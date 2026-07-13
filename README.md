@@ -53,10 +53,15 @@ npm run preview    # תצוגה מקדימה של ה-build (תחת /accessible-e
 
 ## פריסה ל־GitHub Pages
 
-ב־build בלבד נקבע `base: '/accessible-er/'` ([vite.config.ts](vite.config.ts));
-בפיתוח מקומי האפליקציה מוגשת ב־`/`.
+האתר מוגש מדומיין מותאם — `https://accessible-er.mashlom.me` — ולכן ה־`base`
+הוא `/` גם בפיתוח וגם ב־build ([vite.config.ts](vite.config.ts)). קובץ
+[public/CNAME](public/CNAME) מועתק אוטומטית אל `dist/` כדי שהדומיין יישמר בכל פריסה.
 קיים workflow ב-[.github/workflows/deploy.yml](.github/workflows/deploy.yml) שבונה
 ומפרסם אוטומטית בכל דחיפה ל-`main` (יש להפעיל Pages → Source: GitHub Actions).
+
+הערה: `tsc -b` מקמפל את `vite.config.ts`; הפלט מנותב אל `node_modules/.cache`
+(ראו [tsconfig.node.json](tsconfig.node.json)) כדי ש־`vite.config.js` מקומפל לא
+יסתיר את קובץ ההגדרות האמיתי — Vite מעדיף `.js` על `.ts`.
 
 ## מבנה
 

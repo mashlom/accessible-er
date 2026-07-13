@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// In production the app is deployed to GitHub Pages under /accessible-er/,
-// but local dev serves at plain http://localhost:PORT/.
+// The site is served from the ROOT of a custom domain
+// (https://accessible-er.mashlom.me — see public/CNAME), both locally and
+// on GitHub Pages, so the base stays '/'.
 // HashRouter is used so client-side routing works without server rewrites.
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/accessible-er/' : '/',
+export default defineConfig({
+  base: '/',
   plugins: [react()],
-}))
+})

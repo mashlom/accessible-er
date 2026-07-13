@@ -5,7 +5,13 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
-    "strict": true
+    "strict": true,
+
+    // Composite projects must emit; route the output away from the repo
+    // root so the compiled vite.config.js can never shadow vite.config.ts
+    // (Vite resolves .js config files before .ts ones).
+    "outDir": "node_modules/.cache/tsc-node",
+    "tsBuildInfoFile": "node_modules/.cache/tsc-node/tsconfig.node.tsbuildinfo"
   },
   "include": ["vite.config.ts"]
 }

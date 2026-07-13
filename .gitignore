@@ -2,6 +2,11 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# tsc -b artifacts of vite.config.ts — must never shadow the .ts config
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
 .DS_Store
 .vscode/*
 !.vscode/extensions.json
