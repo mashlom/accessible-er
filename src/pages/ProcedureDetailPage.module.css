@@ -1,0 +1,147 @@
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.heroEmoji {
+  font-size: 2.7rem;
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  background: var(--c-lilac-soft);
+  flex-shrink: 0;
+}
+
+.heroTitle {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: var(--c-text-soft);
+  background: var(--c-surface-2);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+
+/* ---- story mode ---- */
+.story {
+  background: linear-gradient(180deg, #f3f9f8, #eaf4f2);
+  border: 1px solid var(--c-primary-soft);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.storyLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--c-primary);
+  margin-bottom: var(--space-3);
+}
+
+.bubble {
+  position: relative;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  min-height: 116px;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.55;
+  margin-inline: auto;
+  max-width: 32ch;
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  inset-inline-start: 40px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: #fff transparent transparent;
+}
+
+.storyMascot {
+  margin: var(--space-4) auto var(--space-3);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-block: var(--space-3);
+}
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c-primary-soft);
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.dotActive {
+  background: var(--c-primary);
+  transform: scale(1.25);
+}
+
+.storyNav {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.storyBtn {
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--c-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  min-width: 120px;
+}
+
+.storyBtnGhost {
+  background: #fff;
+  color: var(--c-primary-dark);
+  border: 1.5px solid var(--c-primary-soft);
+}
+
+.storyBtn:disabled {
+  opacity: 0.4;
+}
+
+/* ---- info sections ---- */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.finishNote {
+  text-align: center;
+  color: var(--c-calm);
+  font-weight: 700;
+  margin-top: var(--space-2);
+}

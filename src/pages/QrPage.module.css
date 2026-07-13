@@ -1,0 +1,51 @@
+.qrCard {
+  background: #fff;
+  border: 3px solid var(--c-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.qrTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--c-primary-dark);
+}
+
+.qrImg {
+  width: min(320px, 70vw);
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.qrUrl {
+  font-size: 0.85rem;
+  color: var(--c-text-faint);
+  word-break: break-all;
+}
+
+.qrHint {
+  font-weight: 600;
+  color: var(--c-text-soft);
+}
+
+.controls {
+  margin-top: var(--space-4);
+  display: flex;
+}
+
+.printBtn {
+  flex: 1;
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  border: none;
+  background: var(--c-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}

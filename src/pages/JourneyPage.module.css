@@ -1,0 +1,220 @@
+.reasonChip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--c-accent-soft);
+  border: 1px solid #f1d8bf;
+  color: var(--c-text);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: var(--space-4);
+}
+
+.hint {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--c-sky-soft);
+  border-radius: var(--radius);
+  color: var(--c-text-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-5);
+}
+
+/* stepper */
+.stepper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step {
+  position: relative;
+  padding-inline-start: 52px;
+  padding-bottom: var(--space-5);
+}
+
+/* connecting line */
+.step::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 17px;
+  top: 8px;
+  bottom: -8px;
+  width: 2px;
+  background: var(--c-border);
+}
+.step:last-child::before {
+  display: none;
+}
+
+.marker {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 4px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--c-surface);
+  border: 2px solid var(--c-border);
+  color: var(--c-text-faint);
+  z-index: 1;
+}
+
+.done .marker {
+  background: var(--c-calm-soft);
+  border-color: var(--c-calm);
+  color: var(--c-calm);
+}
+
+.current .marker {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+  color: #fff;
+  box-shadow: 0 0 0 5px var(--c-primary-soft);
+}
+
+.stepHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  text-align: start;
+  background: transparent;
+  border: none;
+  padding: var(--space-1) 0;
+}
+
+.stepEmoji {
+  font-size: 1.5rem;
+}
+
+.stepTitle {
+  flex: 1;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--c-text);
+}
+
+.current .stepTitle {
+  color: var(--c-primary-dark);
+}
+
+.chevron {
+  color: var(--c-text-faint);
+  transition: transform 0.2s var(--ease);
+  font-size: 1.1rem;
+}
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.currentTag {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--c-primary-dark);
+  background: var(--c-primary-soft);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+/* expanded body */
+.body {
+  margin-top: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.meaning {
+  background: var(--c-surface-2);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.waitBox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--c-lilac-soft);
+  border-radius: var(--radius-sm);
+}
+.waitEmoji {
+  font-size: 1.6rem;
+}
+.waitLabel {
+  font-size: 0.9rem;
+  color: var(--c-text-faint);
+}
+.waitValue {
+  font-weight: 700;
+  color: var(--c-text);
+}
+
+.detailBlock h3 {
+  font-size: 0.98rem;
+  color: var(--c-text-soft);
+  margin-bottom: var(--space-1);
+}
+.detailBlock p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.askTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c-primary-dark);
+  margin-bottom: var(--space-2);
+}
+
+.procChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.procChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--c-lilac-soft);
+  background: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c-text);
+  min-height: 44px;
+  transition: border-color 0.15s var(--ease), background 0.15s var(--ease);
+}
+.procChip:hover {
+  border-color: var(--c-lilac);
+  background: var(--c-lilac-soft);
+}
+
+.hereBtn {
+  align-self: flex-start;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--c-primary);
+  background: #fff;
+  color: var(--c-primary-dark);
+  font-weight: 600;
+  font-size: 1rem;
+  min-height: var(--tap);
+}
+.hereBtnActive {
+  background: var(--c-primary);
+  color: #fff;
+}

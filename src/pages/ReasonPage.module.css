@@ -1,0 +1,144 @@
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  text-align: start;
+  padding: var(--space-4);
+  background: var(--c-surface);
+  border: 2px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s var(--ease), background 0.15s var(--ease),
+    transform 0.1s var(--ease);
+}
+
+.option:hover {
+  border-color: var(--c-primary-soft);
+  transform: translateY(-1px);
+}
+
+.optionSelected {
+  border-color: var(--c-primary);
+  background: var(--c-primary-soft);
+}
+
+.optionEmoji {
+  font-size: 2.3rem;
+  width: 60px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.optionText {
+  flex: 1;
+  min-width: 0;
+}
+
+.optionLabel {
+  display: block;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.optionBlurb {
+  display: block;
+  color: var(--c-text-soft);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  margin-top: 8px;
+}
+
+.check {
+  flex-shrink: 0;
+  font-size: 1.3rem;
+  color: var(--c-primary);
+}
+
+/* selected route preview */
+.routeCard {
+  margin-top: var(--space-5);
+}
+
+.routeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.routeItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+}
+
+.routeDot {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--c-primary-soft);
+  color: var(--c-primary-dark);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.routeLabel {
+  flex: 1;
+  font-size: 1.05rem;
+}
+
+.optionalTag {
+  font-size: 0.82rem;
+  color: var(--c-text-faint);
+  background: var(--c-surface-2);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.routeLink {
+  color: var(--c-primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.actions {
+  margin-top: var(--space-5);
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  background: var(--c-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.ghostBtn {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius);
+  background: transparent;
+  border: 1px solid var(--c-border);
+  color: var(--c-text-soft);
+  font-weight: 600;
+}

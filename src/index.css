@@ -1,0 +1,204 @@
+/* ============================================================
+   Design tokens
+   Calm, low-arousal palette suited to a sensory-sensitive
+   audience: soft teals/greens, warm sand, gentle contrast.
+   ============================================================ */
+:root {
+  --c-bg: #f4f7f6;
+  --c-surface: #ffffff;
+  --c-surface-2: #eef3f2;
+  --c-border: #dce6e4;
+
+  --c-text: #1f2d2b;
+  --c-text-soft: #55645f;
+  --c-text-faint: #8b988f;
+
+  --c-primary: #3f8f8a;
+  --c-primary-dark: #2f6f6b;
+  --c-primary-soft: #dcecea;
+
+  --c-accent: #e8a26b; /* warm sand for gentle highlights */
+  --c-accent-soft: #fbeadb;
+
+  --c-lilac: #b9a7d8;
+  --c-lilac-soft: #ece6f5;
+  --c-sky: #7fb3d5;
+  --c-sky-soft: #e2eef6;
+
+  --c-calm: #77b28a; /* "quiet / good" */
+  --c-calm-soft: #e2f0e6;
+  --c-alert: #d98c74; /* muted, never alarming red */
+  --c-alert-soft: #f8e6df;
+
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 3px rgba(31, 45, 43, 0.06);
+  --shadow: 0 6px 20px rgba(31, 45, 43, 0.08);
+  --shadow-lg: 0 12px 34px rgba(31, 45, 43, 0.12);
+
+  --space-1: 4px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 20px;
+  --space-5: 32px;
+  --space-6: 44px;
+  --space-7: 64px;
+
+  --font: 'Assistant', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+
+  --tap: 48px; /* minimum touch target */
+  --page-max: 880px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ============================================================
+   Reset
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Responsive type scale: everything is sized in rem, so scaling the
+   root scales the whole app — larger on wide screens, still
+   comfortable on phones. */
+html {
+  font-size: clamp(17px, 16px + 0.4vw, 21px);
+}
+
+body {
+  font-family: var(--font);
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--c-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Honour the OS "reduce motion" preference. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ============================================================
+   Utility / shared building blocks
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: var(--space-4);
+  top: -100px;
+  background: var(--c-primary);
+  color: #fff;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  z-index: 100;
+  transition: top 0.15s var(--ease);
+}
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* ============================================================
+   Print — the adaptations card (and QR signage) must print
+   cleanly on its own, without app chrome.
+   ============================================================ */
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* When a .print-area exists, print only it. */
+  body:has(.print-area) * {
+    visibility: hidden;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: none !important;
+  }
+}

@@ -1,0 +1,171 @@
+/* ---------- PageHeader ---------- */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.pageHeaderText {
+  flex: 1;
+  min-width: 0;
+}
+
+.eyebrow {
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--c-primary);
+  margin-bottom: var(--space-1);
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--c-text);
+}
+
+.pageSubtitle {
+  color: var(--c-text-soft);
+  margin-top: var(--space-2);
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+
+/* ---------- NavCard ---------- */
+.navGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 520px) {
+  .navGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.navCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  min-height: 108px;
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease),
+    border-color 0.15s var(--ease);
+}
+
+.navCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--tint, var(--c-primary-soft));
+}
+
+.navCard:active {
+  transform: translateY(0);
+}
+
+.navIcon {
+  flex-shrink: 0;
+  width: 66px;
+  height: 66px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-size: 2.1rem;
+  background: var(--tintSoft, var(--c-primary-soft));
+}
+
+.navBody {
+  min-width: 0;
+}
+
+.navTitle {
+  display: block;
+  font-weight: 700;
+  font-size: 1.28rem;
+  line-height: 1.3;
+  color: var(--c-text);
+}
+
+.navDesc {
+  display: block;
+  color: var(--c-text-soft);
+  font-size: 1.02rem;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+/* ---------- Chip ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--c-surface-2);
+  color: var(--c-text-soft);
+}
+
+/* ---------- InfoList (check-style bullet list) ---------- */
+.infoList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  line-height: 1.55;
+  font-size: 1.02rem;
+}
+
+.infoBullet {
+  flex-shrink: 0;
+  margin-top: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  background: var(--c-primary-soft);
+  color: var(--c-primary-dark);
+}
+
+/* ---------- Section ---------- */
+.section {
+  padding: var(--space-4);
+}
+
+.section p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: var(--space-3);
+}
+
+.note {
+  font-size: 0.95rem;
+  color: var(--c-text-faint);
+  line-height: 1.55;
+}
