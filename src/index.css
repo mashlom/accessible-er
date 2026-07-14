@@ -19,6 +19,8 @@
 
   --c-accent: #e8a26b; /* warm sand for gentle highlights */
   --c-accent-soft: #fbeadb;
+  --c-medium: #d9a441; /* "medium load" — amber, distinct from calm/busy */
+  --c-medium-soft: #f5e9d0;
 
   --c-lilac: #b9a7d8;
   --c-lilac-soft: #ece6f5;
@@ -27,7 +29,7 @@
 
   --c-calm: #77b28a; /* "quiet / good" */
   --c-calm-soft: #e2f0e6;
-  --c-alert: #d98c74; /* muted, never alarming red */
+  --c-alert: #c96a5c; /* muted, never alarming red */
   --c-alert-soft: #f8e6df;
 
   --radius-sm: 10px;
@@ -190,8 +192,8 @@ a {
   body:has(.print-area) * {
     visibility: hidden;
   }
-  .print-area,
-  .print-area * {
+  body:has(.print-area) .print-area,
+  body:has(.print-area) .print-area * {
     visibility: visible;
   }
   .print-area {

@@ -260,7 +260,7 @@ export const procedures: Procedure[] = [
   {
     id: 'stitches',
     title: 'הדבקת פצע או תפירה',
-    emoji: '🩹',
+    emoji: '🤕',
     duration: '10–20 דקות',
     who: 'רופא/ה',
     what: 'מנקים את הפצע וסוגרים אותו — בדבק מיוחד או בתפרים קטנים. לפני כן שמים לרוב חומר שמרדים את האזור.',

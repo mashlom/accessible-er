@@ -73,6 +73,6 @@ export const mapAreas: MapArea[] = [
 
 export const loadLabels: Record<MapArea['load'], { label: string; color: string }> = {
   calm: { label: 'שקט', color: 'var(--c-calm)' },
-  medium: { label: 'בינוני', color: 'var(--c-accent)' },
+  medium: { label: 'בינוני', color: 'var(--c-medium)' },
   busy: { label: 'עמוס', color: 'var(--c-alert)' },
 }

@@ -120,3 +120,22 @@
   color: var(--c-primary-dark);
   font-weight: 700;
 }
+
+.mailLink {
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-pill);
+  background: var(--c-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.copyBtn {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text-soft);
+  font-weight: 600;
+  font-size: 0.95rem;
+}

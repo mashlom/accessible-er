@@ -94,7 +94,9 @@ export function JourneyPage() {
                         ⏳
                       </span>
                       <span>
-                        <span className={styles.waitLabel}>זמן המתנה משוער</span>
+                        <span className={styles.waitLabel}>
+                          {stage.waitKind === 'duration' ? 'משך זמן משוער' : 'זמן המתנה משוער'}
+                        </span>
                         <br />
                         <span className={styles.waitValue}>{stage.waitRange}</span>
                       </span>
