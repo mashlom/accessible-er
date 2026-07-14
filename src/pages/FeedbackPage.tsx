@@ -21,6 +21,28 @@ interface Feedback {
   note: string
 }
 
+const FEEDBACK_EMAIL = 'posicel@gmail.com'
+
+const RATING_LABELS: Record<number, string> = {
+  1: 'פחות עזר',
+  2: 'עזר קצת',
+  3: 'עזר מאוד',
+}
+
+function buildFeedbackText({ rating, helped, note }: Feedback) {
+  return [
+    `דירוג: ${rating ? RATING_LABELS[rating] : 'לא צוין'}`,
+    `מה עזר: ${helped.length ? helped.join(', ') : '—'}`,
+    `הערה: ${note.trim() || '—'}`,
+  ].join('\n')
+}
+
+function buildFeedbackMailto(feedback: Feedback) {
+  const subject = encodeURIComponent('משוב על "מה שלומי?"')
+  const body = encodeURIComponent(buildFeedbackText(feedback))
+  return `mailto:${FEEDBACK_EMAIL}?subject=${subject}&body=${body}`
+}
+
 export function FeedbackPage() {
   const [saved, setSaved] = usePersistentState<Feedback | null>(
     'feedback',
@@ -31,6 +53,8 @@ export function FeedbackPage() {
   const [helped, setHelped] = useState<string[]>(saved?.helped ?? [])
   const [note, setNote] = useState(saved?.note ?? '')
   const [done, setDone] = useState(false)
+  const [sentFeedback, setSentFeedback] = useState<Feedback | null>(null)
+  const [copied, setCopied] = useState(false)
 
   function toggleHelped(item: string) {
     setHelped((prev) =>
@@ -39,8 +63,17 @@ export function FeedbackPage() {
   }
 
   function submit() {
-    setSaved({ rating, helped, note })
+    const feedback = { rating, helped, note }
+    setSaved(feedback)
+    setSentFeedback(feedback)
+    window.location.href = buildFeedbackMailto(feedback)
     setDone(true)
+  }
+
+  async function copyFeedback() {
+    if (!sentFeedback) return
+    await navigator.clipboard.writeText(buildFeedbackText(sentFeedback))
+    setCopied(true)
   }
 
   if (done) {
@@ -50,8 +83,21 @@ export function FeedbackPage() {
           <Mascot size={110} mood="happy" />
           <h1 className={styles.thanksTitle}>תודה רבה! 🌟</h1>
           <p className={styles.thanksBody}>
-            המשוב שלכם עוזר לנו לשפר את הכלי עבור משפחות אחרות.
+            המשוב שלכם עוזר לנו לשפר את הכלי עבור משפחות אחרות. אם נפתחה אצלכם
+            אפליקציית מייל עם הודעה מוכנה — נשאר רק לשלוח אותה.
           </p>
+
+          {sentFeedback && (
+            <>
+              <a href={buildFeedbackMailto(sentFeedback)} className={styles.mailLink}>
+                📧 לא נפתח מייל אצלכם? לחצו כאן
+              </a>
+              <button type="button" className={styles.copyBtn} onClick={copyFeedback}>
+                {copied ? '✓ הועתק' : 'העתקת המשוב כטקסט'}
+              </button>
+            </>
+          )}
+
           <Link to="/" className={styles.homeBtn}>
             חזרה לדף הבית
           </Link>
@@ -130,7 +176,10 @@ export function FeedbackPage() {
       </button>
 
       <div style={{ marginTop: 'var(--space-3)' }}>
-        <Note>המשוב נשמר במכשיר הזה בלבד (דמו) ואינו כולל מידע מזהה.</Note>
+        <Note>
+          לחיצה על השליחה תפתח הודעת מייל מוכנה (לאחר אישור ושליחה מצדכם, המשוב
+          יגיע לצוות). עותק נשמר גם במכשיר הזה (דמו) ואינו כולל מידע מזהה.
+        </Note>
       </div>
     </div>
   )
