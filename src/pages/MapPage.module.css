@@ -36,7 +36,7 @@
   padding: var(--space-4);
   background: var(--c-surface);
   border: 1px solid var(--c-border);
-  border-inline-start: 5px solid var(--loadColor, var(--c-border));
+  border-inline-start: 8px solid var(--loadColor, var(--c-border));
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
 }
