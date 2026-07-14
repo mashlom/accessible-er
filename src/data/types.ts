@@ -31,6 +31,8 @@ export interface JourneyStage {
   canAsk: string[]
   /** invented, range-based estimate shown as guidance only */
   waitRange?: string
+  /** whether waitRange is time spent waiting for this stage, or the stage's own duration. Defaults to 'wait'. */
+  waitKind?: 'wait' | 'duration'
   /**
    * Procedures from procedures.ts that typically happen at this stage —
    * lets the parent open the child-facing preparation right when it is

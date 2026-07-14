@@ -33,6 +33,7 @@ export const journeyStages: JourneyStage[] = [
       'להראות את המכשירים על ההורה קודם',
     ],
     waitRange: '10–20 דקות',
+    waitKind: 'duration',
     procedureIds: ['temperature', 'saturation', 'blood-pressure'],
   },
   {
@@ -62,6 +63,7 @@ export const journeyStages: JourneyStage[] = [
       'זמן עיבוד קצר בין שאלה לתשובה',
     ],
     waitRange: '10–20 דקות',
+    waitKind: 'duration',
     procedureIds: ['doctor-exam'],
   },
   {
@@ -77,6 +79,7 @@ export const journeyStages: JourneyStage[] = [
       'שההורה יישאר קרוב',
     ],
     waitRange: 'משתנה לפי הבדיקה',
+    waitKind: 'duration',
     procedureIds: ['blood-test', 'urine', 'xray', 'ultrasound', 'ct'],
   },
   {
@@ -124,6 +127,7 @@ export const journeyStages: JourneyStage[] = [
       'הכנה חזותית לפני כל טיפול',
     ],
     waitRange: 'משתנה לפי הטיפול',
+    waitKind: 'duration',
     procedureIds: ['iv', 'medication', 'inhalation', 'stitches', 'cast', 'bandage'],
   },
   {
