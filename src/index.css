@@ -190,8 +190,8 @@ a {
   body:has(.print-area) * {
     visibility: hidden;
   }
-  .print-area,
-  .print-area * {
+  body:has(.print-area) .print-area,
+  body:has(.print-area) .print-area * {
     visibility: visible;
   }
   .print-area {
