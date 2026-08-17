@@ -67,7 +67,7 @@ export const mapAreas: MapArea[] = [
     emoji: '🏁',
     note: 'כאן מקבלים הנחיות סיום ומשתחררים הביתה.',
     next: 'הביתה, עם הנחיות להמשך 🏠',
-    load: 'calm',
+    load: 'medium',
   },
 ]
 
