@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Mascot } from '../components/Mascot'
 import { PageHeader, InfoList } from '../components/ui'
 import { journeyStages, getStageIndex } from '../data/journey'
 import { getProcedure } from '../data/procedures'
@@ -7,6 +8,10 @@ import { useVisitReason } from '../hooks/useVisitReason'
 import { usePersistentState } from '../hooks/usePersistentState'
 import { DAY_MS } from '../lib/storage'
 import styles from './JourneyPage.module.css'
+
+const prefersReducedMotion =
+  typeof window !== 'undefined' &&
+  !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
 export function JourneyPage() {
   const { path } = useVisitReason()
@@ -17,8 +22,47 @@ export function JourneyPage() {
     DAY_MS,
   )
   const [openId, setOpenId] = useState<string | null>(currentId ?? journeyStages[0].id)
+  // Roni walking along the stepper — a gentle sense of movement/control.
+  // Off by default only when the OS asks for reduced motion; user can toggle.
+  const [motionOn, setMotionOn] = usePersistentState<boolean>('journey-motion', true)
 
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const stepRefs = useRef<Record<string, HTMLLIElement | null>>({})
+  const prevCurrent = useRef<string | null>(currentId)
+  const [walkerTop, setWalkerTop] = useState<number | null>(null)
+  const [walking, setWalking] = useState(false)
+
+  const animateWalk = motionOn && !prefersReducedMotion
   const currentIndex = currentId ? getStageIndex(currentId) : -1
+
+  // Measure the current step's position so Roni can stand beside it.
+  const measureWalker = useCallback(() => {
+    const wrap = wrapRef.current
+    const el = currentId ? stepRefs.current[currentId] : null
+    if (!wrap || !el) {
+      setWalkerTop(null)
+      return
+    }
+    setWalkerTop(el.getBoundingClientRect().top - wrap.getBoundingClientRect().top)
+  }, [currentId])
+
+  useLayoutEffect(measureWalker, [measureWalker, openId, path])
+
+  useEffect(() => {
+    window.addEventListener('resize', measureWalker)
+    return () => window.removeEventListener('resize', measureWalker)
+  }, [measureWalker])
+
+  // Announce the move ("בואו נלך…") briefly whenever we advance.
+  useEffect(() => {
+    if (prevCurrent.current !== currentId && currentId && animateWalk) {
+      setWalking(true)
+      const t = setTimeout(() => setWalking(false), 1600)
+      prevCurrent.current = currentId
+      return () => clearTimeout(t)
+    }
+    prevCurrent.current = currentId
+  }, [currentId, animateWalk])
 
   function toggleOpen(id: string) {
     setOpenId((prev) => (prev === id ? null : id))
@@ -52,7 +96,30 @@ export function JourneyPage() {
         </span>
       </div>
 
-      <ol className={styles.stepper}>
+      {!prefersReducedMotion && (
+        <label className={styles.motionToggle}>
+          <input
+            type="checkbox"
+            checked={motionOn}
+            onChange={(e) => setMotionOn(e.target.checked)}
+          />
+          <span>🐾 רוני צועד/ת איתנו במסע</span>
+        </label>
+      )}
+
+      <div className={styles.stepperWrap} ref={wrapRef}>
+        {currentId && walkerTop != null && (
+          <div
+            className={styles.walker}
+            style={{ top: walkerTop, transition: animateWalk ? 'top 1.1s var(--ease)' : 'none' }}
+            aria-hidden
+          >
+            {walking && <span className={styles.walkerBubble}>בואו נלך…</span>}
+            <Mascot size={44} mood={walking ? 'wave' : 'happy'} />
+          </div>
+        )}
+
+        <ol className={styles.stepper}>
         {journeyStages.map((stage, i) => {
           const isCurrent = stage.id === currentId
           const isDone = currentIndex > -1 && i < currentIndex
@@ -60,7 +127,13 @@ export function JourneyPage() {
           const stateClass = isCurrent ? styles.current : isDone ? styles.done : ''
 
           return (
-            <li key={stage.id} className={`${styles.step} ${stateClass}`}>
+            <li
+              key={stage.id}
+              ref={(el) => {
+                stepRefs.current[stage.id] = el
+              }}
+              className={`${styles.step} ${stateClass}`}
+            >
               <span className={styles.marker} aria-hidden>
                 {isDone ? '✓' : i + 1}
               </span>
@@ -153,7 +226,8 @@ export function JourneyPage() {
             </li>
           )
         })}
-      </ol>
+        </ol>
+      </div>
     </div>
   )
 }
