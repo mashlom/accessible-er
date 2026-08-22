@@ -17,6 +17,8 @@ export interface CareCard {
   hardMoments: string[]
   pain: string[]
   avoid: string[]
+  /** per-section free text ("אחר"), keyed by section — max 150 chars each */
+  custom: Record<CardArrayField, string>
   freeNote: string
 }
 
@@ -29,6 +31,19 @@ export type CardArrayField =
   | 'pain'
   | 'avoid'
 
+/** Max length of each per-section "אחר" free-text line. */
+export const CUSTOM_MAX = 150
+
+export const emptyCustom: Record<CardArrayField, string> = {
+  communication: '',
+  sensitivities: '',
+  calming: '',
+  escalators: '',
+  hardMoments: '',
+  pain: '',
+  avoid: '',
+}
+
 export const emptyCard: CareCard = {
   nickname: '',
   age: '',
@@ -39,6 +54,7 @@ export const emptyCard: CareCard = {
   hardMoments: [],
   pain: [],
   avoid: [],
+  custom: { ...emptyCustom },
   freeNote: '',
 }
 
@@ -164,6 +180,7 @@ export function isCardEmpty(card: CareCard): boolean {
   return (
     !card.nickname.trim() &&
     !card.freeNote.trim() &&
-    cardSections.every((s) => card[s.key].length === 0)
+    cardSections.every((s) => card[s.key].length === 0) &&
+    cardSections.every((s) => !(card.custom?.[s.key] ?? '').trim())
   )
 }

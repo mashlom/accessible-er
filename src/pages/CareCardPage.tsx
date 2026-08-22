@@ -4,7 +4,9 @@ import { usePersistentState } from '../hooks/usePersistentState'
 import { DAY_MS } from '../lib/storage'
 import {
   cardSections,
+  CUSTOM_MAX,
   emptyCard,
+  emptyCustom,
   isCardEmpty,
   type CardArrayField,
   type CareCard,
@@ -29,6 +31,10 @@ export function CareCardPage() {
       ? list.filter((x) => x !== option)
       : [...list, option]
     setCard({ ...card, [key]: next })
+  }
+
+  function setCustom(key: CardArrayField, value: string) {
+    setCard({ ...card, custom: { ...(card.custom ?? emptyCustom), [key]: value } })
   }
 
   const empty = isCardEmpty(card)
@@ -98,6 +104,21 @@ export function CareCardPage() {
                 </button>
               )
             })}
+          </div>
+          <div className={styles.otherRow}>
+            <input
+              className={styles.otherInput}
+              value={card.custom?.[section.key] ?? ''}
+              onChange={(e) => setCustom(section.key, e.target.value)}
+              maxLength={CUSTOM_MAX}
+              placeholder="אחר… (אפשר לכתוב בחופשי)"
+              aria-label={`אחר — ${section.title}`}
+            />
+            {(card.custom?.[section.key] ?? '').length > 0 && (
+              <span className={styles.otherCount}>
+                {(card.custom?.[section.key] ?? '').length}/{CUSTOM_MAX}
+              </span>
+            )}
           </div>
         </section>
       ))}
