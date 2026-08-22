@@ -57,6 +57,36 @@
   margin-bottom: var(--space-3);
 }
 
+/* method toggle — shown when a procedure has more than one story variant */
+.variantToggle {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  background: #fff;
+  border: 1.5px solid var(--c-primary-soft);
+  border-radius: var(--radius-pill);
+  padding: 5px;
+  margin-bottom: var(--space-4);
+}
+
+.variantBtn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--c-primary-dark);
+  font-weight: 700;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.variantBtnActive {
+  background: var(--c-primary);
+  color: #fff;
+}
+
 .bubble {
   position: relative;
   background: #fff;

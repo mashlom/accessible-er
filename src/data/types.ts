@@ -54,6 +54,19 @@ export interface Procedure {
   adaptations: string[] // adaptations that can be requested
   /** simple first-person steps the mascot narrates to the child */
   story: string[]
+  /**
+   * Alternative step-by-step stories when a procedure has more than one
+   * method (e.g. temperature: in the mouth vs. under the armpit). When set,
+   * the detail page shows a toggle and uses the chosen variant's steps
+   * instead of `story`.
+   */
+  storyVariants?: StoryVariant[]
+}
+
+/** One labelled step-by-step story, used when a procedure has several methods. */
+export interface StoryVariant {
+  label: string // short toggle label, e.g. "בפה"
+  steps: string[]
 }
 
 /** An area on the simple orientation map (module 2). */
