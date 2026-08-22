@@ -1,21 +1,99 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Mascot } from '../components/Mascot'
 import { NavCard } from '../components/ui'
 import { useVisitReason } from '../hooks/useVisitReason'
+import {
+  avatarEmojis,
+  fileToAvatarDataUrl,
+  useSessionAvatar,
+} from '../hooks/useSessionAvatar'
 import styles from './HomePage.module.css'
 
 export function HomePage() {
   const { path } = useVisitReason()
+  const [avatar, setAvatar, resetAvatar] = useSessionAvatar()
+  const fileRef = useRef<HTMLInputElement>(null)
+
+  async function onPickFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    e.target.value = '' // allow re-picking the same file
+    if (!file) return
+    try {
+      const value = await fileToAvatarDataUrl(file)
+      setAvatar({ kind: 'photo', value })
+    } catch {
+      /* if the image can't be read, just keep the current avatar */
+    }
+  }
 
   return (
     <div className="container">
       <section className={styles.hero}>
-        <Mascot size={120} mood="wave" className={styles.heroMascot} />
+        {avatar.kind === 'photo' ? (
+          <img src={avatar.value} alt="האווטר שבחרתם" className={styles.heroAvatarImg} />
+        ) : avatar.kind === 'emoji' ? (
+          <div className={styles.heroAvatarEmoji} aria-label="האווטר שבחרתם">
+            {avatar.value}
+          </div>
+        ) : (
+          <Mascot size={120} mood="wave" className={styles.heroMascot} />
+        )}
+
         <h1 className={styles.heroTitle}>שלום, אני רוני 👋</h1>
         <p className={styles.heroSubtitle}>
           אני כאן כדי ללוות אתכם ואת הילד/ה במיון. נעבור יחד, שלב אחרי שלב, בקצב
           שלכם.
         </p>
+
+        <div className={styles.avatarPicker}>
+          <span className={styles.avatarPickerLabel}>אפשר לבחור דמות מלווה:</span>
+          <div className={styles.avatarOptions}>
+            <button
+              type="button"
+              className={`${styles.avatarChip} ${avatar.kind === 'roni' ? styles.avatarChipOn : ''}`}
+              onClick={resetAvatar}
+              aria-pressed={avatar.kind === 'roni'}
+            >
+              🧸 רוני
+            </button>
+            {avatarEmojis.map((emoji) => (
+              <button
+                key={emoji}
+                type="button"
+                className={`${styles.avatarChip} ${
+                  avatar.kind === 'emoji' && avatar.value === emoji ? styles.avatarChipOn : ''
+                }`}
+                onClick={() => setAvatar({ kind: 'emoji', value: emoji })}
+                aria-pressed={avatar.kind === 'emoji' && avatar.value === emoji}
+              >
+                {emoji}
+              </button>
+            ))}
+            <button
+              type="button"
+              className={styles.avatarChip}
+              onClick={() => fileRef.current?.click()}
+            >
+              📷 תמונה
+            </button>
+            {avatar.kind === 'photo' && (
+              <button type="button" className={styles.avatarChip} onClick={resetAvatar}>
+                ✕ הסרה
+              </button>
+            )}
+          </div>
+          <input
+            ref={fileRef}
+            type="file"
+            accept="image/*"
+            onChange={onPickFile}
+            style={{ display: 'none' }}
+          />
+          <span className={styles.avatarNote}>
+            התמונה נשארת במכשיר לזמן השימוש בלבד ונמחקת ביציאה. שום דבר לא נשלח או נשמר.
+          </span>
+        </div>
       </section>
 
       {path ? (
