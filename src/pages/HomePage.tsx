@@ -156,6 +156,14 @@ export function HomePage() {
           tintSoft="var(--c-calm-soft)"
         />
         <NavCard
+          to="/discharge"
+          emoji="🏠"
+          title="לקראת שחרור"
+          desc="מה קורה בסיום הביקור והחזרה הביתה"
+          tint="#bfe3df"
+          tintSoft="var(--c-primary-soft)"
+        />
+        <NavCard
           to="/reason"
           emoji="💭"
           title="למה הגענו?"

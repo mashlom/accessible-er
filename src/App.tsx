@@ -11,6 +11,7 @@ import { RequestsPage } from './pages/RequestsPage'
 import { FeedbackPage } from './pages/FeedbackPage'
 import { CareCardPage } from './pages/CareCardPage'
 import { CareCardViewPage } from './pages/CareCardViewPage'
+import { DischargePage } from './pages/DischargePage'
 import { MessagePage } from './pages/MessagePage'
 import { QrPage } from './pages/QrPage'
 
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="message" element={<MessagePage />} />
         <Route path="card" element={<CareCardPage />} />
         <Route path="card/view" element={<CareCardViewPage />} />
+        <Route path="discharge" element={<DischargePage />} />
         {/* staff-only page, deliberately not linked from the parent UI */}
         <Route path="settings" element={<QrPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
