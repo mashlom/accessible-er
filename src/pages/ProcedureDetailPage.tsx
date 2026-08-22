@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import { Mascot } from '../components/Mascot'
 import { Section, InfoList } from '../components/ui'
@@ -9,10 +9,19 @@ export function ProcedureDetailPage() {
   const { id } = useParams()
   const procedure = id ? getProcedure(id) : undefined
   const [step, setStep] = useState(0)
+  const [variant, setVariant] = useState(0)
+
+  // Reset the story to the start when navigating between procedures
+  // (the page component stays mounted across /procedures/:id changes).
+  useEffect(() => {
+    setStep(0)
+    setVariant(0)
+  }, [id])
 
   if (!procedure) return <Navigate to="/procedures" replace />
 
-  const steps = procedure.story
+  const variants = procedure.storyVariants
+  const steps = variants ? (variants[variant] ?? variants[0]).steps : procedure.story
   const lastStep = step >= steps.length - 1
   const isFinished = step === steps.length - 1
 
@@ -34,6 +43,25 @@ export function ProcedureDetailPage() {
       {/* Story mode — the mascot walks the child through, step by step */}
       <section className={styles.story} aria-label="סיפור הכנה לילד">
         <p className={styles.storyLabel}>🎬 בואו נראה מה יקרה, שלב אחרי שלב</p>
+
+        {variants && variants.length > 1 && (
+          <div className={styles.variantToggle} role="group" aria-label="איך מודדים">
+            {variants.map((v, i) => (
+              <button
+                key={i}
+                type="button"
+                className={`${styles.variantBtn} ${i === variant ? styles.variantBtnActive : ''}`}
+                aria-pressed={i === variant}
+                onClick={() => {
+                  setVariant(i)
+                  setStep(0)
+                }}
+              >
+                {v.label}
+              </button>
+            ))}
+          </div>
+        )}
 
         <div className={styles.bubble} aria-live="polite">
           {steps[step]}

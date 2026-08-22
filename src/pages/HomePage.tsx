@@ -1,11 +1,31 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Mascot } from '../components/Mascot'
 import { NavCard } from '../components/ui'
 import { useVisitReason } from '../hooks/useVisitReason'
+import {
+  avatarEmojis,
+  fileToAvatarDataUrl,
+  useSessionAvatar,
+} from '../hooks/useSessionAvatar'
 import styles from './HomePage.module.css'
 
 export function HomePage() {
   const { path } = useVisitReason()
+  const [avatar, setAvatar, resetAvatar] = useSessionAvatar()
+  const fileRef = useRef<HTMLInputElement>(null)
+
+  async function onPickFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    e.target.value = '' // allow re-picking the same file
+    if (!file) return
+    try {
+      const value = await fileToAvatarDataUrl(file)
+      setAvatar({ kind: 'photo', value })
+    } catch {
+      /* if the image can't be read, just keep the current avatar */
+    }
+  }
 
   return (
     <div className="container">
@@ -16,6 +36,54 @@ export function HomePage() {
           אני כאן כדי ללוות אתכם ואת הילד/ה במיון. נעבור יחד, שלב אחרי שלב, בקצב
           שלכם.
         </p>
+
+        <div className={styles.avatarPicker}>
+          <span className={styles.avatarPickerLabel}>בחרו איך תיראו במסע:</span>
+          <div className={styles.avatarPreview} aria-hidden>
+            {avatar.kind === 'photo' ? (
+              <img src={avatar.value} alt="" className={styles.avatarPreviewImg} />
+            ) : (
+              <span className={styles.avatarPreviewEmoji}>{avatar.value}</span>
+            )}
+          </div>
+          <div className={styles.avatarOptions}>
+            {avatarEmojis.map((emoji) => (
+              <button
+                key={emoji}
+                type="button"
+                className={`${styles.avatarChip} ${
+                  avatar.kind === 'emoji' && avatar.value === emoji ? styles.avatarChipOn : ''
+                }`}
+                onClick={() => setAvatar({ kind: 'emoji', value: emoji })}
+                aria-pressed={avatar.kind === 'emoji' && avatar.value === emoji}
+              >
+                {emoji}
+              </button>
+            ))}
+            <button
+              type="button"
+              className={styles.avatarChip}
+              onClick={() => fileRef.current?.click()}
+            >
+              📷 תמונה
+            </button>
+            {avatar.kind === 'photo' && (
+              <button type="button" className={styles.avatarChip} onClick={resetAvatar}>
+                ✕ הסרה
+              </button>
+            )}
+          </div>
+          <input
+            ref={fileRef}
+            type="file"
+            accept="image/*"
+            onChange={onPickFile}
+            style={{ display: 'none' }}
+          />
+          <span className={styles.avatarNote}>
+            התמונה נשארת במכשיר לזמן השימוש בלבד ונמחקת ביציאה. שום דבר לא נשלח או נשמר.
+          </span>
+        </div>
       </section>
 
       {path ? (
@@ -94,6 +162,14 @@ export function HomePage() {
           desc="בחירת סיבת ההגעה להתאמת המסלול"
           tint="#f1d8bf"
           tintSoft="var(--c-accent-soft)"
+        />
+        <NavCard
+          to="/message"
+          emoji="✉️"
+          title="הודעה לצוות"
+          desc="בקשה או תודה — להצגה על המסך או לשליחה במייל"
+          tint="#cbb8e6"
+          tintSoft="var(--c-lilac-soft)"
         />
         <NavCard
           to="/feedback"

@@ -1,12 +1,17 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PageHeader, InfoList } from '../components/ui'
+import { useSessionAvatar } from '../hooks/useSessionAvatar'
 import { journeyStages, getStageIndex } from '../data/journey'
 import { getProcedure } from '../data/procedures'
 import { useVisitReason } from '../hooks/useVisitReason'
 import { usePersistentState } from '../hooks/usePersistentState'
 import { DAY_MS } from '../lib/storage'
 import styles from './JourneyPage.module.css'
+
+const prefersReducedMotion =
+  typeof window !== 'undefined' &&
+  !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
 export function JourneyPage() {
   const { path } = useVisitReason()
@@ -17,8 +22,58 @@ export function JourneyPage() {
     DAY_MS,
   )
   const [openId, setOpenId] = useState<string | null>(currentId ?? journeyStages[0].id)
+  // Roni walking along the stepper — a gentle sense of movement/control.
+  // Off by default only when the OS asks for reduced motion; user can toggle.
+  const [motionOn, setMotionOn] = usePersistentState<boolean>('journey-motion', true)
+  const [avatar] = useSessionAvatar() // the child's figure that travels the rail
 
+  const railRef = useRef<HTMLDivElement>(null)
+  const stopRefs = useRef<Record<string, HTMLElement | null>>({})
+  const prevCurrent = useRef<string | null>(currentId)
+  const [roniX, setRoniX] = useState<number | null>(null)
+  const [walking, setWalking] = useState(false)
+
+  const animateWalk = motionOn && !prefersReducedMotion
   const currentIndex = currentId ? getStageIndex(currentId) : -1
+  // Share of the journey already reached — used to tint the passed rail green.
+  const progressPct =
+    currentIndex >= 0
+      ? Math.round((currentIndex / (journeyStages.length - 1)) * 100)
+      : 0
+
+  // Roni rides a stable horizontal progress rail (independent of the
+  // accordion below), so the walk is always visible. Measure the current
+  // stop's centre and translate Roni there. Runs AFTER paint so the CSS
+  // transform transition actually plays instead of jumping.
+  const measureRoni = useCallback(() => {
+    const rail = railRef.current
+    const anchorId = currentId ?? journeyStages[0].id
+    const stop = stopRefs.current[anchorId]
+    if (rail && stop) {
+      const r = stop.getBoundingClientRect()
+      setRoniX(r.left + r.width / 2 - rail.getBoundingClientRect().left - 20)
+    } else {
+      setRoniX(null)
+    }
+  }, [currentId])
+
+  useEffect(measureRoni, [measureRoni])
+
+  useEffect(() => {
+    window.addEventListener('resize', measureRoni)
+    return () => window.removeEventListener('resize', measureRoni)
+  }, [measureRoni])
+
+  // Announce the move ("בואו נלך…") briefly whenever we advance.
+  useEffect(() => {
+    if (prevCurrent.current !== currentId && currentId && animateWalk) {
+      setWalking(true)
+      const t = setTimeout(() => setWalking(false), 1600)
+      prevCurrent.current = currentId
+      return () => clearTimeout(t)
+    }
+    prevCurrent.current = currentId
+  }, [currentId, animateWalk])
 
   function toggleOpen(id: string) {
     setOpenId((prev) => (prev === id ? null : id))
@@ -50,6 +105,70 @@ export function JourneyPage() {
           זמני ההמתנה הם הערכה בטווחים בלבד, ויכולים להשתנות לפי העומס במיון. הם עוזרים
           לדעת למה לצפות — לא הבטחה מדויקת.
         </span>
+      </div>
+
+      <label className={styles.motionToggle}>
+        <input
+          type="checkbox"
+          checked={motionOn}
+          onChange={(e) => setMotionOn(e.target.checked)}
+        />
+        <span>🐾 הדמות שלי זזה לאורך המסע</span>
+      </label>
+
+      <div className={styles.rail} ref={railRef} aria-label="התקדמות במסע">
+        {motionOn && roniX != null && (
+          <div
+            className={styles.railRoni}
+            style={{
+              transform: `translateX(${roniX}px)`,
+              transition: animateWalk ? 'transform 1.1s var(--ease)' : 'none',
+            }}
+            aria-hidden
+          >
+            {walking && <span className={styles.railBubble}>בואו נלך…</span>}
+            {avatar.kind === 'photo' ? (
+              <img src={avatar.value} alt="" className={styles.railAvatarImg} />
+            ) : (
+              <span className={styles.railAvatarEmoji}>{avatar.value}</span>
+            )}
+          </div>
+        )}
+        <div
+          className={styles.railTrack}
+          style={
+            progressPct > 0
+              ? {
+                  background: `linear-gradient(to left, var(--c-calm-soft) ${progressPct}%, var(--c-surface-2) ${progressPct}%)`,
+                }
+              : undefined
+          }
+        >
+          {journeyStages.map((stage, i) => {
+            const stopState =
+              stage.id === currentId
+                ? styles.stopCurrent
+                : currentIndex > -1 && i < currentIndex
+                  ? styles.stopDone
+                  : ''
+            return (
+              <button
+                key={stage.id}
+                type="button"
+                ref={(el) => {
+                  stopRefs.current[stage.id] = el
+                }}
+                className={`${styles.stop} ${stopState}`}
+                onClick={() => markHere(stage.id)}
+                aria-label={`${stage.title}${stage.id === currentId ? ' — אנחנו כאן' : ''}`}
+                aria-current={stage.id === currentId ? 'step' : undefined}
+                title={stage.title}
+              >
+                {stage.emoji}
+              </button>
+            )
+          })}
+        </div>
       </div>
 
       <ol className={styles.stepper}>

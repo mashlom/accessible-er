@@ -24,6 +24,113 @@
   margin-bottom: var(--space-5);
 }
 
+/* motion toggle — lets the family turn Roni's walking on/off */
+.motionToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--c-text-soft);
+  margin-bottom: var(--space-4);
+  cursor: pointer;
+}
+.motionToggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--c-primary);
+}
+
+/* horizontal progress rail — Roni rides along it to the current stage */
+.rail {
+  position: relative;
+  padding-top: 46px; /* room for Roni above the track */
+  margin-bottom: var(--space-5);
+}
+.railTrack {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px;
+  background: var(--c-surface-2);
+  border-radius: var(--radius-pill);
+}
+.stop {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  background: var(--c-surface);
+  border: 2px solid var(--c-border);
+  opacity: 0.6;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+  font-family: inherit;
+  transition: opacity 0.2s var(--ease), border-color 0.2s var(--ease),
+    transform 0.1s var(--ease);
+}
+.stop:hover {
+  opacity: 1;
+  transform: scale(1.12);
+}
+.stop:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 2px;
+  opacity: 1;
+}
+.stopDone {
+  opacity: 1;
+  border-color: var(--c-calm);
+  background: var(--c-calm-soft);
+}
+.stopCurrent {
+  opacity: 1;
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 4px var(--c-primary-soft);
+}
+.railRoni {
+  position: absolute;
+  top: 0;
+  left: 0; /* positioned by translateX in LTR pixel space */
+  right: auto;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+}
+.railAvatarImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--c-primary-soft);
+}
+.railAvatarEmoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+.railBubble {
+  position: absolute;
+  bottom: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #fff;
+  border: 1.5px solid var(--c-primary-soft);
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--c-primary-dark);
+  box-shadow: var(--shadow-sm);
+}
+
 /* stepper */
 .stepper {
   list-style: none;

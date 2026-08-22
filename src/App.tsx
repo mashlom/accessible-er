@@ -11,6 +11,7 @@ import { RequestsPage } from './pages/RequestsPage'
 import { FeedbackPage } from './pages/FeedbackPage'
 import { CareCardPage } from './pages/CareCardPage'
 import { CareCardViewPage } from './pages/CareCardViewPage'
+import { MessagePage } from './pages/MessagePage'
 import { QrPage } from './pages/QrPage'
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="calm" element={<CalmPage />} />
         <Route path="requests" element={<RequestsPage />} />
         <Route path="feedback" element={<FeedbackPage />} />
+        <Route path="message" element={<MessagePage />} />
         <Route path="card" element={<CareCardPage />} />
         <Route path="card/view" element={<CareCardViewPage />} />
         {/* staff-only page, deliberately not linked from the parent UI */}

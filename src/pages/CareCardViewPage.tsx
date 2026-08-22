@@ -103,6 +103,9 @@ export function CareCardViewPage() {
       )}
 
       <div className={`${styles.controls} no-print`}>
+        <button type="button" className={styles.pdfBtn} onClick={() => window.print()}>
+          📄 שמירה כ־PDF לשליחה
+        </button>
         <button type="button" className={styles.printBtn} onClick={() => window.print()}>
           🖨️ הדפסה
         </button>
@@ -113,8 +116,9 @@ export function CareCardViewPage() {
 
       <div className="no-print" style={{ marginTop: 'var(--space-3)' }}>
         <Note>
-          הכרטיס נשמר במכשיר הזה בלבד ונמחק אחרי 24 שעות. הוא מגיע לצוות רק אם תבחרו
-          להציג או להדפיס אותו.
+          לשליחה לצוות: לחצו על "שמירה כ־PDF", בחרו "שמירה כ־PDF" בחלון ההדפסה, ושִׁלחו
+          את הקובץ למייל של המיון בעצמכם. הכרטיס נשמר במכשיר הזה בלבד ונמחק אחרי 24 שעות,
+          ושום דבר לא נשלח אוטומטית.
         </Note>
       </div>
     </div>

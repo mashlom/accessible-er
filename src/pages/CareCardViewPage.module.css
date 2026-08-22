@@ -93,7 +93,7 @@
   flex-wrap: wrap;
 }
 
-.printBtn {
+.pdfBtn {
   flex: 1;
   min-width: 150px;
   padding: var(--space-4);
@@ -101,6 +101,18 @@
   border: none;
   background: var(--c-primary);
   color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.printBtn {
+  flex: 1;
+  min-width: 150px;
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+  border: 1.5px solid var(--c-primary-soft);
+  color: var(--c-primary-dark);
   font-weight: 700;
   font-size: 1rem;
 }
