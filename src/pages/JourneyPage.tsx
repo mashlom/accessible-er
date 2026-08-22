@@ -135,16 +135,20 @@ export function JourneyPage() {
                   ? styles.stopDone
                   : ''
             return (
-              <span
+              <button
                 key={stage.id}
+                type="button"
                 ref={(el) => {
                   stopRefs.current[stage.id] = el
                 }}
                 className={`${styles.stop} ${stopState}`}
+                onClick={() => markHere(stage.id)}
+                aria-label={`${stage.title}${stage.id === currentId ? ' — אנחנו כאן' : ''}`}
+                aria-current={stage.id === currentId ? 'step' : undefined}
                 title={stage.title}
               >
                 {stage.emoji}
-              </span>
+              </button>
             )
           })}
         </div>
