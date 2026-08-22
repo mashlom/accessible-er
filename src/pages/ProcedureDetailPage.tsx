@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import { Mascot } from '../components/Mascot'
 import { Section, InfoList } from '../components/ui'
@@ -10,6 +10,13 @@ export function ProcedureDetailPage() {
   const procedure = id ? getProcedure(id) : undefined
   const [step, setStep] = useState(0)
   const [variant, setVariant] = useState(0)
+
+  // Reset the story to the start when navigating between procedures
+  // (the page component stays mounted across /procedures/:id changes).
+  useEffect(() => {
+    setStep(0)
+    setVariant(0)
+  }, [id])
 
   if (!procedure) return <Navigate to="/procedures" replace />
 
