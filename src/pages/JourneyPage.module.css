@@ -40,35 +40,71 @@
   accent-color: var(--c-primary);
 }
 
-/* stepper */
-.stepperWrap {
+/* horizontal progress rail — Roni rides along it to the current stage */
+.rail {
   position: relative;
+  padding-top: 46px; /* room for Roni above the track */
+  margin-bottom: var(--space-5);
 }
-
-/* Roni walking along beside the current step */
-.walker {
+.railTrack {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px;
+  background: var(--c-surface-2);
+  border-radius: var(--radius-pill);
+}
+.stop {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  background: var(--c-surface);
+  border: 2px solid var(--c-border);
+  opacity: 0.6;
+  transition: opacity 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.stopDone {
+  opacity: 1;
+  border-color: var(--c-calm);
+  background: var(--c-calm-soft);
+}
+.stopCurrent {
+  opacity: 1;
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 4px var(--c-primary-soft);
+}
+.railRoni {
   position: absolute;
-  inset-inline-start: 0;
-  width: 44px;
-  height: 44px;
+  top: 0;
+  left: 0; /* positioned by translateX in LTR pixel space */
+  right: auto;
+  width: 40px;
+  height: 40px;
   z-index: 2;
   pointer-events: none;
 }
-.walkerBubble {
+.railBubble {
   position: absolute;
-  inset-inline-start: 50px;
-  top: 2px;
+  bottom: 42px;
+  left: 50%;
+  transform: translateX(-50%);
   white-space: nowrap;
   background: #fff;
   border: 1.5px solid var(--c-primary-soft);
   border-radius: var(--radius-pill);
-  padding: 4px 12px;
-  font-size: 0.85rem;
+  padding: 3px 10px;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--c-primary-dark);
   box-shadow: var(--shadow-sm);
 }
 
+/* stepper */
 .stepper {
   list-style: none;
   padding: 0;
@@ -77,7 +113,7 @@
 
 .step {
   position: relative;
-  padding-inline-start: 96px;
+  padding-inline-start: 52px;
   padding-bottom: var(--space-5);
 }
 
@@ -85,7 +121,7 @@
 .step::before {
   content: '';
   position: absolute;
-  inset-inline-start: 61px;
+  inset-inline-start: 17px;
   top: 8px;
   bottom: -8px;
   width: 2px;
@@ -97,7 +133,7 @@
 
 .marker {
   position: absolute;
-  inset-inline-start: 44px;
+  inset-inline-start: 0;
   top: 4px;
   width: 36px;
   height: 36px;

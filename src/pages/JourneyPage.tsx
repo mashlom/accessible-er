@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Mascot } from '../components/Mascot'
 import { PageHeader, InfoList } from '../components/ui'
@@ -26,32 +26,37 @@ export function JourneyPage() {
   // Off by default only when the OS asks for reduced motion; user can toggle.
   const [motionOn, setMotionOn] = usePersistentState<boolean>('journey-motion', true)
 
-  const wrapRef = useRef<HTMLDivElement>(null)
-  const stepRefs = useRef<Record<string, HTMLLIElement | null>>({})
+  const railRef = useRef<HTMLDivElement>(null)
+  const stopRefs = useRef<Record<string, HTMLElement | null>>({})
   const prevCurrent = useRef<string | null>(currentId)
-  const [walkerTop, setWalkerTop] = useState<number | null>(null)
+  const [roniX, setRoniX] = useState<number | null>(null)
   const [walking, setWalking] = useState(false)
 
   const animateWalk = motionOn && !prefersReducedMotion
   const currentIndex = currentId ? getStageIndex(currentId) : -1
 
-  // Measure the current step's position so Roni can stand beside it.
-  const measureWalker = useCallback(() => {
-    const wrap = wrapRef.current
-    const el = currentId ? stepRefs.current[currentId] : null
-    if (!wrap || !el) {
-      setWalkerTop(null)
+  // Roni rides a stable horizontal progress rail (independent of the
+  // accordion below), so the walk is always visible. Measure the current
+  // stop's centre and translate Roni there. Runs AFTER paint so the CSS
+  // transform transition actually plays instead of jumping.
+  const measureRoni = useCallback(() => {
+    const rail = railRef.current
+    const anchorId = currentId ?? journeyStages[0].id
+    const stop = stopRefs.current[anchorId]
+    if (!rail || !stop) {
+      setRoniX(null)
       return
     }
-    setWalkerTop(el.getBoundingClientRect().top - wrap.getBoundingClientRect().top)
+    const r = stop.getBoundingClientRect()
+    setRoniX(r.left + r.width / 2 - rail.getBoundingClientRect().left - 20)
   }, [currentId])
 
-  useLayoutEffect(measureWalker, [measureWalker, openId, path])
+  useEffect(measureRoni, [measureRoni])
 
   useEffect(() => {
-    window.addEventListener('resize', measureWalker)
-    return () => window.removeEventListener('resize', measureWalker)
-  }, [measureWalker])
+    window.addEventListener('resize', measureRoni)
+    return () => window.removeEventListener('resize', measureRoni)
+  }, [measureRoni])
 
   // Announce the move ("בואו נלך…") briefly whenever we advance.
   useEffect(() => {
@@ -107,19 +112,45 @@ export function JourneyPage() {
         </label>
       )}
 
-      <div className={styles.stepperWrap} ref={wrapRef}>
-        {currentId && walkerTop != null && (
+      <div className={styles.rail} ref={railRef} aria-label="התקדמות במסע">
+        {roniX != null && (
           <div
-            className={styles.walker}
-            style={{ top: walkerTop, transition: animateWalk ? 'top 1.1s var(--ease)' : 'none' }}
+            className={styles.railRoni}
+            style={{
+              transform: `translateX(${roniX}px)`,
+              transition: animateWalk ? 'transform 1.1s var(--ease)' : 'none',
+            }}
             aria-hidden
           >
-            {walking && <span className={styles.walkerBubble}>בואו נלך…</span>}
-            <Mascot size={44} mood={walking ? 'wave' : 'happy'} />
+            {walking && <span className={styles.railBubble}>בואו נלך…</span>}
+            <Mascot size={40} mood={walking ? 'wave' : 'happy'} />
           </div>
         )}
+        <div className={styles.railTrack}>
+          {journeyStages.map((stage, i) => {
+            const stopState =
+              stage.id === currentId
+                ? styles.stopCurrent
+                : currentIndex > -1 && i < currentIndex
+                  ? styles.stopDone
+                  : ''
+            return (
+              <span
+                key={stage.id}
+                ref={(el) => {
+                  stopRefs.current[stage.id] = el
+                }}
+                className={`${styles.stop} ${stopState}`}
+                title={stage.title}
+              >
+                {stage.emoji}
+              </span>
+            )
+          })}
+        </div>
+      </div>
 
-        <ol className={styles.stepper}>
+      <ol className={styles.stepper}>
         {journeyStages.map((stage, i) => {
           const isCurrent = stage.id === currentId
           const isDone = currentIndex > -1 && i < currentIndex
@@ -127,13 +158,7 @@ export function JourneyPage() {
           const stateClass = isCurrent ? styles.current : isDone ? styles.done : ''
 
           return (
-            <li
-              key={stage.id}
-              ref={(el) => {
-                stepRefs.current[stage.id] = el
-              }}
-              className={`${styles.step} ${stateClass}`}
-            >
+            <li key={stage.id} className={`${styles.step} ${stateClass}`}>
               <span className={styles.marker} aria-hidden>
                 {isDone ? '✓' : i + 1}
               </span>
@@ -226,8 +251,7 @@ export function JourneyPage() {
             </li>
           )
         })}
-        </ol>
-      </div>
+      </ol>
     </div>
   )
 }
