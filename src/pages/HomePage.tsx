@@ -174,6 +174,14 @@ export function HomePage() {
           tintSoft="var(--c-accent-soft)"
         />
         <NavCard
+          to="/message"
+          emoji="✉️"
+          title="הודעה לצוות"
+          desc="בקשה או תודה — להצגה על המסך או לשליחה במייל"
+          tint="#cbb8e6"
+          tintSoft="var(--c-lilac-soft)"
+        />
+        <NavCard
           to="/feedback"
           emoji="💬"
           title="משוב קצר"

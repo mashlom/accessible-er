@@ -116,3 +116,63 @@
   font-weight: 600;
   border: 1px solid #bfe3cb;
 }
+
+/* message-to-staff form */
+.msgTemplates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--space-3);
+}
+
+.msgInput {
+  width: 100%;
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--c-primary-soft);
+  background: var(--c-surface);
+  font: inherit;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--c-text);
+  resize: vertical;
+}
+.msgInput:focus {
+  outline: none;
+  border-color: var(--c-primary);
+}
+
+.msgActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.msgShowBtn,
+.msgMailBtn {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+}
+.msgShowBtn {
+  background: var(--c-primary);
+  color: #fff;
+}
+.msgShowBtn:disabled {
+  opacity: 0.4;
+}
+.msgMailBtn {
+  background: var(--c-surface);
+  border: 1.5px solid var(--c-primary-soft);
+  color: var(--c-primary-dark);
+}
+.msgDisabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
