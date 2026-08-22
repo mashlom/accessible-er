@@ -5,6 +5,7 @@ import { usePersistentState } from '../hooks/usePersistentState'
 import { DAY_MS } from '../lib/storage'
 import {
   emptyCard,
+  emptyCustom,
   isCardEmpty,
   suggestedAdaptations,
   type CareCard,
@@ -40,17 +41,21 @@ export function CareCardViewPage() {
     )
   }
 
+  const c = card.custom ?? emptyCustom
+  const join = (...parts: string[]) =>
+    parts.map((p) => p.trim()).filter(Boolean).join(' · ')
+
   const rows: Row[] = [
-    { emoji: '💬', label: 'תקשורת', value: card.communication.join(' · ') },
-    { emoji: '⚠️', label: 'רגישויות', value: card.sensitivities.join(' · ') },
-    { emoji: '💛', label: 'עוזר', value: card.calming.join(' · ') },
+    { emoji: '💬', label: 'תקשורת', value: join(...card.communication, c.communication) },
+    { emoji: '⚠️', label: 'רגישויות', value: join(...card.sensitivities, c.sensitivities) },
+    { emoji: '💛', label: 'עוזר', value: join(...card.calming, c.calming) },
     {
       emoji: '🚫',
       label: 'להימנע',
-      value: [...card.escalators, ...card.avoid].join(' · '),
+      value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid),
     },
-    { emoji: '🩺', label: 'קשה במיוחד', value: card.hardMoments.join(' · ') },
-    { emoji: '🤕', label: 'ביטוי כאב', value: card.pain.join(' · ') },
+    { emoji: '🩺', label: 'קשה במיוחד', value: join(...card.hardMoments, c.hardMoments) },
+    { emoji: '🤕', label: 'ביטוי כאב', value: join(...card.pain, c.pain) },
     { emoji: '✏️', label: 'עוד', value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
