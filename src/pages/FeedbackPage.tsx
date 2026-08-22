@@ -15,9 +15,14 @@ const HELP_OPTIONS = [
   'הדמות המלווה (רוני)',
 ]
 
+// Optional, anonymous — to learn who uses the tool and its effectiveness
+// across populations (Keren/Rotem). Options confirmed by Rotem.
+const DIAGNOSIS_OPTIONS = ['מאובחן/ת', 'בתהליך אבחון', 'לא', 'מעדיף/ה לא לענות']
+
 interface Feedback {
   rating: number | null
   helped: string[]
+  diagnosis: string | null
   note: string
 }
 
@@ -29,10 +34,11 @@ const RATING_LABELS: Record<number, string> = {
   3: 'עזר מאוד',
 }
 
-function buildFeedbackText({ rating, helped, note }: Feedback) {
+function buildFeedbackText({ rating, helped, diagnosis, note }: Feedback) {
   return [
     `דירוג: ${rating ? RATING_LABELS[rating] : 'לא צוין'}`,
     `מה עזר: ${helped.length ? helped.join(', ') : '—'}`,
+    `אבחון: ${diagnosis ?? 'לא צוין'}`,
     `הערה: ${note.trim() || '—'}`,
   ].join('\n')
 }
@@ -51,6 +57,7 @@ export function FeedbackPage() {
   )
   const [rating, setRating] = useState<number | null>(saved?.rating ?? null)
   const [helped, setHelped] = useState<string[]>(saved?.helped ?? [])
+  const [diagnosis, setDiagnosis] = useState<string | null>(saved?.diagnosis ?? null)
   const [note, setNote] = useState(saved?.note ?? '')
   const [done, setDone] = useState(false)
   const [sentFeedback, setSentFeedback] = useState<Feedback | null>(null)
@@ -63,7 +70,7 @@ export function FeedbackPage() {
   }
 
   function submit() {
-    const feedback = { rating, helped, note }
+    const feedback = { rating, helped, diagnosis, note }
     setSaved(feedback)
     setSentFeedback(feedback)
     window.location.href = buildFeedbackMailto(feedback)
@@ -153,6 +160,27 @@ export function FeedbackPage() {
             </button>
           ))}
         </div>
+      </section>
+
+      <section className={`card ${styles.block}`}>
+        <h2 className={styles.q}>האם הילד/ה מאובחן/ת? (לא חובה, אנונימי)</h2>
+        <div className={styles.chips}>
+          {DIAGNOSIS_OPTIONS.map((opt) => (
+            <button
+              key={opt}
+              type="button"
+              className={`${styles.chip} ${diagnosis === opt ? styles.chipOn : ''}`}
+              onClick={() => setDiagnosis(diagnosis === opt ? null : opt)}
+              aria-pressed={diagnosis === opt}
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+        <p className={styles.helperText}>
+          עוזר לנו להבין מי משתמש בכלי ועד כמה הוא מסייע לאוכלוסיות שונות. אין חובה
+          לענות, והתשובה אנונימית.
+        </p>
       </section>
 
       <section className={`card ${styles.block}`}>

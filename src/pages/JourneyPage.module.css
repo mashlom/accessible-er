@@ -131,6 +131,19 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* link to the discharge screen, shown on the final stage */
+.dischargeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--c-primary-soft);
+  color: var(--c-primary-dark);
+  font-weight: 700;
+}
+
 /* stepper */
 .stepper {
   list-style: none;

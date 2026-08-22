@@ -261,6 +261,12 @@ export function JourneyPage() {
                     </div>
                   )}
 
+                  {stage.id === 'decision' && (
+                    <Link to="/discharge" className={styles.dischargeLink}>
+                      🏠 לקראת שחרור הביתה →
+                    </Link>
+                  )}
+
                   <button
                     type="button"
                     className={`${styles.hereBtn} ${isCurrent ? styles.hereBtnActive : ''}`}
