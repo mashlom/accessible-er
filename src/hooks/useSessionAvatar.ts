@@ -6,21 +6,28 @@ import { useCallback, useState } from 'react'
  * session and is wiped when the tab/browser closes. A photo never
  * leaves the device — nothing is uploaded or persisted to a server.
  */
+/**
+ * The avatar represents the CHILD ("me") — the figure that travels the
+ * journey. (Roni is a separate guide, not this.) It is an emoji figure by
+ * default, or the child's own photo.
+ */
 export type Avatar =
-  | { kind: 'roni' }
   | { kind: 'emoji'; value: string }
   | { kind: 'photo'; value: string } // a downscaled data: URL
 
 const KEY = 'avatar'
-const DEFAULT: Avatar = { kind: 'roni' }
+const DEFAULT: Avatar = { kind: 'emoji', value: '🙂' }
 
-/** Friendly, low-arousal preset faces the child can pick from. */
-export const avatarEmojis = ['🦁', '🐰', '🐼', '🦊', '🐨', '🚀']
+/** Neutral "me" default first, then friendly figures to choose from. */
+export const avatarEmojis = ['🙂', '🧒', '🦁', '🐰', '🦊', '🚀']
 
 function read(): Avatar {
   try {
     const raw = sessionStorage.getItem(KEY)
-    return raw ? (JSON.parse(raw) as Avatar) : DEFAULT
+    if (!raw) return DEFAULT
+    const parsed = JSON.parse(raw) as Avatar
+    if (parsed?.kind === 'emoji' || parsed?.kind === 'photo') return parsed
+    return DEFAULT
   } catch {
     return DEFAULT
   }

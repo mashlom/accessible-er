@@ -68,6 +68,22 @@
   color: var(--c-text-soft);
   font-weight: 600;
 }
+.avatarPreview {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+}
+.avatarPreviewImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--c-primary-soft);
+}
+.avatarPreviewEmoji {
+  font-size: 2.4rem;
+}
 .avatarOptions {
   display: flex;
   flex-wrap: wrap;

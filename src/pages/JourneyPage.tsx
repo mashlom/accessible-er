@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Mascot } from '../components/Mascot'
 import { PageHeader, InfoList } from '../components/ui'
+import { useSessionAvatar } from '../hooks/useSessionAvatar'
 import { journeyStages, getStageIndex } from '../data/journey'
 import { getProcedure } from '../data/procedures'
 import { useVisitReason } from '../hooks/useVisitReason'
@@ -25,6 +25,7 @@ export function JourneyPage() {
   // Roni walking along the stepper — a gentle sense of movement/control.
   // Off by default only when the OS asks for reduced motion; user can toggle.
   const [motionOn, setMotionOn] = usePersistentState<boolean>('journey-motion', true)
+  const [avatar] = useSessionAvatar() // the child's figure that travels the rail
 
   const railRef = useRef<HTMLDivElement>(null)
   const stopRefs = useRef<Record<string, HTMLElement | null>>({})
@@ -108,7 +109,7 @@ export function JourneyPage() {
             checked={motionOn}
             onChange={(e) => setMotionOn(e.target.checked)}
           />
-          <span>🐾 רוני צועד/ת איתנו במסע</span>
+          <span>🐾 הדמות שלי זזה לאורך המסע</span>
         </label>
       )}
 
@@ -123,7 +124,11 @@ export function JourneyPage() {
             aria-hidden
           >
             {walking && <span className={styles.railBubble}>בואו נלך…</span>}
-            <Mascot size={40} mood={walking ? 'wave' : 'happy'} />
+            {avatar.kind === 'photo' ? (
+              <img src={avatar.value} alt="" className={styles.railAvatarImg} />
+            ) : (
+              <span className={styles.railAvatarEmoji}>{avatar.value}</span>
+            )}
           </div>
         )}
         <div className={styles.railTrack}>

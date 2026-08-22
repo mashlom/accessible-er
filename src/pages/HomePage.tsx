@@ -30,16 +30,7 @@ export function HomePage() {
   return (
     <div className="container">
       <section className={styles.hero}>
-        {avatar.kind === 'photo' ? (
-          <img src={avatar.value} alt="האווטר שבחרתם" className={styles.heroAvatarImg} />
-        ) : avatar.kind === 'emoji' ? (
-          <div className={styles.heroAvatarEmoji} aria-label="האווטר שבחרתם">
-            {avatar.value}
-          </div>
-        ) : (
-          <Mascot size={120} mood="wave" className={styles.heroMascot} />
-        )}
-
+        <Mascot size={120} mood="wave" className={styles.heroMascot} />
         <h1 className={styles.heroTitle}>שלום, אני רוני 👋</h1>
         <p className={styles.heroSubtitle}>
           אני כאן כדי ללוות אתכם ואת הילד/ה במיון. נעבור יחד, שלב אחרי שלב, בקצב
@@ -47,16 +38,15 @@ export function HomePage() {
         </p>
 
         <div className={styles.avatarPicker}>
-          <span className={styles.avatarPickerLabel}>אפשר לבחור דמות מלווה:</span>
+          <span className={styles.avatarPickerLabel}>בחרו איך תיראו במסע:</span>
+          <div className={styles.avatarPreview} aria-hidden>
+            {avatar.kind === 'photo' ? (
+              <img src={avatar.value} alt="" className={styles.avatarPreviewImg} />
+            ) : (
+              <span className={styles.avatarPreviewEmoji}>{avatar.value}</span>
+            )}
+          </div>
           <div className={styles.avatarOptions}>
-            <button
-              type="button"
-              className={`${styles.avatarChip} ${avatar.kind === 'roni' ? styles.avatarChipOn : ''}`}
-              onClick={resetAvatar}
-              aria-pressed={avatar.kind === 'roni'}
-            >
-              🧸 רוני
-            </button>
             {avatarEmojis.map((emoji) => (
               <button
                 key={emoji}
