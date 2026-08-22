@@ -102,19 +102,17 @@ export function JourneyPage() {
         </span>
       </div>
 
-      {!prefersReducedMotion && (
-        <label className={styles.motionToggle}>
-          <input
-            type="checkbox"
-            checked={motionOn}
-            onChange={(e) => setMotionOn(e.target.checked)}
-          />
-          <span>🐾 הדמות שלי זזה לאורך המסע</span>
-        </label>
-      )}
+      <label className={styles.motionToggle}>
+        <input
+          type="checkbox"
+          checked={motionOn}
+          onChange={(e) => setMotionOn(e.target.checked)}
+        />
+        <span>🐾 הדמות שלי זזה לאורך המסע</span>
+      </label>
 
       <div className={styles.rail} ref={railRef} aria-label="התקדמות במסע">
-        {roniX != null && (
+        {motionOn && roniX != null && (
           <div
             className={styles.railRoni}
             style={{
