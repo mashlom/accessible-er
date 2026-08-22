@@ -9,6 +9,13 @@
   margin-bottom: var(--space-3);
 }
 
+.helperText {
+  margin-top: var(--space-2);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--c-text-soft);
+}
+
 .faces {
   display: flex;
   gap: var(--space-3);
