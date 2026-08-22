@@ -35,6 +35,11 @@ export function JourneyPage() {
 
   const animateWalk = motionOn && !prefersReducedMotion
   const currentIndex = currentId ? getStageIndex(currentId) : -1
+  // Share of the journey already reached — used to tint the passed rail green.
+  const progressPct =
+    currentIndex >= 0
+      ? Math.round((currentIndex / (journeyStages.length - 1)) * 100)
+      : 0
 
   // Roni rides a stable horizontal progress rail (independent of the
   // accordion below), so the walk is always visible. Measure the current
@@ -44,12 +49,12 @@ export function JourneyPage() {
     const rail = railRef.current
     const anchorId = currentId ?? journeyStages[0].id
     const stop = stopRefs.current[anchorId]
-    if (!rail || !stop) {
+    if (rail && stop) {
+      const r = stop.getBoundingClientRect()
+      setRoniX(r.left + r.width / 2 - rail.getBoundingClientRect().left - 20)
+    } else {
       setRoniX(null)
-      return
     }
-    const r = stop.getBoundingClientRect()
-    setRoniX(r.left + r.width / 2 - rail.getBoundingClientRect().left - 20)
   }, [currentId])
 
   useEffect(measureRoni, [measureRoni])
@@ -129,7 +134,16 @@ export function JourneyPage() {
             )}
           </div>
         )}
-        <div className={styles.railTrack}>
+        <div
+          className={styles.railTrack}
+          style={
+            progressPct > 0
+              ? {
+                  background: `linear-gradient(to left, var(--c-calm-soft) ${progressPct}%, var(--c-surface-2) ${progressPct}%)`,
+                }
+              : undefined
+          }
+        >
           {journeyStages.map((stage, i) => {
             const stopState =
               stage.id === currentId
