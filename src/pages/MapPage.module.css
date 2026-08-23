@@ -76,8 +76,8 @@
 .sensoryValue {
   display: grid;
   place-items: center;
-  min-width: 24px;
-  padding: 4px 7px;
+  min-width: 34px;
+  padding: 4px 12px;
   color: #fff;
 }
 
