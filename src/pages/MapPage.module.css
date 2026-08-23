@@ -23,6 +23,64 @@
   border-radius: 5px;
 }
 
+/* sensory (per-channel) legend — colour scale 0→5 */
+.sensoryLegend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--c-text-soft);
+  margin-bottom: var(--space-4);
+}
+.sensoryScale {
+  display: inline-flex;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.sensoryScale span {
+  width: 18px;
+  height: 12px;
+}
+
+/* per-channel sensory bar — one continuous strip (SeaWorld-guide style) */
+.sensory {
+  display: flex;
+  width: 100%;
+  margin: var(--space-2) 0;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.sensoryItem {
+  display: flex;
+  align-items: stretch;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.sensoryItem + .sensoryItem {
+  border-inline-start: 1px solid var(--c-border);
+}
+.sensoryLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+  padding: 4px 6px;
+  color: var(--c-text);
+  white-space: nowrap;
+}
+.sensoryValue {
+  display: grid;
+  place-items: center;
+  min-width: 34px;
+  padding: 4px 12px;
+  color: #fff;
+}
+
 .areas {
   display: flex;
   flex-direction: column;
