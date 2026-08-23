@@ -70,8 +70,7 @@
   gap: 4px;
   flex: 1;
   padding: 4px 6px;
-  background: var(--c-surface-2);
-  color: var(--c-text-soft);
+  color: var(--c-text);
   white-space: nowrap;
 }
 .sensoryValue {

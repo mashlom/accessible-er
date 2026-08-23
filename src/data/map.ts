@@ -121,3 +121,10 @@ export function sensoryColor(level: number): string {
   const hue = Math.round(130 * (1 - t))
   return `hsl(${hue} 68% 42%)`
 }
+
+/** Soft tint of the same hue, for the channel label behind dark text. */
+export function sensoryColorSoft(level: number): string {
+  const t = Math.max(0, Math.min(1, level / SENSORY_MAX))
+  const hue = Math.round(130 * (1 - t))
+  return `hsl(${hue} 60% 90%)`
+}

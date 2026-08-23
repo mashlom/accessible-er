@@ -1,6 +1,12 @@
 import type { CSSProperties } from 'react'
 import { PageHeader } from '../components/ui'
-import { mapAreas, sensoryChannels, sensoryColor, SENSORY_MAX } from '../data/map'
+import {
+  mapAreas,
+  sensoryChannels,
+  sensoryColor,
+  sensoryColorSoft,
+  SENSORY_MAX,
+} from '../data/map'
 import styles from './MapPage.module.css'
 
 export function MapPage() {
@@ -49,7 +55,10 @@ export function MapPage() {
                 <div className={styles.sensory} aria-label="עומס חושי לפי ערוץ">
                   {sensoryChannels.map((ch) => (
                     <div key={ch.key} className={styles.sensoryItem}>
-                      <span className={styles.sensoryLabel}>
+                      <span
+                        className={styles.sensoryLabel}
+                        style={{ background: sensoryColorSoft(area.sensory[ch.key]) }}
+                      >
                         <span aria-hidden>{ch.emoji}</span> {ch.label}
                       </span>
                       <span
