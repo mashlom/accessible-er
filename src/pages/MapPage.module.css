@@ -43,35 +43,42 @@
   height: 12px;
 }
 
-/* per-channel sensory bar on each area card */
+/* per-channel sensory bar — one continuous strip (SeaWorld-guide style) */
 .sensory {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  width: 100%;
   margin: var(--space-2) 0;
-}
-.sensoryItem {
-  display: inline-flex;
-  align-items: stretch;
+  border: 1px solid var(--c-border);
   border-radius: var(--radius-pill);
   overflow: hidden;
-  border: 1px solid var(--c-border);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
+}
+.sensoryItem {
+  display: flex;
+  align-items: stretch;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.sensoryItem + .sensoryItem {
+  border-inline-start: 1px solid var(--c-border);
 }
 .sensoryLabel {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
-  padding: 3px 8px;
+  flex: 1;
+  padding: 4px 6px;
   background: var(--c-surface-2);
   color: var(--c-text-soft);
+  white-space: nowrap;
 }
 .sensoryValue {
-  display: inline-grid;
+  display: grid;
   place-items: center;
-  min-width: 26px;
-  padding: 3px 6px;
+  min-width: 24px;
+  padding: 4px 7px;
   color: #fff;
 }
 
