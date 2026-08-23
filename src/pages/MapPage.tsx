@@ -1,12 +1,6 @@
 import type { CSSProperties } from 'react'
 import { PageHeader } from '../components/ui'
-import {
-  mapAreas,
-  loadLabels,
-  sensoryChannels,
-  sensoryColor,
-  SENSORY_MAX,
-} from '../data/map'
+import { mapAreas, sensoryChannels, sensoryColor, SENSORY_MAX } from '../data/map'
 import styles from './MapPage.module.css'
 
 export function MapPage() {
@@ -17,15 +11,6 @@ export function MapPage() {
         title="מפת המיון"
         subtitle="לכל אזור מוצג עומס חושי לפי ערוץ — רעש, אור, ריח ואנשים. המספר והצבע מראים כמה גירוי צפוי בכל ערוץ (0 = מעט, 5 = הרבה)."
       />
-
-      <div className={styles.legend}>
-        {(['calm', 'medium', 'busy'] as const).map((key) => (
-          <span key={key} className={styles.legendItem}>
-            <span className={styles.swatch} style={{ background: loadLabels[key].color }} />
-            {loadLabels[key].label}
-          </span>
-        ))}
-      </div>
 
       <div className={styles.sensoryLegend}>
         <span>0 = מעט גירוי</span>
@@ -39,8 +24,13 @@ export function MapPage() {
 
       <div className={styles.areas}>
         {mapAreas.map((area) => {
-          const color = loadLabels[area.load].color
-          const style = { '--loadColor': color } as CSSProperties
+          const maxLevel = Math.max(
+            area.sensory.sound,
+            area.sensory.light,
+            area.sensory.smell,
+            area.sensory.people,
+          )
+          const style = { '--loadColor': sensoryColor(maxLevel) } as CSSProperties
           return (
             <div key={area.id} className={styles.area} style={style}>
               <span className={styles.areaEmoji} aria-hidden>
@@ -49,9 +39,13 @@ export function MapPage() {
               <div className={styles.areaBody}>
                 <div className={styles.areaHead}>
                   <span className={styles.areaName}>{area.name}</span>
-                  <span className={styles.loadBadge}>{loadLabels[area.load].label}</span>
                 </div>
                 <p className={styles.areaNote}>{area.note}</p>
+                {area.next && (
+                  <p className={styles.areaNext}>
+                    <span aria-hidden>👣</span> מכאן ממשיכים: {area.next}
+                  </p>
+                )}
                 <div className={styles.sensory} aria-label="עומס חושי לפי ערוץ">
                   {sensoryChannels.map((ch) => (
                     <div key={ch.key} className={styles.sensoryItem}>
@@ -67,11 +61,6 @@ export function MapPage() {
                     </div>
                   ))}
                 </div>
-                {area.next && (
-                  <p className={styles.areaNext}>
-                    <span aria-hidden>👣</span> מכאן ממשיכים: {area.next}
-                  </p>
-                )}
               </div>
             </div>
           )
