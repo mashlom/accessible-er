@@ -69,6 +69,14 @@ export interface StoryVariant {
   steps: string[]
 }
 
+/** Per-channel sensory levels for a map area (0 = little, 5 = a lot). */
+export interface SensoryLevels {
+  sound: number
+  light: number
+  smell: number
+  people: number
+}
+
 /** An area on the simple orientation map (module 2). */
 export interface MapArea {
   id: string
@@ -76,6 +84,8 @@ export interface MapArea {
   emoji: Icon
   /** sensory/load hint — the "load map" layer the spec asks for */
   load: 'calm' | 'medium' | 'busy'
+  /** multi-channel sensory index (Keren/Rotem, K5) — level 0–5 per channel */
+  sensory: SensoryLevels
   note: string // what happens here / what to expect
   /** where one usually continues from here ("לאן עוברים אחרי כל שלב") */
   next?: string

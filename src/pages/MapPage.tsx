@@ -1,6 +1,12 @@
 import type { CSSProperties } from 'react'
 import { PageHeader } from '../components/ui'
-import { mapAreas, loadLabels } from '../data/map'
+import {
+  mapAreas,
+  loadLabels,
+  sensoryChannels,
+  sensoryColor,
+  SENSORY_MAX,
+} from '../data/map'
 import styles from './MapPage.module.css'
 
 export function MapPage() {
@@ -9,7 +15,7 @@ export function MapPage() {
       <PageHeader
         eyebrow="איפה אנחנו"
         title="מפת המיון"
-        subtitle="הכרות עם המרחבים העיקריים. הצבע מראה כמה כל אזור בדרך כלל שקט או עמוס."
+        subtitle="לכל אזור מוצג עומס חושי לפי ערוץ — רעש, אור, ריח ואנשים. המספר והצבע מראים כמה גירוי צפוי בכל ערוץ (0 = מעט, 5 = הרבה)."
       />
 
       <div className={styles.legend}>
@@ -19,6 +25,16 @@ export function MapPage() {
             {loadLabels[key].label}
           </span>
         ))}
+      </div>
+
+      <div className={styles.sensoryLegend}>
+        <span>0 = מעט גירוי</span>
+        <span className={styles.sensoryScale} aria-hidden>
+          {[0, 1, 2, 3, 4, 5].map((n) => (
+            <span key={n} style={{ background: sensoryColor(n) }} />
+          ))}
+        </span>
+        <span>{SENSORY_MAX} = הרבה גירוי</span>
       </div>
 
       <div className={styles.areas}>
@@ -36,6 +52,21 @@ export function MapPage() {
                   <span className={styles.loadBadge}>{loadLabels[area.load].label}</span>
                 </div>
                 <p className={styles.areaNote}>{area.note}</p>
+                <div className={styles.sensory} aria-label="עומס חושי לפי ערוץ">
+                  {sensoryChannels.map((ch) => (
+                    <div key={ch.key} className={styles.sensoryItem}>
+                      <span className={styles.sensoryLabel}>
+                        <span aria-hidden>{ch.emoji}</span> {ch.label}
+                      </span>
+                      <span
+                        className={styles.sensoryValue}
+                        style={{ background: sensoryColor(area.sensory[ch.key]) }}
+                      >
+                        {area.sensory[ch.key]}
+                      </span>
+                    </div>
+                  ))}
+                </div>
                 {area.next && (
                   <p className={styles.areaNext}>
                     <span aria-hidden>👣</span> מכאן ממשיכים: {area.next}

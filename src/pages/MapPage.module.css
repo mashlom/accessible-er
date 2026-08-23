@@ -23,6 +23,58 @@
   border-radius: 5px;
 }
 
+/* sensory (per-channel) legend — colour scale 0→5 */
+.sensoryLegend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--c-text-soft);
+  margin-bottom: var(--space-4);
+}
+.sensoryScale {
+  display: inline-flex;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.sensoryScale span {
+  width: 18px;
+  height: 12px;
+}
+
+/* per-channel sensory bar on each area card */
+.sensory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: var(--space-2) 0;
+}
+.sensoryItem {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.sensoryLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: var(--c-surface-2);
+  color: var(--c-text-soft);
+}
+.sensoryValue {
+  display: inline-grid;
+  place-items: center;
+  min-width: 26px;
+  padding: 3px 6px;
+  color: #fff;
+}
+
 .areas {
   display: flex;
   flex-direction: column;
