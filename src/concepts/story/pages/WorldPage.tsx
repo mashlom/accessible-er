@@ -1,6 +1,6 @@
 import { useRef, type CSSProperties } from 'react'
 import { Link } from '../../nav'
-import { Roni } from '../components/Roni'
+import { Roni } from '../../../components/Roni'
 import { Bubble } from '../components/kit'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import {

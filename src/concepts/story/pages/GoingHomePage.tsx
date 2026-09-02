@@ -1,5 +1,5 @@
 import { Link } from '../../nav'
-import { Roni } from '../components/Roni'
+import { Roni } from '../../../components/Roni'
 import { Scene, Bubble, Note } from '../components/kit'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'

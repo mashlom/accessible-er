@@ -17,6 +17,7 @@ export const animatedEmoji: Record<string, string> = {
   '🌈': '1f308',
   '🌟': '1f31f',
   '🌡️': '1f321_fe0f',
+  '🎬': '1f3ac',
   '🎭': '1f3ad',
   '🏠': '1f3e0',
   '👃': '1f443',
@@ -46,6 +47,7 @@ export const animatedEmoji: Record<string, string> = {
   '🦿': '1f9bf',
   '🩸': '1fa78',
   '🩺': '1fa7a',
+  '🫧': '1fae7',
 }
 
 export function animationUrl(emoji: string): string | null {

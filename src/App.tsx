@@ -3,6 +3,7 @@ import { MenuPage } from './menu/MenuPage'
 import { ConceptBase } from './concepts/nav'
 import CalmConcept from './concepts/calm/CalmConcept'
 import StoryConcept from './concepts/story/StoryConcept'
+import TalkConcept from './concepts/talk/TalkConcept'
 
 /**
  * Top level: a concept menu at `/`, and every UI concept mounted under
@@ -28,6 +29,15 @@ export default function App() {
         element={
           <ConceptBase base="/story">
             <StoryConcept />
+          </ConceptBase>
+        }
+      />
+
+      <Route
+        path="/talk/*"
+        element={
+          <ConceptBase base="/talk">
+            <TalkConcept />
           </ConceptBase>
         }
       />

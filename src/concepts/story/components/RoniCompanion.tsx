@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { useConceptBase } from '../../nav'
 import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
 import { lineFor, tapLines } from '../companionLines'
-import { Roni } from './Roni'
+import { Roni } from '../../../components/Roni'
 import styles from '../story.module.css'
 
 /**

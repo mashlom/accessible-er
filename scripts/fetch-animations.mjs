@@ -19,7 +19,11 @@ const MANIFEST = join(ROOT, 'src', 'data', 'animations.ts')
 const BASE = 'https://fonts.gstatic.com/s/e/notoemoji/latest'
 
 /** Files scanned for emoji: the shared content plus the story concept's UI. */
-const SCAN_DIRS = [join(ROOT, 'src', 'data'), join(ROOT, 'src', 'concepts', 'story')]
+const SCAN_DIRS = [
+  join(ROOT, 'src', 'data'),
+  join(ROOT, 'src', 'concepts', 'story'),
+  join(ROOT, 'src', 'concepts', 'talk'),
+]
 
 /**
  * A few upstream files are enormous for what they are (🏁 is 320 KB). An icon

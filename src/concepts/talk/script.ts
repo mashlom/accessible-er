@@ -1,4 +1,4 @@
-import type { RoniMood } from '../story/components/Roni'
+import type { RoniMood } from '../../components/Roni'
 import { paths, getPath } from '../../data/paths'
 import { journeyStages, getStageIndex } from '../../data/journey'
 import { procedures, getProcedure } from '../../data/procedures'

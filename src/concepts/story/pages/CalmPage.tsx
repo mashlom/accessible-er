@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from '../../nav'
-import { Roni } from '../components/Roni'
+import { Roni } from '../../../components/Roni'
 import { Scene, Bubble } from '../components/kit'
 import { distressTips, readySentences } from '../../../data/support'
 import shell from '../story.module.css'

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { animationUrl } from '../../../data/animations'
+import { animationUrl } from '../data/animations'
 
 /** OS-level "reduce motion" — respected as a hard opt-out, not a preference. */
 function prefersReducedMotion(): boolean {

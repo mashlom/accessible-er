@@ -1,4 +1,4 @@
-import type { RoniMood } from './components/Roni'
+import type { RoniMood } from '../../components/Roni'
 
 export interface CompanionLine {
   text: string

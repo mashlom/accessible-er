@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from '../../nav'
-import { AnimatedIcon } from '../components/AnimatedIcon'
+import { AnimatedIcon } from '../../../components/AnimatedIcon'
 import { Scene, Bubble, Note } from '../components/kit'
 import styles from '../pages.module.css'
 

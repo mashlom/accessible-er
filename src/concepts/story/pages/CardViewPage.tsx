@@ -1,5 +1,5 @@
 import { Link } from '../../nav'
-import { Roni } from '../components/Roni'
+import { Roni } from '../../../components/Roni'
 import { Note } from '../components/kit'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
