@@ -1,0 +1,533 @@
+/* ============================================================
+   Concept 2 — "המסע של רוני"
+   A warm, illustrated, story-book world. Tokens are scoped to
+   .theme so this concept can be loud and colourful without
+   touching the calm concept's palette.
+   ============================================================ */
+.theme {
+  --s-sky: #d9f0fb;
+  --s-sky-2: #f4fbfe;
+  --s-paper: #fffaf3;
+  --s-paper-2: #fff2e4;
+
+  --s-ink: #33455c;
+  --s-ink-soft: #5f7186;
+  --s-ink-faint: #8c9bab;
+
+  --s-coral: #f4705d;
+  --s-coral-dark: #d9503d;
+  --s-coral-soft: #ffe4de;
+
+  --s-mint: #4bbfae;
+  --s-mint-soft: #d8f4ef;
+
+  --s-sun: #f6b93b;
+  --s-sun-soft: #fff0d1;
+
+  --s-lilac: #9b8ce0;
+  --s-lilac-soft: #ece8fb;
+
+  --s-grass: #86c96b;
+  --s-grass-soft: #e2f3d9;
+
+  --s-sea: #4a9fd8;
+  --s-sea-soft: #dcefFB;
+
+  --s-line: #eadfd0;
+  --s-r: 22px;
+  --s-r-lg: 34px;
+  --s-r-pill: 999px;
+  --s-shadow: 0 8px 0 rgba(51, 69, 92, 0.08);
+  --s-shadow-soft: 0 10px 26px rgba(51, 69, 92, 0.12);
+
+  --s-companion: 168px; /* room kept free at the bottom for Roni */
+}
+
+/* ============================================================
+   Shell
+   ============================================================ */
+.shell {
+  position: relative;
+  min-height: 100%;
+  background: linear-gradient(180deg, var(--s-sky) 0%, var(--s-sky-2) 42%, var(--s-paper) 100%);
+  background-attachment: fixed;
+  overflow-x: clip;
+}
+
+/* decorative sky furniture — sun + clouds, behind everything */
+.skyDeco {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 320px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sun {
+  position: absolute;
+  top: 26px;
+  inset-inline-end: 8%;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffe08a, var(--s-sun));
+  box-shadow: 0 0 0 16px rgba(246, 185, 59, 0.16);
+}
+
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: var(--s-r-pill);
+  opacity: 0.85;
+}
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+.cloudA {
+  top: 58px;
+  inset-inline-start: 6%;
+  width: 96px;
+  height: 30px;
+  animation: drift 46s linear infinite;
+}
+.cloudA::before {
+  width: 42px;
+  height: 42px;
+  top: -20px;
+  inset-inline-start: 16px;
+}
+.cloudA::after {
+  width: 30px;
+  height: 30px;
+  top: -13px;
+  inset-inline-start: 52px;
+}
+.cloudB {
+  top: 132px;
+  inset-inline-start: 44%;
+  width: 68px;
+  height: 22px;
+  opacity: 0.7;
+  animation: drift 64s linear infinite reverse;
+}
+.cloudB::before {
+  width: 32px;
+  height: 32px;
+  top: -15px;
+  inset-inline-start: 12px;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-40px);
+  }
+}
+
+/* ============================================================
+   Top bar
+   ============================================================ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 10px var(--space-3);
+}
+
+.topbarInner {
+  max-width: 900px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+  border: 2px solid #fff;
+  border-radius: var(--s-r-pill);
+  padding: 6px;
+  box-shadow: 0 6px 18px rgba(51, 69, 92, 0.1);
+}
+
+.topBtn {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: none;
+  background: var(--s-paper-2);
+  color: var(--s-ink);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 0.15s var(--ease), background 0.15s var(--ease);
+}
+.topBtn:hover {
+  transform: scale(1.06);
+  background: var(--s-sun-soft);
+}
+.topBtnGhost {
+  background: transparent;
+  pointer-events: none;
+}
+
+.topTitle {
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--s-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+.topTitle span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Page frame
+   ============================================================ */
+.page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+  padding: var(--space-3) var(--space-4) calc(var(--s-companion) + var(--space-5));
+}
+
+.sceneHead {
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.sceneTitle {
+  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.3rem);
+  font-weight: 800;
+  color: var(--s-ink);
+  line-height: 1.2;
+}
+
+.sceneSub {
+  margin-top: 8px;
+  color: var(--s-ink-soft);
+  font-size: 1rem;
+  max-width: 44ch;
+  margin-inline: auto;
+}
+
+/* ============================================================
+   Speech bubble — Roni "talks" on every screen
+   ============================================================ */
+.bubble {
+  position: relative;
+  background: #fff;
+  border: 3px solid var(--s-mint);
+  border-radius: var(--s-r-lg);
+  padding: var(--space-3) var(--space-4);
+  color: var(--s-ink);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  box-shadow: var(--s-shadow);
+}
+
+.bubbleTail {
+  position: absolute;
+  bottom: -16px;
+  inset-inline-start: 40px;
+  width: 26px;
+  height: 18px;
+  background: #fff;
+  border-inline-start: 3px solid var(--s-mint);
+  border-bottom: 3px solid var(--s-mint);
+  border-end-start-radius: 6px;
+  transform: skewX(-18deg);
+}
+
+/* ============================================================
+   Buttons and cards
+   ============================================================ */
+.bigBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 12px 26px;
+  border: none;
+  border-radius: var(--s-r-pill);
+  background: var(--s-coral);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  box-shadow: 0 5px 0 var(--s-coral-dark);
+  transition: transform 0.12s var(--ease), box-shadow 0.12s var(--ease);
+}
+.bigBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 var(--s-coral-dark);
+}
+.bigBtn:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 var(--s-coral-dark);
+}
+.bigBtn:disabled {
+  background: #d6ddE4;
+  box-shadow: 0 5px 0 #bcc6d0;
+  color: #fff;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ghostBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 10px 22px;
+  border: 3px solid var(--s-line);
+  border-radius: var(--s-r-pill);
+  background: #fff;
+  color: var(--s-ink);
+  font-weight: 700;
+}
+.ghostBtn:hover {
+  border-color: var(--s-mint);
+}
+
+.panel {
+  background: #fff;
+  border: 3px solid #fff;
+  border-radius: var(--s-r-lg);
+  padding: var(--space-4);
+  box-shadow: var(--s-shadow-soft);
+}
+
+.panelTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--s-ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--space-2);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* selectable picture chip */
+.pchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  min-height: 48px;
+  border-radius: var(--s-r-pill);
+  border: 3px solid var(--s-line);
+  background: #fff;
+  color: var(--s-ink);
+  font-weight: 700;
+  font-size: 0.98rem;
+  transition: transform 0.12s var(--ease);
+}
+.pchip:hover {
+  transform: translateY(-2px);
+}
+.pchipOn {
+  border-color: var(--s-mint);
+  background: var(--s-mint-soft);
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.note {
+  color: var(--s-ink-faint);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  background: var(--s-paper-2);
+  border-radius: var(--s-r);
+  padding: var(--space-3);
+}
+
+/* ============================================================
+   Companion — Roni is present on every screen
+   ============================================================ */
+.companion {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 40;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+}
+
+.companionInner {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 900px;
+  margin-inline: var(--space-3);
+  margin-bottom: var(--space-3);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  gap: 10px;
+}
+
+.roniBtn {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  width: 96px;
+  height: 96px;
+  flex: none;
+  border-radius: 50%;
+}
+.roniBtn:hover {
+  filter: brightness(1.03);
+}
+
+.tapHint {
+  position: absolute;
+  bottom: 2px;
+  inset-inline-end: -2px;
+  background: var(--s-sun);
+  color: #4a3a12;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--s-r-pill);
+  border: 2px solid #fff;
+  white-space: nowrap;
+}
+
+.companionBubble {
+  position: relative;
+  background: #fff;
+  border: 3px solid var(--s-mint);
+  border-radius: var(--s-r-lg);
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  color: var(--s-ink);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  box-shadow: 0 8px 24px rgba(51, 69, 92, 0.14);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.companionBubble::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  inset-inline-start: 20px;
+  width: 20px;
+  height: 14px;
+  background: #fff;
+  border-inline-start: 3px solid var(--s-mint);
+  border-bottom: 3px solid var(--s-mint);
+  border-end-start-radius: 5px;
+  transform: skewX(-18deg);
+}
+
+.hideBtn {
+  border: none;
+  background: var(--s-paper-2);
+  color: var(--s-ink-soft);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  line-height: 1;
+  flex: none;
+}
+
+/* minimised: just Roni's head peeking from the corner */
+.peek {
+  pointer-events: auto;
+  margin: 0 var(--space-3) var(--space-3);
+  border: 3px solid #fff;
+  background: var(--s-mint-soft);
+  border-radius: 50%;
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(51, 69, 92, 0.18);
+}
+
+.companionAvatar {
+  position: absolute;
+  bottom: 4px;
+  inset-inline-start: -6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: var(--s-sun-soft);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(51, 69, 92, 0.2);
+}
+.companionAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 700px) {
+  .companionInner {
+    margin-inline: auto;
+    width: calc(100% - var(--space-5) * 2);
+  }
+}
+
+/* ============================================================
+   Full-screen overlay (show a sentence to staff, in big type)
+   ============================================================ */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--s-paper);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.overlayText {
+  font-size: clamp(1.6rem, 1.1rem + 3.4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--s-ink);
+  max-width: 20ch;
+}

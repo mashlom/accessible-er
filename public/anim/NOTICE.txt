@@ -1,0 +1,16 @@
+Noto Animated Emoji
+===================
+
+The Lottie animation files in this directory (*.json) are Google's
+"Noto Animated Emoji".
+
+  Source:    https://googlefonts.github.io/noto-emoji-animation/
+  Copyright: Google Inc.
+  License:   Creative Commons Attribution 4.0 International (CC BY 4.0)
+             https://creativecommons.org/licenses/by/4.0/
+
+CC BY 4.0 permits use, redistribution and modification, including for
+commercial purposes, provided the work is attributed. Attribution for this
+project appears in README.md and on the app's concept-menu screen.
+
+The files are unmodified copies fetched by scripts/fetch-animations.mjs.
