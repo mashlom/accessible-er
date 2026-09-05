@@ -12,8 +12,11 @@ export function MapPage() {
   const conceptPath = useConceptPath()
 
   const bgStyle = theme.bg
-    ? { backgroundImage: `url(${theme.bg})` }
-    : { background: theme.accentSoft }
+    ? {
+        '--bg-portrait': `url(${theme.bg})`,
+        '--bg-landscape': `url(${theme.bgLandscape ?? theme.bg})`,
+      } as React.CSSProperties
+    : { '--bg-portrait': 'none', '--bg-landscape': 'none', background: theme.accentSoft } as React.CSSProperties
 
   return (
     <div className={css.mapPage} style={bgStyle}>

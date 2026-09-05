@@ -104,15 +104,21 @@
 
 .mapPage {
   min-height: 100dvh;
+  background-image: var(--bg-portrait);
   background-size: cover;
   background-position: center;
   direction: rtl;
 }
 
+@media (orientation: landscape) {
+  .mapPage {
+    background-image: var(--bg-landscape);
+  }
+}
+
 .mapOverlay {
   min-height: 100dvh;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.6);
   padding: 1.5rem 1.25rem 6rem;
   display: flex;
   flex-direction: column;

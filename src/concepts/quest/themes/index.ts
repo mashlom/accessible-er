@@ -9,8 +9,10 @@ export interface QuestTheme {
   id: string
   name: string
   emoji: string
-  /** Background image path relative to /public */
+  /** Background image path for portrait orientation */
   bg: string
+  /** Background image path for landscape orientation (falls back to bg) */
+  bgLandscape?: string
   /** CSS colour used for UI accents in this world */
   accent: string
   accentSoft: string
@@ -28,6 +30,7 @@ export const themes: QuestTheme[] = [
     name: 'אביר בטירה',
     emoji: '⚔️',
     bg: '/worlds/knight/castle_v.jpg',
+    bgLandscape: '/worlds/knight/castle_h.jpeg',
     accent: '#7b4f28',
     accentSoft: '#f5e6d0',
     accentText: '#ffffff',
