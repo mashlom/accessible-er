@@ -1,0 +1,375 @@
+/* ── World select ──────────────────────────────────────────────────── */
+
+.selectPage {
+  min-height: 100dvh;
+  padding: 2rem 1.25rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: #f8f4ef;
+  direction: rtl;
+}
+
+.selectTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  text-align: center;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.selectSub {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  margin: 0;
+}
+
+.worldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+.worldCard {
+  background: var(--accent-soft);
+  border: 2px solid var(--accent);
+  border-radius: 1.25rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  min-height: 120px;
+}
+
+.worldCard:active {
+  transform: scale(0.97);
+}
+
+.worldEmoji {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.worldName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+}
+
+.realCard {
+  width: 100%;
+  max-width: 480px;
+  background: var(--accent-soft);
+  border: 2px solid var(--accent);
+  border-radius: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.realCard:active {
+  transform: scale(0.98);
+}
+
+.realLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  text-align: right;
+}
+
+.realLabel strong {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.realLabel span {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* ── Map ───────────────────────────────────────────────────────────── */
+
+.mapPage {
+  min-height: 100dvh;
+  background-size: cover;
+  background-position: center;
+  direction: rtl;
+}
+
+.mapOverlay {
+  min-height: 100dvh;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(2px);
+  padding: 1.5rem 1.25rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mapTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+}
+
+.stageList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stageItem {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.stage--optional {
+  margin-right: 1.5rem;
+  position: relative;
+}
+
+.stage--optional::before {
+  content: '';
+  position: absolute;
+  right: -1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ccc;
+}
+
+.stageBtn {
+  width: 100%;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: right;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.stageBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.stage--active .stageBtn {
+  border-color: #f5a623;
+  background: #fffbf0;
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.25);
+}
+
+.stage--done .stageBtn {
+  background: #f0faf0;
+  border-color: #7bc67e;
+}
+
+.stageIcon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.stageText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stageText strong {
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.stageText span {
+  font-size: 0.82rem;
+  color: #666;
+}
+
+.stageDone {
+  font-size: 1.2rem;
+  color: #4caf50;
+  font-weight: 800;
+  margin-right: auto;
+}
+
+.stageLock {
+  font-size: 1rem;
+  margin-right: auto;
+  opacity: 0.5;
+}
+
+/* ── Controls ──────────────────────────────────────────────────────── */
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.doneBtn {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 0.75rem;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.doneBtn:active { opacity: 0.85; }
+
+.nursePanel {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.nursePanel summary {
+  cursor: pointer;
+  text-align: center;
+}
+
+.nurseBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  justify-content: center;
+}
+
+.nurseBtn {
+  padding: 0.35rem 0.75rem;
+  border-radius: 2rem;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.nurseBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* ── Stage detail ──────────────────────────────────────────────────── */
+
+.stagePage {
+  min-height: 100dvh;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+}
+
+.stageHero {
+  padding: 2.5rem 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.stageHeroIcon {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.stageHero h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.stageHeroHint {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+.stageBody {
+  flex: 1;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stageBody section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stageBody h2 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.stageBody p,
+.stageBody li {
+  font-size: 1rem;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.stageBody ul {
+  padding-right: 1.25rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.waitRange {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.stageBack {
+  padding: 1rem 1.25rem 2rem;
+}
+
+.backBtn {
+  background: transparent;
+  border: 2px solid;
+  border-radius: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
