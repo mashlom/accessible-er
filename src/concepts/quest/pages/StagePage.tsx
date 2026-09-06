@@ -19,7 +19,11 @@ export function StagePage() {
   return (
     <div className={css.stagePage}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
-        <span className={css.stageHeroIcon}>{icon}</span>
+        {skin?.image ? (
+          <img src={skin.image} alt="" className={css.stageHeroImg} />
+        ) : (
+          <span className={css.stageHeroIcon}>{icon}</span>
+        )}
         <h1 style={{ color: theme.accent }}>{label}</h1>
         {skin?.hint && <p className={css.stageHeroHint}>{skin.hint}</p>}
       </div>

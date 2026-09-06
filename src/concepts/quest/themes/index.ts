@@ -3,6 +3,8 @@ export interface StageTheme {
   icon: string
   /** Short flavour description shown on the map pin */
   hint: string
+  /** Optional image shown on the map strip (path relative to /public) */
+  image?: string
 }
 
 export interface QuestTheme {
@@ -36,11 +38,11 @@ export const themes: QuestTheme[] = [
     accentText: '#ffffff',
     completedColor: '#c9a84c',
     stages: {
-      reception: { label: 'שער הטירה', icon: '🏰', hint: 'הגיבור/ת נרשמ/ת בספר הגיבורים' },
-      triage: { label: 'בדיקת הכוחות', icon: '⚔️', hint: 'הרופא הצבאי בודק שאתה כשיר/ה למסע' },
-      'wait-doctor': { label: 'אולם האבירים', icon: '🐉', hint: 'ממתינים — והדרקון שומר על הסוד' },
-      doctor: { label: 'פגישה עם הקוסם הגדול', icon: '🧙', hint: 'הקוסם מחליט מהו הקסם הנכון' },
-      decision: { label: 'טקס הניצחון', icon: '🏆', hint: 'קיבלתם גלילה — המסע הסתיים!' },
+      reception: { label: 'שער הטירה', icon: '🏰', hint: 'הגיבור/ת נרשמ/ת בספר הגיבורים', image: '/worlds/knight/tower.jpg' },
+      triage: { label: 'בדיקת הכוחות', icon: '⚔️', hint: 'הרופא הצבאי בודק שאתה כשיר/ה למסע', image: '/worlds/knight/tests.jpeg' },
+      'wait-doctor': { label: 'אולם האבירים', icon: '🐉', hint: 'ממתינים — והדרקון שומר על הסוד', image: '/worlds/knight/dragon.jpeg' },
+      doctor: { label: 'פגישה עם הקוסם הגדול', icon: '🧙', hint: 'הקוסם מחליט מהו הקסם הנכון', image: '/worlds/knight/wizard.jpg' },
+      decision: { label: 'טקס הניצחון', icon: '🏆', hint: 'קיבלתם גלילה — המסע הסתיים!', image: '/worlds/knight/celebrating.jpg' },
       // secret rooms
       tests: { label: 'מראת הקסמים', icon: '🪄', hint: 'המראה רואה מה שעיניים לא יכולות' },
       treatment: { label: 'חדר הנשק', icon: '🔧', hint: 'הנפח מתקן מה שנשבר בקרב' },

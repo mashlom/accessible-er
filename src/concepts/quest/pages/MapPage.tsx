@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
-import { useQuestProgress, OPTIONAL_STAGES } from '../useQuestProgress'
+import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES } from '../useQuestProgress'
 import css from '../quest.module.css'
 
 export function MapPage() {
@@ -18,6 +18,19 @@ export function MapPage() {
       } as React.CSSProperties
     : { '--bg-portrait': 'none', '--bg-landscape': 'none', background: theme.accentSoft } as React.CSSProperties
 
+  const requiredStages = REQUIRED_STAGES.map((id) => {
+    const state = visible.find((s) => s.id === id)
+    const data = journeyStages.find((j) => j.id === id)
+    const skin = theme.stages[id]
+    return {
+      id,
+      label: skin?.label ?? data?.title ?? id,
+      icon: skin?.icon ?? data?.emoji ?? '❓',
+      image: skin?.image,
+      status: state?.status ?? 'locked',
+    }
+  })
+
   return (
     <div className={css.mapPage} style={bgStyle}>
       <div className={css.mapOverlay}>
@@ -25,74 +38,62 @@ export function MapPage() {
           {theme.name}
         </h1>
 
-        <ol className={css.stageList}>
-          {visible.map((stage) => {
-            const data = journeyStages.find((j) => j.id === stage.id)
-            const skin = theme.stages[stage.id]
-            const label = skin?.label ?? data?.title ?? stage.id
-            const icon = skin?.icon ?? data?.emoji ?? '❓'
-            const hint = skin?.hint ?? data?.meaning ?? ''
-
-            return (
-              <li
+        <div className={css.mapBottom}>
+          <div className={css.stageStrip}>
+            {requiredStages.map((stage, i) => (
+              <button
                 key={stage.id}
-                className={[
-                  css.stageItem,
-                  css[`stage--${stage.status}`],
-                  stage.parentId ? css['stage--optional'] : '',
-                ].join(' ')}
+                className={[css.stagePin, css[`pin--${stage.status}`]].join(' ')}
+                disabled={stage.status === 'locked'}
+                onClick={() => navigate(conceptPath(`/stage/${stage.id}`))}
+                aria-label={stage.label}
               >
-                <button
-                  className={css.stageBtn}
-                  disabled={stage.status === 'locked'}
-                  onClick={() => navigate(conceptPath(`/stage/${stage.id}`))}
-                  aria-label={label}
-                >
-                  <span className={css.stageIcon}>{icon}</span>
-                  <span className={css.stageText}>
-                    <strong>{label}</strong>
-                    {stage.status !== 'locked' && <span>{hint}</span>}
-                  </span>
-                  {stage.status === 'done' && <span className={css.stageDone} aria-hidden>✓</span>}
-                  {stage.status === 'locked' && <span className={css.stageLock} aria-hidden>🔒</span>}
-                </button>
-              </li>
-            )
-          })}
-        </ol>
+                <div className={css.pinImageWrap}>
+                  {stage.image ? (
+                    <img src={stage.image} alt="" className={css.pinImage} />
+                  ) : (
+                    <span className={css.pinEmoji}>{stage.icon}</span>
+                  )}
+                  {stage.status === 'done' && <span className={css.pinCheck} aria-hidden>✓</span>}
+                  {stage.status === 'locked' && <span className={css.pinLock} aria-hidden>🔒</span>}
+                  {stage.status === 'active' && <span className={css.pinPulse} aria-hidden />}
+                </div>
+                <span className={css.pinLabel}>{i + 1}. {stage.label}</span>
+              </button>
+            ))}
+          </div>
 
-        {/* Nurse/parent controls */}
-        <div className={css.controls}>
-          {active && (
-            <button
-              className={css.doneBtn}
-              style={{ background: theme.accent, color: theme.accentText }}
-              onClick={completeActive}
-            >
-              סיימנו! ➜
-            </button>
-          )}
+          <div className={css.controls}>
+            {active && (
+              <button
+                className={css.doneBtn}
+                style={{ background: theme.accent, color: theme.accentText }}
+                onClick={completeActive}
+              >
+                סיימנו! ➜
+              </button>
+            )}
 
-          {/* Debug: reveal optional stages */}
-          <details className={css.nursePanel}>
-            <summary>הוספת שלב (לצוות)</summary>
-            <div className={css.nurseBtns}>
-              {OPTIONAL_STAGES.map((id) => {
-                const already = visible.find((s) => s.id === id)
-                const skin = theme.stages[id]
-                return (
-                  <button
-                    key={id}
-                    disabled={!!already}
-                    onClick={() => revealOptional(id)}
-                    className={css.nurseBtn}
-                  >
-                    {skin?.icon} {skin?.label ?? id}
-                  </button>
-                )
-              })}
-            </div>
-          </details>
+            <details className={css.nursePanel}>
+              <summary>הוספת שלב (לצוות)</summary>
+              <div className={css.nurseBtns}>
+                {OPTIONAL_STAGES.map((id) => {
+                  const already = visible.find((s) => s.id === id)
+                  const skin = theme.stages[id]
+                  return (
+                    <button
+                      key={id}
+                      disabled={!!already}
+                      onClick={() => revealOptional(id)}
+                      className={css.nurseBtn}
+                    >
+                      {skin?.icon} {skin?.label ?? id}
+                    </button>
+                  )
+                })}
+              </div>
+            </details>
+          </div>
         </div>
       </div>
     </div>
