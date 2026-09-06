@@ -43,8 +43,8 @@ export const themes: QuestTheme[] = [
     stages: {
       reception: { label: 'שער הטירה', icon: '🏰', hint: 'הגיבור/ת נרשמ/ת בספר הגיבורים', image: '/worlds/knight/tower.jpg' },
       triage: { label: 'בדיקת הכוחות', icon: '⚔️', hint: 'הרופא הצבאי בודק שאתה כשיר/ה למסע', image: '/worlds/knight/tests.jpeg' },
-      'wait-doctor': { label: 'אולם האבירים', icon: '🐉', hint: 'ממתינים — והדרקון שומר על הסוד', image: '/worlds/knight/dragon.jpeg' },
-      doctor: { label: 'פגישה עם הקוסם הגדול', icon: '🧙', hint: 'הקוסם מחליט מהו הקסם הנכון', image: '/worlds/knight/wizard.jpg' },
+      'wait-doctor': { label: 'אולם האבירים', icon: '🐉', hint: 'ממתינים — והדרקון שומר על הסוד', image: '/worlds/knight/wait.JPEG' },
+      doctor: { label: 'פגישה עם הקוסם הגדול', icon: '🧙', hint: 'הקוסם מחליט מהו הקסם הנכון', image: '/worlds/knight/door.JPEG' },
       decision: { label: 'טקס הניצחון', icon: '🏆', hint: 'קיבלתם גלילה — המסע הסתיים!', image: '/worlds/knight/celebrating.jpg' },
       // secret rooms
       tests: { label: 'מראת הקסמים', icon: '🪄', hint: 'המראה רואה מה שעיניים לא יכולות', image: '/worlds/knight/rentgen.jpeg' },
