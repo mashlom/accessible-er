@@ -2,12 +2,12 @@ import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
-import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES } from '../useQuestProgress'
+import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import css from '../quest.module.css'
 
 export function MapPage() {
   const { theme } = useQuestTheme()
-  const { visible, revealOptional } = useQuestProgress()
+  const { visible } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
@@ -62,27 +62,6 @@ export function MapPage() {
             ))}
           </div>
 
-          <div className={css.controls}>
-            <details className={css.nursePanel}>
-              <summary>הוספת שלב (לצוות)</summary>
-              <div className={css.nurseBtns}>
-                {OPTIONAL_STAGES.map((id) => {
-                  const already = visible.find((s) => s.id === id)
-                  const skin = theme.stages[id]
-                  return (
-                    <button
-                      key={id}
-                      disabled={!!already}
-                      onClick={() => revealOptional(id)}
-                      className={css.nurseBtn}
-                    >
-                      {skin?.icon} {skin?.label ?? id}
-                    </button>
-                  )
-                })}
-              </div>
-            </details>
-          </div>
         </div>
       </div>
     </div>
