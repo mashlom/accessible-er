@@ -107,7 +107,7 @@ export function StagePage() {
             style={{ background: theme.accent, color: theme.accentText }}
             onClick={handleDone}
           >
-            סיימנו! ←
+            הצלחתי! ←
           </button>
         )}
         {isLastStage && !isActive && (
