@@ -454,9 +454,17 @@
 
 .stageBack {
   padding: 1rem 1.25rem 2rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.stageBack a {
+  flex: 1;
+  display: flex;
 }
 
 .backBtn {
+  flex: 1;
   background: transparent;
   border: 2px solid;
   border-radius: 0.75rem;
@@ -464,4 +472,9 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  width: 100%;
+}
+
+.stageBack .doneBtn {
+  flex: 2;
 }
