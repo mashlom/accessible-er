@@ -26,7 +26,7 @@ export function CelebratePage() {
             style={{ borderColor: theme.accent, color: theme.accent }}
             onClick={reset}
           >
-            ← חזרה למפה
+            חזרה למפה →
           </button>
         </Link>
       </div>

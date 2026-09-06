@@ -107,7 +107,7 @@ export function StagePage() {
             style={{ background: theme.accent, color: theme.accentText }}
             onClick={handleDone}
           >
-            סיימנו! ➜
+            ← סיימנו!
           </button>
         )}
         {isLastStage && !isActive && (
@@ -116,13 +116,13 @@ export function StagePage() {
               className={css.doneBtn}
               style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
             >
-              לבחירת הבדיקות ➜
+              ← לבחירת הבדיקות
             </button>
           </Link>
         )}
         <Link to={isOptional ? '/night-map' : '/map'}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-            ← חזרה למפה
+            חזרה למפה →
           </button>
         </Link>
       </div>
