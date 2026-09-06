@@ -66,6 +66,7 @@ export const themes: QuestTheme[] = [
     name: 'דינוזאורים',
     emoji: '🦕',
     bg: '',
+    thumbnail: '/worlds/dino/dino.jpeg',
     accent: '#4a7c3f',
     accentSoft: '#dcefd8',
     accentText: '#ffffff',
