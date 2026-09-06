@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
@@ -7,10 +7,15 @@ import css from '../quest.module.css'
 
 export function ProcedureSelectPage() {
   const { theme } = useQuestTheme()
-  const { revealOptional } = useQuestProgress()
+  const { revealOptional, resetOptionals } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
   const [selected, setSelected] = useState<Set<StageId>>(new Set())
+
+  useEffect(() => {
+    resetOptionals()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   function toggle(id: StageId) {
     setSelected((prev) => {
@@ -31,6 +36,7 @@ export function ProcedureSelectPage() {
   }
 
   const prompt = theme.procedurePrompt ?? 'בחרו את הפרוצדורות שנקבעו'
+  const celebrateSkin = theme.stages['decision']
 
   return (
     <div className={css.selectPage} style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}>
@@ -60,10 +66,27 @@ export function ProcedureSelectPage() {
             </button>
           )
         })}
+
+        {/* Happy end — always present, always checked */}
+        <button
+          className={[css.worldCard, css.worldCardSelected].join(' ')}
+          style={{ borderColor: theme.accent, background: theme.accentSoft, cursor: 'default', opacity: 0.85 }}
+          disabled
+          aria-pressed={true}
+        >
+          {celebrateSkin?.image ? (
+            <img src={celebrateSkin.image} alt="" className={css.worldCardImg} />
+          ) : (
+            <span className={css.worldEmoji}>🎉</span>
+          )}
+          <span className={css.worldName} style={{ color: theme.accent }}>
+            ✓ {celebrateSkin?.label ?? 'סוף טוב'}
+          </span>
+        </button>
       </div>
 
       <div className={css.procedureActions}>
-        {selected.size > 0 && (
+        {selected.size > 0 ? (
           <button
             className={css.doneBtn}
             style={{ background: theme.accent, color: theme.accentText }}
@@ -71,14 +94,15 @@ export function ProcedureSelectPage() {
           >
             המשיכו ➜
           </button>
+        ) : (
+          <button
+            className={css.doneBtn}
+            style={{ background: theme.accent, color: theme.accentText }}
+            onClick={handleSkip}
+          >
+            לסיום ➜
+          </button>
         )}
-        <button
-          className={css.backBtn}
-          style={{ borderColor: theme.accent, color: theme.accent }}
-          onClick={handleSkip}
-        >
-          אין צורך — לסיום ➜
-        </button>
       </div>
     </div>
   )
