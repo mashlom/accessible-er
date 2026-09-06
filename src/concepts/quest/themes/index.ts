@@ -58,7 +58,7 @@ export const themes: QuestTheme[] = [
       tests: { label: 'מראת הקסמים', icon: '🪄', hint: 'המראה רואה מה שעיניים לא יכולות', image: '/worlds/knight/rentgen.jpeg' },
       treatment: { label: 'חדר הנשק', icon: '🔧', hint: 'הנפח מתקן מה שנשבר בקרב', image: '/worlds/knight/procedures.jpeg' },
       consult: { label: 'מועצת החכמים', icon: '📜', hint: 'חכם נוסף מצטרף לעזור', image: '/worlds/knight/wizard2.JPEG' },
-      'wait-results': { label: 'המתנה לנבואה', icon: '🔮', hint: 'הגביש מעבד את התשובות' },
+      'wait-results': { label: 'המתנה לנבואה', icon: '🔮', hint: 'הגביש מעבד את התשובות', image: '/worlds/knight/door.JPEG' },
     },
   },
   {
