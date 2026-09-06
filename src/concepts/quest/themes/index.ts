@@ -17,8 +17,12 @@ export interface QuestTheme {
   bg: string
   /** Background image path for landscape orientation (falls back to bg) */
   bgLandscape?: string
+  /** Background for the night/procedures map (falls back to bg) */
+  nightBg?: string
   /** Thumbnail shown on world select card (falls back to bg) */
   thumbnail?: string
+  /** Instruction text on the procedure select screen */
+  procedurePrompt?: string
   /** CSS colour used for UI accents in this world */
   accent: string
   accentSoft: string
@@ -37,7 +41,9 @@ export const themes: QuestTheme[] = [
     emoji: '⚔️',
     bg: '/worlds/knight/castle_v.jpg',
     bgLandscape: '/worlds/knight/castle_h.jpeg',
+    nightBg: '/worlds/knight/night_castle.JPEG',
     thumbnail: '/worlds/knight/knight.jpeg',
+    procedurePrompt: 'בקשו מהגברת היפה (האחות) לבחור את הפרוצדורות שהקוסם הגדול קבע',
     accent: '#7b4f28',
     accentSoft: '#f5e6d0',
     accentText: '#ffffff',

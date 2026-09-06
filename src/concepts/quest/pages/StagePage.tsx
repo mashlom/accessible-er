@@ -17,11 +17,14 @@ export function StagePage() {
 
   const isActive = active?.id === id
   const isLastStage = id === LAST_REQUIRED
+  const isOptional = id ? (OPTIONAL_STAGES as readonly string[]).includes(id) : false
 
   function handleDone() {
     completeActive()
     if (isLastStage) {
-      navigate(conceptPath('/celebrate'))
+      navigate(conceptPath('/procedures'))
+    } else if (isOptional) {
+      navigate(conceptPath('/night-map'))
     } else {
       navigate(conceptPath('/map'))
     }
@@ -107,7 +110,7 @@ export function StagePage() {
             סיימנו! ➜
           </button>
         )}
-        <Link to="/map">
+        <Link to={isOptional ? '/night-map' : '/map'}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
             ← חזרה למפה
           </button>

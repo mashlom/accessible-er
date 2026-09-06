@@ -79,6 +79,8 @@ export function useQuestProgress() {
 
   const visible = stages.filter((s) => s.visible)
   const active = stages.find((s) => s.status === 'active')
+  const visibleOptionals = stages.filter((s) => !REQUIRED_STAGES.includes(s.id as typeof REQUIRED_STAGES[number]) && s.visible)
+  const allOptionalsDone = visibleOptionals.length > 0 && visibleOptionals.every((s) => s.status === 'done')
 
-  return { stages, visible, active, completeActive, revealOptional, reset }
+  return { stages, visible, active, completeActive, revealOptional, reset, visibleOptionals, allOptionalsDone }
 }
