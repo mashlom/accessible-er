@@ -5,6 +5,7 @@ import CalmConcept from './concepts/calm/CalmConcept'
 import StoryConcept from './concepts/story/StoryConcept'
 import TalkConcept from './concepts/talk/TalkConcept'
 import QuestConcept from './concepts/quest/QuestConcept'
+import BookConcept from './concepts/book/BookConcept'
 
 /**
  * Top level: a concept menu at `/`, and every UI concept mounted under
@@ -48,6 +49,15 @@ export default function App() {
         element={
           <ConceptBase base="/quest">
             <QuestConcept />
+          </ConceptBase>
+        }
+      />
+
+      <Route
+        path="/book/*"
+        element={
+          <ConceptBase base="/book">
+            <BookConcept />
           </ConceptBase>
         }
       />
