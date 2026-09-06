@@ -110,6 +110,16 @@ export function StagePage() {
             סיימנו! ➜
           </button>
         )}
+        {isLastStage && !isActive && (
+          <Link to="/procedures">
+            <button
+              className={css.doneBtn}
+              style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
+            >
+              לבחירת הבדיקות ➜
+            </button>
+          </Link>
+        )}
         <Link to={isOptional ? '/night-map' : '/map'}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
             ← חזרה למפה
