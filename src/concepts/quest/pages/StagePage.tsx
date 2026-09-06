@@ -1,12 +1,24 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { Navigate, Link } from '../../nav'
+import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
+import { useQuestProgress } from '../useQuestProgress'
 import css from '../quest.module.css'
 
 export function StagePage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
+  const { active, completeActive } = useQuestProgress()
+  const navigate = useNavigate()
+  const conceptPath = useConceptPath()
+
+  const isActive = active?.id === id
+
+  function handleDone() {
+    completeActive()
+    navigate(conceptPath('/map'))
+  }
 
   const data = journeyStages.find((j) => j.id === id)
   const skin = id ? theme.stages[id] : undefined
@@ -56,6 +68,15 @@ export function StagePage() {
       </div>
 
       <div className={css.stageBack}>
+        {isActive && (
+          <button
+            className={css.doneBtn}
+            style={{ background: theme.accent, color: theme.accentText }}
+            onClick={handleDone}
+          >
+            סיימנו! ➜
+          </button>
+        )}
         <Link to="/map">
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
             ← חזרה למפה

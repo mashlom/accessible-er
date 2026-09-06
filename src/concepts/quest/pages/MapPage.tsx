@@ -7,7 +7,7 @@ import css from '../quest.module.css'
 
 export function MapPage() {
   const { theme } = useQuestTheme()
-  const { visible, active, completeActive, revealOptional } = useQuestProgress()
+  const { visible, revealOptional } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
@@ -64,16 +64,6 @@ export function MapPage() {
           </div>
 
           <div className={css.controls}>
-            {active && (
-              <button
-                className={css.doneBtn}
-                style={{ background: theme.accent, color: theme.accentText }}
-                onClick={completeActive}
-              >
-                סיימנו! ➜
-              </button>
-            )}
-
             <details className={css.nursePanel}>
               <summary>הוספת שלב (לצוות)</summary>
               <div className={css.nurseBtns}>
