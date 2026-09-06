@@ -56,6 +56,23 @@ export function NightMapPage() {
                 <span className={css.pinLabel}>{stage.label}</span>
               </button>
             ))}
+
+            {/* Celebration — always shown as the final destination */}
+            {(() => {
+              const skin = theme.stages['decision']
+              return (
+                <div className={[css.stagePin, css['pin--locked']].join(' ')} style={{ cursor: 'default' }}>
+                  <div className={css.pinImageWrap} style={{ filter: 'none', opacity: 0.75 }}>
+                    {skin?.image ? (
+                      <img src={skin.image} alt="" className={css.pinImage} />
+                    ) : (
+                      <span className={css.pinEmoji}>🎉</span>
+                    )}
+                  </div>
+                  <span className={css.pinLabel}>{skin?.label ?? 'סוף טוב'}</span>
+                </div>
+              )
+            })()}
           </div>
 
           {allOptionalsDone && (
