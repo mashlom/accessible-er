@@ -56,8 +56,8 @@ export const themes: QuestTheme[] = [
       decision: { label: 'טקס הניצחון', icon: '🏆', hint: 'קיבלתם גלילה — המסע הסתיים!', image: '/worlds/knight/celebrating.jpg' },
       // secret rooms
       tests: { label: 'מראת הקסמים', icon: '🪄', hint: 'המראה רואה מה שעיניים לא יכולות', image: '/worlds/knight/rentgen.jpeg' },
-      treatment: { label: 'חדר הנשק', icon: '🔧', hint: 'הנפח מתקן מה שנשבר בקרב' },
-      consult: { label: 'מועצת החכמים', icon: '📜', hint: 'חכם נוסף מצטרף לעזור' },
+      treatment: { label: 'חדר הנשק', icon: '🔧', hint: 'הנפח מתקן מה שנשבר בקרב', image: '/worlds/knight/procedures.jpeg' },
+      consult: { label: 'מועצת החכמים', icon: '📜', hint: 'חכם נוסף מצטרף לעזור', image: '/worlds/knight/wizard2.JPEG' },
       'wait-results': { label: 'המתנה לנבואה', icon: '🔮', hint: 'הגביש מעבד את התשובות' },
     },
   },
