@@ -14,11 +14,10 @@ export function WorldSelectPage() {
     navigate(conceptPath('/map'))
   }
 
+  const ORDER = ['real', 'knight', 'dino', 'ocean', 'fairy', 'safari', 'space']
   const ordered = [
-    themes.find((t) => t.id === 'real')!,
-    themes.find((t) => t.id === 'knight')!,
-    ...themes.filter((t) => t.id !== 'real' && t.id !== 'knight' && t.bg),
-    ...themes.filter((t) => t.id !== 'real' && t.id !== 'knight' && !t.bg),
+    ...ORDER.map((id) => themes.find((t) => t.id === id)!).filter(Boolean),
+    ...themes.filter((t) => !ORDER.includes(t.id)),
   ]
 
   return (

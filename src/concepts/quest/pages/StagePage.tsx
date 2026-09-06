@@ -49,6 +49,33 @@ export function StagePage() {
         )}
         <h1 style={{ color: theme.accent }}>{label}</h1>
         {skin?.hint && <p className={css.stageHeroHint}>{skin.hint}</p>}
+
+        <div className={css.stageBack}>
+          {isActive && (
+            <button
+              className={css.doneBtn}
+              style={{ background: theme.accent, color: theme.accentText }}
+              onClick={handleDone}
+            >
+              הצלחתי! ←
+            </button>
+          )}
+          {isLastStage && !isActive && (
+            <Link to="/procedures">
+              <button
+                className={css.doneBtn}
+                style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
+              >
+                לבחירת הבדיקות ←
+              </button>
+            </Link>
+          )}
+          <Link to={isOptional ? '/night-map' : '/map'}>
+            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
+              חזרה למפה →
+            </button>
+          </Link>
+        </div>
       </div>
 
       <div className={css.stageBody}>
@@ -98,33 +125,6 @@ export function StagePage() {
             </div>
           </details>
         )}
-      </div>
-
-      <div className={css.stageBack}>
-        {isActive && (
-          <button
-            className={css.doneBtn}
-            style={{ background: theme.accent, color: theme.accentText }}
-            onClick={handleDone}
-          >
-            הצלחתי! ←
-          </button>
-        )}
-        {isLastStage && !isActive && (
-          <Link to="/procedures">
-            <button
-              className={css.doneBtn}
-              style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
-            >
-              לבחירת הבדיקות ←
-            </button>
-          </Link>
-        )}
-        <Link to={isOptional ? '/night-map' : '/map'}>
-          <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-            חזרה למפה →
-          </button>
-        </Link>
       </div>
     </div>
   )

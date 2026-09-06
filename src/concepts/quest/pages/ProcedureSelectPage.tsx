@@ -36,7 +36,6 @@ export function ProcedureSelectPage() {
   }
 
   const prompt = theme.procedurePrompt ?? 'בחרו את הפרוצדורות שנקבעו'
-  const celebrateSkin = theme.stages['decision']
 
   return (
     <div className={css.selectPage} style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}>
@@ -67,22 +66,6 @@ export function ProcedureSelectPage() {
           )
         })}
 
-        {/* Happy end — always present, always checked */}
-        <button
-          className={[css.worldCard, css.worldCardSelected].join(' ')}
-          style={{ borderColor: theme.accent, background: theme.accentSoft, cursor: 'default', opacity: 0.85 }}
-          disabled
-          aria-pressed={true}
-        >
-          {celebrateSkin?.image ? (
-            <img src={celebrateSkin.image} alt="" className={css.worldCardImg} />
-          ) : (
-            <span className={css.worldEmoji}>🎉</span>
-          )}
-          <span className={css.worldName} style={{ color: theme.accent }}>
-            ✓ {celebrateSkin?.label ?? 'סוף טוב'}
-          </span>
-        </button>
       </div>
 
       <div className={css.procedureActions}>

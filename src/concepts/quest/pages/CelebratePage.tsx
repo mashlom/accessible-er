@@ -20,13 +20,13 @@ export function CelebratePage() {
         <p className={css.celebrateHint}>{celebrateSkin?.hint ?? ''}</p>
       </div>
       <div className={css.celebrateActions}>
-        <Link to="/map">
+        <Link to="/">
           <button
             className={css.backBtn}
             style={{ borderColor: theme.accent, color: theme.accent }}
             onClick={reset}
           >
-            חזרה למפה →
+            לבחירת עולם →
           </button>
         </Link>
       </div>
