@@ -92,7 +92,7 @@ export function ProcedureSelectPage() {
             style={{ background: theme.accent, color: theme.accentText }}
             onClick={handleContinue}
           >
-            ← המשיכו
+            המשיכו →
           </button>
         ) : (
           <button
@@ -100,7 +100,7 @@ export function ProcedureSelectPage() {
             style={{ background: theme.accent, color: theme.accentText }}
             onClick={handleSkip}
           >
-            ← לסיום
+            לסיום →
           </button>
         )}
       </div>
