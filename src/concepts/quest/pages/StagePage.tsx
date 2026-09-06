@@ -3,8 +3,10 @@ import { Navigate, Link } from '../../nav'
 import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
-import { useQuestProgress } from '../useQuestProgress'
+import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import css from '../quest.module.css'
+
+const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
 
 export function StagePage() {
   const { id } = useParams<{ id: string }>()
@@ -17,7 +19,11 @@ export function StagePage() {
 
   function handleDone() {
     completeActive()
-    navigate(conceptPath('/map'))
+    if (id === LAST_REQUIRED) {
+      navigate(conceptPath('/celebrate'))
+    } else {
+      navigate(conceptPath('/map'))
+    }
   }
 
   const data = journeyStages.find((j) => j.id === id)

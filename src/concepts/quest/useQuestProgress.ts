@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 /** Required stage ids in order */
-export const REQUIRED_STAGES = ['reception', 'triage', 'wait-doctor', 'doctor', 'decision'] as const
+export const REQUIRED_STAGES = ['reception', 'triage', 'wait-doctor', 'doctor'] as const
 
 /** Optional stage ids that can be inserted mid-visit */
 export const OPTIONAL_STAGES = ['tests', 'consult', 'wait-results', 'treatment'] as const
