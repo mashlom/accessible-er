@@ -75,6 +75,15 @@ export function useQuestProgress() {
     update(next)
   }
 
+  /** Reveal multiple optional stages at once (avoids stale-closure bug in loops) */
+  function revealMultiple(ids: StageId[]) {
+    const idSet = new Set(ids)
+    const next = stages.map((s) =>
+      idSet.has(s.id as StageId) ? { ...s, visible: true, status: 'active' as const } : s
+    )
+    update(next)
+  }
+
   function reset() { update(initialStages()) }
 
   function resetOptionals() {
@@ -91,5 +100,5 @@ export function useQuestProgress() {
   const visibleOptionals = stages.filter((s) => !REQUIRED_STAGES.includes(s.id as typeof REQUIRED_STAGES[number]) && s.visible)
   const allOptionalsDone = visibleOptionals.length > 0 && visibleOptionals.every((s) => s.status === 'done')
 
-  return { stages, visible, active, completeActive, revealOptional, reset, resetOptionals, visibleOptionals, allOptionalsDone }
+  return { stages, visible, active, completeActive, revealOptional, revealMultiple, reset, resetOptionals, visibleOptionals, allOptionalsDone }
 }

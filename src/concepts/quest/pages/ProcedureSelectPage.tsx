@@ -7,7 +7,7 @@ import css from '../quest.module.css'
 
 export function ProcedureSelectPage() {
   const { theme } = useQuestTheme()
-  const { revealOptional, resetOptionals } = useQuestProgress()
+  const { revealMultiple, resetOptionals } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
   const [selected, setSelected] = useState<Set<StageId>>(new Set())
@@ -27,7 +27,7 @@ export function ProcedureSelectPage() {
   }
 
   function handleContinue() {
-    selected.forEach((id) => revealOptional(id))
+    revealMultiple([...selected])
     navigate(conceptPath('/night-map'))
   }
 
