@@ -15,6 +15,8 @@ export interface QuestTheme {
   bg: string
   /** Background image path for landscape orientation (falls back to bg) */
   bgLandscape?: string
+  /** Thumbnail shown on world select card (falls back to bg) */
+  thumbnail?: string
   /** CSS colour used for UI accents in this world */
   accent: string
   accentSoft: string
@@ -33,6 +35,7 @@ export const themes: QuestTheme[] = [
     emoji: '⚔️',
     bg: '/worlds/knight/castle_v.jpg',
     bgLandscape: '/worlds/knight/castle_h.jpeg',
+    thumbnail: '/worlds/knight/knight.jpeg',
     accent: '#7b4f28',
     accentSoft: '#f5e6d0',
     accentText: '#ffffff',
@@ -75,7 +78,7 @@ export const themes: QuestTheme[] = [
     id: 'fairy',
     name: 'פיה בגן הקסמים',
     emoji: '🧚',
-    bg: '',
+    bg: '/worlds/fairy/6bf9b600-f83d-4d9e-90ce-4233e11f4b30.JPEG',
     accent: '#9c5ab5',
     accentSoft: '#f0e0f7',
     accentText: '#ffffff',
@@ -96,7 +99,7 @@ export const themes: QuestTheme[] = [
     id: 'space',
     name: 'אסטרונאוט בחלל',
     emoji: '🚀',
-    bg: '',
+    bg: '/worlds/space/space.jpg',
     accent: '#1a3a6b',
     accentSoft: '#d0dcf5',
     accentText: '#ffffff',
@@ -117,7 +120,7 @@ export const themes: QuestTheme[] = [
     id: 'safari',
     name: 'ספארי באפריקה',
     emoji: '🦁',
-    bg: '',
+    bg: '/worlds/safari/safari.JPEG',
     accent: '#b5720a',
     accentSoft: '#fcefd0',
     accentText: '#ffffff',
@@ -138,7 +141,7 @@ export const themes: QuestTheme[] = [
     id: 'ocean',
     name: 'הרפתקה תת-ימית',
     emoji: '🐠',
-    bg: '',
+    bg: '/worlds/ocean/ocean.jpg',
     accent: '#0a6b8a',
     accentSoft: '#d0eef5',
     accentText: '#ffffff',
@@ -159,7 +162,7 @@ export const themes: QuestTheme[] = [
     id: 'real',
     name: 'אני',
     emoji: '🏥',
-    bg: '',
+    bg: '/worlds/real/real.jpg',
     accent: '#2c6e8a',
     accentSoft: '#deeef5',
     accentText: '#ffffff',

@@ -14,8 +14,12 @@ export function WorldSelectPage() {
     navigate(conceptPath('/map'))
   }
 
-  const main = themes.filter((t) => t.id !== 'real')
-  const real = themes.find((t) => t.id === 'real')!
+  const ordered = [
+    themes.find((t) => t.id === 'real')!,
+    themes.find((t) => t.id === 'knight')!,
+    ...themes.filter((t) => t.id !== 'real' && t.id !== 'knight' && t.bg),
+    ...themes.filter((t) => t.id !== 'real' && t.id !== 'knight' && !t.bg),
+  ]
 
   return (
     <div className={css.selectPage}>
@@ -23,7 +27,7 @@ export function WorldSelectPage() {
       <p className={css.selectSub}>בחר/י עולם — ותתחיל/י את המסע שלך</p>
 
       <div className={css.worldGrid}>
-        {main.map((theme) => (
+        {ordered.map((theme) => (
           <button
             key={theme.id}
             className={css.worldCard}
@@ -31,24 +35,17 @@ export function WorldSelectPage() {
             onClick={() => choose(theme.id)}
             aria-label={`בחר עולם: ${theme.name}`}
           >
-            <span className={css.worldEmoji}>{theme.emoji}</span>
-            <span className={css.worldName}>{theme.name}</span>
+            {(theme.thumbnail ?? theme.bg) ? (
+              <img src={theme.thumbnail ?? theme.bg} alt="" className={css.worldCardImg} />
+            ) : (
+              <span className={css.worldEmoji}>{theme.emoji}</span>
+            )}
+            <span className={css.worldCardLabel} style={{ background: theme.accent }}>
+              {theme.name}
+            </span>
           </button>
         ))}
       </div>
-
-      <button
-        className={css.realCard}
-        style={{ '--accent': real.accent, '--accent-soft': real.accentSoft } as React.CSSProperties}
-        onClick={() => choose(real.id)}
-        aria-label={`בחר עולם: ${real.name}`}
-      >
-        <span className={css.worldEmoji}>{real.emoji}</span>
-        <span className={css.realLabel}>
-          <strong>{real.name}</strong>
-          <span>מפת בית החולים — לילדים גדולים ולהורים</span>
-        </span>
-      </button>
     </div>
   )
 }
