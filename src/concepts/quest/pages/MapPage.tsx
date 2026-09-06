@@ -44,7 +44,6 @@ export function MapPage() {
               <button
                 key={stage.id}
                 className={[css.stagePin, css[`pin--${stage.status}`]].join(' ')}
-                disabled={stage.status === 'locked'}
                 onClick={() => navigate(conceptPath(`/stage/${stage.id}`))}
                 aria-label={stage.label}
               >
