@@ -82,7 +82,7 @@ export function NightMapPage() {
                 style={{ background: theme.accent, color: theme.accentText }}
                 onClick={() => navigate(conceptPath('/celebrate'))}
               >
-                סיימנו הכל! →
+                סיימנו הכל! ←
               </button>
             </div>
           )}
