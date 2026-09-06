@@ -23,8 +23,8 @@ export function WorldSelectPage() {
 
   return (
     <div className={css.selectPage}>
-      <h1 className={css.selectTitle}>באיזה עולם תרצה/י לבקר?</h1>
-      <p className={css.selectSub}>בחר/י עולם — ותתחיל/י את המסע שלך</p>
+      <h1 className={css.selectTitle}>איזה עולם מחכה לך?</h1>
+      <p className={css.selectSub}>בחרו עולם — ויוצאים למסע</p>
 
       <div className={css.worldGrid}>
         {ordered.map((theme) => (
