@@ -122,7 +122,7 @@ export function StagePage() {
         )}
         <Link to={isOptional ? '/night-map' : '/map'}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-            חזרה למפה →
+            → חזרה למפה
           </button>
         </Link>
       </div>
