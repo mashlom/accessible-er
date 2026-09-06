@@ -47,7 +47,7 @@ export const themes: QuestTheme[] = [
       doctor: { label: 'פגישה עם הקוסם הגדול', icon: '🧙', hint: 'הקוסם מחליט מהו הקסם הנכון', image: '/worlds/knight/wizard.jpg' },
       decision: { label: 'טקס הניצחון', icon: '🏆', hint: 'קיבלתם גלילה — המסע הסתיים!', image: '/worlds/knight/celebrating.jpg' },
       // secret rooms
-      tests: { label: 'מראת הקסמים', icon: '🪄', hint: 'המראה רואה מה שעיניים לא יכולות' },
+      tests: { label: 'מראת הקסמים', icon: '🪄', hint: 'המראה רואה מה שעיניים לא יכולות', image: '/worlds/knight/rentgen.jpeg' },
       treatment: { label: 'חדר הנשק', icon: '🔧', hint: 'הנפח מתקן מה שנשבר בקרב' },
       consult: { label: 'מועצת החכמים', icon: '📜', hint: 'חכם נוסף מצטרף לעזור' },
       'wait-results': { label: 'המתנה לנבואה', icon: '🔮', hint: 'הגביש מעבד את התשובות' },
