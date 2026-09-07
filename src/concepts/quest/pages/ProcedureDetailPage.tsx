@@ -70,8 +70,6 @@ export function ProcedureDetailPage() {
       )}
 
       <div className={css.stageBody}>
-        <p className={css.parentZoneLabel}>מידע להורים</p>
-
         <section>
           <h2>מה קורה בפועל</h2>
           <p>{procedure.what}</p>
