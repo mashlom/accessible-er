@@ -42,7 +42,7 @@ export function CardPage() {
 
   return (
     <Scene
-      title="הכרטיס שלי"
+      title="הכרטיס שלך"
       subtitle="סמנו את מה שמתאים — פחות משתי דקות. בסוף יוצא כרטיס קצר וגדול, שאפשר להראות לצוות מהמסך או להדפיס."
     >
       <div style={{ marginBottom: 'var(--space-4)' }}>

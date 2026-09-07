@@ -22,7 +22,7 @@ interface Destination {
 const destinations: Destination[] = [
   { to: '/trail', emoji: '🛤️', name: 'השביל שלנו', desc: 'איפה אנחנו עכשיו ומה הלאה', tint: 'var(--s-mint-soft)' },
   { to: '/show', emoji: '🎭', name: 'מה עומד לקרות?', desc: 'סיפור לכל בדיקה, עמוד אחרי עמוד', tint: 'var(--s-lilac-soft)' },
-  { to: '/card', emoji: '🪪', name: 'הכרטיס שלי', desc: 'מה חשוב לדעת עליי', tint: 'var(--s-coral-soft)' },
+  { to: '/card', emoji: '🪪', name: 'הכרטיס שלך', desc: 'מה חשוב לדעת עליך', tint: 'var(--s-coral-soft)' },
   { to: '/map', emoji: '🗺️', name: 'איפה אנחנו?', desc: 'מפה עם מקומות שקטים', tint: 'var(--s-sea-soft)' },
   { to: '/calm', emoji: '💗', name: 'כשקשה', desc: 'לנשום יחד, ומה עוזר', tint: 'var(--s-coral-soft)' },
   { to: '/distract', emoji: '🫧', name: 'הסחת דעת', desc: 'משהו רגוע להסתכל עליו', tint: 'var(--s-sea-soft)' },
@@ -59,7 +59,7 @@ export function WorldPage() {
         <div className={styles.heroCast}>
           <span className={styles.heroMe}>
             {avatar.kind === 'photo' ? (
-              <img src={avatar.value} alt="הדמות שלי" />
+              <img src={avatar.value} alt="הדמות שלך" />
             ) : (
               <span aria-hidden>{avatar.value}</span>
             )}
@@ -77,7 +77,7 @@ export function WorldPage() {
       </section>
 
       <div className={styles.picker}>
-        <span className={styles.pickerLabel}>איך אני נראה/ית במסע?</span>
+        <span className={styles.pickerLabel}>בחרו דמות למסע</span>
         <div className={styles.pickerRow}>
           {avatarEmojis.map((emoji) => (
             <button
