@@ -12,12 +12,6 @@ const CHANNELS = [
   { key: 'people', emoji: '👥', label: 'אנשים' },
 ] as const
 
-function level(n: number): string {
-  if (n <= 1) return 'נמוך'
-  if (n <= 3) return 'בינוני'
-  return 'גבוה'
-}
-
 function levelClass(n: number): string {
   if (n <= 1) return css.low
   if (n <= 3) return css.mid
@@ -43,7 +37,6 @@ export function SensoryBar({ sensory }: Props) {
                   />
                 ))}
               </div>
-              <span className={[css.levelLabel, levelClass(val)].join(' ')}>{level(val)}</span>
             </div>
           )
         })}
