@@ -53,13 +53,13 @@ export function StagePage() {
         {skin?.hint && <p className={css.stageHeroHint}>{skin.hint}</p>}
 
         {data.procedureIds && data.procedureIds.length > 0 && (
-          <div className={css.procedureLinks}>
+          <div className={css.procedureIconRow}>
             {data.procedureIds.map((pid) => {
               const proc = getProcedure(pid)
               return (
                 <Link key={pid} to={`/procedure/${pid}`}>
-                  <button className={css.procedureLink} style={{ borderColor: theme.accent, color: theme.accent }}>
-                    {proc?.emoji ?? ''} {proc?.title ?? pid} ←
+                  <button className={css.procedureIconBtn} style={{ borderColor: theme.accent, color: theme.accent }} aria-label={proc?.title ?? pid}>
+                    {proc?.emoji ?? '?'}
                   </button>
                 </Link>
               )

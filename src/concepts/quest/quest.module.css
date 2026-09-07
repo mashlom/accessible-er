@@ -553,22 +553,25 @@
   flex: 2;
 }
 
-.procedureLinks {
+.procedureIconRow {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-direction: row;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.procedureLink {
-  width: 100%;
-  background: transparent;
+.procedureIconBtn {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
   border: 2px solid;
-  border-radius: 0.75rem;
-  padding: 0.65rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
+  background: transparent;
+  font-size: 1.6rem;
   cursor: pointer;
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .procedureSteps {
