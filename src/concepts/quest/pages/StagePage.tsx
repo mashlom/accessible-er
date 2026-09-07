@@ -5,6 +5,7 @@ import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES } from '../useQuestProgress'
 import { SensoryBar } from '../../../components/SensoryBar'
+import { getProcedure } from '../../../data/procedures'
 import css from '../quest.module.css'
 
 const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
@@ -109,6 +110,24 @@ export function StagePage() {
             <ul>
               {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
+          </section>
+        )}
+
+        {data.procedureIds && data.procedureIds.length > 0 && (
+          <section>
+            <h2>הכנה לפרוצדורות</h2>
+            <div className={css.procedureLinks}>
+              {data.procedureIds.map((pid) => {
+                const proc = getProcedure(pid)
+                return (
+                  <Link key={pid} to={`/procedure/${pid}`}>
+                    <button className={css.procedureLink} style={{ borderColor: theme.accent, color: theme.accent }}>
+                      {proc?.emoji ?? ''} {proc?.title ?? pid} ←
+                    </button>
+                  </Link>
+                )
+              })}
+            </div>
           </section>
         )}
 
