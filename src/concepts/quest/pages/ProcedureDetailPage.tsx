@@ -16,6 +16,9 @@ export function ProcedureDetailPage() {
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <span className={css.stageHeroIcon}>{procedure.emoji}</span>
         <h1 style={{ color: theme.accent }}>{procedure.title}</h1>
+        {theme.procedureNarratives?.[id!] && (
+          <p className={css.stageHeroHint}>{theme.procedureNarratives[id!]}</p>
+        )}
         {procedure.duration && (
           <p className={css.stageHeroHint}>⏱ {procedure.duration}</p>
         )}

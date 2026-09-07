@@ -32,6 +32,8 @@ export interface QuestTheme {
   completedColor: string
   /** Per-stage overrides — only required stages need entries */
   stages: Record<string, StageTheme>
+  /** Short flavour text shown on procedure detail pages in this world */
+  procedureNarratives?: Record<string, string>
 }
 
 export const themes: QuestTheme[] = [
@@ -59,6 +61,24 @@ export const themes: QuestTheme[] = [
       treatment: { label: 'חדר הנשק', icon: '🔧', hint: 'הנפח מתקן מה שנשבר בקרב', image: '/worlds/knight/procedures.jpeg' },
       consult: { label: 'מועצת החכמים', icon: '📜', hint: 'חכם נוסף מצטרף לעזור', image: '/worlds/knight/wizard2.JPEG' },
       'wait-results': { label: 'המתנה לנבואה', icon: '🔮', hint: 'הגביש מעבד את התשובות', image: '/worlds/knight/wait.JPEG' },
+    },
+    procedureNarratives: {
+      'temperature':       'הרופא הצבאי בודק את אש הלחימה שבגוף הגיבור/ת — כמה חום הלוחם/ת נושא/ת בתוכו/ה.',
+      'saturation':        'טבעת הקסם על האצבע מאזינה לנשימת הדם ובודקת שאוויר הנצחון זורם בכל הגוף.',
+      'blood-pressure':    'שרוול הגיבורים לוחץ קלות על הזרוע ומודד את עוצמת זרם החיים של הלוחם/ת.',
+      'doctor-exam':       'הקוסם הגדול בוחן את כוחות הגיבור/ת — ממנה יבוא הקסם הנכון לריפוי.',
+      'blood-test':        'הקוסם צריך טיפת דם אחת מהגיבור/ת כדי להכין את תרכובת הניצחון.',
+      'urine':             'מבחן השרביט: הגיבור/ת ממלאים/ות כוסית קסם שתגלה את סודות הגוף.',
+      'xray':              'מראת הקסמים מסתכלת דרך השריון ורואה את עצמות הגיבור/ת מבפנים.',
+      'ultrasound':        'ג׳ל הקסמים מאפשר למראה לשוטט בתוך הגוף ולמצוא מה שצריך לרפא.',
+      'ct':                'הטבעת הגדולה סורקת לאט את הגיבור/ת ומצלמת כל פרט נסתר מבפנים.',
+      'iv':                'הנפח מחדיר צינור דק כדי לשלח ישירות ללב הגיבור/ת את תרכובת הריפוי.',
+      'medication':        'הקוסם הגדול הכין את הקסם — סירופ הריפוי או התרכובת שתחזק את הגיבור/ת.',
+      'inhalation':        'אדי הקסם נכנסים לריאות הגיבור/ת ופותחים מחדש את שביל האוויר.',
+      'stitches':          'הנפח סוגר בזהירות את פצע הקרב — דבק מיוחד או חוט ריפוי מחבר את השריון.',
+      'cast':              'שריון הגבס עוטף את העצם ומחזיק אותה יציבה עד להחלמה מלאה.',
+      'bandage':           'הנפח עוטף את פצע הקרב בתחבושת הגנה שתשמור עליו עד שיתרפא.',
+      'waiting-results':   'גביש הקוסם מעבד את תוצאות הניסוי — בקרוב תתגלה התשובה.',
     },
   },
   {
