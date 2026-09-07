@@ -215,6 +215,7 @@
 .stagePin {
   flex: 1;
   min-width: 0;
+  max-width: 22vw;
   background: transparent;
   border: none;
   padding: 0;
