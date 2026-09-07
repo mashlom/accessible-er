@@ -39,7 +39,7 @@ export function ProcedureDetailPage() {
         <p className={css.waitRange}>
           {procedure.who && <span>👤 {procedure.who}</span>}
           {procedure.who && procedure.duration && <span> · </span>}
-          {procedure.duration && <span>⏱ {procedure.duration}</span>}
+          {procedure.duration && <span>⏱ זמן משוער: {procedure.duration}</span>}
         </p>
       )}
 
