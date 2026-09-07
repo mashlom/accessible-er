@@ -550,19 +550,21 @@
 
 .backBtn {
   flex: 1;
-  background: transparent;
-  border: 2px solid;
+  background: #fff;
+  border: none;
   border-radius: 0.75rem;
   padding: 0.65rem 1.25rem;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   width: 100%;
-  transition: transform 0.12s;
+  transition: transform 0.12s, box-shadow 0.12s;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.12);
 }
 
 .backBtn:active {
-  transform: scale(0.96);
+  transform: scale(0.97) translateY(2px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.12);
 }
 
 .stageBack .doneBtn {
@@ -578,23 +580,23 @@
 }
 
 .procedureIconBtn {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
-  border: 2px solid;
-  background: transparent;
-  font-size: 1.6rem;
+  border: none;
+  background: #fff;
+  font-size: 1.8rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.12s, box-shadow 0.12s;
-  box-shadow: 0 3px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.15);
 }
 
 .procedureIconBtn:active {
-  transform: scale(0.9) translateY(2px);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.12);
+  transform: scale(0.92) translateY(3px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.15);
 }
 
 .procedureSteps {
