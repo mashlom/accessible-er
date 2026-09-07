@@ -26,6 +26,31 @@ export function ProcedureDetailPage() {
         {theme.procedureNarratives?.[id!] && (
           <p className={css.stageHeroHint}>{theme.procedureNarratives[id!]}</p>
         )}
+
+        {steps && steps.length > 0 && (
+          <div className={css.procedureStoryBlock}>
+            {variants && variants.length > 1 && (
+              <div className={css.variantToggle}>
+                {variants.map((v, i) => (
+                  <button
+                    key={i}
+                    className={`${css.variantBtn} ${i === variant ? css.variantBtnActive : ''}`}
+                    style={i === variant
+                      ? { background: theme.accent, color: theme.accentText, borderColor: theme.accent }
+                      : { borderColor: theme.accent, color: theme.accent }}
+                    onClick={() => setVariant(i)}
+                  >
+                    {v.label}
+                  </button>
+                ))}
+              </div>
+            )}
+            <ol className={css.procedureSteps} style={{ color: theme.accent }}>
+              {steps.map((step, i) => <li key={i}>{step}</li>)}
+            </ol>
+          </div>
+        )}
+
         <div className={css.stageBack}>
           <Link to="/map">
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
@@ -65,29 +90,6 @@ export function ProcedureDetailPage() {
             <ul>
               {procedure.adaptations.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
-          </section>
-        )}
-
-        {steps && steps.length > 0 && (
-          <section>
-            <h2>צעד אחר צעד</h2>
-            {variants && variants.length > 1 && (
-              <div className={css.variantToggle}>
-                {variants.map((v, i) => (
-                  <button
-                    key={i}
-                    className={`${css.variantBtn} ${i === variant ? css.variantBtnActive : ''}`}
-                    style={i === variant ? { background: theme.accent, color: theme.accentText, borderColor: theme.accent } : { borderColor: theme.accent, color: theme.accent }}
-                    onClick={() => setVariant(i)}
-                  >
-                    {v.label}
-                  </button>
-                ))}
-              </div>
-            )}
-            <ol className={css.procedureSteps}>
-              {steps.map((step, i) => <li key={i}>{step}</li>)}
-            </ol>
           </section>
         )}
       </div>
