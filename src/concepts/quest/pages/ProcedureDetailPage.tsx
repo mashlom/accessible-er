@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Navigate, Link } from '../../nav'
 import { getProcedure } from '../../../data/procedures'
@@ -8,8 +9,14 @@ export function ProcedureDetailPage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
   const procedure = id ? getProcedure(id) : undefined
+  const [variant, setVariant] = useState(0)
+
+  useEffect(() => { setVariant(0) }, [id])
 
   if (!procedure) return <Navigate to="/map" replace />
+
+  const variants = procedure.storyVariants
+  const steps = variants ? (variants[variant] ?? variants[0]).steps : procedure.story
 
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
@@ -19,11 +26,13 @@ export function ProcedureDetailPage() {
         {theme.procedureNarratives?.[id!] && (
           <p className={css.stageHeroHint}>{theme.procedureNarratives[id!]}</p>
         )}
-        {procedure.duration && (
-          <p className={css.stageHeroHint}>⏱ {procedure.duration}</p>
-        )}
+        <p className={css.stageHeroHint}>
+          {procedure.who && <span>👤 {procedure.who}</span>}
+          {procedure.who && procedure.duration && <span> · </span>}
+          {procedure.duration && <span>⏱ {procedure.duration}</span>}
+        </p>
         <div className={css.stageBack}>
-          <Link to={`/map`}>
+          <Link to="/map">
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
               חזרה למפה →
             </button>
@@ -56,11 +65,25 @@ export function ProcedureDetailPage() {
           </section>
         )}
 
-        {procedure.story && procedure.story.length > 0 && (
+        {steps && steps.length > 0 && (
           <section>
             <h2>צעד אחר צעד</h2>
+            {variants && variants.length > 1 && (
+              <div className={css.variantToggle}>
+                {variants.map((v, i) => (
+                  <button
+                    key={i}
+                    className={`${css.variantBtn} ${i === variant ? css.variantBtnActive : ''}`}
+                    style={i === variant ? { background: theme.accent, color: theme.accentText, borderColor: theme.accent } : { borderColor: theme.accent, color: theme.accent }}
+                    onClick={() => setVariant(i)}
+                  >
+                    {v.label}
+                  </button>
+                ))}
+              </div>
+            )}
             <ol className={css.procedureSteps}>
-              {procedure.story.map((step, i) => <li key={i}>{step}</li>)}
+              {steps.map((step, i) => <li key={i}>{step}</li>)}
             </ol>
           </section>
         )}
