@@ -527,6 +527,16 @@
   gap: 0.3rem;
 }
 
+.parentZoneLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: -0.5rem 0 -0.25rem;
+}
+
 .waitRange {
   font-size: 0.85rem;
   color: #555;

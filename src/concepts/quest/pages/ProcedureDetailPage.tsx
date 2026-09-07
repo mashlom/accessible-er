@@ -70,24 +70,26 @@ export function ProcedureDetailPage() {
       )}
 
       <div className={css.stageBody}>
+        <p className={css.parentZoneLabel}>מידע להורים</p>
+
         <section>
-          <h2>מה קורה</h2>
+          <h2>מה קורה בפועל</h2>
           <p>{procedure.what}</p>
         </section>
 
         <section>
-          <h2>מה מרגישים</h2>
+          <h2>מה הילד/ה עשוי/ה להרגיש</h2>
           <p>{procedure.feel}</p>
         </section>
 
         <section>
-          <h2>איך מכינים</h2>
+          <h2>איך להכין את הילד/ה</h2>
           <p>{procedure.prepare}</p>
         </section>
 
         {procedure.adaptations && procedure.adaptations.length > 0 && (
           <section>
-            <h2>אפשר לבקש</h2>
+            <h2>מה לבקש מהצוות</h2>
             <ul>
               {procedure.adaptations.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
