@@ -517,12 +517,13 @@
 }
 
 .waitRange {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 1rem;
+  color: #555;
   margin: 0;
-  background: #fff;
-  border-radius: 0.75rem;
-  padding: 0.6rem 1rem;
+  background: #f7f3ee;
+  border-top: 1px solid #e8e0d4;
+  border-bottom: 1px solid #e8e0d4;
+  padding: 0.6rem 1.25rem;
 }
 
 .stageBack {

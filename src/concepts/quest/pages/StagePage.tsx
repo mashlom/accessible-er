@@ -41,7 +41,7 @@ export function StagePage() {
   const heroImg = skin?.heroImage ?? skin?.image
 
   return (
-    <div className={css.stagePage}>
+    <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         {heroImg ? (
           <img src={heroImg} alt="" className={css.stageHeroImg} />
@@ -80,10 +80,19 @@ export function StagePage() {
       </div>
 
       {data.sensory && <SensoryBar sensory={data.sensory} />}
+      {data.waitRange && (
+        <p className={css.waitRange}>⏱ זמן משוער: {data.waitRange}</p>
+      )}
 
       <div className={css.stageBody}>
+        {data.meaning && (
+          <section>
+            <h2>אנחנו כאן</h2>
+            <p>{data.meaning}</p>
+          </section>
+        )}
         <section>
-          <h2>מה קורה כאן?</h2>
+          <h2>מה קורה</h2>
           <p>{data.whatHappens}</p>
         </section>
 
@@ -101,10 +110,6 @@ export function StagePage() {
               {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
           </section>
-        )}
-
-        {data.waitRange && (
-          <p className={css.waitRange}>⏱ זמן משוער: {data.waitRange}</p>
         )}
 
         {isLastStage && (
