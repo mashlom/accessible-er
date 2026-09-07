@@ -52,6 +52,21 @@ export function StagePage() {
         <h1 style={{ color: theme.accent }}>{label}</h1>
         {skin?.hint && <p className={css.stageHeroHint}>{skin.hint}</p>}
 
+        {data.procedureIds && data.procedureIds.length > 0 && (
+          <div className={css.procedureLinks}>
+            {data.procedureIds.map((pid) => {
+              const proc = getProcedure(pid)
+              return (
+                <Link key={pid} to={`/procedure/${pid}`}>
+                  <button className={css.procedureLink} style={{ borderColor: theme.accent, color: theme.accent }}>
+                    {proc?.emoji ?? ''} {proc?.title ?? pid} ←
+                  </button>
+                </Link>
+              )
+            })}
+          </div>
+        )}
+
         <div className={css.stageBack}>
           {isActive && (
             <button
@@ -110,24 +125,6 @@ export function StagePage() {
             <ul>
               {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
-          </section>
-        )}
-
-        {data.procedureIds && data.procedureIds.length > 0 && (
-          <section>
-            <h2>הכנה לפרוצדורות</h2>
-            <div className={css.procedureLinks}>
-              {data.procedureIds.map((pid) => {
-                const proc = getProcedure(pid)
-                return (
-                  <Link key={pid} to={`/procedure/${pid}`}>
-                    <button className={css.procedureLink} style={{ borderColor: theme.accent, color: theme.accent }}>
-                      {proc?.emoji ?? ''} {proc?.title ?? pid} ←
-                    </button>
-                  </Link>
-                )
-              })}
-            </div>
           </section>
         )}
 
