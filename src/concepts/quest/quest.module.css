@@ -43,14 +43,16 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform 0.12s, box-shadow 0.12s;
   min-height: 120px;
   padding: 0;
   position: relative;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.12);
 }
 
 .worldCard:active {
-  transform: scale(0.97);
+  transform: scale(0.96) translateY(3px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.12);
 }
 
 .worldCardSelected {
@@ -224,6 +226,11 @@
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
+  transition: transform 0.12s;
+}
+
+.stagePin:active {
+  transform: scale(0.93);
 }
 
 
@@ -341,7 +348,8 @@
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.15s;
+  transition: transform 0.12s, box-shadow 0.12s;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.18);
 }
 
 @media (orientation: landscape) {
@@ -350,7 +358,10 @@
   .stageStrip { padding-bottom: 0.1rem; }
 }
 
-.doneBtn:active { opacity: 0.85; }
+.doneBtn:active {
+  transform: scale(0.96) translateY(2px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.18);
+}
 
 .nursePanel {
   font-size: 0.85rem;
@@ -547,6 +558,11 @@
   font-weight: 600;
   cursor: pointer;
   width: 100%;
+  transition: transform 0.12s;
+}
+
+.backBtn:active {
+  transform: scale(0.96);
 }
 
 .stageBack .doneBtn {
@@ -572,6 +588,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.12s, box-shadow 0.12s;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.12);
+}
+
+.procedureIconBtn:active {
+  transform: scale(0.9) translateY(2px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.12);
 }
 
 .procedureSteps {
