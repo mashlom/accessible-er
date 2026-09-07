@@ -15,8 +15,9 @@ export function ProcedureDetailPage() {
 
   if (!procedure) return <Navigate to="/map" replace />
 
-  const variants = procedure.storyVariants
-  const steps = variants ? (variants[variant] ?? variants[0]).steps : procedure.story
+  const themedSteps = id ? theme.procedureSteps?.[id] : undefined
+  const variants = themedSteps ? undefined : procedure.storyVariants
+  const steps = themedSteps ?? (variants ? (variants[variant] ?? variants[0]).steps : procedure.story)
 
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
