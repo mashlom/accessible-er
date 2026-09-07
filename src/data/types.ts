@@ -39,6 +39,8 @@ export interface JourneyStage {
    * relevant ("what's about to happen" + "how to explain it to the child").
    */
   procedureIds?: string[]
+  /** multi-channel sensory profile for this stage's physical location */
+  sensory?: SensoryLevels
 }
 
 /** Visual preparation for a common procedure (module 4). */

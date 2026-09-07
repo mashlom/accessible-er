@@ -19,6 +19,7 @@ export const journeyStages: JourneyStage[] = [
       'לקבל הסבר קצר מה השלב הבא',
     ],
     waitRange: '5–15 דקות',
+    sensory: { sound: 3, light: 3, smell: 1, people: 3 },
   },
   {
     id: 'triage',
@@ -35,6 +36,7 @@ export const journeyStages: JourneyStage[] = [
     waitRange: '10–20 דקות',
     waitKind: 'duration',
     procedureIds: ['temperature', 'saturation', 'blood-pressure'],
+    sensory: { sound: 2, light: 3, smell: 1, people: 2 },
   },
   {
     id: 'wait-doctor',
@@ -49,6 +51,7 @@ export const journeyStages: JourneyStage[] = [
       'הערכת זמן משוערת (בטווחים)',
     ],
     waitRange: '30–90 דקות',
+    sensory: { sound: 4, light: 4, smell: 2, people: 4 },
   },
   {
     id: 'doctor',
@@ -65,6 +68,7 @@ export const journeyStages: JourneyStage[] = [
     waitRange: '10–20 דקות',
     waitKind: 'duration',
     procedureIds: ['doctor-exam'],
+    sensory: { sound: 2, light: 3, smell: 1, people: 2 },
   },
   {
     id: 'tests',
@@ -81,6 +85,7 @@ export const journeyStages: JourneyStage[] = [
     waitRange: 'משתנה לפי הבדיקה',
     waitKind: 'duration',
     procedureIds: ['blood-test', 'urine', 'xray', 'ultrasound', 'ct'],
+    sensory: { sound: 3, light: 4, smell: 2, people: 2 },
   },
   {
     id: 'consult',
@@ -98,6 +103,7 @@ export const journeyStages: JourneyStage[] = [
     ],
     waitRange: '20–60 דקות',
     procedureIds: ['doctor-exam'],
+    sensory: { sound: 2, light: 3, smell: 1, people: 2 },
   },
   {
     id: 'wait-results',
@@ -113,6 +119,7 @@ export const journeyStages: JourneyStage[] = [
     ],
     waitRange: '45–120 דקות',
     procedureIds: ['waiting-results'],
+    sensory: { sound: 4, light: 3, smell: 2, people: 3 },
   },
   {
     id: 'treatment',
@@ -129,6 +136,7 @@ export const journeyStages: JourneyStage[] = [
     waitRange: 'משתנה לפי הטיפול',
     waitKind: 'duration',
     procedureIds: ['iv', 'medication', 'inhalation', 'stitches', 'cast', 'bandage'],
+    sensory: { sound: 2, light: 3, smell: 2, people: 2 },
   },
   {
     id: 'decision',

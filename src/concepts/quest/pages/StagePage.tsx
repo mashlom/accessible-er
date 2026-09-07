@@ -4,6 +4,7 @@ import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES } from '../useQuestProgress'
+import { SensoryBar } from '../../../components/SensoryBar'
 import css from '../quest.module.css'
 
 const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
@@ -77,6 +78,8 @@ export function StagePage() {
           </Link>
         </div>
       </div>
+
+      {data.sensory && <SensoryBar sensory={data.sensory} />}
 
       <div className={css.stageBody}>
         <section>
