@@ -26,11 +26,6 @@ export function ProcedureDetailPage() {
         {theme.procedureNarratives?.[id!] && (
           <p className={css.stageHeroHint}>{theme.procedureNarratives[id!]}</p>
         )}
-        <p className={css.stageHeroHint}>
-          {procedure.who && <span>👤 {procedure.who}</span>}
-          {procedure.who && procedure.duration && <span> · </span>}
-          {procedure.duration && <span>⏱ {procedure.duration}</span>}
-        </p>
         <div className={css.stageBack}>
           <Link to="/map">
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
@@ -39,6 +34,14 @@ export function ProcedureDetailPage() {
           </Link>
         </div>
       </div>
+
+      {(procedure.who || procedure.duration) && (
+        <p className={css.waitRange}>
+          {procedure.who && <span>👤 {procedure.who}</span>}
+          {procedure.who && procedure.duration && <span> · </span>}
+          {procedure.duration && <span>⏱ {procedure.duration}</span>}
+        </p>
+      )}
 
       <div className={css.stageBody}>
         <section>
