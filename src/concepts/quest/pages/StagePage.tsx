@@ -79,7 +79,7 @@ export function StagePage() {
               return (
                 <Link key={pid} to={`/procedure/${pid}`}>
                   <button className={css.procedureIconBtn} style={{ borderColor: theme.accent, color: theme.accent }} aria-label={proc?.title ?? pid}>
-                    {done ? '✅' : (proc?.emoji ?? '?')}
+                    {done ? (theme.doneEmoji ?? '✓') : (proc?.emoji ?? '?')}
                   </button>
                 </Link>
               )

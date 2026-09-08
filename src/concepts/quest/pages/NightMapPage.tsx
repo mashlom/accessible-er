@@ -50,7 +50,7 @@ export function NightMapPage() {
                   ) : (
                     <span className={css.pinEmoji}>{stage.icon}</span>
                   )}
-                  {stage.status === 'done' && <span className={css.pinCheck} aria-hidden>✓</span>}
+                  {stage.status === 'done' && <span className={css.pinCheck} aria-hidden>{theme.doneEmoji ?? '✓'}</span>}
                   {stage.status === 'active' && <span className={css.pinPulse} aria-hidden />}
                 </div>
                 <span className={css.pinLabel}>{stage.label}</span>

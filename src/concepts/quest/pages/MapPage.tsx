@@ -53,7 +53,7 @@ export function MapPage() {
                   ) : (
                     <span className={css.pinEmoji}>{stage.icon}</span>
                   )}
-                  {stage.status === 'done' && <span className={css.pinCheck} aria-hidden>✓</span>}
+                  {stage.status === 'done' && <span className={css.pinCheck} aria-hidden>{theme.doneEmoji ?? '✓'}</span>}
                   {stage.status === 'locked' && <span className={css.pinLock} aria-hidden>🔒</span>}
                   {stage.status === 'active' && <span className={css.pinPulse} aria-hidden />}
                 </div>

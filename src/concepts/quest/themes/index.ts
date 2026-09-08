@@ -21,6 +21,8 @@ export interface QuestTheme {
   nightBg?: string
   /** Thumbnail shown on world select card (falls back to bg) */
   thumbnail?: string
+  /** Emoji shown on completed stages/procedures (default '✓') */
+  doneEmoji?: string
   /** Instruction text on the procedure select screen */
   procedurePrompt?: string
   /** CSS colour used for UI accents in this world */
@@ -43,6 +45,7 @@ export const themes: QuestTheme[] = [
     id: 'knight',
     name: 'אביר בטירה',
     emoji: '⚔️',
+    doneEmoji: '🪙',
     bg: '/worlds/knight/castle_v.jpg',
     bgLandscape: '/worlds/knight/castle_h.jpeg',
     nightBg: '/worlds/knight/night_castle.JPEG',
