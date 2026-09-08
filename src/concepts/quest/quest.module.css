@@ -492,9 +492,13 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.1rem;
-  max-width: 40vw;
+  gap: 0.25rem;
+  max-width: 60vw;
   justify-content: flex-end;
+}
+
+.shopCoins .coinCounterItem {
+  font-size: 2.2rem;
 }
 
 .celebrateContent {
