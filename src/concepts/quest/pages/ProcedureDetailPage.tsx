@@ -3,12 +3,15 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Navigate } from '../../nav'
 import { getProcedure } from '../../../data/procedures'
 import { useQuestTheme } from '../useQuestTheme'
+import { useQuestProgress } from '../useQuestProgress'
 import css from '../quest.module.css'
 
 export function ProcedureDetailPage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
+  const { completeProcedure, doneProcedures } = useQuestProgress()
   const navigate = useNavigate()
+  const isDone = id ? doneProcedures.has(id) : false
   const procedure = id ? getProcedure(id) : undefined
   const [variant, setVariant] = useState(0)
 
@@ -54,6 +57,15 @@ export function ProcedureDetailPage() {
         )}
 
         <div className={css.stageBack}>
+          {!isDone && (
+            <button
+              className={css.doneBtn}
+              style={{ background: theme.accent, color: theme.accentText }}
+              onClick={() => { completeProcedure(id!); navigate(-1) }}
+            >
+              הצלחתי! ←
+            </button>
+          )}
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
             חזרה →
           </button>

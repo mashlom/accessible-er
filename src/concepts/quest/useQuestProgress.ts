@@ -19,6 +19,19 @@ export interface StageState {
 }
 
 const KEY = 'quest-progress'
+const PROC_KEY = 'quest-procedures-done'
+
+function loadProcs(): Set<string> {
+  try {
+    const raw = sessionStorage.getItem(PROC_KEY)
+    if (raw) return new Set(JSON.parse(raw))
+  } catch {}
+  return new Set()
+}
+
+function saveProcs(procs: Set<string>) {
+  try { sessionStorage.setItem(PROC_KEY, JSON.stringify([...procs])) } catch {}
+}
 
 function initialStages(): StageState[] {
   const required: StageState[] = REQUIRED_STAGES.map((id, i) => ({
@@ -49,6 +62,7 @@ function save(stages: StageState[]) {
 
 export function useQuestProgress() {
   const [stages, setStages] = useState<StageState[]>(load)
+  const [doneProcedures, setDoneProcedures] = useState<Set<string>>(loadProcs)
 
   function update(next: StageState[]) {
     save(next)
@@ -90,6 +104,13 @@ export function useQuestProgress() {
     update(next)
   }
 
+  function completeProcedure(id: string) {
+    const next = new Set(doneProcedures)
+    next.add(id)
+    saveProcs(next)
+    setDoneProcedures(next)
+  }
+
   function reset() { update(initialStages()) }
 
   function resetOptionals() {
@@ -106,5 +127,5 @@ export function useQuestProgress() {
   const visibleOptionals = stages.filter((s) => !REQUIRED_STAGES.includes(s.id as typeof REQUIRED_STAGES[number]) && s.visible)
   const allOptionalsDone = visibleOptionals.length > 0 && visibleOptionals.every((s) => s.status === 'done')
 
-  return { stages, visible, active, completeActive, completeStage, revealOptional, revealMultiple, reset, resetOptionals, visibleOptionals, allOptionalsDone }
+  return { stages, visible, active, completeActive, completeStage, completeProcedure, doneProcedures, revealOptional, revealMultiple, reset, resetOptionals, visibleOptionals, allOptionalsDone }
 }

@@ -13,7 +13,7 @@ const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
 export function StagePage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
-  const { stages, active, completeActive, completeStage } = useQuestProgress()
+  const { stages, active, completeActive, completeStage, doneProcedures } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
@@ -75,10 +75,11 @@ export function StagePage() {
           <div className={css.procedureIconRow}>
             {data.procedureIds.map((pid) => {
               const proc = getProcedure(pid)
+              const done = doneProcedures.has(pid)
               return (
                 <Link key={pid} to={`/procedure/${pid}`}>
                   <button className={css.procedureIconBtn} style={{ borderColor: theme.accent, color: theme.accent }} aria-label={proc?.title ?? pid}>
-                    {proc?.emoji ?? '?'}
+                    {done ? '✅' : (proc?.emoji ?? '?')}
                   </button>
                 </Link>
               )
