@@ -16,15 +16,19 @@ export function NightMapPage() {
     ? { '--bg-portrait': `url(${bg})`, '--bg-landscape': `url(${bg})` } as React.CSSProperties
     : { '--bg-portrait': 'none', '--bg-landscape': 'none', background: theme.accentSoft } as React.CSSProperties
 
-  const stages = visibleOptionals.map((s) => {
+  const firstActiveIdx = visibleOptionals.findIndex((s) => s.status !== 'done')
+
+  const stages = visibleOptionals.map((s, i) => {
     const data = journeyStages.find((j) => j.id === s.id)
     const skin = theme.stages[s.id]
+    const effectiveStatus = s.status === 'done' ? 'done' : i === firstActiveIdx ? 'active' : 'locked'
     return {
       id: s.id,
       label: skin?.label ?? data?.title ?? s.id,
       icon: skin?.icon ?? data?.emoji ?? '❓',
       image: skin?.image,
-      status: s.status,
+      status: effectiveStatus,
+      clickable: effectiveStatus !== 'locked',
     }
   })
 
@@ -41,7 +45,8 @@ export function NightMapPage() {
               <button
                 key={stage.id}
                 className={[css.stagePin, css[`pin--${stage.status}`]].join(' ')}
-                onClick={() => navigate(conceptPath(`/stage/${stage.id}`))}
+                onClick={() => stage.clickable && navigate(conceptPath(`/stage/${stage.id}`))}
+                disabled={!stage.clickable}
                 aria-label={stage.label}
               >
                 <div className={css.pinImageWrap}>
