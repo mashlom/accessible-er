@@ -105,10 +105,10 @@ export function useQuestProgress() {
   }
 
   function completeProcedure(id: string) {
-    const next = new Set(doneProcedures)
-    next.add(id)
-    saveProcs(next)
-    setDoneProcedures(next)
+    const current = loadProcs()
+    current.add(id)
+    saveProcs(current)
+    setDoneProcedures(new Set(current))
   }
 
   function resetProcs() {
@@ -125,7 +125,6 @@ export function useQuestProgress() {
         : s
     )
     update(next)
-    resetProcs()
   }
 
   const visible = stages.filter((s) => s.visible)
