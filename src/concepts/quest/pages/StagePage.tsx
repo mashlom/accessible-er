@@ -40,7 +40,7 @@ export function StagePage() {
   function handleDone() {
     if (inlineProcId) {
       completeProcedure(inlineProcId)
-    } else if (!data.procedureIds?.length && id) {
+    } else if (id && !data?.procedureIds?.length) {
       // stage has no procedures — award a coin for the stage itself
       completeProcedure(id)
     }
