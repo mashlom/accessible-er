@@ -164,6 +164,20 @@ export function StagePage() {
                 </ul>
               </section>
             )}
+            {data.challenge && (
+              <section>
+                <h2>מה יכול להיות קשה?</h2>
+                <p>{data.challenge}</p>
+              </section>
+            )}
+            {data.canAsk && data.canAsk.length > 0 && (
+              <section>
+                <h2>אפשר לבקש</h2>
+                <ul>
+                  {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+              </section>
+            )}
           </>
         ) : (
           <>
