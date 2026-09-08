@@ -36,8 +36,8 @@ export function NightMapPage() {
     const effectiveStatus = s.status === 'done' ? 'done' : i === firstActiveIdx ? 'active' : 'locked'
     const procIds = data?.procedureIds ?? []
     const procCoins = procIds.filter((pid) => doneProcedures.has(pid)).length
-    const stageCoins = procIds.length === 0 && doneProcedures.has(s.id) ? 1 : 0
-    const earnedCoins = stageCoins + procCoins
+    const stageCoins = doneProcedures.has(s.id) ? 1 : 0
+    const earnedCoins = procCoins > 0 ? procCoins : stageCoins
     return {
       id: s.id,
       label: skin?.label ?? data?.title ?? s.id,

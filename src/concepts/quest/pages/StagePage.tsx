@@ -3,7 +3,7 @@ import { Navigate, Link } from '../../nav'
 import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
-import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES } from '../useQuestProgress'
+import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES, loadProcs } from '../useQuestProgress'
 import { SensoryBar } from '../../../components/SensoryBar'
 import { getProcedure } from '../../../data/procedures'
 import css from '../quest.module.css'
@@ -40,11 +40,11 @@ export function StagePage() {
   function handleDone() {
     if (inlineProcId) {
       completeProcedure(inlineProcId)
-    } else if (id && !data?.procedureIds?.length) {
-      // stage with no procedures — award one coin for the stage itself
-      completeProcedure(id)
+    } else if (id) {
+      const procIds = data?.procedureIds ?? []
+      const anyProcDone = procIds.some((pid) => loadProcs().has(pid))
+      if (!anyProcDone) completeProcedure(id)
     }
-    // stages with multiple procedure icons: coins come only from procedure detail pages
     if (isOptional && id) {
       completeStage(id)
     } else {

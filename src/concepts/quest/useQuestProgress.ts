@@ -21,7 +21,7 @@ export interface StageState {
 const KEY = 'quest-progress'
 const PROC_KEY = 'quest-procedures-done'
 
-function loadProcs(): Set<string> {
+export function loadProcs(): Set<string> {
   try {
     const raw = sessionStorage.getItem(PROC_KEY)
     if (raw) return new Set(JSON.parse(raw))

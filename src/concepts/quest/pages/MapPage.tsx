@@ -24,8 +24,8 @@ export function MapPage() {
     const skin = theme.stages[id]
     const procIds = data?.procedureIds ?? []
     const procCoins = procIds.filter((pid) => doneProcedures.has(pid)).length
-    const stageCoins = procIds.length === 0 && doneProcedures.has(id) ? 1 : 0
-    const earnedCoins = stageCoins + procCoins
+    const stageCoins = doneProcedures.has(id) ? 1 : 0
+    const earnedCoins = procCoins > 0 ? procCoins : stageCoins
     return {
       id,
       label: skin?.label ?? data?.title ?? id,
