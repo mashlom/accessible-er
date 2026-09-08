@@ -111,7 +111,12 @@ export function useQuestProgress() {
     setDoneProcedures(next)
   }
 
-  function reset() { update(initialStages()) }
+  function resetProcs() {
+    saveProcs(new Set())
+    setDoneProcedures(new Set())
+  }
+
+  function reset() { update(initialStages()); resetProcs() }
 
   function resetOptionals() {
     const next = stages.map((s) =>
@@ -120,6 +125,7 @@ export function useQuestProgress() {
         : s
     )
     update(next)
+    resetProcs()
   }
 
   const visible = stages.filter((s) => s.visible)
