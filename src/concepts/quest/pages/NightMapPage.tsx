@@ -9,9 +9,8 @@ import css from '../quest.module.css'
 const DAY_COIN_IDS = new Set<string>(
   REQUIRED_STAGES.flatMap((id) => {
     const stage = journeyStages.find((j) => j.id === id)
-    const procIds = stage?.procedureIds ?? []
-    // stages with no procedures: coin ID = stage ID; otherwise: procedure IDs only
-    return procIds.length === 0 ? [id] : procIds
+    // always include stage ID (fallback coin) + all procedure IDs
+    return [id, ...(stage?.procedureIds ?? [])]
   })
 )
 
