@@ -13,7 +13,7 @@ const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
 export function StagePage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
-  const { active, completeActive, visible, revealOptional } = useQuestProgress()
+  const { active, completeActive } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
