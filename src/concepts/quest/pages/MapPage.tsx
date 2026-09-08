@@ -22,7 +22,9 @@ export function MapPage() {
     const state = visible.find((s) => s.id === id)
     const data = journeyStages.find((j) => j.id === id)
     const skin = theme.stages[id]
-    const earnedCoins = (data?.procedureIds ?? []).filter((pid) => doneProcedures.has(pid)).length
+    const stageCoins = doneProcedures.has(id) ? 1 : 0
+    const procCoins = (data?.procedureIds ?? []).filter((pid) => doneProcedures.has(pid)).length
+    const earnedCoins = stageCoins + procCoins
     return {
       id,
       label: skin?.label ?? data?.title ?? id,
@@ -57,7 +59,7 @@ export function MapPage() {
                   )}
                   {stage.status === 'done' && (
                     <span className={css.pinCoins} aria-hidden>
-                      {Array.from({ length: Math.max(stage.earnedCoins, 1) }, (_, i) => (
+                      {Array.from({ length: stage.earnedCoins }, (_, i) => (
                         <span key={i} className={css.pinCoin}>{theme.doneEmoji ?? '✓'}</span>
                       ))}
                     </span>

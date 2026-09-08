@@ -9,7 +9,8 @@ import css from '../quest.module.css'
 const DAY_COIN_IDS = new Set<string>(
   REQUIRED_STAGES.flatMap((id) => {
     const stage = journeyStages.find((j) => j.id === id)
-    return stage?.procedureIds?.length ? stage.procedureIds : [id]
+    // include the stage ID itself (always) + any procedure IDs (for stages with icon-buttons)
+    return [id, ...(stage?.procedureIds ?? [])]
   })
 )
 
@@ -32,7 +33,9 @@ export function NightMapPage() {
     const data = journeyStages.find((j) => j.id === s.id)
     const skin = theme.stages[s.id]
     const effectiveStatus = s.status === 'done' ? 'done' : i === firstActiveIdx ? 'active' : 'locked'
-    const earnedCoins = (data?.procedureIds ?? []).filter((pid) => doneProcedures.has(pid)).length
+    const stageCoins = doneProcedures.has(s.id) ? 1 : 0
+    const procCoins = (data?.procedureIds ?? []).filter((pid) => doneProcedures.has(pid)).length
+    const earnedCoins = stageCoins + procCoins
     return {
       id: s.id,
       label: skin?.label ?? data?.title ?? s.id,
@@ -78,7 +81,7 @@ export function NightMapPage() {
                   )}
                   {stage.status === 'done' && (
                     <span className={css.pinCoins} aria-hidden>
-                      {Array.from({ length: Math.max(stage.earnedCoins, 1) }, (_, i) => (
+                      {Array.from({ length: stage.earnedCoins }, (_, i) => (
                         <span key={i} className={css.pinCoin}>{theme.doneEmoji ?? '✓'}</span>
                       ))}
                     </span>
