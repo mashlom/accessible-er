@@ -23,6 +23,8 @@ export interface QuestTheme {
   thumbnail?: string
   /** Emoji shown on completed stages/procedures (default '✓') */
   doneEmoji?: string
+  /** Image shown on the celebration/shop screen */
+  shopImage?: string
   /** Instruction text on the procedure select screen */
   procedurePrompt?: string
   /** CSS colour used for UI accents in this world */
@@ -46,6 +48,7 @@ export const themes: QuestTheme[] = [
     name: 'אביר בטירה',
     emoji: '⚔️',
     doneEmoji: '🪙',
+    shopImage: '/worlds/knight/shop.JPEG',
     bg: '/worlds/knight/castle_v.jpg',
     bgLandscape: '/worlds/knight/castle_h.jpeg',
     nightBg: '/worlds/knight/night_castle.JPEG',
@@ -190,6 +193,7 @@ export const themes: QuestTheme[] = [
     name: 'דינוזאורים',
     emoji: '🦕',
     doneEmoji: '⭐',
+    shopImage: '/worlds/knight/shop.JPEG',
     bg: '',
     thumbnail: '/worlds/dino/dino.jpeg',
     accent: '#4a7c3f',
@@ -230,6 +234,7 @@ export const themes: QuestTheme[] = [
     id: 'fairy',
     name: 'פיה בגן הקסמים',
     doneEmoji: '⭐',
+    shopImage: '/worlds/knight/shop.JPEG',
     emoji: '🧚',
     bg: '/worlds/fairy/6bf9b600-f83d-4d9e-90ce-4233e11f4b30.JPEG',
     accent: '#9c5ab5',
@@ -271,6 +276,7 @@ export const themes: QuestTheme[] = [
     name: 'אסטרונאוט בחלל',
     emoji: '🚀',
     doneEmoji: '⭐',
+    shopImage: '/worlds/knight/shop.JPEG',
     bg: '/worlds/space/space.jpg',
     accent: '#1a3a6b',
     accentSoft: '#d0dcf5',
@@ -310,6 +316,7 @@ export const themes: QuestTheme[] = [
     id: 'safari',
     name: 'ספארי באפריקה',
     doneEmoji: '⭐',
+    shopImage: '/worlds/knight/shop.JPEG',
     emoji: '🦁',
     bg: '/worlds/safari/safari.JPEG',
     accent: '#b5720a',
@@ -350,6 +357,7 @@ export const themes: QuestTheme[] = [
     id: 'ocean',
     name: 'הרפתקה תת-ימית',
     doneEmoji: '⭐',
+    shopImage: '/worlds/knight/shop.JPEG',
     emoji: '🐠',
     bg: '/worlds/ocean/ocean.jpg',
     accent: '#0a6b8a',

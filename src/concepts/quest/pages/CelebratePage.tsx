@@ -11,8 +11,8 @@ export function CelebratePage() {
 
   return (
     <div className={css.celebratePage} style={{ background: theme.accentSoft }}>
-      {celebrateSkin?.image && (
-        <img src={celebrateSkin.image} alt="" className={css.celebrateImg} />
+      {theme.shopImage && (
+        <img src={theme.shopImage} alt="" className={css.celebrateImg} />
       )}
       <div className={css.celebrateContent}>
         <p className={css.celebrateTitle} style={{ color: theme.accent }}>
@@ -25,7 +25,11 @@ export function CelebratePage() {
             ))}
           </p>
         )}
-        <p className={css.celebrateHint}>{celebrateSkin?.hint ?? ''}</p>
+        <p className={css.celebrateHint}>
+          {doneCount > 0
+            ? `צברת ${doneCount} ${doneCount === 1 ? 'מטבע' : 'מטבעות'} — ברוכים הבאים לחנות!`
+            : (celebrateSkin?.hint ?? '')}
+        </p>
       </div>
       <div className={css.celebrateActions}>
         <Link to="/">
