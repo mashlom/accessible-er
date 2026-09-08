@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { Navigate, Link } from '../../nav'
+import { useParams, useNavigate } from 'react-router-dom'
+import { Navigate } from '../../nav'
 import { getProcedure } from '../../../data/procedures'
 import { useQuestTheme } from '../useQuestTheme'
 import css from '../quest.module.css'
@@ -8,6 +8,7 @@ import css from '../quest.module.css'
 export function ProcedureDetailPage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
+  const navigate = useNavigate()
   const procedure = id ? getProcedure(id) : undefined
   const [variant, setVariant] = useState(0)
 
@@ -53,11 +54,9 @@ export function ProcedureDetailPage() {
         )}
 
         <div className={css.stageBack}>
-          <Link to="/map">
-            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              חזרה למפה →
-            </button>
-          </Link>
+          <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
+            חזרה →
+          </button>
         </div>
       </div>
 
