@@ -62,12 +62,17 @@ export function CelebratePage() {
       {/* ── Parent zone ── */}
       <div className={css.stageBody}>
         <p className={css.parentZoneLabel}>לקראת שחרור הביתה</p>
+
         {dischargeBlocks.map((b, i) => (
           <section key={i}>
             <h2>{b.emoji} {b.title}</h2>
             <p>{b.body}</p>
           </section>
         ))}
+
+        <Link to="/feedback" className={css.calmLink}>
+          💬 איך היה לכם? ספרו לנו →
+        </Link>
       </div>
     </div>
   )
