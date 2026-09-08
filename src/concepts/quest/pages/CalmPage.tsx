@@ -13,9 +13,11 @@ export function CalmPage() {
     <div className={css.stagePage}>
       {/* ── Child zone ── */}
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
-        <span className={css.stageHeroIcon}>💙</span>
-        <h1 style={{ color: theme.accent }}>רגע, נושמים</h1>
-        <p className={css.stageHeroHint}>אתם עושים עבודה נהדרת. ביקור במלר״ד קשה — בשבילכם ובשביל הילד/ה.</p>
+        {(theme.calmLines ?? ['רגע, נושמים יחד 💙']).map((line, i) => (
+          <p key={i} className={i === 0 ? css.calmChildMain : css.calmChildLine} style={{ color: theme.accent }}>
+            {line}
+          </p>
+        ))}
         <div className={css.stageBack}>
           <button
             className={css.backBtn}

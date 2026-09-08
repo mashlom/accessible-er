@@ -40,6 +40,8 @@ export interface QuestTheme {
   procedureNarratives?: Record<string, string>
   /** World-flavoured step-by-step story overriding the neutral steps from procedures.ts */
   procedureSteps?: Record<string, string[]>
+  /** Lines shown in the child zone of CalmPage — themed calming message for the child */
+  calmLines?: string[]
 }
 
 export const themes: QuestTheme[] = [
@@ -54,6 +56,11 @@ export const themes: QuestTheme[] = [
     nightBg: '/worlds/knight/night_castle.JPEG',
     thumbnail: '/worlds/knight/knight.jpeg',
     procedurePrompt: 'בקשו מהגברת היפה (האחות) לבחור את הפרוצדורות שהקוסם הגדול קבע',
+    calmLines: [
+      'גם לאבירים קשה לפעמים 🛡️',
+      'כשקשה לאביר, הוא נושם עמוק מאוד',
+      'רוצה להסתכל על השמיים? ☁️',
+    ],
     accent: '#7b4f28',
     accentSoft: '#f5e6d0',
     accentText: '#ffffff',
