@@ -38,12 +38,13 @@ export function StagePage() {
   const inlineSteps = themedSteps ?? inlineProc?.story
 
   function handleDone() {
-    // always award a stage-completion coin; inline proc uses its own ID as the coin
     if (inlineProcId) {
       completeProcedure(inlineProcId)
-    } else if (id) {
+    } else if (id && !data?.procedureIds?.length) {
+      // stage with no procedures — award one coin for the stage itself
       completeProcedure(id)
     }
+    // stages with multiple procedure icons: coins come only from procedure detail pages
     if (isOptional && id) {
       completeStage(id)
     } else {

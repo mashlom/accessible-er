@@ -22,8 +22,9 @@ export function MapPage() {
     const state = visible.find((s) => s.id === id)
     const data = journeyStages.find((j) => j.id === id)
     const skin = theme.stages[id]
-    const stageCoins = doneProcedures.has(id) ? 1 : 0
-    const procCoins = (data?.procedureIds ?? []).filter((pid) => doneProcedures.has(pid)).length
+    const procIds = data?.procedureIds ?? []
+    const procCoins = procIds.filter((pid) => doneProcedures.has(pid)).length
+    const stageCoins = procIds.length === 0 && doneProcedures.has(id) ? 1 : 0
     const earnedCoins = stageCoins + procCoins
     return {
       id,

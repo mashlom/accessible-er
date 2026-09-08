@@ -9,8 +9,9 @@ import css from '../quest.module.css'
 const DAY_COIN_IDS = new Set<string>(
   REQUIRED_STAGES.flatMap((id) => {
     const stage = journeyStages.find((j) => j.id === id)
-    // include the stage ID itself (always) + any procedure IDs (for stages with icon-buttons)
-    return [id, ...(stage?.procedureIds ?? [])]
+    const procIds = stage?.procedureIds ?? []
+    // stages with no procedures: coin ID = stage ID; otherwise: procedure IDs only
+    return procIds.length === 0 ? [id] : procIds
   })
 )
 
@@ -33,8 +34,9 @@ export function NightMapPage() {
     const data = journeyStages.find((j) => j.id === s.id)
     const skin = theme.stages[s.id]
     const effectiveStatus = s.status === 'done' ? 'done' : i === firstActiveIdx ? 'active' : 'locked'
-    const stageCoins = doneProcedures.has(s.id) ? 1 : 0
-    const procCoins = (data?.procedureIds ?? []).filter((pid) => doneProcedures.has(pid)).length
+    const procIds = data?.procedureIds ?? []
+    const procCoins = procIds.filter((pid) => doneProcedures.has(pid)).length
+    const stageCoins = procIds.length === 0 && doneProcedures.has(s.id) ? 1 : 0
     const earnedCoins = stageCoins + procCoins
     return {
       id: s.id,
