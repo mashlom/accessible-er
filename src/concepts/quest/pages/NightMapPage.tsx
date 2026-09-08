@@ -7,8 +7,8 @@ import css from '../quest.module.css'
 
 export function NightMapPage() {
   const { theme } = useQuestTheme()
-  const { stages: allStages, visibleOptionals, allOptionalsDone } = useQuestProgress()
-  const doneCount = allStages.filter((s) => s.status === 'done').length
+  const { visibleOptionals, allOptionalsDone, doneProcedures } = useQuestProgress()
+  const doneCount = doneProcedures.size
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
@@ -23,6 +23,7 @@ export function NightMapPage() {
     const data = journeyStages.find((j) => j.id === s.id)
     const skin = theme.stages[s.id]
     const effectiveStatus = s.status === 'done' ? 'done' : i === firstActiveIdx ? 'active' : 'locked'
+    const earnedCoins = (data?.procedureIds ?? []).filter((pid) => doneProcedures.has(pid)).length
     return {
       id: s.id,
       label: skin?.label ?? data?.title ?? s.id,
@@ -30,6 +31,7 @@ export function NightMapPage() {
       image: skin?.image,
       status: effectiveStatus,
       clickable: effectiveStatus !== 'locked',
+      earnedCoins,
     }
   })
 
@@ -65,7 +67,13 @@ export function NightMapPage() {
                   ) : (
                     <span className={css.pinEmoji}>{stage.icon}</span>
                   )}
-                  {stage.status === 'done' && <span className={css.pinCheck} aria-hidden>{theme.doneEmoji ?? '✓'}</span>}
+                  {stage.status === 'done' && (
+                    <span className={css.pinCoins} aria-hidden>
+                      {Array.from({ length: Math.max(stage.earnedCoins, 1) }, (_, i) => (
+                        <span key={i} className={css.pinCoin}>{theme.doneEmoji ?? '✓'}</span>
+                      ))}
+                    </span>
+                  )}
                   {stage.status === 'active' && <span className={css.pinPulse} aria-hidden />}
                 </div>
                 <span className={css.pinLabel}>{stage.label}</span>

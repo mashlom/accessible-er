@@ -5,12 +5,20 @@ import css from '../quest.module.css'
 
 export function ShopPage() {
   const { theme } = useQuestTheme()
-  const { reset } = useQuestProgress()
+  const { reset, doneProcedures } = useQuestProgress()
+  const doneCount = doneProcedures.size
 
   return (
     <div className={css.shopPage} style={{ background: '#000' }}>
       {theme.shopImage && (
         <img src={theme.shopImage} alt="" className={css.shopImg} />
+      )}
+      {doneCount > 0 && (
+        <p className={css.shopCoins}>
+          {Array.from({ length: doneCount }, (_, i) => (
+            <span key={i} className={css.coinCounterItem}>{theme.doneEmoji ?? '✓'}</span>
+          ))}
+        </p>
       )}
       <div className={css.shopActions}>
         <Link to="/">

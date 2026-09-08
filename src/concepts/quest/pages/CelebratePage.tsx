@@ -5,9 +5,9 @@ import css from '../quest.module.css'
 
 export function CelebratePage() {
   const { theme } = useQuestTheme()
-  const { reset, stages } = useQuestProgress()
+  const { reset, doneProcedures } = useQuestProgress()
   const celebrateSkin = theme.stages['decision']
-  const doneCount = stages.filter((s) => s.status === 'done').length
+  const doneCount = doneProcedures.size
 
   return (
     <div className={css.celebratePage} style={{ background: theme.accentSoft }}>

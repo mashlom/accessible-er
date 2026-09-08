@@ -7,7 +7,7 @@ import css from '../quest.module.css'
 
 export function MapPage() {
   const { theme } = useQuestTheme()
-  const { visible } = useQuestProgress()
+  const { visible, doneProcedures } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
@@ -22,12 +22,14 @@ export function MapPage() {
     const state = visible.find((s) => s.id === id)
     const data = journeyStages.find((j) => j.id === id)
     const skin = theme.stages[id]
+    const earnedCoins = (data?.procedureIds ?? []).filter((pid) => doneProcedures.has(pid)).length
     return {
       id,
       label: skin?.label ?? data?.title ?? id,
       icon: skin?.icon ?? data?.emoji ?? '❓',
       image: skin?.image,
       status: state?.status ?? 'locked',
+      earnedCoins,
     }
   })
 
@@ -53,7 +55,13 @@ export function MapPage() {
                   ) : (
                     <span className={css.pinEmoji}>{stage.icon}</span>
                   )}
-                  {stage.status === 'done' && <span className={css.pinCheck} aria-hidden>{theme.doneEmoji ?? '✓'}</span>}
+                  {stage.status === 'done' && (
+                    <span className={css.pinCoins} aria-hidden>
+                      {Array.from({ length: Math.max(stage.earnedCoins, 1) }, (_, i) => (
+                        <span key={i} className={css.pinCoin}>{theme.doneEmoji ?? '✓'}</span>
+                      ))}
+                    </span>
+                  )}
                   {stage.status === 'locked' && <span className={css.pinLock} aria-hidden>🔒</span>}
                   {stage.status === 'active' && <span className={css.pinPulse} aria-hidden />}
                 </div>
