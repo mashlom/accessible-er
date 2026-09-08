@@ -67,6 +67,12 @@ export function useQuestProgress() {
     update(next)
   }
 
+  /** Mark a specific stage as done (for optional stages where multiple can be active) */
+  function completeStage(id: string) {
+    const next = stages.map((s) => s.id === id ? { ...s, status: 'done' as const } : s)
+    update(next)
+  }
+
   /** Reveal an optional stage (nurse decides rентgen needed etc.) */
   function revealOptional(id: StageId) {
     const next = stages.map((s) =>
@@ -100,5 +106,5 @@ export function useQuestProgress() {
   const visibleOptionals = stages.filter((s) => !REQUIRED_STAGES.includes(s.id as typeof REQUIRED_STAGES[number]) && s.visible)
   const allOptionalsDone = visibleOptionals.length > 0 && visibleOptionals.every((s) => s.status === 'done')
 
-  return { stages, visible, active, completeActive, revealOptional, revealMultiple, reset, resetOptionals, visibleOptionals, allOptionalsDone }
+  return { stages, visible, active, completeActive, completeStage, revealOptional, revealMultiple, reset, resetOptionals, visibleOptionals, allOptionalsDone }
 }

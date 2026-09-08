@@ -13,16 +13,21 @@ const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
 export function StagePage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
-  const { active, completeActive } = useQuestProgress()
+  const { stages, active, completeActive, completeStage } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
-  const isActive = active?.id === id
   const isLastStage = id === LAST_REQUIRED
   const isOptional = id ? (OPTIONAL_STAGES as readonly string[]).includes(id) : false
+  const thisStage = stages.find((s) => s.id === id)
+  const isActive = isOptional ? thisStage?.status === 'active' : active?.id === id
 
   function handleDone() {
-    completeActive()
+    if (isOptional && id) {
+      completeStage(id)
+    } else {
+      completeActive()
+    }
     if (isLastStage) {
       navigate(conceptPath('/procedures'))
     } else if (isOptional) {
