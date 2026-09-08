@@ -102,7 +102,6 @@ export const journeyStages: JourneyStage[] = [
       'שההסברים יינתנו שוב, בקצרה ובפשטות',
     ],
     waitRange: '20–60 דקות',
-    procedureIds: ['doctor-exam'],
     sensory: { sound: 2, light: 3, smell: 1, people: 2 },
   },
   {
