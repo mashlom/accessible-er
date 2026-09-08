@@ -62,35 +62,30 @@ export function NightMapPage() {
               </button>
             ))}
 
-            {/* Celebration — always shown as the final destination */}
+            {/* Celebration — clickable once all stages are done */}
             {(() => {
               const skin = theme.stages['decision']
+              const pinClass = [css.stagePin, css[allOptionalsDone ? 'pin--active' : 'pin--locked']].join(' ')
               return (
-                <div className={[css.stagePin, css['pin--locked']].join(' ')} style={{ cursor: 'default' }}>
-                  <div className={css.pinImageWrap} style={{ filter: 'none', opacity: 0.75 }}>
+                <button
+                  className={pinClass}
+                  onClick={() => allOptionalsDone && navigate(conceptPath('/celebrate'))}
+                  disabled={!allOptionalsDone}
+                  aria-label={skin?.label ?? 'סוף טוב'}
+                >
+                  <div className={css.pinImageWrap} style={allOptionalsDone ? {} : { opacity: 0.6 }}>
                     {skin?.image ? (
                       <img src={skin.image} alt="" className={css.pinImage} />
                     ) : (
                       <span className={css.pinEmoji}>🎉</span>
                     )}
+                    {allOptionalsDone && <span className={css.pinPulse} aria-hidden />}
                   </div>
                   <span className={css.pinLabel}>{skin?.label ?? 'סוף טוב'}</span>
-                </div>
+                </button>
               )
             })()}
           </div>
-
-          {allOptionalsDone && (
-            <div className={css.controls}>
-              <button
-                className={css.doneBtn}
-                style={{ background: theme.accent, color: theme.accentText }}
-                onClick={() => navigate(conceptPath('/celebrate'))}
-              >
-                סיימנו הכל! ←
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </div>
