@@ -77,10 +77,13 @@ export function StagePage() {
               const proc = getProcedure(pid)
               const done = doneProcedures.has(pid)
               return (
-                <Link key={pid} to={`/procedure/${pid}`}>
+                <Link key={pid} to={`/procedure/${pid}`} style={{ position: 'relative' }}>
                   <button className={css.procedureIconBtn} style={{ borderColor: theme.accent, color: theme.accent }} aria-label={proc?.title ?? pid}>
-                    {done ? (theme.doneEmoji ?? '✓') : (proc?.emoji ?? '?')}
+                    {proc?.emoji ?? '?'}
                   </button>
+                  {done && (
+                    <span className={css.procDoneBadge}>{theme.doneEmoji ?? '✓'}</span>
+                  )}
                 </Link>
               )
             })}

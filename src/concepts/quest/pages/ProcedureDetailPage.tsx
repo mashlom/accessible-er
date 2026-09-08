@@ -57,15 +57,13 @@ export function ProcedureDetailPage() {
         )}
 
         <div className={css.stageBack}>
-          {!isDone && (
-            <button
-              className={css.doneBtn}
-              style={{ background: theme.accent, color: theme.accentText }}
-              onClick={() => { completeProcedure(id!); navigate(-1) }}
-            >
-              הצלחתי! ←
-            </button>
-          )}
+          <button
+            className={css.doneBtn}
+            style={{ background: theme.accent, color: theme.accentText }}
+            onClick={() => { completeProcedure(id!); navigate(-1) }}
+          >
+            {isDone ? (theme.doneEmoji ?? '✓') : 'הצלחתי! ←'}
+          </button>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
             חזרה →
           </button>
