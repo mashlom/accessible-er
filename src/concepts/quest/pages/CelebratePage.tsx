@@ -18,7 +18,7 @@ export function CelebratePage() {
   const doneCount = doneProcedures.size
 
   return (
-    <div className={css.celebratePage} style={{ background: theme.accentSoft, alignItems: 'stretch', padding: 0 }}>
+    <div className={css.celebratePage}>
       {/* ── Child zone ── */}
       <div className={css.celebrateChildZone} style={{ background: theme.accentSoft }}>
         {theme.shopImage && (
