@@ -361,6 +361,12 @@
   box-shadow: 0 1px 0 rgba(0,0,0,0.18);
 }
 
+.doneBtnCoin {
+  display: inline-block;
+  filter: sepia(1) saturate(4) brightness(1.15);
+  font-style: normal;
+}
+
 .nursePanel {
   font-size: 0.85rem;
   color: #888;

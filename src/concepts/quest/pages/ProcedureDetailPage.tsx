@@ -62,7 +62,7 @@ export function ProcedureDetailPage() {
             style={{ background: theme.accent, color: theme.accentText }}
             onClick={() => { completeProcedure(id!); navigate(-1) }}
           >
-            {isDone ? (theme.doneEmoji ?? '✓') : 'הצלחתי! ←'}
+            {isDone ? <em className={css.doneBtnCoin}>{theme.doneEmoji ?? '✓'}</em> : 'הצלחתי! ←'}
           </button>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
             חזרה →
