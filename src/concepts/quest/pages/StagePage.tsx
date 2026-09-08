@@ -201,6 +201,9 @@ export function StagePage() {
             )}
           </>
         )}
+        <Link to="/calm" className={css.calmLink}>
+          💙 קשה לנו כרגע
+        </Link>
       </div>
     </div>
   )
