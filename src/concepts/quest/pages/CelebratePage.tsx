@@ -41,16 +41,16 @@ export function CelebratePage() {
               : (celebrateSkin?.hint ?? '')}
           </p>
         </div>
-        <div className={css.celebrateActions} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%', maxWidth: '320px' }}>
-          <Link to="/shop">
-            <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
+        <div className={css.stageBack} style={{ width: '100%', maxWidth: '400px' }}>
+          <Link to="/shop" style={{ flex: 2, display: 'flex' }}>
+            <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText, flex: 1 }}>
               לחנות 🛍️
             </button>
           </Link>
-          <Link to="/">
+          <Link to="/" style={{ flex: 1, display: 'flex' }}>
             <button
               className={css.backBtn}
-              style={{ borderColor: theme.accent, color: theme.accent }}
+              style={{ borderColor: theme.accent, color: theme.accent, flex: 1 }}
               onClick={reset}
             >
               לבחירת עולם →
