@@ -2,13 +2,22 @@ import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
-import { useQuestProgress } from '../useQuestProgress'
+import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import css from '../quest.module.css'
+
+// All coin IDs that can be earned on the day map (required stages)
+const DAY_COIN_IDS = new Set<string>(
+  REQUIRED_STAGES.flatMap((id) => {
+    const stage = journeyStages.find((j) => j.id === id)
+    return stage?.procedureIds?.length ? stage.procedureIds : [id]
+  })
+)
 
 export function NightMapPage() {
   const { theme } = useQuestTheme()
   const { visibleOptionals, allOptionalsDone, doneProcedures } = useQuestProgress()
-  const doneCount = doneProcedures.size
+  // Counter shows only coins carried over from the day map
+  const doneCount = [...doneProcedures].filter((id) => DAY_COIN_IDS.has(id)).length
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
