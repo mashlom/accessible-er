@@ -14,7 +14,7 @@ export function CalmPage() {
     <div className={css.stagePage}>
       {/* ── Child zone ── */}
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
-        <AnimatedIcon emoji="🫧" size={200} className={css.stageHeroImg} />
+        <AnimatedIcon emoji="⚡" size={200} className={css.stageHeroImg} />
         {(theme.calmLines ?? ['רגע, נושמים יחד 💙']).map((line, i) => (
           <p key={i} className={i === 0 ? css.calmChildMain : css.calmChildLine} style={{ color: theme.accent }}>
             {line}
