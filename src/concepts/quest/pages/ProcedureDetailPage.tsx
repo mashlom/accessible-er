@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Navigate } from '../../nav'
 import { getProcedure } from '../../../data/procedures'
+import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import css from '../quest.module.css'
@@ -9,9 +10,16 @@ import css from '../quest.module.css'
 export function ProcedureDetailPage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
-  const { completeProcedure, doneProcedures } = useQuestProgress()
+  const { completeProcedure, doneProcedures, active, visibleOptionals } = useQuestProgress()
   const navigate = useNavigate()
   const isDone = id ? doneProcedures.has(id) : false
+
+  // Only allow completing if the parent stage is currently active
+  const parentStage = journeyStages.find((s) => s.procedureIds?.includes(id ?? ''))
+  const parentIsActive = parentStage
+    ? active?.id === parentStage.id ||
+      visibleOptionals.some((s) => s.id === parentStage.id && s.status === 'active')
+    : true // procedure with no parent stage — allow
   const procedure = id ? getProcedure(id) : undefined
   const [variant, setVariant] = useState(0)
 
@@ -57,18 +65,20 @@ export function ProcedureDetailPage() {
         )}
 
         <div className={css.stageBack}>
-          <button
-            className={css.doneBtn}
-            style={{ background: theme.accent, color: theme.accentText }}
-            onClick={() => { completeProcedure(id!); navigate(-1) }}
-          >
-            {isDone
-              ? <em className={css.doneBtnCoin}>{theme.doneEmoji ?? '✓'}</em>
-              : 'הצלחתי! ←'}
-          </button>
-          {!isDone && (
+          {parentIsActive && (
+            <button
+              className={css.doneBtn}
+              style={{ background: theme.accent, color: theme.accentText }}
+              onClick={() => { completeProcedure(id!); navigate(-1) }}
+            >
+              {isDone
+                ? <em className={css.doneBtnCoin}>{theme.doneEmoji ?? '✓'}</em>
+                : 'הצלחתי! ←'}
+            </button>
+          )}
+          {(!isDone || !parentIsActive) && (
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
-              עוד לא צריך →
+              {parentIsActive ? 'עוד לא צריך →' : 'חזרה →'}
             </button>
           )}
         </div>
