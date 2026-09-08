@@ -60,15 +60,12 @@ export function CelebratePage() {
       </div>
 
       {/* ── Parent zone ── */}
-      <div className={css.celebrateParentZone}>
+      <div className={css.stageBody}>
         <p className={css.parentZoneLabel}>לקראת שחרור הביתה</p>
         {dischargeBlocks.map((b, i) => (
-          <section key={i} className={css.dischargeBlock}>
-            <span className={css.dischargeEmoji} aria-hidden>{b.emoji}</span>
-            <div>
-              <h2 className={css.dischargeTitle}>{b.title}</h2>
-              <p className={css.dischargeBody}>{b.body}</p>
-            </div>
+          <section key={i}>
+            <h2>{b.emoji} {b.title}</h2>
+            <p>{b.body}</p>
           </section>
         ))}
       </div>
