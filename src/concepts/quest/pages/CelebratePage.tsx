@@ -31,7 +31,12 @@ export function CelebratePage() {
             : (celebrateSkin?.hint ?? '')}
         </p>
       </div>
-      <div className={css.celebrateActions}>
+      <div className={css.celebrateActions} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        <Link to="/shop">
+          <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
+            לחנות 🛍️
+          </button>
+        </Link>
         <Link to="/">
           <button
             className={css.backBtn}
