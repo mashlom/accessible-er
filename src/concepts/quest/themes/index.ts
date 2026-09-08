@@ -189,6 +189,7 @@ export const themes: QuestTheme[] = [
     id: 'dino',
     name: 'דינוזאורים',
     emoji: '🦕',
+    doneEmoji: '⭐',
     bg: '',
     thumbnail: '/worlds/dino/dino.jpeg',
     accent: '#4a7c3f',
@@ -228,6 +229,7 @@ export const themes: QuestTheme[] = [
   {
     id: 'fairy',
     name: 'פיה בגן הקסמים',
+    doneEmoji: '⭐',
     emoji: '🧚',
     bg: '/worlds/fairy/6bf9b600-f83d-4d9e-90ce-4233e11f4b30.JPEG',
     accent: '#9c5ab5',
@@ -268,6 +270,7 @@ export const themes: QuestTheme[] = [
     id: 'space',
     name: 'אסטרונאוט בחלל',
     emoji: '🚀',
+    doneEmoji: '⭐',
     bg: '/worlds/space/space.jpg',
     accent: '#1a3a6b',
     accentSoft: '#d0dcf5',
@@ -306,6 +309,7 @@ export const themes: QuestTheme[] = [
   {
     id: 'safari',
     name: 'ספארי באפריקה',
+    doneEmoji: '⭐',
     emoji: '🦁',
     bg: '/worlds/safari/safari.JPEG',
     accent: '#b5720a',
@@ -345,6 +349,7 @@ export const themes: QuestTheme[] = [
   {
     id: 'ocean',
     name: 'הרפתקה תת-ימית',
+    doneEmoji: '⭐',
     emoji: '🐠',
     bg: '/worlds/ocean/ocean.jpg',
     accent: '#0a6b8a',
