@@ -458,6 +458,19 @@
   text-align: center;
 }
 
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.calmBreath {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calmBreath { animation: none; }
+}
+
 .calmChildMain {
   font-size: 1.6rem;
   font-weight: 800;
