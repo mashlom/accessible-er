@@ -128,27 +128,6 @@ export function StagePage() {
           </section>
         )}
 
-        {isLastStage && (
-          <details className={css.nursePanel}>
-            <summary>הוספת שלב (להורים ולצוות)</summary>
-            <div className={css.nurseBtns}>
-              {OPTIONAL_STAGES.map((optId) => {
-                const already = visible.find((s) => s.id === optId)
-                const optSkin = theme.stages[optId]
-                return (
-                  <button
-                    key={optId}
-                    disabled={!!already}
-                    onClick={() => revealOptional(optId)}
-                    className={css.nurseBtn}
-                  >
-                    {optSkin?.icon} {optSkin?.label ?? optId}
-                  </button>
-                )
-              })}
-            </div>
-          </details>
-        )}
       </div>
     </div>
   )

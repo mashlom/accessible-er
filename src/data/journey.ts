@@ -67,6 +67,7 @@ export const journeyStages: JourneyStage[] = [
     ],
     waitRange: '10–20 דקות',
     waitKind: 'duration',
+    procedureIds: ['doctor-exam'],
     sensory: { sound: 2, light: 3, smell: 1, people: 2 },
   },
   {
