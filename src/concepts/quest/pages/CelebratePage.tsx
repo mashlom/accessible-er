@@ -41,7 +41,7 @@ export function CelebratePage() {
               : (celebrateSkin?.hint ?? '')}
           </p>
         </div>
-        <div className={css.stageBack} style={{ width: '100%', maxWidth: '400px' }}>
+        <div className={css.stageBack}>
           <Link to="/shop" style={{ flex: 2, display: 'flex' }}>
             <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText, flex: 1 }}>
               לחנות 🛍️
