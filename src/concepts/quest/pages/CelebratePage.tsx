@@ -5,8 +5,9 @@ import css from '../quest.module.css'
 
 export function CelebratePage() {
   const { theme } = useQuestTheme()
-  const { reset } = useQuestProgress()
+  const { reset, stages } = useQuestProgress()
   const celebrateSkin = theme.stages['decision']
+  const doneCount = stages.filter((s) => s.status === 'done').length
 
   return (
     <div className={css.celebratePage} style={{ background: theme.accentSoft }}>
@@ -17,6 +18,13 @@ export function CelebratePage() {
         <p className={css.celebrateTitle} style={{ color: theme.accent }}>
           {celebrateSkin?.label ?? 'עשינו את זה! 🎉'}
         </p>
+        {doneCount > 0 && (
+          <p className={css.celebrateCoins}>
+            {Array.from({ length: doneCount }, (_, i) => (
+              <span key={i} className={css.coinCounterItem}>{theme.doneEmoji ?? '✓'}</span>
+            ))}
+          </p>
+        )}
         <p className={css.celebrateHint}>{celebrateSkin?.hint ?? ''}</p>
       </div>
       <div className={css.celebrateActions}>
