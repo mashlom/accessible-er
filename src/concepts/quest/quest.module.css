@@ -179,6 +179,7 @@
 
 .mapOverlay {
   flex: 1;
+  position: relative;
   background: transparent;
   padding: 1.5rem 0 0;
   display: flex;
@@ -196,11 +197,23 @@
 }
 
 .coinCounter {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
   margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: center;
-  gap: 0.25rem;
+  flex-direction: row;
+  gap: 0.1rem;
   flex-wrap: wrap;
+  max-width: 40vw;
+  justify-content: flex-end;
+}
+
+.coinCounterItem {
+  font-size: 1.4rem;
+  line-height: 1;
+  filter: sepia(1) saturate(4) brightness(1.15) drop-shadow(0 1px 3px rgba(0,0,0,0.5));
 }
 
 /* ── Map bottom block ──────────────────────────────────────────────── */

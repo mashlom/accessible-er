@@ -42,7 +42,7 @@ export function NightMapPage() {
         {doneCount > 0 && (
           <p className={css.coinCounter}>
             {Array.from({ length: doneCount }, (_, i) => (
-              <span key={i} className={css.pinCheck} style={{ position: 'static', fontSize: '1.4rem' }}>
+              <span key={i} className={css.coinCounterItem}>
                 {theme.doneEmoji ?? '✓'}
               </span>
             ))}
