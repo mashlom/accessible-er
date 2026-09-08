@@ -13,7 +13,7 @@ const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
 export function StagePage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
-  const { stages, active, completeActive, completeStage, doneProcedures } = useQuestProgress()
+  const { stages, active, completeActive, completeStage, completeProcedure, doneProcedures } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
@@ -21,21 +21,6 @@ export function StagePage() {
   const isOptional = id ? (OPTIONAL_STAGES as readonly string[]).includes(id) : false
   const thisStage = stages.find((s) => s.id === id)
   const isActive = isOptional ? thisStage?.status === 'active' : active?.id === id
-
-  function handleDone() {
-    if (isOptional && id) {
-      completeStage(id)
-    } else {
-      completeActive()
-    }
-    if (isLastStage) {
-      navigate(conceptPath('/procedures'))
-    } else if (isOptional) {
-      navigate(conceptPath('/night-map'))
-    } else {
-      navigate(conceptPath('/map'))
-    }
-  }
 
   const data = journeyStages.find((j) => j.id === id)
   const skin = id ? theme.stages[id] : undefined
@@ -51,6 +36,22 @@ export function StagePage() {
   const inlineProc = inlineProcId ? getProcedure(inlineProcId) : undefined
   const themedSteps = inlineProcId ? theme.procedureSteps?.[inlineProcId] : undefined
   const inlineSteps = themedSteps ?? inlineProc?.story
+
+  function handleDone() {
+    if (inlineProcId) completeProcedure(inlineProcId)
+    if (isOptional && id) {
+      completeStage(id)
+    } else {
+      completeActive()
+    }
+    if (isLastStage) {
+      navigate(conceptPath('/procedures'))
+    } else if (isOptional) {
+      navigate(conceptPath('/night-map'))
+    } else {
+      navigate(conceptPath('/map'))
+    }
+  }
 
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
