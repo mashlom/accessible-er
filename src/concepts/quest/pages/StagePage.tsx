@@ -41,6 +41,12 @@ export function StagePage() {
   const icon = skin?.icon ?? data.emoji
   const heroImg = skin?.heroImage ?? skin?.image
 
+  // When a stage has exactly one procedure, embed it inline instead of showing an icon link
+  const inlineProcId = data.procedureIds?.length === 1 ? data.procedureIds[0] : undefined
+  const inlineProc = inlineProcId ? getProcedure(inlineProcId) : undefined
+  const themedSteps = inlineProcId ? theme.procedureSteps?.[inlineProcId] : undefined
+  const inlineSteps = themedSteps ?? inlineProc?.story
+
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
@@ -52,7 +58,15 @@ export function StagePage() {
         <h1 style={{ color: theme.accent }}>{label}</h1>
         {skin?.hint && <p className={css.stageHeroHint}>{skin.hint}</p>}
 
-        {data.procedureIds && data.procedureIds.length > 0 && (
+        {inlineProc && inlineSteps && inlineSteps.length > 0 && (
+          <div className={css.procedureStoryBlock}>
+            <ol className={css.procedureSteps} style={{ color: theme.accent }}>
+              {inlineSteps.map((step, i) => <li key={i}>{step}</li>)}
+            </ol>
+          </div>
+        )}
+
+        {!inlineProc && data.procedureIds && data.procedureIds.length > 0 && (
           <div className={css.procedureIconRow}>
             {data.procedureIds.map((pid) => {
               const proc = getProcedure(pid)
@@ -96,9 +110,11 @@ export function StagePage() {
       </div>
 
       {data.sensory && <SensoryBar sensory={data.sensory} />}
-      {data.waitRange && (
-        <p className={css.waitRange}>⏱ זמן משוער: {data.waitRange}</p>
-      )}
+      <p className={css.waitRange}>
+        {inlineProc?.who && <span>👤 {inlineProc.who}</span>}
+        {inlineProc?.who && data.waitRange && <span> · </span>}
+        {data.waitRange && <span>⏱ זמן משוער: {data.waitRange}</span>}
+      </p>
 
       <div className={css.stageBody}>
         {data.meaning && (
@@ -107,27 +123,54 @@ export function StagePage() {
             <p>{data.meaning}</p>
           </section>
         )}
-        <section>
-          <h2>מה קורה</h2>
-          <p>{data.whatHappens}</p>
-        </section>
 
-        {data.challenge && (
-          <section>
-            <h2>מה יכול להיות קשה?</h2>
-            <p>{data.challenge}</p>
-          </section>
+        {inlineProc ? (
+          <>
+            <section>
+              <h2>מה קורה בפועל</h2>
+              <p>{inlineProc.what}</p>
+            </section>
+            <section>
+              <h2>מה הילד/ה עשוי/ה להרגיש</h2>
+              <p>{inlineProc.feel}</p>
+            </section>
+            {inlineProc.prepare && (
+              <section>
+                <h2>איך להכין את הילד/ה</h2>
+                <p>{inlineProc.prepare}</p>
+              </section>
+            )}
+            {inlineProc.adaptations && inlineProc.adaptations.length > 0 && (
+              <section>
+                <h2>מה לבקש מהצוות</h2>
+                <ul>
+                  {inlineProc.adaptations.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+              </section>
+            )}
+          </>
+        ) : (
+          <>
+            <section>
+              <h2>מה קורה</h2>
+              <p>{data.whatHappens}</p>
+            </section>
+            {data.challenge && (
+              <section>
+                <h2>מה יכול להיות קשה?</h2>
+                <p>{data.challenge}</p>
+              </section>
+            )}
+            {data.canAsk && data.canAsk.length > 0 && (
+              <section>
+                <h2>אפשר לבקש</h2>
+                <ul>
+                  {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
+                </ul>
+              </section>
+            )}
+          </>
         )}
-
-        {data.canAsk && data.canAsk.length > 0 && (
-          <section>
-            <h2>אפשר לבקש</h2>
-            <ul>
-              {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
-            </ul>
-          </section>
-        )}
-
       </div>
     </div>
   )
