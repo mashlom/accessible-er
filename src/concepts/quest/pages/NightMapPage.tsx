@@ -7,7 +7,8 @@ import css from '../quest.module.css'
 
 export function NightMapPage() {
   const { theme } = useQuestTheme()
-  const { visibleOptionals, allOptionalsDone } = useQuestProgress()
+  const { stages: allStages, visibleOptionals, allOptionalsDone } = useQuestProgress()
+  const doneCount = allStages.filter((s) => s.status === 'done').length
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
@@ -38,6 +39,15 @@ export function NightMapPage() {
         <h1 className={css.mapTitle} style={{ color: '#fff', textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}>
           {theme.name}
         </h1>
+        {doneCount > 0 && (
+          <p className={css.coinCounter}>
+            {Array.from({ length: doneCount }, (_, i) => (
+              <span key={i} className={css.pinCheck} style={{ position: 'static', fontSize: '1.4rem' }}>
+                {theme.doneEmoji ?? '✓'}
+              </span>
+            ))}
+          </p>
+        )}
 
         <div className={css.mapBottom}>
           <div className={css.stageStrip}>

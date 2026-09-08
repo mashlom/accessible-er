@@ -195,6 +195,14 @@
   text-shadow: 0 1px 4px rgba(255,255,255,0.8);
 }
 
+.coinCounter {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
 /* ── Map bottom block ──────────────────────────────────────────────── */
 
 .mapBottom {
