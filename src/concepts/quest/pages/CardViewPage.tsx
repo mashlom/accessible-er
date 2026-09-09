@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom'
-import { Link } from '../../nav'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useConceptPath } from '../../nav'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
 import {
@@ -15,6 +15,10 @@ import css from '../quest.module.css'
 export function CardViewPage() {
   const { theme } = useQuestTheme()
   const navigate = useNavigate()
+  const conceptPath = useConceptPath()
+  const location = useLocation()
+  const backTo = (location.state as { from?: string } | null)?.from ?? '/card'
+  const goBack = () => navigate(conceptPath(backTo))
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
 
   if (isCardEmpty(card)) {
@@ -25,7 +29,7 @@ export function CardViewPage() {
           <h1 style={{ color: theme.accent }}>הכרטיס עדיין ריק</h1>
           <p className={css.stageHeroHint}>כמה סימונים קצרים — ויהיה לכם כרטיס להציג לצוות</p>
           <div className={css.stageBack}>
-            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
+            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
               חזרה →
             </button>
           </div>
@@ -66,7 +70,7 @@ export function CardViewPage() {
         <h1 style={{ color: theme.accent }}>חשוב לדעת על {name || 'הילד/ה'} שלי</h1>
         {card.age.trim() && <p className={css.stageHeroHint}>גיל {card.age.trim()}</p>}
         <div className={`${css.stageBack} no-print`}>
-          <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
+          <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
             חזרה →
           </button>
         </div>

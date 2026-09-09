@@ -124,7 +124,7 @@ export function CardPage() {
         </section>
 
         <div className={css.stageBack}>
-          <Link to="/card/view">
+          <Link to="/card/view" state={{ from: '/card' }}>
             <button
               className={css.doneBtn}
               style={{ background: theme.accent, color: theme.accentText, opacity: empty ? 0.4 : 1 }}
