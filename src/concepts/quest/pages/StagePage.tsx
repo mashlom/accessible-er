@@ -141,7 +141,6 @@ export function StagePage() {
               <>
                 <p className={css.reasonHint}>בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.</p>
                 <Link to="/reason" className={css.calmLink}>🗺️ מה מחכה לנו היום?</Link>
-                <Link to="/card" className={css.calmLink}>🪪 כרטיס התאמות לצוות</Link>
               </>
             )}
           </section>
@@ -192,6 +191,9 @@ export function StagePage() {
               <section>
                 <h2>מה יכול להיות קשה?</h2>
                 <p>{data.challenge}</p>
+                {id === 'reception' && (
+                  <Link to="/card" className={css.calmLink}>🪪 כרטיס התאמות לצוות</Link>
+                )}
               </section>
             )}
             {data.canAsk && data.canAsk.length > 0 && (
