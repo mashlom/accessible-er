@@ -29,6 +29,8 @@ export interface JourneyStage {
   challenge: string
   /** legitimate things a parent can ask for here */
   canAsk: string[]
+  /** how to prepare the child for the next stage — shown on the waiting stage before it */
+  nextStagePrepare?: string
   /** invented, range-based estimate shown as guidance only */
   waitRange?: string
   /** whether waitRange is time spent waiting for this stage, or the stage's own duration. Defaults to 'wait'. */

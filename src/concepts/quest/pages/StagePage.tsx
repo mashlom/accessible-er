@@ -150,12 +150,6 @@ export function StagePage() {
               <h2>מה הילד/ה עשוי/ה להרגיש</h2>
               <p>{inlineProc.feel}</p>
             </section>
-            {inlineProc.prepare && (
-              <section>
-                <h2>איך להכין את הילד/ה</h2>
-                <p>{inlineProc.prepare}</p>
-              </section>
-            )}
             {data.challenge && (
               <section>
                 <h2>מה יכול להיות קשה?</h2>
@@ -185,6 +179,7 @@ export function StagePage() {
             <section>
               <h2>מה קורה</h2>
               <p>{data.whatHappens}</p>
+              {data.nextStagePrepare && <p>{data.nextStagePrepare}</p>}
             </section>
             {data.challenge && (
               <section>
