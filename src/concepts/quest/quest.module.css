@@ -519,6 +519,126 @@
   border-color: var(--accent, #888);
 }
 
+/* ── CardPage / CardViewPage ── */
+.cardPrivacy {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.5;
+  padding: 0.6rem 0.8rem;
+  background: #f5f5f5;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.cardIdentity {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cardField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+  min-width: 120px;
+}
+
+.cardFieldLabel {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.cardInput {
+  padding: 0.6rem 0.75rem;
+  border: 2px solid #d0d0d0;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  direction: rtl;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cardInput:focus {
+  outline: none;
+  border-color: var(--accent, #888);
+}
+
+.cardChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.cardChip {
+  padding: 0.4rem 0.8rem;
+  border: 2px solid #d0d0d0;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.cardChipOn {
+  font-weight: 700;
+}
+
+.cardOtherInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  direction: rtl;
+  color: #444;
+}
+
+.cardOtherInput:focus {
+  outline: none;
+  border-color: var(--accent, #888);
+}
+
+.cardViewRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.cardViewRow {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: baseline;
+}
+
+.cardViewRow:last-child {
+  border-bottom: none;
+}
+
+.cardViewLabel {
+  flex-shrink: 0;
+  width: 110px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.cardViewValue {
+  flex: 1;
+  font-size: 0.97rem;
+  line-height: 1.5;
+}
+
 .reasonHint {
   font-size: 0.95rem;
   color: #666;

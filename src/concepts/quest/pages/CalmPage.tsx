@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
 import { distressTips, readySentences } from '../../../data/support'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
@@ -91,6 +92,15 @@ export function CalmPage() {
               להציג לצוות ←
             </button>
           )}
+        </section>
+
+        <p className={css.parentZoneLabel}>כרטיס התאמות</p>
+        <section>
+          <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
+            הכרטיס מרכז את מה שחשוב לדעת על הילד/ה — להציג לצוות במקום להסביר במילים.
+          </p>
+          <Link to="/card/view" className={css.calmLink}>🪪 להצגת הכרטיס לצוות</Link>
+          <Link to="/card" className={css.calmLink} style={{ marginTop: '0.5rem', color: '#888', borderColor: '#d0d0d0', fontSize: '0.95rem' }}>✏️ לעריכת הכרטיס</Link>
         </section>
 
         <button
