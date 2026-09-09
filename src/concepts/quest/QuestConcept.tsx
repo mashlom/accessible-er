@@ -9,6 +9,7 @@ import { NightMapPage } from './pages/NightMapPage'
 import { ProcedureDetailPage } from './pages/ProcedureDetailPage'
 import { ShopPage } from './pages/ShopPage'
 import { CalmPage } from './pages/CalmPage'
+import { ReasonPage } from './pages/ReasonPage'
 import { FeedbackPage } from '../calm/pages/FeedbackPage'
 
 /** Concept 4 — "מסע עם מפה". Mounted at /quest by App.tsx. */
@@ -24,6 +25,7 @@ export default function QuestConcept() {
       <Route path="shop" element={<ShopPage />} />
       <Route path="procedure/:id" element={<ProcedureDetailPage />} />
       <Route path="calm" element={<CalmPage />} />
+      <Route path="reason" element={<ReasonPage />} />
       <Route path="feedback" element={<FeedbackPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

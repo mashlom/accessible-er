@@ -137,6 +137,9 @@ export function StagePage() {
           <section>
             <h2>אנחנו כאן</h2>
             <p>{data.meaning}</p>
+            {id === 'reception' && (
+              <Link to="/reason" className={css.calmLink}>🗺️ מה יהיה המסלול שלנו היום?</Link>
+            )}
           </section>
         )}
 

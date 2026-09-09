@@ -501,6 +501,125 @@
   font-weight: 600;
 }
 
+/* ── ReasonPage ── */
+.reasonOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.reasonOption {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  text-align: start;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border: 2px solid #d0d0d0;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.reasonOptionSelected {
+  border-width: 2px;
+}
+
+.reasonEmoji {
+  font-size: 2rem;
+  width: 48px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.reasonText {
+  flex: 1;
+  min-width: 0;
+}
+
+.reasonLabel {
+  display: block;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.reasonBlurb {
+  display: block;
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.reasonCheck {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.reasonRoute {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e0e0e0;
+}
+
+.reasonRoute h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.reasonRouteList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reasonRouteItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.reasonRouteDot {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.reasonRouteLabel {
+  flex: 1;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.reasonOptional {
+  font-size: 0.8rem;
+  color: #888;
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.reasonNote {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 0.75rem;
+  line-height: 1.4;
+}
+
 /* ── CalmPage ── */
 .calmSentences {
   display: flex;
