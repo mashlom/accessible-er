@@ -4,6 +4,9 @@ import { Link } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
 import { distressTips, readySentences } from '../../../data/support'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
+import { usePersistentState } from '../../../hooks/usePersistentState'
+import { DAY_MS } from '../../../lib/storage'
+import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import css from '../quest.module.css'
 
 export function CalmPage() {
@@ -11,6 +14,8 @@ export function CalmPage() {
   const navigate = useNavigate()
   const [shown, setShown] = useState<string | null>(null)
   const [freeText, setFreeText] = useState('')
+  const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
+  const cardEmpty = isCardEmpty(card)
 
   return (
     <div className={css.stagePage}>
@@ -99,8 +104,14 @@ export function CalmPage() {
           <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
             הכרטיס מרכז את מה שחשוב לדעת על הילד/ה — להציג לצוות במקום להסביר במילים.
           </p>
-          <Link to="/card/view" className={css.calmLink}>🪪 להצגת הכרטיס לצוות</Link>
-          <Link to="/card" className={css.calmLink} style={{ marginTop: '0.5rem', color: '#888', borderColor: '#d0d0d0', fontSize: '0.95rem' }}>✏️ לעריכת הכרטיס</Link>
+          {cardEmpty ? (
+            <Link to="/card" className={css.calmLink}>🪪 להכנת כרטיס התאמות</Link>
+          ) : (
+            <>
+              <Link to="/card/view" className={css.calmLink}>🪪 להצגת הכרטיס לצוות</Link>
+              <Link to="/card" className={css.calmLink} style={{ marginTop: '0.5rem', color: '#888', borderColor: '#d0d0d0', fontSize: '0.95rem' }}>✏️ לעריכת הכרטיס</Link>
+            </>
+          )}
         </section>
 
         <button
