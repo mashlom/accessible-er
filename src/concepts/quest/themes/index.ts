@@ -44,6 +44,8 @@ export interface QuestTheme {
   calmLines?: string[]
   /** Title and subtitle shown in the hero zone of CardPage — themed framing for the child */
   cardChildHero?: { title: string; subtitle: string }
+  /** Title shown in the hero zone of DistractPage — themed framing for the child */
+  distractTitle?: string
 }
 
 export const themes: QuestTheme[] = [
@@ -67,6 +69,7 @@ export const themes: QuestTheme[] = [
       title: 'מכתב המלצה לקוסם הגדול',
       subtitle: 'כדי שהקוסם ידע בדיוק איך לעזור לאביר שלנו',
     },
+    distractTitle: 'הצלחית הקסומה 🪄',
     accent: '#7b4f28',
     accentSoft: '#f5e6d0',
     accentText: '#ffffff',

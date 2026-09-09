@@ -519,6 +519,87 @@
   border-color: var(--accent, #888);
 }
 
+/* ── DistractPage ── */
+.distractStage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 260px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #cfeafb 0%, #e7f7f3 60%, #fff6e8 100%);
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.distractArt {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 10px 14px rgba(51,69,92,0.15));
+}
+
+.distractBubbleField {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.distractBubble {
+  position: absolute;
+  bottom: -80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  border: 2px solid rgba(255,255,255,0.9);
+  animation-name: distractRise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes distractRise {
+  from { transform: translateY(0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  to { transform: translateY(-340px) translateX(12px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .distractBubble { animation: none; }
+}
+
+.distractPicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+.distractOpt {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 72px;
+  padding: 8px 4px;
+  border: 2.5px solid #d0d0d0;
+  border-radius: 14px;
+  background: #fff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #333;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.distractOpt span {
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.distractOptOn {
+  border-width: 2.5px;
+}
+
 /* ── CardPage / CardViewPage ── */
 .cardPrivacy {
   font-size: 0.88rem;
