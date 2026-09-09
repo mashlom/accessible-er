@@ -192,7 +192,10 @@ export function StagePage() {
                 <h2>מה יכול להיות קשה?</h2>
                 <p>{data.challenge}</p>
                 {id === 'reception' && (
-                  <Link to="/card" className={css.calmLink}>🪪 כרטיס התאמות לצוות</Link>
+                  <>
+                    <p className={css.reasonHint}>בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.</p>
+                    <Link to="/card" className={css.calmLink}>🪪 כרטיס התאמות לצוות</Link>
+                  </>
                 )}
               </section>
             )}
