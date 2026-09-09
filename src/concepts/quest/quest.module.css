@@ -501,6 +501,13 @@
   font-weight: 600;
 }
 
+.reasonHint {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
 /* ── ReasonPage ── */
 .reasonOptions {
   display: flex;
