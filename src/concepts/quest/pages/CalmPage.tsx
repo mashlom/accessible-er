@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Link } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
+import { useReturnTo } from '../useReturnTo'
 import { distressTips, readySentences } from '../../../data/support'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
 import { usePersistentState } from '../../../hooks/usePersistentState'
@@ -11,7 +11,7 @@ import css from '../quest.module.css'
 
 export function CalmPage() {
   const { theme } = useQuestTheme()
-  const navigate = useNavigate()
+  const { goBack, leaveState } = useReturnTo('/map')
   const [shown, setShown] = useState<string | null>(null)
   const [freeText, setFreeText] = useState('')
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
@@ -31,7 +31,7 @@ export function CalmPage() {
           <button
             className={css.backBtn}
             style={{ borderColor: theme.accent, color: theme.accent }}
-            onClick={() => navigate(-1)}
+            onClick={goBack}
           >
             חזרה →
           </button>
@@ -47,7 +47,7 @@ export function CalmPage() {
             <h2>{tip.emoji} {tip.title}</h2>
             <p>{tip.body}</p>
             {tip.title === 'להוריד גירויים' && (
-              <Link to="/distract" className={css.calmLink} style={{ marginTop: '0.5rem' }}>
+              <Link to="/distract" state={leaveState('/calm')} className={css.calmLink} style={{ marginTop: '0.5rem' }}>
                 🎬 אנימציות להסחת דעת →
               </Link>
             )}
@@ -105,9 +105,9 @@ export function CalmPage() {
             הכרטיס מרכז את מה שחשוב לדעת על הילד/ה — להציג לצוות במקום להסביר במילים.
           </p>
           {cardEmpty ? (
-            <Link to="/card" state={{ from: '/calm' }} className={css.calmLink}>🪪 להכנת כרטיס התאמות</Link>
+            <Link to="/card" state={leaveState('/calm')} className={css.calmLink}>🪪 להכנת כרטיס התאמות</Link>
           ) : (
-            <Link to="/card/view" state={{ from: '/calm' }} className={css.calmLink}>🪪 להצגת הכרטיס לצוות</Link>
+            <Link to="/card/view" state={leaveState('/calm')} className={css.calmLink}>🪪 להצגת הכרטיס לצוות</Link>
           )}
         </section>
 

@@ -1,5 +1,5 @@
-import { useLocation, useNavigate } from 'react-router-dom'
-import { Link, useConceptPath } from '../../nav'
+import { Link } from '../../nav'
+import { useReturnTo } from '../useReturnTo'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
 import {
@@ -14,11 +14,7 @@ import css from '../quest.module.css'
 
 export function CardViewPage() {
   const { theme } = useQuestTheme()
-  const navigate = useNavigate()
-  const conceptPath = useConceptPath()
-  const location = useLocation()
-  const backTo = (location.state as { from?: string } | null)?.from ?? '/card'
-  const goBack = () => navigate(conceptPath(backTo))
+  const { goBack, leaveState, passThroughState } = useReturnTo('/card')
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
 
   if (isCardEmpty(card)) {
@@ -36,7 +32,7 @@ export function CardViewPage() {
         </div>
         <div className={css.stageBody}>
           <div className={css.stageBack}>
-            <Link to="/card" state={{ from: backTo }}>
+            <Link to="/card" state={passThroughState}>
               <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
                 למילוי הכרטיס ←
               </button>
@@ -101,7 +97,7 @@ export function CardViewPage() {
           <button type="button" className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }} onClick={() => window.print()}>
             📄 שמירה / הדפסה
           </button>
-          <Link to="/card">
+          <Link to="/card" state={leaveState('/card/view')}>
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
               ✏️ עריכה →
             </button>

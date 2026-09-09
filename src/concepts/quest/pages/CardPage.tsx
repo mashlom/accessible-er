@@ -1,5 +1,5 @@
-import { useLocation, useNavigate } from 'react-router-dom'
-import { Link, useConceptPath } from '../../nav'
+import { Link } from '../../nav'
+import { useReturnTo } from '../useReturnTo'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
 import {
@@ -16,11 +16,7 @@ import css from '../quest.module.css'
 
 export function CardPage() {
   const { theme } = useQuestTheme()
-  const navigate = useNavigate()
-  const conceptPath = useConceptPath()
-  const location = useLocation()
-  const backTo = (location.state as { from?: string } | null)?.from ?? '/stage/reception'
-  const goBack = () => navigate(conceptPath(backTo))
+  const { goBack, leaveState } = useReturnTo('/stage/reception')
   const [card, setCard, clearCard] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
 
   function toggle(key: CardArrayField, option: string) {
@@ -128,7 +124,7 @@ export function CardPage() {
         </section>
 
         <div className={css.stageBack}>
-          <Link to="/card/view" state={{ from: '/card' }}>
+          <Link to="/card/view" state={leaveState('/card')}>
             <button
               className={css.doneBtn}
               style={{ background: theme.accent, color: theme.accentText, opacity: empty ? 0.4 : 1 }}

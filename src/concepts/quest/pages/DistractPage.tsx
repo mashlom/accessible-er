@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { Link } from '../../nav'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
 import { useQuestTheme } from '../useQuestTheme'
+import { useReturnTo } from '../useReturnTo'
 import css from '../quest.module.css'
 
 const watchables: { emoji: string; label: string }[] = [
@@ -24,6 +24,7 @@ const bubbles = [
 
 export function DistractPage() {
   const { theme } = useQuestTheme()
+  const { goBack } = useReturnTo('/calm')
   const [pick, setPick] = useState(watchables[0])
 
   return (
@@ -69,11 +70,9 @@ export function DistractPage() {
         </div>
 
         <div className={css.stageBack}>
-          <Link to="/calm">
-            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              חזרה →
-            </button>
-          </Link>
+          <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
+            חזרה →
+          </button>
         </div>
       </div>
 
