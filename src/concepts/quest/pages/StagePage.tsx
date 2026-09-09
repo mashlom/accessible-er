@@ -194,7 +194,7 @@ export function StagePage() {
                 {id === 'reception' && (
                   <>
                     <p className={css.reasonHint}>בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.</p>
-                    <Link to="/card" className={css.calmLink}>🪪 כרטיס התאמות לצוות</Link>
+                    <Link to="/card" state={{ from: '/stage/reception' }} className={css.calmLink}>🪪 כרטיס התאמות לצוות</Link>
                   </>
                 )}
               </section>

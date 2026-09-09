@@ -36,7 +36,7 @@ export function CardViewPage() {
         </div>
         <div className={css.stageBody}>
           <div className={css.stageBack}>
-            <Link to="/card">
+            <Link to="/card" state={{ from: backTo }}>
               <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
                 למילוי הכרטיס ←
               </button>

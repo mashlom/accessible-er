@@ -105,7 +105,7 @@ export function CalmPage() {
             הכרטיס מרכז את מה שחשוב לדעת על הילד/ה — להציג לצוות במקום להסביר במילים.
           </p>
           {cardEmpty ? (
-            <Link to="/card" className={css.calmLink}>🪪 להכנת כרטיס התאמות</Link>
+            <Link to="/card" state={{ from: '/calm' }} className={css.calmLink}>🪪 להכנת כרטיס התאמות</Link>
           ) : (
             <Link to="/card/view" state={{ from: '/calm' }} className={css.calmLink}>🪪 להצגת הכרטיס לצוות</Link>
           )}
