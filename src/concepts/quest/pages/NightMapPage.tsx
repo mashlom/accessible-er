@@ -105,8 +105,8 @@ export function NightMapPage() {
                   aria-label={skin?.label ?? 'סוף טוב'}
                 >
                   <div className={css.pinImageWrap} style={allOptionalsDone ? {} : { opacity: 0.6 }}>
-                    {skin?.image ? (
-                      <img src={skin.image} alt="" className={css.pinImage} />
+                    {theme.shopImage ?? skin?.image ? (
+                      <img src={theme.shopImage ?? skin?.image} alt="" className={css.pinImage} />
                     ) : (
                       <span className={css.pinEmoji}>🎉</span>
                     )}
