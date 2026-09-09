@@ -156,18 +156,18 @@ export function StagePage() {
                 <p>{inlineProc.prepare}</p>
               </section>
             )}
+            {data.challenge && (
+              <section>
+                <h2>מה יכול להיות קשה?</h2>
+                <p>{data.challenge}</p>
+              </section>
+            )}
             {inlineProc.adaptations && inlineProc.adaptations.length > 0 && (
               <section>
                 <h2>מה לבקש מהצוות</h2>
                 <ul>
                   {inlineProc.adaptations.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
-              </section>
-            )}
-            {data.challenge && (
-              <section>
-                <h2>מה יכול להיות קשה?</h2>
-                <p>{data.challenge}</p>
               </section>
             )}
             {/* skip data.canAsk when inline procedure already has adaptations */}
