@@ -63,15 +63,6 @@ export function CalmPage() {
           </div>
         </section>
 
-        <button
-          type="button"
-          className={css.calmHelpBtn}
-          style={{ background: theme.accent, color: theme.accentText }}
-          onClick={() => setShown('אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות')}
-        >
-          🆘 נזדקקנו לעזרה
-        </button>
-
         <p className={css.parentZoneLabel}>הודעה חופשית לצוות</p>
         <section>
           <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
@@ -96,6 +87,15 @@ export function CalmPage() {
             </button>
           )}
         </section>
+
+        <button
+          type="button"
+          className={css.calmHelpBtn}
+          style={{ background: theme.accent, color: theme.accentText }}
+          onClick={() => setShown('אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות')}
+        >
+          🆘 נזדקקנו לעזרה
+        </button>
       </div>
 
       {shown && (
