@@ -42,6 +42,8 @@ export interface QuestTheme {
   procedureSteps?: Record<string, string[]>
   /** Lines shown in the child zone of CalmPage — themed calming message for the child */
   calmLines?: string[]
+  /** Title and subtitle shown in the hero zone of CardPage — themed framing for the child */
+  cardChildHero?: { title: string; subtitle: string }
 }
 
 export const themes: QuestTheme[] = [
@@ -61,6 +63,10 @@ export const themes: QuestTheme[] = [
       'כשקשה לאביר, הוא נושם עמוק מאוד',
       'נשום איתי — שאיפה… נשיפה…',
     ],
+    cardChildHero: {
+      title: 'מכתב המלצה לקוסם הגדול',
+      subtitle: 'כדי שהקוסם ידע בדיוק איך לעזור לאביר שלנו',
+    },
     accent: '#7b4f28',
     accentSoft: '#f5e6d0',
     accentText: '#ffffff',

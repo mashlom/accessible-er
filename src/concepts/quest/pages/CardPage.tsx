@@ -33,8 +33,12 @@ export function CardPage() {
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <span className={css.stageHeroIcon}>🪪</span>
-        <h1 style={{ color: theme.accent }}>מה חשוב לדעת על הילד/ה שלי</h1>
-        <p className={css.stageHeroHint}>סמנו את מה שמתאים — פחות מ־2 דקות</p>
+        <h1 style={{ color: theme.accent }}>
+          {theme.cardChildHero?.title ?? 'כרטיס התאמות'}
+        </h1>
+        {theme.cardChildHero?.subtitle && (
+          <p className={css.stageHeroHint}>{theme.cardChildHero.subtitle}</p>
+        )}
         <div className={css.stageBack}>
           <Link to="/stage/reception">
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
@@ -45,6 +49,7 @@ export function CardPage() {
       </div>
 
       <div className={css.stageBody}>
+        <p className={css.parentZoneLabel}>מה חשוב לדעת על הילד/ה שלי</p>
         <p className={css.cardPrivacy}>
           🔒 הכל נשמר <strong>במכשיר הזה בלבד</strong>, נמחק אחרי 24 שעות, ולא נשלח לשום מקום.
         </p>
