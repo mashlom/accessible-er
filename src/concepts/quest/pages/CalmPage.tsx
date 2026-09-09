@@ -107,10 +107,7 @@ export function CalmPage() {
           {cardEmpty ? (
             <Link to="/card" className={css.calmLink}>🪪 להכנת כרטיס התאמות</Link>
           ) : (
-            <>
-              <Link to="/card/view" className={css.calmLink}>🪪 להצגת הכרטיס לצוות</Link>
-              <Link to="/card" className={css.calmLink} style={{ marginTop: '0.5rem', color: '#888', borderColor: '#d0d0d0', fontSize: '0.95rem' }}>✏️ לעריכת הכרטיס</Link>
-            </>
+            <Link to="/card/view" className={css.calmLink}>🪪 להצגת הכרטיס לצוות</Link>
           )}
         </section>
 
