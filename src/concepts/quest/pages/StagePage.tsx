@@ -31,8 +31,8 @@ export function StagePage() {
   const icon = skin?.icon ?? data.emoji
   const heroImg = skin?.heroImage ?? skin?.image
 
-  // When a stage has exactly one procedure, embed it inline instead of showing an icon link
-  const inlineProcId = data.procedureIds?.length === 1 ? data.procedureIds[0] : undefined
+  // Embed inline only when the stage has no own description — otherwise show procedure icon
+  const inlineProcId = data.procedureIds?.length === 1 && !data.whatHappens ? data.procedureIds[0] : undefined
   const inlineProc = inlineProcId ? getProcedure(inlineProcId) : undefined
   const themedSteps = inlineProcId ? theme.procedureSteps?.[inlineProcId] : undefined
   const inlineSteps = themedSteps ?? inlineProc?.story
@@ -170,7 +170,8 @@ export function StagePage() {
                 <p>{data.challenge}</p>
               </section>
             )}
-            {data.canAsk && data.canAsk.length > 0 && (
+            {/* skip data.canAsk when inline procedure already has adaptations */}
+            {(!inlineProc.adaptations || inlineProc.adaptations.length === 0) && data.canAsk && data.canAsk.length > 0 && (
               <section>
                 <h2>אפשר לבקש</h2>
                 <ul>
