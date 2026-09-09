@@ -40,6 +40,11 @@ export function CalmPage() {
           <section key={i}>
             <h2>{tip.emoji} {tip.title}</h2>
             <p>{tip.body}</p>
+            {tip.title === 'להוריד גירויים' && (
+              <a href="#/story/distract" className={css.calmLink} style={{ marginTop: '0.5rem' }}>
+                🎬 אנימציות להסחת דעת →
+              </a>
+            )}
           </section>
         ))}
 
