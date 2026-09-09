@@ -501,6 +501,24 @@
   font-weight: 600;
 }
 
+.calmFreeText {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  border: 2px solid #d0d0d0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  direction: rtl;
+  line-height: 1.5;
+}
+
+.calmFreeText:focus {
+  outline: none;
+  border-color: var(--accent, #888);
+}
+
 .reasonHint {
   font-size: 0.95rem;
   color: #666;

@@ -9,6 +9,7 @@ export function CalmPage() {
   const { theme } = useQuestTheme()
   const navigate = useNavigate()
   const [shown, setShown] = useState<string | null>(null)
+  const [freeText, setFreeText] = useState('')
 
   return (
     <div className={css.stagePage}>
@@ -70,6 +71,31 @@ export function CalmPage() {
         >
           🆘 נזדקקנו לעזרה
         </button>
+
+        <p className={css.parentZoneLabel}>הודעה חופשית לצוות</p>
+        <section>
+          <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
+            רוצים לומר משהו שלא מופיע למעלה? כתבו כאן והציגו לצוות.
+          </p>
+          <textarea
+            className={css.calmFreeText}
+            value={freeText}
+            onChange={(e) => setFreeText(e.target.value)}
+            placeholder="כתבו כאן..."
+            rows={3}
+            dir="rtl"
+          />
+          {freeText.trim() && (
+            <button
+              type="button"
+              className={css.calmSentenceBtn}
+              style={{ borderColor: theme.accent, color: theme.accent, marginTop: '0.5rem' }}
+              onClick={() => setShown(freeText.trim())}
+            >
+              להציג לצוות ←
+            </button>
+          )}
+        </section>
       </div>
 
       {shown && (
