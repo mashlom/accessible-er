@@ -39,6 +39,9 @@ export function MapPage() {
   return (
     <div className={css.mapPage} style={bgStyle}>
       <div className={css.mapOverlay}>
+        <a href="#/" className={css.allConceptsLink}>
+          🔗 כל הקונספטים (זמני)
+        </a>
         <h1 className={css.mapTitle} style={{ color: theme.accent }}>
           {theme.name}
         </h1>
