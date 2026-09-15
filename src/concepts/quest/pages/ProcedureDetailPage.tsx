@@ -27,9 +27,6 @@ export function ProcedureDetailPage() {
 
   if (!procedure) return <Navigate to="/map" replace />
 
-  const socialStory = id ? theme.procedureSocialStory?.[id] : undefined
-  const content = socialStory ?? procedure
-
   const themedSteps = id ? theme.procedureSteps?.[id] : undefined
   const variants = themedSteps ? undefined : procedure.storyVariants
   const steps = themedSteps ?? (variants ? (variants[variant] ?? variants[0]).steps : procedure.story)
@@ -98,24 +95,24 @@ export function ProcedureDetailPage() {
       <div className={css.stageBody}>
         <section>
           <h2>מה קורה בפועל</h2>
-          <p>{content.what}</p>
+          <p>{procedure.what}</p>
         </section>
 
         <section>
-          <h2>{theme.id === 'real' ? 'מה אני עשוי/ה להרגיש' : 'מה הילד/ה עשוי/ה להרגיש'}</h2>
-          <p>{content.feel}</p>
+          <h2>מה הילד/ה עשוי/ה להרגיש</h2>
+          <p>{procedure.feel}</p>
         </section>
 
         <section>
           <h2>איך להכין את הילד/ה</h2>
-          <p>{content.prepare}</p>
+          <p>{procedure.prepare}</p>
         </section>
 
-        {content.adaptations && content.adaptations.length > 0 && (
+        {procedure.adaptations && procedure.adaptations.length > 0 && (
           <section>
             <h2>מה לבקש מהצוות</h2>
             <ul>
-              {content.adaptations.map((item, i) => <li key={i}>{item}</li>)}
+              {procedure.adaptations.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
           </section>
         )}
