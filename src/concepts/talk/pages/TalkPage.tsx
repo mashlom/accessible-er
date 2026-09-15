@@ -2,8 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
-import { type RoniMood } from '../../../components/Roni'
-import { RoniStage } from '../components/RoniStage'
+import { Roni, type RoniMood } from '../../../components/Roni'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { DAY_MS } from '../../../lib/storage'
@@ -137,11 +136,6 @@ export function TalkPage() {
     if (el) el.scrollTop = el.scrollHeight
   }, [messages.length, aside])
 
-  const lastMood: RoniMood =
-    aside?.mood ??
-    [...messages].reverse().find((m) => !m.mine && m.say?.mood)?.say?.mood ??
-    'calm'
-
   function applyAction(action: Action) {
     switch (action.kind) {
       case 'setReason':
@@ -200,13 +194,6 @@ export function TalkPage() {
 
   return (
     <>
-      <RoniStage
-        mood={lastMood}
-        bounce={trail.length * 100 + revealed + (aside ? 1 : 0)}
-        thinking={!done}
-        onTap={tapRoni}
-      />
-
       <div
         id="main"
         className={styles.thread}
@@ -221,19 +208,57 @@ export function TalkPage() {
                 {m.text}
               </p>
             ) : (
-              <div key={m.key} className={`${styles.msg} ${styles.msgRoni}`}>
-                {m.say?.art && (
-                  <span className={styles.msgArt}>
-                    <AnimatedIcon emoji={m.say.art} size={84} />
-                  </span>
-                )}
-                {m.say?.text}
+              <div key={m.key} className={styles.msgRow}>
+                <button
+                  type="button"
+                  className={styles.msgAvatar}
+                  onClick={tapRoni}
+                  aria-label="רוני"
+                >
+                  <Roni size={34} mood={m.say?.mood ?? 'calm'} decorative />
+                </button>
+                <div className={`${styles.msg} ${styles.msgRoni}`}>
+                  {m.say?.art && (
+                    <span className={styles.msgArt}>
+                      <AnimatedIcon emoji={m.say.art} size={84} />
+                    </span>
+                  )}
+                  {m.say?.text}
+                </div>
               </div>
             ),
           )}
 
           {aside && (
-            <p className={`${styles.msg} ${styles.msgRoni}`}>{aside.text}</p>
+            <div className={styles.msgRow}>
+              <button
+                type="button"
+                className={styles.msgAvatar}
+                onClick={tapRoni}
+                aria-label="רוני"
+              >
+                <Roni size={34} mood={aside.mood} decorative />
+              </button>
+              <p className={`${styles.msg} ${styles.msgRoni}`}>{aside.text}</p>
+            </div>
+          )}
+
+          {!done && (
+            <div className={styles.msgRow}>
+              <button
+                type="button"
+                className={styles.msgAvatar}
+                onClick={tapRoni}
+                aria-label="רוני"
+              >
+                <Roni size={34} mood="calm" decorative />
+              </button>
+              <span className={styles.thinking} aria-hidden>
+                <span className={styles.thinkDot} />
+                <span className={styles.thinkDot} />
+                <span className={styles.thinkDot} />
+              </span>
+            </div>
           )}
           <span className={styles.spacer} />
         </div>

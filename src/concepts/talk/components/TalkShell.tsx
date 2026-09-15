@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from 'react-router-dom'
-import { Link, useIsConceptHome } from '../../nav'
+import { useIsConceptHome } from '../../nav'
 import styles from '../talk.module.css'
 
 /**
@@ -30,11 +30,6 @@ export function TalkShell() {
           ) : (
             <span aria-hidden />
           )}
-
-          <Link to="/" className={styles.topTitle}>
-            לדבר עם רוני
-            <small>שיחה אחת, בלי תפריטים</small>
-          </Link>
 
           <a href="#/" className={styles.topBtn} aria-label="לתפריט הקונספטים">
             <span aria-hidden>☰</span>
