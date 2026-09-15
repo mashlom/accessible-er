@@ -448,6 +448,28 @@ export const themes: QuestTheme[] = [
       ],
     },
   },
+  {
+    id: 'dollhouse',
+    name: 'בית הבובות',
+    emoji: '🏠',
+    bg: '',
+    thumbnail: '/worlds/dollhouse/dollhouse.png',
+    accent: '#c2618f',
+    accentSoft: '#fbe6ef',
+    accentText: '#ffffff',
+    completedColor: '#e0a8c4',
+    stages: {
+      reception: { label: 'קבלה בדלפק הכניסה', icon: '📋', hint: 'רושמים את השם בפנקס הכניסה לבית' },
+      triage: { label: 'חדר המדידות', icon: '🧸', hint: 'הדובי עוזר למדוד ולבדוק' },
+      'wait-doctor': { label: 'חדר האורחים', icon: '🪑', hint: 'ממתינים בנחת עד שקוראים בשם' },
+      doctor: { label: 'החדר של הדוקטורית', icon: '🩺', hint: 'הדוקטורית בודקת בעדינות' },
+      decision: { label: 'חזרה הביתה', icon: '🏡', hint: 'סיימנו, אפשר לחזור הביתה' },
+      tests: { label: 'חדר הבדיקות הקטן', icon: '🔬', hint: 'בדיקות דם, רנטגן ועוד' },
+      treatment: { label: 'פינת הטיפול', icon: '💊', hint: 'הטיפול שהוחלט עליו' },
+      consult: { label: 'ביקור של דוקטור נוסף', icon: '🧑‍⚕️', hint: 'עוד דוקטור מצטרף לעזור' },
+      'wait-results': { label: 'חדר ההמתנה השקט', icon: '🕰️', hint: 'ממתינים לתשובות' },
+    },
+  },
 ]
 
 export function getTheme(id: string): QuestTheme {
