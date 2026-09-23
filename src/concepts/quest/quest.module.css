@@ -250,19 +250,6 @@
   text-shadow: 0 1px 4px rgba(255,255,255,0.8);
 }
 
-.allConceptsLink {
-  position: absolute;
-  top: 0.6rem;
-  left: 0.6rem;
-  z-index: 2;
-  font-size: 0.75rem;
-  color: #fff;
-  background: rgba(0,0,0,0.45);
-  padding: 0.3rem 0.6rem;
-  border-radius: 20px;
-  text-decoration: none;
-}
-
 .coinCounter {
   position: absolute;
   top: 0.75rem;

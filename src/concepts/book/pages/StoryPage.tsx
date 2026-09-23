@@ -54,6 +54,9 @@ export function StoryPage() {
   if (page.isParentSelect) {
     return (
       <div className={css.book}>
+        <a href="#/" className={css.menuLink} aria-label="לתפריט הקונספטים">
+          <span aria-hidden>☰</span>
+        </a>
         <div className={css.pageCounter}>
           {allPages.map((_, i) => (
             <span key={i} className={[css.dot, i === index ? css.dotActive : ''].join(' ')} />
@@ -93,6 +96,9 @@ export function StoryPage() {
 
   return (
     <div className={css.book}>
+      <a href="#/" className={css.menuLink} aria-label="לתפריט הקונספטים">
+        <span aria-hidden>☰</span>
+      </a>
       <div className={css.pageCounter}>
         {allPages.map((_, i) => (
           <span key={i} className={[css.dot, i === index ? css.dotActive : ''].join(' ')} />
