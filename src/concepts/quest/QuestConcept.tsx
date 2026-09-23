@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { Navigate } from '../nav'
+import { QuestShell } from './components/QuestShell'
 import { WorldSelectPage } from './pages/WorldSelectPage'
 import { MapPage } from './pages/MapPage'
 import { StagePage } from './pages/StagePage'
@@ -19,20 +20,22 @@ import { FeedbackPage } from '../calm/pages/FeedbackPage'
 export default function QuestConcept() {
   return (
     <Routes>
-      <Route index element={<WorldSelectPage />} />
-      <Route path="map" element={<MapPage />} />
-      <Route path="stage/:id" element={<StagePage />} />
-      <Route path="procedures" element={<ProcedureSelectPage />} />
-      <Route path="night-map" element={<NightMapPage />} />
-      <Route path="celebrate" element={<CelebratePage />} />
-      <Route path="shop" element={<ShopPage />} />
-      <Route path="procedure/:id" element={<ProcedureDetailPage />} />
-      <Route path="calm" element={<CalmPage />} />
-      <Route path="reason" element={<ReasonPage />} />
-      <Route path="card" element={<CardPage />} />
-      <Route path="distract" element={<DistractPage />} />
-      <Route path="card/view" element={<CardViewPage />} />
-      <Route path="feedback" element={<FeedbackPage />} />
+      <Route element={<QuestShell />}>
+        <Route index element={<WorldSelectPage />} />
+        <Route path="map" element={<MapPage />} />
+        <Route path="stage/:id" element={<StagePage />} />
+        <Route path="procedures" element={<ProcedureSelectPage />} />
+        <Route path="night-map" element={<NightMapPage />} />
+        <Route path="celebrate" element={<CelebratePage />} />
+        <Route path="shop" element={<ShopPage />} />
+        <Route path="procedure/:id" element={<ProcedureDetailPage />} />
+        <Route path="calm" element={<CalmPage />} />
+        <Route path="reason" element={<ReasonPage />} />
+        <Route path="card" element={<CardPage />} />
+        <Route path="distract" element={<DistractPage />} />
+        <Route path="card/view" element={<CardViewPage />} />
+        <Route path="feedback" element={<FeedbackPage />} />
+      </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
