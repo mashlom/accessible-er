@@ -13,6 +13,44 @@
   padding: var(--space-6) var(--space-4) var(--space-7);
 }
 
+/* ---------- care card callout ---------- */
+.cardCallout {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: #fff;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  margin-bottom: var(--space-5);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.cardCalloutIcon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.cardCalloutBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardCalloutTitle {
+  display: block;
+  font-weight: 700;
+  color: var(--c-primary-dark);
+  font-size: 1.02rem;
+}
+
+.cardCalloutSub {
+  display: block;
+  color: var(--c-text-soft);
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
 /* ---------- hero ---------- */
 .hero {
   text-align: center;

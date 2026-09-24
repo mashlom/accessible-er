@@ -6,6 +6,10 @@ import StoryConcept from './concepts/story/StoryConcept'
 import TalkConcept from './concepts/talk/TalkConcept'
 import QuestConcept from './concepts/quest/QuestConcept'
 import BookConcept from './concepts/book/BookConcept'
+import { CareCardPage } from './concepts/calm/pages/CareCardPage'
+import { CareCardViewPage } from './concepts/calm/pages/CareCardViewPage'
+import { RequestsPage } from './concepts/calm/pages/RequestsPage'
+import { StandaloneCardShell } from './components/StandaloneCardShell'
 
 /**
  * Top level: a concept menu at `/`, and every UI concept mounted under
@@ -16,6 +20,35 @@ export default function App() {
   return (
     <Routes>
       <Route index element={<MenuPage />} />
+
+      {/* Reachable before picking a concept — per Rotem's feedback (issue #8):
+          the care card should be visible on the home screen, not buried
+          inside a concept. Shares the same `care-card` localStorage key as
+          every concept's own card screen. */}
+      <Route
+        path="/card"
+        element={
+          <StandaloneCardShell>
+            <CareCardPage />
+          </StandaloneCardShell>
+        }
+      />
+      <Route
+        path="/card/view"
+        element={
+          <StandaloneCardShell>
+            <CareCardViewPage />
+          </StandaloneCardShell>
+        }
+      />
+      <Route
+        path="/requests"
+        element={
+          <StandaloneCardShell>
+            <RequestsPage />
+          </StandaloneCardShell>
+        }
+      />
 
       <Route
         path="/calm/*"

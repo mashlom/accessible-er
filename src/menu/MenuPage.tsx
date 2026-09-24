@@ -27,6 +27,18 @@ export function MenuPage() {
           </p>
         </header>
 
+        <Link to="/card" className={styles.cardCallout}>
+          <span className={styles.cardCalloutIcon} aria-hidden>
+            🪪
+          </span>
+          <span className={styles.cardCalloutBody}>
+            <span className={styles.cardCalloutTitle}>מילוי כרטיס התאמות לילד/ה</span>
+            <span className={styles.cardCalloutSub}>
+              אפשר למלא לפני שבוחרים קונספט — הכרטיס משותף לכולם ←
+            </span>
+          </span>
+        </Link>
+
         <p className={styles.sectionLabel}>בחרו קונספט להתנסות</p>
 
         <nav className={styles.list}>
