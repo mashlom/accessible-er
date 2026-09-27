@@ -2,10 +2,12 @@ import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { themes } from '../themes'
 import { useQuestTheme } from '../useQuestTheme'
+import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 export function WorldSelectPage() {
   const { setThemeId } = useQuestTheme()
+  const { t } = useI18n()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
@@ -32,7 +34,7 @@ export function WorldSelectPage() {
             className={css.worldCard}
             style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}
             onClick={() => choose(theme.id)}
-            aria-label={`בחר עולם: ${theme.name}`}
+            aria-label={`${t('ui.buttons.chooseWorldAria', 'בחר עולם:')} ${theme.name}`}
           >
             {(theme.thumbnail ?? theme.bg) ? (
               <img src={theme.thumbnail ?? theme.bg} alt="" className={css.worldCardImg} />

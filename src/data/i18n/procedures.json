@@ -1,0 +1,710 @@
+{
+  "en": {
+    "procedures": {
+      "temperature": {
+        "title": "Temperature check",
+        "duration": "about a minute",
+        "who": "A nurse",
+        "what": "We check how warm the body is. A small plastic tip with a wire goes into the mouth, and your child keeps their mouth closed tight for a moment — as if holding a candy inside. Sometimes it is measured under the armpit instead.",
+        "feel": "It doesn't hurt. Your child just keeps their mouth closed for a moment, or holds their arm against their body if it is measured under the armpit.",
+        "prepare": "You can practice “closing your mouth tight, like there's a candy inside” for a few seconds, or pressing an arm against the body.",
+        "adaptations": [
+          "Choose between measuring in the mouth or under the armpit",
+          "Count to three together",
+          "Let your child hold the device first"
+        ],
+        "story": [
+          "A small plastic tip with a wire goes into my mouth.",
+          "I close my mouth tight-tight, like I have a candy inside.",
+          "I wait quietly for a short moment, until the device is done.",
+          "I hear a little beep — and that's it, we're done."
+        ],
+        "storyVariants": [
+          {
+            "label": "In the mouth",
+            "steps": [
+              "A small plastic tip with a wire goes into my mouth.",
+              "I close my mouth tight-tight, like I have a candy inside.",
+              "I wait quietly for a short moment, until the device is done.",
+              "I hear a little beep — and that's it, we're done."
+            ]
+          },
+          {
+            "label": "Under the armpit",
+            "steps": [
+              "A small plastic tip with a wire goes under my armpit.",
+              "I press my arm to my body and hold it gently.",
+              "I wait quietly for a short moment, until the device is done.",
+              "I hear a little beep — and that's it, we're done."
+            ]
+          }
+        ]
+      },
+      "saturation": {
+        "title": "Oxygen level (saturation)",
+        "duration": "about a minute",
+        "who": "A nurse",
+        "what": "A small, soft clip goes on the finger. A little red light checks the oxygen in the blood. There is no needle.",
+        "feel": "A gentle squeeze on the finger. It doesn't hurt.",
+        "prepare": "You can call it a “clip with a magic light”. Show your child how it lights up red.",
+        "adaptations": [
+          "If needed, it can be moved to a different finger",
+          "Put it on the parent's finger first to show how it works",
+          "Leave the light on for a few seconds so your child can watch it calmly"
+        ],
+        "story": [
+          "They put a small, soft clip on my finger.",
+          "A little red light turns on inside it.",
+          "It only looks — it doesn't do anything, and after a moment they take it off."
+        ]
+      },
+      "blood-pressure": {
+        "title": "Blood pressure check",
+        "duration": "about a minute",
+        "who": "A nurse",
+        "what": "A soft cuff on the arm fills with air and squeezes a little, then lets go by itself.",
+        "feel": "A tightening squeeze on the arm for a few seconds, and then it relaxes.",
+        "prepare": "You can say: “Your arm gets a big hug for a moment, and then it lets go.”",
+        "adaptations": [
+          "Show how the cuff fills with air on the parent's arm first",
+          "Count together how many seconds it takes",
+          "Choose the right or the left arm"
+        ],
+        "story": [
+          "They put a soft cuff on my arm.",
+          "It fills with air and squeezes like a big hug.",
+          "We count together, and it lets go by itself."
+        ]
+      },
+      "doctor-exam": {
+        "title": "Doctor's exam",
+        "duration": "10–20 minutes",
+        "who": "A doctor",
+        "what": "The doctor asks questions and examines the body: listens with a stethoscope, looks in the throat and ears, and sometimes gently feels the tummy. At the end, you decide together what is needed next.",
+        "feel": "Gentle touch, a slightly cold tool on the chest or back, and a small light used for looking. Usually it doesn't hurt.",
+        "prepare": "You can play “doctor” with a doll beforehand, and explain that the doctor is only looking and listening in order to help.",
+        "adaptations": [
+          "Only one person talks and leads",
+          "A short explanation before every touch",
+          "Show each check on a doll or on the parent first",
+          "Your child sits on the parent's lap during the exam"
+        ],
+        "story": [
+          "I'm going to meet a doctor who wants to help me.",
+          "The doctor listens to my body with a stethoscope — a little cold, but it doesn't hurt.",
+          "Maybe they will look in my throat and ears with a small light.",
+          "At the end, the doctor will know what to do to help me."
+        ]
+      },
+      "blood-test": {
+        "title": "Blood test",
+        "duration": "2–5 minutes",
+        "who": "A nurse or a lab technician",
+        "what": "A small drop of blood is taken from the arm, usually with a thin needle. Before that, a numbing cream can be put on the skin.",
+        "feel": "A short prick, like a small pinch. Your child may feel the rubber band pressing around the arm.",
+        "prepare": "Ask for numbing cream in advance. Agree with your child where they will look (for example, at a video or at you) instead of at the arm.",
+        "adaptations": [
+          "Ask for numbing cream and wait for it to work",
+          "Distraction: a video, bubbles, counting",
+          "Only one person talks and leads",
+          "Your child sits on the parent's lap",
+          "A quiet room before and after"
+        ],
+        "story": [
+          "They put a cream on me that makes my skin less sensitive.",
+          "A soft band gets snug around my arm.",
+          "A tiny, quick prick — and I can look at something else.",
+          "They put a small bandage on me, and I was so brave!"
+        ]
+      },
+      "urine": {
+        "title": "Urine test",
+        "duration": "At your own pace",
+        "who": "The parent helps, the nurse explains",
+        "what": "A little urine is collected in a small cup, in the toilet. There is no needle and no pain.",
+        "feel": "Just like a normal pee, only into a cup.",
+        "prepare": "Explain that it is just like using the toilet as usual, only a little is collected in a cup.",
+        "adaptations": [
+          "Take your time, no pressure",
+          "Ask for a quieter toilet",
+          "Ask for an explanation with pictures"
+        ],
+        "story": [
+          "I go to the toilet like always.",
+          "I pee a little into a small cup.",
+          "I give the cup to the nurse. That's it!"
+        ]
+      },
+      "xray": {
+        "title": "X-ray",
+        "duration": "5–10 minutes",
+        "who": "An X-ray technician",
+        "what": "A big machine takes a picture of the bones inside the body. Your child needs to stand or lie calmly for a moment and not move. Sometimes they are given a heavy garment to wear that protects the body, and sometimes also a collar that protects the neck.",
+        "feel": "It doesn't hurt, and your child won't feel anything. The protective garment is a bit heavy, and the machine may move and make a soft noise.",
+        "prepare": "Show a picture of the room in advance. Explain that they might be dressed in a heavy protective garment. Practice being a “statue” — standing without moving for a few seconds.",
+        "adaptations": [
+          "Ask to go into the room and look around beforehand",
+          "Explain in advance about the heavy protective garment and the collar",
+          "The parent stays close, wearing a protective apron",
+          "Practice “not moving” as a game"
+        ],
+        "story": [
+          "We go into a room with a big machine.",
+          "Sometimes they put a heavy cover on me that protects my body, and sometimes a collar too.",
+          "I stand or lie calmly, like a statue.",
+          "The machine takes a picture — I don't feel anything.",
+          "We're done, I can move again."
+        ]
+      },
+      "ultrasound": {
+        "title": "Ultrasound",
+        "duration": "10–20 minutes",
+        "who": "A doctor or a technician",
+        "what": "A cold gel is spread on the skin and a smooth device is moved over it. A picture of the inside of the tummy shows up on a screen. Sometimes, to see well, the device needs to press a little.",
+        "feel": "The gel is a bit cold and wet. The device glides over the skin. When it presses a little, it sometimes tickles and sometimes hurts a tiny bit. If it bothers your child, you can ask them to stop or to wait a moment.",
+        "prepare": "Let your child know that the gel is cold and that sometimes the device presses a little. You can bring a comforting object to hold, and agree in advance how to say “wait, I need a break”.",
+        "adaptations": [
+          "Ask to warm up the gel a little",
+          "Watch the screen together",
+          "Ask them to stop or slow down if the pressing bothers your child",
+          "Ask for short breaks"
+        ],
+        "story": [
+          "I lie calmly on a bed.",
+          "They spread a slightly cold gel on my tummy.",
+          "A smooth device glides and draws a picture on a screen — sometimes it presses a little, and that's okay.",
+          "If it bothers me, I can ask for a little break.",
+          "They wipe off the gel — and we're done."
+        ]
+      },
+      "ct": {
+        "title": "CT scan",
+        "duration": "10–15 minutes",
+        "who": "An imaging technician",
+        "what": "Your child lies on a bed that slides into a big ring that takes pictures. They need to lie calmly without moving.",
+        "feel": "It doesn't hurt. The machine makes noise, and the bed moves slowly.",
+        "prepare": "Show a video of the machine in advance. Practice lying calmly. Noise-reducing headphones can help.",
+        "adaptations": [
+          "Ask for headphones or earplugs",
+          "The parent stays as close as possible",
+          "An explanation of each step with pictures"
+        ],
+        "story": [
+          "I lie on a comfy bed.",
+          "The bed slowly moves into a big ring.",
+          "I hear a noise, and I lie calmly like a statue.",
+          "The bed comes back out — we're done."
+        ]
+      },
+      "iv": {
+        "title": "IV line (fluids)",
+        "duration": "Putting it in: a few minutes",
+        "who": "A nurse",
+        "what": "A thin, soft tube is put into the arm through a small needle, and fluids or medicine are given through it. The needle comes out and the soft tube stays in.",
+        "feel": "A short prick at first, and after that only the feeling of the soft tube on the arm. When the fluids go in, it sometimes feels a little cold at first, but after a moment the feeling goes away and your child hardly feels anything.",
+        "prepare": "Ask for numbing cream in advance. Agree on a distraction. Explain that the tube is soft and is not a needle.",
+        "adaptations": [
+          "Numbing cream beforehand",
+          "Distraction, and one person who leads",
+          "Ask to cover the tube with a sticker so your child doesn't have to look at it"
+        ],
+        "story": [
+          "They put a cream on me that calms my skin.",
+          "A short prick, and then a soft, thin tube goes in.",
+          "They take the needle out, and the soft tube stays to give me fluids.",
+          "They put a sticker on me that holds the soft tube in place."
+        ]
+      },
+      "medication": {
+        "title": "Medicine",
+        "duration": "A few minutes",
+        "who": "A nurse",
+        "what": "Your child is given medicine — sometimes a syrup to drink, sometimes through the IV line. It helps the body feel better.",
+        "feel": "Syrup can be sweet or have a taste. Through the IV line, your child hardly feels anything.",
+        "prepare": "Ask what flavor it has and whether you can choose. Have water or something else ready for the taste afterwards.",
+        "adaptations": [
+          "Ask about flavor options",
+          "Ask for water or a snack afterwards",
+          "Let your child hold the little cup"
+        ],
+        "story": [
+          "I get medicine that helps my body.",
+          "Sometimes I drink a little syrup, sometimes it goes in through the soft tube.",
+          "And I can have some water afterwards for the taste."
+        ]
+      },
+      "inhalation": {
+        "title": "Inhalation (nebulizer)",
+        "duration": "5–10 minutes",
+        "who": "A nurse",
+        "what": "There's no need to breathe hard. A soft mask that gives out cool air with medicine is placed on the face, and your child simply breathes normally. It helps with breathing.",
+        "feel": "Moist, cool air on the face. Sometimes it tickles the eyes a little. The machine makes a small noise.",
+        "prepare": "Show the mask in advance and let your child smell it. Explain that there's no need to breathe hard — just keep the mask on the face and breathe normally.",
+        "adaptations": [
+          "Your child holds the mask together with the parent",
+          "Ask to slow down the airflow if it tickles the eyes or face",
+          "Your child sits on the parent's lap"
+        ],
+        "story": [
+          "They put a soft mask with cool air on my face.",
+          "I don't need to breathe hard — I just breathe normally.",
+          "Sometimes it tickles my eyes a little, and I can ask for the air to come out slower.",
+          "I can watch a video meanwhile. After a few minutes they take it off — we're done."
+        ]
+      },
+      "stitches": {
+        "title": "Wound glue or stitches",
+        "duration": "10–20 minutes",
+        "who": "A doctor",
+        "what": "The wound is closed — with special glue or with small stitches. Sometimes a numbing medicine is put on first: it feels cool, it is covered with a clear sticker, and then you wait a little (up to 45 minutes) until the magic works and the area around the cut “goes to sleep”. Sometimes no numbing is needed at all, and the wound is just glued. The glue is just like the glue we know from kindergarten or school, only clean, and it holds the skin together.",
+        "feel": "After the numbing medicine, the area becomes numb and there is no pain — maybe just a touch or some pressure. Sometimes, as the glue hardens, it feels a little warm, and someone can blow cool air on the face so it isn't felt.",
+        "prepare": "Ask in advance for numbing medicine if needed. Agree on what to do during the procedure — watch something on the phone, talk with the parents, or listen to a story.",
+        "adaptations": [
+          "Ask for numbing medicine for the area and wait for it to work",
+          "Hold mom's or dad's hand, watch something on the phone, or listen to a story",
+          "Ask the parent or the doctor to blow cool air on the face when the glue gets warm",
+          "Cover the area so your child doesn't see it"
+        ],
+        "story": [
+          "Sometimes they first put something cool on the spot to make it sleepy, and cover it with a clear sticker.",
+          "We wait a little until the magic works and the spot “goes to sleep” — and sometimes it's not needed, and we start right away.",
+          "The doctor holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
+          "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
+          "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
+        ],
+        "storyVariants": [
+          {
+            "label": "With numbing",
+            "steps": [
+              "First they put something cool on the spot to make it sleepy, and cover it with a clear sticker.",
+              "We wait a little until the magic works and the spot around the cut “goes to sleep”.",
+              "The doctor holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
+              "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
+              "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
+            ]
+          },
+          {
+            "label": "Without numbing",
+            "steps": [
+              "There's no need to make the spot sleepy — we start right away.",
+              "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+              "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
+              "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
+            ]
+          }
+        ]
+      },
+      "cast": {
+        "title": "Cast or splint",
+        "duration": "15–25 minutes",
+        "who": "A doctor or a cast technician",
+        "what": "The arm or leg is wrapped in a soft material that hardens and holds the bone still so it can heal. Once the wrapping starts, there can be no breaks — because the cast hardens and has to fit the body exactly. So your child waits patiently for a moment while the doctor shapes the cast.",
+        "feel": "The cast may feel warm for a moment as it hardens, and then it becomes firm and a little heavy.",
+        "prepare": "Explain that the cast protects the bone and helps it heal. You can choose in advance whether your child sits or lies down, and whether mom or dad stays next to them or they are on their own. Good to know: once the cast is started, it doesn't stop in the middle.",
+        "adaptations": [
+          "Choose whether to sit or lie down",
+          "Choose whether mom or dad stays close or your child is on their own",
+          "A slow, step-by-step explanation before starting"
+        ],
+        "story": [
+          "I choose whether to sit or lie down, and whether mom or dad stays next to me.",
+          "They wrap my arm or leg in soft layers.",
+          "Now I wait patiently for a moment without moving — we can't stop in the middle, so the cast fits me just right.",
+          "The cast slowly gets hard and keeps my bone safe — and lets it heal."
+        ]
+      },
+      "bandage": {
+        "title": "Bandaging",
+        "duration": "5 minutes",
+        "who": "A nurse or a doctor",
+        "what": "A part of the body is covered with a clean, soft bandage to protect it.",
+        "feel": "A soft, wrapped feeling. Usually pleasant and painless.",
+        "prepare": "Show the bandage and let your child touch it. You can choose where to start.",
+        "adaptations": [
+          "Choose the bandage color or type",
+          "Go slowly",
+          "Let your child hold the end of the bandage"
+        ],
+        "story": [
+          "They wrap a soft bandage around the spot.",
+          "They wrap it gently, layer after layer.",
+          "At the end they stick it down — cosy and protected."
+        ]
+      },
+      "waiting-results": {
+        "title": "Waiting for results",
+        "duration": "Sometimes an hour or more",
+        "who": "You wait together; meanwhile the staff and the lab are working",
+        "what": "After the tests, the lab and the machines work on the answers. This takes time. The doctor will come and tell you when the results are ready.",
+        "feel": "It can be boring, tiring or a little stressful. That's okay — you haven't been forgotten, this is just how it works.",
+        "prepare": "Plan something to do in advance: a game, a video, a snack. You can ask for a quieter corner to wait in.",
+        "adaptations": [
+          "A quiet space or a calm corner to wait in",
+          "Headphones or a comforting object you brought from home",
+          "An update in the meantime on what is already known",
+          "An estimated waiting time (as a range)"
+        ],
+        "story": [
+          "We finished the tests — well done, me!",
+          "Now we wait for the answers. I can play, rest or watch a video.",
+          "The team is working to help me. They haven't forgotten me.",
+          "When the answers are ready, the doctor will come and tell us."
+        ]
+      }
+    }
+  },
+  "ru": {
+    "procedures": {
+      "temperature": {
+        "title": "Измерение температуры",
+        "duration": "около минуты",
+        "who": "Медсестра или медбрат",
+        "what": "Проверяем, какая температура у тела. В рот кладут маленький пластиковый наконечник с проводком, и нужно ненадолго крепко-крепко закрыть рот — как будто там конфета. Иногда вместо этого температуру измеряют под мышкой.",
+        "feel": "Не больно. Нужно только ненадолго держать рот закрытым или прижать руку к телу, если измеряют под мышкой.",
+        "prepare": "Можно потренироваться несколько секунд «крепко закрывать рот, как будто там конфета» или прижимать руку к телу.",
+        "adaptations": [
+          "Выбрать, измерять во рту или под мышкой",
+          "Посчитать вместе до трёх",
+          "Дать ребёнку сначала подержать прибор"
+        ],
+        "story": [
+          "Мне кладут в рот маленький пластиковый наконечник с проводком.",
+          "Я крепко-крепко закрываю рот, как будто там конфета.",
+          "Я тихонько жду чуть-чуть, пока прибор закончит.",
+          "Я слышу тихое «бип» — и всё, готово."
+        ],
+        "storyVariants": [
+          {
+            "label": "Во рту",
+            "steps": [
+              "Мне кладут в рот маленький пластиковый наконечник с проводком.",
+              "Я крепко-крепко закрываю рот, как будто там конфета.",
+              "Я тихонько жду чуть-чуть, пока прибор закончит.",
+              "Я слышу тихое «бип» — и всё, готово."
+            ]
+          },
+          {
+            "label": "Под мышкой",
+            "steps": [
+              "Мне кладут под мышку маленький пластиковый наконечник с проводком.",
+              "Я прижимаю руку к телу и мягко держу.",
+              "Я тихонько жду чуть-чуть, пока прибор закончит.",
+              "Я слышу тихое «бип» — и всё, готово."
+            ]
+          }
+        ]
+      },
+      "saturation": {
+        "title": "Уровень кислорода (сатурация)",
+        "duration": "около минуты",
+        "who": "Медсестра или медбрат",
+        "what": "На палец надевают маленькую мягкую прищепку. Маленький красный огонёк проверяет кислород в крови. Иглы нет.",
+        "feel": "Ощущение лёгкого нажатия на палец. Не больно.",
+        "prepare": "Можно назвать её «прищепкой с волшебным огоньком». Показать ребёнку, как она загорается красным.",
+        "adaptations": [
+          "Если нужно, можно переставить на другой палец",
+          "Сначала надеть на палец родителя, чтобы показать",
+          "Оставить огонёк включённым на несколько секунд, чтобы ребёнок спокойно посмотрел"
+        ],
+        "story": [
+          "Мне надевают на палец маленькую мягкую прищепку.",
+          "В ней загорается маленький красный огонёк.",
+          "Она только смотрит — ничего не делает, и через минутку её снимают."
+        ]
+      },
+      "blood-pressure": {
+        "title": "Измерение давления",
+        "duration": "около минуты",
+        "who": "Медсестра или медбрат",
+        "what": "Мягкая манжета на руке надувается и немного сжимает, а потом сама отпускает.",
+        "feel": "Руку несколько секунд сжимает всё сильнее, а потом отпускает.",
+        "prepare": "Можно сказать: «Руку ненадолго крепко обнимут, а потом отпустят».",
+        "adaptations": [
+          "Сначала показать, как манжета надувается на руке родителя",
+          "Вместе посчитать, сколько секунд это длится",
+          "Выбрать правую или левую руку"
+        ],
+        "story": [
+          "Мне надевают на руку мягкую манжету.",
+          "Она надувается и сжимает, как крепкие объятия.",
+          "Мы считаем, и она сама отпускает."
+        ]
+      },
+      "doctor-exam": {
+        "title": "Осмотр врача",
+        "duration": "10–20 минут",
+        "who": "Врач",
+        "what": "Врач задаёт вопросы и осматривает тело: слушает стетоскопом, смотрит горло и уши, иногда ощупывает живот. В конце вместе решают, что нужно дальше.",
+        "feel": "Мягкие прикосновения, немного холодный прибор на груди или спине и маленький фонарик, которым смотрят. Обычно не больно.",
+        "prepare": "Можно заранее поиграть с куклой «в доктора» и объяснить, что врач только смотрит и слушает, чтобы помочь.",
+        "adaptations": [
+          "Чтобы говорил и вёл только один человек",
+          "Короткое объяснение перед каждым прикосновением",
+          "Сначала показать каждую проверку на кукле или на родителе",
+          "Сидеть на коленях у родителя во время осмотра"
+        ],
+        "story": [
+          "Я встречу врача, который хочет мне помочь.",
+          "Врач слушает моё тело стетоскопом — немного холодно, но не больно.",
+          "Может быть, мне посмотрят горло и уши маленьким фонариком.",
+          "В конце врач будет знать, как мне помочь."
+        ]
+      },
+      "blood-test": {
+        "title": "Анализ крови",
+        "duration": "2–5 минут",
+        "who": "Медсестра, медбрат или лаборант",
+        "what": "Из руки берут маленькую капельку крови, обычно тонкой иглой. Перед этим можно нанести обезболивающий крем.",
+        "feel": "Короткий укол, как маленький щипок. Может ощущаться давление жгута вокруг руки.",
+        "prepare": "Заранее попросить обезболивающий крем. Договориться с ребёнком, куда смотреть (например, на видео или на родителя), а не на руку.",
+        "adaptations": [
+          "Попросить обезболивающий крем и подождать, пока он подействует",
+          "Отвлечение: видео, мыльные пузыри, счёт",
+          "Чтобы говорил и вёл только один человек",
+          "Сидеть на коленях у родителя",
+          "Тихая комната до и после"
+        ],
+        "story": [
+          "Мне мажут крем, от которого кожа становится менее чувствительной.",
+          "Мягкая резинка плотно обхватывает руку.",
+          "Маленький быстрый укол — а я могу смотреть на что-то другое.",
+          "Мне клеят пластырь, и я молодец!"
+        ]
+      },
+      "urine": {
+        "title": "Анализ мочи",
+        "duration": "В своём темпе",
+        "who": "Родитель помогает, медсестра или медбрат объясняет",
+        "what": "Немного мочи собирают в маленький стаканчик, в туалете. Нет ни иглы, ни боли.",
+        "feel": "Точно как обычно пописать, только в стаканчик.",
+        "prepare": "Объяснить, что это как обычный поход в туалет, только немного собирают в стаканчик.",
+        "adaptations": [
+          "Не торопиться, без давления",
+          "Попросить более тихий туалет",
+          "Попросить объяснение в картинках"
+        ],
+        "story": [
+          "Я иду в туалет, как всегда.",
+          "Я писаю немного в маленький стаканчик.",
+          "Я отдаю стаканчик медсестре или медбрату. Всё!"
+        ]
+      },
+      "xray": {
+        "title": "Рентген",
+        "duration": "5–10 минут",
+        "who": "Рентген-лаборант",
+        "what": "Большой аппарат делает снимок костей изнутри. Нужно ненадолго спокойно постоять или полежать и не двигаться. Иногда дают надеть тяжёлую накидку, которая защищает тело, а иногда ещё и воротник, который защищает шею.",
+        "feel": "Не больно, и ничего не чувствуется. Защитная накидка немного тяжёлая, а аппарат может двигаться и тихо шуметь.",
+        "prepare": "Заранее показать фотографию кабинета. Объяснить, что, возможно, наденут тяжёлую защитную накидку. Потренироваться быть «статуей» — постоять не двигаясь несколько секунд.",
+        "adaptations": [
+          "Попросить заранее зайти в кабинет и посмотреть",
+          "Заранее рассказать о тяжёлой защитной накидке и воротнике",
+          "Чтобы родитель оставался рядом в защитном фартуке",
+          "Тренировать «не двигаться» как игру"
+        ],
+        "story": [
+          "Мы заходим в комнату с большим аппаратом.",
+          "Иногда на меня надевают тяжёлую накидку, которая защищает тело, а иногда ещё и воротник.",
+          "Я спокойно стою или лежу, как статуя.",
+          "Аппарат делает снимок — я ничего не чувствую.",
+          "Готово, можно снова двигаться."
+        ]
+      },
+      "ultrasound": {
+        "title": "УЗИ",
+        "duration": "10–20 минут",
+        "who": "Врач или лаборант",
+        "what": "На кожу наносят холодный гель и водят по ней гладким датчиком. На экране видна картинка живота изнутри. Иногда, чтобы хорошо рассмотреть, датчиком нужно немного надавить.",
+        "feel": "Гель немного холодный и влажный. Датчик скользит по коже. Когда немного надавливают, иногда щекотно, а иногда чуть-чуть больно. Если это мешает — можно попросить остановиться или подождать минутку.",
+        "prepare": "Предупредить, что гель холодный и что иногда немного надавливают. Можно взять с собой успокаивающую вещь, чтобы держать в руках, и заранее договориться, как сказать «подождите, мне нужен перерыв».",
+        "adaptations": [
+          "Попросить немного подогреть гель",
+          "Смотреть на экран вместе",
+          "Попросить остановиться или делать медленнее, если давление мешает",
+          "Попросить короткие перерывы"
+        ],
+        "story": [
+          "Я спокойно лежу на кровати.",
+          "Мне мажут на живот немного холодный гель.",
+          "Гладкий датчик скользит и рисует картинку на экране — иногда немного надавливают, и это нормально.",
+          "Если мешает, можно попросить маленький перерыв.",
+          "Мне вытирают гель — и готово."
+        ]
+      },
+      "ct": {
+        "title": "КТ (компьютерная томография)",
+        "duration": "10–15 минут",
+        "who": "Лаборант кабинета КТ",
+        "what": "Ребёнок лежит на кровати, которая заезжает в большое кольцо, делающее снимки. Нужно спокойно лежать и не двигаться.",
+        "feel": "Не больно. Слышен шум аппарата, а кровать медленно двигается.",
+        "prepare": "Заранее показать видео аппарата. Потренироваться спокойно лежать. Можно использовать шумоподавляющие наушники.",
+        "adaptations": [
+          "Попросить наушники или беруши",
+          "Чтобы родитель оставался как можно ближе",
+          "Объяснение каждого шага в картинках"
+        ],
+        "story": [
+          "Я ложусь на удобную кровать.",
+          "Кровать медленно заезжает в большое кольцо.",
+          "Я слышу шум и лежу спокойно, как статуя.",
+          "Кровать выезжает обратно — готово."
+        ]
+      },
+      "iv": {
+        "title": "Капельница (катетер)",
+        "duration": "Установка: несколько минут",
+        "who": "Медсестра или медбрат",
+        "what": "Через маленькую иглу в руку вводят тонкую мягкую трубочку, и через неё дают жидкость или лекарство. Игла выходит, а мягкая трубочка остаётся.",
+        "feel": "Сначала короткий укол, а потом только ощущение мягкой трубочки на руке. Когда жидкость начинает поступать, иногда сначала немного холодно, но если подождать минутку, это ощущение проходит и почти ничего не чувствуется.",
+        "prepare": "Заранее попросить обезболивающий крем. Договориться, чем отвлечься. Объяснить, что трубочка мягкая и это не игла.",
+        "adaptations": [
+          "Обезболивающий крем заранее",
+          "Отвлечение и один человек, который ведёт",
+          "Попросить заклеить трубочку наклейкой, чтобы на неё не смотреть"
+        ],
+        "story": [
+          "Мне мажут крем, который успокаивает кожу.",
+          "Короткий укол, а потом вводят мягкую тонкую трубочку.",
+          "Иглу вынимают, а мягкая трубочка остаётся, чтобы давать мне жидкость.",
+          "Мне приклеивают наклейку, которая держит мягкую трубочку на месте."
+        ]
+      },
+      "medication": {
+        "title": "Лекарства",
+        "duration": "Несколько минут",
+        "who": "Медсестра или медбрат",
+        "what": "Дают лекарство — иногда сироп, чтобы выпить, иногда через капельницу. Оно помогает телу почувствовать себя лучше.",
+        "feel": "Сироп может быть сладким или с привкусом. Через капельницу почти ничего не чувствуется.",
+        "prepare": "Спросить, какой у лекарства вкус и можно ли выбрать. Приготовить воду или что-нибудь, чтобы заесть вкус.",
+        "adaptations": [
+          "Спросить про варианты вкуса",
+          "Попросить воду или перекус после",
+          "Дать ребёнку самому подержать стаканчик"
+        ],
+        "story": [
+          "Я получаю лекарство, которое помогает моему телу.",
+          "Иногда я пью немного сиропа, иногда оно идёт через мягкую трубочку.",
+          "А потом можно попить воды, чтобы убрать вкус."
+        ]
+      },
+      "inhalation": {
+        "title": "Ингаляция",
+        "duration": "5–10 минут",
+        "who": "Медсестра или медбрат",
+        "what": "Не нужно дышать с силой. На лицо надевают мягкую маску, из которой идёт прохладный воздух с лекарством, и ребёнок просто дышит как обычно. Это помогает дыханию.",
+        "feel": "На лице ощущается влажный прохладный воздух. Иногда немного щекочет глаза. Аппарат тихо шумит.",
+        "prepare": "Заранее показать маску, дать её понюхать. Объяснить, что не нужно дышать с силой — только держать маску на лице и дышать как обычно.",
+        "adaptations": [
+          "Держать маску вместе с родителем",
+          "Попросить уменьшить поток воздуха, если щекочет глаза или лицо",
+          "Сидеть на коленях у родителя"
+        ],
+        "story": [
+          "Мне надевают на лицо мягкую маску с прохладным воздухом.",
+          "Не нужно дышать сильно — я просто дышу как обычно.",
+          "Иногда немного щекочет глаза, и можно попросить, чтобы воздух шёл медленнее.",
+          "В это время можно смотреть мультик. Через несколько минут маску снимают — готово."
+        ]
+      },
+      "stitches": {
+        "title": "Заклеивание раны или швы",
+        "duration": "10–20 минут",
+        "who": "Врач",
+        "what": "Рану закрывают — специальным клеем или маленькими швами. Иногда сначала наносят обезболивающее средство: оно прохладное, его закрывают прозрачной наклейкой, а потом немного ждут (до 45 минут), пока волшебство подействует и место пореза «уснёт». Иногда обезболивать совсем не нужно, и рану просто заклеивают. Клей — точно как тот, что мы знаем по садику или школе, только чистый, и он держит кожу.",
+        "feel": "После обезболивающего средства это место немеет и боли не чувствуется — может быть, только прикосновение или давление. Иногда, когда клей застывает, становится немного тепло, и можно подуть прохладным воздухом на лицо, чтобы этого не чувствовать.",
+        "prepare": "Заранее попросить обезболивающее средство, если нужно. Договориться, чем заняться в это время — смотреть что-нибудь в телефоне, разговаривать с родителями или слушать сказку.",
+        "adaptations": [
+          "Попросить обезболивающее средство для этого места и подождать, пока оно подействует",
+          "Держать маму или папу за руку, смотреть что-нибудь в телефоне или слушать сказку",
+          "Попросить родителя или врача подуть прохладным воздухом на лицо, когда клей нагревается",
+          "Закрыть это место, чтобы ребёнок его не видел"
+        ],
+        "story": [
+          "Иногда сначала мажут прохладное средство, от которого место засыпает, и закрывают его прозрачной наклейкой.",
+          "Немного ждём, пока волшебство подействует и место «уснёт», — а иногда это не нужно, и начинают сразу.",
+          "Врач держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
+          "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+          "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
+        ],
+        "storyVariants": [
+          {
+            "label": "С обезболиванием",
+            "steps": [
+              "Сначала мажут прохладное средство, от которого место засыпает, и закрывают его прозрачной наклейкой.",
+              "Немного ждём, пока волшебство подействует и место пореза «уснёт».",
+              "Врач держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
+              "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+              "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
+            ]
+          },
+          {
+            "label": "Без обезболивания",
+            "steps": [
+              "Обезболивать не нужно — начинают сразу.",
+              "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+              "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+              "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
+            ]
+          }
+        ]
+      },
+      "cast": {
+        "title": "Гипс или лангета",
+        "duration": "15–25 минут",
+        "who": "Врач или гипсовый техник",
+        "what": "Руку или ногу обматывают мягким материалом, который затвердевает и бережно держит кость, чтобы она зажила. Когда начали обматывать, перерывы делать нельзя — гипс застывает и должен точно подойти по форме тела. Поэтому нужно немного терпеливо подождать, пока врач подгоняет гипс.",
+        "feel": "Когда гипс застывает, он может ненадолго стать тёплым, а потом становится твёрдым и немного тяжёлым.",
+        "prepare": "Объяснить, что гипс защищает кость и помогает ей зажить. Можно заранее выбрать, сидеть или лежать, и будут ли мама или папа рядом или ребёнок побудет без них. Важно знать: когда начали накладывать гипс, посередине не останавливаются.",
+        "adaptations": [
+          "Выбрать, сидеть или лежать",
+          "Выбрать, будут ли мама или папа рядом или ребёнок побудет без них",
+          "Медленное объяснение шаг за шагом перед началом"
+        ],
+        "story": [
+          "Я выбираю, сидеть или лежать, и будут ли мама или папа рядом со мной.",
+          "Мне обматывают руку или ногу мягкими слоями.",
+          "Теперь я терпеливо жду немного и не двигаюсь — останавливаться посередине нельзя, чтобы гипс подошёл мне точно.",
+          "Гипс медленно твердеет и бережёт кость — и она заживает."
+        ]
+      },
+      "bandage": {
+        "title": "Перевязка",
+        "duration": "5 минут",
+        "who": "Медсестра, медбрат или врач",
+        "what": "Место на теле закрывают чистым мягким бинтом, чтобы его защитить.",
+        "feel": "Ощущение мягкого обёртывания. Обычно приятно и не больно.",
+        "prepare": "Показать бинт, дать потрогать. Можно выбрать, с какого места начать.",
+        "adaptations": [
+          "Выбрать цвет или вид бинта",
+          "Делать медленно",
+          "Дать ребёнку подержать конец бинта"
+        ],
+        "story": [
+          "Мне обматывают это место мягким бинтом.",
+          "Обматывают бережно, слой за слоем.",
+          "В конце закрепляют — уютно и надёжно."
+        ]
+      },
+      "waiting-results": {
+        "title": "Ожидание результатов",
+        "duration": "Иногда час или больше",
+        "who": "Вы ждёте вместе; в это время персонал и лаборатория работают",
+        "what": "После обследований лаборатория и аппараты работают над ответами. Это занимает время. Врач придёт и расскажет, когда будут результаты.",
+        "feel": "Может быть скучно, утомительно или немного тревожно. Это нормально — о вас не забыли, просто так это устроено.",
+        "prepare": "Заранее приготовить, чем заняться: игру, видео, перекус. Можно попросить более тихий уголок для ожидания.",
+        "adaptations": [
+          "Тихое место или спокойный уголок для ожидания",
+          "Наушники или успокаивающая вещь, которую вы взяли из дома",
+          "Промежуточная информация о том, что уже известно",
+          "Примерное время ожидания (в виде диапазона)"
+        ],
+        "story": [
+          "Мы закончили все проверки — я молодец!",
+          "Теперь ждём ответов. Можно поиграть, отдохнуть или посмотреть мультик.",
+          "Врачи и медсёстры работают, чтобы мне помочь. Про меня не забыли.",
+          "Когда будут ответы, врач придёт и расскажет нам."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "en": {
+    "cardSections": [
+      {
+        "title": "How does your child communicate?",
+        "options": [
+          "Speaks",
+          "Speaks a little",
+          "Non-verbal",
+          "AAC (picture communication)",
+          "Understands short instructions",
+          "Needs time to respond"
+        ]
+      },
+      {
+        "title": "Sensory sensitivities",
+        "options": [
+          "Noise",
+          "Bright light",
+          "Touch",
+          "Smells",
+          "Lots of people",
+          "Long waits"
+        ]
+      },
+      {
+        "title": "What calms them?",
+        "options": [
+          "A comfort object from home",
+          "A video or music",
+          "A hug from a parent",
+          "Explaining in advance",
+          "Counting together",
+          "A game"
+        ]
+      },
+      {
+        "title": "What can make distress worse?",
+        "options": [
+          "Touch without warning",
+          "Sudden noise",
+          "Lots of people around",
+          "Bright lights",
+          "Fast talking or shouting",
+          "Surprises and changes"
+        ]
+      },
+      {
+        "title": "Especially hard with…",
+        "options": [
+          "Needles and injections",
+          "Blood pressure measurement",
+          "Touching the face or head",
+          "Lying on an exam bed",
+          "Devices attached to the body",
+          "Staying in one place"
+        ]
+      },
+      {
+        "title": "How do they show pain?",
+        "options": [
+          "Says it in words",
+          "Points to where it hurts",
+          "Crying or screaming",
+          "Goes quiet and withdraws",
+          "Body movements",
+          "A faces pain scale helps"
+        ]
+      },
+      {
+        "title": "Important not to do",
+        "options": [
+          "Touch without explaining",
+          "Talk over their head",
+          "Hold them down by force",
+          "Rush or hurry them",
+          "Many instructions at once",
+          "Take away their comfort object"
+        ]
+      }
+    ],
+    "adaptationSuggestions": {
+      "רעש": "Headphones, earplugs or a quiet space",
+      "אור חזק": "Dimming the lights in the room",
+      "מגע": "A short explanation before every touch",
+      "הרבה אנשים": "Fewer staff in the room — one person leads and talks",
+      "המתנה ממושכת": "A quiet corner while waiting",
+      "מחטים ודקירות": "Numbing cream and time to prepare before a needle",
+      "מגע בלי הכנה": "A short explanation before every touch",
+      "הרבה אנשים מסביב": "Fewer staff in the room — one person leads and talks",
+      "רעש פתאומי": "A quiet environment and a closed door",
+      "אורות חזקים": "Dimming the lights in the room",
+      "להישאר במקום אחד": "Short breaks and movement between steps"
+    }
+  },
+  "ru": {
+    "cardSections": [
+      {
+        "title": "Как ребёнок общается?",
+        "options": [
+          "Говорит",
+          "Говорит мало",
+          "Не говорит (невербальный)",
+          "Альтернативная коммуникация (карточки)",
+          "Понимает короткие инструкции",
+          "Нужно время на ответ"
+        ]
+      },
+      {
+        "title": "Сенсорная чувствительность",
+        "options": [
+          "Шум",
+          "Яркий свет",
+          "Прикосновения",
+          "Запахи",
+          "Много людей",
+          "Долгое ожидание"
+        ]
+      },
+      {
+        "title": "Что успокаивает ребёнка?",
+        "options": [
+          "Успокаивающий предмет из дома",
+          "Видео или музыка",
+          "Объятие родителя",
+          "Объяснение заранее",
+          "Счёт вместе",
+          "Игра"
+        ]
+      },
+      {
+        "title": "Что может усилить стресс?",
+        "options": [
+          "Прикосновение без предупреждения",
+          "Внезапный шум",
+          "Много людей вокруг",
+          "Яркий свет",
+          "Быстрая речь или крик",
+          "Неожиданности и перемены"
+        ]
+      },
+      {
+        "title": "Особенно трудно, когда…",
+        "options": [
+          "Иглы и уколы",
+          "Измерение давления",
+          "Прикосновения к лицу или голове",
+          "Нужно лежать на кушетке",
+          "Приборы на теле",
+          "Нужно оставаться на одном месте"
+        ]
+      },
+      {
+        "title": "Как ребёнок выражает боль?",
+        "options": [
+          "Говорит словами",
+          "Показывает, где болит",
+          "Плач или крик",
+          "Затихает и замыкается",
+          "Движения тела",
+          "Помогает шкала с лицами"
+        ]
+      },
+      {
+        "title": "Важно не делать",
+        "options": [
+          "Прикасаться без объяснения",
+          "Говорить о ребёнке так, будто его нет рядом",
+          "Удерживать силой",
+          "Торопить и подгонять",
+          "Много инструкций сразу",
+          "Забирать успокаивающий предмет"
+        ]
+      }
+    ],
+    "adaptationSuggestions": {
+      "רעש": "Наушники, беруши или тихое место",
+      "אור חזק": "Приглушить свет в комнате",
+      "מגע": "Короткое объяснение перед каждым прикосновением",
+      "הרבה אנשים": "Меньше персонала в палате — один ведёт и говорит",
+      "המתנה ממושכת": "Тихий уголок на время ожидания",
+      "מחטים ודקירות": "Обезболивающий крем и время на подготовку перед уколом",
+      "מגע בלי הכנה": "Короткое объяснение перед каждым прикосновением",
+      "הרבה אנשים מסביב": "Меньше персонала в палате — один ведёт и говорит",
+      "רעש פתאומי": "Тихая обстановка и закрытая дверь",
+      "אורות חזקים": "Приглушить свет в комнате",
+      "להישאר במקום אחד": "Короткие перерывы и движение между этапами"
+    }
+  }
+}

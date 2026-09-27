@@ -1,0 +1,144 @@
+{
+  "en": {
+    "distressTips": [
+      {
+        "title": "Use fewer words",
+        "body": "When your child is overwhelmed, fewer words help more. One short sentence, a calm voice, and lots of patience between sentences."
+      },
+      {
+        "title": "Make some space",
+        "body": "Ask the staff to keep just one person close, and for everyone else to step back a little. Less stimulation = more calm."
+      },
+      {
+        "title": "Reduce stimulation",
+        "body": "Headphones, a hat, dimmer lights, or a comfort object. You can ask the staff for a quiet space."
+      },
+      {
+        "title": "Ask for a break",
+        "body": "It's okay to pause. You can tell the staff \"we need a minute\" — most procedures can wait a short moment."
+      },
+      {
+        "title": "Go back to the familiar",
+        "body": "A familiar object, song, video or game from home helps your child feel grounded. A small, familiar routine is calming in an unfamiliar place."
+      },
+      {
+        "title": "Guide the staff",
+        "body": "You are the experts on your child. Tell the staff in one short sentence what helps and what makes things worse — it's completely fine to guide them."
+      }
+    ],
+    "readySentences": [
+      "My child is autistic. What helps most is a short explanation before anything you do.",
+      "Please — just one person talking, slowly and quietly.",
+      "My child doesn't speak, but understands. Please talk to them directly, in short sentences.",
+      "We need a few minutes to calm down. We'll call you when we're ready.",
+      "Can we move somewhere quieter? The noise is overwhelming for my child.",
+      "Before the needle — could we have numbing cream and a little time to prepare?",
+      "Please don't touch my child without first saying what's going to happen."
+    ],
+    "staffRequests": [
+      {
+        "title": "Quiet room / sensory room",
+        "detail": "An adapted space with less noise and light, for a child who is overwhelmed or needs to calm down."
+      },
+      {
+        "title": "Fewer staff in the room",
+        "detail": "One person leads and talks, and the rest of the team waits outside as much as possible."
+      },
+      {
+        "title": "Explain before touching",
+        "detail": "Every touch or procedure is explained first, so there are no surprises."
+      },
+      {
+        "title": "Small choices",
+        "detail": "Let your child make small choices — stand or sit, right hand or left, which finger, where to start. A small choice gives a sense of control and makes things easier."
+      },
+      {
+        "title": "Time to process and respond",
+        "detail": "A little time between an instruction and doing it, and between a question and an answer, without rushing."
+      },
+      {
+        "title": "Preparing for a procedure",
+        "detail": "An explanation in advance, numbing cream before a needle, and distraction during the procedure."
+      },
+      {
+        "title": "Less sensory input",
+        "detail": "Dimming the lights, lowering noise, and closing the door — to reduce sensory overload."
+      },
+      {
+        "title": "Alternative communication",
+        "detail": "Using pictures, pointing or another way of communicating, if speaking is hard for your child right now."
+      }
+    ]
+  },
+  "ru": {
+    "distressTips": [
+      {
+        "title": "Меньше слов",
+        "body": "Когда ребёнок перегружен, чем меньше слов, тем лучше. Одна короткая фраза, спокойный голос и много терпения между фразами."
+      },
+      {
+        "title": "Освободить пространство",
+        "body": "Попросите персонал, чтобы рядом остался только один человек, а остальные немного отошли. Меньше раздражителей = больше спокойствия."
+      },
+      {
+        "title": "Убрать раздражители",
+        "body": "Наушники, шапка, приглушённый свет или успокаивающий предмет. Можно попросить у персонала тихое место."
+      },
+      {
+        "title": "Попросить паузу",
+        "body": "Остановиться — можно. Скажите персоналу: «Нам нужна минута» — большинство процедур могут немного подождать."
+      },
+      {
+        "title": "Вернуться к привычному",
+        "body": "Знакомый предмет, песня, видео или игра из дома помогают ребёнку почувствовать опору. Маленький привычный ритуал успокаивает в незнакомом месте."
+      },
+      {
+        "title": "Подсказать персоналу",
+        "body": "Вы лучше всех знаете своего ребёнка. Скажите персоналу коротко, что помогает, а что усиливает стресс, — направлять их совершенно нормально."
+      }
+    ],
+    "readySentences": [
+      "У моего ребёнка аутизм. Больше всего помогает короткое объяснение перед каждым действием.",
+      "Пожалуйста, пусть говорит один человек — медленно и тихо.",
+      "Мой ребёнок не говорит, но понимает. Обращайтесь прямо к нему, короткими фразами.",
+      "Нам нужно несколько минут, чтобы успокоиться. Мы позовём вас, когда будем готовы.",
+      "Можно перейти в место потише? Шум перегружает моего ребёнка.",
+      "Перед уколом — можно обезболивающий крем и немного времени, чтобы подготовиться?",
+      "Пожалуйста, не прикасайтесь, не сказав сначала, что сейчас будет."
+    ],
+    "staffRequests": [
+      {
+        "title": "Тихая комната / сенсорная комната",
+        "detail": "Специальное пространство с меньшим шумом и светом — для ребёнка, который перегружен или которому нужно успокоиться."
+      },
+      {
+        "title": "Меньше персонала в палате",
+        "detail": "Один человек ведёт и говорит, а остальные по возможности ждут снаружи."
+      },
+      {
+        "title": "Объяснение перед прикосновением",
+        "detail": "Каждое прикосновение или действие сначала объясняют, чтобы не было неожиданностей."
+      },
+      {
+        "title": "Маленькие выборы",
+        "detail": "Дать ребёнку маленький выбор — стоять или сидеть, правая рука или левая, какой палец, с чего начать. Даже небольшой выбор даёт ощущение контроля и облегчает ситуацию."
+      },
+      {
+        "title": "Время на осмысление и ответ",
+        "detail": "Немного времени между просьбой и её выполнением, между вопросом и ответом — без спешки."
+      },
+      {
+        "title": "Подготовка к процедуре",
+        "detail": "Объяснение заранее, обезболивающий крем перед уколом и отвлечение во время процедуры."
+      },
+      {
+        "title": "Меньше раздражителей",
+        "detail": "Приглушить свет, уменьшить шум и закрыть дверь — чтобы снизить сенсорную нагрузку."
+      },
+      {
+        "title": "Альтернативная коммуникация",
+        "detail": "Картинки, указывание или другой способ общения, если ребёнку сейчас трудно говорить."
+      }
+    ]
+  }
+}

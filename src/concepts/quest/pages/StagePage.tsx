@@ -6,6 +6,7 @@ import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES, loadProcs } from '../useQuestProgress'
 import { SensoryBar } from '../../../components/SensoryBar'
 import { getProcedure } from '../../../data/procedures'
+import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
@@ -13,6 +14,7 @@ const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
 export function StagePage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
+  const { t } = useI18n()
   const { stages, active, completeActive, completeStage, completeProcedure, doneProcedures } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
@@ -22,7 +24,7 @@ export function StagePage() {
   const thisStage = stages.find((s) => s.id === id)
   const isActive = isOptional ? thisStage?.status === 'active' : active?.id === id
 
-  const data = journeyStages.find((j) => j.id === id)
+  const data = t('journey.journeyStages', journeyStages).find((j) => j.id === id)
   const skin = id ? theme.stages[id] : undefined
 
   if (!data) return <Navigate to="/map" replace />
@@ -33,7 +35,7 @@ export function StagePage() {
 
   // When a stage has exactly one procedure, embed it inline instead of showing an icon link
   const inlineProcId = data.procedureIds?.length === 1 ? data.procedureIds[0] : undefined
-  const inlineProc = inlineProcId ? getProcedure(inlineProcId) : undefined
+  const inlineProc = inlineProcId ? t(`procedures.procedures.${inlineProcId}`, getProcedure(inlineProcId)) : undefined
   const themedSteps = inlineProcId ? theme.procedureSteps?.[inlineProcId] : undefined
   const inlineSteps = themedSteps ?? inlineProc?.story
 
@@ -81,7 +83,7 @@ export function StagePage() {
         {!inlineProc && data.procedureIds && data.procedureIds.length > 0 && (
           <div className={css.procedureIconRow}>
             {data.procedureIds.map((pid) => {
-              const proc = getProcedure(pid)
+              const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
               const done = doneProcedures.has(pid)
               return (
                 <Link key={pid} to={`/procedure/${pid}`} style={{ position: 'relative' }}>
@@ -104,7 +106,7 @@ export function StagePage() {
               style={{ background: theme.accent, color: theme.accentText }}
               onClick={handleDone}
             >
-              הצלחתי! ←
+              {t('ui.buttons.done', 'הצלחתי! ←')}
             </button>
           )}
           {isLastStage && !isActive && (
@@ -113,13 +115,13 @@ export function StagePage() {
                 className={css.doneBtn}
                 style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
               >
-                לבחירת הבדיקות ←
+                {t('ui.buttons.chooseTests', 'לבחירת הבדיקות ←')}
               </button>
             </Link>
           )}
           <Link to={isOptional ? '/night-map' : '/map'}>
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              חזרה למפה →
+              {t('ui.buttons.backToMap', 'חזרה למפה →')}
             </button>
           </Link>
         </div>
@@ -129,18 +131,18 @@ export function StagePage() {
       <p className={css.waitRange}>
         {inlineProc?.who && <span>👤 {inlineProc.who}</span>}
         {inlineProc?.who && data.waitRange && <span> · </span>}
-        {data.waitRange && <span>⏱ זמן משוער: {data.waitRange}</span>}
+        {data.waitRange && <span>{t('ui.text.estimated', '⏱ זמן משוער:')} {data.waitRange}</span>}
       </p>
 
       <div className={css.stageBody}>
         {data.meaning && (
           <section>
-            <h2>אנחנו כאן</h2>
+            <h2>{t('ui.text.weAreHere', 'אנחנו כאן')}</h2>
             <p>{data.meaning}</p>
             {id === 'reception' && (
               <>
-                <p className={css.reasonHint}>בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.</p>
-                <Link to="/reason" className={css.calmLink}>🗺️ מה מחכה לנו היום?</Link>
+                <p className={css.reasonHint}>{t('ui.text.reasonHint', 'בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.')}</p>
+                <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits', '🗺️ מה מחכה לנו היום?')}</Link>
               </>
             )}
           </section>
@@ -149,22 +151,22 @@ export function StagePage() {
         {inlineProc ? (
           <>
             <section>
-              <h2>מה קורה בפועל</h2>
+              <h2>{t('ui.text.whatActuallyHappens', 'מה קורה בפועל')}</h2>
               <p>{inlineProc.what}</p>
             </section>
             <section>
-              <h2>מה הילד/ה עשוי/ה להרגיש</h2>
+              <h2>{t('ui.text.childMayFeel', 'מה הילד/ה עשוי/ה להרגיש')}</h2>
               <p>{inlineProc.feel}</p>
             </section>
             {data.challenge && (
               <section>
-                <h2>מה יכול להיות קשה?</h2>
+                <h2>{t('ui.text.whatMayBeHard', 'מה יכול להיות קשה?')}</h2>
                 <p>{data.challenge}</p>
               </section>
             )}
             {inlineProc.adaptations && inlineProc.adaptations.length > 0 && (
               <section>
-                <h2>מה לבקש מהצוות</h2>
+                <h2>{t('ui.text.askStaff', 'מה לבקש מהצוות')}</h2>
                 <ul>
                   {inlineProc.adaptations.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
@@ -173,7 +175,7 @@ export function StagePage() {
             {/* skip data.canAsk when inline procedure already has adaptations */}
             {(!inlineProc.adaptations || inlineProc.adaptations.length === 0) && data.canAsk && data.canAsk.length > 0 && (
               <section>
-                <h2>אפשר לבקש</h2>
+                <h2>{t('ui.text.canAsk', 'אפשר לבקש')}</h2>
                 <ul>
                   {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
@@ -183,25 +185,25 @@ export function StagePage() {
         ) : (
           <>
             <section>
-              <h2>מה קורה</h2>
+              <h2>{t('ui.text.whatHappens', 'מה קורה')}</h2>
               <p>{data.whatHappens}</p>
               {data.nextStagePrepare && <p>{data.nextStagePrepare}</p>}
             </section>
             {data.challenge && (
               <section>
-                <h2>מה יכול להיות קשה?</h2>
+                <h2>{t('ui.text.whatMayBeHard', 'מה יכול להיות קשה?')}</h2>
                 <p>{data.challenge}</p>
                 {id === 'reception' && (
                   <>
-                    <p className={css.reasonHint}>בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.</p>
-                    <Link to="/card" state={{ from: `/stage/${id}` }} className={css.calmLink}>🪪 כרטיס התאמות לצוות</Link>
+                    <p className={css.reasonHint}>{t('ui.text.cardHint', 'בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.')}</p>
+                    <Link to="/card" state={{ from: `/stage/${id}` }} className={css.calmLink}>{t('ui.buttons.cardForStaff', '🪪 כרטיס התאמות לצוות')}</Link>
                   </>
                 )}
               </section>
             )}
             {data.canAsk && data.canAsk.length > 0 && (
               <section>
-                <h2>אפשר לבקש</h2>
+                <h2>{t('ui.text.canAsk', 'אפשר לבקש')}</h2>
                 <ul>
                   {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
@@ -210,7 +212,7 @@ export function StagePage() {
           </>
         )}
         <Link to="/calm" state={{ from: `/stage/${id}` }} className={css.calmLink}>
-          💙 קשה לנו כרגע
+          {t('ui.buttons.hardNow', '💙 קשה לנו כרגע')}
         </Link>
       </div>
     </div>

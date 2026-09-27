@@ -12,10 +12,12 @@ import {
   type CareCard,
 } from '../../../data/careCard'
 import { useQuestTheme } from '../useQuestTheme'
+import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 export function CardPage() {
   const { theme } = useQuestTheme()
+  const { t } = useI18n()
   const { goBack, leaveState } = useReturnTo('/stage/reception')
   const [card, setCard, clearCard] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
 
@@ -36,39 +38,39 @@ export function CardPage() {
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <span className={css.stageHeroIcon}>🪪</span>
         <h1 style={{ color: theme.accent }}>
-          {theme.cardChildHero?.title ?? 'כרטיס התאמות'}
+          {theme.cardChildHero?.title ?? t('ui.text.cardTitle', 'כרטיס התאמות')}
         </h1>
         {theme.cardChildHero?.subtitle && (
           <p className={css.stageHeroHint}>{theme.cardChildHero.subtitle}</p>
         )}
         <div className={css.stageBack}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
-            חזרה →
+            {t('ui.buttons.back', 'חזרה →')}
           </button>
         </div>
       </div>
 
       <div className={css.stageBody}>
-        <p className={css.parentZoneLabel}>מה חשוב לדעת על הילד/ה שלי</p>
+        <p className={css.parentZoneLabel}>{t('ui.text.aboutMyChild', 'מה חשוב לדעת על הילד/ה שלי')}</p>
         <p className={css.cardPrivacy}>
-          🔒 הכל נשמר <strong>במכשיר הזה בלבד</strong>, נמחק אחרי 24 שעות, ולא נשלח לשום מקום.
+          {t('ui.text.privacyA', '🔒 הכל נשמר')} <strong>{t('ui.text.privacyB', 'במכשיר הזה בלבד')}</strong>{t('ui.text.privacyC', ', נמחק אחרי 24 שעות, ולא נשלח לשום מקום.')}
         </p>
 
         <section>
-          <h2>🧒 מי אנחנו (לא חובה)</h2>
+          <h2>{t('ui.text.whoWeAre', '🧒 מי אנחנו (לא חובה)')}</h2>
           <div className={css.cardIdentity}>
             <label className={css.cardField}>
-              <span className={css.cardFieldLabel}>כינוי / שם פרטי</span>
+              <span className={css.cardFieldLabel}>{t('ui.text.nickname', 'כינוי / שם פרטי')}</span>
               <input
                 className={css.cardInput}
                 value={card.nickname}
                 onChange={(e) => setCard({ ...card, nickname: e.target.value })}
                 maxLength={30}
-                placeholder="לא חובה"
+                placeholder={t('ui.text.optional', 'לא חובה')}
               />
             </label>
             <label className={css.cardField} style={{ maxWidth: 100 }}>
-              <span className={css.cardFieldLabel}>גיל</span>
+              <span className={css.cardFieldLabel}>{t('ui.text.age', 'גיל')}</span>
               <input
                 className={css.cardInput}
                 value={card.age}
@@ -81,11 +83,13 @@ export function CardPage() {
           </div>
         </section>
 
-        {cardSections.map((section) => (
+        {cardSections.map((section, si) => {
+          const label = t(`careCard.cardSections.${si}`, section)
+          return (
           <section key={section.key}>
-            <h2>{section.emoji} {section.title}</h2>
-            <div className={css.cardChips} role="group" aria-label={section.title}>
-              {section.options.map((option) => {
+            <h2>{section.emoji} {label.title}</h2>
+            <div className={css.cardChips} role="group" aria-label={label.title}>
+              {section.options.map((option, oi) => {
                 const on = card[section.key].includes(option)
                 return (
                   <button
@@ -96,7 +100,7 @@ export function CardPage() {
                     aria-pressed={on}
                     onClick={() => toggle(section.key, option)}
                   >
-                    {option}
+                    {label.options[oi] ?? option}
                   </button>
                 )
               })}
@@ -106,20 +110,21 @@ export function CardPage() {
               value={card.custom?.[section.key] ?? ''}
               onChange={(e) => setCustom(section.key, e.target.value)}
               maxLength={CUSTOM_MAX}
-              placeholder="אחר… (אפשר לכתוב בחופשי)"
-              aria-label={`אחר — ${section.title}`}
+              placeholder={t('ui.text.otherPlaceholder', 'אחר… (אפשר לכתוב בחופשי)')}
+              aria-label={`${t('ui.text.other', 'אחר')} — ${label.title}`}
             />
           </section>
-        ))}
+          )
+        })}
 
         <section>
-          <h2>✏️ עוד משהו שעוזר? (לא חובה)</h2>
+          <h2>{t('ui.text.anythingElse', '✏️ עוד משהו שעוזר? (לא חובה)')}</h2>
           <textarea
             className={css.calmFreeText}
             rows={3}
             value={card.freeNote}
             onChange={(e) => setCard({ ...card, freeNote: e.target.value })}
-            placeholder="למשל: אוהב שמספרים לו מה קורה בקול שקט…"
+            placeholder={t('ui.text.freeNotePlaceholder', 'למשל: אוהב שמספרים לו מה קורה בקול שקט…')}
           />
         </section>
 
@@ -130,12 +135,12 @@ export function CardPage() {
               style={{ background: theme.accent, color: theme.accentText, opacity: empty ? 0.4 : 1 }}
               disabled={empty}
             >
-              🪪 הצגת הכרטיס לצוות ←
+              {t('ui.buttons.showCardNext', '🪪 הצגת הכרטיס לצוות ←')}
             </button>
           </Link>
           {!empty && (
             <button type="button" className={css.backBtn} style={{ borderColor: '#aaa', color: '#888' }} onClick={clearCard}>
-              ניקוי
+              {t('ui.buttons.clear', 'ניקוי')}
             </button>
           )}
         </div>

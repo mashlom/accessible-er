@@ -3,6 +3,7 @@ import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
+import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 // All coin IDs that can be earned on the day map (required stages)
@@ -16,6 +17,7 @@ const DAY_COIN_IDS = new Set<string>(
 
 export function NightMapPage() {
   const { theme } = useQuestTheme()
+  const { t } = useI18n()
   const { visibleOptionals, allOptionalsDone, doneProcedures } = useQuestProgress()
   // Counter shows only coins carried over from the day map
   const doneCount = [...doneProcedures].filter((id) => DAY_COIN_IDS.has(id)).length
@@ -102,7 +104,7 @@ export function NightMapPage() {
                   className={pinClass}
                   onClick={() => allOptionalsDone && navigate(conceptPath('/celebrate'))}
                   disabled={!allOptionalsDone}
-                  aria-label={skin?.label ?? 'סוף טוב'}
+                  aria-label={skin?.label ?? t('ui.buttons.happyEnd', 'סוף טוב')}
                 >
                   <div className={css.pinImageWrap} style={allOptionalsDone ? {} : { opacity: 0.6 }}>
                     {theme.shopImage ?? skin?.image ? (
@@ -112,7 +114,7 @@ export function NightMapPage() {
                     )}
                     {allOptionalsDone && <span className={css.pinPulse} aria-hidden />}
                   </div>
-                  <span className={css.pinLabel}>{skin?.label ?? 'סוף טוב'}</span>
+                  <span className={css.pinLabel}>{skin?.label ?? t('ui.buttons.happyEnd', 'סוף טוב')}</span>
                 </button>
               )
             })()}

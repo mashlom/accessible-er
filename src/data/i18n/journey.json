@@ -1,0 +1,246 @@
+{
+  "en": {
+    "journeyStages": {
+      "reception": {
+        "title": "Check-in at the reception desk",
+        "meaning": "This is the first step of the visit. After this, you go to triage.",
+        "whatHappens": "The receptionist asks for details and opens a visit file. You usually get an ID bracelet. You may be standing close to other people in line.",
+        "challenge": "Sometimes there is a line and a short wait by the desk. It can be noisy.",
+        "canAsk": [
+          "Sit in a quieter area while waiting",
+          "Get a short explanation of what comes next"
+        ],
+        "waitRange": "5–15 minutes"
+      },
+      "wait-before-triage": {
+        "title": "Waiting before triage",
+        "meaning": "After check-in, you wait in line for the nurse to see you.",
+        "whatHappens": "You sit and wait in line. It can be crowded and noisy, with many people and children around. This is a good time to prepare your child for what will happen at triage.",
+        "challenge": "A crowded, noisy place. Not knowing how long it will take. It can be hard to get your child's attention with so much going on around.",
+        "canAsk": [
+          "A quieter space or a less crowded spot",
+          "Information about how long it might take"
+        ],
+        "nextStagePrepare": "This is a good time to prepare your child for the measurements coming up: temperature, oxygen, blood pressure. You can talk about the devices and practice together.",
+        "waitRange": "5–15 minutes"
+      },
+      "triage": {
+        "title": "Triage and measurements",
+        "meaning": "Triage sets the order of care by how urgent each case is. After this, you wait for your turn with the doctor.",
+        "whatHappens": "A nurse measures temperature, pulse, blood pressure and oxygen, and asks a few short questions. If your child has no ID bracelet yet, they get one now. The nurse touches your child's hand, finger or arm during the measurements, using devices like a thermometer, a finger clip (for oxygen) and a blood pressure cuff.",
+        "challenge": "Several close-contact measurements, one after another. New devices and new sensations.",
+        "canAsk": [
+          "A short explanation before each measurement",
+          "Do the measurements one at a time, at our pace",
+          "Show the devices on the parent first"
+        ],
+        "waitRange": "10–20 minutes"
+      },
+      "wait-doctor": {
+        "title": "Waiting for the doctor",
+        "meaning": "You have finished triage and things are stable. Now you wait for your turn to see the doctor.",
+        "whatHappens": "You wait in the waiting room or at a station. You can use this time to prepare for the next step. The room may be crowded, with people sitting close by.",
+        "nextStagePrepare": "You can play \"doctor\" with a doll beforehand, and explain that the doctor only looks and listens in order to help.",
+        "challenge": "The waiting itself and not knowing what comes next. A busy place can feel overwhelming.",
+        "canAsk": [
+          "A quieter space or a calm waiting corner",
+          "An estimated time (as a range)"
+        ],
+        "waitRange": "30–90 minutes"
+      },
+      "doctor": {
+        "title": "Doctor's exam",
+        "meaning": "This is the main meeting of the visit. From here, the path is tailored to each child's situation.",
+        "whatHappens": "A short talk, a physical exam, and a decision about tests or treatment if needed. It includes light touch and contact with devices — a stethoscope on the chest, a small device to check the throat and ears, and sometimes gentle pressing on the belly.",
+        "challenge": "The touch of a physical exam, and a new person coming close. Lots of questions.",
+        "canAsk": [
+          "One person to lead and do the talking",
+          "An explanation before each touch",
+          "A little time to think between a question and an answer"
+        ],
+        "waitRange": "10–20 minutes"
+      },
+      "tests": {
+        "title": "Tests (if needed)",
+        "meaning": "The doctor decided more information is needed. Not everyone has every test — only what fits the situation.",
+        "whatHappens": "The planned tests are done — blood, urine, X-ray, ultrasound or others. You can prepare your child for each one in advance. Some tests involve contact with devices or materials (like ultrasound gel, an X-ray belt or numbing cream).",
+        "challenge": "Moving between rooms, big machines, waiting between tests.",
+        "canAsk": [
+          "Visual preparation for each test in advance",
+          "Fewer sensory triggers during the test",
+          "The parent stays close"
+        ],
+        "waitRange": "Depends on the test"
+      },
+      "consult": {
+        "title": "Specialist consultation (if needed)",
+        "meaning": "Sometimes a specialist doctor is called — orthopedics, surgery, ENT and others — to check as well. Not everyone needs this, and it is not a sign that something is wrong.",
+        "whatHappens": "Another doctor comes, asks questions and examines, and sometimes suggests another test or treatment. This may include another short physical exam.",
+        "challenge": "Another new person, another exam, and sometimes a wait until the specialist arrives.",
+        "canAsk": [
+          "To know which specialist you are waiting for, and why",
+          "That the specialist is told in advance what is important to know about your child",
+          "That explanations are given again, briefly and simply"
+        ],
+        "waitRange": "20–60 minutes"
+      },
+      "wait-results": {
+        "title": "Waiting for results",
+        "meaning": "The tests are done and now you wait for the answers. This is usually the longer wait.",
+        "whatHappens": "Results come in bit by bit. The doctor will update you when there is information.",
+        "challenge": "A long, unpredictable wait. It is easy to feel \"they forgot about us\".",
+        "canAsk": [
+          "An update on what is already known",
+          "A quiet space to wait",
+          "An estimated time for the results"
+        ],
+        "waitRange": "45–120 minutes"
+      },
+      "treatment": {
+        "title": "Treatment during the visit",
+        "meaning": "The doctor decided on the treatment needed. Every treatment can be adapted to your child's needs.",
+        "whatHappens": "The planned treatment is given — an IV, medicine, inhalation, a cast, a bandage or stitches. You can usually ask for accommodations that make it easier. All of these treatments involve touch, and sometimes devices — like a needle for an IV, or a cast placed on the body.",
+        "challenge": "Treatments that involve touch, a needle, or waiting in one place.",
+        "canAsk": [
+          "Numbing cream before a needle",
+          "Distraction, and one person to lead",
+          "Visual preparation before each treatment"
+        ],
+        "waitRange": "Depends on the treatment"
+      },
+      "decision": {
+        "title": "Decision: going home or staying in hospital",
+        "meaning": "The team sums things up. Most often you go home with instructions; sometimes your child stays in hospital.",
+        "whatHappens": "A summary talk, follow-up instructions, prescriptions if needed, and getting ready to leave or to move to a hospital ward.",
+        "challenge": "A lot of information at the end of a long, tiring visit. Moving to a new place if your child stays in hospital.",
+        "canAsk": [
+          "Instructions in writing or in pictures",
+          "A short summary in simple sentences",
+          "Time to say goodbye to the space before moving"
+        ]
+      }
+    }
+  },
+  "ru": {
+    "journeyStages": {
+      "reception": {
+        "title": "Оформление в регистратуре",
+        "meaning": "Это первый этап визита. Отсюда вы переходите на триаж.",
+        "whatHappens": "Сотрудник регистратуры спрашивает данные и заводит карту визита. Обычно выдают идентификационный браслет. В очереди, возможно, придётся стоять близко к другим людям.",
+        "challenge": "Иногда у стойки очередь и короткое ожидание. Может быть шумно.",
+        "canAsk": [
+          "Посидеть в более тихом месте, пока ждёте",
+          "Коротко объяснить, что будет дальше"
+        ],
+        "waitRange": "5–15 минут"
+      },
+      "wait-before-triage": {
+        "title": "Ожидание перед триажем",
+        "meaning": "После регистратуры вы ждёте в очереди на осмотр у медсестры.",
+        "whatHappens": "Вы сидите в очереди. Может быть тесно и шумно, вокруг много людей и детей. Это хорошее время, чтобы подготовить ребёнка к тому, что будет на триаже.",
+        "challenge": "Тесно и шумно. Непонятно, сколько придётся ждать. Трудно привлечь внимание ребёнка, когда вокруг столько всего.",
+        "canAsk": [
+          "Более тихое или менее людное место",
+          "Узнать, сколько примерно ещё ждать"
+        ],
+        "nextStagePrepare": "Это хорошее время, чтобы подготовить ребёнка к измерениям: температура, кислород, давление. Можно поговорить о приборах и потренироваться.",
+        "waitRange": "5–15 минут"
+      },
+      "triage": {
+        "title": "Триаж и измерения",
+        "meaning": "На триаже определяют очерёдность по срочности. После этого вы ждёте своей очереди к врачу.",
+        "whatHappens": "Медсестра измеряет температуру, пульс, давление и кислород и задаёт несколько коротких вопросов. Если идентификационного браслета ещё нет, его надевают. Во время измерений медсестра касается руки, пальца или предплечья ребёнка и использует приборы: градусник, прищепку на палец (для кислорода) и манжету для давления.",
+        "challenge": "Несколько измерений с близким контактом, одно за другим. Новые приборы и новые ощущения.",
+        "canAsk": [
+          "Коротко объяснять перед каждым измерением",
+          "Делать измерения по одному, в нашем темпе",
+          "Сначала показать приборы на родителе"
+        ],
+        "waitRange": "10–20 минут"
+      },
+      "wait-doctor": {
+        "title": "Ожидание врача",
+        "meaning": "Триаж пройден, состояние стабильное. Теперь вы ждёте своей очереди на осмотр у врача.",
+        "whatHappens": "Вы ждёте в зале ожидания или у поста. Это время можно использовать, чтобы подготовиться к следующему шагу. В зале может быть тесно, люди сидят близко.",
+        "nextStagePrepare": "Можно заранее поиграть с куклой «в доктора» и объяснить, что врач только смотрит и слушает, чтобы помочь.",
+        "challenge": "Само ожидание и неизвестность. В людном месте легко перегрузиться.",
+        "canAsk": [
+          "Более тихое место или спокойный уголок для ожидания",
+          "Примерное время ожидания (в диапазоне)"
+        ],
+        "waitRange": "30–90 минут"
+      },
+      "doctor": {
+        "title": "Осмотр врача",
+        "meaning": "Это главная встреча визита. Дальше путь подбирается под состояние каждого ребёнка.",
+        "whatHappens": "Короткий разговор, осмотр и решение об анализах или лечении, если нужно. Есть лёгкие прикосновения и контакт с приборами — стетоскоп на груди, маленький прибор для осмотра горла и ушей, иногда мягкое надавливание на живот.",
+        "challenge": "Прикосновения при осмотре и новый человек рядом. Много вопросов.",
+        "canAsk": [
+          "Чтобы вёл и говорил один человек",
+          "Объяснять перед каждым прикосновением",
+          "Немного времени на обдумывание между вопросом и ответом"
+        ],
+        "waitRange": "10–20 минут"
+      },
+      "tests": {
+        "title": "Обследования (если нужно)",
+        "meaning": "Врач решил, что нужно больше информации. Не всем делают все обследования — только то, что нужно в вашей ситуации.",
+        "whatHappens": "Проводят назначенные обследования — анализ крови, мочи, рентген, УЗИ или другие. К каждому можно заранее подготовить ребёнка. Некоторые обследования включают контакт с приборами или средствами (например, гель для УЗИ, пояс при рентгене или обезболивающий крем).",
+        "challenge": "Переходы между помещениями, большие аппараты, ожидание между обследованиями.",
+        "canAsk": [
+          "Наглядная подготовка к каждому обследованию заранее",
+          "Меньше раздражителей во время обследования",
+          "Чтобы родитель оставался рядом"
+        ],
+        "waitRange": "Зависит от обследования"
+      },
+      "consult": {
+        "title": "Консультация специалиста (если нужно)",
+        "meaning": "Иногда приглашают врача-специалиста — ортопеда, хирурга, ЛОРа и других — чтобы тоже посмотреть. Это нужно не всем, и это не значит, что что-то плохо.",
+        "whatHappens": "Приходит ещё один врач, задаёт вопросы и осматривает, иногда советует дополнительное обследование или лечение. Может быть ещё один короткий осмотр.",
+        "challenge": "Ещё один новый человек, ещё один осмотр, иногда ожидание, пока придёт специалист.",
+        "canAsk": [
+          "Узнать, какого специалиста вы ждёте и зачем",
+          "Чтобы специалисту заранее рассказали, что важно знать о ребёнке",
+          "Чтобы объяснения повторили — коротко и просто"
+        ],
+        "waitRange": "20–60 минут"
+      },
+      "wait-results": {
+        "title": "Ожидание результатов",
+        "meaning": "Обследования сделаны, теперь вы ждёте ответов. Обычно это самое долгое ожидание.",
+        "whatHappens": "Результаты приходят постепенно. Врач расскажет, когда появится информация.",
+        "challenge": "Долгое и непредсказуемое ожидание. Легко почувствовать, что «про нас забыли».",
+        "canAsk": [
+          "Промежуточные новости о том, что уже известно",
+          "Тихое место для ожидания",
+          "Примерное время до результатов"
+        ],
+        "waitRange": "45–120 минут"
+      },
+      "treatment": {
+        "title": "Лечение во время визита",
+        "meaning": "Врач решил, какое лечение нужно. Любое лечение можно адаптировать под потребности ребёнка.",
+        "whatHappens": "Проводят назначенное лечение — капельницу, лекарства, ингаляцию, гипс, повязку или швы. Обычно можно попросить адаптации, которые облегчают процесс. Все эти процедуры включают прикосновения, а иногда и приборы — например, иглу для капельницы или гипс, который накладывают на тело.",
+        "challenge": "Процедуры с прикосновениями, иглой или ожиданием на одном месте.",
+        "canAsk": [
+          "Обезболивающий крем перед уколом",
+          "Отвлечение и один человек, который ведёт",
+          "Наглядная подготовка перед каждой процедурой"
+        ],
+        "waitRange": "Зависит от процедуры"
+      },
+      "decision": {
+        "title": "Решение: домой или госпитализация",
+        "meaning": "Команда подводит итоги. Чаще всего вас отпускают домой с рекомендациями; иногда ребёнка госпитализируют.",
+        "whatHappens": "Итоговый разговор, рекомендации на дальнейшее, рецепты при необходимости и подготовка к выходу или к переводу в отделение.",
+        "challenge": "Много информации в конце долгого и утомительного визита. Переход в новое место, если ребёнка госпитализируют.",
+        "canAsk": [
+          "Рекомендации письменно или в картинках",
+          "Короткое резюме простыми фразами",
+          "Время попрощаться с местом перед переходом"
+        ]
+      }
+    }
+  }
+}

@@ -3,10 +3,12 @@ import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
+import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 export function MapPage() {
   const { theme } = useQuestTheme()
+  const { t } = useI18n()
   const { visible, doneProcedures } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
@@ -20,7 +22,7 @@ export function MapPage() {
 
   const allItems = REQUIRED_STAGES.map((id) => {
     const state = visible.find((s) => s.id === id)
-    const data = journeyStages.find((j) => j.id === id)
+    const data = t('journey.journeyStages', journeyStages).find((j) => j.id === id)
     const skin = theme.stages[id]
     const procIds = data?.procedureIds ?? []
     const procCoins = procIds.filter((pid) => doneProcedures.has(pid)).length

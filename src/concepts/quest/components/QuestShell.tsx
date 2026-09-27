@@ -1,10 +1,10 @@
 import { Outlet, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { Link, useIsConceptHome } from '../../nav'
 import { REQUIRED_STAGES, useQuestProgress } from '../useQuestProgress'
 import { useQuestTheme } from '../useQuestTheme'
 import { LanguagePicker } from '../../../components/LanguagePicker'
-import { I18nProvider, loadTranslations } from '../../../hooks/useI18n'
+import { setI18nEnabled, useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 /**
@@ -22,63 +22,50 @@ export function QuestShell() {
   const isHome = useIsConceptHome()
   const { active, visibleOptionals } = useQuestProgress()
   const { theme } = useQuestTheme()
+  const { lang, dir, t } = useI18n()
   const isOcean = theme.id === 'ocean'
 
-  console.log('QuestShell: theme.id =', theme.id, 'isOcean =', isOcean)
-
-  useEffect(() => {
-    if (isOcean) {
-      console.log('Loading translations for ocean')
-      loadTranslations('ocean')
-    }
+  useLayoutEffect(() => {
+    setI18nEnabled(isOcean)
+    return () => setI18nEnabled(false)
   }, [isOcean])
 
   const dayActive = active && (REQUIRED_STAGES as readonly string[]).includes(active.id)
   const mapTarget = dayActive || visibleOptionals.length === 0 ? '/map' : '/night-map'
 
-  const header = (
-    <header className={`${css.questTopbar} no-print`}>
-      {!isHome ? (
-        <button
-          type="button"
-          className={css.questTopBtn}
-          onClick={() => navigate(-1)}
-          aria-label="חזרה"
-        >
-          <span aria-hidden>›</span>
-        </button>
-      ) : (
-        <span className={css.questTopBtn} aria-hidden />
-      )}
-
-      <Link to={mapTarget} className={css.questTopBrand} aria-label="למפת המסע">
-        <span aria-hidden>🗺️</span>
-      </Link>
-
-      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end', paddingRight: '0.5rem' }}>
-        {isOcean && <LanguagePicker />}
-        <a href="#/" className={css.questTopBtn} aria-label="לתפריט הקונספטים">
-          <span aria-hidden>☰</span>
-        </a>
-      </div>
-    </header>
-  )
-
-  const main = (
-    <main id="main">
-      <Outlet />
-    </main>
-  )
-
-  const content = (
-    <div className={css.questShell}>
+  return (
+    <div className={css.questShell} dir={dir} lang={lang}>
       <a href="#main" className="skip-link">
-        דילוג לתוכן
+        {t('ui.shell.skip', 'דילוג לתוכן')}
       </a>
-      {header}
-      {main}
+      <header className={`${css.questTopbar} no-print`}>
+        {!isHome ? (
+          <button
+            type="button"
+            className={css.questTopBtn}
+            onClick={() => navigate(-1)}
+            aria-label={t('ui.shell.back', 'חזרה')}
+          >
+            <span aria-hidden>{dir === 'rtl' ? '›' : '‹'}</span>
+          </button>
+        ) : (
+          <span className={css.questTopBtn} aria-hidden />
+        )}
+
+        <Link to={mapTarget} className={css.questTopBrand} aria-label={t('ui.shell.map', 'למפת המסע')}>
+          <span aria-hidden>🗺️</span>
+        </Link>
+
+        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end', paddingInlineEnd: '0.5rem' }}>
+          {isOcean && <LanguagePicker />}
+          <a href="#/" className={css.questTopBtn} aria-label={t('ui.shell.menu', 'לתפריט הקונספטים')}>
+            <span aria-hidden>☰</span>
+          </a>
+        </div>
+      </header>
+      <main id="main">
+        <Outlet />
+      </main>
     </div>
   )
-
-  return <I18nProvider>{content}</I18nProvider>
 }

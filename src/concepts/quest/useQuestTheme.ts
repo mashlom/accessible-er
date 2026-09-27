@@ -1,30 +1,44 @@
-import { useState, useEffect } from 'react'
+import { useMemo, useSyncExternalStore } from 'react'
 import { getTheme, type QuestTheme } from './themes'
+import { useI18n } from '../../hooks/useI18n'
 
 const KEY = 'quest-theme'
 
 function readId(): string {
   try { return sessionStorage.getItem(KEY) ?? '' } catch { return '' }
 }
-function writeId(id: string) {
-  try { sessionStorage.setItem(KEY, id) } catch {}
+
+let id = readId()
+const listeners = new Set<() => void>()
+const subscribe = (l: () => void) => {
+  listeners.add(l)
+  return () => listeners.delete(l)
+}
+
+function setThemeId(newId: string) {
+  id = newId
+  try { sessionStorage.setItem(KEY, newId) } catch {}
+  listeners.forEach((l) => l())
 }
 
 export function useQuestTheme(): { theme: QuestTheme; setThemeId: (id: string) => void } {
-  const [id, setId] = useState<string>(readId)
+  const current = useSyncExternalStore(subscribe, () => id)
+  const { lang, t } = useI18n()
 
-  useEffect(() => {
-    // Sync with sessionStorage on mount
-    const current = readId()
-    if (current && current !== id) {
-      setId(current)
+  const theme = useMemo(() => {
+    const base = getTheme(current)
+    if (base.id !== 'ocean' || lang === 'he') return base
+    return {
+      ...base,
+      name: t('ocean.meta.name', base.name),
+      stages: t('ocean.stages', base.stages),
+      procedureNarratives: t('ocean.procedures', base.procedureNarratives ?? {}),
+      calmLines: t('ocean.calm', base.calmLines ?? []),
+      cardChildHero: t('ocean.card', base.cardChildHero ?? { title: '', subtitle: '' }),
+      distractTitle: t('ocean.distract', base.distractTitle ?? ''),
     }
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current, lang])
 
-  function setThemeId(newId: string) {
-    writeId(newId)
-    setId(newId)
-  }
-
-  return { theme: getTheme(id), setThemeId }
+  return { theme, setThemeId }
 }

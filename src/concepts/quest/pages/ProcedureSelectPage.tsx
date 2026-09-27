@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, OPTIONAL_STAGES, StageId } from '../useQuestProgress'
+import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 export function ProcedureSelectPage() {
   const { theme } = useQuestTheme()
+  const { t } = useI18n()
   const { revealMultiple, resetOptionals } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
@@ -35,11 +37,11 @@ export function ProcedureSelectPage() {
     navigate(conceptPath('/celebrate'))
   }
 
-  const prompt = theme.procedurePrompt ?? 'בחרו את הפרוצדורות שנקבעו'
+  const prompt = theme.procedurePrompt ?? t('ui.text.procedurePrompt', 'בחרו את הפרוצדורות שנקבעו')
 
   return (
     <div className={css.selectPage} style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}>
-      <h1 className={css.selectTitle} style={{ color: theme.accent }}>שלב הבא</h1>
+      <h1 className={css.selectTitle} style={{ color: theme.accent }}>{t('ui.text.nextStep', 'שלב הבא')}</h1>
       <p className={css.selectSub}>{prompt}</p>
 
       <div className={css.worldGrid}>
@@ -75,7 +77,7 @@ export function ProcedureSelectPage() {
             style={{ background: theme.accent, color: theme.accentText }}
             onClick={handleContinue}
           >
-            המשיכו ←
+            {t('ui.buttons.continue', 'המשיכו ←')}
           </button>
         ) : (
           <button
@@ -83,7 +85,7 @@ export function ProcedureSelectPage() {
             style={{ background: theme.accent, color: theme.accentText }}
             onClick={handleSkip}
           >
-            לסיום ←
+            {t('ui.buttons.finish', 'לסיום ←')}
           </button>
         )}
       </div>

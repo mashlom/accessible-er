@@ -10,10 +10,12 @@ import {
   type CareCard,
 } from '../../../data/careCard'
 import { useQuestTheme } from '../useQuestTheme'
+import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 export function CardViewPage() {
   const { theme } = useQuestTheme()
+  const { t } = useI18n()
   const { goBack, leaveState, passThroughState } = useReturnTo('/card')
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
 
@@ -26,7 +28,7 @@ export function CardViewPage() {
           <p className={css.stageHeroHint}>כמה סימונים קצרים — ויהיה לכם כרטיס להציג לצוות</p>
           <div className={css.stageBack}>
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
-              חזרה →
+              {t('ui.buttons.back', 'חזרה →')}
             </button>
           </div>
         </div>
@@ -34,7 +36,7 @@ export function CardViewPage() {
           <div className={css.stageBack}>
             <Link to="/card" state={passThroughState}>
               <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
-                למילוי הכרטיס ←
+                {t('ui.buttons.fillCard', 'למילוי הכרטיס ←')}
               </button>
             </Link>
           </div>
@@ -67,7 +69,7 @@ export function CardViewPage() {
         {card.age.trim() && <p className={css.stageHeroHint}>גיל {card.age.trim()}</p>}
         <div className={`${css.stageBack} no-print`}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
-            חזרה →
+            {t('ui.buttons.back', 'חזרה →')}
           </button>
         </div>
       </div>
@@ -95,11 +97,11 @@ export function CardViewPage() {
 
         <div className={`${css.stageBack} no-print`}>
           <button type="button" className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }} onClick={() => window.print()}>
-            📄 שמירה / הדפסה
+            {t('ui.buttons.savePrint', '📄 שמירה / הדפסה')}
           </button>
           <Link to="/card" state={leaveState('/card/view')}>
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              ✏️ עריכה →
+              {t('ui.buttons.edit', '✏️ עריכה →')}
             </button>
           </Link>
         </div>

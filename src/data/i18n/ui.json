@@ -1,0 +1,261 @@
+{
+  "en": {
+    "buttons": {
+      "back": "← Back",
+      "backToMap": "← Back to map",
+      "done": "I did it! →",
+      "notNeededYet": "← Not needed yet",
+      "chooseTests": "Choose the checks →",
+      "continue": "Continue →",
+      "finish": "Finish →",
+      "toShop": "To the shop 🛍️",
+      "chooseWorld": "← Choose a world",
+      "feedback": "💬 How was it? Tell us →",
+      "distractAnimations": "🎬 Distraction animations →",
+      "showToStaff": "Show to staff →",
+      "makeCard": "🪪 Make an accommodations card",
+      "showCard": "🪪 Show the card to staff",
+      "showCardNext": "🪪 Show the card to staff →",
+      "needHelp": "🆘 We need help",
+      "close": "Close",
+      "clear": "Clear",
+      "fillCard": "Fill in the card →",
+      "savePrint": "📄 Save / Print",
+      "edit": "✏️ Edit",
+      "whatAwaits": "🗺️ What's ahead of us today?",
+      "cardForStaff": "🪪 Accommodations card for staff",
+      "hardNow": "💙 It's hard for us right now",
+      "happyEnd": "Happy ending",
+      "chooseWorldAria": "Choose a world:"
+    },
+    "shell": {
+      "skip": "Skip to content",
+      "back": "Back",
+      "map": "To the journey map",
+      "menu": "To the concepts menu"
+    },
+    "text": {
+      "estimated": "⏱ Estimated time:",
+      "weAreHere": "We are here",
+      "reasonHint": "Tap the button to choose the reason for your visit and see your expected visit plan.",
+      "whatActuallyHappens": "What actually happens",
+      "childMayFeel": "What your child may feel",
+      "whatMayBeHard": "What might be hard?",
+      "askStaff": "What to ask the staff",
+      "canAsk": "You can ask for",
+      "whatHappens": "What happens",
+      "whatHappensHere": "What happens here",
+      "cardHint": "Tap the button to make a short card for the staff describing your child's particular needs.",
+      "prepareMeasurements": "How to prepare your child for the upcoming measurements",
+      "prepareChild": "How to prepare your child",
+      "calmDefault": "A moment — let's breathe together 💙",
+      "whenHard": "When it's hard — what helps",
+      "readySentences": "Ready-made sentences for staff",
+      "readyHint": "Hard to talk right now? Tap a sentence to show it to the staff in large text on the screen — it will appear in Hebrew.",
+      "freeMessage": "Free message to staff",
+      "freeHint": "Want to say something not listed above? Write it here and show it to the staff.",
+      "writeHere": "Write here...",
+      "cardTitle": "Accommodations card",
+      "cardDesc": "The card gathers what's important to know about your child — show it to the staff instead of explaining in words.",
+      "aboutMyChild": "What's important to know about my child",
+      "privacyA": "🔒 Everything is saved",
+      "privacyB": "on this device only",
+      "privacyC": ", deleted after 24 hours, and never sent anywhere.",
+      "whoWeAre": "🧒 Who we are (optional)",
+      "nickname": "Nickname / first name",
+      "optional": "Optional",
+      "age": "Age",
+      "otherPlaceholder": "Other… (free text)",
+      "other": "Other",
+      "anythingElse": "✏️ Anything else that helps? (optional)",
+      "freeNotePlaceholder": "For example: likes being told what's happening in a quiet voice…",
+      "reasonTitle": "What brought you here today?",
+      "reasonHintTop": "Your choice helps show your expected route",
+      "reasonAria": "Reason for the visit",
+      "expectedRoute": "Our expected route",
+      "ifNeeded": "if needed",
+      "routeNote": "This is only an example route. The exact route is decided by the medical staff.",
+      "weDidIt": "We did it! 🎉",
+      "towardsDischarge": "Getting ready to go home",
+      "distractDefault": "Distraction corner",
+      "distractHint": "Choose what you'd like to see ↓",
+      "distractAria": "What would you like to see",
+      "distractWhy": "Distraction — why it helps",
+      "distractP1": "You can look here together instead of at the hand or the device. Choose together what interests your child most — the act of choosing already gives a sense of control.",
+      "distractP2": "If the device is set to \"reduce motion\", the animations won't play. You can also simply count to ten together — that's a good distraction too.",
+      "procedurePrompt": "Choose the procedures that were ordered",
+      "nextStep": "Next step",
+      "sensoryTitle": "What to expect here",
+      "distractLabels": [
+        "Rainbow",
+        "Drop",
+        "Star",
+        "Heart",
+        "Whirl",
+        "Little star"
+      ],
+      "sensoryLabels": [
+        "Noise",
+        "Light",
+        "Smell",
+        "People"
+      ],
+      "discharge": [
+        {
+          "title": "What happens now",
+          "body": "The staff goes over the visit with you, gives instructions for what comes next, and sometimes a prescription. Then you go home."
+        },
+        {
+          "title": "It's a transition",
+          "body": "After a long, tiring visit, even going home can feel like a big change. That's completely okay."
+        },
+        {
+          "title": "At home",
+          "body": "At home your child may need time, quiet and a gradual return to routine. Sometimes the reaction to what we went through comes only later — and that's natural too."
+        },
+        {
+          "title": "Equipment or accessories for home",
+          "body": "Sometimes you need a small item at home — for example, a waterproof cast cover to shower without getting it wet. The staff will explain what you need and where to get it."
+        },
+        {
+          "title": "Follow-up with your pediatrician",
+          "body": "It is important to keep following up with your community pediatrician as recommended — they know your child and will support you after the visit too."
+        }
+      ],
+      "coins": {
+        "one": "You collected {n} coin — welcome to the shop!",
+        "other": "You collected {n} coins — welcome to the shop!"
+      }
+    }
+  },
+  "ru": {
+    "buttons": {
+      "back": "← Назад",
+      "backToMap": "← Назад к карте",
+      "done": "У меня получилось! →",
+      "notNeededYet": "← Пока не нужно",
+      "chooseTests": "К выбору проверок →",
+      "continue": "Дальше →",
+      "finish": "Завершить →",
+      "toShop": "В магазин 🛍️",
+      "chooseWorld": "← Выбрать мир",
+      "feedback": "💬 Как всё прошло? Расскажите нам →",
+      "distractAnimations": "🎬 Мультики, чтобы отвлечься →",
+      "showToStaff": "Показать персоналу →",
+      "makeCard": "🪪 Заполнить карточку адаптаций",
+      "showCard": "🪪 Показать карточку персоналу",
+      "showCardNext": "🪪 Показать карточку персоналу →",
+      "needHelp": "🆘 Нам нужна помощь",
+      "close": "Закрыть",
+      "clear": "Очистить",
+      "fillCard": "Заполнить карточку →",
+      "savePrint": "📄 Сохранить / Распечатать",
+      "edit": "✏️ Редактировать",
+      "whatAwaits": "🗺️ Что нас ждёт сегодня?",
+      "cardForStaff": "🪪 Карточка адаптаций для персонала",
+      "hardNow": "💙 Нам сейчас тяжело",
+      "happyEnd": "Счастливый конец",
+      "chooseWorldAria": "Выбрать мир:"
+    },
+    "shell": {
+      "skip": "Перейти к содержимому",
+      "back": "Назад",
+      "map": "К карте путешествия",
+      "menu": "В меню концепций"
+    },
+    "text": {
+      "estimated": "⏱ Примерное время:",
+      "weAreHere": "Мы здесь",
+      "reasonHint": "Нажмите на кнопку, чтобы выбрать причину визита и увидеть ожидаемый план визита.",
+      "whatActuallyHappens": "Что происходит на самом деле",
+      "childMayFeel": "Что может почувствовать ребёнок",
+      "whatMayBeHard": "Что может быть трудно?",
+      "askStaff": "О чём попросить персонал",
+      "canAsk": "Можно попросить",
+      "whatHappens": "Что происходит",
+      "whatHappensHere": "Что здесь происходит",
+      "cardHint": "Нажмите на кнопку, чтобы подготовить для персонала короткую карточку об особенностях вашего ребёнка.",
+      "prepareMeasurements": "Как подготовить ребёнка к предстоящим измерениям",
+      "prepareChild": "Как подготовить ребёнка",
+      "calmDefault": "Минутку — дышим вместе 💙",
+      "whenHard": "Когда трудно — что помогает",
+      "readySentences": "Готовые фразы для персонала",
+      "readyHint": "Трудно говорить в такой момент? Нажмите на фразу, чтобы показать её персоналу крупно на экране — она появится на иврите.",
+      "freeMessage": "Своё сообщение персоналу",
+      "freeHint": "Хотите сказать то, чего нет выше? Напишите здесь и покажите персоналу.",
+      "writeHere": "Напишите здесь...",
+      "cardTitle": "Карточка адаптаций",
+      "cardDesc": "В карточке собрано главное о ребёнке — покажите её персоналу, вместо того чтобы объяснять словами.",
+      "aboutMyChild": "Что важно знать о моём ребёнке",
+      "privacyA": "🔒 Всё хранится",
+      "privacyB": "только на этом устройстве",
+      "privacyC": ", удаляется через 24 часа и никуда не отправляется.",
+      "whoWeAre": "🧒 Кто мы (необязательно)",
+      "nickname": "Прозвище / имя",
+      "optional": "Необязательно",
+      "age": "Возраст",
+      "otherPlaceholder": "Другое… (можно своими словами)",
+      "other": "Другое",
+      "anythingElse": "✏️ Что-то ещё, что помогает? (необязательно)",
+      "freeNotePlaceholder": "Например: любит, когда тихим голосом рассказывают, что происходит…",
+      "reasonTitle": "Что привело вас сегодня?",
+      "reasonHintTop": "Выбор поможет увидеть ваш ожидаемый маршрут",
+      "reasonAria": "Причина визита",
+      "expectedRoute": "Наш ожидаемый маршрут",
+      "ifNeeded": "при необходимости",
+      "routeNote": "Это лишь примерный маршрут. Точный маршрут определяет медицинский персонал.",
+      "weDidIt": "Мы справились! 🎉",
+      "towardsDischarge": "Готовимся к выписке домой",
+      "distractDefault": "Уголок, чтобы отвлечься",
+      "distractHint": "Выбери, что хочешь посмотреть ↓",
+      "distractAria": "Что хочешь посмотреть",
+      "distractWhy": "Отвлечение — почему это помогает",
+      "distractP1": "Можно смотреть сюда вместе, а не на руку или прибор. Выберите вместе, что больше всего интересно ребёнку, — сам выбор уже даёт ощущение контроля.",
+      "distractP2": "Если на устройстве включено «уменьшение движения», анимации не запустятся. Можно просто вместе посчитать до десяти — это тоже хорошее отвлечение.",
+      "procedurePrompt": "Выберите назначенные процедуры",
+      "nextStep": "Следующий шаг",
+      "sensoryTitle": "Чего ожидать здесь",
+      "distractLabels": [
+        "Радуга",
+        "Капля",
+        "Звезда",
+        "Сердце",
+        "Вихрь",
+        "Звёздочка"
+      ],
+      "sensoryLabels": [
+        "Шум",
+        "Свет",
+        "Запах",
+        "Люди"
+      ],
+      "discharge": [
+        {
+          "title": "Что происходит сейчас",
+          "body": "Персонал подводит с вами итоги визита, даёт рекомендации на будущее, иногда — рецепт. Потом вы едете домой."
+        },
+        {
+          "title": "Это переход",
+          "body": "После долгого утомительного визита даже возвращение домой может ощущаться как большая перемена. Это совершенно нормально."
+        },
+        {
+          "title": "Дома",
+          "body": "Дома ребёнку может понадобиться время, тишина и постепенное возвращение к привычному распорядку. Иногда реакция на пережитое приходит позже — и это тоже естественно."
+        },
+        {
+          "title": "Вещи и приспособления для дома",
+          "body": "Иногда дома нужна небольшая вещь — например, водонепроницаемый чехол для гипса, чтобы мыться, не намочив его. Персонал объяснит, что нужно и где это достать."
+        },
+        {
+          "title": "Наблюдение у педиатра",
+          "body": "Важно продолжать наблюдение у участкового педиатра по рекомендациям — он знает вашего ребёнка и будет сопровождать вас и после визита."
+        }
+      ],
+      "coins": {
+        "one": "Ты собрал(а) {n} монету — добро пожаловать в магазин!",
+        "few": "Ты собрал(а) {n} монеты — добро пожаловать в магазин!",
+        "many": "Ты собрал(а) {n} монет — добро пожаловать в магазин!"
+      }
+    }
+  }
+}

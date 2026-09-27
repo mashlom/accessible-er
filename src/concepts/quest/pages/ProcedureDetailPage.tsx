@@ -5,22 +5,24 @@ import { getProcedure } from '../../../data/procedures'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
+import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 export function ProcedureDetailPage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
+  const { t } = useI18n()
   const { completeProcedure, doneProcedures, active, visibleOptionals } = useQuestProgress()
   const navigate = useNavigate()
   const isDone = id ? doneProcedures.has(id) : false
 
   // Only allow completing if the parent stage is currently active
-  const parentStage = journeyStages.find((s) => s.procedureIds?.includes(id ?? ''))
+  const parentStage = t('journey.journeyStages', journeyStages).find((s) => s.procedureIds?.includes(id ?? ''))
   const parentIsActive = parentStage
     ? active?.id === parentStage.id ||
       visibleOptionals.some((s) => s.id === parentStage.id && s.status === 'active')
     : true // procedure with no parent stage — allow
-  const procedure = id ? getProcedure(id) : undefined
+  const procedure = id ? t(`procedures.procedures.${id}`, getProcedure(id)) : undefined
   const [variant, setVariant] = useState(0)
 
   useEffect(() => { setVariant(0) }, [id])
@@ -80,12 +82,12 @@ export function ProcedureDetailPage() {
             >
               {isDone
                 ? <em className={css.doneBtnCoin}>{theme.doneEmoji ?? '✓'}</em>
-                : 'הצלחתי! ←'}
+                : t('ui.buttons.done', 'הצלחתי! ←')}
             </button>
           )}
           {(!isDone || !parentIsActive) && (
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
-              {parentIsActive ? 'עוד לא צריך →' : 'חזרה →'}
+              {parentIsActive ? t('ui.buttons.notNeededYet', 'עוד לא צריך →') : t('ui.buttons.back', 'חזרה →')}
             </button>
           )}
         </div>
@@ -95,29 +97,29 @@ export function ProcedureDetailPage() {
         <p className={css.waitRange}>
           {procedure.who && <span>👤 {procedure.who}</span>}
           {procedure.who && procedure.duration && <span> · </span>}
-          {procedure.duration && <span>⏱ זמן משוער: {procedure.duration}</span>}
+          {procedure.duration && <span>{t('ui.text.estimated', '⏱ זמן משוער:')} {procedure.duration}</span>}
         </p>
       )}
 
       <div className={css.stageBody}>
         <section>
-          <h2>מה קורה בפועל</h2>
+          <h2>{t('ui.text.whatActuallyHappens', 'מה קורה בפועל')}</h2>
           <p>{procedure.what}</p>
         </section>
 
         <section>
-          <h2>מה הילד/ה עשוי/ה להרגיש</h2>
+          <h2>{t('ui.text.childMayFeel', 'מה הילד/ה עשוי/ה להרגיש')}</h2>
           <p>{procedure.feel}</p>
         </section>
 
         <section>
-          <h2>איך להכין את הילד/ה</h2>
+          <h2>{t('ui.text.prepareChild', 'איך להכין את הילד/ה')}</h2>
           <p>{procedure.prepare}</p>
         </section>
 
         {procedure.adaptations && procedure.adaptations.length > 0 && (
           <section>
-            <h2>מה לבקש מהצוות</h2>
+            <h2>{t('ui.text.askStaff', 'מה לבקש מהצוות')}</h2>
             <ul>
               {procedure.adaptations.map((item, i) => <li key={i}>{item}</li>)}
             </ul>

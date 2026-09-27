@@ -381,6 +381,16 @@ export const themes: QuestTheme[] = [
     shopImage: '/worlds/knight/shop.JPEG',
     emoji: '🐠',
     bg: '/worlds/ocean/ocean.jpg',
+    calmLines: [
+      'גם לצוללנים קשה לפעמים 🤿',
+      'כשקשה לצוללן, הוא נושם עמוק מאוד',
+      'נשום איתי — שאיפה… נשיפה…',
+    ],
+    cardChildHero: {
+      title: 'מכתב הוראות לקברניט',
+      subtitle: 'כדי שקברניט הצוללת ידע בדיוק איך לעזור לצוללן שלנו',
+    },
+    distractTitle: 'תא קול הסונאר 📡',
     accent: '#0a6b8a',
     accentSoft: '#d0eef5',
     accentText: '#ffffff',

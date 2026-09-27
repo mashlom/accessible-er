@@ -1,6 +1,7 @@
 import { Link } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
+import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 const dischargeBlocks = [
@@ -13,6 +14,7 @@ const dischargeBlocks = [
 
 export function CelebratePage() {
   const { theme } = useQuestTheme()
+  const { t, lang } = useI18n()
   const { reset, doneProcedures } = useQuestProgress()
   const celebrateSkin = theme.stages['decision']
   const doneCount = doneProcedures.size
@@ -26,7 +28,7 @@ export function CelebratePage() {
         )}
         <div className={css.celebrateContent}>
           <p className={css.celebrateTitle} style={{ color: theme.accent }}>
-            {celebrateSkin?.label ?? 'עשינו את זה! 🎉'}
+            {celebrateSkin?.label ?? t('ui.text.weDidIt', 'עשינו את זה! 🎉')}
           </p>
           {doneCount > 0 && (
             <p className={css.celebrateCoins}>
@@ -37,14 +39,16 @@ export function CelebratePage() {
           )}
           <p className={css.celebrateHint}>
             {doneCount > 0
-              ? `צברת ${doneCount} ${doneCount === 1 ? 'מטבע' : 'מטבעות'} — ברוכים הבאים לחנות!`
+              ? (lang === 'he'
+                ? `צברת ${doneCount} ${doneCount === 1 ? 'מטבע' : 'מטבעות'} — ברוכים הבאים לחנות!`
+                : t(`ui.text.coins.${new Intl.PluralRules(lang).select(doneCount)}`, '').replace('{n}', String(doneCount)))
               : (celebrateSkin?.hint ?? '')}
           </p>
         </div>
         <div className={css.stageBack}>
           <Link to="/shop" style={{ flex: 2, display: 'flex' }}>
             <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText, flex: 1 }}>
-              לחנות 🛍️
+              {t('ui.buttons.toShop', 'לחנות 🛍️')}
             </button>
           </Link>
           <Link to="/" style={{ flex: 1, display: 'flex' }}>
@@ -53,7 +57,7 @@ export function CelebratePage() {
               style={{ borderColor: theme.accent, color: theme.accent, flex: 1 }}
               onClick={reset}
             >
-              לבחירת עולם →
+              {t('ui.buttons.chooseWorld', 'לבחירת עולם →')}
             </button>
           </Link>
         </div>
@@ -61,9 +65,9 @@ export function CelebratePage() {
 
       {/* ── Parent zone ── */}
       <div className={css.stageBody}>
-        <p className={css.parentZoneLabel}>לקראת שחרור הביתה</p>
+        <p className={css.parentZoneLabel}>{t('ui.text.towardsDischarge', 'לקראת שחרור הביתה')}</p>
 
-        {dischargeBlocks.map((b, i) => (
+        {t('ui.text.discharge', dischargeBlocks).map((b, i) => (
           <section key={i}>
             <h2>{b.emoji} {b.title}</h2>
             <p>{b.body}</p>
@@ -71,7 +75,7 @@ export function CelebratePage() {
         ))}
 
         <Link to="/feedback" className={css.calmLink}>
-          💬 איך היה לכם? ספרו לנו →
+          {t('ui.buttons.feedback', '💬 איך היה לכם? ספרו לנו →')}
         </Link>
       </div>
     </div>

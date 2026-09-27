@@ -5,10 +5,12 @@ import { useQuestTheme } from '../useQuestTheme'
 import { getProcedure } from '../../../data/procedures'
 import { SensoryBar } from '../../../components/SensoryBar'
 import { useQuestProgress, loadProcs } from '../useQuestProgress'
+import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 export function WaitTimesPage() {
   const { theme } = useQuestTheme()
+  const { t } = useI18n()
   const { active, completeProcedure, completeActive } = useQuestProgress()
   const navigate = useNavigate()
 
@@ -22,7 +24,7 @@ export function WaitTimesPage() {
     navigate('/quest/map')
   }
 
-  const data = journeyStages.find((j) => j.id === 'wait-before-triage')
+  const data = t('journey.journeyStages', journeyStages).find((j) => j.id === 'wait-before-triage')
   if (!data) return <div>Error: stage not found</div>
 
   const procIds = ['temperature', 'saturation', 'blood-pressure']
@@ -42,12 +44,12 @@ export function WaitTimesPage() {
               style={{ background: theme.accent, color: theme.accentText }}
               onClick={handleDone}
             >
-              הצלחתי! ←
+              {t('ui.buttons.done', 'הצלחתי! ←')}
             </button>
           )}
           <Link to="/map">
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              חזרה למפה →
+              {t('ui.buttons.backToMap', 'חזרה למפה →')}
             </button>
           </Link>
         </div>
@@ -55,30 +57,30 @@ export function WaitTimesPage() {
 
       {data.sensory && <SensoryBar sensory={data.sensory} />}
       <p className={css.waitRange}>
-        {data.waitRange && <span>⏱ זמן משוער: {data.waitRange}</span>}
+        {data.waitRange && <span>{t('ui.text.estimated', '⏱ זמן משוער:')} {data.waitRange}</span>}
       </p>
 
       <div className={css.stageBody}>
         {data.whatHappens && (
           <section>
-            <h2>מה קורה כאן</h2>
+            <h2>{t('ui.text.whatHappensHere', 'מה קורה כאן')}</h2>
             <p>{data.whatHappens}</p>
           </section>
         )}
 
         {data.challenge && (
           <section>
-            <h2>מה יכול להיות קשה?</h2>
+            <h2>{t('ui.text.whatMayBeHard', 'מה יכול להיות קשה?')}</h2>
             <p>{data.challenge}</p>
           </section>
         )}
 
         <section>
-          <h2>איך להכין את הילד/ה למדידות שעומדות לקרות</h2>
+          <h2>{t('ui.text.prepareMeasurements', 'איך להכין את הילד/ה למדידות שעומדות לקרות')}</h2>
           <p style={{ marginBottom: 'var(--space-3)' }}>{data.nextStagePrepare}</p>
 
           {procIds.map((pid) => {
-            const proc = getProcedure(pid)
+            const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
             if (!proc) return null
             return (
               <div key={pid} style={{ marginBottom: 'var(--space-3)' }}>
@@ -98,7 +100,7 @@ export function WaitTimesPage() {
 
         {data.canAsk && data.canAsk.length > 0 && (
           <section>
-            <h2>אפשר לבקש</h2>
+            <h2>{t('ui.text.canAsk', 'אפשר לבקש')}</h2>
             <ul>
               {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
             </ul>

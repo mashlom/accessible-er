@@ -1,0 +1,280 @@
+{
+  "en": {
+    "paths": {
+      "fever": {
+        "label": "Fever / illness",
+        "blurb": "Usually: check-in, triage, a doctor's exam, and if needed a blood test or an X-ray.",
+        "route": [
+          {
+            "title": "Check-in at the reception desk"
+          },
+          {
+            "title": "Triage and measurements"
+          },
+          {
+            "title": "Doctor's exam"
+          },
+          {
+            "title": "Blood test"
+          },
+          {
+            "title": "Chest X-ray"
+          },
+          {
+            "title": "Treatment, then going home or more tests"
+          }
+        ]
+      },
+      "abdominal": {
+        "label": "Belly pain",
+        "blurb": "Usually: check-in, triage, a doctor's exam, and if needed blood tests, an ultrasound or a specialist.",
+        "route": [
+          {
+            "title": "Check-in at the reception desk"
+          },
+          {
+            "title": "Triage and measurements"
+          },
+          {
+            "title": "Doctor's exam"
+          },
+          {
+            "title": "Blood test"
+          },
+          {
+            "title": "Urine test"
+          },
+          {
+            "title": "Belly ultrasound"
+          },
+          {
+            "title": "Belly CT"
+          },
+          {
+            "title": "Specialist consultation"
+          },
+          {
+            "title": "Treatment, then going home or staying in hospital"
+          }
+        ]
+      },
+      "limb-injury": {
+        "label": "Arm or leg injury",
+        "blurb": "Usually: check-in, triage, a doctor's exam, an X-ray, and if needed a cast or a bandage.",
+        "route": [
+          {
+            "title": "Check-in at the reception desk"
+          },
+          {
+            "title": "Triage and measurements"
+          },
+          {
+            "title": "Doctor's exam"
+          },
+          {
+            "title": "X-ray"
+          },
+          {
+            "title": "Orthopedic consultation"
+          },
+          {
+            "title": "Cast or splint"
+          },
+          {
+            "title": "Going home with instructions"
+          }
+        ]
+      },
+      "cut": {
+        "label": "Cut or skin wound",
+        "blurb": "Usually: check-in, triage, a doctor's exam, numbing, closing the wound and a bandage.",
+        "route": [
+          {
+            "title": "Check-in at the reception desk"
+          },
+          {
+            "title": "Triage and measurements"
+          },
+          {
+            "title": "Doctor's exam"
+          },
+          {
+            "title": "Local numbing"
+          },
+          {
+            "title": "X-ray"
+          },
+          {
+            "title": "Wound glue or stitches"
+          },
+          {
+            "title": "Bandage and care instructions"
+          },
+          {
+            "title": "Going home with instructions"
+          }
+        ]
+      },
+      "other": {
+        "label": "Another reason / not sure yet",
+        "blurb": "Every visit starts the same way: check-in, triage and a doctor's exam. From there, the team plans the next steps.",
+        "route": [
+          {
+            "title": "Check-in at the reception desk"
+          },
+          {
+            "title": "Triage and measurements"
+          },
+          {
+            "title": "Doctor's exam"
+          },
+          {
+            "title": "Tests if needed"
+          },
+          {
+            "title": "Treatment and a decision on next steps"
+          }
+        ]
+      }
+    }
+  },
+  "ru": {
+    "paths": {
+      "fever": {
+        "label": "Температура / болезнь",
+        "blurb": "Обычно: регистратура, триаж, осмотр врача и при необходимости анализ крови или рентген.",
+        "route": [
+          {
+            "title": "Оформление в регистратуре"
+          },
+          {
+            "title": "Триаж и измерения"
+          },
+          {
+            "title": "Осмотр врача"
+          },
+          {
+            "title": "Анализ крови"
+          },
+          {
+            "title": "Рентген грудной клетки"
+          },
+          {
+            "title": "Лечение и выписка или дальнейшее обследование"
+          }
+        ]
+      },
+      "abdominal": {
+        "label": "Боль в животе",
+        "blurb": "Обычно: регистратура, триаж, осмотр врача и при необходимости анализы крови, УЗИ или консультация специалиста.",
+        "route": [
+          {
+            "title": "Оформление в регистратуре"
+          },
+          {
+            "title": "Триаж и измерения"
+          },
+          {
+            "title": "Осмотр врача"
+          },
+          {
+            "title": "Анализ крови"
+          },
+          {
+            "title": "Анализ мочи"
+          },
+          {
+            "title": "УЗИ живота"
+          },
+          {
+            "title": "КТ живота"
+          },
+          {
+            "title": "Консультация специалиста"
+          },
+          {
+            "title": "Лечение и выписка или госпитализация"
+          }
+        ]
+      },
+      "limb-injury": {
+        "label": "Травма руки или ноги",
+        "blurb": "Обычно: регистратура, триаж, осмотр врача, рентген и при необходимости гипс или повязка.",
+        "route": [
+          {
+            "title": "Оформление в регистратуре"
+          },
+          {
+            "title": "Триаж и измерения"
+          },
+          {
+            "title": "Осмотр врача"
+          },
+          {
+            "title": "Рентген"
+          },
+          {
+            "title": "Консультация ортопеда"
+          },
+          {
+            "title": "Гипс или шина"
+          },
+          {
+            "title": "Выписка с рекомендациями"
+          }
+        ]
+      },
+      "cut": {
+        "label": "Порез или рана на коже",
+        "blurb": "Обычно: регистратура, триаж, осмотр врача, обезболивание, закрытие раны и повязка.",
+        "route": [
+          {
+            "title": "Оформление в регистратуре"
+          },
+          {
+            "title": "Триаж и измерения"
+          },
+          {
+            "title": "Осмотр врача"
+          },
+          {
+            "title": "Местное обезболивание"
+          },
+          {
+            "title": "Рентген"
+          },
+          {
+            "title": "Склеивание раны или швы"
+          },
+          {
+            "title": "Повязка и рекомендации по уходу"
+          },
+          {
+            "title": "Выписка с рекомендациями"
+          }
+        ]
+      },
+      "other": {
+        "label": "Другая причина / пока не знаем",
+        "blurb": "Каждый визит начинается одинаково: регистратура, триаж и осмотр врача. Дальше команда решает, что делать.",
+        "route": [
+          {
+            "title": "Оформление в регистратуре"
+          },
+          {
+            "title": "Триаж и измерения"
+          },
+          {
+            "title": "Осмотр врача"
+          },
+          {
+            "title": "Обследования при необходимости"
+          },
+          {
+            "title": "Лечение и решение о дальнейших шагах"
+          }
+        ]
+      }
+    }
+  }
+}

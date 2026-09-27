@@ -11,6 +11,11 @@
         "icon": "🚢",
         "hint": "נרשמים בבסיס התת-ימי ומקבלים צמיד צוללן"
       },
+      "wait-before-triage": {
+        "label": "המתנה על הרציף",
+        "icon": "⚓",
+        "hint": "ממתינים על הרציף עד שקצין הצלילה קורא לנו"
+      },
       "triage": {
         "label": "בדיקות לצלילה",
         "icon": "🤿",
@@ -93,6 +98,11 @@
         "icon": "🚢",
         "hint": "Вы регистрируетесь на подводной базе и получаете браслет водолаза"
       },
+      "wait-before-triage": {
+        "label": "Ожидание на причале",
+        "icon": "⚓",
+        "hint": "Ждём на причале, пока офицер погружения нас не позовёт"
+      },
       "triage": {
         "label": "Проверка перед погружением",
         "icon": "🤿",
@@ -174,6 +184,11 @@
         "label": "Entering the Submarine",
         "icon": "🚢",
         "hint": "You register at the underwater base and get a diver's bracelet"
+      },
+      "wait-before-triage": {
+        "label": "Waiting on the Dock",
+        "icon": "⚓",
+        "hint": "We wait on the dock until the dive officer calls us"
       },
       "triage": {
         "label": "Pre-dive Checkup",
