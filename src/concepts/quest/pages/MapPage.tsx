@@ -85,7 +85,7 @@ export function MapPage() {
                   {item.status === 'locked' && <span className={css.pinLock} aria-hidden>🔒</span>}
                   {item.status === 'active' && <span className={css.pinPulse} aria-hidden />}
                 </div>
-                <span className={css.pinLabel}>{i}. {item.label}</span>
+                <span className={css.pinLabel}>{i + 1}. {item.label}</span>
               </button>
             ))}
           </div>
