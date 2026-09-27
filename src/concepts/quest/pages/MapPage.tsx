@@ -44,6 +44,26 @@ export function MapPage() {
         </h1>
 
         <div className={css.mapBottom}>
+          <div style={{ textAlign: 'center', marginBottom: 'var(--space-3)' }}>
+            <button
+              onClick={() => navigate(conceptPath('/wait-times'))}
+              style={{
+                padding: 'var(--space-2) var(--space-3)',
+                background: theme.accent,
+                color: theme.accentText || 'white',
+                border: 'none',
+                borderRadius: '8px',
+                fontSize: '0.9em',
+                fontWeight: 500,
+                cursor: 'pointer',
+                transition: 'opacity 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+            >
+              ⏱️ זמנים משוערים
+            </button>
+          </div>
           <div className={css.stageStrip}>
             {requiredStages.map((stage, i) => (
               <button

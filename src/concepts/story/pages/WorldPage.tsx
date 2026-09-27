@@ -21,6 +21,7 @@ interface Destination {
 
 const destinations: Destination[] = [
   { to: '/trail', emoji: '🛤️', name: 'השביל שלנו', desc: 'איפה אנחנו עכשיו ומה הלאה', tint: 'var(--s-mint-soft)' },
+  { to: '/wait-times', emoji: '⏱️', name: 'זמנים משוערים', desc: 'כמה זמן כל שלב יכול לקחת', tint: 'var(--s-sun-soft)' },
   { to: '/show', emoji: '🎭', name: 'מה עומד לקרות?', desc: 'סיפור לכל בדיקה, עמוד אחרי עמוד', tint: 'var(--s-lilac-soft)' },
   { to: '/card', emoji: '🪪', name: 'הכרטיס שלך', desc: 'מה חשוב לדעת עליך', tint: 'var(--s-coral-soft)' },
   { to: '/map', emoji: '🗺️', name: 'איפה אנחנו?', desc: 'מפה עם מקומות שקטים', tint: 'var(--s-sea-soft)' },

@@ -14,6 +14,7 @@ import { ReasonPage } from './pages/ReasonPage'
 import { CardPage } from './pages/CardPage'
 import { DistractPage } from './pages/DistractPage'
 import { CardViewPage } from './pages/CardViewPage'
+import { WaitTimesPage } from './pages/WaitTimesPage'
 import { FeedbackPage } from '../calm/pages/FeedbackPage'
 
 /** Concept 4 — "מסע עם מפה". Mounted at /quest by App.tsx. */
@@ -31,6 +32,7 @@ export default function QuestConcept() {
         <Route path="procedure/:id" element={<ProcedureDetailPage />} />
         <Route path="calm" element={<CalmPage />} />
         <Route path="reason" element={<ReasonPage />} />
+        <Route path="wait-times" element={<WaitTimesPage />} />
         <Route path="card" element={<CardPage />} />
         <Route path="distract" element={<DistractPage />} />
         <Route path="card/view" element={<CardViewPage />} />

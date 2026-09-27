@@ -124,6 +124,14 @@ export function HomePage() {
           tintSoft="var(--c-primary-soft)"
         />
         <NavCard
+          to="/wait-times"
+          emoji="⏱️"
+          title="זמנים משוערים"
+          desc="כמה זמן כל שלב יכול לקחת בערך"
+          tint="#d4a574"
+          tintSoft="#f0e4d5"
+        />
+        <NavCard
           to="/procedures"
           emoji="🎬"
           title="מה עומד לקרות?"

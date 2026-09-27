@@ -14,6 +14,7 @@ import { CareCardPage } from './pages/CareCardPage'
 import { CareCardViewPage } from './pages/CareCardViewPage'
 import { DischargePage } from './pages/DischargePage'
 import { MessagePage } from './pages/MessagePage'
+import { WaitTimesPage } from './pages/WaitTimesPage'
 import { QrPage } from './pages/QrPage'
 
 /** Concept 1 — "רגוע ומסודר". Mounted at /calm by App.tsx. */
@@ -24,6 +25,7 @@ export default function CalmConcept() {
         <Route index element={<HomePage />} />
         <Route path="reason" element={<ReasonPage />} />
         <Route path="journey" element={<JourneyPage />} />
+        <Route path="wait-times" element={<WaitTimesPage />} />
         <Route path="procedures" element={<ProceduresPage />} />
         <Route path="procedures/:id" element={<ProcedureDetailPage />} />
         <Route path="map" element={<MapPage />} />

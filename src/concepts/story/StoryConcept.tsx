@@ -15,6 +15,7 @@ import { CardViewPage } from './pages/CardViewPage'
 import { GoingHomePage } from './pages/GoingHomePage'
 import { MessagePage } from './pages/MessagePage'
 import { FeedbackPage } from './pages/FeedbackPage'
+import { WaitTimesPage } from './pages/WaitTimesPage'
 import { QrPage } from './pages/QrPage'
 
 /** Concept 2 — "המסע של רוני". Mounted at /story by App.tsx. */
@@ -25,6 +26,7 @@ export default function StoryConcept() {
         <Route index element={<WorldPage />} />
         <Route path="reason" element={<ReasonPage />} />
         <Route path="trail" element={<TrailPage />} />
+        <Route path="wait-times" element={<WaitTimesPage />} />
         <Route path="show" element={<ShowPage />} />
         <Route path="show/:id" element={<BookPage />} />
         <Route path="map" element={<MapPage />} />
