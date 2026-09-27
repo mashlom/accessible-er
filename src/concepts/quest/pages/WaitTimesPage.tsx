@@ -1,66 +1,98 @@
 import { Link } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
+import { getProcedure } from '../../../data/procedures'
+import { SensoryBar } from '../../../components/SensoryBar'
 import css from '../quest.module.css'
 
 export function WaitTimesPage() {
   const { theme } = useQuestTheme()
 
+  const data = journeyStages.find((j) => j.id === 'wait-before-triage')
+  if (!data) return <div>Error: stage not found</div>
+
+  const procIds = ['temperature', 'saturation', 'blood-pressure']
+
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
-        <span className={css.stageHeroIcon}>⏱️</span>
-        <h1 style={{ color: theme.accent }}>זמנים משוערים</h1>
-        <p className={css.stageHeroHint}>כל שלב יכול לקחת בערך כמה דקות</p>
+        <span className={css.stageHeroIcon}>⏳</span>
+        <h1 style={{ color: theme.accent }}>{data.title}</h1>
+        <p className={css.stageHeroHint}>{data.meaning}</p>
       </div>
 
+      {data.sensory && <SensoryBar sensory={data.sensory} />}
+      <p className={css.waitRange}>
+        {data.waitRange && <span>⏱ זמן משוער: {data.waitRange}</span>}
+      </p>
+
       <div className={css.stageBody}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-          {journeyStages.map((stage, i) => (
-            <div
-              key={stage.id}
-              style={{
-                padding: 'var(--space-3)',
-                borderLeft: `4px solid ${theme.accent}`,
-                background: theme.accentSoft,
-                borderRadius: '4px',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--space-2)', marginBottom: 'var(--space-2)' }}>
-                <span style={{ fontSize: '1.25em', minWidth: '2em' }}>{stage.emoji}</span>
-                <h3 style={{ margin: 0, color: theme.accent, flex: 1 }}>{i + 1}. {stage.title}</h3>
-              </div>
+        {data.whatHappens && (
+          <section>
+            <h2>מה קורה כאן</h2>
+            <p>{data.whatHappens}</p>
+          </section>
+        )}
 
-              {stage.waitRange && (
-                <p style={{ margin: 0, fontSize: '0.95em', color: theme.accent }}>
-                  <span style={{ fontWeight: 600 }}>
-                    {stage.waitKind === 'duration' ? '⏱️ משך זמן משוער' : '⏳ זמן המתנה משוער'}:
-                  </span>
-                  <br />
-                  <span style={{ fontSize: '1.1em' }}>{stage.waitRange}</span>
-                </p>
-              )}
+        {data.challenge && (
+          <section>
+            <h2>מה יכול להיות קשה?</h2>
+            <p>{data.challenge}</p>
+          </section>
+        )}
 
-              {stage.meaning && (
-                <p style={{ margin: 'var(--space-2) 0 0 0', fontSize: '0.9em', color: theme.accent, opacity: 0.85 }}>
-                  {stage.meaning}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
+        <section>
+          <h2>הכנה למדידות שעומדות לקרות</h2>
+          <p>{data.nextStagePrepare}</p>
 
-        <p style={{ marginTop: 'var(--space-4)', fontSize: '0.85em', color: theme.accent, opacity: 0.7, fontStyle: 'italic' }}>
-          הזמנים הם טווחים להמחשה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.
-        </p>
+          <div style={{ marginTop: 'var(--space-3)', display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+            {procIds.map((pid) => {
+              const proc = getProcedure(pid)
+              if (!proc) return null
+              return (
+                <div key={pid} style={{
+                  padding: 'var(--space-2)',
+                  background: theme.accentSoft,
+                  borderRadius: '4px',
+                  borderLeft: `3px solid ${theme.accent}`,
+                }}>
+                  <h3 style={{ margin: '0 0 var(--space-1) 0', color: theme.accent }}>
+                    {proc.emoji} {proc.title}
+                  </h3>
+                  <p style={{ margin: '0 0 var(--space-1) 0', fontSize: '0.9em' }}>
+                    <strong>מה קורה:</strong> {proc.what}
+                  </p>
+                  <p style={{ margin: '0 0 var(--space-1) 0', fontSize: '0.9em' }}>
+                    <strong>איך להכין:</strong> {proc.prepare}
+                  </p>
+                  {proc.adaptations && proc.adaptations.length > 0 && (
+                    <div style={{ fontSize: '0.9em' }}>
+                      <strong>אפשר גם:</strong>
+                      <ul style={{ margin: 'var(--space-1) 0 0 0', paddingLeft: '1.5em' }}>
+                        {proc.adaptations.map((a, i) => <li key={i}>{a}</li>)}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </section>
 
-        <div className={css.stageBack}>
-          <Link to="/map">
-            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              חזרה למפה →
-            </button>
-          </Link>
-        </div>
+        {data.canAsk && data.canAsk.length > 0 && (
+          <section>
+            <h2>אפשר לבקש</h2>
+            <ul>
+              {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
+            </ul>
+          </section>
+        )}
+
+        <Link to="/map">
+          <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent, marginTop: 'var(--space-3)' }}>
+            חזרה למפה →
+          </button>
+        </Link>
       </div>
     </div>
   )
