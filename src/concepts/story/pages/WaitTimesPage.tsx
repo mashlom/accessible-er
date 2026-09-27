@@ -1,6 +1,5 @@
 import { journeyStages } from '../../../data/journey'
 import { Scene, Bubble } from '../components/kit'
-import styles from '../pages.module.css'
 
 export function WaitTimesPage() {
   return (

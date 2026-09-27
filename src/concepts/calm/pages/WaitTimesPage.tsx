@@ -1,12 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import { journeyStages } from '../../../data/journey'
 import { PageHeader } from '../components/ui'
-import { useQuestTheme } from '../../quest/useQuestTheme'
-import styles from './JourneyPage.module.css'
 
 export function WaitTimesPage() {
   const navigate = useNavigate()
-  const { theme } = useQuestTheme()
 
   return (
     <div className="container">
