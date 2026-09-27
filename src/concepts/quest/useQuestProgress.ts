@@ -74,11 +74,9 @@ export function useQuestProgress() {
     const next = [...stages]
     const activeIdx = next.findIndex((s) => s.status === 'active')
     if (activeIdx === -1) return
-    console.log('completeActive: current active index', activeIdx, 'stage id:', next[activeIdx]?.id)
     next[activeIdx] = { ...next[activeIdx], status: 'done' }
     // find next visible locked stage
     const nextLocked = next.findIndex((s, i) => i > activeIdx && s.visible && s.status === 'locked')
-    console.log('completeActive: next locked index', nextLocked, 'stages from activeIdx:', next.slice(activeIdx + 1).map(s => ({ id: s.id, visible: s.visible, status: s.status })))
     if (nextLocked !== -1) next[nextLocked] = { ...next[nextLocked], status: 'active' }
     update(next)
   }

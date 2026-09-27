@@ -13,7 +13,6 @@ export function WaitTimesPage() {
   const navigate = useNavigate()
 
   const isActive = active?.id === 'wait-before-triage'
-  console.log('WaitTimesPage - active stage:', active?.id, 'isActive:', isActive)
 
   function handleDone() {
     const procIds = ['temperature', 'saturation', 'blood-pressure']
