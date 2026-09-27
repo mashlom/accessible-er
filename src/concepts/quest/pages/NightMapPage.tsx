@@ -4,6 +4,7 @@ import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
+import { StageIcon } from '../../../components/StageIcon'
 import css from '../quest.module.css'
 
 // All coin IDs that can be earned on the day map (required stages)
@@ -80,7 +81,7 @@ export function NightMapPage() {
                   {stage.image ? (
                     <img src={stage.image} alt="" className={css.pinImage} />
                   ) : (
-                    <span className={css.pinEmoji}>{stage.icon}</span>
+                    <span className={css.pinEmoji}><StageIcon icon={stage.icon} /></span>
                   )}
                   {stage.status === 'done' && (
                     <span className={css.pinCoins} aria-hidden>

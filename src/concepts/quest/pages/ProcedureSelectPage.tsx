@@ -4,6 +4,7 @@ import { useConceptPath } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, OPTIONAL_STAGES, StageId } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
+import { StageIcon } from '../../../components/StageIcon'
 import css from '../quest.module.css'
 
 export function ProcedureSelectPage() {
@@ -59,7 +60,7 @@ export function ProcedureSelectPage() {
               {skin?.image ? (
                 <img src={skin.image} alt="" className={css.worldCardImg} />
               ) : (
-                <span className={css.worldEmoji}>{skin?.icon ?? '❓'}</span>
+                <span className={css.worldEmoji}><StageIcon icon={skin?.icon ?? '❓'} /></span>
               )}
               <span className={css.worldName} style={{ color: theme.accent }}>
                 {isSelected ? '✓ ' : ''}{skin?.label ?? id}

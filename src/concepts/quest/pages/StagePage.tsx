@@ -7,6 +7,7 @@ import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES, loadProcs } from '.
 import { SensoryBar } from '../../../components/SensoryBar'
 import { getProcedure } from '../../../data/procedures'
 import { useI18n } from '../../../hooks/useI18n'
+import { StageIcon } from '../../../components/StageIcon'
 import css from '../quest.module.css'
 
 const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
@@ -67,7 +68,7 @@ export function StagePage() {
         {heroImg ? (
           <img src={heroImg} alt="" className={css.stageHeroImg} />
         ) : (
-          <span className={css.stageHeroIcon}>{icon}</span>
+          <span className={css.stageHeroIcon}><StageIcon icon={icon} /></span>
         )}
         <h1 style={{ color: theme.accent }}>{label}</h1>
         {skin?.hint && <p className={css.stageHeroHint}>{skin.hint}</p>}

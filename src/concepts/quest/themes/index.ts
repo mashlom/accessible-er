@@ -397,7 +397,7 @@ export const themes: QuestTheme[] = [
     completedColor: '#25b8e8',
     stages: {
       reception: { label: 'על הרציף', icon: '⚓', hint: 'נרשמים בבסיס ומקבלים צמיד צוללן' },
-      'wait-before-triage': { label: 'כניסה לצוללת', icon: '🚢', hint: 'עולים לצוללת ומחכים שקצין הצלילה יקרא לנו' },
+      'wait-before-triage': { label: 'כניסה לצוללת', icon: '/worlds/ocean/submarine.svg', hint: 'עולים לצוללת ומחכים שקצין הצלילה יקרא לנו' },
       triage: { label: 'בדיקות לצלילה', icon: '🤿', hint: 'הקצין בודק שאתה מוכן/ה לצלילה' },
       'wait-doctor': { label: 'ממתינים בתא', icon: '🐟', hint: 'דגים עוברים בחוץ, ממתינים לקברניט' },
       doctor: { label: 'פגישה עם קברניט הצוללת', icon: '🐙', hint: 'התמנון החכם מחליט מה לעשות' },
