@@ -42,41 +42,26 @@ export function WaitTimesPage() {
         )}
 
         <section>
-          <h2>הכנה למדידות שעומדות לקרות</h2>
-          <p>{data.nextStagePrepare}</p>
+          <h2>איך להכין את הילד/ה למדידות שעומדות לקרות</h2>
+          <p style={{ marginBottom: 'var(--space-3)' }}>{data.nextStagePrepare}</p>
 
-          <div style={{ marginTop: 'var(--space-3)', display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-            {procIds.map((pid) => {
-              const proc = getProcedure(pid)
-              if (!proc) return null
-              return (
-                <div key={pid} style={{
-                  padding: 'var(--space-2)',
-                  background: theme.accentSoft,
-                  borderRadius: '4px',
-                  borderLeft: `3px solid ${theme.accent}`,
-                }}>
-                  <h3 style={{ margin: '0 0 var(--space-1) 0', color: theme.accent }}>
-                    {proc.emoji} {proc.title}
-                  </h3>
-                  <p style={{ margin: '0 0 var(--space-1) 0', fontSize: '0.9em' }}>
-                    <strong>מה קורה:</strong> {proc.what}
-                  </p>
-                  <p style={{ margin: '0 0 var(--space-1) 0', fontSize: '0.9em' }}>
-                    <strong>איך להכין:</strong> {proc.prepare}
-                  </p>
-                  {proc.adaptations && proc.adaptations.length > 0 && (
-                    <div style={{ fontSize: '0.9em' }}>
-                      <strong>אפשר גם:</strong>
-                      <ul style={{ margin: 'var(--space-1) 0 0 0', paddingLeft: '1.5em' }}>
-                        {proc.adaptations.map((a, i) => <li key={i}>{a}</li>)}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              )
-            })}
-          </div>
+          {procIds.map((pid) => {
+            const proc = getProcedure(pid)
+            if (!proc) return null
+            return (
+              <div key={pid} style={{ marginBottom: 'var(--space-3)' }}>
+                <p style={{ margin: 0, marginBottom: 'var(--space-2)' }}>
+                  <strong>{proc.emoji} {proc.title}</strong>
+                </p>
+                <p style={{ margin: 0, marginBottom: 'var(--space-1)', fontSize: '0.95em', lineHeight: '1.5' }}>
+                  {proc.what} {proc.feel && `לא כואב — ${proc.feel}`}
+                </p>
+                <p style={{ margin: 0, marginBottom: 'var(--space-2)', fontSize: '0.95em', lineHeight: '1.5', fontStyle: 'italic' }}>
+                  💡 {proc.prepare}
+                </p>
+              </div>
+            )
+          })}
         </section>
 
         {data.canAsk && data.canAsk.length > 0 && (
