@@ -1,12 +1,26 @@
+import { useNavigate } from 'react-router-dom'
 import { Link } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { getProcedure } from '../../../data/procedures'
 import { SensoryBar } from '../../../components/SensoryBar'
+import { useQuestProgress, loadProcs } from '../useQuestProgress'
 import css from '../quest.module.css'
 
 export function WaitTimesPage() {
   const { theme } = useQuestTheme()
+  const { active, completeProcedure, completeActive } = useQuestProgress()
+  const navigate = useNavigate()
+
+  const isActive = active?.id === 'wait-before-triage'
+
+  function handleDone() {
+    const procIds = ['temperature', 'saturation', 'blood-pressure']
+    const anyProcDone = procIds.some((pid) => loadProcs().has(pid))
+    if (!anyProcDone) completeProcedure('wait-before-triage')
+    completeActive()
+    navigate('/quest/map')
+  }
 
   const data = journeyStages.find((j) => j.id === 'wait-before-triage')
   if (!data) return <div>Error: stage not found</div>
@@ -73,11 +87,22 @@ export function WaitTimesPage() {
           </section>
         )}
 
-        <Link to="/map">
-          <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent, marginTop: 'var(--space-3)' }}>
-            חזרה למפה →
-          </button>
-        </Link>
+        <div className={css.stageBack} style={{ marginTop: 'var(--space-4)' }}>
+          {isActive && (
+            <button
+              className={css.doneBtn}
+              style={{ background: theme.accent, color: theme.accentText }}
+              onClick={handleDone}
+            >
+              הצלחתי! ←
+            </button>
+          )}
+          <Link to="/map">
+            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
+              חזרה למפה →
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   )
