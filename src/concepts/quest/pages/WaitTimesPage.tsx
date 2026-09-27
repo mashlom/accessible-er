@@ -11,7 +11,7 @@ import css from '../quest.module.css'
 export function WaitTimesPage() {
   const { theme } = useQuestTheme()
   const { active, completeProcedure, completeActive } = useQuestProgress()
-  const { t, lang } = useI18n()
+  const { t } = useI18n()
   const navigate = useNavigate()
 
   const isActive = active?.id === 'wait-before-triage'
