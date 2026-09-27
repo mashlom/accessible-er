@@ -85,7 +85,7 @@ export function WaitTimesPage() {
                   <strong>{proc.emoji} {proc.title}</strong>
                 </p>
                 <p style={{ margin: 0, marginBottom: 'var(--space-1)', fontSize: '0.95em', lineHeight: '1.5' }}>
-                  {proc.what} {proc.feel && `לא כואב — ${proc.feel}`}
+                  {proc.what} {proc.feel}
                 </p>
                 <p style={{ margin: 0, marginBottom: 'var(--space-2)', fontSize: '0.95em', lineHeight: '1.5', fontStyle: 'italic' }}>
                   💡 {proc.prepare}
