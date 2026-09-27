@@ -77,5 +77,5 @@ export function QuestShell() {
     </div>
   )
 
-  return isOcean ? <I18nProvider theme="ocean">{content}</I18nProvider> : content
+  return isOcean ? <I18nProvider>{content}</I18nProvider> : content
 }

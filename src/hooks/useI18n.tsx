@@ -12,16 +12,16 @@ const I18nContext = createContext<I18nContextType | undefined>(undefined)
 
 let translations: Record<Language, any> = { he: {}, en: {}, ru: {} }
 
-export async function loadTranslations(theme: string) {
+export async function loadTranslations(filename: string) {
   try {
-    const module = await import(`../data/i18n/${theme}.json`)
+    const module = await import(`../data/i18n/${filename}.json`)
     translations = module.default
   } catch (err) {
-    console.warn(`Could not load translations for theme ${theme}`, err)
+    console.warn(`Could not load translations for ${filename}`, err)
   }
 }
 
-export function I18nProvider({ children, theme }: { children: ReactNode; theme: string }) {
+export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Language>('he')
 
   const t = (key: string) => {
