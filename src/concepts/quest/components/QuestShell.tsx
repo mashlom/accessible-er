@@ -24,8 +24,11 @@ export function QuestShell() {
   const { theme } = useQuestTheme()
   const isOcean = theme.id === 'ocean'
 
+  console.log('QuestShell: theme.id =', theme.id, 'isOcean =', isOcean)
+
   useEffect(() => {
     if (isOcean) {
+      console.log('Loading translations for ocean')
       loadTranslations('ocean')
     }
   }, [isOcean])
@@ -77,5 +80,5 @@ export function QuestShell() {
     </div>
   )
 
-  return isOcean ? <I18nProvider>{content}</I18nProvider> : content
+  return <I18nProvider>{content}</I18nProvider>
 }

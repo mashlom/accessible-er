@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { getTheme, type QuestTheme } from './themes'
 
 const KEY = 'quest-theme'
@@ -12,6 +12,14 @@ function writeId(id: string) {
 
 export function useQuestTheme(): { theme: QuestTheme; setThemeId: (id: string) => void } {
   const [id, setId] = useState<string>(readId)
+
+  useEffect(() => {
+    // Sync with sessionStorage on mount
+    const current = readId()
+    if (current && current !== id) {
+      setId(current)
+    }
+  }, [])
 
   function setThemeId(newId: string) {
     writeId(newId)
