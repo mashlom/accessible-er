@@ -1,30 +1,67 @@
 .picker {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+  position: relative;
 }
 
-.button {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 2px solid transparent;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  font-size: 1.2rem;
+.trigger {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 1.25rem;
   cursor: pointer;
-  transition: all 0.2s;
-  padding: 0;
+}
+
+.trigger:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.caret {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  inset-inline-end: 0;
+  z-index: 40;
+  min-width: 10rem;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
+}
+
+.item {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font: inherit;
+  font-size: 1rem;
+  text-align: start;
+  cursor: pointer;
 }
 
-.button:hover {
-  background: rgba(255, 255, 255, 0.2);
+.item > span:first-child {
+  font-size: 1.25rem;
 }
 
-.button.active {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: currentColor;
-  transform: scale(1.1);
+.item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.item.active {
+  background: rgba(0, 0, 0, 0.08);
+  font-weight: 700;
 }
