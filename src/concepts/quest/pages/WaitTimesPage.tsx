@@ -13,6 +13,7 @@ export function WaitTimesPage() {
   const navigate = useNavigate()
 
   const isActive = active?.id === 'wait-before-triage'
+  console.log('WaitTimesPage - active stage:', active?.id, 'isActive:', isActive)
 
   function handleDone() {
     const procIds = ['temperature', 'saturation', 'blood-pressure']
@@ -33,6 +34,23 @@ export function WaitTimesPage() {
         <span className={css.stageHeroIcon}>⏳</span>
         <h1 style={{ color: theme.accent }}>{data.title}</h1>
         <p className={css.stageHeroHint}>{data.meaning}</p>
+
+        <div style={{ display: 'flex', gap: 'var(--space-3)', marginTop: 'var(--space-4)', justifyContent: 'center' }}>
+          {isActive && (
+            <button
+              className={css.doneBtn}
+              style={{ background: theme.accent, color: theme.accentText, flex: 1, maxWidth: '200px' }}
+              onClick={handleDone}
+            >
+              הצלחתי! ←
+            </button>
+          )}
+          <Link to="/map" style={{ flex: 1, maxWidth: '200px' }}>
+            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent, width: '100%' }}>
+              חזרה למפה →
+            </button>
+          </Link>
+        </div>
       </div>
 
       {data.sensory && <SensoryBar sensory={data.sensory} />}
@@ -86,23 +104,6 @@ export function WaitTimesPage() {
             </ul>
           </section>
         )}
-
-        <div className={css.stageBack} style={{ marginTop: 'var(--space-4)' }}>
-          {isActive && (
-            <button
-              className={css.doneBtn}
-              style={{ background: theme.accent, color: theme.accentText }}
-              onClick={handleDone}
-            >
-              הצלחתי! ←
-            </button>
-          )}
-          <Link to="/map">
-            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              חזרה למפה →
-            </button>
-          </Link>
-        </div>
       </div>
     </div>
   )
