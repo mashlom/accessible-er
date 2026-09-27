@@ -18,23 +18,35 @@ export function MapPage() {
       } as React.CSSProperties
     : { '--bg-portrait': 'none', '--bg-landscape': 'none', background: theme.accentSoft } as React.CSSProperties
 
-  const requiredStages = REQUIRED_STAGES.map((id) => {
-    const state = visible.find((s) => s.id === id)
-    const data = journeyStages.find((j) => j.id === id)
-    const skin = theme.stages[id]
-    const procIds = data?.procedureIds ?? []
-    const procCoins = procIds.filter((pid) => doneProcedures.has(pid)).length
-    const stageCoins = doneProcedures.has(id) ? 1 : 0
-    const earnedCoins = procCoins > 0 ? procCoins : stageCoins
-    return {
-      id,
-      label: skin?.label ?? data?.title ?? id,
-      icon: skin?.icon ?? data?.emoji ?? '❓',
-      image: skin?.image,
-      status: state?.status ?? 'locked',
-      earnedCoins,
-    }
-  })
+  const allItems = [
+    {
+      id: 'wait-times',
+      label: 'זמנים משוערים',
+      icon: '⏱️',
+      image: undefined,
+      status: 'unlocked',
+      earnedCoins: 0,
+      isWaitTimes: true,
+    },
+    ...REQUIRED_STAGES.map((id) => {
+      const state = visible.find((s) => s.id === id)
+      const data = journeyStages.find((j) => j.id === id)
+      const skin = theme.stages[id]
+      const procIds = data?.procedureIds ?? []
+      const procCoins = procIds.filter((pid) => doneProcedures.has(pid)).length
+      const stageCoins = doneProcedures.has(id) ? 1 : 0
+      const earnedCoins = procCoins > 0 ? procCoins : stageCoins
+      return {
+        id,
+        label: skin?.label ?? data?.title ?? id,
+        icon: skin?.icon ?? data?.emoji ?? '❓',
+        image: skin?.image,
+        status: state?.status ?? 'locked',
+        earnedCoins,
+        isWaitTimes: false,
+      }
+    }),
+  ]
 
   return (
     <div className={css.mapPage} style={bgStyle}>
@@ -44,51 +56,31 @@ export function MapPage() {
         </h1>
 
         <div className={css.mapBottom}>
-          <div style={{ textAlign: 'center', marginBottom: 'var(--space-3)' }}>
-            <button
-              onClick={() => navigate(conceptPath('/wait-times'))}
-              style={{
-                padding: 'var(--space-2) var(--space-3)',
-                background: theme.accent,
-                color: theme.accentText || 'white',
-                border: 'none',
-                borderRadius: '8px',
-                fontSize: '0.9em',
-                fontWeight: 500,
-                cursor: 'pointer',
-                transition: 'opacity 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-            >
-              ⏱️ זמנים משוערים
-            </button>
-          </div>
           <div className={css.stageStrip}>
-            {requiredStages.map((stage, i) => (
+            {allItems.map((item, i) => (
               <button
-                key={stage.id}
-                className={[css.stagePin, css[`pin--${stage.status}`]].join(' ')}
-                onClick={() => navigate(conceptPath(`/stage/${stage.id}`))}
-                aria-label={stage.label}
+                key={item.id}
+                className={[css.stagePin, css[`pin--${item.status}`]].join(' ')}
+                onClick={() => navigate(conceptPath(item.isWaitTimes ? '/wait-times' : `/stage/${item.id}`))}
+                aria-label={item.label}
               >
                 <div className={css.pinImageWrap}>
-                  {stage.image ? (
-                    <img src={stage.image} alt="" className={css.pinImage} />
+                  {item.image ? (
+                    <img src={item.image} alt="" className={css.pinImage} />
                   ) : (
-                    <span className={css.pinEmoji}>{stage.icon}</span>
+                    <span className={css.pinEmoji}>{item.icon}</span>
                   )}
-                  {stage.status === 'done' && (
+                  {item.status === 'done' && (
                     <span className={css.pinCoins} aria-hidden>
-                      {Array.from({ length: stage.earnedCoins }, (_, i) => (
-                        <span key={i} className={css.pinCoin}>{theme.doneEmoji ?? '✓'}</span>
+                      {Array.from({ length: item.earnedCoins }, (_, j) => (
+                        <span key={j} className={css.pinCoin}>{theme.doneEmoji ?? '✓'}</span>
                       ))}
                     </span>
                   )}
-                  {stage.status === 'locked' && <span className={css.pinLock} aria-hidden>🔒</span>}
-                  {stage.status === 'active' && <span className={css.pinPulse} aria-hidden />}
+                  {item.status === 'locked' && <span className={css.pinLock} aria-hidden>🔒</span>}
+                  {item.status === 'active' && <span className={css.pinPulse} aria-hidden />}
                 </div>
-                <span className={css.pinLabel}>{i + 1}. {stage.label}</span>
+                <span className={css.pinLabel}>{i}. {item.label}</span>
               </button>
             ))}
           </div>
