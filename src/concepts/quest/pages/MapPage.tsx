@@ -43,7 +43,7 @@ export function MapPage() {
   return (
     <div className={css.mapPage} style={bgStyle}>
       <div className={css.mapOverlay}>
-        <h1 className={css.mapTitle} style={{ color: theme.accent }}>
+        <h1 className={`${css.mapTitle} ${css.mapTitlePill}`} style={{ color: theme.accent }}>
           {theme.name}
         </h1>
 
