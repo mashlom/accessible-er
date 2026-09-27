@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
 
 type Language = 'he' | 'en' | 'ru'
 
@@ -10,25 +10,23 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined)
 
-let translations: Record<Language, any> = { he: {}, en: {}, ru: {} }
-
 export async function loadTranslations(filename: string) {
   try {
     const response = await fetch(`/src/data/i18n/${filename}.json`)
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
     const data = await response.json()
-    translations = data
+    // Store in window object so Provider can access it
+    window.__i18nData = data
     console.log(`✓ Loaded translations for ${filename}`, Object.keys(data))
   } catch (err) {
     console.warn(`Could not load translations for ${filename}:`, err)
-    // Try fallback: import all as object
     try {
       const allTranslations = {
         he: (await import(`../data/i18n/${filename}.json`)).default.he,
         en: (await import(`../data/i18n/${filename}.json`)).default.en,
         ru: (await import(`../data/i18n/${filename}.json`)).default.ru,
       }
-      translations = allTranslations
+      window.__i18nData = allTranslations
       console.log(`✓ Loaded translations via import for ${filename}`)
     } catch (fallbackErr) {
       console.error(`Failed to load ${filename} via both methods:`, fallbackErr)
@@ -36,8 +34,26 @@ export async function loadTranslations(filename: string) {
   }
 }
 
+declare global {
+  interface Window {
+    __i18nData?: Record<Language, any>
+  }
+}
+
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Language>('he')
+  const [translations, setTranslations] = useState<Record<Language, any>>({ he: {}, en: {}, ru: {} })
+
+  // Watch for translations loaded by loadTranslations
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.__i18nData && window.__i18nData !== translations) {
+        setTranslations(window.__i18nData)
+        clearInterval(interval)
+      }
+    }, 100)
+    return () => clearInterval(interval)
+  }, [])
 
   const t = (key: string) => {
     const keys = key.split('.')
