@@ -14,10 +14,25 @@ let translations: Record<Language, any> = { he: {}, en: {}, ru: {} }
 
 export async function loadTranslations(filename: string) {
   try {
-    const module = await import(`../data/i18n/${filename}.json`)
-    translations = module.default
+    const response = await fetch(`/src/data/i18n/${filename}.json`)
+    if (!response.ok) throw new Error(`HTTP ${response.status}`)
+    const data = await response.json()
+    translations = data
+    console.log(`✓ Loaded translations for ${filename}`, Object.keys(data))
   } catch (err) {
-    console.warn(`Could not load translations for ${filename}`, err)
+    console.warn(`Could not load translations for ${filename}:`, err)
+    // Try fallback: import all as object
+    try {
+      const allTranslations = {
+        he: (await import(`../data/i18n/${filename}.json`)).default.he,
+        en: (await import(`../data/i18n/${filename}.json`)).default.en,
+        ru: (await import(`../data/i18n/${filename}.json`)).default.ru,
+      }
+      translations = allTranslations
+      console.log(`✓ Loaded translations via import for ${filename}`)
+    } catch (fallbackErr) {
+      console.error(`Failed to load ${filename} via both methods:`, fallbackErr)
+    }
   }
 }
 
