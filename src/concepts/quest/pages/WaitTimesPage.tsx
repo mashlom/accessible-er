@@ -59,6 +59,13 @@ export function WaitTimesPage() {
       </p>
 
       <div className={css.stageBody}>
+        {data.meaning && (
+          <section>
+            <h2>אנחנו כאן</h2>
+            <p>{data.meaning}</p>
+          </section>
+        )}
+
         {data.whatHappens && (
           <section>
             <h2>מה קורה כאן</h2>
