@@ -40,7 +40,7 @@ export function TrailPage() {
           {path ? (
             <>
               באנו בגלל <strong>{path.label}</strong>. כל ילד/ה מתחיל/ה אותו דבר —
-              קבלה, טריאז׳ ובדיקת רופא/ה — ומשם הצוות מתאים את ההמשך.{' '}
+              קבלה, הערכה של מצב בריאות ובדיקת רופא/ה — ומשם הצוות מתאים את ההמשך.{' '}
               <Link to="/reason" style={{ textDecoration: 'underline' }}>
                 שינוי הסיבה
               </Link>
