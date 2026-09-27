@@ -18,7 +18,7 @@ export function MapPage() {
       } as React.CSSProperties
     : { '--bg-portrait': 'none', '--bg-landscape': 'none', background: theme.accentSoft } as React.CSSProperties
 
-  const allItems = REQUIRED_STAGES.map((id, idx) => {
+  const allItems = REQUIRED_STAGES.map((id) => {
     const state = visible.find((s) => s.id === id)
     const data = journeyStages.find((j) => j.id === id)
     const skin = theme.stages[id]
@@ -27,31 +27,15 @@ export function MapPage() {
     const stageCoins = doneProcedures.has(id) ? 1 : 0
     const earnedCoins = procCoins > 0 ? procCoins : stageCoins
 
-    const item = {
+    return {
       id,
       label: skin?.label ?? data?.title ?? id,
       icon: skin?.icon ?? data?.emoji ?? '❓',
       image: skin?.image,
       status: state?.status ?? 'locked',
       earnedCoins,
-      isWaitTimes: false,
     }
-
-    // Insert wait-times after reception (first item)
-    const result = [item]
-    if (idx === 0) {
-      result.push({
-        id: 'wait-times',
-        label: 'זמנים משוערים',
-        icon: '⏱️',
-        image: undefined,
-        status: 'unlocked',
-        earnedCoins: 0,
-        isWaitTimes: true,
-      })
-    }
-    return result
-  }).flat()
+  })
 
   return (
     <div className={css.mapPage} style={bgStyle}>
@@ -66,7 +50,7 @@ export function MapPage() {
               <button
                 key={item.id}
                 className={[css.stagePin, css[`pin--${item.status}`]].join(' ')}
-                onClick={() => navigate(conceptPath(item.isWaitTimes ? '/wait-times' : `/stage/${item.id}`))}
+                onClick={() => navigate(conceptPath(item.id === 'wait-before-triage' ? '/wait-times' : `/stage/${item.id}`))}
                 aria-label={item.label}
               >
                 <div className={css.pinImageWrap}>
