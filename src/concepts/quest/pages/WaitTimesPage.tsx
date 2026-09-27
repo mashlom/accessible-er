@@ -34,18 +34,18 @@ export function WaitTimesPage() {
         <h1 style={{ color: theme.accent }}>{data.title}</h1>
         <p className={css.stageHeroHint}>{data.meaning}</p>
 
-        <div style={{ display: 'flex', gap: 'var(--space-3)', marginTop: 'var(--space-4)', justifyContent: 'center' }}>
+        <div className={css.stageBack}>
           {isActive && (
             <button
               className={css.doneBtn}
-              style={{ background: theme.accent, color: theme.accentText, flex: 1, maxWidth: '200px' }}
+              style={{ background: theme.accent, color: theme.accentText }}
               onClick={handleDone}
             >
               הצלחתי! ←
             </button>
           )}
-          <Link to="/map" style={{ flex: 1, maxWidth: '200px' }}>
-            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent, width: '100%' }}>
+          <Link to="/map">
+            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
               חזרה למפה →
             </button>
           </Link>
