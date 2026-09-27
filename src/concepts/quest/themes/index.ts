@@ -76,6 +76,7 @@ export const themes: QuestTheme[] = [
     completedColor: '#c9a84c',
     stages: {
       reception: { label: 'שער הטירה', icon: '🏰', hint: 'נרשמים בספר הגיבורים ומקבלים צמיד אביר', image: '/worlds/knight/tower.jpg' },
+      'wait-before-triage': { label: 'חצר הטירה', icon: '🛡️', hint: 'ממתינים בחצר עד שהרופא הצבאי קורא' },
       triage: { label: 'בדיקת הכוחות', icon: '⚔️', hint: 'הרופא הצבאי בודק שאתה כשיר/ה למסע', image: '/worlds/knight/tests.jpeg' },
       'wait-doctor': { label: 'אולם האבירים', icon: '🚪', hint: 'ממתינים באולם עד שהקוסם הגדול יקרא', image: '/worlds/knight/door.JPEG' },
       doctor: { label: 'פגישה עם הקוסם הגדול', icon: '🧙', hint: 'הקוסם מחליט מהו הקסם הנכון', image: '/worlds/knight/wizard.JPEG' },
@@ -218,6 +219,7 @@ export const themes: QuestTheme[] = [
     completedColor: '#8bc34a',
     stages: {
       reception: { label: 'כניסה לשמורה', icon: '🌿', hint: 'נרשמים בשמורת הדינוזאורים ומקבלים צמיד חוקר' },
+      'wait-before-triage': { label: 'שביל הכניסה', icon: '🦕', hint: 'מחכים על השביל עד שהחוקר קורא לנו' },
       triage: { label: 'בדיקת חוקר', icon: '🔭', hint: 'החוקר בודק שאתה בריא/ה למסע' },
       'wait-doctor': { label: 'מחנה ההמתנה', icon: '🏕️', hint: 'נחים במחנה עד שהמדריך מוכן' },
       doctor: { label: 'פגישה עם המדריך הראשי', icon: '🦖', hint: 'המדריך מחליט איזה מסלול נעשה' },
@@ -259,6 +261,7 @@ export const themes: QuestTheme[] = [
     completedColor: '#d4a8e8',
     stages: {
       reception: { label: 'שער הגן', icon: '🌸', hint: 'נרשמים בגן הקסמים ומקבלים צמיד קסמים' },
+      'wait-before-triage': { label: 'גשר הפרפרים', icon: '🦋', hint: 'מחכים על הגשר עד שהפיה הרפואית קוראת' },
       triage: { label: 'בדיקת הקסמים', icon: '✨', hint: 'הפיה הרפואית בודקת את הקסם שלך' },
       'wait-doctor': { label: 'פינת הפרחים', icon: '🌺', hint: 'יושבים בין הפרחים ומחכים' },
       doctor: { label: 'פגישה עם פיית הריפוי', icon: '🧚', hint: 'הפיה מחליטה איזה קסם תרפא' },
@@ -300,6 +303,7 @@ export const themes: QuestTheme[] = [
     completedColor: '#5c8de8',
     stages: {
       reception: { label: 'כניסה לתחנה', icon: '🛸', hint: 'נרשמים בתחנת החלל ומקבלים צמיד אסטרונאוט' },
+      'wait-before-triage': { label: 'תא ההמתנה', icon: '🧑‍🚀', hint: 'ממתינים בתחנה עד שהטכנאי קורא לבדיקה' },
       triage: { label: 'בדיקות לפני המראה', icon: '📡', hint: 'הטכנאי בודק שאתה מוכן/ה לטיסה' },
       'wait-doctor': { label: 'חדר בקרה', icon: '🌍', hint: 'ממתינים לקברניט שיסיים תדרוך' },
       doctor: { label: 'פגישה עם הקברניט', icon: '👨‍🚀', hint: 'הקברניט קובע את מסלול הטיסה' },
@@ -341,6 +345,7 @@ export const themes: QuestTheme[] = [
     completedColor: '#e8a825',
     stages: {
       reception: { label: 'כניסה למחנה', icon: '⛺', hint: 'נרשמים במחנה הספארי ומקבלים צמיד מסייר' },
+      'wait-before-triage': { label: 'בצל העץ', icon: '🌳', hint: 'נחים בצל העץ עד שהמדריך קורא' },
       triage: { label: 'בדיקת הציוד', icon: '🎒', hint: 'המדריך בודק שאתה מוכן/ה לצאת לשטח' },
       'wait-doctor': { label: 'ממתינים לאריה', icon: '🦁', hint: 'האריה עסוק — מחכים בסבלנות' },
       doctor: { label: 'פגישה עם ראש השבט', icon: '🐘', hint: 'הפיל הזקן מחליט מה עושים' },
@@ -382,6 +387,7 @@ export const themes: QuestTheme[] = [
     completedColor: '#25b8e8',
     stages: {
       reception: { label: 'כניסה לצוללת', icon: '🚢', hint: 'נרשמים בבסיס התת-ימי ומקבלים צמיד צוללן' },
+      'wait-before-triage': { label: 'המתנה על הרציף', icon: '⚓', hint: 'ממתינים על הרציף עד שקצין הצלילה קורא לנו' },
       triage: { label: 'בדיקות לצלילה', icon: '🤿', hint: 'הקצין בודק שאתה מוכן/ה לצלילה' },
       'wait-doctor': { label: 'ממתינים בתא', icon: '🐟', hint: 'דגים עוברים בחוץ, ממתינים לקברניט' },
       doctor: { label: 'פגישה עם קברניט הצוללת', icon: '🐙', hint: 'התמנון החכם מחליט מה לעשות' },
@@ -421,6 +427,7 @@ export const themes: QuestTheme[] = [
     completedColor: '#4caf80',
     stages: {
       reception: { label: 'קבלה במזכירות', icon: '📝', hint: 'פותחים תיק ביקור' },
+      'wait-before-triage': { label: 'המתנה לטריאז׳', icon: '⏳', hint: 'ממתינים לבדיקה של האחות' },
       triage: { label: 'טריאז׳ ומדידות', icon: '🩺', hint: 'אחות מודדת ובודקת' },
       'wait-doctor': { label: 'המתנה לרופא/ה', icon: '⏳', hint: 'ממתינים בחדר ההמתנה' },
       doctor: { label: 'בדיקת רופא/ה', icon: '👩‍⚕️', hint: 'הרופא/ה בודק/ת ומחליט/ה' },
@@ -460,6 +467,7 @@ export const themes: QuestTheme[] = [
     completedColor: '#e0a8c4',
     stages: {
       reception: { label: 'קבלה בדלפק הכניסה', icon: '📋', hint: 'רושמים את השם בפנקס הכניסה לבית' },
+      'wait-before-triage': { label: 'הספסל במסדרון', icon: '🛋️', hint: 'יושבים על הספסל עד שהדובי קורא' },
       triage: { label: 'חדר המדידות', icon: '🧸', hint: 'הדובי עוזר למדוד ולבדוק' },
       'wait-doctor': { label: 'חדר האורחים', icon: '🪑', hint: 'ממתינים בנחת עד שקוראים בשם' },
       doctor: { label: 'החדר של הדוקטורית', icon: '🩺', hint: 'הדוקטורית בודקת בעדינות' },

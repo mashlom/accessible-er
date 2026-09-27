@@ -5,13 +5,11 @@ import { useQuestTheme } from '../useQuestTheme'
 import { getProcedure } from '../../../data/procedures'
 import { SensoryBar } from '../../../components/SensoryBar'
 import { useQuestProgress, loadProcs } from '../useQuestProgress'
-import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 export function WaitTimesPage() {
   const { theme } = useQuestTheme()
   const { active, completeProcedure, completeActive } = useQuestProgress()
-  const { t } = useI18n()
   const navigate = useNavigate()
 
   const isActive = active?.id === 'wait-before-triage'
@@ -28,22 +26,14 @@ export function WaitTimesPage() {
   if (!data) return <div>Error: stage not found</div>
 
   const procIds = ['temperature', 'saturation', 'blood-pressure']
-
-  // Use translations if available, fallback to Hebrew
-  const getStageText = (key: string) => {
-    const val = t(`stages.${data.id}.${key}`)
-    if (val === `stages.${data.id}.${key}`) {
-      return data[key as keyof typeof data] as string
-    }
-    return val
-  }
+  const skin = theme.stages['wait-before-triage']
 
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
-        <span className={css.stageHeroIcon}>⏳</span>
-        <h1 style={{ color: theme.accent }}>{getStageText('label') || data.title}</h1>
-        <p className={css.stageHeroHint}>{getStageText('hint') || data.meaning}</p>
+        <span className={css.stageHeroIcon}>{skin?.icon ?? data.emoji}</span>
+        <h1 style={{ color: theme.accent }}>{skin?.label ?? data.title}</h1>
+        <p className={css.stageHeroHint}>{skin?.hint ?? data.meaning}</p>
 
         <div className={css.stageBack}>
           {isActive && (
