@@ -26,13 +26,14 @@ export function WaitTimesPage() {
   if (!data) return <div>Error: stage not found</div>
 
   const procIds = ['temperature', 'saturation', 'blood-pressure']
+  const skin = theme.stages['wait-before-triage']
 
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
-        <span className={css.stageHeroIcon}>⏳</span>
-        <h1 style={{ color: theme.accent }}>{data.title}</h1>
-        <p className={css.stageHeroHint}>{data.meaning}</p>
+        <span className={css.stageHeroIcon}>{skin?.icon ?? data.emoji}</span>
+        <h1 style={{ color: theme.accent }}>{skin?.label ?? data.title}</h1>
+        <p className={css.stageHeroHint}>{skin?.hint ?? data.meaning}</p>
 
         <div className={css.stageBack}>
           {isActive && (
