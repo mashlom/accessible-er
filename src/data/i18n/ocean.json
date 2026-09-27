@@ -158,5 +158,87 @@
       "subtitle": ""
     },
     "distract": ""
+  },
+  "en": {
+    "meta": {
+      "name": "Underwater Adventure",
+      "emoji": "🐠",
+      "procedurePrompt": ""
+    },
+    "stages": {
+      "reception": {
+        "label": "Entering the Submarine",
+        "icon": "🚢",
+        "hint": "You register at the underwater base and get a diver's bracelet"
+      },
+      "triage": {
+        "label": "Pre-dive Checkup",
+        "icon": "🤿",
+        "hint": "The officer checks that you're ready to dive"
+      },
+      "wait-doctor": {
+        "label": "Waiting in the Chamber",
+        "icon": "🐟",
+        "hint": "Fish swim by outside, waiting for the submarine captain"
+      },
+      "doctor": {
+        "label": "Meeting with the Submarine Captain",
+        "icon": "🐙",
+        "hint": "The wise octopus decides what to do"
+      },
+      "decision": {
+        "label": "Rising to the Surface!",
+        "icon": "🌊",
+        "hint": "We explored the underwater world — time to return!"
+      },
+      "tests": {
+        "label": "Submarine Sonar",
+        "icon": "📡",
+        "hint": "The sonar sees through the water"
+      },
+      "treatment": {
+        "label": "Submarine Repairs",
+        "icon": "🔧",
+        "hint": "The engineer fixes what needs fixing"
+      },
+      "consult": {
+        "label": "Base Contact",
+        "icon": "📻",
+        "hint": "An expert from the base connects"
+      },
+      "wait-results": {
+        "label": "Processing Sonar Data",
+        "icon": "💾",
+        "hint": "The sonar processes data"
+      }
+    },
+    "procedures": {
+      "temperature": "The submarine equipment measures the diver's body temperature — to make sure everything is ready before diving.",
+      "saturation": "The oxygen sensor checks that enough air flows through the blood — just like the oxygen tanks in deep diving.",
+      "blood-pressure": "The submarine captain measures blood pressure — to make sure your body is ready for the pressure of the deep.",
+      "doctor-exam": "The wise octopus examines the diver and decides what treatment is right.",
+      "blood-test": "The submarine lab needs one drop of blood to analyze your body's condition.",
+      "urine": "The sample cup will reveal to the wise octopus what's happening in the diver's body.",
+      "xray": "The submarine sonar photographs the inside of the body — you can see everything as if through clear water.",
+      "ultrasound": "The sonar gel lets the equipment discover what's hidden in the depths of your body.",
+      "ct": "The scanning ring slowly passes and takes a 3D picture of everything inside.",
+      "iv": "The thin tube sends healing fluids directly into the blood — like the submarine's oxygen system.",
+      "medication": "The wise octopus prepared a sea medicine — a special syrup to restore the diver's strength.",
+      "inhalation": "Healing vapors come through the mask — like breathing air from a tank deep underwater.",
+      "stitches": "The submarine engineer fixes the wound — special sea glue that will seal the injury.",
+      "cast": "The plaster shield wraps around the bone like a submarine hull — keeping everything stable until healing.",
+      "bandage": "The protective covering wraps the wound and protects it like the submarine's hull.",
+      "waiting-results": "The sonar processes the data — soon we'll know what the dive discovered."
+    },
+    "calm": [
+      "Even divers find it hard sometimes 🤿",
+      "When a diver finds it hard, they breathe very deeply",
+      "Breathe with me — breathe in... breathe out..."
+    ],
+    "card": {
+      "title": "Instructions for the Submarine Captain",
+      "subtitle": "So the submarine captain knows exactly how to help our diver"
+    },
+    "distract": "Sonar Sound Chamber 📡"
   }
 }
