@@ -38,7 +38,8 @@ export function QuestShell() {
       <a href="#main" className="skip-link">
         {t('ui.shell.skip', 'דילוג לתוכן')}
       </a>
-      <header className={`${css.questTopbar} no-print`}>
+      {/* Pinned RTL so the top bar doesn't flip when the language changes */}
+      <header className={`${css.questTopbar} no-print`} dir="rtl">
         {!isHome ? (
           <button
             type="button"
@@ -46,7 +47,7 @@ export function QuestShell() {
             onClick={() => navigate(-1)}
             aria-label={t('ui.shell.back', 'חזרה')}
           >
-            <span aria-hidden>{dir === 'rtl' ? '›' : '‹'}</span>
+            <span aria-hidden>›</span>
           </button>
         ) : (
           <span className={css.questTopBtn} aria-hidden />
