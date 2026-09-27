@@ -18,35 +18,40 @@ export function MapPage() {
       } as React.CSSProperties
     : { '--bg-portrait': 'none', '--bg-landscape': 'none', background: theme.accentSoft } as React.CSSProperties
 
-  const allItems = [
-    {
-      id: 'wait-times',
-      label: 'זמנים משוערים',
-      icon: '⏱️',
-      image: undefined,
-      status: 'unlocked',
-      earnedCoins: 0,
-      isWaitTimes: true,
-    },
-    ...REQUIRED_STAGES.map((id) => {
-      const state = visible.find((s) => s.id === id)
-      const data = journeyStages.find((j) => j.id === id)
-      const skin = theme.stages[id]
-      const procIds = data?.procedureIds ?? []
-      const procCoins = procIds.filter((pid) => doneProcedures.has(pid)).length
-      const stageCoins = doneProcedures.has(id) ? 1 : 0
-      const earnedCoins = procCoins > 0 ? procCoins : stageCoins
-      return {
-        id,
-        label: skin?.label ?? data?.title ?? id,
-        icon: skin?.icon ?? data?.emoji ?? '❓',
-        image: skin?.image,
-        status: state?.status ?? 'locked',
-        earnedCoins,
-        isWaitTimes: false,
-      }
-    }),
-  ]
+  const allItems = REQUIRED_STAGES.map((id, idx) => {
+    const state = visible.find((s) => s.id === id)
+    const data = journeyStages.find((j) => j.id === id)
+    const skin = theme.stages[id]
+    const procIds = data?.procedureIds ?? []
+    const procCoins = procIds.filter((pid) => doneProcedures.has(pid)).length
+    const stageCoins = doneProcedures.has(id) ? 1 : 0
+    const earnedCoins = procCoins > 0 ? procCoins : stageCoins
+
+    const item = {
+      id,
+      label: skin?.label ?? data?.title ?? id,
+      icon: skin?.icon ?? data?.emoji ?? '❓',
+      image: skin?.image,
+      status: state?.status ?? 'locked',
+      earnedCoins,
+      isWaitTimes: false,
+    }
+
+    // Insert wait-times after reception (first item)
+    const result = [item]
+    if (idx === 0) {
+      result.push({
+        id: 'wait-times',
+        label: 'זמנים משוערים',
+        icon: '⏱️',
+        image: undefined,
+        status: 'unlocked',
+        earnedCoins: 0,
+        isWaitTimes: true,
+      })
+    }
+    return result
+  }).flat()
 
   return (
     <div className={css.mapPage} style={bgStyle}>
