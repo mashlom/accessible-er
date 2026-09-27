@@ -51,7 +51,21 @@ function initialStages(): StageState[] {
 function load(): StageState[] {
   try {
     const raw = sessionStorage.getItem(KEY)
-    if (raw) return JSON.parse(raw)
+    if (raw) {
+      // Saved progress may predate newly added stages — merge it into the current stage list
+      const saved: StageState[] = JSON.parse(raw)
+      const byId = new Map(saved.map((s) => [s.id, s]))
+      const merged = initialStages().map((s) => byId.get(s.id) ?? { ...s, status: 'locked' as const })
+      const activeIdx = merged.findIndex((s) => s.status === 'active')
+      if (activeIdx !== -1) {
+        const firstLocked = merged.findIndex((s) => s.visible && s.status === 'locked')
+        if (firstLocked !== -1 && firstLocked < activeIdx) {
+          merged[activeIdx] = { ...merged[activeIdx], status: 'locked' }
+          merged[firstLocked] = { ...merged[firstLocked], status: 'active' }
+        }
+      }
+      return merged
+    }
   } catch {}
   return initialStages()
 }
