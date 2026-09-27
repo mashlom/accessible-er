@@ -3,7 +3,7 @@
     "journeyStages": {
       "reception": {
         "title": "Check-in at the reception desk",
-        "meaning": "This is the first step of the visit. After this, you go to triage.",
+        "meaning": "This is the first step of the visit. After this, you go to the nurse for an initial assessment and measurements.",
         "whatHappens": "The receptionist asks for details and opens a visit file. You usually get an ID bracelet. You may be standing close to other people in line.",
         "challenge": "Sometimes there is a line and a short wait by the desk. It can be noisy.",
         "canAsk": [
@@ -13,9 +13,9 @@
         "waitRange": "5–15 minutes"
       },
       "wait-before-triage": {
-        "title": "Waiting before triage",
+        "title": "Waiting before the nurse's assessment",
         "meaning": "After check-in, you wait in line for the nurse to see you.",
-        "whatHappens": "You sit and wait in line. It can be crowded and noisy, with many people and children around. This is a good time to prepare your child for what will happen at triage.",
+        "whatHappens": "You sit and wait in line. It can be crowded and noisy, with many people and children around. This is a good time to prepare your child for what will happen with the nurse.",
         "challenge": "A crowded, noisy place. Not knowing how long it will take. It can be hard to get your child's attention with so much going on around.",
         "canAsk": [
           "A quieter space or a less crowded spot",
@@ -25,8 +25,8 @@
         "waitRange": "5–15 minutes"
       },
       "triage": {
-        "title": "Triage and measurements",
-        "meaning": "Triage sets the order of care by how urgent each case is. After this, you wait for your turn with the doctor.",
+        "title": "Initial assessment and measurements",
+        "meaning": "The nurse checks how your child is feeling and takes measurements. After this, you wait for your turn with the doctor.",
         "whatHappens": "A nurse measures temperature, pulse, blood pressure and oxygen, and asks a few short questions. If your child has no ID bracelet yet, they get one now. The nurse touches your child's hand, finger or arm during the measurements, using devices like a thermometer, a finger clip (for oxygen) and a blood pressure cuff.",
         "challenge": "Several close-contact measurements, one after another. New devices and new sensations.",
         "canAsk": [
@@ -38,7 +38,7 @@
       },
       "wait-doctor": {
         "title": "Waiting for the doctor",
-        "meaning": "You have finished triage and things are stable. Now you wait for your turn to see the doctor.",
+        "meaning": "The nurse's assessment is done and things are stable. Now you wait for your turn to see the doctor.",
         "whatHappens": "You wait in the waiting room or at a station. You can use this time to prepare for the next step. The room may be crowded, with people sitting close by.",
         "nextStagePrepare": "You can play \"doctor\" with a doll beforehand, and explain that the doctor only looks and listens in order to help.",
         "challenge": "The waiting itself and not knowing what comes next. A busy place can feel overwhelming.",
@@ -125,7 +125,7 @@
     "journeyStages": {
       "reception": {
         "title": "Оформление в регистратуре",
-        "meaning": "Это первый этап визита. Отсюда вы переходите на триаж.",
+        "meaning": "Это первый этап визита. Отсюда вы переходите на оценку состояния и измерения.",
         "whatHappens": "Сотрудник регистратуры спрашивает данные и заводит карту визита. Обычно выдают идентификационный браслет. В очереди, возможно, придётся стоять близко к другим людям.",
         "challenge": "Иногда у стойки очередь и короткое ожидание. Может быть шумно.",
         "canAsk": [
@@ -135,9 +135,9 @@
         "waitRange": "5–15 минут"
       },
       "wait-before-triage": {
-        "title": "Ожидание перед триажем",
+        "title": "Ожидание перед оценкой состояния",
         "meaning": "После регистратуры вы ждёте в очереди на осмотр у медсестры.",
-        "whatHappens": "Вы сидите в очереди. Может быть тесно и шумно, вокруг много людей и детей. Это хорошее время, чтобы подготовить ребёнка к тому, что будет на триаже.",
+        "whatHappens": "Вы сидите в очереди. Может быть тесно и шумно, вокруг много людей и детей. Это хорошее время, чтобы подготовить ребёнка к тому, что будет у медсестры.",
         "challenge": "Тесно и шумно. Непонятно, сколько придётся ждать. Трудно привлечь внимание ребёнка, когда вокруг столько всего.",
         "canAsk": [
           "Более тихое или менее людное место",
@@ -147,8 +147,8 @@
         "waitRange": "5–15 минут"
       },
       "triage": {
-        "title": "Триаж и измерения",
-        "meaning": "На триаже определяют очерёдность по срочности. После этого вы ждёте своей очереди к врачу.",
+        "title": "Оценка состояния и измерения у медсестры",
+        "meaning": "Медсестра проверяет, как себя чувствует ребёнок, и делает необходимые измерения. После этого вы ждёте своей очереди к врачу.",
         "whatHappens": "Медсестра измеряет температуру, пульс, давление и кислород и задаёт несколько коротких вопросов. Если идентификационного браслета ещё нет, его надевают. Во время измерений медсестра касается руки, пальца или предплечья ребёнка и использует приборы: градусник, прищепку на палец (для кислорода) и манжету для давления.",
         "challenge": "Несколько измерений с близким контактом, одно за другим. Новые приборы и новые ощущения.",
         "canAsk": [
@@ -160,7 +160,7 @@
       },
       "wait-doctor": {
         "title": "Ожидание врача",
-        "meaning": "Триаж пройден, состояние стабильное. Теперь вы ждёте своей очереди на осмотр у врача.",
+        "meaning": "Оценка состояния завершена, состояние стабильное. Теперь вы ждёте своей очереди на осмотр у врача.",
         "whatHappens": "Вы ждёте в зале ожидания или у поста. Это время можно использовать, чтобы подготовиться к следующему шагу. В зале может быть тесно, люди сидят близко.",
         "nextStagePrepare": "Можно заранее поиграть с куклой «в доктора» и объяснить, что врач только смотрит и слушает, чтобы помочь.",
         "challenge": "Само ожидание и неизвестность. В людном месте легко перегрузиться.",

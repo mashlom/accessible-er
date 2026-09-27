@@ -437,8 +437,8 @@ export const themes: QuestTheme[] = [
     completedColor: '#4caf80',
     stages: {
       reception: { label: 'קבלה במזכירות', icon: '📝', hint: 'פותחים תיק ביקור' },
-      'wait-before-triage': { label: 'המתנה לטריאז׳', icon: '⏳', hint: 'ממתינים לבדיקה של האחות' },
-      triage: { label: 'טריאז׳ ומדידות', icon: '🩺', hint: 'אחות מודדת ובודקת' },
+      'wait-before-triage': { label: 'המתנה לבדיקת מצב בריאות', icon: '⏳', hint: 'ממתינים לבדיקה של האחות' },
+      triage: { label: 'הערכה של מצב בריאות ומדידות', icon: '🩺', hint: 'אחות מודדת ובודקת' },
       'wait-doctor': { label: 'המתנה לרופא/ה', icon: '⏳', hint: 'ממתינים בחדר ההמתנה' },
       doctor: { label: 'בדיקת רופא/ה', icon: '👩‍⚕️', hint: 'הרופא/ה בודק/ת ומחליט/ה' },
       decision: { label: 'שחרור או אשפוז', icon: '🏁', hint: 'סוף הביקור' },

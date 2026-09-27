@@ -3,13 +3,13 @@
     "paths": {
       "fever": {
         "label": "Fever / illness",
-        "blurb": "Usually: check-in, triage, a doctor's exam, and if needed a blood test or an X-ray.",
+        "blurb": "Usually: check-in, initial assessment, a doctor's exam, and if needed a blood test or an X-ray.",
         "route": [
           {
             "title": "Check-in at the reception desk"
           },
           {
-            "title": "Triage and measurements"
+            "title": "Initial assessment and measurements"
           },
           {
             "title": "Doctor's exam"
@@ -27,13 +27,13 @@
       },
       "abdominal": {
         "label": "Belly pain",
-        "blurb": "Usually: check-in, triage, a doctor's exam, and if needed blood tests, an ultrasound or a specialist.",
+        "blurb": "Usually: check-in, initial assessment, a doctor's exam, and if needed blood tests, an ultrasound or a specialist.",
         "route": [
           {
             "title": "Check-in at the reception desk"
           },
           {
-            "title": "Triage and measurements"
+            "title": "Initial assessment and measurements"
           },
           {
             "title": "Doctor's exam"
@@ -60,13 +60,13 @@
       },
       "limb-injury": {
         "label": "Arm or leg injury",
-        "blurb": "Usually: check-in, triage, a doctor's exam, an X-ray, and if needed a cast or a bandage.",
+        "blurb": "Usually: check-in, initial assessment, a doctor's exam, an X-ray, and if needed a cast or a bandage.",
         "route": [
           {
             "title": "Check-in at the reception desk"
           },
           {
-            "title": "Triage and measurements"
+            "title": "Initial assessment and measurements"
           },
           {
             "title": "Doctor's exam"
@@ -87,13 +87,13 @@
       },
       "cut": {
         "label": "Cut or skin wound",
-        "blurb": "Usually: check-in, triage, a doctor's exam, numbing, closing the wound and a bandage.",
+        "blurb": "Usually: check-in, initial assessment, a doctor's exam, numbing, closing the wound and a bandage.",
         "route": [
           {
             "title": "Check-in at the reception desk"
           },
           {
-            "title": "Triage and measurements"
+            "title": "Initial assessment and measurements"
           },
           {
             "title": "Doctor's exam"
@@ -117,13 +117,13 @@
       },
       "other": {
         "label": "Another reason / not sure yet",
-        "blurb": "Every visit starts the same way: check-in, triage and a doctor's exam. From there, the team plans the next steps.",
+        "blurb": "Every visit starts the same way: check-in, initial assessment and a doctor's exam. From there, the team plans the next steps.",
         "route": [
           {
             "title": "Check-in at the reception desk"
           },
           {
-            "title": "Triage and measurements"
+            "title": "Initial assessment and measurements"
           },
           {
             "title": "Doctor's exam"
@@ -142,13 +142,13 @@
     "paths": {
       "fever": {
         "label": "Температура / болезнь",
-        "blurb": "Обычно: регистратура, триаж, осмотр врача и при необходимости анализ крови или рентген.",
+        "blurb": "Обычно: регистратура, оценка состояния и измерения, осмотр врача и при необходимости анализ крови или рентген.",
         "route": [
           {
             "title": "Оформление в регистратуре"
           },
           {
-            "title": "Триаж и измерения"
+            "title": "Оценка состояния и измерения у медсестры"
           },
           {
             "title": "Осмотр врача"
@@ -166,13 +166,13 @@
       },
       "abdominal": {
         "label": "Боль в животе",
-        "blurb": "Обычно: регистратура, триаж, осмотр врача и при необходимости анализы крови, УЗИ или консультация специалиста.",
+        "blurb": "Обычно: регистратура, оценка состояния и измерения, осмотр врача и при необходимости анализы крови, УЗИ или консультация специалиста.",
         "route": [
           {
             "title": "Оформление в регистратуре"
           },
           {
-            "title": "Триаж и измерения"
+            "title": "Оценка состояния и измерения у медсестры"
           },
           {
             "title": "Осмотр врача"
@@ -199,13 +199,13 @@
       },
       "limb-injury": {
         "label": "Травма руки или ноги",
-        "blurb": "Обычно: регистратура, триаж, осмотр врача, рентген и при необходимости гипс или повязка.",
+        "blurb": "Обычно: регистратура, оценка состояния и измерения, осмотр врача, рентген и при необходимости гипс или повязка.",
         "route": [
           {
             "title": "Оформление в регистратуре"
           },
           {
-            "title": "Триаж и измерения"
+            "title": "Оценка состояния и измерения у медсестры"
           },
           {
             "title": "Осмотр врача"
@@ -226,13 +226,13 @@
       },
       "cut": {
         "label": "Порез или рана на коже",
-        "blurb": "Обычно: регистратура, триаж, осмотр врача, обезболивание, закрытие раны и повязка.",
+        "blurb": "Обычно: регистратура, оценка состояния и измерения, осмотр врача, обезболивание, закрытие раны и повязка.",
         "route": [
           {
             "title": "Оформление в регистратуре"
           },
           {
-            "title": "Триаж и измерения"
+            "title": "Оценка состояния и измерения у медсестры"
           },
           {
             "title": "Осмотр врача"
@@ -256,13 +256,13 @@
       },
       "other": {
         "label": "Другая причина / пока не знаем",
-        "blurb": "Каждый визит начинается одинаково: регистратура, триаж и осмотр врача. Дальше команда решает, что делать.",
+        "blurb": "Каждый визит начинается одинаково: регистратура, оценка состояния и измерения, и осмотр врача. Дальше команда решает, что делать.",
         "route": [
           {
             "title": "Оформление в регистратуре"
           },
           {
-            "title": "Триаж и измерения"
+            "title": "Оценка состояния и измерения у медсестры"
           },
           {
             "title": "Осмотр врача"
