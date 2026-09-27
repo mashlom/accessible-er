@@ -5,6 +5,7 @@ import { useQuestTheme } from '../useQuestTheme'
 import { getProcedure } from '../../../data/procedures'
 import { SensoryBar } from '../../../components/SensoryBar'
 import { useQuestProgress, loadProcs } from '../useQuestProgress'
+import { StageIcon } from '../../../components/StageIcon'
 import css from '../quest.module.css'
 
 export function WaitTimesPage() {
@@ -31,7 +32,7 @@ export function WaitTimesPage() {
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
-        <span className={css.stageHeroIcon}>{skin?.icon ?? data.emoji}</span>
+        <span className={css.stageHeroIcon}><StageIcon icon={skin?.icon ?? data.emoji} /></span>
         <h1 style={{ color: theme.accent }}>{skin?.label ?? data.title}</h1>
         <p className={css.stageHeroHint}>{skin?.hint ?? data.meaning}</p>
 

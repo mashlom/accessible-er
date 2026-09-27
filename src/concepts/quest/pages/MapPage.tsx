@@ -3,6 +3,7 @@ import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
+import { StageIcon } from '../../../components/StageIcon'
 import css from '../quest.module.css'
 
 export function MapPage() {
@@ -57,7 +58,7 @@ export function MapPage() {
                   {item.image ? (
                     <img src={item.image} alt="" className={css.pinImage} />
                   ) : (
-                    <span className={css.pinEmoji}>{item.icon}</span>
+                    <span className={css.pinEmoji}><StageIcon icon={item.icon} /></span>
                   )}
                   {item.status === 'done' && (
                     <span className={css.pinCoins} aria-hidden>
