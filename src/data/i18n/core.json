@@ -1,0 +1,62 @@
+{
+  "he": {
+    "canAsk": [
+      "לשבת במקום שקט יותר בזמן ההמתנה",
+      "לקבל הסבר קצר מה השלב הבא",
+      "הסבר קצר לפני כל מדידה",
+      "לבצע את המדידות אחת־אחת ובקצב שלנו",
+      "להראות את המכשירים על ההורה קודם",
+      "מרחב שקט או פינת המתנה רגועה",
+      "קיט חושי או אוזניות להפחתת רעש",
+      "הערכת זמן משוערת (בטווחים)",
+      "שאדם אחד יוביל וידבר",
+      "זמן עיבוד קצר בין שאלה לתשובה",
+      "משחה מאלחשת לפני דקירה",
+      "הסחת דעת ואדם אחד שמוביל",
+      "הכנה חזותית לפני כל טיפול",
+      "הנחיות כתובות או בתמונות",
+      "סיכום קצר במשפטים פשוטים",
+      "זמן להיפרד מהמרחב לפני מעבר"
+    ]
+  },
+  "en": {
+    "canAsk": [
+      "Sit in a quieter area while waiting",
+      "Get a short explanation of what comes next",
+      "Short explanation before each measurement",
+      "Do measurements one at a time, at our pace",
+      "Show the equipment on the parent first",
+      "Quiet space or calm waiting area",
+      "Headphones or sensory kit for noise reduction",
+      "Estimated time (as a range)",
+      "One person to lead and speak",
+      "Short processing time between question and answer",
+      "Numbing cream before needle insertion",
+      "Distraction and one person to lead",
+      "Visual preparation before each procedure",
+      "Written or picture instructions",
+      "Short summary in simple sentences",
+      "Time to say goodbye before moving"
+    ]
+  },
+  "ru": {
+    "canAsk": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  }
+}
