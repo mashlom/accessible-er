@@ -289,6 +289,28 @@
       "subtitle": "So the captain knows exactly how to help our diver"
     },
     "distract": "Sonar Sounds 📡",
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "In the mouth",
+          "steps": [
+            "A diver puts a small plastic thermometer with a wire into their mouth.",
+            "They close their mouth tight-tight, like they have candy inside.",
+            "We wait for a short moment, until the device is done.",
+            "A little beep — and that's it, we're done."
+          ]
+        },
+        {
+          "label": "Under the armpit",
+          "steps": [
+            "A diver puts a small plastic thermometer with a wire under their armpit.",
+            "They press their arm to their body and hold it gently.",
+            "We wait for a short moment, until the device is done.",
+            "A little beep — and that's it, we're done."
+          ]
+        }
+      ]
+    },
     "procedureSteps": {
       "doctor-exam": [
         "The captain listens to my body with a stethoscope — it's a little cold, but it doesn't hurt.",
