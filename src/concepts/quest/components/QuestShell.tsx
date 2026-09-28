@@ -60,7 +60,7 @@ export function QuestShell() {
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end', paddingInlineEnd: '0.5rem' }}>
           {isOcean && <LanguagePicker />}
           <a href="#/" className={css.questTopBtn} aria-label={t('ui.shell.menu', 'לתפריט הקונספטים')}>
-            <span aria-hidden>☰</span>
+            <span aria-hidden>🏁</span>
           </a>
         </div>
       </header>
