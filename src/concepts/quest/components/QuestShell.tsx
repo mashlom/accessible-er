@@ -23,7 +23,7 @@ export function QuestShell() {
   const { active, visibleOptionals } = useQuestProgress()
   const { theme } = useQuestTheme()
   const { lang, dir, t } = useI18n()
-  const isOcean = theme.id === 'ocean'
+  const isOcean = theme.id === 'ocean' && !isHome
 
   useLayoutEffect(() => {
     setI18nEnabled(isOcean)
