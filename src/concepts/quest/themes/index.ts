@@ -401,7 +401,7 @@ export const themes: QuestTheme[] = [
       'wait-before-triage': { label: 'כניסה לצוללת', icon: '/worlds/ocean/submarine.svg', hint: 'עולים לצוללת ומחכים שקצין הצלילה יקרא לנו' },
       triage: { label: 'בדיקות לצלילה', icon: '🤿', hint: 'הקצין בודק שאתה מוכן/ה לצלילה' },
       'wait-doctor': { label: 'ממתינים בתא', icon: '🐟', hint: 'דגים עוברים בחוץ, ממתינים לקברניט' },
-      doctor: { label: 'פגישה עם קברניט הצוללת', icon: '🐙', hint: 'התמנון החכם מחליט מה לעשות' },
+      doctor: { label: 'פגישה עם קברניט הצוללת', icon: '🐙', hint: 'הקברניט מחליט מה לעשות' },
       decision: { label: 'עלייה לפני השטח!', icon: '🌊', hint: 'צפנו בעולם התת-ימי — חוזרים!' },
       tests: { label: 'סונאר הצוללת', icon: '📡', hint: 'הסונאר רואה דרך המים' },
       treatment: { label: 'תיקון הצוללת', icon: '🔧', hint: 'המהנדס מתקן את מה שצריך' },
