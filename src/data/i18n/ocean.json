@@ -82,7 +82,15 @@
       "title": "מכתב הוראות לקברניט",
       "subtitle": "כדי שקברניט הצוללת ידע בדיוק איך לעזור לצוללן שלנו"
     },
-    "distract": "תא קול הסונאר 📡"
+    "distract": "תא קול הסונאר 📡",
+    "procedureSteps": {
+      "doctor-exam": [
+        "נפגוש את הקברניט שרוצה לעזור לנו.",
+        "הוא מקשיב לגוף עם כלי קסמים — קצת קר, לא כואב.",
+        "אולי יסתכל בגרון ובאוזניים עם אור קסמים קטן.",
+        "בסוף יידע הקברניט מה לעשות."
+      ]
+    }
   },
   "ru": {
     "meta": {
@@ -167,7 +175,14 @@
       "title": "Письмо капитану",
       "subtitle": "Чтобы капитан подводной лодки знал, как помочь нашему водолазу"
     },
-    "distract": "Звуки локатора 📡"
+    "distract": "Звуки локатора 📡",
+    "procedureSteps": {
+      "doctor-exam": [
+        "Капитан слушает стетоскопом, как дышит водолаз, и как бьется его сердце. Это немного холодно, но не больно.",
+        "Может быть, он посмотрит в горло и уши с помощью маленького фонарика.",
+        "В конце он скажет, что делать дальше."
+      ]
+    }
   },
   "en": {
     "meta": {
@@ -252,6 +267,13 @@
       "title": "A Letter to the Captain",
       "subtitle": "So the captain knows exactly how to help our diver"
     },
-    "distract": "Sonar Sounds 📡"
+    "distract": "Sonar Sounds 📡",
+    "procedureSteps": {
+      "doctor-exam": [
+        "The captain listens to my body with a stethoscope — it's a little cold, but it doesn't hurt.",
+        "Maybe he'll look in my throat and ears with a small flashlight.",
+        "At the end, he'll know what to do next."
+      ]
+    }
   }
 }
