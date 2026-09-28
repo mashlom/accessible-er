@@ -27,7 +27,7 @@
       "doctor": {
         "label": "פגישה עם קברניט הצוללת",
         "icon": "🐙",
-        "hint": "התמנון החכם מחליט מה לעשות"
+        "hint": "הקברניט מחליט מה לעשות"
       },
       "decision": {
         "label": "עלייה לפני השטח!",
@@ -112,7 +112,7 @@
       "doctor": {
         "label": "Встреча с капитаном подводной лодки",
         "icon": "🐙",
-        "hint": "Мудрый осьминог решает, что делать"
+        "hint": "Капитан решает, что делать"
       },
       "decision": {
         "label": "Всплываем!",
@@ -197,7 +197,7 @@
       "doctor": {
         "label": "Meeting the Captain",
         "icon": "🐙",
-        "hint": "The wise octopus decides what to do"
+        "hint": "The captain decides what to do"
       },
       "decision": {
         "label": "Back to the Surface!",
