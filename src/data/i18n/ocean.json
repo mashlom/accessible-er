@@ -12,12 +12,12 @@
       },
       "wait-before-triage": {
         "label": "כניסה לצוללת",
-        "hint": "עולים לצוללת ומחכים שקצין הצלילה יקרא לנו"
+        "hint": "עולים לצוללת ומחכים שהבוצמן יקרא לנו"
       },
       "triage": {
         "label": "בדיקות לצלילה",
         "icon": "🤿",
-        "hint": "הקצין בודק שאתה מוכן/ה לצלילה"
+        "hint": "הבוצמן בודק שאתה מוכן/ה לצלילה"
       },
       "wait-doctor": {
         "label": "ממתינים בתא",
@@ -45,9 +45,9 @@
         "hint": "המהנדס מתקן את מה שצריך"
       },
       "consult": {
-        "label": "קשר עם הבסיס",
+        "label": "יעוץ סגן הקברניט",
         "icon": "📻",
-        "hint": "מומחה מהבסיס מתחבר"
+        "hint": "סגן הקברניט עוזר לנו להבין"
       },
       "wait-results": {
         "label": "עיבוד נתוני הסונאר",
@@ -182,12 +182,12 @@
       },
       "wait-before-triage": {
         "label": "Boarding the Submarine",
-        "hint": "We climb aboard and wait for the dive officer to call us"
+        "hint": "We climb aboard and wait for the boatswain to call us"
       },
       "triage": {
         "label": "Pre-dive Checkup",
         "icon": "🤿",
-        "hint": "The officer checks that we're ready to dive"
+        "hint": "The boatswain checks that we're ready to dive"
       },
       "wait-doctor": {
         "label": "Waiting in the Cabin",
@@ -215,9 +215,9 @@
         "hint": "The engineer fixes what needs fixing"
       },
       "consult": {
-        "label": "Calling the Base",
+        "label": "First Mate's Consultation",
         "icon": "📻",
-        "hint": "An expert from the base joins us on the radio"
+        "hint": "The first mate helps us figure it out"
       },
       "wait-results": {
         "label": "Waiting for the Sonar",
