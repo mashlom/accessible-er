@@ -85,7 +85,7 @@
       "distractP2": "If the device is set to \"reduce motion\", the animations won't play. You can also simply count to ten together — that's a good distraction too.",
       "procedurePrompt": "Choose the procedures that were ordered",
       "nextStep": "Next step",
-      "sensoryTitle": "What to expect here",
+      "sensoryTitle": "Sensory load",
       "distractLabels": [
         "Rainbow",
         "Drop",
@@ -214,7 +214,7 @@
       "distractP2": "Если на устройстве включено «уменьшение движения», анимации не запустятся. Можно просто вместе посчитать до десяти — это тоже хорошее отвлечение.",
       "procedurePrompt": "Выберите назначенные процедуры",
       "nextStep": "Следующий шаг",
-      "sensoryTitle": "Чего ожидать здесь",
+      "sensoryTitle": "Уровень нагрузки",
       "distractLabels": [
         "Радуга",
         "Капля",
