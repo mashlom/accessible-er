@@ -8,7 +8,7 @@
     "stages": {
       "reception": {
         "label": "על הרציף",
-        "hint": "נרשמים בבסיס ומקבלים צמיד צוללן"
+        "hint": "נרשמים בספר היומן של הצוללת ומקבלים צמיד צוללן"
       },
       "wait-before-triage": {
         "label": "כניסה לצוללת",
@@ -178,7 +178,7 @@
     "stages": {
       "reception": {
         "label": "On the Dock",
-        "hint": "You register at the base and get a diver's bracelet"
+        "hint": "You sign the ship's log and get a diver's bracelet"
       },
       "wait-before-triage": {
         "label": "Boarding the Submarine",
