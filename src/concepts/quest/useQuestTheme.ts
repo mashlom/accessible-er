@@ -34,6 +34,7 @@ export function useQuestTheme(): { theme: QuestTheme; setThemeId: (id: string) =
       stages: t('ocean.stages', base.stages),
       procedureNarratives: t('ocean.procedures', base.procedureNarratives ?? {}),
       procedureSteps: t('ocean.procedureSteps', base.procedureSteps ?? {}),
+      procedureVariants: t('ocean.procedureVariants', base.procedureVariants ?? {}),
       calmLines: t('ocean.calm', base.calmLines ?? []),
       cardChildHero: t('ocean.card', base.cardChildHero ?? { title: '', subtitle: '' }),
       distractTitle: t('ocean.distract', base.distractTitle ?? ''),

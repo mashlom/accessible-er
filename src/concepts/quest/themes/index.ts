@@ -40,6 +40,7 @@ export interface QuestTheme {
   procedureNarratives?: Record<string, string>
   /** World-flavoured step-by-step story overriding the neutral steps from procedures.ts */
   procedureSteps?: Record<string, string[]>
+  procedureVariants?: Record<string, { label: string; steps: string[] }[]>
   /** Lines shown in the child zone of CalmPage — themed calming message for the child */
   calmLines?: string[]
   /** Title and subtitle shown in the hero zone of CardPage — themed framing for the child */

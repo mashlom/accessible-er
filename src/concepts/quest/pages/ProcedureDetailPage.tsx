@@ -30,7 +30,7 @@ export function ProcedureDetailPage() {
   if (!procedure) return <Navigate to="/map" replace />
 
   const themedSteps = id ? theme.procedureSteps?.[id] : undefined
-  const variants = themedSteps ? undefined : procedure.storyVariants
+  const variants = themedSteps ? undefined : (theme.procedureVariants?.[id!] ?? procedure.storyVariants)
   const steps = themedSteps ?? (variants ? (variants[variant] ?? variants[0]).steps : procedure.story)
 
   return (
