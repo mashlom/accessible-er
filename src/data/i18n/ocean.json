@@ -84,6 +84,11 @@
     },
     "distract": "תא קול הסונאר 📡",
     "procedureSteps": {
+      "saturation": [
+        "הצוללן/ת מרכיב/ה על האצבע קליפס רך וקטן.",
+        "אור אדום קטן נדלק בתוכו.",
+        "הוא רק מסתכל — לא עושה כלום. כשהבוצמן מאשר/ת, מורידים אותו."
+      ],
       "doctor-exam": [
         "הוא מקשיב לגוף עם כלי קסמים — קצת קר, לא כואב.",
         "אולי יסתכל בגרון ובאוזניים עם אור קסמים קטן.",
@@ -198,6 +203,11 @@
       ]
     },
     "procedureSteps": {
+      "saturation": [
+        "Водолаз надевает на палец маленькую мягкую прищепку.",
+        "В ней загорается маленький красный огонёк.",
+        "Она только смотрит — ничего не делает. Когда боцман разрешит, её можно снять."
+      ],
       "doctor-exam": [
         "Капитан слушает стетоскопом, как дышит водолаз, и как бьется его сердце. Это немного холодно, но не больно.",
         "Может быть, он посмотрит в горло и уши с помощью маленького фонарика.",
@@ -312,6 +322,11 @@
       ]
     },
     "procedureSteps": {
+      "saturation": [
+        "The diver puts a small, soft clip on their finger.",
+        "A little red light turns on inside it.",
+        "It only looks — it doesn't do anything. Once the boatswain says it's okay, it comes off."
+      ],
       "doctor-exam": [
         "The captain listens to my body with a stethoscope — it's a little cold, but it doesn't hurt.",
         "Maybe he'll look in my throat and ears with a small flashlight.",
