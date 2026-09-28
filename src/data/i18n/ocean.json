@@ -203,6 +203,12 @@
         "В ней загорается маленький красный огонёк.",
         "Она только смотрит — ничего не делает. Когда боцман разрешит, её можно снять."
       ],
+      "blood-pressure": [
+        "Боцман надевает на руку мягкую манжету.",
+        "Манжета надувается и сжимает, как вода на глубине.",
+        "Водолаз считает: раз, два, три, ...",
+        "Потом воздух выходит из манжеты. Её можно снять."
+      ],
       "doctor-exam": [
         "Капитан слушает стетоскопом, как дышит водолаз, и как бьется его сердце. Это немного холодно, но не больно.",
         "Может быть, он посмотрит в горло и уши с помощью маленького фонарика.",
@@ -321,6 +327,12 @@
         "The diver puts a small, soft clip on their finger.",
         "A little red light turns on inside it.",
         "It only looks — it doesn't do anything. Once the boatswain says it's okay, it comes off."
+      ],
+      "blood-pressure": [
+        "The boatswain puts a soft cuff on the diver's arm.",
+        "The cuff fills with air and squeezes, like the water pressure down deep.",
+        "The diver counts: one, two, three...",
+        "Then the air goes out of the cuff. It can come off."
       ],
       "doctor-exam": [
         "The captain listens to my body with a stethoscope — it's a little cold, but it doesn't hurt.",
