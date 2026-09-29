@@ -40,7 +40,7 @@ export function AppShell() {
 
           {/* demo affordance: back to the concept menu */}
           <a href="#/" className={styles.iconBtn} aria-label="לתפריט הקונספטים">
-            <span aria-hidden>☰</span>
+            <span aria-hidden>🏁</span>
           </a>
         </div>
       </header>

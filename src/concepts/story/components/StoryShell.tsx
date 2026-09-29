@@ -45,7 +45,7 @@ export function StoryShell() {
             </Link>
 
             <a href="#/" className={styles.topBtn} aria-label="לתפריט הקונספטים">
-              <span aria-hidden>☰</span>
+              <span aria-hidden>🏁</span>
             </a>
           </div>
         </header>
