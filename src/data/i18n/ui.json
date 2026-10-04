@@ -26,7 +26,10 @@
       "cardForStaff": "🪪 Accommodations card for staff",
       "hardNow": "💙 It's hard for us right now",
       "happyEnd": "Happy ending",
-      "chooseWorldAria": "Choose a world:"
+      "chooseWorldAria": "Choose a world:",
+      "discharge": "🏠 Go home",
+      "admission": "🏥 Continue hospitalization",
+      "changeChoice": "← Change choice"
     },
     "shell": {
       "skip": "Skip to content",
@@ -77,6 +80,8 @@
       "routeNote": "This is only an example route. The exact route is decided by the medical staff.",
       "weDidIt": "We did it! 🎉",
       "towardsDischarge": "Getting ready to go home",
+      "towardsAdmission": "Getting ready for continued hospitalization",
+      "outcomeLabel": "What happens now?",
       "distractDefault": "Distraction corner",
       "distractHint": "Choose what you'd like to see ↓",
       "distractAria": "What would you like to see",
@@ -122,6 +127,28 @@
           "body": "It is important to keep following up with your community pediatrician as recommended — they know your child and will support you after the visit too."
         }
       ],
+      "admission": [
+        {
+          "title": "What happens now",
+          "body": "The team has decided to continue care in the hospital. Your child will be transferred to an inpatient unit where they will receive close monitoring and care tailored to their needs."
+        },
+        {
+          "title": "The transition to the ward",
+          "body": "After a long visit, moving to a new place can be an additional challenge. It's important to give your child time, clear explanations, and to continue using the adaptations that helped during the visit."
+        },
+        {
+          "title": "In the hospital room",
+          "body": "A new room, new staff, and unfamiliar surroundings can feel overwhelming. You can ask to bring things your child loves, and tell the ward staff what helped during the exam."
+        },
+        {
+          "title": "Family support",
+          "body": "Parents can stay close by, share what's important about your child, and continue with the adaptations that have proven helpful. This is teamwork."
+        },
+        {
+          "title": "Connecting with the ward team",
+          "body": "We're preparing a brief report for the ward staff with all the adaptations that helped. This will help them continue the best possible care for your child."
+        }
+      ],
       "coins": {
         "one": "You collected {n} coin — welcome to the shop!",
         "other": "You collected {n} coins — welcome to the shop!"
@@ -155,7 +182,10 @@
       "cardForStaff": "🪪 Карточка адаптаций для персонала",
       "hardNow": "💙 Нам сейчас тяжело",
       "happyEnd": "Счастливый конец",
-      "chooseWorldAria": "Выбрать мир:"
+      "chooseWorldAria": "Выбрать мир:",
+      "discharge": "🏠 Выписка домой",
+      "admission": "🏥 Госпитализация",
+      "changeChoice": "← Изменить выбор"
     },
     "shell": {
       "skip": "Перейти к содержимому",
@@ -206,6 +236,8 @@
       "routeNote": "Это лишь примерный маршрут. Точный маршрут определяет медицинский персонал.",
       "weDidIt": "Мы справились! 🎉",
       "towardsDischarge": "Готовимся к выписке домой",
+      "towardsAdmission": "Готовимся к госпитализации",
+      "outcomeLabel": "Что происходит дальше?",
       "distractDefault": "Уголок, чтобы отвлечься",
       "distractHint": "Выбери, что хочешь посмотреть ↓",
       "distractAria": "Что хочешь посмотреть",
@@ -251,10 +283,32 @@
           "body": "Важно продолжать наблюдение у участкового педиатра по рекомендациям — он знает вашего ребёнка и будет сопровождать вас и после визита."
         }
       ],
+      "admission": [
+        {
+          "title": "Что происходит сейчас",
+          "body": "Команда решила продолжить лечение в больнице. Ребёнка переведут в отделение интенсивной терапии, где будет постоянный мониторинг и помощь, подобранная под его нужды."
+        },
+        {
+          "title": "Переход в отделение",
+          "body": "После долгого визита переезд в новое место — это дополнительная нагрузка. Важно дать ребёнку время, ясные объяснения и продолжить те адаптации, которые помогали во время обследования."
+        },
+        {
+          "title": "В палате больницы",
+          "body": "Новая палата, новый персонал, незнакомая обстановка — это может быть перегруженно. Можно попросить принести любимые вещи ребёнка и рассказать команде отделения, что помогало во время приёма."
+        },
+        {
+          "title": "Поддержка семьи",
+          "body": "Родители могут оставаться рядом, делиться важной информацией о ребёнке и продолжать те адаптации, которые доказали свою помощь. Это командная работа."
+        },
+        {
+          "title": "Связь с командой отделения",
+          "body": "Мы готовим краткий отчёт для команды отделения со всеми адаптациями, которые помогали. Это поможет им обеспечить лучший уход для вашего ребёнка."
+        }
+      ],
       "coins": {
-        "one": "Ты собрал(а) {n} монету — добро пожаловать в магазин!",
-        "few": "Ты собрал(а) {n} монеты — добро пожаловать в магазин!",
-        "many": "Ты собрал(а) {n} монет — добро пожаловать в магазин!"
+        "one": "У тебя есть {n} монета — добро пожаловать в магазин!",
+        "few": "У тебя есть {n} монеты — добро пожаловать в магазин!",
+        "many": "У тебя есть {n} монет — добро пожаловать в магазин!"
       }
     }
   }
