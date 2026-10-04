@@ -69,7 +69,7 @@ export function NightMapPage() {
 
         <div className={css.mapBottom}>
           <div className={css.stageStrip}>
-            {stages.map((stage) => (
+            {stages.map((stage, i) => (
               <button
                 key={stage.id}
                 className={[css.stagePin, css[`pin--${stage.status}`]].join(' ')}
@@ -92,7 +92,7 @@ export function NightMapPage() {
                   )}
                   {stage.status === 'active' && <span className={css.pinPulse} aria-hidden />}
                 </div>
-                <span className={css.pinLabel}>{stage.label}</span>
+                <span className={css.pinLabel}>{i + 6}. {stage.label}</span>
               </button>
             ))}
 
