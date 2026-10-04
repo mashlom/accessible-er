@@ -81,21 +81,20 @@ export function MapPage() {
             ))}
           </div>
 
-          {canContinueToProcedures && (
-            <div className={css.procedureSelectRow}>
-              <button
-                className={css.stagePin}
-                onClick={() => navigate(conceptPath('/procedures'))}
-                style={{ '--accent': theme.accent } as React.CSSProperties}
-                aria-label={t('ui.buttons.selectProcedures', 'בחירת בדיקות')}
-              >
-                <div className={css.pinImageWrap}>
-                  <span className={css.pinEmoji}>✓</span>
-                </div>
-                <span className={css.pinLabel}>{t('ui.buttons.selectProcedures', 'בחירת בדיקות')}</span>
-              </button>
-            </div>
-          )}
+          <div className={css.procedureSelectRow}>
+            <button
+              className={css.stagePin}
+              onClick={() => navigate(conceptPath('/procedures'))}
+              style={{ '--accent': theme.accent, opacity: canContinueToProcedures ? 1 : 0.5 } as React.CSSProperties}
+              aria-label={t('ui.buttons.selectProcedures', 'בחירת בדיקות')}
+              disabled={!canContinueToProcedures}
+            >
+              <div className={css.pinImageWrap}>
+                <span className={css.pinEmoji}>✓</span>
+              </div>
+              <span className={css.pinLabel}>{t('ui.buttons.selectProcedures', 'בחירת בדיקות')}</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
