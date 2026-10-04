@@ -79,9 +79,7 @@ export function MapPage() {
                 <span className={css.pinLabel}>{i + 1}. {item.label}</span>
               </button>
             ))}
-          </div>
 
-          <div className={css.procedureSelectRow}>
             <button
               className={css.stagePin}
               onClick={() => navigate(conceptPath('/procedures'))}
@@ -92,7 +90,7 @@ export function MapPage() {
               <div className={css.pinImageWrap}>
                 <span className={css.pinEmoji}>✓</span>
               </div>
-              <span className={css.pinLabel}>{t('ui.buttons.selectProcedures', 'בחירת בדיקות')}</span>
+              <span className={css.pinLabel}>{allItems.length + 1}. {t('ui.buttons.selectProcedures', 'בחירת בדיקות')}</span>
             </button>
           </div>
         </div>
