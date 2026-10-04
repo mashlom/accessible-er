@@ -27,6 +27,7 @@
       "hardNow": "💙 It's hard for us right now",
       "happyEnd": "Happy ending",
       "chooseWorldAria": "Choose a world:",
+      "selectProcedures": "Choose the checks",
       "discharge": "🏠 Go home",
       "admission": "🏥 Continue hospitalization",
       "changeChoice": "← Change choice"
@@ -183,6 +184,7 @@
       "hardNow": "💙 Нам сейчас тяжело",
       "happyEnd": "Счастливый конец",
       "chooseWorldAria": "Выбрать мир:",
+      "selectProcedures": "Выбор проверок",
       "discharge": "🏠 Выписка домой",
       "admission": "🏥 Госпитализация",
       "changeChoice": "← Изменить выбор"
