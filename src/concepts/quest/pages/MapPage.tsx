@@ -10,9 +10,13 @@ import css from '../quest.module.css'
 export function MapPage() {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
-  const { visible, doneProcedures } = useQuestProgress()
+  const { visible, doneProcedures, stages } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
+
+  const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
+  const lastStage = stages.find((s) => s.id === LAST_REQUIRED)
+  const canContinueToProcedures = lastStage?.status === 'done'
 
   const bgStyle = theme.bg
     ? {
@@ -77,6 +81,21 @@ export function MapPage() {
             ))}
           </div>
 
+          {canContinueToProcedures && (
+            <div className={css.procedureSelectRow}>
+              <button
+                className={css.stagePin}
+                onClick={() => navigate(conceptPath('/procedures'))}
+                style={{ '--accent': theme.accent } as React.CSSProperties}
+                aria-label={t('ui.buttons.selectProcedures', 'בחירת בדיקות')}
+              >
+                <div className={css.pinImageWrap}>
+                  <span className={css.pinEmoji}>✓</span>
+                </div>
+                <span className={css.pinLabel}>{t('ui.buttons.selectProcedures', 'בחירת בדיקות')}</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

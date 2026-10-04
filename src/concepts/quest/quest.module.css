@@ -299,6 +299,12 @@
   width: 100%;
 }
 
+.procedureSelectRow {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0.5rem 0;
+}
+
 .stagePin {
   flex: 1;
   min-width: 0;

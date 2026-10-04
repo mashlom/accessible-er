@@ -44,6 +44,9 @@ export function ProcedureSelectPage() {
     <div className={css.selectPage} style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}>
       <h1 className={css.selectTitle} style={{ color: theme.accent }}>{t('ui.text.nextStep', 'שלב הבא')}</h1>
       <p className={css.selectSub}>{prompt}</p>
+      <p className={css.selectNote} style={{ color: theme.accent, fontSize: '0.95rem', marginTop: '0.5rem', opacity: 0.85 }}>
+        {t('ui.text.staffNote', 'אחות או רופא: בחרו את הבדיקות או הטיפולים שהרופא הנחה')}
+      </p>
 
       <div className={css.worldGrid}>
         {OPTIONAL_STAGES.map((id) => {

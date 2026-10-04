@@ -54,7 +54,7 @@ export function StagePage() {
       completeActive()
     }
     if (isLastStage) {
-      navigate(conceptPath('/procedures'))
+      navigate(conceptPath('/map'))
     } else if (isOptional) {
       navigate(conceptPath('/night-map'))
     } else {
