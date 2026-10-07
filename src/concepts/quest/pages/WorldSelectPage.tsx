@@ -36,13 +36,22 @@ export function WorldSelectPage() {
             onClick={() => choose(theme.id)}
             aria-label={`${t('ui.buttons.chooseWorldAria', 'בחר עולם:')} ${theme.name}`}
           >
-            {(theme.thumbnail ?? theme.bg) ? (
+            {theme.thumbnailOverlay ? (
+              <div
+                className={css.worldCardBackdrop}
+                style={{ backgroundImage: `url(${theme.thumbnail ?? theme.bg})` }}
+              >
+                <img src={theme.thumbnailOverlay} alt="" className={css.worldCardOverlay} />
+              </div>
+            ) : (theme.thumbnail ?? theme.bg) ? (
               <img src={theme.thumbnail ?? theme.bg} alt="" className={css.worldCardImg} />
             ) : (
               <span className={css.worldEmoji}>{theme.emoji}</span>
             )}
-            <span className={css.worldCardLabel} style={{ background: theme.accent }}>
-              {theme.name}
+            <span className={css.worldCardName}>{theme.name}</span>
+            <span className={css.worldCardCta}>
+              <span className={css.worldCardArrow} aria-hidden>↖</span>
+              {t('ui.buttons.startJourney', 'להתחיל במסע')}
             </span>
           </button>
         ))}

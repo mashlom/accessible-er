@@ -21,6 +21,8 @@ export interface QuestTheme {
   nightBg?: string
   /** Thumbnail shown on world select card (falls back to bg) */
   thumbnail?: string
+  /** If set, thumbnail is used as a cropped backdrop and this image is layered on top */
+  thumbnailOverlay?: string
   /** Emoji shown on completed stages/procedures (default '✓') */
   doneEmoji?: string
   /** Image shown on the celebration/shop screen */
@@ -59,7 +61,8 @@ export const themes: QuestTheme[] = [
     bg: '/worlds/knight/castle_v.jpg',
     bgLandscape: '/worlds/knight/castle_h.jpeg',
     nightBg: '/worlds/knight/night_castle.JPEG',
-    thumbnail: '/worlds/knight/knight.jpeg',
+    thumbnail: '/worlds/knight/castle.png',
+    thumbnailOverlay: '/worlds/knight/knight.png',
     procedurePrompt: 'בקשו מהגברת היפה (האחות) לבחור את הפרוצדורות שהקוסם הגדול קבע',
     calmLines: [
       'גם לאבירים קשה לפעמים 🛡️',
@@ -386,6 +389,7 @@ export const themes: QuestTheme[] = [
     shopImage: '/worlds/knight/shop.JPEG',
     emoji: '🐠',
     bg: '/worlds/ocean/ocean.jpg',
+    thumbnailOverlay: '/worlds/ocean/submarine.png',
     calmLines: [
       'גם לצוללנים קשה לפעמים 🤿',
       'כשקשה לצוללן, הוא נושם עמוק מאוד',
