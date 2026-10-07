@@ -1458,3 +1458,122 @@
 .outcomeBtn:active {
   transform: scale(0.98);
 }
+
+/* ── Ocean Map (positioned scene) ─────────────────────────────────── */
+
+.oceanMap {
+  min-height: 100dvh;
+  background: #7fc6d4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oceanTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0.75rem auto 0;
+  padding: 0.25rem 1.25rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 2;
+}
+
+.oceanScene {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 830 / 1900;
+  container-type: inline-size;
+  overflow: hidden;
+  margin-top: -2.5rem;
+}
+
+.oceanScene::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--scene-bg) center / cover no-repeat;
+  transform: scale(-1, -1);
+}
+
+.oceanStage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.oceanStage:focus-visible .oceanBubble {
+  outline: 3px solid #0a6b8a;
+  outline-offset: 2px;
+}
+
+.oceanObj {
+  position: absolute;
+  display: block;
+  height: auto;
+  pointer-events: auto;
+  cursor: pointer;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+  transition: transform 0.2s, filter 0.2s;
+  z-index: 2;
+}
+
+.oceanObj:hover {
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.3));
+}
+
+.oceanBubble {
+  position: absolute;
+  z-index: 2;
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1.8cqw;
+  padding: 1.2cqw 2cqw 1.4cqw;
+  width: max-content;
+  text-align: right;
+  direction: rtl;
+  cursor: pointer;
+}
+
+.oceanBubble h3 {
+  margin: 0;
+  font-size: 3.6cqw;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111;
+}
+
+.oceanBubble p {
+  margin: 0.2cqw 0 0;
+  font-size: 2.9cqw;
+  line-height: 1.25;
+  color: #111;
+}
+
+.oceanDone {
+  display: inline-block;
+  margin-inline-start: 0.5em;
+  font-size: 0.9em;
+}
+
+.oceanStage.pin--locked .oceanObj,
+.oceanStage.pin--locked .oceanBubble {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: grayscale(0.4);
+}
+
+.oceanStage.pin--active .oceanObj {
+  animation: oceanBob 2.4s ease-in-out infinite;
+}
+
+@keyframes oceanBob {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -1.2cqw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oceanStage.pin--active .oceanObj { animation: none; }
+}
