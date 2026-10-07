@@ -16,7 +16,7 @@ export function WorldSelectPage() {
     navigate(conceptPath('/map'))
   }
 
-  const ORDER = ['real', 'knight', 'dino', 'dollhouse', 'ocean', 'fairy', 'safari', 'space']
+  const ORDER = ['ocean', 'knight', 'real', 'dino', 'dollhouse', 'fairy', 'safari', 'space']
   const ordered = [
     ...ORDER.map((id) => themes.find((t) => t.id === id)!).filter(Boolean),
     ...themes.filter((t) => !ORDER.includes(t.id)),
