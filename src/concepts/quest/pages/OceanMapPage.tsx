@@ -4,6 +4,7 @@ import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
+import { LanguagePicker } from '../../../components/LanguagePicker'
 import css from '../quest.module.css'
 
 type Box = { left?: number; right?: number; top: number; width: number }
@@ -75,6 +76,12 @@ export function OceanMapPage() {
             <span aria-hidden>{dir === 'rtl' ? '→' : '←'}</span>
           </Link>
           <span>{t('ui.text.oceanTopbar', 'המסע שלך בעולם התת-ימי')}</span>
+          <div className={css.oceanHeaderTools}>
+            <LanguagePicker />
+            <a href="#/" className={css.questTopBtn} aria-label={t('ui.shell.menu', 'לתפריט הקונספטים')}>
+              <span aria-hidden>🏁</span>
+            </a>
+          </div>
         </div>
         <h1 className={css.oceanHeadline}>{t('ui.text.oceanHeadline', 'המסע שלך מתחיל כאן')}</h1>
         <p className={css.oceanSub}>{t('ui.text.oceanSub', 'בוא נראה מה מחכה לך בדרך')}</p>

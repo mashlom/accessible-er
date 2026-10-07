@@ -34,6 +34,8 @@ export function QuestShell() {
   const dayActive = active && (REQUIRED_STAGES as readonly string[]).includes(active.id)
   const mapTarget = dayActive || visibleOptionals.length === 0 ? '/map' : '/night-map'
   const isMapPage = pathname?.includes('/map') || pathname?.includes('/night-map')
+  // The ocean day map carries its own language picker and menu link in its header row
+  const hideTopbar = isOcean && /\/map$/.test(pathname)
 
   return (
     <div className={css.questShell} dir={dir} lang={lang}>
@@ -41,7 +43,7 @@ export function QuestShell() {
         {t('ui.shell.skip', 'דילוג לתוכן')}
       </a>
       {/* Pinned RTL so the top bar doesn't flip when the language changes */}
-      <header className={`${css.questTopbar} ${isOcean ? css.questTopbarOcean : ''} no-print`} dir="rtl">
+      {!hideTopbar && <header className={`${css.questTopbar} ${isOcean ? css.questTopbarOcean : ''} no-print`} dir="rtl">
         {!isHome ? (
           <button
             type="button"
@@ -69,7 +71,7 @@ export function QuestShell() {
             <span aria-hidden>🏁</span>
           </a>
         </div>
-      </header>
+      </header>}
       <main id="main">
         <Outlet />
       </main>
