@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useConceptPath } from '../../nav'
+import { Link, useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
@@ -9,16 +9,16 @@ import css from '../quest.module.css'
 type Box = { left?: number; right?: number; top: number; width: number }
 type Slot = { obj: Box; bubble: Box; flip?: boolean; bubbleFront?: boolean }
 
-// Percent coordinates on the 830×1900 scene; stages 1–3 traced from the mockup,
+// Percent coordinates on the 830×2700 scene; stages 1–3 traced from the mockup,
 // 4–6 continue the same left/right rhythm below. Bubbles sit behind the object
 // unless bubbleFront is set, so an object may overlap a bubble's edge, not vice versa.
 const LAYOUT: Slot[] = [
-  { obj: { left: -2, top: 1.5, width: 44 }, bubble: { left: 25, top: 8.5, width: 50 }, flip: true, bubbleFront: true },
-  { obj: { left: 22, top: 20, width: 52 }, bubble: { left: 54, top: 20.5, width: 44 } },
-  { obj: { left: 45, top: 32.5, width: 55 }, bubble: { right: 50, top: 36, width: 48 } },
-  { obj: { left: 0, top: 49, width: 48 }, bubble: { left: 40, top: 49, width: 54 } },
-  { obj: { left: 46, top: 64, width: 50 }, bubble: { right: 50, top: 64, width: 48 } },
-  { obj: { left: 2, top: 80, width: 46 }, bubble: { left: 40, top: 80, width: 54 } },
+  { obj: { left: -2, top: 1.02, width: 44 }, bubble: { left: 25, top: 3.33, width: 50 }, flip: true, bubbleFront: true },
+  { obj: { left: 22, top: 19.63, width: 52 }, bubble: { left: 54, top: 20, width: 44 } },
+  { obj: { left: 45, top: 35.37, width: 55 }, bubble: { right: 42, top: 36.3, width: 40 } },
+  { obj: { left: 0, top: 51.85, width: 48 }, bubble: { left: 29.5, top: 52.22, width: 44 } },
+  { obj: { left: 46, top: 66.67, width: 50 }, bubble: { right: 42, top: 67.04, width: 40 } },
+  { obj: { left: 54, top: 79.63, width: 46 }, bubble: { right: 29, top: 83.5, width: 40 } },
 ]
 
 const IMAGES: Record<string, string> = {
@@ -37,7 +37,7 @@ const pct = (b: Box): React.CSSProperties => ({ ...side(b), top: `${b.top}%`, wi
 
 export function OceanMapPage() {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, dir } = useI18n()
   const { visible, stages } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
@@ -69,7 +69,16 @@ export function OceanMapPage() {
 
   return (
     <div className={css.oceanMap}>
-      <h1 className={css.oceanTitle} style={{ color: theme.accent }}>{theme.name}</h1>
+      <header className={css.oceanHeader}>
+        <div className={css.oceanHeaderRow}>
+          <Link to="/" className={css.oceanHeaderBack} aria-label={t('ui.shell.worlds', 'לבחירת עולם אחר')}>
+            <span aria-hidden>{dir === 'rtl' ? '→' : '←'}</span>
+          </Link>
+          <span>{t('ui.text.oceanTopbar', 'המסע שלך בעולם התת-ימי')}</span>
+        </div>
+        <h1 className={css.oceanHeadline}>{t('ui.text.oceanHeadline', 'המסע שלך מתחיל כאן')}</h1>
+        <p className={css.oceanSub}>{t('ui.text.oceanSub', 'בוא נראה מה מחכה לך בדרך')}</p>
+      </header>
 
       <div className={css.oceanScene} style={{ '--scene-bg': `url(${theme.bg})` } as React.CSSProperties}>
         {items.map((item, i) => {
@@ -103,6 +112,7 @@ export function OceanMapPage() {
                 }}
               >
                 <h3>
+                  <span className={css.oceanNum} aria-hidden>{i + 1}</span>
                   {item.label}
                   {item.status === 'done' && <span className={css.oceanDone}>{theme.doneEmoji ?? '✓'}</span>}
                 </h3>

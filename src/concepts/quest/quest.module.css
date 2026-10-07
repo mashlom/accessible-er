@@ -1463,37 +1463,74 @@
 
 .oceanMap {
   min-height: 100dvh;
-  background: #7fc6d4;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.oceanTitle {
-  font-size: 1.4rem;
+.oceanHeader {
+  width: 100%;
+  max-width: 560px;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 1rem 0.5rem 1.25rem;
+  text-align: start;
+}
+
+.oceanHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.oceanHeaderBack {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-inline-start: -0.25rem;
+  font-size: 1.6rem;
+  color: #111;
+  border-radius: 50%;
+}
+
+.oceanHeadline {
+  margin: 0.9rem 0 0;
+  font-size: clamp(1.9rem, 8vw, 2.7rem);
   font-weight: 800;
-  margin: 0.75rem auto 0;
-  padding: 0.25rem 1.25rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
-  position: relative;
-  z-index: 2;
+  line-height: 1.15;
+  color: #111;
+}
+
+.oceanSub {
+  margin: 0.4rem 0 0;
+  font-size: clamp(1.6rem, 7vw, 2.3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: #111;
 }
 
 .oceanScene {
   position: relative;
   width: 100%;
   max-width: 560px;
-  aspect-ratio: 830 / 1900;
+  aspect-ratio: 830 / 2700;
+  background: #78dff8;
   container-type: inline-size;
   overflow: hidden;
-  margin-top: -2.5rem;
 }
 
 .oceanScene::before {
   content: '';
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: calc(-0.18 * 301.2cqw);
+  height: calc(1.18 * 301.2cqw);
   background: var(--scene-bg) center / cover no-repeat;
   transform: scale(-1, -1);
 }
@@ -1550,6 +1587,20 @@
   font-size: 2.9cqw;
   line-height: 1.25;
   color: #111;
+}
+
+.oceanNum {
+  display: inline-grid;
+  place-items: center;
+  width: 5.2cqw;
+  height: 5.2cqw;
+  margin-inline-end: 1.2cqw;
+  border-radius: 50%;
+  background: #12384a;
+  color: #fff;
+  font-size: 3cqw;
+  font-weight: 700;
+  vertical-align: 0.15cqw;
 }
 
 .oceanDone {
