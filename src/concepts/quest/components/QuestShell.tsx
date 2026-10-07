@@ -41,7 +41,7 @@ export function QuestShell() {
         {t('ui.shell.skip', 'דילוג לתוכן')}
       </a>
       {/* Pinned RTL so the top bar doesn't flip when the language changes */}
-      <header className={`${css.questTopbar} no-print`} dir="rtl">
+      <header className={`${css.questTopbar} ${isOcean ? css.questTopbarOcean : ''} no-print`} dir="rtl">
         {!isHome ? (
           <button
             type="button"
