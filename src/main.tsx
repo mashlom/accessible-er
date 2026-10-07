@@ -12,7 +12,7 @@ function ScrollToTop() {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HashRouter>
+    <HashRouter future={{ v7_relativeSplatPath: true }}>
       <ScrollToTop />
       <App />
     </HashRouter>
