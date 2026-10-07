@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { useLayoutEffect } from 'react'
 import { Link, useIsConceptHome } from '../../nav'
 import { REQUIRED_STAGES, useQuestProgress } from '../useQuestProgress'
@@ -19,6 +19,7 @@ import css from '../quest.module.css'
  */
 export function QuestShell() {
   const navigate = useNavigate()
+  const { pathname } = useLocation()
   const isHome = useIsConceptHome()
   const { active, visibleOptionals } = useQuestProgress()
   const { theme } = useQuestTheme()
@@ -32,6 +33,7 @@ export function QuestShell() {
 
   const dayActive = active && (REQUIRED_STAGES as readonly string[]).includes(active.id)
   const mapTarget = dayActive || visibleOptionals.length === 0 ? '/map' : '/night-map'
+  const isMapPage = pathname?.includes('/map') || pathname?.includes('/night-map')
 
   return (
     <div className={css.questShell} dir={dir} lang={lang}>
@@ -53,9 +55,13 @@ export function QuestShell() {
           <span className={css.questTopBtn} aria-hidden />
         )}
 
-        <Link to={mapTarget} className={css.questTopBrand} aria-label={t('ui.shell.map', 'למפת המסע')}>
-          <span aria-hidden>🗺️</span>
-        </Link>
+        {!isMapPage ? (
+          <Link to={mapTarget} className={css.questTopBrand} aria-label={t('ui.shell.map', 'למפת המסע')}>
+            <span aria-hidden>🗺️</span>
+          </Link>
+        ) : (
+          <span className={css.questTopBrand} aria-hidden />
+        )}
 
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end', paddingInlineEnd: '0.5rem' }}>
           {isOcean && <LanguagePicker />}
