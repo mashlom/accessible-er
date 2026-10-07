@@ -28,6 +28,7 @@
       "happyEnd": "Happy ending",
       "chooseWorldAria": "Choose a world:",
       "startJourney": "Start the journey",
+      "parentInfo": "More info for parents",
       "selectProcedures": "Choose the checks",
       "discharge": "🏠 Go home",
       "admission": "🏥 Continue hospitalization",
@@ -42,6 +43,7 @@
     "text": {
       "estimated": "⏱ Estimated time:",
       "weAreHere": "We are here",
+      "stageProcedures": "Procedures at this stage",
       "reasonHint": "Tap the button to choose the reason for your visit and see your expected visit plan.",
       "whatActuallyHappens": "What actually happens",
       "childMayFeel": "What your child may feel",
@@ -189,6 +191,7 @@
       "happyEnd": "Счастливый конец",
       "chooseWorldAria": "Выбрать мир:",
       "startJourney": "Начать путешествие",
+      "parentInfo": "Подробнее для родителя",
       "selectProcedures": "Выбор процедур",
       "discharge": "🏠 Выписка домой",
       "admission": "🏥 Госпитализация",
@@ -203,6 +206,7 @@
     "text": {
       "estimated": "⏱ Примерное время:",
       "weAreHere": "Мы здесь",
+      "stageProcedures": "Процедуры на этом этапе",
       "reasonHint": "Нажмите на кнопку, чтобы выбрать причину визита и увидеть ожидаемый план визита.",
       "whatActuallyHappens": "Что происходит на самом деле",
       "childMayFeel": "Что может почувствовать ребёнок",

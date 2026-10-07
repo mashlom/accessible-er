@@ -4,6 +4,7 @@ import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
+import { ParentInfo } from '../components/ParentInfo'
 import css from '../quest.module.css'
 
 type Box = { left?: number; right?: number; top: number; width: number }
@@ -122,6 +123,7 @@ export function OceanMapPage() {
           )
         })}
       </div>
+      <ParentInfo />
     </div>
   )
 }
