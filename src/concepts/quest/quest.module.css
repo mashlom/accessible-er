@@ -1788,3 +1788,75 @@
 .sheetHint + a {
   margin-top: 0.4rem;
 }
+
+/* ── Ocean stage sheet ─────────────────────────────────────────────── */
+
+.stageSheet {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 1.25rem;
+}
+
+.stageSheetImg {
+  width: calc(100% + 2rem);
+  margin: 0 -1rem;
+  max-height: 56dvh;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.22));
+}
+
+.stageSheetTitle {
+  margin: 0;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.stageSheetHint {
+  margin: -0.35rem 0 0;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+.stageSheet .procedureSteps {
+  margin: 0;
+}
+
+.stageSheet .procedureIconRow {
+  justify-content: center;
+}
+
+.parentBtnInline {
+  position: static;
+  width: 100%;
+  margin-top: 0.25rem;
+  box-shadow: none;
+}
+
+.stageSheetActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.stageSheetActions .doneBtn,
+.stageSheetActions .backBtn {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.stageSheetActions .backBtn {
+  border: 2px solid;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}

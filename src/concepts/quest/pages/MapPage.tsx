@@ -6,7 +6,6 @@ import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
 import { OceanMapPage } from './OceanMapPage'
-import { ParentInfo } from '../components/ParentInfo'
 import css from '../quest.module.css'
 
 export function MapPage() {
@@ -99,7 +98,6 @@ export function MapPage() {
           </div>
         </div>
       </div>
-      <ParentInfo />
     </div>
   )
 }

@@ -7,6 +7,8 @@ import { SensoryBar } from '../../../components/SensoryBar'
 import { useQuestProgress, loadProcs } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
+import { OceanStageSheet } from '../components/OceanStageSheet'
+import { OCEAN_IMAGES } from './OceanMapPage'
 import css from '../quest.module.css'
 
 export function WaitTimesPage() {
@@ -30,6 +32,20 @@ export function WaitTimesPage() {
 
   const procIds = ['temperature', 'saturation', 'blood-pressure']
   const skin = theme.stages['wait-before-triage']
+
+  if (theme.id === 'ocean') {
+    return (
+      <OceanStageSheet
+        stageId="wait-before-triage"
+        label={skin?.label ?? data.title}
+        hint={skin?.hint ?? data.meaning}
+        image={skin?.heroImage ?? skin?.image ?? OCEAN_IMAGES['wait-before-triage']}
+        isActive={isActive}
+        onDone={handleDone}
+        backTo="/map"
+      />
+    )
+  }
 
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>

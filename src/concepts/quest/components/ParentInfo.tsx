@@ -10,7 +10,7 @@ import css from '../quest.module.css'
 const WAIT_PROCS = ['temperature', 'saturation', 'blood-pressure']
 
 /** Floating pill on the map that opens the parent-facing details of the current stage in a bottom sheet. */
-export function ParentInfo({ stageId: stageOverride }: { stageId?: string }) {
+export function ParentInfo({ stageId: stageOverride, inline }: { stageId?: string; inline?: boolean }) {
   const [open, setOpen] = useState(false)
   const { t } = useI18n()
   const { active } = useQuestProgress()
@@ -28,7 +28,7 @@ export function ParentInfo({ stageId: stageOverride }: { stageId?: string }) {
       <button
         ref={triggerRef}
         type="button"
-        className={css.parentBtn}
+        className={inline ? `${css.parentBtn} ${css.parentBtnInline}` : css.parentBtn}
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
       >

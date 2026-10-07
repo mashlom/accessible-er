@@ -5,7 +5,6 @@ import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
-import { ParentInfo } from '../components/ParentInfo'
 import css from '../quest.module.css'
 
 // All coin IDs that can be earned on the day map (required stages)
@@ -123,7 +122,6 @@ export function NightMapPage() {
           </div>
         </div>
       </div>
-      <ParentInfo stageId={stages.find((s) => s.status === 'active')?.id} />
     </div>
   )
 }

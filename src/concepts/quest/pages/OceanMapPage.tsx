@@ -4,7 +4,6 @@ import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
-import { ParentInfo } from '../components/ParentInfo'
 import css from '../quest.module.css'
 
 type Box = { left?: number; right?: number; top: number; width: number }
@@ -22,7 +21,7 @@ const LAYOUT: Slot[] = [
   { obj: { left: 54, top: 79.63, width: 46 }, bubble: { right: 29, top: 83.5, width: 40 } },
 ]
 
-const IMAGES: Record<string, string> = {
+export const OCEAN_IMAGES: Record<string, string> = {
   reception: '/worlds/ocean/wharf.png',
   'wait-before-triage': '/worlds/ocean/submarine.png',
   triage: '/worlds/ocean/checkup.png',
@@ -98,7 +97,7 @@ export function OceanMapPage() {
               aria-label={item.label}
             >
               <img
-                src={IMAGES[item.id]}
+                src={OCEAN_IMAGES[item.id]}
                 alt=""
                 className={css.oceanObj}
                 style={{ ...pct(slot.obj), transform: slot.flip ? 'scaleX(-1)' : undefined }}
@@ -123,7 +122,6 @@ export function OceanMapPage() {
           )
         })}
       </div>
-      <ParentInfo />
     </div>
   )
 }

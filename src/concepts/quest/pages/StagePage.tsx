@@ -8,6 +8,8 @@ import { SensoryBar } from '../../../components/SensoryBar'
 import { getProcedure } from '../../../data/procedures'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
+import { OceanStageSheet } from '../components/OceanStageSheet'
+import { OCEAN_IMAGES } from './OceanMapPage'
 import css from '../quest.module.css'
 
 const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
@@ -60,6 +62,43 @@ export function StagePage() {
     } else {
       navigate(conceptPath('/map'))
     }
+  }
+
+  if (theme.id === 'ocean' && id) {
+    return (
+      <OceanStageSheet
+        stageId={id}
+        label={label}
+        hint={skin?.hint}
+        image={heroImg ?? OCEAN_IMAGES[id]}
+        isActive={!!isActive}
+        onDone={handleDone}
+        showChooseTests={isLastStage}
+        backTo={isOptional ? '/night-map' : '/map'}
+      >
+        {inlineProc && inlineSteps && inlineSteps.length > 0 && (
+          <ol className={css.procedureSteps} style={{ color: theme.accent }}>
+            {inlineSteps.map((step, i) => <li key={i}>{step}</li>)}
+          </ol>
+        )}
+        {!inlineProc && data.procedureIds && data.procedureIds.length > 0 && (
+          <div className={css.procedureIconRow}>
+            {data.procedureIds.map((pid) => {
+              const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
+              const done = doneProcedures.has(pid)
+              return (
+                <Link key={pid} to={`/procedure/${pid}`} style={{ position: 'relative' }}>
+                  <button className={css.procedureIconBtn} style={{ borderColor: theme.accent, color: theme.accent }} aria-label={proc?.title ?? pid}>
+                    {proc?.emoji ?? '?'}
+                  </button>
+                  {done && <span className={css.procDoneBadge}>{theme.doneEmoji ?? '✓'}</span>}
+                </Link>
+              )
+            })}
+          </div>
+        )}
+      </OceanStageSheet>
+    )
   }
 
   return (
