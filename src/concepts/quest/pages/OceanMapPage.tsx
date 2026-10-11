@@ -27,7 +27,7 @@ export const OCEAN_IMAGES: Record<string, string> = {
   'wait-before-triage': '/worlds/ocean/submarine.png',
   triage: '/worlds/ocean/checkup.png',
   'wait-doctor': '/worlds/ocean/submarine.png',
-  doctor: '/worlds/ocean/submarine.png',
+  doctor: '/worlds/ocean/doctor.png',
   procedures: '/worlds/ocean/wharf.png',
 }
 
