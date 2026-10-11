@@ -1689,6 +1689,7 @@
   max-width: 560px;
   max-height: 92dvh;
   overflow-y: auto;
+  overflow-x: hidden;
   box-sizing: border-box;
   padding: 0.25rem 1rem 1.5rem;
   background: #fff;
@@ -1814,6 +1815,22 @@
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.22));
+}
+
+.stageSheetImgBleed {
+  /* Centered on the house itself (it spans 12%–97% of the picture, so its middle is at 54.5%),
+     with room on both sides. The picture is cut straight on the left, so that edge fades out. */
+  --w: min(56dvh, 100%);
+  width: var(--w);
+  max-width: none;
+  max-height: none;
+  height: auto;
+  margin: 0;
+  align-self: center;
+  position: relative;
+  left: calc(var(--w) * -0.045);
+  -webkit-mask-image: linear-gradient(to right, transparent 11%, #000 24%);
+  mask-image: linear-gradient(to right, transparent 11%, #000 24%);
 }
 
 .stageSheetTitle {

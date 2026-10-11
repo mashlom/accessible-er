@@ -67,7 +67,14 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
             <span aria-hidden />
           </button>
 
-          {image && <img src={image} alt="" className={css.stageSheetImg} />}
+          {image && (
+            <img
+              src={image}
+              alt=""
+              // The house is cut straight on its left edge in the mockup: push it off the sheet's edge
+              className={image.endsWith('station-house.png') ? `${css.stageSheetImg} ${css.stageSheetImgBleed}` : css.stageSheetImg}
+            />
+          )}
           <h1 className={css.stageSheetTitle} style={{ color: theme.accent }}>{label}</h1>
           {hint && <p className={css.stageSheetHint}>{hint}</p>}
 
