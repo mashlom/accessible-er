@@ -15,8 +15,8 @@ const WAIT_PROCS = ['temperature', 'saturation', 'blood-pressure']
 
 /** Floating pill on the map that opens the parent-facing details of the current stage in a bottom sheet. */
 /** nav: also put the world/language/menu controls at the top of the sheet (for screens with no top bar) */
-/** ocean: the mockup's pill (book icon, bottom-left of the ocean map) */
-export function ParentInfo({ stageId: stageOverride, inline, nav, ocean }: { stageId?: string; inline?: boolean; nav?: boolean; ocean?: boolean }) {
+/** ocean: the mockup's pill (book icon, bottom-left of the ocean map); wide: landscape layout */
+export function ParentInfo({ stageId: stageOverride, inline, nav, ocean, wide }: { stageId?: string; inline?: boolean; nav?: boolean; ocean?: boolean; wide?: boolean }) {
   const [open, setOpen] = useState(false)
   const { t } = useI18n()
   const { active } = useQuestProgress()
@@ -32,7 +32,13 @@ export function ParentInfo({ stageId: stageOverride, inline, nav, ocean }: { sta
   return (
     <>
       {ocean ? (
-        <button ref={triggerRef} type="button" className={css.parentBtnOcean} onClick={() => setOpen(true)} aria-haspopup="dialog">
+        <button
+          ref={triggerRef}
+          type="button"
+          className={wide ? `${css.parentBtnOcean} ${css.parentBtnOceanWide}` : css.parentBtnOcean}
+          onClick={() => setOpen(true)}
+          aria-haspopup="dialog"
+        >
           <span className={css.parentBtnOceanPill}>
             {t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
             <svg viewBox="33 888 24 24" className={css.parentBtnOceanIcon} aria-hidden>
