@@ -53,7 +53,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
 
   return (
     <>
-      <OceanMapPage />
+      <OceanMapPage underSheet />
       <div className={css.sheetBackdrop} onClick={close}>
         <div
           ref={dialogRef}

@@ -5,12 +5,18 @@ import { journeyStages } from '../../../data/journey'
 import { getProcedure } from '../../../data/procedures'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
+import { LanguagePicker } from '../../../components/LanguagePicker'
 import css from '../quest.module.css'
+
+/** Open-book icon from the ocean mockup (drawn inside a 24×24 circle at 33,888 in the frame) */
+const BOOK_PATH = 'M40.75 903C41.3553 903 41.9445 903.066 42.5176 903.197C43.0907 903.328 43.6606 903.525 44.2273 903.788V896.4C43.6992 896.1 43.139 895.875 42.5466 895.725C41.9542 895.575 41.3553 895.5 40.75 895.5C40.2864 895.5 39.8259 895.544 39.3688 895.631C38.9116 895.719 38.4705 895.85 38.0455 896.025V903.45C38.4962 903.3 38.9437 903.188 39.3881 903.113C39.8324 903.038 40.2864 903 40.75 903ZM45.7727 903.788C46.3394 903.525 46.9093 903.328 47.4824 903.197C48.0555 903.066 48.6447 903 49.25 903C49.7136 903 50.1676 903.038 50.6119 903.113C51.0563 903.188 51.5038 903.3 51.9545 903.45V896.025C51.5295 895.85 51.0884 895.719 50.6312 895.631C50.1741 895.544 49.7136 895.5 49.25 895.5C48.6447 895.5 48.0458 895.575 47.4534 895.725C46.861 895.875 46.3008 896.1 45.7727 896.4V903.788ZM45 906C44.3818 905.525 43.7121 905.156 42.9909 904.894C42.2697 904.631 41.5227 904.5 40.75 904.5C40.2091 904.5 39.6778 904.569 39.1562 904.706C38.6347 904.844 38.1356 905.038 37.6591 905.288C37.3886 905.425 37.1278 905.419 36.8767 905.269C36.6256 905.119 36.5 904.9 36.5 904.613V895.575C36.5 895.438 36.5354 895.306 36.6063 895.181C36.6771 895.056 36.7833 894.963 36.925 894.9C37.5174 894.6 38.1356 894.375 38.7795 894.225C39.4235 894.075 40.0803 894 40.75 894C41.497 894 42.2278 894.094 42.9426 894.281C43.6574 894.469 44.3432 894.75 45 895.125C45.6568 894.75 46.3426 894.469 47.0574 894.281C47.7722 894.094 48.503 894 49.25 894C49.9197 894 50.5765 894.075 51.2205 894.225C51.8644 894.375 52.4826 894.6 53.075 894.9C53.2167 894.963 53.3229 895.056 53.3938 895.181C53.4646 895.306 53.5 895.438 53.5 895.575V904.613C53.5 904.9 53.3744 905.119 53.1233 905.269C52.8722 905.419 52.6114 905.425 52.3409 905.288C51.8644 905.038 51.3653 904.844 50.8438 904.706C50.3222 904.569 49.7909 904.5 49.25 904.5C48.4773 904.5 47.7303 904.631 47.0091 904.894C46.2879 905.156 45.6182 905.525 45 906Z'
 
 const WAIT_PROCS = ['temperature', 'saturation', 'blood-pressure']
 
 /** Floating pill on the map that opens the parent-facing details of the current stage in a bottom sheet. */
-export function ParentInfo({ stageId: stageOverride, inline }: { stageId?: string; inline?: boolean }) {
+/** nav: also put the world/language/menu controls at the top of the sheet (for screens with no top bar) */
+/** ocean: the mockup's pill (book icon, bottom-left of the ocean map) */
+export function ParentInfo({ stageId: stageOverride, inline, nav, ocean }: { stageId?: string; inline?: boolean; nav?: boolean; ocean?: boolean }) {
   const [open, setOpen] = useState(false)
   const { t } = useI18n()
   const { active } = useQuestProgress()
@@ -25,23 +31,35 @@ export function ParentInfo({ stageId: stageOverride, inline }: { stageId?: strin
 
   return (
     <>
-      <button
-        ref={triggerRef}
-        type="button"
-        className={inline ? `${css.parentBtn} ${css.parentBtnInline}` : css.parentBtn}
-        onClick={() => setOpen(true)}
-        aria-haspopup="dialog"
-      >
-        <span className={css.parentBtnArrow} aria-hidden>↖</span>
-        {t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
-      </button>
-      {open && <ParentSheet stageId={stageId} onClose={close} />}
+      {ocean ? (
+        <button ref={triggerRef} type="button" className={css.parentBtnOcean} onClick={() => setOpen(true)} aria-haspopup="dialog">
+          <span className={css.parentBtnOceanPill}>
+            {t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
+            <svg viewBox="33 888 24 24" className={css.parentBtnOceanIcon} aria-hidden>
+              <rect x="33" y="888" width="24" height="24" rx="12" />
+              <path d={BOOK_PATH} />
+            </svg>
+          </span>
+        </button>
+      ) : (
+        <button
+          ref={triggerRef}
+          type="button"
+          className={inline ? `${css.parentBtn} ${css.parentBtnInline}` : css.parentBtn}
+          onClick={() => setOpen(true)}
+          aria-haspopup="dialog"
+        >
+          <span className={css.parentBtnArrow} aria-hidden>↖</span>
+          {t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
+        </button>
+      )}
+      {open && <ParentSheet stageId={stageId} onClose={close} nav={nav} />}
     </>
   )
 }
 
-function ParentSheet({ stageId, onClose }: { stageId: string; onClose: () => void }) {
-  const { t } = useI18n()
+function ParentSheet({ stageId, onClose, nav }: { stageId: string; onClose: () => void; nav?: boolean }) {
+  const { t, dir } = useI18n()
   const closeRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
@@ -80,6 +98,18 @@ function ParentSheet({ stageId, onClose }: { stageId: string; onClose: () => voi
         >
           <span aria-hidden />
         </button>
+
+        {nav && (
+          <div className={css.sheetNav}>
+            <Link to="/" className={css.sheetNavBtn}>
+              <span aria-hidden>{dir === 'rtl' ? '→' : '←'}</span> {t('ui.shell.worlds', 'לבחירת עולם אחר')}
+            </Link>
+            <LanguagePicker />
+            <a href="#/" className={css.sheetNavBtn} aria-label={t('ui.shell.menu', 'לתפריט הקונספטים')}>
+              <span aria-hidden>🏁</span>
+            </a>
+          </div>
+        )}
 
         {data.sensory && <SensoryBar sensory={data.sensory} />}
         {(singleProc?.who || data.waitRange) && (

@@ -1476,50 +1476,10 @@
   align-items: center;
 }
 
-.oceanHeader {
-  width: 100%;
-  max-width: 560px;
-  box-sizing: border-box;
-  background: #fff;
-  padding: 1rem 0.5rem 1.25rem;
-  text-align: start;
-}
 
-.oceanHeaderRow {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #111;
-}
 
-.oceanHeaderBack {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  margin-inline-start: -0.25rem;
-  font-size: 1.6rem;
-  color: #111;
-  border-radius: 50%;
-}
 
-.oceanHeadline {
-  margin: 0.9rem 0 0;
-  font-size: clamp(1.9rem, 8vw, 2.7rem);
-  font-weight: 800;
-  line-height: 1.15;
-  color: #111;
-}
 
-.oceanSub {
-  margin: 0.4rem 0 0;
-  font-size: clamp(1.6rem, 7vw, 2.3rem);
-  font-weight: 300;
-  line-height: 1.2;
-  color: #111;
-}
 
 .oceanScene {
   position: relative;
@@ -1534,12 +1494,61 @@
 .oceanScene::before {
   content: '';
   position: absolute;
+  /* From the Figma frame (412 units wide): background box at (-87, -250), 553×1260, rotated 180° */
+  left: calc(-87 / 412 * 100cqw);
+  top: calc(-250 / 412 * 100cqw);
+  width: calc(553 / 412 * 100cqw);
+  height: calc(1260 / 412 * 100cqw);
+  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
+  transform: rotate(180deg);
+}
+
+.oceanScene::after {
+  content: '';
+  position: absolute;
   left: 0;
   right: 0;
-  top: calc(-0.18 * 301.2cqw);
-  height: calc(1.18 * 301.2cqw);
-  background: var(--scene-bg) center / cover no-repeat;
-  transform: scale(-1, -1);
+  top: calc(-16 / 412 * 100cqw);
+  height: calc(199 / 412 * 100cqw);
+  background: linear-gradient(#207082, rgba(29, 117, 129, 0) 76%);
+  pointer-events: none;
+}
+
+.oceanTitle {
+  /* Title pill from the mockup: 283×50 at (64, 44) on the 412-wide frame */
+  position: absolute;
+  z-index: 3;
+  left: calc(64.5 / 412 * 100cqw);
+  top: calc(44.5 / 412 * 100cqw);
+  width: calc(283 / 412 * 100cqw);
+  height: calc(50 / 412 * 100cqw);
+  box-sizing: border-box;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #d9d9d9;
+  color: #fff;
+  font-size: calc(21 / 412 * 100cqw);
+  font-weight: 300;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.oceanTitle strong {
+  font-weight: 800;
+}
+
+.oceanPath {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.oceanPath circle {
+  fill: #fff;
 }
 
 .oceanStage {
@@ -1570,50 +1579,43 @@
 
 .oceanBubble {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   pointer-events: auto;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 1.8cqw;
-  padding: 1.2cqw 2cqw 1.4cqw;
-  width: max-content;
-  text-align: right;
-  direction: rtl;
+  translate: -50% -50%;
   cursor: pointer;
-}
-
-.oceanBubble h3 {
-  margin: 0;
-  font-size: 3.6cqw;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #111;
-}
-
-.oceanBubble p {
-  margin: 0.2cqw 0 0;
-  font-size: 2.9cqw;
-  line-height: 1.25;
-  color: #111;
 }
 
 .oceanNum {
   display: inline-grid;
   place-items: center;
-  width: 5.2cqw;
-  height: 5.2cqw;
-  margin-inline-end: 1.2cqw;
+  /* 23×23 circle in the 412-wide mockup */
+  width: calc(24 / 412 * 100cqw);
+  height: calc(24 / 412 * 100cqw);
+  box-sizing: border-box;
   border-radius: 50%;
-  background: #12384a;
-  color: #fff;
-  font-size: 3cqw;
-  font-weight: 700;
-  vertical-align: 0.15cqw;
+  background: #e4f6fa;
+  border: 1px solid #000;
+  color: #000;
+  font-size: calc(15 / 412 * 100cqw);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.oceanStar {
+  position: absolute;
+  z-index: 3;
+  translate: -50% -50%;
+  font-size: calc(30 / 412 * 100cqw);
+  line-height: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.9)) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
 }
 
 .oceanDone {
-  display: inline-block;
-  margin-inline-start: 0.5em;
-  font-size: 0.9em;
+  position: absolute;
+  top: -1.5cqw;
+  inset-inline-end: -2cqw;
+  font-size: 3.2cqw;
 }
 
 .oceanStage.pin--locked .oceanObj,
@@ -1868,9 +1870,80 @@
   cursor: pointer;
 }
 
-.oceanHeaderTools {
-  margin-inline-start: auto;
+
+/* World / language / menu controls at the top of the parent sheet (ocean map has no top bar) */
+.sheetNav {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.sheetNavBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding: 0 0.9rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.sheetNavBtn:first-child {
+  margin-inline-end: auto;
+}
+
+/* Ocean map parent button, from the mockup: 166×34 pill at (28, 883) on the 412×939 frame.
+   The button itself is 48px tall for touch; the visible pill sits inside it. */
+.parentBtnOcean {
+  --col: min(100vw, 560px);
+  position: fixed;
+  z-index: 20;
+  left: calc((100vw - var(--col)) / 2 + var(--col) * 28 / 412);
+  bottom: calc(var(--col) * 22 / 412 - 7px);
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.parentBtnOceanPill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 34px;
+  box-sizing: border-box;
+  padding-inline: 0.9rem 4px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.parentBtnOceanIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.parentBtnOceanIcon rect {
+  fill: #000;
+}
+
+.parentBtnOceanIcon path {
+  fill: #fff;
+}
+
+.parentBtnOcean:focus-visible .parentBtnOceanPill {
+  outline: 3px solid #0a6b8a;
+  outline-offset: 2px;
 }
