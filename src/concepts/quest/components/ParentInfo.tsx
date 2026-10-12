@@ -5,7 +5,6 @@ import { journeyStages } from '../../../data/journey'
 import { getProcedure } from '../../../data/procedures'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
-import { LanguagePicker } from '../../../components/LanguagePicker'
 import css from '../quest.module.css'
 
 /** Open-book icon from the ocean mockup (drawn inside a 24×24 circle at 33,888 in the frame) */
@@ -14,9 +13,8 @@ const BOOK_PATH = 'M40.75 903C41.3553 903 41.9445 903.066 42.5176 903.197C43.090
 const WAIT_PROCS = ['temperature', 'saturation', 'blood-pressure']
 
 /** Floating pill on the map that opens the parent-facing details of the current stage in a bottom sheet. */
-/** nav: also put the world/language/menu controls at the top of the sheet (for screens with no top bar) */
 /** ocean: the mockup's pill (book icon, bottom-left of the ocean map); wide: landscape layout */
-export function ParentInfo({ stageId: stageOverride, inline, nav, ocean, wide }: { stageId?: string; inline?: boolean; nav?: boolean; ocean?: boolean; wide?: boolean }) {
+export function ParentInfo({ stageId: stageOverride, inline, ocean, wide }: { stageId?: string; inline?: boolean; ocean?: boolean; wide?: boolean }) {
   const [open, setOpen] = useState(false)
   const { t } = useI18n()
   const { active } = useQuestProgress()
@@ -59,13 +57,13 @@ export function ParentInfo({ stageId: stageOverride, inline, nav, ocean, wide }:
           {t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
         </button>
       )}
-      {open && <ParentSheet stageId={stageId} onClose={close} nav={nav} />}
+      {open && <ParentSheet stageId={stageId} onClose={close} />}
     </>
   )
 }
 
-function ParentSheet({ stageId, onClose, nav }: { stageId: string; onClose: () => void; nav?: boolean }) {
-  const { t, dir } = useI18n()
+function ParentSheet({ stageId, onClose }: { stageId: string; onClose: () => void }) {
+  const { t } = useI18n()
   const closeRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
@@ -104,18 +102,6 @@ function ParentSheet({ stageId, onClose, nav }: { stageId: string; onClose: () =
         >
           <span aria-hidden />
         </button>
-
-        {nav && (
-          <div className={css.sheetNav}>
-            <Link to="/" className={css.sheetNavBtn}>
-              <span aria-hidden>{dir === 'rtl' ? '→' : '←'}</span> {t('ui.shell.worlds', 'לבחירת עולם אחר')}
-            </Link>
-            <LanguagePicker />
-            <a href="#/" className={css.sheetNavBtn} aria-label={t('ui.shell.menu', 'לתפריט הקונספטים')}>
-              <span aria-hidden>🏁</span>
-            </a>
-          </div>
-        )}
 
         {data.sensory && <SensoryBar sensory={data.sensory} />}
         {(singleProc?.who || data.waitRange) && (

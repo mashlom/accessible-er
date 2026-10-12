@@ -3,12 +3,13 @@ import { useI18n } from '../hooks/useI18n'
 import css from './LanguagePicker.module.css'
 
 const languages = [
-  { code: 'he' as const, flag: '🇮🇱', name: 'עברית' },
-  { code: 'en' as const, flag: '🇬🇧', name: 'English' },
-  { code: 'ru' as const, flag: '🇷🇺', name: 'Русский' },
+  { code: 'he' as const, flag: '🇮🇱', short: 'IL', name: 'עברית' },
+  { code: 'en' as const, flag: '🇬🇧', short: 'EN', name: 'English' },
+  { code: 'ru' as const, flag: '🇷🇺', short: 'RU', name: 'Русский' },
 ]
 
-export function LanguagePicker() {
+/** overlay: a small translucent pill with the country code, for use over a picture */
+export function LanguagePicker({ variant = 'default' }: { variant?: 'default' | 'overlay' }) {
   const { lang, setLang } = useI18n()
   const [open, setOpen] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
@@ -34,13 +35,13 @@ export function LanguagePicker() {
     <div className={css.picker} ref={rootRef}>
       <button
         type="button"
-        className={css.trigger}
+        className={variant === 'overlay' ? `${css.trigger} ${css.overlay}` : css.trigger}
         onClick={() => setOpen((o) => !o)}
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={`Language: ${current.name}`}
       >
-        <span aria-hidden>{current.flag}</span>
+        <span aria-hidden>{variant === 'overlay' ? current.short : current.flag}</span>
         <span className={css.caret} aria-hidden>▾</span>
       </button>
 

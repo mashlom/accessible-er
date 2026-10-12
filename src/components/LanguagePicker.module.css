@@ -65,3 +65,32 @@
   background: rgba(0, 0, 0, 0.08);
   font-weight: 700;
 }
+
+/* Over a picture: small translucent pill with the country code (the touch area is still 44px) */
+.overlay {
+  position: relative;
+  height: 22px;
+  padding: 0 7px;
+  gap: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.overlay::before {
+  content: '';
+  position: absolute;
+  inset: -11px -6px;
+}
+
+.overlay:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.overlay .caret {
+  font-size: 9px;
+  color: #fff;
+}

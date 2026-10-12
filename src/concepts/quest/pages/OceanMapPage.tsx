@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useConceptPath } from '../../nav'
+import { Link, useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
+import { LanguagePicker } from '../../../components/LanguagePicker'
 import { ParentInfo } from '../components/ParentInfo'
 import css from '../quest.module.css'
 
@@ -129,7 +130,7 @@ export const OCEAN_IMAGES: Record<string, string> = {
 /** underSheet: rendered behind a stage sheet, which has its own parent-info pill */
 export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, dir } = useI18n()
   const { visible, stages } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
@@ -165,6 +166,23 @@ export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
 
   return (
     <div className={wide ? `${css.oceanMap} ${css.oceanMapWide}` : css.oceanMap}>
+      {!underSheet && (
+        <div className={wide ? `${css.oceanTopRow} ${css.oceanTopRowWide}` : css.oceanTopRow}>
+          <Link to="/" className={css.oceanTopBtn} aria-label={t('ui.shell.worlds', 'לבחירת עולם אחר')}>
+            <svg viewBox="0 0 24 24" aria-hidden className={css.oceanTopIcon} style={{ scale: dir === 'rtl' ? '1' : '-1 1' }}>
+              <path d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+          <div className={css.oceanTopGroup}>
+            <LanguagePicker variant="overlay" />
+            <a href="#/" className={css.oceanTopBtn} aria-label={t('ui.shell.menu', 'לתפריט הקונספטים')}>
+              <svg viewBox="0 0 24 24" aria-hidden className={css.oceanTopIcon}>
+                <path d="M4 11l8-7 8 7M6 10v9h4v-5h4v5h4v-9" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      )}
       <div
         className={wide ? `${css.oceanScene} ${css.oceanSceneWide}` : css.oceanScene}
         style={{ aspectRatio: `${W} / ${H}`, '--u': `calc(100cqw / ${W})`, ...vars } as React.CSSProperties}
@@ -220,7 +238,7 @@ export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
           )
         })}
       </div>
-      {!underSheet && <ParentInfo nav ocean wide={wide} />}
+      {!underSheet && <ParentInfo ocean wide={wide} />}
     </div>
   )
 }
