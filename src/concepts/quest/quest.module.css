@@ -1486,7 +1486,8 @@
   width: 100%;
   max-width: 560px;
   aspect-ratio: 830 / 2700;
-  background: #78dff8;
+  /* what shows where the background picture doesn't reach */
+  background: var(--map-bg, #78dff8);
   container-type: inline-size;
   overflow: hidden;
 }
@@ -1500,7 +1501,7 @@
   width: calc(var(--bg-w) * var(--u));
   height: calc(var(--bg-h) * var(--u));
   background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
-  transform: rotate(var(--bg-rot, 0deg));
+  transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
 }
 
 .oceanScene::after {
@@ -1512,6 +1513,7 @@
   height: calc(var(--grad-h, 0) * var(--u));
   background: linear-gradient(#207082, rgba(29, 117, 129, 0) 76%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .oceanTitle {
@@ -1527,7 +1529,7 @@
   display: grid;
   place-items: center;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--title-bg, rgba(255, 255, 255, 0.2));
   border: 1px solid #d9d9d9;
   color: #fff;
   font-size: calc(var(--title-fs) * var(--u));
@@ -1543,7 +1545,7 @@
 .oceanPath {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -2312,4 +2314,8 @@
 
 .sheetHandle:focus-visible span {
   box-shadow: 0 0 0 3px #0a6b8a;
+}
+
+.oceanStage[aria-disabled='true'] .oceanObj {
+  cursor: not-allowed;
 }

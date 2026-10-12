@@ -35,7 +35,7 @@ export function QuestShell() {
   const mapTarget = dayActive || visibleOptionals.length === 0 ? '/map' : '/night-map'
   const isMapPage = pathname?.includes('/map') || pathname?.includes('/night-map')
   // The ocean day map carries its own language picker and menu link in its header row
-  const hideTopbar = isOcean && /\/map$/.test(pathname)
+  const hideTopbar = isOcean && /\/(night-)?map$/.test(pathname)
 
   return (
     <div className={css.questShell} dir={dir} lang={lang}>

@@ -56,7 +56,8 @@ export function StagePage() {
       completeActive()
     }
     if (isLastStage) {
-      navigate(conceptPath('/map'))
+      // ocean: finishing the doctor stage goes straight on to the procedure choice
+      navigate(conceptPath(theme.id === 'ocean' ? '/procedures' : '/map'))
     } else if (isOptional) {
       navigate(conceptPath('/night-map'))
     } else {
@@ -74,6 +75,7 @@ export function StagePage() {
         isActive={!!isActive}
         onDone={handleDone}
         showChooseTests={isLastStage && thisStage?.status === 'done'}
+        doneIsChoice={isLastStage}
         backTo={isOptional ? '/night-map' : '/map'}
       >
         {inlineProc && inlineSteps && inlineSteps.length > 0 && (

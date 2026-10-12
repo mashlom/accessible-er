@@ -5,6 +5,7 @@ import { useConceptPath } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
 import { OceanMapPage } from '../pages/OceanMapPage'
+import { OceanNightMapPage } from '../pages/OceanNightMapPage'
 import { ParentInfo } from './ParentInfo'
 import css from '../quest.module.css'
 
@@ -19,12 +20,14 @@ interface Props {
   onDone: () => void
   /** Last required stage, already done: offer the procedure selection instead */
   showChooseTests?: boolean
+  /** Last required stage: the main button finishes it and goes straight to the procedure selection */
+  doneIsChoice?: boolean
   /** Map to return to when the sheet closes */
   backTo: '/map' | '/night-map'
 }
 
 /** Ocean world: a stage opens as a bottom sheet over the map instead of a separate page. */
-export function OceanStageSheet({ stageId, label, hint, image, children, isActive, onDone, showChooseTests, backTo }: Props) {
+export function OceanStageSheet({ stageId, label, hint, image, children, isActive, onDone, showChooseTests, doneIsChoice, backTo }: Props) {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
   const navigate = useNavigate()
@@ -53,7 +56,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
 
   return (
     <>
-      <OceanMapPage underSheet />
+      {backTo === '/night-map' ? <OceanNightMapPage underSheet /> : <OceanMapPage underSheet />}
       <div className={css.sheetBackdrop} onClick={close}>
         <div
           ref={dialogRef}
@@ -88,7 +91,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
                 style={{ background: theme.accent, color: theme.accentText }}
                 onClick={onDone}
               >
-                {t('ui.buttons.done', 'הצלחתי! ←')}
+                {doneIsChoice ? t('ui.buttons.chooseTests', 'לבחירת הבדיקות ←') : t('ui.buttons.done', 'הצלחתי! ←')}
               </button>
             )}
             {showChooseTests && !isActive && (

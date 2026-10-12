@@ -9,11 +9,11 @@ import { LanguagePicker } from '../../../components/LanguagePicker'
 import { ParentInfo } from '../components/ParentInfo'
 import css from '../quest.module.css'
 
-type Pt = [number, number]
+export type Pt = [number, number]
 /** Coordinates are in the Figma frame's units: picture box (x, y, w, h) and the number badge's center */
-type Slot = { x: number; y: number; w: number; h: number; badge: Pt; flip?: boolean }
+export type Slot = { x: number; y: number; w: number; h: number; badge: Pt; flip?: boolean }
 
-interface Scene {
+export interface Scene {
   W: number
   H: number
   slots: Slot[]
@@ -78,7 +78,7 @@ const LANDSCAPE: Scene = {
 }
 
 /** True on screens wide enough for the landscape scene */
-function useWide(): boolean {
+export function useWide(): boolean {
   const query = '(min-aspect-ratio: 3/2)'
   const [wide, setWide] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches)
   useEffect(() => {
@@ -97,38 +97,41 @@ export const OCEAN_IMAGES: Record<string, string> = {
   triage: '/worlds/ocean/station-pod.png',
   'wait-doctor': '/worlds/ocean/station-pod.png',
   doctor: '/worlds/ocean/station-doctor.png',
+  // Second stage (stand-in pictures until the four stations are drawn); the last one stands on land
+  tests: '/worlds/ocean/station-pod.png',
+  consult: '/worlds/ocean/station-sub.png',
+  'wait-results': '/worlds/ocean/station-pod.png',
+  treatment: '/worlds/ocean/station-sub.png',
+  decision: '/worlds/ocean/station-house.png',
 }
 
-/** underSheet: rendered behind a stage sheet, which has its own parent-info pill */
-export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
-  const { theme } = useQuestTheme()
+export interface ViewItem {
+  id: string
+  label: string
+  status: string
+  image: string
+  /** Missing = not openable yet */
+  onOpen?: () => void
+}
+
+interface ViewProps {
+  portrait: Scene
+  landscape: Scene
+  items: ViewItem[]
+  underSheet?: boolean
+  progress: { done: number; total: number }
+  /** Number badges on the stations, counting from firstNumber */
+  numbers?: boolean
+  firstNumber?: number
+}
+
+/** The map scene with its top row, progress capsule and parent button; both layouts share it. */
+export function OceanMapView({ portrait, landscape, items, underSheet, progress, numbers, firstNumber = 1 }: ViewProps) {
   const { t, dir } = useI18n()
-  const { visible, stages } = useQuestProgress()
-  const navigate = useNavigate()
-  const conceptPath = useConceptPath()
   const wide = useWide()
-  const { W, H, slots, dots, lines, vars } = wide ? LANDSCAPE : PORTRAIT
+  const { W, H, slots, dots, lines, vars } = wide ? landscape : portrait
   const pctX = (v: number) => `${(v / W) * 100}%`
   const pctY = (v: number) => `${(v / H) * 100}%`
-
-  const journey = t('journey.journeyStages', journeyStages)
-  // Progress is shared equally between the five stations of the day map
-  const dayStages = stages.filter((st) => (REQUIRED_STAGES as readonly string[]).includes(st.id))
-  const doneStages = dayStages.filter((st) => st.status === 'done').length
-
-  const items = [
-    ...REQUIRED_STAGES.map((id) => {
-      const skin = theme.stages[id]
-      const data = journey.find((j) => j.id === id)
-      return {
-        id,
-        label: skin?.label ?? data?.title ?? id,
-        hint: skin?.hint ?? '',
-        status: visible.find((s) => s.id === id)?.status ?? 'locked',
-        to: id === 'wait-before-triage' ? '/wait-times' : `/stage/${id}`,
-      }
-    }),
-  ]
 
   return (
     <div className={wide ? `${css.oceanMap} ${css.oceanMapWide}` : css.oceanMap}>
@@ -166,20 +169,21 @@ export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
         </h1>
         {items.map((item, i) => {
           const slot = slots[i]
-          // A station that isn't reached yet can still be looked at (its sheet has no "done" button)
-          const go = () => navigate(conceptPath(item.to))
+          if (!slot) return null
+          const open = item.onOpen
           return (
             <div
               key={item.id}
               className={[css.oceanStage, css[`pin--${item.status}`]].join(' ')}
-              onClick={go}
-              onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && go()}
+              onClick={open}
+              onKeyDown={(e) => open && (e.key === 'Enter' || e.key === ' ') && open()}
               role="button"
-              tabIndex={0}
+              tabIndex={open ? 0 : -1}
+              aria-disabled={!open}
               aria-label={item.label}
             >
               <img
-                src={OCEAN_IMAGES[item.id]}
+                src={item.image}
                 alt=""
                 className={css.oceanObj}
                 style={{ left: pctX(slot.x), top: pctY(slot.y), width: pctX(slot.w), transform: slot.flip ? 'scaleX(-1)' : undefined }}
@@ -193,12 +197,11 @@ export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
                   ⭐
                 </span>
               )}
-              <div
-                className={css.oceanBubble}
-                style={{ left: pctX(slot.badge[0]), top: pctY(slot.badge[1]) }}
-              >
-                <span className={css.oceanNum} aria-label={item.label}>{i + 1}</span>
-              </div>
+              {numbers && (
+                <div className={css.oceanBubble} style={{ left: pctX(slot.badge[0]), top: pctY(slot.badge[1]) }}>
+                  <span className={css.oceanNum} aria-label={item.label}>{firstNumber + i}</span>
+                </div>
+              )}
             </div>
           )
         })}
@@ -209,13 +212,52 @@ export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
           role="progressbar"
           aria-label={t('ui.text.journeyProgress', 'התקדמות במסע')}
           aria-valuemin={0}
-          aria-valuemax={dayStages.length}
-          aria-valuenow={doneStages}
+          aria-valuemax={progress.total}
+          aria-valuenow={progress.done}
         >
-          <span className={css.oceanProgressFill} style={{ '--p': doneStages / dayStages.length } as React.CSSProperties} />
+          <span className={css.oceanProgressFill} style={{ '--p': progress.total ? progress.done / progress.total : 0 } as React.CSSProperties} />
         </div>
       )}
       {!underSheet && <ParentInfo ocean wide={wide} />}
     </div>
+  )
+}
+
+/** underSheet: rendered behind a stage sheet, which has its own parent-info pill */
+export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
+  const { theme } = useQuestTheme()
+  const { t } = useI18n()
+  const { visible, stages } = useQuestProgress()
+  const navigate = useNavigate()
+  const conceptPath = useConceptPath()
+
+  const journey = t('journey.journeyStages', journeyStages)
+  // Progress is shared equally between the five stations of the day map
+  const dayStages = stages.filter((st) => (REQUIRED_STAGES as readonly string[]).includes(st.id))
+  const doneStages = dayStages.filter((st) => st.status === 'done').length
+
+  // A station that isn't reached yet can still be looked at (its sheet has no "done" button)
+  const items: ViewItem[] = REQUIRED_STAGES.map((id) => {
+    const skin = theme.stages[id]
+    const data = journey.find((j) => j.id === id)
+    const to = id === 'wait-before-triage' ? '/wait-times' : `/stage/${id}`
+    return {
+      id,
+      label: skin?.label ?? data?.title ?? id,
+      status: visible.find((s) => s.id === id)?.status ?? 'locked',
+      image: OCEAN_IMAGES[id],
+      onOpen: () => navigate(conceptPath(to)),
+    }
+  })
+
+  return (
+    <OceanMapView
+      portrait={PORTRAIT}
+      landscape={LANDSCAPE}
+      items={items}
+      underSheet={underSheet}
+      progress={{ done: doneStages, total: dayStages.length }}
+      numbers
+    />
   )
 }
