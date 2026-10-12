@@ -142,6 +142,9 @@ export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
   const lastRequired = stages.find((s) => s.id === REQUIRED_STAGES[REQUIRED_STAGES.length - 1])
   const canContinueToProcedures = lastRequired?.status === 'done'
   const journey = t('journey.journeyStages', journeyStages)
+  // Progress is shared equally between the five stations of the day map
+  const dayStages = stages.filter((st) => (REQUIRED_STAGES as readonly string[]).includes(st.id))
+  const doneStages = dayStages.filter((st) => st.status === 'done').length
 
   const items = [
     ...REQUIRED_STAGES.map((id) => {
@@ -237,6 +240,18 @@ export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
           )
         })}
       </div>
+      {!underSheet && (
+        <div
+          className={wide ? `${css.oceanProgress} ${css.oceanProgressWide}` : css.oceanProgress}
+          role="progressbar"
+          aria-label={t('ui.text.journeyProgress', 'התקדמות במסע')}
+          aria-valuemin={0}
+          aria-valuemax={dayStages.length}
+          aria-valuenow={doneStages}
+        >
+          <span className={css.oceanProgressFill} style={{ '--p': doneStages / dayStages.length } as React.CSSProperties} />
+        </div>
+      )}
       {!underSheet && <ParentInfo ocean wide={wide} />}
     </div>
   )

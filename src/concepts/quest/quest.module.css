@@ -2034,3 +2034,39 @@
   .stageSheetImg { max-height: 36dvh; }
   .stageSheetImgBleed { --w: min(36dvh, 100%); }
 }
+
+/* Progress capsule from the mockup, filled in equal steps as stations are done, growing upwards */
+.oceanProgress {
+  --col: min(100vw, 560px);
+  position: fixed;
+  z-index: 14;
+  left: calc((100vw - var(--col)) / 2 + var(--col) * 372 / 412);
+  /* On short windows it moves up and shrinks so it always fits the screen */
+  --top: min(calc(var(--col) * 189 / 412), 24dvh);
+  top: var(--top);
+  width: calc(var(--col) * 14 / 412);
+  height: min(calc(var(--col) * 373 / 412), calc(100dvh - var(--top) - 64px));
+  box-sizing: border-box;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.oceanProgressFill {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: calc(var(--p) * 100%);
+  background: #d4a237;
+  transition: height 0.6s ease;
+}
+
+/* Landscape: same vertical capsule at the right edge, under the title pill, above the house */
+.oceanProgressWide {
+  --S: max(100vw, calc(100dvh * 1920 / 1080));
+  left: min(calc((100vw - var(--S)) / 2 + var(--S) * 1868 / 1920), calc(100vw - 34px));
+  top: calc(var(--S) * 215 / 1920);
+  width: calc(var(--S) * 14 / 1920 + 6px);
+  height: calc(var(--S) * 285 / 1920);
+}
