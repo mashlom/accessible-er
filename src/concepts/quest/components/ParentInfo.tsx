@@ -5,6 +5,7 @@ import { journeyStages } from '../../../data/journey'
 import { getProcedure } from '../../../data/procedures'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
+import { useQuestTheme } from '../useQuestTheme'
 import css from '../quest.module.css'
 
 /** Open-book icon from the ocean mockup (drawn inside a 24×24 circle at 33,888 in the frame) */
@@ -64,6 +65,7 @@ export function ParentInfo({ stageId: stageOverride, inline, ocean, wide }: { st
 
 function ParentSheet({ stageId, onClose }: { stageId: string; onClose: () => void }) {
   const { t } = useI18n()
+  const { theme } = useQuestTheme()
   const closeRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
@@ -87,7 +89,7 @@ function ParentSheet({ stageId, onClose }: { stageId: string; onClose: () => voi
   return (
     <div className={css.sheetBackdrop} onClick={onClose}>
       <div
-        className={css.sheet}
+        className={theme.id === 'ocean' ? `${css.sheet} ${css.oceanSheet}` : css.sheet}
         role="dialog"
         aria-modal="true"
         aria-label={t('ui.buttons.parentInfo', 'מידע נוסף להורה')}

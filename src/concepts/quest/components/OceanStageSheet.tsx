@@ -57,7 +57,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
       <div className={css.sheetBackdrop} onClick={close}>
         <div
           ref={dialogRef}
-          className={`${css.sheet} ${css.stageSheet}`}
+          className={`${css.sheet} ${css.stageSheet} ${css.oceanSheet}`}
           role="dialog"
           aria-modal="true"
           aria-label={label}
