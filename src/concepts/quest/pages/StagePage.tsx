@@ -73,7 +73,7 @@ export function StagePage() {
         image={heroImg ?? OCEAN_IMAGES[id]}
         isActive={!!isActive}
         onDone={handleDone}
-        showChooseTests={isLastStage}
+        showChooseTests={isLastStage && thisStage?.status === 'done'}
         backTo={isOptional ? '/night-map' : '/map'}
       >
         {inlineProc && inlineSteps && inlineSteps.length > 0 && (

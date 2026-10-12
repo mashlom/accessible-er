@@ -1631,9 +1631,9 @@
 .oceanStage.pin--locked .oceanObj,
 .oceanStage.pin--locked .oceanBubble {
   opacity: 0.55;
-  cursor: not-allowed;
   filter: grayscale(0.4);
 }
+
 
 .oceanStage.pin--active .oceanObj {
   animation: oceanBob 2.4s ease-in-out infinite;

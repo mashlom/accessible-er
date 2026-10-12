@@ -200,8 +200,8 @@ export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
         </h1>
         {items.map((item, i) => {
           const slot = slots[i]
-          const locked = item.status === 'locked'
-          const go = () => !locked && navigate(conceptPath(item.to))
+          // A station that isn't reached yet can still be looked at (its sheet has no "done" button)
+          const go = () => navigate(conceptPath(item.to))
           return (
             <div
               key={item.id}
@@ -209,8 +209,7 @@ export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
               onClick={go}
               onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && go()}
               role="button"
-              tabIndex={locked ? -1 : 0}
-              aria-disabled={locked}
+              tabIndex={0}
               aria-label={item.label}
             >
               <img
