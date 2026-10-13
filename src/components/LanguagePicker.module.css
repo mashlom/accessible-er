@@ -66,16 +66,16 @@
   font-weight: 700;
 }
 
-/* Over a picture: small translucent pill with the country code (the touch area is still 44px) */
+/* Over a picture: translucent pill with the country code, 44px high */
 .overlay {
   position: relative;
-  height: 22px;
-  padding: 0 7px;
-  gap: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  height: 44px;
+  padding: 0 14px;
+  gap: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
   background: rgba(255, 255, 255, 0.18);
   color: #fff;
-  font-size: 12px;
+  font-size: 24px;
   font-weight: 600;
   line-height: 1;
 }
@@ -83,7 +83,7 @@
 .overlay::before {
   content: '';
   position: absolute;
-  inset: -11px -6px;
+  inset: -6px;
 }
 
 .overlay:hover {
@@ -91,6 +91,6 @@
 }
 
 .overlay .caret {
-  font-size: 9px;
+  font-size: 18px;
   color: #fff;
 }

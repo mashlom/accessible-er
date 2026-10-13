@@ -47,7 +47,7 @@ const PORTRAIT: Scene = {
   vars: {
     '--bg-x': -87, '--bg-y': -250, '--bg-w': 553, '--bg-h': 1260, '--bg-rot': '180deg',
     '--grad-y': -16, '--grad-h': 199,
-    '--title-x': 64.5, '--title-y': 44.5, '--title-w': 283, '--title-h': 50, '--title-fs': 21,
+    '--title-x': 64.5, '--title-y': 72, '--title-w': 283, '--title-h': 50, '--title-fs': 21,
     '--badge': 24, '--badge-fs': 15, '--star': 30,
   },
 }
