@@ -78,7 +78,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
             <span aria-hidden />
           </button>
 
-          <div className={css.procBigIcon} aria-hidden><span>{procedure.emoji}</span></div>
+          <div className={css.procBigIcon} aria-hidden>{procedure.emoji}</div>
           <h1 className={css.stageSheetTitle} style={{ color: theme.accent }}>{procedure.title}</h1>
           {narrative && <p className={css.stageSheetHint}>{narrative}</p>}
 
