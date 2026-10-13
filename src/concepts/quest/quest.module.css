@@ -2740,33 +2740,34 @@ path.oceanTrailLit {
   }
 }
 
-/* Stars earned on the first stage, at the top right of the second stage's map, under the top row */
+/* Stars earned on the first stage, at the top right of the second stage's map, under the top row:
+   the stars themselves, one for each, wrapping to a second row when there are many */
 .oceanStarsTotal {
   position: fixed;
   z-index: 14;
   top: 68px;
   right: 12px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
-  gap: 8px;
-  height: 44px;
-  padding: 0 16px;
+  box-sizing: border-box;
+  max-width: calc(100vw - 24px);
+  padding: 8px 14px;
   border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 999px;
+  border-radius: 24px;
   background: rgba(18, 56, 74, 0.35);
-  color: #fff;
-  font-size: 24px;
-  font-weight: 700;
+  /* the same size as the stars under the stations (30 units of the 412 column, 56 of the 1920 scene) */
+  font-size: calc(30 * var(--colw) / 412);
+  gap: 2px calc(3 * var(--colw) / 412);
   line-height: 1;
   pointer-events: none;
-}
-
-.oceanStarsTotal span:first-child {
-  font-size: 26px;
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.35));
 }
 
 .oceanStarsTotalWide {
   top: 76px;
   right: 24px;
+  font-size: calc(56 * 100vw / 1920);
+  gap: 2px calc(5 * 100vw / 1920);
 }

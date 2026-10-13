@@ -187,14 +187,13 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
           </div>
         </div>
       )}
-      {!underSheet && starsTotal !== undefined && (
+      {!underSheet && (starsTotal ?? 0) > 0 && (
         <div
           className={wide ? `${css.oceanStarsTotal} ${css.oceanStarsTotalWide}` : css.oceanStarsTotal}
           role="img"
           aria-label={`${t('ui.text.starsEarned', 'כוכבים שהרווחת')}: ${starsTotal}`}
         >
-          <span aria-hidden>⭐</span>
-          <span aria-hidden>{starsTotal}</span>
+          {Array.from({ length: starsTotal ?? 0 }, (_, j) => <span key={j} aria-hidden>⭐</span>)}
         </div>
       )}
       <div
