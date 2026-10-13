@@ -84,6 +84,11 @@
     },
     "distract": "תא קול הסונאר 📡",
     "procedureSteps": {
+      "medication": [
+        "מקבלים תרופת ים שעוזרת לגוף.",
+        "לפעמים צריך לשתות אותה, ולפעמים מכניסים אותה ליד דרך צינורית רכה.",
+        "אם שתינו אותה, אפשר לשתות מים אחרי, כדי להעביר את הטעם."
+      ],
       "blood-pressure": [
         "שמים לי שרוול רך על הזרוע.",
         "השרוול מתנפח ולוחץ, כמו לחץ המים בעומק.",
@@ -264,8 +269,8 @@
       ],
       "medication": [
         "Водолаз получает морское лекарство, которое помогает его телу.",
-        "Иногда это сироп, иногда — через мягкую трубочку.",
-        "Потом можно попить воды, чтобы убрать вкус."
+        "Иногда его нужно выпить, а иногда его вводят в руку через мягкую трубочку.",
+        "Если лекарство пили, потом можно попить воды, чтобы убрать вкус."
       ],
       "inhalation": [
         "Боцман надевает на лицо водолаза мягкую маску с прохладным воздухом — почти как маска для дайвинга.",
@@ -415,6 +420,11 @@
       ]
     },
     "procedureSteps": {
+      "medication": [
+        "The diver gets sea medicine that helps the body.",
+        "Sometimes it is drunk, and sometimes it goes into the arm through a soft tube.",
+        "If it was drunk, there can be some water afterwards to wash the taste away."
+      ],
       "saturation": [
         "The diver puts a small, soft clip on their finger.",
         "A little red light turns on inside it.",
