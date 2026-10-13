@@ -247,8 +247,24 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
           </section>
         )}
 
-        <Link to="/calm" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.hardNow', '💙 קשה לנו כרגע')}</Link>
+        {!ocean && <Link to="/calm" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.hardNow', '💙 קשה לנו כרגע')}</Link>}
           </>
+        )}
+
+        {/* Parent side: ask for calm help or close. No "I did it" here: that belongs to the child's sheet. */}
+        {ocean && (
+          <div className={css.sheetFooter}>
+            <Link
+              to="/calm"
+              state={{ from: '/map' }}
+              className={`${css.oceanBtn} ${css.oceanBtnDone}`}
+            >
+              {t('ui.buttons.hardNow', '💙 קשה לנו כרגע')}
+            </Link>
+            <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={onClose}>
+              {t('ui.buttons.close', 'סגירה')}
+            </button>
+          </div>
         )}
       </div>
     </div>
