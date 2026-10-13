@@ -15,17 +15,16 @@ const BOOK_PATH = 'M40.75 903C41.3553 903 41.9445 903.066 42.5176 903.197C43.090
 const WAIT_PROCS = ['temperature', 'saturation', 'blood-pressure']
 
 /** Floating pill on the map that opens the parent-facing details of the current stage in a bottom sheet. */
-/** ocean: the mockup's pill (book icon, bottom-left of the ocean map); wide: landscape layout */
 interface ParentInfoProps {
   stageId?: string
   inline?: boolean
+  /** ocean: the mockup's pill with the book icon */
   ocean?: boolean
-  wide?: boolean
   /** Open straight on this procedure's details (from the procedure's own child page) */
   initialProc?: string
 }
 
-export function ParentInfo({ stageId: stageOverride, inline, ocean, wide, initialProc }: ParentInfoProps) {
+export function ParentInfo({ stageId: stageOverride, inline, ocean, initialProc }: ParentInfoProps) {
   const [open, setOpen] = useState(false)
   const { t } = useI18n()
   const { active } = useQuestProgress()
@@ -44,7 +43,7 @@ export function ParentInfo({ stageId: stageOverride, inline, ocean, wide, initia
         <button
           ref={triggerRef}
           type="button"
-          className={wide ? `${css.parentBtnOcean} ${css.parentBtnOceanWide}` : css.parentBtnOcean}
+          className={inline ? `${css.parentBtnOcean} ${css.parentBtnOceanInline}` : css.parentBtnOcean}
           onClick={() => setOpen(true)}
           aria-haspopup="dialog"
         >

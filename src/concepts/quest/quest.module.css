@@ -1901,15 +1901,10 @@
   cursor: pointer;
 }
 
-/* Ocean map parent button, from the mockup: 166×34 pill at (28, 883) on the 412×939 frame.
-   The button itself is 48px tall for touch; the visible pill sits inside it. */
+/* Parent pill of the ocean sheets, from the mockup: a white pill with a book icon (the button itself is
+   at least 44px tall for touch; the visible pill sits inside it). */
 .parentBtnOcean {
-  --col: min(100vw, 560px);
-  position: fixed;
-  z-index: 20;
-  left: calc((100vw - var(--col)) / 2 + var(--col) * 28 / 412);
-  bottom: calc(var(--col) * 22 / 412 - 7px);
-  min-height: 48px;
+  min-height: max(calc(44 * var(--u)), 44px);
   display: flex;
   align-items: center;
   padding: 0;
@@ -1918,11 +1913,15 @@
   cursor: pointer;
 }
 
+.parentBtnOceanInline {
+  align-self: center;
+}
+
 .parentBtnOceanPill {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  height: 34px;
+  height: max(calc(36 * var(--u)), 34px);
   box-sizing: border-box;
   padding-inline: 0.9rem 4px;
   background: #fff;
@@ -2058,11 +2057,6 @@
   transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
 }
 
-.parentBtnOceanWide {
-  left: max(16px, 3.75vw);
-  bottom: max(8px, 1.4vw);
-}
-
 /* Progress capsule from the mockup, filled in equal steps as stations are done, growing upwards */
 .oceanProgress {
   --col: min(100vw, 560px);
@@ -2085,8 +2079,10 @@
 
 .oceanProgressFill {
   position: absolute;
-  inset: auto 0 0 0;
-  height: calc(var(--p) * 100%);
+  /* a small inner margin between the outline and the fill, as in the mockup */
+  inset: auto 3px 3px 3px;
+  height: calc(var(--p) * (100% - 6px));
+  border-radius: 999px;
   background: #cca640;
   transition: height 0.6s ease;
 }

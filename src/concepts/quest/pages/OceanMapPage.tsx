@@ -6,7 +6,6 @@ import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { LanguagePicker } from '../../../components/LanguagePicker'
-import { ParentInfo } from '../components/ParentInfo'
 import css from '../quest.module.css'
 
 export type Pt = [number, number]
@@ -249,7 +248,6 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
           <span className={css.oceanProgressFill} style={{ '--p': progress.total ? progress.done / progress.total : 0 } as React.CSSProperties} />
         </div>
       )}
-      {!underSheet && <ParentInfo ocean wide={wide} />}
     </div>
   )
 }

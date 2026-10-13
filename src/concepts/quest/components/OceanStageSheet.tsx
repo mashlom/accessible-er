@@ -103,7 +103,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
             </button>
           </div>
 
-          <ParentInfo stageId={stageId} inline />
+          <ParentInfo stageId={stageId} inline ocean />
         </div>
       </div>
     </>
