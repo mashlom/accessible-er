@@ -1487,6 +1487,7 @@
   position: relative;
   width: 100%;
   max-width: 560px;
+  margin-left: auto; /* a narrow map is pressed to the right edge; extra picture is drawn on its left */
   aspect-ratio: 830 / 2700;
   /* what shows where the background picture doesn't reach */
   background: var(--map-bg, #78dff8);
@@ -1959,7 +1960,8 @@
   right: 0;
   z-index: 15;
   max-width: 560px;
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: 0;
   box-sizing: border-box;
   padding: 2px 4px;
   display: flex;
@@ -2020,13 +2022,14 @@
   background: #1f6f80;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end; /* the picture falls to the bottom of the screen */
 }
 
 .oceanSceneWide {
   position: relative;
   width: 100%;
   max-width: none;
+  margin-left: 0;
   aspect-ratio: 1920 / 1080;
   flex-shrink: 0;
 }
@@ -2043,9 +2046,8 @@
   transform: scaleY(-1);
 }
 
-/* each piece tucks 2px under the scene so no hairline shows between them */
-.oceanTileVTop { top: calc(50% - var(--sh) / 2 - var(--sh) + 2px); }
-.oceanTileVBottom { top: calc(50% + var(--sh) / 2 - 2px); }
+/* the mirrored piece sits right above the scene, tucked 2px under it so no hairline shows */
+.oceanTileVTop { bottom: calc(var(--sh) - 2px); }
 
 .oceanTileV .oceanSideBgW {
   position: absolute;
@@ -2062,7 +2064,7 @@
   --col: min(100vw, 560px);
   position: fixed;
   z-index: 14;
-  left: calc((100vw - var(--col)) / 2 + var(--col) * 372 / 412);
+  left: calc(100vw - var(--col) + var(--col) * 372 / 412);
   /* On short windows it moves up and shrinks so it always fits the screen */
   --top: min(calc(var(--col) * 189 / 412), 24dvh);
   top: var(--top);
@@ -2542,7 +2544,7 @@
   bottom: 0;
   width: var(--colw);
   /* k is the tile's place counted in columns from the middle one */
-  left: calc(50% - var(--colw) / 2 + var(--k) * var(--colw));
+  left: calc(100% - var(--colw) + var(--k) * var(--colw));
   overflow: hidden;
   pointer-events: none;
 }
@@ -2664,4 +2666,9 @@
 
 .oceanSheet .procHead {
   margin-bottom: calc(24 * var(--u));
+}
+
+/* Portrait map on a wide window: the sheet is pressed to the right edge too, over the map's column */
+@media not all and ((min-aspect-ratio: 3/2) or (min-width: 1121px)) {
+  .sheetBackdrop > .oceanSheet { margin-left: auto; }
 }

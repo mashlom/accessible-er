@@ -76,9 +76,10 @@ const LANDSCAPE: Scene = {
   },
 }
 
-/** True on screens wide enough for the landscape scene */
+/** True on screens wide enough for the landscape scene: a landscape shape, or wider than two portrait
+ *  columns (1120px), so the portrait map never needs a third background piece */
 export function useWide(): boolean {
-  const query = '(min-aspect-ratio: 3/2)'
+  const query = '(min-aspect-ratio: 3/2), (min-width: 1121px)'
   const [wide, setWide] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches)
   useEffect(() => {
     const mq = window.matchMedia(query)
@@ -139,20 +140,17 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
       style={vars as React.CSSProperties}
     >
       {wide && (
-        <>
-          <div className={`${css.oceanTileV} ${css.oceanTileVTop}`} aria-hidden>
-            <div className={css.oceanSideBgW} />
-          </div>
-          <div className={`${css.oceanTileV} ${css.oceanTileVBottom}`} aria-hidden>
-            <div className={css.oceanSideBgW} />
-          </div>
-        </>
+        // the scene sits on the bottom of the screen; only what is above it is filled with the mirrored picture
+        <div className={`${css.oceanTileV} ${css.oceanTileVTop}`} aria-hidden>
+          <div className={css.oceanSideBgW} />
+        </div>
       )}
       {!wide && (
         <>
-          {/* the sides: the picture mirrored outwards from the column's edges (a mirror at each edge, so the
-              two meet without a seam, and the next tile mirrors back) */}
-          {[-2, -1, 1, 2].map((k) => (
+          {/* the column is pressed to the right edge; the rest of the screen, on its left, is the picture
+              mirrored outwards from the column's edge (a mirror at each edge, so the pieces meet without a
+              seam, and the next tile mirrors back) */}
+          {[-1].map((k) => (
             <div
               key={k}
               className={`${css.oceanTile} ${Math.abs(k) % 2 === 1 ? css.oceanTileFlip : ''}`}
