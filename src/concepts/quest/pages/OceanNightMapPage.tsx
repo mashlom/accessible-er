@@ -5,7 +5,7 @@ import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
-import { OceanMapView, OCEAN_IMAGES, type Pt, type Scene, type Slot, type ViewItem } from './OceanMapPage'
+import { OceanMapView, OCEAN_IMAGES, starsFor, type Pt, type Scene, type Slot, type ViewItem } from './OceanMapPage'
 
 /** Picture shapes (width / height) of the stand-in station images */
 function aspectOf(src: string): number {
@@ -188,7 +188,7 @@ function landscapeScene(images: string[]): Scene {
 export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {}) {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
-  const { visibleOptionals, allOptionalsDone } = useQuestProgress()
+  const { visibleOptionals, allOptionalsDone, doneProcedures } = useQuestProgress()
   const screenH = useScreenUnits()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
@@ -204,6 +204,7 @@ export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {})
       label: skin?.label ?? data?.title ?? s.id,
       status: s.status === 'done' ? 'done' : i === firstOpen ? 'active' : 'locked',
       image: OCEAN_IMAGES[s.id],
+      stars: starsFor(data?.procedureIds, s.id, doneProcedures),
       onOpen: () => navigate(conceptPath(`/stage/${s.id}`)),
     }
   })

@@ -110,6 +110,8 @@ export interface ViewItem {
   label: string
   status: string
   image: string
+  /** Stars earned: one for each procedure done at the station (or one for the station itself) */
+  stars?: number
   /** Missing = not openable yet */
   onOpen?: () => void
 }
@@ -222,13 +224,14 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
                 className={css.oceanObj}
                 style={{ left: pctX(slot.x), top: pctY(slot.y), width: pctX(slot.w), transform: slot.flip ? 'scaleX(-1)' : undefined }}
               />
-              {item.status === 'done' && (
+              {(item.stars ?? 0) > 0 && (
                 <span
-                  className={css.oceanStar}
+                  className={css.oceanStars}
                   style={{ left: pctX(slot.x + slot.w / 2), top: pctY(slot.y + slot.h * 0.88) }}
-                  aria-label={t('ui.text.done', 'בוצע')}
+                  role="img"
+                  aria-label={`${t('ui.text.done', 'בוצע')}: ${item.stars}`}
                 >
-                  ⭐
+                  {Array.from({ length: item.stars ?? 0 }, (_, j) => <span key={j} className={css.oceanStar} aria-hidden>⭐</span>)}
                 </span>
               )}
               {numbers && (
@@ -256,11 +259,17 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
   )
 }
 
+/** One star for each procedure done at a station; a station finished without one (no procedures) gets one */
+export function starsFor(procedureIds: string[] | undefined, stageId: string, done: Set<string>): number {
+  const procs = (procedureIds ?? []).filter((pid) => done.has(pid)).length
+  return procs > 0 ? procs : done.has(stageId) ? 1 : 0
+}
+
 /** underSheet: rendered behind a stage sheet, which has its own parent-info pill */
 export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
-  const { visible, stages } = useQuestProgress()
+  const { visible, stages, doneProcedures } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
@@ -279,6 +288,7 @@ export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
       label: skin?.label ?? data?.title ?? id,
       status: visible.find((s) => s.id === id)?.status ?? 'locked',
       image: OCEAN_IMAGES[id],
+      stars: starsFor(data?.procedureIds, id, doneProcedures),
       onOpen: () => navigate(conceptPath(to)),
     }
   })
