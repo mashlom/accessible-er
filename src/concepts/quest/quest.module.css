@@ -2071,7 +2071,8 @@
   --col: min(100vw, 560px);
   position: fixed;
   z-index: 14;
-  left: calc(100vw - var(--col) + var(--col) * 372 / 412);
+  /* pressed to the column's left edge, away from the stations on the right */
+  left: calc(100vw - var(--col) + var(--col) * 6 / 412);
   /* On short windows it moves up and shrinks so it always fits the screen */
   --top: min(calc(var(--col) * 189 / 412), 24dvh);
   top: var(--top);
