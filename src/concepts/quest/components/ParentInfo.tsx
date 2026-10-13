@@ -259,7 +259,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
               state={{ from: '/map' }}
               className={`${css.oceanBtn} ${css.oceanBtnDone}`}
             >
-              {t('ui.buttons.hardNow', '💙 קשה לנו כרגע')}
+              {t('ui.buttons.oceanHardNow', '💙 קשה לנו כרגע')}
             </Link>
             <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={onClose}>
               {t('ui.buttons.close', 'סגירה')}
