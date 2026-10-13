@@ -78,12 +78,12 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
             <span aria-hidden />
           </button>
 
-          <div className={css.procBigIcon} aria-hidden>{procedure.emoji}</div>
+          <div className={css.procBigIcon} aria-hidden><span>{procedure.emoji}</span></div>
           <h1 className={css.stageSheetTitle} style={{ color: theme.accent }}>{procedure.title}</h1>
           {narrative && <p className={css.stageSheetHint}>{narrative}</p>}
 
           {steps && steps.length > 0 && (
-            <div>
+            <div className={css.procBody}>
               {variants && variants.length > 1 && (
                 <div className={css.variantToggle} style={{ '--n': variants.length } as React.CSSProperties}>
                   {variants.map((v, i) => (

@@ -2484,13 +2484,34 @@
 
 /* Child page of one procedure: its icon takes the place of the station picture */
 .procBigIcon {
-  flex: 1 1 auto;
-  min-height: 0;
+  /* takes the free room, but never less than its own size, and its size follows the room it has */
+  flex: 1 1 calc(70 * var(--u));
+  min-height: calc(76 * var(--u));
+  container-type: size;
   display: grid;
   place-items: center;
-  font-size: calc(84 * var(--u));
   line-height: 1.15;
-  padding-bottom: calc(8 * var(--u));
+}
+
+.procBigIcon > span {
+  font-size: min(calc(84 * var(--u)), 62cqh);
+}
+
+/* The steps scroll on their own when they are long, so the picture, title and buttons never overlap them */
+.procBody {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  min-height: 0;
+}
+
+.procBody .procedureSteps {
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.procBody .procedureSteps li {
+  flex-shrink: 0;
 }
 
 .procedureIconBtn {
