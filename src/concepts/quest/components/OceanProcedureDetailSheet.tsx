@@ -110,6 +110,8 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
             </div>
           )}
 
+          <ParentInfo stageId={stageId} inline ocean initialProc={id} />
+
           <div className={css.stageSheetActions}>
             {stageActive && (
               <button
@@ -129,8 +131,6 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
               </button>
             )}
           </div>
-
-          <ParentInfo stageId={stageId} inline ocean initialProc={id} />
         </div>
       </div>
     </>

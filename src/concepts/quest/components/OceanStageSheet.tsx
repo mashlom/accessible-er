@@ -83,6 +83,8 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
 
           {children}
 
+          <ParentInfo stageId={stageId} inline ocean />
+
           <div className={css.stageSheetActions}>
             {isActive && (
               <button
@@ -102,8 +104,6 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
               {t('ui.buttons.backToMap', 'חזרה למפה →')}
             </button>
           </div>
-
-          <ParentInfo stageId={stageId} inline ocean />
         </div>
       </div>
     </>

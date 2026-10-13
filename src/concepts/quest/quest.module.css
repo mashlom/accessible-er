@@ -2568,3 +2568,100 @@
   background: linear-gradient(#207082, rgba(29, 117, 129, 0) 76%);
   pointer-events: none;
 }
+
+/* ── Station sheet laid out like the mockup (measured on the 412×939 frame) ─────────────────────────
+   handle 7px from the top · picture 364×340 at +50 · title 17px bold, start-aligned, black · hint 15px ·
+   round buttons 48px, 15px apart, start-aligned · parent pill 34px, start-aligned · buttons 16px apart,
+   24px from the bottom. */
+.oceanSheet.stageSheet {
+  --dh: 640;
+  gap: 0;
+  padding-bottom: calc(24 * var(--u));
+}
+
+.oceanSheet.stageSheet .sheetHandle {
+  height: calc(24 * var(--u));
+  margin-bottom: calc(26 * var(--u));
+}
+
+.oceanSheet.stageSheet .stageSheetImg {
+  flex: 0 0 auto;
+  height: max(90px, min(calc(340 * var(--u)), calc(92dvh - 330px)));
+  max-height: none;
+  width: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+
+.oceanSheet.stageSheet .stageSheetImgBleed {
+  /* keeps the house's own fade and offset; the picture is 340 tall like the others */
+  --w: min(calc(326 * var(--u)), 100%, max(86px, calc((92dvh - 330px) * 0.96)));
+  width: var(--w);
+  height: auto;
+}
+
+.oceanSheet.stageSheet .stageSheetTitle {
+  margin: calc(12 * var(--u)) 0 0;
+  text-align: start;
+  font-size: max(calc(17 * var(--u)), 16px);
+  font-weight: 800;
+  color: #000 !important;
+}
+
+.oceanSheet.stageSheet .stageSheetHint {
+  margin: calc(4 * var(--u)) 0 0;
+  text-align: start;
+  font-size: max(calc(15 * var(--u)), 14px);
+  color: #222;
+}
+
+.oceanSheet.stageSheet .procedureIconRow {
+  justify-content: flex-start;
+  gap: calc(15 * var(--u));
+  margin-top: calc(14 * var(--u));
+}
+
+.oceanSheet.stageSheet .parentBtnOceanInline {
+  align-self: flex-start;
+  margin-top: calc(10 * var(--u));
+}
+
+.oceanSheet.stageSheet .parentBtnOceanPill {
+  min-width: calc(166 * var(--u));
+  /* text about 108px wide like the mockup (17px), icon 24px */
+  font-size: 17px;
+  gap: calc(14 * var(--u));
+  padding-inline: calc(22 * var(--u)) calc(5 * var(--u));
+}
+
+.oceanSheet.stageSheet .stageSheetActions {
+  gap: calc(16 * var(--u));
+  margin-top: auto;
+  padding-top: calc(16 * var(--u));
+}
+
+/* Parent panel cards in mockup units (measured on the 412×939 frame): 17px bold title, 14px text,
+   cards 20px apart, tight padding */
+.oceanSheet .sheetCard {
+  margin-bottom: calc(18 * var(--u));
+  padding: calc(14 * var(--u)) calc(18 * var(--u)) calc(14 * var(--u));
+  border-radius: calc(16 * var(--u));
+  background: #f3eeec;
+}
+
+.oceanSheet .sheetCard h2 {
+  margin: 0 0 calc(4 * var(--u));
+  font-size: max(calc(17 * var(--u)), 16px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.oceanSheet .sheetCard p,
+.oceanSheet .sheetCard li {
+  font-size: max(calc(14 * var(--u)), 14px);
+  line-height: 1.25;
+}
+
+.oceanSheet .procHead {
+  margin-bottom: calc(24 * var(--u));
+}
