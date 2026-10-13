@@ -2099,10 +2099,10 @@
 
 /* Landscape: same vertical capsule at the right edge, under the title pill, above the house */
 .oceanProgressWide {
-  /* the scene is as wide as the window and centred up and down */
+  /* the scene is as wide as the window and sits on the bottom of the screen */
   --S: 100vw;
   left: min(calc(var(--S) * 1868 / 1920), calc(100vw - 34px));
-  top: calc(max(0px, (100dvh - var(--S) * 9 / 16) / 2) + var(--S) * 215 / 1920);
+  top: calc(max(0px, 100dvh - var(--S) * 9 / 16) + var(--S) * 215 / 1920);
   width: calc(var(--S) * 14 / 1920 + 6px);
   height: calc(var(--S) * 285 / 1920);
 }
