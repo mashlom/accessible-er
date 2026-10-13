@@ -2696,3 +2696,17 @@
   justify-content: space-between;
   padding-inline: calc(22 * var(--u)) calc(5 * var(--u));
 }
+
+/* The part of the route already travelled glows: warm light dots and dashes with a soft halo (static, no flicker) */
+.oceanTrailLit circle {
+  fill: #fff4cf;
+}
+
+.oceanTrailLit,
+path.oceanTrailLit {
+  filter: drop-shadow(0 0 2px rgba(255, 224, 130, 0.95)) drop-shadow(0 0 6px rgba(255, 200, 80, 0.65));
+}
+
+path.oceanTrailLit {
+  stroke: #fff4cf;
+}

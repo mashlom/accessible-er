@@ -85,19 +85,19 @@ function portraitScene(images: string[], screenH: number): Scene {
   // house, while the pier to its left (where the shore runs lower) reaches over the water
   const shift = shoreOrig(412) - (fy + fh * 0.96)
 
-  const dots: Pt[] = []
+  const dots: Pt[][] = []
   for (let k = 0; k < slots.length - 1; k++) {
     const a = slots[k]
     const b = slots[k + 1]
     if (k + 1 < n) {
       // sea to sea: the stations sit in two columns, so the trail hops across the gap to the next number
       const fromLeft = a.x + a.w / 2 < 206
-      dots.push(...horizontal(
+      dots.push(horizontal(
         [fromLeft ? a.x + a.w * 0.9 : a.x + a.w * 0.1, a.y + a.h * 0.55],
         [b.x + b.w / 2 + (fromLeft ? -20 : 20), b.y - 6],
       ))
     } else {
-      dots.push(...vertical([a.x + a.w / 2, a.y + a.h * 0.92], [b.x + b.w / 2, b.y - 34]))
+      dots.push(vertical([a.x + a.w / 2, a.y + a.h * 0.92], [b.x + b.w / 2, b.y - 34]))
     }
   }
   return {
