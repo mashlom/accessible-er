@@ -2719,3 +2719,19 @@ path.oceanTrailLit {
     left: calc(100vw - var(--col) - var(--col) * 14 / 412 - 20px);
   }
 }
+
+/* Landscape / wide windows (the same switch as the landscape map): the sheet docks to the right as a side
+   panel pressed to the right edge, as wide as its content (no big white field), standing on the bottom
+   edge, and the map stays in view on its left */
+@media (min-aspect-ratio: 3/2), (min-width: 1121px) {
+  .sheetBackdrop:has(> .oceanSheet) {
+    align-items: flex-end;
+  }
+
+  .sheetBackdrop > .oceanSheet {
+    --sw: clamp(380px, 22vw, 560px);
+    margin-left: auto;
+    margin-right: 0;
+    border-radius: 28px 0 0 0;
+  }
+}
