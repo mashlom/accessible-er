@@ -85,7 +85,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
           {steps && steps.length > 0 && (
             <div>
               {variants && variants.length > 1 && (
-                <div className={css.variantToggle}>
+                <div className={css.variantToggle} style={{ '--n': variants.length } as React.CSSProperties}>
                   {variants.map((v, i) => (
                     <button
                       key={i}

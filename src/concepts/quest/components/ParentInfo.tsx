@@ -6,6 +6,7 @@ import { getProcedure } from '../../../data/procedures'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { useQuestTheme } from '../useQuestTheme'
+import { ProcedureLineIcon } from './ProcedureLineIcon'
 import css from '../quest.module.css'
 
 /** Open-book icon from the ocean mockup (drawn inside a 24×24 circle at 33,888 in the frame) */
@@ -272,7 +273,7 @@ function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
       )}
 
       <header className={css.procHead}>
-        <span className={css.procIcon} aria-hidden>{proc.emoji}</span>
+        <span className={css.procIcon} aria-hidden><ProcedureLineIcon id={pid} emoji={proc.emoji} /></span>
         <div className={css.procHeadText}>
           <h2>{proc.title}</h2>
           {narrative && <p>{narrative}</p>}

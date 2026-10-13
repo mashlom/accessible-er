@@ -2043,9 +2043,10 @@
   width: calc(var(--col) * 14 / 412);
   height: min(calc(var(--col) * 373 / 412), calc(100dvh - var(--top) - 64px));
   box-sizing: border-box;
-  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.22);
+  /* the mockup's track: mint, a little bluer at the top; the gold fill (done stations) rises from the bottom */
+  background: linear-gradient(to bottom, #8fdfe8, #89dfcd);
   overflow: hidden;
   pointer-events: none;
 }
@@ -2054,7 +2055,7 @@
   position: absolute;
   inset: auto 0 0 0;
   height: calc(var(--p) * 100%);
-  background: #d4a237;
+  background: #cca640;
   transition: height 0.6s ease;
 }
 
@@ -2455,4 +2456,49 @@
 
 .procedureIconBtn {
   text-decoration: none;
+}
+
+/* Round procedure buttons of the stage sheet, as in the mockup: flat light circles with a thin line icon */
+.oceanSheet .procedureIconRow {
+  gap: calc(12 * var(--u));
+}
+
+.oceanSheet .procedureIconBtn {
+  width: max(calc(48 * var(--u)), 44px);
+  height: max(calc(48 * var(--u)), 44px);
+  background: #f3eeec;
+  color: #111;
+  box-shadow: none;
+  font-size: max(calc(26 * var(--u)), 24px);
+}
+
+.oceanSheet .procedureIconBtn:active {
+  transform: scale(0.94);
+  box-shadow: none;
+}
+
+.oceanSheet .procedureIconBtn:focus-visible {
+  outline: 3px solid #0a6b8a;
+  outline-offset: 2px;
+}
+
+.oceanSheet .procDoneBadge {
+  top: -4px;
+  inset-inline-start: -4px;
+  left: auto;
+}
+
+/* Variants of a procedure (e.g. "in the mouth" / "under the arm"): equal-width buttons that share the row */
+.oceanSheet .variantToggle {
+  display: grid;
+  grid-template-columns: repeat(var(--n, 2), 1fr);
+  gap: calc(10 * var(--u));
+  margin-bottom: calc(10 * var(--u));
+}
+
+.oceanSheet .variantBtn {
+  width: 100%;
+  min-height: max(calc(44 * var(--u)), 44px);
+  border-radius: calc(12 * var(--u));
+  font-size: max(calc(15 * var(--u)), 14px);
 }
