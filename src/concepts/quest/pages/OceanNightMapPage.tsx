@@ -10,6 +10,7 @@ import { OceanMapView, OCEAN_IMAGES, starsFor, type Pt, type Scene, type Slot, t
 /** Picture shapes (width / height) of the stand-in station images */
 function aspectOf(src: string): number {
   if (src.includes('station-pod')) return 287 / 185
+  if (src.includes('station-sonar')) return 218 / 132
   if (src.includes('station-sub')) return 227 / 169
   return 211 / 220 // house
 }

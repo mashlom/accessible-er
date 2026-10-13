@@ -99,7 +99,7 @@ export const OCEAN_IMAGES: Record<string, string> = {
   'wait-doctor': '/worlds/ocean/station-aquarium.png',
   doctor: '/worlds/ocean/station-doctor.png',
   // Second stage (stand-in pictures until the four stations are drawn); the last one stands on land
-  tests: '/worlds/ocean/station-pod.png',
+  tests: '/worlds/ocean/station-sonar.png',
   consult: '/worlds/ocean/station-sub.png',
   'wait-results': '/worlds/ocean/station-pod.png',
   treatment: '/worlds/ocean/station-sub.png',
