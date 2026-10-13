@@ -123,10 +123,12 @@ interface ViewProps {
   /** Number badges on the stations, counting from firstNumber */
   numbers?: boolean
   firstNumber?: number
+  /** No "your journey starts here" pill (the second stage's map) */
+  noTitle?: boolean
 }
 
 /** The map scene with its top row, progress capsule and parent button; both layouts share it. */
-export function OceanMapView({ portrait, landscape, items, underSheet, progress, numbers, firstNumber = 1 }: ViewProps) {
+export function OceanMapView({ portrait, landscape, items, underSheet, progress, numbers, firstNumber = 1, noTitle }: ViewProps) {
   const { t, dir } = useI18n()
   const wide = useWide()
   const { W, H, slots, dots, lines, vars } = wide ? landscape : portrait
@@ -188,7 +190,7 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
           {dots?.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={1.8} />)}
           {lines?.map((pts, i) => <path key={i} d={`M ${pts.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join(' L ')}`} />)}
         </svg>
-        {(() => {
+        {!noTitle && (() => {
           const text = t('ui.text.oceanHeadline', 'המסע שלך מתחיל כאן')
           const cut = text.lastIndexOf(' ')
           // longer wording (other languages) gets a smaller font and wraps to two lines, so it stays inside the pill

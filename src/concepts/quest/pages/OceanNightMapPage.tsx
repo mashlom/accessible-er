@@ -222,6 +222,7 @@ export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {})
       underSheet={underSheet}
       progress={{ done, total: visibleOptionals.length }}
       numbers
+      noTitle
       firstNumber={6} // the numbers go on from the first stage's five stations
     />
   )
