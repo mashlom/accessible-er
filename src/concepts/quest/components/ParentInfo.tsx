@@ -15,7 +15,16 @@ const WAIT_PROCS = ['temperature', 'saturation', 'blood-pressure']
 
 /** Floating pill on the map that opens the parent-facing details of the current stage in a bottom sheet. */
 /** ocean: the mockup's pill (book icon, bottom-left of the ocean map); wide: landscape layout */
-export function ParentInfo({ stageId: stageOverride, inline, ocean, wide }: { stageId?: string; inline?: boolean; ocean?: boolean; wide?: boolean }) {
+interface ParentInfoProps {
+  stageId?: string
+  inline?: boolean
+  ocean?: boolean
+  wide?: boolean
+  /** Open straight on this procedure's details (from the procedure's own child page) */
+  initialProc?: string
+}
+
+export function ParentInfo({ stageId: stageOverride, inline, ocean, wide, initialProc }: ParentInfoProps) {
   const [open, setOpen] = useState(false)
   const { t } = useI18n()
   const { active } = useQuestProgress()
@@ -58,21 +67,31 @@ export function ParentInfo({ stageId: stageOverride, inline, ocean, wide }: { st
           {t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
         </button>
       )}
-      {open && <ParentSheet stageId={stageId} onClose={close} />}
+      {open && <ParentSheet stageId={stageId} onClose={close} initialProc={initialProc} />}
     </>
   )
 }
 
-function ParentSheet({ stageId, onClose }: { stageId: string; onClose: () => void }) {
-  const { t } = useI18n()
+function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClose: () => void; initialProc?: string }) {
+  const { t, dir } = useI18n()
   const { theme } = useQuestTheme()
   const closeRef = useRef<HTMLButtonElement>(null)
+  const ocean = theme.id === 'ocean'
+  // ocean: a procedure's details slide in inside this same sheet
+  const [proc, setProc] = useState<string | null>(initialProc ?? null)
+  const procRef = useRef(proc)
+  procRef.current = proc
 
   useEffect(() => {
     closeRef.current?.focus()
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
+    // Escape first steps back from a procedure to the overview, then closes the sheet
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return
+      if (procRef.current && !initialProc) setProc(null)
+      else onClose()
+    }
     window.addEventListener('keydown', onKey)
     return () => {
       document.body.style.overflow = prevOverflow
@@ -105,6 +124,10 @@ function ParentSheet({ stageId, onClose }: { stageId: string; onClose: () => voi
           <span aria-hidden />
         </button>
 
+        {ocean && proc ? (
+          <ProcedurePanel pid={proc} onBack={initialProc ? undefined : () => setProc(null)} />
+        ) : (
+          <>
         {data.sensory && <SensoryBar sensory={data.sensory} />}
         {(singleProc?.who || data.waitRange) && (
           <p className={css.sheetWait}>
@@ -209,7 +232,14 @@ function ParentSheet({ stageId, onClose }: { stageId: string; onClose: () => voi
                 const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
                 return (
                   <li key={pid}>
-                    <Link to={`/procedure/${pid}`}>{proc?.emoji} {proc?.title ?? pid}</Link>
+                    {ocean ? (
+                      <button type="button" className={css.sheetProcBtn} onClick={() => setProc(pid)}>
+                        <span>{proc?.emoji} {proc?.title ?? pid}</span>
+                        <span aria-hidden>{dir === 'rtl' ? '‹' : '›'}</span>
+                      </button>
+                    ) : (
+                      <Link to={`/procedure/${pid}`}>{proc?.emoji} {proc?.title ?? pid}</Link>
+                    )}
                   </li>
                 )
               })}
@@ -218,7 +248,64 @@ function ParentSheet({ stageId, onClose }: { stageId: string; onClose: () => voi
         )}
 
         <Link to="/calm" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.hardNow', '💙 קשה לנו כרגע')}</Link>
+          </>
+        )}
       </div>
+    </div>
+  )
+}
+
+/** One procedure's details for the parent, shown inside the parent sheet (slides in from the "forward" side) */
+function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
+  const { t, dir } = useI18n()
+  const { theme } = useQuestTheme()
+  const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
+  const narrative = theme.procedureNarratives?.[pid]
+  if (!proc) return null
+
+  return (
+    <div className={css.procPanel} style={{ '--slide': dir === 'rtl' ? -1 : 1 } as React.CSSProperties}>
+      {onBack && (
+        <button type="button" className={css.procBack} onClick={onBack} aria-label={t('ui.buttons.back', 'חזרה →')}>
+          <span aria-hidden>{dir === 'rtl' ? '→' : '←'}</span>
+        </button>
+      )}
+
+      <header className={css.procHead}>
+        <span className={css.procIcon} aria-hidden>{proc.emoji}</span>
+        <div className={css.procHeadText}>
+          <h2>{proc.title}</h2>
+          {narrative && <p>{narrative}</p>}
+        </div>
+      </header>
+
+      {proc.what && (
+        <section className={css.sheetCard}>
+          <h2>{t('ui.text.whatActuallyHappens', 'מה קורה בפועל')}</h2>
+          <p>{proc.what}</p>
+        </section>
+      )}
+      {proc.feel && (
+        <section className={css.sheetCard}>
+          <h2>{t('ui.text.childMayFeel', 'מה הילד/ה עשוי/ה להרגיש')}</h2>
+          <p>{proc.feel}</p>
+        </section>
+      )}
+      {proc.prepare && (
+        <section className={css.sheetCard}>
+          <h2>{t('ui.text.prepareChild', 'איך להכין את הילד/ה')}</h2>
+          <p>{proc.prepare}</p>
+        </section>
+      )}
+      {proc.adaptations && proc.adaptations.length > 0 && (
+        <section className={css.sheetCard}>
+          <h2>{t('ui.text.askStaff', 'מה לבקש מהצוות')}</h2>
+          <ul>
+            {proc.adaptations.map((item: string, i: number) => <li key={i}>{item}</li>)}
+          </ul>
+        </section>
+      )}
+
     </div>
   )
 }

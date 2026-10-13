@@ -9,6 +9,7 @@ import { getProcedure } from '../../../data/procedures'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
 import { OceanStageSheet } from '../components/OceanStageSheet'
+import { OceanProcedureIcons } from '../components/OceanProcedureIcons'
 import { OCEAN_IMAGES } from './OceanMapPage'
 import css from '../quest.module.css'
 
@@ -84,20 +85,7 @@ export function StagePage() {
           </ol>
         )}
         {!inlineProc && data.procedureIds && data.procedureIds.length > 0 && (
-          <div className={css.procedureIconRow}>
-            {data.procedureIds.map((pid) => {
-              const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
-              const done = doneProcedures.has(pid)
-              return (
-                <Link key={pid} to={`/procedure/${pid}`} style={{ position: 'relative' }}>
-                  <button className={css.procedureIconBtn} style={{ borderColor: theme.accent, color: theme.accent }} aria-label={proc?.title ?? pid}>
-                    {proc?.emoji ?? '?'}
-                  </button>
-                  {done && <span className={css.procDoneBadge}>{theme.doneEmoji ?? '✓'}</span>}
-                </Link>
-              )
-            })}
-          </div>
+          <OceanProcedureIcons ids={data.procedureIds} />
         )}
       </OceanStageSheet>
     )

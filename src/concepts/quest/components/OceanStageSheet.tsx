@@ -87,24 +87,18 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
             {isActive && (
               <button
                 type="button"
-                className={css.doneBtn}
-                style={{ background: theme.accent, color: theme.accentText }}
+                className={`${css.oceanBtn} ${css.oceanBtnDone}`}
                 onClick={onDone}
               >
                 {doneIsChoice ? t('ui.buttons.chooseTests', 'לבחירת הבדיקות ←') : t('ui.buttons.done', 'הצלחתי! ←')}
               </button>
             )}
             {showChooseTests && !isActive && (
-              <Link to="/procedures" className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
+              <Link to="/procedures" className={`${css.oceanBtn} ${css.oceanBtnDone}`}>
                 {t('ui.buttons.chooseTests', 'לבחירת הבדיקות ←')}
               </Link>
             )}
-            <button
-              type="button"
-              className={css.backBtn}
-              style={{ background: theme.accentSoft, borderColor: theme.accent, color: theme.accent }}
-              onClick={close}
-            >
+            <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={close}>
               {t('ui.buttons.backToMap', 'חזרה למפה →')}
             </button>
           </div>

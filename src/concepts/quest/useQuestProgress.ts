@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 /** Required stage ids in order */
 export const REQUIRED_STAGES = ['reception', 'wait-before-triage', 'triage', 'wait-doctor', 'doctor'] as const
@@ -29,8 +29,12 @@ export function loadProcs(): Set<string> {
   return new Set()
 }
 
+/** Tells every component using this hook that the done procedures changed (they each keep their own copy) */
+const PROCS_EVENT = 'quest-procs-changed'
+
 function saveProcs(procs: Set<string>) {
   try { sessionStorage.setItem(PROC_KEY, JSON.stringify([...procs])) } catch {}
+  try { window.dispatchEvent(new Event(PROCS_EVENT)) } catch {}
 }
 
 function initialStages(): StageState[] {
@@ -77,6 +81,12 @@ function save(stages: StageState[]) {
 export function useQuestProgress() {
   const [stages, setStages] = useState<StageState[]>(load)
   const [doneProcedures, setDoneProcedures] = useState<Set<string>>(loadProcs)
+
+  useEffect(() => {
+    const on = () => setDoneProcedures(loadProcs())
+    window.addEventListener(PROCS_EVENT, on)
+    return () => window.removeEventListener(PROCS_EVENT, on)
+  }, [])
 
   function update(next: StageState[]) {
     save(next)

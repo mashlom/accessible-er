@@ -2319,3 +2319,140 @@
 .oceanStage[aria-disabled='true'] .oceanObj {
   cursor: not-allowed;
 }
+
+/* ── Ocean sheets: buttons in a row and the procedure panel ────────── */
+
+/* Mockup buttons: black "done" and grey "back to map", side by side */
+.oceanBtn {
+  flex: 1;
+  min-height: max(calc(48 * var(--u)), 44px);
+  padding: 0 calc(12 * var(--u));
+  border: 0;
+  border-radius: calc(12 * var(--u));
+  font: inherit;
+  font-size: max(calc(16 * var(--u)), 15px);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.oceanBtnDone {
+  background: #000;
+  color: #fff;
+}
+
+.oceanBtnBack {
+  background: #d9d9d9;
+  color: #000;
+}
+
+.oceanBtn:focus-visible {
+  outline: 3px solid #0a6b8a;
+  outline-offset: 2px;
+}
+
+.oceanSheet .stageSheetActions {
+  flex-direction: row;
+}
+
+/* Procedure panel inside the parent sheet */
+.procPanel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  animation: procIn 0.22s ease-out;
+}
+
+@keyframes procIn {
+  from { transform: translateX(calc(var(--slide, -1) * 36px)); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+.procBack {
+  align-self: flex-start;
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  font-size: 1.4rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.procHead {
+  display: flex;
+  align-items: center;
+  gap: calc(12 * var(--u));
+  margin: 0 0 calc(14 * var(--u));
+}
+
+.procIcon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: calc(48 * var(--u));
+  height: calc(48 * var(--u));
+  border-radius: 50%;
+  background: #f5f1f0;
+  font-size: calc(26 * var(--u));
+}
+
+.procHeadText h2 {
+  margin: 0;
+  font-size: max(calc(16 * var(--u)), 16px);
+  font-weight: 800;
+}
+
+.procHeadText p {
+  margin: 2px 0 0;
+  font-size: max(calc(13 * var(--u)), 13px);
+  line-height: 1.35;
+  color: #222;
+}
+
+/* Stays at the bottom of the sheet while its content scrolls */
+.sheetFooter {
+  position: sticky;
+  bottom: calc(-20 * var(--u));
+  display: flex;
+  gap: calc(12 * var(--u));
+  margin-top: auto;
+  padding: calc(12 * var(--u)) 0 calc(16 * var(--u));
+  background: #fff;
+}
+
+/* A procedure in the parent sheet's overview: a button that opens its details */
+.sheetProcBtn {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.9rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+  font-weight: 600;
+  color: #0a4a66;
+  cursor: pointer;
+}
+
+/* Child page of one procedure: its icon takes the place of the station picture */
+.procBigIcon {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  font-size: calc(84 * var(--u));
+  line-height: 1.15;
+  padding-bottom: calc(8 * var(--u));
+}
+
+.procedureIconBtn {
+  text-decoration: none;
+}

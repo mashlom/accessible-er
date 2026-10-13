@@ -6,6 +6,7 @@ import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
+import { OceanProcedureDetailSheet } from '../components/OceanProcedureDetailSheet'
 import css from '../quest.module.css'
 
 export function ProcedureDetailPage() {
@@ -28,6 +29,8 @@ export function ProcedureDetailPage() {
   useEffect(() => { setVariant(0) }, [id])
 
   if (!procedure) return <Navigate to="/map" replace />
+
+  if (theme.id === 'ocean' && id) return <OceanProcedureDetailSheet id={id} />
 
   const themedSteps = id ? theme.procedureSteps?.[id] : undefined
   const variants = themedSteps ? undefined : (theme.procedureVariants?.[id!] ?? procedure.storyVariants)
