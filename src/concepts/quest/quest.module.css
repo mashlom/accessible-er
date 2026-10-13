@@ -2732,6 +2732,7 @@ path.oceanTrailLit {
     --sw: clamp(380px, 22vw, 560px);
     margin-left: auto;
     margin-right: 0;
-    border-radius: 28px 0 0 0;
+    height: 100dvh;
+    border-radius: 28px 0 0 28px;
   }
 }
