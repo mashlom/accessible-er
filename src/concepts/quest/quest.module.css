@@ -1470,7 +1470,9 @@
 
 .oceanMap {
   min-height: 100dvh;
-  background: #fff;
+  position: relative;
+  overflow: clip;
+  background: var(--map-bg, #74dcf6);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2007,23 +2009,53 @@
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
 }
 
-/* Landscape screens: the scene is 16:9. On a narrower screen it is cropped evenly at the sides;
-   on a wider one (a phone turned sideways) it keeps the full width and the page scrolls down. */
+/* Landscape screens: the scene is 16:9 and always as wide as the window, so every station is in view.
+   On a window taller than 16:9 the picture is mirrored up and down from the scene's edges to fill it;
+   on a wider one (a phone turned sideways) the page scrolls down. */
 .oceanMapWide {
+  --sw: 100vw;
+  --sh: calc(100vw * 9 / 16);
   min-height: 100dvh;
   position: relative;
-  overflow-x: hidden;
+  overflow: clip;
   background: #1f6f80;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .oceanSceneWide {
   position: relative;
-  left: 50%;
-  translate: -50% 0;
-  width: max(100vw, calc(100dvh * 1920 / 1080));
+  width: 100%;
   max-width: none;
   aspect-ratio: 1920 / 1080;
+  flex-shrink: 0;
+}
+
+/* The mirrored pieces above and below the scene (same picture, flipped upside down) */
+.oceanTileV {
+  position: absolute;
+  left: 0;
+  width: var(--sw);
+  height: var(--sh);
+  overflow: hidden;
+  pointer-events: none;
+  container-type: inline-size;
+  transform: scaleY(-1);
+}
+
+/* each piece tucks 2px under the scene so no hairline shows between them */
+.oceanTileVTop { top: calc(50% - var(--sh) / 2 - var(--sh) + 2px); }
+.oceanTileVBottom { top: calc(50% + var(--sh) / 2 - 2px); }
+
+.oceanTileV .oceanSideBgW {
+  position: absolute;
+  left: calc(var(--bg-x, 0) * 100cqw / 1920);
+  top: calc(var(--bg-y, 0) * 100cqw / 1920);
+  width: calc(var(--bg-w, 1920) * 100cqw / 1920);
+  height: calc(var(--bg-h, 1080) * 100cqw / 1920);
+  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
+  transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
 }
 
 .parentBtnOceanWide {
@@ -2061,9 +2093,10 @@
 
 /* Landscape: same vertical capsule at the right edge, under the title pill, above the house */
 .oceanProgressWide {
-  --S: max(100vw, calc(100dvh * 1920 / 1080));
-  left: min(calc((100vw - var(--S)) / 2 + var(--S) * 1868 / 1920), calc(100vw - 34px));
-  top: calc(var(--S) * 215 / 1920);
+  /* the scene is as wide as the window and centred up and down */
+  --S: 100vw;
+  left: min(calc(var(--S) * 1868 / 1920), calc(100vw - 34px));
+  top: calc(max(0px, (100dvh - var(--S) * 9 / 16) / 2) + var(--S) * 215 / 1920);
   width: calc(var(--S) * 14 / 1920 + 6px);
   height: calc(var(--S) * 285 / 1920);
 }
@@ -2501,4 +2534,41 @@
   min-height: max(calc(44 * var(--u)), 44px);
   border-radius: calc(12 * var(--u));
   font-size: max(calc(15 * var(--u)), 14px);
+}
+
+/* Portrait map on a wide window: the picture is mirrored outwards from the column's edges (tile k = -1, 1
+   is the mirror image beside the column, k = -2, 2 mirrors that back), so the colours meet at the seam. */
+.oceanMap { --uc: calc(min(100vw, 560px) / 412); --colw: min(100vw, 560px); }
+
+.oceanTile {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--colw);
+  /* k is the tile's place counted in columns from the middle one */
+  left: calc(50% - var(--colw) / 2 + var(--k) * var(--colw));
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.oceanTileFlip { transform: scaleX(-1); }
+
+.oceanSideBg {
+  position: absolute;
+  left: calc(var(--bg-x, 0) * var(--uc));
+  top: calc(var(--bg-y, 0) * var(--uc));
+  width: calc(var(--bg-w, 412) * var(--uc));
+  height: calc(var(--bg-h, 939) * var(--uc));
+  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
+  transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
+}
+
+.oceanBackdropGrad {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--grad-y, 0) * var(--uc));
+  height: calc(var(--grad-h, 0) * var(--uc));
+  background: linear-gradient(#207082, rgba(29, 117, 129, 0) 76%);
+  pointer-events: none;
 }

@@ -90,7 +90,7 @@ export function ProcedureDetailPage() {
           )}
           {(!isDone || !parentIsActive) && (
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
-              {parentIsActive ? t('ui.buttons.notNeededYet', 'עוד לא צריך →') : t('ui.buttons.back', 'חזרה →')}
+              {t('ui.buttons.back', 'חזרה →')}
             </button>
           )}
         </div>

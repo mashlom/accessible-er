@@ -125,7 +125,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
             )}
             {(!isDone || !stageActive) && (
               <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={back}>
-                {stageActive ? t('ui.buttons.notNeededYet', 'עוד לא צריך →') : t('ui.buttons.back', 'חזרה →')}
+                {t('ui.buttons.back', 'חזרה →')}
               </button>
             )}
           </div>

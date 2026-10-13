@@ -134,7 +134,38 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
   const pctY = (v: number) => `${(v / H) * 100}%`
 
   return (
-    <div className={wide ? `${css.oceanMap} ${css.oceanMapWide}` : css.oceanMap}>
+    <div
+      className={wide ? `${css.oceanMap} ${css.oceanMapWide}` : css.oceanMap}
+      // the same numbers are used by the mirrored pieces that fill what the scene doesn't reach
+      style={vars as React.CSSProperties}
+    >
+      {wide && (
+        <>
+          <div className={`${css.oceanTileV} ${css.oceanTileVTop}`} aria-hidden>
+            <div className={css.oceanSideBgW} />
+          </div>
+          <div className={`${css.oceanTileV} ${css.oceanTileVBottom}`} aria-hidden>
+            <div className={css.oceanSideBgW} />
+          </div>
+        </>
+      )}
+      {!wide && (
+        <>
+          {/* the sides: the picture mirrored outwards from the column's edges (a mirror at each edge, so the
+              two meet without a seam, and the next tile mirrors back) */}
+          {[-2, -1, 1, 2].map((k) => (
+            <div
+              key={k}
+              className={`${css.oceanTile} ${Math.abs(k) % 2 === 1 ? css.oceanTileFlip : ''}`}
+              style={{ '--k': k } as React.CSSProperties}
+              aria-hidden
+            >
+              <div className={css.oceanSideBg} />
+            </div>
+          ))}
+          <div className={css.oceanBackdropGrad} aria-hidden />
+        </>
+      )}
       {!underSheet && (
         <div className={wide ? `${css.oceanTopRow} ${css.oceanTopRowWide}` : css.oceanTopRow}>
           <Link to="/" className={css.oceanTopBtn} aria-label={t('ui.shell.worlds', 'לבחירת עולם אחר')}>
