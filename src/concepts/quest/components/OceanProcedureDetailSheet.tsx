@@ -20,7 +20,7 @@ export const stageRoute = (stageId: string) => (stageId === 'wait-before-triage'
  */
 export function OceanProcedureDetailSheet({ id }: { id: string }) {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const { completeProcedure, doneProcedures, active, visibleOptionals } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
@@ -68,7 +68,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
       {night ? <OceanNightMapPage underSheet /> : <OceanMapPage underSheet />}
       <div className={css.sheetBackdrop} onClick={back}>
         <div
-          className={`${css.sheet} ${css.stageSheet} ${css.oceanSheet}`}
+          className={`${css.sheet} ${css.stageSheet} ${css.oceanSheet} ${lang === 'he' ? '' : css.parentBelow}`}
           role="dialog"
           aria-modal="true"
           aria-label={procedure.title}
@@ -122,7 +122,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
                   back()
                 }}
               >
-                {isDone ? (theme.doneEmoji ?? '✓') : t('ui.buttons.done', 'הצלחתי! ←')}
+                {isDone ? (theme.doneEmoji ?? '✓') : t('ui.buttons.oceanDone', 'הצלחתי! ←')}
               </button>
             )}
             {(!isDone || !stageActive) && (

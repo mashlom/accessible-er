@@ -188,13 +188,17 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
           {dots?.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={1.8} />)}
           {lines?.map((pts, i) => <path key={i} d={`M ${pts.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join(' L ')}`} />)}
         </svg>
-        <h1 className={css.oceanTitle}>
-          {(() => {
-            const text = t('ui.text.oceanHeadline', 'המסע שלך מתחיל כאן')
-            const cut = text.lastIndexOf(' ')
-            return <span>{text.slice(0, cut + 1)}<strong>{text.slice(cut + 1)}</strong></span>
-          })()}
-        </h1>
+        {(() => {
+          const text = t('ui.text.oceanHeadline', 'המסע שלך מתחיל כאן')
+          const cut = text.lastIndexOf(' ')
+          // longer wording (other languages) gets a smaller font and wraps to two lines, so it stays inside the pill
+          const shrink = text.length > 22 ? 0.78 : 1
+          return (
+            <h1 className={css.oceanTitle} style={{ '--title-shrink': shrink } as React.CSSProperties}>
+              <span>{text.slice(0, cut + 1)}<strong>{text.slice(cut + 1)}</strong></span>
+            </h1>
+          )
+        })()}
         {items.map((item, i) => {
           const slot = slots[i]
           if (!slot) return null

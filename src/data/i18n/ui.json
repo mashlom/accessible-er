@@ -4,6 +4,7 @@
       "back": "← Back",
       "backToMap": "← Back to map",
       "done": "I did it! →",
+      "oceanDone": "I did it! →",
       "notNeededYet": "← Not needed yet",
       "backToStation": "Back to the station →",
       "chooseTests": "Choose the checks →",
@@ -39,10 +40,13 @@
       "skip": "Skip to content",
       "back": "Back",
       "map": "To the journey map",
-      "menu": "To the concepts menu"
+      "menu": "To the concepts menu",
+      "worlds": "Choose another world"
     },
     "text": {
       "estimated": "⏱ Estimated time:",
+      "done": "Done",
+      "staffNote": "Nurse or doctor: choose the tests or treatments the doctor ordered",
       "weAreHere": "We are here",
       "stageProcedures": "Procedures at this stage",
       "reasonHint": "Tap the button to choose the reason for your visit and see your expected visit plan.",
@@ -169,6 +173,7 @@
       "back": "← Назад",
       "backToMap": "← Назад к карте",
       "done": "У меня получилось! →",
+      "oceanDone": "Получилось! →",
       "notNeededYet": "← Пока не нужно",
       "backToStation": "Назад к станции →",
       "chooseTests": "К выбору проверок →",
@@ -204,9 +209,12 @@
       "skip": "Перейти к содержимому",
       "back": "Назад",
       "map": "К карте путешествия",
-      "menu": "В меню концепций"
+      "menu": "В меню концепций",
+      "worlds": "Выбрать другой мир"
     },
     "text": {
+      "done": "Выполнено",
+      "staffNote": "Медсестра или врач: выберите обследования или процедуры, которые назначил врач",
       "estimated": "⏱ Примерное время:",
       "weAreHere": "Мы здесь",
       "stageProcedures": "Процедуры на этом этапе",

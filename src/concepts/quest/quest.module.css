@@ -1535,10 +1535,12 @@
   background: var(--title-bg, rgba(255, 255, 255, 0.2));
   border: 1px solid #d9d9d9;
   color: #fff;
-  font-size: calc(var(--title-fs) * var(--u));
+  font-size: calc(var(--title-fs) * var(--title-shrink, 1) * var(--u));
   font-weight: 300;
-  line-height: 1;
-  white-space: nowrap;
+  line-height: 1.1;
+  text-align: center;
+  text-wrap: balance;
+  padding-inline: 5%;
 }
 
 .oceanTitle strong {
@@ -2671,4 +2673,21 @@
 /* Portrait map on a wide window: the sheet is pressed to the right edge too, over the map's column */
 @media not all and ((min-aspect-ratio: 3/2) or (min-width: 1121px)) {
   .sheetBackdrop > .oceanSheet { margin-left: auto; }
+}
+
+/* Other languages: the longer "more for the parent" label goes under the two buttons, full width
+   (Hebrew keeps the mockup's small pill above the buttons) */
+.oceanSheet.stageSheet.parentBelow .stageSheetActions { order: 1; }
+
+.oceanSheet.stageSheet.parentBelow .parentBtnOceanInline {
+  order: 2;
+  align-self: stretch;
+  margin-top: calc(12 * var(--u));
+}
+
+.oceanSheet.stageSheet.parentBelow .parentBtnOceanPill {
+  width: 100%;
+  /* text at the start of the line (left in Russian/English), the book icon at the far end */
+  justify-content: space-between;
+  padding-inline: calc(22 * var(--u)) calc(5 * var(--u));
 }

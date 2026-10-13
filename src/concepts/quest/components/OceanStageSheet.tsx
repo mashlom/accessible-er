@@ -29,7 +29,7 @@ interface Props {
 /** Ocean world: a stage opens as a bottom sheet over the map instead of a separate page. */
 export function OceanStageSheet({ stageId, label, hint, image, children, isActive, onDone, showChooseTests, doneIsChoice, backTo }: Props) {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
   const handleRef = useRef<HTMLButtonElement>(null)
@@ -60,7 +60,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
       <div className={css.sheetBackdrop} onClick={close}>
         <div
           ref={dialogRef}
-          className={`${css.sheet} ${css.stageSheet} ${css.oceanSheet}`}
+          className={`${css.sheet} ${css.stageSheet} ${css.oceanSheet} ${lang === 'he' ? '' : css.parentBelow}`}
           role="dialog"
           aria-modal="true"
           aria-label={label}
@@ -92,7 +92,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
                 className={`${css.oceanBtn} ${css.oceanBtnDone}`}
                 onClick={onDone}
               >
-                {doneIsChoice ? t('ui.buttons.chooseTests', 'לבחירת הבדיקות ←') : t('ui.buttons.done', 'הצלחתי! ←')}
+                {doneIsChoice ? t('ui.buttons.chooseTests', 'לבחירת הבדיקות ←') : t('ui.buttons.oceanDone', 'הצלחתי! ←')}
               </button>
             )}
             {showChooseTests && !isActive && (
