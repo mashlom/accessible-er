@@ -2753,10 +2753,7 @@ path.oceanTrailLit {
   align-items: center;
   box-sizing: border-box;
   max-width: calc(100vw - 24px);
-  padding: 8px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 24px;
-  background: rgba(18, 56, 74, 0.35);
+  padding: 4px 8px;
   /* the same size as the stars under the stations (30 units of the 412 column, 56 of the 1920 scene) */
   font-size: calc(30 * var(--colw) / 412);
   gap: 2px calc(3 * var(--colw) / 412);
