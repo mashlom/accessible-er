@@ -77,11 +77,10 @@ const LANDSCAPE: Scene = {
   },
 }
 
-/** True on screens wide enough for the landscape scene: a landscape shape, or wider than 1.25 portrait
- *  columns (700px of the 560px column) as long as the window is not taller than it is wide (on a tall window
- *  the small landscape scene would leave too much to be filled with mirrored picture) */
+/** True on screens wide enough for the landscape scene: a landscape shape, or wide enough that what the
+ *  560px portrait column leaves is a quarter of the window (747px), whatever its height */
 export function useWide(): boolean {
-  const query = '(min-aspect-ratio: 3/2), (min-width: 701px) and (min-aspect-ratio: 1/1)'
+  const query = '(min-aspect-ratio: 3/2), (min-width: 747px)'
   const [wide, setWide] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches)
   useEffect(() => {
     const mq = window.matchMedia(query)

@@ -3831,7 +3831,7 @@
 }
 
 /* Portrait map on a wide window: the sheet is pressed to the right edge too, over the map's column */
-@media not all and ((min-aspect-ratio: 3/2) or ((min-width: 701px) and (min-aspect-ratio: 1/1))) {
+@media not all and ((min-aspect-ratio: 3/2) or (min-width: 747px)) {
   .sheetBackdrop > .oceanSheet { margin-left: auto; }
 }
 
@@ -3877,7 +3877,7 @@ path.oceanTrailLit {
 /* Landscape / wide windows (the same switch as the landscape map): the sheet docks to the right as a side
    panel pressed to the right edge, as wide as its content (no big white field), standing on the bottom
    edge, and the map stays in view on its left */
-@media (min-aspect-ratio: 3/2), (min-width: 701px) and (min-aspect-ratio: 1/1) {
+@media (min-aspect-ratio: 3/2), (min-width: 747px) {
   .sheetBackdrop:has(> .oceanSheet) {
     align-items: flex-end;
   }
@@ -3921,4 +3921,12 @@ path.oceanTrailLit {
   right: 24px;
   font-size: calc(56 * 100vw / 1920);
   gap: 2px calc(5 * 100vw / 1920);
+}
+
+/* Above the landscape scene only the near half of the mirrored picture is drawn (the mirrored water; the
+   far half would show the sand upside down), fading into the plain sea colour of the window above it */
+.oceanTileVTop {
+  height: calc(var(--sh) / 2);
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
 }
