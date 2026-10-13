@@ -2729,7 +2729,10 @@ path.oceanTrailLit {
   }
 
   .sheetBackdrop > .oceanSheet {
-    --sw: clamp(380px, 22vw, 560px);
+    /* as in the mockup (800 of 1920): about 42% of the window; the content scales with the width */
+    --sw: clamp(380px, 42vw, 800px);
+    /* the full-height panel holds about 660 units of content, so the unit also follows the height */
+    --u: min(calc(var(--sw) / 412), calc(100dvh / 660));
     margin-left: auto;
     margin-right: 0;
     height: 100dvh;
