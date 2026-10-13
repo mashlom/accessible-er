@@ -124,18 +124,19 @@ function portraitScene(images: string[], screenH: number): Scene {
  */
 function landscapeScene(images: string[]): Scene {
   const n = images.length - 1
-  const w = n <= 2 ? 520 : n === 3 ? 440 : 360
-  const left = 520 // the sea stations stay right of this (the house stands on the left)
-  const right = 1850
+  // like the first stage: the stations alternate low / high, going right to left, about 350–400 apart
+  const w = n <= 2 ? 500 : n === 3 ? 470 : 430
+  const first = 1560 // centre of the first station
+  const last = 600 // the last one stays clear of the house and its pier
+  const step = n <= 1 ? 0 : Math.min(400, (first - last) / (n - 1))
   const slots: Slot[] = []
   for (let k = 0; k < n; k++) {
     const h = w / aspectOf(images[k])
-    const low = k % 2 === 0 // the first station is low (the title pill is up on the right), then they alternate
-    const even = n === 1 ? 800 : right - w - k * ((right - w - left) / (n - 1))
-    // a high station must stay clear of the title pill (it spans 1270–1820)
-    const x = low ? even : Math.min(even, 1250 - w)
-    const y = low ? 470 : 150
-    slots.push({ x, y, w, h, badge: [x + w / 2, y - 6] })
+    const cx = n === 1 ? 1100 : first - k * step
+    const low = k % 2 === 0 // the first station is low, then they alternate
+    const x = cx - w / 2
+    const y = low ? 800 - h : 170
+    slots.push({ x, y, w, h, badge: [cx, y - 6] })
   }
   const fw = 493
   const fh = fw / aspectOf(images[n])
@@ -146,10 +147,15 @@ function landscapeScene(images: string[]): Scene {
   for (let k = 0; k < n - 1; k++) {
     const a = slots[k]
     const b = slots[k + 1]
-    const up = k % 2 === 0
-    lines.push(vertical(
-      [a.x + a.w / 2, up ? a.y + a.h * 0.05 : a.y + a.h * 0.92],
-      [b.x + b.w / 2, up ? b.y + b.h * 0.95 : b.y - 34],
+    const low = k % 2 === 0
+    // from the top of a low station / the bottom of a high one, up or down to the next station's number
+    const start: Pt = [a.x + a.w * 0.45, low ? a.y + a.h * 0.05 : a.y + a.h * 0.95]
+    const end: Pt = [b.badge[0] + 24, b.badge[1] + 2]
+    lines.push(dotsAlong(
+      start,
+      [start[0], start[1] + (end[1] - start[1]) * 0.8],
+      [start[0] + (end[0] - start[0]) * 0.3, end[1]],
+      end,
     ))
   }
   if (n > 0) {
