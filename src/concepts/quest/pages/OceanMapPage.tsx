@@ -77,10 +77,11 @@ const LANDSCAPE: Scene = {
   },
 }
 
-/** True on screens wide enough for the landscape scene: a landscape shape, or wider than two portrait
- *  columns (1120px), so the portrait map never needs a third background piece */
+/** True on screens wide enough for the landscape scene: a landscape shape, or wider than 1.25 portrait
+ *  columns (700px of the 560px column) as long as the window is not taller than it is wide (on a tall window
+ *  the small landscape scene would leave too much to be filled with mirrored picture) */
 export function useWide(): boolean {
-  const query = '(min-aspect-ratio: 3/2), (min-width: 1121px)'
+  const query = '(min-aspect-ratio: 3/2), (min-width: 701px) and (min-aspect-ratio: 1/1)'
   const [wide, setWide] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches)
   useEffect(() => {
     const mq = window.matchMedia(query)
