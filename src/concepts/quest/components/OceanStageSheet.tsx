@@ -30,7 +30,7 @@ interface Props {
 /** Ocean world: a stage opens as a bottom sheet over the map instead of a separate page. */
 export function OceanStageSheet({ stageId, label, hint, image, children, isActive, onDone, showChooseTests, doneIsChoice, backTo }: Props) {
   const { theme } = useQuestTheme()
-  const { t, lang } = useI18n()
+  const { t } = useI18n()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
   const handleRef = useRef<HTMLButtonElement>(null)
@@ -60,7 +60,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
       <div className={css.sheetBackdrop} onClick={close}>
         <div
           ref={dialogRef}
-          className={`${css.sheet} ${css.stageSheet} ${css.oceanSheet} ${lang === 'he' ? '' : css.parentBelow}`}
+          className={`${css.sheet} ${css.stageSheet} ${css.oceanSheet} ${css.parentBelow}`}
           role="dialog"
           aria-modal="true"
           aria-label={label}
