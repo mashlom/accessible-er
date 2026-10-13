@@ -46,8 +46,10 @@ const PORTRAIT: Scene = {
     ([[304, 744], [299, 745], [293, 747], [287, 749], [282, 751], [276, 754], [271, 756], [266, 760], [261, 763], [256, 767], [251, 770], [247, 774], [242, 778], [237, 782], [233, 786], [227, 789], [222, 791], [216, 793], [210, 793], [204, 793]] as Pt[]),
   ],
   vars: {
-    '--bg-x': -87, '--bg-y': -250, '--bg-w': 553, '--bg-h': 1260, '--bg-rot': '180deg',
-    '--grad-y': -16, '--grad-h': 199,
+    // the sea is a CSS gradient (deep by the sand at the top, light at the bottom); the shore picture
+    // is turned upside down so the sand is at the top, its top edge fading into the sea
+    '--sea': 'linear-gradient(to bottom, #175466 0%, #175466 22%, #1d7882 34%, #38b3ba 46%, #74d8f0 62%, #78e0f8 80%, #78e0f8 100%)',
+    '--bg-x': -190, '--bg-y': -30, '--bg-w': 775, '--bg-h': 520, '--bg-rot': '180deg',
     '--title-x': 64.5, '--title-y': 72, '--title-w': 283, '--title-h': 50, '--title-fs': 21,
     '--badge': 24, '--badge-fs': 15, '--star': 30,
   },
@@ -71,7 +73,10 @@ const LANDSCAPE: Scene = {
     [[225.9, 739.9], [212.2, 736.6], [200.6, 726.1], [194.2, 711.4], [190.9, 695.6], [189, 679.5], [187.7, 663.4], [186.3, 647.4], [184.6, 631.3], [181.9, 615.4], [177.7, 599.8], [172.4, 586.8], [170.6, 583.3], [163.7, 571.6], [154.8, 558.8], [145.1, 546.7], [135.1, 534.8], [125.6, 522.5], [117.6, 509.3], [112, 494.9], [109.3, 479.6], [109, 463.9], [110.2, 450.4]],
   ],
   vars: {
-    '--bg-x': 0, '--bg-y': -1682, '--bg-w': 1920, '--bg-h': 4376,
+    // the sea is a gradient, the sand picture sits in the bottom right corner
+    '--sea': 'linear-gradient(to bottom, #207082 0%, #1b6677 40%, #175466 75%, #175466 100%)',
+    '--sea-top': '#207082',
+    '--bg-x': -300, '--bg-y': 59, '--bg-w': 2400, '--bg-h': 1610,
     '--title-x': 1270, '--title-y': 94, '--title-w': 550, '--title-h': 97, '--title-fs': 41,
     '--badge': 42, '--badge-fs': 26, '--star': 56,
   },
@@ -146,12 +151,6 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
       // the same numbers are used by the mirrored pieces that fill what the scene doesn't reach
       style={vars as React.CSSProperties}
     >
-      {wide && (
-        // the scene sits on the bottom of the screen; only what is above it is filled with the mirrored picture
-        <div className={`${css.oceanTileV} ${css.oceanTileVTop}`} aria-hidden>
-          <div className={css.oceanSideBgW} />
-        </div>
-      )}
       {!wide && (
         <>
           {/* the column is pressed to the right edge; the rest of the screen, on its left, is the picture
@@ -167,7 +166,6 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
               <div className={css.oceanSideBg} />
             </div>
           ))}
-          <div className={css.oceanBackdropGrad} aria-hidden />
         </>
       )}
       {!underSheet && (

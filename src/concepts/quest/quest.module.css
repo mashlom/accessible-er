@@ -1489,8 +1489,8 @@
   max-width: 560px;
   margin-left: auto; /* a narrow map is pressed to the right edge; extra picture is drawn on its left */
   aspect-ratio: 830 / 2700;
-  /* what shows where the background picture doesn't reach */
-  background: var(--map-bg, #78dff8);
+  /* the sea: a gradient in code (--sea), the shore picture is laid over it */
+  background: var(--sea, #175466);
   container-type: inline-size;
   overflow: hidden;
 }
@@ -1503,7 +1503,10 @@
   top: calc(var(--bg-y) * var(--u));
   width: calc(var(--bg-w) * var(--u));
   height: calc(var(--bg-h) * var(--u));
-  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
+  background: url('/worlds/ocean/shore.jpg') 0 0 / 100% 100% no-repeat;
+  /* the top of the shore picture fades into the sea (the mask is turned with the picture) */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 24%);
   transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
 }
 
@@ -2026,7 +2029,7 @@
   min-height: 100dvh;
   position: relative;
   overflow: clip;
-  background: #1f6f80;
+  background: var(--sea-top, #1f6f80);
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* the picture falls to the bottom of the screen */
@@ -2041,30 +2044,6 @@
   flex-shrink: 0;
 }
 
-/* The mirrored pieces above and below the scene (same picture, flipped upside down) */
-.oceanTileV {
-  position: absolute;
-  left: 0;
-  width: var(--sw);
-  height: var(--sh);
-  overflow: hidden;
-  pointer-events: none;
-  container-type: inline-size;
-  transform: scaleY(-1);
-}
-
-/* the mirrored piece sits right above the scene, tucked 2px under it so no hairline shows */
-.oceanTileVTop { bottom: calc(var(--sh) - 2px); }
-
-.oceanTileV .oceanSideBgW {
-  position: absolute;
-  left: calc(var(--bg-x, 0) * 100cqw / 1920);
-  top: calc(var(--bg-y, 0) * 100cqw / 1920);
-  width: calc(var(--bg-w, 1920) * 100cqw / 1920);
-  height: calc(var(--bg-h, 1080) * 100cqw / 1920);
-  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
-  transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
-}
 
 /* Progress capsule from the mockup, filled in equal steps as stations are done, growing upwards */
 .oceanProgress {
@@ -2641,8 +2620,8 @@
   max-width: 560px;
   margin-left: auto; /* a narrow map is pressed to the right edge; extra picture is drawn on its left */
   aspect-ratio: 830 / 2700;
-  /* what shows where the background picture doesn't reach */
-  background: var(--map-bg, #78dff8);
+  /* the sea: a gradient in code (--sea), the shore picture is laid over it */
+  background: var(--sea, #175466);
   container-type: inline-size;
   overflow: hidden;
 }
@@ -2655,7 +2634,10 @@
   top: calc(var(--bg-y) * var(--u));
   width: calc(var(--bg-w) * var(--u));
   height: calc(var(--bg-h) * var(--u));
-  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
+  background: url('/worlds/ocean/shore.jpg') 0 0 / 100% 100% no-repeat;
+  /* the top of the shore picture fades into the sea (the mask is turned with the picture) */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 24%);
   transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
 }
 
@@ -3178,7 +3160,7 @@
   min-height: 100dvh;
   position: relative;
   overflow: clip;
-  background: #1f6f80;
+  background: var(--sea-top, #1f6f80);
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* the picture falls to the bottom of the screen */
@@ -3193,30 +3175,6 @@
   flex-shrink: 0;
 }
 
-/* The mirrored pieces above and below the scene (same picture, flipped upside down) */
-.oceanTileV {
-  position: absolute;
-  left: 0;
-  width: var(--sw);
-  height: var(--sh);
-  overflow: hidden;
-  pointer-events: none;
-  container-type: inline-size;
-  transform: scaleY(-1);
-}
-
-/* the mirrored piece sits right above the scene, tucked 2px under it so no hairline shows */
-.oceanTileVTop { bottom: calc(var(--sh) - 2px); }
-
-.oceanTileV .oceanSideBgW {
-  position: absolute;
-  left: calc(var(--bg-x, 0) * 100cqw / 1920);
-  top: calc(var(--bg-y, 0) * 100cqw / 1920);
-  width: calc(var(--bg-w, 1920) * 100cqw / 1920);
-  height: calc(var(--bg-h, 1080) * 100cqw / 1920);
-  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
-  transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
-}
 
 /* Progress capsule from the mockup, filled in equal steps as stations are done, growing upwards */
 .oceanProgress {
@@ -3705,6 +3663,7 @@
   width: var(--colw);
   /* k is the tile's place counted in columns from the middle one */
   left: calc(100% - var(--colw) + var(--k) * var(--colw));
+  background: var(--sea, #175466);
   overflow: hidden;
   pointer-events: none;
 }
@@ -3717,7 +3676,9 @@
   top: calc(var(--bg-y, 0) * var(--uc));
   width: calc(var(--bg-w, 412) * var(--uc));
   height: calc(var(--bg-h, 939) * var(--uc));
-  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
+  background: url('/worlds/ocean/shore.jpg') 0 0 / 100% 100% no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 24%);
   transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
 }
 
