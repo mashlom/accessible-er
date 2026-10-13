@@ -19,6 +19,7 @@ commercially, and its source and licence must be written down.
   station-pod.png       station 3 (and the stand-in for the second stage)
   station-aquarium.png  station 4, the aquarium dome with fish
   station-doctor.png    station 5, the captain's dome
+  station-sonar.png     second stage, the sonar station (the X-ray and the tests)
 
   Tool:      Google Gemini, the free version (image generation).
              The exact model / version is not recorded.
