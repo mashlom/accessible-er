@@ -1,0 +1,83 @@
+Ocean world ("הרפתקה תת-ימית") — pictures: sources and licence
+=============================================================
+
+STATUS: DRAFT, written 2026-10-13 from what Maria Semenova reported. Lines
+marked "TO CONFIRM" have not been checked against the original sources and
+must be confirmed (by Shevi, the designer, and by whoever decides on the
+licence) before the app is shown outside the team.
+
+The project rule (CLAUDE.md): every picture must be free to use, including
+commercially, and its source and licence must be written down.
+
+
+1. Pictures made with generative AI
+-----------------------------------
+
+  background.jpg        sea and shore background of the maps
+  station-house.png     station 1, the house on the pier
+  station-sub.png       station 2, the submarine
+  station-pod.png       station 3 (and the stand-in for the second stage)
+  station-aquarium.png  station 4, the aquarium dome with fish
+  station-doctor.png    station 5, the captain's dome
+
+  Tool:      Google Gemini, the free version (image generation).
+             The exact model / version is not recorded.
+  Made:      during the two weeks before 2026-10-13 (about 2026-09-29 to
+             2026-10-13), by Shevi (designer), TO CONFIRM which pictures
+             exactly, and whether all of them are Gemini's.
+  Editing:   background removal (a "removebg" step, see the original file
+             name of station-aquarium.png: "Gemini_Generated_Image_...
+             -removebg-preview"), cropping and resizing; the pictures were
+             placed in the Figma file "Mashlom.me" and exported or
+             re-saved from there. TO CONFIRM the tool used for the removal.
+  Prompts:   not kept. TO CONFIRM: ask Shevi to save the prompts and the
+             original, unedited Gemini files (also for later, higher
+             resolution versions).
+
+  Licence / terms (TO CONFIRM — these are the open questions, not
+  conclusions):
+
+  a) Terms of use. Which Google terms applied on the day, and whether they
+     allow commercial use of pictures from the FREE version. Record the
+     name and date of the terms (Google Terms of Service, the Generative AI
+     Additional Terms of Service, the Gemini Apps policy) and a link or a
+     copy.
+  b) Ownership. Whether the pictures can be protected by copyright at all;
+     in several countries works made purely by AI, without enough human
+     authorship, are not protected, which also means nobody can give an
+     exclusive licence to them. Ask the people responsible for the project
+     (ALUT, the MLR team) how this should be handled.
+  c) Watermark. Gemini marks its pictures (an invisible SynthID mark, and in
+     some versions a visible one). Check that nothing visible is left in
+     the files and that the marks are not removed on purpose.
+  d) Style resemblance. The pictures should not copy a recognizable
+     character or product; Shevi to confirm that the prompts did not name
+     one.
+  e) Disclosure. The app should say, in the credits (README.md and the
+     concept menu footer, like the Noto animations), that the ocean
+     world's pictures were made with generative AI.
+
+
+2. Other pictures in this folder (not made with AI in this round)
+-----------------------------------------------------------------
+
+  checkup.png, ocean.jpg, submarine.png, submarine.svg, underwater.png,
+  wharf.png
+
+  These are older pictures of the first version of the ocean world; most
+  are no longer used (only underwater.png is still referenced). The source
+  and licence were not written down. TO CONFIRM where they came from, or
+  delete them with the cleanup of the unused files.
+
+
+3. Not pictures of this folder, for completeness
+------------------------------------------------
+
+  - The round procedure icons and the book icon of the parent button are
+    drawn in the app (src/concepts/quest/components/ProcedureLineIcon.tsx
+    and ParentInfo.tsx); the book icon's shape comes from the Figma file
+    of the project (TO CONFIRM that it is Shevi's own drawing or from a
+    licensed icon set, and write down which).
+  - The emoji (💪, 🩹 etc.) are the user's system emoji, not files of the
+    project.
+  - The Noto animations have their own notice: public/anim/NOTICE.txt.
