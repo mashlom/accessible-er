@@ -92,12 +92,12 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
                 className={`${css.oceanBtn} ${css.oceanBtnDone}`}
                 onClick={onDone}
               >
-                {doneIsChoice ? t('ui.buttons.chooseTests', 'לבחירת הבדיקות ←') : t('ui.buttons.oceanDone', 'הצלחתי! ←')}
+                {doneIsChoice ? t('ui.buttons.oceanDecision', 'החלטת הרופא ←') : t('ui.buttons.oceanDone', 'הצלחתי! ←')}
               </button>
             )}
             {showChooseTests && !isActive && (
               <Link to="/procedures" className={`${css.oceanBtn} ${css.oceanBtnDone}`}>
-                {t('ui.buttons.chooseTests', 'לבחירת הבדיקות ←')}
+                {t('ui.buttons.oceanDecision', 'החלטת הרופא ←')}
               </Link>
             )}
             <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={close}>
