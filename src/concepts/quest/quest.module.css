@@ -1512,8 +1512,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(var(--grad-y, 0) * var(--u));
-  height: calc(var(--grad-h, 0) * var(--u));
+  /* 2px above the picture's edge (it is on a fractional pixel), so no light hairline shows there */
+  top: calc(var(--grad-y, 0) * var(--u) - 2px);
+  height: calc(var(--grad-h, 0) * var(--u) + 2px);
   background: linear-gradient(#207082, rgba(29, 117, 129, 0) 76%);
   pointer-events: none;
   z-index: 0;
@@ -2664,8 +2665,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(var(--grad-y, 0) * var(--u));
-  height: calc(var(--grad-h, 0) * var(--u));
+  /* 2px above the picture's edge (it is on a fractional pixel), so no light hairline shows there */
+  top: calc(var(--grad-y, 0) * var(--u) - 2px);
+  height: calc(var(--grad-h, 0) * var(--u) + 2px);
   background: linear-gradient(#207082, rgba(29, 117, 129, 0) 76%);
   pointer-events: none;
   z-index: 0;
@@ -3725,8 +3727,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(var(--grad-y, 0) * var(--uc));
-  height: calc(var(--grad-h, 0) * var(--uc));
+  top: calc(var(--grad-y, 0) * var(--uc) - 2px);
+  height: calc(var(--grad-h, 0) * var(--uc) + 2px);
   background: linear-gradient(#207082, rgba(29, 117, 129, 0) 76%);
   pointer-events: none;
 }
