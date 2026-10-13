@@ -45,10 +45,13 @@ function useScreenUnits(): number {
 /**
  * Second stage, portrait: 0–4 stations in the sea, zigzagging down from the right, and the last one, a
  * house with a pier, on the right at the bottom, standing almost in the water (mirrored, so the pier
- * points into the sea). The sea is a gradient and the shore picture is placed so that at the right edge the
- * shore runs right under the house's foot (the pier to its left reaches over the water): little sand, lots of
- * sea. The map is at least as tall as the screen, so there is no empty strip.
+ * points into the sea). The old background (land at the bottom) is moved so the shore passes just under
+ * the house: little sand, lots of sea. The map is at least as tall as the screen, so there is no empty
+ * strip; any gap at the top is light water, like the picture's own top.
  */
+/** Where the shore runs on the unshifted background (the sea is above this line) */
+const shoreOrig = (x: number) => 653 + (412 - x) * 0.347
+
 function portraitScene(images: string[], screenH: number): Scene {
   const n = images.length - 1
   const w = n <= 2 ? 250 : n === 3 ? 215 : 185
@@ -78,6 +81,10 @@ function portraitScene(images: string[], screenH: number): Scene {
   }
   slots.push({ x: fx, y: fy, w: fw, h: fh, badge: [fx + fw / 2, fy - 6], flip: true })
 
+  // the house stands at the very edge of the land: at the right edge the shore meets the foot of the
+  // house, while the pier to its left (where the shore runs lower) reaches over the water
+  const shift = shoreOrig(412) - (fy + fh * 0.96)
+
   const dots: Pt[][] = []
   for (let k = 0; k < slots.length - 1; k++) {
     const a = slots[k]
@@ -99,14 +106,13 @@ function portraitScene(images: string[], screenH: number): Scene {
     slots,
     dots,
     vars: {
-      // the sea is a gradient (teal at the top, never light blue); the sand picture is at the bottom, placed
-      // so that at the right edge its shore runs right under the house's foot
-      '--sea': 'linear-gradient(to bottom, #207082 0%, #1d7882 30%, #175466 62%, #175466 100%)',
-      '--bg-x': -148, '--bg-y': Math.round(fy + fh * 0.96 - 0.43 * 376 - 30), '--bg-w': 560, '--bg-h': 376,
+      '--bg-x': 0, '--bg-y': -shift, '--bg-w': 412, '--bg-h': 939,
       '--title-x': 64.5, '--title-y': 44.5, '--title-w': 283, '--title-h': 50, '--title-fs': 21,
       '--badge': 24, '--badge-fs': 15, '--star': 30, '--title-bg': 'rgba(18, 56, 74, 0.35)',
       // The picture's top is light water: cover it with the deep teal of the first stage's map and let the
       // same teal fill any gap above the picture, so the top is never light blue
+      '--grad-y': -shift, '--grad-h': 520,
+      '--map-bg': '#207082',
     },
   }
 }
@@ -171,10 +177,7 @@ function landscapeScene(images: string[]): Scene {
     lines,
     vars: {
       // the first stage's landscape background, mirrored
-      // the sea is a gradient, the sand picture mirrored into the bottom left corner
-      '--sea': 'linear-gradient(to bottom, #207082 0%, #1b6677 40%, #175466 75%, #175466 100%)',
-      '--sea-top': '#207082',
-      '--bg-x': -180, '--bg-y': 59, '--bg-w': 2400, '--bg-h': 1610, '--bg-sx': -1,
+      '--bg-x': 0, '--bg-y': -1682, '--bg-w': 1920, '--bg-h': 4376, '--bg-sx': -1,
       '--title-x': 1270, '--title-y': 94, '--title-w': 550, '--title-h': 97, '--title-fs': 41,
       '--badge': 42, '--badge-fs': 26, '--star': 56,
     },
