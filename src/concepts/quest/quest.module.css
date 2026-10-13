@@ -2514,6 +2514,16 @@
   flex-shrink: 0;
 }
 
+/* The same rhythm as the station sheet: 14 units under the hint, 14 between the variants and the steps,
+   and the same 12 above the parent button and 16 above the two buttons (from the shared sheet rules) */
+.oceanSheet.stageSheet .procBody {
+  margin-top: calc(14 * var(--u));
+}
+
+.oceanSheet.stageSheet .procBody .variantToggle {
+  margin-bottom: calc(14 * var(--u));
+}
+
 .procedureIconBtn {
   text-decoration: none;
 }
