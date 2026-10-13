@@ -1,3 +1,4 @@
+import { lockBodyScroll } from '../../../lib/scrollLock'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from '../../nav'
 import { SensoryBar } from '../../../components/SensoryBar'
@@ -84,8 +85,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
 
   useEffect(() => {
     closeRef.current?.focus()
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    const unlock = lockBodyScroll()
     // Escape first steps back from a procedure to the overview, then closes the sheet
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'Escape') return
@@ -94,7 +94,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
     }
     window.addEventListener('keydown', onKey)
     return () => {
-      document.body.style.overflow = prevOverflow
+      unlock()
       window.removeEventListener('keydown', onKey)
     }
   }, [onClose])

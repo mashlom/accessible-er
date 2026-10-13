@@ -1,3 +1,4 @@
+import { lockBodyScroll } from '../../../lib/scrollLock'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
@@ -41,8 +42,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
 
   useEffect(() => {
     handleRef.current?.focus()
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    const unlock = lockBodyScroll()
     const onKey = (e: KeyboardEvent) => {
       // the parent sheet, if open, takes the Escape itself
       if (e.key !== 'Escape' || document.querySelectorAll('[role="dialog"]').length > 1) return
@@ -50,7 +50,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
     }
     window.addEventListener('keydown', onKey)
     return () => {
-      document.body.style.overflow = prev
+      unlock()
       window.removeEventListener('keydown', onKey)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

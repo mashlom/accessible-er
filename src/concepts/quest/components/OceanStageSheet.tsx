@@ -1,3 +1,4 @@
+import { lockBodyScroll } from '../../../lib/scrollLock'
 import { useEffect, useRef, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from '../../nav'
@@ -39,8 +40,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
 
   useEffect(() => {
     handleRef.current?.focus()
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    const unlock = lockBodyScroll()
     const onKey = (e: KeyboardEvent) => {
       // A nested dialog (parent info) handles its own Escape
       if (e.key !== 'Escape' || dialogRef.current?.querySelector('[role="dialog"]')) return
@@ -48,7 +48,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
     }
     window.addEventListener('keydown', onKey)
     return () => {
-      document.body.style.overflow = prev
+      unlock()
       window.removeEventListener('keydown', onKey)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
