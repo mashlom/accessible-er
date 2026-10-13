@@ -2711,3 +2711,11 @@ path.oceanTrailLit {
 path.oceanTrailLit {
   stroke: #fff4cf;
 }
+
+/* Portrait map on a window wider than the column (the mirrored picture shows on its left): the progress bar
+   moves out of the column, onto the extra picture, so it covers no station */
+@media (min-width: 620px) {
+  .oceanProgress:not(.oceanProgressWide) {
+    left: calc(100vw - var(--col) - var(--col) * 14 / 412 - 20px);
+  }
+}
