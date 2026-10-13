@@ -39,7 +39,7 @@ export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
   }, [])
 
   // Texts are the app's own (not the mockup's wording)
-  const title = t('ui.text.oceanDecisionTitle', 'החלטת הרופא')
+  const title = t('ui.text.oceanDecisionTitle', 'החלטת הקפטן')
   const prompt = theme.procedurePrompt ?? t('ui.text.procedurePrompt', 'בחרו את הפרוצדורות שנקבעו')
 
   return (
