@@ -128,10 +128,12 @@ interface ViewProps {
   firstNumber?: number
   /** No "your journey starts here" pill (the second stage's map) */
   noTitle?: boolean
+  /** Stars earned on the first stage, shown at the top right (the second stage's map) */
+  starsTotal?: number
 }
 
 /** The map scene with its top row, progress capsule and parent button; both layouts share it. */
-export function OceanMapView({ portrait, landscape, items, underSheet, progress, numbers, firstNumber = 1, noTitle }: ViewProps) {
+export function OceanMapView({ portrait, landscape, items, underSheet, progress, numbers, firstNumber = 1, noTitle, starsTotal }: ViewProps) {
   const { t, dir } = useI18n()
   const wide = useWide()
   const { W, H, slots, dots, lines, vars } = wide ? landscape : portrait
@@ -183,6 +185,16 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
               </svg>
             </a>
           </div>
+        </div>
+      )}
+      {!underSheet && starsTotal !== undefined && (
+        <div
+          className={wide ? `${css.oceanStarsTotal} ${css.oceanStarsTotalWide}` : css.oceanStarsTotal}
+          role="img"
+          aria-label={`${t('ui.text.starsEarned', 'כוכבים שהרווחת')}: ${starsTotal}`}
+        >
+          <span aria-hidden>⭐</span>
+          <span aria-hidden>{starsTotal}</span>
         </div>
       )}
       <div

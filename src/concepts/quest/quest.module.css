@@ -2739,3 +2739,34 @@ path.oceanTrailLit {
     border-radius: 28px 0 0 28px;
   }
 }
+
+/* Stars earned on the first stage, at the top right of the second stage's map, under the top row */
+.oceanStarsTotal {
+  position: fixed;
+  z-index: 14;
+  top: 68px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  background: rgba(18, 56, 74, 0.35);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.oceanStarsTotal span:first-child {
+  font-size: 26px;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+}
+
+.oceanStarsTotalWide {
+  top: 76px;
+  right: 24px;
+}

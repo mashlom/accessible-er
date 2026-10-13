@@ -46,6 +46,7 @@
       "worlds": "Choose another world"
     },
     "text": {
+      "starsEarned": "Stars earned",
       "estimated": "⏱ Estimated time:",
       "done": "Done",
       "oceanDecisionTitle": "Captain's decision",
@@ -218,6 +219,7 @@
       "worlds": "Выбрать другой мир"
     },
     "text": {
+      "starsEarned": "Заработанные звёзды",
       "done": "Выполнено",
       "oceanDecisionTitle": "Решение капитана",
       "staffNote": "Медсестра или врач: выберите обследования или процедуры, которые назначил врач",

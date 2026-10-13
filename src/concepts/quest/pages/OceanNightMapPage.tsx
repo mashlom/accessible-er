@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
 import { useQuestTheme } from '../useQuestTheme'
-import { useQuestProgress } from '../useQuestProgress'
+import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { OceanMapView, OCEAN_IMAGES, starsFor, type Pt, type Scene, type Slot, type ViewItem } from './OceanMapPage'
 
@@ -218,6 +218,12 @@ export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {})
     onOpen: allOptionalsDone ? () => navigate(conceptPath('/celebrate')) : undefined,
   })
 
+  // the stars earned on the first stage, shown at the top right
+  const starsTotal = REQUIRED_STAGES.reduce(
+    (sum, id) => sum + starsFor(journey.find((j) => j.id === id)?.procedureIds, id, doneProcedures),
+    0,
+  )
+
   const images = items.map((it) => it.image)
   const done = visibleOptionals.filter((s) => s.status === 'done').length
 
@@ -230,6 +236,7 @@ export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {})
       progress={{ done, total: visibleOptionals.length }}
       numbers
       noTitle
+      starsTotal={starsTotal}
       firstNumber={6} // the numbers go on from the first stage's five stations
     />
   )
