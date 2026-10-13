@@ -34,7 +34,8 @@ const PORTRAIT: Scene = {
     { x: -27, y: 108, w: 211, h: 220, badge: [93, 176] },
     { x: 235, y: 237, w: 227, h: 169, badge: [266, 277] },
     { x: -26, y: 414, w: 287, h: 185, badge: [117, 410] },
-    { x: 206, y: 563, w: 287, h: 185, badge: [337, 561] },
+    // the aquarium picture is smaller than the other domes in the mockup; a bit higher, closer to its number, and fully in view
+    { x: 222, y: 595, w: 189, h: 129, badge: [337, 561] },
     { x: -56, y: 698, w: 262, h: 169, badge: [201, 792] },
   ],
   // trail i runs from station i+1's edge to station i+2's number
@@ -60,7 +61,7 @@ const LANDSCAPE: Scene = {
     { x: 1494, y: 521, w: 493, h: 513, badge: [1640, 655], flip: true },
     { x: 1024, y: 437, w: 528, h: 393, badge: [1276.5, 839.5] },
     { x: 651, y: 156, w: 487, h: 314, badge: [1132.5, 339.5] },
-    { x: 159, y: 554, w: 562, h: 363, badge: [429.5, 544.5] },
+    { x: 255, y: 620, w: 370, h: 253, badge: [429.5, 544.5] },
     { x: -89, y: 118, w: 512, h: 330, badge: [106.5, 452.5] },
   ],
   lines: [
@@ -95,7 +96,7 @@ export const OCEAN_IMAGES: Record<string, string> = {
   reception: '/worlds/ocean/station-house.png',
   'wait-before-triage': '/worlds/ocean/station-sub.png',
   triage: '/worlds/ocean/station-pod.png',
-  'wait-doctor': '/worlds/ocean/station-pod.png',
+  'wait-doctor': '/worlds/ocean/station-aquarium.png',
   doctor: '/worlds/ocean/station-doctor.png',
   // Second stage (stand-in pictures until the four stations are drawn); the last one stands on land
   tests: '/worlds/ocean/station-pod.png',
