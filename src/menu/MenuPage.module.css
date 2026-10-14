@@ -207,7 +207,8 @@
 }
 
 .disclaimer {
-  color: var(--c-text-faint);
+  /* the faint grey was about 2.6:1 on this panel; the soft text colour is about 5.4:1 */
+  color: var(--c-text-soft);
   font-size: 0.85rem;
 }
 
