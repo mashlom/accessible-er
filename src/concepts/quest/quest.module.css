@@ -3831,7 +3831,7 @@
 }
 
 /* Portrait map on a wide window: the sheet is pressed to the right edge too, over the map's column */
-@media not all and ((min-aspect-ratio: 3/2) or (min-width: 747px)) {
+@media not all and ((min-aspect-ratio: 3/2) or ((min-width: 747px) and (min-aspect-ratio: 1/1))) {
   .sheetBackdrop > .oceanSheet { margin-left: auto; }
 }
 
@@ -3877,7 +3877,7 @@ path.oceanTrailLit {
 /* Landscape / wide windows (the same switch as the landscape map): the sheet docks to the right as a side
    panel pressed to the right edge, as wide as its content (no big white field), standing on the bottom
    edge, and the map stays in view on its left */
-@media (min-aspect-ratio: 3/2), (min-width: 747px) {
+@media (min-aspect-ratio: 3/2), (min-width: 747px) and (min-aspect-ratio: 1/1) {
   .sheetBackdrop:has(> .oceanSheet) {
     align-items: flex-end;
   }
@@ -4202,10 +4202,10 @@ path.oceanTrailLit {
   background: var(--tok-page);
 }
 
-/* Portrait map on a window wider than the column (a tablet, up to the switch to the landscape layout at 747px): the
+/* Portrait map on a window wider than the column (a tablet, as long as the window is taller than wide: the portrait layout stays on a tablet held upright): the
    stations, the top row, the progress case, the stars counter and the sheets stand in the middle, while the
    background picture stays pressed to the right edge. */
-@media not all and ((min-aspect-ratio: 3/2) or (min-width: 747px)) {
+@media not all and ((min-aspect-ratio: 3/2) or ((min-width: 747px) and (min-aspect-ratio: 1/1))) {
   .oceanScene {
     margin-inline: auto;
   }
@@ -4239,7 +4239,7 @@ path.oceanTrailLit {
   }
 }
 
-@media (min-width: 620px) and (max-width: 746px) {
+@media (min-width: 620px) {
   /* the progress case leaves the column onto the picture beside it */
   .oceanProgress:not(.oceanProgressWide) {
     left: calc((100vw - var(--col)) / 2 - var(--col) * 14 / 412 - 20px);

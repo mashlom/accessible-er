@@ -87,10 +87,11 @@ const LANDSCAPE: Scene = {
   },
 }
 
-/** True on screens wide enough for the landscape scene: a landscape shape, or wide enough that what the
- *  560px portrait column leaves is a quarter of the window (747px), whatever its height */
+/** True on screens wide enough for the landscape scene: a landscape shape, or wide enough that what the 560px portrait
+ *  column leaves is a quarter of the window (747px) - but only when the window is not taller than it is wide: a
+ *  tablet held upright keeps the portrait layout */
 export function useWide(): boolean {
-  const query = '(min-aspect-ratio: 3/2), (min-width: 747px)'
+  const query = '(min-aspect-ratio: 3/2), (min-width: 747px) and (min-aspect-ratio: 1/1)'
   const [wide, setWide] = useState(() => typeof window !== 'undefined' && window.matchMedia(query).matches)
   useEffect(() => {
     const mq = window.matchMedia(query)
