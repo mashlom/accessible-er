@@ -49,7 +49,8 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
   const conceptPath = useConceptPath()
   const handleRef = useRef<HTMLButtonElement>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
-  const bubbles = stageId === 'doctor'
+  // the stations that stand in the water (the captain's and the aquarium cabin) have bubbles behind their picture
+  const bubbles = stageId === 'doctor' || stageId === 'wait-doctor'
   const wide = useWide()
   const isHouse = !!image?.endsWith('station-house.png')
 
