@@ -35,7 +35,7 @@ const PORTRAIT: Scene = {
   // before, the three domes smaller; each number on the top of its station
   slots: [
     { x: -27, y: 108, w: 211, h: 220, badge: [92, 176] },
-    { x: 235, y: 235, w: 227, h: 169, badge: [265, 277] },
+    { x: 241, y: 242, w: 189, h: 155, badge: [265, 277] },
     { x: 16, y: 408, w: 211, h: 136, badge: [116, 411] },
     { x: 177, y: 566, w: 189, h: 129, badge: [272, 567] },
     { x: 31, y: 748, w: 214, h: 138, badge: [123, 745] },
@@ -65,7 +65,7 @@ const LANDSCAPE: Scene = {
   slots: [
     // the number 1 stands at the start of the trail (her frame has none on the house)
     { x: 1494, y: 521, w: 493, h: 513, badge: [1628, 772], flip: true },
-    { x: 1024, y: 437, w: 528, h: 393, badge: [1276.5, 839.5] },
+    { x: 1035, y: 456, w: 442, h: 362, badge: [1276.5, 839.5] },
     { x: 651, y: 156, w: 487, h: 314, badge: [1132.5, 339.5] },
     // the aquarium: its picture is cropped tight, so a little narrower than the pod's rock it replaces (as in portrait);
     // its number on the top of the dome, as in the frame
@@ -104,15 +104,15 @@ export function useWide(): boolean {
 
 export const OCEAN_IMAGES: Record<string, string> = {
   reception: '/worlds/ocean/station-house.png',
-  'wait-before-triage': '/worlds/ocean/station-sub.png',
+  'wait-before-triage': '/worlds/ocean/station-sub-lit.png',
   triage: '/worlds/ocean/station-pod.png',
   'wait-doctor': '/worlds/ocean/station-aquarium.png',
   doctor: '/worlds/ocean/station-doctor.png',
   // Second stage (stand-in pictures until the four stations are drawn); the last one stands on land
   tests: '/worlds/ocean/station-sonar.png',
-  consult: '/worlds/ocean/station-sub.png',
+  consult: '/worlds/ocean/station-sub-lit.png',
   'wait-results': '/worlds/ocean/station-pod.png',
-  treatment: '/worlds/ocean/station-sub.png',
+  treatment: '/worlds/ocean/station-sub-lit.png',
   decision: '/worlds/ocean/station-house.png',
 }
 

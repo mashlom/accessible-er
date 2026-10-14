@@ -12,6 +12,7 @@ import { OceanMapView, OCEAN_IMAGES, starsFor, type Pt, type Scene, type Slot, t
 function aspectOf(src: string): number {
   if (src.includes('station-pod')) return 287 / 185
   if (src.includes('station-sonar')) return 218 / 132
+  if (src.includes('station-sub-lit')) return 255 / 209
   if (src.includes('station-sub')) return 227 / 169
   return 211 / 220 // house
 }
@@ -127,7 +128,7 @@ function landscapeScene(images: string[]): Scene {
   ]
   // how much of a picture's width / how far below its top the visible part is (the pictures have margins)
   const fit = (img: string) =>
-    img.includes('station-sub') ? { frac: 0.815, lift: 0.056 } : img.includes('station-sonar') ? { frac: 0.963, lift: 0.03 } : { frac: 0.916, lift: 0.068 }
+    img.includes('station-sub-lit') ? { frac: 0.969, lift: 0.02 } : img.includes('station-sub') ? { frac: 0.815, lift: 0.056 } : img.includes('station-sonar') ? { frac: 0.963, lift: 0.03 } : { frac: 0.916, lift: 0.068 }
   const slots: Slot[] = []
   for (let k = 0; k < n; k++) {
     const pl = places[k]
