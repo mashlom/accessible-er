@@ -30,7 +30,7 @@ interface Props {
 /** Bubbles far behind the captain's picture, on its sea floor panel: centre (x, y) in % of the panel's width and height,
  *  diameter in % of its width. Some are half hidden behind the dome. */
 const BUBBLES = [
-  { x: 70, y: 9, d: 13 },
+  { x: 71, y: 23, d: 13 },
   { x: 29, y: 20, d: 10 },
   { x: 84, y: 36, d: 6.5 },
   { x: 14, y: 42, d: 5 },
