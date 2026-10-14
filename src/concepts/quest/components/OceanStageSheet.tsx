@@ -49,8 +49,8 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
   const conceptPath = useConceptPath()
   const handleRef = useRef<HTMLButtonElement>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
-  // the stations that stand in the water (the captain's and the aquarium cabin) have bubbles behind their picture
-  const bubbles = stageId === 'doctor' || stageId === 'wait-doctor'
+  // every station that stands in the water (all but the house on the pier and the golden symbols) has bubbles behind its picture
+  const bubbles = ['wait-before-triage', 'triage', 'wait-doctor', 'doctor'].includes(stageId)
   const wide = useWide()
   const isHouse = !!image?.endsWith('station-house.png')
 
