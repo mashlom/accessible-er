@@ -38,7 +38,7 @@ export function QuestShell() {
   const hideTopbar = isOcean && /\/(night-)?map$/.test(pathname)
 
   return (
-    <div className={css.questShell} dir={dir} lang={lang}>
+    <div className={`${css.questShell} ${isOcean ? css.questShellOcean : ''}`} dir={dir} lang={lang}>
       <a href="#main" className="skip-link">
         {t('ui.shell.skip', 'דילוג לתוכן')}
       </a>

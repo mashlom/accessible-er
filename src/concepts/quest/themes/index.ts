@@ -386,7 +386,8 @@ export const themes: QuestTheme[] = [
     id: 'ocean',
     name: 'הרפתקה תת-ימית',
     doneEmoji: '⭐',
-    shopImage: '/worlds/knight/shop.JPEG',
+    // the picture of the celebration and shop screens: the sea floor of the sheets
+    shopImage: '/worlds/ocean/sheet-seabed.jpg',
     emoji: '🐠',
     bg: '/worlds/ocean/underwater.png',
     thumbnailOverlay: '/worlds/ocean/station-sub.png',
@@ -400,8 +401,9 @@ export const themes: QuestTheme[] = [
       subtitle: 'כדי שקברניט הצוללת ידע בדיוק איך לעזור לצוללן שלנו',
     },
     distractTitle: 'חדר ההידרופונים 🎧',
-    accent: '#0a6b8a',
-    accentSoft: '#d0eef5',
+    // Shevi's colour tokens: primary action #087E8B, information areas #E5F2F7
+    accent: '#087e8b',
+    accentSoft: '#e5f2f7',
     accentText: '#ffffff',
     completedColor: '#25b8e8',
     stages: {

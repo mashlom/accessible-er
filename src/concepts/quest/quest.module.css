@@ -4183,3 +4183,21 @@ path.oceanTrailLit {
 .stageSheetPicWrap .stageBubble {
   z-index: 0;
 }
+
+/* ── The ocean world's other screens (help, reason, card, celebration, feedback ...) in Shevi's colour tokens ──
+   page #F7FAF9, text #173B4D, secondary text #526570, primary action #087E8B, information areas #E5F2F7 (the
+   accent colours come from the theme) */
+.questShellOcean {
+  --tok-text: #173b4d;
+  --tok-text2: #526570;
+  --tok-action: #087e8b;
+  --tok-page: #f7faf9;
+  --tok-blue: #e5f2f7;
+  --tok-mint: #ddf3ee;
+  background: var(--tok-page);
+  color: var(--tok-text);
+}
+
+.questShellOcean .questTopbar {
+  background: var(--tok-page);
+}
