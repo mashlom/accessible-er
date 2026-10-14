@@ -4203,8 +4203,8 @@ path.oceanTrailLit {
 }
 
 /* Portrait map on a window wider than the column (a tablet, up to the switch to the landscape layout at 747px): the
-   column stands in the middle and the mirrored picture fills both sides (before: pressed to the right edge). The
-   top row, the progress case, the stars counter and the sheets follow the column. */
+   stations, the top row, the progress case, the stars counter and the sheets stand in the middle, while the
+   background picture stays pressed to the right edge. */
 @media not all and ((min-aspect-ratio: 3/2) or (min-width: 747px)) {
   .oceanScene {
     margin-inline: auto;
@@ -4214,8 +4214,16 @@ path.oceanTrailLit {
     margin-inline: auto;
   }
 
-  .oceanTile {
-    left: calc(50% - var(--colw) / 2 + var(--k) * var(--colw));
+  /* the background: the picture stays pressed to the right edge (the column's own picture is drawn as the tile
+     k = 0 there, the mirrored piece k = -1 beside it); the scene only carries the stations, the trails, the numbers,
+     and it stands in the middle */
+  .oceanScene {
+    background: transparent;
+  }
+
+  .oceanScene::before,
+  .oceanScene::after {
+    display: none;
   }
 
   .oceanProgress:not(.oceanProgressWide) {
