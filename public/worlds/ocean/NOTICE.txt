@@ -73,13 +73,14 @@ commercially, and its source and licence must be written down.
 2. Other pictures in this folder (not made with AI in this round)
 -----------------------------------------------------------------
 
-  checkup.png, ocean.jpg, submarine.png, submarine.svg, underwater.png,
-  wharf.png
+  underwater.png
 
-  These are older pictures of the first version of the ocean world; most
-  are no longer used (only underwater.png is still referenced). The source
-  and licence were not written down. TO CONFIRM where they came from, or
-  delete them with the cleanup of the unused files.
+  An older picture of the first version of the ocean world (the world's
+  background in the theme and on the world-select screen). Its source and
+  licence were not written down. TO CONFIRM where it came from.
+  The other old pictures of that version (checkup.png, ocean.jpg,
+  submarine.png, submarine.svg, wharf.png) were unused and were deleted on
+  2026-10-14.
 
 
 3. Not pictures of this folder, for completeness
