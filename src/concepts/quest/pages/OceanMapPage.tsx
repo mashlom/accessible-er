@@ -224,11 +224,17 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
       >
         <svg viewBox={`0 0 ${W} ${H}`} className={css.oceanPath} aria-hidden>
           {/* a trail lights up once the station it leaves is done */}
-          {dots?.map((seg, i) => (
-            <g key={i} className={items[i]?.status === 'done' ? css.oceanTrailLit : undefined}>
-              {seg.map(([x, y], j) => <circle key={j} cx={x} cy={y} r={1.8} />)}
-            </g>
-          ))}
+          {dots?.map((seg, i) => {
+            // the dots stop short of the next station's number: none inside the circle or right at its edge
+            const target = numbers ? slots[i + 1]?.badge : undefined
+            const r = (Number(vars['--badge']) || 0) / 2 + 8
+            const shown = target ? seg.filter(([x, y]) => Math.hypot(x - target[0], y - target[1]) >= r) : seg
+            return (
+              <g key={i} className={items[i]?.status === 'done' ? css.oceanTrailLit : undefined}>
+                {shown.map(([x, y], j) => <circle key={j} cx={x} cy={y} r={1.8} />)}
+              </g>
+            )
+          })}
           {lines?.map((pts, i) => {
             // a trail that ends at the next station's number stops at the circle's edge, not inside it
             const target = numbers ? slots[i + 1]?.badge : undefined
