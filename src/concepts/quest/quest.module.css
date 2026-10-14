@@ -3112,10 +3112,10 @@ path.oceanTrailLit {
   }
 }
 
-/* ── Ocean: the buttons of the other screens in the style of the sheets' buttons (black "do", grey "back") ── */
+/* ── Ocean: the buttons of the other screens in the style of the sheets' buttons (teal "do", white outlined "back") ── */
 .questShellOcean .doneBtn,
 .questShellOcean .outcomeBtn {
-  background: #000 !important;
+  background: var(--tok-action) !important;
   color: #fff !important;
   border: 0;
   border-radius: 12px;
@@ -3125,9 +3125,9 @@ path.oceanTrailLit {
 }
 
 .questShellOcean .backBtn {
-  background: #d9d9d9 !important;
-  color: #000 !important;
-  border: 0 !important;
+  background: #fff !important;
+  color: var(--tok-action) !important;
+  border: 1.5px solid var(--tok-action) !important;
   border-radius: 12px;
   box-shadow: none;
   font-weight: 700;
@@ -3139,4 +3139,17 @@ path.oceanTrailLit {
 .questShellOcean .backBtn:focus-visible {
   outline: 3px solid #0a6b8a;
   outline-offset: 2px;
+}
+
+/* A procedure's picture area is a sea floor panel like the stations' (see stageSheetPicWrap): the emoji stands in the middle, over the bubbles */
+.stageSheetPicWrap.procBigIcon {
+  align-items: center;
+  justify-content: center;
+}
+
+.procBigEmoji {
+  position: relative;
+  z-index: 1;
+  font-size: calc(84 * var(--u));
+  line-height: 1.15;
 }
