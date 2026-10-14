@@ -20,6 +20,16 @@ commercially, and its source and licence must be written down.
   station-aquarium.png  station 4, the aquarium dome with fish
   station-doctor.png    station 5, the captain's dome
   station-sonar.png     second stage, the sonar station (the X-ray and the tests)
+  station-sub-lit.png   the submarine station with its lamp on (2026-10-14, replaces station-sub.png on the maps)
+  symbol-sonar.png      golden symbol of the sonar station (the rings)
+  symbol-comms.png      golden symbol of the base link (submarine, waves, tower)
+  symbol-data.png       golden symbol of the data processing (bars and a wave)
+  symbol-repair.png     golden symbol of the repair (wrenches and valves)
+  sheet-seabed.jpg      the sea floor behind a station's picture on its sheet
+  sheet-fade.png        the pale teal veil over it (Shevi's "Rectangle 24")
+
+  The pictures added on 2026-10-14 (the last seven lines) were downloaded by Maria from the Figma file (made by
+  Shevi); how they were made (the tool) is TO CONFIRM, like for the rest.
 
   Tool:      Google Gemini, the free version (image generation).
              The exact model / version is not recorded.
