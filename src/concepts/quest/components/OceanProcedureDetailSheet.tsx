@@ -10,6 +10,7 @@ import { useI18n } from '../../../hooks/useI18n'
 import { OceanMapPage } from '../pages/OceanMapPage'
 import { OceanNightMapPage } from '../pages/OceanNightMapPage'
 import { ParentInfo } from './ParentInfo'
+import { BUBBLES } from './OceanStageSheet'
 import css from '../quest.module.css'
 
 /** Route of a station's own (child) sheet */
@@ -78,7 +79,13 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
             <span aria-hidden />
           </button>
 
-          <div className={css.procBigIcon} aria-hidden>{procedure.emoji}</div>
+          {/* the procedure's picture stands on the same sea floor panel with bubbles as the stations' pictures */}
+          <div className={`${css.stageSheetPicWrap} ${css.procBigIcon}`} aria-hidden>
+            {BUBBLES.map((b, i) => (
+              <span key={i} className={css.stageBubble} style={{ left: `${b.x}%`, top: `${b.y}%`, width: `${b.d}%` }} />
+            ))}
+            <span className={css.procBigEmoji}>{procedure.emoji}</span>
+          </div>
           <h1 className={css.stageSheetTitle} style={{ color: theme.accent }}>{procedure.title}</h1>
           {narrative && <p className={css.stageSheetHint}>{narrative}</p>}
 
