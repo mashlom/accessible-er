@@ -26,7 +26,9 @@ export function StagePage() {
   const isLastStage = id === LAST_REQUIRED
   const isOptional = id ? (OPTIONAL_STAGES as readonly string[]).includes(id) : false
   const thisStage = stages.find((s) => s.id === id)
-  const isActive = isOptional ? thisStage?.status === 'active' : active?.id === id
+  // the second stage's stations are not in order: any of them that was ordered and is not done yet can be finished
+  // (a station left "locked" by an older saved state could never be finished, and the ending stayed locked)
+  const isActive = isOptional ? !!thisStage?.visible && thisStage.status !== 'done' : active?.id === id
 
   const data = t('journey.journeyStages', journeyStages).find((j) => j.id === id)
   const skin = id ? theme.stages[id] : undefined
