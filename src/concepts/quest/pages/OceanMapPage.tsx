@@ -136,6 +136,15 @@ function trimAtCircle(pts: Pt[], c: Pt, r: number): Pt[] {
   return out
 }
 
+/** The golden symbols of the second stage's stations (Shevi's new set): shown big on the station's sheet and on the
+ *  choice sheet; on the map the stations keep their pictures */
+export const OCEAN_SYMBOLS: Record<string, string> = {
+  tests: '/worlds/ocean/symbol-sonar.png',
+  consult: '/worlds/ocean/symbol-comms.png',
+  'wait-results': '/worlds/ocean/symbol-data.png',
+  treatment: '/worlds/ocean/symbol-repair.png',
+}
+
 export interface ViewItem {
   id: string
   label: string

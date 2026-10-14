@@ -6,7 +6,7 @@ import { useQuestTheme } from '../useQuestTheme'
 import { OPTIONAL_STAGES, type StageId } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
-import { OceanMapPage, OCEAN_IMAGES } from '../pages/OceanMapPage'
+import { OceanMapPage, OCEAN_SYMBOLS } from '../pages/OceanMapPage'
 import css from '../quest.module.css'
 
 interface Props {
@@ -15,9 +15,6 @@ interface Props {
   onContinue: () => void
   onSkip: () => void
 }
-
-/** The stations that already have their own drawn picture; the others show their icon until they are drawn */
-const DRAWN: Record<string, string> = { tests: OCEAN_IMAGES.tests }
 
 /** Ocean world: the procedure choice (which extra stations were prescribed) as a sheet over the map. */
 export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: Props) {
@@ -77,8 +74,8 @@ export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
                   onClick={() => onToggle(id)}
                 >
                   <span className={css.pickPic}>
-                    {DRAWN[id] || skin?.image ? (
-                      <img src={DRAWN[id] ?? skin?.image} alt="" />
+                    {OCEAN_SYMBOLS[id] || skin?.image ? (
+                      <img src={OCEAN_SYMBOLS[id] ?? skin?.image} alt="" />
                     ) : (
                       <StageIcon icon={skin?.icon ?? '❓'} />
                     )}
