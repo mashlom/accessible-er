@@ -110,6 +110,10 @@ export function MenuPage() {
             </a>
             . דמות רוני מקורית לפרויקט.
           </p>
+          <p className={styles.disclaimer}>
+            האיורים בעולם "הרפתקה תת-ימית" נוצרו בעזרת בינה מלאכותית גנרטיבית (Google
+            Gemini) ועובדו בידי צוות העיצוב.
+          </p>
         </section>
       </main>
     </div>

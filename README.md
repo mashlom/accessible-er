@@ -105,7 +105,7 @@ src/
 
 ## מדיה ורישיונות
 
-כל המדיה בפרויקט פתוחה לשימוש חופשי, כולל מסחרי:
+כל המדיה בפרויקט פתוחה לשימוש חופשי, כולל מסחרי — למעט איורי עולם האוקיינוס (ראו להלן), שמצב הרישיון שלהם עדיין נבדק:
 
 - **אנימציות האייקונים** בקונספט "המסע של רוני" (`public/anim/*.json`) הן
   [Noto Animated Emoji](https://googlefonts.github.io/noto-emoji-animation/)
@@ -113,6 +113,10 @@ src/
   [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) —
   © Google Inc. ראו [public/anim/NOTICE.txt](public/anim/NOTICE.txt).
   לרענון או להוספה: `npm run anim`.
+- **איורי עולם "הרפתקה תת-ימית"** בקונספט המסע (`public/worlds/ocean/`: התחנות,
+  הרקעים והסמלים) נוצרו בעזרת בינה מלאכותית גנרטיבית (Google Gemini, הגרסה
+  החינמית) ועובדו בידי צוות העיצוב. תנאי השימוש והרישיון עדיין בבדיקה — ראו
+  [public/worlds/ocean/NOTICE.txt](public/worlds/ocean/NOTICE.txt).
 - **דמות רוני** נכתבה במיוחד לפרויקט (SVG בקוד).
 - שאר ה"איורים" הם אימוג'י של מערכת ההפעלה ו־SVG/CSS.
 
