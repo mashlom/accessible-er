@@ -109,57 +109,56 @@ function portraitScene(images: string[], screenH: number): Scene {
 }
 
 /**
- * Second stage, landscape: the first stage's landscape background mirrored, so the little bit of sand
- * is in the bottom left corner. The sea stations zigzag from right to left, as the first stage does,
- * and the path ends at the house, which stands as a pier at the water's edge on the left.
+ * Second stage, landscape: the first stage's landscape mirrored (the background, and the places of the stations,
+ * taken in the opposite order): the path leads from the top right, down to the bottom right, to the top centre
+ * and the centre left, and ends at the house, which stands as a pier at the water's edge on the left.
  */
 function landscapeScene(images: string[]): Scene {
   const n = images.length - 1
-  // like the first stage: the stations alternate low / high, going right to left, about 350–400 apart
-  const w = n <= 2 ? 500 : n === 3 ? 470 : 430
-  const first = 1560 // centre of the first station
-  const last = 600 // the last one stays clear of the house and its pier
-  const step = n <= 1 ? 0 : Math.min(400, (first - last) / (n - 1))
+  // The first stage's landscape arrangement, mirrored left to right: its five places are taken in the opposite
+  // order, because here the path leads TO the house. Places (visible width, centre x, top of the picture) and
+  // where each station's number stands (relative to the place):
+  //   A top right (the captain's place), B bottom right, C top centre, D centre left; the house bottom left.
+  const places = [
+    { cx: 1700, top: 130, vis: 430, badge: [1745, 405] as Pt },
+    { cx: 1500, top: 590, vis: 470, badge: [1500, 549] as Pt },
+    { cx: 1050, top: 190, vis: 440, badge: [1305, 344] as Pt },
+    { cx: 664, top: 465, vis: 428, badge: [664, 432] as Pt },
+  ]
+  // how much of a picture's width / how far below its top the visible part is (the pictures have margins)
+  const fit = (img: string) =>
+    img.includes('station-sub') ? { frac: 0.815, lift: 0.056 } : img.includes('station-sonar') ? { frac: 0.963, lift: 0.03 } : { frac: 0.916, lift: 0.068 }
   const slots: Slot[] = []
   for (let k = 0; k < n; k++) {
+    const pl = places[k]
+    const f = fit(images[k])
+    const w = pl.vis / f.frac
     const h = w / aspectOf(images[k])
-    const cx = n === 1 ? 1100 : first - k * step
-    const low = k % 2 === 0 // the first station is low, then they alternate
-    const x = cx - w / 2
-    const y = low ? 800 - h : 170
-    slots.push({ x, y, w, h, badge: [cx, y - 6] })
+    slots.push({ x: pl.cx - w / 2, y: pl.top - f.lift * h, w, h, badge: pl.badge })
   }
   const fw = 493
   const fh = fw / aspectOf(images[n])
   // the first stage's house, mirrored across the scene: house on the left, pier pointing into the sea
   slots.push({ x: -67, y: 521, w: fw, h: fh, badge: [-67 + fw / 2, 515] })
 
+  // trails: from a station's edge to the next station's number (the number cuts them at its edge)
+  const starts: Pt[] = [
+    [places[0].cx - 70, places[0].top + 300], // under the top right station
+    [places[1].cx - 120, places[1].top + 10], // above the bottom right station, going up
+    [places[2].cx - 150, places[2].top + 285], // under the top centre station
+    [places[3].cx, places[3].top + 330], // under the station centre left
+  ]
   const lines: Pt[][] = []
   for (let k = 0; k < n - 1; k++) {
-    const a = slots[k]
-    const b = slots[k + 1]
-    const low = k % 2 === 0
-    // from the top of a low station / the bottom of a high one, up or down to the next station's number
-    const start: Pt = [a.x + a.w * 0.45, low ? a.y + a.h * 0.05 : a.y + a.h * 0.95]
-    const end: Pt = [b.badge[0] + 24, b.badge[1] + 2]
-    lines.push(dotsAlong(
-      start,
-      [start[0], start[1] + (end[1] - start[1]) * 0.8],
-      [start[0] + (end[0] - start[0]) * 0.3, end[1]],
-      end,
-    ))
+    const a = starts[k]
+    const e = slots[k + 1].badge
+    lines.push(dotsAlong(a, [a[0], a[1] + (e[1] - a[1]) * 0.7], [a[0] + (e[0] - a[0]) * 0.3, e[1]], e))
   }
   if (n > 0) {
     // to the end of the pier
-    const a = slots[n - 1]
-    const lower = (n - 1) % 2 === 0
-    const start: Pt = lower ? [a.x + a.w * 0.05, a.y + a.h * 0.6] : [a.x + a.w / 2, a.y + a.h * 0.95]
+    const a = starts[n - 1]
     const end: Pt = [430, 870]
-    lines.push(
-      lower
-        ? dotsAlong(start, [start[0] - 100, start[1]], [end[0] + 140, end[1]], end)
-        : dotsAlong(start, [start[0], start[1] + 140], [end[0] + 200, end[1] + 40], end),
-    )
+    lines.push(dotsAlong(a, [a[0], a[1] + 100], [end[0] + 160, end[1] + 30], end))
   }
   return {
     W: 1920,
