@@ -3930,3 +3930,37 @@ path.oceanTrailLit {
   -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
 }
+
+/* The progress capsule as in the mockup: a transparent glass case (17 units wide) that the sticks of the
+   stations done so far go into one by one, from the bottom, gold - mint - gold - mint - gold. It is not a
+   continuous bar: each station is a stick, an empty place is see-through. */
+.oceanProgress {
+  width: calc(var(--col) * 17 / 412);
+  padding: calc(var(--col) * 3 / 412);
+  display: flex;
+  flex-direction: column-reverse;
+  gap: calc(var(--col) * 3 / 412);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.22);
+  overflow: visible;
+}
+
+.oceanProgressStick {
+  flex: 1 1 0;
+  border-radius: 999px;
+  background: transparent;
+  transition: background-color 0.5s ease;
+}
+
+.oceanProgressStick[data-on='true']:nth-child(odd) { background: #d9a53a; }
+.oceanProgressStick[data-on='true']:nth-child(even) { background: #84dccb; }
+
+/* Landscape: the case at the right edge, longer: from the home button down to the house station */
+.oceanProgressWide {
+  top: calc(max(0px, 100dvh - var(--S) * 9 / 16) + var(--S) * 118 / 1920);
+  width: calc(var(--S) * 26 / 1920);
+  padding: calc(var(--S) * 5 / 1920);
+  gap: calc(var(--S) * 5 / 1920);
+  height: calc(var(--S) * 440 / 1920);
+}

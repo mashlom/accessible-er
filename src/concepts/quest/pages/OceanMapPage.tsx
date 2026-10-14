@@ -316,7 +316,10 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
           aria-valuemax={progress.total}
           aria-valuenow={progress.done}
         >
-          <span className={css.oceanProgressFill} style={{ '--p': progress.total ? progress.done / progress.total : 0 } as React.CSSProperties} />
+          {/* a glass case that the sticks go into one by one (gold, mint, gold, mint, gold from the bottom) */}
+          {Array.from({ length: progress.total }, (_, i) => (
+            <span key={i} className={css.oceanProgressStick} data-on={i < progress.done} />
+          ))}
         </div>
       )}
     </div>
