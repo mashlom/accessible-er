@@ -4000,9 +4000,12 @@ path.oceanTrailLit {
   color: var(--tok-text) !important;
 }
 
-/* the picture sits on a pale blue panel */
+/* the picture sits on a panel: the sea floor with its light ripples, under a pale teal veil that fades out downwards
+   (sheet-fade.png is Shevi's "Rectangle 24") */
 .oceanSheet.stageSheet .stageSheetImg {
-  background: var(--tok-blue);
+  background:
+    url('/worlds/ocean/sheet-fade.png') center top / 100% 100% no-repeat,
+    url('/worlds/ocean/sheet-seabed.jpg') center bottom / cover no-repeat;
   border-radius: calc(12 * var(--u));
 }
 
