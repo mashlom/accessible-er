@@ -3964,3 +3964,142 @@ path.oceanTrailLit {
   gap: calc(var(--S) * 5 / 1920);
   height: calc(var(--S) * 440 / 1920);
 }
+
+/* ── Ocean sheets in the colours of Shevi's "Design Tokens" table ─────────────────────────────────────────
+   text #173B4D, secondary text #526570, primary action #087E8B, page #F7FAF9, cards #FFFFFF, mint #DDF3EE,
+   info areas #E5F2F7, coral #B5473A, yellow marks #F4C95D. (Her names are semantic and may change, so the
+   values live in these variables.) */
+.oceanSheet {
+  --tok-text: #173b4d;
+  --tok-text2: #526570;
+  --tok-action: #087e8b;
+  --tok-page: #f7faf9;
+  --tok-card: #ffffff;
+  --tok-mint: #ddf3ee;
+  --tok-blue: #e5f2f7;
+  --tok-coral: #b5473a;
+  --tok-yellow: #f4c95d;
+}
+
+.sheet.oceanSheet {
+  background: var(--tok-page);
+  color: var(--tok-text);
+}
+
+.oceanSheet .stageSheetTitle,
+.oceanSheet.stageSheet .stageSheetTitle {
+  color: var(--tok-text) !important;
+}
+
+.oceanSheet .stageSheetHint,
+.oceanSheet.stageSheet .stageSheetHint {
+  color: var(--tok-text2);
+}
+
+.oceanSheet .procedureSteps {
+  color: var(--tok-text) !important;
+}
+
+/* the picture sits on a pale blue panel */
+.oceanSheet.stageSheet .stageSheetImg {
+  background: var(--tok-blue);
+  border-radius: calc(12 * var(--u));
+}
+
+/* buttons: teal "I did it", a teal outline for "back" */
+.oceanSheet .oceanBtnDone {
+  background: var(--tok-action);
+  color: #fff;
+}
+
+.oceanSheet .oceanBtnBack {
+  background: var(--tok-card);
+  color: var(--tok-action);
+  border: 1.5px solid var(--tok-action);
+}
+
+.oceanSheet .sheetFooter {
+  background: var(--tok-page);
+}
+
+/* the parent button: white pill, a yellow circle with the book */
+.oceanSheet .parentBtnOceanPill {
+  background: var(--tok-card);
+  border-color: rgba(8, 126, 139, 0.28);
+  color: var(--tok-text);
+}
+
+.oceanSheet .parentBtnOceanIcon rect {
+  fill: var(--tok-yellow);
+}
+
+/* the round procedure buttons: light blue */
+.oceanSheet .procedureIconBtn {
+  background: var(--tok-blue);
+  color: var(--tok-text);
+}
+
+/* the parent panel's cards: light blue with a yellow book circle before each heading */
+.oceanSheet .sheetCard {
+  background: var(--tok-blue);
+}
+
+.oceanSheet .sheetCard h2 {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  color: var(--tok-text);
+}
+
+.oceanSheet .sheetCard h2::before {
+  content: '';
+  flex: 0 0 auto;
+  width: calc(22 * var(--u));
+  height: calc(22 * var(--u));
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23F4C95D'/%3E%3Cpath d='M6 8.5c2-1 4-1 6 .5 2-1.5 4-1.5 6-.5v8c-2-1-4-1-6 .5-2-1.5-4-1.5-6-.5z M12 9v8' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.oceanSheet .sheetCard p,
+.oceanSheet .sheetCard li {
+  color: var(--tok-text);
+}
+
+.oceanSheet .procHeadText p {
+  color: var(--tok-text2);
+}
+
+.oceanSheet .procIcon {
+  background: var(--tok-blue);
+}
+
+/* the choice sheet */
+.oceanSheet .pickTitle {
+  color: var(--tok-text);
+}
+
+.oceanSheet .pickSub {
+  color: var(--tok-text2);
+}
+
+.oceanSheet .pickNote {
+  color: var(--tok-action);
+}
+
+.oceanSheet .pickCard {
+  background: var(--tok-blue);
+  border: 0;
+  color: var(--tok-text);
+}
+
+.oceanSheet .pickCardOn {
+  box-shadow: inset 0 0 0 2px var(--tok-action);
+}
+
+.oceanSheet .pickPic {
+  background: transparent;
+}
+
+.oceanSheet .pickBtn {
+  background: var(--tok-action);
+  color: #fff;
+}
