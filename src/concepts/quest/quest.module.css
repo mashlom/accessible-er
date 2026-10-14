@@ -4117,14 +4117,6 @@ path.oceanTrailLit {
   flex-direction: column;
 }
 
-/* the captain's panel is plain pale blue (no sea floor) so the bubbles show */
-.oceanSheet.stageSheet .stageSheetImgPale {
-  background: var(--tok-blue);
-  /* the picture stands in the lower part of the panel, the bubbles rise in the free space above it */
-  box-sizing: border-box;
-  padding: calc(165 * var(--u)) calc(24 * var(--u)) calc(14 * var(--u));
-  object-fit: contain;
-}
 
 /* A bubble as Shevi drew it: a steel-blue glass ball with a thin dark blue outline and a soft glint at the top left */
 .stageBubble {
@@ -4169,4 +4161,25 @@ path.oceanTrailLit {
 .oceanSheet.stageSheet .stageSheetPicHouse .stageSheetImgFlip {
   transform: scaleX(-1);
   left: calc(var(--w) * 0.045);
+}
+
+/* The captain's panel: the wrapper carries the sea floor panel, the bubbles are far behind the picture and the picture
+   (transparent) stands in front of them */
+.stageSheetPicWrap {
+  overflow: hidden;
+  border-radius: calc(12 * var(--u));
+  background:
+    url('/worlds/ocean/sheet-fade.png') center top / 100% 100% no-repeat,
+    url('/worlds/ocean/sheet-seabed.jpg') center bottom / cover no-repeat;
+}
+
+.oceanSheet.stageSheet .stageSheetPicWrap .stageSheetImg {
+  background: none;
+  border-radius: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.stageSheetPicWrap .stageBubble {
+  z-index: 0;
 }

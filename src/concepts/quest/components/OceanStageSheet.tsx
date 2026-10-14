@@ -27,18 +27,18 @@ interface Props {
   backTo: '/map' | '/night-map'
 }
 
-/** Bubbles over the captain's picture, as in Shevi's frame (measured on it): centre (x, y) in % of the panel's width and
- *  height, diameter in % of its width. Two big ones, a pair, three tiny ones and two small ones rise from the dome. */
+/** Bubbles far behind the captain's picture, on its sea floor panel: centre (x, y) in % of the panel's width and height,
+ *  diameter in % of its width. Some are half hidden behind the dome. */
 const BUBBLES = [
-  { x: 53.4, y: -3, d: 14.2 },
-  { x: 64.8, y: 9.5, d: 14.2 },
-  { x: 46, y: 25, d: 12.5 },
-  { x: 50.6, y: 20, d: 4.3 },
-  { x: 62.2, y: 35.8, d: 1.7 },
-  { x: 65.7, y: 41.2, d: 1.7 },
-  { x: 63.1, y: 43, d: 1.7 },
-  { x: 65.7, y: 49.6, d: 4.5 },
-  { x: 58.3, y: 54, d: 9.7 },
+  { x: 70, y: 9, d: 13 },
+  { x: 29, y: 20, d: 10 },
+  { x: 84, y: 36, d: 6.5 },
+  { x: 14, y: 42, d: 5 },
+  { x: 77, y: 58, d: 4 },
+  { x: 22, y: 66, d: 6 },
+  { x: 60, y: 22, d: 2.5 },
+  { x: 55, y: 28, d: 1.8 },
+  { x: 9, y: 28, d: 2.2 },
 ]
 
 /** Ocean world: a stage opens as a bottom sheet over the map instead of a separate page. */
@@ -88,7 +88,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
           </button>
 
           {image && (
-            // the captain's sheet has bubbles rising over its picture, on a pale panel (the other stations have the sea floor)
+            // the captain's sheet has bubbles far behind its picture, on the sea floor panel (the wrapper carries the panel)
             <div className={isHouse ? css.stageSheetPicHouse : bubbles ? css.stageSheetPicWrap : css.stageSheetPicPlain}>
               <img
                 src={image}
@@ -99,7 +99,6 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
                   isHouse ? css.stageSheetImgBleed : '',
                   // on the landscape map the house is mirrored (the pier points left): so it is on its sheet
                   isHouse && wide ? css.stageSheetImgFlip : '',
-                  bubbles ? css.stageSheetImgPale : '',
                   image.includes('/symbol-') ? css.stageSheetImgSymbol : '',
                 ].join(' ')}
               />
