@@ -197,13 +197,15 @@ export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {})
     }
   })
   const finale = theme.stages['decision']
+  // nothing was ordered (the choice was skipped or reset by going back to it): there is nothing left to finish
+  const endingOpen = allOptionalsDone || visibleOptionals.length === 0
   items.push({
     id: 'decision',
     label: finale?.label ?? t('ui.buttons.happyEnd', 'סוף טוב'),
-    status: allOptionalsDone ? 'active' : 'locked',
+    status: endingOpen ? 'active' : 'locked',
     image: OCEAN_IMAGES.decision,
     // the ending can be opened only when everything before it is done
-    onOpen: allOptionalsDone ? () => navigate(conceptPath('/celebrate')) : undefined,
+    onOpen: endingOpen ? () => navigate(conceptPath('/celebrate')) : undefined,
   })
 
   // the stars earned on the first stage, shown at the top right
