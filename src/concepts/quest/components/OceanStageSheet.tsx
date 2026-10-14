@@ -27,13 +27,18 @@ interface Props {
   backTo: '/map' | '/night-map'
 }
 
-/** Bubbles over the captain's picture: centre (x, y) in % of the picture's box and diameter in % of its width */
+/** Bubbles over the captain's picture, as in Shevi's frame (measured on it): centre (x, y) in % of the panel's width and
+ *  height, diameter in % of its width. Two big ones, a pair, three tiny ones and two small ones rise from the dome. */
 const BUBBLES = [
-  { x: 52, y: 7, d: 14 },
-  { x: 43, y: 19, d: 11 },
-  { x: 57, y: 26, d: 4.5 },
-  { x: 54, y: 30, d: 2.8 },
-  { x: 49, y: 31, d: 6 },
+  { x: 53.4, y: -3, d: 14.2 },
+  { x: 64.8, y: 9.5, d: 14.2 },
+  { x: 46, y: 25, d: 12.5 },
+  { x: 50.6, y: 20, d: 4.3 },
+  { x: 62.2, y: 35.8, d: 1.7 },
+  { x: 65.7, y: 41.2, d: 1.7 },
+  { x: 63.1, y: 43, d: 1.7 },
+  { x: 65.7, y: 49.6, d: 4.5 },
+  { x: 58.3, y: 54, d: 9.7 },
 ]
 
 /** Ocean world: a stage opens as a bottom sheet over the map instead of a separate page. */
