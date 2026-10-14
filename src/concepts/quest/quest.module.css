@@ -4146,3 +4146,28 @@ path.oceanTrailLit {
   padding: calc(40 * var(--u)) calc(36 * var(--u));
   object-fit: contain;
 }
+
+/* The house is a picture cut straight on one side (the map pushes that side off the screen). On its sheet the pale panel
+   with the sea floor is the wrapper, as wide as the others' panels, and the house inside is clipped by it; on the
+   landscape map (and the side panel) the house is mirrored, as on that map. */
+.stageSheetPicHouse {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: calc(12 * var(--u));
+  background:
+    url('/worlds/ocean/sheet-fade.png') center top / 100% 100% no-repeat,
+    url('/worlds/ocean/sheet-seabed.jpg') center bottom / cover no-repeat;
+}
+
+.oceanSheet.stageSheet .stageSheetPicHouse .stageSheetImg {
+  background: none;
+  border-radius: 0;
+}
+
+.oceanSheet.stageSheet .stageSheetPicHouse .stageSheetImgFlip {
+  transform: scaleX(-1);
+  left: calc(var(--w) * 0.045);
+}

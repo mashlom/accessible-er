@@ -5,7 +5,7 @@ import { Link } from '../../nav'
 import { useConceptPath } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
-import { OceanMapPage } from '../pages/OceanMapPage'
+import { OceanMapPage, useWide } from '../pages/OceanMapPage'
 import { OceanNightMapPage } from '../pages/OceanNightMapPage'
 import { ParentInfo } from './ParentInfo'
 import css from '../quest.module.css'
@@ -45,6 +45,8 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
   const handleRef = useRef<HTMLButtonElement>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
   const bubbles = stageId === 'doctor'
+  const wide = useWide()
+  const isHouse = !!image?.endsWith('station-house.png')
 
   const close = () => navigate(conceptPath(backTo))
 
@@ -82,14 +84,16 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
 
           {image && (
             // the captain's sheet has bubbles rising over its picture, on a pale panel (the other stations have the sea floor)
-            <div className={bubbles ? css.stageSheetPicWrap : css.stageSheetPicPlain}>
+            <div className={isHouse ? css.stageSheetPicHouse : bubbles ? css.stageSheetPicWrap : css.stageSheetPicPlain}>
               <img
                 src={image}
                 alt=""
                 // The house is cut straight on its left edge in the mockup: push it off the sheet's edge
                 className={[
                   css.stageSheetImg,
-                  image.endsWith('station-house.png') ? css.stageSheetImgBleed : '',
+                  isHouse ? css.stageSheetImgBleed : '',
+                  // on the landscape map the house is mirrored (the pier points left): so it is on its sheet
+                  isHouse && wide ? css.stageSheetImgFlip : '',
                   bubbles ? css.stageSheetImgPale : '',
                   image.includes('/symbol-') ? css.stageSheetImgSymbol : '',
                 ].join(' ')}
