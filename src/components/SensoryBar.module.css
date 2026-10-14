@@ -65,3 +65,15 @@
 .levelLabel.low  { color: #5aab6e; }
 .levelLabel.mid  { color: #e6a832; }
 .levelLabel.high { color: #d95f5f; }
+
+/* In the ocean world's sheets (Shevi's colour tokens): a white card with a light teal outline */
+.ocean {
+  background: #ffffff;
+  border: 1px solid rgba(8, 126, 139, 0.18);
+  border-radius: 14px;
+  margin-bottom: 0.75rem;
+}
+
+.ocean .title {
+  color: #526570;
+}

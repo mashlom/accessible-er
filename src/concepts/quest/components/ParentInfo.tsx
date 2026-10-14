@@ -128,7 +128,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
           <ProcedurePanel pid={proc} onBack={initialProc ? undefined : () => setProc(null)} />
         ) : (
           <>
-        {data.sensory && <SensoryBar sensory={data.sensory} />}
+        {data.sensory && <SensoryBar sensory={data.sensory} ocean={ocean} />}
         {(singleProc?.who || data.waitRange) && (
           <p className={css.sheetWait}>
             {singleProc?.who && <span>👤 {singleProc.who}</span>}

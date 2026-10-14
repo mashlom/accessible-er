@@ -4,6 +4,8 @@ import css from './SensoryBar.module.css'
 
 interface Props {
   sensory: SensoryLevels
+  /** The ocean world's sheets: a white card in its colours instead of the beige strip */
+  ocean?: boolean
 }
 
 const CHANNELS = [
@@ -19,10 +21,10 @@ function levelClass(n: number): string {
   return css.high
 }
 
-export function SensoryBar({ sensory }: Props) {
+export function SensoryBar({ sensory, ocean }: Props) {
   const { t } = useI18n()
   return (
-    <div className={css.bar}>
+    <div className={ocean ? `${css.bar} ${css.ocean}` : css.bar}>
       <p className={css.title}>{t('ui.text.sensoryTitle', 'מה לצפות כאן')}</p>
       <div className={css.channels}>
         {CHANNELS.map(({ key, emoji, label }, ci) => {
