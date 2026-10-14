@@ -63,7 +63,8 @@ const LANDSCAPE: Scene = {
   // the stations as in Shevi's landscape frame: the captain's dome top left, the pod top centre, the aquarium
   // bottom left (the frame has the old pod there), the submarine centre right, the house bottom right
   slots: [
-    { x: 1494, y: 521, w: 493, h: 513, badge: [1640, 655], flip: true },
+    // the number 1 stands at the start of the trail (her frame has none on the house)
+    { x: 1494, y: 521, w: 493, h: 513, badge: [1628, 772], flip: true },
     { x: 1024, y: 437, w: 528, h: 393, badge: [1276.5, 839.5] },
     { x: 651, y: 156, w: 487, h: 314, badge: [1132.5, 339.5] },
     // the aquarium: its picture is cropped tight, so a little narrower than the pod's rock it replaces (as in portrait);
