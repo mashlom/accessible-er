@@ -149,6 +149,30 @@ src/
 - השיחה נשמרת ב־`sessionStorage` (`talk-trail`) כרשימת מזהי צמתים בלבד — הטקסט
   נבנה מחדש מ־`resolveNode`, ואף הודעה לא נשמרת.
 
+### 4. `quest` — "מסע במלר״ד" (`#/quest`), עולם האוקיינוס
+
+קונספט של עולמות (`useQuestTheme`): בוחרים עולם, ומפת המסע מציגה תחנות. העולם
+הגמור והמעוצב לפי המוקאפ של שבי (Figma "Mashlom.me") הוא **האוקיינוס**
+("הרפתקה תת-ימית", `theme.id === 'ocean'`); שאר העולמות עדיין לא עובדו מחדש —
+**אל תיגעו בהם כשעובדים על האוקיינוס**.
+
+- **מפות:** [OceanMapPage](src/concepts/quest/pages/OceanMapPage.tsx) (שלב 1, 5 תחנות)
+  ו־[OceanNightMapPage](src/concepts/quest/pages/OceanNightMapPage.tsx) (שלב 2, התחנות
+  שהרופא הורה + סוף טוב). הסצנה מצוירת ביחידות של מסגרת הפיגמה (אנכית 412×939, אופקית
+  1920×1080) עם `--u`.
+- **מעבר אנכי/אופקי:** `(min-aspect-ratio: 3/2), (min-width: 747px) and
+  (min-aspect-ratio: 1/1)` — מוגדר גם ב־`useWide()` וגם ב־CSS, ושניהם חייבים להישאר
+  זהים. טאבלט עומד נשאר באנכי. באנכי על חלון רחב הרקע מרוצף ותוכן הסצנה במרכז.
+- **גיליונות (sheets):** `OceanStageSheet`, `OceanProcedureSheet`,
+  `OceanProcedureDetailSheet`, ו־`ParentInfo` (`ocean`). כפתור ההורה תמיד **מתחת** לכפתורי
+  הילד. באופקי הגיליון הופך לפאנל צד בגובה מלא.
+- **צבעים:** טוקנים `--tok-*` מהפיגמה של שבי; מבטיחים ניגודיות קריאה.
+- **טקסטים:** מקור האמת הוא האפליקציה (`src/data/i18n/ocean.json`, `ui.json`), לא
+  הפיגמה. אין להמציא תוכן רפואי; הנוסחים לשלב השני עוברים בדיקה של צוות MLR.
+- **נעילת גלילה:** `lockBodyScroll()` (מונה) — אל תכתבו `overflow` על ה־body ישירות.
+- **מדיה:** ציורי העולם נוצרו ב־AI גנרטיבי (ראו "מדיה ואנימציות"), והרישיון עדיין
+  **לא סגור**.
+
 ### `Roni` — הדמות
 
 `Roni` מקבל `mood` מתוך שמונה הבעות, `float` לריחוף, ו־`bounceKey` שמריץ מחדש
@@ -167,6 +191,7 @@ src/
 | אנימציות האייקונים (`public/anim/*.json`) | [Noto Animated Emoji](https://googlefonts.github.io/noto-emoji-animation/) של Google | CC BY 4.0 — **מחייב ייחוס** |
 | דמות רוני (`Roni.tsx`) | נכתבה לפרויקט | חלק מהריפו |
 | שאר האיורים | אימוג'י מהמערכת + SVG/CSS | — |
+| ציורי עולם האוקיינוס (`public/worlds/ocean/*`) | נוצרו ב־Gemini (גרסה חינמית) ועובדו ע״י שבי | **טרם נסגר** — ראו [NOTICE.txt](public/worlds/ocean/NOTICE.txt); חובה לציין ב־README ובתחתית התפריט שנוצרו ב־AI |
 
 CC BY 4.0 מחייב ייחוס, ולכן הקרדיט מופיע בשלושה מקומות שאסור להסיר:
 [public/anim/NOTICE.txt](public/anim/NOTICE.txt), [README.md](README.md), ותחתית
