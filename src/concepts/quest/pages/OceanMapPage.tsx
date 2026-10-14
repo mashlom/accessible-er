@@ -246,7 +246,11 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
           {lines?.map((pts, i) => {
             // a trail that ends at the next station's number stops at the circle's edge, not inside it
             const target = numbers ? slots[i + 1]?.badge : undefined
-            const shown = target ? trimAtCircle(pts, target, (Number(vars['--badge']) || 0) / 2 + 8) : pts
+            const r = (Number(vars['--badge']) || 0) / 2 + 8
+            let shown = target ? trimAtCircle(pts, target, r) : pts
+            // a trail that starts at a number (the second stage) also starts at the circle's edge
+            const origin = numbers ? slots[i]?.badge : undefined
+            if (origin) shown = trimAtCircle([...shown].reverse(), origin, r).reverse()
             return (
               <path
                 key={i}

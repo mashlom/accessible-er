@@ -122,8 +122,8 @@ function landscapeScene(images: string[]): Scene {
   const places = [
     { cx: 1700, top: 130, vis: 430, badge: [1745, 405] as Pt },
     { cx: 1500, top: 590, vis: 470, badge: [1500, 549] as Pt },
-    { cx: 1050, top: 190, vis: 440, badge: [1305, 344] as Pt },
-    { cx: 664, top: 465, vis: 428, badge: [664, 432] as Pt },
+    { cx: 1050, top: 190, vis: 440, badge: [1050, 518] as Pt },
+    { cx: 664, top: 465, vis: 428, badge: [664, 852] as Pt },
   ]
   // how much of a picture's width / how far below its top the visible part is (the pictures have margins)
   const fit = (img: string) =>
@@ -141,24 +141,20 @@ function landscapeScene(images: string[]): Scene {
   // the first stage's house, mirrored across the scene: house on the left, pier pointing into the sea
   slots.push({ x: -67, y: 521, w: fw, h: fh, badge: [-67 + fw / 2, 515] })
 
-  // trails: from a station's edge to the next station's number (the number cuts them at its edge)
-  const starts: Pt[] = [
-    [places[0].cx - 70, places[0].top + 300], // under the top right station
-    [places[1].cx - 120, places[1].top + 10], // above the bottom right station, going up
-    [places[2].cx - 150, places[2].top + 285], // under the top centre station
-    [places[3].cx, places[3].top + 330], // under the station centre left
+  // trails: every number is joined to the next one by a curve that goes around the stations (the numbers cut
+  // them at their edges); the last number is joined to the end of the pier
+  const curves: ((from: Pt, to: Pt) => Pt[])[] = [
+    (a, b) => dotsAlong(a, [1740, 490], [1620, 560], b), // 6 to 7: down from under the top right station
+    (a, b) => dotsAlong(a, [1380, 520], [1200, 560], b), // 7 to 8: left, between the stations
+    (a, b) => dotsAlong(a, [1020, 760], [840, 920], b), // 8 to 9: down the right side of the left station
   ]
   const lines: Pt[][] = []
-  for (let k = 0; k < n - 1; k++) {
-    const a = starts[k]
-    const e = slots[k + 1].badge
-    lines.push(dotsAlong(a, [a[0], a[1] + (e[1] - a[1]) * 0.7], [a[0] + (e[0] - a[0]) * 0.3, e[1]], e))
-  }
+  for (let k = 0; k < n - 1; k++) lines.push(curves[k](slots[k].badge, slots[k + 1].badge))
   if (n > 0) {
     // to the end of the pier
-    const a = starts[n - 1]
+    const lb = slots[n - 1].badge
     const end: Pt = [430, 870]
-    lines.push(dotsAlong(a, [a[0], a[1] + 100], [end[0] + 160, end[1] + 30], end))
+    lines.push(dotsAlong(lb, [lb[0] - 70, lb[1] + 30], [end[0] + 90, end[1] + 10], end))
   }
   return {
     W: 1920,
