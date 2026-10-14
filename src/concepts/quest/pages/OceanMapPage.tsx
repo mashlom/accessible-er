@@ -6,6 +6,7 @@ import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { LanguagePicker } from '../../../components/LanguagePicker'
+import { dotsAlong } from './oceanTrails'
 import css from '../quest.module.css'
 
 export type Pt = [number, number]
@@ -30,20 +31,22 @@ export interface Scene {
 const PORTRAIT: Scene = {
   W: 412,
   H: 939,
+  // the stations as in Shevi's portrait frame (measured on screenshots of it): the house and the submarine as
+  // before, the three domes smaller; each number on the top of its station
   slots: [
-    { x: -27, y: 108, w: 211, h: 220, badge: [93, 176] },
-    { x: 235, y: 237, w: 227, h: 169, badge: [266, 277] },
-    { x: -26, y: 414, w: 287, h: 185, badge: [117, 410] },
-    // the aquarium is as big as the captain's dome after it (the cropped picture is as wide as that one)
-    { x: 148, y: 566, w: 262, h: 179, badge: [337, 561] },
-    { x: -56, y: 698, w: 262, h: 169, badge: [201, 792] },
+    { x: -27, y: 108, w: 211, h: 220, badge: [92, 176] },
+    { x: 235, y: 235, w: 227, h: 169, badge: [265, 277] },
+    { x: 16, y: 408, w: 211, h: 136, badge: [116, 411] },
+    { x: 177, y: 566, w: 189, h: 129, badge: [272, 567] },
+    { x: 31, y: 748, w: 214, h: 138, badge: [123, 745] },
   ],
-  // trail i runs from station i+1's edge to station i+2's number
+  // trail i runs from station i's edge to station i+1's number (the first two as drawn in the mockup, the others
+  // curves between the measured points)
   dots: [
     ([[180, 271], [184, 268], [189, 266], [195, 263], [201, 262], [207, 260], [213, 260], [219, 259], [225, 260], [231, 260], [237, 262], [243, 264], [248, 266], [254, 269], [259, 272], [264, 275]] as Pt[]),
     ([[252, 380], [247, 382], [241, 383], [235, 382], [229, 382], [223, 381], [217, 380], [211, 380], [205, 379], [199, 378], [194, 378], [188, 377], [182, 377], [176, 378], [170, 378], [164, 379], [158, 380], [152, 381], [147, 383], [141, 386], [136, 389], [131, 393], [127, 397], [123, 401], [120, 406]] as Pt[]),
-    ([[243, 527], [248, 525], [254, 523], [260, 523], [266, 525], [272, 527], [277, 531], [281, 535], [285, 540], [290, 544], [294, 548], [299, 552], [304, 555], [309, 558], [315, 560], [321, 562], [327, 562]] as Pt[]),
-    ([[304, 744], [299, 745], [293, 747], [287, 749], [282, 751], [276, 754], [271, 756], [266, 760], [261, 763], [256, 767], [251, 770], [247, 774], [242, 778], [237, 782], [233, 786], [227, 789], [222, 791], [216, 793], [210, 793], [204, 793]] as Pt[]),
+    dotsAlong([183, 517], [215, 520], [240, 552], [272, 567]),
+    dotsAlong([255, 691], [200, 700], [140, 702], [123, 745]),
   ],
   vars: {
     '--bg-x': -87, '--bg-y': -250, '--bg-w': 553, '--bg-h': 1260, '--bg-rot': '180deg',
