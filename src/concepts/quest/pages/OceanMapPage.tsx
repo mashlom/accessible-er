@@ -75,7 +75,7 @@ const LANDSCAPE: Scene = {
     // behind the picture: the water's colour, so its edge pixels never show light cyan
     '--map-bg': '#1f6f80',
     '--title-x': 1270, '--title-y': 94, '--title-w': 550, '--title-h': 97, '--title-fs': 41,
-    '--badge': 42, '--badge-fs': 26, '--star': 56,
+    '--badge': 60, '--badge-fs': 36, '--star': 56,
   },
 }
 
