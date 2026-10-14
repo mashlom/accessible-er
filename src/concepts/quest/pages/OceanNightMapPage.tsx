@@ -121,7 +121,7 @@ function landscapeScene(images: string[]): Scene {
   // where each station's number stands (relative to the place):
   //   A top right (the captain's place), B bottom right, C top centre, D centre left; the house bottom left.
   const places = [
-    { cx: 1700, top: 130, vis: 430, badge: [1745, 405] as Pt },
+    { cx: 1640, top: 190, vis: 430, badge: [1685, 465] as Pt },
     { cx: 1500, top: 590, vis: 470, badge: [1500, 549] as Pt },
     { cx: 1050, top: 190, vis: 440, badge: [1050, 518] as Pt },
     { cx: 664, top: 465, vis: 428, badge: [664, 852] as Pt },
@@ -140,12 +140,12 @@ function landscapeScene(images: string[]): Scene {
   const fw = 493
   const fh = fw / aspectOf(images[n])
   // the first stage's house, mirrored across the scene: house on the left, pier pointing into the sea
-  slots.push({ x: -67, y: 521, w: fw, h: fh, badge: [-67 + fw / 2, 515] })
+  slots.push({ x: -67, y: 521, w: fw, h: fh, badge: [-67 + fw / 2, 560] })
 
   // trails: every number is joined to the next one by a curve that goes around the stations (the numbers cut
   // them at their edges); the last number is joined to the end of the pier
   const curves: ((from: Pt, to: Pt) => Pt[])[] = [
-    (a, b) => dotsAlong(a, [1740, 490], [1620, 560], b), // 6 to 7: down from under the top right station
+    (a, b) => dotsAlong(a, [1690, 540], [1620, 580], b), // 6 to 7: down from under the top right station
     (a, b) => dotsAlong(a, [1380, 520], [1200, 560], b), // 7 to 8: left, between the stations
     (a, b) => dotsAlong(a, [1020, 760], [840, 920], b), // 8 to 9: down the right side of the left station
   ]
