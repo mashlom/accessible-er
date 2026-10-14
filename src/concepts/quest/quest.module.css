@@ -4219,6 +4219,9 @@ path.oceanTrailLit {
      and it stands in the middle */
   .oceanScene {
     background: transparent;
+    /* the stations that run over the column's edge (the house, the submarine ...) are not cut there: the map wrapper
+       clips them at the window's edge */
+    overflow: visible;
   }
 
   .oceanScene::before,
