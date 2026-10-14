@@ -27,8 +27,9 @@ commercially, and its source and licence must be written down.
   symbol-repair.png     golden symbol of the repair (wrenches and valves)
   sheet-seabed.jpg      the sea floor behind a station's picture on its sheet
   sheet-fade.png        the pale teal veil over it (Shevi's "Rectangle 24")
+  station-doctor-sheet.png  the whole captain's dome for his sheet (2026-10-14; the map keeps station-doctor.png)
 
-  The pictures added on 2026-10-14 (the last seven lines) were downloaded by Maria from the Figma file (made by
+  The pictures added on 2026-10-14 (the last eight lines) were downloaded by Maria from the Figma file (made by
   Shevi); how they were made (the tool) is TO CONFIRM, like for the rest.
 
   Tool:      Google Gemini, the free version (image generation).

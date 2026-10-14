@@ -145,6 +145,12 @@ export const OCEAN_SYMBOLS: Record<string, string> = {
   treatment: '/worlds/ocean/symbol-repair.png',
 }
 
+/** Pictures that differ on the station's sheet from the map (the captain's dome on the sheet is whole, not cut at
+ *  the left edge as on the map) */
+export const OCEAN_SHEET_PICTURES: Record<string, string> = {
+  doctor: '/worlds/ocean/station-doctor-sheet.png',
+}
+
 export interface ViewItem {
   id: string
   label: string

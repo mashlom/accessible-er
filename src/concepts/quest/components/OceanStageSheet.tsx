@@ -27,6 +27,15 @@ interface Props {
   backTo: '/map' | '/night-map'
 }
 
+/** Bubbles over the captain's picture: centre (x, y) in % of the picture's box and diameter in % of its width */
+const BUBBLES = [
+  { x: 52, y: 7, d: 14 },
+  { x: 43, y: 19, d: 11 },
+  { x: 57, y: 26, d: 4.5 },
+  { x: 54, y: 30, d: 2.8 },
+  { x: 49, y: 31, d: 6 },
+]
+
 /** Ocean world: a stage opens as a bottom sheet over the map instead of a separate page. */
 export function OceanStageSheet({ stageId, label, hint, image, children, isActive, onDone, showChooseTests, doneIsChoice, backTo }: Props) {
   const { theme } = useQuestTheme()
@@ -35,6 +44,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
   const conceptPath = useConceptPath()
   const handleRef = useRef<HTMLButtonElement>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
+  const bubbles = stageId === 'doctor'
 
   const close = () => navigate(conceptPath(backTo))
 
@@ -71,12 +81,23 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
           </button>
 
           {image && (
-            <img
-              src={image}
-              alt=""
-              // The house is cut straight on its left edge in the mockup: push it off the sheet's edge
-              className={image.endsWith('station-house.png') ? `${css.stageSheetImg} ${css.stageSheetImgBleed}` : css.stageSheetImg}
-            />
+            // the captain's sheet has bubbles rising over its picture, on a pale panel (the other stations have the sea floor)
+            <div className={bubbles ? css.stageSheetPicWrap : css.stageSheetPicPlain}>
+              <img
+                src={image}
+                alt=""
+                // The house is cut straight on its left edge in the mockup: push it off the sheet's edge
+                className={[
+                  css.stageSheetImg,
+                  image.endsWith('station-house.png') ? css.stageSheetImgBleed : '',
+                  bubbles ? css.stageSheetImgPale : '',
+                  image.includes('/symbol-') ? css.stageSheetImgSymbol : '',
+                ].join(' ')}
+              />
+              {bubbles && BUBBLES.map((b, i) => (
+                <span key={i} className={css.stageBubble} style={{ left: `${b.x}%`, top: `${b.y}%`, width: `${b.d}%` }} aria-hidden />
+              ))}
+            </div>
           )}
           <h1 className={css.stageSheetTitle} style={{ color: theme.accent }}>{label}</h1>
           {hint && <p className={css.stageSheetHint}>{hint}</p>}

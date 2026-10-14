@@ -10,7 +10,7 @@ import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
 import { OceanStageSheet } from '../components/OceanStageSheet'
 import { OceanProcedureIcons } from '../components/OceanProcedureIcons'
-import { OCEAN_IMAGES, OCEAN_SYMBOLS } from './OceanMapPage'
+import { OCEAN_IMAGES, OCEAN_SYMBOLS, OCEAN_SHEET_PICTURES } from './OceanMapPage'
 import css from '../quest.module.css'
 
 const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
@@ -72,7 +72,7 @@ export function StagePage() {
         stageId={id}
         label={label}
         hint={skin?.hint}
-        image={OCEAN_SYMBOLS[id] ?? heroImg ?? OCEAN_IMAGES[id]}
+        image={OCEAN_SYMBOLS[id] ?? OCEAN_SHEET_PICTURES[id] ?? heroImg ?? OCEAN_IMAGES[id]}
         isActive={!!isActive}
         onDone={handleDone}
         showChooseTests={isLastStage && thisStage?.status === 'done'}

@@ -4106,3 +4106,43 @@ path.oceanTrailLit {
   background: var(--tok-action);
   color: #fff;
 }
+
+/* The picture of the station on its sheet may sit in a wrapper (the captain's has bubbles over it); the wrapper
+   is a column like the sheet, so the picture lays out the same */
+.stageSheetPicWrap,
+.stageSheetPicPlain {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* the captain's panel is plain pale blue (no sea floor) so the bubbles show */
+.oceanSheet.stageSheet .stageSheetImgPale {
+  background: var(--tok-blue);
+  /* the picture stands in the lower part of the panel, the bubbles rise in the free space above it */
+  box-sizing: border-box;
+  padding: calc(92 * var(--u)) calc(20 * var(--u)) calc(14 * var(--u));
+  object-fit: contain;
+}
+
+/* A bubble: a soft pale rim, a white glint at the top left and a small one at the bottom left, almost clear inside */
+.stageBubble {
+  position: absolute;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.95) 0 7%, rgba(255, 255, 255, 0) 19%),
+    radial-gradient(circle at 26% 72%, rgba(255, 255, 255, 0.6) 0 5%, rgba(255, 255, 255, 0) 13%),
+    radial-gradient(circle at 50% 50%, rgba(150, 205, 225, 0.1) 55%, rgba(110, 175, 205, 0.42) 100%);
+  box-shadow: inset 0 0 0 1.5px rgba(190, 235, 245, 0.8), 0 1px 4px rgba(60, 120, 150, 0.18);
+}
+
+/* A golden symbol on its sheet is not stretched to the panel's edges: it has room around it */
+.oceanSheet.stageSheet .stageSheetImgSymbol {
+  box-sizing: border-box;
+  padding: calc(40 * var(--u)) calc(36 * var(--u));
+  object-fit: contain;
+}
