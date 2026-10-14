@@ -202,7 +202,7 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
           {/* the column is pressed to the right edge; the rest of the screen, on its left, is the picture
               mirrored outwards from the column's edge (a mirror at each edge, so the pieces meet without a
               seam, and the next tile mirrors back) */}
-          {[-1].map((k) => (
+          {[-1, 1].map((k) => (
             <div
               key={k}
               className={`${css.oceanTile} ${Math.abs(k) % 2 === 1 ? css.oceanTileFlip : ''}`}

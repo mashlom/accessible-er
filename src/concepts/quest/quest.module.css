@@ -4201,3 +4201,39 @@ path.oceanTrailLit {
 .questShellOcean .questTopbar {
   background: var(--tok-page);
 }
+
+/* Portrait map on a window wider than the column (a tablet, up to the switch to the landscape layout at 747px): the
+   column stands in the middle and the mirrored picture fills both sides (before: pressed to the right edge). The
+   top row, the progress case, the stars counter and the sheets follow the column. */
+@media not all and ((min-aspect-ratio: 3/2) or (min-width: 747px)) {
+  .oceanScene {
+    margin-inline: auto;
+  }
+
+  .oceanTopRow {
+    margin-inline: auto;
+  }
+
+  .oceanTile {
+    left: calc(50% - var(--colw) / 2 + var(--k) * var(--colw));
+  }
+
+  .oceanProgress:not(.oceanProgressWide) {
+    left: calc((100vw - var(--col)) / 2 + var(--col) * 6 / 412);
+  }
+
+  .oceanStarsTotal:not(.oceanStarsTotalWide) {
+    right: calc((100vw - var(--col)) / 2 + 12px);
+  }
+
+  .sheetBackdrop > .oceanSheet {
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 620px) and (max-width: 746px) {
+  /* the progress case leaves the column onto the picture beside it */
+  .oceanProgress:not(.oceanProgressWide) {
+    left: calc((100vw - var(--col)) / 2 - var(--col) * 14 / 412 - 20px);
+  }
+}
