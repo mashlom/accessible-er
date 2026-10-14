@@ -108,6 +108,26 @@ export const OCEAN_IMAGES: Record<string, string> = {
   decision: '/worlds/ocean/station-house.png',
 }
 
+/** Cuts the end of a polyline where it enters a circle (when it ends inside or next to it) */
+function trimAtCircle(pts: Pt[], c: Pt, r: number): Pt[] {
+  const d = (p: Pt) => Math.hypot(p[0] - c[0], p[1] - c[1])
+  const out = [...pts]
+  if (out.length < 3 || d(out[out.length - 1]) > r * 1.6) return pts
+  let last = out.pop() as Pt
+  while (out.length > 1 && d(out[out.length - 1]) < r) last = out.pop() as Pt
+  // the point on the last segment that is exactly r from the centre
+  const prev = out[out.length - 1]
+  const dp = d(prev)
+  const dl = d(last)
+  if (dl < r && dp > r) {
+    const t = (dp - r) / (dp - dl)
+    out.push([prev[0] + (last[0] - prev[0]) * t, prev[1] + (last[1] - prev[1]) * t])
+  } else if (dl >= r) {
+    out.push(last)
+  }
+  return out
+}
+
 export interface ViewItem {
   id: string
   label: string
@@ -209,13 +229,18 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
               {seg.map(([x, y], j) => <circle key={j} cx={x} cy={y} r={1.8} />)}
             </g>
           ))}
-          {lines?.map((pts, i) => (
-            <path
-              key={i}
-              className={items[i]?.status === 'done' ? css.oceanTrailLit : undefined}
-              d={`M ${pts.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join(' L ')}`}
-            />
-          ))}
+          {lines?.map((pts, i) => {
+            // a trail that ends at the next station's number stops at the circle's edge, not inside it
+            const target = numbers ? slots[i + 1]?.badge : undefined
+            const shown = target ? trimAtCircle(pts, target, (Number(vars['--badge']) || 0) / 2 + 8) : pts
+            return (
+              <path
+                key={i}
+                className={items[i]?.status === 'done' ? css.oceanTrailLit : undefined}
+                d={`M ${shown.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join(' L ')}`}
+              />
+            )
+          })}
         </svg>
         {!noTitle && (() => {
           const text = t('ui.text.oceanHeadline', 'המסע שלך מתחיל כאן')
