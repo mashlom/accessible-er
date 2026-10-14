@@ -38,7 +38,8 @@ const PORTRAIT: Scene = {
     { x: 241, y: 242, w: 189, h: 155, badge: [265, 277] },
     { x: 16, y: 408, w: 211, h: 136, badge: [116, 411] },
     { x: 177, y: 566, w: 189, h: 129, badge: [272, 567] },
-    { x: 31, y: 748, w: 214, h: 138, badge: [123, 745] },
+    // the captain's dome is 10% smaller than in the first frame, as in Shevi's latest one (shrunk about the top centre)
+    { x: 41, y: 748, w: 193, h: 124, badge: [123, 745] },
   ],
   // trail i runs from station i's edge to station i+1's number (the first two as drawn in the mockup, the others
   // curves between the measured points)
@@ -70,7 +71,7 @@ const LANDSCAPE: Scene = {
     // the aquarium: its picture is cropped tight, so a little narrower than the pod's rock it replaces (as in portrait);
     // its number on the top of the dome, as in the frame
     { x: 180, y: 589, w: 475, h: 324, badge: [423, 549] },
-    { x: -89, y: 118, w: 512, h: 330, badge: [106.5, 452.5] },
+    { x: -64, y: 151, w: 461, h: 297, badge: [106.5, 452.5] },
   ],
   lines: [
     [[1648.2, 788.2], [1636.1, 781.8], [1620.7, 778.5], [1604.8, 778.5], [1589.1, 780.7], [1573.8, 784.3], [1558.7, 789], [1543.8, 794.2], [1529, 799.9], [1514.4, 805.9], [1499.8, 812], [1485.2, 818.2], [1470.6, 824.4], [1456, 830.4], [1441.3, 836.3], [1426.5, 841.8], [1411.6, 846.9], [1396.4, 851.5], [1381.1, 855.4], [1365.5, 858.3], [1349.8, 860], [1333.9, 860], [1318.3, 857.9], [1303.2, 853.3], [1289.3, 845.9], [1278.4, 837.4]],
