@@ -3153,3 +3153,12 @@ path.oceanTrailLit {
   font-size: calc(84 * var(--u));
   line-height: 1.15;
 }
+
+/* ── Ocean: contrast fixes (the old greys were 3.5:1 on white, the teal line 4.2:1 on the pale blue) ── */
+.questShellOcean .stageBody h2 {
+  color: var(--tok-text2);
+}
+
+.questShellOcean .calmChildLine {
+  color: #065a66;
+}

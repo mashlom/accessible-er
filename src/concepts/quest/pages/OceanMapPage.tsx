@@ -54,6 +54,8 @@ const PORTRAIT: Scene = {
     '--grad-y': -16, '--grad-h': 199,
     '--title-x': 64.5, '--title-y': 72, '--title-w': 283, '--title-h': 50, '--title-fs': 21,
     '--badge': 24, '--badge-fs': 15, '--star': 30,
+    // the white text lies partly on the light sand: a darker glass keeps it readable (over 4.5:1)
+    '--title-bg': 'rgba(18, 56, 74, 0.6)',
   },
 }
 
@@ -85,6 +87,7 @@ const LANDSCAPE: Scene = {
     '--map-bg': '#1f6f80',
     '--title-x': 1270, '--title-y': 94, '--title-w': 550, '--title-h': 97, '--title-fs': 41,
     '--badge': 42, '--badge-fs': 26, '--star': 56,
+    '--title-bg': 'rgba(18, 56, 74, 0.6)',
   },
 }
 

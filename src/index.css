@@ -164,7 +164,8 @@ a {
   position: absolute;
   inset-inline-start: var(--space-4);
   top: -100px;
-  background: var(--c-primary);
+  /* the primary colour is 3.8:1 with white; this one is about 5.8:1 */
+  background: #2b6f6b;
   color: #fff;
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-sm);
