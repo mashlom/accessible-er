@@ -171,7 +171,7 @@ function landscapeScene(images: string[]): Scene {
       '--bg-x': 0, '--bg-y': -1682, '--bg-w': 1920, '--bg-h': 4376, '--bg-sx': -1,
       '--map-bg': '#1f6f80',
       '--title-x': 1270, '--title-y': 94, '--title-w': 550, '--title-h': 97, '--title-fs': 41,
-      '--badge': 60, '--badge-fs': 36, '--star': 56,
+      '--badge': 42, '--badge-fs': 26, '--star': 56,
     },
   }
 }

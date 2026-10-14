@@ -60,29 +60,29 @@ const PORTRAIT: Scene = {
 const LANDSCAPE: Scene = {
   W: 1920,
   H: 1080,
-  // the stations as in Shevi's landscape frame (measured on screenshots of it, 0.384 px per unit): the house at the
-  // bottom right, the submarine top right, the pod in the middle, the aquarium top left, the captain's dome
-  // bottom left; the numbers as drawn there (the house has none in her frame; ours stays)
+  // the stations as in Shevi's landscape frame: the captain's dome top left, the pod top centre, the aquarium
+  // bottom left (the frame has the old pod there), the submarine centre right, the house bottom right
   slots: [
-    { x: 1494, y: 523, w: 493, h: 513, badge: [1640, 655], flip: true },
-    { x: 1322, y: 233, w: 432, h: 322, badge: [1504, 540] },
-    { x: 821, y: 545, w: 468, h: 302, badge: [1050, 568] },
-    { x: 239, y: 205, w: 475, h: 324, badge: [664, 478] },
-    { x: 85, y: 720, w: 406, h: 262, badge: [284, 710] },
+    { x: 1494, y: 521, w: 493, h: 513, badge: [1640, 655], flip: true },
+    { x: 1024, y: 437, w: 528, h: 393, badge: [1276.5, 839.5] },
+    { x: 651, y: 156, w: 487, h: 314, badge: [1132.5, 339.5] },
+    // the aquarium: its picture is cropped tight, so a little narrower than the pod's rock it replaces (as in portrait);
+    // its number on the top of the dome, as in the frame
+    { x: 180, y: 589, w: 475, h: 324, badge: [423, 549] },
+    { x: -89, y: 118, w: 512, h: 330, badge: [106.5, 452.5] },
   ],
-  // trail i runs from station i to the number of station i+1 (curves between the measured points)
   lines: [
-    dotsAlong([1650, 790], [1590, 740], [1620, 600], [1504, 540]),
-    dotsAlong([1340, 505], [1250, 480], [1120, 490], [1050, 568]),
-    dotsAlong([835, 618], [760, 625], [740, 500], [664, 478]),
-    dotsAlong([456, 527], [480, 640], [200, 590], [284, 710]),
+    [[1648.2, 788.2], [1636.1, 781.8], [1620.7, 778.5], [1604.8, 778.5], [1589.1, 780.7], [1573.8, 784.3], [1558.7, 789], [1543.8, 794.2], [1529, 799.9], [1514.4, 805.9], [1499.8, 812], [1485.2, 818.2], [1470.6, 824.4], [1456, 830.4], [1441.3, 836.3], [1426.5, 841.8], [1411.6, 846.9], [1396.4, 851.5], [1381.1, 855.4], [1365.5, 858.3], [1349.8, 860], [1333.9, 860], [1318.3, 857.9], [1303.2, 853.3], [1289.3, 845.9], [1278.4, 837.4]],
+    [[1222.4, 478.4], [1209.1, 474.8], [1197.8, 464.4], [1190.7, 450.4], [1186.2, 435.2], [1183.1, 419.7], [1180.6, 404], [1178, 388.4], [1174.8, 372.9], [1169.8, 357.9], [1160.6, 345.5], [1145.7, 341.2], [1132.3, 344.2]],
+    [[817.8, 456.2], [811.2, 468], [798.4, 477], [783.5, 482.4], [768.1, 485.7], [752.4, 487.9], [736.7, 489.2], [720.9, 490], [705.1, 490.5], [689.3, 490.7], [673.5, 490.8], [657.6, 490.8], [641.8, 490.7], [626, 490.7], [610.2, 490.8], [594.4, 491], [578.6, 491.4], [562.8, 492.1], [547.1, 493.1], [531.3, 494.6], [515.6, 496.7], [500.1, 499.5], [484.7, 503.4], [469.8, 508.6], [455.7, 515.6], [443.1, 525.1], [433.4, 537.3], [428, 550]],
+    [[225.9, 739.9], [212.2, 736.6], [200.6, 726.1], [194.2, 711.4], [190.9, 695.6], [189, 679.5], [187.7, 663.4], [186.3, 647.4], [184.6, 631.3], [181.9, 615.4], [177.7, 599.8], [172.4, 586.8], [170.6, 583.3], [163.7, 571.6], [154.8, 558.8], [145.1, 546.7], [135.1, 534.8], [125.6, 522.5], [117.6, 509.3], [112, 494.9], [109.3, 479.6], [109, 463.9], [110.2, 450.4]],
   ],
   vars: {
     '--bg-x': 0, '--bg-y': -1682, '--bg-w': 1920, '--bg-h': 4376,
     // behind the picture: the water's colour, so its edge pixels never show light cyan
     '--map-bg': '#1f6f80',
     '--title-x': 1270, '--title-y': 94, '--title-w': 550, '--title-h': 97, '--title-fs': 41,
-    '--badge': 60, '--badge-fs': 36, '--star': 56,
+    '--badge': 42, '--badge-fs': 26, '--star': 56,
   },
 }
 
