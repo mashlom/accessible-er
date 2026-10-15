@@ -25,6 +25,8 @@ interface Props {
   doneIsChoice?: boolean
   /** Map to return to when the sheet closes */
   backTo: '/map' | '/night-map'
+  /** No parent details (the locked ending has none) */
+  noParent?: boolean
 }
 
 /** Bubbles far behind the captain's picture, on its sea floor panel: centre (x, y) in % of the panel's width and height,
@@ -42,7 +44,7 @@ export const BUBBLES = [
 ]
 
 /** Ocean world: a stage opens as a bottom sheet over the map instead of a separate page. */
-export function OceanStageSheet({ stageId, label, hint, image, children, isActive, onDone, showChooseTests, doneIsChoice, backTo }: Props) {
+export function OceanStageSheet({ stageId, label, hint, image, children, isActive, onDone, showChooseTests, doneIsChoice, backTo, noParent }: Props) {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
   const navigate = useNavigate()
@@ -113,7 +115,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
 
           {children}
 
-          <ParentInfo stageId={stageId} inline ocean />
+          {!noParent && <ParentInfo stageId={stageId} inline ocean />}
 
           <div className={css.stageSheetActions}>
             {isActive && (

@@ -204,8 +204,8 @@ export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {})
     label: finale?.label ?? t('ui.buttons.happyEnd', 'סוף טוב'),
     status: endingOpen ? 'active' : 'locked',
     image: OCEAN_IMAGES.decision,
-    // the ending can be opened only when everything before it is done
-    onOpen: endingOpen ? () => navigate(conceptPath('/celebrate')) : undefined,
+    // locked, it still opens (like the other stations) as a sheet with only the way back
+    onOpen: () => navigate(conceptPath(endingOpen ? '/celebrate' : '/stage/decision')),
   })
 
   // the stars earned on the first stage, shown at the top right

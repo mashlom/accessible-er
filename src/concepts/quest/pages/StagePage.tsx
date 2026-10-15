@@ -33,6 +33,23 @@ export function StagePage() {
   const data = t('journey.journeyStages', journeyStages).find((j) => j.id === id)
   const skin = id ? theme.stages[id] : undefined
 
+  // ocean: the ending station opened before everything is done: a sheet with only the way back
+  if (theme.id === 'ocean' && id === 'decision') {
+    const skin = theme.stages.decision
+    return (
+      <OceanStageSheet
+        stageId="decision"
+        label={skin?.label ?? ''}
+        hint={skin?.hint}
+        image={OCEAN_IMAGES.decision}
+        isActive={false}
+        onDone={() => {}}
+        backTo="/night-map"
+        noParent
+      />
+    )
+  }
+
   if (!data) return <Navigate to="/map" replace />
 
   const label = skin?.label ?? data.title
