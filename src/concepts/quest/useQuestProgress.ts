@@ -74,8 +74,12 @@ function load(): StageState[] {
   return initialStages()
 }
 
+/** Tells every component using this hook that the stages changed (they each keep their own copy) */
+const STAGES_EVENT = 'quest-stages-changed'
+
 function save(stages: StageState[]) {
   try { sessionStorage.setItem(KEY, JSON.stringify(stages)) } catch {}
+  try { window.dispatchEvent(new Event(STAGES_EVENT)) } catch {}
 }
 
 export function useQuestProgress() {
@@ -84,8 +88,13 @@ export function useQuestProgress() {
 
   useEffect(() => {
     const on = () => setDoneProcedures(loadProcs())
+    const onStages = () => setStages(load())
     window.addEventListener(PROCS_EVENT, on)
-    return () => window.removeEventListener(PROCS_EVENT, on)
+    window.addEventListener(STAGES_EVENT, onStages)
+    return () => {
+      window.removeEventListener(PROCS_EVENT, on)
+      window.removeEventListener(STAGES_EVENT, onStages)
+    }
   }, [])
 
   function update(next: StageState[]) {
@@ -95,7 +104,9 @@ export function useQuestProgress() {
 
   /** Mark current active stage as done, unlock next */
   function completeActive() {
-    const next = [...stages]
+    // every change starts from the saved state, not from this component's copy: another page's copy (the map under
+    // a sheet, an earlier visit) may be older, and writing it back would undo a station that was just finished
+    const next = [...load()]
     const activeIdx = next.findIndex((s) => s.status === 'active')
     if (activeIdx === -1) return
     next[activeIdx] = { ...next[activeIdx], status: 'done' }
@@ -107,13 +118,13 @@ export function useQuestProgress() {
 
   /** Mark a specific stage as done (for optional stages where multiple can be active) */
   function completeStage(id: string) {
-    const next = stages.map((s) => s.id === id ? { ...s, status: 'done' as const } : s)
+    const next = load().map((s) => s.id === id ? { ...s, status: 'done' as const } : s)
     update(next)
   }
 
   /** Reveal an optional stage (nurse decides rентgen needed etc.) */
   function revealOptional(id: StageId) {
-    const next = stages.map((s) =>
+    const next = load().map((s) =>
       s.id === id ? { ...s, visible: true, status: 'active' as const } : s
     )
     update(next)
@@ -122,7 +133,7 @@ export function useQuestProgress() {
   /** Reveal multiple optional stages at once (avoids stale-closure bug in loops) */
   function revealMultiple(ids: StageId[]) {
     const idSet = new Set(ids)
-    const next = stages.map((s) =>
+    const next = load().map((s) =>
       idSet.has(s.id as StageId) ? { ...s, visible: true, status: 'active' as const } : s
     )
     update(next)
@@ -143,7 +154,7 @@ export function useQuestProgress() {
   function reset() { update(initialStages()); resetProcs() }
 
   function resetOptionals() {
-    const next = stages.map((s) =>
+    const next = load().map((s) =>
       (OPTIONAL_STAGES as readonly string[]).includes(s.id)
         ? { ...s, visible: false, status: 'locked' as const }
         : s
