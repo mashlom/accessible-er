@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Navigate } from '../nav'
 import { QuestShell } from './components/QuestShell'
 import { WorldSelectPage } from './pages/WorldSelectPage'
+import { WorldLinkPage } from './pages/WorldLinkPage'
 import { MapPage } from './pages/MapPage'
 import { StagePage } from './pages/StagePage'
 import { CelebratePage } from './pages/CelebratePage'
@@ -23,6 +24,7 @@ export default function QuestConcept() {
     <Routes>
       <Route element={<QuestShell />}>
         <Route index element={<WorldSelectPage />} />
+        <Route path="world/:id" element={<WorldLinkPage />} />
         <Route path="map" element={<MapPage />} />
         <Route path="stage/:id" element={<StagePage />} />
         <Route path="procedures" element={<ProcedureSelectPage />} />
