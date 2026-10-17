@@ -1,19 +1,7 @@
 import { useMemo, useSyncExternalStore } from 'react'
 import { getTheme, type QuestTheme } from './themes'
 import { useI18n } from '../../hooks/useI18n'
-import oceanTexts from '../../data/child/worlds/ocean/texts.json'
-
-/** The ocean world's child texts, one file with all languages (src/data/child/worlds/ocean/texts.json) */
-interface OceanText {
-  meta: { name: string; emoji: string }
-  stages: Record<string, { label: string; hint: string }>
-  procedures: Record<string, string>
-  procedureSteps?: Record<string, string[]>
-  procedureVariants?: Record<string, { label: string; steps: string[] }[]>
-  calm: string[]
-  card: { title: string; subtitle: string }
-  distract: string
-}
+import { worldText, type WorldLang } from '../../data/child/worlds'
 
 const KEY = 'quest-theme'
 
@@ -39,22 +27,23 @@ export function useQuestTheme(): { theme: QuestTheme; setThemeId: (id: string) =
   const { lang } = useI18n()
 
   const theme = useMemo(() => {
+    // every world's child texts come from src/data/child/worlds/<world>/texts.json (the language, else Hebrew)
     const base = getTheme(current)
-    if (base.id !== 'ocean') return base
-    const tx = (oceanTexts as unknown as Record<string, OceanText>)[lang]
+    const tx = worldText(base.id, lang as WorldLang)
+    if (!tx) return base
     const stages = Object.fromEntries(
-      Object.entries(base.stages).map(([id, st]) => [id, { ...st, ...tx.stages[id] }]),
+      Object.entries(base.stages).map(([id, st]) => [id, { ...st, ...tx.stages?.[id] }]),
     )
     return {
       ...base,
-      name: tx.meta.name,
+      name: tx.name ?? base.name,
       stages,
-      procedureNarratives: tx.procedures,
-      procedureSteps: tx.procedureSteps ?? {},
-      procedureVariants: tx.procedureVariants ?? {},
-      calmLines: tx.calm,
-      cardChildHero: tx.card,
-      distractTitle: tx.distract,
+      procedureNarratives: tx.procedureNarratives,
+      procedureSteps: tx.procedureSteps,
+      procedureVariants: tx.procedureVariants,
+      calmLines: tx.calmLines,
+      cardChildHero: tx.cardChildHero,
+      distractTitle: tx.distractTitle,
     }
   }, [current, lang])
 
