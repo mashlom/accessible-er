@@ -64,7 +64,7 @@
     "distractTitle": "שרביט הקסומים ✨"
   },
   "en": {
-    "name": "Fairy Garden",
+    "name": "Magic Garden",
     "stages": {
       "reception": {
         "label": "Garden Gate",
@@ -128,7 +128,7 @@
     "distractTitle": "The Magic Wand ✨"
   },
   "ru": {
-    "name": "Фея в саду",
+    "name": "Волшебный сад",
     "stages": {
       "reception": {
         "label": "Ворота сада",
