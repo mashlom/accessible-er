@@ -1,14 +1,16 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Navigate } from '../../nav'
 import { Mascot } from '../components/Mascot'
 import { Section, InfoList } from '../components/ui'
-import { getProcedure } from '../../../data/procedures'
+import { parentProcedure } from '../../../data/parent'
 import styles from './ProcedureDetailPage.module.css'
 
 export function ProcedureDetailPage() {
+  const { lang } = useI18n()
   const { id } = useParams()
-  const procedure = id ? getProcedure(id) : undefined
+  const procedure = id ? parentProcedure(lang, id) : undefined
   const [step, setStep] = useState(0)
   const [variant, setVariant] = useState(0)
 

@@ -1,11 +1,14 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { Link } from '../../nav'
 import { PageHeader } from '../components/ui'
-import { procedures, getProcedure } from '../../../data/procedures'
+import { procedures } from '../../../data/procedures'
+import { parentProcedure } from '../../../data/parent'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import type { Procedure } from '../../../data/types'
 import styles from './ProceduresPage.module.css'
 
 export function ProceduresPage() {
+  const { lang } = useI18n()
   const { path } = useVisitReason()
 
   // Procedures that appear on the selected reason's route, surfaced first.
@@ -13,14 +16,14 @@ export function ProceduresPage() {
     ? path.route
         .map((s) => s.procedureId)
         .filter((id): id is string => Boolean(id))
-        .map((id) => getProcedure(id))
+        .map((id) => parentProcedure(lang, id))
         .filter((p): p is Procedure => Boolean(p))
         // de-dupe while keeping order
         .filter((p, i, arr) => arr.findIndex((x) => x.id === p.id) === i)
     : []
 
   const relevantIds = new Set(relevant.map((p) => p.id))
-  const rest = procedures.filter((p) => !relevantIds.has(p.id))
+  const rest = procedures.filter((p) => !relevantIds.has(p.id)).map((p) => parentProcedure(lang, p.id) ?? p)
 
   return (
     <div className="container">

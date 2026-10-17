@@ -1,8 +1,10 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { useNavigate } from 'react-router-dom'
-import { journeyStages } from '../../../data/journey'
+import { parentJourney } from '../../../data/parent'
 import { PageHeader } from '../components/ui'
 
 export function WaitTimesPage() {
+  const { lang } = useI18n()
   const navigate = useNavigate()
 
   return (
@@ -14,7 +16,7 @@ export function WaitTimesPage() {
       />
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-        {journeyStages.map((stage, i) => (
+        {parentJourney(lang).map((stage, i) => (
           <div
             key={stage.id}
             style={{

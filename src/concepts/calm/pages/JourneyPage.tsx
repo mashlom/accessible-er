@@ -1,9 +1,10 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from '../../nav'
 import { PageHeader, InfoList } from '../components/ui'
 import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
-import { journeyStages, getStageIndex } from '../../../data/journey'
-import { getProcedure } from '../../../data/procedures'
+import { getStageIndex } from '../../../data/journey'
+import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
@@ -14,6 +15,7 @@ const prefersReducedMotion =
   !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
 export function JourneyPage() {
+  const { lang } = useI18n()
   const { path } = useVisitReason()
   // "where are we in the process" — persisted for the day so a refresh keeps it.
   const [currentId, setCurrentId] = usePersistentState<string | null>(
@@ -21,7 +23,7 @@ export function JourneyPage() {
     null,
     DAY_MS,
   )
-  const [openId, setOpenId] = useState<string | null>(currentId ?? journeyStages[0].id)
+  const [openId, setOpenId] = useState<string | null>(currentId ?? parentJourney(lang)[0].id)
   // Roni walking along the stepper — a gentle sense of movement/control.
   // Off by default only when the OS asks for reduced motion; user can toggle.
   const [motionOn, setMotionOn] = usePersistentState<boolean>('journey-motion', true)
@@ -38,7 +40,7 @@ export function JourneyPage() {
   // Share of the journey already reached — used to tint the passed rail green.
   const progressPct =
     currentIndex >= 0
-      ? Math.round((currentIndex / (journeyStages.length - 1)) * 100)
+      ? Math.round((currentIndex / (parentJourney(lang).length - 1)) * 100)
       : 0
 
   // Roni rides a stable horizontal progress rail (independent of the
@@ -47,7 +49,7 @@ export function JourneyPage() {
   // transform transition actually plays instead of jumping.
   const measureRoni = useCallback(() => {
     const rail = railRef.current
-    const anchorId = currentId ?? journeyStages[0].id
+    const anchorId = currentId ?? parentJourney(lang)[0].id
     const stop = stopRefs.current[anchorId]
     if (rail && stop) {
       const r = stop.getBoundingClientRect()
@@ -145,7 +147,7 @@ export function JourneyPage() {
               : undefined
           }
         >
-          {journeyStages.map((stage, i) => {
+          {parentJourney(lang).map((stage, i) => {
             const stopState =
               stage.id === currentId
                 ? styles.stopCurrent
@@ -173,7 +175,7 @@ export function JourneyPage() {
       </div>
 
       <ol className={styles.stepper}>
-        {journeyStages.map((stage, i) => {
+        {parentJourney(lang).map((stage, i) => {
           const isCurrent = stage.id === currentId
           const isDone = currentIndex > -1 && i < currentIndex
           const isOpen = openId === stage.id
@@ -245,7 +247,7 @@ export function JourneyPage() {
                       </p>
                       <div className={styles.procChips}>
                         {stage.procedureIds.map((pid) => {
-                          const proc = getProcedure(pid)
+                          const proc = parentProcedure(lang, pid)
                           if (!proc) return null
                           return (
                             <Link
