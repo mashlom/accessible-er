@@ -1,8 +1,9 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { useState } from 'react'
 import { Link } from '../../nav'
 import { Scene, Bubble, Note } from '../components/kit'
-import { journeyStages, getStageIndex } from '../../../data/journey'
-import { getProcedure } from '../../../data/procedures'
+import { getStageIndex } from '../../../data/journey'
+import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
@@ -19,13 +20,14 @@ import styles from '../pages.module.css'
  * concepts mid-visit keeps their place.
  */
 export function TrailPage() {
+  const { lang } = useI18n()
   const { path } = useVisitReason()
   const [currentId, setCurrentId] = usePersistentState<string | null>(
     'journey-stage',
     null,
     DAY_MS,
   )
-  const [openId, setOpenId] = useState<string | null>(currentId ?? journeyStages[0].id)
+  const [openId, setOpenId] = useState<string | null>(currentId ?? parentJourney(lang)[0].id)
   const [avatar] = useSessionAvatar()
 
   const currentIndex = currentId ? getStageIndex(currentId) : -1
@@ -58,7 +60,7 @@ export function TrailPage() {
       </div>
 
       <ol className={styles.trail}>
-        {journeyStages.map((stage, i) => {
+        {parentJourney(lang).map((stage, i) => {
           const isHere = stage.id === currentId
           const isDone = currentIndex > -1 && i < currentIndex
           const isOpen = openId === stage.id
@@ -134,7 +136,7 @@ export function TrailPage() {
                     {stage.procedureIds && stage.procedureIds.length > 0 && (
                       <div className={styles.prepRow}>
                         {stage.procedureIds.map((pid) => {
-                          const p = getProcedure(pid)
+                          const p = parentProcedure(lang, pid)
                           if (!p) return null
                           return (
                             <Link key={pid} to={`/show/${pid}`} className={styles.prepLink}>

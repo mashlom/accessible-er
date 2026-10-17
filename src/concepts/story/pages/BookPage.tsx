@@ -1,10 +1,11 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Navigate, Link } from '../../nav'
 import { Roni, type RoniMood } from '../../../components/Roni'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
 import { Panel, Note } from '../components/kit'
-import { getProcedure } from '../../../data/procedures'
+import { parentProcedure } from '../../../data/parent'
 import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
@@ -24,8 +25,9 @@ function moodForStep(step: number, total: number): RoniMood {
  * is, what it may feel like, what to ask for) sits below the book.
  */
 export function BookPage() {
+  const { lang } = useI18n()
   const { id } = useParams()
-  const procedure = id ? getProcedure(id) : undefined
+  const procedure = id ? parentProcedure(lang, id) : undefined
   const [avatar] = useSessionAvatar()
   const [step, setStep] = useState(0)
   const [variant, setVariant] = useState(0)

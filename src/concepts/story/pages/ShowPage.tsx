@@ -1,6 +1,8 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { Link } from '../../nav'
 import { Scene, Bubble } from '../components/kit'
-import { procedures, getProcedure } from '../../../data/procedures'
+import { procedures } from '../../../data/procedures'
+import { parentProcedure } from '../../../data/parent'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import type { Procedure } from '../../../data/types'
 import styles from '../pages.module.css'
@@ -22,6 +24,7 @@ function Card({ p }: { p: Procedure }) {
  * family has told us why they came, the ones on their likely route come first.
  */
 export function ShowPage() {
+  const { lang } = useI18n()
   const { path } = useVisitReason()
 
   const likelyIds = [
@@ -29,8 +32,8 @@ export function ShowPage() {
       (path?.route ?? []).map((s) => s.procedureId).filter((id): id is string => !!id),
     ),
   ]
-  const likely = likelyIds.map(getProcedure).filter((p): p is Procedure => !!p)
-  const rest = procedures.filter((p) => !likelyIds.includes(p.id))
+  const likely = likelyIds.map((id) => parentProcedure(lang, id)).filter((p): p is Procedure => !!p)
+  const rest = procedures.filter((p) => !likelyIds.includes(p.id)).map((p) => parentProcedure(lang, p.id) ?? p)
 
   return (
     <Scene

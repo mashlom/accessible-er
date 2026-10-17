@@ -1,7 +1,9 @@
-import { journeyStages } from '../../../data/journey'
+import { useI18n } from '../../../hooks/useI18n'
+import { parentJourney } from '../../../data/parent'
 import { Scene, Bubble } from '../components/kit'
 
 export function WaitTimesPage() {
+  const { lang } = useI18n()
   return (
     <Scene
       title="זמנים משוערים"
@@ -14,7 +16,7 @@ export function WaitTimesPage() {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-        {journeyStages.map((stage, i) => (
+        {parentJourney(lang).map((stage, i) => (
           <div
             key={stage.id}
             style={{
