@@ -92,7 +92,10 @@
       "askMore": "עוד דברים שאפשר לבקש"
     },
     "prep": {
-      "for": "להתכונן ל{title}"
+      "for": "להתכונן ל{title}",
+      "whoDur": "מי עושה את זה: {who}\nכמה זמן: {duration}",
+      "letsSee": "בואו נראה איך זה הולך, שלב אחרי שלב",
+      "feel": "מה אני עשוי להרגיש?"
     }
   },
   "en": {
@@ -188,7 +191,10 @@
       "askMore": "More things you can ask for"
     },
     "prep": {
-      "for": "Get ready: {title}"
+      "for": "Get ready: {title}",
+      "whoDur": "Who does it: {who}\nHow long: {duration}",
+      "letsSee": "Let's see how it goes, step by step",
+      "feel": "What might I feel?"
     }
   },
   "ru": {
@@ -284,7 +290,10 @@
       "askMore": "Что ещё можно попросить"
     },
     "prep": {
-      "for": "Подготовка: {title}"
+      "for": "Как подготовиться: {title}",
+      "whoDur": "Кто делает: {who}\nСколько времени: {duration}",
+      "letsSee": "Посмотрим, как это проходит, шаг за шагом",
+      "feel": "Что я могу почувствовать?"
     }
   }
 }

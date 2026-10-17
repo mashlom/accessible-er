@@ -297,9 +297,9 @@ function prepNode(pid: string, rest: string[], lang: Lang): TalkNode | null {
       choices.push({ label: `לראות איך זה הולך — ${v.label}`, go: `prep:${pid}:v${i}:s0` })
     }
   } else {
-    choices.push({ label: 'בואו נראה איך זה הולך, שלב אחרי שלב', go: `prep:${pid}:v0:s0` })
+    choices.push({ label: talkText(lang).prep.letsSee, go: `prep:${pid}:v0:s0` })
   }
-  choices.push({ label: 'מה אני עשוי להרגיש?', go: `prep:${pid}:feel` })
+  choices.push({ label: talkText(lang).prep.feel, go: `prep:${pid}:feel` })
   choices.push({ label: 'מה אפשר לבקש?', go: `prep:${pid}:ask` })
   choices.push(BACK)
 
@@ -307,7 +307,7 @@ function prepNode(pid: string, rest: string[], lang: Lang): TalkNode | null {
     say: [
       { text: `${p.title}`, mood: 'curious', art: p.emoji },
       { text: p.what },
-      { text: `מי עושה את זה: ${p.who}\nכמה זמן: ${p.duration}` },
+      { text: talkText(lang).prep.whoDur.replace('{who}', p.who).replace('{duration}', p.duration) },
     ],
     choices,
   }
