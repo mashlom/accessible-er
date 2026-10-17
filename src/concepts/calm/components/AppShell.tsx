@@ -1,5 +1,6 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Link, useIsConceptHome } from '../../nav'
+import { LanguagePicker } from '../../../components/LanguagePicker'
 import styles from './AppShell.module.css'
 
 /**
@@ -30,6 +31,8 @@ export function AppShell() {
           ) : (
             <span className={styles.iconBtn} aria-hidden />
           )}
+
+          <LanguagePicker />
 
           <Link to="/" className={styles.brand}>
             <span className={styles.brandMark} aria-hidden>
