@@ -12,10 +12,22 @@ import {
 import { useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
+import parentUi from '../../../data/parent/ui.json'
+
+const parentTexts = parentUi as unknown as Record<'he' | 'en' | 'ru', { card: CardText }>
+type CardText = {
+  empty: { title: string; hint: string }
+  viewTitle: string
+  age: string
+  suggestionsTitle: string
+  rows: Record<'communication' | 'sensitivities' | 'calming' | 'avoid' | 'hardMoments' | 'pain' | 'freeNote', string>
+  nameFallback: string
+}
 
 export function CardViewPage() {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
+  const cardText = (parentTexts[lang] ?? parentTexts.he).card
   const { goBack, leaveState, passThroughState } = useReturnTo('/card')
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
 
@@ -24,8 +36,8 @@ export function CardViewPage() {
       <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
         <div className={css.stageHero} style={{ background: theme.accentSoft }}>
           <span className={css.stageHeroIcon}>🪪</span>
-          <h1 style={{ color: theme.accent }}>הכרטיס עדיין ריק</h1>
-          <p className={css.stageHeroHint}>כמה סימונים קצרים — ויהיה לכם כרטיס להציג לצוות</p>
+          <h1 style={{ color: theme.accent }}>{cardText.empty.title}</h1>
+          <p className={css.stageHeroHint}>{cardText.empty.hint}</p>
           <div className={css.stageBack}>
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
               {t('ui.buttons.back', 'חזרה →')}
@@ -49,13 +61,13 @@ export function CardViewPage() {
   const join = (...parts: string[]) => parts.map((p) => p.trim()).filter(Boolean).join(' · ')
 
   const rows = [
-    { emoji: '💬', label: 'תקשורת', value: join(...card.communication, c.communication) },
-    { emoji: '⚠️', label: 'רגישויות', value: join(...card.sensitivities, c.sensitivities) },
-    { emoji: '💛', label: 'עוזר', value: join(...card.calming, c.calming) },
-    { emoji: '🚫', label: 'להימנע', value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid) },
-    { emoji: '🩺', label: 'קשה במיוחד', value: join(...card.hardMoments, c.hardMoments) },
-    { emoji: '🤕', label: 'ביטוי כאב', value: join(...card.pain, c.pain) },
-    { emoji: '✏️', label: 'עוד', value: card.freeNote.trim() },
+    { emoji: '💬', label: cardText.rows.communication, value: join(...card.communication, c.communication) },
+    { emoji: '⚠️', label: cardText.rows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
+    { emoji: '💛', label: cardText.rows.calming, value: join(...card.calming, c.calming) },
+    { emoji: '🚫', label: cardText.rows.avoid, value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid) },
+    { emoji: '🩺', label: cardText.rows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
+    { emoji: '🤕', label: cardText.rows.pain, value: join(...card.pain, c.pain) },
+    { emoji: '✏️', label: cardText.rows.freeNote, value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
   const suggestions = suggestedAdaptations(card)
@@ -65,8 +77,8 @@ export function CardViewPage() {
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <span className={css.stageHeroIcon}>🪪</span>
-        <h1 style={{ color: theme.accent }}>חשוב לדעת על {name || 'הילד/ה'} שלי</h1>
-        {card.age.trim() && <p className={css.stageHeroHint}>גיל {card.age.trim()}</p>}
+        <h1 style={{ color: theme.accent }}>{cardText.viewTitle.replace('{name}', name || cardText.nameFallback)}</h1>
+        {card.age.trim() && <p className={css.stageHeroHint}>{cardText.age.replace('{age}', card.age.trim())}</p>}
         <div className={`${css.stageBack} no-print`}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
             {t('ui.buttons.back', 'חזרה →')}
@@ -88,7 +100,7 @@ export function CardViewPage() {
 
         {suggestions.length > 0 && (
           <section className="no-print">
-            <h2>💡 התאמות שכדאי לבקש</h2>
+            <h2>{cardText.suggestionsTitle}</h2>
             <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
               {suggestions.map((s) => <li key={s}>{s}</li>)}
             </ul>

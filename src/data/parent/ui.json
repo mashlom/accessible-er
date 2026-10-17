@@ -55,6 +55,25 @@
           "body": "אנחנו מכינים דוח קצר לצוות המחלקה עם כל ההתאמות שעזרו. זה יעזור להם להמשיך את הטיפול בצורה הטובה ביותר לילד/ה."
         }
       ]
+    },
+    "card": {
+      "empty": {
+        "title": "הכרטיס עדיין ריק",
+        "hint": "כמה סימונים קצרים — ויהיה לכם כרטיס להציג לצוות"
+      },
+      "viewTitle": "חשוב לדעת על {name} שלי",
+      "age": "גיל {age}",
+      "suggestionsTitle": "💡 התאמות שכדאי לבקש",
+      "rows": {
+        "communication": "תקשורת",
+        "sensitivities": "רגישויות",
+        "calming": "עוזר",
+        "avoid": "להימנע",
+        "hardMoments": "קשה במיוחד",
+        "pain": "ביטוי כאב",
+        "freeNote": "עוד"
+      },
+      "nameFallback": "הילד/ה"
     }
   },
   "en": {
@@ -103,6 +122,25 @@
           "body": "We're preparing a brief report for the ward staff with all the adaptations that helped. This will help them continue the best possible care for your child."
         }
       ]
+    },
+    "card": {
+      "empty": {
+        "title": "The card is still empty",
+        "hint": "A few short marks — and you will have a card to show the staff"
+      },
+      "viewTitle": "Important to know about my {name}",
+      "age": "Age {age}",
+      "suggestionsTitle": "💡 Adaptations worth asking for",
+      "rows": {
+        "communication": "Communication",
+        "sensitivities": "Sensitivities",
+        "calming": "Helps",
+        "avoid": "Avoid",
+        "hardMoments": "Especially hard",
+        "pain": "How pain shows",
+        "freeNote": "More"
+      },
+      "nameFallback": "my child"
     }
   },
   "ru": {
@@ -151,6 +189,25 @@
           "body": "Мы готовим краткий отчёт для команды отделения со всеми адаптациями, которые помогали. Это поможет им обеспечить лучший уход для вашего ребёнка."
         }
       ]
+    },
+    "card": {
+      "empty": {
+        "title": "Карточка пока пустая",
+        "hint": "Несколько коротких отметок — и будет карточка, которую можно показать персоналу"
+      },
+      "viewTitle": "Важно знать о моём ребёнке: {name}",
+      "age": "Возраст: {age}",
+      "suggestionsTitle": "💡 Адаптации, о которых стоит попросить",
+      "rows": {
+        "communication": "Общение",
+        "sensitivities": "Чувствительность",
+        "calming": "Помогает",
+        "avoid": "Не делать",
+        "hardMoments": "Особенно тяжело",
+        "pain": "Как проявляется боль",
+        "freeNote": "Ещё"
+      },
+      "nameFallback": "ребёнок"
     }
   }
 }
