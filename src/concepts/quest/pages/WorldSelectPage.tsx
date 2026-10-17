@@ -16,7 +16,7 @@ export function WorldSelectPage() {
   function choose(id: string) {
     setThemeId(id)
     // the world's own address, so the address bar can be copied and sent
-    navigate(conceptPath(`/world/${id}`))
+    navigate(conceptPath(`/${id}`))
   }
 
   const ORDER = ['ocean', 'knight', 'dollhouse', 'real', 'dino', 'fairy', 'safari', 'space']
