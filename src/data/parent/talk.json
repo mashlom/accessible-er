@@ -21,6 +21,25 @@
       "prep": "מה עומד לקרות?",
       "change": "לשנות את הסיבה",
       "optional": " (לפי הצורך)"
+    },
+    "card": {
+      "cardIntro": "בואו נכין יחד כרטיס קטן שמספר לצוות מה חשוב לדעת עליי.",
+      "cardPrivacy": "🔒 הכל נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ולא נשלח לשום מקום. מה שלא תראו בעצמכם — לא יגיע לצוות.",
+      "cardQuestions": "אשאל כמה שאלות קצרות. אפשר לדלג על כל אחת.",
+      "cardStart": "יאללה, נתחיל",
+      "cardNotNow": "לא עכשיו",
+      "cardDone": "סיימנו! הכרטיס מוכן.",
+      "cardDoneShow": "אפשר להראות אותו לצוות ישר מהמסך, או להדפיס.",
+      "cardDoneEmpty": "לא סימנתם כלום — אפשר לחזור ולמלא מתי שנוח.",
+      "cardShow": "להראות את הכרטיס",
+      "cardFix": "לחזור ולתקן",
+      "cardPickMany": "אפשר לסמן כמה שרוצים.",
+      "cardNext": "הבא ←",
+      "cardLast": "סיימנו ←",
+      "cardSkip": "לדלג על השאלה",
+      "cardLastStep": "סיימנו ←",
+      "cardNextStep": "הבא ←",
+      "cardSkipQ": "לדלג על השאלה"
     }
   },
   "en": {
@@ -45,6 +64,25 @@
       "prep": "What is going to happen?",
       "change": "Change the reason",
       "optional": " (if needed)"
+    },
+    "card": {
+      "cardIntro": "Let's make a short card together that tells the staff what is important to know about me.",
+      "cardPrivacy": "🔒 Everything is saved on this device only, deleted after 24 hours, and never sent anywhere. What you do not show yourself will not reach the staff.",
+      "cardQuestions": "I will ask a few short questions. You can skip any of them.",
+      "cardStart": "Let's start",
+      "cardNotNow": "Not now",
+      "cardDone": "Done! The card is ready.",
+      "cardDoneShow": "You can show it to the staff right from the screen, or print it.",
+      "cardDoneEmpty": "Nothing is ticked yet — you can come back and fill it in whenever it suits you.",
+      "cardShow": "Show the card",
+      "cardFix": "Go back and change",
+      "cardPickMany": "You can tick as many as you like.",
+      "cardNext": "Next →",
+      "cardLast": "Done →",
+      "cardSkip": "Skip this question",
+      "cardLastStep": "Done →",
+      "cardNextStep": "Next →",
+      "cardSkipQ": "Skip this question"
     }
   },
   "ru": {
@@ -69,6 +107,25 @@
       "prep": "Что будет дальше?",
       "change": "Изменить причину",
       "optional": " (по необходимости)"
+    },
+    "card": {
+      "cardIntro": "Давайте вместе сделаем короткую карточку, которая расскажет персоналу, что важно знать обо мне.",
+      "cardPrivacy": "🔒 Всё хранится только на этом устройстве, удаляется через 24 часа и никуда не отправляется. То, что вы не покажете сами, не попадёт к персоналу.",
+      "cardQuestions": "Я задам несколько коротких вопросов. Любой можно пропустить.",
+      "cardStart": "Давайте начнём",
+      "cardNotNow": "Не сейчас",
+      "cardDone": "Готово! Карточка готова.",
+      "cardDoneShow": "Её можно показать персоналу прямо с экрана или распечатать.",
+      "cardDoneEmpty": "Пока ничего не отмечено — можно вернуться и заполнить, когда удобно.",
+      "cardShow": "Показать карточку",
+      "cardFix": "Вернуться и поправить",
+      "cardPickMany": "Можно отметить сколько угодно.",
+      "cardNext": "Дальше →",
+      "cardLast": "Готово →",
+      "cardSkip": "Пропустить вопрос",
+      "cardLastStep": "Готово →",
+      "cardNextStep": "Дальше →",
+      "cardSkipQ": "Пропустить вопрос"
     }
   }
 }

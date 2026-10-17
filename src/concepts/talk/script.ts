@@ -423,16 +423,16 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       if (rest.length === 0) {
         return {
           say: [
-            { text: 'בואו נכין יחד כרטיס קטן שמספר לצוות מה חשוב לדעת עליי.', mood: 'curious' },
+            { text: talkText(ctx.lang).card.cardIntro, mood: 'curious' },
             {
-              text: '🔒 הכל נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ולא נשלח לשום מקום. מה שלא תראו בעצמכם — לא יגיע לצוות.',
+              text: talkText(ctx.lang).card.cardPrivacy,
               mood: 'calm',
             },
-            { text: 'אשאל כמה שאלות קצרות. אפשר לדלג על כל אחת.' },
+            { text: talkText(ctx.lang).card.cardQuestions },
           ],
           choices: [
-            { label: 'יאללה, נתחיל', go: 'card:0' },
-            { label: 'לא עכשיו', go: 'topics', quiet: true },
+            { label: talkText(ctx.lang).card.cardStart, go: 'card:0' },
+            { label: talkText(ctx.lang).card.cardNotNow, go: 'topics', quiet: true },
           ],
         }
       }
@@ -441,20 +441,20 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
         const filled = cardSectionsIn(ctx.lang).filter((s) => ctx.card[s.key].length > 0).length
         return {
           say: [
-            { text: 'סיימנו! הכרטיס מוכן.', mood: 'proud' },
+            { text: talkText(ctx.lang).card.cardDone, mood: 'proud' },
             {
               text: filled
-                ? 'אפשר להראות אותו לצוות ישר מהמסך, או להדפיס.'
-                : 'לא סימנתם כלום — אפשר לחזור ולמלא מתי שנוח.',
+                ? talkText(ctx.lang).card.cardDoneShow
+                : talkText(ctx.lang).card.cardDoneEmpty,
             },
           ],
           choices: [
             {
               emoji: '🪪',
-              label: 'להראות את הכרטיס',
+              label: talkText(ctx.lang).card.cardShow,
               action: { kind: 'open', to: '/card/view' },
             },
-            { label: 'לחזור ולתקן', go: 'card:0', quiet: true },
+            { label: talkText(ctx.lang).card.cardFix, go: 'card:0', quiet: true },
             BACK,
           ],
         }
@@ -467,15 +467,15 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       return {
         say: [
           { text: `${section.emoji} ${section.title}`, mood: 'curious' },
-          { text: 'אפשר לסמן כמה שרוצים.' },
+          { text: talkText(ctx.lang).card.cardPickMany },
         ],
         multi: { field: section.key, options: section.options },
         choices: [
           {
-            label: last ? 'סיימנו ←' : 'הבא ←',
+            label: last ? talkText(ctx.lang).card.cardLastStep : talkText(ctx.lang).card.cardNextStep,
             go: last ? 'card:done' : `card:${n + 1}`,
           },
-          { label: 'לדלג על השאלה', go: last ? 'card:done' : `card:${n + 1}`, quiet: true },
+          { label: talkText(ctx.lang).card.cardSkipQ, go: last ? 'card:done' : `card:${n + 1}`, quiet: true },
         ],
       }
     }
