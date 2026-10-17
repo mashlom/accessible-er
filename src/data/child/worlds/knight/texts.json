@@ -195,7 +195,7 @@
         "hint": "The wizard decides which magic is needed"
       },
       "decision": {
-        "label": "Victory Ceremony",
+        "label": "End of the Journey",
         "hint": "You got the scroll — the quest is over!"
       },
       "tests": {
