@@ -191,6 +191,12 @@
       "readyHint": "Hard to talk at such a moment? Tap a sentence to show it to the staff in large text on the screen.",
       "askLink": "🙋 To the list of what you can ask the staff ←",
       "sentenceShown": "Sentence shown to the staff"
+    },
+    "calmRequests": {
+      "eyebrow": "What we can ask for",
+      "title": "Fair requests to the staff",
+      "subtitle": "These are things it is allowed and fine to ask for, to make things easier for the child. The staff is here to help.",
+      "note": "Not every request is possible at every moment, but you can always ask. You can tell the staff in a short sentence what helps your child — you are the experts on your child."
     }
   },
   "ru": {
@@ -386,6 +392,12 @@
       "readyHint": "Трудно говорить в такой момент? Нажмите на фразу, чтобы показать её персоналу крупным текстом на экране.",
       "askLink": "🙋 К списку того, что можно попросить у персонала ←",
       "sentenceShown": "Фраза, показанная персоналу"
+    },
+    "calmRequests": {
+      "eyebrow": "Что можно попросить",
+      "title": "Законные просьбы к персоналу",
+      "subtitle": "Это то, о чём можно и нужно просить, чтобы облегчить ребёнку. Персонал здесь, чтобы помогать.",
+      "note": "Не каждая просьба возможна в любой момент, но спросить всегда можно. Можно коротко сказать персоналу, что помогает вашему ребёнку — вы в этом эксперты."
     }
   }
 }
