@@ -8,7 +8,7 @@ import type { Procedure } from '../../../data/types'
 import styles from './ProceduresPage.module.css'
 
 export function ProceduresPage() {
-  const { lang } = useI18n()
+  const { t, lang } = useI18n()
   const { path } = useVisitReason()
 
   // Procedures that appear on the selected reason's route, surfaced first.
@@ -28,15 +28,15 @@ export function ProceduresPage() {
   return (
     <div className="container">
       <PageHeader
-        eyebrow="מה עומד לקרות"
-        title="הכנה לבדיקות ולפרוצדורות"
-        subtitle="בחרו פעולה כדי לראות מה עומד לקרות, כמה זמן זה לוקח, ומה אפשר לבקש. רוני יסביר לילד/ה שלב אחרי שלב."
+        eyebrow={t('ui.calmProcedures.eyebrow', 'מה עומד לקרות')}
+        title={t('ui.calmProcedures.title', 'הכנה לבדיקות ולפרוצדורות')}
+        subtitle={t('ui.calmProcedures.subtitle', 'בחרו פעולה כדי לראות מה עומד לקרות, כמה זמן זה לוקח, ומה אפשר לבקש. רוני יסביר לילד/ה שלב אחרי שלב.')}
       />
 
       {relevant.length > 0 && (
         <>
           <p className={styles.groupLabel}>
-            {path?.emoji} רלוונטי לביקור שלנו ({path?.label})
+            {path?.emoji} {t('ui.calmProcedures.relevant', 'רלוונטי לביקור שלנו')} ({path?.label})
           </p>
           <div className={`${styles.grid} ${styles.relevant}`}>
             {relevant.map((p) => (
@@ -47,7 +47,7 @@ export function ProceduresPage() {
       )}
 
       <p className={styles.groupLabel}>
-        {relevant.length > 0 ? 'כל הפעולות' : 'הפעולות הנפוצות'}
+        {relevant.length > 0 ? t('ui.calmProcedures.allActions', 'כל הפעולות') : t('ui.calmProcedures.commonActions', 'הפעולות הנפוצות')}
       </p>
       <div className={styles.grid}>
         {rest.map((p) => (

@@ -160,6 +160,14 @@
       "subtitle": "Each stage can take about this long",
       "note": "The times are ranges for illustration only. The order and times may change depending on the team's decision and how busy the emergency room is.",
       "back": "← Back"
+    },
+    "calmProcedures": {
+      "eyebrow": "What is going to happen",
+      "title": "Preparing for tests and procedures",
+      "subtitle": "Choose an action to see what is going to happen, how long it takes, and what you can ask for. Roni will explain it to the child step by step.",
+      "relevant": "Relevant to our visit",
+      "allActions": "All actions",
+      "commonActions": "Common actions"
     }
   },
   "ru": {
@@ -324,6 +332,14 @@
       "subtitle": "Каждый этап может занять примерно столько",
       "note": "Время — ориентировочные диапазоны. Порядок и время могут меняться по решению команды и из-за загруженности приёмного покоя.",
       "back": "← Назад"
+    },
+    "calmProcedures": {
+      "eyebrow": "Что будет дальше",
+      "title": "Подготовка к обследованиям и процедурам",
+      "subtitle": "Выберите действие, чтобы увидеть, что будет, сколько это займёт и что можно попросить. Рони объяснит ребёнку шаг за шагом.",
+      "relevant": "Подходит для нашего визита",
+      "allActions": "Все действия",
+      "commonActions": "Частые действия"
     }
   }
 }
