@@ -49,6 +49,10 @@
         "pain": "איך הילד/ה מראה כאב?",
         "avoid": "מה חשוב לא לעשות?"
       }
+    },
+    "home": {
+      "homeAfter": "ומה יהיה בבית?",
+      "tellUs": "לספר לכם איך היה לנו"
     }
   },
   "en": {
@@ -101,6 +105,10 @@
         "pain": "How does your child show pain?",
         "avoid": "What is important not to do?"
       }
+    },
+    "home": {
+      "homeAfter": "What will it be like at home?",
+      "tellUs": "Tell you how it was for us"
     }
   },
   "ru": {
@@ -153,6 +161,10 @@
         "pain": "Как ребёнок показывает боль?",
         "avoid": "Чего важно не делать?"
       }
+    },
+    "home": {
+      "homeAfter": "Что будет дома?",
+      "tellUs": "Рассказать, как у нас прошло"
     }
   }
 }

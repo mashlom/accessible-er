@@ -5,6 +5,7 @@ import { parentJourney, parentProcedure } from '../../data/parent'
 import { parentPaths } from '../../data/parent/paths'
 import supportI18n from '../../data/i18n/support.json'
 import talkTexts from '../../data/parent/talk.json'
+import parentUi from '../../data/parent/ui.json'
 import careI18n from '../../data/i18n/careCard.json'
 import { mapAreas, loadLabels } from '../../data/map'
 import { distressTips, readySentences, staffRequests } from '../../data/support'
@@ -110,6 +111,12 @@ export const topicChoices = TOPICS
 
 function bullets(items: string[]): string {
   return items.map((i) => `· ${i}`).join('\n')
+}
+
+/** One block of the discharge texts, the same blocks as on the quest's celebration screen (src/data/parent/ui.json) */
+function dischargeBody(lang: Lang, i: number): string {
+  const blocks = ((parentUi as unknown as Record<Lang, { celebrate: { discharge: { body: string }[] } }>)[lang] ?? (parentUi as unknown as Record<'he', { celebrate: { discharge: { body: string }[] } }>).he).celebrate.discharge
+  return blocks[i].body
 }
 
 /** The dialogue lines of this part of the talk, in the chosen language (src/data/parent/talk.json) */
@@ -634,40 +641,23 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       if (rest[0] === 'after') {
         return {
           say: [
-            {
-              text: 'בבית אולי יהיה צורך בזמן, בשקט ובחזרה הדרגתית לשגרה.',
-              mood: 'sleepy',
-            },
-            {
-              text: 'לפעמים התגובה למה שעברנו מגיעה רק אחר כך — וגם זה טבעי לגמרי.',
-            },
-            {
-              text: 'וחשוב: להמשיך מעקב אצל רופא/ת הילדים בקהילה לפי ההמלצות. הם מכירים אתכם.',
-              mood: 'calm',
-            },
+            { text: dischargeBody(ctx.lang, 2), mood: 'sleepy' },
+            { text: dischargeBody(ctx.lang, 4), mood: 'calm' },
           ],
           choices: [
-            { emoji: '💬', label: 'לספר לכם איך היה לנו', go: 'bye' },
+            { emoji: '💬', label: talkText(ctx.lang).home.tellUs, go: 'bye' },
             BACK,
           ],
         }
       }
       return {
         say: [
-          {
-            text: 'בסוף הביקור הצוות מסכם איתכם, נותן הנחיות להמשך, ולפעמים מרשם.',
-            mood: 'calm',
-          },
-          {
-            text: 'גם היציאה הביתה היא מעבר. אחרי יום ארוך זה יכול להרגיש שינוי גדול — אפשר לצאת לאט.',
-            mood: 'hug',
-          },
-          {
-            text: 'לפעמים צריך בבית ציוד קטן — למשל כיסוי אטום לגבס. הצוות יסביר מה ואיפה.',
-          },
+          { text: dischargeBody(ctx.lang, 0), mood: 'calm' },
+          { text: dischargeBody(ctx.lang, 1), mood: 'hug' },
+          { text: dischargeBody(ctx.lang, 3) },
         ],
         choices: [
-          { emoji: '🏠', label: 'ומה יהיה בבית?', go: 'home:after' },
+          { emoji: '🏠', label: talkText(ctx.lang).home.homeAfter, go: 'home:after' },
           BACK,
         ],
       }
