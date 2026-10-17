@@ -3,6 +3,7 @@ import { Link } from '../../nav'
 import { Mascot } from '../components/Mascot'
 import { NavCard } from '../components/ui'
 import { useVisitReason } from '../../../hooks/useVisitReason'
+import { parentPaths } from '../../../data/parent/paths'
 import { useI18n } from '../../../hooks/useI18n'
 import {
   avatarEmojis,
@@ -17,6 +18,7 @@ export function HomePage() {
   // the tiles' titles and descriptions: src/data/parent/ui.json, in the chosen language
   const tiles = (parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string; desc: string }> }>)[lang]?.tiles ?? (parentUi as unknown as Record<'he', { tiles: Record<string, { title: string; desc: string }> }>).he.tiles
   const { path } = useVisitReason()
+  const shownPath = path && (parentPaths(lang).find((p) => p.id === path.id) ?? path)
   const [avatar, setAvatar, resetAvatar] = useSessionAvatar()
   const fileRef = useRef<HTMLInputElement>(null)
 
@@ -94,14 +96,14 @@ export function HomePage() {
       {path ? (
         <div className={styles.reasonBanner}>
           <span className={styles.reasonEmoji} aria-hidden>
-            {path.emoji}
+            {shownPath?.emoji}
           </span>
           <span className={styles.reasonText}>
-            <span className={styles.reasonLabel}>הגענו בגלל</span>
-            <span className={styles.reasonValue}>{path.label}</span>
+            <span className={styles.reasonLabel}>{t('ui.calmHome.reasonLabel', 'הגענו בגלל')}</span>
+            <span className={styles.reasonValue}>{shownPath?.label}</span>
           </span>
           <Link to="/reason" className={styles.reasonChange}>
-            שינוי
+            {t('ui.calmHome.change', 'שינוי')}
           </Link>
         </div>
       ) : (
@@ -110,7 +112,7 @@ export function HomePage() {
         </Link>
       )}
 
-      <p className={styles.sectionLabel}>מה אפשר לעשות כאן</p>
+      <p className={styles.sectionLabel}>{t('ui.calmHome.canDo', 'מה אפשר לעשות כאן')}</p>
       <nav className={styles.navList}>
         <NavCard
           to="/card"
@@ -203,8 +205,7 @@ export function HomePage() {
       </nav>
 
       <p className={styles.footNote}>
-        הכלי נועד להנגיש את הביקור ולהפחית אי־ודאות. הוא אינו מחליף את הצוות הרפואי
-        ואינו מספק ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים.
+        {t('ui.calmHome.footer', 'הכלי נועד להנגיש את הביקור ולהפחית אי־ודאות. הוא אינו מחליף את הצוות הרפואי ואינו מספק ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים.')}
       </p>
     </div>
   )

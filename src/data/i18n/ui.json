@@ -182,7 +182,11 @@
       "ask": "What you can ask the staff"
     },
     "calmHome": {
-      "reasonPrompt": "👉 Tell me why you came today — so you can see what may be ahead"
+      "reasonPrompt": "👉 Tell me why you came today — so you can see what may be ahead",
+      "reasonLabel": "We came because of",
+      "change": "Change",
+      "canDo": "What you can do here",
+      "footer": "This tool is meant to make the visit easier to understand and reduce uncertainty. It does not replace the medical team and does not give medical advice. No need to enter a name or personal details."
     },
     "calmPage": {
       "eyebrow": "When it's hard",
@@ -408,7 +412,11 @@
       "ask": "Что можно попросить у персонала"
     },
     "calmHome": {
-      "reasonPrompt": "👉 Расскажите, зачем вы пришли сегодня, чтобы узнать, что может вас ожидать"
+      "reasonPrompt": "👉 Расскажите, зачем вы пришли сегодня, чтобы узнать, что может вас ожидать",
+      "reasonLabel": "Мы пришли из-за",
+      "change": "Изменить",
+      "canDo": "Что можно сделать здесь",
+      "footer": "Инструмент помогает сделать визит понятнее и снизить неопределённость. Он не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные."
     },
     "calmPage": {
       "eyebrow": "Когда трудно",
