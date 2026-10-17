@@ -37,14 +37,15 @@ export function CalmPage() {
         {t('ui.calmPage.readyHint', 'קשה לדבר ברגע כזה? לחצו על משפט כדי להציג אותו לצוות בגדול על המסך.')}
       </p>
       <div className={styles.sentences}>
-        {readySentences.map((s) => (
+        {/* the button shows the parent's language; the sentence shown on the screen stays in Hebrew for the staff */}
+        {readySentences.map((s, i) => (
           <button
             key={s}
             type="button"
             className={styles.sentence}
             onClick={() => setShown(s)}
           >
-            {s}
+            {t('support.readySentences', readySentences)[i] ?? s}
           </button>
         ))}
       </div>
