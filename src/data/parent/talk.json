@@ -95,8 +95,66 @@
       "for": "להתכונן ל{title}",
       "whoDur": "מי עושה את זה: {who}\nכמה זמן: {duration}",
       "letsSee": "בואו נראה איך זה הולך, שלב אחרי שלב",
-      "feel": "מה אני עשוי להרגיש?"
-    }
+      "feel": "מה הילד/ה עשוי/ה להרגיש?",
+      "howPrepare": "איך אפשר להתכונן:",
+      "askBefore": "לפני {title} אפשר לבקש:",
+      "intro": "לפי מה שסיפרתם לי, אלה הדברים שכנראה נפגוש היום. על מה נדבר?",
+      "whatAll": "על מה נכין את עצמנו?"
+    },
+    "ui": {
+      "showAll": "להראות הכול עכשיו",
+      "close": "סגירה",
+      "roni": "רוני",
+      "multiGroup": "אפשר לסמן כמה תשובות",
+      "bigSentence": "משפט מוצג לצוות"
+    },
+    "buttons": {
+      "allTests": "להראות לי את כל הבדיקות",
+      "otherPlace": "מקום אחר",
+      "quietPlace": "אפשר לבקש מקום שקט?",
+      "moreAsk": "מה עוד אפשר לבקש?",
+      "howAsk": "איך מבקשים את זה?",
+      "restart": "להתחיל שיחה מחדש",
+      "helpedMuch": "עזר מאוד",
+      "helpedSome": "עזר קצת",
+      "helpedLess": "פחות עזר"
+    },
+    "ask": {
+      "askGeneral": "מותר לבקש! הצוות רגיל לזה, וזה בסדר גמור.",
+      "askAbout": "על מה תרצו לשמוע?",
+      "availability": "הזמינות תלויה במצב, בציוד ובעומס באותו רגע. גם כשלא מתאפשר — שווה לשאול."
+    },
+    "map": {
+      "heading": "איזה מקום במלר״ד מעניין אתכם?",
+      "body": "אספר מה קורה שם, וכמה רועש או שקט בו.",
+      "load": "כמה עמוס שם: {label}",
+      "next": "מכאן ממשיכים אל: {next}"
+    },
+    "bye": {
+      "thanks1": "תודה רבה! זה עוזר לנו לשפר את הכלי למשפחות אחרות.",
+      "thanks2": "אם נפתחה אצלכם אפליקציית מייל עם הודעה מוכנה — נשאר רק לשלוח אותה.",
+      "thanks3": "היה לי טוב איתכם היום. שיהיה רק טוב 💛",
+      "ask": "איך היה לכם היום?",
+      "askNote": "שאלה אחת קצרה, בלי שם ובלי פרטים מזהים."
+    },
+    "topicNames": {
+      "reason": "למה באנו היום",
+      "where": "איפה אנחנו בתהליך",
+      "prep": "מה עומד לקרות",
+      "card": "מה חשוב לדעת עליי",
+      "map": "איפה אנחנו במיון",
+      "calm": "קשה לנו עכשיו",
+      "ask": "מה אפשר לבקש",
+      "home": "מה יהיה בסוף"
+    },
+    "asides": [
+      "היי! נגעתם בי 😊",
+      "אני כאן. לא הולך לשום מקום.",
+      "רוצים לנשום איתי? פנימה… והחוצה…",
+      "אתם עושים את זה מצוין!",
+      "אפשר גם רק לשבת בשקט. גם זה בסדר.",
+      "אני גאה בכם 🌟"
+    ]
   },
   "en": {
     "intro": {
@@ -194,8 +252,66 @@
       "for": "Get ready: {title}",
       "whoDur": "Who does it: {who}\nHow long: {duration}",
       "letsSee": "Let's see how it goes, step by step",
-      "feel": "What might I feel?"
-    }
+      "feel": "What might the child feel?",
+      "howPrepare": "How to get ready:",
+      "askBefore": "Before {title}, you can ask for:",
+      "intro": "Based on what you told me, these are the things we will probably meet today. What shall we talk about?",
+      "whatAll": "What shall we prepare for?"
+    },
+    "ui": {
+      "showAll": "Show everything now",
+      "close": "Close",
+      "roni": "Roni",
+      "multiGroup": "You can tick more than one answer",
+      "bigSentence": "Sentence shown to the staff"
+    },
+    "buttons": {
+      "allTests": "Show me all the tests",
+      "otherPlace": "Another place",
+      "quietPlace": "Can I ask for a quiet place?",
+      "moreAsk": "What else can I ask for?",
+      "howAsk": "How do I ask for this?",
+      "restart": "Start the talk again",
+      "helpedMuch": "It helped a lot",
+      "helpedSome": "It helped a little",
+      "helpedLess": "It helped less"
+    },
+    "ask": {
+      "askGeneral": "You can ask! The staff is used to it, and it is completely fine.",
+      "askAbout": "What would you like to hear about?",
+      "availability": "Availability depends on the situation, the equipment and how busy it is at that moment. Even when it is not possible, it is worth asking."
+    },
+    "map": {
+      "heading": "Which place in the ER would you like to know about?",
+      "body": "I will tell you what happens there and how loud or quiet it is.",
+      "load": "How busy it is: {label}",
+      "next": "From here we go on to: {next}"
+    },
+    "bye": {
+      "thanks1": "Thank you very much! It helps us improve this tool for other families.",
+      "thanks2": "If an email app opened with a ready message, all that is left is to send it.",
+      "thanks3": "It was good being with you today. Take care 💛",
+      "ask": "How was today for you?",
+      "askNote": "One short question, with no name and no identifying details."
+    },
+    "topicNames": {
+      "reason": "Why we came today",
+      "where": "Where we are in the process",
+      "prep": "What is going to happen",
+      "card": "What is important to know about me",
+      "map": "Where we are in the ER",
+      "calm": "It is hard for us right now",
+      "ask": "What can I ask for",
+      "home": "What will happen at the end"
+    },
+    "asides": [
+      "Hi! You touched me 😊",
+      "I'm here. I'm not going anywhere.",
+      "Want to breathe with me? In… and out…",
+      "You are doing it really well!",
+      "You can also just sit quietly. That's okay too.",
+      "I'm proud of you 🌟"
+    ]
   },
   "ru": {
     "intro": {
@@ -293,7 +409,65 @@
       "for": "Как подготовиться: {title}",
       "whoDur": "Кто делает: {who}\nСколько времени: {duration}",
       "letsSee": "Посмотрим, как это проходит, шаг за шагом",
-      "feel": "Что я могу почувствовать?"
-    }
+      "feel": "Что может почувствовать ребёнок?",
+      "howPrepare": "Как подготовиться:",
+      "askBefore": "Перед {title} можно попросить:",
+      "intro": "Судя по тому, что вы рассказали, это то, что, скорее всего, встретится сегодня. О чём поговорим?",
+      "whatAll": "К чему будем готовиться?"
+    },
+    "ui": {
+      "showAll": "Показать всё сейчас",
+      "close": "Закрыть",
+      "roni": "Рони",
+      "multiGroup": "Можно отметить несколько ответов",
+      "bigSentence": "Фраза, показанная персоналу"
+    },
+    "buttons": {
+      "allTests": "Показать все обследования",
+      "otherPlace": "Другое место",
+      "quietPlace": "Можно попросить тихое место?",
+      "moreAsk": "Что ещё можно попросить?",
+      "howAsk": "Как это попросить?",
+      "restart": "Начать разговор заново",
+      "helpedMuch": "Очень помогло",
+      "helpedSome": "Немного помогло",
+      "helpedLess": "Помогло меньше"
+    },
+    "ask": {
+      "askGeneral": "Можно просить! Персонал к этому привык, и это совершенно нормально.",
+      "askAbout": "О чём вы хотите услышать?",
+      "availability": "Возможность зависит от ситуации, оборудования и загруженности в этот момент. Даже если сейчас не получится — стоит спросить."
+    },
+    "map": {
+      "heading": "Какое место в приёмном покое вас интересует?",
+      "body": "Расскажу, что там происходит и насколько там шумно или тихо.",
+      "load": "Насколько людно: {label}",
+      "next": "Отсюда переходим к: {next}"
+    },
+    "bye": {
+      "thanks1": "Большое спасибо! Это помогает нам улучшать инструмент для других семей.",
+      "thanks2": "Если у вас открылось почтовое приложение с готовым письмом — осталось только его отправить.",
+      "thanks3": "Мне было с вами хорошо сегодня. Пусть всё будет хорошо 💛",
+      "ask": "Как прошёл сегодняшний день?",
+      "askNote": "Один короткий вопрос, без имени и без личных данных."
+    },
+    "topicNames": {
+      "reason": "Зачем мы пришли сегодня",
+      "where": "Где мы на пути",
+      "prep": "Что будет дальше",
+      "card": "Что важно знать обо мне",
+      "map": "Где мы в приёмном покое",
+      "calm": "Нам сейчас тяжело",
+      "ask": "Что можно попросить",
+      "home": "Что будет в конце"
+    },
+    "asides": [
+      "Привет! Вы до меня дотронулись 😊",
+      "Я здесь. Никуда не ухожу.",
+      "Хотите подышать со мной? Вдох… и выдох…",
+      "У вас отлично получается!",
+      "Можно и просто посидеть тихо. Это тоже нормально.",
+      "Я горжусь вами 🌟"
+    ]
   }
 }

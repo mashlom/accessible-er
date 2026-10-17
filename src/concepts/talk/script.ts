@@ -5,9 +5,9 @@ import { parentJourney, parentProcedure } from '../../data/parent'
 import { parentPaths } from '../../data/parent/paths'
 import supportI18n from '../../data/i18n/support.json'
 import talkTexts from '../../data/parent/talk.json'
+import { parentChannelLabel, parentLoadLabel, parentMapAreas } from '../../data/parent/map'
 import parentUi from '../../data/parent/ui.json'
 import careI18n from '../../data/i18n/careCard.json'
-import { mapAreas, loadLabels } from '../../data/map'
 import { distressTips, readySentences, staffRequests } from '../../data/support'
 import { cardSections, type CardArrayField, type CareCard } from '../../data/careCard'
 
@@ -213,17 +213,15 @@ function stageNode(id: string, tail: string | undefined, lang: Lang): TalkNode |
 function prepNode(pid: string, rest: string[], lang: Lang): TalkNode | null {
   const p = parentProcedure(lang, pid)
   if (!p) return null
-  const variants = p.storyVariants
 
   if (rest[0] === 'feel') {
     return {
       say: [
         { text: p.feel, mood: 'curious' },
-        { text: `איך אפשר להתכונן: ${p.prepare}`, mood: 'calm' },
+        { text: `${talkText(lang).prep.howPrepare} ${p.prepare}`, mood: 'calm' },
       ],
       choices: [
-        { label: 'מה אפשר לבקש?', go: `prep:${pid}:ask` },
-        { label: 'בואו נראה איך זה הולך', go: `prep:${pid}:v0:s0` },
+        { label: talkText(lang).stage.ask, go: `prep:${pid}:ask` },
         BACK,
       ],
     }
@@ -232,75 +230,20 @@ function prepNode(pid: string, rest: string[], lang: Lang): TalkNode | null {
   if (rest[0] === 'ask') {
     return {
       say: [
-        { text: `לפני ${p.title} אפשר לבקש:`, mood: 'happy' },
+        { text: talkText(lang).prep.askBefore.replace('{title}', p.title), mood: 'happy' },
         { text: bullets(p.adaptations) },
       ],
       choices: [
-        { label: 'בואו נראה איך זה הולך', go: `prep:${pid}:v0:s0` },
-        { emoji: '🙋', label: 'עוד דברים שאפשר לבקש', go: 'ask' },
+        { emoji: '🙋', label: talkText(lang).stage.askMore, go: 'ask' },
         BACK,
       ],
     }
   }
 
-  // prep:<pid>:v<i>:s<n>  /  prep:<pid>:v<i>:done
-  const vMatch = rest[0]?.match(/^v(\d+)$/)
-  if (vMatch) {
-    const vi = Number(vMatch[1])
-    const steps = variants ? (variants[vi] ?? variants[0]).steps : p.story
-    const stepMatch = rest[1]?.match(/^s(\d+)$/)
-
-    if (rest[1] === 'done') {
-      return {
-        say: [
-          { text: 'סיימנו את כל הסיפור! 🌟', mood: 'cheer' },
-          { text: 'עכשיו כבר יודעים מה עומד לקרות. אני אהיה שם איתכם.', mood: 'proud' },
-        ],
-        choices: [
-          { label: 'עוד פעם מההתחלה', go: `prep:${pid}:v${vi}:s0` },
-          { label: 'מה אפשר לבקש?', go: `prep:${pid}:ask` },
-          { emoji: '🎬', label: 'להתכונן למשהו אחר', go: 'prep' },
-          BACK,
-        ],
-      }
-    }
-
-    if (stepMatch) {
-      const n = Number(stepMatch[1])
-      if (n >= steps.length) return null
-      const last = n === steps.length - 1
-      return {
-        say: [
-          {
-            text: steps[n],
-            mood: n === 0 ? 'curious' : last ? 'cheer' : 'calm',
-            art: n === 0 ? p.emoji : undefined,
-          },
-        ],
-        choices: [
-          last
-            ? { label: 'וזהו — סיימנו! 🌟', go: `prep:${pid}:v${vi}:done` }
-            : { label: 'ואז? ←', go: `prep:${pid}:v${vi}:s${n + 1}` },
-          ...(n > 0
-            ? [{ label: '→ רגע, אחורה', go: `prep:${pid}:v${vi}:s${n - 1}`, quiet: true }]
-            : []),
-          { emoji: '💗', label: 'רגע — נעצור', go: 'calm', quiet: true },
-        ],
-      }
-    }
-  }
-
   // the procedure's opening card
   const choices: Choice[] = []
-  if (variants && variants.length > 1) {
-    for (const [i, v] of variants.entries()) {
-      choices.push({ label: `לראות איך זה הולך — ${v.label}`, go: `prep:${pid}:v${i}:s0` })
-    }
-  } else {
-    choices.push({ label: talkText(lang).prep.letsSee, go: `prep:${pid}:v0:s0` })
-  }
   choices.push({ label: talkText(lang).prep.feel, go: `prep:${pid}:feel` })
-  choices.push({ label: 'מה אפשר לבקש?', go: `prep:${pid}:ask` })
+  choices.push({ label: talkText(lang).stage.ask, go: `prep:${pid}:ask` })
   choices.push(BACK)
 
   return {
@@ -423,14 +366,14 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
         say: [
           {
             text: showAll
-              ? 'על מה נכין את עצמנו?'
-              : `לפי מה שסיפרתם לי, אלה הדברים שכנראה נפגוש היום. על מה נדבר?`,
+              ? talkText(ctx.lang).prep.whatAll
+              : talkText(ctx.lang).prep.intro,
             mood: 'curious',
           },
         ],
         choices: [
           ...list.map((p) => ({ emoji: p.emoji, label: p.title, go: `prep:${p.id}` })),
-          ...(showAll ? [] : [{ label: 'להראות לי את כל הבדיקות', go: 'prep:all' }]),
+          ...(showAll ? [] : [{ label: talkText(ctx.lang).buttons.allTests, go: 'prep:all' }]),
           BACK,
         ],
       }
@@ -502,31 +445,30 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     case 'map':
       return {
         say: [
-          { text: 'איזה מקום במלר״ד מעניין אתכם?', mood: 'curious' },
-          { text: 'אספר מה קורה שם, וכמה רועש או שקט בו.' },
+          { text: talkText(ctx.lang).map.heading, mood: 'curious' },
+          { text: talkText(ctx.lang).map.body },
         ],
         choices: [
-          ...mapAreas.map((a) => ({ emoji: a.emoji, label: a.name, go: `area:${a.id}` })),
+          ...parentMapAreas(ctx.lang).map((a) => ({ emoji: a.emoji, label: a.name, go: `area:${a.id}` })),
           BACK,
         ],
       }
 
     case 'area': {
-      const area = mapAreas.find((a) => a.id === rest[0])
+      const area = parentMapAreas(ctx.lang).find((a) => a.id === rest[0])
       if (!area) return unknown(ctx.lang)
-      const load = loadLabels[area.load]
-      return {
+            return {
         say: [
           { text: `${area.name}`, mood: 'calm', art: area.emoji },
           { text: area.note },
           {
-            text: `כמה עמוס שם: ${load.label}\n🔊 רעש ${area.sensory.sound}/5 · 💡 אור ${area.sensory.light}/5 · 👃 ריח ${area.sensory.smell}/5 · 👥 אנשים ${area.sensory.people}/5`,
+            text: `${talkText(ctx.lang).map.load.replace('{label}', parentLoadLabel(ctx.lang, area.load))}\n🔊 ${parentChannelLabel(ctx.lang, 'sound')} ${area.sensory.sound}/5 · 💡 ${parentChannelLabel(ctx.lang, 'light')} ${area.sensory.light}/5 · 👃 ${parentChannelLabel(ctx.lang, 'smell')} ${area.sensory.smell}/5 · 👥 ${parentChannelLabel(ctx.lang, 'people')} ${area.sensory.people}/5`,
           },
-          ...(area.next ? [{ text: `מכאן ממשיכים אל: ${area.next}` }] : []),
+          ...(area.next ? [{ text: talkText(ctx.lang).map.next.replace('{next}', area.next) }] : []),
         ],
         choices: [
-          { emoji: '🗺️', label: 'מקום אחר', go: 'map' },
-          { emoji: '🙋', label: 'אפשר לבקש מקום שקט?', go: 'ask' },
+          { emoji: '🗺️', label: talkText(ctx.lang).buttons.otherPlace, go: 'map' },
+          { emoji: '🙋', label: talkText(ctx.lang).buttons.quietPlace, go: 'ask' },
           BACK,
         ],
       }
@@ -619,21 +561,21 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
             { text: r.title, mood: 'happy', art: r.emoji },
             { text: r.detail },
             {
-              text: 'הזמינות תלויה במצב, בציוד ובעומס באותו רגע. גם כשלא מתאפשר — שווה לשאול.',
+              text: talkText(ctx.lang).ask.availability,
               mood: 'calm',
             },
           ],
           choices: [
-            { label: 'מה עוד אפשר לבקש?', go: 'ask' },
-            { emoji: '🗣️', label: 'איך מבקשים את זה?', go: 'calm:say' },
+            { label: talkText(ctx.lang).buttons.moreAsk, go: 'ask' },
+            { emoji: '🗣️', label: talkText(ctx.lang).buttons.howAsk, go: 'calm:say' },
             BACK,
           ],
         }
       }
       return {
         say: [
-          { text: 'מותר לבקש! הצוות רגיל לזה, וזה בסדר גמור.', mood: 'happy' },
-          { text: 'על מה תרצו לשמוע?' },
+          { text: talkText(ctx.lang).ask.askGeneral, mood: 'happy' },
+          { text: talkText(ctx.lang).ask.askAbout },
         ],
         choices: [
           ...staffRequestsIn(ctx.lang).map((r, i) => ({ emoji: r.emoji, label: r.title, go: `ask:${i}` })),
@@ -673,27 +615,27 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       if (rest[0] === 'thanks') {
         return {
           say: [
-            { text: 'תודה רבה! זה עוזר לנו לשפר את הכלי למשפחות אחרות.', mood: 'cheer' },
+            { text: talkText(ctx.lang).bye.thanks1, mood: 'cheer' },
             {
-              text: 'אם נפתחה אצלכם אפליקציית מייל עם הודעה מוכנה — נשאר רק לשלוח אותה.',
+              text: talkText(ctx.lang).bye.thanks2,
             },
-            { text: 'היה לי טוב איתכם היום. שיהיה רק טוב 💛', mood: 'proud' },
+            { text: talkText(ctx.lang).bye.thanks3, mood: 'proud' },
           ],
           choices: [
-            { label: 'להתחיל שיחה מחדש', action: { kind: 'restart' }, quiet: true },
+            { label: talkText(ctx.lang).buttons.restart, action: { kind: 'restart' }, quiet: true },
             BACK,
           ],
         }
       }
       return {
         say: [
-          { text: 'איך היה לכם היום?', mood: 'curious' },
-          { text: 'שאלה אחת קצרה, בלי שם ובלי פרטים מזהים.' },
+          { text: talkText(ctx.lang).bye.ask, mood: 'curious' },
+          { text: talkText(ctx.lang).bye.askNote },
         ],
         choices: [
-          { emoji: '😀', label: 'עזר מאוד', action: { kind: 'feedback', rating: 3 }, go: 'bye:thanks' },
-          { emoji: '🙂', label: 'עזר קצת', action: { kind: 'feedback', rating: 2 }, go: 'bye:thanks' },
-          { emoji: '😕', label: 'פחות עזר', action: { kind: 'feedback', rating: 1 }, go: 'bye:thanks' },
+          { emoji: '😀', label: talkText(ctx.lang).buttons.helpedMuch, action: { kind: 'feedback', rating: 3 }, go: 'bye:thanks' },
+          { emoji: '🙂', label: talkText(ctx.lang).buttons.helpedSome, action: { kind: 'feedback', rating: 2 }, go: 'bye:thanks' },
+          { emoji: '😕', label: talkText(ctx.lang).buttons.helpedLess, action: { kind: 'feedback', rating: 1 }, go: 'bye:thanks' },
           BACK,
         ],
       }

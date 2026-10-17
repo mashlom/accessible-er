@@ -1,0 +1,47 @@
+{
+  "he": {
+    "areas": {
+      "entrance": { "name": "כניסה וקבלה", "note": "הכניסה למלר״ד ודלפק המזכירות. כאן פותחים תיק ונרשמים.", "next": "טריאז׳ — ממש בסמוך" },
+      "triage": { "name": "עמדת טריאז׳", "note": "כאן אחות מודדת ובודקת מצב ראשוני. סמוך לכניסה.", "next": "חדר ההמתנה, עד שקוראים לרופא/ה" },
+      "waiting": { "name": "חדר המתנה", "note": "אזור ישיבה להמתנה. לרוב האזור הכי עמוס ורועש. אפשר לבקש פינה שקטה יותר.", "next": "חדר בדיקה, כשמגיע התור" },
+      "outside": { "name": "המתנה בחוץ / באזור סמוך", "note": "אם מצב הילד/ה מאפשר ובתיאום עם הצוות, אפשר לצאת לאזור סמוך או החוצה — טוב למי שצריך תנועה או שקט. יש שם מקום לשבת ולזוז מעט. הצוות יקרא לכם כשמגיע התור — אין התראה בטלפון או באפליקציה.", "next": "חוזרים פנימה כשקוראים לנו" },
+      "quiet-room": { "name": "חדר מותאם (סנוזלן)", "note": "חדר טיפולים מותאם ושקט יותר, סמוך לעמדת הקבלה, עם פאנלים חושיים וגירויים מופחתים — אפשר לבצע בו גם טיפולים כמו עירוי או ניטור בסביבה רגועה. הצוות מפנה לשם ילדים שמתאים להם, לפי הצורך והפניוּת. אפשר לספר לצוות על הצרכים של הילד/ה.", "next": "חוזרים לשלב שבו היינו — רגועים יותר" },
+      "treatment": { "name": "חדרי בדיקה וטיפול", "note": "כאן בודק הרופא/ה ומבצעים טיפולים. לרוב חדר סגור ושקט יחסית.", "next": "בדיקות נוספות, המתנה לתוצאות או שחרור" },
+      "imaging": { "name": "חדרי דימות (צילום / CT)", "note": "כאן מצלמים רנטגן, אולטרסאונד או CT. המכונות גדולות ולפעמים רועשות.", "next": "חוזרים להמתין לתוצאות" },
+      "restroom": { "name": "שירותים", "note": "שירותים לשימוש המשפחות, וגם מקום לבדיקת שתן. לחלק מהילדים זה מרחב מציף — יש ריח, ולפעמים רעש חזק של ההדחה. אפשר להיכנס לרגע קצר ולצאת." },
+      "discharge": { "name": "שחרור", "note": "כאן מקבלים הנחיות סיום ומשתחררים הביתה.", "next": "הביתה, עם הנחיות להמשך 🏠" }
+    },
+    "load": { "calm": "שקט", "medium": "בינוני", "busy": "עמוס" },
+    "channels": { "sound": "רעש", "light": "אור", "smell": "ריח", "people": "אנשים" }
+  },
+  "en": {
+    "areas": {
+      "entrance": { "name": "Entrance and reception", "note": "The entrance to the ER and the desk of the secretaries. This is where your file is opened and you register.", "next": "Triage — right nearby" },
+      "triage": { "name": "Triage station", "note": "A nurse measures and checks the first condition here. Close to the entrance.", "next": "The waiting room, until the doctor calls you" },
+      "waiting": { "name": "Waiting room", "note": "Seating for waiting. Usually the busiest and loudest area. You can ask for a quieter corner.", "next": "An examination room, when your turn comes" },
+      "outside": { "name": "Waiting outside / in a nearby area", "note": "If your child's condition allows and it is agreed with the staff, you can step out to a nearby area or outside. It is good for those who need movement or quiet. There is a place to sit and move a little. The staff will call you when your turn comes — there is no alert on the phone or the app.", "next": "Back inside when we are called" },
+      "quiet-room": { "name": "Adapted room (Snoezelen)", "note": "An adapted, quieter treatment room near the reception desk, with sensory panels and fewer stimuli. Treatments such as an IV or monitoring can also be done here in a calm setting. The staff directs children here when it suits them, according to need and availability. You can tell the staff about your child's needs.", "next": "Back to the stage where we were — calmer now" },
+      "treatment": { "name": "Examination and treatment rooms", "note": "The doctor examines here and treatments are done. Usually a closed and relatively quiet room.", "next": "Further tests, waiting for results, or discharge" },
+      "imaging": { "name": "Imaging rooms (X-ray / CT)", "note": "X-ray, ultrasound or CT scans are taken here. The machines are large and sometimes loud.", "next": "Back to waiting for the results" },
+      "restroom": { "name": "Toilets", "note": "Toilets for families, and also a place for a urine test. For some children this is an overwhelming space — there is a smell, and sometimes a loud flush. You can go in for a short moment and come out." },
+      "discharge": { "name": "Discharge", "note": "This is where you get the instructions for after and go home.", "next": "Home, with instructions for what comes next 🏠" }
+    },
+    "load": { "calm": "Calm", "medium": "Medium", "busy": "Busy" },
+    "channels": { "sound": "Noise", "light": "Light", "smell": "Smell", "people": "People" }
+  },
+  "ru": {
+    "areas": {
+      "entrance": { "name": "Вход и регистратура", "note": "Вход в приёмный покой и стойка регистратуры. Здесь открывают карту и регистрируют вас.", "next": "Триаж — совсем рядом" },
+      "triage": { "name": "Пост триажа", "note": "Здесь медсестра измеряет показатели и оценивает первичное состояние. Рядом со входом.", "next": "Зал ожидания, пока не позовут к врачу" },
+      "waiting": { "name": "Зал ожидания", "note": "Зона для ожидания с сидячими местами. Обычно самая людная и шумная. Можно попросить более тихий уголок.", "next": "Смотровая, когда подойдёт очередь" },
+      "outside": { "name": "Ожидание снаружи / в соседней зоне", "note": "Если состояние ребёнка позволяет и это согласовано с персоналом, можно выйти в соседнюю зону или на улицу. Это хорошо тем, кому нужны движение или тишина. Там есть место, где можно сесть и немного походить. Персонал позовёт вас, когда подойдёт очередь, — звонка или уведомления в телефоне или приложении не будет.", "next": "Возвращаемся внутрь, когда зовут" },
+      "quiet-room": { "name": "Адаптированная комната (снузелен)", "note": "Адаптированная, более тихая комната для процедур рядом со стойкой регистратуры, с сенсорными панелями и меньшим количеством раздражителей. Здесь можно провести и процедуры, например капельницу или наблюдение, в спокойной обстановке. Персонал направляет сюда детей, которым это подходит, — по необходимости и при наличии места. Вы можете рассказать персоналу о потребностях ребёнка.", "next": "Возвращаемся к тому этапу, где были, — теперь спокойнее" },
+      "treatment": { "name": "Смотровые и процедурные", "note": "Здесь врач осматривает и проводятся процедуры. Обычно закрытая и относительно тихая комната.", "next": "Дополнительные анализы, ожидание результатов или выписка" },
+      "imaging": { "name": "Кабинеты визуализации (рентген / КТ)", "note": "Здесь делают снимки: рентген, УЗИ или КТ. Аппараты большие и иногда шумные.", "next": "Возвращаемся ждать результаты" },
+      "restroom": { "name": "Туалеты", "note": "Туалеты для семей, а также место для анализа мочи. Для некоторых детей это переполняющее пространство: есть запах, а иногда громко работает смыв. Можно зайти ненадолго и выйти." },
+      "discharge": { "name": "Выписка", "note": "Здесь получают рекомендации на дальнейшее и уходят домой.", "next": "Домой, с рекомендациями на дальнейшее 🏠" }
+    },
+    "load": { "calm": "Тихо", "medium": "Средне", "busy": "Людно" },
+    "channels": { "sound": "Шум", "light": "Свет", "smell": "Запах", "people": "Люди" }
+  }
+}
