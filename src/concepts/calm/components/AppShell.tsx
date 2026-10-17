@@ -1,5 +1,6 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Link, useIsConceptHome } from '../../nav'
+import { useI18n } from '../../../hooks/useI18n'
 import { LanguagePicker } from '../../../components/LanguagePicker'
 import styles from './AppShell.module.css'
 
@@ -10,9 +11,11 @@ import styles from './AppShell.module.css'
 export function AppShell() {
   const navigate = useNavigate()
   const isHome = useIsConceptHome()
+  // the direction follows the language: Hebrew reads right to left, Russian and English left to right
+  const { dir, lang } = useI18n()
 
   return (
-    <div className={styles.shell}>
+    <div className={styles.shell} dir={dir} lang={lang}>
       <a href="#main" className="skip-link">
         דילוג לתוכן
       </a>
