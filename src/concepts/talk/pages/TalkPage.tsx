@@ -299,7 +299,7 @@ export function TalkPage() {
                     onClick={() => toggleCardOption(current.multi!.field, option)}
                   >
                     {on && <span aria-hidden>✓ </span>}
-                    {option}
+                    {current.multi!.labels[current.multi!.options.indexOf(option)] ?? option}
                   </button>
                 )
               })}

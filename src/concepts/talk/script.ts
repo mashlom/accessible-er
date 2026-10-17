@@ -23,6 +23,13 @@ const PAUSE_TIP = distressTips.findIndex((tip) => tip.title === 'לבקש הפס
 const distressTipsIn = (lang: Lang) => inLang(distressTips, lang, supportI18n, 'distressTips')
 const staffRequestsIn = (lang: Lang) => inLang(staffRequests, lang, supportI18n, 'staffRequests')
 // the section titles are translated; the options stay the Hebrew values that are saved on the card
+/** The translated labels of one section's options, by position (the saved values stay Hebrew) */
+function cardLabels(lang: Lang, n: number): string[] {
+  const sec = cardSections[n]
+  const tr = ((careI18n as unknown as Record<Lang, { cardSections: { options: string[] }[] }>)[lang]?.cardSections ?? [])[n]
+  return sec.options.map((o, i) => tr?.options?.[i] ?? o)
+}
+
 const cardSectionsIn = (lang: Lang) => cardSections.map((sec, i) => {
   const tr = ((careI18n as unknown as Record<Lang, { cardSections: { title: string }[] }>)[lang]?.cardSections ?? [])[i]
   return { ...sec, title: tr?.title ?? sec.title }
@@ -74,7 +81,8 @@ export interface TalkNode {
    * A section of the adaptations card, answered by toggling chips that stay
    * on screen — the one place a single answer isn't enough.
    */
-  multi?: { field: CardArrayField; options: string[] }
+  /** the options are saved in Hebrew (for the staff); `labels` are what the family reads */
+  multi?: { field: CardArrayField; options: string[]; labels: string[] }
 }
 
 export interface Ctx {
@@ -469,7 +477,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
           { text: `${section.emoji} ${section.title}`, mood: 'curious' },
           { text: talkText(ctx.lang).card.cardPickMany },
         ],
-        multi: { field: section.key, options: section.options },
+        multi: { field: section.key, options: section.options, labels: cardLabels(ctx.lang, n) },
         choices: [
           {
             label: last ? talkText(ctx.lang).card.cardLastStep : talkText(ctx.lang).card.cardNextStep,
