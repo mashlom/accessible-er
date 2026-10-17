@@ -7,7 +7,7 @@ import { usePersistentState } from '../../../hooks/usePersistentState'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { DAY_MS } from '../../../lib/storage'
 import { emptyCard, type CardArrayField, type CareCard } from '../../../data/careCard'
-import { resolveNode, topicChoices, type Action, type Choice, type Say } from '../script'
+import { resolveNode, talkText, topicChoices, type Action, type Choice, type Say } from '../script'
 import { useI18n } from '../../../hooks/useI18n'
 import parentUi from '../../../data/parent/ui.json'
 import styles from '../talk.module.css'
@@ -69,6 +69,7 @@ const TOPIC_TILE: Record<string, string> = { reason: 'reason', prep: 'procedures
 export function TalkPage() {
   const { t, lang } = useI18n()
   const topicLabel = (choice: Choice): string => {
+    if (choice.go === 'topics') return talkText(lang).topics.back
     if (!topicChoices.some((tc) => tc.go === choice.go && tc.label === choice.label)) return choice.label
     const tiles = (parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string }> }>)[lang]?.tiles
     const tile = TOPIC_TILE[choice.go ?? ''] ?? ''

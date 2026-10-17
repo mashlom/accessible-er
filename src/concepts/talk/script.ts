@@ -4,6 +4,7 @@ import { procedures } from '../../data/procedures'
 import { parentJourney, parentProcedure } from '../../data/parent'
 import { parentPaths } from '../../data/parent/paths'
 import supportI18n from '../../data/i18n/support.json'
+import talkTexts from '../../data/parent/talk.json'
 import careI18n from '../../data/i18n/careCard.json'
 import { mapAreas, loadLabels } from '../../data/map'
 import { distressTips, readySentences, staffRequests } from '../../data/support'
@@ -92,7 +93,7 @@ const TOPICS: Choice[] = [
 ]
 
 /** Every node offers a way back to the topics — a thread you cannot leave is a trap. */
-const BACK: Choice = { emoji: '↩️', label: 'לדבר על משהו אחר', go: 'topics', quiet: true }
+const BACK: Choice = { emoji: '↩️', label: talkTexts.he.topics.back, go: 'topics', quiet: true }
 
 export const topicChoices = TOPICS
 
@@ -100,9 +101,14 @@ function bullets(items: string[]): string {
   return items.map((i) => `· ${i}`).join('\n')
 }
 
-function unknown(): TalkNode {
+/** The dialogue lines of this part of the talk, in the chosen language (src/data/parent/talk.json) */
+export function talkText(lang: Lang): typeof talkTexts.he {
+  return (talkTexts as unknown as Record<Lang, typeof talkTexts.he>)[lang] ?? talkTexts.he
+}
+
+function unknown(lang: Lang = 'he'): TalkNode {
   return {
-    say: [{ text: 'רגע, איבדתי את החוט. בואו נחזור לרשימה.', mood: 'curious' }],
+    say: [{ text: talkText(lang).unknown, mood: 'curious' }],
     choices: [...TOPICS],
   }
 }
@@ -297,16 +303,16 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     case 'start':
       return {
         say: [
-          { text: 'שלום! אני רוני 👋', mood: 'wave' },
-          { text: 'אני אלווה אתכם היום במלר״ד. נדבר על מה שקורה — דבר אחד בכל פעם.', mood: 'happy' },
-          { text: 'אני שואל, אתם עונים, ואפשר לעצור מתי שרוצים. במה נתחיל?', mood: 'curious' },
+          { text: talkText(ctx.lang).intro.hi, mood: 'wave' },
+          { text: talkText(ctx.lang).intro.line1, mood: 'happy' },
+          { text: talkText(ctx.lang).intro.line2, mood: 'curious' },
         ],
         choices: [...TOPICS],
       }
 
     case 'topics':
       return {
-        say: [{ text: 'על מה נדבר עכשיו?', mood: 'curious' }],
+        say: [{ text: talkText(ctx.lang).topics.ask, mood: 'curious' }],
         choices: [...TOPICS],
       }
 
@@ -374,12 +380,12 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       }
 
     case 'stage':
-      return stageNode(rest[0], rest[1], ctx.lang) ?? unknown()
+      return stageNode(rest[0], rest[1], ctx.lang) ?? unknown(ctx.lang)
 
     /* ---------- procedures ---------- */
     case 'prep': {
       if (rest.length > 0 && rest[0] !== 'all') {
-        return prepNode(rest[0], rest.slice(1), ctx.lang) ?? unknown()
+        return prepNode(rest[0], rest.slice(1), ctx.lang) ?? unknown(ctx.lang)
       }
 
       const likelyIds = [
@@ -453,7 +459,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
 
       const n = Number(rest[0])
       const section = cardSectionsIn(ctx.lang)[n]
-      if (!section) return unknown()
+      if (!section) return unknown(ctx.lang)
       const last = n === cardSectionsIn(ctx.lang).length - 1
       return {
         say: [
@@ -486,7 +492,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
 
     case 'area': {
       const area = mapAreas.find((a) => a.id === rest[0])
-      if (!area) return unknown()
+      if (!area) return unknown(ctx.lang)
       const load = loadLabels[area.load]
       return {
         say: [
@@ -562,7 +568,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
 
     case 'tip': {
       const tip = distressTipsIn(ctx.lang)[Number(rest[0])]
-      if (!tip) return unknown()
+      if (!tip) return unknown(ctx.lang)
       return {
         say: [
           { text: tip.title, mood: 'hug', art: tip.emoji },
@@ -580,7 +586,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     case 'ask': {
       if (rest.length) {
         const r = staffRequestsIn(ctx.lang)[Number(rest[0])]
-        if (!r) return unknown()
+        if (!r) return unknown(ctx.lang)
         return {
           say: [
             { text: r.title, mood: 'happy', art: r.emoji },
@@ -683,6 +689,6 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       }
 
     default:
-      return unknown()
+      return unknown(ctx.lang)
   }
 }

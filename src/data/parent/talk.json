@@ -1,0 +1,38 @@
+{
+  "he": {
+    "intro": {
+      "hi": "שלום! אני רוני 👋",
+      "line1": "אני אלווה אתכם היום במלר״ד. נדבר על מה שקורה — דבר אחד בכל פעם.",
+      "line2": "אני שואל, אתם עונים, ואפשר לעצור מתי שרוצים. במה נתחיל?"
+    },
+    "topics": {
+      "ask": "על מה נדבר עכשיו?",
+      "back": "לדבר על משהו אחר"
+    },
+    "unknown": "רגע, איבדתי את החוט. בואו נחזור לרשימה."
+  },
+  "en": {
+    "intro": {
+      "hi": "Hello! I'm Roni 👋",
+      "line1": "I'll be with you today in the emergency room. We'll talk about what is happening — one thing at a time.",
+      "line2": "I ask, you answer, and you can stop whenever you like. Where shall we start?"
+    },
+    "topics": {
+      "ask": "What shall we talk about now?",
+      "back": "Talk about something else"
+    },
+    "unknown": "Wait, I lost the thread. Let's go back to the list."
+  },
+  "ru": {
+    "intro": {
+      "hi": "Здравствуйте! Я Рони 👋",
+      "line1": "Я буду с вами сегодня в приёмном покое. Поговорим о том, что происходит, — по одному вопросу за раз.",
+      "line2": "Я спрашиваю, вы отвечаете, и можно остановиться в любой момент. С чего начнём?"
+    },
+    "topics": {
+      "ask": "О чём поговорим сейчас?",
+      "back": "Поговорить о чём-то другом"
+    },
+    "unknown": "Секунду, я потерял нить. Вернёмся к списку."
+  }
+}
