@@ -1,0 +1,20 @@
+{
+  "he": {
+    "worlds": {
+      "title": "איזה עולם מחכה לך?",
+      "subtitle": "בחרו עולם — ויוצאים למסע"
+    }
+  },
+  "en": {
+    "worlds": {
+      "title": "Which world is waiting for you?",
+      "subtitle": "Choose a world — and set off on the journey"
+    }
+  },
+  "ru": {
+    "worlds": {
+      "title": "Какой мир ждёт тебя?",
+      "subtitle": "Выберите мир — и отправляемся в путешествие"
+    }
+  }
+}
