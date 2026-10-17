@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Link, useIsConceptHome } from '../../nav'
 import { RoniCompanion } from './RoniCompanion'
+import { HelperChat } from '../../../components/helper/HelperChat'
 import styles from '../story.module.css'
 
 /**
@@ -24,6 +25,7 @@ export function StoryShell() {
           <span className={`${styles.cloud} ${styles.cloudB}`} />
         </div>
 
+        {!isHome && (
         <header className={`${styles.topbar} no-print`}>
           <div className={styles.topbarInner}>
             {!isHome ? (
@@ -49,12 +51,15 @@ export function StoryShell() {
             </a>
           </div>
         </header>
+        )}
 
         <main id="main">
           <Outlet />
         </main>
 
-        <RoniCompanion />
+        {/* the home screen has no Roni: the family's home is the parent's centre */}
+        {!isHome && <RoniCompanion />}
+        <HelperChat />
       </div>
     </div>
   )

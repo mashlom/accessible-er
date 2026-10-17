@@ -1,13 +1,7 @@
-import { useRef, type CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
 import { Link } from '../../nav'
-import { Roni } from '../../../components/Roni'
-import { Bubble } from '../components/kit'
+import { openHelper } from '../../../components/helper/helperStore'
 import { useVisitReason } from '../../../hooks/useVisitReason'
-import {
-  avatarEmojis,
-  fileToAvatarDataUrl,
-  useSessionAvatar,
-} from '../../../hooks/useSessionAvatar'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
@@ -34,94 +28,51 @@ const destinations: Destination[] = [
 ]
 
 /**
- * The concept's home: a little illustrated world. Roni and the child's own
- * figure stand together on a hill, and each destination is a place you can
- * walk to — not a row in a menu.
+ * The app's home (the parent side, as in the design): a header, the child's
+ * world with the one big "start the journey" action and two shared activities,
+ * then the parent's centre with the tiles of every stage of the visit.
  */
 export function WorldPage() {
   const { path } = useVisitReason()
-  const [avatar, setAvatar, resetAvatar] = useSessionAvatar()
-  const fileRef = useRef<HTMLInputElement>(null)
-
-  async function onPickFile(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]
-    e.target.value = ''
-    if (!file) return
-    try {
-      setAvatar({ kind: 'photo', value: await fileToAvatarDataUrl(file) })
-    } catch {
-      /* unreadable image — keep the current avatar */
-    }
-  }
 
   return (
     <div className={shell.page}>
-      <section className={styles.hero}>
-        <div className={styles.heroCast}>
-          <span className={styles.heroMe}>
-            {avatar.kind === 'photo' ? (
-              <img src={avatar.value} alt="הדמות שלך" />
-            ) : (
-              <span aria-hidden>{avatar.value}</span>
-            )}
-          </span>
-          <Roni size={150} mood="wave" float />
-        </div>
-        <div className={styles.hill} aria-hidden />
+      <header className={styles.homeHead}>
+        <span className={styles.homeEyebrow}>מלר״ד ילדים • לניאדו</span>
+        <h1 className={styles.homeTitle}>מה שלומי?</h1>
+        <p className={styles.homeSub}>
+          כלי להנגשת הביקור במיון לילדים אוטיסטים ולמשפחותיהם
+        </p>
+      </header>
 
-        <div className={styles.heroBubble}>
-          <Bubble>
-            <strong>שלום! אני רוני.</strong> נעבור את היום הזה יחד — לאט, שלב אחרי
-            שלב. אני אהיה כאן בכל מסך, ואפשר תמיד ללחוץ עליי.
-          </Bubble>
+      <section className={styles.homeSection} aria-labelledby="child-world">
+        <div className={styles.sectionHead}>
+          <h2 id="child-world" className={styles.worldLabel}>עולם הילד</h2>
+          <span className={styles.sectionChip}>בוחרים איך לצאת לדרך</span>
+        </div>
+
+        <a href="#/quest" className={styles.bigStart}>
+          <span className={styles.bigStartIcon} aria-hidden>🗺️</span>
+          <span className={styles.bigStartText}>
+            <strong>בוא נצא למסע</strong>
+            <span>בוחרים עולם — טירה, דינוזאורים, פיות ועוד — ועוברים את הביקור תחנה אחר תחנה על המפה</span>
+          </span>
+          <span className={styles.bigStartArrow} aria-hidden>←</span>
+        </a>
+
+        <div className={styles.childCards}>
+          <button type="button" className={styles.childCard} onClick={openHelper}>
+            <span aria-hidden>💬</span>
+            <span className={styles.childCardName}>בוא נדבר!</span>
+            <span className={styles.childCardDesc}>שיחה אחת רציפה עם רוני</span>
+          </button>
+          <a href="#/book" className={styles.childCard}>
+            <span aria-hidden>📖</span>
+            <span className={styles.childCardName}>בוא נקרא ביחד</span>
+            <span className={styles.childCardDesc}>סיפור קצר, עמוד אחר עמוד</span>
+          </a>
         </div>
       </section>
-
-      <div className={styles.picker}>
-        <span className={styles.pickerLabel}>בחרו דמות למסע</span>
-        <div className={styles.pickerRow}>
-          {avatarEmojis.map((emoji) => (
-            <button
-              key={emoji}
-              type="button"
-              className={`${styles.avatarOpt} ${
-                avatar.kind === 'emoji' && avatar.value === emoji ? styles.avatarOptOn : ''
-              }`}
-              onClick={() => setAvatar({ kind: 'emoji', value: emoji })}
-              aria-pressed={avatar.kind === 'emoji' && avatar.value === emoji}
-              aria-label={`דמות ${emoji}`}
-            >
-              <span aria-hidden>{emoji}</span>
-            </button>
-          ))}
-          <button
-            type="button"
-            className={`${styles.avatarOpt} ${styles.avatarOptWide}`}
-            onClick={() => fileRef.current?.click()}
-          >
-            📷 תמונה שלי
-          </button>
-          {avatar.kind === 'photo' && (
-            <button
-              type="button"
-              className={`${styles.avatarOpt} ${styles.avatarOptWide}`}
-              onClick={resetAvatar}
-            >
-              ✕ הסרה
-            </button>
-          )}
-        </div>
-        <input
-          ref={fileRef}
-          type="file"
-          accept="image/*"
-          onChange={onPickFile}
-          style={{ display: 'none' }}
-        />
-        <span className={styles.pickerNote}>
-          התמונה נשארת במכשיר לזמן השימוש בלבד ונמחקת ביציאה. שום דבר לא נשלח.
-        </span>
-      </div>
 
       {path ? (
         <div className={styles.reasonStrip}>
@@ -150,7 +101,10 @@ export function WorldPage() {
         </Link>
       )}
 
-      <h2 className={styles.worldLabel}>לאן הולכים?</h2>
+      <div className={styles.sectionHead}>
+        <h2 className={styles.worldLabel}>מרכז ההורה</h2>
+        <span className={styles.sectionChip}>כל מה שצריך במהלך הביקור</span>
+      </div>
       <nav className={styles.destGrid}>
         {destinations.map((d) => (
           <Link

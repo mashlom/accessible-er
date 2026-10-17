@@ -2,6 +2,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { Link, useIsConceptHome } from '../../nav'
 import { useI18n } from '../../../hooks/useI18n'
 import { LanguagePicker } from '../../../components/LanguagePicker'
+import { HelperChat } from '../../../components/helper/HelperChat'
 import styles from './AppShell.module.css'
 
 /**
@@ -54,6 +55,7 @@ export function AppShell() {
 
       <main id="main" className={styles.main}>
         <Outlet />
+        <HelperChat />
       </main>
     </div>
   )
