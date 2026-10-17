@@ -183,6 +183,14 @@
     },
     "calmHome": {
       "reasonPrompt": "👉 Tell me why you came today — so you can see what may be ahead"
+    },
+    "calmPage": {
+      "eyebrow": "When it's hard",
+      "title": "A moment of distress? We are here",
+      "subtitle": "When a child is overwhelmed, a few small things help. Take a breath — you are doing great work.",
+      "readyHint": "Hard to talk at such a moment? Tap a sentence to show it to the staff in large text on the screen.",
+      "askLink": "🙋 To the list of what you can ask the staff ←",
+      "sentenceShown": "Sentence shown to the staff"
     }
   },
   "ru": {
@@ -370,6 +378,14 @@
     },
     "calmHome": {
       "reasonPrompt": "👉 Расскажите, зачем вы пришли сегодня, чтобы узнать, что может вас ожидать"
+    },
+    "calmPage": {
+      "eyebrow": "Когда трудно",
+      "title": "Момент тревоги? Мы рядом",
+      "subtitle": "Когда ребёнок перегружен, помогают несколько маленьких вещей. Сделайте вдох — вы делаете отличную работу.",
+      "readyHint": "Трудно говорить в такой момент? Нажмите на фразу, чтобы показать её персоналу крупным текстом на экране.",
+      "askLink": "🙋 К списку того, что можно попросить у персонала ←",
+      "sentenceShown": "Фраза, показанная персоналу"
     }
   }
 }

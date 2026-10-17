@@ -2,22 +2,24 @@ import { useState } from 'react'
 import { Link } from '../../nav'
 import { PageHeader } from '../components/ui'
 import { distressTips, readySentences } from '../../../data/support'
+import { useI18n } from '../../../hooks/useI18n'
 import styles from './SupportPages.module.css'
 
 export function CalmPage() {
+  const { t } = useI18n()
   // A sentence the parent chose to show staff in large type.
   const [shown, setShown] = useState<string | null>(null)
 
   return (
     <div className="container">
       <PageHeader
-        eyebrow="כשקשה"
-        title="רגע של מצוקה? אנחנו כאן"
-        subtitle="כשהילד/ה מוצף/ת, כמה דברים קטנים עוזרים. קחו נשימה — אתם עושים עבודה נהדרת."
+        eyebrow={t('ui.calmPage.eyebrow', 'כשקשה')}
+        title={t('ui.calmPage.title', 'רגע של מצוקה? אנחנו כאן')}
+        subtitle={t('ui.calmPage.subtitle', 'כשהילד/ה מוצף/ת, כמה דברים קטנים עוזרים. קחו נשימה — אתם עושים עבודה נהדרת.')}
       />
 
       <div className={styles.list}>
-        {distressTips.map((tip, i) => (
+        {t('support.distressTips', distressTips).map((tip, i) => (
           <div key={i} className={styles.tip}>
             <span className={styles.tipEmoji} aria-hidden>
               {tip.emoji}
@@ -30,9 +32,9 @@ export function CalmPage() {
         ))}
       </div>
 
-      <h2 className={styles.subhead}>🗨️ משפטים מוכנים לצוות</h2>
+      <h2 className={styles.subhead}>🗨️ {t('ui.text.readySentences', 'משפטים מוכנים לצוות')}</h2>
       <p className={styles.subnote}>
-        קשה לדבר ברגע כזה? לחצו על משפט כדי להציג אותו לצוות בגדול על המסך.
+        {t('ui.calmPage.readyHint', 'קשה לדבר ברגע כזה? לחצו על משפט כדי להציג אותו לצוות בגדול על המסך.')}
       </p>
       <div className={styles.sentences}>
         {readySentences.map((s) => (
@@ -48,7 +50,7 @@ export function CalmPage() {
       </div>
 
       <Link to="/requests" className={styles.crossLink}>
-        🙋 לרשימת הדברים שאפשר לבקש מהצוות ←
+        {t('ui.calmPage.askLink', '🙋 לרשימת הדברים שאפשר לבקש מהצוות ←')}
       </Link>
 
       {shown && (
@@ -56,12 +58,12 @@ export function CalmPage() {
           className={styles.overlay}
           role="dialog"
           aria-modal="true"
-          aria-label="משפט מוצג לצוות"
+          aria-label={t('ui.calmPage.sentenceShown', 'משפט מוצג לצוות')}
           onClick={() => setShown(null)}
         >
           <p className={styles.overlayText}>{shown}</p>
           <button type="button" className={styles.overlayClose}>
-            סגירה
+            {t('ui.buttons.close', 'סגירה')}
           </button>
         </div>
       )}
