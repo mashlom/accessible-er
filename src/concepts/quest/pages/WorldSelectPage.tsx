@@ -2,12 +2,13 @@ import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { themes } from '../themes'
 import { useQuestTheme } from '../useQuestTheme'
+import { worldText, type WorldLang } from '../../../data/child/worlds'
 import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 export function WorldSelectPage() {
   const { setThemeId } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
@@ -29,13 +30,16 @@ export function WorldSelectPage() {
       <p className={css.selectSub}>בחרו עולם — ויוצאים למסע</p>
 
       <div className={css.worldGrid}>
-        {ordered.map((theme) => (
+        {ordered.map((theme) => {
+          // the world's name comes from its texts file, in the chosen language
+          const name = worldText(theme.id, lang as WorldLang)?.name ?? theme.name ?? ''
+          return (
           <button
             key={theme.id}
             className={css.worldCard}
             style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}
             onClick={() => choose(theme.id)}
-            aria-label={`${t('ui.buttons.chooseWorldAria', 'בחר עולם:')} ${theme.name}`}
+            aria-label={`${t('ui.buttons.chooseWorldAria', 'בחר עולם:')} ${name}`}
           >
             {theme.thumbnailOverlay ? (
               <div
@@ -49,13 +53,14 @@ export function WorldSelectPage() {
             ) : (
               <span className={css.worldEmoji}>{theme.emoji}</span>
             )}
-            <span className={css.worldCardName}>{theme.name}</span>
+            <span className={css.worldCardName}>{name}</span>
             <span className={css.worldCardCta}>
               <span className={css.worldCardArrow} aria-hidden>↖</span>
               {t('ui.buttons.startJourney', 'להתחיל במסע')}
             </span>
           </button>
-        ))}
+          )
+        })}
       </div>
     </div>
   )
