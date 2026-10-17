@@ -26,8 +26,9 @@ type CardText = {
 
 export function CardViewPage() {
   const { theme } = useQuestTheme()
-  const { t, lang } = useI18n()
-  const cardText = (parentTexts[lang] ?? parentTexts.he).card
+  const { t } = useI18n()
+  // the card is for the staff, so its words are always Hebrew (src/data/parent/ui.json); the buttons follow the language
+  const cardText = parentTexts.he.card
   const { goBack, leaveState, passThroughState } = useReturnTo('/card')
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
 
@@ -87,8 +88,10 @@ export function CardViewPage() {
       </div>
 
       <div className={css.stageBody}>
+        <p className={css.stageHeroHint}>{t('ui.careView.hebrewNote', 'הכרטיס כתוב בעברית: הצוות קורא אותו בעברית.')}</p>
         <div className={`${css.cardViewRows} print-area`}>
           {rows.map((row) => (
+
             <div key={row.label} className={css.cardViewRow}>
               <span className={css.cardViewLabel}>
                 <span aria-hidden>{row.emoji}</span> {row.label}

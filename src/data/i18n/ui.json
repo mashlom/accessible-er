@@ -136,7 +136,8 @@
       "savePdf": "📄 Save as PDF to send",
       "print": "🖨️ Print",
       "edit": "✏️ Edit the card",
-      "sendHint": "To send it to the staff: tap \"Save as PDF\", choose \"Save as PDF\" in the print window, and send the file to the emergency room email yourself. The card is saved on this device only and deleted after 24 hours; nothing is sent automatically."
+      "sendHint": "To send it to the staff: tap \"Save as PDF\", choose \"Save as PDF\" in the print window, and send the file to the emergency room email yourself. The card is saved on this device only and deleted after 24 hours; nothing is sent automatically.",
+      "hebrewNote": "The card is written in Hebrew: the staff reads it in Hebrew."
     }
   },
   "ru": {
@@ -277,7 +278,8 @@
       "savePdf": "📄 Сохранить как PDF для отправки",
       "print": "🖨️ Печать",
       "edit": "✏️ Изменить карточку",
-      "sendHint": "Чтобы отправить персоналу: нажмите «Сохранить как PDF», в окне печати выберите «Сохранить как PDF» и отправьте файл на почту приёмного покоя сами. Карточка хранится только на этом устройстве и удаляется через 24 часа; ничего не отправляется автоматически."
+      "sendHint": "Чтобы отправить персоналу: нажмите «Сохранить как PDF», в окне печати выберите «Сохранить как PDF» и отправьте файл на почту приёмного покоя сами. Карточка хранится только на этом устройстве и удаляется через 24 часа; ничего не отправляется автоматически.",
+      "hebrewNote": "Карточка написана на иврите: персонал читает её на иврите."
     }
   }
 }

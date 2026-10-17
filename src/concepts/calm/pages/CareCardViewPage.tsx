@@ -26,9 +26,9 @@ interface Row {
  * shows from the screen or prints. No transmission, ever.
  */
 export function CareCardViewPage() {
-  const { t, lang } = useI18n()
-  // the card's words are the same as on the worlds' card page: src/data/parent/ui.json
-  const cardText = (parentUi as unknown as Record<'he' | 'en' | 'ru', { card: { empty: { title: string; hint: string }; viewTitle: string; age: string; suggestionsTitle: string; rows: Record<string, string>; nameFallback: string } }>)[lang]?.card ?? (parentUi as unknown as Record<'he', { card: { empty: { title: string; hint: string }; viewTitle: string; age: string; suggestionsTitle: string; rows: Record<string, string>; nameFallback: string } }>).he.card
+  const { t } = useI18n()
+  // the card is for the staff, so its words are always Hebrew (src/data/parent/ui.json); the buttons follow the language
+  const cardText = (parentUi as unknown as Record<'he', { card: { empty: { title: string; hint: string }; viewTitle: string; age: string; suggestionsTitle: string; rows: Record<string, string>; nameFallback: string } }>).he.card
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
 
   if (isCardEmpty(card)) {
@@ -81,8 +81,10 @@ export function CareCardViewPage() {
             {card.age.trim() && <div className={styles.cardAge}>{cardText.age.replace('{age}', card.age.trim())}</div>}
           </div>
         </div>
+        <p className={styles.cardAge}>{t('ui.careView.hebrewNote', 'הכרטיס כתוב בעברית: הצוות קורא אותו בעברית.')}</p>
         <div className={styles.rows}>
           {rows.map((row) => (
+
             <div key={row.label} className={styles.row}>
               <span className={styles.rowLabel}>
                 <span aria-hidden>{row.emoji}</span>
