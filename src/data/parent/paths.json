@@ -68,7 +68,7 @@
   },
   "en": {
     "fever": {
-      "label": "Fever / illness",
+      "label": "Fever",
       "blurb": "Usually: check-in, initial assessment, a doctor's exam, and if needed a blood test or an X-ray.",
       "route": [
         "Check-in at the reception desk",
@@ -135,7 +135,7 @@
   },
   "ru": {
     "fever": {
-      "label": "Температура / болезнь",
+      "label": "Высокая температура",
       "blurb": "Обычно: регистратура, оценка состояния и измерения, осмотр врача и при необходимости анализ крови или рентген.",
       "route": [
         "Оформление в регистратуре",
