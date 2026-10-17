@@ -347,7 +347,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
             text:
               talkText(ctx.lang).reason.routeHeading + '\n' +
               path.route
-                .map((s, i) => `${i + 1}. ${s.title}${s.optional ? ' (לפי הצורך)' : ''}`)
+                .map((s, i) => `${i + 1}. ${s.title}${s.optional ? talkText(ctx.lang).reason.optional : ''}`)
                 .join('\n'),
           },
           {
