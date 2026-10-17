@@ -21,6 +21,10 @@ function inLang<T extends object>(src: T[], lang: Lang, bucket: Record<string, u
 // the position of the 'ask for a break' tip in the support list
 const PAUSE_TIP = distressTips.findIndex((tip) => tip.title === 'לבקש הפסקה')
 
+/** The ready sentences in the chosen language, for the buttons only */
+const readySentencesIn = (lang: Lang): string[] =>
+  ((supportI18n as unknown as Record<Lang, { readySentences?: string[] }>)[lang]?.readySentences ?? [])
+
 const distressTipsIn = (lang: Lang) => inLang(distressTips, lang, supportI18n, 'distressTips')
 const staffRequestsIn = (lang: Lang) => inLang(staffRequests, lang, supportI18n, 'staffRequests')
 // the section titles are translated; the options stay the Hebrew values that are saved on the card
@@ -547,8 +551,9 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
             { text: talkText(ctx.lang).calm.sayHint2 },
           ],
           choices: [
-            ...readySentences.map((s) => ({
-              label: s,
+            // the button shows the parent's language; what is shown on the screen for the staff stays Hebrew
+            ...readySentences.map((s, i) => ({
+              label: readySentencesIn(ctx.lang)[i] ?? s,
               action: { kind: 'showBig', text: s } as Action,
             })),
             BACK,
