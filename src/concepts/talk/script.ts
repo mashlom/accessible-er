@@ -387,7 +387,6 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     case 'where':
       return {
         say: [
-          { text: talkText(ctx.lang).where.ask, mood: 'curious' },
           { text: talkText(ctx.lang).where.hint },
         ],
         choices: [
