@@ -12,12 +12,12 @@ export function AppShell() {
   const navigate = useNavigate()
   const isHome = useIsConceptHome()
   // the direction follows the language: Hebrew reads right to left, Russian and English left to right
-  const { dir, lang } = useI18n()
+  const { t, dir, lang } = useI18n()
 
   return (
     <div className={styles.shell} dir={dir} lang={lang}>
       <a href="#main" className="skip-link">
-        דילוג לתוכן
+        {t('ui.shell.skip', 'דילוג לתוכן')}
       </a>
       <header className={`${styles.header} no-print`}>
         <div className={styles.headerInner}>

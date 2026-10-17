@@ -128,6 +128,15 @@
       },
       "cardSubtitle": "Tick what fits — under 2 minutes. At the end you get a short card to show the staff on screen or print it.",
       "privacyD": "What you don't show yourself won't reach the staff. You can fill it in without a name at all."
+    },
+    "careView": {
+      "fill": "Fill in the card",
+      "suggestions": "Based on what you ticked — adaptations to ask for",
+      "fullList": "Full list of what you can ask for →",
+      "savePdf": "📄 Save as PDF to send",
+      "print": "🖨️ Print",
+      "edit": "✏️ Edit the card",
+      "sendHint": "To send it to the staff: tap \"Save as PDF\", choose \"Save as PDF\" in the print window, and send the file to the emergency room email yourself. The card is saved on this device only and deleted after 24 hours; nothing is sent automatically."
     }
   },
   "ru": {
@@ -260,6 +269,15 @@
       },
       "cardSubtitle": "Отметьте, что подходит, — меньше 2 минут. В конце получите короткую карточку, которую можно показать персоналу на экране или распечатать.",
       "privacyD": "То, что вы не покажете сами, не попадёт к персоналу. Можно заполнить вообще без имени."
+    },
+    "careView": {
+      "fill": "Заполнить карточку",
+      "suggestions": "По тому, что вы отметили, — адаптации, о которых стоит попросить",
+      "fullList": "Полный список того, что можно попросить →",
+      "savePdf": "📄 Сохранить как PDF для отправки",
+      "print": "🖨️ Печать",
+      "edit": "✏️ Изменить карточку",
+      "sendHint": "Чтобы отправить персоналу: нажмите «Сохранить как PDF», в окне печати выберите «Сохранить как PDF» и отправьте файл на почту приёмного покоя сами. Карточка хранится только на этом устройстве и удаляется через 24 часа; ничего не отправляется автоматически."
     }
   }
 }
