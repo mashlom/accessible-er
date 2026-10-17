@@ -53,6 +53,24 @@
     "home": {
       "homeAfter": "ומה יהיה בבית?",
       "tellUs": "לספר לכם איך היה לנו"
+    },
+    "calm": {
+      "tipsHint": "על מה נדבר? כל אחד מאלה עוזר.",
+      "sayHint": "קשה לדבר עכשיו? בחרו משפט, ואציג אותו בגדול על המסך.",
+      "sayHint2": "ככה אפשר פשוט להראות אותו לצוות, בלי להסביר.",
+      "watchOne": "אפשר להסתכל לכאן במקום על היד. אני נשאר איתכם.",
+      "watchTwo": "תסתכלו על הקשת… היא לא הולכת לשום מקום, וגם אני לא.",
+      "watchThree": "אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…",
+      "again": "עוד פעם",
+      "moreHelp": "מה עוד עוזר?",
+      "hardNow1": "קשה עכשיו? זה בסדר גמור. אני כאן.",
+      "hardNow2": "קודם כל — ננשום יחד. פנימה… והחוצה… עוד פעם, לאט.",
+      "hardNow3": "אתם עושים עבודה נהדרת. באמת.",
+      "watchBtn": "משהו רגוע להסתכל עליו",
+      "helpBtn": "מה עוזר עכשיו?",
+      "sayBtn": "קשה לי לדבר עם הצוות",
+      "moreHelpBtn": "עוד משהו שעוזר",
+      "howSayBtn": "איך אומרים את זה לצוות?"
     }
   },
   "en": {
@@ -109,6 +127,24 @@
     "home": {
       "homeAfter": "What will it be like at home?",
       "tellUs": "Tell you how it was for us"
+    },
+    "calm": {
+      "tipsHint": "What shall we talk about? Each of these helps.",
+      "sayHint": "Hard to talk right now? Choose a sentence, and I will show it big on the screen.",
+      "sayHint2": "That way you can simply show it to the staff, without explaining.",
+      "watchOne": "You can look here instead of at your hand. I am staying with you.",
+      "watchTwo": "Look at the rainbow… it is not going anywhere, and neither am I.",
+      "watchThree": "We can also count slowly to ten together. One… two… three…",
+      "again": "Again",
+      "moreHelp": "What else helps?",
+      "hardNow1": "Is it hard right now? That's completely okay. I'm here.",
+      "hardNow2": "First of all — let us breathe together. In… and out… once more, slowly.",
+      "hardNow3": "You are doing great work. Really.",
+      "watchBtn": "Something calm to look at",
+      "helpBtn": "What helps right now?",
+      "sayBtn": "It is hard for me to talk to the staff",
+      "moreHelpBtn": "Something else that helps",
+      "howSayBtn": "How do I say this to the staff?"
     }
   },
   "ru": {
@@ -165,6 +201,24 @@
     "home": {
       "homeAfter": "Что будет дома?",
       "tellUs": "Рассказать, как у нас прошло"
+    },
+    "calm": {
+      "tipsHint": "О чём поговорим? Каждое из этого помогает.",
+      "sayHint": "Трудно говорить сейчас? Выберите фразу, и я покажу её крупно на экране.",
+      "sayHint2": "Так можно просто показать её персоналу, ничего не объясняя.",
+      "watchOne": "Можно смотреть сюда, а не на руку. Я остаюсь с вами.",
+      "watchTwo": "Посмотрите на радугу… она никуда не уходит, и я тоже.",
+      "watchThree": "Можно ещё медленно посчитать со мной до десяти. Один… два… три…",
+      "again": "Ещё раз",
+      "moreHelp": "Что ещё помогает?",
+      "hardNow1": "Сейчас трудно? Это совершенно нормально. Я рядом.",
+      "hardNow2": "Прежде всего — давайте подышим вместе. Вдох… и выдох… ещё раз, медленно.",
+      "hardNow3": "Вы делаете отличную работу. Правда.",
+      "watchBtn": "Что-то спокойное, чтобы посмотреть",
+      "helpBtn": "Что помогает сейчас?",
+      "sayBtn": "Мне трудно говорить с персоналом",
+      "moreHelpBtn": "Что-то ещё, что помогает",
+      "howSayBtn": "Как сказать это персоналу?"
     }
   }
 }

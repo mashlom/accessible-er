@@ -533,7 +533,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     case 'calm':
       if (rest[0] === 'tips') {
         return {
-          say: [{ text: 'על מה נדבר? כל אחד מאלה עוזר.', mood: 'hug' }],
+          say: [{ text: talkText(ctx.lang).calm.tipsHint, mood: 'hug' }],
           choices: [
             ...distressTipsIn(ctx.lang).map((t, i) => ({ emoji: t.emoji, label: t.title, go: `tip:${i}` })),
             BACK,
@@ -543,8 +543,8 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       if (rest[0] === 'say') {
         return {
           say: [
-            { text: 'קשה לדבר עכשיו? בחרו משפט, ואציג אותו בגדול על המסך.', mood: 'calm' },
-            { text: 'ככה אפשר פשוט להראות אותו לצוות, בלי להסביר.' },
+            { text: talkText(ctx.lang).calm.sayHint, mood: 'calm' },
+            { text: talkText(ctx.lang).calm.sayHint2 },
           ],
           choices: [
             ...readySentences.map((s) => ({
@@ -558,28 +558,28 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       if (rest[0] === 'watch') {
         return {
           say: [
-            { text: 'אפשר להסתכל לכאן במקום על היד. אני נשאר איתכם.', mood: 'hug' },
-            { art: '🌈', text: 'תסתכלו על הקשת… היא לא הולכת לשום מקום, וגם אני לא.' },
+            { text: talkText(ctx.lang).calm.watchOne, mood: 'hug' },
+            { art: '🌈', text: talkText(ctx.lang).calm.watchTwo },
             { art: '💧' },
-            { art: '🌟', text: 'אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…' },
+            { art: '🌟', text: talkText(ctx.lang).calm.watchThree },
           ],
           choices: [
-            { label: 'עוד פעם', go: 'calm:watch' },
-            { label: 'מה עוד עוזר?', go: 'calm:tips' },
+            { label: talkText(ctx.lang).calm.again, go: 'calm:watch' },
+            { label: talkText(ctx.lang).calm.moreHelp, go: 'calm:tips' },
             BACK,
           ],
         }
       }
       return {
         say: [
-          { text: 'קשה עכשיו? זה בסדר גמור. אני כאן.', mood: 'hug' },
-          { text: 'קודם כל — ננשום יחד. פנימה… והחוצה… עוד פעם, לאט.', mood: 'calm' },
-          { text: 'אתם עושים עבודה נהדרת. באמת.', mood: 'proud' },
+          { text: talkText(ctx.lang).calm.hardNow1, mood: 'hug' },
+          { text: talkText(ctx.lang).calm.hardNow2, mood: 'calm' },
+          { text: talkText(ctx.lang).calm.hardNow3, mood: 'proud' },
         ],
         choices: [
-          { emoji: '🫧', label: 'משהו רגוע להסתכל עליו', go: 'calm:watch' },
-          { emoji: '💡', label: 'מה עוזר עכשיו?', go: 'calm:tips' },
-          { emoji: '🗣️', label: 'קשה לי לדבר עם הצוות', go: 'calm:say' },
+          { emoji: '🫧', label: talkText(ctx.lang).calm.watchBtn, go: 'calm:watch' },
+          { emoji: '💡', label: talkText(ctx.lang).calm.helpBtn, go: 'calm:tips' },
+          { emoji: '🗣️', label: talkText(ctx.lang).calm.sayBtn, go: 'calm:say' },
           BACK,
         ],
       }
@@ -596,8 +596,8 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
         ],
         choices: [
           ...(isPause ? [{ emoji: '⏸️', label: talkText(ctx.lang).staffPause, action: { kind: 'showBig', text: 'אנחנו צריכים דקה' } as Action }] : []),
-          { label: 'עוד משהו שעוזר', go: 'calm:tips' },
-          { emoji: '🗣️', label: 'איך אומרים את זה לצוות?', go: 'calm:say' },
+          { label: talkText(ctx.lang).calm.moreHelpBtn, go: 'calm:tips' },
+          { emoji: '🗣️', label: talkText(ctx.lang).calm.howSayBtn, go: 'calm:say' },
           BACK,
         ],
       }
