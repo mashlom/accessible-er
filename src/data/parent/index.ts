@@ -33,6 +33,7 @@ export function parentTexts(lang: ParentLang): ParentTexts {
 
 import { journeyStages } from '../journey'
 import { getProcedure } from '../procedures'
+import { procedureSteps } from '../child/procedures'
 import type { JourneyStage, Procedure } from '../types'
 
 /** The stations as shown to the parent: the code's station data with the parent texts of the language on top */
@@ -44,5 +45,7 @@ export function parentJourney(lang: ParentLang): JourneyStage[] {
 export function parentProcedure(lang: ParentLang, id: string): Procedure | undefined {
   const base = getProcedure(id)
   const tx = parentTexts(lang).procedures[id]
-  return base && tx ? { ...base, ...tx } : base
+  // the steps a child hears are shared by all worlds: their own file (src/data/child/procedures)
+  const steps = procedureSteps(lang, id)
+  return base && tx ? { ...base, ...tx, ...steps } : base
 }
