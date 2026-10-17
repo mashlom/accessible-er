@@ -74,6 +74,52 @@
         "freeNote": "עוד"
       },
       "nameFallback": "הילד/ה"
+    },
+    "tiles": {
+      "card": {
+        "title": "חשוב לדעת על הילד/ה שלי",
+        "desc": "כרטיס התאמות קצר להצגה לצוות"
+      },
+      "journey": {
+        "title": "מה קורה עכשיו?",
+        "desc": "שלבי הביקור במיון, ומה צפוי בהמשך"
+      },
+      "wait-times": {
+        "title": "זמנים משוערים",
+        "desc": "כמה זמן כל שלב יכול לקחת בערך"
+      },
+      "procedures": {
+        "title": "מה עומד לקרות?",
+        "desc": "הכנה לבדיקות ולפרוצדורות, שלב אחרי שלב"
+      },
+      "map": {
+        "title": "איפה אנחנו?",
+        "desc": "מפה פשוטה של המיון, כולל מקומות שקטים"
+      },
+      "calm": {
+        "title": "מה עושים כשקשה?",
+        "desc": "הנחיות קצרות להורה ברגעי מצוקה"
+      },
+      "requests": {
+        "title": "מה אפשר לבקש?",
+        "desc": "התאמות שאפשר לבקש מהצוות"
+      },
+      "discharge": {
+        "title": "לקראת שחרור",
+        "desc": "מה קורה בסיום הביקור והחזרה הביתה"
+      },
+      "reason": {
+        "title": "למה הגענו?",
+        "desc": "בחירת סיבת ההגעה להתאמת המסלול"
+      },
+      "message": {
+        "title": "הודעה לצוות",
+        "desc": "בקשה או תודה — להצגה על המסך או לשליחה במייל"
+      },
+      "feedback": {
+        "title": "משוב קצר",
+        "desc": "ספרו לנו איך היה — כדי שנשתפר"
+      }
     }
   },
   "en": {
@@ -141,6 +187,52 @@
         "freeNote": "More"
       },
       "nameFallback": "my child"
+    },
+    "tiles": {
+      "card": {
+        "title": "What to know about my child",
+        "desc": "A short card of adaptations to show the staff"
+      },
+      "journey": {
+        "title": "What happens now?",
+        "desc": "The stages of the visit in the emergency room, and what comes next"
+      },
+      "wait-times": {
+        "title": "Estimated times",
+        "desc": "About how long each stage can take"
+      },
+      "procedures": {
+        "title": "What is going to happen?",
+        "desc": "Preparing for the tests and procedures, step by step"
+      },
+      "map": {
+        "title": "Where are we?",
+        "desc": "A simple map of the emergency room, with quiet places"
+      },
+      "calm": {
+        "title": "What to do when it is hard?",
+        "desc": "Short guidance for the parent in moments of distress"
+      },
+      "requests": {
+        "title": "What can I ask for?",
+        "desc": "Adaptations you can ask the staff for"
+      },
+      "discharge": {
+        "title": "Before discharge",
+        "desc": "What happens at the end of the visit and going home"
+      },
+      "reason": {
+        "title": "Why did we come?",
+        "desc": "Choose the reason for the visit to adapt the route"
+      },
+      "message": {
+        "title": "A message to the staff",
+        "desc": "A request or thanks — to show on the screen or send by email"
+      },
+      "feedback": {
+        "title": "A short feedback",
+        "desc": "Tell us how it was, so we can improve"
+      }
     }
   },
   "ru": {
@@ -208,6 +300,52 @@
         "freeNote": "Ещё"
       },
       "nameFallback": "ребёнок"
+    },
+    "tiles": {
+      "card": {
+        "title": "Важно знать о моём ребёнке",
+        "desc": "Короткая карточка адаптаций, чтобы показать персоналу"
+      },
+      "journey": {
+        "title": "Что происходит сейчас?",
+        "desc": "Этапы визита в приёмном покое и что ждёт дальше"
+      },
+      "wait-times": {
+        "title": "Примерное время",
+        "desc": "Сколько примерно может занять каждый этап"
+      },
+      "procedures": {
+        "title": "Что будет дальше?",
+        "desc": "Подготовка к обследованиям и процедурам, шаг за шагом"
+      },
+      "map": {
+        "title": "Где мы?",
+        "desc": "Простая карта приёмного покоя, с тихими местами"
+      },
+      "calm": {
+        "title": "Что делать, когда трудно?",
+        "desc": "Короткие советы родителю в моменты тревоги"
+      },
+      "requests": {
+        "title": "Что можно попросить?",
+        "desc": "Адаптации, о которых можно попросить персонал"
+      },
+      "discharge": {
+        "title": "Перед выпиской",
+        "desc": "Что происходит в конце визита и при возвращении домой"
+      },
+      "reason": {
+        "title": "Почему мы пришли?",
+        "desc": "Выберите причину визита, чтобы подстроить маршрут"
+      },
+      "message": {
+        "title": "Сообщение персоналу",
+        "desc": "Просьба или благодарность — показать на экране или отправить по почте"
+      },
+      "feedback": {
+        "title": "Короткий отзыв",
+        "desc": "Расскажите, как всё прошло, — чтобы мы стали лучше"
+      }
     }
   }
 }
