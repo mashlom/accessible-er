@@ -246,7 +246,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
           </section>
         )}
 
-        {!ocean && <Link to="/calm" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.hardNow', '💙 קשה לנו כרגע')}</Link>}
+        {!ocean && <Link to="/calm" state={{ from: '/map' }} className={css.calmLink}><span aria-hidden className={css.heartIcon}>💙</span> {t('ui.buttons.hardNow', 'קשה לנו כרגע')}</Link>}
           </>
         )}
 

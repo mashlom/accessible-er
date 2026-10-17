@@ -3165,3 +3165,8 @@ path.oceanTrailLit {
 .questShellOcean .calmChildLine {
   color: #065a66;
 }
+
+/* the heart on the 'it's hard for us' button: a gap before the words */
+.heartIcon {
+  margin-inline-end: 0.4em;
+}

@@ -260,7 +260,7 @@ export function StagePage() {
           </>
         )}
         <Link to="/calm" state={{ from: `/stage/${id}` }} className={css.calmLink}>
-          {t('ui.buttons.hardNow', '💙 קשה לנו כרגע')}
+          <span aria-hidden className={css.heartIcon}>💙</span> {t('ui.buttons.hardNow', 'קשה לנו כרגע')}
         </Link>
       </div>
     </div>
