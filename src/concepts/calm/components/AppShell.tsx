@@ -32,8 +32,6 @@ export function AppShell() {
             <span className={styles.iconBtn} aria-hidden />
           )}
 
-          <LanguagePicker />
-
           <Link to="/" className={styles.brand}>
             <span className={styles.brandMark} aria-hidden>
               🧸
@@ -41,10 +39,13 @@ export function AppShell() {
             <span>מה שלומי?</span>
           </Link>
 
-          {/* demo affordance: back to the concept menu */}
-          <a href="#/" className={styles.iconBtn} aria-label="לתפריט הקונספטים">
-            <span aria-hidden>🏁</span>
-          </a>
+          <div className={styles.end}>
+            <LanguagePicker />
+            {/* demo affordance: back to the concept menu */}
+            <a href="#/" className={styles.iconBtn} aria-label="לתפריט הקונספטים">
+              <span aria-hidden>🏁</span>
+            </a>
+          </div>
         </div>
       </header>
 

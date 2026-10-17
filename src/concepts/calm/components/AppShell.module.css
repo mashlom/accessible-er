@@ -18,12 +18,20 @@
   margin-inline: auto;
   padding: var(--space-2) var(--space-4);
   display: grid;
-  grid-template-columns: var(--tap) 1fr var(--tap);
+  grid-template-columns: var(--tap) 1fr auto;
   align-items: center;
   gap: var(--space-2);
 }
 
+.end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-1);
+}
+
 .brand {
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   justify-content: center;
