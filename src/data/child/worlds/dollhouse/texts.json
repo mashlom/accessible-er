@@ -44,5 +44,97 @@
       }
     },
     "distractTitle": "חדר המשחקים 🎪"
+  },
+  "en": {
+    "name": "Dollhouse",
+    "stages": {
+      "reception": {
+        "label": "Reception Desk",
+        "hint": "We write the name in the house entrance book"
+      },
+      "wait-before-triage": {
+        "label": "The Corridor Bench",
+        "hint": "We sit on the bench until the teddy bear calls"
+      },
+      "triage": {
+        "label": "Measuring Room",
+        "hint": "The teddy bear helps to measure and check"
+      },
+      "wait-doctor": {
+        "label": "The Guest Room",
+        "hint": "We wait calmly until our name is called"
+      },
+      "doctor": {
+        "label": "The Doctor's Room",
+        "hint": "The doctor checks gently"
+      },
+      "decision": {
+        "label": "Going Home",
+        "hint": "We are done, we can go home"
+      },
+      "tests": {
+        "label": "The Small Test Room",
+        "hint": "Blood tests, an X-ray and more"
+      },
+      "treatment": {
+        "label": "The Treatment Corner",
+        "hint": "The treatment that was decided on"
+      },
+      "consult": {
+        "label": "Visit from Another Doctor",
+        "hint": "Another doctor joins to help"
+      },
+      "wait-results": {
+        "label": "The Quiet Waiting Room",
+        "hint": "We wait for the answers"
+      }
+    },
+    "distractTitle": "The Playroom 🎪"
+  },
+  "ru": {
+    "name": "Кукольный домик",
+    "stages": {
+      "reception": {
+        "label": "Стойка регистрации",
+        "hint": "Записываем имя в книгу входа в домик"
+      },
+      "wait-before-triage": {
+        "label": "Скамейка в коридоре",
+        "hint": "Сидим на скамейке, пока нас позовёт мишка"
+      },
+      "triage": {
+        "label": "Комната измерений",
+        "hint": "Мишка помогает измерить и проверить"
+      },
+      "wait-doctor": {
+        "label": "Комната гостей",
+        "hint": "Спокойно ждём, пока назовут наше имя"
+      },
+      "doctor": {
+        "label": "Комната доктора",
+        "hint": "Доктор аккуратно проверяет"
+      },
+      "decision": {
+        "label": "Возвращаемся домой",
+        "hint": "Всё, можно возвращаться домой"
+      },
+      "tests": {
+        "label": "Маленькая комната анализов",
+        "hint": "Анализы крови, рентген и другое"
+      },
+      "treatment": {
+        "label": "Уголок лечения",
+        "hint": "Лечение, которое решили назначить"
+      },
+      "consult": {
+        "label": "Визит другого доктора",
+        "hint": "Ещё один доктор приходит помочь"
+      },
+      "wait-results": {
+        "label": "Тихая комната ожидания",
+        "hint": "Ждём ответов"
+      }
+    },
+    "distractTitle": "Игровая комната 🎪"
   }
 }
