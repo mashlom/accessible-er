@@ -197,6 +197,13 @@
       "title": "Fair requests to the staff",
       "subtitle": "These are things it is allowed and fine to ask for, to make things easier for the child. The staff is here to help.",
       "note": "Not every request is possible at every moment, but you can always ask. You can tell the staff in a short sentence what helps your child — you are the experts on your child."
+    },
+    "calmDischarge": {
+      "eyebrow": "Discharge",
+      "title": "Getting ready to go home",
+      "subtitle": "What happens at the end of the visit, and how to get ready to go home.",
+      "draftNote": "The text here is a first draft, to be finalised together with the team.",
+      "home": "Back to the home page"
     }
   },
   "ru": {
@@ -398,6 +405,13 @@
       "title": "Законные просьбы к персоналу",
       "subtitle": "Это то, о чём можно и нужно просить, чтобы облегчить ребёнку нахождение в приёмном покое. Персонал здесь, чтобы помогать.",
       "note": "Не каждая просьба возможна в любой момент, но спросить всегда можно. Можно коротко сказать персоналу, что помогает вашему ребёнку — вы в этом эксперты."
+    },
+    "calmDischarge": {
+      "eyebrow": "Выписка",
+      "title": "Готовимся к возвращению домой",
+      "subtitle": "Что происходит в конце визита и как подготовиться к возвращению домой.",
+      "draftNote": "Текст здесь — первый черновик, окончательную формулировку согласуем с командой.",
+      "home": "Назад на главную"
     }
   }
 }
