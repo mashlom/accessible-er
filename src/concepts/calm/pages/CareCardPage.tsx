@@ -21,6 +21,8 @@ import styles from './CareCardPage.module.css'
  */
 export function CareCardPage() {
   const { t } = useI18n()
+  // the chosen options are saved in Hebrew (the card is for the staff); only their labels are translated
+  const translatedSections = t('careCard.cardSections', cardSections)
   const [card, setCard, clearCard] = usePersistentState<CareCard>(
     'care-card',
     emptyCard,
@@ -85,13 +87,13 @@ export function CareCardPage() {
         </div>
       </section>
 
-      {t('careCard.cardSections', cardSections).map((section) => (
+      {cardSections.map((section, si) => (
         <section key={section.key} className={`card ${styles.section}`}>
           <h2 className={styles.sectionTitle}>
-            <span aria-hidden>{section.emoji}</span> {section.title}
+            <span aria-hidden>{section.emoji}</span> {translatedSections[si]?.title ?? section.title}
           </h2>
-          <div className={styles.chips} role="group" aria-label={section.title}>
-            {section.options.map((option) => {
+          <div className={styles.chips} role="group" aria-label={translatedSections[si]?.title ?? section.title}>
+            {section.options.map((option, oi) => {
               const on = card[section.key].includes(option)
               return (
                 <button
@@ -101,7 +103,7 @@ export function CareCardPage() {
                   aria-pressed={on}
                   onClick={() => toggle(section.key, option)}
                 >
-                  {option}
+                  {translatedSections[si]?.options?.[oi] ?? option}
                 </button>
               )
             })}
