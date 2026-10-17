@@ -387,8 +387,8 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     case 'where':
       return {
         say: [
-          { text: 'איפה אתם עכשיו?', mood: 'curious' },
-          { text: 'סמנו את השלב, ואספר לכם מה קורה בו.' },
+          { text: talkText(ctx.lang).where.ask, mood: 'curious' },
+          { text: talkText(ctx.lang).where.hint },
         ],
         choices: [
           ...parentJourney(ctx.lang).map((s) => ({

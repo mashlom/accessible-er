@@ -72,6 +72,10 @@
       "moreHelpBtn": "עוד משהו שעוזר",
       "howSayBtn": "איך אומרים את זה לצוות?",
       "question": "במה אפשר לעזור עכשיו?"
+    },
+    "where": {
+      "ask": "איפה אתם עכשיו?",
+      "hint": "סמנו את השלב, ואספר לכם מה קורה בו."
     }
   },
   "en": {
@@ -147,6 +151,10 @@
       "moreHelpBtn": "Something else that helps",
       "howSayBtn": "How do I say this to the staff?",
       "question": "What would help you most right now?"
+    },
+    "where": {
+      "ask": "Where are you now?",
+      "hint": "Mark the stage, and I will tell you what happens there."
     }
   },
   "ru": {
@@ -222,6 +230,10 @@
       "moreHelpBtn": "Что-то ещё, что помогает",
       "howSayBtn": "Как сказать это персоналу?",
       "question": "Что вам сейчас нужно?"
+    },
+    "where": {
+      "ask": "Где вы сейчас?",
+      "hint": "Отметьте этап, и я расскажу, что там происходит."
     }
   }
 }
