@@ -8,6 +8,8 @@ import styles from './ReasonPage.module.css'
 export function ReasonPage() {
   const { reasonId, path, setReason, clearReason } = useVisitReason()
   const { t, lang } = useI18n()
+  // the chosen route as shown to the parent: its stops come from src/data/parent/paths.json
+  const shownPath = path && (parentPaths(lang).find((p) => p.id === path.id) ?? path)
 
   return (
     <div className="container">
@@ -49,10 +51,10 @@ export function ReasonPage() {
       {path && (
         <section className={`card ${styles.routeCard}`} style={{ padding: 'var(--space-4)' }}>
           <h2 style={{ fontSize: '1.05rem', marginBottom: 'var(--space-3)' }}>
-            {path.emoji} {t('ui.text.expectedRoute', 'המסלול הצפוי שלנו')}
+            {shownPath?.emoji} {t('ui.text.expectedRoute', 'המסלול הצפוי שלנו')}
           </h2>
           <ol className={styles.routeList}>
-            {path.route.map((stop, i) => (
+            {shownPath?.route.map((stop, i) => (
               <li key={i} className={styles.routeItem}>
                 <span className={styles.routeDot} aria-hidden>
                   {i + 1}
