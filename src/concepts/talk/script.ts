@@ -603,7 +603,8 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
         choices: [
           ...(isPause ? [{ emoji: '⏸️', label: talkText(ctx.lang).staffPause, action: { kind: 'showBig', text: 'אנחנו צריכים דקה' } as Action }] : []),
           { label: talkText(ctx.lang).calm.moreHelpBtn, go: 'calm:tips' },
-          { emoji: '🗣️', label: talkText(ctx.lang).calm.howSayBtn, go: 'calm:say' },
+          // the break tip already has its own button for the staff
+          ...(isPause ? [] : [{ emoji: '🗣️', label: talkText(ctx.lang).calm.howSayBtn, go: 'calm:say' }]),
           BACK,
         ],
       }
