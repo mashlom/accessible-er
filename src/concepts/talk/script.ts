@@ -575,6 +575,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
           { text: talkText(ctx.lang).calm.hardNow1, mood: 'hug' },
           { text: talkText(ctx.lang).calm.hardNow2, mood: 'calm' },
           { text: talkText(ctx.lang).calm.hardNow3, mood: 'proud' },
+          { text: talkText(ctx.lang).calm.question, mood: 'curious' },
         ],
         choices: [
           { emoji: '🫧', label: talkText(ctx.lang).calm.watchBtn, go: 'calm:watch' },

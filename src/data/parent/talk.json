@@ -70,7 +70,8 @@
       "helpBtn": "מה עוזר עכשיו?",
       "sayBtn": "קשה לי לדבר עם הצוות",
       "moreHelpBtn": "עוד משהו שעוזר",
-      "howSayBtn": "איך אומרים את זה לצוות?"
+      "howSayBtn": "איך אומרים את זה לצוות?",
+      "question": "במה אפשר לעזור עכשיו?"
     }
   },
   "en": {
@@ -144,7 +145,8 @@
       "helpBtn": "What helps right now?",
       "sayBtn": "It is hard for me to talk to the staff",
       "moreHelpBtn": "Something else that helps",
-      "howSayBtn": "How do I say this to the staff?"
+      "howSayBtn": "How do I say this to the staff?",
+      "question": "What would help you most right now?"
     }
   },
   "ru": {
@@ -218,7 +220,8 @@
       "helpBtn": "Что помогает сейчас?",
       "sayBtn": "Мне трудно говорить с персоналом",
       "moreHelpBtn": "Что-то ещё, что помогает",
-      "howSayBtn": "Как сказать это персоналу?"
+      "howSayBtn": "Как сказать это персоналу?",
+      "question": "Что вам сейчас нужно?"
     }
   }
 }
