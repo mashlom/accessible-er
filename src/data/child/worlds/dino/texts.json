@@ -62,5 +62,133 @@
       "waiting-results": "המעבדה מנתחת את הדגימות — עוד מעט נדע מה גילתה הבדיקה."
     },
     "distractTitle": "טבעת המאובנים 🦴"
+  },
+  "en": {
+    "name": "Dinosaurs",
+    "stages": {
+      "reception": {
+        "label": "Reserve Entrance",
+        "hint": "We register at the dinosaur reserve and get an explorer's bracelet"
+      },
+      "wait-before-triage": {
+        "label": "The Entrance Path",
+        "hint": "We wait on the path until the explorer calls us"
+      },
+      "triage": {
+        "label": "Explorer Check",
+        "hint": "The explorer checks that you are fit for the trip"
+      },
+      "wait-doctor": {
+        "label": "Waiting Camp",
+        "hint": "We rest at the camp until the guide is ready"
+      },
+      "doctor": {
+        "label": "Meeting the Head Guide",
+        "hint": "The guide decides which route we take"
+      },
+      "decision": {
+        "label": "Escape from the Volcano!",
+        "hint": "We got out safely — the trip is over!"
+      },
+      "tests": {
+        "label": "Findings Lab",
+        "hint": "We check the samples that were found"
+      },
+      "treatment": {
+        "label": "Treatment Post",
+        "hint": "We treat a wound from the trip"
+      },
+      "consult": {
+        "label": "Field Expert",
+        "hint": "Another expert comes to help"
+      },
+      "wait-results": {
+        "label": "Waiting for Sample Results",
+        "hint": "The lab is working"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "The explorer measures the young dinosaur's body temperature — to make sure they are fit for the trip.",
+      "saturation": "The sample sensor on the finger checks that enough oxygen flows in the blood — just like the checks on dinosaurs in the reserve.",
+      "blood-pressure": "The guide checks the strength of the flow of life in the arm — to know how much strength the trip hero has.",
+      "doctor-exam": "The head guide examines the young dinosaur — the route we take next will be decided from it.",
+      "blood-test": "The lab needs one drop of sample — just like explorers study dinosaur bones.",
+      "urine": "The liquid sample cup will show the explorer what is happening in the young dinosaur's body.",
+      "xray": "The scanner looks inside the body and takes a picture of the bones — just like finding dinosaur skeletons.",
+      "ultrasound": "The discovery gel lets the scanner wander inside the body and map what is there.",
+      "ct": "The big ring scans slowly and makes a detailed map of the body — like archaeologists uncovering a fossil.",
+      "iv": "A thin tube sends healing liquid straight into the blood — like scientists feeding sick dinosaurs in the reserve.",
+      "medication": "The explorer has prepared a special medicine to help the young dinosaur's body recover.",
+      "inhalation": "Healing vapours go into the lungs and help breathing feel easy — like clean ancient forest air.",
+      "stitches": "The reserve doctor carefully closes the wound — just like joining a dinosaur's bones.",
+      "cast": "The plaster armour wraps the bone and keeps it still until it fully heals.",
+      "bandage": "A protective dressing wraps the wound and keeps it safe from the surroundings until it heals.",
+      "waiting-results": "The lab analyses the samples — soon we will know what the test found."
+    },
+    "distractTitle": "The Fossil Ring 🦴"
+  },
+  "ru": {
+    "name": "Динозавры",
+    "stages": {
+      "reception": {
+        "label": "Вход в заповедник",
+        "hint": "Регистрируемся в заповеднике динозавров и получаем браслет исследователя"
+      },
+      "wait-before-triage": {
+        "label": "Дорожка у входа",
+        "hint": "Ждём на дорожке, пока нас позовёт исследователь"
+      },
+      "triage": {
+        "label": "Проверка исследователя",
+        "hint": "Исследователь проверяет, что ты здоров(а) для похода"
+      },
+      "wait-doctor": {
+        "label": "Лагерь ожидания",
+        "hint": "Отдыхаем в лагере, пока проводник готов"
+      },
+      "doctor": {
+        "label": "Встреча с главным проводником",
+        "hint": "Проводник решает, по какому маршруту пойдём"
+      },
+      "decision": {
+        "label": "Бегство от вулкана!",
+        "hint": "Выбрались в безопасности — поход окончен!"
+      },
+      "tests": {
+        "label": "Лаборатория находок",
+        "hint": "Проверяем найденные образцы"
+      },
+      "treatment": {
+        "label": "Пост лечения",
+        "hint": "Лечим рану, полученную в походе"
+      },
+      "consult": {
+        "label": "Эксперт по местности",
+        "hint": "Приходит ещё один эксперт помочь"
+      },
+      "wait-results": {
+        "label": "Ждём результатов образцов",
+        "hint": "Лаборатория работает"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "Исследователь измеряет температуру тела молодого динозавра — чтобы убедиться, что он готов к походу.",
+      "saturation": "Датчик образцов на пальце проверяет, что в крови достаточно кислорода — точно так же, как проверяют динозавров в заповеднике.",
+      "blood-pressure": "Проводник проверяет силу потока жизни в руке — чтобы знать, сколько сил у героя похода.",
+      "doctor-exam": "Главный проводник осматривает молодого динозавра — по этому осмотру решат, каким маршрутом пойдём дальше.",
+      "blood-test": "Лаборатории нужна одна капля образца — точно так же, как исследователи изучают кости динозавров.",
+      "urine": "Чашка с жидким образцом расскажет исследователю, что происходит в теле молодого динозавра.",
+      "xray": "Аппарат-сканер смотрит внутрь тела и снимает кости — так же, как находят скелеты динозавров.",
+      "ultrasound": "Гель для поиска позволяет сканеру бродить внутри тела и наносить на карту, что там есть.",
+      "ct": "Большое кольцо медленно сканирует и строит подробную карту тела — как археологи, которые откапывают окаменелость.",
+      "iv": "Тонкая трубка передаёт целебную жидкость прямо в кровь — как учёные кормят больных динозавров в заповеднике.",
+      "medication": "Исследователь приготовил особое лекарство, которое поможет телу молодого динозавра выздороветь.",
+      "inhalation": "Целебные пары попадают в лёгкие и помогают легко дышать — как чистый воздух древнего леса.",
+      "stitches": "Врач заповедника аккуратно закрывает рану — точно так же, как соединяют кости динозавра.",
+      "cast": "Гипсовый доспех обхватывает кость и держит её неподвижно, пока она полностью не заживёт.",
+      "bandage": "Защитная повязка обхватывает рану и бережёт её от окружения, пока она не заживёт.",
+      "waiting-results": "Лаборатория анализирует образцы — скоро мы узнаем, что показал анализ."
+    },
+    "distractTitle": "Кольцо окаменелостей 🦴"
   }
 }
