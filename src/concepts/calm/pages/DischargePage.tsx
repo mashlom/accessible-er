@@ -1,6 +1,5 @@
 import { Link } from '../../nav'
-import { Mascot } from '../components/Mascot'
-import { PageHeader, Note } from '../components/ui'
+import { PageHeader } from '../components/ui'
 import { useI18n } from '../../../hooks/useI18n'
 import parentUi from '../../../data/parent/ui.json'
 import styles from './SupportPages.module.css'
@@ -36,14 +35,6 @@ export function DischargePage() {
             </div>
           </div>
         ))}
-      </div>
-
-      <div style={{ marginTop: 'var(--space-4)', textAlign: 'center' }}>
-        <Mascot size={80} mood="happy" />
-      </div>
-
-      <div style={{ marginTop: 'var(--space-3)' }}>
-        <Note>{t('ui.calmDischarge.draftNote', 'הטקסט כאן טיוטה ראשונית — לניסוח סופי יחד עם חגית.')}</Note>
       </div>
 
       <div style={{ marginTop: 'var(--space-4)', textAlign: 'center' }}>
