@@ -15,7 +15,7 @@ const prefersReducedMotion =
   !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
 export function JourneyPage() {
-  const { lang } = useI18n()
+  const { t, lang } = useI18n()
   const { path } = useVisitReason()
   // "where are we in the process" — persisted for the day so a refresh keeps it.
   const [currentId, setCurrentId] = usePersistentState<string | null>(
@@ -197,7 +197,7 @@ export function JourneyPage() {
                   {stage.emoji}
                 </span>
                 <span className={styles.stepTitle}>{stage.title}</span>
-                {isCurrent && <span className={styles.currentTag}>אנחנו כאן</span>}
+                {isCurrent && <span className={styles.currentTag}>{t('ui.text.weAreHere', 'אנחנו כאן')}</span>}
                 <span
                   className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ''}`}
                   aria-hidden
@@ -226,17 +226,17 @@ export function JourneyPage() {
                   )}
 
                   <div className={styles.detailBlock}>
-                    <h3>מה קורה כאן</h3>
+                    <h3>{t('ui.text.whatHappensHere', 'מה קורה כאן')}</h3>
                     <p>{stage.whatHappens}</p>
                   </div>
 
                   <div className={styles.detailBlock}>
-                    <h3>מה עלול להיות מאתגר</h3>
+                    <h3>{t('ui.text.whatMayBeHard', 'מה עלול להיות מאתגר')}</h3>
                     <p>{stage.challenge}</p>
                   </div>
 
                   <div>
-                    <p className={styles.askTitle}>💬 מה אפשר לבקש בשלב הזה</p>
+                    <p className={styles.askTitle}>💬 {t('ui.text.canAsk', 'מה אפשר לבקש בשלב הזה')}</p>
                     <InfoList items={stage.canAsk} />
                   </div>
 
@@ -274,7 +274,7 @@ export function JourneyPage() {
                     className={`${styles.hereBtn} ${isCurrent ? styles.hereBtnActive : ''}`}
                     onClick={() => markHere(stage.id)}
                   >
-                    {isCurrent ? '✓ אנחנו כאן' : 'סמנו: אנחנו כאן'}
+                    {isCurrent ? `✓ ${t('ui.text.weAreHere', 'אנחנו כאן')}` : 'סמנו: אנחנו כאן'}
                   </button>
                 </div>
               )}
