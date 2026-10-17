@@ -1,11 +1,13 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { Link } from '../../nav'
 import { PageHeader, Note } from '../components/ui'
-import { paths } from '../../../data/paths'
+import { parentPaths } from '../../../data/parent/paths'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import styles from './ReasonPage.module.css'
 
 export function ReasonPage() {
   const { reasonId, path, setReason, clearReason } = useVisitReason()
+  const { lang } = useI18n()
 
   return (
     <div className="container">
@@ -16,7 +18,7 @@ export function ReasonPage() {
       />
 
       <div className={styles.options} role="radiogroup" aria-label="סיבת ההגעה">
-        {paths.map((p) => {
+        {parentPaths(lang).map((p) => {
           const selected = p.id === reasonId
           return (
             <button

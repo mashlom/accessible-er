@@ -1,8 +1,10 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { PageHeader, Note } from '../components/ui'
 import { staffRequests } from '../../../data/support'
 import styles from './SupportPages.module.css'
 
 export function RequestsPage() {
+  const { t } = useI18n()
   return (
     <div className="container">
       <PageHeader
@@ -12,7 +14,7 @@ export function RequestsPage() {
       />
 
       <div className={styles.list}>
-        {staffRequests.map((req, i) => (
+        {t('support.staffRequests', staffRequests).map((req, i) => (
           <div key={i} className={styles.tip}>
             <span className={styles.tipEmoji} aria-hidden>
               {req.emoji}

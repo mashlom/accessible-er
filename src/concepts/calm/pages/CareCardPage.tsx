@@ -1,3 +1,4 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { Link } from '../../nav'
 import { PageHeader } from '../components/ui'
 import { usePersistentState } from '../../../hooks/usePersistentState'
@@ -19,6 +20,7 @@ import styles from './CareCardPage.module.css'
  * optional; nothing identifying is required.
  */
 export function CareCardPage() {
+  const { t } = useI18n()
   const [card, setCard, clearCard] = usePersistentState<CareCard>(
     'care-card',
     emptyCard,
@@ -84,7 +86,7 @@ export function CareCardPage() {
         </div>
       </section>
 
-      {cardSections.map((section) => (
+      {t('careCard.cardSections', cardSections).map((section) => (
         <section key={section.key} className={`card ${styles.section}`}>
           <h2 className={styles.sectionTitle}>
             <span aria-hidden>{section.emoji}</span> {section.title}
