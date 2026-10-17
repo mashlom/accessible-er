@@ -122,50 +122,6 @@
         "Smell",
         "People"
       ],
-      "discharge": [
-        {
-          "title": "What happens now",
-          "body": "The staff goes over the visit with you, gives instructions for what comes next, and sometimes a prescription. Then you go home."
-        },
-        {
-          "title": "It's a transition",
-          "body": "After a long, tiring visit, even going home can feel like a big change. That's completely okay."
-        },
-        {
-          "title": "At home",
-          "body": "At home your child may need time, quiet and a gradual return to routine. Sometimes the reaction to what we went through comes only later — and that's natural too."
-        },
-        {
-          "title": "Equipment or accessories for home",
-          "body": "Sometimes you need a small item at home — for example, a waterproof cast cover to shower without getting it wet. The staff will explain what you need and where to get it."
-        },
-        {
-          "title": "Follow-up with your pediatrician",
-          "body": "It is important to keep following up with your community pediatrician as recommended — they know your child and will support you after the visit too."
-        }
-      ],
-      "admission": [
-        {
-          "title": "What happens now",
-          "body": "The team has decided to continue care in the hospital. Your child will be transferred to an inpatient unit where they will receive close monitoring and care tailored to their needs."
-        },
-        {
-          "title": "The transition to the ward",
-          "body": "After a long visit, moving to a new place can be an additional challenge. It's important to give your child time, clear explanations, and to continue using the adaptations that helped during the visit."
-        },
-        {
-          "title": "In the hospital room",
-          "body": "A new room, new staff, and unfamiliar surroundings can feel overwhelming. You can ask to bring things your child loves, and tell the ward staff what helped during the exam."
-        },
-        {
-          "title": "Family support",
-          "body": "Parents can stay close by, share what's important about your child, and continue with the adaptations that have proven helpful. This is teamwork."
-        },
-        {
-          "title": "Connecting with the ward team",
-          "body": "We're preparing a brief report for the ward staff with all the adaptations that helped. This will help them continue the best possible care for your child."
-        }
-      ],
       "coins": {
         "one": "You collected {n} coin — welcome to the shop!",
         "other": "You collected {n} coins — welcome to the shop!"
@@ -294,50 +250,6 @@
         "Свет",
         "Запах",
         "Люди"
-      ],
-      "discharge": [
-        {
-          "title": "Что происходит сейчас",
-          "body": "Персонал подводит с вами итоги визита, даёт рекомендации на будущее, иногда — рецепт. Потом вы едете домой."
-        },
-        {
-          "title": "Это переход",
-          "body": "После долгого утомительного визита даже возвращение домой может ощущаться как большая перемена. Это совершенно нормально."
-        },
-        {
-          "title": "Дома",
-          "body": "Дома ребёнку может понадобиться время, тишина и постепенное возвращение к привычному распорядку. Иногда реакция на пережитое приходит позже — и это тоже естественно."
-        },
-        {
-          "title": "Вещи и приспособления для дома",
-          "body": "Иногда дома нужна небольшая вещь — например, водонепроницаемый чехол для гипса, чтобы мыться, не намочив его. Персонал объяснит, что нужно и где это достать."
-        },
-        {
-          "title": "Наблюдение у педиатра",
-          "body": "Важно продолжать наблюдение у участкового педиатра по рекомендациям — он знает вашего ребёнка и будет сопровождать вас и после визита."
-        }
-      ],
-      "admission": [
-        {
-          "title": "Что происходит сейчас",
-          "body": "Команда решила продолжить лечение в больнице. Ребёнка переведут в отделение интенсивной терапии, где будет постоянный мониторинг и помощь, подобранная под его нужды."
-        },
-        {
-          "title": "Переход в отделение",
-          "body": "После долгого визита переезд в новое место — это дополнительная нагрузка. Важно дать ребёнку время, ясные объяснения и продолжить те адаптации, которые помогали во время обследования."
-        },
-        {
-          "title": "В палате больницы",
-          "body": "Новая палата, новый персонал, незнакомая обстановка — это может быть перегруженно. Можно попросить принести любимые вещи ребёнка и рассказать команде отделения, что помогало во время приёма."
-        },
-        {
-          "title": "Поддержка семьи",
-          "body": "Родители могут оставаться рядом, делиться важной информацией о ребёнке и продолжать те адаптации, которые доказали свою помощь. Это командная работа."
-        },
-        {
-          "title": "Связь с командой отделения",
-          "body": "Мы готовим краткий отчёт для команды отделения со всеми адаптациями, которые помогали. Это поможет им обеспечить лучший уход для вашего ребёнка."
-        }
       ],
       "coins": {
         "one": "У тебя есть {n} монета — добро пожаловать в магазин!",

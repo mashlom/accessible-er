@@ -5,24 +5,23 @@ import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
+import parentUi from '../../../data/parent/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import css from '../quest.module.css'
 
-const dischargeBlocks = [
-  { emoji: '📝', title: 'מה קורה עכשיו', body: 'הצוות מסכם איתכם את הביקור, נותן הנחיות להמשך, ולפעמים מרשם. אחר כך משתחררים הביתה.' },
-  { emoji: '🚪', title: 'זה מעבר', body: 'אחרי ביקור ארוך ומעייף, גם עצם היציאה הביתה יכולה להרגיש כמו שינוי גדול. זה בסדר גמור.' },
-  { emoji: '🏠', title: 'בבית', body: 'בבית אולי יהיה צורך בזמן, בשקט ובחזרה הדרגתית לשגרה. לפעמים התגובה למה שעברנו מגיעה רק אחר כך — וגם זה טבעי.' },
-  { emoji: '🧰', title: 'ציוד או אביזרים לבית', body: 'לפעמים צריך בבית ציוד או אביזר קטן — למשל כיסוי אטום לגבס כדי להתקלח בלי להרטיב אותו. הצוות יסביר מה צריך ואיפה להשיג.' },
-  { emoji: '🩺', title: 'מעקב אצל רופא/ת הילדים', body: 'חשוב להמשיך מעקב אצל רופא/ת הילדים בקהילה לפי ההמלצות — הם מכירים את הילד/ה וילוו אתכם גם אחרי הביקור.' },
-]
+// the emoji of each block stay in code; the words come from src/data/parent/ui.json
+const BLOCK_EMOJI = {
+  discharge: ['📝', '🚪', '🏠', '🧰', '🩺'],
+  admission: ['🏥', '🚪', '🛏️', '💙', '📞'],
+} as const
 
-const admissionBlocks = [
-  { emoji: '🏥', title: 'מה קורה עכשיו', body: 'הצוות החליט להמשיך עם טיפול בבית חולים. הילד/ה יעבור למחלקת אשפוז, שם יהיה מעקב מקרוב והתאמה בהתאם לצרכים.' },
-  { emoji: '🚪', title: 'המעבר למחלקה', body: 'המעבר עצמו יכול להיות עומס נוסף אחרי ביקור ארוך. חשוב לתן לילד/ה זמן, הסברים, והמשך את ההתאמות שעזרו בדרך.' },
-  { emoji: '🛏️', title: 'בחדר האשפוז', body: 'בחדר יהיה חדר חדש, צוות חדש וסביבה לא מוכרת. אפשר לבקש להביא דברים אהובים של הילד/ה, ולהסביר לצוות המחלקה מה עזר בבדיקות.' },
-  { emoji: '💙', title: 'תמיכה משפחתית', body: 'הורים יכולים להישאר קרוב, לספר לצוות על הילד/ה, ולהמשיך עם ההתאמות שהוכיחו שהן עוזרות. זו עבודת צוות.' },
-  { emoji: '📞', title: 'חיבור עם צוות המחלקה', body: 'אנחנו מכינים דוח קצר לצוות המחלקה עם כל ההתאמות שעזרו. זה יעזור להם להמשיך את הטיפול בצורה הטובה ביותר לילד/ה.' },
-]
+type Block = { title: string; body: string }
+const parentCelebrate = parentUi as unknown as Record<'he' | 'en' | 'ru', { celebrate: Record<'discharge' | 'admission', Block[]> }>
+
+function blocksFor(lang: 'he' | 'en' | 'ru', kind: 'discharge' | 'admission') {
+  const texts = (parentCelebrate[lang] ?? parentCelebrate.he).celebrate[kind]
+  return texts.map((b, i) => ({ emoji: BLOCK_EMOJI[kind][i], ...b }))
+}
 
 export function CelebratePage() {
   const [outcome, setOutcome] = useState<'discharge' | 'admission' | null>(null)
@@ -109,10 +108,7 @@ export function CelebratePage() {
               {outcome === 'discharge' ? t('ui.text.towardsDischarge', 'לקראת שחרור הביתה') : t('ui.text.towardsAdmission', 'לקראת המשך אשפוז')}
             </p>
 
-            {(outcome === 'discharge'
-              ? t('ui.text.discharge', dischargeBlocks)
-              : t('ui.text.admission', admissionBlocks)
-            ).map((b, i) => (
+            {blocksFor(lang, outcome).map((b, i) => (
               <section key={i}>
                 <h2>{b.emoji} {b.title}</h2>
                 <p>{b.body}</p>
