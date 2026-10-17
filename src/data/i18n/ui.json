@@ -216,6 +216,12 @@
       "sendEmail": "✉️ Send by email",
       "howTo": "To show it: tap \"Show to the staff\" and show the screen. To send it: an email opens with the message — add the email address of the emergency room and send it yourself. Nothing is sent automatically.",
       "shownAria": "Message shown to the staff"
+    },
+    "calmReason": {
+      "eyebrow": "Why we came",
+      "subtitle": "Your choice helps me show you the expected route. You can change it at any moment — and every visit starts the same way.",
+      "continue": "Continue to the visit →",
+      "clear": "Clear the choice"
     }
   },
   "ru": {
@@ -436,6 +442,12 @@
       "sendEmail": "✉️ Отправить по почте",
       "howTo": "Чтобы показать: нажмите «Показать персоналу» и покажите экран. Чтобы отправить: откроется письмо с сообщением — добавьте адрес почты приёмного покоя и отправьте сами. Ничего не отправляется автоматически.",
       "shownAria": "Сообщение, показанное персоналу"
+    },
+    "calmReason": {
+      "eyebrow": "Почему мы пришли",
+      "subtitle": "Выбор помогает показать ожидаемый маршрут. Его можно изменить в любой момент — и каждый визит начинается одинаково.",
+      "continue": "Перейти к визиту →",
+      "clear": "Сбросить выбор"
     }
   }
 }

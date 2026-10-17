@@ -7,17 +7,17 @@ import styles from './ReasonPage.module.css'
 
 export function ReasonPage() {
   const { reasonId, path, setReason, clearReason } = useVisitReason()
-  const { lang } = useI18n()
+  const { t, lang } = useI18n()
 
   return (
     <div className="container">
       <PageHeader
-        eyebrow="למה הגענו"
-        title="מה הביא אתכם היום?"
-        subtitle="הבחירה עוזרת לי להראות לכם את המסלול הצפוי. אפשר לשנות בכל רגע — וכל ביקור מתחיל אותו דבר."
+        eyebrow={t('ui.calmReason.eyebrow', 'למה הגענו')}
+        title={t('ui.text.reasonTitle', 'מה הביא אתכם היום?')}
+        subtitle={t('ui.calmReason.subtitle', 'הבחירה עוזרת לי להראות לכם את המסלול הצפוי. אפשר לשנות בכל רגע — וכל ביקור מתחיל אותו דבר.')}
       />
 
-      <div className={styles.options} role="radiogroup" aria-label="סיבת ההגעה">
+      <div className={styles.options} role="radiogroup" aria-label={t('ui.text.reasonAria', 'סיבת ההגעה')}>
         {parentPaths(lang).map((p) => {
           const selected = p.id === reasonId
           return (
@@ -49,7 +49,7 @@ export function ReasonPage() {
       {path && (
         <section className={`card ${styles.routeCard}`} style={{ padding: 'var(--space-4)' }}>
           <h2 style={{ fontSize: '1.05rem', marginBottom: 'var(--space-3)' }}>
-            {path.emoji} המסלול הצפוי שלנו
+            {path.emoji} {t('ui.text.expectedRoute', 'המסלול הצפוי שלנו')}
           </h2>
           <ol className={styles.routeList}>
             {path.route.map((stop, i) => (
@@ -66,13 +66,13 @@ export function ReasonPage() {
                     stop.title
                   )}
                 </span>
-                {stop.optional && <span className={styles.optionalTag}>לפי הצורך</span>}
+                {stop.optional && <span className={styles.optionalTag}>{t('ui.text.ifNeeded', 'לפי הצורך')}</span>}
               </li>
             ))}
           </ol>
           <div style={{ marginTop: 'var(--space-3)' }}>
             <Note>
-              זהו מסלול לדוגמה בלבד. המסלול המדויק תמיד נקבע על ידי הצוות הרפואי לפי מצב הילד.
+              {t('ui.text.routeNote', 'זהו מסלול לדוגמה בלבד. המסלול המדויק תמיד נקבע על ידי הצוות הרפואי לפי מצב הילד.')}
             </Note>
           </div>
         </section>
@@ -81,10 +81,10 @@ export function ReasonPage() {
       {path && (
         <div className={styles.actions}>
           <Link to="/journey" className={styles.primaryBtn}>
-            להתקדם למסע במיון ←
+            {t('ui.calmReason.continue', 'להתקדם למסע במיון ←')}
           </Link>
           <button type="button" className={styles.ghostBtn} onClick={clearReason}>
-            ניקוי הבחירה
+            {t('ui.calmReason.clear', 'ניקוי הבחירה')}
           </button>
         </div>
       )}
