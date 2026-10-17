@@ -156,7 +156,7 @@ function stageNode(id: string, tail: string | undefined, lang: Lang): TalkNode |
         },
       ],
       choices: [
-        { label: 'מה אפשר לבקש כאן?', go: `stage:${id}:ask` },
+        { label: talkText(lang).stage.askHere, go: `stage:${id}:ask` },
         { emoji: '💗', label: 'קשה לנו ממש עכשיו', go: 'calm' },
         BACK,
       ],
@@ -172,7 +172,7 @@ function stageNode(id: string, tail: string | undefined, lang: Lang): TalkNode |
       ],
       choices: [
         { label: 'עוד דברים שאפשר לבקש', go: 'ask' },
-        next ? { label: 'ומה אחרי זה?', go: `stage:${next.id}` } : BACK,
+        next ? { label: talkText(lang).stage.after, go: `stage:${next.id}` } : BACK,
         BACK,
       ].filter((c, i, a) => a.indexOf(c) === i),
     }
@@ -187,20 +187,20 @@ function stageNode(id: string, tail: string | undefined, lang: Lang): TalkNode |
     say.push({
       text:
         stage.waitKind === 'duration'
-          ? `זה לוקח בערך ${stage.waitRange}. זה טווח בלבד.`
-          : `ההמתנה כאן היא בערך ${stage.waitRange}. זה טווח בלבד — הצוות מחליט לפי המצב והעומס.`,
+          ? talkText(lang).stage.waitShort.replace('{range}', stage.waitRange)
+          : talkText(lang).stage.waitLong.replace('{range}', stage.waitRange),
     })
   }
 
   const choices: Choice[] = [
-    { label: 'מה עלול להיות קשה כאן?', go: `stage:${id}:hard` },
-    { label: 'מה אפשר לבקש?', go: `stage:${id}:ask` },
+    { label: talkText(lang).stage.hard, go: `stage:${id}:hard` },
+    { label: talkText(lang).stage.ask, go: `stage:${id}:ask` },
   ]
   for (const pid of stage.procedureIds ?? []) {
     const p = parentProcedure(lang, pid)
     if (p) choices.push({ emoji: p.emoji, label: `להתכונן ל${p.title}`, go: `prep:${pid}` })
   }
-  if (next) choices.push({ label: 'ומה השלב הבא?', go: `stage:${next.id}` })
+  if (next) choices.push({ label: talkText(lang).stage.next, go: `stage:${next.id}` })
   choices.push(BACK)
 
   return { say, choices }

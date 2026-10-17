@@ -76,6 +76,15 @@
     "where": {
       "ask": "איפה אתם עכשיו?",
       "hint": "סמנו את השלב, ואספר לכם מה קורה בו."
+    },
+    "stage": {
+      "waitShort": "זה לוקח בערך {range}. זה טווח בלבד.",
+      "waitLong": "ההמתנה כאן היא בערך {range}. זה טווח בלבד — הצוות מחליט לפי המצב והעומס.",
+      "hard": "מה עלול להיות קשה כאן?",
+      "ask": "מה אפשר לבקש?",
+      "askHere": "מה אפשר לבקש כאן?",
+      "after": "ומה אחרי זה?",
+      "next": "ומה השלב הבא?"
     }
   },
   "en": {
@@ -155,6 +164,15 @@
     "where": {
       "ask": "Where are you now?",
       "hint": "Mark the stage, and I will tell you what happens there."
+    },
+    "stage": {
+      "waitShort": "It takes about {range}. That is only a range.",
+      "waitLong": "The wait here is about {range}. It is only a range — the team decides by the situation and how busy it is.",
+      "hard": "What may be hard here?",
+      "ask": "What can I ask for?",
+      "askHere": "What can I ask for here?",
+      "after": "And what comes after that?",
+      "next": "And what is the next stage?"
     }
   },
   "ru": {
@@ -234,6 +252,15 @@
     "where": {
       "ask": "Где вы сейчас?",
       "hint": "Отметьте этап, и я расскажу, что там происходит."
+    },
+    "stage": {
+      "waitShort": "Это занимает примерно {range}. Это только ориентир.",
+      "waitLong": "Ожидание здесь примерно {range}. Это только ориентир — команда решает по состоянию и загруженности.",
+      "hard": "Что здесь может быть трудно?",
+      "ask": "Что можно попросить?",
+      "askHere": "Что здесь можно попросить?",
+      "after": "А что будет потом?",
+      "next": "Какой следующий этап?"
     }
   }
 }
