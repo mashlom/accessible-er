@@ -180,6 +180,9 @@
       "feel": "What the child may feel",
       "prepare": "How to prepare",
       "ask": "What you can ask the staff"
+    },
+    "calmHome": {
+      "reasonPrompt": "👉 Tell me why you came today — so I can adapt the route for you"
     }
   },
   "ru": {
@@ -364,6 +367,9 @@
       "feel": "Что ребёнок может почувствовать",
       "prepare": "Как подготовиться",
       "ask": "Что можно попросить у персонала"
+    },
+    "calmHome": {
+      "reasonPrompt": "👉 Расскажите, зачем вы пришли сегодня, — чтобы я подстроил маршрут под вас"
     }
   }
 }

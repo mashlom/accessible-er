@@ -13,7 +13,7 @@ import parentUi from '../../../data/parent/ui.json'
 import styles from './HomePage.module.css'
 
 export function HomePage() {
-  const { lang } = useI18n()
+  const { t, lang } = useI18n()
   // the tiles' titles and descriptions: src/data/parent/ui.json, in the chosen language
   const tiles = (parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string; desc: string }> }>)[lang]?.tiles ?? (parentUi as unknown as Record<'he', { tiles: Record<string, { title: string; desc: string }> }>).he.tiles
   const { path } = useVisitReason()
@@ -106,7 +106,7 @@ export function HomePage() {
         </div>
       ) : (
         <Link to="/reason" className={styles.reasonPrompt}>
-          👉 ספרו לי למה הגעתם היום — כדי שאתאים לכם את המסלול
+          {t('ui.calmHome.reasonPrompt', '👉 ספרו לי למה הגעתם היום — כדי שאתאים לכם את המסלול')}
         </Link>
       )}
 
