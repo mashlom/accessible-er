@@ -17,6 +17,9 @@ function inLang<T extends object>(src: T[], lang: Lang, bucket: Record<string, u
   const tr = ((bucket as Record<Lang, Record<string, unknown>>)[lang]?.[key] ?? []) as Partial<T>[]
   return src.map((item, i) => ({ ...item, ...(tr[i] ?? {}) }))
 }
+// the position of the 'ask for a break' tip in the support list
+const PAUSE_TIP = distressTips.findIndex((tip) => tip.title === 'לבקש הפסקה')
+
 const distressTipsIn = (lang: Lang) => inLang(distressTips, lang, supportI18n, 'distressTips')
 const staffRequestsIn = (lang: Lang) => inLang(staffRequests, lang, supportI18n, 'staffRequests')
 // the section titles are translated; the options stay the Hebrew values that are saved on the card
@@ -569,12 +572,15 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     case 'tip': {
       const tip = distressTipsIn(ctx.lang)[Number(rest[0])]
       if (!tip) return unknown(ctx.lang)
+      // the break tip also offers the phrase for the staff, shown big in Hebrew on the screen
+      const isPause = Number(rest[0]) === PAUSE_TIP
       return {
         say: [
           { text: tip.title, mood: 'hug', art: tip.emoji },
           { text: tip.body },
         ],
         choices: [
+          ...(isPause ? [{ emoji: '⏸️', label: talkText(ctx.lang).staffPause, action: { kind: 'showBig', text: 'אנחנו צריכים דקה' } as Action }] : []),
           { label: 'עוד משהו שעוזר', go: 'calm:tips' },
           { emoji: '🗣️', label: 'איך אומרים את זה לצוות?', go: 'calm:say' },
           BACK,

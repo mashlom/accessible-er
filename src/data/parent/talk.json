@@ -9,7 +9,8 @@
       "ask": "על מה נדבר עכשיו?",
       "back": "לדבר על משהו אחר"
     },
-    "unknown": "רגע, איבדתי את החוט. בואו נחזור לרשימה."
+    "unknown": "רגע, איבדתי את החוט. בואו נחזור לרשימה.",
+    "staffPause": "להראות לצוות: «אנחנו צריכים דקה»"
   },
   "en": {
     "intro": {
@@ -21,7 +22,8 @@
       "ask": "What shall we talk about now?",
       "back": "Talk about something else"
     },
-    "unknown": "Wait, I lost the thread. Let's go back to the list."
+    "unknown": "Wait, I lost the thread. Let's go back to the list.",
+    "staffPause": "Show the staff: \"we need a minute\""
   },
   "ru": {
     "intro": {
@@ -33,6 +35,7 @@
       "ask": "О чём поговорим сейчас?",
       "back": "Поговорить о чём-то другом"
     },
-    "unknown": "Секунду, я потерял нить. Вернёмся к списку."
+    "unknown": "Секунду, я потерял нить. Вернёмся к списку.",
+    "staffPause": "Показать персоналу: «Нам нужна минута»"
   }
 }
