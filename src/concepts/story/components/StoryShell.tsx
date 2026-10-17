@@ -1,7 +1,9 @@
+import { useLayoutEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Link, useIsConceptHome } from '../../nav'
 import { RoniCompanion } from './RoniCompanion'
 import { HelperChat } from '../../../components/helper/HelperChat'
+import { setI18nEnabled } from '../../../hooks/useI18n'
 import styles from '../story.module.css'
 
 /**
@@ -11,6 +13,11 @@ import styles from '../story.module.css'
 export function StoryShell() {
   const navigate = useNavigate()
   const isHome = useIsConceptHome()
+  // translations are on across the parent side of the app (home, pages, helper)
+  useLayoutEffect(() => {
+    setI18nEnabled(true)
+    return () => setI18nEnabled(false)
+  }, [])
 
   return (
     <div className={styles.theme}>

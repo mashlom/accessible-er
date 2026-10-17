@@ -139,6 +139,7 @@
   align-items: center;
   gap: 12px;
   margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
   padding: 12px var(--space-3);
   background: var(--s-sun-soft);
   border: 3px solid #fff;
@@ -1247,34 +1248,6 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.7);
 }
-.bigStart {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 0.75rem;
-  padding: 1.1rem 1.25rem;
-  border-radius: 1.25rem;
-  background: linear-gradient(135deg, #0f8b8d, #0b6b6e);
-  color: #fff;
-  text-decoration: none;
-  min-height: 48px;
-}
-.bigStartIcon {
-  font-size: 2.2rem;
-}
-.bigStartText {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-.bigStartText span {
-  font-size: 0.95rem;
-  opacity: 0.92;
-}
-.bigStartArrow {
-  font-size: 1.4rem;
-}
 .childCards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1288,13 +1261,18 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  align-items: flex-start;
+  gap: 0.35rem;
   padding: 0.9rem;
   border-radius: 1rem;
-  background: #fff;
+  background: var(--s-grass-soft);
   color: inherit;
   text-decoration: none;
   min-height: 48px;
+}
+.childCardIcon {
+  font-size: 2.6rem;
+  line-height: 1;
 }
 .childCardName {
   font-weight: 700;
@@ -1302,4 +1280,19 @@
 .childCardDesc {
   font-size: 0.85rem;
   opacity: 0.75;
+}
+
+.homeLang {
+  display: flex;
+  direction: ltr;
+  justify-content: flex-start;
+  margin-bottom: 0.25rem;
+}
+
+/* the helper's tile in the parent centre is a button, not a link */
+button.dest {
+  border: none;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
 }
