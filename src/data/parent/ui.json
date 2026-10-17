@@ -222,7 +222,7 @@
         "desc": "What happens at the end of the visit and going home"
       },
       "reason": {
-        "title": "Why did we come?",
+        "title": "Reason for the visit",
         "desc": "Choose the reason for the visit to adapt the route"
       },
       "message": {
@@ -335,7 +335,7 @@
         "desc": "Что происходит в конце визита и при возвращении домой"
       },
       "reason": {
-        "title": "Почему мы пришли?",
+        "title": "Причина визита",
         "desc": "Выберите причину визита, чтобы подстроить маршрут"
       },
       "message": {
