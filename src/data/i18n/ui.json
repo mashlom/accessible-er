@@ -204,6 +204,18 @@
       "subtitle": "What happens at the end of the visit, and how to get ready to go home.",
       "draftNote": "The text here is a first draft, to be finalised together with the team.",
       "home": "Back to the home page"
+    },
+    "calmMessage": {
+      "eyebrow": "Before we go",
+      "title": "A message to the staff",
+      "subtitle": "Would you like to ask for something or say thank you? Write a short sentence — you can show it to the staff on the screen, or send it by email yourself.",
+      "placeholder": "For example: we would be glad if we could wait in a quieter corner · thank you very much for your patience.",
+      "request": "🙏 Request",
+      "thanks": "💛 Thanks",
+      "showOnScreen": "🖥️ Show to the staff on the screen",
+      "sendEmail": "✉️ Send by email",
+      "howTo": "To show it: tap \"Show to the staff\" and show the screen. To send it: an email opens with the message — add the email address of the emergency room and send it yourself. Nothing is sent automatically.",
+      "shownAria": "Message shown to the staff"
     }
   },
   "ru": {
@@ -412,6 +424,18 @@
       "subtitle": "Что происходит в конце визита и как подготовиться к возвращению домой.",
       "draftNote": "Текст здесь — первый черновик, окончательную формулировку согласуем с командой.",
       "home": "Назад на главную"
+    },
+    "calmMessage": {
+      "eyebrow": "Перед уходом",
+      "title": "Сообщение персоналу",
+      "subtitle": "Хотите что-то попросить или сказать спасибо? Напишите короткую фразу — её можно показать персоналу на экране или отправить по почте самостоятельно.",
+      "placeholder": "Например: мы будем рады, если можно будет подождать в более тихом углу · большое спасибо за терпение.",
+      "request": "🙏 Просьба",
+      "thanks": "💛 Спасибо",
+      "showOnScreen": "🖥️ Показать персоналу на экране",
+      "sendEmail": "✉️ Отправить по почте",
+      "howTo": "Чтобы показать: нажмите «Показать персоналу» и покажите экран. Чтобы отправить: откроется письмо с сообщением — добавьте адрес почты приёмного покоя и отправьте сами. Ничего не отправляется автоматически.",
+      "shownAria": "Сообщение, показанное персоналу"
     }
   }
 }
