@@ -7,7 +7,9 @@ import { usePersistentState } from '../../../hooks/usePersistentState'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { DAY_MS } from '../../../lib/storage'
 import { emptyCard, type CardArrayField, type CareCard } from '../../../data/careCard'
-import { resolveNode, type Action, type Choice, type Say } from '../script'
+import { resolveNode, topicChoices, type Action, type Choice, type Say } from '../script'
+import { useI18n } from '../../../hooks/useI18n'
+import parentUi from '../../../data/parent/ui.json'
 import styles from '../talk.module.css'
 
 /** One exchange: what Roni said, and what the family answered to it. */
@@ -61,7 +63,20 @@ function readTrail(): Turn[] {
  * throw the family back to the beginning. It is rebuilt by re-resolving each
  * node, so no message text is ever persisted.
  */
+// the topic buttons use the same words as the home tiles (src/data/parent/ui.json), in the chosen language
+const TOPIC_TILE: Record<string, string> = { reason: 'reason', prep: 'procedures', card: 'card', map: 'map', ask: 'requests', home: 'discharge' }
+
 export function TalkPage() {
+  const { t, lang } = useI18n()
+  const topicLabel = (choice: Choice): string => {
+    if (!topicChoices.some((tc) => tc.go === choice.go && tc.label === choice.label)) return choice.label
+    const tiles = (parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string }> }>)[lang]?.tiles
+    const tile = TOPIC_TILE[choice.go ?? ''] ?? ''
+    if (tile && tiles && tiles[tile]) return tiles[tile].title
+    if (choice.go === 'calm') return t('ui.buttons.hardNow', choice.label)
+    if (choice.go === 'where') return t('ui.talkTopics.where', choice.label)
+    return choice.label
+  }
   const navigate = useNavigate()
   const path = useConceptPath()
 
@@ -299,7 +314,7 @@ export function TalkPage() {
                 onClick={() => choose(choice)}
               >
                 {choice.emoji && <span aria-hidden>{choice.emoji}</span>}
-                {choice.label}
+                {topicLabel(choice)}
               </button>
             ))
           ) : (

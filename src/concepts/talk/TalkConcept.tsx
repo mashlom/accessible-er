@@ -1,4 +1,6 @@
+import { useLayoutEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { setI18nEnabled } from '../../hooks/useI18n'
 import { Navigate } from '../nav'
 import { TalkShell } from './components/TalkShell'
 import { TalkPage } from './pages/TalkPage'
@@ -13,6 +15,11 @@ import { QrPage } from './pages/QrPage'
  * card you hold up to staff, and printable signage.
  */
 export default function TalkConcept() {
+  // translations are on while the talk concept is open (the topics use the same words as the home tiles)
+  useLayoutEffect(() => {
+    setI18nEnabled(true)
+    return () => setI18nEnabled(false)
+  }, [])
   return (
     <Routes>
       <Route element={<TalkShell />}>

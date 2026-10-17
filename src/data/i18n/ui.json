@@ -226,6 +226,9 @@
       "subtitle": "Your choice helps me show you the expected route. You can change it at any moment — and every visit starts the same way.",
       "continue": "Continue to the visit →",
       "clear": "Clear the choice"
+    },
+    "talkTopics": {
+      "where": "Where we are in the process"
     }
   },
   "ru": {
@@ -456,6 +459,9 @@
       "subtitle": "Выбор помогает показать ожидаемый маршрут. Его можно изменить в любой момент — и каждый визит начинается одинаково.",
       "continue": "Перейти к визиту →",
       "clear": "Сбросить выбор"
+    },
+    "talkTopics": {
+      "where": "Где мы сейчас в процессе"
     }
   }
 }
