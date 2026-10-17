@@ -138,6 +138,22 @@
       "edit": "✏️ Edit the card",
       "sendHint": "To send it to the staff: tap \"Save as PDF\", choose \"Save as PDF\" in the print window, and send the file to the emergency room email yourself. The card is saved on this device only and deleted after 24 hours; nothing is sent automatically.",
       "hebrewNote": "The card is written in Hebrew: the staff reads it in Hebrew."
+    },
+    "calmJourney": {
+      "eyebrow": "What happens now",
+      "title": "Our journey in the emergency room",
+      "subtitle": "These are the stages of every visit. Mark where we are now, and I will show what comes next.",
+      "notice": "The order and times here are only a general estimate; they can change depending on the team's decision and how busy the emergency room is. Not every visit goes through all the stages, and sometimes the order is different.",
+      "reasonLabel": "We came because of:",
+      "character": "🐾 My character moves along the journey",
+      "railAria": "Progress through the journey",
+      "letsGo": "Let's go…",
+      "weAreHereSuffix": " — we are here",
+      "durationLabel": "Estimated duration",
+      "waitLabel": "Estimated waiting time",
+      "markHere": "Mark: we are here",
+      "prepareChild": "🎬 Prepare the child for what happens here",
+      "beforeDischarge": "🏠 Before going home →"
     }
   },
   "ru": {
@@ -280,6 +296,22 @@
       "edit": "✏️ Изменить карточку",
       "sendHint": "Чтобы отправить персоналу: нажмите «Сохранить как PDF», в окне печати выберите «Сохранить как PDF» и отправьте файл на почту приёмного покоя сами. Карточка хранится только на этом устройстве и удаляется через 24 часа; ничего не отправляется автоматически.",
       "hebrewNote": "Карточка написана на иврите: персонал читает её на иврите."
+    },
+    "calmJourney": {
+      "eyebrow": "Что происходит сейчас",
+      "title": "Наш путь в приёмном покое",
+      "subtitle": "Это этапы любого визита. Отметьте, где мы сейчас, и я покажу, что будет дальше.",
+      "notice": "Порядок и время здесь — общая оценка. Они могут меняться по решению команды и из-за загруженности приёмного покоя. Не каждый визит проходит все этапы, и порядок иногда другой.",
+      "reasonLabel": "Мы пришли из-за:",
+      "character": "🐾 Мой персонаж идёт по пути",
+      "railAria": "Прогресс по пути",
+      "letsGo": "Идём…",
+      "weAreHereSuffix": " — мы здесь",
+      "durationLabel": "Примерная длительность",
+      "waitLabel": "Примерное время ожидания",
+      "markHere": "Отметить: мы здесь",
+      "prepareChild": "🎬 Подготовить ребёнка к тому, что здесь будет",
+      "beforeDischarge": "🏠 К выписке домой →"
     }
   }
 }

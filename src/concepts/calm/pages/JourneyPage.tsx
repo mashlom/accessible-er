@@ -89,24 +89,22 @@ export function JourneyPage() {
   return (
     <div className="container">
       <PageHeader
-        eyebrow="מה קורה עכשיו"
-        title="המסע שלנו במיון"
-        subtitle="אלה השלבים של כל ביקור. סמנו איפה אנחנו עכשיו, ואני אראה מה צפוי בהמשך."
+        eyebrow={t('ui.calmJourney.eyebrow', 'מה קורה עכשיו')}
+        title={t('ui.calmJourney.title', 'המסע שלנו במיון')}
+        subtitle={t('ui.calmJourney.subtitle', 'אלה השלבים של כל ביקור. סמנו איפה אנחנו עכשיו, ואני אראה מה צפוי בהמשך.')}
       />
 
       {path && (
         <Link to="/reason" className={styles.reasonChip}>
           <span aria-hidden>{path.emoji}</span>
-          הגענו בגלל: {path.label}
+          {t('ui.calmJourney.reasonLabel', 'הגענו בגלל:')} {path.label}
         </Link>
       )}
 
       <div className={styles.hint}>
         <span aria-hidden>⏱️</span>
         <span>
-          הסדר והזמנים כאן הם הערכה כללית בלבד, ויכולים להשתנות לפי החלטת הצוות והעומס
-          במיון. לא כל ביקור עובר את כל השלבים, ולפעמים הסדר שונה — זה עוזר לדעת למה
-          לצפות, ולא הבטחה מדויקת.
+          {t('ui.calmJourney.notice', 'הסדר והזמנים כאן הם הערכה כללית בלבד, ויכולים להשתנות לפי החלטת הצוות והעומס במיון. לא כל ביקור עובר את כל השלבים, ולפעמים הסדר שונה — זה עוזר לדעת למה לצפות, ולא הבטחה מדויקת.')}
         </span>
       </div>
 
@@ -116,10 +114,10 @@ export function JourneyPage() {
           checked={motionOn}
           onChange={(e) => setMotionOn(e.target.checked)}
         />
-        <span>🐾 הדמות שלי זזה לאורך המסע</span>
+        <span>{t('ui.calmJourney.character', '🐾 הדמות שלי זזה לאורך המסע')}</span>
       </label>
 
-      <div className={styles.rail} ref={railRef} aria-label="התקדמות במסע">
+      <div className={styles.rail} ref={railRef} aria-label={t('ui.calmJourney.railAria', 'התקדמות במסע')}>
         {motionOn && roniX != null && (
           <div
             className={styles.railRoni}
@@ -129,7 +127,7 @@ export function JourneyPage() {
             }}
             aria-hidden
           >
-            {walking && <span className={styles.railBubble}>בואו נלך…</span>}
+            {walking && <span className={styles.railBubble}>{t('ui.calmJourney.letsGo', 'בואו נלך…')}</span>}
             {avatar.kind === 'photo' ? (
               <img src={avatar.value} alt="" className={styles.railAvatarImg} />
             ) : (
@@ -163,7 +161,7 @@ export function JourneyPage() {
                 }}
                 className={`${styles.stop} ${stopState}`}
                 onClick={() => markHere(stage.id)}
-                aria-label={`${stage.title}${stage.id === currentId ? ' — אנחנו כאן' : ''}`}
+                aria-label={`${stage.title}${stage.id === currentId ? t('ui.calmJourney.weAreHereSuffix', ' — אנחנו כאן') : ''}`}
                 aria-current={stage.id === currentId ? 'step' : undefined}
                 title={stage.title}
               >
@@ -217,7 +215,7 @@ export function JourneyPage() {
                       </span>
                       <span>
                         <span className={styles.waitLabel}>
-                          {stage.waitKind === 'duration' ? 'משך זמן משוער' : 'זמן המתנה משוער'}
+                          {stage.waitKind === 'duration' ? t('ui.calmJourney.durationLabel', 'משך זמן משוער') : t('ui.calmJourney.waitLabel', 'זמן המתנה משוער')}
                         </span>
                         <br />
                         <span className={styles.waitValue}>{stage.waitRange}</span>
@@ -243,7 +241,7 @@ export function JourneyPage() {
                   {stage.procedureIds && stage.procedureIds.length > 0 && (
                     <div>
                       <p className={styles.askTitle}>
-                        🎬 להכין את הילד/ה למה שקורה כאן
+                        {t('ui.calmJourney.prepareChild', '🎬 להכין את הילד/ה למה שקורה כאן')}
                       </p>
                       <div className={styles.procChips}>
                         {stage.procedureIds.map((pid) => {
@@ -265,7 +263,7 @@ export function JourneyPage() {
 
                   {stage.id === 'decision' && (
                     <Link to="/discharge" className={styles.dischargeLink}>
-                      🏠 לקראת שחרור הביתה →
+                      {t('ui.calmJourney.beforeDischarge', '🏠 לקראת שחרור הביתה →')}
                     </Link>
                   )}
 
@@ -274,7 +272,7 @@ export function JourneyPage() {
                     className={`${styles.hereBtn} ${isCurrent ? styles.hereBtnActive : ''}`}
                     onClick={() => markHere(stage.id)}
                   >
-                    {isCurrent ? `✓ ${t('ui.text.weAreHere', 'אנחנו כאן')}` : 'סמנו: אנחנו כאן'}
+                    {isCurrent ? `✓ ${t('ui.text.weAreHere', 'אנחנו כאן')}` : t('ui.calmJourney.markHere', 'סמנו: אנחנו כאן')}
                   </button>
                 </div>
               )}
