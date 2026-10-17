@@ -97,6 +97,13 @@ export function StagePage() {
         doneIsChoice={isLastStage}
         backTo={isOptional ? '/night-map' : '/map'}
       >
+        {/* the first station's way to the visit's route: the same as on the other worlds' station sheets */}
+        {id === 'reception' && (
+          <>
+            <p className={css.reasonHint}>{t('ui.text.reasonHint', 'בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.')}</p>
+            <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits', '🗺️ מה מחכה לנו היום?')}</Link>
+          </>
+        )}
         {inlineProc && inlineSteps && inlineSteps.length > 0 && (
           <ol className={css.procedureSteps} style={{ color: theme.accent }}>
             {inlineSteps.map((step, i) => <li key={i}>{step}</li>)}
