@@ -1,0 +1,50 @@
+{
+  "en": {
+    "ui": {
+      "menu": "To the menu",
+      "back": "← Back",
+      "next": "Next →",
+      "continue": "Continue →",
+      "toEnd": "To the end →",
+      "restart": "From the start ↺"
+    },
+    "pages": {
+      "arrival": { "text": "We arrive at the hospital.", "sub": "There is a desk by the entrance. There we write down the name and answer a few short questions." },
+      "reception": { "text": "Someone receives us.", "sub": "They ask what happened and write everything down. You can tell it yourself, or the parent can tell it." },
+      "triage": { "text": "A nurse comes to check.", "sub": "We measure temperature, blood pressure and pulse. It takes a few minutes and does not hurt." },
+      "wait-doctor": { "text": "We wait.", "sub": "We wait until the doctor is free. You can sit, breathe, and wait quietly." },
+      "doctor": { "text": "The doctor comes in and says hello.", "sub": "They ask questions and check gently. You can ask anything." },
+      "parent-select": { "text": "For parents and staff", "sub": "Choose the next steps the doctor has set" },
+      "tests": { "text": "We go to tests.", "sub": "Sometimes a blood test or an X-ray is needed. It helps the doctor understand what is happening." },
+      "treatment": { "text": "We get treatment.", "sub": "Sometimes they give medicine or do a small treatment. It helps to feel better." },
+      "consult": { "text": "Another doctor comes.", "sub": "Sometimes a specialist comes to check too. Another pair of eyes to help." },
+      "wait-results": { "text": "We wait for results.", "sub": "Tests take time. We wait, and then the doctor tells what they found." },
+      "decision": { "text": "The doctor explains what happens now.", "sub": "Sometimes we go home. Sometimes more tests are needed. In any case, we explain." },
+      "end": { "text": "We did it!", "sub": "The hospital visit is over. You can be proud." }
+    }
+  },
+  "ru": {
+    "ui": {
+      "menu": "В меню",
+      "back": "← Назад",
+      "next": "Дальше →",
+      "continue": "Продолжить →",
+      "toEnd": "К концу →",
+      "restart": "С начала ↺"
+    },
+    "pages": {
+      "arrival": { "text": "Приезжаем в больницу.", "sub": "У входа есть стол. Там записывают имя и задают несколько коротких вопросов." },
+      "reception": { "text": "Нас кто-то встречает.", "sub": "Спрашивают, что случилось, и записывают всё. Можно рассказать самим, а можно попросить родителя." },
+      "triage": { "text": "Медсестра приходит проверить.", "sub": "Измеряют температуру, давление и пульс. Это занимает несколько минут и не больно." },
+      "wait-doctor": { "text": "Ждём.", "sub": "Ждём, пока освободится врач. Можно сидеть, дышать и ждать спокойно." },
+      "doctor": { "text": "Врач заходит и здоровается.", "sub": "Задают вопросы и аккуратно проверяют. Можно спросить что угодно." },
+      "parent-select": { "text": "Родителям и команде", "sub": "Выберите следующие шаги, которые назначил врач" },
+      "tests": { "text": "Идём на обследования.", "sub": "Иногда нужен анализ крови или рентген. Это помогает врачу понять, что происходит." },
+      "treatment": { "text": "Получаем лечение.", "sub": "Иногда дают лекарство или делают небольшую процедуру. Это помогает почувствовать себя лучше." },
+      "consult": { "text": "Приходит другой врач.", "sub": "Иногда тоже приходит специалист посмотреть. Ещё одна пара глаз, чтобы помочь." },
+      "wait-results": { "text": "Ждём результатов.", "sub": "Анализы занимают время. Ждём, а потом врач рассказывает, что нашли." },
+      "decision": { "text": "Врач объясняет, что будет дальше.", "sub": "Иногда возвращаемся домой. Иногда нужны ещё обследования. В любом случае нам всё объяснят." },
+      "end": { "text": "У нас получилось!", "sub": "Визит в больницу закончился. Можно гордиться." }
+    }
+  }
+}

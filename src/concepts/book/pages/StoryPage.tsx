@@ -1,8 +1,13 @@
 import { useState, useMemo } from 'react'
 import { basePages, parentSelectPage, procedureOptions, endPages, BookPage } from '../script'
+import { useI18n } from '../../../hooks/useI18n'
+import { LanguagePicker } from '../../../components/LanguagePicker'
 import css from '../book.module.css'
 
 export function StoryPage() {
+  const { t, dir, lang } = useI18n()
+  // the page's own text, or its translation from data/i18n/book.json (keyed by the page id)
+  const pageText = (id: string, field: 'text' | 'sub', fallback: string) => t(`book.pages.${id}.${field}`, fallback)
   const [index, setIndex] = useState(0)
   const [selectedProcs, setSelectedProcs] = useState<Set<string>>(new Set())
   const [procChosen, setProcChosen] = useState(false)
@@ -53,10 +58,11 @@ export function StoryPage() {
 
   if (page.isParentSelect) {
     return (
-      <div className={css.book}>
-        <a href="#/" className={css.menuLink} aria-label="לתפריט הקונספטים">
+      <div className={css.book} dir={dir} lang={lang}>
+        <a href="#/" className={css.menuLink} aria-label={t('book.ui.menu', 'לתפריט')}>
           <span aria-hidden>🏁</span>
         </a>
+        <LanguagePicker />
         <div className={css.pageCounter}>
           {allPages.map((_, i) => (
             <span key={i} className={[css.dot, i === index ? css.dotActive : ''].join(' ')} />
@@ -64,8 +70,8 @@ export function StoryPage() {
         </div>
 
         <div className={css.parentSelect}>
-          <p className={css.parentSelectTitle}>להורים ולצוות</p>
-          <p className={css.parentSelectSub}>בחרו את השלבים הבאים שהרופא/ה קבע/ה</p>
+          <p className={css.parentSelectTitle}>{pageText('parent-select', 'text', 'להורים ולצוות')}</p>
+          <p className={css.parentSelectSub}>{pageText('parent-select', 'sub', 'בחרו את השלבים הבאים שהרופא/ה קבע/ה')}</p>
           <div className={css.procGrid}>
             {procedureOptions.map((proc) => {
               const on = selectedProcs.has(proc.id)
@@ -77,7 +83,7 @@ export function StoryPage() {
                   aria-pressed={on}
                 >
                   <span className={css.procEmoji}>{proc.emoji}</span>
-                  <span className={css.procLabel}>{proc.text}</span>
+                  <span className={css.procLabel}>{pageText(proc.id, 'text', proc.text)}</span>
                 </button>
               )
             })}
@@ -85,9 +91,9 @@ export function StoryPage() {
         </div>
 
         <div className={css.nav}>
-          <button className={css.backBtn} onClick={goBack}>← אחורה</button>
+          <button className={css.backBtn} onClick={goBack}>{t('book.ui.back', '← אחורה')}</button>
           <button className={css.nextBtn} onClick={confirmProcs}>
-            {selectedProcs.size > 0 ? 'המשיכו ←' : 'לסיום ←'}
+            {selectedProcs.size > 0 ? t('book.ui.continue', 'המשיכו ←') : t('book.ui.toEnd', 'לסיום ←')}
           </button>
         </div>
       </div>
@@ -95,10 +101,11 @@ export function StoryPage() {
   }
 
   return (
-    <div className={css.book}>
-      <a href="#/" className={css.menuLink} aria-label="לתפריט הקונספטים">
+    <div className={css.book} dir={dir} lang={lang}>
+      <a href="#/" className={css.menuLink} aria-label={t('book.ui.menu', 'לתפריט')}>
         <span aria-hidden>🏁</span>
       </a>
+      <LanguagePicker />
       <div className={css.pageCounter}>
         {allPages.map((_, i) => (
           <span key={i} className={[css.dot, i === index ? css.dotActive : ''].join(' ')} />
@@ -107,18 +114,18 @@ export function StoryPage() {
 
       <div className={css.pageContent}>
         <div className={css.illustration}>{page.emoji}</div>
-        <p className={css.mainText}>{page.text}</p>
-        {page.sub && <p className={css.subText}>{page.sub}</p>}
+        <p className={css.mainText}>{pageText(page.id, 'text', page.text)}</p>
+        {page.sub && <p className={css.subText}>{pageText(page.id, 'sub', page.sub)}</p>}
       </div>
 
       <div className={css.nav}>
         {!isFirst && (
-          <button className={css.backBtn} onClick={goBack}>← אחורה</button>
+          <button className={css.backBtn} onClick={goBack}>{t('book.ui.back', '← אחורה')}</button>
         )}
         {!isLast ? (
-          <button className={css.nextBtn} onClick={goNext}>הלאה ←</button>
+          <button className={css.nextBtn} onClick={goNext}>{t('book.ui.next', 'הלאה ←')}</button>
         ) : (
-          <button className={css.nextBtn} onClick={restart}>מההתחלה ↺</button>
+          <button className={css.nextBtn} onClick={restart}>{t('book.ui.restart', 'מההתחלה ↺')}</button>
         )}
       </div>
     </div>

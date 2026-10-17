@@ -26,10 +26,11 @@ export function QuestShell() {
   const { lang, dir, t } = useI18n()
   const isOcean = theme.id === 'ocean' && !isHome
 
+  // translations are on for the whole child side (the worlds and their screens), not only for the ocean
   useLayoutEffect(() => {
-    setI18nEnabled(isOcean)
+    setI18nEnabled(true)
     return () => setI18nEnabled(false)
-  }, [isOcean])
+  }, [])
 
   const dayActive = active && (REQUIRED_STAGES as readonly string[]).includes(active.id)
   const mapTarget = dayActive || visibleOptionals.length === 0 ? '/map' : '/night-map'

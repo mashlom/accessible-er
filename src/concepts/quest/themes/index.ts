@@ -1,8 +1,9 @@
 export interface StageTheme {
-  label: string
+  /** text fields are optional: a world may keep them in its child texts file instead */
+  label?: string
   icon: string
   /** Short flavour description shown on the map pin */
-  hint: string
+  hint?: string
   /** Optional image shown on the map strip (path relative to /public) */
   image?: string
   /** If set, shown as hero on the stage detail page instead of image */
@@ -391,68 +392,22 @@ export const themes: QuestTheme[] = [
     emoji: '🐠',
     bg: '/worlds/ocean/underwater.png',
     thumbnailOverlay: '/worlds/ocean/station-sub.png',
-    calmLines: [
-      'גם לצוללנים קשה לפעמים 🤿',
-      'כשקשה לצוללן, הוא נושם עמוק מאוד',
-      'נשום איתי — שאיפה… נשיפה…',
-    ],
-    cardChildHero: {
-      title: 'מכתב הוראות לקברניט',
-      subtitle: 'כדי שקברניט הצוללת ידע בדיוק איך לעזור לצוללן שלנו',
-    },
-    distractTitle: 'חדר ההידרופונים 🎧',
     // Shevi's colour tokens: primary action #087E8B, information areas #E5F2F7
     accent: '#087e8b',
     accentSoft: '#e5f2f7',
     accentText: '#ffffff',
     completedColor: '#25b8e8',
     stages: {
-      reception: { label: 'על הרציף', icon: '⚓', hint: 'נרשמים בבסיס ומקבלים צמיד צוללן', image: '/worlds/ocean/station-house.png' },
-      'wait-before-triage': { label: 'כניסה לצוללת', icon: '/worlds/ocean/station-sub.png', hint: 'עולים לצוללת ומחכים שקצין הצלילה יקרא לנו' },
-      triage: { label: 'בדיקות לצלילה', icon: '🤿', hint: 'הקצין בודק שאתה מוכן/ה לצלילה', heroImage: '/worlds/ocean/station-pod.png' },
-      'wait-doctor': { label: 'ממתינים בתא', icon: '🐟', hint: 'דגים עוברים בחוץ, ממתינים לקברניט' },
-      doctor: { label: 'פגישה עם קברניט הצוללת', icon: '🐙', hint: 'הקברניט מחליט מה לעשות' },
-      decision: { label: 'עלייה לפני השטח!', icon: '🌊', hint: 'צפנו בעולם התת-ימי — חוזרים!' },
-      tests: { label: 'סונאר הצוללת', icon: '📡', hint: 'הסונאר רואה דרך המים' },
-      treatment: { label: 'תיקון הצוללת', icon: '🔧', hint: 'המהנדס מתקן את מה שצריך' },
-      consult: { label: 'קשר עם הבסיס', icon: '📻', hint: 'מומחה מהבסיס מתחבר' },
-      'wait-results': { label: 'עיבוד נתוני הסונאר', icon: '💾', hint: 'הסונאר מעבד נתונים' },
-    },
-    procedureNarratives: {
-      'temperature':     'ציוד הצוללת מודד את חום גוף הצוללן/ת — כדי לוודא שהכל תקין לפני הצלילה.',
-      'saturation':      'חיישן החמצן בודק שמספיק אוויר זורם בדם — בדיוק כמו מיכלי החמצן בצלילה עמוקה.',
-      'blood-pressure':  'קברניט הצוללת מודד את לחץ הדם — כדי לוודא שהגוף מוכן ללחצי העומק.',
-      'doctor-exam':     'הקברניט בוחן את הצוללן/ת ומחליט מהו הטיפול הנכון.',
-      'blood-test':      'מעבדת הצוללת צריכה טיפת דם אחת כדי לנתח את מצב הגוף.',
-      'urine':           'כוסית הדגימה תגלה לקברניט מה מתרחש בגוף הצוללן/ת.',
-      'xray':            'סונאר הצוללת מצלם את פנים הגוף — רואים הכל כמו דרך מים שקופים.',
-      'ultrasound':      'ג׳ל הסונאר מאפשר לציוד לגלות מה מסתתר בעומקי הגוף.',
-      'ct':              'הטבעת הסורקת עוברת לאט ומצלמת תמונה תלת-ממדית של כל מה שבפנים.',
-      'iv':              'הצינור הדק מזרים נוזלי ריפוי ישירות לדם — כמו מערכת החמצן של הצוללת.',
-      'medication':      'הקברניט הכין את תרופת הים — סירופ מיוחד שיחזיר את הכוח לצוללן/ת.',
-      'inhalation':      'אדי הריפוי דרך המסכה — כמו שנושמים אוויר מהמיכל עמוק מתחת למים.',
-      'stitches':        'מהנדס הצוללת מתקן את הפצע — דבק ימי מיוחד שיאחה את הפגיעה.',
-      'cast':            'מגן הגבס עוטף את העצם כמו מעטפת הצוללת — ומחזיק הכל יציב עד להחלמה.',
-      'bandage':         'חיפוי ההגנה עוטף את הפצע ומגן עליו כמו דופן הצוללת.',
-      'waiting-results': 'הסונאר מעבד את הנתונים — עוד מעט נדע מה גילתה הצלילה.',
-    },
-    procedureSteps: {
-      'medication': [
-        'מקבלים תרופת ים שעוזרת לגוף.',
-        'לפעמים צריך לשתות אותה, ולפעמים מכניסים אותה ליד דרך צינורית רכה.',
-        'אם שתינו אותה, אפשר לשתות מים אחרי, כדי להעביר את הטעם.',
-      ],
-      'blood-pressure': [
-        'שמים לי שרוול רך על הזרוע.',
-        'השרוול מתנפח ולוחץ, כמו לחץ המים בעומק.',
-        'סופרים: אחת, שתיים, שלוש...',
-        'אחר כך האוויר יוצא מהשרוול. אפשר להוריד אותו.',
-      ],
-      'doctor-exam': [
-        'הוא מקשיב לגוף עם כלי קסמים — קצת קר, לא כואב.',
-        'אולי יסתכל בגרון ובאוזניים עם אור קסמים קטן.',
-        'בסוף יידע הקברניט מה לעשות.',
-      ],
+      reception: { icon: '⚓', image: '/worlds/ocean/station-house.png' },
+      'wait-before-triage': { icon: '/worlds/ocean/station-sub.png' },
+      triage: { icon: '🤿', heroImage: '/worlds/ocean/station-pod.png' },
+      'wait-doctor': { icon: '🐟' },
+      doctor: { icon: '🐙' },
+      decision: { icon: '🌊' },
+      tests: { icon: '📡' },
+      treatment: { icon: '🔧' },
+      consult: { icon: '📻' },
+      'wait-results': { icon: '💾' },
     },
   },
   {
