@@ -168,6 +168,18 @@
       "relevant": "Relevant to our visit",
       "allActions": "All actions",
       "commonActions": "Common actions"
+    },
+    "calmProcedureDetail": {
+      "storyLabel": "🎬 Let's see what happens, step by step",
+      "measureWays": "How we measure",
+      "prev": "Previous",
+      "next": "Next →",
+      "again": "Again ↻",
+      "finished": "Well done! We got through it together 🌟",
+      "what": "What happens",
+      "feel": "What the child may feel",
+      "prepare": "How to prepare",
+      "ask": "What you can ask the staff"
     }
   },
   "ru": {
@@ -340,6 +352,18 @@
       "relevant": "Подходит для нашего визита",
       "allActions": "Все действия",
       "commonActions": "Частые действия"
+    },
+    "calmProcedureDetail": {
+      "storyLabel": "🎬 Посмотрим, что будет, шаг за шагом",
+      "measureWays": "Как измеряем",
+      "prev": "Назад",
+      "next": "Дальше →",
+      "again": "Ещё раз ↻",
+      "finished": "Молодцы! Мы прошли это вместе 🌟",
+      "what": "Что происходит",
+      "feel": "Что ребёнок может почувствовать",
+      "prepare": "Как подготовиться",
+      "ask": "Что можно попросить у персонала"
     }
   }
 }

@@ -8,7 +8,7 @@ import { parentProcedure } from '../../../data/parent'
 import styles from './ProcedureDetailPage.module.css'
 
 export function ProcedureDetailPage() {
-  const { lang } = useI18n()
+  const { t, lang } = useI18n()
   const { id } = useParams()
   const procedure = id ? parentProcedure(lang, id) : undefined
   const [step, setStep] = useState(0)
@@ -44,11 +44,11 @@ export function ProcedureDetailPage() {
       </div>
 
       {/* Story mode — the mascot walks the child through, step by step */}
-      <section className={styles.story} aria-label="סיפור הכנה לילד">
-        <p className={styles.storyLabel}>🎬 בואו נראה מה יקרה, שלב אחרי שלב</p>
+      <section className={styles.story} aria-label={t('ui.calmProcedureDetail.storyLabel', '🎬 בואו נראה מה יקרה, שלב אחרי שלב')}>
+        <p className={styles.storyLabel}>{t('ui.calmProcedureDetail.storyLabel', '🎬 בואו נראה מה יקרה, שלב אחרי שלב')}</p>
 
         {variants && variants.length > 1 && (
-          <div className={styles.variantToggle} role="group" aria-label="איך מודדים">
+          <div className={styles.variantToggle} role="group" aria-label={t('ui.calmProcedureDetail.measureWays', 'איך מודדים')}>
             {variants.map((v, i) => (
               <button
                 key={i}
@@ -92,7 +92,7 @@ export function ProcedureDetailPage() {
             onClick={() => setStep((s) => Math.max(0, s - 1))}
             disabled={step === 0}
           >
-            הקודם
+            {t('ui.calmProcedureDetail.prev', 'הקודם')}
           </button>
           {!lastStep ? (
             <button
@@ -100,7 +100,7 @@ export function ProcedureDetailPage() {
               className={styles.storyBtn}
               onClick={() => setStep((s) => Math.min(steps.length - 1, s + 1))}
             >
-              הבא ←
+              {t('ui.calmProcedureDetail.next', 'הבא ←')}
             </button>
           ) : (
             <button
@@ -108,28 +108,28 @@ export function ProcedureDetailPage() {
               className={styles.storyBtn}
               onClick={() => setStep(0)}
             >
-              עוד פעם ↻
+              {t('ui.calmProcedureDetail.again', 'עוד פעם ↻')}
             </button>
           )}
         </div>
 
-        {isFinished && <p className={styles.finishNote}>כל הכבוד! עברנו את זה יחד 🌟</p>}
+        {isFinished && <p className={styles.finishNote}>{t('ui.calmProcedureDetail.finished', 'כל הכבוד! עברנו את זה יחד 🌟')}</p>}
       </section>
 
       <div className={styles.sections}>
-        <Section title="מה קורה" emoji="ℹ️">
+        <Section title={t('ui.calmProcedureDetail.what', 'מה קורה')} emoji="ℹ️">
           <p>{procedure.what}</p>
         </Section>
 
-        <Section title="מה הילד/ה עשוי/ה להרגיש" emoji="💛">
+        <Section title={t('ui.calmProcedureDetail.feel', 'מה הילד/ה עשוי/ה להרגיש')} emoji="💛">
           <p>{procedure.feel}</p>
         </Section>
 
-        <Section title="איך אפשר להתכונן" emoji="🎒">
+        <Section title={t('ui.calmProcedureDetail.prepare', 'איך אפשר להתכונן')} emoji="🎒">
           <p>{procedure.prepare}</p>
         </Section>
 
-        <Section title="מה אפשר לבקש מהצוות" emoji="🙋">
+        <Section title={t('ui.calmProcedureDetail.ask', 'מה אפשר לבקש מהצוות')} emoji="🙋">
           <InfoList items={procedure.adaptations} />
         </Section>
       </div>
