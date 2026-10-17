@@ -83,7 +83,7 @@ export function ReasonPage() {
       {path && (
         <div className={styles.actions}>
           <Link to="/journey" className={styles.primaryBtn}>
-            {t('ui.calmReason.continue', 'להתקדם למסע במיון ←')}
+            {t('ui.calmReason.continue', 'להתקדם לשביל במיון ←')}
           </Link>
           <button type="button" className={styles.ghostBtn} onClick={clearReason}>
             {t('ui.calmReason.clear', 'ניקוי הבחירה')}

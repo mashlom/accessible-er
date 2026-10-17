@@ -105,7 +105,7 @@
         "desc": "התאמות שאפשר לבקש מהצוות"
       },
       "discharge": {
-        "title": "לקראת שחרור",
+        "title": "סוף השביל",
         "desc": "מה קורה בסיום הביקור והחזרה הביתה"
       },
       "reason": {
@@ -190,11 +190,11 @@
     },
     "tiles": {
       "card": {
-        "title": "What to know about my child",
+        "title": "Your card",
         "desc": "A short card of adaptations to show the staff"
       },
       "journey": {
-        "title": "What happens now?",
+        "title": "Our trail",
         "desc": "The stages of the visit in the emergency room, and what comes next"
       },
       "wait-times": {
@@ -210,7 +210,7 @@
         "desc": "A simple map of the emergency room, with quiet places"
       },
       "calm": {
-        "title": "What to do when it is hard?",
+        "title": "When it is hard",
         "desc": "Short guidance for the parent in moments of distress"
       },
       "requests": {
@@ -218,7 +218,7 @@
         "desc": "Adaptations you can ask the staff for"
       },
       "discharge": {
-        "title": "Before discharge",
+        "title": "End of the Journey",
         "desc": "What happens at the end of the visit and going home"
       },
       "reason": {
@@ -230,7 +230,7 @@
         "desc": "A request or thanks — to show on the screen or send by email"
       },
       "feedback": {
-        "title": "A short feedback",
+        "title": "How was it?",
         "desc": "Tell us how it was, so we can improve"
       }
     }
@@ -307,7 +307,7 @@
         "desc": "Короткая карточка адаптаций, чтобы показать персоналу"
       },
       "journey": {
-        "title": "Что происходит сейчас?",
+        "title": "Наш путь",
         "desc": "Этапы визита в приёмном покое и что ждёт дальше"
       },
       "wait-times": {
@@ -323,7 +323,7 @@
         "desc": "Простая карта приёмного покоя, с тихими местами"
       },
       "calm": {
-        "title": "Что делать, когда трудно?",
+        "title": "Когда трудно",
         "desc": "Короткие советы родителю в моменты тревоги"
       },
       "requests": {
@@ -331,7 +331,7 @@
         "desc": "Адаптации, о которых можно попросить персонал"
       },
       "discharge": {
-        "title": "Перед выпиской",
+        "title": "Завершение пути",
         "desc": "Что происходит в конце визита и при возвращении домой"
       },
       "reason": {
@@ -343,7 +343,7 @@
         "desc": "Просьба или благодарность — показать на экране или отправить по почте"
       },
       "feedback": {
-        "title": "Короткий отзыв",
+        "title": "Как прошло?",
         "desc": "Расскажите, как всё прошло, — чтобы мы стали лучше"
       }
     }

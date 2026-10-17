@@ -55,7 +55,7 @@
         "desc": "מותר לבקש מהצוות"
       },
       "going-home": {
-        "name": "הביתה",
+        "name": "סוף השביל",
         "desc": "איך נגמר היום"
       },
       "message": {
@@ -94,6 +94,9 @@
       "distract": {
         "name": "A distraction",
         "desc": "Something calm to look at"
+      },
+      "going-home": {
+        "desc": "How the day ends"
       }
     }
   },
@@ -123,6 +126,9 @@
       "distract": {
         "name": "Отвлечься",
         "desc": "Что-то спокойное, на что можно смотреть"
+      },
+      "going-home": {
+        "desc": "Как закончится день"
       }
     }
   }

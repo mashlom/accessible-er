@@ -43,11 +43,14 @@ const calmTileOf: Record<string, string> = {
 type Tile = { name: string; desc: string }
 const calmTiles = parentUi as unknown as Record<HomeLang, { tiles: Record<string, { title: string; desc: string }> }>
 
-/** Hebrew stays the story's own (the design's names); other languages reuse the calm wording where the destination is the same */
+/** Hebrew stays the story's own (the design's names); the other languages reuse the calm wording where the destination is the same */
 function tileText(lang: HomeLang, id: string): Tile {
-  const own = (homeTexts[lang].tiles as Record<string, Tile | undefined>)[id]
+  const own = (homeTexts[lang].tiles as Record<string, Partial<Tile> | undefined>)[id]
+  const hebrew = (homeTexts.he.tiles as Record<string, Tile>)[id]
   const calmKey = calmTileOf[id]
-  if (lang === 'he' || !calmKey) return own ?? (homeTexts.he.tiles as Record<string, Tile>)[id]
+  if (lang === 'he' || !calmKey) {
+    return { name: own?.name ?? hebrew.name, desc: own?.desc ?? hebrew.desc }
+  }
   const c = calmTiles[lang].tiles[calmKey]
   return { name: c.title, desc: c.desc }
 }
@@ -105,7 +108,7 @@ export function WorldPage() {
             <span className={styles.reasonStripLabel}>{tx.reasonLabel}</span>
             {reasonLabel}
           </span>
-          <Link to="/reason" className={styles.reasonStripAction}>
+          <Link to="/reason" className={styles.reasonStripChange}>
             {tx.reasonChange}
           </Link>
         </div>

@@ -90,7 +90,7 @@ export function JourneyPage() {
     <div className="container">
       <PageHeader
         eyebrow={t('ui.calmJourney.eyebrow', 'מה קורה עכשיו')}
-        title={t('ui.calmJourney.title', 'המסע שלנו במיון')}
+        title={t('ui.calmJourney.title', 'השביל שלנו במיון')}
         subtitle={t('ui.calmJourney.subtitle', 'אלה השלבים של כל ביקור. סמנו איפה אנחנו עכשיו, ואני אראה מה צפוי בהמשך.')}
       />
 
@@ -114,10 +114,10 @@ export function JourneyPage() {
           checked={motionOn}
           onChange={(e) => setMotionOn(e.target.checked)}
         />
-        <span>{t('ui.calmJourney.character', '🐾 הדמות שלי זזה לאורך המסע')}</span>
+        <span>{t('ui.calmJourney.character', '🐾 הדמות שלי זזה לאורך השביל')}</span>
       </label>
 
-      <div className={styles.rail} ref={railRef} aria-label={t('ui.calmJourney.railAria', 'התקדמות במסע')}>
+      <div className={styles.rail} ref={railRef} aria-label={t('ui.calmJourney.railAria', 'התקדמות בשביל')}>
         {motionOn && roniX != null && (
           <div
             className={styles.railRoni}
