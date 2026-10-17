@@ -62,5 +62,133 @@
       "waiting-results": "המחשב מנתח את נתוני המשימה — בקרוב יהיו לנו תוצאות."
     },
     "distractTitle": "חלון התצפית 🪟"
+  },
+  "en": {
+    "name": "Astronaut in Space",
+    "stages": {
+      "reception": {
+        "label": "Station Entrance",
+        "hint": "We register at the space station and get an astronaut's bracelet"
+      },
+      "wait-before-triage": {
+        "label": "Waiting Cabin",
+        "hint": "We wait at the station until the technician calls us for the check"
+      },
+      "triage": {
+        "label": "Checks Before Launch",
+        "hint": "The technician checks that you are ready to fly"
+      },
+      "wait-doctor": {
+        "label": "Control Room",
+        "hint": "We wait for the commander to finish the briefing"
+      },
+      "doctor": {
+        "label": "Meeting the Commander",
+        "hint": "The commander sets the flight route"
+      },
+      "decision": {
+        "label": "Successful Landing!",
+        "hint": "We are back on Earth safely!"
+      },
+      "tests": {
+        "label": "Space Scanner",
+        "hint": "The scanner sees what the eye cannot see"
+      },
+      "treatment": {
+        "label": "Station Repair",
+        "hint": "The technician fixes what needs fixing"
+      },
+      "consult": {
+        "label": "Command Centre",
+        "hint": "Another expert joins to help"
+      },
+      "wait-results": {
+        "label": "Data Processing",
+        "hint": "The computer analyses the data"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "The technician measures the astronaut's body temperature before the launch — to make sure the body is fit for the mission.",
+      "saturation": "The oxygen sensor checks that enough air flows in the blood — just like in a space suit.",
+      "blood-pressure": "The technician measures the blood pressure to make sure the body is ready for the conditions of the mission.",
+      "doctor-exam": "The commander examines the astronaut before the launch — the next mission will be decided from it.",
+      "blood-test": "The station lab needs a small blood sample to analyse the state of the body before the flight.",
+      "urine": "A special sample test — a cup that will show the commander that the body is ready for space conditions.",
+      "xray": "The station scanner takes a picture of the body's structure from the inside — just like the scans done on astronauts.",
+      "ultrasound": "The scanning gel lets the sonar move inside the body and find what needs fixing.",
+      "ct": "The big ring builds a 3D map of the body — like mapping an unknown star.",
+      "iv": "A thin tube sends essential liquids straight into the blood — like the feeding system of a space station.",
+      "medication": "The commander has prepared a healing mixture — a capsule or a syrup that will return the astronaut to full strength.",
+      "inhalation": "Medicine vapours through the mask open the airway — just like the breathing system in space.",
+      "stitches": "The technician carefully repairs the injury — a special glue that will join what was damaged on the mission.",
+      "cast": "A plaster armour holds the bone still — like the station's frame that keeps everything in place.",
+      "bandage": "A protective dressing wraps the injured area — like protecting delicate parts of a spacecraft.",
+      "waiting-results": "The computer analyses the mission data — soon we will have results."
+    },
+    "distractTitle": "The Observation Window 🪟"
+  },
+  "ru": {
+    "name": "Космонавт в космосе",
+    "stages": {
+      "reception": {
+        "label": "Вход на станцию",
+        "hint": "Регистрируемся на космической станции и получаем браслет космонавта"
+      },
+      "wait-before-triage": {
+        "label": "Каюта ожидания",
+        "hint": "Ждём на станции, пока техник позовёт на проверку"
+      },
+      "triage": {
+        "label": "Проверки перед взлётом",
+        "hint": "Техник проверяет, что ты готов(а) к полёту"
+      },
+      "wait-doctor": {
+        "label": "Диспетчерская",
+        "hint": "Ждём, пока командир закончит инструктаж"
+      },
+      "doctor": {
+        "label": "Встреча с командиром",
+        "hint": "Командир определяет маршрут полёта"
+      },
+      "decision": {
+        "label": "Удачная посадка!",
+        "hint": "Мы благополучно вернулись на Землю!"
+      },
+      "tests": {
+        "label": "Космический сканер",
+        "hint": "Сканер видит то, что не видит глаз"
+      },
+      "treatment": {
+        "label": "Ремонт станции",
+        "hint": "Техник чинит то, что нужно починить"
+      },
+      "consult": {
+        "label": "Командный центр",
+        "hint": "Ещё один эксперт присоединяется помочь"
+      },
+      "wait-results": {
+        "label": "Обработка данных",
+        "hint": "Компьютер анализирует данные"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "Техник измеряет температуру тела космонавта перед стартом — чтобы убедиться, что тело готово к миссии.",
+      "saturation": "Датчик кислорода проверяет, что в крови течёт достаточно воздуха — точно так же, как в скафандре.",
+      "blood-pressure": "Техник измеряет давление, чтобы убедиться, что тело готово к условиям миссии.",
+      "doctor-exam": "Командир осматривает космонавта перед стартом — по этому осмотру решат, какая миссия будет следующей.",
+      "blood-test": "Лаборатории станции нужен небольшой образец крови, чтобы проанализировать состояние тела перед полётом.",
+      "urine": "Особый анализ образца — чашка, которая покажет командиру, что тело готово к условиям космоса.",
+      "xray": "Сканер станции снимает строение тела изнутри — точно так же, как сканируют космонавтов.",
+      "ultrasound": "Гель для сканирования позволяет сонару двигаться внутри тела и находить то, что нужно починить.",
+      "ct": "Большое кольцо строит трёхмерную карту тела — как картографирование неизвестной звезды.",
+      "iv": "Тонкая трубка подаёт жизненно важные жидкости прямо в кровь — как система питания космической станции.",
+      "medication": "Командир приготовил целебную смесь — капсулу или сироп, которые вернут космонавта к силам.",
+      "inhalation": "Пары лекарства через маску открывают дыхательные пути — точно так же, как система дыхания в космосе.",
+      "stitches": "Техник аккуратно чинит повреждение — особый клей соединит то, что пострадало в миссии.",
+      "cast": "Гипсовый доспех держит кость неподвижно — как каркас станции, который удерживает всё на месте.",
+      "bandage": "Защитная повязка обхватывает повреждённое место — как защита тонких деталей космического корабля.",
+      "waiting-results": "Компьютер анализирует данные миссии — скоро у нас будут результаты."
+    },
+    "distractTitle": "Иллюминатор 🪟"
   }
 }
