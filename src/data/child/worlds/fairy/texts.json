@@ -62,5 +62,133 @@
       "waiting-results": "הגביש הקסום מעבד את הבדיקות — עוד מעט תגיע תשובת הקסם."
     },
     "distractTitle": "שרביט הקסומים ✨"
+  },
+  "en": {
+    "name": "Fairy in the Magic Garden",
+    "stages": {
+      "reception": {
+        "label": "Garden Gate",
+        "hint": "We register in the magic garden and get a magic bracelet"
+      },
+      "wait-before-triage": {
+        "label": "Butterfly Bridge",
+        "hint": "We wait on the bridge until the healing fairy calls"
+      },
+      "triage": {
+        "label": "Magic Check",
+        "hint": "The healing fairy checks your magic"
+      },
+      "wait-doctor": {
+        "label": "Flower Corner",
+        "hint": "We sit among the flowers and wait"
+      },
+      "doctor": {
+        "label": "Meeting the Healing Fairy",
+        "hint": "The fairy decides which magic will heal"
+      },
+      "decision": {
+        "label": "Victory Flower",
+        "hint": "You got a magic flower — you are healed!"
+      },
+      "tests": {
+        "label": "Magic Sight",
+        "hint": "The crystal shows what is inside"
+      },
+      "treatment": {
+        "label": "Healing Wand",
+        "hint": "The fairy heals with her wand"
+      },
+      "consult": {
+        "label": "Council of Fairies",
+        "hint": "Another fairy comes to help"
+      },
+      "wait-results": {
+        "label": "Waiting for the Magic",
+        "hint": "The magic is being prepared"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "The healing fairy checks the hero's inner fire — to know which magic will help.",
+      "saturation": "The pink magic ring on the finger checks that the magic of air flows in the blood as it should.",
+      "blood-pressure": "The fairies' sleeve presses gently and checks the strength of the hero's magic heart.",
+      "doctor-exam": "The healing fairy gently examines the hero's powers — the right magic will come from it.",
+      "blood-test": "The fairy needs one small magic drop to brew the right healing magic.",
+      "urine": "The blue magic cup will reveal the body's secrets to the healing fairy.",
+      "xray": "The garden mirror looks deep into the body and sees everything — without you feeling anything.",
+      "ultrasound": "The garden gel on the skin lets the wand wander inside and find what needs healing.",
+      "ct": "The magic ring scans slowly and takes a picture of everything inside.",
+      "iv": "The fairy's thin tube sends healing magic straight into the hero's blood.",
+      "medication": "The healing fairy has brewed a special magic — a syrup or a mixture that will strengthen the hero.",
+      "inhalation": "Magic vapours come through the mask and help breathing flow easily and happily.",
+      "stitches": "The fairy carefully closes the wound with magic glue or a golden healing thread.",
+      "cast": "The fairies' plaster armour wraps the bone and holds it until it fully heals.",
+      "bandage": "The garden dressing wraps the wound and protects it until the magic does its work.",
+      "waiting-results": "The magic crystal processes the tests — soon the magic answer will come."
+    },
+    "distractTitle": "The Magic Wand ✨"
+  },
+  "ru": {
+    "name": "Фея в волшебном саду",
+    "stages": {
+      "reception": {
+        "label": "Ворота сада",
+        "hint": "Регистрируемся в волшебном саду и получаем волшебный браслет"
+      },
+      "wait-before-triage": {
+        "label": "Мост бабочек",
+        "hint": "Ждём на мосту, пока нас позовёт целительница-фея"
+      },
+      "triage": {
+        "label": "Проверка волшебства",
+        "hint": "Целительница-фея проверяет твоё волшебство"
+      },
+      "wait-doctor": {
+        "label": "Цветочный уголок",
+        "hint": "Сидим среди цветов и ждём"
+      },
+      "doctor": {
+        "label": "Встреча с феей-целительницей",
+        "hint": "Фея решает, какое волшебство исцелит"
+      },
+      "decision": {
+        "label": "Цветок победы",
+        "hint": "Ты получил(а) волшебный цветок — ты исцелён(а)!"
+      },
+      "tests": {
+        "label": "Волшебное зрение",
+        "hint": "Кристалл показывает, что внутри"
+      },
+      "treatment": {
+        "label": "Целебная палочка",
+        "hint": "Фея исцеляет своей палочкой"
+      },
+      "consult": {
+        "label": "Совет фей",
+        "hint": "Ещё одна фея приходит помочь"
+      },
+      "wait-results": {
+        "label": "Ждём волшебства",
+        "hint": "Волшебство готовится"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "Фея-целительница проверяет внутренний огонь героя — чтобы узнать, какое волшебство поможет.",
+      "saturation": "Розовое волшебное кольцо на пальце проверяет, что волшебный воздух течёт в крови как надо.",
+      "blood-pressure": "Рукав фей мягко сжимается и проверяет силу волшебного сердца героя.",
+      "doctor-exam": "Фея-целительница мягко изучает силы героя — от них придёт подходящее волшебство.",
+      "blood-test": "Фее нужна одна маленькая волшебная капля, чтобы сварить нужное целебное волшебство.",
+      "urine": "Синяя волшебная чашка раскроет фее-целительнице тайны тела.",
+      "xray": "Садовое зеркало заглядывает глубоко в тело и видит всё — ты при этом ничего не чувствуешь.",
+      "ultrasound": "Садовый гель на коже позволяет палочке бродить внутри и найти то, что нужно вылечить.",
+      "ct": "Волшебное кольцо медленно сканирует и делает снимок всего, что внутри.",
+      "iv": "Тонкая трубка феи посылает целебное волшебство прямо в кровь героя.",
+      "medication": "Фея-целительница сварила особое волшебство — сироп или смесь, которая укрепит героя.",
+      "inhalation": "Волшебные пары приходят через маску и помогают дышать легко и радостно.",
+      "stitches": "Фея аккуратно закрывает рану волшебным клеем или золотой целебной нитью.",
+      "cast": "Гипсовый доспех фей обхватывает кость и держит её, пока она полностью не заживёт.",
+      "bandage": "Садовая повязка обхватывает рану и защищает её, пока волшебство делает своё дело.",
+      "waiting-results": "Волшебный кристалл обрабатывает анализы — скоро придёт волшебный ответ."
+    },
+    "distractTitle": "Волшебная палочка ✨"
   }
 }
