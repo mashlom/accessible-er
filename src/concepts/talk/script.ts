@@ -474,7 +474,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       const last = n === cardSectionsIn(ctx.lang).length - 1
       return {
         say: [
-          { text: `${section.emoji} ${section.title}`, mood: 'curious' },
+          { text: `${section.emoji} ${talkText(ctx.lang).card.questions[section.key]}`, mood: 'curious' },
           { text: talkText(ctx.lang).card.cardPickMany },
         ],
         multi: { field: section.key, options: section.options, labels: cardLabels(ctx.lang, n) },

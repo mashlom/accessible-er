@@ -39,7 +39,16 @@
       "cardSkip": "לדלג על השאלה",
       "cardLastStep": "סיימנו ←",
       "cardNextStep": "הבא ←",
-      "cardSkipQ": "לדלג על השאלה"
+      "cardSkipQ": "לדלג על השאלה",
+      "questions": {
+        "communication": "איך הילד/ה מתקשר/ת?",
+        "sensitivities": "למה הילד/ה רגיש/ה?",
+        "calming": "מה מרגיע את הילד/ה?",
+        "escalators": "מה עלול להגביר את הלחץ?",
+        "hardMoments": "מה קשה במיוחד?",
+        "pain": "איך הילד/ה מראה כאב?",
+        "avoid": "מה חשוב לא לעשות?"
+      }
     }
   },
   "en": {
@@ -82,7 +91,16 @@
       "cardSkip": "Skip this question",
       "cardLastStep": "Done →",
       "cardNextStep": "Next →",
-      "cardSkipQ": "Skip this question"
+      "cardSkipQ": "Skip this question",
+      "questions": {
+        "communication": "How does your child communicate?",
+        "sensitivities": "What is your child sensitive to?",
+        "calming": "What calms your child?",
+        "escalators": "What can make stress worse?",
+        "hardMoments": "What is especially hard?",
+        "pain": "How does your child show pain?",
+        "avoid": "What is important not to do?"
+      }
     }
   },
   "ru": {
@@ -125,7 +143,16 @@
       "cardSkip": "Пропустить вопрос",
       "cardLastStep": "Готово →",
       "cardNextStep": "Дальше →",
-      "cardSkipQ": "Пропустить вопрос"
+      "cardSkipQ": "Пропустить вопрос",
+      "questions": {
+        "communication": "Как ребёнок общается?",
+        "sensitivities": "К чему ребёнок чувствителен?",
+        "calming": "Что успокаивает ребёнка?",
+        "escalators": "Что может усилить стресс?",
+        "hardMoments": "Что особенно трудно?",
+        "pain": "Как ребёнок показывает боль?",
+        "avoid": "Чего важно не делать?"
+      }
     }
   }
 }
