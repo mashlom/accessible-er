@@ -151,13 +151,13 @@ function stageNode(id: string, tail: string | undefined, lang: Lang): TalkNode |
       say: [
         { text: stage.challenge, mood: 'curious' },
         {
-          text: 'אם זה קורה — זה בסדר גמור, וזה לא סימן שמשהו השתבש. יש דברים שעוזרים.',
+          text: talkText(lang).stage.reassure,
           mood: 'hug',
         },
       ],
       choices: [
         { label: talkText(lang).stage.askHere, go: `stage:${id}:ask` },
-        { emoji: '💗', label: 'קשה לנו ממש עכשיו', go: 'calm' },
+        { emoji: '💗', label: talkText(lang).stage.hardNowBtn, go: 'calm' },
         BACK,
       ],
     }
@@ -166,12 +166,12 @@ function stageNode(id: string, tail: string | undefined, lang: Lang): TalkNode |
   if (tail === 'ask') {
     return {
       say: [
-        { text: 'הנה מה שאפשר לבקש בשלב הזה:', mood: 'happy' },
+        { text: talkText(lang).stage.askIntro, mood: 'happy' },
         { text: bullets(stage.canAsk) },
-        { text: 'מותר לבקש. הצוות רגיל לזה.', mood: 'calm' },
+        { text: talkText(lang).stage.askOk, mood: 'calm' },
       ],
       choices: [
-        { label: 'עוד דברים שאפשר לבקש', go: 'ask' },
+        { label: talkText(lang).stage.askMore, go: 'ask' },
         next ? { label: talkText(lang).stage.after, go: `stage:${next.id}` } : BACK,
         BACK,
       ].filter((c, i, a) => a.indexOf(c) === i),

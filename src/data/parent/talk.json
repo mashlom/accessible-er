@@ -84,7 +84,12 @@
       "ask": "מה אפשר לבקש?",
       "askHere": "מה אפשר לבקש כאן?",
       "after": "ומה אחרי זה?",
-      "next": "ומה השלב הבא?"
+      "next": "ומה השלב הבא?",
+      "reassure": "אם זה קורה — זה בסדר גמור, וזה לא סימן שמשהו השתבש. יש דברים שעוזרים.",
+      "hardNowBtn": "קשה לנו ממש עכשיו",
+      "askIntro": "הנה מה שאפשר לבקש בשלב הזה:",
+      "askOk": "מותר לבקש. הצוות רגיל לזה.",
+      "askMore": "עוד דברים שאפשר לבקש"
     }
   },
   "en": {
@@ -172,7 +177,12 @@
       "ask": "What can I ask for?",
       "askHere": "What can I ask for here?",
       "after": "And what comes after that?",
-      "next": "And what is the next stage?"
+      "next": "And what is the next stage?",
+      "reassure": "If this happens, it is completely fine, and it does not mean something went wrong. There are things that help.",
+      "hardNowBtn": "It is really hard for us right now",
+      "askIntro": "Here is what you can ask for at this stage:",
+      "askOk": "You can ask. The staff is used to it.",
+      "askMore": "More things you can ask for"
     }
   },
   "ru": {
@@ -260,7 +270,12 @@
       "ask": "Что можно попросить?",
       "askHere": "Что здесь можно попросить?",
       "after": "А что будет потом?",
-      "next": "Какой следующий этап?"
+      "next": "Какой следующий этап?",
+      "reassure": "Если это случается — это совершенно нормально, и это не значит, что что-то пошло не так. Есть вещи, которые помогают.",
+      "hardNowBtn": "Нам сейчас очень тяжело",
+      "askIntro": "Вот что можно попросить на этом этапе:",
+      "askOk": "Можно просить. Персонал к этому привык.",
+      "askMore": "Что ещё можно попросить"
     }
   }
 }
