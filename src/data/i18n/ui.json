@@ -154,6 +154,12 @@
       "markHere": "Mark: we are here",
       "prepareChild": "🎬 Prepare the child for what happens here",
       "beforeDischarge": "🏠 Before going home →"
+    },
+    "calmWaitTimes": {
+      "title": "Estimated times",
+      "subtitle": "Each stage can take about this long",
+      "note": "The times are ranges for illustration only. The order and times may change depending on the team's decision and how busy the emergency room is.",
+      "back": "← Back"
     }
   },
   "ru": {
@@ -312,6 +318,12 @@
       "markHere": "Отметить: мы здесь",
       "prepareChild": "🎬 Подготовить ребёнка к тому, что здесь будет",
       "beforeDischarge": "🏠 К выписке домой →"
+    },
+    "calmWaitTimes": {
+      "title": "Примерное время",
+      "subtitle": "Каждый этап может занять примерно столько",
+      "note": "Время — ориентировочные диапазоны. Порядок и время могут меняться по решению команды и из-за загруженности приёмного покоя.",
+      "back": "← Назад"
     }
   }
 }

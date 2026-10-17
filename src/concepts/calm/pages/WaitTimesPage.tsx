@@ -4,15 +4,15 @@ import { parentJourney } from '../../../data/parent'
 import { PageHeader } from '../components/ui'
 
 export function WaitTimesPage() {
-  const { lang } = useI18n()
+  const { t, lang } = useI18n()
   const navigate = useNavigate()
 
   return (
     <div className="container">
       <PageHeader
         eyebrow="⏱️"
-        title="זמנים משוערים"
-        subtitle="כל שלב יכול לקחת בערך כמה דקות"
+        title={t('ui.calmWaitTimes.title', 'זמנים משוערים')}
+        subtitle={t('ui.calmWaitTimes.subtitle', 'כל שלב יכול לקחת בערך כמה דקות')}
       />
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -36,7 +36,7 @@ export function WaitTimesPage() {
             {stage.waitRange && (
               <p style={{ margin: 0, fontSize: '0.95em', color: 'var(--c-calm)', marginBottom: '1rem' }}>
                 <span style={{ fontWeight: 600 }}>
-                  {stage.waitKind === 'duration' ? '⏱️ משך זמן משוער' : '⏳ זמן המתנה משוער'}:
+                  {stage.waitKind === 'duration' ? `⏱️ ${t('ui.calmJourney.durationLabel', 'משך זמן משוער')}` : `⏳ ${t('ui.calmJourney.waitLabel', 'זמן המתנה משוער')}`}:
                 </span>
                 <br />
                 <span style={{ fontSize: '1.1em', fontWeight: 500 }}>{stage.waitRange}</span>
@@ -53,7 +53,7 @@ export function WaitTimesPage() {
       </div>
 
       <p style={{ marginTop: '2rem', fontSize: '0.85em', color: 'var(--c-calm)', opacity: 0.7, fontStyle: 'italic' }}>
-        הזמנים הם טווחים להמחשה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.
+        {t('ui.calmWaitTimes.note', 'הזמנים הם טווחים להמחשה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.')}
       </p>
 
       <div style={{ marginTop: '2rem', textAlign: 'center' }}>
@@ -73,7 +73,7 @@ export function WaitTimesPage() {
           onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
           onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
         >
-          חזרה ←
+          {t('ui.calmWaitTimes.back', 'חזרה ←')}
         </button>
       </div>
     </div>
