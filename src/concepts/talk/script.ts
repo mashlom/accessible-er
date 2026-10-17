@@ -341,24 +341,24 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       if (!path) return resolveNode('reason', ctx)
       return {
         say: [
-          { text: `הבנתי — ${path.label}.`, mood: 'calm', art: path.emoji },
+          { text: talkText(ctx.lang).reason.understood.replace('{label}', path.label), mood: 'calm', art: path.emoji },
           { text: path.blurb },
           {
             text:
-              'הדרך הצפויה שלנו:\n' +
+              talkText(ctx.lang).reason.routeHeading + '\n' +
               path.route
                 .map((s, i) => `${i + 1}. ${s.title}${s.optional ? ' (לפי הצורך)' : ''}`)
                 .join('\n'),
           },
           {
-            text: 'חשוב לדעת: הסדר והזמנים יכולים להשתנות לפי החלטת הצוות והעומס. זה לא סימן שמשהו לא בסדר.',
+            text: talkText(ctx.lang).reason.note,
             mood: 'calm',
           },
         ],
         choices: [
-          { emoji: '📍', label: 'איפה אנחנו עכשיו?', go: 'where' },
-          { emoji: '🎬', label: 'מה עומד לקרות?', go: 'prep' },
-          { label: 'לשנות את הסיבה', go: 'reason', quiet: true },
+          { emoji: '📍', label: talkText(ctx.lang).reason.where, go: 'where' },
+          { emoji: '🎬', label: talkText(ctx.lang).reason.prep, go: 'prep' },
+          { label: talkText(ctx.lang).reason.change, go: 'reason', quiet: true },
           BACK,
         ],
       }

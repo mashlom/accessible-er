@@ -13,7 +13,13 @@
     "staffPause": "להראות לצוות: «אנחנו צריכים דקה»",
     "reason": {
       "ask": "ספרו לי — מה הביא אתכם היום?",
-      "hint": "זה יעזור לי להראות לכם את הדרך הצפויה."
+      "hint": "זה יעזור לי להראות לכם את הדרך הצפויה.",
+      "understood": "הבנתי — {label}.",
+      "routeHeading": "הדרך הצפויה שלנו:",
+      "note": "חשוב לדעת: הסדר והזמנים יכולים להשתנות לפי החלטת הצוות והעומס. זה לא סימן שמשהו לא בסדר.",
+      "where": "איפה אנחנו עכשיו?",
+      "prep": "מה עומד לקרות?",
+      "change": "לשנות את הסיבה"
     }
   },
   "en": {
@@ -30,7 +36,13 @@
     "staffPause": "Show the staff: \"we need a minute\"",
     "reason": {
       "ask": "Tell me — what brought you here today?",
-      "hint": "This will help me show you the expected route."
+      "hint": "This will help me show you the expected route.",
+      "understood": "Got it — {label}.",
+      "routeHeading": "Our expected route:",
+      "note": "Good to know: the order and times can change depending on the team's decision and how busy it is. This does not mean anything is wrong.",
+      "where": "Where are we now?",
+      "prep": "What is going to happen?",
+      "change": "Change the reason"
     }
   },
   "ru": {
@@ -47,7 +59,13 @@
     "staffPause": "Показать персоналу: «Нам нужна минута»",
     "reason": {
       "ask": "Расскажите — что привело вас сегодня?",
-      "hint": "Это поможет мне показать вам ожидаемый маршрут."
+      "hint": "Это поможет мне показать вам ожидаемый маршрут.",
+      "understood": "Поняла — {label}.",
+      "routeHeading": "Наш ожидаемый маршрут:",
+      "note": "Важно знать: порядок и время могут меняться по решению команды и из-за загруженности. Это не значит, что что-то идёт не так.",
+      "where": "Где мы сейчас?",
+      "prep": "Что будет дальше?",
+      "change": "Изменить причину"
     }
   }
 }
