@@ -186,7 +186,7 @@ export function TalkPage() {
     setAside(null)
     setTrail((prev) => {
       const head = prev.slice(0, -1)
-      const last = { ...prev[prev.length - 1], answer: choice.label }
+      const last = { ...prev[prev.length - 1], answer: topicLabel(choice) }
       return [...head, last, { node: choice.go! }]
     })
   }

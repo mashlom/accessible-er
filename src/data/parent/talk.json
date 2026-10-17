@@ -10,7 +10,11 @@
       "back": "לדבר על משהו אחר"
     },
     "unknown": "רגע, איבדתי את החוט. בואו נחזור לרשימה.",
-    "staffPause": "להראות לצוות: «אנחנו צריכים דקה»"
+    "staffPause": "להראות לצוות: «אנחנו צריכים דקה»",
+    "reason": {
+      "ask": "ספרו לי — מה הביא אתכם היום?",
+      "hint": "זה יעזור לי להראות לכם את הדרך הצפויה."
+    }
   },
   "en": {
     "intro": {
@@ -23,7 +27,11 @@
       "back": "Talk about something else"
     },
     "unknown": "Wait, I lost the thread. Let's go back to the list.",
-    "staffPause": "Show the staff: \"we need a minute\""
+    "staffPause": "Show the staff: \"we need a minute\"",
+    "reason": {
+      "ask": "Tell me — what brought you here today?",
+      "hint": "This will help me show you the expected route."
+    }
   },
   "ru": {
     "intro": {
@@ -36,6 +44,10 @@
       "back": "Поговорить о чём-то другом"
     },
     "unknown": "Секунду, я потерял нить. Вернёмся к списку.",
-    "staffPause": "Показать персоналу: «Нам нужна минута»"
+    "staffPause": "Показать персоналу: «Нам нужна минута»",
+    "reason": {
+      "ask": "Расскажите — что привело вас сегодня?",
+      "hint": "Это поможет мне показать вам ожидаемый маршрут."
+    }
   }
 }

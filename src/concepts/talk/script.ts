@@ -323,8 +323,8 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     case 'reason':
       return {
         say: [
-          { text: 'ספרו לי — מה הביא אתכם היום?', mood: 'curious' },
-          { text: 'זה יעזור לי להראות לכם את הדרך הצפויה.' },
+          { text: talkText(ctx.lang).reason.ask, mood: 'curious' },
+          { text: talkText(ctx.lang).reason.hint },
         ],
         choices: [
           ...parentPaths(ctx.lang).map((p) => ({
