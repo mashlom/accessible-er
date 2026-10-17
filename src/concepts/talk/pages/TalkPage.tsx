@@ -97,7 +97,7 @@ export function TalkPage() {
   const timer = useRef<number>()
   const asideTimer = useRef<number>()
 
-  const ctx = useMemo(() => ({ reasonId, stageId, card }), [reasonId, stageId, card])
+  const ctx = useMemo(() => ({ reasonId, stageId, card, lang }), [reasonId, stageId, card, lang])
   const currentId = trail[trail.length - 1].node
   const current = useMemo(() => resolveNode(currentId, ctx), [currentId, ctx])
 

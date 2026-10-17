@@ -1,10 +1,28 @@
 import type { RoniMood } from '../../components/Roni'
-import { paths, getPath } from '../../data/paths'
-import { journeyStages, getStageIndex } from '../../data/journey'
-import { procedures, getProcedure } from '../../data/procedures'
+import { getStageIndex } from '../../data/journey'
+import { procedures } from '../../data/procedures'
+import { parentJourney, parentProcedure } from '../../data/parent'
+import { parentPaths } from '../../data/parent/paths'
+import supportI18n from '../../data/i18n/support.json'
+import careI18n from '../../data/i18n/careCard.json'
 import { mapAreas, loadLabels } from '../../data/map'
 import { distressTips, readySentences, staffRequests } from '../../data/support'
 import { cardSections, type CardArrayField, type CareCard } from '../../data/careCard'
+
+type Lang = 'he' | 'en' | 'ru'
+
+/** The same list in the chosen language, merged by position over the code's list (ids, emoji and values stay from the code) */
+function inLang<T extends object>(src: T[], lang: Lang, bucket: Record<string, unknown>, key: string): T[] {
+  const tr = ((bucket as Record<Lang, Record<string, unknown>>)[lang]?.[key] ?? []) as Partial<T>[]
+  return src.map((item, i) => ({ ...item, ...(tr[i] ?? {}) }))
+}
+const distressTipsIn = (lang: Lang) => inLang(distressTips, lang, supportI18n, 'distressTips')
+const staffRequestsIn = (lang: Lang) => inLang(staffRequests, lang, supportI18n, 'staffRequests')
+// the section titles are translated; the options stay the Hebrew values that are saved on the card
+const cardSectionsIn = (lang: Lang) => cardSections.map((sec, i) => {
+  const tr = ((careI18n as unknown as Record<Lang, { cardSections: { title: string }[] }>)[lang]?.cardSections ?? [])[i]
+  return { ...sec, title: tr?.title ?? sec.title }
+})
 
 /**
  * The conversation engine of concept 3.
@@ -59,6 +77,7 @@ export interface Ctx {
   reasonId: string | null
   stageId: string | null
   card: CareCard
+  lang: Lang
 }
 
 const TOPICS: Choice[] = [
@@ -92,11 +111,12 @@ function unknown(): TalkNode {
 /* Journey                                                             */
 /* ------------------------------------------------------------------ */
 
-function stageNode(id: string, tail: string | undefined): TalkNode | null {
+function stageNode(id: string, tail: string | undefined, lang: Lang): TalkNode | null {
   const i = getStageIndex(id)
   if (i < 0) return null
-  const stage = journeyStages[i]
-  const next = journeyStages[i + 1]
+  const journey = parentJourney(lang)
+  const stage = journey[i]
+  const next = journey[i + 1]
 
   if (tail === 'hard') {
     return {
@@ -149,7 +169,7 @@ function stageNode(id: string, tail: string | undefined): TalkNode | null {
     { label: 'מה אפשר לבקש?', go: `stage:${id}:ask` },
   ]
   for (const pid of stage.procedureIds ?? []) {
-    const p = getProcedure(pid)
+    const p = parentProcedure(lang, pid)
     if (p) choices.push({ emoji: p.emoji, label: `להתכונן ל${p.title}`, go: `prep:${pid}` })
   }
   if (next) choices.push({ label: 'ומה השלב הבא?', go: `stage:${next.id}` })
@@ -162,8 +182,8 @@ function stageNode(id: string, tail: string | undefined): TalkNode | null {
 /* Procedures                                                          */
 /* ------------------------------------------------------------------ */
 
-function prepNode(pid: string, rest: string[]): TalkNode | null {
-  const p = getProcedure(pid)
+function prepNode(pid: string, rest: string[], lang: Lang): TalkNode | null {
+  const p = parentProcedure(lang, pid)
   if (!p) return null
   const variants = p.storyVariants
 
@@ -271,7 +291,7 @@ function prepNode(pid: string, rest: string[]): TalkNode | null {
 
 export function resolveNode(id: string, ctx: Ctx): TalkNode {
   const [head, ...rest] = id.split(':')
-  const path = ctx.reasonId ? getPath(ctx.reasonId) : undefined
+  const path = ctx.reasonId ? parentPaths(ctx.lang).find((p) => p.id === ctx.reasonId) : undefined
 
   switch (head) {
     case 'start':
@@ -298,7 +318,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
           { text: 'זה יעזור לי להראות לכם את הדרך הצפויה.' },
         ],
         choices: [
-          ...paths.map((p) => ({
+          ...parentPaths(ctx.lang).map((p) => ({
             emoji: p.emoji,
             label: p.label,
             go: 'route',
@@ -343,7 +363,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
           { text: 'סמנו את השלב, ואספר לכם מה קורה בו.' },
         ],
         choices: [
-          ...journeyStages.map((s) => ({
+          ...parentJourney(ctx.lang).map((s) => ({
             emoji: s.emoji,
             label: s.title + (s.id === ctx.stageId ? ' ✓' : ''),
             go: `stage:${s.id}`,
@@ -354,12 +374,12 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       }
 
     case 'stage':
-      return stageNode(rest[0], rest[1]) ?? unknown()
+      return stageNode(rest[0], rest[1], ctx.lang) ?? unknown()
 
     /* ---------- procedures ---------- */
     case 'prep': {
       if (rest.length > 0 && rest[0] !== 'all') {
-        return prepNode(rest[0], rest.slice(1)) ?? unknown()
+        return prepNode(rest[0], rest.slice(1), ctx.lang) ?? unknown()
       }
 
       const likelyIds = [
@@ -369,8 +389,8 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       ]
       const showAll = rest[0] === 'all' || likelyIds.length === 0
       const list = showAll
-        ? procedures
-        : likelyIds.map(getProcedure).filter((p): p is (typeof procedures)[number] => !!p)
+        ? procedures.map((p) => parentProcedure(ctx.lang, p.id) ?? p)
+        : likelyIds.map((id) => parentProcedure(ctx.lang, id)).filter((p): p is (typeof procedures)[number] => !!p)
 
       return {
         say: [
@@ -409,7 +429,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       }
 
       if (rest[0] === 'done') {
-        const filled = cardSections.filter((s) => ctx.card[s.key].length > 0).length
+        const filled = cardSectionsIn(ctx.lang).filter((s) => ctx.card[s.key].length > 0).length
         return {
           say: [
             { text: 'סיימנו! הכרטיס מוכן.', mood: 'proud' },
@@ -432,9 +452,9 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       }
 
       const n = Number(rest[0])
-      const section = cardSections[n]
+      const section = cardSectionsIn(ctx.lang)[n]
       if (!section) return unknown()
-      const last = n === cardSections.length - 1
+      const last = n === cardSectionsIn(ctx.lang).length - 1
       return {
         say: [
           { text: `${section.emoji} ${section.title}`, mood: 'curious' },
@@ -491,7 +511,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
         return {
           say: [{ text: 'על מה נדבר? כל אחד מאלה עוזר.', mood: 'hug' }],
           choices: [
-            ...distressTips.map((t, i) => ({ emoji: t.emoji, label: t.title, go: `tip:${i}` })),
+            ...distressTipsIn(ctx.lang).map((t, i) => ({ emoji: t.emoji, label: t.title, go: `tip:${i}` })),
             BACK,
           ],
         }
@@ -541,7 +561,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       }
 
     case 'tip': {
-      const tip = distressTips[Number(rest[0])]
+      const tip = distressTipsIn(ctx.lang)[Number(rest[0])]
       if (!tip) return unknown()
       return {
         say: [
@@ -559,7 +579,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     /* ---------- requests ---------- */
     case 'ask': {
       if (rest.length) {
-        const r = staffRequests[Number(rest[0])]
+        const r = staffRequestsIn(ctx.lang)[Number(rest[0])]
         if (!r) return unknown()
         return {
           say: [
@@ -583,7 +603,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
           { text: 'על מה תרצו לשמוע?' },
         ],
         choices: [
-          ...staffRequests.map((r, i) => ({ emoji: r.emoji, label: r.title, go: `ask:${i}` })),
+          ...staffRequestsIn(ctx.lang).map((r, i) => ({ emoji: r.emoji, label: r.title, go: `ask:${i}` })),
           BACK,
         ],
       }
