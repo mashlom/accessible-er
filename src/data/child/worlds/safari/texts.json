@@ -62,5 +62,133 @@
       "waiting-results": "מעבדת השטח מנתחת את הדגימות — עוד מעט נדע מה גילה הספארי."
     },
     "distractTitle": "מבט אל הסוואנה 🌅"
+  },
+  "en": {
+    "name": "Safari in Africa",
+    "stages": {
+      "reception": {
+        "label": "Camp Entrance",
+        "hint": "We register at the safari camp and get a ranger's bracelet"
+      },
+      "wait-before-triage": {
+        "label": "In the Tree's Shade",
+        "hint": "We rest in the shade of the tree until the guide calls"
+      },
+      "triage": {
+        "label": "Equipment Check",
+        "hint": "The guide checks that you are ready to go out into the field"
+      },
+      "wait-doctor": {
+        "label": "Waiting for the Lion",
+        "hint": "The lion is busy — we wait patiently"
+      },
+      "doctor": {
+        "label": "Meeting the Chief",
+        "hint": "The old elephant decides what to do"
+      },
+      "decision": {
+        "label": "Back to Camp!",
+        "hint": "The sunset is beautiful — the journey is over!"
+      },
+      "tests": {
+        "label": "Field Lab",
+        "hint": "We check the samples from the field"
+      },
+      "treatment": {
+        "label": "Treatment Post",
+        "hint": "The veterinarian helps"
+      },
+      "consult": {
+        "label": "Expert from the Savanna",
+        "hint": "Another expert is coming"
+      },
+      "wait-results": {
+        "label": "Waiting for Results",
+        "hint": "The samples are being tested"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "The guide checks the body temperature — just like animals are checked at the safari before going out into the field.",
+      "saturation": "A small oxygen sensor checks that the hero's blood carries enough air all through the journey.",
+      "blood-pressure": "The guide measures the strength of the heart — to make sure the hero is ready for field conditions.",
+      "doctor-exam": "The chief examines the traveller and decides the right treatment for going back out into the field.",
+      "blood-test": "The field lab needs one small blood sample to find out what is happening in the body.",
+      "urine": "The sample cup will show the tribe's doctor what is happening in the hero's body.",
+      "xray": "The safari scanner takes a picture of the inside of the body — everything is seen without feeling anything.",
+      "ultrasound": "The test gel lets the equipment scan inside the body and find what needs treatment.",
+      "ct": "The scanning ring moves slowly and makes a detailed map of everything inside.",
+      "iv": "A thin tube sends healing liquid straight into the blood — like giving strength back to animals in the field.",
+      "medication": "The chief has prepared the jungle medicine — a syrup or a mixture that will bring back strength.",
+      "inhalation": "Healing vapours of the field come through the mask and help breathing flow freely.",
+      "stitches": "The tribe's doctor carefully repairs the wound — a special glue or a thread that will close it.",
+      "cast": "The plaster armour wraps the bone like a strong tree supports its trunk — and holds it until it heals.",
+      "bandage": "The field dressing wraps the wound and protects it from the surroundings until it heals.",
+      "waiting-results": "The field lab analyses the samples — soon we will know what the safari found."
+    },
+    "distractTitle": "A View of the Savanna 🌅"
+  },
+  "ru": {
+    "name": "Сафари в Африке",
+    "stages": {
+      "reception": {
+        "label": "Вход в лагерь",
+        "hint": "Регистрируемся в сафари-лагере и получаем браслет следопыта"
+      },
+      "wait-before-triage": {
+        "label": "В тени дерева",
+        "hint": "Отдыхаем в тени дерева, пока нас позовёт проводник"
+      },
+      "triage": {
+        "label": "Проверка снаряжения",
+        "hint": "Проводник проверяет, что ты готов(а) выйти в поле"
+      },
+      "wait-doctor": {
+        "label": "Ждём льва",
+        "hint": "Лев занят — терпеливо ждём"
+      },
+      "doctor": {
+        "label": "Встреча с вождём",
+        "hint": "Старый слон решает, что делать"
+      },
+      "decision": {
+        "label": "Возвращаемся в лагерь!",
+        "hint": "Закат красивый — путешествие окончено!"
+      },
+      "tests": {
+        "label": "Полевая лаборатория",
+        "hint": "Проверяем образцы из поля"
+      },
+      "treatment": {
+        "label": "Пост лечения",
+        "hint": "Ветеринар помогает"
+      },
+      "consult": {
+        "label": "Эксперт из саванны",
+        "hint": "Скоро придёт ещё один эксперт"
+      },
+      "wait-results": {
+        "label": "Ждём результатов",
+        "hint": "Образцы проверяются"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "Проводник проверяет температуру тела — так же, как проверяют животных в сафари перед выходом в поле.",
+      "saturation": "Маленький датчик кислорода проверяет, что кровь героя несёт достаточно воздуха на протяжении всего пути.",
+      "blood-pressure": "Проводник измеряет силу сердца — чтобы убедиться, что герой готов к условиям поля.",
+      "doctor-exam": "Вождь осматривает путешественника и решает, какое лечение нужно, чтобы вернуться в поле.",
+      "blood-test": "Полевой лаборатории нужен один маленький образец крови, чтобы понять, что происходит в теле.",
+      "urine": "Чашка с образцом покажет врачу племени, что происходит в теле героя.",
+      "xray": "Сканер сафари снимает внутреннее строение тела — всё видно, и ничего не чувствуешь.",
+      "ultrasound": "Гель для проверки позволяет аппарату сканировать внутри тела и найти то, что нужно лечить.",
+      "ct": "Сканирующее кольцо движется медленно и строит подробную карту всего внутри.",
+      "iv": "Тонкая трубка доставляет целебную жидкость прямо в кровь — как возвращают силы животным в поле.",
+      "medication": "Вождь приготовил лекарство джунглей — сироп или смесь, которая вернёт силы.",
+      "inhalation": "Целебные пары поля проходят через маску и помогают дыханию идти свободно.",
+      "stitches": "Врач племени аккуратно чинит рану — особый клей или нитка, которые её закроют.",
+      "cast": "Гипсовый доспех обхватывает кость, как крепкое дерево поддерживает ствол, и держит её, пока она не заживёт.",
+      "bandage": "Полевая повязка обхватывает рану и защищает её от окружающей среды, пока она не заживёт.",
+      "waiting-results": "Полевая лаборатория анализирует образцы — скоро мы узнаем, что нашло сафари."
+    },
+    "distractTitle": "Вид на саванну 🌅"
   }
 }
