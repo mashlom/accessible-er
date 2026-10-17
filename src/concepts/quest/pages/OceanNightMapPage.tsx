@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
-import { journeyStages } from '../../../data/journey'
+import { parentJourney } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
@@ -175,13 +175,13 @@ function landscapeScene(images: string[]): Scene {
 /** Ocean world, second stage: the stations prescribed by the captain, then the surfacing on land. */
 export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {}) {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const { visibleOptionals, allOptionalsDone, doneProcedures } = useQuestProgress()
   const screenH = useScreenUnits()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
-  const journey = t('journey.journeyStages', journeyStages)
+  const journey = parentJourney(lang)
   const firstOpen = visibleOptionals.findIndex((s) => s.status !== 'done')
 
   const items: ViewItem[] = visibleOptionals.map((s, i) => {

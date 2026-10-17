@@ -2,8 +2,7 @@ import { lockBodyScroll } from '../../../lib/scrollLock'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from '../../nav'
 import { SensoryBar } from '../../../components/SensoryBar'
-import { journeyStages } from '../../../data/journey'
-import { getProcedure } from '../../../data/procedures'
+import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { useQuestTheme } from '../useQuestTheme'
@@ -74,7 +73,7 @@ export function ParentInfo({ stageId: stageOverride, inline, ocean, initialProc 
 }
 
 function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClose: () => void; initialProc?: string }) {
-  const { t, dir } = useI18n()
+  const { t, lang, dir } = useI18n()
   const { theme } = useQuestTheme()
   const closeRef = useRef<HTMLButtonElement>(null)
   const ocean = theme.id === 'ocean'
@@ -99,11 +98,11 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
     }
   }, [onClose])
 
-  const data = t('journey.journeyStages', journeyStages).find((j) => j.id === stageId)
+  const data = parentJourney(lang).find((j) => j.id === stageId)
   if (!data) return null
 
   const singleProcId = data.procedureIds?.length === 1 ? data.procedureIds[0] : undefined
-  const singleProc = singleProcId ? t(`procedures.procedures.${singleProcId}`, getProcedure(singleProcId)) : undefined
+  const singleProc = singleProcId ? parentProcedure(lang, singleProcId) : undefined
 
   return (
     <div className={css.sheetBackdrop} onClick={onClose}>
@@ -192,7 +191,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
             <h2>{t('ui.text.prepareMeasurements', 'איך להכין את הילד/ה למדידות שעומדות לקרות')}</h2>
             {data.nextStagePrepare && <p>{data.nextStagePrepare}</p>}
             {WAIT_PROCS.map((pid) => {
-              const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
+              const proc = parentProcedure(lang, pid)
               if (!proc) return null
               return (
                 <div key={pid} className={css.sheetProc}>
@@ -229,7 +228,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
             <h2>{t('ui.text.stageProcedures', 'פרוצדורות בשלב הזה')}</h2>
             <ul className={css.sheetLinks}>
               {data.procedureIds.map((pid) => {
-                const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
+                const proc = parentProcedure(lang, pid)
                 return (
                   <li key={pid}>
                     {ocean ? (
@@ -273,9 +272,9 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
 
 /** One procedure's details for the parent, shown inside the parent sheet (slides in from the "forward" side) */
 function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
-  const { t, dir } = useI18n()
+  const { t, lang, dir } = useI18n()
   const { theme } = useQuestTheme()
-  const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
+  const proc = parentProcedure(lang, pid)
   const narrative = theme.procedureNarratives?.[pid]
   if (!proc) return null
 

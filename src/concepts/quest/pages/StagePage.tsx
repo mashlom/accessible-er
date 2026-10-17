@@ -1,11 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { Navigate, Link } from '../../nav'
 import { useConceptPath } from '../../nav'
-import { journeyStages } from '../../../data/journey'
+import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES, loadProcs } from '../useQuestProgress'
 import { SensoryBar } from '../../../components/SensoryBar'
-import { getProcedure } from '../../../data/procedures'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
 import { OceanStageSheet } from '../components/OceanStageSheet'
@@ -18,7 +17,7 @@ const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
 export function StagePage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const { stages, active, completeActive, completeStage, completeProcedure, doneProcedures } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
@@ -30,7 +29,7 @@ export function StagePage() {
   // (a station left "locked" by an older saved state could never be finished, and the ending stayed locked)
   const isActive = isOptional ? !!thisStage?.visible && thisStage.status !== 'done' : active?.id === id
 
-  const data = t('journey.journeyStages', journeyStages).find((j) => j.id === id)
+  const data = parentJourney(lang).find((j) => j.id === id)
   const skin = id ? theme.stages[id] : undefined
 
   // ocean: the ending station opened before everything is done: a sheet with only the way back
@@ -58,7 +57,7 @@ export function StagePage() {
 
   // When a stage has exactly one procedure, embed it inline instead of showing an icon link
   const inlineProcId = data.procedureIds?.length === 1 ? data.procedureIds[0] : undefined
-  const inlineProc = inlineProcId ? t(`procedures.procedures.${inlineProcId}`, getProcedure(inlineProcId)) : undefined
+  const inlineProc = inlineProcId ? parentProcedure(lang, inlineProcId) : undefined
   const themedSteps = inlineProcId ? theme.procedureSteps?.[inlineProcId] : undefined
   const inlineSteps = themedSteps ?? inlineProc?.story
 
@@ -132,7 +131,7 @@ export function StagePage() {
         {!inlineProc && data.procedureIds && data.procedureIds.length > 0 && (
           <div className={css.procedureIconRow}>
             {data.procedureIds.map((pid) => {
-              const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
+              const proc = parentProcedure(lang, pid)
               const done = doneProcedures.has(pid)
               return (
                 <Link key={pid} to={`/procedure/${pid}`} style={{ position: 'relative' }}>
