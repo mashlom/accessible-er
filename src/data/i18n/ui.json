@@ -125,7 +125,9 @@
       "coins": {
         "one": "You collected {n} coin — welcome to the shop!",
         "other": "You collected {n} coins — welcome to the shop!"
-      }
+      },
+      "cardSubtitle": "Tick what fits — under 2 minutes. At the end you get a short card to show the staff on screen or print it.",
+      "privacyD": "What you don't show yourself won't reach the staff. You can fill it in without a name at all."
     }
   },
   "ru": {
@@ -255,7 +257,9 @@
         "one": "У тебя есть {n} монета — добро пожаловать в магазин!",
         "few": "У тебя есть {n} монеты — добро пожаловать в магазин!",
         "many": "У тебя есть {n} монет — добро пожаловать в магазин!"
-      }
+      },
+      "cardSubtitle": "Отметьте, что подходит, — меньше 2 минут. В конце получите короткую карточку, которую можно показать персоналу на экране или распечатать.",
+      "privacyD": "То, что вы не покажете сами, не попадёт к персоналу. Можно заполнить вообще без имени."
     }
   }
 }
