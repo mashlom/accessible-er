@@ -198,7 +198,7 @@ function stageNode(id: string, tail: string | undefined, lang: Lang): TalkNode |
   ]
   for (const pid of stage.procedureIds ?? []) {
     const p = parentProcedure(lang, pid)
-    if (p) choices.push({ emoji: p.emoji, label: `להתכונן ל${p.title}`, go: `prep:${pid}` })
+    if (p) choices.push({ emoji: p.emoji, label: talkText(lang).prep.for.replace('{title}', p.title), go: `prep:${pid}` })
   }
   if (next) choices.push({ label: talkText(lang).stage.next, go: `stage:${next.id}` })
   choices.push(BACK)

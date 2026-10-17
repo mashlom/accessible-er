@@ -90,6 +90,9 @@
       "askIntro": "הנה מה שאפשר לבקש בשלב הזה:",
       "askOk": "מותר לבקש. הצוות רגיל לזה.",
       "askMore": "עוד דברים שאפשר לבקש"
+    },
+    "prep": {
+      "for": "להתכונן ל{title}"
     }
   },
   "en": {
@@ -183,6 +186,9 @@
       "askIntro": "Here is what you can ask for at this stage:",
       "askOk": "You can ask. The staff is used to it.",
       "askMore": "More things you can ask for"
+    },
+    "prep": {
+      "for": "Get ready: {title}"
     }
   },
   "ru": {
@@ -276,6 +282,9 @@
       "askIntro": "Вот что можно попросить на этом этапе:",
       "askOk": "Можно просить. Персонал к этому привык.",
       "askMore": "Что ещё можно попросить"
+    },
+    "prep": {
+      "for": "Подготовка: {title}"
     }
   }
 }
