@@ -101,7 +101,7 @@ export function MapPage() {
                 {area.next && (
                   <p className={styles.roomNext}>
                     <span aria-hidden>➡️ </span>
-                    {tx.next} {area.next}
+                    <span className={styles.roomNextLabel}>{tx.next}</span> {area.next}
                   </p>
                 )}
               </div>

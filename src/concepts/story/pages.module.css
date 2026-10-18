@@ -846,10 +846,12 @@
 
 .room {
   background: #fff;
-  border: 3px solid #fff;
-  border-radius: var(--s-r-lg);
-  box-shadow: var(--s-shadow-soft);
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
+  box-shadow: none;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .roomTop {
@@ -857,21 +859,21 @@
   align-items: center;
   gap: 12px;
   padding: var(--space-3);
-  background: var(--roomTint);
+  background: #fff;
 }
 .roomEmoji {
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: #fff;
+  background: #f3f7f9;
   display: grid;
   place-items: center;
   font-size: 1.8rem;
   flex: none;
 }
 .roomName {
-  font-weight: 800;
-  color: var(--s-ink);
+  font-weight: 700;
+  color: #173b4d;
   font-size: 1.05rem;
 }
 .loadBadge {
@@ -888,6 +890,9 @@
 }
 
 .roomBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: var(--space-3);
   font-size: 0.92rem;
   line-height: 1.6;
@@ -895,14 +900,15 @@
 }
 
 .weather {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
-  margin-top: var(--space-3);
+  margin-top: auto;
 }
 .weatherChip {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
   border-radius: var(--s-r-pill);
   padding: 5px 11px;
@@ -922,9 +928,10 @@
 }
 
 .roomNext {
-  margin-top: var(--space-3);
+  margin-top: var(--space-4);
+  padding-top: 0;
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--s-ink);
   background: var(--s-paper-2);
   border-radius: var(--s-r);
@@ -1345,4 +1352,15 @@ button.dest {
 }
 .homeSection .sectionChip {
   color: #526570;
+}
+
+
+/* the question in the next-step line is bold, the answer is plain */
+.roomNextLabel {
+  font-weight: 700;
+}
+
+/* the description keeps the same gap above the sensory marks as the marks keep above the next step; extra room goes above the marks */
+.roomBody > p:first-child {
+  margin: 0 0 var(--space-4);
 }

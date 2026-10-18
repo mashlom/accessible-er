@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
-import { Link, useIsConceptHome } from '../../nav'
+import { Outlet, useNavigate } from 'react-router-dom'
+import { useIsConceptHome } from '../../nav'
 import { HelperChat } from '../../../components/helper/HelperChat'
 import { LanguagePicker } from '../../../components/LanguagePicker'
 import { setI18nEnabled } from '../../../hooks/useI18n'
@@ -13,8 +13,6 @@ import styles from '../story.module.css'
 export function StoryShell() {
   const navigate = useNavigate()
   const isHome = useIsConceptHome()
-  // the map icon leads to the trail; on the trail itself it has nowhere to go
-  const onTrail = useLocation().pathname.endsWith('/trail')
   // translations are on across the parent side of the app (home, pages, helper)
   useLayoutEffect(() => {
     setI18nEnabled(true)
@@ -50,13 +48,7 @@ export function StoryShell() {
               <span className={`${styles.topBtn} ${styles.topBtnGhost}`} aria-hidden />
             )}
 
-            {onTrail ? (
-              <span className={styles.topTitle} aria-hidden />
-            ) : (
-              <Link to="/trail" className={styles.topTitle} aria-label="לשביל שלנו">
-                <span aria-hidden>🗺️</span>
-              </Link>
-            )}
+            <span className={styles.topTitle} aria-hidden />
 
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'flex-end' }}>
               <LanguagePicker />

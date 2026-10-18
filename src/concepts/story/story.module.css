@@ -241,6 +241,13 @@
   box-shadow: var(--s-shadow);
 }
 
+.bubblePlain {
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
+  box-shadow: none;
+  color: #173b4d;
+}
+
 .bubbleTail {
   position: absolute;
   bottom: -16px;

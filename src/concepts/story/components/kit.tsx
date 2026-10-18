@@ -24,12 +24,7 @@ export function Scene({
 
 /** A speech bubble with a tail — used wherever Roni or the app "says" something. */
 export function Bubble({ children }: { children: ReactNode }) {
-  return (
-    <div className={styles.bubble}>
-      {children}
-      <span className={styles.bubbleTail} aria-hidden />
-    </div>
-  )
+  return <div className={`${styles.bubble} ${styles.bubblePlain}`}>{children}</div>
 }
 
 export function Panel({
