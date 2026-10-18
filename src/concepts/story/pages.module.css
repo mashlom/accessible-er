@@ -1084,8 +1084,8 @@
 .textarea {
   font: inherit;
   width: 100%;
-  border: 3px solid var(--s-line);
-  border-radius: var(--s-r);
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   padding: 12px 14px;
   background: #fff;
   color: var(--s-ink);
@@ -1363,4 +1363,18 @@ button.dest {
 /* the description keeps the same gap above the sensory marks as the marks keep above the next step; extra room goes above the marks */
 .roomBody > p:first-child {
   margin: 0 0 var(--space-4);
+}
+
+/* every card on the story pages is the same plain card as the first one on the card page */
+.tip,
+.showCard,
+.dest,
+.childCard,
+.room,
+.stopCard,
+.reasonBtn {
+  background: #fff;
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
+  box-shadow: none;
 }

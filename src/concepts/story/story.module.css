@@ -308,10 +308,10 @@
 
 .panel {
   background: #fff;
-  border: 3px solid #fff;
-  border-radius: var(--s-r-lg);
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   padding: var(--space-4);
-  box-shadow: var(--s-shadow-soft);
+  box-shadow: none;
 }
 
 .panelTitle {
@@ -360,11 +360,12 @@
 }
 
 .note {
-  color: var(--s-ink-faint);
+  color: #526570;
   font-size: 0.88rem;
   line-height: 1.6;
-  background: var(--s-paper-2);
-  border-radius: var(--s-r);
+  background: #fff;
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   padding: var(--space-3);
 }
 

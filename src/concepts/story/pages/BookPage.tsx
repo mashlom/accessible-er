@@ -3,7 +3,7 @@ import { Navigate, Link } from '../../nav'
 import { Panel, Note } from '../components/kit'
 import { useParams } from 'react-router-dom'
 import { parentProcedure } from '../../../data/parent'
-import homeTexts from '../../../data/parent/home.json'
+import parentUi from '../../../data/parent/ui.json'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
@@ -14,7 +14,7 @@ import styles from '../pages.module.css'
  */
 export function BookPage() {
   const { lang, dir } = useI18n()
-  const tx = homeTexts[lang].book
+  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: Record<string, string> }>)[lang].procedurePage
   const { id } = useParams()
   const procedure = id ? parentProcedure(lang, id) : undefined
 

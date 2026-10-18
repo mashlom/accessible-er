@@ -47,7 +47,7 @@ export function ShowPage() {
       {likely.length > 0 && (
         <>
           <h2 className={styles.sectionLabel}>
-            {path?.emoji} {tx.likely}
+            {tx.likely}
           </h2>
           <div className={styles.showGrid}>
             {likely.map((p) => (

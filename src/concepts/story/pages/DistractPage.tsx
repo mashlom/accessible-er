@@ -3,6 +3,18 @@ import { Link } from '../../nav'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
 import { Scene, Bubble, Note } from '../components/kit'
 import styles from '../pages.module.css'
+import { useI18n } from '../../../hooks/useI18n'
+import parentUi from '../../../data/parent/ui.json'
+
+type StoryDistractTexts = {
+  title: string
+  subtitle: string
+  bubble: string
+  labels: string[]
+  aria: string
+  note: string
+  cross: string
+}
 
 /**
  * "פינת הסחת דעת" — the distraction the spec keeps listing as an adaptation
@@ -14,14 +26,7 @@ import styles from '../pages.module.css'
  * Only emoji that actually have an animation are offered here — a static
  * glyph would defeat the point.
  */
-const watchables: { emoji: string; label: string }[] = [
-  { emoji: '🌈', label: 'קשת' },
-  { emoji: '💧', label: 'טיפה' },
-  { emoji: '🌟', label: 'כוכב' },
-  { emoji: '💗', label: 'לב' },
-  { emoji: '🌀', label: 'סחרחורת' },
-  { emoji: '⭐', label: 'כוכבון' },
-]
+const watchEmojis = ['🌈', '💧', '🌟', '💗', '🌀', '⭐']
 
 /** Slow-rising bubbles, offset so they never pulse together. */
 const bubbles = [
@@ -34,17 +39,17 @@ const bubbles = [
 ]
 
 export function DistractPage() {
-  const [pick, setPick] = useState(watchables[0])
+  const { lang, dir } = useI18n()
+  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { storyDistract: StoryDistractTexts }>)[lang].storyDistract
+  const watchables = watchEmojis.map((emoji, i) => ({ emoji, label: tx.labels[i] ?? '' }))
+  const [pick, setPick] = useState(watchEmojis[0])
+  const current = watchables.find((w) => w.emoji === pick) ?? watchables[0]
 
   return (
-    <Scene
-      title="פינת הסחת דעת"
-      subtitle="משהו רגוע להסתכל עליו בזמן בדיקה, דקירה או המתנה ארוכה. הילד/ה בוחר/ת מה לראות."
-    >
+    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <Scene title={tx.title} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
-        <Bubble>
-          אפשר להסתכל לכאן במקום על היד. אני נשאר איתכם עד שזה נגמר.
-        </Bubble>
+        <Bubble>{tx.bubble}</Bubble>
       </div>
 
       <div className={styles.watchStage}>
@@ -64,20 +69,20 @@ export function DistractPage() {
           ))}
         </div>
         <AnimatedIcon
-          emoji={pick.emoji}
+          emoji={current.emoji}
           size={200}
           className={styles.watchArt}
         />
       </div>
 
-      <div className={styles.watchPicker} role="group" aria-label="מה רוצים לראות">
+      <div className={styles.watchPicker} role="group" aria-label={tx.aria}>
         {watchables.map((w) => (
           <button
             key={w.emoji}
             type="button"
-            className={`${styles.watchOpt} ${pick.emoji === w.emoji ? styles.watchOptOn : ''}`}
-            onClick={() => setPick(w)}
-            aria-pressed={pick.emoji === w.emoji}
+            className={`${styles.watchOpt} ${current.emoji === w.emoji ? styles.watchOptOn : ''}`}
+            onClick={() => setPick(w.emoji)}
+            aria-pressed={current.emoji === w.emoji}
           >
             <span aria-hidden>{w.emoji}</span>
             {w.label}
@@ -86,15 +91,13 @@ export function DistractPage() {
       </div>
 
       <div style={{ marginTop: 'var(--space-4)' }}>
-        <Note>
-          אם המכשיר מוגדר ל"הפחתת תנועה", האנימציות לא ירוצו — הבועות והציור יישארו
-          במקום. אפשר גם פשוט לספור יחד עד עשר; גם זו הסחת דעת טובה.
-        </Note>
+        <Note>{tx.note}</Note>
       </div>
 
       <Link to="/calm" className={styles.crossLink}>
-        💗 לעוד דברים שעוזרים כשקשה ←
+        {tx.cross}
       </Link>
     </Scene>
+    </div>
   )
 }
