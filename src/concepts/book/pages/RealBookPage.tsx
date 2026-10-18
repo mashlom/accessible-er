@@ -3,7 +3,10 @@ import { useI18n } from '../../../hooks/useI18n'
 import realTexts from '../../../data/child/worlds/real/texts.json'
 import realInfo from '../../../data/child/book/real-info.json'
 import encyclopedia from '../../../data/child/book/encyclopedia.json'
+import { parentProcedure } from '../../../data/parent'
 import css from '../book.module.css'
+import quest from '../../quest/quest.module.css'
+import { ProcedureLineIcon } from '../../quest/components/ProcedureLineIcon'
 
 /**
  * "How it works" — the אני world retold as a book (issue #10): one stage per
@@ -39,7 +42,9 @@ export function RealBookPage() {
   const labels = ((realInfo as unknown as Record<string, { headings: { whatHappens: string; challenge: string; canAsk: string } }>)[lang] ?? (realInfo as unknown as Record<string, { headings: { whatHappens: string; challenge: string; canAsk: string } }>).he).headings
   const tx: InsertTexts = { close: ({ ru: 'Закрыть', en: 'Close', he: 'סגירה' } as Record<string, string>)[lang] ?? 'סגירה' }
   const [index, setIndex] = useState(0)
-  const [insertOpen, setInsertOpen] = useState(false)
+  const [insertKey, setInsertKey] = useState<string | null>(null)
+  // the temperature opens its parent description page first; from there the insert is one tap away
+  const [measureOpen, setMeasureOpen] = useState<string | null>(null)
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [chosen, setChosen] = useState(false)
 
@@ -59,7 +64,7 @@ export function RealBookPage() {
 
   // a new page closes the sheet
   useEffect(() => {
-    setInsertOpen(false)
+    setInsertKey(null)
   }, [index])
 
   function toggle(id: string) {
@@ -129,6 +134,22 @@ export function RealBookPage() {
         <div className={css.illustration}>{STAGE_ICONS[stageId]}</div>
         <p className={css.mainText}>{`${pages.filter((p) => p !== SELECT_PAGE).indexOf(stageId) + 1}. `}{child?.label}</p>
         <p className={css.subText}>{child?.hint}</p>
+        {child && stageId === 'triage' && (
+        <div className={css.measureRow}>
+          {([
+            ['triage-temperature', 'temperature', { ru: 'Температура', en: 'Temperature', he: 'חום' }],
+            ['triage-oxygen', 'saturation', { ru: 'Сатурация', en: 'Saturation', he: 'סטורציה' }],
+            ['triage-pressure', 'blood-pressure', { ru: 'Давление', en: 'Blood pressure', he: 'לחץ דם' }],
+          ] as const).map(([key, icon, names]) => (
+            <button key={key} type="button" className={css.measureBtn} onClick={() => (key === 'triage-temperature' ? setMeasureOpen(key) : setInsertKey(key))} aria-haspopup="dialog">
+              <span className={quest.procIcon} style={{ width: 64, height: 64, fontSize: 30 }} aria-hidden>
+                <ProcedureLineIcon id={icon} />
+              </span>
+              <span className={css.measureLabel}>{names[lang as 'he' | 'en' | 'ru'] ?? names.he}</span>
+            </button>
+          ))}
+        </div>
+        )}
         {info && (
           <div className={css.stageInfo}>
             {info.meaning && <p>{info.meaning}</p>}
@@ -158,13 +179,12 @@ export function RealBookPage() {
         )}
       </div>
 
-      {/* the book is for the child: the encyclopedic insert of this stage opens from here */}
-      {child && (
-        <button type="button" className={css.parentBtn} onClick={() => setInsertOpen(true)} aria-haspopup="dialog">
-          🔎 {t('book.ui.interesting', 'Это интересно')}
+      {/* the encyclopedic insert of every stage, above the next button; the measurements stage has its own circles */}
+      {child && stageId !== 'triage' && (
+        <button type="button" className={css.parentBtn} onClick={() => setInsertKey(stageId)} aria-haspopup="dialog">
+          🔎 {({ ru: 'Это интересно', en: 'It is interesting', he: 'מעניין' } as Record<string, string>)[lang] ?? 'Это интересно'}
         </button>
       )}
-
       <div className={css.nav}>
         {index > 0 && (
           <button className={css.backBtn} onClick={() => setIndex((i) => i - 1)}>
@@ -182,21 +202,40 @@ export function RealBookPage() {
         )}
       </div>
 
-      {insertOpen && child && (() => {
-        const insert = (encyclopedia as unknown as Record<string, Record<string, { title: string; text: string; draft?: boolean }>>)[lang]?.[stageId]
-          ?? (encyclopedia as unknown as Record<string, Record<string, { title: string; text: string; draft?: boolean }>>).he[stageId]
+      {measureOpen === 'triage-temperature' && (() => {
+        const proc = parentProcedure(lang, 'temperature')
+        if (!proc) return null
+        return (
+          <div className={css.sheetBackdrop} onClick={() => setMeasureOpen(null)}>
+            <div className={css.sheet} role="dialog" aria-modal="true" aria-label={proc.title} onClick={(e) => e.stopPropagation()}>
+              <h2 className={css.sheetTitle}>{proc.title}</h2>
+              <p>{proc.what}</p>
+              <p>{proc.feel}</p>
+              <p>{proc.prepare}</p>
+              <button type="button" className={css.parentBtn} onClick={() => { setInsertKey('triage-temperature'); setMeasureOpen(null) }}>
+                🔎 {({ ru: 'Это интересно', en: 'It is interesting', he: 'מעניין' } as Record<string, string>)[lang] ?? 'Это интересно'}
+              </button>
+              <button type="button" className={css.nextBtn} style={{ marginTop: '1.25rem' }} onClick={() => setMeasureOpen(null)}>
+                {tx.close}
+              </button>
+            </div>
+          </div>
+        )
+      })()}
+      {insertKey && (() => {
+        const insert = ((encyclopedia as unknown as Record<string, Record<string, { title: string; text: string; draft?: boolean }>>)[lang] ?? (encyclopedia as unknown as Record<string, Record<string, { title: string; text: string; draft?: boolean }>>).he)[insertKey]
         if (!insert) return null
         return (
-          <div className={css.sheetBackdrop} onClick={() => setInsertOpen(false)}>
+          <div className={css.sheetBackdrop} onClick={() => setInsertKey(null)}>
             <div className={css.sheet} role="dialog" aria-modal="true" aria-label={insert.title} onClick={(e) => e.stopPropagation()}>
               <h2 className={css.sheetTitle}>{insert.title}</h2>
-              <p style={{ whiteSpace: 'pre-line' }}>{insert.text}</p>
               {insert.draft && (
-                <p>
+                <p style={{ marginTop: '0.25rem', marginBottom: '0.75rem' }}>
                   <strong><em>{({ ru: 'черновик — ждёт проверки', en: 'draft — awaiting review', he: 'טיוטה — ממתינה לאישור' } as Record<string, string>)[lang] ?? 'טיוטה'}</em></strong>
                 </p>
               )}
-              <button type="button" className={css.nextBtn} onClick={() => setInsertOpen(false)}>
+              <p style={{ whiteSpace: 'pre-line' }}>{insert.text}</p>
+              <button type="button" className={css.nextBtn} style={{ marginTop: '1.25rem' }} onClick={() => setInsertKey(null)}>
                 {tx.close}
               </button>
             </div>

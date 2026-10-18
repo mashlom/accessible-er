@@ -7,12 +7,7 @@
     },
     "wait-before-triage": {
       "title": "למה מחכים?",
-      "text": "בחדר ההמתנה הצוות מטפל במי שהמצב שלו הכי דחוף. הזמן מתחלק לפי מה שכל אחד צריך.",
-      "draft": true
-    },
-    "triage": {
-      "title": "איך מודדים חום?",
-      "text": "מודדים חום בעזרת מדחום קטן, ולחץ דם בעזרת רצועה שמתנפחת על היד ומשתחררת לבד.",
+      "text": "לחדר המיון מגיעים ילדים שצריכים עזרה. לפעמים צריך לעזור מיד ודחוף.\n\nבחנות בדרך כלל משרתים אנשים לפי התור: מי שהגיע קודם לקופה משלם קודם והולך קודם.\n\nבבית החולים זה לא כך: אם למישהו צריך עזרה דחופה, האחרים צריכים לחכות.",
       "draft": true
     },
     "wait-doctor": {
@@ -49,6 +44,21 @@
       "title": "איך מחליטים לשחרר?",
       "text": "הרופא/ה בודק/ת את כל התוצאות ומחליט/ה אם אפשר לחזור הביתה, או שצריך להישאר.",
       "draft": true
+    },
+    "triage-temperature": {
+      "title": "איך מודדים חום?",
+      "text": "חום הוא כמה חם הגוף. מודדים אותו במדחום קטן, למשל מתחת לבית השחי או באוזן. זה מהיר וכמעט לא כואב.",
+      "draft": true
+    },
+    "triage-oxygen": {
+      "title": "מה זה חמצן בדם?",
+      "text": "סטורציה היא כמה חמצן יש בדם. חמצן עוזר לגוף לעבוד. מודדים אותו בקליפס קטן על האצבע: האור עובר דרך האצבע והמכשיר מראה אחוז. הקליפס לא כואב, רק לוחץ קצת.",
+      "draft": true
+    },
+    "triage-pressure": {
+      "title": "איך מודדים לחץ דם?",
+      "text": "לחץ דם הוא באיזה כוח הדם זורם בכלי הדם. מודדים אותו ברצועה רכה על היד: היא מתנפחת, לוחצת קצת, ואז משתחררת לאט. זה יכול ללחוץ קצת, אבל זה עובר מהר.",
+      "draft": true
     }
   },
   "en": {
@@ -59,12 +69,7 @@
     },
     "wait-before-triage": {
       "title": "Why do we wait?",
-      "text": "In the waiting room the team first looks after the people who need help most urgently.",
-      "draft": true
-    },
-    "triage": {
-      "title": "How is a temperature measured?",
-      "text": "A small thermometer measures the temperature. Blood pressure is measured with a band that inflates on the arm and then loosens by itself.",
+      "text": "Children who need help come to the emergency room. Sometimes help is needed very urgently.\n\nIn a shop, people are usually served one after another: whoever came to the till first pays first and leaves first.\n\nIn a hospital it is different: if someone needs urgent help, the others have to wait.",
       "draft": true
     },
     "wait-doctor": {
@@ -101,6 +106,21 @@
       "title": "How is the decision to go home made?",
       "text": "The doctor looks at all the results and decides whether you can go home, or need to stay.",
       "draft": true
+    },
+    "triage-temperature": {
+      "title": "How is a temperature measured?",
+      "text": "Temperature is how warm the body is. It is measured with a small thermometer, for example under the arm or in the ear. It is quick and hardly hurts.",
+      "draft": true
+    },
+    "triage-oxygen": {
+      "title": "What is oxygen in the blood?",
+      "text": "Saturation is how much oxygen there is in the blood. Oxygen helps the body work. It is measured with a small clip on a finger: light passes through the finger, and the device shows a percentage. The clip does not hurt, it just squeezes a little.",
+      "draft": true
+    },
+    "triage-pressure": {
+      "title": "How is blood pressure measured?",
+      "text": "Blood pressure is how strongly the blood flows through the vessels. It is measured with a soft cuff on the arm: it inflates, gently squeezes the arm, and then slowly lets go. It may squeeze a little, but it passes quickly.",
+      "draft": true
     }
   },
   "ru": {
@@ -111,12 +131,7 @@
     },
     "wait-before-triage": {
       "title": "Почему мы ждём?",
-      "text": "В зале ожидания сначала помогают тем, кому нужна помощь срочнее всего.",
-      "draft": true
-    },
-    "triage": {
-      "title": "Как измеряют температуру?",
-      "text": "Температуру измеряют маленьким термометром. Давление измеряют манжетой, которая надувается на руке и сама отпускает.",
+      "text": "В приёмный покой приходят дети, которым нужна помощь. Бывает, что помощь нужно оказать очень срочно.\n\nВ магазине обычно обслуживают людей по очереди: кто раньше пришёл к кассе, тот раньше расплатится и уйдёт.\n\nВ больнице не так: если кому-то нужна срочная помощь, то остальным приходится подождать.",
       "draft": true
     },
     "wait-doctor": {
@@ -152,6 +167,21 @@
     "decision": {
       "title": "Как решают, можно ли домой?",
       "text": "Врач смотрит все результаты и решает, можно ли идти домой или нужно остаться.",
+      "draft": true
+    },
+    "triage-temperature": {
+      "title": "Как измеряют температуру?",
+      "text": "Температура — это то, насколько тепло тело. Её измеряют маленьким термометром, например под мышкой или в ухе. Это быстро и почти не больно.",
+      "draft": true
+    },
+    "triage-oxygen": {
+      "title": "Что такое кислород в крови?",
+      "text": "Сатурация — это то, сколько кислорода есть в крови. Кислород помогает телу работать. Её измеряют маленьким прищепком на пальце: через палец проходит свет, а прибор показывает процент. Прищепка не больно, только немного сжимает.",
+      "draft": true
+    },
+    "triage-pressure": {
+      "title": "Как измеряют давление?",
+      "text": "Давление — это то, с какой силой кровь идёт по сосудам. Его измеряют мягкой манжетой на руке: она надувается, слегка сжимает руку, а потом медленно отпускает. Может немного сжимать, но это быстро проходит.",
       "draft": true
     }
   }

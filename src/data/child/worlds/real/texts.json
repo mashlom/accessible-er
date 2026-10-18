@@ -11,7 +11,7 @@
         "hint": "ממתינים לבדיקה של האחות"
       },
       "triage": {
-        "label": "הערכה של מצב בריאות ומדידות",
+        "label": "הערכת מצב ומדידות",
         "hint": "אחות מודדת ובודקת"
       },
       "wait-doctor": {
@@ -73,7 +73,7 @@
         "hint": "We wait for the nurse"
       },
       "triage": {
-        "label": "Health check and measurements",
+        "label": "Assessment and measurements",
         "hint": "A nurse measures and checks"
       },
       "wait-doctor": {
