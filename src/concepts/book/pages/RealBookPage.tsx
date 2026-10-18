@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useI18n } from '../../../hooks/useI18n'
-import { parentJourney } from '../../../data/parent'
-import parentUi from '../../../data/parent/ui.json'
 import realTexts from '../../../data/child/worlds/real/texts.json'
+import realInfo from '../../../data/child/book/real-info.json'
+import encyclopedia from '../../../data/child/book/encyclopedia.json'
 import css from '../book.module.css'
 
 /**
@@ -32,13 +32,14 @@ const STAGE_ICONS: Record<string, string> = {
   'wait-results': '🕰️',
 }
 
-type RealBookTexts = { parentBtn: string; close: string; whatHappens: string; challenge: string; canAsk: string }
+type InsertTexts = { close: string }
 
 export function RealBookPage() {
   const { t, lang, dir } = useI18n()
-  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { realBook: RealBookTexts }>)[lang].realBook
+  const labels = ((realInfo as unknown as Record<string, { headings: { whatHappens: string; challenge: string; canAsk: string } }>)[lang] ?? (realInfo as unknown as Record<string, { headings: { whatHappens: string; challenge: string; canAsk: string } }>).he).headings
+  const tx: InsertTexts = { close: ({ ru: 'Закрыть', en: 'Close', he: 'סגירה' } as Record<string, string>)[lang] ?? 'סגירה' }
   const [index, setIndex] = useState(0)
-  const [parentOpen, setParentOpen] = useState(false)
+  const [insertOpen, setInsertOpen] = useState(false)
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [chosen, setChosen] = useState(false)
 
@@ -50,14 +51,15 @@ export function RealBookPage() {
   }, [chosen, selected, stages])
 
   const stageId = pages[index]
+  // the stage information, written for the child (data/child/book/real-info.json)
+  const info = ((realInfo as unknown as Record<string, Record<string, { meaning: string; whatHappens: string; challenge: string; canAsk: string[] }>>)[lang] ?? (realInfo as unknown as Record<string, Record<string, { meaning: string; whatHappens: string; challenge: string; canAsk: string[] }>>).he)[stageId]
   const isSelect = stageId === SELECT_PAGE
   const child = isSelect ? undefined : stages[stageId]
-  const parent = isSelect ? undefined : parentJourney(lang).find((s) => s.id === stageId)
   const isLast = index === pages.length - 1
 
   // a new page closes the sheet
   useEffect(() => {
-    setParentOpen(false)
+    setInsertOpen(false)
   }, [index])
 
   function toggle(id: string) {
@@ -127,11 +129,41 @@ export function RealBookPage() {
         <div className={css.illustration}>{STAGE_ICONS[stageId]}</div>
         <p className={css.mainText}>{`${pages.filter((p) => p !== SELECT_PAGE).indexOf(stageId) + 1}. `}{child?.label}</p>
         <p className={css.subText}>{child?.hint}</p>
+        {info && (
+          <div className={css.stageInfo}>
+            {info.meaning && <p>{info.meaning}</p>}
+            {info.whatHappens && (
+              <>
+                <h3 className={css.sheetLabel}>{labels.whatHappens}</h3>
+                <p>{info.whatHappens}</p>
+              </>
+            )}
+            {info.challenge && (
+              <>
+                <h3 className={css.sheetLabel}>{labels.challenge}</h3>
+                <p>{info.challenge}</p>
+              </>
+            )}
+            {info.canAsk && info.canAsk.length > 0 && (
+              <>
+                <h3 className={css.sheetLabel}>{labels.canAsk}</h3>
+                <ul className={css.sheetList}>
+                  {info.canAsk.map((a) => (
+                    <li key={a}>{a}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </div>
+        )}
       </div>
 
-      <button type="button" className={css.parentBtn} onClick={() => setParentOpen(true)} aria-haspopup="dialog">
-        {tx.parentBtn}
-      </button>
+      {/* the book is for the child: the encyclopedic insert of this stage opens from here */}
+      {child && (
+        <button type="button" className={css.parentBtn} onClick={() => setInsertOpen(true)} aria-haspopup="dialog">
+          🔎 {t('book.ui.interesting', 'Это интересно')}
+        </button>
+      )}
 
       <div className={css.nav}>
         {index > 0 && (
@@ -150,27 +182,27 @@ export function RealBookPage() {
         )}
       </div>
 
-      {parentOpen && parent && (
-        <div className={css.sheetBackdrop} onClick={() => setParentOpen(false)}>
-          <div className={css.sheet} role="dialog" aria-modal="true" aria-label={tx.parentBtn} onClick={(e) => e.stopPropagation()}>
-            <h2 className={css.sheetTitle}>{parent.title}</h2>
-            <p>{parent.meaning}</p>
-            <h3 className={css.sheetLabel}>{tx.whatHappens}</h3>
-            <p>{parent.whatHappens}</p>
-            <h3 className={css.sheetLabel}>{tx.challenge}</h3>
-            <p>{parent.challenge}</p>
-            <h3 className={css.sheetLabel}>{tx.canAsk}</h3>
-            <ul className={css.sheetList}>
-              {parent.canAsk.map((a) => (
-                <li key={a}>{a}</li>
-              ))}
-            </ul>
-            <button type="button" className={css.nextBtn} onClick={() => setParentOpen(false)}>
-              {tx.close}
-            </button>
+      {insertOpen && child && (() => {
+        const insert = (encyclopedia as unknown as Record<string, Record<string, { title: string; text: string; draft?: boolean }>>)[lang]?.[stageId]
+          ?? (encyclopedia as unknown as Record<string, Record<string, { title: string; text: string; draft?: boolean }>>).he[stageId]
+        if (!insert) return null
+        return (
+          <div className={css.sheetBackdrop} onClick={() => setInsertOpen(false)}>
+            <div className={css.sheet} role="dialog" aria-modal="true" aria-label={insert.title} onClick={(e) => e.stopPropagation()}>
+              <h2 className={css.sheetTitle}>{insert.title}</h2>
+              <p style={{ whiteSpace: 'pre-line' }}>{insert.text}</p>
+              {insert.draft && (
+                <p>
+                  <strong><em>{({ ru: 'черновик — ждёт проверки', en: 'draft — awaiting review', he: 'טיוטה — ממתינה לאישור' } as Record<string, string>)[lang] ?? 'טיוטה'}</em></strong>
+                </p>
+              )}
+              <button type="button" className={css.nextBtn} onClick={() => setInsertOpen(false)}>
+                {tx.close}
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      })()}
     </div>
   )
 }

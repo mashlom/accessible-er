@@ -437,3 +437,20 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* the stage's information, moved from the parent part into the child book */
+.stageInfo {
+  width: min(560px, 100%);
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
+  color: #173b4d;
+  line-height: 1.6;
+  font-size: 0.98rem;
+  text-align: start;
+}
+.stageInfo p {
+  margin: 0 0 0.5rem;
+}

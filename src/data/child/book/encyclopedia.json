@@ -1,0 +1,158 @@
+{
+  "he": {
+    "reception": {
+      "title": "למה צריך תיק ביקור?",
+      "text": "לכל מי שמגיע לבית החולים פותחים תיקייה מיוחדת. התיקייה נשמרת במחשב. האחיות והרופאים שידברו איתך יכולים לראות אותה. למשל, רופא יכול לכתוב שצריך בדיקת דם — והאחות תדע מה לעשות.\n\nלשם כך כל המחשבים בבית החולים מחוברים לרשת משותפת. גם אם האינטרנט מתנתק, המידע נשאר זמין לכל האחיות והרופאים שיעזרו לך.",
+      "draft": true
+    },
+    "wait-before-triage": {
+      "title": "למה מחכים?",
+      "text": "בחדר ההמתנה הצוות מטפל במי שהמצב שלו הכי דחוף. הזמן מתחלק לפי מה שכל אחד צריך.",
+      "draft": true
+    },
+    "triage": {
+      "title": "איך מודדים חום?",
+      "text": "מודדים חום בעזרת מדחום קטן, ולחץ דם בעזרת רצועה שמתנפחת על היד ומשתחררת לבד.",
+      "draft": true
+    },
+    "wait-doctor": {
+      "title": "מה עושים בזמן ההמתנה?",
+      "text": "אפשר לשחק, לקרוא או לנשום לאט. הרופא/ה יגיע/תגיע כשיהיה זמן.",
+      "draft": true
+    },
+    "doctor": {
+      "title": "מה הסטטוסקופ שומע?",
+      "text": "הסטטוסקופ עוזר לרופא/ה לשמוע את הלב ואת הנשימה, כמו להקשיב לגוף בשקט.",
+      "draft": true
+    },
+    "tests": {
+      "title": "איך עושים בדיקת דם?",
+      "text": "לוקחים מעט דם מהיד בעזרת מחט דקה מאוד. זה רגע קצר, ואחריו מטפלים במקום.",
+      "draft": true
+    },
+    "treatment": {
+      "title": "איך עובד טיפול?",
+      "text": "תרופות נכנסות לגוף ועוזרות לו להחלים. לכל טיפול יש סיבה, והצוות מסביר אותה.",
+      "draft": true
+    },
+    "consult": {
+      "title": "מי הם מומחים?",
+      "text": "רופאים מומחים למערכת אחת בגוף, למשל לב או עיניים. הם רואים דברים שרופא כללי צריך לבדוק יותר לעומק.",
+      "draft": true
+    },
+    "wait-results": {
+      "title": "למה התוצאות לוקחות זמן?",
+      "text": "בדיקות מסוימות נשלחות למעבדה, ושם צריך זמן לבדוק אותן בקפידה.",
+      "draft": true
+    },
+    "decision": {
+      "title": "איך מחליטים לשחרר?",
+      "text": "הרופא/ה בודק/ת את כל התוצאות ומחליט/ה אם אפשר לחזור הביתה, או שצריך להישאר.",
+      "draft": true
+    }
+  },
+  "en": {
+    "reception": {
+      "title": "Why do we need a visit file?",
+      "text": "A special folder is opened for everyone who comes to the hospital. The folder is kept on a computer. The nurses and doctors who will talk with you can see it. For example, a doctor can write that a blood test is needed — and the nurse will know what to do.\n\nFor this, all the computers in the hospital are joined into one shared network. Even if the internet goes off, the information stays available to all the nurses and doctors who will help you.",
+      "draft": true
+    },
+    "wait-before-triage": {
+      "title": "Why do we wait?",
+      "text": "In the waiting room the team first looks after the people who need help most urgently.",
+      "draft": true
+    },
+    "triage": {
+      "title": "How is a temperature measured?",
+      "text": "A small thermometer measures the temperature. Blood pressure is measured with a band that inflates on the arm and then loosens by itself.",
+      "draft": true
+    },
+    "wait-doctor": {
+      "title": "What do we do while we wait?",
+      "text": "You can play, read, or breathe slowly. The doctor will come when there is time.",
+      "draft": true
+    },
+    "doctor": {
+      "title": "What does a stethoscope hear?",
+      "text": "A stethoscope helps the doctor hear the heart and breathing, like listening quietly to the body.",
+      "draft": true
+    },
+    "tests": {
+      "title": "How is a blood test done?",
+      "text": "A very thin needle takes a small amount of blood from the arm. It is quick, and then the place is looked after.",
+      "draft": true
+    },
+    "treatment": {
+      "title": "How does treatment work?",
+      "text": "Medicines go into the body and help it get better. Every treatment has a reason, and the team explains it.",
+      "draft": true
+    },
+    "consult": {
+      "title": "Who are specialists?",
+      "text": "Specialist doctors know one system of the body in depth, for example the heart or the eyes.",
+      "draft": true
+    },
+    "wait-results": {
+      "title": "Why do results take time?",
+      "text": "Some tests are sent to a lab, where they need time to be checked carefully.",
+      "draft": true
+    },
+    "decision": {
+      "title": "How is the decision to go home made?",
+      "text": "The doctor looks at all the results and decides whether you can go home, or need to stay.",
+      "draft": true
+    }
+  },
+  "ru": {
+    "reception": {
+      "title": "Зачем нужна карта визита?",
+      "text": "На каждого, кто приходит в больницу, открывают специальную папку. Эта папка хранится в компьютере. Её будут видеть медсёстры и врачи, которые будут с тобой разговаривать. Например, доктор может написать, что нужен анализ крови, — и медсестра будет знать, что ей делать.\n\nДля этого все компьютеры в больнице объединяют в общую сеть. Даже если отключится интернет, информация будет доступна всем медсёстрам и врачам, которые будут тебе помогать.",
+      "draft": true
+    },
+    "wait-before-triage": {
+      "title": "Почему мы ждём?",
+      "text": "В зале ожидания сначала помогают тем, кому нужна помощь срочнее всего.",
+      "draft": true
+    },
+    "triage": {
+      "title": "Как измеряют температуру?",
+      "text": "Температуру измеряют маленьким термометром. Давление измеряют манжетой, которая надувается на руке и сама отпускает.",
+      "draft": true
+    },
+    "wait-doctor": {
+      "title": "Что делать, пока ждём?",
+      "text": "Можно поиграть, почитать или медленно подышать. Врач придёт, когда будет время.",
+      "draft": true
+    },
+    "doctor": {
+      "title": "Что слышит стетоскоп?",
+      "text": "Стетоскоп помогает врачу услышать сердце и дыхание — как будто тихо слушаешь тело.",
+      "draft": true
+    },
+    "tests": {
+      "title": "Как берут анализ крови?",
+      "text": "Очень тонкой иголкой берут немного крови из руки. Это быстро, а потом место заботливо обрабатывают.",
+      "draft": true
+    },
+    "treatment": {
+      "title": "Как работает лечение?",
+      "text": "Лекарства попадают в тело и помогают ему выздороветь. У каждого лечения есть причина, и команда её объясняет.",
+      "draft": true
+    },
+    "consult": {
+      "title": "Кто такие специалисты?",
+      "text": "Врачи-специалисты хорошо знают одну систему тела, например сердце или глаза.",
+      "draft": true
+    },
+    "wait-results": {
+      "title": "Почему результаты ждут?",
+      "text": "Некоторые анализы отправляют в лабораторию, там их внимательно проверяют, и это занимает время.",
+      "draft": true
+    },
+    "decision": {
+      "title": "Как решают, можно ли домой?",
+      "text": "Врач смотрит все результаты и решает, можно ли идти домой или нужно остаться.",
+      "draft": true
+    }
+  }
+}
