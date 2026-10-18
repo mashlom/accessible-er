@@ -114,6 +114,14 @@
       "likely": "כנראה נפגוש את אלה היום",
       "all": "כל הסיפורים",
       "ours": "הסיפורים שלנו"
+    },
+    "wait": {
+      "title": "זמנים משוערים",
+      "subtitle": "כל שלב יכול לקחת בערך כמה דקות",
+      "note": "הזמנים בעמוד הזה הם טווחים בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.",
+      "duration": "⏱️ משך זמן משוער",
+      "wait": "⏳ זמן המתנה משוער",
+      "back": "חזרה ←"
     }
   },
   "en": {
@@ -194,6 +202,14 @@
       "likely": "We will probably meet these today",
       "all": "All the stories",
       "ours": "Our stories"
+    },
+    "wait": {
+      "title": "Estimated times",
+      "subtitle": "About how long each stage can take",
+      "note": "The times on this page are ranges only. The order and times may change depending on the team's decision and how busy the ER is.",
+      "duration": "⏱️ Estimated duration",
+      "wait": "⏳ Estimated waiting time",
+      "back": "Back ←"
     }
   },
   "ru": {
@@ -274,6 +290,14 @@
       "likely": "Скорее всего, сегодня встретятся",
       "all": "Все истории",
       "ours": "Наши истории"
+    },
+    "wait": {
+      "title": "Примерное время",
+      "subtitle": "Сколько примерно может занять каждый этап",
+      "note": "Указано ориентировочное время. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
+      "duration": "⏱️ Примерная длительность",
+      "wait": "⏳ Примерное время ожидания",
+      "back": "Назад ←"
     }
   }
 }
