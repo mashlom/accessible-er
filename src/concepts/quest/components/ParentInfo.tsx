@@ -72,11 +72,26 @@ export function ParentInfo({ stageId: stageOverride, inline, ocean, initialProc 
   )
 }
 
-function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClose: () => void; initialProc?: string }) {
+/** The sheet itself is exported for the books: the picture book opens it under its child pages. */
+export function ParentSheet({
+  stageId,
+  onClose,
+  initialProc,
+  oceanLook,
+  questLinks = true,
+}: {
+  stageId: string
+  onClose: () => void
+  initialProc?: string
+  /** force the ocean styling outside the quest (the books) */
+  oceanLook?: boolean
+  /** the reason/card links lead into the quest, so the books hide them */
+  questLinks?: boolean
+}) {
   const { t, lang, dir } = useI18n()
   const { theme } = useQuestTheme()
   const closeRef = useRef<HTMLButtonElement>(null)
-  const ocean = theme.id === 'ocean'
+  const ocean = oceanLook ?? theme.id === 'ocean'
   // ocean: a procedure's details slide in inside this same sheet
   const [proc, setProc] = useState<string | null>(initialProc ?? null)
   const procRef = useRef(proc)
@@ -107,7 +122,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
   return (
     <div className={css.sheetBackdrop} onClick={onClose}>
       <div
-        className={theme.id === 'ocean' ? `${css.sheet} ${css.oceanSheet}` : css.sheet}
+        className={ocean ? `${css.sheet} ${css.oceanSheet}` : css.sheet}
         role="dialog"
         aria-modal="true"
         aria-label={t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
@@ -140,7 +155,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
           <section className={css.sheetCard}>
             <h2>{t('ui.text.weAreHere', 'אנחנו כאן')}</h2>
             <p>{data.meaning}</p>
-            {stageId === 'reception' && (
+            {stageId === 'reception' && questLinks && (
               <>
                 <p className={css.sheetHint}>{t('ui.text.reasonHint', 'בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.')}</p>
                 <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits', '🗺️ מה מחכה לנו היום?')}</Link>
@@ -177,7 +192,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
           <section className={css.sheetCard}>
             <h2>{t('ui.text.whatMayBeHard', 'מה יכול להיות קשה?')}</h2>
             <p>{data.challenge}</p>
-            {stageId === 'reception' && (
+            {stageId === 'reception' && questLinks && (
               <>
                 <p className={css.sheetHint}>{t('ui.text.cardHint', 'בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.')}</p>
                 <Link to="/card" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.cardForStaff', '🪪 כרטיס התאמות לצוות')}</Link>

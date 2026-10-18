@@ -5,57 +5,71 @@
       "back": "Back",
       "next": "Next",
       "continue": "Continue",
-      "toEnd": "To the end",
-      "restart": "From the start ↺"
+      "toEnd": "Nothing assigned",
+      "restart": "From the start ↺",
+      "choiceHome": "Home",
+      "choiceHospital": "We stay in the hospital"
     },
     "pages": {
       "arrival": {
-        "text": "We arrive at the hospital.",
-        "sub": "There is a desk by the entrance. There we write down the name and answer a few short questions."
-      },
-      "reception": {
-        "text": "Someone receives us.",
-        "sub": "They ask what happened and write everything down. You can tell it yourself, or the parent can tell it."
+        "text": "We arrive at the hospital",
+        "sub": "There is a desk by the entrance. There they write down your name, ask what happened, and write everything down. You can answer the questions yourself, or let your parents answer."
       },
       "triage": {
-        "text": "A nurse comes to check.",
-        "sub": "We measure temperature, blood pressure and pulse. It takes a few minutes and does not hurt."
+        "text": "A nurse comes to check",
+        "sub": "They measure your temperature, blood pressure and pulse. It takes a few minutes and does not hurt."
       },
       "wait-doctor": {
-        "text": "We wait.",
+        "text": "We wait",
         "sub": "We wait until the doctor is free. You can sit, breathe, and wait quietly."
       },
       "doctor": {
-        "text": "The doctor comes in and says hello.",
-        "sub": "They ask questions and check gently. You can ask anything."
+        "text": "In the doctor's room",
+        "sub": "The doctor asks questions and examines you. You can ask something too."
       },
       "parent-select": {
         "text": "For parents and staff",
         "sub": "Choose the next steps the doctor has set"
       },
       "tests": {
-        "text": "We go to tests.",
+        "text": "We go to tests",
         "sub": "Sometimes a blood test or an X-ray is needed. It helps the doctor understand what is happening."
       },
       "treatment": {
-        "text": "We get treatment.",
+        "text": "We get treatment",
         "sub": "Sometimes they give medicine or do a small treatment. It helps to feel better."
       },
       "consult": {
-        "text": "Another doctor comes.",
-        "sub": "Sometimes a specialist comes to check too. Another pair of eyes to help."
+        "text": "Another doctor comes",
+        "sub": "Another doctor needs to check you. They will say what to do next."
       },
       "wait-results": {
-        "text": "We wait for results.",
+        "text": "We wait for results",
         "sub": "Tests take time. We wait, and then the doctor tells what they found."
       },
       "decision": {
-        "text": "The doctor explains what happens now.",
+        "text": "The doctor explains what happens now",
         "sub": "Sometimes we go home. Sometimes more tests are needed. In any case, we explain."
       },
       "end": {
         "text": "We did it!",
         "sub": "The hospital visit is over. You can be proud."
+      },
+      "disposition": {
+        "text": "Do we go home or stay?",
+        "sub": "Sometimes we go home, and sometimes we stay in the hospital for a few days. The doctor decides together with you."
+      },
+      "home": {
+        "text": "We go home",
+        "sub": "At home we also need time and rest. You can talk about what we went through."
+      },
+      "hospital": {
+        "text": "We stay in the hospital",
+        "sub": "Here they keep a close watch on us, and someone is always nearby. You can ask how many nights."
+      },
+      "wait-before-triage": {
+        "text": "We wait until we are called",
+        "sub": "You can sit, look around, or breathe slowly."
       }
     }
   },
@@ -65,57 +79,99 @@
       "back": "Назад",
       "next": "Дальше",
       "continue": "Продолжить",
-      "toEnd": "К концу",
-      "restart": "С начала ↺"
+      "toEnd": "Ничего не назначено",
+      "restart": "С начала ↺",
+      "choiceHome": "Домой",
+      "choiceHospital": "Остаёмся в больнице"
     },
     "pages": {
       "arrival": {
-        "text": "Приезжаем в больницу.",
-        "sub": "У входа есть стол. Там записывают имя и задают несколько коротких вопросов."
-      },
-      "reception": {
-        "text": "Нас кто-то встречает.",
-        "sub": "Спрашивают, что случилось, и записывают всё. Можно рассказать самим, а можно попросить родителя."
+        "text": "Приезжаем в больницу",
+        "sub": "У входа есть стол. Там записывают твоё имя, спрашивают, что случилось, и всё записывают. Ты можешь ответить на вопросы, или пусть ответят родители."
       },
       "triage": {
-        "text": "Медсестра приходит проверить.",
-        "sub": "Измеряют температуру, давление и пульс. Это занимает несколько минут и не больно."
+        "text": "Медсестра приходит проверить",
+        "sub": "У тебя измеряют температуру, давление и пульс. Это занимает несколько минут и не больно."
       },
       "wait-doctor": {
-        "text": "Ждём.",
+        "text": "Ждём",
         "sub": "Ждём, пока освободится врач. Можно сидеть, дышать и ждать спокойно."
       },
       "doctor": {
-        "text": "Врач заходит и здоровается.",
-        "sub": "Задают вопросы и аккуратно проверяют. Можно спросить что угодно."
+        "text": "В кабинете врача",
+        "sub": "Врач задаёт вопросы и осматривает. Ты тоже можешь что-нибудь спросить."
       },
       "parent-select": {
         "text": "Родителям и команде",
         "sub": "Выберите следующие шаги, которые назначил врач"
       },
       "tests": {
-        "text": "Идём на обследования.",
+        "text": "Идём на обследования",
         "sub": "Иногда нужен анализ крови или рентген. Это помогает врачу понять, что происходит."
       },
       "treatment": {
-        "text": "Получаем лечение.",
+        "text": "Получаем лечение",
         "sub": "Иногда дают лекарство или делают небольшую процедуру. Это помогает почувствовать себя лучше."
       },
       "consult": {
-        "text": "Приходит другой врач.",
-        "sub": "Иногда тоже приходит специалист посмотреть. Ещё одна пара глаз, чтобы помочь."
+        "text": "Приходит другой врач",
+        "sub": "Еще один врач должен осмотреть тебя. Он скажет, что делать дальше."
       },
       "wait-results": {
-        "text": "Ждём результатов.",
+        "text": "Ждём результатов",
         "sub": "Анализы занимают время. Ждём, а потом врач рассказывает, что нашли."
       },
       "decision": {
-        "text": "Врач объясняет, что будет дальше.",
+        "text": "Врач объясняет, что будет дальше",
         "sub": "Иногда возвращаемся домой. Иногда нужны ещё обследования. В любом случае нам всё объяснят."
       },
       "end": {
         "text": "У нас получилось!",
         "sub": "Визит в больницу закончился. Можно гордиться."
+      },
+      "disposition": {
+        "text": "Домой или остаёмся?",
+        "sub": "Иногда возвращаемся домой, а иногда остаёмся в больнице на несколько дней. Врач решает вместе с вами."
+      },
+      "home": {
+        "text": "Едем домой",
+        "sub": "Дома тоже нужно время и отдых. Можно поговорить о том, что было."
+      },
+      "hospital": {
+        "text": "Остаёмся в больнице",
+        "sub": "Здесь за нами внимательно следят, и рядом всегда кто-то есть. Можно спросить, сколько ночей."
+      },
+      "wait-before-triage": {
+        "text": "Ждём, пока нас позовут",
+        "sub": "Можно посидеть, посмотреть вокруг или медленно подышать."
+      }
+    }
+  },
+  "he": {
+    "ui": {
+      "toEnd": "אין הפניות",
+      "choiceHome": "הביתה",
+      "choiceHospital": "נשארים בבית החולים"
+    },
+    "pages": {
+      "disposition": {
+        "text": "הולכים הביתה או נשארים?",
+        "sub": "לפעמים חוזרים הביתה, ולפעמים נשארים בבית החולים כמה ימים. הרופא/ה מחליט/ה יחד איתכם."
+      },
+      "home": {
+        "text": "חוזרים הביתה",
+        "sub": "גם בבית צריך זמן ומנוחה. אפשר לדבר על מה שעברנו."
+      },
+      "hospital": {
+        "text": "נשארים בבית החולים",
+        "sub": "כאן שומרים עלינו מקרוב, ותמיד יש מי שיהיה לידנו. אפשר לשאול כמה לילות."
+      },
+      "arrival": {
+        "sub": "ליד הכניסה יש שולחן. שם רושמים את השם שלך, שואלים מה קרה ורושמים הכול. אפשר לענות בעצמך, ואפשר לתת להורים לענות."
+      },
+      "wait-before-triage": {
+        "text": "מחכים שיקראו לנו",
+        "sub": "אפשר לשבת, להסתכל מסביב, או לנשום לאט. אני לידך."
       }
     }
   }

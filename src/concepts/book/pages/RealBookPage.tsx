@@ -113,7 +113,7 @@ export function RealBookPage() {
             {t('book.ui.back', 'אחורה')}
           </button>
           <button className={css.nextBtn} onClick={() => setChosen(true)}>
-            {selected.size > 0 ? t('book.ui.continue', 'המשיכו') : t('book.ui.toEnd', 'לסיום')}
+            {selected.size > 0 ? t('book.ui.continue', 'המשיכו') : t('book.ui.toEnd', 'אין הפניות')}
           </button>
         </div>
       </div>
@@ -127,7 +127,7 @@ export function RealBookPage() {
       {/* the child's page stays Hebrew (the real world is not translated yet) */}
       <div className={css.pageContent} dir="rtl" lang="he">
         <div className={css.illustration}>{STAGE_ICONS[stageId]}</div>
-        <p className={css.mainText}>{child?.label}</p>
+        <p className={css.mainText}>{`${pages.filter((p) => p !== SELECT_PAGE).indexOf(stageId) + 1}. `}{child?.label}</p>
         <p className={css.subText}>{child?.hint}</p>
       </div>
 

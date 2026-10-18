@@ -28,6 +28,8 @@ commercially, and its source and licence must be written down.
   sheet-seabed.jpg      the sea floor behind a station's picture on its sheet
   sheet-fade.png        the pale teal veil over it (Shevi's "Rectangle 24")
   station-doctor-sheet.png  the whole captain's dome for his sheet (2026-10-14; the map keeps station-doctor.png)
+  sand.png              sand dune edge at the bottom of the ocean screens (sent by Shevi, same licence as the rest of this list, TO CONFIRM the tool like the others)
+  sea.png               sea background (sent by Shevi, same licence as the rest of this list, TO CONFIRM the tool and whether it is a photo or a generated picture)
 
   The pictures added on 2026-10-14 (the last eight lines) were downloaded by Maria from the Figma file (made by
   Shevi); how they were made (the tool) is TO CONFIRM, like for the rest.
