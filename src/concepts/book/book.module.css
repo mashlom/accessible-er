@@ -478,3 +478,32 @@
   font-weight: 700;
   font-size: 0.95rem;
 }
+
+/* the sheet's buttons: two equal buttons on one row, the same shape as the rest of the app */
+.sheetActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 1.25rem;
+}
+.sheetBtnOutline,
+.sheetBtnSolid {
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.sheetBtnOutline {
+  border: 1px solid #d5dde2;
+  background: #fff;
+  color: #173b4d;
+}
+.sheetBtnSolid {
+  border: none;
+  background: #087e8b;
+  color: #fff;
+}

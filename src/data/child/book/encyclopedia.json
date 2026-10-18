@@ -16,8 +16,8 @@
       "draft": true
     },
     "doctor": {
-      "title": "מה הסטטוסקופ שומע?",
-      "text": "הסטטוסקופ עוזר לרופא/ה לשמוע את הלב ואת הנשימה, כמו להקשיב לגוף בשקט.",
+      "title": "איך עובד הסטטוסקופ?",
+      "text": "בהתחלה רופאים לחצו את האוזן לגב של אדם והקשיבו לנשימה ולפעימות הלב. אבל האוזן שומעת צלילים שקטים לא טוב, וגם קשה ללחוץ את האוזן לחזה של מישהו אחר. אז מישהו המציא צינור. הוא נקרא סטטוסקופ: המילה \"סטטוס\" ביוונית פירושה \"חזה\".\n\nהצינור אוסף את הקול מתוך הגוף ומוביל אותו ישר לאוזן, כאילו מקרב אותו. לכן הצלילים נשמעים חזק וברור יותר, והרעש מהחדר כמעט לא מפריע.\n\nלקצה הסטטוסקופ יש ראש מתכת עם שני צדדים. צד אחד הוא דיסק דק מפלסטיק, שנקרא ממברנה. הוא שומע טוב צלילים גבוהים, כמו נשימה ופעולת שסתומי הלב. הצד השני דומה לכוס קטנה. הוא שומע טוב יותר צלילים נמוכים. הרופא/ה מהפך/ת את הראש כדי להקשיב לדברים שונים.\n\nהסטטוסקופ הופך את הצלילים של הגוף לברורים, שקטים ומובנים.",
       "draft": true
     },
     "tests": {
@@ -46,19 +46,44 @@
       "draft": true
     },
     "triage-temperature": {
-      "title": "איך מודדים חום?",
-      "text": "חום הוא כמה חם הגוף. מודדים אותו במדחום קטן, למשל מתחת לבית השחי או באוזן. זה מהיר וכמעט לא כואב.",
+      "title": "למה מודדים חום?",
+      "text": "החום סביבנו משתנה: בקיץ מעל 30 מעלות בחוץ, ובחורף יכול להיות 10. אבל החום בתוך הגוף של אדם בדרך כלל אותו דבר, בערך 36.5 מעלות.\n\nכשחיידקים או וירוסים קטנים נכנסים לגוף, הגוף מתחיל להתגונן. תאים קטנים בדם מתחילים מלחמה עם הפולשים! והגוף מתחמם. החום עולה ל-38 מעלות ואפילו יותר.\n\nלרופא חשוב לדעת מה החום שלך, כדי לראות אם יש בגוף מלחמה כזאת.",
       "draft": true
     },
     "triage-oxygen": {
-      "title": "מה זה חמצן בדם?",
-      "text": "סטורציה היא כמה חמצן יש בדם. חמצן עוזר לגוף לעבוד. מודדים אותו בקליפס קטן על האצבע: האור עובר דרך האצבע והמכשיר מראה אחוז. הקליפס לא כואב, רק לוחץ קצת.",
+      "title": "מה זה סטורציה?",
+      "text": "סטורציה היא אחוז החמצן שנושא ההמוגלובין, חלבון בתאי הדם האדומים. ההמוגלובין הוא כמו משאית קטנה: הוא לוקח חמצן בריאות ומחלק אותו לכל הגוף. אם כל ה\"משאיות\" טעונות במלואן, הסטורציה בערך 100%. ככל שהן מובילות פחות חמצן, האחוז נמוך יותר.\n\nהמכשיר על האצבע (פולסאוקסימטר) מאיר דרך האצבע בשני סוגי אור: אדום ואינפרא-אדום. ההמוגלובין עם חמצן ובלי חמצן מעביר כל אחד מהם אחרת. המכשיר משווה בין השניים ומציג אחוז.\n\nבדרך כלל אצל אדם בריא הסטורציה בערך 95–100%. אם היא נמוכה יותר, הרופא בודק למה ומחליט מה לעשות. המכשיר עצמו יכול לטעות אם האצבע קרה, עם לק או אם היא זזה הרבה, ולכן האחות לפעמים בודקת שוב.",
       "draft": true
     },
     "triage-pressure": {
       "title": "איך מודדים לחץ דם?",
-      "text": "לחץ דם הוא באיזה כוח הדם זורם בכלי הדם. מודדים אותו ברצועה רכה על היד: היא מתנפחת, לוחצת קצת, ואז משתחררת לאט. זה יכול ללחוץ קצת, אבל זה עובר מהר.",
+      "text": "לחץ הדם מראה באיזה כוח הדם לוחץ על דפנות כלי הדם כשהוא זורם בגוף. הרופא צריך אותו כדי להבין איך הלב וכלי הדם עובדים.\n\nהלב הוא כמו משאבה: הוא דוחף את הדם לכל הגוף. כשהמשאבה עובדת חלש מדי או כשכלי הדם צרים מדי, הלחץ משתנה. לחץ נמוך או גבוה מדי יכול להעיד שלגוף אין מספיק דם, או שללב ולכלי הדם קשה.",
       "draft": true
+    },
+    "tests-blood-test": {
+      "title": "מה אפשר ללמוד מבדיקת דם?",
+      "draft": true,
+      "text": "הדם זורם בכל הגוף ונושא את כל מה שצריך: חמצן, אוכל ועזרה נגד מחלות. לכן בדם אפשר לראות הרבה דברים, גם כשהאדם לא מרגיש שום דבר.\n\nבדם יש תאים שונים, ולכל אחד תפקיד משלו. תאים אדומים נושאים חמצן, כמו משאיות קטנות. תאים לבנים שומרים על הגוף מפני חיידקים: כששם נלחמת זיהום, יש יותר מהם. חלקיקים קטנים שנקראים טסיות עוזרים לדם להיקרש כשיש חתך.\n\nבדיקת דם מראה כמה יש מכל תא, ואם הם עובדים טוב. הרופא משווה את המספרים למה שרגיל אצל ילדים בגילך. אם משהו שונה, הרופא חושב על הסיבה, ואולי יזמין בדיקה נוספת.\n\nבדיקה אחת לא מספרת הכול. הרופא מסתכל על התוצאות יחד עם איך שאתה מרגיש ומה שרואים בבדיקה."
+    },
+    "tests-urine": {
+      "title": "מה אפשר ללמוד מבדיקת שתן?",
+      "draft": true,
+      "text": "הכליות עובדות כמו מסנן. הן מנקות את הדם ושולחות את כל מה שמיותר לשתן. לכן השתן יכול לספר איך הכליות עובדות ומה קורה בגוף.\n\nלבדיקה צריך כמות קטנה של שתן בכוס נקייה. לפעמים מבקשים לאסוף אותו מאמצע הזרם, כדי שיגיעו פחות חיידקים מהעור לדגימה. אם הצלחת לאסוף מעט, זה בסדר: תבקש מהאחות, והיא תעזור.\n\nבמעבדה מסתכלים על הצבע ועל השקיפות, ואחר כך בודקים מה יש בתוכו. לפעמים מוצאים סוכר, חלבון, דם או סימנים לזיהום. הרופא משווה כל אחד מהם למה שנורמלי.\n\nהשתן משתנה במהלך היום, לפי האוכל, השתייה וכמה זזת. לכן בדיקה אחת לא מספרת הכול. הרופא מסתכל על התוצאה יחד עם איך שאתה מרגיש, ואם צריך, מבקש לחזור על הבדיקה."
+    },
+    "tests-xray": {
+      "title": "מה זה רנטגן?",
+      "draft": true,
+      "text": "הרבה זמן, כשעצם נשברה, רופאים יכלו רק למשש אותה בידיים. אחר כך מדענים גילו קרניים מיוחדות.\n\nהקרניים האלה נקראות קרני רנטגן, על שם המדען שגילה אותן, וילהלם רנטגן. זה היה ב־1895.\n\nקרני רנטגן עוברות דרך עצמות ורקמות רכות בצורה שונה: דרך העור והשרירים כמעט בחופשיות, והעצמות עוצרות אותן הרבה יותר. לכן בתמונה העצמות נראות בהירות, והשאר כהה יותר. הרופא רואה בתמונה אם העצם שלמה או שיש בה סדק.\n\nהצילום עצמו מהיר. כדאי להוריד תכשיטים מתכתיים קודם: מתכת עוצרת את הקרניים כמו עצם, ולכן בתמונה היא נראית כנקודה בהירה שיכולה להסתיר את מה שהרופא צריך לראות. הקרניים פועלות רק לרגע, בזמן הצילום.\n\nרנטגן לא עושים סתם. הרופא מחליט אם צריך תמונה, ומה צריך לראות בה. הוא יכול להחליט שחלקים מסוימים בגוף צריך לכסות בסינר כבד שלא מכניס את הקרניים. הסינר מכסה את החלקים בגוף שלא צריך בתמונה."
+    },
+    "tests-ultrasound": {
+      "title": "איך עובד אולטרסאונד?",
+      "draft": true,
+      "text": "אולטרסאונד הוא צליל. לא הצליל שאפשר לשמוע, אלא צליל הרבה יותר גבוה, כל כך גבוה שאנשים לא שומעים אותו.\n\nהרופא מזיז על העור מכשיר קטן וחלק, שנקרא גשש. קודם מורחים על העור ג'ל שקוף. הג'ל עוזר לצליל להיכנס לגוף, ולא להיעלם באוויר בין הגשש לעור.\n\nהגשש שולח את הצליל פנימה. הצליל מגיע לאיברים ומוחזר מהם, כמו הד מקיר בחדר ריק. הגשש תופס את ההד ושולח אותו למחשב. המחשב בודק כמה רחוק וכמה מהר חזר ההד, ומצייר תמונה על המסך.\n\nרקמה צפופה מחזירה הד חזק יותר. לכן האיברים והעצמות נראים אחרת על המסך. הרופא מסתכל על התמונה ומחליט אם הכול בסדר.\n\nאולטרסאונד לא כואב ולא משתמש בקרני רנטגן. אפשר להרגיש קצת קור מהג'ל, והגשש עשוי ללחוץ קצת."
+    },
+    "tests-ct": {
+      "title": "איך עובד סי־טי?",
+      "draft": true,
+      "text": "סי־טי משתמש גם הוא בקרני רנטגן, אבל מצלמים הרבה תמונות, לא רק אחת. התמונות מונחות אחת על השנייה, כמו פרוסות של לחם, פרוסה דקה אחרי פרוסה.\n\nאתה שוכב על מיטה, והמיטה נכנסת לאט לתוך מכשיר גדול ועגול. המכשיר מסתובב סביבך במעגל ושולח את הקרניים מכמה צדדים.\n\nכל סיבוב לוקח רק כמה שניות. בזמן הזה המחשב מקבל הרבה תמונות של הגוף ובונה מהן פרוסה אחרי פרוסה. כך הרופא רואה לא רק את מה שבחוץ, אלא גם מה שבפנים, מכמה צדדים.\n\nלכן חשוב לשכב מאוד בשקט. אם זזים, התמונה מטושטשת, כמו תמונה שצולמה תוך כדי ריצה. אז צריך לצלם שוב.\n\nסי־טי לוקח יותר זמן מצילום רגיל אחד, אבל המכשיר לא נוגע בך ולא כואב. בפנים יכול להיות קצת רועש, והמיטה יכולה לזוז קדימה ואחורה."
     }
   },
   "en": {
@@ -78,8 +103,8 @@
       "draft": true
     },
     "doctor": {
-      "title": "What does a stethoscope hear?",
-      "text": "A stethoscope helps the doctor hear the heart and breathing, like listening quietly to the body.",
+      "title": "How does a stethoscope work?",
+      "text": "At first, doctors pressed their ear to a person's back and listened to breathing and the heartbeat. But the ear hears quiet sounds poorly, and it is awkward to press your ear to someone's chest. So someone invented a tube. It was called a stethoscope: the Greek word \"stethos\" means \"chest\".\n\nThe tube gathers the sound from inside the body and leads it straight to the ear, as if bringing it closer. That is why the sounds become louder and clearer, and the noise from the room hardly gets in the way.\n\nThe end of the stethoscope has a metal head with two sides. One side is a thin plastic disc, called the diaphragm. It hears high sounds well, such as breathing and the work of the heart valves. The other side looks like a little cup. It hears low sounds better. The doctor turns the head over to listen to different things.\n\nA stethoscope makes the sounds of the body clear, calm and easy to understand.",
       "draft": true
     },
     "tests": {
@@ -108,19 +133,44 @@
       "draft": true
     },
     "triage-temperature": {
-      "title": "How is a temperature measured?",
-      "text": "Temperature is how warm the body is. It is measured with a small thermometer, for example under the arm or in the ear. It is quick and hardly hurts.",
+      "title": "Why do we measure temperature?",
+      "text": "The temperature around us changes: in summer it is over 30 degrees outside, and in winter it can be 10. But the temperature inside a person is usually always the same, about 36.5 degrees.\n\nWhen tiny bacteria or viruses get into the body, the body starts to defend itself. Tiny cells in the blood start a war with the invaders! And the body becomes hot. The temperature rises to 38 degrees or even more.\n\nIt is important for the doctor to know your temperature, to see whether such a war is going on in your body.",
       "draft": true
     },
     "triage-oxygen": {
-      "title": "What is oxygen in the blood?",
-      "text": "Saturation is how much oxygen there is in the blood. Oxygen helps the body work. It is measured with a small clip on a finger: light passes through the finger, and the device shows a percentage. The clip does not hurt, it just squeezes a little.",
+      "title": "What is saturation?",
+      "text": "Saturation is the percentage of oxygen carried by haemoglobin, a protein in the red blood cells. Haemoglobin is like a small truck: it picks up oxygen in the lungs and delivers it all over the body. If all the \"trucks\" are fully loaded, saturation is about 100%. The less oxygen they carry, the lower the percentage.\n\nThe device on the finger (a pulse oximeter) shines two kinds of light through the finger: red and infrared. Haemoglobin with oxygen and without it lets each kind of light through differently. The device compares the two and shows a percentage.\n\nUsually a healthy person has a saturation of about 95–100%. If it is lower, the doctor looks for the reason and decides what to do next. The device itself can be wrong if the finger is cold, has nail polish, or moves a lot, so the nurse sometimes checks again.",
       "draft": true
     },
     "triage-pressure": {
       "title": "How is blood pressure measured?",
-      "text": "Blood pressure is how strongly the blood flows through the vessels. It is measured with a soft cuff on the arm: it inflates, gently squeezes the arm, and then slowly lets go. It may squeeze a little, but it passes quickly.",
+      "text": "Blood pressure shows how strongly the blood presses on the walls of the vessels as it flows through the body. The doctor needs it to understand how the heart and the vessels work.\n\nThe heart is like a pump: it pushes blood through the whole body. When the pump works too weakly or the vessels are too narrow, the pressure changes. Pressure that is too low or too high can mean that the body does not have enough blood, or that the heart and the vessels are having a hard time.",
       "draft": true
+    },
+    "tests-blood-test": {
+      "title": "What can a blood test show?",
+      "draft": true,
+      "text": "Blood travels all over the body and carries everything it needs: oxygen, food and help against illness. So a lot can be seen in the blood, even when a person does not feel anything.\n\nBlood has different cells, and each has its own job. Red cells carry oxygen, like tiny trucks. White cells protect the body from germs: when an infection is fighting somewhere, there are more of them. Tiny cell pieces called platelets help the blood clot when there is a cut.\n\nA blood test shows how many of each cell there are and how well they work. The doctor compares the numbers with what is usual for children of your age. If something is different, the doctor thinks about why, and may order another test.\n\nOne test does not say everything. The doctor looks at the results together with how you feel and what can be seen during the check-up."
+    },
+    "tests-urine": {
+      "title": "What can a urine test show?",
+      "draft": true,
+      "text": "The kidneys work like a filter. They clean the blood and send everything extra into the urine. So urine can tell us how the kidneys work and what is happening in the body.\n\nFor the test a small amount of urine is needed in a clean cup. Sometimes you are asked to collect it from the middle of the stream, so that fewer germs from the skin get into the sample. If you can only manage a little, that is fine: ask the nurse, who will help.\n\nIn the lab they look at the colour and how clear it is, and then check what is in it. Sometimes sugar, protein, blood or signs of an infection are found. The doctor compares each of these with what is normal.\n\nUrine changes during the day, depending on food, drinks and how much you moved. So one test does not say everything. The doctor looks at the result together with how you feel and, if needed, asks for it to be repeated."
+    },
+    "tests-xray": {
+      "title": "What is an X-ray?",
+      "draft": true,
+      "text": "For a long time, when a bone was broken, doctors could only feel it with their hands. Then scientists found special rays.\n\nThese rays are called X-rays, after the scientist who discovered them, Wilhelm Röntgen. That was in 1895.\n\nX-rays pass through bones and soft tissue in different ways: through skin and muscles almost freely, while bones stop them much more. So on the picture bones look light and everything else looks darker. The doctor can see on the picture whether a bone is whole or has a crack.\n\nThe picture itself is quick. Take off any metal jewellery beforehand: metal stops the rays much like bone does, so on the picture it shows up as a bright spot that can hide what the doctor needs to see. The rays are on only for a moment, during the picture.\n\nDoctors do not take an X-ray for no reason. The doctor decides whether a picture is needed and what should be seen on it. The doctor may decide that some parts of the body need to be covered with a heavy apron that does not let the rays through. The apron covers the parts of the body that are not needed in the picture."
+    },
+    "tests-ultrasound": {
+      "title": "How does an ultrasound work?",
+      "draft": true,
+      "text": "An ultrasound is sound. Not the sound you can hear, but much higher, so high that people cannot hear it.\n\nThe doctor moves a small smooth device called a probe over the skin. A clear gel is put on the skin first. The gel helps the sound go into the body instead of getting lost in the air between the probe and the skin.\n\nThe probe sends the sound into the body. The sound reaches the organs and bounces back from them, like an echo from a wall in an empty room. The probe catches the echo and sends it to a computer. The computer looks at how far away the echo came from and how fast it came back, and draws a picture on the screen.\n\nA denser tissue sends back a stronger echo. That is why organs and bones look different on the screen. The doctor looks at the picture and decides whether everything is fine.\n\nAn ultrasound does not hurt and does not use X-rays. The gel may feel a little cold, and the probe may press a little."
+    },
+    "tests-ct": {
+      "title": "How does a CT scan work?",
+      "draft": true,
+      "text": "A CT scan uses X-rays too, but many pictures are taken, not just one. They are stacked like slices of bread, one thin slice at a time.\n\nYou lie on a table, and the table slowly moves into a large round machine. The machine goes around you in a circle and sends the rays from different sides.\n\nEach turn takes only a few seconds. During that time the computer gets many pictures of the body and builds them into slice after slice. So the doctor can see not only the outside, but also what is inside, from many sides.\n\nThat is why it is important to lie very still. If you move, the picture becomes blurry, like a photo taken while running. Then the picture has to be taken again.\n\nA CT scan takes longer than one ordinary picture, but the machine does not touch you and does not hurt. It may be a little noisy inside, and the table may move forward and back."
     }
   },
   "ru": {
@@ -140,8 +190,8 @@
       "draft": true
     },
     "doctor": {
-      "title": "Что слышит стетоскоп?",
-      "text": "Стетоскоп помогает врачу услышать сердце и дыхание — как будто тихо слушаешь тело.",
+      "title": "Как работает стетоскоп?",
+      "text": "Сначала врачи прижимали ухо к спине и слушали дыхание и биение сердца. Но ухо слышит тихие звуки плохо, да и прижиматься к чужой груди неудобно. Тогда кто-то придумал трубочку. Её назвали стетоскопом: слово «стетос» по-гречески значит «грудь».\n\nТрубочка собирает звук изнутри тела и ведёт его прямо к уху, как будто подносит его ближе. Поэтому звуки становятся громче и яснее, а шум из комнаты почти не мешает.\n\nНа конце стетоскопа есть металлическая головка с двумя сторонами. Одна сторона — тонкий пластиковый диск, его называют мембраной. Он хорошо слышит высокие звуки, например дыхание и работу сердечных клапанов. Другая сторона похожа на чашечку. Она лучше слышит низкие звуки. Врач переворачивает головку, чтобы послушать разное.\n\nСтетоскоп делает звуки тела слышными, спокойными и понятными.",
       "draft": true
     },
     "tests": {
@@ -170,19 +220,44 @@
       "draft": true
     },
     "triage-temperature": {
-      "title": "Как измеряют температуру?",
-      "text": "Температура — это то, насколько тепло тело. Её измеряют маленьким термометром, например под мышкой или в ухе. Это быстро и почти не больно.",
+      "title": "Зачем измерять температуру?",
+      "text": "Температура вокруг нас меняется: летом на улице больше 30 градусов, а зимой может быть и 10. А температура внутри человека обычно одна и та же, примерно 36 с половиной градусов.\n\nКогда в тело человека попадают маленькие бактерии или вирусы, организм начинает защищаться. Маленькие клетки внутри крови начинают войну с захватчиками! И тело становится горячим. Температура повышается до 38 градусов и даже больше.\n\nВрачу важно знать твою температуру, чтобы определить, идёт ли в теле такая война.",
       "draft": true
     },
     "triage-oxygen": {
-      "title": "Что такое кислород в крови?",
-      "text": "Сатурация — это то, сколько кислорода есть в крови. Кислород помогает телу работать. Её измеряют маленьким прищепком на пальце: через палец проходит свет, а прибор показывает процент. Прищепка не больно, только немного сжимает.",
+      "title": "Что такое сатурация?",
+      "text": "Сатурация — это процент кислорода, который переносит гемоглобин, белок в красных клетках крови. Гемоглобин как маленький грузовичок: он забирает кислород в лёгких и развозит его по всему телу. Если все «грузовички» полностью нагружены, сатурация около 100%. Чем меньше кислорода они везут, тем ниже процент.\n\nПрибор на пальце (пульсоксиметр) светит через палец двумя видами света: красным и инфракрасным. Гемоглобин с кислородом и без него по-разному пропускают тот и другой свет. Прибор сравнивает эти два показателя и выдаёт процент.\n\nОбычно у здорового человека сатурация около 95–100%. Если она ниже, врач смотрит, почему, и решает, что делать дальше. Сам прибор может ошибаться, если палец холодный, накрашен лаком или сильно двигается, поэтому медсестра иногда перепроверяет.",
       "draft": true
     },
     "triage-pressure": {
       "title": "Как измеряют давление?",
-      "text": "Давление — это то, с какой силой кровь идёт по сосудам. Его измеряют мягкой манжетой на руке: она надувается, слегка сжимает руку, а потом медленно отпускает. Может немного сжимать, но это быстро проходит.",
+      "text": "Давление показывает, с какой силой кровь давит на стенки сосудов, когда течёт по телу. Оно нужно врачу, чтобы понять, как работает сердце и сосуды.\n\nСердце как насос: оно гонит кровь по всему телу. Когда насос работает слишком слабо или сосуды слишком узкие, давление меняется. Слишком низкое или слишком высокое давление может значить, что телу не хватает крови, или что сердцу и сосудам трудно.",
       "draft": true
+    },
+    "tests-blood-test": {
+      "title": "Что можно узнать из крови?",
+      "draft": true,
+      "text": "Кровь течёт по всему телу и переносит всё нужное: кислород, еду, защиту от болезней. Поэтому по крови многое видно, даже если сам человек ничего не чувствует.\n\nВ крови есть разные клетки, и у каждой своя работа. Красные клетки несут кислород, как маленькие грузовички. Белые клетки защищают тело от микробов: если где-то воюет инфекция, их становится больше. Маленькие клетки-пластинки помогают крови свернуться, когда где-то появилась ранка.\n\nАнализ крови показывает, сколько каждой клетки и хорошо ли они работают. Врач сравнивает цифры с тем, что обычно бывает у детей твоего возраста. Если что-то отличается, он думает, почему, и может назначить ещё одно исследование.\n\nОдин анализ не говорит всё. Врач смотрит на результаты вместе с тем, как ты себя чувствуешь и что видно при осмотре."
+    },
+    "tests-urine": {
+      "title": "Что можно узнать из мочи?",
+      "draft": true,
+      "text": "Почки работают как фильтр. Они очищают кровь и отправляют всё лишнее в мочу. Поэтому моча рассказывает, как работают почки и что происходит в теле.\n\nДля анализа нужна небольшая порция мочи в чистой баночке. Иногда её просят собрать в середине струи, чтобы в образце было меньше микробов с кожи. Если получилось немного, ничего страшного: попроси медсестру, она подскажет.\n\nВ лаборатории смотрят на цвет и прозрачность, а потом проверяют, что в ней есть. Бывает, что в моче находят сахар, белок, кровь или признаки инфекции. Каждое из этого врач сравнивает с тем, что нормально.\n\nМоча меняется за день: от еды, питья и того, сколько ты двигался. Поэтому один анализ не говорит всё. Врач смотрит на результат вместе с тем, как ты себя чувствуешь, и если нужно, просит повторить."
+    },
+    "tests-xray": {
+      "title": "Что такое рентген?",
+      "draft": true,
+      "text": "Долгое время, если кость была сломана, врачи могли только прощупать её руками. А потом учёные узнали, что есть особые лучи.\n\nЭти лучи назвали рентгеновскими в честь учёного, который их открыл, — Вильгельма Рентгена. Было это в 1895 году.\n\nРентгеновские лучи по-разному проходят через кости и мягкие ткани: кожу и мышцы почти насквозь, а кости задерживают гораздо сильнее. Поэтому на снимке кости выглядят светлыми, а всё остальное — темнее. Врач видит на снимке, цела кость или есть трещина.\n\nСнимок делается быстро. Металлические украшения лучше снять заранее: металл задерживает лучи почти так же, как кости, поэтому на снимке он выглядит светлым пятном и может закрыть то, что нужно рассмотреть врачу. Лучи включаются ненадолго, и только на время снимка.\n\nРентген не делают просто так. Врач сам решает, нужен ли снимок и что на нём надо увидеть. Он может решить, что какие-то части тела нужно скрыть тяжелым фартуком, не пропускающим лучи. Фартук закрывает те части тела, которые не нужны на снимке."
+    },
+    "tests-ultrasound": {
+      "title": "Как работает УЗИ?",
+      "draft": true,
+      "text": "УЗИ — это звук. Не тот, который слышно, а намного выше: он такой высокий, что человек его не слышит.\n\nВрач водит по коже датчик. Это небольшой гладкий предмет, на него нанесён прозрачный гель. Гель нужен, чтобы звук проходил в тело, а не терялся в воздухе между датчиком и кожей.\n\nДатчик посылает звук внутрь тела. Звук доходит до органов и отражается от них, как эхо от стены в пустой комнате. Датчик ловит эхо и отправляет его в компьютер. Компьютер смотрит, как далеко и как быстро вернулось эхо, и рисует картинку на экране.\n\nЧем плотнее ткань, тем лучше эхо возвращается. Поэтому органы и кости на экране видны по-разному. Врач смотрит на картинку и решает, всё ли в порядке.\n\nУЗИ не делает больно и не использует рентгеновские лучи. Может быть только немного холодно от геля и чуть давит датчик."
+    },
+    "tests-ct": {
+      "title": "Как работает КТ?",
+      "draft": true,
+      "text": "КТ — это тоже рентгеновские лучи, но снимков получается много. Не один, а целая стопка, как у хлеба, который режут на тонкие ломтики.\n\nТы лежишь на столе, и стол медленно въезжает внутрь большого круглого аппарата. Аппарат вокруг тебя ходит по кругу и посылает лучи с разных сторон.\n\nКаждый оборот занимает всего несколько секунд. За это время компьютер получает много картинок тела и собирает из них слой за слоем. Так врач видит не только то, что снаружи, но и то, что внутри, с разных сторон.\n\nВот поэтому важно лежать очень тихо. Если двигаться, картинка получится размытой, как фотография, которую снимали на бегу. Тогда придётся сделать снимок ещё раз.\n\nКТ занимает больше времени, чем один обычный снимок, но аппарат не касается тебя и не делает больно. Внутри может быть немного шумно, и стол может ехать то вперёд, то назад."
     }
   }
 }

@@ -1,0 +1,98 @@
+{
+  "ru": {
+    "blood-test": {
+      "title": "Анализ крови",
+      "what": "Из пальца или из руки берут немного крови. Это делают тонкой иголкой, и это быстро.",
+      "feel": "Может быть один укол и немного щиплет. Потом место прижимают ватой.",
+      "prepare": "Можно попросить, чтобы сказали перед иголкой, и посмотреть в другую сторону."
+    },
+    "urine": {
+      "title": "Анализ мочи",
+      "what": "Нужно немного мочи в маленький стаканчик. Иногда дают специальную баночку.",
+      "feel": "Ничего болезненного. Может быть неловко, если нужно немного подождать.",
+      "prepare": "Можно попросить объяснить, как это сделать, и попросить маму или папу помочь."
+    },
+    "xray": {
+      "title": "Рентген",
+      "what": "Тебя просят постоять или полежать, пока аппарат делает снимок. Это занимает несколько секунд.",
+      "feel": "Не больно. Нужно замереть на секунду, и это может быть трудно.",
+      "prepare": "Можно попросить, чтобы сказали «сейчас» и «можно дышать». Иногда надевают фартук, чтобы защитить тело."
+    },
+    "ultrasound": {
+      "title": "УЗИ",
+      "what": "По коже водят маленьким датчиком, на который нанесён немного геля. Экран показывает, что внутри тела.",
+      "feel": "Гель холодный, но не больно. Датчик может немного давить.",
+      "prepare": "Можно попросить сказать, что сейчас будет, и смотреть на экран вместе с врачом."
+    },
+    "ct": {
+      "title": "КТ (компьютерная томография)",
+      "what": "Ты лежишь на столе, и он медленно въезжает в большое кольцо. Аппарат делает много снимков.",
+      "feel": "Внутри кольца может быть шумно и тесно. Иногда просят задержать дыхание на несколько секунд.",
+      "prepare": "Можно попросить сказать, когда начнут и когда можно дышать. Можно взять любимую игрушку."
+    }
+  },
+  "en": {
+    "blood-test": {
+      "title": "Blood test",
+      "what": "A little blood is taken from a finger or from the arm. It is done with a thin needle, and it is quick.",
+      "feel": "It may be one prick and a little sting. Then the place is pressed with cotton wool.",
+      "prepare": "You can ask them to tell you before the needle, and look away while it happens."
+    },
+    "urine": {
+      "title": "Urine test",
+      "what": "You need a little urine in a small cup. Sometimes a special pot is given.",
+      "feel": "Nothing painful. It can feel awkward if you have to wait a little.",
+      "prepare": "You can ask them to explain how to do it, and ask mum or dad to help."
+    },
+    "xray": {
+      "title": "X-ray",
+      "what": "You are asked to stand or lie still while the machine takes a picture. It takes a few seconds.",
+      "feel": "It does not hurt. You need to stay still for a second, and that can be hard.",
+      "prepare": "You can ask them to say \"now\" and \"you can breathe\". Sometimes an apron is put on to protect the body."
+    },
+    "ultrasound": {
+      "title": "Ultrasound",
+      "what": "A small probe with a little gel on it is moved over the skin. The screen shows what is inside the body.",
+      "feel": "The gel is cold, but it does not hurt. The probe may press a little.",
+      "prepare": "You can ask them to say what is about to happen, and look at the screen together with the doctor."
+    },
+    "ct": {
+      "title": "CT scan",
+      "what": "You lie on a table, and it slowly moves into a big ring. The machine takes many pictures.",
+      "feel": "Inside the ring it can be loud and tight. Sometimes you are asked to hold your breath for a few seconds.",
+      "prepare": "You can ask them to tell you when it starts and when you can breathe. You can take a favourite toy."
+    }
+  },
+  "he": {
+    "blood-test": {
+      "title": "בדיקת דם",
+      "what": "לוקחים מעט דם מהאצבע או מהיד. עושים את זה במחט דקה, וזה מהיר.",
+      "feel": "יכול להיות דקירה אחת וצריבה קטנה. אחר כך לוחצים על המקום בצמר גפן.",
+      "prepare": "אפשר לבקש שיגידו לפני המחט, ולהסתכל לצד בזמן שזה קורה."
+    },
+    "urine": {
+      "title": "בדיקת שתן",
+      "what": "צריך מעט שתן בכוס קטנה. לפעמים נותנים קופסה מיוחדת.",
+      "feel": "שום דבר לא כואב. יכול להיות קצת מביך אם צריך לחכות.",
+      "prepare": "אפשר לבקש שיסבירו איך עושים את זה, ולבקש מאמא או מאבא לעזור."
+    },
+    "xray": {
+      "title": "צילום רנטגן",
+      "what": "מבקשים ממך לעמוד או לשכב בשקט, בזמן שהמכשיר מצלם. זה לוקח כמה שניות.",
+      "feel": "לא כואב. צריך להיות בלי תזוזה לשנייה, וזה יכול להיות קשה.",
+      "prepare": "אפשר לבקש שיגידו \"עכשיו\" ו\"אפשר לנשום\". לפעמים מלבישים סינר כדי להגן על הגוף."
+    },
+    "ultrasound": {
+      "title": "אולטרסאונד",
+      "what": "מזיזים על העור חיישן קטן עם מעט ג'ל. המסך מראה מה יש בתוך הגוף.",
+      "feel": "הג'ל קר, אבל לא כואב. החיישן יכול ללחוץ קצת.",
+      "prepare": "אפשר לבקש שיגידו מה עומד לקרות, ולהסתכל על המסך יחד עם הרופא/ה."
+    },
+    "ct": {
+      "title": "סי־טי (CT)",
+      "what": "שוכבים על מיטה, והיא נכנסת לאט לתוך טבעת גדולה. המכשיר מצלם הרבה תמונות.",
+      "feel": "בתוך הטבעת יכול להיות רועש וצפוף. לפעמים מבקשים לעצור את הנשימה לכמה שניות.",
+      "prepare": "אפשר לבקש שיגידו מתי מתחילים ומתי אפשר לנשום. אפשר לקחת צעצוע אהוב."
+    }
+  }
+}

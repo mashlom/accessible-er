@@ -1,0 +1,89 @@
+{
+  "ru": {
+    "temperature": {
+      "title": "Измерение температуры",
+      "armpit": {
+        "label": "Под мышкой",
+        "what": "Термометр кладут под мышку и слегка прижимают руку к телу. Это занимает несколько секунд.",
+        "feel": "Немного непривычно, но не больно. Можно держать руку спокойно.",
+        "prepare": "Можно сказать медсестре, что ты чувствуешь, и попросить объяснить, прежде чем начнут."
+      },
+      "mouth": {
+        "label": "Во рту",
+        "what": "Термометр кладут под язык, и рот нужно держать закрытым, пока он не пикнет. Это занимает около минуты.",
+        "feel": "Может быть немного непривычно держать рот закрытым. Не больно.",
+        "prepare": "Можно попробовать дышать носом, а когда термометр пикнет, сказать медсестре."
+      }
+    },
+    "saturation": {
+      "title": "Сатурация",
+      "what": "На палец надевают маленькую прищепку. Через палец проходит свет, и прибор показывает, сколько кислорода в крови.",
+      "feel": "Прищепка немного сжимает палец. Не больно, просто непривычно. Можно попросить сначала показать его на маме или папе.",
+      "prepare": "Можно попросить объяснить, что это за прибор, и посидеть спокойно минуту-другую."
+    },
+    "blood-pressure": {
+      "title": "Измерение давления",
+      "what": "На руку надевают мягкую манжету. Она надувается, немного сжимает руку, а потом медленно отпускает.",
+      "feel": "Рука может стать тугой на несколько секунд. Может быть немного неприятно, но это быстро проходит.",
+      "prepare": "Можно попросить, чтобы сказали, когда начнут надувать, и подышать вместе с медсестрой."
+    }
+  },
+  "en": {
+    "temperature": {
+      "title": "Temperature check",
+      "armpit": {
+        "label": "Under the arm",
+        "what": "The thermometer goes under the arm, and the arm is held gently against the body. It takes a few seconds.",
+        "feel": "It may feel a little unusual, but it does not hurt. You can keep your arm still.",
+        "prepare": "You can tell the nurse how you feel, and ask them to explain before they start."
+      },
+      "mouth": {
+        "label": "In the mouth",
+        "what": "The thermometer goes under the tongue, and the mouth must stay closed until it beeps. It takes about a minute.",
+        "feel": "It can feel a little unusual to keep the mouth closed. It does not hurt.",
+        "prepare": "You can try breathing through your nose, and tell the nurse when it beeps."
+      }
+    },
+    "saturation": {
+      "title": "Oxygen level (saturation)",
+      "what": "A small clip goes on a finger. Light passes through the finger, and the device shows how much oxygen is in the blood.",
+      "feel": "The clip squeezes the finger a little. It does not hurt, it is just unusual. You can ask to see it first on mum or dad.",
+      "prepare": "You can ask them to explain what the device is, and sit still for a minute or two."
+    },
+    "blood-pressure": {
+      "title": "Blood pressure check",
+      "what": "A soft cuff goes on your arm. It inflates, squeezes the arm a little, and then slowly lets go.",
+      "feel": "The arm may feel tight for a few seconds. It can be a little uncomfortable, but it passes quickly.",
+      "prepare": "You can ask them to tell you when they start inflating, and breathe together with the nurse."
+    }
+  },
+  "he": {
+    "temperature": {
+      "title": "מדידת חום",
+      "armpit": {
+        "label": "מתחת לבית השחי",
+        "what": "מניחים את המדחום מתחת לבית השחי ולוחצים קלות את היד אל הגוף. זה לוקח כמה שניות.",
+        "feel": "זה יכול להרגיש קצת לא רגיל, אבל זה לא כואב. אפשר להחזיק את היד שקטה.",
+        "prepare": "אפשר להגיד לאחות איך אתה/את מרגיש/ה, ולבקש שתסביר לפני שמתחילים."
+      },
+      "mouth": {
+        "label": "בפה",
+        "what": "מניחים את המדחום מתחת ללשון, ושומרים על הפה סגור עד שהוא מצפצף. זה לוקח בערך דקה.",
+        "feel": "יכול להיות קצת לא רגיל לשמור על הפה סגור. זה לא כואב.",
+        "prepare": "אפשר לנסות לנשום דרך האף, ולהגיד לאחות כשהוא מצפצף."
+      }
+    },
+    "saturation": {
+      "title": "סטורציה",
+      "what": "שמים על האצבע קליפס קטן. האור עובר דרך האצבע, והמכשיר מראה כמה חמצן יש בדם.",
+      "feel": "הקליפס לוחץ קצת על האצבע. זה לא כואב, רק לא רגיל. אפשר לבקש להראות אותו קודם על אמא או אבא.",
+      "prepare": "אפשר לבקש שיסבירו מה המכשיר, ולשבת בשקט דקה-שתיים."
+    },
+    "blood-pressure": {
+      "title": "מדידת לחץ דם",
+      "what": "שמים על היד רצועה רכה. היא מתנפחת, לוחצת קצת על היד, ואז משתחררת לאט.",
+      "feel": "היד יכולה להרגיש מתוחה כמה שניות. זה יכול להיות קצת לא נעים, אבל זה עובר מהר.",
+      "prepare": "אפשר לבקש שיגידו מתי מתחילים לנפח, ולנשום יחד עם האחות."
+    }
+  }
+}
