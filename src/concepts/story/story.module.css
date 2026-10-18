@@ -57,7 +57,7 @@
 /* decorative sky furniture — sun + clouds, behind everything */
 .skyDeco {
   position: fixed;
-  inset: 0 0 auto 0;
+  inset: 64px 0 auto 0;
   height: 320px;
   pointer-events: none;
   z-index: 0;
@@ -137,22 +137,15 @@
   position: sticky;
   top: 0;
   z-index: 30;
-  padding: 10px var(--space-3);
 }
 
 .topbarInner {
-  max-width: 900px;
-  margin-inline: auto;
   display: grid;
   grid-template-columns: 52px 1fr 52px;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(10px);
-  border: 2px solid #fff;
-  border-radius: var(--s-r-pill);
-  padding: 6px;
-  box-shadow: 0 6px 18px rgba(51, 69, 92, 0.1);
+  background: #fff;
+  padding: 6px var(--space-3);
 }
 
 .topBtn {
@@ -537,4 +530,15 @@
   line-height: 1.35;
   color: var(--s-ink);
   max-width: 20ch;
+}
+
+/* the flag at the end of the top bar has no round background */
+.topFlag {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
 }

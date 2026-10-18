@@ -52,7 +52,7 @@ export function StoryShell() {
 
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'flex-end' }}>
               <LanguagePicker />
-              <a href="#/" className={styles.topBtn} aria-label="לתפריט הקונספטים">
+              <a href="#/" className={styles.topFlag} aria-label="לתפריט הקונספטים">
                 <span aria-hidden>🏁</span>
               </a>
             </div>
