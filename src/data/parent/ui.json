@@ -327,7 +327,13 @@
       "close": "סגירה",
       "whatHappens": "מה קורה כאן",
       "challenge": "מה עלול להיות קשה",
-      "canAsk": "מה אפשר לבקש"
+      "canAsk": "מה אפשר לבקש",
+      "avatar": {
+        "label": "בחרו איך תיראו במסע:",
+        "photo": "📷 תמונה",
+        "remove": "✕ הסרה",
+        "note": "התמונה נשארת במכשיר לזמן השימוש בלבד ונמחקת ביציאה. שום דבר לא נשלח או נשמר."
+      }
     }
   },
   "en": {
@@ -648,7 +654,13 @@
       "close": "Close",
       "whatHappens": "What happens here",
       "challenge": "What may be hard",
-      "canAsk": "What you can ask for"
+      "canAsk": "What you can ask for",
+      "avatar": {
+        "label": "Choose how you will look on the journey:",
+        "photo": "📷 Photo",
+        "remove": "✕ Remove",
+        "note": "The photo stays on the device only while you use it and is deleted when you leave. Nothing is sent or stored."
+      }
     }
   },
   "ru": {
@@ -969,7 +981,13 @@
       "close": "Закрыть",
       "whatHappens": "Что здесь происходит",
       "challenge": "Что может быть трудно",
-      "canAsk": "Что можно попросить"
+      "canAsk": "Что можно попросить",
+      "avatar": {
+        "label": "Выберите, как вы будете выглядеть в путешествии:",
+        "photo": "📷 Фото",
+        "remove": "✕ Убрать",
+        "note": "Фотография остаётся на устройстве только на время использования и удаляется при выходе. Ничего не отправляется и не сохраняется."
+      }
     }
   }
 }

@@ -5,8 +5,8 @@ import { useConceptPath } from '../nav'
 import parentUi from '../../data/parent/ui.json'
 import { LanguagePicker } from '../../components/LanguagePicker'
 import { StoryPage } from './pages/StoryPage'
-import { SoonPage } from './pages/SoonPage'
 import { RealBookPage } from './pages/RealBookPage'
+import { RoniBookPage } from './pages/RoniBookPage'
 import css from './book.module.css'
 
 /**
@@ -57,7 +57,7 @@ export default function BookConcept() {
       </nav>
       <Routes>
         <Route index element={<StoryPage />} />
-        <Route path="story" element={<SoonPage which="roni" />} />
+        <Route path="story" element={<RoniBookPage />} />
         <Route path="real" element={<RealBookPage />} />
       </Routes>
     </div>

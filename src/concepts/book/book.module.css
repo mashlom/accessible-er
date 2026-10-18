@@ -311,3 +311,105 @@
   margin: 0;
   padding-inline-start: 1.2em;
 }
+
+/* ---- the Roni book: the horizontal rail of stops on every child page ---- */
+.rail {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.5rem 0 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.railStop {
+  position: relative;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  border-radius: 50%;
+  border: 2px solid #e3d9c6;
+  background: #fff;
+  opacity: 0.75;
+}
+/* the little path between the stops */
+.railStop + .railStop::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: -6px;
+  top: 50%;
+  width: 6px;
+  height: 2px;
+  background: #e3d9c6;
+}
+.railStopDone {
+  background: #e9f3e4;
+  border-color: #9cc48f;
+  opacity: 1;
+}
+.railStopOn {
+  border-color: #6b4f2a;
+  background: #fff;
+  opacity: 1;
+  transform: scale(1.15);
+}
+.roniFigure {
+  margin-bottom: 0.5rem;
+}
+
+/* ---- the intro page's avatar picker (as on the calm home) ---- */
+.avatarPicker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+  max-width: 34rem;
+}
+.avatarLabel {
+  font-weight: 700;
+  color: #6b4f2a;
+}
+.avatarRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.avatarChip {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  border: 2px solid #e3d9c6;
+  background: #fff;
+  cursor: pointer;
+}
+.avatarChipOn {
+  border-color: #6b4f2a;
+  background: #f1e8d8;
+}
+.avatarChipWide {
+  width: auto;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #6b4f2a;
+}
+.avatarNote {
+  font-size: 0.85rem;
+  color: #8a7a5e;
+  text-align: center;
+  line-height: 1.5;
+}
+.railAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
