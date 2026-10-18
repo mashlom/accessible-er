@@ -96,3 +96,8 @@
   font-size: 18px;
   color: #fff;
 }
+
+.menuStart {
+  inset-inline-end: auto;
+  inset-inline-start: 0;
+}

@@ -66,6 +66,53 @@
         "name": "איך היה?",
         "desc": "לספר לנו במשפט"
       }
+    },
+    "reason": {
+      "title": "למה באנו היום?",
+      "subtitle": "הבחירה עוזרת לי להראות לכם את הדרך הצפויה. אפשר לשנות בכל רגע — וכל ביקור מתחיל אותו דבר.",
+      "aria": "סיבת ההגעה",
+      "routeHeading": "הדרך הצפויה שלנו",
+      "optional": " · לפי הצורך",
+      "note": "זו דוגמה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות הרפואי ולפי העומס במיון.",
+      "toTrail": "לשביל שלנו ←",
+      "clear": "ניקוי הבחירה"
+    },
+    "trail": {
+      "title": "השביל שלנו",
+      "subtitle": "כל עיגול הוא תחנה בביקור. לוחצים על תחנה כדי לראות מה קורה בה, מה עלול להיות קשה, ומה אפשר לבקש.",
+      "bubbleStart": "באנו בגלל",
+      "bubbleBody": "כל ילד/ה מתחיל/ה אותו דבר — קבלה, הערכה של מצב בריאות ובדיקת רופא/ה — ומשם הצוות מתאים את ההמשך.",
+      "bubbleChange": "שינוי הסיבה",
+      "bubbleNone": "עוד לא סיפרתם לי למה באנו.",
+      "bubbleAsk": "אפשר לספר לי כאן",
+      "bubbleEnd": "ואתאים את הדרך.",
+      "hereSuffix": " — אנחנו כאן",
+      "whatHappens": "מה קורה כאן",
+      "challenge": "מה עלול להיות קשה",
+      "canAsk": "מה אפשר לבקש",
+      "hereOn": "📍 אנחנו כאן — לביטול",
+      "markHere": "לסמן: אנחנו כאן",
+      "note": "הזמנים הם טווחים להמחשה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.",
+      "crossLink": "🏠 מה קורה בסוף הביקור, בדרך הביתה ←"
+    },
+    "book": {
+      "what": "מה קורה",
+      "feel": "מה אפשר להרגיש",
+      "prepare": "איך מתכוננים",
+      "ask": "מה אפשר לבקש מהצוות",
+      "distract": "🫧 לפתוח פינת הסחת דעת בזמן הפעולה",
+      "note": "הסדר והזמנים עשויים להשתנות לפי החלטת הצוות והעומס במיון.",
+      "crossLink": "🎭 לכל הסיפורים ←",
+      "videoTitle": "כאן ייכנס סרטון קצר",
+      "videoText": "סרטון אמיתי של {title} מהמלר״ד בלניאדו, או סיפור חברתי מצולם. בדמו זה שמור מקום בלבד — הצילום צריך להיעשות במחלקה עצמה."
+    },
+    "show": {
+      "title": "מה עומד לקרות?",
+      "subtitle": "כל בדיקה היא סיפור קצר עם ציור, ואני מספר אותו עמוד אחרי עמוד. אפשר לעצור בכל רגע ולחזור אחורה.",
+      "bubble": "אפשר לקרוא את הסיפור לפני שנכנסים — ככה כבר יודעים מה יקרה, ואין הפתעות.",
+      "likely": "כנראה נפגוש את אלה היום",
+      "all": "כל הסיפורים",
+      "ours": "הסיפורים שלנו"
     }
   },
   "en": {
@@ -87,7 +134,7 @@
     },
     "parentLabel": "Parent centre",
     "reasonAsk": "Tell me why we came today — and I'll show you our route",
-    "reasonLabel": "We came today because of",
+    "reasonLabel": "Reason for the visit",
     "reasonChange": "Change",
     "foot": "This tool is meant to make the visit easier to follow and to reduce uncertainty. It does not replace the medical team and does not give medical advice. There is no need to enter a name or identifying details.",
     "tiles": {
@@ -98,6 +145,53 @@
       "going-home": {
         "desc": "How the day ends"
       }
+    },
+    "reason": {
+      "title": "Why did we come today?",
+      "subtitle": "Your choice helps me show you the expected route. You can change it at any time — every visit starts the same way.",
+      "aria": "Reason for the visit",
+      "routeHeading": "Our expected route",
+      "optional": " · if needed",
+      "note": "This is only an example. The order and times may change depending on the medical team's decision and how busy the ER is.",
+      "toTrail": "To our trail ←",
+      "clear": "Clear the choice"
+    },
+    "trail": {
+      "title": "Our trail",
+      "subtitle": "Each circle is a stop of the visit. Tap a stop to see what happens there, what may be hard, and what you can ask for.",
+      "bubbleStart": "Reason for the visit:",
+      "bubbleBody": "Every child starts the same way — registration, a check of the health condition and a doctor's examination — and from there the team adapts what comes next.",
+      "bubbleChange": "Change the reason",
+      "bubbleNone": "You have not told me yet why we came.",
+      "bubbleAsk": "You can tell me here",
+      "bubbleEnd": "and I will adapt the route.",
+      "hereSuffix": " — we are here",
+      "whatHappens": "What happens here",
+      "challenge": "What may be hard",
+      "canAsk": "What can I ask for",
+      "hereOn": "📍 We are here — tap to undo",
+      "markHere": "Mark: we are here",
+      "note": "The times are ranges for illustration only. The order and times may change depending on the medical team's decision and how busy the ER is.",
+      "crossLink": "🏠 What happens at the end of the visit, on the way home ←"
+    },
+    "book": {
+      "what": "What happens",
+      "feel": "What it may feel like",
+      "prepare": "How to get ready",
+      "ask": "What you can ask the staff for",
+      "distract": "🫧 Open a distraction corner during the procedure",
+      "note": "The order and times may change depending on the team's decision and how busy the ER is.",
+      "crossLink": "🎭 All the stories ←",
+      "videoTitle": "A short video will go here",
+      "videoText": "A real video of {title} from the Laniado ER, or a filmed social story. In the demo this is only a placeholder — the filming has to be done in the department itself."
+    },
+    "show": {
+      "title": "What is going to happen?",
+      "subtitle": "Each test is a short story with pictures, and I tell it page by page. You can stop at any time and go back.",
+      "bubble": "You can read the story before we go in — then you already know what will happen, and there are no surprises.",
+      "likely": "We will probably meet these today",
+      "all": "All the stories",
+      "ours": "Our stories"
     }
   },
   "ru": {
@@ -119,7 +213,7 @@
     },
     "parentLabel": "Центр для родителей",
     "reasonAsk": "Расскажите, зачем мы пришли сегодня, — и я покажу вам наш путь",
-    "reasonLabel": "Мы пришли сегодня из-за",
+    "reasonLabel": "Причина визита",
     "reasonChange": "Изменить",
     "foot": "Инструмент помогает сделать визит понятнее и снизить неопределённость. Он не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные.",
     "tiles": {
@@ -130,6 +224,53 @@
       "going-home": {
         "desc": "Как закончится день"
       }
+    },
+    "reason": {
+      "title": "Почему мы пришли сегодня?",
+      "subtitle": "Выбор помогает показать вам ожидаемый путь. Его можно изменить в любой момент — любой визит начинается одинаково.",
+      "aria": "Причина визита",
+      "routeHeading": "Наш ожидаемый путь",
+      "optional": " · по необходимости",
+      "note": "Это только пример. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
+      "toTrail": "К нашему пути ←",
+      "clear": "Сбросить выбор"
+    },
+    "trail": {
+      "title": "Наш путь",
+      "subtitle": "Каждый кружок — это этап визита. Нажмите на этап, чтобы увидеть, что там происходит, что может быть трудно и что можно попросить.",
+      "bubbleStart": "Причина визита:",
+      "bubbleBody": "Каждый ребёнок начинает одинаково: регистрация, оценка состояния и осмотр врача, а дальше команда подстраивает продолжение.",
+      "bubbleChange": "Изменить причину",
+      "bubbleNone": "Вы ещё не рассказали, зачем мы пришли.",
+      "bubbleAsk": "Можно рассказать здесь",
+      "bubbleEnd": "и я подстрою путь.",
+      "hereSuffix": " — мы здесь",
+      "whatHappens": "Что здесь происходит",
+      "challenge": "Что может быть трудно",
+      "canAsk": "Что можно попросить",
+      "hereOn": "📍 Мы здесь — отменить",
+      "markHere": "Отметить: мы здесь",
+      "note": "Время — это ориентир для наглядности. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
+      "crossLink": "🏠 Что происходит в конце визита, по дороге домой ←"
+    },
+    "book": {
+      "what": "Что происходит",
+      "feel": "Что можно почувствовать",
+      "prepare": "Как подготовиться",
+      "ask": "Что можно попросить у персонала",
+      "distract": "🫧 Открыть уголок отвлечения во время процедуры",
+      "note": "Порядок и время могут меняться по решению команды и из-за загруженности приёмного покоя.",
+      "crossLink": "🎭 Ко всем историям ←",
+      "videoTitle": "Здесь будет короткое видео",
+      "videoText": "Настоящее видео: {title} в приёмном покое Ланиадо или снятая социальная история. В демо здесь только место — съёмку нужно делать в самом отделении."
+    },
+    "show": {
+      "title": "Что будет дальше?",
+      "subtitle": "Каждое обследование — это короткая история с картинками, и я рассказываю её страница за страницей. Можно остановиться в любой момент и вернуться назад.",
+      "bubble": "Можно прочитать историю до того, как зайдём, — тогда уже знаешь, что будет, и нет неожиданностей.",
+      "likely": "Скорее всего, сегодня встретятся",
+      "all": "Все истории",
+      "ours": "Наши истории"
     }
   }
 }

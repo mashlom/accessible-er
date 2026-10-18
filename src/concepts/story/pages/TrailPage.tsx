@@ -4,6 +4,8 @@ import { Link } from '../../nav'
 import { Scene, Bubble, Note } from '../components/kit'
 import { getStageIndex } from '../../../data/journey'
 import { parentJourney, parentProcedure } from '../../../data/parent'
+import { parentPaths } from '../../../data/parent/paths'
+import homeTexts from '../../../data/parent/home.json'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
@@ -20,8 +22,10 @@ import styles from '../pages.module.css'
  * concepts mid-visit keeps their place.
  */
 export function TrailPage() {
-  const { lang } = useI18n()
-  const { path } = useVisitReason()
+  const { lang, dir } = useI18n()
+  const tx = homeTexts[lang].trail
+  const { reasonId } = useVisitReason()
+  const path = reasonId ? parentPaths(lang).find((p) => p.id === reasonId) : undefined
   const [currentId, setCurrentId] = usePersistentState<string | null>(
     'journey-stage',
     null,
@@ -33,27 +37,24 @@ export function TrailPage() {
   const currentIndex = currentId ? getStageIndex(currentId) : -1
 
   return (
-    <Scene
-      title="השביל שלנו"
-      subtitle="כל עיגול הוא תחנה בביקור. לוחצים על תחנה כדי לראות מה קורה בה, מה עלול להיות קשה, ומה אפשר לבקש."
-    >
+    <div dir={dir} lang={lang} style={{ display: 'contents' }}>
+    <Scene title={tx.title} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>
           {path ? (
             <>
-              באנו בגלל <strong>{path.label}</strong>. כל ילד/ה מתחיל/ה אותו דבר —
-              קבלה, הערכה של מצב בריאות ובדיקת רופא/ה — ומשם הצוות מתאים את ההמשך.{' '}
+              {tx.bubbleStart} <strong>{path.label}</strong>. {tx.bubbleBody}{' '}
               <Link to="/reason" style={{ textDecoration: 'underline' }}>
-                שינוי הסיבה
+                {tx.bubbleChange}
               </Link>
             </>
           ) : (
             <>
-              עוד לא סיפרתם לי למה באנו.{' '}
+              {tx.bubbleNone}{' '}
               <Link to="/reason" style={{ textDecoration: 'underline', fontWeight: 700 }}>
-                אפשר לספר לי כאן
+                {tx.bubbleAsk}
               </Link>{' '}
-              ואתאים את הדרך.
+              {tx.bubbleEnd}
             </>
           )}
         </Bubble>
@@ -73,7 +74,7 @@ export function TrailPage() {
                 }`}
                 onClick={() => setOpenId(isOpen ? null : stage.id)}
                 aria-expanded={isOpen}
-                aria-label={`${stage.title}${isHere ? ' — אנחנו כאן' : ''}`}
+                aria-label={`${stage.title}${isHere ? tx.hereSuffix : ''}`}
               >
                 <span aria-hidden>{stage.emoji}</span>
                 {isDone && (
@@ -117,15 +118,15 @@ export function TrailPage() {
                 {isOpen && (
                   <div className={styles.stopDetail}>
                     <p className={styles.detailRow}>
-                      <span className={styles.detailLabel}>מה קורה כאן</span>
+                      <span className={styles.detailLabel}>{tx.whatHappens}</span>
                       {stage.whatHappens}
                     </p>
                     <p className={styles.detailRow}>
-                      <span className={styles.detailLabel}>מה עלול להיות קשה</span>
+                      <span className={styles.detailLabel}>{tx.challenge}</span>
                       {stage.challenge}
                     </p>
                     <div className={styles.detailRow}>
-                      <span className={styles.detailLabel}>מה אפשר לבקש</span>
+                      <span className={styles.detailLabel}>{tx.canAsk}</span>
                       <ul className={styles.askList}>
                         {stage.canAsk.map((a) => (
                           <li key={a}>{a}</li>
@@ -154,7 +155,7 @@ export function TrailPage() {
                       onClick={() => setCurrentId(isHere ? null : stage.id)}
                       aria-pressed={isHere}
                     >
-                      {isHere ? '📍 אנחנו כאן — לביטול' : 'לסמן: אנחנו כאן'}
+                      {isHere ? tx.hereOn : tx.markHere}
                     </button>
                   </div>
                 )}
@@ -165,15 +166,13 @@ export function TrailPage() {
       </ol>
 
       <div style={{ marginTop: 'var(--space-4)' }}>
-        <Note>
-          הזמנים הם טווחים להמחשה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות
-          ולפי העומס במיון.
-        </Note>
+        <Note>{tx.note}</Note>
       </div>
 
       <Link to="/going-home" className={styles.crossLink}>
-        🏠 מה קורה בסוף הביקור, בדרך הביתה ←
+        {tx.crossLink}
       </Link>
     </Scene>
+    </div>
   )
 }

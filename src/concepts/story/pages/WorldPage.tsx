@@ -70,7 +70,7 @@ export function WorldPage() {
     <div className={shell.page} dir={dir} lang={lang}>
       <header className={styles.homeHead}>
         <div className={styles.homeLang}>
-          <LanguagePicker />
+          <LanguagePicker align="start" />
         </div>
         <span className={styles.homeEyebrow}>{tx.eyebrow}</span>
         <h1 className={styles.homeTitle}>{tx.title}</h1>
