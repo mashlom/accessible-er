@@ -114,13 +114,7 @@ export function WorldPage() {
         </div>
       ) : (
         <Link to="/reason" className={styles.reasonStrip}>
-          <span className={styles.reasonStripEmoji} aria-hidden>
-            💭
-          </span>
           <span className={styles.reasonStripText}>{tx.reasonAsk}</span>
-          <span className={styles.reasonStripAction} aria-hidden>
-            ←
-          </span>
         </Link>
       )}
 

@@ -17,7 +17,7 @@
       "desc": "סיפור קצר, עמוד אחר עמוד"
     },
     "parentLabel": "מרכז ההורה",
-    "reasonAsk": "ספרו לי למה באנו היום — ואראה לכם את הדרך שלנו",
+    "reasonAsk": "ספרו לי — מה הביא אתכם היום?",
     "reasonLabel": "באנו היום בגלל",
     "reasonChange": "שינוי",
     "foot": "הכלי נועד להנגיש את הביקור ולהפחית אי־ודאות. הוא אינו מחליף את הצוות הרפואי ואינו מספק ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים.",
@@ -187,7 +187,7 @@
       "desc": "Read a book together with your child about what is ahead of you"
     },
     "parentLabel": "Parent centre",
-    "reasonAsk": "Tell me why we came today — and I'll show you our route",
+    "reasonAsk": "Tell me — what brought you here today?",
     "reasonLabel": "Reason for the visit",
     "reasonChange": "Change",
     "foot": "This tool is meant to make the visit easier to follow and to reduce uncertainty. It does not replace the medical team and does not give medical advice. There is no need to enter a name or identifying details.",
@@ -320,7 +320,7 @@
       "desc": "Прочтите вместе с ребёнком книгу о том, что вам предстоит"
     },
     "parentLabel": "Центр для родителей",
-    "reasonAsk": "Расскажите, зачем мы пришли сегодня, — и я покажу вам наш путь",
+    "reasonAsk": "Расскажите — что привело вас сегодня?",
     "reasonLabel": "Причина визита",
     "reasonChange": "Изменить",
     "foot": "Инструмент помогает сделать визит понятнее и снизить неопределённость. Он не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные.",

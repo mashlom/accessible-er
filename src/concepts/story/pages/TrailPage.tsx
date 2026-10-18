@@ -60,13 +60,7 @@ export function TrailPage() {
         </div>
       ) : (
         <Link to="/reason" className={styles.reasonStrip}>
-          <span className={styles.reasonStripEmoji} aria-hidden>
-            💭
-          </span>
           <span className={styles.reasonStripText}>{home.reasonAsk}</span>
-          <span className={styles.reasonStripAction} aria-hidden>
-            ←
-          </span>
         </Link>
       )}
 
