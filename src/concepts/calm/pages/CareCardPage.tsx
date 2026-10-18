@@ -1,3 +1,4 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { Link } from '../../nav'
 import { PageHeader } from '../components/ui'
 import { usePersistentState } from '../../../hooks/usePersistentState'
@@ -19,6 +20,9 @@ import styles from './CareCardPage.module.css'
  * optional; nothing identifying is required.
  */
 export function CareCardPage() {
+  const { t } = useI18n()
+  // the chosen options are saved in Hebrew (the card is for the staff); only their labels are translated
+  const translatedSections = t('careCard.cardSections', cardSections)
   const [card, setCard, clearCard] = usePersistentState<CareCard>(
     'care-card',
     emptyCard,
@@ -42,36 +46,35 @@ export function CareCardPage() {
   return (
     <div className="container">
       <PageHeader
-        eyebrow="כרטיס התאמות"
-        title="מה חשוב לדעת על הילד/ה שלי"
-        subtitle="סמנו את מה שמתאים — פחות מ־2 דקות. בסוף מקבלים כרטיס קצר שמציגים לצוות מהמסך או בהדפסה."
+        eyebrow={t('ui.text.cardTitle', 'כרטיס התאמות')}
+        title={t('ui.text.aboutMyChild', 'מה חשוב לדעת על הילד/ה שלי')}
+        subtitle={t('ui.text.cardSubtitle', 'סמנו את מה שמתאים — פחות מ־2 דקות. בסוף מקבלים כרטיס קצר שמציגים לצוות מהמסך או בהדפסה.')}
       />
 
       <div className={styles.privacy}>
         <span aria-hidden>🔒</span>
         <span>
-          הכל נשמר <strong>במכשיר הזה בלבד</strong>, נמחק אוטומטית אחרי 24 שעות, ולא
-          נשלח לשום מקום. מה שלא תציגו בעצמכם — לא יגיע לצוות. אפשר למלא בלי שם בכלל.
+          {t('ui.text.privacyA', '🔒 הכל נשמר')} <strong>{t('ui.text.privacyB', 'במכשיר הזה בלבד')}</strong>{t('ui.text.privacyC', ', נמחק אחרי 24 שעות, ולא נשלח לשום מקום.')} {t('ui.text.privacyD', 'מה שלא תציגו בעצמכם — לא יגיע לצוות. אפשר למלא בלי שם בכלל.')}
         </span>
       </div>
 
       <section className={`card ${styles.section}`}>
         <h2 className={styles.sectionTitle}>
-          <span aria-hidden>🧒</span> מי אנחנו (לא חובה)
+          <span aria-hidden>🧒</span> {t('ui.text.whoWeAre', '🧒 מי אנחנו (לא חובה)').replace('🧒 ', '')}
         </h2>
         <div className={styles.identity}>
           <label className={styles.field}>
-            <span className={styles.fieldLabel}>כינוי / שם פרטי</span>
+            <span className={styles.fieldLabel}>{t('ui.text.nickname', 'כינוי / שם פרטי')}</span>
             <input
               className={styles.input}
               value={card.nickname}
               onChange={(e) => setCard({ ...card, nickname: e.target.value })}
               maxLength={30}
-              placeholder="לא חובה"
+              placeholder={t('ui.text.optional', 'לא חובה')}
             />
           </label>
           <label className={styles.field} style={{ maxWidth: 110 }}>
-            <span className={styles.fieldLabel}>גיל</span>
+            <span className={styles.fieldLabel}>{t('ui.text.age', 'גיל')}</span>
             <input
               className={styles.input}
               value={card.age}
@@ -84,13 +87,13 @@ export function CareCardPage() {
         </div>
       </section>
 
-      {cardSections.map((section) => (
+      {cardSections.map((section, si) => (
         <section key={section.key} className={`card ${styles.section}`}>
           <h2 className={styles.sectionTitle}>
-            <span aria-hidden>{section.emoji}</span> {section.title}
+            <span aria-hidden>{section.emoji}</span> {translatedSections[si]?.title ?? section.title}
           </h2>
-          <div className={styles.chips} role="group" aria-label={section.title}>
-            {section.options.map((option) => {
+          <div className={styles.chips} role="group" aria-label={translatedSections[si]?.title ?? section.title}>
+            {section.options.map((option, oi) => {
               const on = card[section.key].includes(option)
               return (
                 <button
@@ -100,7 +103,7 @@ export function CareCardPage() {
                   aria-pressed={on}
                   onClick={() => toggle(section.key, option)}
                 >
-                  {option}
+                  {translatedSections[si]?.options?.[oi] ?? option}
                 </button>
               )
             })}
@@ -111,8 +114,8 @@ export function CareCardPage() {
               value={card.custom?.[section.key] ?? ''}
               onChange={(e) => setCustom(section.key, e.target.value)}
               maxLength={CUSTOM_MAX}
-              placeholder="אחר… (אפשר לכתוב בחופשי)"
-              aria-label={`אחר — ${section.title}`}
+              placeholder={t('ui.text.otherPlaceholder', 'אחר… (אפשר לכתוב בחופשי)')}
+              aria-label={`${t('ui.text.other', 'אחר')} — ${section.title}`}
             />
             {(card.custom?.[section.key] ?? '').length > 0 && (
               <span className={styles.otherCount}>
@@ -125,14 +128,14 @@ export function CareCardPage() {
 
       <section className={`card ${styles.section}`}>
         <h2 className={styles.sectionTitle}>
-          <span aria-hidden>✏️</span> עוד משהו שעוזר לילד/ה שלכם? (לא חובה)
+          <span aria-hidden>✏️</span> {t('ui.text.anythingElse', '✏️ עוד משהו שעוזר? (לא חובה)').replace('✏️ ', '')}
         </h2>
         <textarea
           className={styles.textarea}
           rows={3}
           value={card.freeNote}
           onChange={(e) => setCard({ ...card, freeNote: e.target.value })}
-          placeholder="למשל: אוהב שמספרים לו מה קורה בקול שקט; נרגעת עם הדובי הכחול…"
+          placeholder={t('ui.text.freeNotePlaceholder', 'למשל: אוהב שמספרים לו מה קורה בקול שקט…')}
         />
       </section>
 
@@ -142,11 +145,11 @@ export function CareCardPage() {
           className={`${styles.showBtn} ${empty ? styles.showBtnDisabled : ''}`}
           aria-disabled={empty}
         >
-          🪪 הצגת הכרטיס לצוות
+          {t('ui.buttons.showCardNext', '🪪 הצגת הכרטיס לצוות ←').replace(' ←', '')}
         </Link>
         {!empty && (
           <button type="button" className={styles.clearBtn} onClick={clearCard}>
-            ניקוי
+            {t('ui.buttons.clear', 'ניקוי')}
           </button>
         )}
       </div>

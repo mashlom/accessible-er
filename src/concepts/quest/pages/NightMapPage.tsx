@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { journeyStages } from '../../../data/journey'
+import { parentJourney } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
@@ -19,7 +20,7 @@ const DAY_COIN_IDS = new Set<string>(
 
 function StripNightMapPage() {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const { visibleOptionals, allOptionalsDone, doneProcedures } = useQuestProgress()
   // Counter shows only coins carried over from the day map
   const doneCount = [...doneProcedures].filter((id) => DAY_COIN_IDS.has(id)).length
@@ -34,7 +35,7 @@ function StripNightMapPage() {
   const firstActiveIdx = visibleOptionals.findIndex((s) => s.status !== 'done')
 
   const stages = visibleOptionals.map((s, i) => {
-    const data = journeyStages.find((j) => j.id === s.id)
+    const data = parentJourney(lang).find((j) => j.id === s.id)
     const skin = theme.stages[s.id]
     const effectiveStatus = s.status === 'done' ? 'done' : i === firstActiveIdx ? 'active' : 'locked'
     const procIds = data?.procedureIds ?? []

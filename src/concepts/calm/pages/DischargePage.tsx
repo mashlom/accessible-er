@@ -1,47 +1,26 @@
 import { Link } from '../../nav'
-import { Mascot } from '../components/Mascot'
-import { PageHeader, Note } from '../components/ui'
+import { PageHeader } from '../components/ui'
+import { useI18n } from '../../../hooks/useI18n'
+import parentUi from '../../../data/parent/ui.json'
 import styles from './SupportPages.module.css'
 
 /**
  * Discharge / going-home screen (Keren & Rotem, K6 + K13/K14).
  * Draft Hebrew copy — to be refined together with Hagit.
  */
-const dischargeBlocks: { emoji: string; title: string; body: string }[] = [
-  {
-    emoji: '📝',
-    title: 'מה קורה עכשיו',
-    body: 'הצוות מסכם איתכם את הביקור, נותן הנחיות להמשך, ולפעמים מרשם. אחר כך משתחררים הביתה.',
-  },
-  {
-    emoji: '🚪',
-    title: 'זה מעבר',
-    body: 'אחרי ביקור ארוך ומעייף, גם עצם היציאה הביתה יכולה להרגיש כמו שינוי גדול. זה בסדר גמור.',
-  },
-  {
-    emoji: '🏠',
-    title: 'בבית',
-    body: 'בבית אולי יהיה צורך בזמן, בשקט ובחזרה הדרגתית לשגרה. לפעמים התגובה למה שעברנו מגיעה רק אחר כך — וגם זה טבעי.',
-  },
-  {
-    emoji: '🧰',
-    title: 'ציוד או אביזרים לבית',
-    body: 'לפעמים צריך בבית ציוד או אביזר קטן — למשל כיסוי אטום לגבס כדי להתקלח בלי להרטיב אותו. הצוות יסביר מה צריך ואיפה להשיג.',
-  },
-  {
-    emoji: '🩺',
-    title: 'מעקב אצל רופא/ת הילדים',
-    body: 'חשוב להמשיך מעקב אצל רופא/ת הילדים בקהילה לפי ההמלצות — הם מכירים את הילד/ה וילוו אתכם גם אחרי הביקור.',
-  },
-]
+// the emoji of each block stay here; the words come from src/data/parent/ui.json (the same blocks as on the quest's celebration screen)
+const BLOCK_EMOJI = ['📝', '🚪', '🏠', '🧰', '🩺']
 
 export function DischargePage() {
+  const { t, lang } = useI18n()
+  const texts = ((parentUi as unknown as Record<'he' | 'en' | 'ru', { celebrate: { discharge: { title: string; body: string }[] } }>)[lang] ?? (parentUi as unknown as Record<'he', { celebrate: { discharge: { title: string; body: string }[] } }>).he).celebrate.discharge
+  const dischargeBlocks = texts.map((b, i) => ({ emoji: BLOCK_EMOJI[i], ...b }))
   return (
     <div className="container">
       <PageHeader
-        eyebrow="שחרור"
-        title="לקראת שחרור הביתה"
-        subtitle="מה קורה בסיום הביקור, ואיך מתכוננים לחזרה הביתה."
+        eyebrow={t('ui.calmDischarge.eyebrow', 'שחרור')}
+        title={t('ui.calmDischarge.title', 'לקראת שחרור הביתה')}
+        subtitle={t('ui.calmDischarge.subtitle', 'מה קורה בסיום הביקור, ואיך מתכוננים לחזרה הביתה.')}
       />
 
       <div className={styles.list}>
@@ -59,15 +38,7 @@ export function DischargePage() {
       </div>
 
       <div style={{ marginTop: 'var(--space-4)', textAlign: 'center' }}>
-        <Mascot size={80} mood="happy" />
-      </div>
-
-      <div style={{ marginTop: 'var(--space-3)' }}>
-        <Note>הטקסט כאן טיוטה ראשונית — לניסוח סופי יחד עם חגית.</Note>
-      </div>
-
-      <div style={{ marginTop: 'var(--space-4)', textAlign: 'center' }}>
-        <Link to="/">חזרה לדף הבית</Link>
+        <Link to="/">{t('ui.calmDischarge.home', 'חזרה לדף הבית')}</Link>
       </div>
     </div>
   )

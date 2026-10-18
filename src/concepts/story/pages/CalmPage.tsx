@@ -2,9 +2,26 @@ import { useState } from 'react'
 import { Link } from '../../nav'
 import { Roni } from '../../../components/Roni'
 import { Scene, Bubble } from '../components/kit'
-import { distressTips, readySentences } from '../../../data/support'
+import { readySentences } from '../../../data/support'
+import { useI18n } from '../../../hooks/useI18n'
+import parentUi from '../../../data/parent/ui.json'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
+
+type StoryCalmTexts = {
+  title: string
+  subtitle: string
+  breathe: string
+  circle: string
+  tipsLabel: string
+  sentencesLabel: string
+  sentencesHint: string
+  distract: string
+  requests: string
+  dialog: string
+  close: string
+  tips: { emoji: string; title: string; body: string }[]
+}
 
 /**
  * The hardest moment of the visit. Roni sits with the family, breathes
@@ -13,25 +30,25 @@ import styles from '../pages.module.css'
  */
 export function CalmPage() {
   const [shown, setShown] = useState<string | null>(null)
+  const { lang, dir } = useI18n()
+  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { storyCalm: StoryCalmTexts }>)[lang].storyCalm
 
   return (
-    <Scene
-      title="רגע קשה? אנחנו כאן"
-      subtitle="כשהילד/ה מוצף/ת, כמה דברים קטנים עוזרים. קחו נשימה — אתם עושים עבודה נהדרת."
-    >
+    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <Scene title={tx.title} subtitle={tx.subtitle}>
       <div className={styles.breathe}>
         <Roni size={120} mood="hug" float />
         <div className={styles.breatheCircle} aria-hidden>
-          נשימה
+          {tx.circle}
         </div>
         <p style={{ color: 'var(--s-ink-soft)', maxWidth: '30ch' }}>
-          אפשר לנשום יחד עם העיגול: כשהוא גדל — שואפים. כשהוא קטן — נושפים.
+          {tx.breathe}
         </p>
       </div>
 
-      <h2 className={styles.sectionLabel}>מה עוזר עכשיו</h2>
+      <h2 className={styles.sectionLabel}>{tx.tipsLabel}</h2>
       <div className={styles.tips}>
-        {distressTips.map((tip) => (
+        {tx.tips.map((tip) => (
           <div key={tip.title} className={styles.tip}>
             <span className={styles.tipEmoji} aria-hidden>
               {tip.emoji}
@@ -44,11 +61,10 @@ export function CalmPage() {
         ))}
       </div>
 
-      <h2 className={styles.sectionLabel}>משפטים מוכנים לצוות</h2>
+      <h2 className={styles.sectionLabel}>{tx.sentencesLabel}</h2>
       <div style={{ marginBottom: 'var(--space-3)' }}>
         <Bubble>
-          קשה לדבר עכשיו? לחצו על משפט — הוא יופיע בגדול על המסך, ואפשר פשוט להראות
-          אותו לצוות.
+          {tx.sentencesHint}
         </Bubble>
       </div>
       <div className={styles.sentences}>
@@ -60,10 +76,10 @@ export function CalmPage() {
       </div>
 
       <Link to="/distract" className={styles.crossLink}>
-        🫧 לפינת הסחת דעת — משהו רגוע להסתכל עליו ←
+        {tx.distract}
       </Link>
       <Link to="/requests" className={styles.crossLink}>
-        🙋 לכל מה שאפשר לבקש מהצוות ←
+        {tx.requests}
       </Link>
 
       {shown && (
@@ -71,15 +87,16 @@ export function CalmPage() {
           className={shell.overlay}
           role="dialog"
           aria-modal="true"
-          aria-label="משפט מוצג לצוות"
+          aria-label={tx.dialog}
           onClick={() => setShown(null)}
         >
           <p className={shell.overlayText}>{shown}</p>
           <button type="button" className={shell.bigBtn}>
-            סגירה
+            {tx.close}
           </button>
         </div>
       )}
     </Scene>
+    </div>
   )
 }

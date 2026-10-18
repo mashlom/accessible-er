@@ -10,6 +10,9 @@ import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
+// the tip that links to the distraction page: found by its place in the data, so it works in every language
+const REDUCE_STIMULATION_TIP = distressTips.findIndex((tip) => tip.title === 'להוריד גירויים')
+
 export function CalmPage() {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
@@ -48,7 +51,7 @@ export function CalmPage() {
           <section key={i}>
             <h2>{tip.emoji} {tip.title}</h2>
             <p>{tip.body}</p>
-            {distressTips[i].title === 'להוריד גירויים' && (
+            {i === REDUCE_STIMULATION_TIP && (
               <Link to="/distract" state={leaveState('/calm')} className={css.calmLink} style={{ marginTop: '0.5rem' }}>
                 {t('ui.buttons.distractAnimations', '🎬 אנימציות להסחת דעת →')}
               </Link>

@@ -1,8 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
-import { Navigate } from '../nav'
 import { QuestShell } from './components/QuestShell'
 import { WorldSelectPage } from './pages/WorldSelectPage'
-import { WorldLinkPage } from './pages/WorldLinkPage'
+import { WorldScope } from './components/WorldScope'
 import { MapPage } from './pages/MapPage'
 import { StagePage } from './pages/StagePage'
 import { CelebratePage } from './pages/CelebratePage'
@@ -18,29 +17,40 @@ import { CardViewPage } from './pages/CardViewPage'
 import { WaitTimesPage } from './pages/WaitTimesPage'
 import { FeedbackPage } from '../calm/pages/FeedbackPage'
 
+/** The screens of one world, under /quest/<world>/…, so every link inside a world stays in that world. */
+function WorldRoutes() {
+  return (
+    <Routes>
+      <Route index element={<MapPage />} />
+      <Route path="map" element={<MapPage />} />
+      <Route path="stage/:id" element={<StagePage />} />
+      <Route path="procedures" element={<ProcedureSelectPage />} />
+      <Route path="night-map" element={<NightMapPage />} />
+      <Route path="celebrate" element={<CelebratePage />} />
+      <Route path="shop" element={<ShopPage />} />
+      <Route path="procedure/:id" element={<ProcedureDetailPage />} />
+      <Route path="calm" element={<CalmPage />} />
+      <Route path="reason" element={<ReasonPage />} />
+      <Route path="wait-times" element={<WaitTimesPage />} />
+      <Route path="card" element={<CardPage />} />
+      <Route path="distract" element={<DistractPage />} />
+      <Route path="card/view" element={<CardViewPage />} />
+      <Route path="feedback" element={<FeedbackPage />} />
+    </Routes>
+  )
+}
+
 /** Concept 4 — "מסע עם מפה". Mounted at /quest by App.tsx. */
 export default function QuestConcept() {
   return (
     <Routes>
       <Route element={<QuestShell />}>
         <Route index element={<WorldSelectPage />} />
-        <Route path="world/:id" element={<WorldLinkPage />} />
-        <Route path="map" element={<MapPage />} />
-        <Route path="stage/:id" element={<StagePage />} />
-        <Route path="procedures" element={<ProcedureSelectPage />} />
-        <Route path="night-map" element={<NightMapPage />} />
-        <Route path="celebrate" element={<CelebratePage />} />
-        <Route path="shop" element={<ShopPage />} />
-        <Route path="procedure/:id" element={<ProcedureDetailPage />} />
-        <Route path="calm" element={<CalmPage />} />
-        <Route path="reason" element={<ReasonPage />} />
-        <Route path="wait-times" element={<WaitTimesPage />} />
-        <Route path="card" element={<CardPage />} />
-        <Route path="distract" element={<DistractPage />} />
-        <Route path="card/view" element={<CardViewPage />} />
-        <Route path="feedback" element={<FeedbackPage />} />
+        {/* /quest/<world>/<screen>, e.g. /quest/dollhouse/wait-times; an address without a world goes to the chosen one */}
+        <Route path=":worldId/*" element={<WorldScope />}>
+          <Route path="*" element={<WorldRoutes />} />
+        </Route>
       </Route>
-      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
 }

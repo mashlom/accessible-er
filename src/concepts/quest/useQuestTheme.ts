@@ -1,6 +1,7 @@
 import { useMemo, useSyncExternalStore } from 'react'
 import { getTheme, type QuestTheme } from './themes'
 import { useI18n } from '../../hooks/useI18n'
+import { worldText, type WorldLang } from '../../data/child/worlds'
 
 const KEY = 'quest-theme'
 
@@ -23,23 +24,27 @@ function setThemeId(newId: string) {
 
 export function useQuestTheme(): { theme: QuestTheme; setThemeId: (id: string) => void } {
   const current = useSyncExternalStore(subscribe, () => id)
-  const { lang, t } = useI18n()
+  const { lang } = useI18n()
 
   const theme = useMemo(() => {
+    // every world's child texts come from src/data/child/worlds/<world>/texts.json (the language, else Hebrew)
     const base = getTheme(current)
-    if (base.id !== 'ocean' || lang === 'he') return base
+    const tx = worldText(base.id, lang as WorldLang)
+    if (!tx) return base
+    const stages = Object.fromEntries(
+      Object.entries(base.stages).map(([id, st]) => [id, { ...st, ...tx.stages?.[id] }]),
+    )
     return {
       ...base,
-      name: t('ocean.meta.name', base.name),
-      stages: t('ocean.stages', base.stages),
-      procedureNarratives: t('ocean.procedures', base.procedureNarratives ?? {}),
-      procedureSteps: t('ocean.procedureSteps', base.procedureSteps ?? {}),
-      procedureVariants: t('ocean.procedureVariants', base.procedureVariants ?? {}),
-      calmLines: t('ocean.calm', base.calmLines ?? []),
-      cardChildHero: t('ocean.card', base.cardChildHero ?? { title: '', subtitle: '' }),
-      distractTitle: t('ocean.distract', base.distractTitle ?? ''),
+      name: tx.name ?? base.name,
+      stages,
+      procedureNarratives: tx.procedureNarratives,
+      procedureSteps: tx.procedureSteps,
+      procedureVariants: tx.procedureVariants,
+      calmLines: tx.calmLines,
+      cardChildHero: tx.cardChildHero,
+      distractTitle: tx.distractTitle,
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current, lang])
 
   return { theme, setThemeId }

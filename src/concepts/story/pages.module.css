@@ -9,21 +9,34 @@
 }
 
 .actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  justify-content: center;
   margin-top: var(--space-4);
 }
+/* the two buttons of a row are the same width and shape */
+.actions > * {
+  width: 100%;
+  box-sizing: border-box;
+}
 
+/* a cross link looks like the secondary button (ghostBtn), not like an inline link */
 .crossLink {
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 58px;
   margin-top: var(--space-4);
+  padding: 12px 26px;
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
+  background: #fff;
+  color: #173b4d;
   font-weight: 800;
-  color: var(--s-coral-dark);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  font-size: 1.1rem;
+  text-align: center;
+  text-decoration: none;
 }
 
 /* ============================================================
@@ -139,13 +152,13 @@
   align-items: center;
   gap: 12px;
   margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
   padding: 12px var(--space-3);
-  background: var(--s-sun-soft);
-  border: 3px solid #fff;
-  border-radius: var(--s-r-lg);
+  background: #fbf6e9;
+  border: 1px solid #efe2c2;
+  border-radius: 14px;
   font-weight: 700;
   color: var(--s-ink);
-  box-shadow: var(--s-shadow-soft);
 }
 .reasonStripEmoji {
   font-size: 1.9rem;
@@ -160,6 +173,18 @@
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--s-ink-faint);
+}
+.reasonStripChange {
+  flex-shrink: 0;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #e5b98d;
+  background: #fff;
+  color: var(--s-ink);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
 }
 .reasonStripAction {
   font-weight: 800;
@@ -199,7 +224,7 @@
   padding: var(--space-3) 10px var(--space-4);
   background: #fff;
   border: 3px solid #fff;
-  border-radius: var(--s-r-lg);
+  border-radius: 14px;
   box-shadow: var(--s-shadow-soft);
   transition: transform 0.15s var(--ease);
 }
@@ -332,32 +357,35 @@
 .trail::before {
   content: '';
   position: absolute;
-  top: 38px;
-  bottom: 38px;
-  inset-inline-start: 36px;
+  top: 18px;
+  bottom: 18px;
+  inset-inline-start: 17px;
   width: 0;
-  border-inline-start: 5px dashed rgba(75, 191, 174, 0.5);
+  border-inline-start: 2px solid #c9d3d9;
 }
 
 .stop {
   position: relative;
   display: grid;
-  grid-template-columns: 76px 1fr;
+  grid-template-columns: 36px 1fr;
   align-items: start;
-  gap: 12px;
+  gap: 14px;
 }
 
 .stopDot {
   position: relative;
-  width: 76px;
-  height: 76px;
+  width: 36px;
+  height: 36px;
+  margin-top: 14px;
   border-radius: 50%;
-  border: 4px solid #fff;
-  background: var(--s-paper-2);
+  border: 2px solid #c9d3d9;
+  background: #fff;
   display: grid;
   place-items: center;
-  font-size: 2rem;
-  box-shadow: 0 6px 14px rgba(51, 69, 92, 0.12);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #526570;
+  box-shadow: none;
   z-index: 1;
   transition: transform 0.15s var(--ease);
 }
@@ -365,12 +393,35 @@
   transform: scale(1.05);
 }
 .stopDone {
-  background: var(--s-mint-soft);
+  background: #2fa84f;
+  border-color: #2fa84f;
+  color: #fff;
 }
 .stopHere {
-  background: var(--s-sun-soft);
-  border-color: var(--s-sun);
-  box-shadow: 0 0 0 6px rgba(246, 185, 59, 0.25);
+  background: #2fa84f;
+  border-color: #2fa84f;
+  box-shadow: 0 0 0 5px rgba(47, 168, 79, 0.2);
+}
+
+.trailHead {
+  text-align: start;
+  margin-bottom: var(--space-4);
+}
+.trailTitle {
+  margin: 0;
+  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.2rem);
+  font-weight: 800;
+  color: #173b4d;
+  line-height: 1.2;
+}
+.trailLead {
+  display: block;
+  font-weight: 400;
+}
+.trailSub {
+  margin: 8px 0 0;
+  color: #526570;
+  font-size: 1rem;
 }
 
 .stopStar {
@@ -403,15 +454,15 @@
 
 .stopCard {
   background: #fff;
-  border: 3px solid #fff;
-  border-radius: var(--s-r-lg);
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   padding: var(--space-3);
-  box-shadow: var(--s-shadow-soft);
+  box-shadow: none;
   text-align: start;
   width: 100%;
 }
 .stopCardHere {
-  border-color: var(--s-sun);
+  border-color: #2fa84f;
 }
 
 .stopTitleRow {
@@ -488,17 +539,18 @@
 
 .hereBtn {
   margin-top: var(--space-3);
-  width: 100%;
+  width: auto;
   min-height: 48px;
-  border-radius: var(--s-r-pill);
-  border: 3px solid var(--s-line);
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid #e5b98d;
   background: #fff;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--s-ink);
 }
 .hereBtnOn {
-  border-color: var(--s-sun);
-  background: var(--s-sun-soft);
+  border-color: #e5b98d;
+  background: #fff;
 }
 
 /* ============================================================
@@ -730,26 +782,27 @@
 }
 
 .watchPicker {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
-  justify-content: center;
   margin-top: var(--space-4);
 }
 
 .watchOpt {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  width: 84px;
-  padding: 10px 4px;
-  border: 3px solid var(--s-line);
-  border-radius: var(--s-r-lg);
+  min-width: 0;
+  padding: 10px 6px;
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   background: #fff;
   font-weight: 700;
   font-size: 0.85rem;
-  color: var(--s-ink);
+  line-height: 1.25;
+  text-align: center;
+  color: #173b4d;
 }
 .watchOpt span {
   font-size: 1.8rem;
@@ -807,10 +860,12 @@
 
 .room {
   background: #fff;
-  border: 3px solid #fff;
-  border-radius: var(--s-r-lg);
-  box-shadow: var(--s-shadow-soft);
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
+  box-shadow: none;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .roomTop {
@@ -818,21 +873,21 @@
   align-items: center;
   gap: 12px;
   padding: var(--space-3);
-  background: var(--roomTint);
+  background: #fff;
 }
 .roomEmoji {
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: #fff;
+  background: #f3f7f9;
   display: grid;
   place-items: center;
   font-size: 1.8rem;
   flex: none;
 }
 .roomName {
-  font-weight: 800;
-  color: var(--s-ink);
+  font-weight: 700;
+  color: #173b4d;
   font-size: 1.05rem;
 }
 .loadBadge {
@@ -849,6 +904,9 @@
 }
 
 .roomBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: var(--space-3);
   font-size: 0.92rem;
   line-height: 1.6;
@@ -856,14 +914,15 @@
 }
 
 .weather {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
-  margin-top: var(--space-3);
+  margin-top: auto;
 }
 .weatherChip {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
   border-radius: var(--s-r-pill);
   padding: 5px 11px;
@@ -883,9 +942,10 @@
 }
 
 .roomNext {
-  margin-top: var(--space-3);
+  margin-top: var(--space-4);
+  padding-top: 0;
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--s-ink);
   background: var(--s-paper-2);
   border-radius: var(--s-r);
@@ -1038,8 +1098,8 @@
 .textarea {
   font: inherit;
   width: 100%;
-  border: 3px solid var(--s-line);
-  border-radius: var(--s-r);
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   padding: 12px 14px;
   background: #fff;
   color: var(--s-ink);
@@ -1166,22 +1226,25 @@
    Feedback
    ============================================================ */
 .faces {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
 }
 .face {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  width: 92px;
+  min-width: 0;
   padding: 12px 6px;
-  border: 3px solid var(--s-line);
-  border-radius: var(--s-r-lg);
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   background: #fff;
   font-weight: 700;
-  color: var(--s-ink);
+  font-size: 0.95rem;
+  color: #173b4d;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 .faceOn {
   border-color: var(--s-coral);
@@ -1213,4 +1276,122 @@
   font-size: 0.8rem;
   color: var(--s-ink-faint);
   word-break: break-all;
+}
+
+/* ---- home (parent side, with the child's world on top) ---- */
+.homeHead {
+  text-align: center;
+  padding: 1.25rem 0.5rem 0.5rem;
+}
+.homeEyebrow {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #087e8b;
+}
+.homeTitle {
+  margin: 0.25rem 0;
+  color: #173b4d;
+  font-size: clamp(2rem, 6vw, 2.6rem);
+}
+.homeSub {
+  margin: 0;
+  color: #526570;
+}
+.homeSection {
+  margin-top: 1.25rem;
+}
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.sectionChip {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+}
+.childCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.childCard {
+  border: none;
+  box-shadow: 0 6px 18px rgba(23, 59, 77, 0.06);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 0.9rem;
+  border-radius: 14px;
+  background: var(--s-grass-soft);
+  color: inherit;
+  text-decoration: none;
+  min-height: 48px;
+}
+.childCardIcon {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+.childCardName {
+  font-weight: 700;
+}
+.childCardDesc {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.homeLang {
+  display: flex;
+  direction: ltr;
+  justify-content: flex-start;
+  margin-bottom: 0.25rem;
+}
+
+/* the helper's tile in the parent centre is a button, not a link */
+button.dest {
+  border: none;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+/* the home's accents follow the design tokens: ink, secondary text, action teal */
+.homeSection .worldLabel {
+  color: #173b4d;
+}
+.homeSection .sectionChip {
+  color: #526570;
+}
+
+
+/* the question in the next-step line is bold, the answer is plain */
+.roomNextLabel {
+  font-weight: 700;
+}
+
+/* the description keeps the same gap above the sensory marks as the marks keep above the next step; extra room goes above the marks */
+.roomBody > p:first-child {
+  margin: 0 0 var(--space-4);
+}
+
+/* every card on the story pages is the same plain card as the first one on the card page */
+.tip,
+.showCard,
+.dest,
+.childCard,
+.room,
+.stopCard,
+.reasonBtn {
+  background: #fff;
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
+  box-shadow: none;
 }

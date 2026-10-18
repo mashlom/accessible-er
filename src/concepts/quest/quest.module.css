@@ -2861,6 +2861,9 @@ path.oceanTrailLit {
 
 .oceanSheet .procedureSteps {
   color: var(--tok-text) !important;
+  /* the steps are the same size as the sheet's own text, not the page's rem size */
+  font-size: max(calc(16 * var(--u)), 15px);
+  line-height: 1.4;
 }
 
 /* the picture sits on a panel: the sea floor with its light ripples, under a pale teal veil that fades out downwards
@@ -3161,4 +3164,9 @@ path.oceanTrailLit {
 
 .questShellOcean .calmChildLine {
   color: #065a66;
+}
+
+/* the heart on the 'it's hard for us' button: a gap before the words */
+.heartIcon {
+  margin-inline-end: 0.4em;
 }

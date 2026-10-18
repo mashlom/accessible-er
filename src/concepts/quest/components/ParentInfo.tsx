@@ -2,8 +2,7 @@ import { lockBodyScroll } from '../../../lib/scrollLock'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from '../../nav'
 import { SensoryBar } from '../../../components/SensoryBar'
-import { journeyStages } from '../../../data/journey'
-import { getProcedure } from '../../../data/procedures'
+import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { useQuestTheme } from '../useQuestTheme'
@@ -73,11 +72,26 @@ export function ParentInfo({ stageId: stageOverride, inline, ocean, initialProc 
   )
 }
 
-function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClose: () => void; initialProc?: string }) {
-  const { t, dir } = useI18n()
+/** The sheet itself is exported for the books: the picture book opens it under its child pages. */
+export function ParentSheet({
+  stageId,
+  onClose,
+  initialProc,
+  oceanLook,
+  questLinks = true,
+}: {
+  stageId: string
+  onClose: () => void
+  initialProc?: string
+  /** force the ocean styling outside the quest (the books) */
+  oceanLook?: boolean
+  /** the reason/card links lead into the quest, so the books hide them */
+  questLinks?: boolean
+}) {
+  const { t, lang, dir } = useI18n()
   const { theme } = useQuestTheme()
   const closeRef = useRef<HTMLButtonElement>(null)
-  const ocean = theme.id === 'ocean'
+  const ocean = oceanLook ?? theme.id === 'ocean'
   // ocean: a procedure's details slide in inside this same sheet
   const [proc, setProc] = useState<string | null>(initialProc ?? null)
   const procRef = useRef(proc)
@@ -99,16 +113,16 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
     }
   }, [onClose])
 
-  const data = t('journey.journeyStages', journeyStages).find((j) => j.id === stageId)
+  const data = parentJourney(lang).find((j) => j.id === stageId)
   if (!data) return null
 
   const singleProcId = data.procedureIds?.length === 1 ? data.procedureIds[0] : undefined
-  const singleProc = singleProcId ? t(`procedures.procedures.${singleProcId}`, getProcedure(singleProcId)) : undefined
+  const singleProc = singleProcId ? parentProcedure(lang, singleProcId) : undefined
 
   return (
     <div className={css.sheetBackdrop} onClick={onClose}>
       <div
-        className={theme.id === 'ocean' ? `${css.sheet} ${css.oceanSheet}` : css.sheet}
+        className={ocean ? `${css.sheet} ${css.oceanSheet}` : css.sheet}
         role="dialog"
         aria-modal="true"
         aria-label={t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
@@ -141,7 +155,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
           <section className={css.sheetCard}>
             <h2>{t('ui.text.weAreHere', 'אנחנו כאן')}</h2>
             <p>{data.meaning}</p>
-            {stageId === 'reception' && (
+            {stageId === 'reception' && questLinks && (
               <>
                 <p className={css.sheetHint}>{t('ui.text.reasonHint', 'בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.')}</p>
                 <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits', '🗺️ מה מחכה לנו היום?')}</Link>
@@ -178,7 +192,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
           <section className={css.sheetCard}>
             <h2>{t('ui.text.whatMayBeHard', 'מה יכול להיות קשה?')}</h2>
             <p>{data.challenge}</p>
-            {stageId === 'reception' && (
+            {stageId === 'reception' && questLinks && (
               <>
                 <p className={css.sheetHint}>{t('ui.text.cardHint', 'בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.')}</p>
                 <Link to="/card" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.cardForStaff', '🪪 כרטיס התאמות לצוות')}</Link>
@@ -192,7 +206,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
             <h2>{t('ui.text.prepareMeasurements', 'איך להכין את הילד/ה למדידות שעומדות לקרות')}</h2>
             {data.nextStagePrepare && <p>{data.nextStagePrepare}</p>}
             {WAIT_PROCS.map((pid) => {
-              const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
+              const proc = parentProcedure(lang, pid)
               if (!proc) return null
               return (
                 <div key={pid} className={css.sheetProc}>
@@ -229,7 +243,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
             <h2>{t('ui.text.stageProcedures', 'פרוצדורות בשלב הזה')}</h2>
             <ul className={css.sheetLinks}>
               {data.procedureIds.map((pid) => {
-                const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
+                const proc = parentProcedure(lang, pid)
                 return (
                   <li key={pid}>
                     {ocean ? (
@@ -247,7 +261,7 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
           </section>
         )}
 
-        {!ocean && <Link to="/calm" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.hardNow', '💙 קשה לנו כרגע')}</Link>}
+        {!ocean && <Link to="/calm" state={{ from: '/map' }} className={css.calmLink}><span aria-hidden className={css.heartIcon}>💙</span> {t('ui.buttons.hardNow', 'קשה לנו כרגע')}</Link>}
           </>
         )}
 
@@ -273,9 +287,9 @@ function ParentSheet({ stageId, onClose, initialProc }: { stageId: string; onClo
 
 /** One procedure's details for the parent, shown inside the parent sheet (slides in from the "forward" side) */
 function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
-  const { t, dir } = useI18n()
+  const { t, lang, dir } = useI18n()
   const { theme } = useQuestTheme()
-  const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
+  const proc = parentProcedure(lang, pid)
   const narrative = theme.procedureNarratives?.[pid]
   if (!proc) return null
 

@@ -1,4 +1,6 @@
+import { useLayoutEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { setI18nEnabled } from '../../hooks/useI18n'
 import { Navigate } from '../nav'
 import { AppShell } from './components/AppShell'
 import { HomePage } from './pages/HomePage'
@@ -19,6 +21,12 @@ import { QrPage } from './pages/QrPage'
 
 /** Concept 1 — "רגוע ומסודר". Mounted at /calm by App.tsx. */
 export default function CalmConcept() {
+  // translations are on while the calm concept is open (the parent texts have their own file, parent/texts.json)
+  useLayoutEffect(() => {
+    setI18nEnabled(true)
+    return () => setI18nEnabled(false)
+  }, [])
+
   return (
     <Routes>
       <Route element={<AppShell />}>

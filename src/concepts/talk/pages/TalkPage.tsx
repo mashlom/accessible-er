@@ -7,7 +7,9 @@ import { usePersistentState } from '../../../hooks/usePersistentState'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { DAY_MS } from '../../../lib/storage'
 import { emptyCard, type CardArrayField, type CareCard } from '../../../data/careCard'
-import { resolveNode, type Action, type Choice, type Say } from '../script'
+import { resolveNode, talkText, topicChoices, type Action, type Choice, type Say } from '../script'
+import { useI18n } from '../../../hooks/useI18n'
+import parentUi from '../../../data/parent/ui.json'
 import styles from '../talk.module.css'
 
 /** One exchange: what Roni said, and what the family answered to it. */
@@ -24,15 +26,8 @@ const RATING_LABELS: Record<number, string> = {
   3: 'עזר מאוד',
 }
 
-/** Roni's asides when the child taps him — not part of the conversation. */
-const tapAsides: { text: string; mood: RoniMood }[] = [
-  { text: 'היי! נגעתם בי 😊', mood: 'happy' },
-  { text: 'אני כאן. לא הולך לשום מקום.', mood: 'hug' },
-  { text: 'רוצים לנשום איתי? פנימה… והחוצה…', mood: 'calm' },
-  { text: 'אתם עושים את זה מצוין!', mood: 'cheer' },
-  { text: 'אפשר גם רק לשבת בשקט. גם זה בסדר.', mood: 'sleepy' },
-  { text: 'אני גאה בכם 🌟', mood: 'proud' },
-]
+/** Roni's asides when the child taps him — not part of the conversation. Texts per language in talk.json. */
+const tapMoods: RoniMood[] = ['happy', 'hug', 'calm', 'cheer', 'sleepy', 'proud']
 
 const reduceMotion = () =>
   !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
@@ -61,7 +56,20 @@ function readTrail(): Turn[] {
  * throw the family back to the beginning. It is rebuilt by re-resolving each
  * node, so no message text is ever persisted.
  */
+// the topic buttons use the same words as the home tiles (src/data/parent/ui.json), in the chosen language
+const TOPIC_TILE: Record<string, string> = { reason: 'reason', prep: 'procedures', card: 'card', map: 'map', ask: 'requests', home: 'discharge' }
+
 export function TalkPage() {
+  const { lang } = useI18n()
+  const ui = talkText(lang).ui
+  const topicLabel = (choice: Choice): string => {
+    if (choice.go === 'topics') return talkText(lang).topics.back
+    if (!topicChoices.some((tc) => tc.go === choice.go && tc.label === choice.label)) return choice.label
+    const tiles = (parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string }> }>)[lang]?.tiles
+    const tile = TOPIC_TILE[choice.go ?? ''] ?? ''
+    if (tile && tiles && tiles[tile]) return tiles[tile].title
+    return (talkText(lang).topicNames as Record<string, string>)[choice.go ?? ''] ?? choice.label
+  }
   const navigate = useNavigate()
   const path = useConceptPath()
 
@@ -82,7 +90,7 @@ export function TalkPage() {
   const timer = useRef<number>()
   const asideTimer = useRef<number>()
 
-  const ctx = useMemo(() => ({ reasonId, stageId, card }), [reasonId, stageId, card])
+  const ctx = useMemo(() => ({ reasonId, stageId, card, lang }), [reasonId, stageId, card, lang])
   const currentId = trail[trail.length - 1].node
   const current = useMemo(() => resolveNode(currentId, ctx), [currentId, ctx])
 
@@ -170,7 +178,7 @@ export function TalkPage() {
     setAside(null)
     setTrail((prev) => {
       const head = prev.slice(0, -1)
-      const last = { ...prev[prev.length - 1], answer: choice.label }
+      const last = { ...prev[prev.length - 1], answer: topicLabel(choice) }
       return [...head, last, { node: choice.go! }]
     })
   }
@@ -184,8 +192,8 @@ export function TalkPage() {
   }
 
   function tapRoni() {
-    const next = tapAsides[Math.floor(Math.random() * tapAsides.length)]
-    setAside(next)
+    const i = Math.floor(Math.random() * tapMoods.length)
+    setAside({ text: talkText(lang).asides[i], mood: tapMoods[i] })
     window.clearTimeout(asideTimer.current)
     asideTimer.current = window.setTimeout(() => setAside(null), 5000)
   }
@@ -213,7 +221,7 @@ export function TalkPage() {
                   type="button"
                   className={styles.msgAvatar}
                   onClick={tapRoni}
-                  aria-label="רוני"
+                  aria-label={ui.roni}
                 >
                   <Roni size={34} mood={m.say?.mood ?? 'calm'} decorative />
                 </button>
@@ -235,7 +243,7 @@ export function TalkPage() {
                 type="button"
                 className={styles.msgAvatar}
                 onClick={tapRoni}
-                aria-label="רוני"
+                aria-label={ui.roni}
               >
                 <Roni size={34} mood={aside.mood} decorative />
               </button>
@@ -249,7 +257,7 @@ export function TalkPage() {
                 type="button"
                 className={styles.msgAvatar}
                 onClick={tapRoni}
-                aria-label="רוני"
+                aria-label={ui.roni}
               >
                 <Roni size={34} mood="calm" decorative />
               </button>
@@ -270,7 +278,7 @@ export function TalkPage() {
             <div
               className={styles.multi}
               role="group"
-              aria-label="אפשר לסמן כמה תשובות"
+              aria-label={ui.multiGroup}
             >
               {current.multi.options.map((option) => {
                 const on = card[current.multi!.field].includes(option)
@@ -283,7 +291,7 @@ export function TalkPage() {
                     onClick={() => toggleCardOption(current.multi!.field, option)}
                   >
                     {on && <span aria-hidden>✓ </span>}
-                    {option}
+                    {current.multi!.labels[current.multi!.options.indexOf(option)] ?? option}
                   </button>
                 )
               })}
@@ -299,12 +307,12 @@ export function TalkPage() {
                 onClick={() => choose(choice)}
               >
                 {choice.emoji && <span aria-hidden>{choice.emoji}</span>}
-                {choice.label}
+                {topicLabel(choice)}
               </button>
             ))
           ) : (
             <button type="button" className={styles.answerQuiet} onClick={revealAll}>
-              להראות הכול עכשיו
+              {ui.showAll}
             </button>
           )}
         </div>
@@ -315,12 +323,12 @@ export function TalkPage() {
           className={styles.overlay}
           role="dialog"
           aria-modal="true"
-          aria-label="משפט מוצג לצוות"
+          aria-label={ui.bigSentence}
           onClick={() => setBig(null)}
         >
           <p className={styles.overlayText}>{big}</p>
           <button type="button" className={styles.overlayClose}>
-            סגירה
+            {ui.close}
           </button>
         </div>
       )}

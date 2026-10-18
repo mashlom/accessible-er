@@ -57,7 +57,7 @@
 /* decorative sky furniture — sun + clouds, behind everything */
 .skyDeco {
   position: fixed;
-  inset: 0 0 auto 0;
+  inset: 64px 0 auto 0;
   height: 320px;
   pointer-events: none;
   z-index: 0;
@@ -66,7 +66,7 @@
 .sun {
   position: absolute;
   top: 26px;
-  inset-inline-end: 8%;
+  right: 8%;
   width: 74px;
   height: 74px;
   border-radius: 50%;
@@ -89,7 +89,7 @@
 }
 .cloudA {
   top: 58px;
-  inset-inline-start: 6%;
+  left: 6%;
   width: 96px;
   height: 30px;
   animation: drift 46s linear infinite;
@@ -137,7 +137,7 @@
   position: sticky;
   top: 0;
   z-index: 30;
-  padding: 10px var(--space-3);
+  background: #fff;
 }
 
 .topbarInner {
@@ -147,12 +147,7 @@
   grid-template-columns: 52px 1fr 52px;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(10px);
-  border: 2px solid #fff;
-  border-radius: var(--s-r-pill);
-  padding: 6px;
-  box-shadow: 0 6px 18px rgba(51, 69, 92, 0.1);
+  padding: 6px var(--space-4);
 }
 
 .topBtn {
@@ -241,6 +236,13 @@
   box-shadow: var(--s-shadow);
 }
 
+.bubblePlain {
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
+  box-shadow: none;
+  color: #173b4d;
+}
+
 .bubbleTail {
   position: absolute;
   bottom: -16px;
@@ -265,25 +267,22 @@
   min-height: 58px;
   padding: 12px 26px;
   border: none;
-  border-radius: var(--s-r-pill);
-  background: var(--s-coral);
+  border-radius: 14px;
+  background: #087e8b;
   color: #fff;
   font-size: 1.1rem;
   font-weight: 800;
-  box-shadow: 0 5px 0 var(--s-coral-dark);
+  box-shadow: none;
   transition: transform 0.12s var(--ease), box-shadow 0.12s var(--ease);
 }
 .bigBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 7px 0 var(--s-coral-dark);
+  background: #076e79;
 }
 .bigBtn:active {
-  transform: translateY(3px);
-  box-shadow: 0 2px 0 var(--s-coral-dark);
+  transform: translateY(1px);
 }
 .bigBtn:disabled {
-  background: #d6ddE4;
-  box-shadow: 0 5px 0 #bcc6d0;
+  background: #d6dde4;
   color: #fff;
   cursor: not-allowed;
   transform: none;
@@ -294,13 +293,14 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 52px;
-  padding: 10px 22px;
-  border: 3px solid var(--s-line);
-  border-radius: var(--s-r-pill);
+  min-height: 58px;
+  padding: 12px 26px;
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   background: #fff;
-  color: var(--s-ink);
-  font-weight: 700;
+  color: #173b4d;
+  font-weight: 800;
+  font-size: 1.1rem;
 }
 .ghostBtn:hover {
   border-color: var(--s-mint);
@@ -308,10 +308,10 @@
 
 .panel {
   background: #fff;
-  border: 3px solid #fff;
-  border-radius: var(--s-r-lg);
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   padding: var(--space-4);
-  box-shadow: var(--s-shadow-soft);
+  box-shadow: none;
 }
 
 .panelTitle {
@@ -360,11 +360,12 @@
 }
 
 .note {
-  color: var(--s-ink-faint);
+  color: #526570;
   font-size: 0.88rem;
   line-height: 1.6;
-  background: var(--s-paper-2);
-  border-radius: var(--s-r);
+  background: #fff;
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   padding: var(--space-3);
 }
 
@@ -530,4 +531,15 @@
   line-height: 1.35;
   color: var(--s-ink);
   max-width: 20ch;
+}
+
+/* the flag at the end of the top bar has no round background */
+.topFlag {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+  background: transparent;
+  border: none;
 }

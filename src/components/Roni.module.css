@@ -56,7 +56,7 @@
 
 .waveArm {
   animation: wave 1.8s ease-in-out infinite;
-  transform-origin: 145px 130px;
+  transform-origin: 146px 140px;
 }
 
 @keyframes wave {
@@ -65,9 +65,9 @@
     transform: rotate(0deg);
   }
   30% {
-    transform: rotate(-16deg);
+    transform: rotate(-9deg);
   }
   60% {
-    transform: rotate(10deg);
+    transform: rotate(6deg);
   }
 }

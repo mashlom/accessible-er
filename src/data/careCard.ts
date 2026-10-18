@@ -171,9 +171,19 @@ const adaptationSuggestions: Record<string, string> = {
   'להישאר במקום אחד': 'הפסקות קצרות ותנועה בין שלבים',
 }
 
-export function suggestedAdaptations(card: CareCard): string[] {
+export function suggestedAdaptations(
+  card: CareCard,
+  // translations keyed by the Hebrew option (src/data/i18n/careCard.json); missing entries fall back to Hebrew
+  translated?: Record<string, string>,
+): string[] {
   const picked = [...card.sensitivities, ...card.escalators, ...card.hardMoments]
-  return [...new Set(picked.map((p) => adaptationSuggestions[p]).filter(Boolean))]
+  return [
+    ...new Set(
+      picked
+        .map((p) => (translated?.[p] && adaptationSuggestions[p] ? translated[p] : adaptationSuggestions[p]))
+        .filter(Boolean),
+    ),
+  ]
 }
 
 export function isCardEmpty(card: CareCard): boolean {

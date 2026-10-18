@@ -1,0 +1,353 @@
+{
+  "he": {
+    "reception": {
+      "title": "למה צריך תיק ביקור?",
+      "text": "לכל מי שמגיע לבית החולים פותחים תיקייה מיוחדת. התיקייה נשמרת במחשב. האחיות והרופאים שידברו איתך יכולים לראות אותה. למשל, רופא יכול לכתוב שצריך בדיקת דם — והאחות תדע מה לעשות.\n\nלשם כך כל המחשבים בבית החולים מחוברים לרשת משותפת. גם אם האינטרנט מתנתק, המידע נשאר זמין לכל האחיות והרופאים שיעזרו לך.",
+      "draft": true
+    },
+    "wait-before-triage": {
+      "title": "למה מחכים?",
+      "text": "לחדר המיון מגיעים ילדים שצריכים עזרה. לפעמים צריך לעזור מיד ודחוף.\n\nבחנות בדרך כלל משרתים אנשים לפי התור: מי שהגיע קודם לקופה משלם קודם והולך קודם.\n\nבבית החולים זה לא כך: אם למישהו צריך עזרה דחופה, האחרים צריכים לחכות.",
+      "draft": true
+    },
+    "wait-doctor": {
+      "title": "מה עושים בזמן ההמתנה?",
+      "text": "אפשר לשחק, לקרוא או לנשום לאט. הרופא/ה יגיע/תגיע כשיהיה זמן.",
+      "draft": true
+    },
+    "doctor": {
+      "title": "איך עובד הסטטוסקופ?",
+      "text": "בהתחלה רופאים לחצו את האוזן לגב של אדם והקשיבו לנשימה ולפעימות הלב. אבל האוזן שומעת צלילים שקטים לא טוב, וגם קשה ללחוץ את האוזן לחזה של מישהו אחר. אז מישהו המציא צינור. הוא נקרא סטטוסקופ: המילה \"סטטוס\" ביוונית פירושה \"חזה\".\n\nהצינור אוסף את הקול מתוך הגוף ומוביל אותו ישר לאוזן, כאילו מקרב אותו. לכן הצלילים נשמעים חזק וברור יותר, והרעש מהחדר כמעט לא מפריע.\n\nלקצה הסטטוסקופ יש ראש מתכת עם שני צדדים. צד אחד הוא דיסק דק מפלסטיק, שנקרא ממברנה. הוא שומע טוב צלילים גבוהים, כמו נשימה ופעולת שסתומי הלב. הצד השני דומה לכוס קטנה. הוא שומע טוב יותר צלילים נמוכים. הרופא/ה מהפך/ת את הראש כדי להקשיב לדברים שונים.\n\nהסטטוסקופ הופך את הצלילים של הגוף לברורים, שקטים ומובנים.",
+      "draft": true
+    },
+    "tests": {
+      "title": "איך עושים בדיקת דם?",
+      "text": "לוקחים מעט דם מהיד בעזרת מחט דקה מאוד. זה רגע קצר, ואחריו מטפלים במקום.",
+      "draft": true
+    },
+    "treatment": {
+      "title": "איך עובד טיפול?",
+      "text": "תרופות נכנסות לגוף ועוזרות לו להחלים. לכל טיפול יש סיבה, והצוות מסביר אותה.",
+      "draft": true
+    },
+    "consult": {
+      "title": "מי הם מומחים?",
+      "draft": true,
+      "text": "רופאים מומחים מכירים מאוד טוב מערכת אחת בגוף, למשל את הלב או את העיניים. לכן כשהרופא הרגיל צריך לבדוק משהו לעומק, הוא קורא למומחה.\n\nקרדיולוג מכיר את הלב ואת כלי הדם. רופא עיניים דואג לעיניים. נוירולוג מכיר את המוח ואת העצבים. אורתופד דואג לעצמות, למפרקים ולשרירים. רופא ריאות דואג לריאות ולנשימה. גסטרואנטרולוג בודק את הבטן: הקיבה והמעיים. נפרולוג מכיר את הכליות. רופא עור דואג לעור. רופא אף אוזן גרון דואג לאוזניים, לגרון ולאף. המטולוג דואג לדם.\n\nהמומחה מגיע, שואל שאלות ומסתכל עליך בעיון. הוא יכול להזמין עוד בדיקה או טיפול, שצריך בדיוק לחלק הזה בגוף.\n\nלא צריך לזכור את כל השמות. מספיק לדעת: לכל רופא יש חלק בגוף שהוא מכיר במיוחד טוב."
+    },
+    "wait-results": {
+      "title": "למה התוצאות לוקחות זמן?",
+      "text": "בדיקות מסוימות נשלחות למעבדה, ושם צריך זמן לבדוק אותן בקפידה.",
+      "draft": true
+    },
+    "decision": {
+      "title": "איך מחליטים לשחרר?",
+      "draft": true,
+      "text": "הרופא בודק את כל התוצאות: הבדיקה, המדידות, הבדיקות והתמונות. הוא חושב לא רק על מה שכבר רואים, אלא גם על מה שעלול לקרות אחר כך.\n\nאפשר לנסוע הביתה כשהמצב רגוע ואין שינויים מהירים. כמובן, תרופות בכדורים אפשר לקחת בעצמך או עם ההורים. אבל עירוי עם תרופה עשוי לדרוש שמישהו יהיה לידך וישגיח עליו כל הזמן. לפעמים צריך למדוד נשימה או לב הרבה פעמים, כדי לראות מיד אם יהיה לך רע יותר. אולי בדיקה מסוימת עוד לא מוכנה, ובלעדיה אי אפשר להבין מה קורה איתך. במקרים כאלה עדיף להישאר במקום שיש בו רופאים ואחיות שדואגים לך כל הזמן.\n\nלהישאר בבית החולים לא מפחיד. אולי עכשיו זה המקום הכי בטוח, בזמן שהגוף מתחזק. הרופא תמיד מסביר למה נבחרה דווקא הבחירה הזו, ואומר מה יהיה אחר כך."
+    },
+    "triage-temperature": {
+      "title": "למה מודדים חום?",
+      "text": "החום סביבנו משתנה: בקיץ מעל 30 מעלות בחוץ, ובחורף יכול להיות 10. אבל החום בתוך הגוף של אדם בדרך כלל אותו דבר, בערך 36.5 מעלות.\n\nכשחיידקים או וירוסים קטנים נכנסים לגוף, הגוף מתחיל להתגונן. תאים קטנים בדם מתחילים מלחמה עם הפולשים! והגוף מתחמם. החום עולה ל-38 מעלות ואפילו יותר.\n\nלרופא חשוב לדעת מה החום שלך, כדי לראות אם יש בגוף מלחמה כזאת.",
+      "draft": true
+    },
+    "triage-oxygen": {
+      "title": "מה זה סטורציה?",
+      "text": "סטורציה היא אחוז החמצן שנושא ההמוגלובין, חלבון בתאי הדם האדומים. ההמוגלובין הוא כמו משאית קטנה: הוא לוקח חמצן בריאות ומחלק אותו לכל הגוף. אם כל ה\"משאיות\" טעונות במלואן, הסטורציה בערך 100%. ככל שהן מובילות פחות חמצן, האחוז נמוך יותר.\n\nהמכשיר על האצבע (פולסאוקסימטר) מאיר דרך האצבע בשני סוגי אור: אדום ואינפרא-אדום. ההמוגלובין עם חמצן ובלי חמצן מעביר כל אחד מהם אחרת. המכשיר משווה בין השניים ומציג אחוז.\n\nבדרך כלל אצל אדם בריא הסטורציה בערך 95–100%. אם היא נמוכה יותר, הרופא בודק למה ומחליט מה לעשות. המכשיר עצמו יכול לטעות אם האצבע קרה, עם לק או אם היא זזה הרבה, ולכן האחות לפעמים בודקת שוב.",
+      "draft": true
+    },
+    "triage-pressure": {
+      "title": "איך מודדים לחץ דם?",
+      "text": "לחץ הדם מראה באיזה כוח הדם לוחץ על דפנות כלי הדם כשהוא זורם בגוף. הרופא צריך אותו כדי להבין איך הלב וכלי הדם עובדים.\n\nהלב הוא כמו משאבה: הוא דוחף את הדם לכל הגוף. כשהמשאבה עובדת חלש מדי או כשכלי הדם צרים מדי, הלחץ משתנה. לחץ נמוך או גבוה מדי יכול להעיד שלגוף אין מספיק דם, או שללב ולכלי הדם קשה.",
+      "draft": true
+    },
+    "tests-blood-test": {
+      "title": "מה אפשר ללמוד מבדיקת דם?",
+      "draft": true,
+      "text": "הדם זורם בכל הגוף ונושא את כל מה שצריך: חמצן, אוכל ועזרה נגד מחלות. לכן בדם אפשר לראות הרבה דברים, גם כשהאדם לא מרגיש שום דבר.\n\nבדם יש תאים שונים, ולכל אחד תפקיד משלו. תאים אדומים נושאים חמצן, כמו משאיות קטנות. תאים לבנים שומרים על הגוף מפני חיידקים: כששם נלחמת זיהום, יש יותר מהם. חלקיקים קטנים שנקראים טסיות עוזרים לדם להיקרש כשיש חתך.\n\nבדיקת דם מראה כמה יש מכל תא, ואם הם עובדים טוב. הרופא משווה את המספרים למה שרגיל אצל ילדים בגילך. אם משהו שונה, הרופא חושב על הסיבה, ואולי יזמין בדיקה נוספת.\n\nבדיקה אחת לא מספרת הכול. הרופא מסתכל על התוצאות יחד עם איך שאתה מרגיש ומה שרואים בבדיקה."
+    },
+    "tests-urine": {
+      "title": "מה אפשר ללמוד מבדיקת שתן?",
+      "draft": true,
+      "text": "הכליות עובדות כמו מסנן. הן מנקות את הדם ושולחות את כל מה שמיותר לשתן. לכן השתן יכול לספר איך הכליות עובדות ומה קורה בגוף.\n\nלבדיקה צריך כמות קטנה של שתן בכוס נקייה. לפעמים מבקשים לאסוף אותו מאמצע הזרם, כדי שיגיעו פחות חיידקים מהעור לדגימה. אם הצלחת לאסוף מעט, זה בסדר: תבקש מהאחות, והיא תעזור.\n\nבמעבדה מסתכלים על הצבע ועל השקיפות, ואחר כך בודקים מה יש בתוכו. לפעמים מוצאים סוכר, חלבון, דם או סימנים לזיהום. הרופא משווה כל אחד מהם למה שנורמלי.\n\nהשתן משתנה במהלך היום, לפי האוכל, השתייה וכמה זזת. לכן בדיקה אחת לא מספרת הכול. הרופא מסתכל על התוצאה יחד עם איך שאתה מרגיש, ואם צריך, מבקש לחזור על הבדיקה."
+    },
+    "tests-xray": {
+      "title": "מה זה רנטגן?",
+      "draft": true,
+      "text": "הרבה זמן, כשעצם נשברה, רופאים יכלו רק למשש אותה בידיים. אחר כך מדענים גילו קרניים מיוחדות.\n\nהקרניים האלה נקראות קרני רנטגן, על שם המדען שגילה אותן, וילהלם רנטגן. זה היה ב־1895.\n\nקרני רנטגן עוברות דרך עצמות ורקמות רכות בצורה שונה: דרך העור והשרירים כמעט בחופשיות, והעצמות עוצרות אותן הרבה יותר. לכן בתמונה העצמות נראות בהירות, והשאר כהה יותר. הרופא רואה בתמונה אם העצם שלמה או שיש בה סדק.\n\nהצילום עצמו מהיר. כדאי להוריד תכשיטים מתכתיים קודם: מתכת עוצרת את הקרניים כמו עצם, ולכן בתמונה היא נראית כנקודה בהירה שיכולה להסתיר את מה שהרופא צריך לראות. הקרניים פועלות רק לרגע, בזמן הצילום.\n\nרנטגן לא עושים סתם. הרופא מחליט אם צריך תמונה, ומה צריך לראות בה. הוא יכול להחליט שחלקים מסוימים בגוף צריך לכסות בסינר כבד שלא מכניס את הקרניים. הסינר מכסה את החלקים בגוף שלא צריך בתמונה."
+    },
+    "tests-ultrasound": {
+      "title": "איך עובד אולטרסאונד?",
+      "draft": true,
+      "text": "אולטרסאונד הוא צליל. לא הצליל שאפשר לשמוע, אלא צליל הרבה יותר גבוה, כל כך גבוה שאנשים לא שומעים אותו.\n\nהרופא מזיז על העור מכשיר קטן וחלק, שנקרא גשש. קודם מורחים על העור ג'ל שקוף. הג'ל עוזר לצליל להיכנס לגוף, ולא להיעלם באוויר בין הגשש לעור.\n\nהגשש שולח את הצליל פנימה. הצליל מגיע לאיברים ומוחזר מהם, כמו הד מקיר בחדר ריק. הגשש תופס את ההד ושולח אותו למחשב. המחשב בודק כמה רחוק וכמה מהר חזר ההד, ומצייר תמונה על המסך.\n\nרקמה צפופה מחזירה הד חזק יותר. לכן האיברים והעצמות נראים אחרת על המסך. הרופא מסתכל על התמונה ומחליט אם הכול בסדר.\n\nאולטרסאונד לא כואב ולא משתמש בקרני רנטגן. אפשר להרגיש קצת קור מהג'ל, והגשש עשוי ללחוץ קצת."
+    },
+    "tests-ct": {
+      "title": "איך עובד סי־טי?",
+      "draft": true,
+      "text": "סי־טי משתמש גם הוא בקרני רנטגן, אבל מצלמים הרבה תמונות, לא רק אחת. התמונות מונחות אחת על השנייה, כמו פרוסות של לחם, פרוסה דקה אחרי פרוסה.\n\nאתה שוכב על מיטה, והמיטה נכנסת לאט לתוך מכשיר גדול ועגול. המכשיר מסתובב סביבך במעגל ושולח את הקרניים מכמה צדדים.\n\nכל סיבוב לוקח רק כמה שניות. בזמן הזה המחשב מקבל הרבה תמונות של הגוף ובונה מהן פרוסה אחרי פרוסה. כך הרופא רואה לא רק את מה שבחוץ, אלא גם מה שבפנים, מכמה צדדים.\n\nלכן חשוב לשכב מאוד בשקט. אם זזים, התמונה מטושטשת, כמו תמונה שצולמה תוך כדי ריצה. אז צריך לצלם שוב.\n\nסי־טי לוקח יותר זמן מצילום רגיל אחד, אבל המכשיר לא נוגע בך ולא כואב. בפנים יכול להיות קצת רועש, והמיטה יכולה לזוז קדימה ואחורה."
+    },
+    "treatment-iv": {
+      "title": "בשביל מה צריך עירוי?",
+      "draft": true,
+      "text": "כדור נכנס קודם לקיבה, ואחר כך צריך להתמוסס ולהיספג. זה לוקח זמן, ולפעמים התרופה לא פועלת מהר ככל שצריך. לפעמים החולה מרגיש בחילה, או לא יכול לבלוע כדור.\n\nאבל אפשר להכניס את התרופה ישר לדם. דרך העירוי היא זורמת לאט ובאופן שווה, בכמויות קטנות. הרופא יכול לעצור או לשנות את המינון בכל רגע, אם משהו לא בסדר.\n\nלמה התרופה ניתנת בטיפות? כי הגוף לא אוהב קפיצות פתאומיות. הרבה תרופה בבת אחת יכולה לפגוע, ומעט בכל פעם עוזר.\n\nאדם לא יכול לחיות בלי מים. במחלות שונות אדם לא יכול לשתות, ומתפתחת התייבשות. זה מסוכן מאוד. לכן אנשים המציאו להכניס מים ישר לדם.\n\nבהתחלה ניסו להכניס מים רגילים. אבל התברר שהדם מתקיים על כמות מסוימת של מלח. אם מים רגילים נכנסים לדם, המלח בו מתדלל, ותאי הדם מתחילים לספוג מים, להתנפח ולהתפוצץ. לכן מכניסים את המים בתמיסת מלח: מים עם אותם מלחים שיש לאדם בדם. אז תאי הדם נשארים שלמים."
+    },
+    "treatment-medication": {
+      "title": "איך תרופה נכנסת לגוף?",
+      "text": "תרופה יכולה להיות כדור, סירופ, טיפות או זריקה. את הכדור בולעים, והוא מתמוסס בקיבה, ומשם התרופה עוברת לדם.\n\nזריקה שולחת את התרופה ישר לדם או מתחת לעור, ולכן היא פועלת מהר יותר.\n\nכל תרופה מותאמת לגיל ולמשקל. לכן הרופא או האחות תמיד בודקים מה ומה כמה נותנים.",
+      "draft": true
+    },
+    "treatment-inhalation": {
+      "title": "איך עובדת אינהלציה?",
+      "text": "אפשר לשאוף תרופה. ככה היא מגיעה בדיוק למקום שצריך: לגרון ולריאות.\n\nהמכשיר הופך את התרופה לאדים דקים, קלים כמו אדי תה חם. בקושי רואים אותם.\n\nשואפים בנשימה רגועה ושווה. אם נעשה קשה, אפשר לנשום רגיל כמה רגעים ואז להמשיך.",
+      "draft": true
+    },
+    "treatment-bandage": {
+      "title": "בשביל מה צריך תחבושת?",
+      "text": "התחבושת מגינה על הפצע מלכלוך וחיידקים. מתחתיה לעור קל יותר להתרפא.\n\nהעור מתרפא בעצמו, והתחבושת עוזרת לו. מחליפים אותה כשצריך ובודקים איך הפצע מתרפא.\n\nאם היא מפריעה, אפשר להוריד אותה, אבל רק בעזרת מבוגר או אחות.",
+      "draft": true
+    },
+    "treatment-cast": {
+      "title": "בשביל מה צריך גבס?",
+      "text": "כשעצם שבורה, היא צריכה להתחבר. כדי שתתחבר נכון, צריך להחזיק אותה בלי לזוז.\n\nהגבס פועל כמו בית קשיח לעצם. מתחתיו הגוף בונה רקמה חדשה שמחברת את העצם, וזה לוקח כמה שבועות.\n\nלפעמים אפשר לכתוב או לצייר על הגבס, אם הרופא מרשה.",
+      "draft": true
+    },
+    "treatment-stitches": {
+      "title": "בשביל מה צריך תפרים?",
+      "text": "כשפצע גדול, השפות שלו לא תמיד נשארות יחד לבד. התפרים מחברים אותן, כמו שרוך שמהדק נעל.\n\nהחוטים נספגים לבד או שמורידים אותם אחר כך. עם הזמן התפר בדרך כלל כמעט לא נראה.\n\nהתפר מונע מהפצע להיפתח ועוזר לו להתרפא מהר יותר.",
+      "draft": true
+    }
+  },
+  "en": {
+    "reception": {
+      "title": "Why do we need a visit file?",
+      "text": "A special folder is opened for everyone who comes to the hospital. The folder is kept on a computer. The nurses and doctors who will talk with you can see it. For example, a doctor can write that a blood test is needed — and the nurse will know what to do.\n\nFor this, all the computers in the hospital are joined into one shared network. Even if the internet goes off, the information stays available to all the nurses and doctors who will help you.",
+      "draft": true
+    },
+    "wait-before-triage": {
+      "title": "Why do we wait?",
+      "text": "Children who need help come to the emergency room. Sometimes help is needed very urgently.\n\nIn a shop, people are usually served one after another: whoever came to the till first pays first and leaves first.\n\nIn a hospital it is different: if someone needs urgent help, the others have to wait.",
+      "draft": true
+    },
+    "wait-doctor": {
+      "title": "What do we do while we wait?",
+      "text": "You can play, read, or breathe slowly. The doctor will come when there is time.",
+      "draft": true
+    },
+    "doctor": {
+      "title": "How does a stethoscope work?",
+      "text": "At first, doctors pressed their ear to a person's back and listened to breathing and the heartbeat. But the ear hears quiet sounds poorly, and it is awkward to press your ear to someone's chest. So someone invented a tube. It was called a stethoscope: the Greek word \"stethos\" means \"chest\".\n\nThe tube gathers the sound from inside the body and leads it straight to the ear, as if bringing it closer. That is why the sounds become louder and clearer, and the noise from the room hardly gets in the way.\n\nThe end of the stethoscope has a metal head with two sides. One side is a thin plastic disc, called the diaphragm. It hears high sounds well, such as breathing and the work of the heart valves. The other side looks like a little cup. It hears low sounds better. The doctor turns the head over to listen to different things.\n\nA stethoscope makes the sounds of the body clear, calm and easy to understand.",
+      "draft": true
+    },
+    "tests": {
+      "title": "How is a blood test done?",
+      "text": "A very thin needle takes a small amount of blood from the arm. It is quick, and then the place is looked after.",
+      "draft": true
+    },
+    "treatment": {
+      "title": "How does treatment work?",
+      "text": "Medicines go into the body and help it get better. Every treatment has a reason, and the team explains it.",
+      "draft": true
+    },
+    "consult": {
+      "title": "Who are specialists?",
+      "draft": true,
+      "text": "Specialist doctors know one system of the body really well, for example the heart or the eyes. So when the general doctor needs to check something more closely, they call a specialist.\n\nA cardiologist knows the heart and the blood vessels. An eye doctor looks after the eyes. A neurologist knows the brain and the nerves. An orthopaedic doctor looks after bones, joints and muscles. A lung doctor looks after the lungs and breathing. A gastroenterologist looks at the tummy: the stomach and the intestines. A kidney doctor knows the kidneys. A skin doctor looks after the skin. An ENT doctor looks after the ears, throat and nose. A blood doctor looks after the blood.\n\nThe specialist comes, asks questions and looks at you carefully. They may order one more test or treatment that is needed for that part of the body.\n\nYou do not need to remember all the names. It is enough to know: each doctor has a part of the body that they know especially well."
+    },
+    "wait-results": {
+      "title": "Why do results take time?",
+      "text": "Some tests are sent to a lab, where they need time to be checked carefully.",
+      "draft": true
+    },
+    "decision": {
+      "title": "How is the decision to go home made?",
+      "draft": true,
+      "text": "The doctor looks at all the results: the check-up, the measurements, the tests and the pictures. They think not only about what can already be seen, but also about what might happen next.\n\nYou can go home if your condition is calm and there are no quick changes. Of course, pills can be taken by yourself or with your parents. But a drip with medicine may need a person to watch it all the time. Sometimes breathing or the heart must be checked often, so that you can see straight away if you get worse. Maybe a test is not ready yet, and without it it is impossible to understand what is happening with you. In such cases it is better to stay where there are doctors and nurses who look after you all the time.\n\nStaying in the hospital is not scary. It may be the safest place right now, while your body gets stronger. The doctor always explains why this choice was made, and says what will happen next."
+    },
+    "triage-temperature": {
+      "title": "Why do we measure temperature?",
+      "text": "The temperature around us changes: in summer it is over 30 degrees outside, and in winter it can be 10. But the temperature inside a person is usually always the same, about 36.5 degrees.\n\nWhen tiny bacteria or viruses get into the body, the body starts to defend itself. Tiny cells in the blood start a war with the invaders! And the body becomes hot. The temperature rises to 38 degrees or even more.\n\nIt is important for the doctor to know your temperature, to see whether such a war is going on in your body.",
+      "draft": true
+    },
+    "triage-oxygen": {
+      "title": "What is saturation?",
+      "text": "Saturation is the percentage of oxygen carried by haemoglobin, a protein in the red blood cells. Haemoglobin is like a small truck: it picks up oxygen in the lungs and delivers it all over the body. If all the \"trucks\" are fully loaded, saturation is about 100%. The less oxygen they carry, the lower the percentage.\n\nThe device on the finger (a pulse oximeter) shines two kinds of light through the finger: red and infrared. Haemoglobin with oxygen and without it lets each kind of light through differently. The device compares the two and shows a percentage.\n\nUsually a healthy person has a saturation of about 95–100%. If it is lower, the doctor looks for the reason and decides what to do next. The device itself can be wrong if the finger is cold, has nail polish, or moves a lot, so the nurse sometimes checks again.",
+      "draft": true
+    },
+    "triage-pressure": {
+      "title": "How is blood pressure measured?",
+      "text": "Blood pressure shows how strongly the blood presses on the walls of the vessels as it flows through the body. The doctor needs it to understand how the heart and the vessels work.\n\nThe heart is like a pump: it pushes blood through the whole body. When the pump works too weakly or the vessels are too narrow, the pressure changes. Pressure that is too low or too high can mean that the body does not have enough blood, or that the heart and the vessels are having a hard time.",
+      "draft": true
+    },
+    "tests-blood-test": {
+      "title": "What can a blood test show?",
+      "draft": true,
+      "text": "Blood travels all over the body and carries everything it needs: oxygen, food and help against illness. So a lot can be seen in the blood, even when a person does not feel anything.\n\nBlood has different cells, and each has its own job. Red cells carry oxygen, like tiny trucks. White cells protect the body from germs: when an infection is fighting somewhere, there are more of them. Tiny cell pieces called platelets help the blood clot when there is a cut.\n\nA blood test shows how many of each cell there are and how well they work. The doctor compares the numbers with what is usual for children of your age. If something is different, the doctor thinks about why, and may order another test.\n\nOne test does not say everything. The doctor looks at the results together with how you feel and what can be seen during the check-up."
+    },
+    "tests-urine": {
+      "title": "What can a urine test show?",
+      "draft": true,
+      "text": "The kidneys work like a filter. They clean the blood and send everything extra into the urine. So urine can tell us how the kidneys work and what is happening in the body.\n\nFor the test a small amount of urine is needed in a clean cup. Sometimes you are asked to collect it from the middle of the stream, so that fewer germs from the skin get into the sample. If you can only manage a little, that is fine: ask the nurse, who will help.\n\nIn the lab they look at the colour and how clear it is, and then check what is in it. Sometimes sugar, protein, blood or signs of an infection are found. The doctor compares each of these with what is normal.\n\nUrine changes during the day, depending on food, drinks and how much you moved. So one test does not say everything. The doctor looks at the result together with how you feel and, if needed, asks for it to be repeated."
+    },
+    "tests-xray": {
+      "title": "What is an X-ray?",
+      "draft": true,
+      "text": "For a long time, when a bone was broken, doctors could only feel it with their hands. Then scientists found special rays.\n\nThese rays are called X-rays, after the scientist who discovered them, Wilhelm Röntgen. That was in 1895.\n\nX-rays pass through bones and soft tissue in different ways: through skin and muscles almost freely, while bones stop them much more. So on the picture bones look light and everything else looks darker. The doctor can see on the picture whether a bone is whole or has a crack.\n\nThe picture itself is quick. Take off any metal jewellery beforehand: metal stops the rays much like bone does, so on the picture it shows up as a bright spot that can hide what the doctor needs to see. The rays are on only for a moment, during the picture.\n\nDoctors do not take an X-ray for no reason. The doctor decides whether a picture is needed and what should be seen on it. The doctor may decide that some parts of the body need to be covered with a heavy apron that does not let the rays through. The apron covers the parts of the body that are not needed in the picture."
+    },
+    "tests-ultrasound": {
+      "title": "How does an ultrasound work?",
+      "draft": true,
+      "text": "An ultrasound is sound. Not the sound you can hear, but much higher, so high that people cannot hear it.\n\nThe doctor moves a small smooth device called a probe over the skin. A clear gel is put on the skin first. The gel helps the sound go into the body instead of getting lost in the air between the probe and the skin.\n\nThe probe sends the sound into the body. The sound reaches the organs and bounces back from them, like an echo from a wall in an empty room. The probe catches the echo and sends it to a computer. The computer looks at how far away the echo came from and how fast it came back, and draws a picture on the screen.\n\nA denser tissue sends back a stronger echo. That is why organs and bones look different on the screen. The doctor looks at the picture and decides whether everything is fine.\n\nAn ultrasound does not hurt and does not use X-rays. The gel may feel a little cold, and the probe may press a little."
+    },
+    "tests-ct": {
+      "title": "How does a CT scan work?",
+      "draft": true,
+      "text": "A CT scan uses X-rays too, but many pictures are taken, not just one. They are stacked like slices of bread, one thin slice at a time.\n\nYou lie on a table, and the table slowly moves into a large round machine. The machine goes around you in a circle and sends the rays from different sides.\n\nEach turn takes only a few seconds. During that time the computer gets many pictures of the body and builds them into slice after slice. So the doctor can see not only the outside, but also what is inside, from many sides.\n\nThat is why it is important to lie very still. If you move, the picture becomes blurry, like a photo taken while running. Then the picture has to be taken again.\n\nA CT scan takes longer than one ordinary picture, but the machine does not touch you and does not hurt. It may be a little noisy inside, and the table may move forward and back."
+    },
+    "treatment-iv": {
+      "title": "Why is a drip needed?",
+      "draft": true,
+      "text": "A pill first goes into the stomach, then it has to dissolve and be taken in. That takes time, and sometimes the medicine does not work as fast as it should. Sometimes a patient feels sick, or cannot swallow a pill.\n\nBut the medicine can be put straight into the blood. Through a drip it goes slowly and evenly, in small amounts. The doctor can stop or change the dose at any moment, if something is not right.\n\nWhy is the medicine given drop by drop? Because the body does not like sudden jumps. Too much medicine at once can harm, while a little at a time helps.\n\nA person cannot live without water. With many illnesses a person cannot drink, and dehydration happens. This is very dangerous. So people learned to put water straight into the blood.\n\nAt first they tried putting in plain water. But it turned out that the blood depends on a certain amount of salt. If plain water gets into the blood, the salt in it is diluted, and the blood cells start to take in water, swell and burst. That is why the water is given in saline: water with the same salts as a person has in the blood. Then the blood cells stay whole."
+    },
+    "treatment-medication": {
+      "title": "How does medicine get into the body?",
+      "text": "Medicine can be a pill, a syrup, drops or an injection. A pill is swallowed and dissolves in the stomach, and from there the medicine goes into the blood.\n\nAn injection sends the medicine straight into the blood or under the skin, so it works faster.\n\nEvery medicine is chosen for the age and weight of the child. So the doctor or nurse always checks what and how much is given.",
+      "draft": true
+    },
+    "treatment-inhalation": {
+      "title": "How does inhalation work?",
+      "text": "Medicine can be breathed in. Then it goes exactly where it is needed: to the throat and the lungs.\n\nThe machine turns the medicine into a fine mist, light like the steam from a hot cup of tea. It is hard to see.\n\nBreathe calmly and evenly. If it gets tiring, you can breathe normally for a moment and then carry on.",
+      "draft": true
+    },
+    "treatment-bandage": {
+      "title": "Why is a bandage needed?",
+      "text": "A bandage protects a wound from dirt and germs. Under it the skin finds it easier to heal.\n\nThe skin heals itself, and the bandage helps it. It is changed when needed, and the doctors check how the wound is healing.\n\nIf it bothers you, the bandage can be taken off, but only with a grown-up or a nurse.",
+      "draft": true
+    },
+    "treatment-cast": {
+      "title": "Why is a cast needed?",
+      "text": "When a bone is broken, it has to heal. To heal properly, it needs to be kept still.\n\nThe cast works like a hard house for the bone. Under it the body builds new tissue that joins the bone back together, and that takes a few weeks.\n\nSometimes you can write or draw on the cast, if the doctor allows it.",
+      "draft": true
+    },
+    "treatment-stitches": {
+      "title": "Why are stitches needed?",
+      "text": "When a wound is large, its edges do not always stay together by themselves. Stitches hold them together, like a lace pulls a shoe closed.\n\nThe threads either dissolve by themselves or are taken out later. Over time the stitch usually becomes almost invisible.\n\nA stitch stops the wound from opening and helps it heal faster.",
+      "draft": true
+    }
+  },
+  "ru": {
+    "reception": {
+      "title": "Зачем нужна карта визита?",
+      "text": "На каждого, кто приходит в больницу, открывают специальную папку. Эта папка хранится в компьютере. Её будут видеть медсёстры и врачи, которые будут с тобой разговаривать. Например, доктор может написать, что нужен анализ крови, — и медсестра будет знать, что ей делать.\n\nДля этого все компьютеры в больнице объединяют в общую сеть. Даже если отключится интернет, информация будет доступна всем медсёстрам и врачам, которые будут тебе помогать.",
+      "draft": true
+    },
+    "wait-before-triage": {
+      "title": "Почему мы ждём?",
+      "text": "В приёмный покой приходят дети, которым нужна помощь. Бывает, что помощь нужно оказать очень срочно.\n\nВ магазине обычно обслуживают людей по очереди: кто раньше пришёл к кассе, тот раньше расплатится и уйдёт.\n\nВ больнице не так: если кому-то нужна срочная помощь, то остальным приходится подождать.",
+      "draft": true
+    },
+    "wait-doctor": {
+      "title": "Что делать, пока ждём?",
+      "text": "Можно поиграть, почитать или медленно подышать. Врач придёт, когда будет время.",
+      "draft": true
+    },
+    "doctor": {
+      "title": "Как работает стетоскоп?",
+      "text": "Сначала врачи прижимали ухо к спине и слушали дыхание и биение сердца. Но ухо слышит тихие звуки плохо, да и прижиматься к чужой груди неудобно. Тогда кто-то придумал трубочку. Её назвали стетоскопом: слово «стетос» по-гречески значит «грудь».\n\nТрубочка собирает звук изнутри тела и ведёт его прямо к уху, как будто подносит его ближе. Поэтому звуки становятся громче и яснее, а шум из комнаты почти не мешает.\n\nНа конце стетоскопа есть металлическая головка с двумя сторонами. Одна сторона — тонкий пластиковый диск, его называют мембраной. Он хорошо слышит высокие звуки, например дыхание и работу сердечных клапанов. Другая сторона похожа на чашечку. Она лучше слышит низкие звуки. Врач переворачивает головку, чтобы послушать разное.\n\nСтетоскоп делает звуки тела слышными, спокойными и понятными.",
+      "draft": true
+    },
+    "tests": {
+      "title": "Как берут анализ крови?",
+      "text": "Очень тонкой иголкой берут немного крови из руки. Это быстро, а потом место заботливо обрабатывают.",
+      "draft": true
+    },
+    "treatment": {
+      "title": "Как работает лечение?",
+      "text": "Лекарства попадают в тело и помогают ему выздороветь. У каждого лечения есть причина, и команда её объясняет.",
+      "draft": true
+    },
+    "consult": {
+      "title": "Кто такие специалисты?",
+      "draft": true,
+      "text": "Врачи-специалисты хорошо знают одну систему тела, например сердце или глаза. Поэтому, когда общему врачу нужно что-то уточнить, он зовёт специалиста.\n\nКардиолог знает сердце и сосуды. Офтальмолог смотрит глаза. Невролог знает мозг и нервы. Ортопед занимается косточками, суставами и мышцами. Пульмонолог лечит лёгкие и дыхание. Гастроэнтеролог смотрит живот: желудок и кишечник. Нефролог знает почки. Дерматолог — кожу. ЛОР — уши, горло и нос. Гематолог — кровь.\n\nСпециалист приходит, задаёт вопросы и внимательно тебя смотрит. Он может назначить ещё одно обследование или лечение, которое нужно именно этой системе тела.\n\nНе нужно запоминать все названия. Достаточно знать: у каждого врача есть свой кусочек тела, который он знает особенно хорошо."
+    },
+    "wait-results": {
+      "title": "Почему результаты ждут?",
+      "text": "Некоторые анализы отправляют в лабораторию, там их внимательно проверяют, и это занимает время.",
+      "draft": true
+    },
+    "decision": {
+      "title": "Как решают, можно ли домой?",
+      "draft": true,
+      "text": "Врач смотрит все результаты: осмотр, измерения, анализы и снимки. Он думает не только о том, что уже видно, но и о том, что может случиться дальше.\n\nДомой можно ехать, если состояние спокойное, нет быстрых изменений. Конечно, лекарства в таблетках можно принимать самому или с родителями. Но капельница с лекарством может требовать, чтобы рядом всё время был человек, который следит за ней. Иногда нужно часто мерить дыхание или сердце, чтобы сразу увидеть, если тебе станет хуже. Может быть, какой-то анализ ещё не готов, и без него невозможно понять, что с тобой происходит. В таких случаях лучше остаться, где есть врачи и медсестры, которые смотрят за тобой всё время.\n\nОстаться в больнице — не страшно. Может быть, сейчас это самое безопасное место, пока тело набирается сил. Врач всегда объясняет, почему выбрано именно это, и говорит, что будет дальше."
+    },
+    "triage-temperature": {
+      "title": "Зачем измерять температуру?",
+      "text": "Температура вокруг нас меняется: летом на улице больше 30 градусов, а зимой может быть и 10. А температура внутри человека обычно одна и та же, примерно 36 с половиной градусов.\n\nКогда в тело человека попадают маленькие бактерии или вирусы, организм начинает защищаться. Маленькие клетки внутри крови начинают войну с захватчиками! И тело становится горячим. Температура повышается до 38 градусов и даже больше.\n\nВрачу важно знать твою температуру, чтобы определить, идёт ли в теле такая война.",
+      "draft": true
+    },
+    "triage-oxygen": {
+      "title": "Что такое сатурация?",
+      "text": "Сатурация — это процент кислорода, который переносит гемоглобин, белок в красных клетках крови. Гемоглобин как маленький грузовичок: он забирает кислород в лёгких и развозит его по всему телу. Если все «грузовички» полностью нагружены, сатурация около 100%. Чем меньше кислорода они везут, тем ниже процент.\n\nПрибор на пальце (пульсоксиметр) светит через палец двумя видами света: красным и инфракрасным. Гемоглобин с кислородом и без него по-разному пропускают тот и другой свет. Прибор сравнивает эти два показателя и выдаёт процент.\n\nОбычно у здорового человека сатурация около 95–100%. Если она ниже, врач смотрит, почему, и решает, что делать дальше. Сам прибор может ошибаться, если палец холодный, накрашен лаком или сильно двигается, поэтому медсестра иногда перепроверяет.",
+      "draft": true
+    },
+    "triage-pressure": {
+      "title": "Как измеряют давление?",
+      "text": "Давление показывает, с какой силой кровь давит на стенки сосудов, когда течёт по телу. Оно нужно врачу, чтобы понять, как работает сердце и сосуды.\n\nСердце как насос: оно гонит кровь по всему телу. Когда насос работает слишком слабо или сосуды слишком узкие, давление меняется. Слишком низкое или слишком высокое давление может значить, что телу не хватает крови, или что сердцу и сосудам трудно.",
+      "draft": true
+    },
+    "tests-blood-test": {
+      "title": "Что можно узнать из крови?",
+      "draft": true,
+      "text": "Кровь течёт по всему телу и переносит всё нужное: кислород, еду, защиту от болезней. Поэтому по крови многое видно, даже если сам человек ничего не чувствует.\n\nВ крови есть разные клетки, и у каждой своя работа. Красные клетки несут кислород, как маленькие грузовички. Белые клетки защищают тело от микробов: если где-то воюет инфекция, их становится больше. Маленькие клетки-пластинки помогают крови свернуться, когда где-то появилась ранка.\n\nАнализ крови показывает, сколько каждой клетки и хорошо ли они работают. Врач сравнивает цифры с тем, что обычно бывает у детей твоего возраста. Если что-то отличается, он думает, почему, и может назначить ещё одно исследование.\n\nОдин анализ не говорит всё. Врач смотрит на результаты вместе с тем, как ты себя чувствуешь и что видно при осмотре."
+    },
+    "tests-urine": {
+      "title": "Что можно узнать из мочи?",
+      "draft": true,
+      "text": "Почки работают как фильтр. Они очищают кровь и отправляют всё лишнее в мочу. Поэтому моча рассказывает, как работают почки и что происходит в теле.\n\nДля анализа нужна небольшая порция мочи в чистой баночке. Иногда её просят собрать в середине струи, чтобы в образце было меньше микробов с кожи. Если получилось немного, ничего страшного: попроси медсестру, она подскажет.\n\nВ лаборатории смотрят на цвет и прозрачность, а потом проверяют, что в ней есть. Бывает, что в моче находят сахар, белок, кровь или признаки инфекции. Каждое из этого врач сравнивает с тем, что нормально.\n\nМоча меняется за день: от еды, питья и того, сколько ты двигался. Поэтому один анализ не говорит всё. Врач смотрит на результат вместе с тем, как ты себя чувствуешь, и если нужно, просит повторить."
+    },
+    "tests-xray": {
+      "title": "Что такое рентген?",
+      "draft": true,
+      "text": "Долгое время, если кость была сломана, врачи могли только прощупать её руками. А потом учёные узнали, что есть особые лучи.\n\nЭти лучи назвали рентгеновскими в честь учёного, который их открыл, — Вильгельма Рентгена. Было это в 1895 году.\n\nРентгеновские лучи по-разному проходят через кости и мягкие ткани: кожу и мышцы почти насквозь, а кости задерживают гораздо сильнее. Поэтому на снимке кости выглядят светлыми, а всё остальное — темнее. Врач видит на снимке, цела кость или есть трещина.\n\nСнимок делается быстро. Металлические украшения лучше снять заранее: металл задерживает лучи почти так же, как кости, поэтому на снимке он выглядит светлым пятном и может закрыть то, что нужно рассмотреть врачу. Лучи включаются ненадолго, и только на время снимка.\n\nРентген не делают просто так. Врач сам решает, нужен ли снимок и что на нём надо увидеть. Он может решить, что какие-то части тела нужно скрыть тяжелым фартуком, не пропускающим лучи. Фартук закрывает те части тела, которые не нужны на снимке."
+    },
+    "tests-ultrasound": {
+      "title": "Как работает УЗИ?",
+      "draft": true,
+      "text": "УЗИ — это звук. Не тот, который слышно, а намного выше: он такой высокий, что человек его не слышит.\n\nВрач водит по коже датчик. Это небольшой гладкий предмет, на него нанесён прозрачный гель. Гель нужен, чтобы звук проходил в тело, а не терялся в воздухе между датчиком и кожей.\n\nДатчик посылает звук внутрь тела. Звук доходит до органов и отражается от них, как эхо от стены в пустой комнате. Датчик ловит эхо и отправляет его в компьютер. Компьютер смотрит, как далеко и как быстро вернулось эхо, и рисует картинку на экране.\n\nЧем плотнее ткань, тем лучше эхо возвращается. Поэтому органы и кости на экране видны по-разному. Врач смотрит на картинку и решает, всё ли в порядке.\n\nУЗИ не делает больно и не использует рентгеновские лучи. Может быть только немного холодно от геля и чуть давит датчик."
+    },
+    "tests-ct": {
+      "title": "Как работает КТ?",
+      "draft": true,
+      "text": "КТ — это тоже рентгеновские лучи, но снимков получается много. Не один, а целая стопка, как у хлеба, который режут на тонкие ломтики.\n\nТы лежишь на столе, и стол медленно въезжает внутрь большого круглого аппарата. Аппарат вокруг тебя ходит по кругу и посылает лучи с разных сторон.\n\nКаждый оборот занимает всего несколько секунд. За это время компьютер получает много картинок тела и собирает из них слой за слоем. Так врач видит не только то, что снаружи, но и то, что внутри, с разных сторон.\n\nВот поэтому важно лежать очень тихо. Если двигаться, картинка получится размытой, как фотография, которую снимали на бегу. Тогда придётся сделать снимок ещё раз.\n\nКТ занимает больше времени, чем один обычный снимок, но аппарат не касается тебя и не делает больно. Внутри может быть немного шумно, и стол может ехать то вперёд, то назад."
+    },
+    "treatment-iv": {
+      "title": "Зачем нужна капельница?",
+      "draft": true,
+      "text": "Таблетка сначала попадает в желудок, потом её нужно растворить и впитать. Это занимает время, а иногда лекарство не успевает подействовать так быстро, как нужно. Бывает, что больного тошнит, или он не может проглотить таблетку.\n\nНо лекарство можно ввести прямо в кровь. Через капельницу оно идёт медленно и ровно, маленькими порциями. Врач в любой момент может остановить или поменять дозу, если что-то не так.\n\nПочему лекарство вводится по капле? Потому что тело не любит резких скачков. Слишком много лекарства сразу может навредить, а понемногу — помогает.\n\nЧеловек не может жить без воды. При разных болезнях человек не может пить, и возникает обезвоживание. Это очень опасно. Поэтому люди придумали вводить воду прямо в кровь.\n\nВ начале пробовали вводить простую воду. Но оказалось, что в крови всё держится на определённом количестве соли. Если в кровь попадает чистая вода, соль разбавляется, и клетки крови начинают впитывать воду, раздуваться и лопаться. Поэтому воду вводят в физрастворе: к воде добавлены такие же соли, как есть у человека в крови. Тогда клетки крови остаются целыми."
+    },
+    "treatment-medication": {
+      "title": "Как лекарство попадает в тело?",
+      "text": "Лекарство может быть таблеткой, сиропом, каплями или уколом. Таблетку проглатывают, она растворяется в желудке, а оттуда лекарство идёт в кровь.\n\nУкол отправляет лекарство сразу в кровь или под кожу, поэтому действует быстрее.\n\nКаждое лекарство подбирают под возраст и вес. Поэтому врач или медсестра всегда проверяют, что именно и сколько дают.",
+      "draft": true
+    },
+    "treatment-inhalation": {
+      "title": "Как работает ингаляция?",
+      "text": "Лекарство можно вдыхать. Тогда оно попадает прямо туда, где нужно: в горло и в лёгкие.\n\nАппарат превращает лекарство в мелкий туман, лёгкий, как пар от чая. Его почти не видно.\n\nДышать нужно спокойно и ровно. Если устал, можно немного подышать обычно, а потом продолжить.",
+      "draft": true
+    },
+    "treatment-bandage": {
+      "title": "Зачем нужна повязка?",
+      "text": "Повязка защищает рану от грязи и микробов. Под ней коже легче заживать.\n\nКожа заживает сама, а повязка ей помогает. Её меняют, когда нужно, и смотрят, как заживает рана.\n\nЕсли повязка мешает, её можно снять, но только вместе со взрослым или с медсестрой.",
+      "draft": true
+    },
+    "treatment-cast": {
+      "title": "Зачем нужен гипс?",
+      "text": "Когда кость сломана, она должна срастись. Чтобы срослась правильно, её нужно держать неподвижно.\n\nГипс работает как твёрдый домик для кости. Внутри тело само строит новую ткань, которая соединяет кость, и на это уходит несколько недель.\n\nИногда на гипсе можно написать или нарисовать, если врач разрешит.",
+      "draft": true
+    },
+    "treatment-stitches": {
+      "title": "Зачем накладывают швы?",
+      "text": "Когда рана большая, её края сами плохо держатся вместе. Швы стягивают их, как шнурок стягивает ботинок.\n\nНитки рассасываются сами или их потом снимают. Со временем шов обычно становится почти незаметным.\n\nШов не даёт ране открыться и помогает ей зажить быстрее.",
+      "draft": true
+    }
+  }
+}

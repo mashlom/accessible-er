@@ -1,9 +1,10 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from '../../nav'
 import { PageHeader, InfoList } from '../components/ui'
 import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
-import { journeyStages, getStageIndex } from '../../../data/journey'
-import { getProcedure } from '../../../data/procedures'
+import { getStageIndex } from '../../../data/journey'
+import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
@@ -14,6 +15,7 @@ const prefersReducedMotion =
   !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
 export function JourneyPage() {
+  const { t, lang } = useI18n()
   const { path } = useVisitReason()
   // "where are we in the process" — persisted for the day so a refresh keeps it.
   const [currentId, setCurrentId] = usePersistentState<string | null>(
@@ -21,7 +23,7 @@ export function JourneyPage() {
     null,
     DAY_MS,
   )
-  const [openId, setOpenId] = useState<string | null>(currentId ?? journeyStages[0].id)
+  const [openId, setOpenId] = useState<string | null>(currentId ?? parentJourney(lang)[0].id)
   // Roni walking along the stepper — a gentle sense of movement/control.
   // Off by default only when the OS asks for reduced motion; user can toggle.
   const [motionOn, setMotionOn] = usePersistentState<boolean>('journey-motion', true)
@@ -38,7 +40,7 @@ export function JourneyPage() {
   // Share of the journey already reached — used to tint the passed rail green.
   const progressPct =
     currentIndex >= 0
-      ? Math.round((currentIndex / (journeyStages.length - 1)) * 100)
+      ? Math.round((currentIndex / (parentJourney(lang).length - 1)) * 100)
       : 0
 
   // Roni rides a stable horizontal progress rail (independent of the
@@ -47,7 +49,7 @@ export function JourneyPage() {
   // transform transition actually plays instead of jumping.
   const measureRoni = useCallback(() => {
     const rail = railRef.current
-    const anchorId = currentId ?? journeyStages[0].id
+    const anchorId = currentId ?? parentJourney(lang)[0].id
     const stop = stopRefs.current[anchorId]
     if (rail && stop) {
       const r = stop.getBoundingClientRect()
@@ -87,24 +89,22 @@ export function JourneyPage() {
   return (
     <div className="container">
       <PageHeader
-        eyebrow="מה קורה עכשיו"
-        title="המסע שלנו במיון"
-        subtitle="אלה השלבים של כל ביקור. סמנו איפה אנחנו עכשיו, ואני אראה מה צפוי בהמשך."
+        eyebrow={t('ui.calmJourney.eyebrow', 'מה קורה עכשיו')}
+        title={t('ui.calmJourney.title', 'השביל שלנו במיון')}
+        subtitle={t('ui.calmJourney.subtitle', 'אלה השלבים של כל ביקור. סמנו איפה אנחנו עכשיו, ואני אראה מה צפוי בהמשך.')}
       />
 
       {path && (
         <Link to="/reason" className={styles.reasonChip}>
           <span aria-hidden>{path.emoji}</span>
-          הגענו בגלל: {path.label}
+          {t('ui.calmJourney.reasonLabel', 'הגענו בגלל:')} {path.label}
         </Link>
       )}
 
       <div className={styles.hint}>
         <span aria-hidden>⏱️</span>
         <span>
-          הסדר והזמנים כאן הם הערכה כללית בלבד, ויכולים להשתנות לפי החלטת הצוות והעומס
-          במיון. לא כל ביקור עובר את כל השלבים, ולפעמים הסדר שונה — זה עוזר לדעת למה
-          לצפות, ולא הבטחה מדויקת.
+          {t('ui.calmJourney.notice', 'הסדר והזמנים כאן הם הערכה כללית בלבד, ויכולים להשתנות לפי החלטת הצוות והעומס במיון. לא כל ביקור עובר את כל השלבים, ולפעמים הסדר שונה — זה עוזר לדעת למה לצפות, ולא הבטחה מדויקת.')}
         </span>
       </div>
 
@@ -114,10 +114,10 @@ export function JourneyPage() {
           checked={motionOn}
           onChange={(e) => setMotionOn(e.target.checked)}
         />
-        <span>🐾 הדמות שלי זזה לאורך המסע</span>
+        <span>{t('ui.calmJourney.character', '🐾 הדמות שלי זזה לאורך השביל')}</span>
       </label>
 
-      <div className={styles.rail} ref={railRef} aria-label="התקדמות במסע">
+      <div className={styles.rail} ref={railRef} aria-label={t('ui.calmJourney.railAria', 'התקדמות בשביל')}>
         {motionOn && roniX != null && (
           <div
             className={styles.railRoni}
@@ -127,7 +127,7 @@ export function JourneyPage() {
             }}
             aria-hidden
           >
-            {walking && <span className={styles.railBubble}>בואו נלך…</span>}
+            {walking && <span className={styles.railBubble}>{t('ui.calmJourney.letsGo', 'בואו נלך…')}</span>}
             {avatar.kind === 'photo' ? (
               <img src={avatar.value} alt="" className={styles.railAvatarImg} />
             ) : (
@@ -145,7 +145,7 @@ export function JourneyPage() {
               : undefined
           }
         >
-          {journeyStages.map((stage, i) => {
+          {parentJourney(lang).map((stage, i) => {
             const stopState =
               stage.id === currentId
                 ? styles.stopCurrent
@@ -161,7 +161,7 @@ export function JourneyPage() {
                 }}
                 className={`${styles.stop} ${stopState}`}
                 onClick={() => markHere(stage.id)}
-                aria-label={`${stage.title}${stage.id === currentId ? ' — אנחנו כאן' : ''}`}
+                aria-label={`${stage.title}${stage.id === currentId ? t('ui.calmJourney.weAreHereSuffix', ' — אנחנו כאן') : ''}`}
                 aria-current={stage.id === currentId ? 'step' : undefined}
                 title={stage.title}
               >
@@ -173,7 +173,7 @@ export function JourneyPage() {
       </div>
 
       <ol className={styles.stepper}>
-        {journeyStages.map((stage, i) => {
+        {parentJourney(lang).map((stage, i) => {
           const isCurrent = stage.id === currentId
           const isDone = currentIndex > -1 && i < currentIndex
           const isOpen = openId === stage.id
@@ -195,7 +195,7 @@ export function JourneyPage() {
                   {stage.emoji}
                 </span>
                 <span className={styles.stepTitle}>{stage.title}</span>
-                {isCurrent && <span className={styles.currentTag}>אנחנו כאן</span>}
+                {isCurrent && <span className={styles.currentTag}>{t('ui.text.weAreHere', 'אנחנו כאן')}</span>}
                 <span
                   className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ''}`}
                   aria-hidden
@@ -215,7 +215,7 @@ export function JourneyPage() {
                       </span>
                       <span>
                         <span className={styles.waitLabel}>
-                          {stage.waitKind === 'duration' ? 'משך זמן משוער' : 'זמן המתנה משוער'}
+                          {stage.waitKind === 'duration' ? t('ui.calmJourney.durationLabel', 'משך זמן משוער') : t('ui.calmJourney.waitLabel', 'זמן המתנה משוער')}
                         </span>
                         <br />
                         <span className={styles.waitValue}>{stage.waitRange}</span>
@@ -224,28 +224,28 @@ export function JourneyPage() {
                   )}
 
                   <div className={styles.detailBlock}>
-                    <h3>מה קורה כאן</h3>
+                    <h3>{t('ui.text.whatHappensHere', 'מה קורה כאן')}</h3>
                     <p>{stage.whatHappens}</p>
                   </div>
 
                   <div className={styles.detailBlock}>
-                    <h3>מה עלול להיות מאתגר</h3>
+                    <h3>{t('ui.text.whatMayBeHard', 'מה עלול להיות מאתגר')}</h3>
                     <p>{stage.challenge}</p>
                   </div>
 
                   <div>
-                    <p className={styles.askTitle}>💬 מה אפשר לבקש בשלב הזה</p>
+                    <p className={styles.askTitle}>💬 {t('ui.text.canAsk', 'מה אפשר לבקש בשלב הזה')}</p>
                     <InfoList items={stage.canAsk} />
                   </div>
 
                   {stage.procedureIds && stage.procedureIds.length > 0 && (
                     <div>
                       <p className={styles.askTitle}>
-                        🎬 להכין את הילד/ה למה שקורה כאן
+                        {t('ui.calmJourney.prepareChild', '🎬 להכין את הילד/ה למה שקורה כאן')}
                       </p>
                       <div className={styles.procChips}>
                         {stage.procedureIds.map((pid) => {
-                          const proc = getProcedure(pid)
+                          const proc = parentProcedure(lang, pid)
                           if (!proc) return null
                           return (
                             <Link
@@ -263,7 +263,7 @@ export function JourneyPage() {
 
                   {stage.id === 'decision' && (
                     <Link to="/discharge" className={styles.dischargeLink}>
-                      🏠 לקראת שחרור הביתה →
+                      {t('ui.calmJourney.beforeDischarge', '🏠 לקראת שחרור הביתה →')}
                     </Link>
                   )}
 
@@ -272,7 +272,7 @@ export function JourneyPage() {
                     className={`${styles.hereBtn} ${isCurrent ? styles.hereBtnActive : ''}`}
                     onClick={() => markHere(stage.id)}
                   >
-                    {isCurrent ? '✓ אנחנו כאן' : 'סמנו: אנחנו כאן'}
+                    {isCurrent ? `✓ ${t('ui.text.weAreHere', 'אנחנו כאן')}` : t('ui.calmJourney.markHere', 'סמנו: אנחנו כאן')}
                   </button>
                 </div>
               )}

@@ -1,20 +1,22 @@
-import { journeyStages } from '../../../data/journey'
+import { useI18n } from '../../../hooks/useI18n'
+import { parentJourney } from '../../../data/parent'
 import { Scene, Bubble } from '../components/kit'
+import homeTexts from '../../../data/parent/home.json'
 
 export function WaitTimesPage() {
+  const { lang, dir } = useI18n()
+  const tx = homeTexts[lang].wait
   return (
-    <Scene
-      title="זמנים משוערים"
-      subtitle="כל שלב יכול לקחת בערך כמה דקות"
-    >
+    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <Scene title={tx.title} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>
-          הזמנים בעמוד הזה הם טווחים בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.
+          {tx.note}
         </Bubble>
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-        {journeyStages.map((stage, i) => (
+        {parentJourney(lang).map((stage, i) => (
           <div
             key={stage.id}
             style={{
@@ -34,7 +36,7 @@ export function WaitTimesPage() {
             {stage.waitRange && (
               <p style={{ margin: 0, fontSize: '0.95em', color: 'var(--c-story)', marginBottom: 'var(--space-2)' }}>
                 <span style={{ fontWeight: 600 }}>
-                  {stage.waitKind === 'duration' ? '⏱️ משך זמן משוער' : '⏳ זמן המתנה משוער'}:
+                  {stage.waitKind === 'duration' ? tx.duration : tx.wait}:
                 </span>
                 <br />
                 <span style={{ fontSize: '1.1em' }}>{stage.waitRange}</span>
@@ -67,10 +69,11 @@ export function WaitTimesPage() {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
           >
-            חזרה ←
+            {tx.back}
           </button>
         </a>
       </div>
     </Scene>
+    </div>
   )
 }

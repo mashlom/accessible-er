@@ -24,7 +24,7 @@ export const paths: VisitPath[] = [
   {
     id: 'abdominal',
     label: 'כאבי בטן',
-    emoji: '🤕',
+    emoji: '😣',
     blurb: 'בדרך כלל: קבלה, הערכה של מצב בריאות, בדיקת רופא, ולפי הצורך בדיקות דם, אולטרסאונד או ייעוץ.',
     route: [
       { title: 'קבלה במזכירות' },

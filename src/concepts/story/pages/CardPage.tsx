@@ -1,6 +1,8 @@
 import { Link } from '../../nav'
 import { Scene, Bubble, Panel, ChipButton, Note } from '../components/kit'
 import { usePersistentState } from '../../../hooks/usePersistentState'
+import { useI18n } from '../../../hooks/useI18n'
+import homeTexts from '../../../data/parent/home.json'
 import { DAY_MS } from '../../../lib/storage'
 import {
   cardSections,
@@ -25,6 +27,10 @@ export function CardPage() {
     emptyCard,
     DAY_MS,
   )
+  const { lang, dir, t } = useI18n()
+  const tx = homeTexts[lang as 'he' | 'en' | 'ru'].cardPage ?? homeTexts.he.cardPage
+  // the labels are translated; the values stored on the card stay in Hebrew, as the staff reads them
+  const translatedSections = t('careCard.cardSections', cardSections)
 
   function toggle(key: CardArrayField, option: string) {
     const list = card[key]
@@ -41,67 +47,63 @@ export function CardPage() {
   const empty = isCardEmpty(card)
 
   return (
-    <Scene
-      title="הכרטיס שלך"
-      subtitle="סמנו את מה שמתאים — פחות משתי דקות. בסוף יוצא כרטיס קצר וגדול, שאפשר להראות לצוות מהמסך או להדפיס."
-    >
+    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <Scene title={tx.title} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
-        <Bubble>
-          🔒 הכל נשמר <strong>במכשיר הזה בלבד</strong>, נמחק אחרי 24 שעות, ולא נשלח
-          לשום מקום. מה שלא תראו בעצמכם — לא יגיע לצוות. אפשר למלא גם בלי שם.
-        </Bubble>
+        <Bubble>{tx.bubble}</Bubble>
       </div>
 
       <div className={shell.stack}>
-        <Panel title="מי אני (לא חובה)" emoji="🧒">
+        <Panel title={tx.me} emoji="🧒">
           <div className={styles.twoUp}>
             <label className={styles.field}>
-              כינוי / שם פרטי
+              {tx.nickname}
               <input
                 className={styles.input}
                 value={card.nickname}
                 onChange={(e) => setCard({ ...card, nickname: e.target.value })}
                 maxLength={30}
-                placeholder="לא חובה"
+                placeholder={tx.nickPh}
               />
             </label>
             <label className={styles.field}>
-              גיל
+              {tx.age}
               <input
                 className={styles.input}
                 value={card.age}
                 onChange={(e) => setCard({ ...card, age: e.target.value })}
                 maxLength={6}
                 inputMode="numeric"
-                placeholder="—"
+                placeholder={tx.agePh}
               />
             </label>
           </div>
         </Panel>
 
-        {cardSections.map((section) => {
+        {cardSections.map((section, si) => {
           const custom = card.custom?.[section.key] ?? ''
+          const shown = translatedSections[si] ?? section
           return (
-            <Panel key={section.key} title={section.title} emoji={section.emoji}>
-              <div className={shell.chipRow} role="group" aria-label={section.title}>
-                {section.options.map((option) => (
+            <Panel key={section.key} title={shown.title} emoji={section.emoji}>
+              <div className={shell.chipRow} role="group" aria-label={shown.title}>
+                {section.options.map((option, oi) => (
                   <ChipButton
                     key={option}
                     on={card[section.key].includes(option)}
                     onClick={() => toggle(section.key, option)}
                   >
-                    {option}
+                    {shown.options[oi] ?? option}
                   </ChipButton>
                 ))}
               </div>
               <label className={styles.field} style={{ marginTop: 'var(--space-3)' }}>
-                <span className="visually-hidden">אחר — {section.title}</span>
+                <span className="visually-hidden">{tx.other.replace('{title}', shown.title)}</span>
                 <input
                   className={styles.input}
                   value={custom}
                   onChange={(e) => setCustom(section.key, e.target.value)}
                   maxLength={CUSTOM_MAX}
-                  placeholder="אחר… (אפשר לכתוב בחופשי)"
+                  placeholder={tx.otherPh}
                 />
                 {custom.length > 0 && (
                   <span className={styles.charCount}>
@@ -113,20 +115,17 @@ export function CardPage() {
           )
         })}
 
-        <Panel title="עוד משהו שעוזר לי? (לא חובה)" emoji="✏️">
+        <Panel title={tx.freeTitle} emoji="✏️">
           <textarea
             className={styles.textarea}
             rows={3}
             value={card.freeNote}
             onChange={(e) => setCard({ ...card, freeNote: e.target.value })}
-            placeholder="למשל: אוהב שמספרים לי מה קורה בקול שקט; נרגעת עם הדובי הכחול…"
+            placeholder={tx.freePh}
           />
         </Panel>
 
-        <Note>
-          מה שמסמנים כאן פותח גם הצעות להתאמות שכדאי לבקש — הן מופיעות מתחת לכרטיס
-          עצמו.
-        </Note>
+        <Note>{tx.note}</Note>
       </div>
 
       <div className={styles.actions}>
@@ -136,14 +135,15 @@ export function CardPage() {
           aria-disabled={empty}
           style={empty ? { pointerEvents: 'none', opacity: 0.5 } : undefined}
         >
-          🪪 להראות את הכרטיס לצוות
+          {tx.show}
         </Link>
         {!empty && (
           <button type="button" className={shell.ghostBtn} onClick={clearCard}>
-            ניקוי הכרטיס
+            {tx.clear}
           </button>
         )}
       </div>
     </Scene>
+    </div>
   )
 }

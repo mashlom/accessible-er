@@ -3,15 +3,22 @@ import { Link } from '../../nav'
 import { Mascot } from '../components/Mascot'
 import { NavCard } from '../components/ui'
 import { useVisitReason } from '../../../hooks/useVisitReason'
+import { parentPaths } from '../../../data/parent/paths'
+import { useI18n } from '../../../hooks/useI18n'
 import {
   avatarEmojis,
   fileToAvatarDataUrl,
   useSessionAvatar,
 } from '../../../hooks/useSessionAvatar'
+import parentUi from '../../../data/parent/ui.json'
 import styles from './HomePage.module.css'
 
 export function HomePage() {
+  const { t, lang } = useI18n()
+  // the tiles' titles and descriptions: src/data/parent/ui.json, in the chosen language
+  const tiles = (parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string; desc: string }> }>)[lang]?.tiles ?? (parentUi as unknown as Record<'he', { tiles: Record<string, { title: string; desc: string }> }>).he.tiles
   const { path } = useVisitReason()
+  const shownPath = path && (parentPaths(lang).find((p) => p.id === path.id) ?? path)
   const [avatar, setAvatar, resetAvatar] = useSessionAvatar()
   const fileRef = useRef<HTMLInputElement>(null)
 
@@ -89,117 +96,116 @@ export function HomePage() {
       {path ? (
         <div className={styles.reasonBanner}>
           <span className={styles.reasonEmoji} aria-hidden>
-            {path.emoji}
+            {shownPath?.emoji}
           </span>
           <span className={styles.reasonText}>
-            <span className={styles.reasonLabel}>הגענו בגלל</span>
-            <span className={styles.reasonValue}>{path.label}</span>
+            <span className={styles.reasonLabel}>{t('ui.calmHome.reasonLabel', 'הגענו בגלל')}</span>
+            <span className={styles.reasonValue}>{shownPath?.label}</span>
           </span>
           <Link to="/reason" className={styles.reasonChange}>
-            שינוי
+            {t('ui.calmHome.change', 'שינוי')}
           </Link>
         </div>
       ) : (
         <Link to="/reason" className={styles.reasonPrompt}>
-          👉 ספרו לי למה הגעתם היום — כדי שאתאים לכם את המסלול
+          {t('ui.calmHome.reasonPrompt', '👉 ספרו לי למה הגעתם היום — כדי שאתאים לכם את המסלול')}
         </Link>
       )}
 
-      <p className={styles.sectionLabel}>מה אפשר לעשות כאן</p>
+      <p className={styles.sectionLabel}>{t('ui.calmHome.canDo', 'מה אפשר לעשות כאן')}</p>
       <nav className={styles.navList}>
         <NavCard
           to="/card"
           emoji="🪪"
-          title="חשוב לדעת על הילד/ה שלי"
-          desc="כרטיס התאמות קצר להצגה לצוות"
+          title={tiles["card"].title}
+          desc={tiles["card"].desc}
           tint="#a9d2ce"
           tintSoft="var(--c-primary-soft)"
         />
         <NavCard
           to="/journey"
           emoji="🧭"
-          title="מה קורה עכשיו?"
-          desc="שלבי הביקור במיון, ומה צפוי בהמשך"
+          title={tiles["journey"].title}
+          desc={tiles["journey"].desc}
           tint="#a9d2ce"
           tintSoft="var(--c-primary-soft)"
         />
         <NavCard
           to="/wait-times"
           emoji="⏱️"
-          title="זמנים משוערים"
-          desc="כמה זמן כל שלב יכול לקחת בערך"
+          title={tiles["wait-times"].title}
+          desc={tiles["wait-times"].desc}
           tint="#d4a574"
           tintSoft="#f0e4d5"
         />
         <NavCard
           to="/procedures"
           emoji="🎬"
-          title="מה עומד לקרות?"
-          desc="הכנה לבדיקות ולפרוצדורות, שלב אחרי שלב"
+          title={tiles["procedures"].title}
+          desc={tiles["procedures"].desc}
           tint="#cbb8e6"
           tintSoft="var(--c-lilac-soft)"
         />
         <NavCard
           to="/map"
           emoji="🗺️"
-          title="איפה אנחנו?"
-          desc="מפה פשוטה של המיון, כולל מקומות שקטים"
+          title={tiles["map"].title}
+          desc={tiles["map"].desc}
           tint="#a7cbe6"
           tintSoft="var(--c-sky-soft)"
         />
         <NavCard
           to="/calm"
           emoji="💗"
-          title="מה עושים כשקשה?"
-          desc="הנחיות קצרות להורה ברגעי מצוקה"
+          title={tiles["calm"].title}
+          desc={tiles["calm"].desc}
           tint="#efc0ac"
           tintSoft="var(--c-alert-soft)"
         />
         <NavCard
           to="/requests"
           emoji="🙋"
-          title="מה אפשר לבקש?"
-          desc="התאמות שאפשר לבקש מהצוות"
+          title={tiles["requests"].title}
+          desc={tiles["requests"].desc}
           tint="#a9dcb8"
           tintSoft="var(--c-calm-soft)"
         />
         <NavCard
           to="/discharge"
           emoji="🏠"
-          title="לקראת שחרור"
-          desc="מה קורה בסיום הביקור והחזרה הביתה"
+          title={tiles["discharge"].title}
+          desc={tiles["discharge"].desc}
           tint="#bfe3df"
           tintSoft="var(--c-primary-soft)"
         />
         <NavCard
           to="/reason"
           emoji="💭"
-          title="למה הגענו?"
-          desc="בחירת סיבת ההגעה להתאמת המסלול"
+          title={tiles["reason"].title}
+          desc={tiles["reason"].desc}
           tint="#f1d8bf"
           tintSoft="var(--c-accent-soft)"
         />
         <NavCard
           to="/message"
           emoji="✉️"
-          title="הודעה לצוות"
-          desc="בקשה או תודה — להצגה על המסך או לשליחה במייל"
+          title={tiles["message"].title}
+          desc={tiles["message"].desc}
           tint="#cbb8e6"
           tintSoft="var(--c-lilac-soft)"
         />
         <NavCard
           to="/feedback"
           emoji="💬"
-          title="משוב קצר"
-          desc="ספרו לנו איך היה — כדי שנשתפר"
+          title={tiles["feedback"].title}
+          desc={tiles["feedback"].desc}
           tint="#a7cbe6"
           tintSoft="var(--c-sky-soft)"
         />
       </nav>
 
       <p className={styles.footNote}>
-        הכלי נועד להנגיש את הביקור ולהפחית אי־ודאות. הוא אינו מחליף את הצוות הרפואי
-        ואינו מספק ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים.
+        {t('ui.calmHome.footer', 'הכלי נועד להנגיש את הביקור ולהפחית אי־ודאות. הוא אינו מחליף את הצוות הרפואי ואינו מספק ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים.')}
       </p>
     </div>
   )

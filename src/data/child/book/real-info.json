@@ -1,0 +1,317 @@
+{
+  "ru": {
+    "headings": {
+      "meaning": "",
+      "whatHappens": "Что здесь будет",
+      "challenge": "Что может быть трудно",
+      "canAsk": "О чём ты можешь попросить"
+    },
+    "reception": {
+      "meaning": "Это первый шаг визита. Отсюда мы идём на осмотр медсестры.",
+      "whatHappens": "Тебя спрашивают, как тебя зовут и что случилось. Обычно дают браслет с именем. Иногда приходится стоять близко к другим людям.",
+      "challenge": "Иногда у стойки очередь и короткое ожидание. Может быть шумно.",
+      "canAsk": [
+        "Посидеть в более тихом месте, пока ждёшь",
+        "Чтобы тебе коротко объяснили, что будет дальше"
+      ]
+    },
+    "wait-before-triage": {
+      "meaning": "После регистратуры мы ждём в очереди к медсестре.",
+      "whatHappens": "Мы сидим и ждём. Вокруг может быть тесно и шумно, много людей и детей. Это хорошее время, чтобы подготовиться к тому, что будет у медсестры.",
+      "challenge": "Тесно и шумно. Непонятно, сколько ждать.",
+      "canAsk": [
+        "Место, где тише и меньше людей",
+        "Узнать, сколько примерно ещё ждать"
+      ]
+    },
+    "triage": {
+      "meaning": "Медсестра смотрит, как ты себя чувствуешь, и делает измерения. После этого мы ждём своей очереди к врачу.",
+      "whatHappens": "Медсестра измеряет температуру, пульс, давление и кислород и задаёт несколько коротких вопросов. Во время измерений она касается руки или пальца. Для этого используют градусник, прищепку на палец и манжету, которая сжимает руку.",
+      "challenge": "Несколько измерений подряд, рядом с новым человеком. Новые приборы и новые ощущения.",
+      "canAsk": [
+        "Чтобы тебе коротко объяснили, что сейчас будет, перед каждым измерением",
+        "Делать измерения по одному, давать тебе передышку между ними",
+        "Сначала показать измерение на маме или папе"
+      ]
+    },
+    "wait-doctor": {
+      "meaning": "Мы уже проверены, и состояние стабильное. Теперь ждём очереди к врачу.",
+      "whatHappens": "Мы ждём в зале ожидания или у поста. В зале может быть тесно, люди сидят близко. Это время можно использовать, чтобы подготовиться.",
+      "challenge": "Ожидание и неизвестность. В людном месте легко перегрузиться.",
+      "canAsk": [
+        "Спокойный уголок для ожидания",
+        "Примерное время ожидания"
+      ]
+    },
+    "doctor": {
+      "meaning": "Это главная встреча визита. Дальше врач решает, что нужно именно тебе.",
+      "whatHappens": "Врач разговаривает с тобой, осматривает тебя и решает, нужны ли анализы или лечение. Врач может послушать сердце стетоскопом, посмотреть горло и уши, иногда мягко надавить на живот.",
+      "challenge": "Прикосновения во время осмотра и новый человек рядом. Много вопросов.",
+      "canAsk": [
+        "Чтобы говорил и вёл один человек",
+        "Чтобы тебе объясняли перед каждым прикосновением",
+        "Немного времени, чтобы подумать между вопросом и ответом"
+      ]
+    },
+    "tests": {
+      "meaning": "Врач решил, что нужно больше информации. Делают только те обследования, которые нужны именно тебе.",
+      "whatHappens": "Делают анализ крови или мочи, рентген, УЗИ или другие обследования. Перед каждым можно узнать, как оно пройдёт. Иногда нужен гель, пояс или обезболивающий крем.",
+      "challenge": "Переходы между комнатами, большие аппараты, ожидание между обследованиями.",
+      "canAsk": [
+        "Заранее рассказать, как пройдёт каждое обследование",
+        "Поменьше шума и света во время обследования",
+        "Чтобы мама или папа были рядом"
+      ]
+    },
+    "treatment": {
+      "meaning": "Врач решил, какое лечение нужно. Лечение можно подстроить под тебя.",
+      "whatHappens": "Делают назначенное лечение: капельницу, лекарство, ингаляцию, гипс, повязку или швы. Обычно можно попросить, чтобы было полегче. Часто это прикосновения, иногда иголка или гипс на руке или ноге.",
+      "challenge": "Процедуры с прикосновениями, иголкой или долгое сидение на одном месте.",
+      "canAsk": [
+        "Обезболивающий крем перед уколом",
+        "Отвлечься и чтобы рядом был один человек, который всё объясняет",
+        "Заранее рассказать о каждой процедуре"
+      ]
+    },
+    "consult": {
+      "meaning": "Иногда приходит врач-специалист, например ортопед, хирург или отоларинголог. Это нужно не всем и не значит, что с тобой что-то плохо.",
+      "whatHappens": "Приходит ещё один врач, задаёт вопросы и смотрит. Иногда он советует ещё одно обследование или лечение. Бывает, что приходится немного подождать, пока он придёт.",
+      "challenge": "Ещё один новый человек, ещё один осмотр, иногда ожидание.",
+      "canAsk": [
+        "Узнать, кто придёт и зачем",
+        "Чтобы специалисту заранее рассказали, что важно знать о тебе",
+        "Чтобы объяснили коротко и просто"
+      ]
+    },
+    "wait-results": {
+      "meaning": "Обследования сделаны, теперь ждём ответы. Обычно это самое долгое ожидание.",
+      "whatHappens": "Результаты приходят постепенно. Врач расскажет, когда будут новости.",
+      "challenge": "Долгое и непонятное ожидание. Легко подумать, что про нас забыли.",
+      "canAsk": [
+        "Короткие новости о том, что уже известно",
+        "Тихое место, чтобы ждать",
+        "Примерное время до ответа"
+      ]
+    },
+    "decision": {
+      "meaning": "Врачи подводят итоги. Чаще всего отпускают домой с рекомендациями, иногда оставляют в больнице.",
+      "whatHappens": "Итоговый разговор, рекомендации на дальше, рецепты, если нужны, и подготовка к выходу или к переходу в отделение.",
+      "challenge": "Много информации в конце долгого визита. Переход в новое место, если остаёшься.",
+      "canAsk": [
+        "Рекомендации в картинках или написанные",
+        "Короткое резюме простыми словами",
+        "Время попрощаться с местом перед выходом"
+      ]
+    }
+  },
+  "en": {
+    "headings": {
+      "meaning": "",
+      "whatHappens": "What will happen here",
+      "challenge": "What may be hard",
+      "canAsk": "What can you ask for?"
+    },
+    "reception": {
+      "meaning": "This is the first step of the visit. From here we go to the nurse.",
+      "whatHappens": "They ask your name and what happened. You usually get a wristband with your name. Sometimes you have to stand close to other people.",
+      "challenge": "Sometimes there is a queue and a short wait at the desk. It can be noisy.",
+      "canAsk": [
+        "Sit in a quieter place while you wait",
+        "Have someone briefly explain what comes next"
+      ]
+    },
+    "wait-before-triage": {
+      "meaning": "After the desk we wait in line for the nurse.",
+      "whatHappens": "We sit and wait. It can be crowded and noisy, with lots of people and children. It is a good time to get ready for what the nurse will do.",
+      "challenge": "Crowded and noisy. It is not clear how long the wait will be.",
+      "canAsk": [
+        "A place that is quieter and less busy",
+        "To know roughly how much longer we wait"
+      ]
+    },
+    "triage": {
+      "meaning": "The nurse checks how you feel and takes measurements. After that we wait for our turn with the doctor.",
+      "whatHappens": "The nurse measures temperature, pulse, blood pressure and oxygen, and asks a few short questions. She may touch your hand or finger. For this they use a thermometer, a clip on the finger and a cuff that squeezes the arm.",
+      "challenge": "Several measurements in a row, with a new person close by. New devices and new feelings.",
+      "canAsk": [
+        "To have it briefly explained what is about to happen before each measurement",
+        "Take the measurements one at a time, giving you a break between them",
+        "First show the measurement on mum or dad"
+      ]
+    },
+    "wait-doctor": {
+      "meaning": "We have been checked and the condition is stable. Now we wait for the doctor.",
+      "whatHappens": "We wait in the waiting room or by the desk. It can be crowded. This time can be used to get ready.",
+      "challenge": "Waiting and not knowing. In a busy place it is easy to get overloaded.",
+      "canAsk": [
+        "A calm corner to wait in",
+        "A rough idea of how long the wait is"
+      ]
+    },
+    "doctor": {
+      "meaning": "This is the main meeting of the visit. The doctor decides what is right for you.",
+      "whatHappens": "The doctor talks with you, examines you and decides whether you need tests or treatment. The doctor may listen to your heart with a stethoscope, look at your throat and ears, and sometimes press gently on your tummy.",
+      "challenge": "Touch during the examination, a new person close by, and many questions.",
+      "canAsk": [
+        "One person who talks and leads",
+        "An explanation before each touch",
+        "A little time to think between a question and an answer"
+      ]
+    },
+    "tests": {
+      "meaning": "The doctor wants more information. Only the tests that you need are done.",
+      "whatHappens": "Blood or urine tests, an X-ray, an ultrasound or other tests. Before each one you can find out how it will go. Sometimes there is gel, a belt or a numbing cream.",
+      "challenge": "Moving between rooms, big machines, waiting between tests.",
+      "canAsk": [
+        "Find out in advance how each test will go",
+        "Less noise and light during the test",
+        "Mum or dad staying close"
+      ]
+    },
+    "treatment": {
+      "meaning": "The doctor decided what treatment is needed. The treatment can be adjusted for you.",
+      "whatHappens": "The planned treatment is given: a drip, medicine, an inhaler, a cast, a dressing or stitches. You can usually ask for things to be made easier. Often there is touch, sometimes a needle or a cast.",
+      "challenge": "Procedures with touch, a needle, or sitting still for a long time.",
+      "canAsk": [
+        "A numbing cream before a needle",
+        "Distraction and one person who explains everything",
+        "Being told in advance about each procedure"
+      ]
+    },
+    "consult": {
+      "meaning": "Sometimes a specialist doctor comes, for example a bone doctor, a surgeon or an ENT. Not everyone needs this, and it does not mean something is wrong with you.",
+      "whatHappens": "Another doctor comes, asks questions and looks at you. Sometimes they suggest another test or treatment. Sometimes we need to wait a little until they arrive.",
+      "challenge": "One more new person, one more check, sometimes waiting.",
+      "canAsk": [
+        "Find out who is coming and why",
+        "Let the specialist know in advance what is important about you",
+        "Have things explained briefly and simply"
+      ]
+    },
+    "wait-results": {
+      "meaning": "The tests are done, now we wait for the answers. This is usually the longest wait.",
+      "whatHappens": "The results come bit by bit. The doctor will tell us when there is news.",
+      "challenge": "A long and unclear wait. It is easy to feel that we have been forgotten.",
+      "canAsk": [
+        "Short updates on what is already known",
+        "A quiet place to wait",
+        "A rough idea of how long until the answer"
+      ]
+    },
+    "decision": {
+      "meaning": "The doctors sum up. Most often you go home with advice, sometimes you stay in the hospital.",
+      "whatHappens": "A final talk, advice for the next days, prescriptions if needed, and getting ready to leave or to move to a ward.",
+      "challenge": "A lot of information at the end of a long visit. A new place if you stay.",
+      "canAsk": [
+        "Advice in pictures or in writing",
+        "A short summary in simple words",
+        "Time to say goodbye to the place before leaving"
+      ]
+    }
+  },
+  "he": {
+    "headings": {
+      "meaning": "",
+      "whatHappens": "מה קורה כאן",
+      "challenge": "מה עלול להיות קשה",
+      "canAsk": "על מה אפשר לבקש?"
+    },
+    "reception": {
+      "meaning": "זה השלב הראשון בביקור. מכאן הולכים לאחות.",
+      "whatHappens": "שואלים איך קוראים לך ומה קרה. בדרך כלל נותנים צמיד עם השם. לפעמים צריך לעמוד קרוב לאנשים אחרים.",
+      "challenge": "לפעמים יש תור וזמן המתנה קצר ליד הדלפק. יכול להיות רועש.",
+      "canAsk": [
+        "לשבת במקום שקט יותר בזמן ההמתנה",
+        "שיסבירו לך בקצרה מה השלב הבא"
+      ]
+    },
+    "wait-before-triage": {
+      "meaning": "אחרי הדלפק ממתינים בתור לאחות.",
+      "whatHappens": "יושבים ומחכים. יכול להיות צפוף ורועש, הרבה אנשים וילדים. זה זמן טוב להתכונן למה שהאחות תעשה.",
+      "challenge": "צפוף ורועש. לא ברור כמה זמן מחכים.",
+      "canAsk": [
+        "מקום שקט יותר ופחות צפוף",
+        "לדעת בערך כמה עוד מחכים"
+      ]
+    },
+    "triage": {
+      "meaning": "האחות בודקת איך אתה מרגיש/ה ומודדת. אחרי זה ממתינים לתור לרופא/ה.",
+      "whatHappens": "האחות מודדת חום, דופק, לחץ דם וחמצן ושואלת כמה שאלות קצרות. היא עשויה לגעת ביד או באצבע. לשם כך משתמשים במדחום, בקליפס על האצבע ובמנשם שלוחץ על היד.",
+      "challenge": "כמה מדידות ברצף, ליד אדם חדש. מכשירים חדשים והרגשות חדשות.",
+      "canAsk": [
+        "שיסבירו לך בקצרה מה עומד לקרות לפני כל מדידה",
+        "למדוד אחת אחת, ולתת לך הפסקה בין המדידות",
+        "להראות קודם את המדידה על אמא או על אבא"
+      ]
+    },
+    "wait-doctor": {
+      "meaning": "בדקו אותנו והמצב יציב. עכשיו ממתינים לתור לרופא/ה.",
+      "whatHappens": "מחכים באולם ההמתנה או ליד העמדה. יכול להיות צפוף. אפשר להשתמש בזמן הזה כדי להתכונן.",
+      "challenge": "המתנה ולא לדעת. במקום עמוס קל להיות מוצף/ת.",
+      "canAsk": [
+        "פינה רגועה לחכות בה",
+        "לדעת בערך כמה זמן מחכים"
+      ]
+    },
+    "doctor": {
+      "meaning": "זו הפגישה המרכזית של הביקור. הרופא/ה מחליט/ה מה נכון בדיוק בשבילך.",
+      "whatHappens": "הרופא/ה מדבר/ת איתך, בודק/ת אותך ומחליט/ה אם צריך בדיקות או טיפול. הרופא/ה יכול/ה להקשיב ללב בסטטוסקופ, להסתכל בגרון ובאוזניים, ולפעמים ללחוץ בעדינות על הבטן.",
+      "challenge": "מגע במהלך הבדיקה, אדם חדש לידך, והרבה שאלות.",
+      "canAsk": [
+        "שמי שמדבר ומוביל יהיה אחד",
+        "שיסבירו לפני כל מגע",
+        "קצת זמן לחשוב בין שאלה לתשובה"
+      ]
+    },
+    "tests": {
+      "meaning": "הרופא/ה רוצה יותר מידע. עושים רק את הבדיקות שאתה/את צריך/ה.",
+      "whatHappens": "בדיקת דם או שתן, צילום רנטגן, אולטרסאונד ובדיקות אחרות. לפני כל אחת אפשר לברר איך היא תעבור. לפעמים יש ג'ל, חגורה או משחה משככת כאב.",
+      "challenge": "מעברים בין חדרים, מכשירים גדולים, המתנה בין בדיקות.",
+      "canAsk": [
+        "לדעת מראש איך תעבור כל בדיקה",
+        "פחות רעש ואור בזמן הבדיקה",
+        "שאמא או אבא יישארו לידך"
+      ]
+    },
+    "treatment": {
+      "meaning": "הרופא/ה החליט/ה איזה טיפול צריך. אפשר להתאים את הטיפול אליך.",
+      "whatHappens": "נותנים את הטיפול שנקבע: עירוי, תרופה, אינהלציה, גבס, תחבושת או תפרים. בדרך כלל אפשר לבקש שיהיה קל יותר. לפעמים זה מגע, לפעמים מחט או גבס.",
+      "challenge": "טיפולים עם מגע, מחט, או ישיבה במקום אחד הרבה זמן.",
+      "canAsk": [
+        "משחה משככת כאב לפני זריקה",
+        "להסיח את הדעת ושיהיה לידך אדם אחד שמסביר הכול",
+        "שיספרו מראש על כל טיפול"
+      ]
+    },
+    "consult": {
+      "meaning": "לפעמים מגיע רופא/ה מומחה/ית, למשל אורתופד, מנתח/ת או א.א.ו. זה לא לכולם, וזה לא אומר שמשהו רע איתך.",
+      "whatHappens": "מגיע רופא/ה נוסף/ת, שואל/ת שאלות ובודק/ת. לפעמים הוא/היא ממליץ/ה על בדיקה או טיפול נוסף. לפעמים צריך לחכות קצת עד שיגיע.",
+      "challenge": "עוד אדם חדש, עוד בדיקה, לפעמים המתנה.",
+      "canAsk": [
+        "לדעת מי מגיע ולמה",
+        "שהמומחה/ית ידעו מראש מה חשוב לדעת עליך",
+        "שיסבירו בקצרה ובפשטות"
+      ]
+    },
+    "wait-results": {
+      "meaning": "הבדיקות נעשו, עכשיו מחכים לתשובות. בדרך כלל זו ההמתנה הכי ארוכה.",
+      "whatHappens": "התוצאות מגיעות בהדרגה. הרופא/ה יגיד/תגיד כשיהיו חדשות.",
+      "challenge": "המתנה ארוכה ולא ברורה. קל לחשוב שנשכחנו.",
+      "canAsk": [
+        "עדכונים קצרים על מה שכבר ידוע",
+        "מקום שקט לחכות בו",
+        "זמן משוער עד התשובה"
+      ]
+    },
+    "decision": {
+      "meaning": "הצוות מסכם. לרוב משחררים הביתה עם המלצות, לפעמים נשארים בבית החולים.",
+      "whatHappens": "שיחת סיכום, המלצות להמשך, מרשמים אם צריך, והכנה ליציאה או למעבר למחלקה.",
+      "challenge": "הרבה מידע בסוף ביקור ארוך. מעבר למקום חדש אם נשארים.",
+      "canAsk": [
+        "המלצות בתמונות או בכתב",
+        "סיכום קצר במילים פשוטות",
+        "זמן להיפרד מהמקום לפני היציאה"
+      ]
+    }
+  }
+}

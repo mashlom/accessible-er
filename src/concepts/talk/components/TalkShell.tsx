@@ -1,5 +1,7 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import { useIsConceptHome } from '../../nav'
+import { LanguagePicker } from '../../../components/LanguagePicker'
+import { useI18n } from '../../../hooks/useI18n'
 import styles from '../talk.module.css'
 
 /**
@@ -9,10 +11,11 @@ import styles from '../talk.module.css'
 export function TalkShell() {
   const navigate = useNavigate()
   const isHome = useIsConceptHome()
+  const { dir, lang } = useI18n()
 
   return (
     <div className={styles.theme}>
-      <div className={styles.app}>
+      <div className={styles.app} dir={dir} lang={lang}>
         <a href="#main" className="skip-link">
           דילוג לתוכן
         </a>
@@ -31,9 +34,12 @@ export function TalkShell() {
             <span aria-hidden />
           )}
 
-          <a href="#/" className={styles.topBtn} aria-label="לתפריט הקונספטים">
-            <span aria-hidden>🏁</span>
-          </a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <LanguagePicker />
+            <a href="#/" className={styles.topBtn} aria-label="לתפריט הקונספטים">
+              <span aria-hidden>🏁</span>
+            </a>
+          </div>
         </header>
 
         <Outlet />

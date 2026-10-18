@@ -1,8 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { Link } from '../../nav'
-import { journeyStages } from '../../../data/journey'
+import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
-import { getProcedure } from '../../../data/procedures'
 import { SensoryBar } from '../../../components/SensoryBar'
 import { useQuestProgress, loadProcs } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
@@ -13,7 +12,7 @@ import css from '../quest.module.css'
 
 export function WaitTimesPage() {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const { active, completeProcedure, completeActive } = useQuestProgress()
   const navigate = useNavigate()
 
@@ -27,7 +26,7 @@ export function WaitTimesPage() {
     navigate('/quest/map')
   }
 
-  const data = t('journey.journeyStages', journeyStages).find((j) => j.id === 'wait-before-triage')
+  const data = parentJourney(lang).find((j) => j.id === 'wait-before-triage')
   if (!data) return <div>Error: stage not found</div>
 
   const procIds = ['temperature', 'saturation', 'blood-pressure']
@@ -104,7 +103,7 @@ export function WaitTimesPage() {
           <p style={{ marginBottom: 'var(--space-3)' }}>{data.nextStagePrepare}</p>
 
           {procIds.map((pid) => {
-            const proc = t(`procedures.procedures.${pid}`, getProcedure(pid))
+            const proc = parentProcedure(lang, pid)
             if (!proc) return null
             return (
               <div key={pid} style={{ marginBottom: 'var(--space-3)' }}>

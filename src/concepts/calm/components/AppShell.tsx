@@ -1,5 +1,8 @@
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Link, useIsConceptHome } from '../../nav'
+import { useI18n } from '../../../hooks/useI18n'
+import { LanguagePicker } from '../../../components/LanguagePicker'
+import { HelperChat } from '../../../components/helper/HelperChat'
 import styles from './AppShell.module.css'
 
 /**
@@ -9,11 +12,13 @@ import styles from './AppShell.module.css'
 export function AppShell() {
   const navigate = useNavigate()
   const isHome = useIsConceptHome()
+  // the direction follows the language: Hebrew reads right to left, Russian and English left to right
+  const { t, dir, lang } = useI18n()
 
   return (
-    <div className={styles.shell}>
+    <div className={styles.shell} dir={dir} lang={lang}>
       <a href="#main" className="skip-link">
-        דילוג לתוכן
+        {t('ui.shell.skip', 'דילוג לתוכן')}
       </a>
       <header className={`${styles.header} no-print`}>
         <div className={styles.headerInner}>
@@ -38,15 +43,19 @@ export function AppShell() {
             <span>מה שלומי?</span>
           </Link>
 
-          {/* demo affordance: back to the concept menu */}
-          <a href="#/" className={styles.iconBtn} aria-label="לתפריט הקונספטים">
-            <span aria-hidden>🏁</span>
-          </a>
+          <div className={styles.end}>
+            <LanguagePicker />
+            {/* demo affordance: back to the concept menu */}
+            <a href="#/" className={styles.iconBtn} aria-label="לתפריט הקונספטים">
+              <span aria-hidden>🏁</span>
+            </a>
+          </div>
         </div>
       </header>
 
       <main id="main" className={styles.main}>
         <Outlet />
+        <HelperChat />
       </main>
     </div>
   )

@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Navigate } from '../../nav'
-import { getProcedure } from '../../../data/procedures'
-import { journeyStages } from '../../../data/journey'
+import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
@@ -12,18 +11,18 @@ import css from '../quest.module.css'
 export function ProcedureDetailPage() {
   const { id } = useParams<{ id: string }>()
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const { completeProcedure, doneProcedures, active, visibleOptionals } = useQuestProgress()
   const navigate = useNavigate()
   const isDone = id ? doneProcedures.has(id) : false
 
   // Only allow completing if the parent stage is currently active
-  const parentStage = t('journey.journeyStages', journeyStages).find((s) => s.procedureIds?.includes(id ?? ''))
+  const parentStage = parentJourney(lang).find((s) => s.procedureIds?.includes(id ?? ''))
   const parentIsActive = parentStage
     ? active?.id === parentStage.id ||
       visibleOptionals.some((s) => s.id === parentStage.id && s.status === 'active')
     : true // procedure with no parent stage — allow
-  const procedure = id ? t(`procedures.procedures.${id}`, getProcedure(id)) : undefined
+  const procedure = id ? parentProcedure(lang, id) : undefined
   const [variant, setVariant] = useState(0)
 
   useEffect(() => { setVariant(0) }, [id])

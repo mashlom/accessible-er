@@ -1,22 +1,29 @@
 import { Scene, Bubble, Note } from '../components/kit'
-import { staffRequests } from '../../../data/support'
+import { useI18n } from '../../../hooks/useI18n'
+import parentUi from '../../../data/parent/ui.json'
 import styles from '../pages.module.css'
+
+type StoryRequestsTexts = {
+  title: string
+  subtitle: string
+  bubble: string
+  note: string
+  items: { emoji: string; title: string; detail: string }[]
+}
 
 /** The legitimate asks. Informational — nothing is sent; the parent asks. */
 export function RequestsPage() {
+  const { lang, dir } = useI18n()
+  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { storyRequests: StoryRequestsTexts }>)[lang].storyRequests
   return (
-    <Scene
-      title="מה אפשר לבקש?"
-      subtitle="אלה בקשות לגיטימיות לגמרי. הצוות רגיל אליהן, וזה בסדר גמור לבקש."
-    >
+    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <Scene title={tx.title} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
-        <Bubble>
-          אתם המומחים לילד/ה שלכם. אם משהו יעזור — אפשר פשוט לבקש, גם באמצע.
-        </Bubble>
+        <Bubble>{tx.bubble}</Bubble>
       </div>
 
       <div className={styles.requests}>
-        {staffRequests.map((r) => (
+        {tx.items.map((r) => (
           <div key={r.title} className={styles.request}>
             <span className={styles.requestEmoji} aria-hidden>
               {r.emoji}
@@ -30,11 +37,9 @@ export function RequestsPage() {
       </div>
 
       <div style={{ marginTop: 'var(--space-4)' }}>
-        <Note>
-          הזמינות של כל התאמה תלויה במצב הרפואי, בציוד ובעומס באותו רגע. גם כשלא
-          מתאפשר — שווה לשאול.
-        </Note>
+        <Note>{tx.note}</Note>
       </div>
     </Scene>
+    </div>
   )
 }

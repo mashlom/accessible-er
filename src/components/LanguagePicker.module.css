@@ -11,6 +11,7 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 999px;
   background: #fff;
+  color: #1f2d2b;
   font-size: 1.25rem;
   cursor: pointer;
 }
@@ -34,6 +35,7 @@
   padding: 6px;
   list-style: none;
   background: #fff;
+  color: #1f2d2b;
   border-radius: 14px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
 }
@@ -93,4 +95,9 @@
 .overlay .caret {
   font-size: 18px;
   color: #fff;
+}
+
+.menuStart {
+  inset-inline-end: auto;
+  inset-inline-start: 0;
 }

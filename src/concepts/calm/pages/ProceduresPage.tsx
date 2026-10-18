@@ -1,11 +1,14 @@
+import { useI18n } from '../../../hooks/useI18n'
 import { Link } from '../../nav'
 import { PageHeader } from '../components/ui'
-import { procedures, getProcedure } from '../../../data/procedures'
+import { procedures } from '../../../data/procedures'
+import { parentProcedure } from '../../../data/parent'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import type { Procedure } from '../../../data/types'
 import styles from './ProceduresPage.module.css'
 
 export function ProceduresPage() {
+  const { t, lang } = useI18n()
   const { path } = useVisitReason()
 
   // Procedures that appear on the selected reason's route, surfaced first.
@@ -13,27 +16,27 @@ export function ProceduresPage() {
     ? path.route
         .map((s) => s.procedureId)
         .filter((id): id is string => Boolean(id))
-        .map((id) => getProcedure(id))
+        .map((id) => parentProcedure(lang, id))
         .filter((p): p is Procedure => Boolean(p))
         // de-dupe while keeping order
         .filter((p, i, arr) => arr.findIndex((x) => x.id === p.id) === i)
     : []
 
   const relevantIds = new Set(relevant.map((p) => p.id))
-  const rest = procedures.filter((p) => !relevantIds.has(p.id))
+  const rest = procedures.filter((p) => !relevantIds.has(p.id)).map((p) => parentProcedure(lang, p.id) ?? p)
 
   return (
     <div className="container">
       <PageHeader
-        eyebrow="מה עומד לקרות"
-        title="הכנה לבדיקות ולפרוצדורות"
-        subtitle="בחרו פעולה כדי לראות מה עומד לקרות, כמה זמן זה לוקח, ומה אפשר לבקש. רוני יסביר לילד/ה שלב אחרי שלב."
+        eyebrow={t('ui.calmProcedures.eyebrow', 'מה עומד לקרות')}
+        title={t('ui.calmProcedures.title', 'הכנה לבדיקות ולפרוצדורות')}
+        subtitle={t('ui.calmProcedures.subtitle', 'בחרו פעולה כדי לראות מה עומד לקרות, כמה זמן זה לוקח, ומה אפשר לבקש. רוני יסביר לילד/ה שלב אחרי שלב.')}
       />
 
       {relevant.length > 0 && (
         <>
           <p className={styles.groupLabel}>
-            {path?.emoji} רלוונטי לביקור שלנו ({path?.label})
+            {path?.emoji} {t('ui.calmProcedures.relevant', 'רלוונטי לביקור שלנו')} ({path?.label})
           </p>
           <div className={`${styles.grid} ${styles.relevant}`}>
             {relevant.map((p) => (
@@ -44,7 +47,7 @@ export function ProceduresPage() {
       )}
 
       <p className={styles.groupLabel}>
-        {relevant.length > 0 ? 'כל הפעולות' : 'הפעולות הנפוצות'}
+        {relevant.length > 0 ? t('ui.calmProcedures.allActions', 'כל הפעולות') : t('ui.calmProcedures.commonActions', 'הפעולות הנפוצות')}
       </p>
       <div className={styles.grid}>
         {rest.map((p) => (

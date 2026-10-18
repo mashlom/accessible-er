@@ -19,7 +19,9 @@ import { StandaloneCardShell } from './components/StandaloneCardShell'
 export default function App() {
   return (
     <Routes>
-      <Route index element={<MenuPage />} />
+      {/* the start of the site is the story home; the old concept menu lives at /concepts */}
+      <Route index element={<Navigate to="/story" replace />} />
+      <Route path="/concepts" element={<MenuPage />} />
 
       {/* Reachable before picking a concept — per Rotem's feedback (issue #8):
           the care card should be visible on the home screen, not buried

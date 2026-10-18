@@ -11,6 +11,9 @@ import {
   suggestedAdaptations,
   type CareCard,
 } from '../../../data/careCard'
+import { useI18n } from '../../../hooks/useI18n'
+import parentUi from '../../../data/parent/ui.json'
+import careI18n from '../../../data/i18n/careCard.json'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
@@ -18,21 +21,34 @@ import styles from '../pages.module.css'
  * The staff-facing side of the card: very short, very large, shown from
  * the screen or printed. Nothing is transmitted — the parent shows it.
  */
+type CardViewTexts = {
+  emptyTitle: string
+  emptyHint: string
+  fill: string
+  hebrewNote: string
+  suggestions: string
+  fullList: string
+  savePdf: string
+  edit: string
+  sendHint: string
+}
+
 export function CardViewPage() {
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   const [avatar] = useSessionAvatar()
+  const { lang, dir } = useI18n()
+  // the chrome around the card follows the parent's language; the card itself stays in Hebrew — the staff reads it
+  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { cardView: CardViewTexts }>)[lang].cardView
 
   if (isCardEmpty(card)) {
     return (
-      <div className={shell.page}>
+      <div className={shell.page} dir={dir} lang={lang}>
         <div className={styles.emptyState}>
           <Roni size={120} mood="curious" float />
-          <h1 className={shell.sceneTitle}>הכרטיס עדיין ריק</h1>
-          <p style={{ color: 'var(--s-ink-soft)' }}>
-            כמה סימונים קצרים — ויהיה לכם כרטיס גדול להראות לצוות.
-          </p>
+          <h1 className={shell.sceneTitle}>{tx.emptyTitle}</h1>
+          <p style={{ color: 'var(--s-ink-soft)' }}>{tx.emptyHint}</p>
           <Link to="/card" className={shell.bigBtn}>
-            למילוי הכרטיס
+            {tx.fill}
           </Link>
         </div>
       </div>
@@ -60,12 +76,14 @@ export function CardViewPage() {
     { emoji: '✏️', label: 'עוד', value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
-  const suggestions = suggestedAdaptations(card)
+  const suggestionsIn = (careI18n as unknown as Record<string, { adaptationSuggestions?: Record<string, string> }>)[lang]?.adaptationSuggestions
+  const suggestions = suggestedAdaptations(card, suggestionsIn)
   const name = card.nickname.trim()
 
   return (
-    <div className={shell.page}>
-      <div className={`${styles.idCard} print-area`}>
+    <div className={shell.page} dir={dir} lang={lang}>
+      {/* the card itself is Hebrew and RTL — the staff reads it */}
+      <div className={`${styles.idCard} print-area`} dir="rtl" lang="he">
         <div className={styles.idHead}>
           <span className={styles.idFace} aria-hidden>
             {avatar.kind === 'photo' ? <img src={avatar.value} alt="" /> : avatar.value}
@@ -75,6 +93,7 @@ export function CardViewPage() {
               חשוב לדעת על {name || 'הילד/ה'} שלי
             </div>
             {card.age.trim() && <div className={styles.idAge}>גיל {card.age.trim()}</div>}
+            {lang !== 'he' && <div className={styles.idAge}>{tx.hebrewNote}</div>}
           </div>
         </div>
         <div className={styles.idRows}>
@@ -92,33 +111,29 @@ export function CardViewPage() {
 
       {suggestions.length > 0 && (
         <div className={`${styles.suggest} no-print`} style={{ marginTop: 'var(--space-4)' }}>
-          <strong>💡 לפי מה שסימנתם — התאמות שכדאי לבקש</strong>
+          <strong>{tx.suggestions}</strong>
           <ul className={styles.suggestList}>
             {suggestions.map((s) => (
               <li key={s}>{s}</li>
             ))}
           </ul>
           <Link to="/requests" className={styles.crossLink} style={{ marginTop: 10 }}>
-            לרשימה המלאה של מה אפשר לבקש ←
+            {tx.fullList}
           </Link>
         </div>
       )}
 
       <div className={`${styles.actions} no-print`}>
         <button type="button" className={shell.bigBtn} onClick={() => window.print()}>
-          📄 שמירה כ־PDF / הדפסה
+          {tx.savePdf}
         </button>
         <Link to="/card" className={shell.ghostBtn}>
-          ✏️ עריכה
+          {tx.edit}
         </Link>
       </div>
 
       <div className="no-print" style={{ marginTop: 'var(--space-4)' }}>
-        <Note>
-          לשליחה לצוות: לחצו "שמירה כ־PDF", בחרו "שמירה כ־PDF" בחלון ההדפסה, ושִׁלחו את
-          הקובץ בעצמכם. הכרטיס נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ושום דבר לא
-          נשלח אוטומטית.
-        </Note>
+        <Note>{tx.sendHint}</Note>
       </div>
     </div>
   )

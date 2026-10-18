@@ -2,8 +2,7 @@ import { lockBodyScroll } from '../../../lib/scrollLock'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
-import { getProcedure } from '../../../data/procedures'
-import { journeyStages } from '../../../data/journey'
+import { parentJourney, parentProcedure } from '../../../data/parent'
 import { OPTIONAL_STAGES, useQuestProgress } from '../useQuestProgress'
 import { useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
@@ -22,7 +21,7 @@ export const stageRoute = (stageId: string) => (stageId === 'wait-before-triage'
  */
 export function OceanProcedureDetailSheet({ id }: { id: string }) {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const { completeProcedure, doneProcedures, active, visibleOptionals } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
@@ -30,13 +29,13 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
   const [variant, setVariant] = useState(0)
   useEffect(() => setVariant(0), [id])
 
-  const parentStage = t('journey.journeyStages', journeyStages).find((s) => s.procedureIds?.includes(id))
+  const parentStage = parentJourney(lang).find((s) => s.procedureIds?.includes(id))
   const stageId = parentStage?.id ?? 'triage'
   const stageActive = parentStage
     ? active?.id === stageId || visibleOptionals.some((s) => s.id === stageId && s.status === 'active')
     : true
   const isDone = doneProcedures.has(id)
-  const procedure = t(`procedures.procedures.${id}`, getProcedure(id))
+  const procedure = parentProcedure(lang, id)
   const night = (OPTIONAL_STAGES as readonly string[]).includes(stageId)
 
   const back = () => navigate(conceptPath(stageRoute(stageId)))

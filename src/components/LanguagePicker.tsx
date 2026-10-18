@@ -9,7 +9,14 @@ const languages = [
 ]
 
 /** overlay: a small translucent pill with the country code, for use over a picture */
-export function LanguagePicker({ variant = 'default' }: { variant?: 'default' | 'overlay' }) {
+export function LanguagePicker({
+  variant = 'default',
+  align = 'end',
+}: {
+  variant?: 'default' | 'overlay'
+  /** which edge of the trigger the menu opens from; use 'start' near the left edge of the screen */
+  align?: 'start' | 'end'
+}) {
   const { lang, setLang } = useI18n()
   const [open, setOpen] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
@@ -46,7 +53,7 @@ export function LanguagePicker({ variant = 'default' }: { variant?: 'default' | 
       </button>
 
       {open && (
-        <ul className={css.menu} role="menu">
+        <ul className={align === 'start' ? `${css.menu} ${css.menuStart}` : css.menu} role="menu">
           {languages.map((l) => (
             <li key={l.code} role="none">
               <button

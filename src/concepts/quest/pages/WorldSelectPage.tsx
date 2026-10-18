@@ -2,40 +2,46 @@ import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
 import { themes } from '../themes'
 import { useQuestTheme } from '../useQuestTheme'
+import { worldText, type WorldLang } from '../../../data/child/worlds'
+import childUi from '../../../data/child/ui.json'
 import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 export function WorldSelectPage() {
   const { setThemeId } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
   function choose(id: string) {
     setThemeId(id)
     // the world's own address, so the address bar can be copied and sent
-    navigate(conceptPath(`/world/${id}`))
+    navigate(conceptPath(`/${id}`))
   }
 
-  const ORDER = ['ocean', 'knight', 'dollhouse', 'real', 'dino', 'fairy', 'safari', 'space']
+  // the אני world lives on the Books shelf now (issue #10), so it is not offered as a game
+  const ORDER = ['ocean', 'knight', 'dollhouse', 'dino', 'fairy', 'safari', 'space']
   const ordered = [
     ...ORDER.map((id) => themes.find((t) => t.id === id)!).filter(Boolean),
-    ...themes.filter((t) => !ORDER.includes(t.id)),
+    ...themes.filter((t) => !ORDER.includes(t.id) && t.id !== 'real'),
   ]
 
   return (
     <div className={css.selectPage}>
-      <h1 className={css.selectTitle}>איזה עולם מחכה לך?</h1>
-      <p className={css.selectSub}>בחרו עולם — ויוצאים למסע</p>
+      <h1 className={css.selectTitle}>{(childUi[lang as WorldLang] ?? childUi.he).worlds.title}</h1>
+      <p className={css.selectSub}>{(childUi[lang as WorldLang] ?? childUi.he).worlds.subtitle}</p>
 
       <div className={css.worldGrid}>
-        {ordered.map((theme) => (
+        {ordered.map((theme) => {
+          // the world's name comes from its texts file, in the chosen language
+          const name = worldText(theme.id, lang as WorldLang)?.name ?? theme.name ?? ''
+          return (
           <button
             key={theme.id}
             className={css.worldCard}
             style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}
             onClick={() => choose(theme.id)}
-            aria-label={`${t('ui.buttons.chooseWorldAria', 'בחר עולם:')} ${theme.name}`}
+            aria-label={`${t('ui.buttons.chooseWorldAria', 'בחר עולם:')} ${name}`}
           >
             {theme.thumbnailOverlay ? (
               <div
@@ -49,13 +55,14 @@ export function WorldSelectPage() {
             ) : (
               <span className={css.worldEmoji}>{theme.emoji}</span>
             )}
-            <span className={css.worldCardName}>{theme.name}</span>
+            <span className={css.worldCardName}>{name}</span>
             <span className={css.worldCardCta}>
               <span className={css.worldCardArrow} aria-hidden>↖</span>
               {t('ui.buttons.startJourney', 'להתחיל במסע')}
             </span>
           </button>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

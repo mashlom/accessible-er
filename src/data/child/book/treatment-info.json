@@ -1,0 +1,335 @@
+{
+  "ru": {
+    "iv": {
+      "title": "Капельница",
+      "world": "Тонкая мягкая трубочка помогает лекарству дойти прямо до крови — медленно и спокойно.",
+      "what": "В руку тебе введут тонкую мягкую трубочку. Сначала введут маленькую иглу, потом игла выйдет, а мягкая трубочка останется. Через трубочку медленно пойдёт жидкость или лекарство.",
+      "feel": "Сначала будет короткий укол. Потом ты почувствуешь только мягкую трубочку на руке. Когда жидкость начнёт идти, может быть немного холодно. Если подождать минутку, это пройдёт, и почти ничего не будет чувствоваться.",
+      "prepare": "Можно заранее попросить обезболивающий крем. Подумай, чем отвлечься, например книжкой или любимой песней. Помни: трубочка мягкая, это не игла.",
+      "canAsk": [
+        "Обезболивающий крем заранее",
+        "Отвлечься, и чтобы рядом был один человек, который всё объясняет",
+        "Заклеить трубочку наклейкой, чтобы на неё не смотреть"
+      ],
+      "headings": {
+        "what": "Что здесь будет",
+        "feel": "Что может быть трудно",
+        "prepare": "",
+        "canAsk": "О чём ты можешь попросить"
+      }
+    },
+    "medication": {
+      "title": "Лекарство",
+      "world": "Иногда лекарство — это сироп, а иногда оно приходит через трубочку. Оно помогает тебе почувствовать себя лучше.",
+      "what": "Тебе дадут лекарство. Иногда это сироп, который нужно выпить, а иногда оно идёт через капельницу. Лекарство поможет телу почувствовать себя лучше.",
+      "feel": "Сироп может быть сладким или с необычным вкусом. Через капельницу почти ничего не чувствуется.",
+      "prepare": "Можно спросить, какой у лекарства вкус и можно ли выбрать. Приготовь воду или что-нибудь, чтобы заесть вкус.",
+      "canAsk": [
+        "Спросить про варианты вкуса",
+        "Попросить воду или перекус после",
+        "Самому подержать стаканчик"
+      ],
+      "headings": {
+        "what": "Что здесь будет",
+        "feel": "Что может быть трудно",
+        "prepare": "",
+        "canAsk": "О чём ты можешь попросить"
+      }
+    },
+    "inhalation": {
+      "title": "Ингаляция",
+      "world": "Лекарство попадает в дыхание прямо туда, где нужно. Ты дышишь как обычно, а туман делает свою работу.",
+      "what": "Дышать сильно не нужно. На лицо наденут мягкую маску. Из неё пойдёт прохладный воздух с лекарством, и ты просто дышишь как обычно. Это помогает дышать легче.",
+      "feel": "На лице будет влажный прохладный воздух. Иногда немного щекочет глаза. Аппарат тихо шумит.",
+      "prepare": "Можно заранее посмотреть на маску и понюхать её. Помни: не нужно дышать с силой, только держать маску на лице и дышать как обычно.",
+      "canAsk": [
+        "Держать маску вместе с мамой или папой",
+        "Попросить уменьшить поток воздуха, если щекочет глаза или лицо",
+        "Сидеть на коленях у мамы или папы"
+      ],
+      "headings": {
+        "what": "Что здесь будет",
+        "feel": "Что может быть трудно",
+        "prepare": "",
+        "canAsk": "О чём ты можешь попросить"
+      }
+    },
+    "bandage": {
+      "title": "Повязка",
+      "world": "Повязка защищает больное место, как охранник у двери.",
+      "what": "Место на теле закроют чистым мягким бинтом, чтобы его защитить.",
+      "feel": "Бинт мягкий, как обёртывание. Обычно это приятно и не больно.",
+      "prepare": "Можно посмотреть на бинт и потрогать его. Можно выбрать, с какого места начать.",
+      "canAsk": [
+        "Выбрать цвет или вид бинта",
+        "Попросить делать медленно",
+        "Подержать конец бинта"
+      ],
+      "headings": {
+        "what": "Что здесь будет",
+        "feel": "Что может быть трудно",
+        "prepare": "",
+        "canAsk": "О чём ты можешь попросить"
+      }
+    },
+    "cast": {
+      "title": "Гипс или лангета",
+      "world": "Гипс — это твёрдый домик для твоей кости, пока она не срастётся.",
+      "what": "Руку или ногу обмотают мягким материалом. Он застывает и бережно держит кость, пока она срастается. Когда начинают обматывать, перерывов делать нельзя: гипс застывает и должен точно подойти к форме тела. Поэтому нужно немного подождать, пока врач его подгоняет.",
+      "feel": "Когда гипс застывает, он может ненадолго стать тёплым. Потом он становится твёрдым и немного тяжёлым.",
+      "prepare": "Можно узнать, что гипс защищает кость и помогает ей зажить. Заранее подумай, хочешь ли ты сидеть или лежать. Ещё можно решить, будут ли рядом мама или папа, или ты побудешь без них. Важно знать: когда начинают накладывать гипс, посередине не останавливаются.",
+      "canAsk": [
+        "Выбрать, сидеть или лежать",
+        "Выбрать, будут ли рядом мама или папа, или ты побудешь без них",
+        "Чтобы тебе медленно объясняли каждый шаг перед началом"
+      ],
+      "headings": {
+        "what": "Что здесь будет",
+        "feel": "Что может быть трудно",
+        "prepare": "",
+        "canAsk": "О чём ты можешь попросить"
+      }
+    },
+    "stitches": {
+      "title": "Заклеивание раны или швы",
+      "world": "Врач закрывает рану клеем или швами, и она остаётся на месте, пока заживает.",
+      "what": "Рану закроют специальным клеем или маленькими швами. Иногда сначала наносят обезболивающее средство. Его кладут прохладным, закрывают прозрачной наклейкой и немного ждут, до 45 минут, пока место «уснёт». Иногда обезболивать не нужно, и рану просто заклеивают. Клей такой же, как тот, что ты знаешь по садику или школе, только чистый, и он держит кожу.",
+      "feel": "После обезболивающего место немеет, и боли не будет, может быть только прикосновение или давление. Когда клей застывает, может стать немного тепло. Тогда можно попросить подуть на лицо прохладным воздухом, чтобы не так чувствовалось.",
+      "prepare": "Можно попросить обезболивающее средство заранее, если нужно. Подумай, чем заняться, пока всё делают: посмотреть что-нибудь в телефоне, поговорить с мамой или папой или послушать сказку.",
+      "canAsk": [
+        "Обезболивающее средство для этого места и подождать, пока оно подействует",
+        "Держать маму или папу за руку, смотреть что-нибудь в телефоне или слушать сказку",
+        "Попросить подуть прохладным воздухом на лицо, когда клей нагревается",
+        "Закрыть это место, чтобы не видеть"
+      ],
+      "headings": {
+        "what": "Что здесь будет",
+        "feel": "Что может быть трудно",
+        "prepare": "",
+        "canAsk": "О чём ты можешь попросить"
+      }
+    }
+  },
+  "en": {
+    "iv": {
+      "title": "Drip",
+      "world": "A soft thin tube helps the medicine reach my blood, slowly and calmly.",
+      "what": "A soft thin tube is put into your arm. First a tiny needle goes in, then the needle comes out and the soft tube stays. Medicine or fluid slowly goes through the tube.",
+      "feel": "First there is a short poke. After that you only feel the soft tube on your arm. When the fluid starts to flow, it may feel a little cold. If you wait a minute, that goes away and you hardly feel anything.",
+      "prepare": "You can ask for a numbing cream beforehand. Think about what will distract you, for example a book or your favourite song. Remember: the tube is soft, and it is not a needle.",
+      "canAsk": [
+        "A numbing cream beforehand",
+        "Something to distract you, and one person who explains everything",
+        "A sticker over the tube, so you do not have to look at it"
+      ],
+      "headings": {
+        "what": "What will happen here",
+        "feel": "What may be hard",
+        "prepare": "",
+        "canAsk": "What can you ask for?"
+      }
+    },
+    "medication": {
+      "title": "Medicine",
+      "world": "Sometimes the medicine is a syrup, and sometimes it comes through the tube. It helps me feel better.",
+      "what": "You will get some medicine. Sometimes it is a syrup to drink, and sometimes it goes through a drip. The medicine helps your body feel better.",
+      "feel": "The syrup can be sweet or taste strange. Through a drip you hardly feel anything.",
+      "prepare": "You can ask what the medicine tastes like and whether you can choose. Get some water or something to take the taste away.",
+      "canAsk": [
+        "Ask about the flavour choices",
+        "Ask for water or a snack afterwards",
+        "Hold the cup yourself"
+      ],
+      "headings": {
+        "what": "What will happen here",
+        "feel": "What may be hard",
+        "prepare": "",
+        "canAsk": "What can you ask for?"
+      }
+    },
+    "inhalation": {
+      "title": "Inhalation",
+      "world": "The medicine goes into my breathing, right to where it is needed. I breathe as usual, and the mist does its job.",
+      "what": "You do not need to breathe hard. A soft mask goes on your face. Cool air with medicine comes out of it, and you just breathe as usual. This helps you breathe more easily.",
+      "feel": "Your face feels moist, cool air. Sometimes it tickles your eyes. The machine makes a quiet hum.",
+      "prepare": "You can look at the mask and smell it beforehand. Remember: you do not need to breathe hard, just hold the mask on your face and breathe as usual.",
+      "canAsk": [
+        "Hold the mask together with mum or dad",
+        "Ask for less airflow if it tickles your eyes or face",
+        "Sit on mum's or dad's lap"
+      ],
+      "headings": {
+        "what": "What will happen here",
+        "feel": "What may be hard",
+        "prepare": "",
+        "canAsk": "What can you ask for?"
+      }
+    },
+    "bandage": {
+      "title": "Bandage",
+      "world": "The bandage protects the sore place, like a guard at the door.",
+      "what": "The place on your body is covered with a clean soft bandage, to keep it safe.",
+      "feel": "It feels like a soft wrap. It is usually nice and does not hurt.",
+      "prepare": "You can look at the bandage and touch it. You can choose where to start.",
+      "canAsk": [
+        "Choose the colour or kind of bandage",
+        "Ask them to go slowly",
+        "Hold the end of the bandage"
+      ],
+      "headings": {
+        "what": "What will happen here",
+        "feel": "What may be hard",
+        "prepare": "",
+        "canAsk": "What can you ask for?"
+      }
+    },
+    "cast": {
+      "title": "Cast or splint",
+      "world": "The cast is a hard house for your bone until it heals.",
+      "what": "Your arm or leg is wrapped in a soft material. It hardens and gently holds the bone while it heals. When the wrapping starts, there are no breaks: the cast hardens and has to fit your body exactly. So you wait a little while the doctor fits it.",
+      "feel": "When the cast hardens, it may feel warm for a little while. Then it becomes hard and a little heavy.",
+      "prepare": "You can find out that the cast protects the bone and helps it heal. Think ahead about whether you want to sit or lie down. You can also decide whether mum or dad will be with you, or whether you will be without them. Good to know: once they start putting on the cast, they do not stop in the middle.",
+      "canAsk": [
+        "Choose whether to sit or lie down",
+        "Choose whether mum or dad will be with you, or you stay without them",
+        "Ask for each step to be explained slowly before it starts"
+      ],
+      "headings": {
+        "what": "What will happen here",
+        "feel": "What may be hard",
+        "prepare": "",
+        "canAsk": "What can you ask for?"
+      }
+    },
+    "stitches": {
+      "title": "Glue or stitches for the wound",
+      "world": "The doctor closes the wound with glue or stitches, and it stays in place while it heals.",
+      "what": "The wound is closed with special glue or with tiny stitches. Sometimes a numbing cream is put on first. It feels cool, it is covered with a clear sticker, and you wait a little, up to 45 minutes, until the place goes to sleep. Sometimes no numbing is needed, and the wound is just glued. The glue is like the one you know from kindergarten or school, only clean, and it holds the skin together.",
+      "feel": "After the numbing cream the place goes numb, and you do not feel pain, maybe only touch or pressure. When the glue hardens, it can become a little warm. Then you can ask for cool air to be blown on your face, so you notice it less.",
+      "prepare": "You can ask for the numbing cream beforehand if you need it. Think about what to do while it happens: look at something on a phone, talk to mum or dad, or listen to a story.",
+      "canAsk": [
+        "Numbing cream for this place, and wait for it to work",
+        "Hold mum's or dad's hand, look at something on a phone or listen to a story",
+        "Ask for cool air on your face when the glue warms up",
+        "Cover the place so you do not have to see it"
+      ],
+      "headings": {
+        "what": "What will happen here",
+        "feel": "What may be hard",
+        "prepare": "",
+        "canAsk": "What can you ask for?"
+      }
+    }
+  },
+  "he": {
+    "iv": {
+      "title": "עירוי",
+      "world": "לפעמים התרופה צריכה להיכנס ישר לדם. צינורית רכה עוזרת לה להגיע לשם, לאט ובשקט.",
+      "what": "מכניסים לזרוע צינורית דקה ורכה. קודם נכנסת מחט קטנה, ואחר כך המחט יוצאת והצינורית הרכה נשארת. דרכה זורם לאט נוזל או תרופה.",
+      "feel": "בהתחלה יש עקיצה קצרה. אחר כך מרגישים רק את הצינורית הרכה על היד. כשהנוזל מתחיל לזרום, אפשר להרגיש קצת קור. אם מחכים דקה, זה עובר, וכמעט לא מרגישים כלום.",
+      "prepare": "אפשר לבקש קרם משכך כאב מראש. כדאי לחשוב על מה שיסיח את הדעת, למשל ספר או שיר אהוב. זכור: הצינורית רכה, והיא לא מחט.",
+      "canAsk": [
+        "קרם משכך כאב מראש",
+        "משהו שיסיח את הדעת, ואדם אחד שמסביר הכול",
+        "מדבקה על הצינורית, כדי לא להסתכל עליה"
+      ],
+      "headings": {
+        "what": "מה קורה כאן",
+        "feel": "מה עלול להיות קשה",
+        "prepare": "",
+        "canAsk": "על מה אפשר לבקש?"
+      }
+    },
+    "medication": {
+      "title": "תרופה",
+      "world": "לפעמים התרופה היא סירופ, ולפעמים היא מגיעה דרך הצינורית. היא עוזרת לי להרגיש טוב יותר.",
+      "what": "תקבל תרופה. לפעמים זה סירופ לשתות, ולפעמים זה עובר דרך עירוי. התרופה עוזרת לגוף להרגיש טוב יותר.",
+      "feel": "הסירופ יכול להיות מתוק או בטעם מוזר. דרך העירוי כמעט לא מרגישים כלום.",
+      "prepare": "אפשר לשאול איזה טעם יש לתרופה ואם אפשר לבחור. כדאי להכין מים או משהו שיעזור להסיר את הטעם.",
+      "canAsk": [
+        "לשאול על אפשרויות טעם",
+        "לבקש מים או נשנוש אחרי",
+        "להחזיק את הכוס בעצמך"
+      ],
+      "headings": {
+        "what": "מה קורה כאן",
+        "feel": "מה עלול להיות קשה",
+        "prepare": "",
+        "canAsk": "על מה אפשר לבקש?"
+      }
+    },
+    "inhalation": {
+      "title": "אינהלציה",
+      "world": "התרופה נכנסת לנשימה שלי, בדיוק לאן שהיא צריכה. אני נושם רגיל, והאדים עושים את העבודה.",
+      "what": "לא צריך לנשום חזק. שמים מסכה רכה על הפנים. יוצא ממנה אוויר קריר עם תרופה, ואתה פשוט נושם כרגיל. זה עוזר לנשום קצת יותר קל.",
+      "feel": "על הפנים מרגישים אוויר לח וקריר. לפעמים זה מדגדג בעיניים. המכשיר משמיע רחש שקט.",
+      "prepare": "אפשר להסתכל על המסכה ולהריח אותה מראש. זכור: לא צריך לנשום חזק, רק להחזיק את המסכה על הפנים ולנשום כרגיל.",
+      "canAsk": [
+        "להחזיק את המסכה יחד עם אמא או אבא",
+        "לבקש להקטין את זרימת האוויר אם זה מדגדג בעיניים או בפנים",
+        "לשבת על הברכיים של אמא או אבא"
+      ],
+      "headings": {
+        "what": "מה קורה כאן",
+        "feel": "מה עלול להיות קשה",
+        "prepare": "",
+        "canAsk": "על מה אפשר לבקש?"
+      }
+    },
+    "bandage": {
+      "title": "תחבושת",
+      "world": "התחבושת מגינה על המקום שנפגע, כמו שומר שעומד ליד הדלת.",
+      "what": "המקום בגוף מכוסה בתחבושת רכה ונקייה, כדי להגן עליו.",
+      "feel": "זה מרגיש כמו עטיפה רכה. בדרך כלל זה נעים ולא כואב.",
+      "prepare": "אפשר להסתכל על התחבושת ולגעת בה. אפשר לבחור מאיפה להתחיל.",
+      "canAsk": [
+        "לבחור צבע או סוג של תחבושת",
+        "לבקש לעשות לאט",
+        "להחזיק את קצה התחבושת"
+      ],
+      "headings": {
+        "what": "מה קורה כאן",
+        "feel": "מה עלול להיות קשה",
+        "prepare": "",
+        "canAsk": "על מה אפשר לבקש?"
+      }
+    },
+    "cast": {
+      "title": "גבס או סד",
+      "world": "הגבס הוא בית קשיח לעצם שלך, עד שהיא מתחברת.",
+      "what": "את היד או הרגל עוטפים בחומר רך. הוא מתקשה ומחזיק בעדינות את העצם, בזמן שהיא מתחברת. כשמתחילים לעטוף, אי אפשר לעשות הפסקות: הגבס מתקשה וצריך להתאים בדיוק לגוף. לכן מחכים קצת, בזמן שהרופא מתאים את הגבס.",
+      "feel": "כשהגבס מתקשה, הוא יכול להיות חם לרגע. אחר כך הוא נעשה קשיח וקצת כבד.",
+      "prepare": "אפשר לדעת שהגבס מגן על העצם ועוזר לה להתחבר. כדאי לחשוב מראש אם רוצים לשבת או לשכב. אפשר גם להחליט אם אמא או אבא יהיו לידך, או שתהיה בלעדיהם. חשוב לדעת: כשמתחילים לשים את הגבס, לא עוצרים באמצע.",
+      "canAsk": [
+        "לבחור אם לשבת או לשכב",
+        "לבחור אם אמא או אבא יהיו לידך, או שתהיה בלעדיהם",
+        "שיסבירו לאט כל שלב לפני שמתחילים"
+      ],
+      "headings": {
+        "what": "מה קורה כאן",
+        "feel": "מה עלול להיות קשה",
+        "prepare": "",
+        "canAsk": "על מה אפשר לבקש?"
+      }
+    },
+    "stitches": {
+      "title": "הדבקת הפצע או תפרים",
+      "world": "הרופא סוגר את הפצע בדבק או בתפרים, והוא נשאר במקומו עד שהוא מתרפא.",
+      "what": "את הפצע סוגרים בדבק מיוחד או בתפרים קטנים. לפעמים קודם מורחים קרם משכך כאב. הוא קריר, מכסים אותו במדבקה שקופה, ומחכים קצת, עד 45 דקות, עד שהמקום נרדם. לפעמים לא צריך להרדים, והפצע רק נדבק. הדבק הוא כמו הדבק שאתה מכיר מהגן או מבית הספר, רק נקי, והוא מחזיק את העור.",
+      "feel": "אחרי הקרם המקום נעשה מקהה, ולא מרגישים כאב, אולי רק מגע או לחץ. כשהדבק מתקשה, המקום יכול להתחמם קצת. אז אפשר לבקש שיפיחו על הפנים אוויר קריר, כדי שזה יורגש פחות.",
+      "prepare": "אפשר לבקש קרם משכך כאב מראש, אם צריך. כדאי לחשוב מה לעשות בזמן שזה קורה: להסתכל על משהו בטלפון, לדבר עם אמא או אבא, או להקשיב לסיפור.",
+      "canAsk": [
+        "קרם משכך כאב למקום הזה, ולחכות שיפעל",
+        "להחזיק את היד של אמא או אבא, להסתכל על משהו בטלפון או להקשיב לסיפור",
+        "לבקש אוויר קריר על הפנים כשהדבק מתחמם",
+        "לכסות את המקום כדי לא לראות אותו"
+      ],
+      "headings": {
+        "what": "מה קורה כאן",
+        "feel": "מה עלול להיות קשה",
+        "prepare": "",
+        "canAsk": "על מה אפשר לבקש?"
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useI18n } from '../../../hooks/useI18n'
 import { PageHeader, Note } from '../components/ui'
 import styles from './SupportPages.module.css'
 
@@ -9,11 +10,12 @@ import styles from './SupportPages.module.css'
  * adds the ER address and sends themselves). Nothing is sent automatically.
  */
 const templates = [
-  { label: '🙏 בקשה', starter: 'נשמח מאוד אם אפשר ' },
-  { label: '💛 תודה', starter: 'רצינו להגיד תודה על ' },
+  { key: 'request', starter: 'נשמח מאוד אם אפשר ' },
+  { key: 'thanks', starter: 'רצינו להגיד תודה על ' },
 ]
 
 export function MessagePage() {
+  const { t } = useI18n()
   const [text, setText] = useState('')
   const [shown, setShown] = useState(false)
 
@@ -23,20 +25,20 @@ export function MessagePage() {
   return (
     <div className="container">
       <PageHeader
-        eyebrow="לפני שהולכים"
-        title="הודעה לצוות"
-        subtitle="רוצים לבקש משהו או להגיד תודה? כתבו משפט קצר — ותוכלו להראות אותו לצוות על המסך, או לשלוח במייל בעצמכם."
+        eyebrow={t('ui.calmMessage.eyebrow', 'לפני שהולכים')}
+        title={t('ui.calmMessage.title', 'הודעה לצוות')}
+        subtitle={t('ui.calmMessage.subtitle', 'רוצים לבקש משהו או להגיד תודה? כתבו משפט קצר — ותוכלו להראות אותו לצוות על המסך, או לשלוח במייל בעצמכם.')}
       />
 
       <div className={styles.msgTemplates}>
-        {templates.map((t) => (
+        {templates.map((tpl) => (
           <button
-            key={t.label}
+            key={tpl.key}
             type="button"
             className={styles.sentence}
-            onClick={() => setText(t.starter)}
+            onClick={() => setText(tpl.starter)}
           >
-            {t.label}
+            {t(`ui.calmMessage.${tpl.key}`, tpl.key === 'request' ? '🙏 בקשה' : '💛 תודה')}
           </button>
         ))}
       </div>
@@ -45,7 +47,7 @@ export function MessagePage() {
         className={styles.msgInput}
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="לדוגמה: נשמח אם אפשר להמתין בפינה שקטה יותר · תודה רבה על הסבלנות."
+        placeholder={t('ui.calmMessage.placeholder', 'לדוגמה: נשמח אם אפשר להמתין בפינה שקטה יותר · תודה רבה על הסבלנות.')}
         rows={4}
         maxLength={400}
       />
@@ -57,20 +59,19 @@ export function MessagePage() {
           disabled={!trimmed}
           onClick={() => setShown(true)}
         >
-          🖥️ הצגה לצוות על המסך
+          {t('ui.calmMessage.showOnScreen', '🖥️ הצגה לצוות על המסך')}
         </button>
         <a
           className={`${styles.msgMailBtn} ${!trimmed ? styles.msgDisabled : ''}`}
           href={trimmed ? mailto : undefined}
           aria-disabled={!trimmed}
         >
-          ✉️ שליחה במייל
+          {t('ui.calmMessage.sendEmail', '✉️ שליחה במייל')}
         </a>
       </div>
 
       <Note>
-        להצגה: לחצו "הצגה לצוות" והראו את המסך. לשליחה: ייפתח המייל עם ההודעה — הוסיפו
-        את כתובת המייל של המיון ושִׁלחו בעצמכם. שום דבר לא נשלח אוטומטית.
+        {t('ui.calmMessage.howTo', 'להצגה: לחצו \"הצגה לצוות\" והראו את המסך. לשליחה: ייפתח המייל עם ההודעה — הוסיפו את כתובת המייל של המיון ושִׁלחו בעצמכם. שום דבר לא נשלח אוטומטית.')}
       </Note>
 
       {shown && (
@@ -78,12 +79,12 @@ export function MessagePage() {
           className={styles.overlay}
           role="dialog"
           aria-modal="true"
-          aria-label="הודעה מוצגת לצוות"
+          aria-label={t('ui.calmMessage.shownAria', 'הודעה מוצגת לצוות')}
           onClick={() => setShown(false)}
         >
           <p className={styles.overlayText}>{trimmed}</p>
           <button type="button" className={styles.overlayClose}>
-            סגירה
+            {t('ui.buttons.close', 'סגירה')}
           </button>
         </div>
       )}

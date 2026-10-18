@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link, useConceptPath } from '../../nav'
-import { journeyStages } from '../../../data/journey'
+import { parentJourney } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
@@ -359,12 +359,12 @@ export function starsFor(procedureIds: string[] | undefined, stageId: string, do
 /** underSheet: rendered behind a stage sheet, which has its own parent-info pill */
 export function OceanMapPage({ underSheet }: { underSheet?: boolean } = {}) {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { lang } = useI18n()
   const { visible, stages, doneProcedures } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
-  const journey = t('journey.journeyStages', journeyStages)
+  const journey = parentJourney(lang)
   // Progress is shared equally between the five stations of the day map
   const dayStages = stages.filter((st) => (REQUIRED_STAGES as readonly string[]).includes(st.id))
   const doneStages = dayStages.filter((st) => st.status === 'done').length

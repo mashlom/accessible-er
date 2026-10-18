@@ -1,0 +1,203 @@
+{
+  "he": {
+    "fever": {
+      "label": "חום / מחלה",
+      "blurb": "בדרך כלל: קבלה, הערכה של מצב בריאות, בדיקת רופא, ולפי הצורך בדיקת דם או צילום.",
+      "route": [
+        "קבלה במזכירות",
+        "הערכה של מצב בריאות ומדידות",
+        "בדיקת רופא/ה",
+        "בדיקת דם",
+        "צילום חזה",
+        "טיפול ושחרור או המשך בירור"
+      ]
+    },
+    "abdominal": {
+      "label": "כאבי בטן",
+      "blurb": "בדרך כלל: קבלה, הערכה של מצב בריאות, בדיקת רופא, ולפי הצורך בדיקות דם, אולטרסאונד או ייעוץ.",
+      "route": [
+        "קבלה במזכירות",
+        "הערכה של מצב בריאות ומדידות",
+        "בדיקת רופא/ה",
+        "בדיקת דם",
+        "בדיקת שתן",
+        "אולטרסאונד בטן",
+        "CT בטן",
+        "ייעוץ מומחה",
+        "טיפול ושחרור או אשפוז"
+      ]
+    },
+    "limb-injury": {
+      "label": "חבלה ביד או ברגל",
+      "blurb": "בדרך כלל: קבלה, הערכה של מצב בריאות, בדיקת רופא, צילום, ולפי הצורך גבס או חבישה.",
+      "route": [
+        "קבלה במזכירות",
+        "הערכה של מצב בריאות ומדידות",
+        "בדיקת רופא/ה",
+        "צילום רנטגן",
+        "ייעוץ אורתופדי",
+        "גבס או סד",
+        "שחרור עם הנחיות"
+      ]
+    },
+    "cut": {
+      "label": "חתך או פציעה בעור",
+      "blurb": "בדרך כלל: קבלה, הערכה של מצב בריאות, בדיקת רופא, אלחוש, סגירת הפצע וחבישה.",
+      "route": [
+        "קבלה במזכירות",
+        "הערכה של מצב בריאות ומדידות",
+        "בדיקת רופא/ה",
+        "אלחוש מקומי",
+        "צילום",
+        "הדבקת פצע או תפירה",
+        "חבישה והדרכה",
+        "שחרור עם הנחיות"
+      ]
+    },
+    "other": {
+      "label": "סיבה אחרת / עדיין לא בטוחים",
+      "blurb": "כל ביקור מתחיל אותו דבר: קבלה, הערכה של מצב בריאות ובדיקת רופא. משם הצוות מתאים את ההמשך.",
+      "route": [
+        "קבלה במזכירות",
+        "הערכה של מצב בריאות ומדידות",
+        "בדיקת רופא/ה",
+        "בדיקות לפי הצורך",
+        "טיפול והחלטה על ההמשך"
+      ]
+    }
+  },
+  "en": {
+    "fever": {
+      "label": "Fever",
+      "blurb": "Usually: check-in, initial assessment, a doctor's exam, and if needed a blood test or an X-ray.",
+      "route": [
+        "Check-in at the reception desk",
+        "Initial assessment and measurements",
+        "Doctor's exam",
+        "Blood test",
+        "Chest X-ray",
+        "Treatment, then going home or more tests"
+      ]
+    },
+    "abdominal": {
+      "label": "Belly pain",
+      "blurb": "Usually: check-in, initial assessment, a doctor's exam, and if needed blood tests, an ultrasound or a specialist.",
+      "route": [
+        "Check-in at the reception desk",
+        "Initial assessment and measurements",
+        "Doctor's exam",
+        "Blood test",
+        "Urine test",
+        "Belly ultrasound",
+        "Belly CT",
+        "Specialist consultation",
+        "Treatment, then going home or staying in hospital"
+      ]
+    },
+    "limb-injury": {
+      "label": "Arm or leg injury",
+      "blurb": "Usually: check-in, initial assessment, a doctor's exam, an X-ray, and if needed a cast or a bandage.",
+      "route": [
+        "Check-in at the reception desk",
+        "Initial assessment and measurements",
+        "Doctor's exam",
+        "X-ray",
+        "Orthopedic consultation",
+        "Cast or splint",
+        "Going home with instructions"
+      ]
+    },
+    "cut": {
+      "label": "Cut or skin wound",
+      "blurb": "Usually: check-in, initial assessment, a doctor's exam, numbing, closing the wound and a bandage.",
+      "route": [
+        "Check-in at the reception desk",
+        "Initial assessment and measurements",
+        "Doctor's exam",
+        "Local numbing",
+        "X-ray",
+        "Wound glue or stitches",
+        "Bandage and care instructions",
+        "Going home with instructions"
+      ]
+    },
+    "other": {
+      "label": "Another reason / not sure yet",
+      "blurb": "Every visit starts the same way: check-in, initial assessment and a doctor's exam. From there, the team plans the next steps.",
+      "route": [
+        "Check-in at the reception desk",
+        "Initial assessment and measurements",
+        "Doctor's exam",
+        "Tests if needed",
+        "Treatment and a decision on next steps"
+      ]
+    }
+  },
+  "ru": {
+    "fever": {
+      "label": "Высокая температура",
+      "blurb": "Обычно нужны: регистратура, оценка состояния и измерения, осмотр врача и при необходимости анализ крови или рентген.",
+      "route": [
+        "Оформление в регистратуре",
+        "Оценка состояния и измерения у медсестры",
+        "Осмотр врача",
+        "Анализ крови",
+        "Рентген грудной клетки",
+        "Лечение и выписка или дальнейшее обследование"
+      ]
+    },
+    "abdominal": {
+      "label": "Боль в животе",
+      "blurb": "Обычно: регистратура, оценка состояния и измерения, осмотр врача и при необходимости анализы крови, УЗИ или консультация специалиста.",
+      "route": [
+        "Оформление в регистратуре",
+        "Оценка состояния и измерения у медсестры",
+        "Осмотр врача",
+        "Анализ крови",
+        "Анализ мочи",
+        "УЗИ живота",
+        "КТ живота",
+        "Консультация специалиста",
+        "Лечение и выписка или госпитализация"
+      ]
+    },
+    "limb-injury": {
+      "label": "Травма руки или ноги",
+      "blurb": "Обычно: регистратура, оценка состояния и измерения, осмотр врача, рентген и при необходимости гипс или повязка.",
+      "route": [
+        "Оформление в регистратуре",
+        "Оценка состояния и измерения у медсестры",
+        "Осмотр врача",
+        "Рентген",
+        "Консультация ортопеда",
+        "Гипс или шина",
+        "Выписка с рекомендациями"
+      ]
+    },
+    "cut": {
+      "label": "Порез или рана на коже",
+      "blurb": "Обычно: регистратура, оценка состояния и измерения, осмотр врача, обезболивание, закрытие раны и повязка.",
+      "route": [
+        "Оформление в регистратуре",
+        "Оценка состояния и измерения у медсестры",
+        "Осмотр врача",
+        "Местное обезболивание",
+        "Рентген",
+        "Склеивание раны или швы",
+        "Повязка и рекомендации по уходу",
+        "Выписка с рекомендациями"
+      ]
+    },
+    "other": {
+      "label": "Другая причина / пока не знаем",
+      "blurb": "Каждый визит начинается одинаково: регистратура, оценка состояния и измерения, и осмотр врача. Дальше команда решает, что делать.",
+      "route": [
+        "Оформление в регистратуре",
+        "Оценка состояния и измерения у медсестры",
+        "Осмотр врача",
+        "Обследования при необходимости",
+        "Лечение и решение о дальнейших шагах"
+      ]
+    }
+  }
+}

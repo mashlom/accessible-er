@@ -1,0 +1,518 @@
+{
+  "he": {
+    "name": "אביר בטירה",
+    "stages": {
+      "reception": {
+        "label": "שער הטירה",
+        "hint": "נרשמים בספר הגיבורים ומקבלים צמיד אביר"
+      },
+      "wait-before-triage": {
+        "label": "חצר הטירה",
+        "hint": "ממתינים בחצר עד שהרופא הצבאי קורא"
+      },
+      "triage": {
+        "label": "בדיקת הכוחות",
+        "hint": "הרופא הצבאי בודק שאתה כשיר/ה למסע"
+      },
+      "wait-doctor": {
+        "label": "אולם האבירים",
+        "hint": "ממתינים באולם עד שהקוסם הגדול יקרא"
+      },
+      "doctor": {
+        "label": "פגישה עם הקוסם הגדול",
+        "hint": "הקוסם מחליט מהו הקסם הנכון"
+      },
+      "decision": {
+        "label": "טקס הניצחון",
+        "hint": "קיבלתם גלילה — המסע הסתיים!"
+      },
+      "tests": {
+        "label": "מראת הקסמים",
+        "hint": "המראה רואה מה שעיניים לא יכולות"
+      },
+      "treatment": {
+        "label": "חדר הנשק",
+        "hint": "הנפח מתקן מה שנשבר בקרב"
+      },
+      "consult": {
+        "label": "מועצת החכמים",
+        "hint": "חכם נוסף מצטרף לעזור"
+      },
+      "wait-results": {
+        "label": "המתנה לנבואה",
+        "hint": "הגביש מעבד את התשובות"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "הקוסם בודק את האש הפנימית של הגיבור — כמה חום קסמים נושא הגוף בתוכו.",
+      "saturation": "טבעת הקסם על האצבע מאזינה לנשימת הדם ובודקת שאוויר הנצחון זורם בכל הגוף.",
+      "blood-pressure": "שרוול הגיבורים לוחץ קלות על הזרוע ומודד את עוצמת זרם החיים של הלוחם/ת.",
+      "doctor-exam": "הקוסם הגדול בוחן את כוחות הגיבור — ממנה יבוא הקסם הנכון לריפוי.",
+      "blood-test": "הקוסם צריך טיפת דם אחת מהגיבור כדי להכין את תרכובת הניצחון.",
+      "urine": "מבחן השרביט: הגיבור ממלאים/ות כוסית קסם שתגלה את סודות הגוף.",
+      "xray": "מראת הקסמים מסתכלת דרך השריון ורואה את עצמות הגיבור מבפנים.",
+      "ultrasound": "ג׳ל הקסמים מאפשר למראה לשוטט בתוך הגוף ולמצוא מה שצריך לרפא.",
+      "ct": "הטבעת הגדולה סורקת לאט את הגיבור ומצלמת כל פרט נסתר מבפנים.",
+      "iv": "הנפח מחדיר צינור דק כדי לשלח ישירות ללב הגיבור את תרכובת הריפוי.",
+      "medication": "הקוסם הגדול הכין מרקחת ריפוי — סירופ או תרכובת שתחזק את הגיבור.",
+      "inhalation": "הקוסם מרכיב את קסדת הקרב — הציריה שמכניסה אדי ריפוי ישר לריאות.",
+      "stitches": "הנפח סוגר בזהירות את פצע הקרב — דבק מיוחד או חוט ריפוי מחבר את השריון.",
+      "cast": "שריון הגבס עוטף את העצם ומחזיק אותה יציבה עד להחלמה מלאה.",
+      "bandage": "שריון הגנה רך עוטף את פצע הקרב ושומר עליו עד שיתרפא לגמרי.",
+      "waiting-results": "גביש הקוסם מעבד את תוצאות הניסוי — בקרוב תתגלה התשובה."
+    },
+    "procedureSteps": {
+      "temperature": [
+        "מכניסים שרביט קסמים קטן לפה.",
+        "סוגרים את הפה חזק — כאילו שומרים על סוד.",
+        "מחכים רגע בשקט עד שהשרביט מסיים לקרוא את הקסם.",
+        "שומעים צפצוף קטן — הקוסם קרא את החום הפנימי."
+      ],
+      "saturation": [
+        "שמים טבעת קסם קטנה על האצבע.",
+        "האור האדום שבה מאזין לנשימת הדם.",
+        "מחכים רגע בנחת עד שהטבעת מסיימת.",
+        "מורידים את הטבעת — הקסם נקרא."
+      ],
+      "blood-pressure": [
+        "שמים שרוול קסמים על הזרוע.",
+        "הוא מתנפח ולוחץ כמו חיבוק חם של השריון.",
+        "סופרים בשקט, והוא משחרר לבד.",
+        "הקוסם קרא את עוצמת הלב."
+      ],
+      "doctor-exam": [
+        "נפגוש את הקוסם הגדול שרוצה לעזור.",
+        "הוא מקשיב לגוף עם כלי קסמים — קצת קר, לא כואב.",
+        "אולי יסתכל בגרון ובאוזניים עם אור קסמים קטן.",
+        "בסוף יידע הקוסם איזה קסם ריפוי נדרש."
+      ],
+      "blood-test": [
+        "שמים משחת הגנה שמרדימה את עור הזרוע.",
+        "גומיית הגיבורים מתהדקת קלות על הזרוע.",
+        "דקירה קצרה כמו עקיצת נוצה — ואפשר להסתכל על משהו אחר.",
+        "שמים מדבקת ניצחון — הגיבור נתן/ה טיפה לקסם."
+      ],
+      "urine": [
+        "הולכים לחדר הסודי של הטירה.",
+        "עושים קצת פיפי לתוך כוס קסמים קטנה.",
+        "נותנים את הכוס לרפואן — הוא יקרא את סודות הגוף.",
+        "המשימה הסודית הושלמה!"
+      ],
+      "xray": [
+        "נכנסים לחדר מראת הקסמים.",
+        "לפעמים מלבישים שריון כבד שמגן על הגוף.",
+        "עומדים בנחת כמו פסל אביר — בלי לזוז.",
+        "מראת הקסמים מצלמת את העצמות מבפנים — לא מרגישים כלום.",
+        "סיימנו, אפשר לזוז שוב."
+      ],
+      "ultrasound": [
+        "שוכבים בנחת על שולחן הקסמים.",
+        "מורחים ג׳ל קסמים קצת קר על הבטן.",
+        "שרביט החיפוש מחליק ומצייר תמונה של הפנים.",
+        "אם לוחץ קצת — אפשר לבקש שיאט.",
+        "מנגבים את הג׳ל וסיימנו."
+      ],
+      "ct": [
+        "שוכבים על מיטת הטבעת הגדולה.",
+        "המיטה זזה לאט לתוך טבעת הקסמים.",
+        "שומעים רעשי קסם, ושוכבים בנחת כמו פסל.",
+        "המיטה חוזרת החוצה — הטבעת ראתה הכל."
+      ],
+      "iv": [
+        "שמים משחת הגנה שמרדימה את עור הזרוע.",
+        "הנפח מכניס צינור דק ורך — דקירה קצרה בלבד.",
+        "מוציאים את המחט, והצינור הרך נשאר להעביר את הקסם.",
+        "מדביקים מדבקת שריון שמחזיקה הכל במקום."
+      ],
+      "medication": [
+        "הקוסם הגדול הכין מרקחת ריפוי מיוחדת.",
+        "המרקחת מגיעה בסירופ — לפעמים מתוקה, לפעמים עם טעם.",
+        "שותים לאט, וקסם הריפוי מתפשט בכל הגוף.",
+        "אפשר לשתות מים אחרי — המרקחת קיבלה."
+      ],
+      "inhalation": [
+        "הקוסם מרכיב ציריה — קסדת הקרב הרכה שמגנה על הנשימה.",
+        "מהציריה יוצאים אדי ריפוי — אוויר לח וקריר.",
+        "לא צריך לנשום בכוח — רק נושמים רגיל, כמו אביר שנח אחרי קרב.",
+        "אחרי כמה דקות מסירים — הריאות קיבלו את הקסם."
+      ],
+      "stitches": [
+        "לפעמים שמים קסם קור על הפצע ומכסים במגן שקוף — מחכים שיעבוד.",
+        "הרפואן סוגר את הפצע בדבק מיוחד או בחוט ריפוי — לא כואב.",
+        "אפשר להסתכל על משהו אחר בזמן הזה.",
+        "שמים חבישת הגנה מלמעלה — הפצע בדרך להחלמה."
+      ],
+      "cast": [
+        "בוחרים את התנוחה הנוחה — יושבים או שוכבים.",
+        "עוטפים את היד או הרגל בשכבות רכות ומגינות.",
+        "מחכים בנחת בלי לזוז — השריון מתקשה ומתאים לגוף.",
+        "שריון הגבס מוכן — מגן על העצם עד שתחלים."
+      ],
+      "bandage": [
+        "שריון הגנה רך — תחבושת קסמים נקייה ומוכנה.",
+        "עוטפת בעדינות סביב האזור, שכבה על שכבה.",
+        "נדבקת בסוף ומגנה — הפצע מוגן מבחוץ, ריפוי קורה מבפנים."
+      ],
+      "waiting-results": [
+        "סיימנו את כל הניסויים — כל הכבוד להגיבור!",
+        "גביש הקוסם עובד על התשובות.",
+        "אפשר לנוח, לשחק או לראות סרטון.",
+        "כשהגביש יסיים — הקוסם יבוא לספר לנו."
+      ]
+    },
+    "calmLines": [
+      "גם לאבירים קשה לפעמים 🛡️",
+      "כשקשה לאביר, הוא נושם עמוק מאוד",
+      "נשום איתי — שאיפה… נשיפה…"
+    ],
+    "cardChildHero": {
+      "title": "מכתב המלצה לקוסם הגדול",
+      "subtitle": "כדי שהקוסם ידע בדיוק איך לעזור לאביר שלנו"
+    },
+    "distractTitle": "הצלחית הקסומה 🪄"
+  },
+  "en": {
+    "name": "Knight in the Castle",
+    "stages": {
+      "reception": {
+        "label": "The Castle Gate",
+        "hint": "We sign the heroes' book and get a knight's bracelet"
+      },
+      "wait-before-triage": {
+        "label": "The Castle Yard",
+        "hint": "We wait in the yard until the military doctor calls"
+      },
+      "triage": {
+        "label": "Strength Check",
+        "hint": "The military doctor checks that you are ready for the quest"
+      },
+      "wait-doctor": {
+        "label": "The Knights' Hall",
+        "hint": "We wait in the hall until the great wizard calls"
+      },
+      "doctor": {
+        "label": "Meeting the Great Wizard",
+        "hint": "The wizard decides which magic is needed"
+      },
+      "decision": {
+        "label": "End of the Journey",
+        "hint": "You got the scroll — the quest is over!"
+      },
+      "tests": {
+        "label": "The Magic Mirror",
+        "hint": "The mirror sees what eyes cannot"
+      },
+      "treatment": {
+        "label": "The Weapon Room",
+        "hint": "The smith fixes what was broken in battle"
+      },
+      "consult": {
+        "label": "The Council of Sages",
+        "hint": "Another sage joins to help"
+      },
+      "wait-results": {
+        "label": "Waiting for the Prophecy",
+        "hint": "The crystal processes the answers"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "The wizard checks the hero's inner fire — how much magic heat the body carries inside.",
+      "saturation": "The magic ring on the finger listens to the breath of the blood and checks that the air of victory flows through the whole body.",
+      "blood-pressure": "The heroes' sleeve presses gently on the arm and measures the strength of the warrior's flow of life.",
+      "doctor-exam": "The great wizard examines the hero's powers — the right magic for healing will come from it.",
+      "blood-test": "The wizard needs one drop of blood from the hero to prepare the potion of victory.",
+      "urine": "The sceptre test: the hero fills a magic cup that will reveal the body's secrets.",
+      "xray": "The magic mirror looks through the armour and sees the hero's bones from the inside.",
+      "ultrasound": "The magic gel lets the mirror wander inside the body and find what needs healing.",
+      "ct": "The great ring slowly scans the hero and takes a picture of every hidden detail inside.",
+      "iv": "The smith inserts a thin tube to send the healing potion straight into the hero's blood.",
+      "medication": "The great wizard has prepared a healing potion — a syrup or a mixture that will make the hero stronger.",
+      "inhalation": "The wizard puts on the battle helmet — a tube that brings healing vapours straight into the lungs.",
+      "stitches": "The smith carefully closes the battle wound — a special glue or healing thread joins the armour.",
+      "cast": "The plaster armour wraps the bone and keeps it still until it heals completely.",
+      "bandage": "A soft protective armour wraps the battle wound and keeps it safe until it fully heals.",
+      "waiting-results": "The wizard's crystal processes the results of the tests — the answer will be revealed soon."
+    },
+    "procedureSteps": {
+      "temperature": [
+        "We put a small magic sceptre in the mouth.",
+        "We close the mouth tight — as if we are keeping a secret.",
+        "We wait quietly until the sceptre finishes reading the magic.",
+        "We hear a small beep — the wizard has read the inner heat."
+      ],
+      "saturation": [
+        "We put a small magic ring on the finger.",
+        "Its red light listens to the breath of the blood.",
+        "We wait calmly until the ring finishes.",
+        "We take the ring off — the magic has been read."
+      ],
+      "blood-pressure": [
+        "We put a magic sleeve on the arm.",
+        "It swells and presses like a warm hug from the armour.",
+        "We count quietly, and it lets go by itself.",
+        "The wizard has read the strength of the heart."
+      ],
+      "doctor-exam": [
+        "We meet the great wizard who wants to help.",
+        "He listens to the body with magic tools — a little cold, but not painful.",
+        "Maybe he will look at the throat and ears with a small magic light.",
+        "In the end the wizard will know which healing magic is needed."
+      ],
+      "blood-test": [
+        "We put on a protective cream that numbs the skin of the arm.",
+        "The heroes' band tightens gently on the arm.",
+        "A short prick, like a feather bite — and we can look at something else.",
+        "We put on a victory sticker — the hero gave a drop to the magic."
+      ],
+      "urine": [
+        "We go to the secret room of the castle.",
+        "We do a little wee into a small magic cup.",
+        "We give the cup to the healer — he will read the body's secrets.",
+        "The secret mission is complete!"
+      ],
+      "xray": [
+        "We go into the magic mirror room.",
+        "Sometimes we wear a heavy armour that protects the body.",
+        "We stand calmly like a knight statue — without moving.",
+        "The magic mirror takes a picture of the bones from the inside — we feel nothing.",
+        "We are done, we can move again."
+      ],
+      "ultrasound": [
+        "We lie calmly on the magic table.",
+        "We spread a little cool magic gel on the tummy.",
+        "The search wand glides and draws a picture of the inside.",
+        "If it presses a little, we can ask it to slow down.",
+        "We wipe off the gel — and we are done."
+      ],
+      "ct": [
+        "We lie on the bed of the great ring.",
+        "The bed moves slowly into the magic ring.",
+        "We hear magic sounds and lie calmly like a statue.",
+        "The bed comes back out — the ring has seen everything."
+      ],
+      "iv": [
+        "We put on a protective cream that numbs the skin of the arm.",
+        "The smith inserts a thin, soft tube — only a short prick.",
+        "We take out the needle, and the soft tube stays to carry the magic.",
+        "We put on an armour sticker that holds everything in place."
+      ],
+      "medication": [
+        "The great wizard has prepared a special healing potion.",
+        "The potion comes as a syrup — sometimes sweet, sometimes with a taste.",
+        "We drink it slowly, and the healing magic spreads through the whole body.",
+        "We can drink water after — the potion has been received."
+      ],
+      "inhalation": [
+        "The wizard puts on a tube — the soft battle helmet that protects the breath.",
+        "Healing vapours come out of the tube — cool, moist air.",
+        "We do not need to breathe hard — we just breathe normally, like a knight resting after battle.",
+        "After a few minutes it is taken off — the lungs have received the magic."
+      ],
+      "stitches": [
+        "Sometimes we put cold magic on the wound and cover it with a clear shield — we wait for it to work.",
+        "The healer closes the wound with a special glue or healing thread — it does not hurt.",
+        "We can look at something else during this.",
+        "We put a protective dressing on top — the wound is on its way to healing."
+      ],
+      "cast": [
+        "We choose a comfortable position — sitting or lying.",
+        "We wrap the hand or the leg in soft, protective layers.",
+        "We wait calmly without moving — the armour hardens and fits the body.",
+        "The plaster armour is ready — it protects the bone until it heals."
+      ],
+      "bandage": [
+        "Soft protective armour — a clean, ready magic bandage.",
+        "It wraps gently around the area, layer after layer.",
+        "It sticks at the end and protects — the wound is safe from outside, healing happens inside."
+      ],
+      "waiting-results": [
+        "We have finished all the tests — well done, hero!",
+        "The wizard's crystal works on the answers.",
+        "We can rest, play, or watch a video.",
+        "When the crystal is finished, the wizard will come and tell us."
+      ]
+    },
+    "calmLines": [
+      "Even knights find it hard sometimes 🛡️",
+      "When a knight finds it hard, they breathe very deeply",
+      "Breathe with me — in… out…"
+    ],
+    "cardChildHero": {
+      "title": "A recommendation letter for the great wizard",
+      "subtitle": "So the wizard knows exactly how to help our knight"
+    },
+    "distractTitle": "The Magic Bowl 🪄"
+  },
+  "ru": {
+    "name": "Рыцарь в замке",
+    "stages": {
+      "reception": {
+        "label": "Ворота замка",
+        "hint": "Записываемся в книгу героев и получаем браслет рыцаря"
+      },
+      "wait-before-triage": {
+        "label": "Двор замка",
+        "hint": "Ждём во дворе, пока нас позовёт военный врач"
+      },
+      "triage": {
+        "label": "Проверка сил",
+        "hint": "Военный врач проверяет, готов ли ты к походу"
+      },
+      "wait-doctor": {
+        "label": "Зал рыцарей",
+        "hint": "Ждём в зале, пока нас позовёт великий волшебник"
+      },
+      "doctor": {
+        "label": "Встреча с великим волшебником",
+        "hint": "Волшебник решает, какое нужно волшебство"
+      },
+      "decision": {
+        "label": "Конец путешествия",
+        "hint": "Ты получил свиток — поход окончен!"
+      },
+      "tests": {
+        "label": "Волшебное зеркало",
+        "hint": "Зеркало видит то, чего не видят глаза"
+      },
+      "treatment": {
+        "label": "Оружейная",
+        "hint": "Кузнец чинит то, что сломалось в бою"
+      },
+      "consult": {
+        "label": "Совет мудрецов",
+        "hint": "Ещё один мудрец приходит помочь"
+      },
+      "wait-results": {
+        "label": "Ожидание пророчества",
+        "hint": "Кристалл обрабатывает ответы"
+      }
+    },
+    "procedureNarratives": {
+      "temperature": "Волшебник проверяет внутренний огонь героя — сколько магического тепла в его теле.",
+      "saturation": "Волшебное кольцо на пальце прислушивается к дыханию крови и проверяет, что воздух победы течёт по всему телу.",
+      "blood-pressure": "Рукав героев мягко сжимает руку и измеряет силу потока жизни воина.",
+      "doctor-exam": "Великий волшебник изучает силы героя — от них зависит, какое волшебство поможет вылечить.",
+      "blood-test": "Волшебнику нужна одна капля крови героя, чтобы приготовить зелье победы.",
+      "urine": "Испытание скипетром: герой наполняет волшебную чашу, которая раскроет тайны тела.",
+      "xray": "Волшебное зеркало смотрит сквозь доспехи и видит кости героя изнутри.",
+      "ultrasound": "Волшебный гель позволяет зеркалу бродить внутри тела и найти то, что нужно вылечить.",
+      "ct": "Большое кольцо медленно сканирует героя и снимает каждую скрытую деталь внутри.",
+      "iv": "Кузнец вводит тонкую трубку, чтобы отправить целебное зелье прямо в кровь героя.",
+      "medication": "Великий волшебник приготовил целебное зелье — сироп или смесь, которая укрепит героя.",
+      "inhalation": "Волшебник надевает боевой шлем — трубку, которая вдыхает целебные пары прямо в лёгкие.",
+      "stitches": "Кузнец аккуратно закрывает рану — особый клей или целебная нить соединяет доспех.",
+      "cast": "Гипсовый доспех обхватывает кость и держит её неподвижно, пока она полностью не заживёт.",
+      "bandage": "Мягкий защитный доспех обхватывает боевую рану и бережёт её, пока она полностью не заживёт.",
+      "waiting-results": "Кристалл волшебника обрабатывает результаты испытаний — скоро откроется ответ."
+    },
+    "procedureSteps": {
+      "temperature": [
+        "В рот кладём маленький волшебный скипетр.",
+        "Рот закрываем крепко — как будто храним секрет.",
+        "Тихо ждём, пока скипетр дочитает заклинание.",
+        "Слышим короткий писк — волшебник прочитал внутренний жар."
+      ],
+      "saturation": [
+        "На палец надеваем маленькое волшебное кольцо.",
+        "Его красный свет слушает дыхание крови.",
+        "Спокойно ждём, пока кольцо закончит.",
+        "Снимаем кольцо — волшебство прочитано."
+      ],
+      "blood-pressure": [
+        "На руку надеваем волшебный рукав.",
+        "Он надувается и сжимает, как тёплое объятие доспеха.",
+        "Тихо считаем, и он сам отпускает.",
+        "Волшебник прочитал силу сердца."
+      ],
+      "doctor-exam": [
+        "Встречаем великого волшебника, который хочет помочь.",
+        "Он слушает тело волшебными инструментами — немного холодно, но не больно.",
+        "Может быть, посмотрит горло и уши маленьким волшебным светом.",
+        "В конце волшебник узнает, какое целебное волшебство нужно."
+      ],
+      "blood-test": [
+        "На кожу руки наносим защитный крем, который её обезболивает.",
+        "Ремешок героев мягко затягивается на руке.",
+        "Короткий укол, как укус пера — и можно смотреть на что-то другое.",
+        "Клеим наклейку победы — герой отдал каплю волшебству."
+      ],
+      "urine": [
+        "Идём в тайную комнату замка.",
+        "Немного делаем в маленькую волшебную чашку.",
+        "Отдаём чашку лекарю — он прочитает тайны тела.",
+        "Тайное задание выполнено!"
+      ],
+      "xray": [
+        "Заходим в комнату волшебного зеркала.",
+        "Иногда надеваем тяжёлый доспех, который защищает тело.",
+        "Стоим спокойно, как статуя рыцаря, — не двигаясь.",
+        "Волшебное зеркало делает снимок костей изнутри — ничего не чувствуем.",
+        "Всё, теперь можно снова двигаться."
+      ],
+      "ultrasound": [
+        "Спокойно ложимся на волшебный стол.",
+        "Немного прохладного волшебного геля наносим на живот.",
+        "Волшебная палочка-искатель скользит и рисует картинку того, что внутри.",
+        "Если немного давит — можно попросить замедлить.",
+        "Вытираем гель — и всё."
+      ],
+      "ct": [
+        "Ложимся на кровать большого кольца.",
+        "Кровать медленно въезжает в волшебное кольцо.",
+        "Слышим волшебные звуки и лежим спокойно, как статуя.",
+        "Кровать выезжает обратно — кольцо всё увидело."
+      ],
+      "iv": [
+        "На кожу руки наносим защитный крем, который её обезболивает.",
+        "Кузнец вводит тонкую мягкую трубку — только короткий укол.",
+        "Вынимаем иголку, а мягкая трубка остаётся, чтобы передавать волшебство.",
+        "Клеим наклейку-доспех, которая всё держит на месте."
+      ],
+      "medication": [
+        "Великий волшебник приготовил особое целебное зелье.",
+        "Зелье бывает в виде сиропа — иногда сладкого, иногда с каким-то вкусом.",
+        "Пьём медленно, и целебное волшебство расходится по всему телу.",
+        "После можно выпить воды — зелье принято."
+      ],
+      "inhalation": [
+        "Волшебник надевает трубку — мягкий боевой шлем, который защищает дыхание.",
+        "Из трубки идут целебные пары — прохладный, влажный воздух.",
+        "Не нужно дышать сильно — дышим обычно, как рыцарь, отдыхающий после боя.",
+        "Через несколько минут шлем снимают — лёгкие получили волшебство."
+      ],
+      "stitches": [
+        "Иногда на рану кладут холодное волшебство и закрывают прозрачным щитом — ждём, пока оно подействует.",
+        "Лекарь закрывает рану особым клеем или целебной нитью — не больно.",
+        "Во время этого можно смотреть на что-то другое.",
+        "Сверху накладывают защитную повязку — рана идёт на поправку."
+      ],
+      "cast": [
+        "Выбираем удобное положение — сидя или лёжа.",
+        "Обматываем руку или ногу мягкими защитными слоями.",
+        "Спокойно ждём, не двигаясь, — доспех застывает и подходит телу.",
+        "Гипсовый доспех готов — он защищает кость, пока она не заживёт."
+      ],
+      "bandage": [
+        "Мягкий защитный доспех — чистая, готовая волшебная повязка.",
+        "Она мягко обвивает место, слой за слоем.",
+        "В конце прикрепляется и защищает — рана снаружи защищена, а внутри идёт исцеление."
+      ],
+      "waiting-results": [
+        "Все испытания закончены — молодец, герой!",
+        "Кристалл волшебника работает над ответами.",
+        "Можно отдохнуть, поиграть или посмотреть видео.",
+        "Когда кристалл закончит, волшебник придёт и расскажет нам."
+      ]
+    },
+    "calmLines": [
+      "Даже рыцарям иногда бывает трудно 🛡️",
+      "Когда рыцарю трудно, он очень глубоко дышит",
+      "Дыши со мной — вдох… выдох…"
+    ],
+    "cardChildHero": {
+      "title": "Рекомендательное письмо великому волшебнику",
+      "subtitle": "Чтобы волшебник точно знал, как помочь нашему рыцарю"
+    },
+    "distractTitle": "Волшебная чаша 🪄"
+  }
+}

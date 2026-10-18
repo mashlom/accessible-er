@@ -1,0 +1,473 @@
+{
+  "he": {
+    "intro": {
+      "hi": "שלום! אני רוני 👋",
+      "line1": "אני אלווה אתכם היום במלר״ד. נדבר על מה שקורה — דבר אחד בכל פעם.",
+      "line2": "אני שואל, אתם עונים, ואפשר לעצור מתי שרוצים. במה נתחיל?"
+    },
+    "topics": {
+      "ask": "על מה נדבר עכשיו?",
+      "back": "לדבר על משהו אחר"
+    },
+    "unknown": "רגע, איבדתי את החוט. בואו נחזור לרשימה.",
+    "staffPause": "להראות לצוות: «אנחנו צריכים דקה»",
+    "reason": {
+      "ask": "ספרו לי — מה הביא אתכם היום?",
+      "hint": "זה יעזור לי להראות לכם את הדרך הצפויה.",
+      "understood": "הבנתי — {label}.",
+      "routeHeading": "הדרך הצפויה שלנו:",
+      "note": "חשוב לדעת: הסדר והזמנים יכולים להשתנות לפי החלטת הצוות והעומס. זה לא סימן שמשהו לא בסדר.",
+      "where": "איפה אנחנו עכשיו?",
+      "prep": "איך מכינים את הילד/ה?",
+      "change": "לשנות את הסיבה",
+      "optional": " (לפי הצורך)"
+    },
+    "card": {
+      "cardIntro": "בואו נכין יחד כרטיס קטן שמספר לצוות מה חשוב לדעת עליי.",
+      "cardPrivacy": "🔒 הכל נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ולא נשלח לשום מקום. מה שלא תראו בעצמכם — לא יגיע לצוות.",
+      "cardQuestions": "אשאל כמה שאלות קצרות. אפשר לדלג על כל אחת.",
+      "cardStart": "יאללה, נתחיל",
+      "cardNotNow": "לא עכשיו",
+      "cardDone": "סיימנו! הכרטיס מוכן.",
+      "cardDoneShow": "אפשר להראות אותו לצוות ישר מהמסך, או להדפיס.",
+      "cardDoneEmpty": "לא סימנתם כלום — אפשר לחזור ולמלא מתי שנוח.",
+      "cardShow": "להראות את הכרטיס",
+      "cardFix": "לחזור ולתקן",
+      "cardPickMany": "אפשר לסמן כמה שרוצים.",
+      "cardNext": "הבא ←",
+      "cardLast": "סיימנו ←",
+      "cardSkip": "לדלג על השאלה",
+      "cardLastStep": "סיימנו ←",
+      "cardNextStep": "הבא ←",
+      "cardSkipQ": "לדלג על השאלה",
+      "questions": {
+        "communication": "איך הילד/ה מתקשר/ת?",
+        "sensitivities": "למה הילד/ה רגיש/ה?",
+        "calming": "מה מרגיע את הילד/ה?",
+        "escalators": "מה עלול להגביר את הלחץ?",
+        "hardMoments": "מה קשה במיוחד?",
+        "pain": "איך הילד/ה מראה כאב?",
+        "avoid": "מה חשוב לא לעשות?"
+      }
+    },
+    "home": {
+      "homeAfter": "ומה יהיה בבית?",
+      "tellUs": "לספר לכם איך היה לנו"
+    },
+    "calm": {
+      "tipsHint": "על מה נדבר? כל אחד מאלה עוזר.",
+      "sayHint": "קשה לדבר עכשיו? בחרו משפט, ואציג אותו בגדול על המסך.",
+      "sayHint2": "ככה אפשר פשוט להראות אותו לצוות, בלי להסביר.",
+      "watchOne": "אפשר להסתכל לכאן במקום על היד. אני נשאר איתכם.",
+      "watchTwo": "תסתכלו על הקשת… היא לא הולכת לשום מקום, וגם אני לא.",
+      "watchThree": "אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…",
+      "again": "עוד פעם",
+      "moreHelp": "מה עוד עוזר?",
+      "hardNow1": "קשה עכשיו? זה בסדר גמור. אני כאן.",
+      "hardNow2": "קודם כל — ננשום יחד. פנימה… והחוצה… עוד פעם, לאט.",
+      "hardNow3": "אתם עושים עבודה נהדרת. באמת.",
+      "watchBtn": "משהו רגוע להסתכל עליו",
+      "helpBtn": "מה עוזר עכשיו?",
+      "sayBtn": "קשה לי לדבר עם הצוות",
+      "moreHelpBtn": "עוד משהו שעוזר",
+      "howSayBtn": "איך אומרים את זה לצוות?",
+      "question": "במה אפשר לעזור עכשיו?"
+    },
+    "where": {
+      "ask": "איפה אתם עכשיו?",
+      "hint": "סמנו את השלב, ואספר לכם מה קורה בו."
+    },
+    "stage": {
+      "waitShort": "זה לוקח בערך {range}. זה טווח בלבד.",
+      "waitLong": "ההמתנה כאן היא בערך {range}. זה טווח בלבד — הצוות מחליט לפי המצב והעומס.",
+      "hard": "מה עלול להיות קשה כאן?",
+      "ask": "מה אפשר לבקש?",
+      "askHere": "מה אפשר לבקש כאן?",
+      "after": "ומה אחרי זה?",
+      "next": "ומה השלב הבא?",
+      "reassure": "אם זה קורה — זה בסדר גמור, וזה לא סימן שמשהו השתבש. יש דברים שעוזרים.",
+      "hardNowBtn": "קשה לנו ממש עכשיו",
+      "askIntro": "הנה מה שאפשר לבקש בשלב הזה:",
+      "askOk": "מותר לבקש. הצוות רגיל לזה.",
+      "askMore": "עוד דברים שאפשר לבקש"
+    },
+    "prep": {
+      "for": "להתכונן ל{title}",
+      "whoDur": "מי עושה את זה: {who}\nכמה זמן: {duration}",
+      "letsSee": "בואו נראה איך זה הולך, שלב אחרי שלב",
+      "feel": "מה הילד/ה עשוי/ה להרגיש?",
+      "howPrepare": "איך אפשר להתכונן:",
+      "askBefore": "לפני {title} אפשר לבקש:",
+      "intro": "לפי מה שסיפרתם לי, אלה הדברים שכנראה נפגוש היום. על מה נדבר?",
+      "whatAll": "על מה נכין את עצמנו?"
+    },
+    "ui": {
+      "showAll": "להראות הכול עכשיו",
+      "close": "סגירה",
+      "roni": "רוני",
+      "multiGroup": "אפשר לסמן כמה תשובות",
+      "bigSentence": "משפט מוצג לצוות"
+    },
+    "buttons": {
+      "allTests": "להראות לי את כל הבדיקות",
+      "otherPlace": "מקום אחר",
+      "quietPlace": "אפשר לבקש מקום שקט?",
+      "moreAsk": "מה עוד אפשר לבקש?",
+      "howAsk": "איך מבקשים את זה?",
+      "restart": "להתחיל שיחה מחדש",
+      "helpedMuch": "עזר מאוד",
+      "helpedSome": "עזר קצת",
+      "helpedLess": "פחות עזר"
+    },
+    "ask": {
+      "askGeneral": "מותר לבקש! הצוות רגיל לזה, וזה בסדר גמור.",
+      "askAbout": "על מה תרצו לשמוע?",
+      "availability": "הזמינות תלויה במצב, בציוד ובעומס באותו רגע. גם כשלא מתאפשר — שווה לשאול."
+    },
+    "map": {
+      "heading": "איזה מקום במלר״ד מעניין אתכם?",
+      "body": "אספר מה קורה שם, וכמה רועש או שקט בו.",
+      "load": "כמה עמוס שם: {label}",
+      "next": "מכאן ממשיכים אל: {next}"
+    },
+    "bye": {
+      "thanks1": "תודה רבה! זה עוזר לנו לשפר את הכלי למשפחות אחרות.",
+      "thanks2": "אם נפתחה אצלכם אפליקציית מייל עם הודעה מוכנה — נשאר רק לשלוח אותה.",
+      "thanks3": "היה לי טוב איתכם היום. שיהיה רק טוב 💛",
+      "ask": "איך היה לכם היום?",
+      "askNote": "שאלה אחת קצרה, בלי שם ובלי פרטים מזהים."
+    },
+    "topicNames": {
+      "reason": "למה באנו היום",
+      "where": "איפה אנחנו בתהליך",
+      "prep": "איך מכינים את הילד/ה?",
+      "card": "מה חשוב לדעת עליי",
+      "map": "איפה אנחנו במיון",
+      "calm": "קשה לנו עכשיו",
+      "ask": "מה אפשר לבקש",
+      "home": "מה יהיה בסוף"
+    },
+    "asides": [
+      "היי! נגעתם בי 😊",
+      "אני כאן. לא הולך לשום מקום.",
+      "רוצים לנשום איתי? פנימה… והחוצה…",
+      "אתם עושים את זה מצוין!",
+      "אפשר גם רק לשבת בשקט. גם זה בסדר.",
+      "אני גאה בכם 🌟"
+    ]
+  },
+  "en": {
+    "intro": {
+      "hi": "Hello! I'm Roni 👋",
+      "line1": "I'll be with you today in the emergency room. We'll talk about what is happening — one thing at a time.",
+      "line2": "I ask, you answer, and you can stop whenever you like. Where shall we start?"
+    },
+    "topics": {
+      "ask": "What shall we talk about now?",
+      "back": "Talk about something else"
+    },
+    "unknown": "Wait, I lost the thread. Let's go back to the list.",
+    "staffPause": "Show the staff: \"we need a minute\"",
+    "reason": {
+      "ask": "Tell me — what brought you here today?",
+      "hint": "This will help me show you the expected route.",
+      "understood": "Got it — {label}.",
+      "routeHeading": "Our expected route:",
+      "note": "Good to know: the order and times can change depending on the team's decision and how busy it is. This does not mean anything is wrong.",
+      "where": "Where are we now?",
+      "prep": "What is going to happen?",
+      "change": "Change the reason",
+      "optional": " (if needed)"
+    },
+    "card": {
+      "cardIntro": "Let's make a short card together that tells the staff what is important to know about me.",
+      "cardPrivacy": "🔒 Everything is saved on this device only, deleted after 24 hours, and never sent anywhere. What you do not show yourself will not reach the staff.",
+      "cardQuestions": "I will ask a few short questions. You can skip any of them.",
+      "cardStart": "Let's start",
+      "cardNotNow": "Not now",
+      "cardDone": "The card is filled in.",
+      "cardDoneShow": "You can show it to the staff right from the screen, or print it. The card is written in Hebrew — the staff reads it in Hebrew.",
+      "cardDoneEmpty": "Nothing is ticked yet — you can come back and fill it in whenever it suits you.",
+      "cardShow": "Show the card",
+      "cardFix": "Go back and change",
+      "cardPickMany": "You can tick as many as you like.",
+      "cardNext": "Next →",
+      "cardLast": "Done →",
+      "cardSkip": "Skip this question",
+      "cardLastStep": "Done →",
+      "cardNextStep": "Next →",
+      "cardSkipQ": "Skip this question",
+      "questions": {
+        "communication": "How does your child communicate?",
+        "sensitivities": "What is your child sensitive to?",
+        "calming": "What calms your child?",
+        "escalators": "What can make stress worse?",
+        "hardMoments": "What is especially hard?",
+        "pain": "How does your child show pain?",
+        "avoid": "What is important not to do?"
+      }
+    },
+    "home": {
+      "homeAfter": "What will it be like at home?",
+      "tellUs": "Tell you how it was for us"
+    },
+    "calm": {
+      "tipsHint": "What shall we talk about? Each of these helps.",
+      "sayHint": "Hard to talk right now? Choose a sentence, and I will show it big on the screen.",
+      "sayHint2": "That way you can simply show it to the staff, without explaining.",
+      "watchOne": "You can look here instead of at your hand. I am staying with you.",
+      "watchTwo": "Look at the rainbow… it is not going anywhere, and neither am I.",
+      "watchThree": "We can also count slowly to ten together. One… two… three…",
+      "again": "Again",
+      "moreHelp": "What else helps?",
+      "hardNow1": "Is it hard right now? That's completely okay. I'm here.",
+      "hardNow2": "First of all — let us breathe together. In… and out… once more, slowly.",
+      "hardNow3": "You are doing great work. Really.",
+      "watchBtn": "I need something calm for my child to look at",
+      "helpBtn": "Tell me what could help us right now",
+      "sayBtn": "It is hard for me to talk to the staff",
+      "moreHelpBtn": "Something else that helps",
+      "howSayBtn": "How do I say this to the staff?",
+      "question": "What would help you most right now?"
+    },
+    "where": {
+      "ask": "Where are you now?",
+      "hint": "Mark the stage, and I will tell you what happens there."
+    },
+    "stage": {
+      "waitShort": "It takes about {range}. That is only a range.",
+      "waitLong": "The wait here is about {range}. It is only a range — the team decides by the situation and how busy it is.",
+      "hard": "What may be hard here?",
+      "ask": "What can I ask for?",
+      "askHere": "What can I ask for here?",
+      "after": "And what comes after that?",
+      "next": "And what is the next stage?",
+      "reassure": "If this happens, it is completely fine, and it does not mean something went wrong. There are things that help.",
+      "hardNowBtn": "It is really hard for us right now",
+      "askIntro": "Here is what you can ask for at this stage:",
+      "askOk": "You can ask. The staff is used to it.",
+      "askMore": "More things you can ask for"
+    },
+    "prep": {
+      "for": "Get ready: {title}",
+      "whoDur": "Who does it: {who}\nHow long: {duration}",
+      "letsSee": "Let's see how it goes, step by step",
+      "feel": "What might the child feel?",
+      "howPrepare": "How to get ready:",
+      "askBefore": "Before {title}, you can ask for:",
+      "intro": "Based on what you told me, these are the things we will probably meet today. What shall we talk about?",
+      "whatAll": "What shall we prepare for?"
+    },
+    "ui": {
+      "showAll": "Show everything now",
+      "close": "Close",
+      "roni": "Roni",
+      "multiGroup": "You can tick more than one answer",
+      "bigSentence": "Sentence shown to the staff"
+    },
+    "buttons": {
+      "allTests": "Show me all the tests",
+      "otherPlace": "Another place",
+      "quietPlace": "Can I ask for a quiet place?",
+      "moreAsk": "What else can I ask for?",
+      "howAsk": "How do I ask for this?",
+      "restart": "Start the talk again",
+      "helpedMuch": "It helped a lot",
+      "helpedSome": "It helped a little",
+      "helpedLess": "It helped less"
+    },
+    "ask": {
+      "askGeneral": "You can ask! The staff is used to it, and it is completely fine.",
+      "askAbout": "What would you like to hear about?",
+      "availability": "Availability depends on the situation, the equipment and how busy it is at that moment. Even when it is not possible, it is worth asking."
+    },
+    "map": {
+      "heading": "Which place in the ER would you like to know about?",
+      "body": "I will tell you what happens there and how loud or quiet it is.",
+      "load": "How busy it is: {label}",
+      "next": "From here we go on to: {next}"
+    },
+    "bye": {
+      "thanks1": "Thank you very much! It helps us improve this tool for other families.",
+      "thanks2": "If an email app opened with a ready message, all that is left is to send it.",
+      "thanks3": "It was good being with you today. Take care 💛",
+      "ask": "How was today for you?",
+      "askNote": "One short question, with no name and no identifying details."
+    },
+    "topicNames": {
+      "reason": "Why we came today",
+      "where": "Where we are in the process",
+      "prep": "What is going to happen",
+      "card": "What is important to know about me",
+      "map": "Where we are in the ER",
+      "calm": "It is hard for us right now",
+      "ask": "What can I ask for",
+      "home": "What will happen at the end"
+    },
+    "asides": [
+      "Hi! You touched me 😊",
+      "I'm here. I'm not going anywhere.",
+      "Want to breathe with me? In… and out…",
+      "You are doing it really well!",
+      "You can also just sit quietly. That's okay too.",
+      "I'm proud of you 🌟"
+    ]
+  },
+  "ru": {
+    "intro": {
+      "hi": "Здравствуйте! Я Рони 👋",
+      "line1": "Я буду с вами сегодня в приёмном покое. Поговорим о том, что происходит, — по одному вопросу за раз.",
+      "line2": "Я спрашиваю, вы отвечаете, и можно остановиться в любой момент. С чего начнём?"
+    },
+    "topics": {
+      "ask": "О чём поговорим сейчас?",
+      "back": "Поговорить о чём-то другом"
+    },
+    "unknown": "Секунду, я потерял нить. Вернёмся к списку.",
+    "staffPause": "Показать персоналу: «Нам нужна минута»",
+    "reason": {
+      "ask": "Расскажите — что привело вас сегодня?",
+      "hint": "Это поможет мне показать вам ожидаемый маршрут.",
+      "understood": "Понятно — {label}.",
+      "routeHeading": "Ожидаемый маршрут:",
+      "note": "Важно знать: порядок и время могут меняться по решению команды и из-за загруженности. Это не значит, что что-то идёт не так.",
+      "where": "Где мы сейчас?",
+      "prep": "Как подготовить ребёнка?",
+      "change": "Изменить причину",
+      "optional": " (по необходимости)"
+    },
+    "card": {
+      "cardIntro": "Давайте вместе сделаем короткую карточку, которая расскажет персоналу, что важно знать обо мне.",
+      "cardPrivacy": "🔒 Всё хранится только на этом устройстве, удаляется через 24 часа и никуда не отправляется. То, что вы не покажете сами, не попадёт к персоналу.",
+      "cardQuestions": "Я задам несколько коротких вопросов. Любой вопрос можно пропустить.",
+      "cardStart": "Давай начнём",
+      "cardNotNow": "Не сейчас",
+      "cardDone": "Карточка заполнена.",
+      "cardDoneShow": "Её можно показать персоналу прямо с экрана или распечатать. Карточка написана на иврите — персонал читает её на иврите.",
+      "cardDoneEmpty": "Пока ничего не отмечено — можно вернуться и заполнить, когда удобно.",
+      "cardShow": "Показать карточку",
+      "cardFix": "Вернуться и поправить",
+      "cardPickMany": "Можно отметить сколько угодно.",
+      "cardNext": "Дальше →",
+      "cardLast": "Готово →",
+      "cardSkip": "Пропустить вопрос",
+      "cardLastStep": "Готово →",
+      "cardNextStep": "Дальше →",
+      "cardSkipQ": "Пропустить вопрос",
+      "questions": {
+        "communication": "Как ребёнок общается?",
+        "sensitivities": "К чему ребёнок особенно чувствителен?",
+        "calming": "Что успокаивает ребёнка?",
+        "escalators": "Что может усилить стресс?",
+        "hardMoments": "Что особенно трудно?",
+        "pain": "Как ребёнок показывает боль?",
+        "avoid": "Чего важно не делать?"
+      }
+    },
+    "home": {
+      "homeAfter": "Что будет дома?",
+      "tellUs": "Рассказать, как у нас прошло"
+    },
+    "calm": {
+      "tipsHint": "У меня есть вот такие варианты. Что обсудим?",
+      "sayHint": "Трудно говорить сейчас? Выберите фразу, и я покажу её крупно на экране.",
+      "sayHint2": "Так можно просто показать её персоналу, ничего не объясняя.",
+      "watchOne": "Можно смотреть сюда, а не на руку. Я остаюсь с вами.",
+      "watchTwo": "Посмотрите на радугу… она никуда не уходит, и я тоже.",
+      "watchThree": "Можно ещё медленно посчитать со мной до десяти. Один… два… три…",
+      "again": "Ещё раз",
+      "moreHelp": "Что ещё помогает?",
+      "hardNow1": "Сейчас трудно? Это совершенно нормально. Я рядом.",
+      "hardNow2": "Прежде всего — давайте подышим вместе. Вдох… и выдох… ещё раз, медленно.",
+      "hardNow3": "Вы делаете отличную работу. Правда.",
+      "watchBtn": "Мне нужно что-то спокойное, чтобы ребёнок мог посмотреть",
+      "helpBtn": "Расскажи, что может нам помочь сейчас",
+      "sayBtn": "Мне трудно говорить с персоналом",
+      "moreHelpBtn": "Что-то ещё, что помогает",
+      "howSayBtn": "Как сказать это персоналу?",
+      "question": "Что вам сейчас нужно?"
+    },
+    "where": {
+      "ask": "Где вы сейчас?",
+      "hint": "Отметьте этап, и я расскажу, что там происходит."
+    },
+    "stage": {
+      "waitShort": "Это занимает примерно {range}. Это только ориентир.",
+      "waitLong": "Ожидание здесь примерно {range}. Это только ориентир — команда решает по состоянию и загруженности.",
+      "hard": "Что здесь может быть трудно?",
+      "ask": "Что можно попросить?",
+      "askHere": "Что здесь можно попросить?",
+      "after": "А что будет потом?",
+      "next": "Какой следующий этап?",
+      "reassure": "Если это случается — это совершенно нормально, и это не значит, что что-то пошло не так. Есть вещи, которые помогают.",
+      "hardNowBtn": "Нам сейчас очень тяжело",
+      "askIntro": "Вот что можно попросить на этом этапе:",
+      "askOk": "Можно просить. Персонал к этому привык.",
+      "askMore": "Что ещё можно попросить"
+    },
+    "prep": {
+      "for": "Как подготовиться: {title}",
+      "whoDur": "Кто делает: {who}\nСколько времени: {duration}",
+      "letsSee": "Посмотрим, как это проходит, шаг за шагом",
+      "feel": "Что может почувствовать ребёнок?",
+      "howPrepare": "Как подготовиться:",
+      "askBefore": "Перед {title} можно попросить:",
+      "intro": "Судя по тому, что вы рассказали, это то, что, скорее всего, встретится сегодня. О чём поговорим?",
+      "whatAll": "К чему будем готовиться?"
+    },
+    "ui": {
+      "showAll": "Показать всё сейчас",
+      "close": "Закрыть",
+      "roni": "Рони",
+      "multiGroup": "Можно отметить несколько ответов",
+      "bigSentence": "Фраза, показанная персоналу"
+    },
+    "buttons": {
+      "allTests": "Показать все обследования",
+      "otherPlace": "Другое место",
+      "quietPlace": "Можно попросить тихое место?",
+      "moreAsk": "Что ещё можно попросить?",
+      "howAsk": "Как это попросить?",
+      "restart": "Начать разговор заново",
+      "helpedMuch": "Очень помогло",
+      "helpedSome": "Немного помогло",
+      "helpedLess": "Помогло меньше"
+    },
+    "ask": {
+      "askGeneral": "Можно просить! Персонал к этому привык, и это совершенно нормально.",
+      "askAbout": "О чём вы хотите услышать?",
+      "availability": "Возможность зависит от ситуации, оборудования и загруженности в этот момент. Даже если сейчас не получится — стоит спросить."
+    },
+    "map": {
+      "heading": "Какое место в приёмном покое вас интересует?",
+      "body": "Расскажу, что там происходит и насколько там шумно или тихо.",
+      "load": "Насколько людно: {label}",
+      "next": "Отсюда переходим к: {next}"
+    },
+    "bye": {
+      "thanks1": "Большое спасибо! Это помогает нам улучшать инструмент для других семей.",
+      "thanks2": "Если у вас открылось почтовое приложение с готовым письмом — осталось только его отправить.",
+      "thanks3": "Мне было с вами хорошо сегодня. Пусть всё будет хорошо 💛",
+      "ask": "Как прошёл сегодняшний день?",
+      "askNote": "Один короткий вопрос, без имени и без личных данных."
+    },
+    "topicNames": {
+      "reason": "Зачем мы пришли сегодня",
+      "where": "Где мы на пути",
+      "prep": "Как подготовить ребёнка?",
+      "card": "Что важно знать обо мне",
+      "map": "Где мы в приёмном покое",
+      "calm": "Нам сейчас тяжело",
+      "ask": "Что можно попросить",
+      "home": "Что будет в конце"
+    },
+    "asides": [
+      "Привет! Вы до меня дотронулись 😊",
+      "Я здесь. Никуда не ухожу.",
+      "Хотите подышать со мной? Вдох… и выдох…",
+      "У вас отлично получается!",
+      "Можно и просто посидеть тихо. Это тоже нормально.",
+      "Я горжусь вами 🌟"
+    ]
+  }
+}

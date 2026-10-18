@@ -26,16 +26,18 @@ export function QuestShell() {
   const { lang, dir, t } = useI18n()
   const isOcean = theme.id === 'ocean' && !isHome
 
+  // translations are on for the whole child side (the worlds and their screens), not only for the ocean
   useLayoutEffect(() => {
-    setI18nEnabled(isOcean)
+    setI18nEnabled(true)
     return () => setI18nEnabled(false)
-  }, [isOcean])
+  }, [])
 
   const dayActive = active && (REQUIRED_STAGES as readonly string[]).includes(active.id)
   const mapTarget = dayActive || visibleOptionals.length === 0 ? '/map' : '/night-map'
-  const isMapPage = pathname?.includes('/map') || pathname?.includes('/night-map')
+  // the world's map: /quest/<world>/map, /quest/<world>/night-map or the world's own address /quest/<world>
+  const isMapPage = /\/(night-)?map$/.test(pathname) || /^\/quest\/[^/]+\/?$/.test(pathname)
   // The ocean day map carries its own language picker and menu link in its header row
-  const hideTopbar = isOcean && /\/(night-)?map$/.test(pathname)
+  const hideTopbar = isOcean && isMapPage
 
   return (
     <div className={`${css.questShell} ${isOcean ? css.questShellOcean : ''}`} dir={dir} lang={lang}>
@@ -66,7 +68,7 @@ export function QuestShell() {
         )}
 
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end', paddingInlineEnd: '0.5rem' }}>
-          {isOcean && <LanguagePicker />}
+          <LanguagePicker />
           <a href="#/" className={css.questTopBtn} aria-label={t('ui.shell.menu', 'לתפריט הקונספטים')}>
             <span aria-hidden>🏁</span>
           </a>
