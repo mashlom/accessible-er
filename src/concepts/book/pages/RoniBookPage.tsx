@@ -154,6 +154,12 @@ export function RoniBookPage() {
       <div className={css.pageContent}>
         <div className={css.roniFigure}>
           <Roni size={120} mood={moodFor(stagePages.indexOf(stageId), stagePages.length)} decorative />
+          {/* the chosen figure stands beside Roni, so picking one answers "where am I?" at once */}
+          {isIntro && (
+            <span className={css.companion} aria-hidden>
+              {avatar.kind === 'photo' ? <img src={avatar.value} alt="" /> : avatar.value}
+            </span>
+          )}
         </div>
         <p className={css.mainText}>{line?.text}</p>
         <p className={css.subText}>{line?.sub}</p>

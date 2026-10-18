@@ -101,12 +101,12 @@ export function Roni({
           {waving ? (
             <g className={styles.waveArm}>
               <ellipse
-                cx="156"
-                cy="106"
-                rx="12"
-                ry="23"
+                cx="158"
+                cy="132"
+                rx="9"
+                ry="22"
                 fill="#5cbfb4"
-                transform="rotate(-38 156 106)"
+                transform="rotate(70 158 132)"
               />
             </g>
           ) : (
