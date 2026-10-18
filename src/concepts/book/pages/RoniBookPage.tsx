@@ -24,6 +24,8 @@ const BASE_STAGES = ['reception', 'wait-before-triage', 'triage', 'wait-doctor',
 const OPTIONAL_STAGES = ['tests', 'treatment', 'consult', 'wait-results'] as const
 const END_STAGES = ['decision'] as const
 const SELECT_PAGE = 'parent-select'
+/** After the decision: going home or staying in the hospital (the family chooses; the choice page is shown here). */
+const DISPOSITION_PAGE = 'disposition'
 
 /** Roni's mood follows the arc of the story: a wave hello → calm → proud. */
 function moodFor(index: number, total: number): RoniMood {
@@ -45,6 +47,7 @@ export function RoniBookPage() {
   const [parentOpen, setParentOpen] = useState(false)
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [chosen, setChosen] = useState(false)
+  const [disposition, setDisposition] = useState<'home' | 'hospital' | null>(null)
   const [avatar, setAvatar, resetAvatar] = useSessionAvatar()
   const fileRef = useRef<HTMLInputElement>(null)
 
@@ -53,15 +56,18 @@ export function RoniBookPage() {
 
   const pages: string[] = useMemo(() => {
     const extras = chosen ? OPTIONAL_STAGES.filter((id) => selected.has(id)) : [SELECT_PAGE]
-    return [INTRO_PAGE, ...BASE_STAGES, ...extras, ...END_STAGES]
-  }, [chosen, selected])
+    const outcome = disposition ? [disposition] : []
+    return [INTRO_PAGE, ...BASE_STAGES, ...extras, ...END_STAGES, DISPOSITION_PAGE, ...outcome]
+  }, [chosen, selected, disposition])
 
   const stageId = pages[index]
   const isSelect = stageId === SELECT_PAGE
   const isIntro = stageId === INTRO_PAGE
   const line = isSelect ? undefined : lines[stageId]
   const isLast = index === pages.length - 1
-  const stagePages = pages.filter((id) => id !== SELECT_PAGE && id !== INTRO_PAGE)
+  const isDisposition = stageId === DISPOSITION_PAGE
+  const isOutcome = stageId === 'home' || stageId === 'hospital'
+  const stagePages = pages.filter((id) => id !== SELECT_PAGE && id !== INTRO_PAGE && id !== DISPOSITION_PAGE && id !== 'home' && id !== 'hospital')
 
   useEffect(() => {
     setParentOpen(false)
@@ -88,6 +94,7 @@ export function RoniBookPage() {
   }
 
   function restart() {
+    setDisposition(null)
     setIndex(0)
     setSelected(new Set())
     setChosen(false)
@@ -165,10 +172,23 @@ export function RoniBookPage() {
             </span>
           )}
         </div>
-        <p className={css.mainText}>{`${stagePages.indexOf(stageId) + 1}. `}{line?.text}</p>
+        <p className={css.mainText}>{isIntro || isDisposition || isOutcome ? line?.text : `${stagePages.indexOf(stageId) + 1}. ${line?.text ?? ''}`}</p>
         <p className={css.subText}>{line?.sub}</p>
       </div>
 
+
+      {isDisposition && !disposition && (
+        <div className={css.procGrid}>
+          <button className={css.procCard} onClick={() => { setDisposition('home'); setIndex((i) => i + 1) }}>
+            <span className={css.procEmoji}>🏠</span>
+            <span className={css.procLabel}>{t('book.ui.choiceHome', 'הביתה')}</span>
+          </button>
+          <button className={css.procCard} onClick={() => { setDisposition('hospital'); setIndex((i) => i + 1) }}>
+            <span className={css.procEmoji}>🏥</span>
+            <span className={css.procLabel}>{t('book.ui.choiceHospital', 'נשארים בבית החולים')}</span>
+          </button>
+        </div>
+      )}
 
       {isIntro && (
         <div className={css.avatarPicker}>
@@ -205,7 +225,7 @@ export function RoniBookPage() {
             {t('book.ui.back', 'אחורה')}
           </button>
         )}
-        {!isLast ? (
+        {isDisposition && !disposition ? null : !isLast ? (
           <button className={css.nextBtn} onClick={() => setIndex((i) => i + 1)}>
             {t('book.ui.next', 'הלאה')}
           </button>
@@ -217,7 +237,7 @@ export function RoniBookPage() {
       </div>
 
       {/* the ocean world's parent pill, under the whole child part */}
-      {!isIntro && (
+      {!isIntro && !isDisposition && !isOutcome && (
         <button
           type="button"
           className={`${quest.parentBtnOcean} ${quest.parentBtnOceanInline}`}

@@ -42,7 +42,8 @@ export function RealBookPage() {
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [chosen, setChosen] = useState(false)
 
-  const stages = (realTexts as { he: { stages: Record<string, { label: string; hint: string }> } }).he.stages
+  // the stage texts come in the chosen language; Hebrew is the source
+  const stages = ((realTexts as unknown as Record<'he' | 'en' | 'ru', { stages: Record<string, { label: string; hint: string }> }>)[lang] ?? (realTexts as unknown as Record<'he', { stages: Record<string, { label: string; hint: string }> }>).he).stages
   const pages: string[] = useMemo(() => {
     const extras = chosen ? OPTIONAL_STAGES.filter((id) => selected.has(id)) : [SELECT_PAGE]
     return [...BASE_STAGES, ...extras, ...END_STAGES].filter((id) => id === SELECT_PAGE || stages[id])
@@ -98,8 +99,6 @@ export function RealBookPage() {
                   className={[css.procCard, on ? css.procCardOn : ''].join(' ')}
                   onClick={() => toggle(id)}
                   aria-pressed={on}
-                  dir="rtl"
-                  lang="he"
                 >
                   <span className={css.procEmoji}>{STAGE_ICONS[id]}</span>
                   <span className={css.procLabel}>{stages[id].label}</span>
@@ -124,8 +123,7 @@ export function RealBookPage() {
     <div className={css.book} dir={dir} lang={lang}>
       {counter}
 
-      {/* the child's page stays Hebrew (the real world is not translated yet) */}
-      <div className={css.pageContent} dir="rtl" lang="he">
+      <div className={css.pageContent}>
         <div className={css.illustration}>{STAGE_ICONS[stageId]}</div>
         <p className={css.mainText}>{`${pages.filter((p) => p !== SELECT_PAGE).indexOf(stageId) + 1}. `}{child?.label}</p>
         <p className={css.subText}>{child?.hint}</p>

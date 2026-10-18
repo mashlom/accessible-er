@@ -143,11 +143,11 @@ export function StoryPage() {
         <div className={css.procGrid}>
           <button className={css.procCard} onClick={() => { setDisposition('home'); setIndex((i) => i + 1) }}>
             <span className={css.procEmoji}>🏠</span>
-            <span className={css.procLabel}>{t('book.ui.choiceHome', 'Домой')}</span>
+            <span className={css.procLabel}>{t('book.ui.choiceHome', 'הביתה')}</span>
           </button>
           <button className={css.procCard} onClick={() => { setDisposition('hospital'); setIndex((i) => i + 1) }}>
             <span className={css.procEmoji}>🏥</span>
-            <span className={css.procLabel}>{t('book.ui.choiceHospital', 'Остаёмся в больнице')}</span>
+            <span className={css.procLabel}>{t('book.ui.choiceHospital', 'נשארים בבית החולים')}</span>
           </button>
         </div>
       ) : (

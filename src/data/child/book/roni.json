@@ -5,90 +5,114 @@
       "sub": "אני אהיה איתך במיון. נעבור את כל השלבים יחד, שלב אחרי שלב. בלי למהר לשום מקום."
     },
     "reception": {
-      "text": "הגענו! קודם ניגשים לדלפק ונרשמים.",
-      "sub": "אומרים איך קוראים לנו, ומקבלים צמיד עם השם. אני איתכם."
+      "text": "הגענו. קודם ניגשים לשולחן.",
+      "sub": "מי שיושב/ת ליד השולחן רושם/ת את השם שלך. אפשר לענות בעצמך, ואפשר לבקש מההורים לענות."
     },
     "wait-before-triage": {
-      "text": "עכשיו מחכים קצת.",
-      "sub": "אפשר לשבת, להסתכל מסביב, או לנשום איתי לאט."
+      "text": "עכשיו מחכים יחד.",
+      "sub": "אפשר לשבת ליד ההורים, להסתכל מסביב, או לנשום לאט."
     },
     "triage": {
-      "text": "אחות באה לבדוק איך אנחנו מרגישים.",
-      "sub": "מודדים חום ודופק. זה קצר, ואפשר לשבת אצל ההורה."
+      "text": "אחות באה לבדוק אותנו.",
+      "sub": "היא תמדוד חום ודופק. זה מהיר ולא כואב. אני איתך."
     },
     "wait-doctor": {
-      "text": "מחכים לרופא או לרופאה.",
-      "sub": "לפעמים זה לוקח זמן. אני נשאר לידכם כל הזמן."
+      "text": "מחכים לרופא/ה.",
+      "sub": "לפעמים זה לוקח זמן. אפשר לשחק או לשבת יחד."
     },
     "doctor": {
       "text": "הרופא/ה בודק/ת אותנו בעדינות.",
-      "sub": "שואלים שאלות, מקשיבים עם סטטוסקופ. אפשר לשאול כל דבר."
+      "sub": "שואלים ומקשיבים. אפשר לשאול כל מה שרוצים."
     },
     "tests": {
-      "text": "הולכים לעשות בדיקות.",
+      "text": "הולכים לבדיקות.",
       "sub": "למשל בדיקת דם או צילום. זה עוזר להבין איך לעזור לנו."
     },
     "treatment": {
       "text": "מקבלים טיפול.",
-      "sub": "לפעמים תרופה, לפעמים טיפול קטן. אחר כך מרגישים טוב יותר."
+      "sub": "לפעמים תרופה, לפעמים טיפול קטן. אחר כך מרגישים יותר טוב."
     },
     "consult": {
-      "text": "עוד רופא/ה בא/ה להסתכל.",
+      "text": "בא עוד רופא/ה.",
       "sub": "מומחה שיודע הרבה. עוד זוג עיניים שעוזר לנו."
     },
     "wait-results": {
-      "text": "מחכים לתשובות.",
+      "text": "מחכים לתוצאות.",
       "sub": "הבדיקות לוקחות זמן. אפשר לשחק או לנוח בינתיים."
     },
     "decision": {
       "text": "הרופא/ה מספר/ת מה עכשיו.",
-      "sub": "לפעמים הולכים הביתה, לפעמים נשארים עוד קצת. עשינו את זה יחד! ⭐"
+      "sub": "לפעמים הולכים הביתה, לפעמים נשארים עוד כמה ימים. עשינו את זה יחד! ⭐"
+    },
+    "disposition": {
+      "text": "הולכים הביתה או נשארים?",
+      "sub": "הרופא/ה מחליט/ה יחד איתך. כך נדע מה יהיה הלאה."
+    },
+    "home": {
+      "text": "חוזרים הביתה.",
+      "sub": "גם בבית צריך זמן ומנוחה. אפשר לדבר על מה שעברנו."
+    },
+    "hospital": {
+      "text": "נשארים בבית החולים.",
+      "sub": "כאן שומרים עלינו מקרוב, ותמיד יש מי שיהיה לידנו. אפשר לשאול כמה לילות."
     }
   },
   "en": {
     "intro": {
       "text": "Hello, I'm Roni 👋",
-      "sub": "I will be with you in the emergency room. We will go through all the steps together, one step at a time. No need to hurry."
+      "sub": "I'll be with you in the emergency room. We'll go through all the steps together, one step at a time. No need to hurry."
     },
     "reception": {
-      "text": "We arrived! First we go to the desk and register.",
-      "sub": "We say our name and get a bracelet with it. I am with you."
+      "text": "We've arrived. First we go to the desk.",
+      "sub": "The person at the desk writes down your name. You can answer yourself, or ask your mum or dad to answer."
     },
     "wait-before-triage": {
-      "text": "Now we wait a little.",
-      "sub": "We can sit, look around, or breathe slowly with me."
+      "text": "Now we wait together.",
+      "sub": "You can sit next to your parents, look around, or breathe slowly."
     },
     "triage": {
-      "text": "A nurse comes to check how we feel.",
-      "sub": "They measure temperature and pulse. It is short, and you can sit with your parent."
+      "text": "A nurse comes to check us.",
+      "sub": "She'll measure your temperature and pulse. It's quick and doesn't hurt. I'm with you."
     },
     "wait-doctor": {
       "text": "We wait for the doctor.",
-      "sub": "Sometimes it takes a while. I stay right next to you the whole time."
+      "sub": "Sometimes it takes a while. We can play or just sit together."
     },
     "doctor": {
       "text": "The doctor checks us gently.",
-      "sub": "They ask questions and listen with a stethoscope. You can ask anything."
+      "sub": "They ask and listen. You can ask anything you want."
     },
     "tests": {
       "text": "We go to do some tests.",
       "sub": "For example a blood test or an X-ray. It helps to understand how to help us."
     },
     "treatment": {
-      "text": "We get treatment.",
+      "text": "We get some treatment.",
       "sub": "Sometimes medicine, sometimes a small treatment. Afterwards we feel better."
     },
     "consult": {
-      "text": "Another doctor comes to look.",
-      "sub": "An expert who knows a lot. One more pair of eyes helping us."
+      "text": "Another doctor comes.",
+      "sub": "An expert who knows a lot. One more pair of eyes to help us."
     },
     "wait-results": {
-      "text": "We wait for the answers.",
+      "text": "We wait for the results.",
       "sub": "The tests take time. We can play or rest meanwhile."
     },
     "decision": {
-      "text": "The doctor tells us what happens now.",
-      "sub": "Sometimes we go home, sometimes we stay a little longer. We did it together! ⭐"
+      "text": "The doctor tells us what comes next.",
+      "sub": "Sometimes we go home, sometimes we stay a few more days. We did it together! ⭐"
+    },
+    "disposition": {
+      "text": "Do we go home or stay?",
+      "sub": "The doctor decides together with you. That's how we'll find out what comes next."
+    },
+    "home": {
+      "text": "We go home.",
+      "sub": "At home we also need time and rest. You can talk about what happened."
+    },
+    "hospital": {
+      "text": "We stay in the hospital.",
+      "sub": "Here they keep a close watch on us, and someone is always nearby. You can ask how many nights."
     }
   },
   "ru": {
@@ -97,44 +121,56 @@
       "sub": "Я буду с тобой в приёмном покое. Мы пройдём все шаги вместе, шаг за шагом. Никуда не будем торопиться."
     },
     "reception": {
-      "text": "Мы пришли! Сначала подходим к стойке и записываемся.",
-      "sub": "Говорим, как нас зовут, и получаем браслет с именем. Я с вами."
+      "text": "Мы пришли. Сначала подходим к столу.",
+      "sub": "Тот, кто сидит за столом, запишет твоё имя. Можно ответить самому, а можно попросить маму или папу."
     },
     "wait-before-triage": {
-      "text": "Теперь немного ждём.",
-      "sub": "Можно посидеть, посмотреть вокруг или медленно подышать со мной."
+      "text": "Теперь мы ждём вместе.",
+      "sub": "Можно сесть рядом с родителями, посмотреть вокруг или медленно подышать."
     },
     "triage": {
-      "text": "Медсестра приходит проверить, как мы себя чувствуем.",
-      "sub": "Измеряют температуру и пульс. Это быстро, и можно сидеть у родителя."
+      "text": "К нам пришла медсестра.",
+      "sub": "Она измерит температуру и пульс. Это быстро и не больно. Я с тобой."
     },
     "wait-doctor": {
-      "text": "Ждём врача.",
-      "sub": "Иногда это занимает время. Я всё время рядом с тобой."
+      "text": "Мы ждём врача.",
+      "sub": "Иногда это занимает время. Можно поиграть или просто посидеть вместе."
     },
     "doctor": {
-      "text": "Врач осматривает нас осторожно.",
-      "sub": "Задаёт вопросы, слушает стетоскопом. Можно спросить о чём угодно."
+      "text": "Врач осторожно осматривает.",
+      "sub": "Врач задаёт вопросы и слушает. Ты можешь спросить всё, что хочешь."
     },
     "tests": {
-      "text": "Идём на обследования.",
-      "sub": "Например, анализ крови или снимок. Это помогает понять, как нам помочь."
+      "text": "Мы идём на обследования.",
+      "sub": "Например, анализ крови или снимок. Так врач поймёт, как нам помочь."
     },
     "treatment": {
-      "text": "Получаем лечение.",
-      "sub": "Иногда лекарство, иногда небольшая процедура. Потом становится лучше."
+      "text": "Мы получаем лечение.",
+      "sub": "Иногда это лекарство, иногда маленькая процедура. Потом нам станет лучше."
     },
     "consult": {
-      "text": "Ещё один врач приходит посмотреть.",
-      "sub": "Специалист, который много знает. Ещё одна пара глаз, которая нам помогает."
+      "text": "К нам приходит ещё один врач.",
+      "sub": "Он специалист и поможет нам вместе с первым врачом."
     },
     "wait-results": {
-      "text": "Ждём ответы.",
-      "sub": "Обследования занимают время. Пока можно поиграть или отдохнуть."
+      "text": "Мы ждём результаты.",
+      "sub": "Анализы занимают время. Пока можно поиграть или отдохнуть."
     },
     "decision": {
-      "text": "Врач рассказывает, что теперь.",
-      "sub": "Иногда идём домой, иногда остаёмся ещё немного. Мы справились вместе! ⭐"
+      "text": "Врач расскажет, что будет дальше.",
+      "sub": "Иногда мы идём домой, иногда остаёмся ещё на несколько дней. Мы справились вместе! ⭐"
+    },
+    "disposition": {
+      "text": "Домой или остаёмся?",
+      "sub": "Врач решает вместе с тобой. Так мы узнаем, что будет дальше."
+    },
+    "home": {
+      "text": "Едем домой.",
+      "sub": "Дома тоже нужно время и отдых. Можно поговорить о том, что было."
+    },
+    "hospital": {
+      "text": "Остаёмся в больнице.",
+      "sub": "Здесь за нами внимательно следят, и рядом всегда кто-то есть. Можно спросить, сколько ночей."
     }
   }
 }
