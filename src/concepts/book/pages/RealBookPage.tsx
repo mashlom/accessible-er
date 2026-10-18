@@ -5,6 +5,7 @@ import realInfo from '../../../data/child/book/real-info.json'
 import encyclopedia from '../../../data/child/book/encyclopedia.json'
 import measureInfo from '../../../data/child/book/measure-info.json'
 import testsInfo from '../../../data/child/book/tests-info.json'
+import treatmentInfo from '../../../data/child/book/treatment-info.json'
 import css from '../book.module.css'
 import quest from '../../quest/quest.module.css'
 import { ProcedureLineIcon } from '../../quest/components/ProcedureLineIcon'
@@ -137,9 +138,16 @@ export function RealBookPage() {
         <div className={css.illustration}>{STAGE_ICONS[stageId]}</div>
         <p className={css.mainText}>{`${pages.filter((p) => p !== SELECT_PAGE).indexOf(stageId) + 1}. `}{child?.label}</p>
         <p className={css.subText}>{child?.hint}</p>
-        {child && (stageId === 'triage' || stageId === 'tests') && (
+        {child && (stageId === 'triage' || stageId === 'tests' || stageId === 'treatment') && (
         <div className={css.measureRow}>
-          {(stageId === 'tests' ? [
+          {(stageId === 'treatment' ? [
+            ['treatment-iv', 'iv', { ru: 'Капельница', en: 'Drip', he: 'עירוי' }],
+            ['treatment-medication', 'medication', { ru: 'Лекарство', en: 'Medicine', he: 'תרופה' }],
+            ['treatment-inhalation', 'inhalation', { ru: 'Ингаляция', en: 'Inhalation', he: 'אינהלציה' }],
+            ['treatment-bandage', 'bandage', { ru: 'Повязка', en: 'Bandage', he: 'תחבושת' }],
+            ['treatment-cast', 'cast', { ru: 'Гипс', en: 'Cast', he: 'גבס' }],
+            ['treatment-stitches', 'stitches', { ru: 'Швы', en: 'Stitches', he: 'תפרים' }],
+          ] as const : stageId === 'tests' ? [
             ['tests-blood-test', 'blood-test', { ru: 'Анализ крови', en: 'Blood test', he: 'בדיקת דם' }],
             ['tests-urine', 'urine', { ru: 'Анализ мочи', en: 'Urine test', he: 'בדיקת שתן' }],
             ['tests-xray', 'xray', { ru: 'Рентген', en: 'X-ray', he: 'רנטגן' }],
@@ -188,8 +196,8 @@ export function RealBookPage() {
         )}
       </div>
 
-      {/* the encyclopedic insert of every stage, above the next button; the measurements stage has its own circles */}
-      {child && stageId !== 'triage' && stageId !== 'tests' && (
+      {/* the encyclopedic insert of every stage, above the next button; the measurements, tests and treatment stages have their own circles */}
+      {child && stageId !== 'triage' && stageId !== 'tests' && stageId !== 'treatment' && (
         <button type="button" className={css.parentBtn} onClick={() => setInsertKey(stageId)} aria-haspopup="dialog">
           🔎 {({ ru: 'Это интересно', en: 'It is interesting', he: 'מעניין' } as Record<string, string>)[lang] ?? 'Это интересно'}
         </button>
@@ -214,10 +222,13 @@ export function RealBookPage() {
       {measureOpen && (() => {
         const measureKey = ({ 'triage-temperature': 'temperature', 'triage-oxygen': 'saturation', 'triage-pressure': 'blood-pressure' } as Record<string, string>)[measureOpen]
         type Way = { label: string; what: string; feel: string; prepare: string }
-        type Measure = { title: string; what?: string; feel?: string; prepare?: string; armpit?: Way; mouth?: Way }
+        type Heads = { what: string; feel: string; prepare: string; canAsk: string }
+        // the treatments also carry the line from the world, the headings and the things to ask for
+        type Measure = { title: string; world?: string; what?: string; feel?: string; prepare?: string; canAsk?: string[]; headings?: Heads; armpit?: Way; mouth?: Way }
         // the measurements and the tests each have their own child texts
-        const raw = measureOpen.startsWith('tests-')
-          ? ((testsInfo as unknown as Record<string, Record<string, Measure>>)[lang] ?? (testsInfo as unknown as Record<string, Record<string, Measure>>).he)[measureOpen.slice(6)]
+        const extra = measureOpen.startsWith('tests-') ? testsInfo : measureOpen.startsWith('treatment-') ? treatmentInfo : null
+        const raw = extra
+          ? ((extra as unknown as Record<string, Record<string, Measure>>)[lang] ?? (extra as unknown as Record<string, Record<string, Measure>>).he)[measureOpen.slice(measureOpen.indexOf('-') + 1)]
           : ((measureInfo as unknown as Record<string, Record<string, Measure>>)[lang] ?? (measureInfo as unknown as Record<string, Record<string, Measure>>).he)[measureKey]
         if (!raw) return null
         const info: Measure = raw.armpit ? { ...raw, ...raw.armpit, ...(tempWay === 'mouth' && raw.mouth ? raw.mouth : {}) } : raw
@@ -234,9 +245,23 @@ export function RealBookPage() {
                   ))}
                 </div>
               )}
+              {info.world && <p style={{ fontStyle: 'italic' }}>{info.world}</p>}
+              {info.headings && <h3 className={css.sheetLabel}>{info.headings.what}</h3>}
               <p>{info.what}</p>
+              {info.headings && <h3 className={css.sheetLabel}>{info.headings.feel}</h3>}
               <p>{info.feel}</p>
+              {info.headings?.prepare && <h3 className={css.sheetLabel}>{info.headings.prepare}</h3>}
               <p>{info.prepare}</p>
+              {info.canAsk && info.canAsk.length > 0 && (
+                <>
+                  {info.headings && <h3 className={css.sheetLabel}>{info.headings.canAsk}</h3>}
+                  <ul className={css.sheetList}>
+                    {info.canAsk.map((a) => (
+                      <li key={a}>{a}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
               <div className={css.sheetActions}>
                 <button type="button" className={css.sheetBtnOutline} onClick={() => { setInsertKey(measureOpen); setMeasureOpen(null) }}>
                   🔎 {({ ru: 'Это интересно', en: 'It is interesting', he: 'מעניין' } as Record<string, string>)[lang] ?? 'Это интересно'}

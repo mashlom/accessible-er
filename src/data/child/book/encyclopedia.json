@@ -84,6 +84,36 @@
       "title": "איך עובד סי־טי?",
       "draft": true,
       "text": "סי־טי משתמש גם הוא בקרני רנטגן, אבל מצלמים הרבה תמונות, לא רק אחת. התמונות מונחות אחת על השנייה, כמו פרוסות של לחם, פרוסה דקה אחרי פרוסה.\n\nאתה שוכב על מיטה, והמיטה נכנסת לאט לתוך מכשיר גדול ועגול. המכשיר מסתובב סביבך במעגל ושולח את הקרניים מכמה צדדים.\n\nכל סיבוב לוקח רק כמה שניות. בזמן הזה המחשב מקבל הרבה תמונות של הגוף ובונה מהן פרוסה אחרי פרוסה. כך הרופא רואה לא רק את מה שבחוץ, אלא גם מה שבפנים, מכמה צדדים.\n\nלכן חשוב לשכב מאוד בשקט. אם זזים, התמונה מטושטשת, כמו תמונה שצולמה תוך כדי ריצה. אז צריך לצלם שוב.\n\nסי־טי לוקח יותר זמן מצילום רגיל אחד, אבל המכשיר לא נוגע בך ולא כואב. בפנים יכול להיות קצת רועש, והמיטה יכולה לזוז קדימה ואחורה."
+    },
+    "treatment-iv": {
+      "title": "בשביל מה צריך עירוי?",
+      "draft": true,
+      "text": "כדור נכנס קודם לקיבה, ואחר כך צריך להתמוסס ולהיספג. זה לוקח זמן, ולפעמים התרופה לא פועלת מהר ככל שצריך. לפעמים החולה מרגיש בחילה, או לא יכול לבלוע כדור.\n\nאבל אפשר להכניס את התרופה ישר לדם. דרך העירוי היא זורמת לאט ובאופן שווה, בכמויות קטנות. הרופא יכול לעצור או לשנות את המינון בכל רגע, אם משהו לא בסדר.\n\nלמה התרופה ניתנת בטיפות? כי הגוף לא אוהב קפיצות פתאומיות. הרבה תרופה בבת אחת יכולה לפגוע, ומעט בכל פעם עוזר.\n\nאדם לא יכול לחיות בלי מים. במחלות שונות אדם לא יכול לשתות, ומתפתחת התייבשות. זה מסוכן מאוד. לכן אנשים המציאו להכניס מים ישר לדם.\n\nבהתחלה ניסו להכניס מים רגילים. אבל התברר שהדם מתקיים על כמות מסוימת של מלח. אם מים רגילים נכנסים לדם, המלח בו מתדלל, ותאי הדם מתחילים לספוג מים, להתנפח ולהתפוצץ. לכן מכניסים את המים בתמיסת מלח: מים עם אותם מלחים שיש לאדם בדם. אז תאי הדם נשארים שלמים."
+    },
+    "treatment-medication": {
+      "title": "איך תרופה נכנסת לגוף?",
+      "text": "תרופה יכולה להיות כדור, סירופ, טיפות או זריקה. את הכדור בולעים, והוא מתמוסס בקיבה, ומשם התרופה עוברת לדם.\n\nזריקה שולחת את התרופה ישר לדם או מתחת לעור, ולכן היא פועלת מהר יותר.\n\nכל תרופה מותאמת לגיל ולמשקל. לכן הרופא או האחות תמיד בודקים מה ומה כמה נותנים.",
+      "draft": true
+    },
+    "treatment-inhalation": {
+      "title": "איך עובדת אינהלציה?",
+      "text": "אפשר לשאוף תרופה. ככה היא מגיעה בדיוק למקום שצריך: לגרון ולריאות.\n\nהמכשיר הופך את התרופה לאדים דקים, קלים כמו אדי תה חם. בקושי רואים אותם.\n\nשואפים בנשימה רגועה ושווה. אם נעשה קשה, אפשר לנשום רגיל כמה רגעים ואז להמשיך.",
+      "draft": true
+    },
+    "treatment-bandage": {
+      "title": "בשביל מה צריך תחבושת?",
+      "text": "התחבושת מגינה על הפצע מלכלוך וחיידקים. מתחתיה לעור קל יותר להתרפא.\n\nהעור מתרפא בעצמו, והתחבושת עוזרת לו. מחליפים אותה כשצריך ובודקים איך הפצע מתרפא.\n\nאם היא מפריעה, אפשר להוריד אותה, אבל רק בעזרת מבוגר או אחות.",
+      "draft": true
+    },
+    "treatment-cast": {
+      "title": "בשביל מה צריך גבס?",
+      "text": "כשעצם שבורה, היא צריכה להתחבר. כדי שתתחבר נכון, צריך להחזיק אותה בלי לזוז.\n\nהגבס פועל כמו בית קשיח לעצם. מתחתיו הגוף בונה רקמה חדשה שמחברת את העצם, וזה לוקח כמה שבועות.\n\nלפעמים אפשר לכתוב או לצייר על הגבס, אם הרופא מרשה.",
+      "draft": true
+    },
+    "treatment-stitches": {
+      "title": "בשביל מה צריך תפרים?",
+      "text": "כשפצע גדול, השפות שלו לא תמיד נשארות יחד לבד. התפרים מחברים אותן, כמו שרוך שמהדק נעל.\n\nהחוטים נספגים לבד או שמורידים אותם אחר כך. עם הזמן התפר בדרך כלל כמעט לא נראה.\n\nהתפר מונע מהפצע להיפתח ועוזר לו להתרפא מהר יותר.",
+      "draft": true
     }
   },
   "en": {
@@ -171,6 +201,36 @@
       "title": "How does a CT scan work?",
       "draft": true,
       "text": "A CT scan uses X-rays too, but many pictures are taken, not just one. They are stacked like slices of bread, one thin slice at a time.\n\nYou lie on a table, and the table slowly moves into a large round machine. The machine goes around you in a circle and sends the rays from different sides.\n\nEach turn takes only a few seconds. During that time the computer gets many pictures of the body and builds them into slice after slice. So the doctor can see not only the outside, but also what is inside, from many sides.\n\nThat is why it is important to lie very still. If you move, the picture becomes blurry, like a photo taken while running. Then the picture has to be taken again.\n\nA CT scan takes longer than one ordinary picture, but the machine does not touch you and does not hurt. It may be a little noisy inside, and the table may move forward and back."
+    },
+    "treatment-iv": {
+      "title": "Why is a drip needed?",
+      "draft": true,
+      "text": "A pill first goes into the stomach, then it has to dissolve and be taken in. That takes time, and sometimes the medicine does not work as fast as it should. Sometimes a patient feels sick, or cannot swallow a pill.\n\nBut the medicine can be put straight into the blood. Through a drip it goes slowly and evenly, in small amounts. The doctor can stop or change the dose at any moment, if something is not right.\n\nWhy is the medicine given drop by drop? Because the body does not like sudden jumps. Too much medicine at once can harm, while a little at a time helps.\n\nA person cannot live without water. With many illnesses a person cannot drink, and dehydration happens. This is very dangerous. So people learned to put water straight into the blood.\n\nAt first they tried putting in plain water. But it turned out that the blood depends on a certain amount of salt. If plain water gets into the blood, the salt in it is diluted, and the blood cells start to take in water, swell and burst. That is why the water is given in saline: water with the same salts as a person has in the blood. Then the blood cells stay whole."
+    },
+    "treatment-medication": {
+      "title": "How does medicine get into the body?",
+      "text": "Medicine can be a pill, a syrup, drops or an injection. A pill is swallowed and dissolves in the stomach, and from there the medicine goes into the blood.\n\nAn injection sends the medicine straight into the blood or under the skin, so it works faster.\n\nEvery medicine is chosen for the age and weight of the child. So the doctor or nurse always checks what and how much is given.",
+      "draft": true
+    },
+    "treatment-inhalation": {
+      "title": "How does inhalation work?",
+      "text": "Medicine can be breathed in. Then it goes exactly where it is needed: to the throat and the lungs.\n\nThe machine turns the medicine into a fine mist, light like the steam from a hot cup of tea. It is hard to see.\n\nBreathe calmly and evenly. If it gets tiring, you can breathe normally for a moment and then carry on.",
+      "draft": true
+    },
+    "treatment-bandage": {
+      "title": "Why is a bandage needed?",
+      "text": "A bandage protects a wound from dirt and germs. Under it the skin finds it easier to heal.\n\nThe skin heals itself, and the bandage helps it. It is changed when needed, and the doctors check how the wound is healing.\n\nIf it bothers you, the bandage can be taken off, but only with a grown-up or a nurse.",
+      "draft": true
+    },
+    "treatment-cast": {
+      "title": "Why is a cast needed?",
+      "text": "When a bone is broken, it has to heal. To heal properly, it needs to be kept still.\n\nThe cast works like a hard house for the bone. Under it the body builds new tissue that joins the bone back together, and that takes a few weeks.\n\nSometimes you can write or draw on the cast, if the doctor allows it.",
+      "draft": true
+    },
+    "treatment-stitches": {
+      "title": "Why are stitches needed?",
+      "text": "When a wound is large, its edges do not always stay together by themselves. Stitches hold them together, like a lace pulls a shoe closed.\n\nThe threads either dissolve by themselves or are taken out later. Over time the stitch usually becomes almost invisible.\n\nA stitch stops the wound from opening and helps it heal faster.",
+      "draft": true
     }
   },
   "ru": {
@@ -258,6 +318,36 @@
       "title": "Как работает КТ?",
       "draft": true,
       "text": "КТ — это тоже рентгеновские лучи, но снимков получается много. Не один, а целая стопка, как у хлеба, который режут на тонкие ломтики.\n\nТы лежишь на столе, и стол медленно въезжает внутрь большого круглого аппарата. Аппарат вокруг тебя ходит по кругу и посылает лучи с разных сторон.\n\nКаждый оборот занимает всего несколько секунд. За это время компьютер получает много картинок тела и собирает из них слой за слоем. Так врач видит не только то, что снаружи, но и то, что внутри, с разных сторон.\n\nВот поэтому важно лежать очень тихо. Если двигаться, картинка получится размытой, как фотография, которую снимали на бегу. Тогда придётся сделать снимок ещё раз.\n\nКТ занимает больше времени, чем один обычный снимок, но аппарат не касается тебя и не делает больно. Внутри может быть немного шумно, и стол может ехать то вперёд, то назад."
+    },
+    "treatment-iv": {
+      "title": "Зачем нужна капельница?",
+      "draft": true,
+      "text": "Таблетка сначала попадает в желудок, потом её нужно растворить и впитать. Это занимает время, а иногда лекарство не успевает подействовать так быстро, как нужно. Бывает, что больного тошнит, или он не может проглотить таблетку.\n\nНо лекарство можно ввести прямо в кровь. Через капельницу оно идёт медленно и ровно, маленькими порциями. Врач в любой момент может остановить или поменять дозу, если что-то не так.\n\nПочему лекарство вводится по капле? Потому что тело не любит резких скачков. Слишком много лекарства сразу может навредить, а понемногу — помогает.\n\nЧеловек не может жить без воды. При разных болезнях человек не может пить, и возникает обезвоживание. Это очень опасно. Поэтому люди придумали вводить воду прямо в кровь.\n\nВ начале пробовали вводить простую воду. Но оказалось, что в крови всё держится на определённом количестве соли. Если в кровь попадает чистая вода, соль разбавляется, и клетки крови начинают впитывать воду, раздуваться и лопаться. Поэтому воду вводят в физрастворе: к воде добавлены такие же соли, как есть у человека в крови. Тогда клетки крови остаются целыми."
+    },
+    "treatment-medication": {
+      "title": "Как лекарство попадает в тело?",
+      "text": "Лекарство может быть таблеткой, сиропом, каплями или уколом. Таблетку проглатывают, она растворяется в желудке, а оттуда лекарство идёт в кровь.\n\nУкол отправляет лекарство сразу в кровь или под кожу, поэтому действует быстрее.\n\nКаждое лекарство подбирают под возраст и вес. Поэтому врач или медсестра всегда проверяют, что именно и сколько дают.",
+      "draft": true
+    },
+    "treatment-inhalation": {
+      "title": "Как работает ингаляция?",
+      "text": "Лекарство можно вдыхать. Тогда оно попадает прямо туда, где нужно: в горло и в лёгкие.\n\nАппарат превращает лекарство в мелкий туман, лёгкий, как пар от чая. Его почти не видно.\n\nДышать нужно спокойно и ровно. Если устал, можно немного подышать обычно, а потом продолжить.",
+      "draft": true
+    },
+    "treatment-bandage": {
+      "title": "Зачем нужна повязка?",
+      "text": "Повязка защищает рану от грязи и микробов. Под ней коже легче заживать.\n\nКожа заживает сама, а повязка ей помогает. Её меняют, когда нужно, и смотрят, как заживает рана.\n\nЕсли повязка мешает, её можно снять, но только вместе со взрослым или с медсестрой.",
+      "draft": true
+    },
+    "treatment-cast": {
+      "title": "Зачем нужен гипс?",
+      "text": "Когда кость сломана, она должна срастись. Чтобы срослась правильно, её нужно держать неподвижно.\n\nГипс работает как твёрдый домик для кости. Внутри тело само строит новую ткань, которая соединяет кость, и на это уходит несколько недель.\n\nИногда на гипсе можно написать или нарисовать, если врач разрешит.",
+      "draft": true
+    },
+    "treatment-stitches": {
+      "title": "Зачем накладывают швы?",
+      "text": "Когда рана большая, её края сами плохо держатся вместе. Швы стягивают их, как шнурок стягивает ботинок.\n\nНитки рассасываются сами или их потом снимают. Со временем шов обычно становится почти незаметным.\n\nШов не даёт ране открыться и помогает ей зажить быстрее.",
+      "draft": true
     }
   }
 }
