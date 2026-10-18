@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { useI18n } from '../../hooks/useI18n'
 import { Roni } from '../Roni'
 import { TalkPage } from '../../concepts/talk/pages/TalkPage'
@@ -25,8 +26,28 @@ export function HelperChat() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
-  if (!open) {
-    return (
+  // rendered on the body: an ancestor with a transform or an overflow would otherwise move the button with the page
+  return createPortal(
+    open ? (
+      <div className={styles.overlay} onClick={closeHelper}>
+        <div
+          className={styles.sheet}
+          role="dialog"
+          aria-modal="true"
+          aria-label="רוני"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button type="button" className={styles.close} onClick={closeHelper} aria-label="סגירה">
+            ✕
+          </button>
+          <div className={`${talkStyles.theme} ${styles.talkHost}`}>
+            <div className={talkStyles.app} dir={dir} lang={lang}>
+              <TalkPage />
+            </div>
+          </div>
+        </div>
+      </div>
+    ) : (
       <button
         type="button"
         className={styles.fab}
@@ -34,29 +55,9 @@ export function HelperChat() {
         aria-label="רוני"
         aria-haspopup="dialog"
       >
-        <Roni size={40} mood="calm" decorative />
+        <Roni size={44} mood="calm" headOnly decorative />
       </button>
-    )
-  }
-
-  return (
-    <div className={styles.overlay} onClick={closeHelper}>
-      <div
-        className={styles.sheet}
-        role="dialog"
-        aria-modal="true"
-        aria-label="רוני"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button type="button" className={styles.close} onClick={closeHelper} aria-label="סגירה">
-          ✕
-        </button>
-        <div className={`${talkStyles.theme} ${styles.talkHost}`}>
-          <div className={talkStyles.app} dir={dir} lang={lang}>
-            <TalkPage />
-          </div>
-        </div>
-      </div>
-    </div>
+    ),
+    document.body,
   )
 }

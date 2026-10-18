@@ -137,15 +137,17 @@
   position: sticky;
   top: 0;
   z-index: 30;
+  background: #fff;
 }
 
 .topbarInner {
+  max-width: 900px;
+  margin-inline: auto;
   display: grid;
   grid-template-columns: 52px 1fr 52px;
   align-items: center;
   gap: 8px;
-  background: #fff;
-  padding: 6px var(--space-3);
+  padding: 6px var(--space-4);
 }
 
 .topBtn {
@@ -265,25 +267,22 @@
   min-height: 58px;
   padding: 12px 26px;
   border: none;
-  border-radius: var(--s-r-pill);
-  background: var(--s-coral);
+  border-radius: 14px;
+  background: #087e8b;
   color: #fff;
   font-size: 1.1rem;
   font-weight: 800;
-  box-shadow: 0 5px 0 var(--s-coral-dark);
+  box-shadow: none;
   transition: transform 0.12s var(--ease), box-shadow 0.12s var(--ease);
 }
 .bigBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 7px 0 var(--s-coral-dark);
+  background: #076e79;
 }
 .bigBtn:active {
-  transform: translateY(3px);
-  box-shadow: 0 2px 0 var(--s-coral-dark);
+  transform: translateY(1px);
 }
 .bigBtn:disabled {
-  background: #d6ddE4;
-  box-shadow: 0 5px 0 #bcc6d0;
+  background: #d6dde4;
   color: #fff;
   cursor: not-allowed;
   transform: none;
@@ -294,13 +293,14 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 52px;
-  padding: 10px 22px;
-  border: 3px solid var(--s-line);
-  border-radius: var(--s-r-pill);
+  min-height: 58px;
+  padding: 12px 26px;
+  border: 1px solid #d5dde2;
+  border-radius: 14px;
   background: #fff;
-  color: var(--s-ink);
-  font-weight: 700;
+  color: #173b4d;
+  font-weight: 800;
+  font-size: 1.1rem;
 }
 .ghostBtn:hover {
   border-color: var(--s-mint);

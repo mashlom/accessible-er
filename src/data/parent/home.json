@@ -74,7 +74,7 @@
       "routeHeading": "הדרך הצפויה שלנו",
       "optional": " · לפי הצורך",
       "note": "זו דוגמה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות הרפואי ולפי העומס במיון.",
-      "toTrail": "לשביל שלנו ←",
+      "toTrail": "לשביל שלנו",
       "clear": "ניקוי הבחירה"
     },
     "trail": {
@@ -93,7 +93,7 @@
       "hereOn": "📍 אנחנו כאן — לביטול",
       "markHere": "לסמן: אנחנו כאן",
       "note": "הזמנים הם טווחים להמחשה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.",
-      "crossLink": "🏠 מה קורה בסוף הביקור, בדרך הביתה ←",
+      "crossLink": "🏠 מה קורה בסוף הביקור, בדרך הביתה",
       "lead": "איפה אנחנו עכשיו ומה הלאה"
     },
     "show": {
@@ -110,7 +110,7 @@
       "note": "הזמנים בעמוד הזה הם טווחים בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.",
       "duration": "⏱️ משך זמן משוער",
       "wait": "⏳ זמן המתנה משוער",
-      "back": "חזרה ←"
+      "back": "חזרה"
     },
     "mapPage": {
       "title": "איפה אנחנו?",
@@ -147,7 +147,7 @@
         ]
       ],
       "closing": "כל הכבוד לכם. נתראה — ושיהיה לכם רק טוב 💛",
-      "feedback": "לספר לנו איך היה ←",
+      "feedback": "לספר לנו איך היה",
       "back": "חזרה לעולם של רוני",
       "note": "הטקסט כאן טיוטה ראשונית — לניסוח סופי יחד עם חגית."
     },
@@ -207,7 +207,7 @@
       "routeHeading": "Our expected route",
       "optional": " · if needed",
       "note": "This is only an example. The order and times may change depending on the medical team's decision and how busy the ER is.",
-      "toTrail": "To our trail ←",
+      "toTrail": "To our trail",
       "clear": "Clear the choice"
     },
     "trail": {
@@ -226,7 +226,7 @@
       "hereOn": "📍 We are here — tap to undo",
       "markHere": "Mark: we are here",
       "note": "The times are ranges for illustration only. The order and times may change depending on the medical team's decision and how busy the ER is.",
-      "crossLink": "🏠 What happens at the end of the visit, on the way home ←",
+      "crossLink": "🏠 What happens at the end of the visit, on the way home",
       "lead": "Where we are now and what comes next"
     },
     "show": {
@@ -243,7 +243,7 @@
       "note": "The times on this page are ranges only. The order and times may change depending on the team's decision and how busy the ER is.",
       "duration": "⏱️ Estimated duration",
       "wait": "⏳ Estimated waiting time",
-      "back": "Back ←"
+      "back": "Back"
     },
     "mapPage": {
       "title": "Where are we?",
@@ -280,7 +280,7 @@
         ]
       ],
       "closing": "Well done, all of you. See you — and wishing you only good things 💛",
-      "feedback": "Tell us how it was ←",
+      "feedback": "Tell us how it was",
       "back": "Back to the start",
       "note": "The text here is a first draft — the final wording will be agreed with Hagit."
     },
@@ -340,7 +340,7 @@
       "routeHeading": "Наш ожидаемый путь",
       "optional": " · по необходимости",
       "note": "Это только пример. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
-      "toTrail": "К нашему пути ←",
+      "toTrail": "К нашему пути",
       "clear": "Сбросить выбор"
     },
     "trail": {
@@ -359,7 +359,7 @@
       "hereOn": "📍 Мы здесь — отменить",
       "markHere": "Отметить: мы здесь",
       "note": "Указано ориентировочное время. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
-      "crossLink": "🏠 Что происходит в конце визита, по дороге домой ←",
+      "crossLink": "🏠 Что происходит в конце визита, по дороге домой",
       "lead": "Где мы сейчас и что дальше"
     },
     "show": {
@@ -376,7 +376,7 @@
       "note": "Указано ориентировочное время. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
       "duration": "⏱️ Примерная длительность",
       "wait": "⏳ Примерное время ожидания",
-      "back": "Назад ←"
+      "back": "Назад"
     },
     "mapPage": {
       "title": "Где мы?",
@@ -396,8 +396,8 @@
           "Команда подводит итог визита, даёт рекомендации на дальнейшее и иногда рецепт. Затем вы уходите домой."
         ],
         [
-          "Уход тоже переход",
-          "После долгого и утомительного визита даже уход может показаться большой переменой. Можно уйти медленно и попрощаться с местом, прежде чем выйти."
+          "Уход домой — тоже переход",
+          "После долгого и утомительного визита даже уход домой может показаться большой переменой. Можно не торопиться и попрощаться с местом, прежде чем выйти."
         ],
         [
           "Дома",
@@ -412,8 +412,8 @@
           "Важно продолжить наблюдение у педиатра по месту жительства по рекомендациям. Он знает вашего ребёнка и будет сопровождать вас и после визита."
         ]
       ],
-      "closing": "Молодцы, всем вам. До встречи — и пусть всё будет хорошо 💛",
-      "feedback": "Расскажите, как всё прошло ←",
+      "closing": "Вы молодцы! До встречи — и пусть всё будет хорошо!",
+      "feedback": "Расскажите, как всё прошло",
       "back": "Назад, на главную",
       "note": "Текст здесь — первый черновик. Окончательную формулировку согласуем с Хагит."
     },

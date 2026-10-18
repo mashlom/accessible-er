@@ -20,6 +20,8 @@ interface RoniProps {
   className?: string
   /** decorative use — the surrounding text already says what Roni does */
   decorative?: boolean
+  /** crop to the face: the head fills the frame (for small round buttons) */
+  headOnly?: boolean
 }
 
 const moodLabel: Record<RoniMood, string> = {
@@ -49,6 +51,7 @@ export function Roni({
   bounceKey = 0,
   className,
   decorative = false,
+  headOnly = false,
 }: RoniProps) {
   const armsUp = mood === 'cheer'
   const waving = mood === 'wave'
@@ -67,14 +70,16 @@ export function Roni({
         .join(' ')}
       width={size}
       height={size}
-      viewBox="0 0 200 200"
+      viewBox={headOnly ? '42 24 116 116' : '0 0 200 200'}
       role={decorative ? 'presentation' : 'img'}
       aria-hidden={decorative || undefined}
       aria-label={decorative ? undefined : moodLabel[mood]}
     >
       {/* ground shadow */}
-      <ellipse cx="100" cy="188" rx="52" ry="8" fill="#2f4858" opacity="0.10" />
+      {!headOnly && <ellipse cx="100" cy="188" rx="52" ry="8" fill="#2f4858" opacity="0.10" />}
 
+      {!headOnly && (
+      <>
       {/* feet */}
       <ellipse cx="78" cy="180" rx="17" ry="11" fill="#5cbfb4" />
       <ellipse cx="122" cy="180" rx="17" ry="11" fill="#5cbfb4" />
@@ -127,6 +132,8 @@ export function Roni({
         fill="#ff8a75"
       />
       <path d="M132 132 q14 6 10 24 q-10 2 -16 -4 z" fill="#f4705d" />
+      </>
+      )}
 
       {/* ears */}
       <circle cx="58" cy="50" r="19" fill="#7ecfc6" />

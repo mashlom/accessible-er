@@ -1,8 +1,11 @@
 .fab {
   position: fixed;
-  left: 16px;
-  bottom: 16px;
-  z-index: 900;
+  /* lines up with the left edge of the content column (900px max, centred) */
+  left: max(16px, calc((100vw - 900px) / 2 + 16px));
+  /* on phones the browser's own bottom bar can cover the corner — the safe-area inset keeps the button above it */
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  /* above the top bar, the sky, the cards and the sheets: it is never covered */
+  z-index: 1100;
   width: 56px;
   height: 56px;
   padding: 0;

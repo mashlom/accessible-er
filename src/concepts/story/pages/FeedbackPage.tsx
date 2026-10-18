@@ -116,7 +116,7 @@ export function FeedbackPage() {
             </button>
           </div>
           <Link to="/" className={styles.crossLink}>
-            {tx.back} ←
+            {tx.back}
           </Link>
         </div>
       </div>
