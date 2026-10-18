@@ -14,6 +14,8 @@ const PATHS: Record<string, string[]> = {
   stitches: ['M3 12h18', 'M7 8v8', 'M12 8v8', 'M17 8v8'],
   cast: ['M5 5h14v14H5z', 'M5 9.5h14', 'M5 14.5h14'],
   bandage: ['M4 15L15 4a3.5 3.5 0 0 1 5 5L9 20a3.5 3.5 0 0 1-5-5z', 'M9.5 9.5l5 5'],
+  discharge: ['M3 11l9-7 9 7', 'M5 10v10h14V10', 'M10 20v-5h4v5'],
+  hospital: ['M5 20V5h14v15', 'M12 8v6', 'M9 11h6'],
 }
 
 export function hasLineIcon(id: string): boolean {

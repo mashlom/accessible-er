@@ -1,0 +1,110 @@
+{
+  "ru": {
+    "discharge": {
+      "title": "Выписка",
+      "what": "Выписка — это когда ты едешь домой. Врач решает, что тебе можно уехать, и объясняет, что делать дома: какие лекарства принимать и когда прийти снова.",
+      "feel": "Может быть радостно и немного волнительно. Иногда ещё немного устаёшь, это нормально.",
+      "prepare": "Можно заранее собрать свои вещи и попросить объяснить правила дома ещё раз.",
+      "canAsk": [
+        "Попросить объяснить, что делать дома",
+        "Спросить, когда нужно прийти снова",
+        "Попросить написать всё на бумажке"
+      ],
+      "headings": {
+        "what": "Что здесь будет",
+        "feel": "Что может быть трудно",
+        "prepare": "",
+        "canAsk": "О чём ты можешь попросить"
+      }
+    },
+    "hospital": {
+      "title": "Госпитализация",
+      "what": "Госпитализация — это когда ты остаёшься в больнице. У тебя будет своя комнатка и кровать, где ты будешь лежать. Рядом будут другие дети. Родители смогут приходить днём и общаться с тобой, а ты можешь в любой момент им позвонить.",
+      "feel": "Сначала может быть непривычно: новое место и незнакомые звуки. Это нормально. Со временем комната станет понятной, и будет проще.",
+      "prepare": "Можно взять что-нибудь своё из дома: любимую игрушку, книжку, подушку. Можно спросить, как устроена комната и когда приходят родители.",
+      "canAsk": [
+        "Узнать, когда родители смогут прийти днём",
+        "Позвонить маме или папе, когда захочешь",
+        "Узнать, какие дети рядом и что они делают"
+      ],
+      "headings": {
+        "what": "Что здесь будет",
+        "feel": "Что может быть трудно",
+        "prepare": "",
+        "canAsk": "О чём ты можешь попросить"
+      }
+    }
+  },
+  "en": {
+    "discharge": {
+      "title": "Going home",
+      "what": "Going home means you are leaving the hospital and going back home. The doctor decides that you can go, and explains what to do at home: which medicine to take and when to come back.",
+      "feel": "It may feel happy and a little exciting. Sometimes you are still a bit tired, and that is normal.",
+      "prepare": "You can pack your things beforehand, and ask for the rules at home to be explained again.",
+      "canAsk": [
+        "Ask them to explain what to do at home",
+        "Ask when you need to come back",
+        "Ask for everything to be written on a piece of paper"
+      ],
+      "headings": {
+        "what": "What will happen here",
+        "feel": "What may be hard",
+        "prepare": "",
+        "canAsk": "What can you ask for?"
+      }
+    },
+    "hospital": {
+      "title": "Staying in the hospital",
+      "what": "Staying in the hospital means you stay here for a while. You will have your own little room and a bed to lie in. Other children will be nearby. Your parents can come during the day and talk with you, and you can call them at any time.",
+      "feel": "At first it may feel strange: a new place and unfamiliar sounds. That is normal. Over time the room will feel familiar, and it will get easier.",
+      "prepare": "You can bring something of your own from home: a favourite toy, a book or a pillow. You can ask how the room works and when your parents can come.",
+      "canAsk": [
+        "Find out when your parents can come during the day",
+        "Call mum or dad whenever you want",
+        "Find out which children are nearby and what they are doing"
+      ],
+      "headings": {
+        "what": "What will happen here",
+        "feel": "What may be hard",
+        "prepare": "",
+        "canAsk": "What can you ask for?"
+      }
+    }
+  },
+  "he": {
+    "discharge": {
+      "title": "שחרור הביתה",
+      "what": "שחרור הביתה זה כשנוסעים הביתה. הרופא מחליט שאפשר ללכת, ומסביר מה עושים בבית: איזו תרופה לקחת ומתי לחזור.",
+      "feel": "אפשר להרגיש שמחה וקצת התרגשות. לפעמים עדיין קצת עייפים, וזה נורמלי.",
+      "prepare": "אפשר לארוז מראש את הדברים, ולבקש שיסבירו שוב את הכללים בבית.",
+      "canAsk": [
+        "לבקש שיסבירו מה עושים בבית",
+        "לשאול מתי צריך לחזור",
+        "לבקש שיכתבו הכול על דף"
+      ],
+      "headings": {
+        "what": "מה קורה כאן",
+        "feel": "מה עלול להיות קשה",
+        "prepare": "",
+        "canAsk": "על מה אפשר לבקש?"
+      }
+    },
+    "hospital": {
+      "title": "שהייה בבית החולים",
+      "what": "שהייה בבית החולים זה כשנשארים כאן לזמן מה. יהיה לך חדר קטן משלך ומיטה לשכב בה. ילדים אחרים יהיו לידך. ההורים יכולים לבוא בזמן היום ולדבר איתך, ואתה יכול להתקשר אליהם בכל רגע.",
+      "feel": "בהתחלה זה יכול להרגיש מוזר: מקום חדש וצלילים לא מוכרים. זה נורמלי. עם הזמן החדר יהיה מוכר, ויהיה יותר קל.",
+      "prepare": "אפשר לקחת מהבית משהו שלך: צעצוע אהוב, ספר או כרית. אפשר לשאול איך החדר עובד ומתי ההורים יכולים לבוא.",
+      "canAsk": [
+        "לברר מתי ההורים יכולים לבוא בזמן היום",
+        "להתקשר לאמא או לאבא כשתרצה",
+        "לברר אילו ילדים יהיו לידך ומה הם עושים"
+      ],
+      "headings": {
+        "what": "מה קורה כאן",
+        "feel": "מה עלול להיות קשה",
+        "prepare": "",
+        "canAsk": "על מה אפשר לבקש?"
+      }
+    }
+  }
+}

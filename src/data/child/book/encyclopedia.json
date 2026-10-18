@@ -32,8 +32,8 @@
     },
     "consult": {
       "title": "מי הם מומחים?",
-      "text": "רופאים מומחים למערכת אחת בגוף, למשל לב או עיניים. הם רואים דברים שרופא כללי צריך לבדוק יותר לעומק.",
-      "draft": true
+      "draft": true,
+      "text": "רופאים מומחים מכירים מאוד טוב מערכת אחת בגוף, למשל את הלב או את העיניים. לכן כשהרופא הרגיל צריך לבדוק משהו לעומק, הוא קורא למומחה.\n\nקרדיולוג מכיר את הלב ואת כלי הדם. רופא עיניים דואג לעיניים. נוירולוג מכיר את המוח ואת העצבים. אורתופד דואג לעצמות, למפרקים ולשרירים. רופא ריאות דואג לריאות ולנשימה. גסטרואנטרולוג בודק את הבטן: הקיבה והמעיים. נפרולוג מכיר את הכליות. רופא עור דואג לעור. רופא אף אוזן גרון דואג לאוזניים, לגרון ולאף. המטולוג דואג לדם.\n\nהמומחה מגיע, שואל שאלות ומסתכל עליך בעיון. הוא יכול להזמין עוד בדיקה או טיפול, שצריך בדיוק לחלק הזה בגוף.\n\nלא צריך לזכור את כל השמות. מספיק לדעת: לכל רופא יש חלק בגוף שהוא מכיר במיוחד טוב."
     },
     "wait-results": {
       "title": "למה התוצאות לוקחות זמן?",
@@ -42,8 +42,8 @@
     },
     "decision": {
       "title": "איך מחליטים לשחרר?",
-      "text": "הרופא/ה בודק/ת את כל התוצאות ומחליט/ה אם אפשר לחזור הביתה, או שצריך להישאר.",
-      "draft": true
+      "draft": true,
+      "text": "הרופא בודק את כל התוצאות: הבדיקה, המדידות, הבדיקות והתמונות. הוא חושב לא רק על מה שכבר רואים, אלא גם על מה שעלול לקרות אחר כך.\n\nאפשר לנסוע הביתה כשהמצב רגוע ואין שינויים מהירים. כמובן, תרופות בכדורים אפשר לקחת בעצמך או עם ההורים. אבל עירוי עם תרופה עשוי לדרוש שמישהו יהיה לידך וישגיח עליו כל הזמן. לפעמים צריך למדוד נשימה או לב הרבה פעמים, כדי לראות מיד אם יהיה לך רע יותר. אולי בדיקה מסוימת עוד לא מוכנה, ובלעדיה אי אפשר להבין מה קורה איתך. במקרים כאלה עדיף להישאר במקום שיש בו רופאים ואחיות שדואגים לך כל הזמן.\n\nלהישאר בבית החולים לא מפחיד. אולי עכשיו זה המקום הכי בטוח, בזמן שהגוף מתחזק. הרופא תמיד מסביר למה נבחרה דווקא הבחירה הזו, ואומר מה יהיה אחר כך."
     },
     "triage-temperature": {
       "title": "למה מודדים חום?",
@@ -149,8 +149,8 @@
     },
     "consult": {
       "title": "Who are specialists?",
-      "text": "Specialist doctors know one system of the body in depth, for example the heart or the eyes.",
-      "draft": true
+      "draft": true,
+      "text": "Specialist doctors know one system of the body really well, for example the heart or the eyes. So when the general doctor needs to check something more closely, they call a specialist.\n\nA cardiologist knows the heart and the blood vessels. An eye doctor looks after the eyes. A neurologist knows the brain and the nerves. An orthopaedic doctor looks after bones, joints and muscles. A lung doctor looks after the lungs and breathing. A gastroenterologist looks at the tummy: the stomach and the intestines. A kidney doctor knows the kidneys. A skin doctor looks after the skin. An ENT doctor looks after the ears, throat and nose. A blood doctor looks after the blood.\n\nThe specialist comes, asks questions and looks at you carefully. They may order one more test or treatment that is needed for that part of the body.\n\nYou do not need to remember all the names. It is enough to know: each doctor has a part of the body that they know especially well."
     },
     "wait-results": {
       "title": "Why do results take time?",
@@ -159,8 +159,8 @@
     },
     "decision": {
       "title": "How is the decision to go home made?",
-      "text": "The doctor looks at all the results and decides whether you can go home, or need to stay.",
-      "draft": true
+      "draft": true,
+      "text": "The doctor looks at all the results: the check-up, the measurements, the tests and the pictures. They think not only about what can already be seen, but also about what might happen next.\n\nYou can go home if your condition is calm and there are no quick changes. Of course, pills can be taken by yourself or with your parents. But a drip with medicine may need a person to watch it all the time. Sometimes breathing or the heart must be checked often, so that you can see straight away if you get worse. Maybe a test is not ready yet, and without it it is impossible to understand what is happening with you. In such cases it is better to stay where there are doctors and nurses who look after you all the time.\n\nStaying in the hospital is not scary. It may be the safest place right now, while your body gets stronger. The doctor always explains why this choice was made, and says what will happen next."
     },
     "triage-temperature": {
       "title": "Why do we measure temperature?",
@@ -266,8 +266,8 @@
     },
     "consult": {
       "title": "Кто такие специалисты?",
-      "text": "Врачи-специалисты хорошо знают одну систему тела, например сердце или глаза.",
-      "draft": true
+      "draft": true,
+      "text": "Врачи-специалисты хорошо знают одну систему тела, например сердце или глаза. Поэтому, когда общему врачу нужно что-то уточнить, он зовёт специалиста.\n\nКардиолог знает сердце и сосуды. Офтальмолог смотрит глаза. Невролог знает мозг и нервы. Ортопед занимается косточками, суставами и мышцами. Пульмонолог лечит лёгкие и дыхание. Гастроэнтеролог смотрит живот: желудок и кишечник. Нефролог знает почки. Дерматолог — кожу. ЛОР — уши, горло и нос. Гематолог — кровь.\n\nСпециалист приходит, задаёт вопросы и внимательно тебя смотрит. Он может назначить ещё одно обследование или лечение, которое нужно именно этой системе тела.\n\nНе нужно запоминать все названия. Достаточно знать: у каждого врача есть свой кусочек тела, который он знает особенно хорошо."
     },
     "wait-results": {
       "title": "Почему результаты ждут?",
@@ -276,8 +276,8 @@
     },
     "decision": {
       "title": "Как решают, можно ли домой?",
-      "text": "Врач смотрит все результаты и решает, можно ли идти домой или нужно остаться.",
-      "draft": true
+      "draft": true,
+      "text": "Врач смотрит все результаты: осмотр, измерения, анализы и снимки. Он думает не только о том, что уже видно, но и о том, что может случиться дальше.\n\nДомой можно ехать, если состояние спокойное, нет быстрых изменений. Конечно, лекарства в таблетках можно принимать самому или с родителями. Но капельница с лекарством может требовать, чтобы рядом всё время был человек, который следит за ней. Иногда нужно часто мерить дыхание или сердце, чтобы сразу увидеть, если тебе станет хуже. Может быть, какой-то анализ ещё не готов, и без него невозможно понять, что с тобой происходит. В таких случаях лучше остаться, где есть врачи и медсестры, которые смотрят за тобой всё время.\n\nОстаться в больнице — не страшно. Может быть, сейчас это самое безопасное место, пока тело набирается сил. Врач всегда объясняет, почему выбрано именно это, и говорит, что будет дальше."
     },
     "triage-temperature": {
       "title": "Зачем измерять температуру?",
