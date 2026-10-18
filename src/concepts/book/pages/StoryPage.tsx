@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react'
 import { basePages, parentSelectPage, procedureOptions, endPages, BookPage } from '../script'
 import { useI18n } from '../../../hooks/useI18n'
-import { LanguagePicker } from '../../../components/LanguagePicker'
 import css from '../book.module.css'
 
 export function StoryPage() {
@@ -59,10 +58,6 @@ export function StoryPage() {
   if (page.isParentSelect) {
     return (
       <div className={css.book} dir={dir} lang={lang}>
-        <a href="#/" className={css.menuLink} aria-label={t('book.ui.menu', 'לתפריט')}>
-          <span aria-hidden>🏁</span>
-        </a>
-        <LanguagePicker />
         <div className={css.pageCounter}>
           {allPages.map((_, i) => (
             <span key={i} className={[css.dot, i === index ? css.dotActive : ''].join(' ')} />
@@ -91,9 +86,9 @@ export function StoryPage() {
         </div>
 
         <div className={css.nav}>
-          <button className={css.backBtn} onClick={goBack}>{t('book.ui.back', '← אחורה')}</button>
+          <button className={css.backBtn} onClick={goBack}>{t('book.ui.back', 'אחורה')}</button>
           <button className={css.nextBtn} onClick={confirmProcs}>
-            {selectedProcs.size > 0 ? t('book.ui.continue', 'המשיכו ←') : t('book.ui.toEnd', 'לסיום ←')}
+            {selectedProcs.size > 0 ? t('book.ui.continue', 'המשיכו') : t('book.ui.toEnd', 'לסיום')}
           </button>
         </div>
       </div>
@@ -102,10 +97,6 @@ export function StoryPage() {
 
   return (
     <div className={css.book} dir={dir} lang={lang}>
-      <a href="#/" className={css.menuLink} aria-label={t('book.ui.menu', 'לתפריט')}>
-        <span aria-hidden>🏁</span>
-      </a>
-      <LanguagePicker />
       <div className={css.pageCounter}>
         {allPages.map((_, i) => (
           <span key={i} className={[css.dot, i === index ? css.dotActive : ''].join(' ')} />
@@ -120,10 +111,10 @@ export function StoryPage() {
 
       <div className={css.nav}>
         {!isFirst && (
-          <button className={css.backBtn} onClick={goBack}>{t('book.ui.back', '← אחורה')}</button>
+          <button className={css.backBtn} onClick={goBack}>{t('book.ui.back', 'אחורה')}</button>
         )}
         {!isLast ? (
-          <button className={css.nextBtn} onClick={goNext}>{t('book.ui.next', 'הלאה ←')}</button>
+          <button className={css.nextBtn} onClick={goNext}>{t('book.ui.next', 'הלאה')}</button>
         ) : (
           <button className={css.nextBtn} onClick={restart}>{t('book.ui.restart', 'מההתחלה ↺')}</button>
         )}

@@ -19,10 +19,11 @@ export function WorldSelectPage() {
     navigate(conceptPath(`/${id}`))
   }
 
-  const ORDER = ['ocean', 'knight', 'dollhouse', 'real', 'dino', 'fairy', 'safari', 'space']
+  // the אני world lives on the Books shelf now (issue #10), so it is not offered as a game
+  const ORDER = ['ocean', 'knight', 'dollhouse', 'dino', 'fairy', 'safari', 'space']
   const ordered = [
     ...ORDER.map((id) => themes.find((t) => t.id === id)!).filter(Boolean),
-    ...themes.filter((t) => !ORDER.includes(t.id)),
+    ...themes.filter((t) => !ORDER.includes(t.id) && t.id !== 'real'),
   ]
 
   return (
