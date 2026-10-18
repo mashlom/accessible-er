@@ -89,7 +89,7 @@
         "desc": "כמה זמן כל שלב יכול לקחת בערך"
       },
       "procedures": {
-        "title": "מה עומד לקרות?",
+        "title": "איך מכינים את הילד/ה?",
         "desc": "הכנה לבדיקות ולפרוצדורות, שלב אחרי שלב"
       },
       "map": {
@@ -120,6 +120,185 @@
         "title": "משוב קצר",
         "desc": "ספרו לנו איך היה — כדי שנשתפר"
       }
+    },
+    "procedurePage": {
+      "what": "מה קורה",
+      "feel": "מה אפשר להרגיש",
+      "prepare": "איך מתכוננים",
+      "ask": "מה אפשר לבקש מהצוות",
+      "distract": "🫧 לפתוח פינת הסחת דעת בזמן הפעולה",
+      "note": "הסדר והזמנים עשויים להשתנות לפי החלטת הצוות והעומס במיון.",
+      "crossLink": "🎭 לכל הסיפורים ←",
+      "videoTitle": "כאן ייכנס סרטון קצר",
+      "videoText": "סרטון אמיתי של {title} מהמלר״ד בלניאדו, או סיפור חברתי מצולם. בדמו זה שמור מקום בלבד — הצילום צריך להיעשות במחלקה עצמה."
+    },
+    "storyCalm": {
+      "title": "כשקשה",
+      "subtitle": "כשהילד/ה מוצף/ת, כמה דברים קטנים עוזרים. קחו נשימה — אתם עושים עבודה נהדרת.",
+      "breathe": "אפשר לנשום יחד עם העיגול: כשהוא גדל — שואפים. כשהוא קטן — נושפים.",
+      "circle": "נשימה",
+      "tipsLabel": "מה עוזר עכשיו",
+      "sentencesLabel": "משפטים מוכנים לצוות",
+      "sentencesHint": "קשה לדבר עכשיו? לחצו על משפט — הוא יופיע בגדול על המסך, ואפשר פשוט להראות אותו לצוות.",
+      "distract": "🫧 לפינת הסחת דעת — משהו רגוע להסתכל עליו ←",
+      "requests": "🙋 לכל מה שאפשר לבקש מהצוות ←",
+      "dialog": "משפט מוצג לצוות",
+      "close": "סגירה",
+      "tips": [
+        {
+          "emoji": "🤫",
+          "title": "להפחית מילים",
+          "body": "בזמן הצפה, פחות מילים עוזרות יותר. משפט קצר אחד, קול רגוע, והמון סבלנות בין המשפטים."
+        },
+        {
+          "emoji": "🧍",
+          "title": "לפנות מרחב",
+          "body": "בקשו מהצוות שאדם אחד בלבד יישאר קרוב, ושאר האנשים יתרחקו קצת. פחות גירויים = יותר רוגע."
+        },
+        {
+          "emoji": "🎧",
+          "title": "להוריד גירויים",
+          "body": "אוזניות, כובע, הורדת אור, או חפץ מרגיע. אפשר לבקש מהצוות מרחב שקט."
+        },
+        {
+          "emoji": "⏸️",
+          "title": "לבקש הפסקה",
+          "body": "מותר לעצור. אפשר להגיד לצוות \"אנחנו צריכים דקה\" — רוב הפעולות יכולות לחכות רגע קצר."
+        },
+        {
+          "emoji": "🧸",
+          "title": "לחזור למוכר",
+          "body": "חפץ, שיר, סרטון או משחק מוכר מהבית עוזרים לעגן. שגרה קטנה ומוכרת מרגיעה בתוך מקום זר."
+        },
+        {
+          "emoji": "💬",
+          "title": "לתווך לצוות",
+          "body": "אתם המומחים לילד שלכם. אמרו לצוות במשפט קצר מה עוזר ומה מסלים — זה בסדר גמור לכוון אותם."
+        }
+      ]
+    },
+    "storyDistract": {
+      "title": "הסחת דעת",
+      "subtitle": "משהו רגוע להסתכל עליו בזמן בדיקה, דקירה או המתנה ארוכה. הילד/ה בוחר/ת מה לראות.",
+      "bubble": "אפשר להסתכל לכאן במקום על היד. אני נשאר איתכם עד שזה נגמר.",
+      "labels": [
+        "קשת",
+        "טיפה",
+        "כוכב",
+        "לב",
+        "סחרחורת",
+        "כוכבון"
+      ],
+      "aria": "מה רוצים לראות",
+      "note": "אם המכשיר מוגדר ל\"הפחתת תנועה\", האנימציות לא ירוצו — הבועות והציור יישארו במקום. אפשר גם פשוט לספור יחד עד עשר; גם זו הסחת דעת טובה.",
+      "cross": "💗 לעוד דברים שעוזרים כשקשה ←"
+    },
+    "storyRequests": {
+      "title": "מה אפשר לבקש",
+      "subtitle": "אלה בקשות לגיטימיות לגמרי. הצוות רגיל אליהן, וזה בסדר גמור לבקש.",
+      "bubble": "אתם המומחים לילד/ה שלכם. אם משהו יעזור — אפשר פשוט לבקש, גם באמצע.",
+      "note": "הזמינות של כל התאמה תלויה במצב הרפואי, בציוד ובעומס באותו רגע. גם כשלא מתאפשר — שווה לשאול.",
+      "items": [
+        {
+          "emoji": "🌙",
+          "title": "חדר שקט / סנוזלן",
+          "detail": "מרחב מותאם עם פחות רעש ואור, למי שמוצף או צריך להירגע."
+        },
+        {
+          "emoji": "👤",
+          "title": "פחות אנשי צוות בחדר",
+          "detail": "שאדם אחד יוביל וידבר, ושאר הצוות ימתין בחוץ ככל האפשר."
+        },
+        {
+          "emoji": "🗣️",
+          "title": "הסבר לפני מגע",
+          "detail": "שכל נגיעה או פעולה יוסברו קודם, כדי שלא יהיו הפתעות."
+        },
+        {
+          "emoji": "🙌",
+          "title": "מיקרו־בחירות",
+          "detail": "לאפשר לילד/ה בחירות קטנות — לעמוד או לשבת, יד ימין או שמאל, איזו אצבע, מאיפה מתחילים. בחירה קטנה נותנת תחושת שליטה ומקלה."
+        },
+        {
+          "emoji": "⏱️",
+          "title": "זמן עיבוד ותגובה",
+          "detail": "זמן קצר בין הוראה לביצוע, ובין שאלה לתשובה, בלי למהר."
+        },
+        {
+          "emoji": "💉",
+          "title": "הכנה לפרוצדורה",
+          "detail": "הסבר מראש, משחה מאלחשת לפני דקירה, והסחת דעת בזמן הפעולה."
+        },
+        {
+          "emoji": "🔇",
+          "title": "הפחתת גירויים",
+          "detail": "הנמכת אור, הורדת רעש, וסגירת דלת — כדי להפחית עומס חושי."
+        },
+        {
+          "emoji": "🖼️",
+          "title": "תקשורת חלופית",
+          "detail": "שימוש בתמונות, הצבעה או אמצעי תקשורת אחר, אם דיבור קשה לילד כרגע."
+        }
+      ]
+    },
+    "storyFeedback": {
+      "title": "איך היה?",
+      "subtitle": "כמה שאלות קצרות — כדי שנוכל לשפר את הכלי. אין צורך בשם או בפרטים מזהים.",
+      "ratingTitle": "עד כמה הכלי עזר לכם היום?",
+      "faces": [
+        "פחות",
+        "קצת",
+        "מאוד"
+      ],
+      "helpTitle": "מה עזר לכם? (אפשר לבחור כמה)",
+      "help": [
+        "השביל של הביקור",
+        "הסיפורים על הבדיקות",
+        "המפה",
+        "מה עושים כשקשה",
+        "מה אפשר לבקש",
+        "רוני, הדמות המלווה"
+      ],
+      "diagTitle": "האם הילד/ה מאובחן/ת? (לא חובה, אנונימי)",
+      "diag": [
+        "מאובחן/ת",
+        "בתהליך אבחון",
+        "לא",
+        "מעדיף/ה לא לענות"
+      ],
+      "diagNote": "עוזר לנו להבין מי משתמש בכלי ועד כמה הוא מסייע לאוכלוסיות שונות. אין חובה לענות, והתשובה אנונימית.",
+      "notesTitle": "עוד משהו שתרצו לספר? (לא חובה)",
+      "notePh": "מה עזר, מה חסר, מה נשמח לשפר…",
+      "submit": "שליחת משוב",
+      "note": "לחיצה על השליחה תפתח הודעת מייל מוכנה (המשוב יגיע לצוות רק אחרי שתאשרו ותשלחו). עותק נשמר גם במכשיר הזה (דמו) ואינו כולל מידע מזהה.",
+      "thanks": "תודה רבה! 🌟",
+      "thanksText": "המשוב שלכם עוזר לנו לשפר את הכלי עבור משפחות אחרות. אם נפתחה אצלכם אפליקציית מייל עם הודעה מוכנה — נשאר רק לשלוח אותה.",
+      "mailAgain": "📧 לא נפתח מייל? לחצו כאן",
+      "copy": "העתקת המשוב כטקסט",
+      "copied": "✓ הועתק",
+      "back": "חזרה לעולם של רוני"
+    },
+    "storyMessage": {
+      "title": "הודעה לצוות",
+      "subtitle": "רוצים לבקש משהו או להגיד תודה? כתבו משפט קצר, והראו אותו לצוות על המסך — או שִׁלחו במייל בעצמכם.",
+      "bubble": "אפשר להתחיל ממשפט מוכן, ולשנות אותו איך שרוצים.",
+      "templates": [
+        {
+          "label": "🙏 בקשה",
+          "starter": "נשמח מאוד אם אפשר "
+        },
+        {
+          "label": "💛 תודה",
+          "starter": "רצינו להגיד תודה על "
+        }
+      ],
+      "placeholder": "לדוגמה: נשמח אם אפשר להמתין בפינה שקטה יותר · תודה רבה על הסבלנות.",
+      "aria": "ההודעה שלכם",
+      "show": "🖥️ להראות על המסך",
+      "mail": "✉️ שליחה במייל",
+      "note": "להצגה: לחצו \"להראות על המסך\" והראו את המסך לצוות. לשליחה: ייפתח המייל עם ההודעה — הוסיפו את כתובת המייל של המיון ושִׁלחו בעצמכם. שום דבר לא נשלח אוטומטית.",
+      "dialog": "הודעה מוצגת לצוות",
+      "close": "סגירה"
     }
   },
   "en": {
@@ -233,6 +412,185 @@
         "title": "How was it?",
         "desc": "Tell us how it was, so we can improve"
       }
+    },
+    "procedurePage": {
+      "what": "What happens",
+      "feel": "What it may feel like",
+      "prepare": "How to get ready",
+      "ask": "What you can ask the staff for",
+      "distract": "🫧 Open a distraction corner during the procedure",
+      "note": "The order and times may change depending on the team's decision and how busy the ER is.",
+      "crossLink": "🎭 All the stories ←",
+      "videoTitle": "A short video will go here",
+      "videoText": "A real video of {title} from the Laniado ER, or a filmed social story. In the demo this is only a placeholder — the filming has to be done in the department itself."
+    },
+    "storyCalm": {
+      "title": "When it is hard",
+      "subtitle": "When your child is overwhelmed, a few small things help. Take a breath — you are doing great work.",
+      "breathe": "Breathe together with the circle: when it grows — breathe in. When it gets smaller — breathe out.",
+      "circle": "Breathe",
+      "tipsLabel": "What helps now",
+      "sentencesLabel": "Ready sentences for the staff",
+      "sentencesHint": "Hard to talk right now? Tap a sentence — it will appear large on the screen, and you can simply show it to the staff.",
+      "distract": "🫧 To the distraction corner — something calm to look at ←",
+      "requests": "🙋 Everything you can ask the staff for ←",
+      "dialog": "Sentence shown to the staff",
+      "close": "Close",
+      "tips": [
+        {
+          "emoji": "🤫",
+          "title": "Use fewer words",
+          "body": "When your child is overwhelmed, fewer words help more. One short sentence, a calm voice, and lots of patience between sentences."
+        },
+        {
+          "emoji": "🧍",
+          "title": "Make some space",
+          "body": "Ask the staff to keep just one person close, and for everyone else to step back a little. Less stimulation = more calm."
+        },
+        {
+          "emoji": "🎧",
+          "title": "Reduce stimulation",
+          "body": "Headphones, a hat, dimmer lights, or a comfort object. You can ask the staff for a quiet space."
+        },
+        {
+          "emoji": "⏸️",
+          "title": "Ask for a break",
+          "body": "It's okay to pause. You can tell the staff \"we need a minute\" — most procedures can wait a short moment."
+        },
+        {
+          "emoji": "🧸",
+          "title": "Go back to the familiar",
+          "body": "A familiar object, song, video or game from home helps your child feel grounded. A small, familiar routine is calming in an unfamiliar place."
+        },
+        {
+          "emoji": "💬",
+          "title": "Guide the staff",
+          "body": "You are the experts on your child. Tell the staff in one short sentence what helps and what makes things worse — it's completely fine to guide them."
+        }
+      ]
+    },
+    "storyDistract": {
+      "title": "Distraction corner",
+      "subtitle": "Something calm to look at during a test, a needle or a long wait. The child chooses what to watch.",
+      "bubble": "You can look here instead of at your hand. I stay with you until it is over.",
+      "labels": [
+        "Rainbow",
+        "Drop",
+        "Star",
+        "Heart",
+        "Dizzy",
+        "Big star"
+      ],
+      "aria": "What to watch",
+      "note": "If the device is set to reduce motion, the animations will not run — the bubbles and the picture stay still. You can also simply count together to ten; that is a good distraction too.",
+      "cross": "💗 More things that help when it is hard ←"
+    },
+    "storyRequests": {
+      "title": "What can I ask for?",
+      "subtitle": "These are completely legitimate requests. The staff is used to them, and it is fine to ask.",
+      "bubble": "You are the experts on your child. If something would help, you can simply ask — even in the middle.",
+      "note": "Whether each adaptation is available depends on the medical situation, the equipment and how busy it is at that moment. Even when it is not possible — it is worth asking.",
+      "items": [
+        {
+          "emoji": "🌙",
+          "title": "Quiet room / sensory room",
+          "detail": "An adapted space with less noise and light, for a child who is overwhelmed or needs to calm down."
+        },
+        {
+          "emoji": "👤",
+          "title": "Fewer staff in the room",
+          "detail": "One person leads and talks, and the rest of the team waits outside as much as possible."
+        },
+        {
+          "emoji": "🗣️",
+          "title": "Explain before touching",
+          "detail": "Every touch or procedure is explained first, so there are no surprises."
+        },
+        {
+          "emoji": "🙌",
+          "title": "Small choices",
+          "detail": "Let your child make small choices — stand or sit, right hand or left, which finger, where to start. A small choice gives a sense of control and makes things easier."
+        },
+        {
+          "emoji": "⏱️",
+          "title": "Time to process and respond",
+          "detail": "A little time between an instruction and doing it, and between a question and an answer, without rushing."
+        },
+        {
+          "emoji": "💉",
+          "title": "Preparing for a procedure",
+          "detail": "An explanation in advance, numbing cream before a needle, and distraction during the procedure."
+        },
+        {
+          "emoji": "🔇",
+          "title": "Less sensory input",
+          "detail": "Dimming the lights, lowering noise, and closing the door — to reduce sensory overload."
+        },
+        {
+          "emoji": "🖼️",
+          "title": "Alternative communication",
+          "detail": "Using pictures, pointing or another way of communicating, if speaking is hard for your child right now."
+        }
+      ]
+    },
+    "storyFeedback": {
+      "title": "How was it?",
+      "subtitle": "A few short questions — so we can improve the tool. No name or identifying details are needed.",
+      "ratingTitle": "How much did the tool help you today?",
+      "faces": [
+        "Less",
+        "A little",
+        "A lot"
+      ],
+      "helpTitle": "What helped you? (you can choose several)",
+      "help": [
+        "The visit route",
+        "The stories about the tests",
+        "The map",
+        "What to do when it is hard",
+        "What I can ask for",
+        "Roni, the helper"
+      ],
+      "diagTitle": "Is the child diagnosed? (optional, anonymous)",
+      "diag": [
+        "Diagnosed",
+        "In the diagnosis process",
+        "No",
+        "Prefer not to answer"
+      ],
+      "diagNote": "It helps us understand who uses the tool and how well it helps different groups. Answering is optional, and the answer is anonymous.",
+      "notesTitle": "Anything else you would like to tell us? (optional)",
+      "notePh": "What helped, what is missing, what we could improve…",
+      "submit": "Send feedback",
+      "note": "Pressing send opens a ready email (the feedback reaches the team only after you confirm and send it). A copy is also kept on this device (demo) and contains no identifying information.",
+      "thanks": "Thank you very much! 🌟",
+      "thanksText": "Your feedback helps us improve the tool for other families. If an email app opened with a ready message, all that is left is to send it.",
+      "mailAgain": "📧 No email opened? Tap here",
+      "copy": "Copy the feedback as text",
+      "copied": "✓ Copied",
+      "back": "Back to the start"
+    },
+    "storyMessage": {
+      "title": "A message to the staff",
+      "subtitle": "Would you like to ask for something or say thank you? Write a short sentence and show it to the staff on the screen — or send it by email yourselves.",
+      "bubble": "You can start with a ready sentence and change it however you like.",
+      "templates": [
+        {
+          "label": "🙏 Request",
+          "starter": "We would be very glad if we could "
+        },
+        {
+          "label": "💛 Thanks",
+          "starter": "We wanted to say thank you for "
+        }
+      ],
+      "placeholder": "For example: we would be glad to wait in a quieter corner · thank you very much for your patience.",
+      "aria": "Your message",
+      "show": "🖥️ Show on the screen",
+      "mail": "✉️ Send by email",
+      "note": "To show: tap \"Show on the screen\" and show the screen to the staff. To send: your email app opens with the message — add the address of the ER and send it yourselves. Nothing is sent automatically.",
+      "dialog": "Message shown to the staff",
+      "close": "Close"
     }
   },
   "ru": {
@@ -315,7 +673,7 @@
         "desc": "Сколько примерно может занять каждый этап"
       },
       "procedures": {
-        "title": "Что будет дальше?",
+        "title": "Как подготовить ребёнка?",
         "desc": "Подготовка к обследованиям и процедурам, шаг за шагом"
       },
       "map": {
@@ -346,6 +704,185 @@
         "title": "Как прошло?",
         "desc": "Расскажите, как всё прошло, — чтобы мы стали лучше"
       }
+    },
+    "procedurePage": {
+      "what": "Что происходит",
+      "feel": "Что может почувствовать ребёнок?",
+      "prepare": "Как подготовиться",
+      "ask": "Что можно попросить у персонала",
+      "distract": "🫧 Открыть уголок отвлечения во время процедуры",
+      "note": "Порядок и время могут меняться по решению команды и из-за загруженности приёмного покоя.",
+      "crossLink": "🎭 Ко всем историям ←",
+      "videoTitle": "Здесь будет короткое видео",
+      "videoText": "Настоящее видео: {title} в приёмном покое Ланиадо или снятая социальная история. В демо здесь только место — съёмку нужно делать в самом отделении."
+    },
+    "storyCalm": {
+      "title": "Когда трудно",
+      "subtitle": "Когда ребёнок перегружен, помогают несколько маленьких вещей. Сделайте вдох — вы делаете отличную работу.",
+      "breathe": "Дышите вместе с кругом: когда он растёт — вдох. Когда уменьшается — выдох.",
+      "circle": "Дыхание",
+      "tipsLabel": "Что помогает сейчас",
+      "sentencesLabel": "Готовые фразы для персонала",
+      "sentencesHint": "Трудно говорить сейчас? Нажмите на фразу — она появится крупно на экране, и её можно просто показать персоналу.",
+      "distract": "🫧 В уголок отвлечения — что-то спокойное, на что можно смотреть ←",
+      "requests": "🙋 Всё, что можно попросить у персонала ←",
+      "dialog": "Фраза, показанная персоналу",
+      "close": "Закрыть",
+      "tips": [
+        {
+          "emoji": "🤫",
+          "title": "Меньше слов",
+          "body": "Когда ребёнок перегружен, чем меньше слов, тем лучше. Одна короткая фраза, спокойный голос и много терпения между фразами."
+        },
+        {
+          "emoji": "🧍",
+          "title": "Дать больше пространства",
+          "body": "Попросите персонал, чтобы рядом остался только один человек, а остальные немного отошли. Меньше раздражителей = больше спокойствия."
+        },
+        {
+          "emoji": "🎧",
+          "title": "Убрать раздражители",
+          "body": "Наушники, шапка, приглушённый свет или успокаивающий предмет. Можно попросить у персонала тихое место."
+        },
+        {
+          "emoji": "⏸️",
+          "title": "Попросить паузу",
+          "body": "Остановиться — можно. Скажите персоналу: «Нам нужна минута» — большинство процедур могут немного подождать."
+        },
+        {
+          "emoji": "🧸",
+          "title": "Вернуться к привычному",
+          "body": "Знакомый предмет, песня, видео или игра из дома помогают ребёнку почувствовать опору. Маленький привычный ритуал успокаивает в незнакомом месте."
+        },
+        {
+          "emoji": "💬",
+          "title": "Подсказать персоналу",
+          "body": "Вы лучше всех знаете своего ребёнка. Скажите персоналу коротко, что помогает, а что усиливает стресс, — направлять их совершенно нормально."
+        }
+      ]
+    },
+    "storyDistract": {
+      "title": "Отвлечься",
+      "subtitle": "Что-то спокойное, на что можно смотреть во время обследования, укола или долгого ожидания. Ребёнок выбирает, что смотреть.",
+      "bubble": "Можно смотреть сюда, а не на руку. Я остаюсь с вами, пока всё не закончится.",
+      "labels": [
+        "Радуга",
+        "Капля",
+        "Звёздочка",
+        "Сердце",
+        "Водоворот",
+        "Большая звезда"
+      ],
+      "aria": "Что хотим посмотреть",
+      "note": "Если на устройстве включено «уменьшение движения», анимации не будут работать — пузыри и картинка останутся на месте. Можно просто посчитать вместе до десяти — это тоже хорошее отвлечение.",
+      "cross": "💗 Ещё то, что помогает, когда трудно ←"
+    },
+    "storyRequests": {
+      "title": "Что можно попросить?",
+      "subtitle": "Это совершенно законные просьбы. Персонал к ним привык, и просить — совершенно нормально.",
+      "bubble": "Вы — эксперты в своём ребёнке. Если что-то поможет, можно просто попросить — даже в середине.",
+      "note": "Возможность каждой адаптации зависит от медицинской ситуации, оборудования и загруженности в этот момент. Даже если сейчас не получится — стоит спросить.",
+      "items": [
+        {
+          "emoji": "🌙",
+          "title": "Тихая комната / сенсорная комната",
+          "detail": "Специальное пространство с меньшим шумом и светом — для ребёнка, который перегружен или которому нужно успокоиться."
+        },
+        {
+          "emoji": "👤",
+          "title": "Меньше персонала в палате",
+          "detail": "Один человек ведёт и говорит, а остальные по возможности ждут снаружи."
+        },
+        {
+          "emoji": "🗣️",
+          "title": "Объяснение перед прикосновением",
+          "detail": "Каждое прикосновение или действие сначала объясняют, чтобы не было неожиданностей."
+        },
+        {
+          "emoji": "🙌",
+          "title": "Маленькие выборы",
+          "detail": "Дать ребёнку маленький выбор — стоять или сидеть, правая рука или левая, какой палец, с чего начать. Даже небольшой выбор даёт ощущение контроля и облегчает ситуацию."
+        },
+        {
+          "emoji": "⏱️",
+          "title": "Время на осмысление и ответ",
+          "detail": "Немного времени между просьбой и её выполнением, между вопросом и ответом — без спешки."
+        },
+        {
+          "emoji": "💉",
+          "title": "Подготовка к процедуре",
+          "detail": "Объяснение заранее, обезболивающий крем перед уколом и отвлечение во время процедуры."
+        },
+        {
+          "emoji": "🔇",
+          "title": "Меньше раздражителей",
+          "detail": "Приглушить свет, уменьшить шум и закрыть дверь — чтобы снизить сенсорную нагрузку."
+        },
+        {
+          "emoji": "🖼️",
+          "title": "Альтернативная коммуникация",
+          "detail": "Картинки, указывание или другой способ общения, если ребёнку сейчас трудно говорить."
+        }
+      ]
+    },
+    "storyFeedback": {
+      "title": "Как прошло?",
+      "subtitle": "Несколько коротких вопросов — чтобы мы могли улучшить инструмент. Имя или личные данные не нужны.",
+      "ratingTitle": "Насколько инструмент помог вам сегодня?",
+      "faces": [
+        "Меньше",
+        "Немного",
+        "Очень"
+      ],
+      "helpTitle": "Что помогло? (можно выбрать несколько)",
+      "help": [
+        "Путь визита",
+        "Истории об обследованиях",
+        "Карта",
+        "Что делать, когда трудно",
+        "Что можно попросить",
+        "Рони, помощник"
+      ],
+      "diagTitle": "Есть ли у ребёнка диагноз? (необязательно, анонимно)",
+      "diag": [
+        "Есть диагноз",
+        "Идёт обследование для диагноза",
+        "Нет",
+        "Предпочитаю не отвечать"
+      ],
+      "diagNote": "Это помогает понять, кто пользуется инструментом и насколько он помогает разным группам. Отвечать не обязательно, ответ анонимный.",
+      "notesTitle": "Что ещё хотите рассказать? (необязательно)",
+      "notePh": "Что помогло, чего не хватило, что можно улучшить…",
+      "submit": "Отправить отзыв",
+      "note": "Нажатие «Отправить» откроет готовое письмо (отзыв попадёт к команде только после того, как вы подтвердите отправку). Копия также сохранится на этом устройстве (демо) и не содержит идентифицирующих данных.",
+      "thanks": "Большое спасибо! 🌟",
+      "thanksText": "Ваш отзыв помогает нам улучшать инструмент для других семей. Если открылось почтовое приложение с готовым письмом — осталось только его отправить.",
+      "mailAgain": "📧 Письмо не открылось? Нажмите здесь",
+      "copy": "Скопировать отзыв текстом",
+      "copied": "✓ Скопировано",
+      "back": "Назад, на главную"
+    },
+    "storyMessage": {
+      "title": "Сообщение персоналу",
+      "subtitle": "Хотите что-то попросить или сказать спасибо? Напишите короткую фразу и покажите её персоналу на экране — или отправьте письмо сами.",
+      "bubble": "Можно начать с готовой фразы и изменить её, как удобно.",
+      "templates": [
+        {
+          "label": "🙏 Просьба",
+          "starter": "Будем очень рады, если можно "
+        },
+        {
+          "label": "💛 Благодарность",
+          "starter": "Хотели сказать спасибо за "
+        }
+      ],
+      "placeholder": "Например: будем рады подождать в более тихом уголке · большое спасибо за терпение.",
+      "aria": "Ваше сообщение",
+      "show": "🖥️ Показать на экране",
+      "mail": "✉️ Отправить по почте",
+      "note": "Чтобы показать: нажмите «Показать на экране» и покажите экран персоналу. Чтобы отправить: откроется письмо с сообщением — добавьте адрес приёмного покоя и отправьте сами. Ничего не отправляется автоматически.",
+      "dialog": "Сообщение, показанное персоналу",
+      "close": "Закрыть"
     }
   }
 }

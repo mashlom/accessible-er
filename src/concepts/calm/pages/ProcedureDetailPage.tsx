@@ -1,3 +1,4 @@
+import parentUi from '../../../data/parent/ui.json'
 import { useI18n } from '../../../hooks/useI18n'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -9,6 +10,8 @@ import styles from './ProcedureDetailPage.module.css'
 
 export function ProcedureDetailPage() {
   const { t, lang } = useI18n()
+  // the panel titles are shared with the story's procedure page (parent/ui.json)
+  const shared = (parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: Record<string, string> }>)[lang].procedurePage
   const { id } = useParams()
   const procedure = id ? parentProcedure(lang, id) : undefined
   const [step, setStep] = useState(0)
@@ -117,19 +120,19 @@ export function ProcedureDetailPage() {
       </section>
 
       <div className={styles.sections}>
-        <Section title={t('ui.calmProcedureDetail.what', 'מה קורה')} emoji="ℹ️">
+        <Section title={shared.what} emoji="ℹ️">
           <p>{procedure.what}</p>
         </Section>
 
-        <Section title={t('ui.calmProcedureDetail.feel', 'מה הילד/ה עשוי/ה להרגיש')} emoji="💛">
+        <Section title={shared.feel} emoji="💛">
           <p>{procedure.feel}</p>
         </Section>
 
-        <Section title={t('ui.calmProcedureDetail.prepare', 'איך אפשר להתכונן')} emoji="🎒">
+        <Section title={shared.prepare} emoji="🎒">
           <p>{procedure.prepare}</p>
         </Section>
 
-        <Section title={t('ui.calmProcedureDetail.ask', 'מה אפשר לבקש מהצוות')} emoji="🙋">
+        <Section title={shared.ask} emoji="🙋">
           <InfoList items={procedure.adaptations} />
         </Section>
       </div>

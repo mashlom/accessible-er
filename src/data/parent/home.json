@@ -31,7 +31,7 @@
         "desc": "כמה זמן כל שלב יכול לקחת"
       },
       "show": {
-        "name": "מה עומד לקרות?",
+        "name": "איך מכינים את הילד/ה?",
         "desc": "סיפור לכל בדיקה, עמוד אחרי עמוד"
       },
       "card": {
@@ -96,19 +96,8 @@
       "crossLink": "🏠 מה קורה בסוף הביקור, בדרך הביתה ←",
       "lead": "איפה אנחנו עכשיו ומה הלאה"
     },
-    "book": {
-      "what": "מה קורה",
-      "feel": "מה אפשר להרגיש",
-      "prepare": "איך מתכוננים",
-      "ask": "מה אפשר לבקש מהצוות",
-      "distract": "🫧 לפתוח פינת הסחת דעת בזמן הפעולה",
-      "note": "הסדר והזמנים עשויים להשתנות לפי החלטת הצוות והעומס במיון.",
-      "crossLink": "🎭 לכל הסיפורים ←",
-      "videoTitle": "כאן ייכנס סרטון קצר",
-      "videoText": "סרטון אמיתי של {title} מהמלר״ד בלניאדו, או סיפור חברתי מצולם. בדמו זה שמור מקום בלבד — הצילום צריך להיעשות במחלקה עצמה."
-    },
     "show": {
-      "title": "מה עומד לקרות?",
+      "title": "איך מכינים את הילד/ה?",
       "subtitle": "כל בדיקה היא סיפור קצר עם ציור, ואני מספר אותו עמוד אחרי עמוד. אפשר לעצור בכל רגע ולחזור אחורה.",
       "bubble": "אפשר לקרוא את הסיפור לפני שנכנסים — ככה כבר יודעים מה יקרה, ואין הפתעות.",
       "likely": "כנראה נפגוש את אלה היום",
@@ -130,6 +119,54 @@
       "next": "ממשיכים מכאן אל:",
       "ofFive": "{level} מתוך {max}",
       "note": "המפה והדירוג החושי הם הערכה ראשונית לצורך הדמו, ויעודכנו יחד עם צוות המלר״ד ואלו״ט. מיקום מדויק של אזורים ייקבע לפי המחלקה בפועל."
+    },
+    "goingHome": {
+      "title": "סוף השביל",
+      "subtitle": "מה קורה בסיום הביקור, ואיך מתכוננים לחזרה הביתה.",
+      "bubble": "עשיתם היום משהו גדול. עכשיו הולכים הביתה — לאט, בקצב שלכם.",
+      "blocks": [
+        [
+          "מה קורה עכשיו",
+          "הצוות מסכם איתכם את הביקור, נותן הנחיות להמשך, ולפעמים מרשם. אחר כך משתחררים הביתה."
+        ],
+        [
+          "גם היציאה היא מעבר",
+          "אחרי ביקור ארוך ומעייף, עצם היציאה יכולה להרגיש כמו שינוי גדול. אפשר לצאת לאט, ולהיפרד מהמרחב לפני שיוצאים."
+        ],
+        [
+          "בבית",
+          "בבית אולי יהיה צורך בזמן, בשקט ובחזרה הדרגתית לשגרה. לפעמים התגובה למה שעברנו מגיעה רק אחר כך — וגם זה טבעי."
+        ],
+        [
+          "ציוד או אביזרים לבית",
+          "לפעמים צריך בבית ציוד קטן — למשל כיסוי אטום לגבס כדי להתקלח בלי להרטיב. הצוות יסביר מה צריך ואיפה להשיג."
+        ],
+        [
+          "מעקב אצל רופא/ת הילדים",
+          "חשוב להמשיך מעקב אצל רופא/ת הילדים בקהילה לפי ההמלצות — הם מכירים את הילד/ה וילוו אתכם גם אחרי הביקור."
+        ]
+      ],
+      "closing": "כל הכבוד לכם. נתראה — ושיהיה לכם רק טוב 💛",
+      "feedback": "לספר לנו איך היה ←",
+      "back": "חזרה לעולם של רוני",
+      "note": "הטקסט כאן טיוטה ראשונית — לניסוח סופי יחד עם חגית."
+    },
+    "cardPage": {
+      "title": "הכרטיס שלך",
+      "subtitle": "סמנו את מה שמתאים — פחות משתי דקות. בסוף יוצא כרטיס קצר וגדול, שאפשר להראות לצוות מהמסך או להדפיס.",
+      "bubble": "🔒 הכל נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ולא נשלח לשום מקום. מה שלא תראו בעצמכם — לא יגיע לצוות. אפשר למלא גם בלי שם.",
+      "me": "מי אני (לא חובה)",
+      "nickname": "כינוי / שם פרטי",
+      "nickPh": "לא חובה",
+      "age": "גיל",
+      "agePh": "—",
+      "otherPh": "אחר… (אפשר לכתוב בחופשי)",
+      "other": "אחר — {title}",
+      "freeTitle": "עוד משהו שעוזר לי? (לא חובה)",
+      "freePh": "למשל: אוהב שמספרים לי מה קורה בקול שקט; נרגעת עם הדובי הכחול…",
+      "note": "מה שמסמנים כאן פותח גם הצעות להתאמות שכדאי לבקש — הן מופיעות מתחת לכרטיס עצמו.",
+      "show": "🪪 להראות את הכרטיס לצוות",
+      "clear": "ניקוי הכרטיס"
     }
   },
   "en": {
@@ -192,17 +229,6 @@
       "crossLink": "🏠 What happens at the end of the visit, on the way home ←",
       "lead": "Where we are now and what comes next"
     },
-    "book": {
-      "what": "What happens",
-      "feel": "What it may feel like",
-      "prepare": "How to get ready",
-      "ask": "What you can ask the staff for",
-      "distract": "🫧 Open a distraction corner during the procedure",
-      "note": "The order and times may change depending on the team's decision and how busy the ER is.",
-      "crossLink": "🎭 All the stories ←",
-      "videoTitle": "A short video will go here",
-      "videoText": "A real video of {title} from the Laniado ER, or a filmed social story. In the demo this is only a placeholder — the filming has to be done in the department itself."
-    },
     "show": {
       "title": "What is going to happen?",
       "subtitle": "Each test is a short story with pictures, and I tell it page by page. You can stop at any time and go back.",
@@ -226,6 +252,54 @@
       "next": "What's next?",
       "ofFive": "{level} of {max}",
       "note": "The map and the sensory ratings are a first estimate for the demo, and will be updated together with the Laniado ER team. The exact locations of the areas will be set by the actual department."
+    },
+    "goingHome": {
+      "title": "End of the Journey",
+      "subtitle": "What happens at the end of the visit, and how to get ready for going home.",
+      "bubble": "You did something big today. Now we go home — slowly, at your own pace.",
+      "blocks": [
+        [
+          "What happens now",
+          "The team goes over the visit with you, gives instructions for what comes next, and sometimes a prescription. Then you go home."
+        ],
+        [
+          "Leaving is a change too",
+          "After a long and tiring visit, just leaving can feel like a big change. You can leave slowly, and say goodbye to the place before you go."
+        ],
+        [
+          "At home",
+          "At home you may need time, quiet and a gradual return to routine. Sometimes the reaction to what we went through comes only later — that is natural too."
+        ],
+        [
+          "Equipment or aids for home",
+          "Sometimes a little equipment is needed at home — for example a waterproof cover for a cast, so you can shower without getting it wet. The team will explain what is needed and where to get it."
+        ],
+        [
+          "Follow-up with the paediatrician",
+          "It is important to continue follow-up with your child's paediatrician in the community, as recommended. They know your child and will support you after the visit too."
+        ]
+      ],
+      "closing": "Well done, all of you. See you — and wishing you only good things 💛",
+      "feedback": "Tell us how it was ←",
+      "back": "Back to the start",
+      "note": "The text here is a first draft — the final wording will be agreed with Hagit."
+    },
+    "cardPage": {
+      "title": "Your card",
+      "subtitle": "Tick what fits — less than two minutes. At the end you get a short, large card, which you can show the staff on the screen or print.",
+      "bubble": "🔒 Everything is saved on this device only, deleted after 24 hours, and not sent anywhere. What you do not show yourself will not reach the staff. You can fill it in without a name.",
+      "me": "About the child (optional)",
+      "nickname": "Nickname or first name",
+      "nickPh": "Optional",
+      "age": "Age",
+      "agePh": "—",
+      "otherPh": "Other… (you can write freely)",
+      "other": "Other — {title}",
+      "freeTitle": "Anything else that helps? (optional)",
+      "freePh": "For example: likes being told calmly what is happening; calms down with the blue teddy…",
+      "note": "What is ticked here also suggests adaptations worth asking for — they appear below the card itself.",
+      "show": "🪪 Show the card to the staff",
+      "clear": "Clear the card"
     }
   },
   "ru": {
@@ -288,22 +362,11 @@
       "crossLink": "🏠 Что происходит в конце визита, по дороге домой ←",
       "lead": "Где мы сейчас и что дальше"
     },
-    "book": {
-      "what": "Что происходит",
-      "feel": "Что можно почувствовать",
-      "prepare": "Как подготовиться",
-      "ask": "Что можно попросить у персонала",
-      "distract": "🫧 Открыть уголок отвлечения во время процедуры",
-      "note": "Порядок и время могут меняться по решению команды и из-за загруженности приёмного покоя.",
-      "crossLink": "🎭 Ко всем историям ←",
-      "videoTitle": "Здесь будет короткое видео",
-      "videoText": "Настоящее видео: {title} в приёмном покое Ланиадо или снятая социальная история. В демо здесь только место — съёмку нужно делать в самом отделении."
-    },
     "show": {
-      "title": "Что будет дальше?",
+      "title": "Как подготовить ребёнка?",
       "subtitle": "Каждое обследование — это короткая история с картинками, и я рассказываю её страница за страницей. Можно остановиться в любой момент и вернуться назад.",
       "bubble": "Можно прочитать историю до того, как зайдём, — тогда уже знаешь, что будет, и нет неожиданностей.",
-      "likely": "Скорее всего, сегодня встретятся",
+      "likely": "Скорее всего, сегодня понадобится",
       "all": "Все истории",
       "ours": "Наши истории"
     },
@@ -322,6 +385,54 @@
       "next": "Что дальше?",
       "ofFive": "{level} из {max}",
       "note": "Карта и сенсорные оценки — первичная оценка для демо. Их обновят вместе с командой приёмного покоя Ланиадо. Точное расположение зон определится по самому отделению."
+    },
+    "goingHome": {
+      "title": "Завершение пути",
+      "subtitle": "Что происходит в конце визита и как подготовиться к возвращению домой.",
+      "bubble": "Сегодня вы сделали что-то большое. Теперь идём домой — медленно, в своём темпе.",
+      "blocks": [
+        [
+          "Что происходит сейчас",
+          "Команда подводит итог визита, даёт рекомендации на дальнейшее и иногда рецепт. Затем вы уходите домой."
+        ],
+        [
+          "Уход тоже переход",
+          "После долгого и утомительного визита даже уход может показаться большой переменой. Можно уйти медленно и попрощаться с местом, прежде чем выйти."
+        ],
+        [
+          "Дома",
+          "Дома может понадобиться время, тишина и постепенное возвращение к привычному ритму. Иногда реакция на пережитое приходит только потом — и это тоже нормально."
+        ],
+        [
+          "Оборудование или принадлежности для дома",
+          "Иногда дома нужно небольшое оборудование, например водонепроницаемый чехол для гипса, чтобы мыться и не мочить его. Команда объяснит, что нужно и где это взять."
+        ],
+        [
+          "Наблюдение у педиатра",
+          "Важно продолжить наблюдение у педиатра по месту жительства по рекомендациям. Он знает вашего ребёнка и будет сопровождать вас и после визита."
+        ]
+      ],
+      "closing": "Молодцы, всем вам. До встречи — и пусть всё будет хорошо 💛",
+      "feedback": "Расскажите, как всё прошло ←",
+      "back": "Назад, на главную",
+      "note": "Текст здесь — первый черновик. Окончательную формулировку согласуем с Хагит."
+    },
+    "cardPage": {
+      "title": "Важно знать о моём ребёнке",
+      "subtitle": "Отметьте подходящее — это займёт меньше двух минут. В конце получится короткая крупная карточка, которую можно показать персоналу с экрана или распечатать.",
+      "bubble": "🔒 Всё сохраняется только на этом устройстве, удаляется через 24 часа и никуда не отправляется. То, что вы не покажете сами, не попадёт к персоналу. Можно заполнить и без имени.",
+      "me": "О ребёнке (необязательно)",
+      "nickname": "Имя или прозвище",
+      "nickPh": "Необязательно",
+      "age": "Возраст",
+      "agePh": "—",
+      "otherPh": "Другое… (можно написать свободно)",
+      "other": "Другое — {title}",
+      "freeTitle": "Что ещё помогает? (необязательно)",
+      "freePh": "Например: любит, когда ему спокойно рассказывают, что происходит; успокаивается с синим мишкой…",
+      "note": "Отмеченное здесь также подсказывает, какие адаптации стоит попросить — они появляются под самой карточкой.",
+      "show": "🪪 Показать карточку персоналу",
+      "clear": "Очистить карточку"
     }
   }
 }
