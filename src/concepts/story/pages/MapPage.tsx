@@ -1,13 +1,15 @@
 import type { CSSProperties } from 'react'
 import { Scene, Bubble, Note } from '../components/kit'
 import {
-  mapAreas,
   loadLabels,
   sensoryChannels,
   sensoryColor,
   sensoryColorSoft,
   SENSORY_MAX,
 } from '../../../data/map'
+import { parentMapAreas, parentLoadLabel, parentChannelLabel } from '../../../data/parent/map'
+import homeTexts from '../../../data/parent/home.json'
+import { useI18n } from '../../../hooks/useI18n'
 import type { MapArea } from '../../../data/types'
 import styles from '../pages.module.css'
 
@@ -29,20 +31,17 @@ const loadFace: Record<MapArea['load'], string> = {
  * bright, how smelly, how crowded — and where you usually go next.
  */
 export function MapPage() {
+  const { lang, dir } = useI18n()
+  const tx = homeTexts[lang].mapPage
   return (
-    <Scene
-      title="איפה אנחנו?"
-      subtitle="לכל מקום במיון יש אופי משלו. כאן רואים איפה רועש, איפה אפשר לנוח, ולאן ממשיכים משם."
-    >
+    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <Scene title={tx.title} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
-        <Bubble>
-          העיגולים הצבעוניים מספרים כמה <strong>רעש, אור, ריח ואנשים</strong> יש בכל
-          מקום. ירוק = מעט, אדום = הרבה.
-        </Bubble>
+        <Bubble>{tx.bubble}</Bubble>
       </div>
 
       <div className={styles.rooms}>
-        {mapAreas.map((area) => {
+        {parentMapAreas(lang).map((area) => {
           const load = loadLabels[area.load]
           return (
             <article
@@ -58,7 +57,7 @@ export function MapPage() {
                   <h2 className={styles.roomName}>{area.name}</h2>
                   <span className={styles.loadBadge} style={{ color: load.color }}>
                     <span aria-hidden>{loadFace[area.load]}</span>
-                    {load.label}
+                    {parentLoadLabel(lang, area.load)}
                   </span>
                 </div>
               </div>
@@ -74,10 +73,10 @@ export function MapPage() {
                         key={ch.key}
                         className={styles.weatherChip}
                         style={{ background: sensoryColorSoft(level) }}
-                        title={`${ch.label}: ${level} מתוך ${SENSORY_MAX}`}
+                        title={`${parentChannelLabel(lang, ch.key)}: ${tx.ofFive.replace('{level}', String(level)).replace('{max}', String(SENSORY_MAX))}`}
                       >
                         <span aria-hidden>{ch.emoji}</span>
-                        {ch.label}
+                        {parentChannelLabel(lang, ch.key)}
                         <span className={styles.weatherBars} aria-hidden>
                           {Array.from({ length: SENSORY_MAX }, (_, i) => (
                             <span
@@ -92,7 +91,7 @@ export function MapPage() {
                           ))}
                         </span>
                         <span className="visually-hidden">
-                          {level} מתוך {SENSORY_MAX}
+                          {tx.ofFive.replace('{level}', String(level)).replace('{max}', String(SENSORY_MAX))}
                         </span>
                       </span>
                     )
@@ -102,7 +101,7 @@ export function MapPage() {
                 {area.next && (
                   <p className={styles.roomNext}>
                     <span aria-hidden>➡️ </span>
-                    ממשיכים מכאן אל: {area.next}
+                    {tx.next} {area.next}
                   </p>
                 )}
               </div>
@@ -112,11 +111,9 @@ export function MapPage() {
       </div>
 
       <div style={{ marginTop: 'var(--space-4)' }}>
-        <Note>
-          המפה והדירוג החושי הם הערכה ראשונית לצורך הדמו, ויעודכנו יחד עם צוות המלר״ד
-          ואלו״ט. מיקום מדויק של אזורים ייקבע לפי המחלקה בפועל.
-        </Note>
+        <Note>{tx.note}</Note>
       </div>
     </Scene>
+    </div>
   )
 }
