@@ -1,15 +1,15 @@
 import { useI18n } from '../../../hooks/useI18n'
 import { useState } from 'react'
 import { Link } from '../../nav'
-import { Scene, Bubble, Note } from '../components/kit'
+import { Note } from '../components/kit'
 import { getStageIndex } from '../../../data/journey'
 import { parentJourney, parentProcedure } from '../../../data/parent'
 import { parentPaths } from '../../../data/parent/paths'
 import homeTexts from '../../../data/parent/home.json'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { usePersistentState } from '../../../hooks/usePersistentState'
-import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
 import { DAY_MS } from '../../../lib/storage'
+import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
 /**
@@ -24,6 +24,7 @@ import styles from '../pages.module.css'
 export function TrailPage() {
   const { lang, dir } = useI18n()
   const tx = homeTexts[lang].trail
+  const home = homeTexts[lang]
   const { reasonId } = useVisitReason()
   const path = reasonId ? parentPaths(lang).find((p) => p.id === reasonId) : undefined
   const [currentId, setCurrentId] = usePersistentState<string | null>(
@@ -32,33 +33,42 @@ export function TrailPage() {
     DAY_MS,
   )
   const [openId, setOpenId] = useState<string | null>(currentId ?? parentJourney(lang)[0].id)
-  const [avatar] = useSessionAvatar()
 
   const currentIndex = currentId ? getStageIndex(currentId) : -1
 
   return (
-    <div dir={dir} lang={lang} style={{ display: 'contents' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
-      <div style={{ marginBottom: 'var(--space-4)' }}>
-        <Bubble>
-          {path ? (
-            <>
-              {tx.bubbleStart} <strong>{path.label}</strong>. {tx.bubbleBody}{' '}
-              <Link to="/reason" style={{ textDecoration: 'underline' }}>
-                {tx.bubbleChange}
-              </Link>
-            </>
-          ) : (
-            <>
-              {tx.bubbleNone}{' '}
-              <Link to="/reason" style={{ textDecoration: 'underline', fontWeight: 700 }}>
-                {tx.bubbleAsk}
-              </Link>{' '}
-              {tx.bubbleEnd}
-            </>
-          )}
-        </Bubble>
-      </div>
+    <div className={shell.page} dir={dir} lang={lang}>
+      <header className={styles.trailHead}>
+        <h1 className={styles.trailTitle}>
+          {tx.title}
+          <span className={styles.trailLead}>{tx.lead}</span>
+        </h1>
+        <p className={styles.trailSub}>{tx.subtitle}</p>
+      </header>
+      {path ? (
+        <div className={styles.reasonStrip}>
+          <span className={styles.reasonStripEmoji} aria-hidden>
+            {path.emoji}
+          </span>
+          <span className={styles.reasonStripText}>
+            <span className={styles.reasonStripLabel}>{home.reasonLabel}</span>
+            {path.label}
+          </span>
+          <Link to="/reason" className={styles.reasonStripChange}>
+            {home.reasonChange}
+          </Link>
+        </div>
+      ) : (
+        <Link to="/reason" className={styles.reasonStrip}>
+          <span className={styles.reasonStripEmoji} aria-hidden>
+            💭
+          </span>
+          <span className={styles.reasonStripText}>{home.reasonAsk}</span>
+          <span className={styles.reasonStripAction} aria-hidden>
+            ←
+          </span>
+        </Link>
+      )}
 
       <ol className={styles.trail}>
         {parentJourney(lang).map((stage, i) => {
@@ -76,17 +86,7 @@ export function TrailPage() {
                 aria-expanded={isOpen}
                 aria-label={`${stage.title}${isHere ? tx.hereSuffix : ''}`}
               >
-                <span aria-hidden>{stage.emoji}</span>
-                {isDone && (
-                  <span className={styles.stopStar} aria-hidden>
-                    ⭐
-                  </span>
-                )}
-                {isHere && (
-                  <span className={styles.meToken} aria-hidden>
-                    {avatar.kind === 'photo' ? <img src={avatar.value} alt="" /> : avatar.value}
-                  </span>
-                )}
+                <span aria-hidden>{isDone ? '✓' : isHere ? '' : i + 1}</span>
               </button>
 
               <div className={`${styles.stopCard} ${isHere ? styles.stopCardHere : ''}`}>
@@ -103,6 +103,7 @@ export function TrailPage() {
                 >
                   <span className={styles.stopTitleRow}>
                     <span className={styles.stopTitle}>
+                      <span aria-hidden>{stage.emoji} </span>
                       {isHere && '📍 '}
                       {stage.title}
                     </span>
@@ -172,7 +173,6 @@ export function TrailPage() {
       <Link to="/going-home" className={styles.crossLink}>
         {tx.crossLink}
       </Link>
-    </Scene>
     </div>
   )
 }

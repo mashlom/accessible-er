@@ -93,7 +93,8 @@
       "hereOn": "📍 אנחנו כאן — לביטול",
       "markHere": "לסמן: אנחנו כאן",
       "note": "הזמנים הם טווחים להמחשה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.",
-      "crossLink": "🏠 מה קורה בסוף הביקור, בדרך הביתה ←"
+      "crossLink": "🏠 מה קורה בסוף הביקור, בדרך הביתה ←",
+      "lead": "איפה אנחנו עכשיו ומה הלאה"
     },
     "book": {
       "what": "מה קורה",
@@ -172,7 +173,8 @@
       "hereOn": "📍 We are here — tap to undo",
       "markHere": "Mark: we are here",
       "note": "The times are ranges for illustration only. The order and times may change depending on the medical team's decision and how busy the ER is.",
-      "crossLink": "🏠 What happens at the end of the visit, on the way home ←"
+      "crossLink": "🏠 What happens at the end of the visit, on the way home ←",
+      "lead": "Where we are now and what comes next"
     },
     "book": {
       "what": "What happens",
@@ -250,8 +252,9 @@
       "canAsk": "Что можно попросить",
       "hereOn": "📍 Мы здесь — отменить",
       "markHere": "Отметить: мы здесь",
-      "note": "Время — это ориентир для наглядности. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
-      "crossLink": "🏠 Что происходит в конце визита, по дороге домой ←"
+      "note": "Указано ориентировочное время. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
+      "crossLink": "🏠 Что происходит в конце визита, по дороге домой ←",
+      "lead": "Где мы сейчас и что дальше"
     },
     "book": {
       "what": "Что происходит",
