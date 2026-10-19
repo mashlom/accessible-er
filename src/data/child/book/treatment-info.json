@@ -34,7 +34,8 @@
         "feel": "Что может быть трудно",
         "prepare": "",
         "canAsk": "О чём ты можешь попросить"
-      }
+      },
+      "videoName": "Приём лекарства"
     },
     "inhalation": {
       "title": "Ингаляция",
@@ -145,7 +146,8 @@
         "feel": "What may be hard",
         "prepare": "",
         "canAsk": "What can you ask for?"
-      }
+      },
+      "videoName": "Taking medicine"
     },
     "inhalation": {
       "title": "Inhalation",
@@ -256,7 +258,8 @@
         "feel": "מה עלול להיות קשה",
         "prepare": "",
         "canAsk": "על מה אפשר לבקש?"
-      }
+      },
+      "videoName": "נטילת תרופה"
     },
     "inhalation": {
       "title": "אינהלציה",

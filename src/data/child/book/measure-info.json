@@ -19,7 +19,8 @@
       "title": "Сатурация",
       "what": "На палец надевают маленькую прищепку. Через палец проходит свет, и прибор показывает, сколько кислорода в крови.",
       "feel": "Прищепка немного сжимает палец. Не больно, просто непривычно. Можно попросить сначала показать его на маме или папе.",
-      "prepare": "Можно попросить объяснить, что это за прибор, и посидеть спокойно минуту-другую."
+      "prepare": "Можно попросить объяснить, что это за прибор, и посидеть спокойно минуту-другую.",
+      "videoName": "Измерение сатурации"
     },
     "blood-pressure": {
       "title": "Измерение давления",
@@ -48,7 +49,8 @@
       "title": "Oxygen level (saturation)",
       "what": "A small clip goes on a finger. Light passes through the finger, and the device shows how much oxygen is in the blood.",
       "feel": "The clip squeezes the finger a little. It does not hurt, it is just unusual. You can ask to see it first on mum or dad.",
-      "prepare": "You can ask them to explain what the device is, and sit still for a minute or two."
+      "prepare": "You can ask them to explain what the device is, and sit still for a minute or two.",
+      "videoName": "Measuring saturation"
     },
     "blood-pressure": {
       "title": "Blood pressure check",
@@ -77,7 +79,8 @@
       "title": "סטורציה",
       "what": "שמים על האצבע קליפס קטן. האור עובר דרך האצבע, והמכשיר מראה כמה חמצן יש בדם.",
       "feel": "הקליפס לוחץ קצת על האצבע. זה לא כואב, רק לא רגיל. אפשר לבקש להראות אותו קודם על אמא או אבא.",
-      "prepare": "אפשר לבקש שיסבירו מה המכשיר, ולשבת בשקט דקה-שתיים."
+      "prepare": "אפשר לבקש שיסבירו מה המכשיר, ולשבת בשקט דקה-שתיים.",
+      "videoName": "מדידת סטורציה"
     },
     "blood-pressure": {
       "title": "מדידת לחץ דם",
