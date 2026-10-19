@@ -507,3 +507,34 @@
   background: #087e8b;
   color: #fff;
 }
+
+/* where a filmed clip would live: a placeholder, the same as in the story's procedure pages */
+.videoSlot {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
+  align-items: start;
+  margin-top: 1rem;
+  padding: 14px;
+  border: 2px dashed #d5dde2;
+  border-radius: 16px;
+  background: #fff;
+  color: #3d5563;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.videoSlot strong {
+  color: #173b4d;
+}
+.videoSlot p {
+  margin-top: 4px;
+}
+.videoSlotIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #f7faf9;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+}
