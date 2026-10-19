@@ -1,13 +1,14 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { ParentSheet } from '../../quest/components/ParentInfo'
 import quest from '../../quest/quest.module.css'
 import { useI18n } from '../../../hooks/useI18n'
 import { Roni, type RoniMood } from '../../../components/Roni'
-import { avatarEmojis, fileToAvatarDataUrl, useSessionAvatar } from '../../../hooks/useSessionAvatar'
+import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
 import { parentJourney } from '../../../data/parent'
 import parentUi from '../../../data/parent/ui.json'
 import roniLines from '../../../data/child/book/roni.json'
 import css from '../book.module.css'
+import { useStageProcedures } from '../useStageProcedures'
 
 /**
  * "A story with Roni" — the calm journey retold as a book (issue #10):
@@ -34,22 +35,17 @@ function moodFor(index: number, total: number): RoniMood {
   return 'calm'
 }
 
-type AvatarTexts = { label: string; photo: string; remove: string; note: string }
-type RealBookTexts = { parentBtn: string; close: string; whatHappens: string; challenge: string; canAsk: string; avatar: AvatarTexts }
 type RoniLine = { text: string; sub: string }
 
 export function RoniBookPage() {
   const { t, lang, dir } = useI18n()
-  // the sheet texts are shared with the "how it works" book
-  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { realBook: RealBookTexts }>)[lang].realBook
   const lines = (roniLines as Record<'he' | 'en' | 'ru', Record<string, RoniLine>>)[lang] ?? (roniLines as Record<'he', Record<string, RoniLine>>).he
   const [index, setIndex] = useState(0)
   const [parentOpen, setParentOpen] = useState(false)
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [chosen, setChosen] = useState(false)
   const [disposition, setDisposition] = useState<'home' | 'hospital' | null>(null)
-  const [avatar, setAvatar, resetAvatar] = useSessionAvatar()
-  const fileRef = useRef<HTMLInputElement>(null)
+  const [avatar] = useSessionAvatar()
 
   const journey = parentJourney(lang)
   const stageOf = (id: string) => journey.find((s) => s.id === id)
@@ -61,6 +57,8 @@ export function RoniBookPage() {
   }, [chosen, selected, disposition])
 
   const stageId = pages[index]
+  // the stage's circles (measurements, tests, treatments, outcomes) and their sheets, as in "How it works"
+  const procs = useStageProcedures(stageId, { withVideo: true, withInserts: false })
   const isSelect = stageId === SELECT_PAGE
   const isIntro = stageId === INTRO_PAGE
   const line = isSelect ? undefined : lines[stageId]
@@ -82,17 +80,6 @@ export function RoniBookPage() {
     })
   }
 
-  async function onPickFile(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]
-    e.target.value = ''
-    if (!file) return
-    try {
-      setAvatar({ kind: 'photo', value: await fileToAvatarDataUrl(file) })
-    } catch {
-      /* unreadable image — keep the current avatar */
-    }
-  }
-
   function restart() {
     setDisposition(null)
     setIndex(0)
@@ -100,28 +87,6 @@ export function RoniBookPage() {
     setChosen(false)
   }
 
-  /* the horizontal rail of stops, on every child page: where this page sits on the visit */
-  const rail = (
-    <div className={css.rail} aria-hidden>
-      {stagePages.map((id) => {
-        const stage = stageOf(id)
-        const state = id === stageId ? css.railStopOn : stagePages.indexOf(id) < stagePages.indexOf(stageId) ? css.railStopDone : ''
-        return (
-          <span key={id} className={[css.railStop, state].join(' ')}>
-            {id === stageId ? (
-              avatar.kind === 'photo' ? (
-                <img src={avatar.value} alt="" className={css.railAvatar} />
-              ) : (
-                avatar.value
-              )
-            ) : (
-              stage?.emoji
-            )}
-          </span>
-        )
-      })}
-    </div>
-  )
 
   if (isSelect) {
     return (
@@ -160,7 +125,6 @@ export function RoniBookPage() {
 
   return (
     <div className={css.book} dir={dir} lang={lang}>
-      {!isIntro && rail}
 
       <div className={css.pageContent}>
         <div className={css.roniFigure}>
@@ -174,6 +138,17 @@ export function RoniBookPage() {
         </div>
         <p className={css.mainText}>{isIntro || isDisposition || isOutcome ? line?.text : `${stagePages.indexOf(stageId) + 1}. ${line?.text ?? ''}`}</p>
         <p className={css.subText}>{line?.sub}</p>
+        {procs.circles}
+        {/* the same placeholder as in the story's procedure pages: a filmed clip of this stage would sit here */}
+        {!isIntro && !isSelect && !isDisposition && !isOutcome && stageOf(stageId) && (
+          <div className={css.videoSlot}>
+            <span className={css.videoSlotIcon} aria-hidden>🎬</span>
+            <div>
+              <strong>{(parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang].procedurePage.videoTitle}</strong>
+              <p>{(parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang].procedurePage.videoText.replace('{title}', stageOf(stageId)?.title ?? '')}</p>
+            </div>
+          </div>
+        )}
       </div>
 
 
@@ -190,35 +165,7 @@ export function RoniBookPage() {
         </div>
       )}
 
-      {isIntro && (
-        <div className={css.avatarPicker}>
-          <span className={css.avatarLabel}>{tx.avatar.label}</span>
-          <div className={css.avatarRow}>
-            {avatarEmojis.map((emoji) => (
-              <button
-                key={emoji}
-                type="button"
-                className={[css.avatarChip, avatar.kind === 'emoji' && avatar.value === emoji ? css.avatarChipOn : ''].join(' ')}
-                onClick={() => setAvatar({ kind: 'emoji', value: emoji })}
-                aria-pressed={avatar.kind === 'emoji' && avatar.value === emoji}
-              >
-                {emoji}
-              </button>
-            ))}
-            <button type="button" className={`${css.avatarChip} ${css.avatarChipWide}`} onClick={() => fileRef.current?.click()}>
-              {tx.avatar.photo}
-            </button>
-            {avatar.kind === 'photo' && (
-              <button type="button" className={`${css.avatarChip} ${css.avatarChipWide}`} onClick={resetAvatar}>
-                {tx.avatar.remove}
-              </button>
-            )}
-          </div>
-          <input ref={fileRef} type="file" accept="image/*" onChange={onPickFile} style={{ display: 'none' }} />
-          <span className={css.avatarNote}>{tx.avatar.note}</span>
-        </div>
-      )}
-
+      {procs.footer}
       <div className={css.nav}>
         {index > 0 && (
           <button className={css.backBtn} onClick={() => setIndex((i) => i - 1)}>

@@ -2,7 +2,7 @@
   "he": {
     "intro": {
       "text": "שלום, אני רוני 👋",
-      "sub": "אני אהיה איתך במיון. נעבור את כל השלבים יחד, שלב אחרי שלב. בלי למהר לשום מקום."
+      "sub": "אני אהיה איתך במיון. נעבור את כל השלבים יחד, שלב אחרי שלב. בלי למהר לשום מקום. אראה לך סרטון־סיפור על כל מקום שאליו נגיע. זו הכנה טובה, נכון?"
     },
     "reception": {
       "text": "הגענו. קודם ניגשים לשולחן.",
@@ -60,7 +60,7 @@
   "en": {
     "intro": {
       "text": "Hello, I'm Roni 👋",
-      "sub": "I'll be with you in the emergency room. We'll go through all the steps together, one step at a time. No need to hurry."
+      "sub": "I'll be with you in the emergency room. We'll go through all the steps together, one step at a time. No need to hurry. I'll show you a video story about every place we go to. That's good preparation, isn't it?"
     },
     "reception": {
       "text": "We've arrived. First we go to the desk.",
@@ -118,7 +118,7 @@
   "ru": {
     "intro": {
       "text": "Привет, я Рони! 👋",
-      "sub": "Я буду с тобой в приёмном покое. Мы пройдём все шаги вместе, шаг за шагом. Никуда не будем торопиться."
+      "sub": "Я буду с тобой в приёмном покое. Мы пройдём все шаги вместе, шаг за шагом. Никуда не будем торопиться. Я покажу тебе видео-историю про каждое место, куда мы направимся. Это хорошая подготовка, правда?"
     },
     "reception": {
       "text": "Мы пришли. Сначала подходим к столу.",
