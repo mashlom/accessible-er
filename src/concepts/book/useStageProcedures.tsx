@@ -51,7 +51,7 @@ const NO_STAGE_INSERT = ['triage', 'tests', 'treatment']
 
 type Way = { label: string; what: string; feel: string; prepare: string }
 type Heads = { what: string; feel: string; prepare: string; canAsk: string }
-type Measure = { title: string; world?: string; what?: string; feel?: string; prepare?: string; canAsk?: string[]; headings?: Heads; armpit?: Way; mouth?: Way }
+type Measure = { title: string; videoName?: string; videoText?: string; world?: string; what?: string; feel?: string; prepare?: string; canAsk?: string[]; headings?: Heads; armpit?: Way; mouth?: Way }
 type Insert = { title: string; text: string; draft?: boolean }
 
 const pick = <T,>(data: Record<string, T> | Record<string, Record<string, T>>, lang: string) =>
@@ -135,7 +135,7 @@ export function useStageProcedures(stageId: string, options: { withVideo?: boole
                 <span className={css.videoSlotIcon} aria-hidden>🎬</span>
                 <div>
                   <strong>{plate.videoTitle}</strong>
-                  <p>{plate.videoText.replace('{title}', info.title)}</p>
+                  <p>{(info.videoText ?? plate.videoText).replace('{title}', info.videoName ?? info.title)}</p>
                 </div>
               </div>
             )}

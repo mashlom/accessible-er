@@ -32,7 +32,8 @@
         "feel": "Что может быть трудно",
         "prepare": "",
         "canAsk": "О чём ты можешь попросить"
-      }
+      },
+      "videoText": "Настоящее видео: как устроена палата в отделении или снятая социальная история. В демо здесь только место — съёмку нужно делать в самом отделении."
     }
   },
   "en": {
@@ -68,7 +69,8 @@
         "feel": "What may be hard",
         "prepare": "",
         "canAsk": "What can you ask for?"
-      }
+      },
+      "videoText": "A real video of how the ward room is set up, or a filmed social story. In the demo this is only a placeholder — the filming has to be done in the department itself."
     }
   },
   "he": {
@@ -104,7 +106,8 @@
         "feel": "מה עלול להיות קשה",
         "prepare": "",
         "canAsk": "על מה אפשר לבקש?"
-      }
+      },
+      "videoText": "סרטון אמיתי של איך נראה החדר במחלקה, או סיפור חברתי מצולם. בדמו זה שמור מקום בלבד — הצילום צריך להיעשות במחלקה עצמה."
     }
   }
 }
