@@ -52,7 +52,7 @@ export function CareCardView({ footer }: { footer: (state: { print: () => void }
   ].filter((r) => r.value)
 
   // the suggestions the parent reads on screen (not printed): in the chosen language
-  const suggestions = suggestedAdaptations(card, keyed((careI18n as unknown as Record<string, { adaptationSuggestions?: Record<string, string> }>)[lang], 'i18n/careCard')?.adaptationSuggestions)
+  const suggestions = suggestedAdaptations(card, keyed((careI18n as unknown as Record<string, { asks: Record<string, string>; adaptationFor: Record<string, string> }>)[lang], 'i18n/careCard'))
 
   return (
     <>

@@ -95,18 +95,18 @@ export const cardSections: CardSection[] = sectionMeta.map((m, i) => ({
  * Marking a sensitivity/trigger opens matching adaptation suggestions
  * (the spec's "סימון רגישות יאפשר לפתוח הצעות להתאמות מסוימות").
  */
-const adaptationSuggestions: Record<string, string> = (careI18n as unknown as { he: { adaptationSuggestions: Record<string, string> } }).he.adaptationSuggestions
-
+// the suggestion texts are the card's asks: each trigger points at an ask id, so the text lives once
 export function suggestedAdaptations(
   card: CareCard,
-  // translations keyed by the Hebrew option (src/data/i18n/careCard.json); missing entries fall back to Hebrew
-  translated?: Record<string, string>,
+  copy: { asks: Record<string, string>; adaptationFor: Record<string, string> },
 ): string[] {
   const picked = [...card.sensitivities, ...card.escalators, ...card.hardMoments]
   return [
     ...new Set(
       picked
-        .map((p) => (translated?.[p] && adaptationSuggestions[p] ? translated[p] : adaptationSuggestions[p]))
+        .map((p) => copy.adaptationFor[p])
+        .filter(Boolean)
+        .map((id) => copy.asks[id])
         .filter(Boolean),
     ),
   ]
