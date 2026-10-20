@@ -15,6 +15,9 @@ import css from '../quest.module.css'
 import parentUi from '../../../data/parent/ui.json'
 import careI18n from '../../../data/i18n/careCard.json'
 
+// the requests are for the staff, so they are in Hebrew
+const careI18nHe = (careI18n as unknown as { he: { asks: Record<string, string> & { title: string } } }).he
+
 const parentTexts = parentUi as unknown as Record<'he' | 'en' | 'ru', { card: CardText }>
 type CardText = {
   empty: { title: string; hint: string }
@@ -105,6 +108,15 @@ export function CardViewPage() {
             </div>
           ))}
         </div>
+
+{(card.asks ?? []).length > 0 && (
+          <section>
+            <h2>{careI18nHe.asks.title}</h2>
+            <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
+              {(card.asks ?? []).map((id) => <li key={id}>{careI18nHe.asks[id as keyof typeof careI18nHe.asks]}</li>)}
+            </ul>
+          </section>
+        )}
 
         {suggestions.length > 0 && (
           <section className="no-print">

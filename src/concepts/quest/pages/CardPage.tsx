@@ -3,6 +3,7 @@ import { useReturnTo } from '../useReturnTo'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
 import {
+  askIds,
   cardSections,
   CUSTOM_MAX,
   emptyCard,
@@ -116,6 +117,27 @@ export function CardPage() {
           </section>
           )
         })}
+
+        <section>
+          <h2>{t('careCard.asks.title')}</h2>
+          <div className={css.cardChips} role="group" aria-label={t('careCard.asks.title')}>
+            {askIds.map((id) => {
+              const on = (card.asks ?? []).includes(id)
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  className={`${css.cardChip} ${on ? css.cardChipOn : ''}`}
+                  style={on ? { borderColor: theme.accent, background: theme.accentSoft, color: theme.accent } : undefined}
+                  aria-pressed={on}
+                  onClick={() => setCard({ ...card, asks: on ? (card.asks ?? []).filter((x) => x !== id) : [...(card.asks ?? []), id] })}
+                >
+                  {t(`careCard.asks.${id}`)}
+                </button>
+              )
+            })}
+          </div>
+        </section>
 
         <section>
           <h2>{t('ui.text.anythingElse')}</h2>

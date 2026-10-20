@@ -19,8 +19,13 @@ export interface CareCard {
   avoid: string[]
   /** per-section free text ("אחר"), keyed by section — max 150 chars each */
   custom: Record<CardArrayField, string>
+  /** the requests the parent picked for the staff (ids, see askIds; the text is in i18n/careCard.json) */
+  asks: string[]
   freeNote: string
 }
+
+/** The requests the parent can pick. The Hebrew text is what the staff reads. */
+export const askIds = ['noise', 'light', 'touch', 'staff', 'waiting', 'needle', 'sudden', 'breaks'] as const
 
 export type CardArrayField =
   | 'communication'
@@ -55,6 +60,7 @@ export const emptyCard: CareCard = {
   pain: [],
   avoid: [],
   custom: { ...emptyCustom },
+  asks: [],
   freeNote: '',
 }
 
@@ -191,6 +197,7 @@ export function isCardEmpty(card: CareCard): boolean {
     !card.nickname.trim() &&
     !card.freeNote.trim() &&
     cardSections.every((s) => card[s.key].length === 0) &&
-    cardSections.every((s) => !(card.custom?.[s.key] ?? '').trim())
+    cardSections.every((s) => !(card.custom?.[s.key] ?? '').trim()) &&
+    (card.asks ?? []).length === 0
   )
 }

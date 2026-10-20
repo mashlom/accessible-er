@@ -7,6 +7,10 @@ import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
 import parentUi from '../../../data/parent/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
+import careI18n from '../../../data/i18n/careCard.json'
+
+// the requests are for the staff, so they are in Hebrew
+const askHe = (careI18n as unknown as { he: { asks: Record<string, string> } }).he.asks
 import css from '../quest.module.css'
 
 // the emoji of each block stay in code; the words come from src/data/parent/ui.json
@@ -179,6 +183,16 @@ export function CelebratePage() {
                   </div>
                 </div>
               ))}
+            {(card.asks ?? []).length > 0 && (
+              <div className={css.cardOverlaySection}>
+                <div className={css.cardOverlayEmoji}>🙋</div>
+                <div className={css.cardOverlayItems}>
+                  {(card.asks ?? []).map((id) => (
+                    <div key={id} className={css.cardOverlayItem}>{askHe[id]}</div>
+                  ))}
+                </div>
+              </div>
+            )}
             {card.freeNote.trim() && (
               <div className={css.cardOverlaySection}>
                 <div className={css.cardOverlayEmoji}>✏️</div>
