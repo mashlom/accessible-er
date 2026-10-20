@@ -30,8 +30,9 @@
 
 ## ארכיטקטורה: קונספטים
 
-הדף הראשי (`#/`) הוא **תפריט של קונספטים**. כל קונספט הוא כיוון UI/UX שונה על
-**אותו תוכן בדיוק**, כדי שהצוות יוכל להשוות.
+הדף הראשי (`#/`, שמפנה ל־`#/story`) הוא **מסך הבית של ההורה**: מסלול המסע, עולם הילד
+(המשחק במסע והספרים), ועוזר רוני בכפתור צף. תוכן של כל המסכים נשאר אחד — `src/data`.
+המסכים הישנים שנבדקו כקונספטים (`#/calm`, `#/talk`) נשארו מחוברים לתאימות.
 
 ```
 src/
@@ -39,21 +40,21 @@ src/
   components/  Roni + AnimatedIcon — דמות ונכסים משותפים לכל הקונספטים
   hooks/       usePersistentState, useVisitReason, useSessionAvatar
   lib/         storage.ts — localStorage עם תפוגה
-  menu/        MenuPage — תפריט הקונספטים ב־"/"
   concepts/
-    registry.ts        קטלוג הקונספטים שמוצג בתפריט
     nav.tsx            Link/Navigate מודעי־base (ראו למטה)
-    calm/              קונספט 1 — "רגוע ומסודר"   → /calm
-      CalmConcept.tsx  ה־<Routes> של הקונספט
-      components/  pages/
-    story/             קונספט 2 — "המסע של רוני"  → /story
+    story/             דף הבית של ההורה → /story
       StoryConcept.tsx
       components/  pages/  story.module.css  pages.module.css
-    talk/              קונספט 3 — "לדבר עם רוני"  → /talk
+    quest/             עולם הילד: המסע והעולמות → /quest
+    book/              הספרים → /book
+    talk/              עוזר רוני, שיחה צפה
       TalkConcept.tsx
       script.ts        מנוע השיחה — צמתים, לא מסכים
       components/  pages/  talk.module.css
-  App.tsx      תפריט + מיפוי כל קונספט ל־base שלו
+    calm/              הקונספט הישן "רגוע ומסודר" → /calm
+      CalmConcept.tsx  ה־<Routes> של הקונספט
+      components/  pages/
+  App.tsx      מיפוי הנתיבים ל־base שלהם
 ```
 
 **רוני הוא של הפרויקט, לא של קונספט.** הוא יושב ב־`src/components/Roni.tsx`
@@ -88,8 +89,7 @@ src/
    ```tsx
    <Route path="/<id>/*" element={<ConceptBase base="/<id>"><IdConcept /></ConceptBase>} />
    ```
-3. הוסיפו רשומה ל־[src/concepts/registry.ts](src/concepts/registry.ts) — היא מה
-   שמופיע בתפריט.
+3. קישור למסך החדש מדף הבית (`src/concepts/story/pages/WorldPage.tsx`) או מהספרים.
 4. השתמשו רק בתוכן מ־`src/data`.
 
 ### `concepts/nav.tsx` — למה זה קיים
@@ -100,7 +100,7 @@ src/
 - **בתוך קוד של קונספט** ייבאו `Link` ו־`Navigate` מ־`../../nav`, **לא** מ־
   `react-router-dom`. `useNavigate` (לחזרה אחורה) בא כרגיל מ־`react-router-dom`.
 - `to="/"` בתוך קונספט פירושו "מסך הבית של הקונספט".
-- כדי לחזור לתפריט הקונספטים משתמשים ב־`<a href="#/">` (מחוץ ל־base).
+- כדי לחזור לדף הבית משתמשים ב־`<a href="#/">` (מחוץ ל־base).
 
 ## שני הקונספטים הקיימים
 
@@ -136,7 +136,7 @@ src/
   מזהי צמתים נושאים פרמטרים: `stage:triage`, `prep:blood-test:v0:s2`, `card:3`.
   להוסיף נושא לשיחה = ענף חדש ב־`resolveNode` + פריט ב־`TOPICS`.
 - **המבנה של המסך שונה:** גובה קבוע (`100dvh`), לא מסמך שגולל. שורת ניווט צרה
-  למעלה (חזרה + תפריט הקונספטים בלבד, בלי כותרת), שרשור שגולל באמצע, וכפתורי
+  למעלה (חזרה + דף הבית בלבד, בלי כותרת), שרשור שגולל באמצע, וכפתורי
   תשובה ברצפה. רק שני מסכים אחרים קיימים, כי הם לא יכולים להיות שיחה: הכרטיס
   להצגה לצוות והשילוט לצוות.
 - **רוני בתוך השרשור, לא במה נפרדת:** הוא מופיע כאווטאר קטן (34px) לצד כל
@@ -191,11 +191,11 @@ src/
 | אנימציות האייקונים (`public/anim/*.json`) | [Noto Animated Emoji](https://googlefonts.github.io/noto-emoji-animation/) של Google | CC BY 4.0 — **מחייב ייחוס** |
 | דמות רוני (`Roni.tsx`) | נכתבה לפרויקט | חלק מהריפו |
 | שאר האיורים | אימוג'י מהמערכת + SVG/CSS | — |
-| ציורי עולם האוקיינוס (`public/worlds/ocean/*`) | נוצרו ב־Gemini (גרסה חינמית) ועובדו ע״י שבי | **טרם נסגר** — ראו [NOTICE.txt](public/worlds/ocean/NOTICE.txt); חובה לציין ב־README ובתחתית התפריט שנוצרו ב־AI |
+| ציורי עולם האוקיינוס (`public/worlds/ocean/*`) | נוצרו ב־Gemini (גרסה חינמית) ועובדו ע״י שבי | **טרם נסגר** — ראו [NOTICE.txt](public/worlds/ocean/NOTICE.txt); חובה לציין ב־README ובתחתית דף הבית שנוצרו ב־AI |
 
 CC BY 4.0 מחייב ייחוס, ולכן הקרדיט מופיע בשלושה מקומות שאסור להסיר:
 [public/anim/NOTICE.txt](public/anim/NOTICE.txt), [README.md](README.md), ותחתית
-[מסך התפריט](src/menu/MenuPage.tsx).
+[דף הבית](src/concepts/story/pages/WorldPage.tsx) (הקרדיט בתרגום של כל שפה: `credits` ב־[home.json](src/data/parent/home.json)).
 
 ### איך זה עובד
 

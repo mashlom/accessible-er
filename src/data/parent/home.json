@@ -167,6 +167,11 @@
       "note": "מה שמסמנים כאן פותח גם הצעות להתאמות שכדאי לבקש — הן מופיעות מתחת לכרטיס עצמו.",
       "show": "🪪 להראות את הכרטיס לצוות",
       "clear": "ניקוי הכרטיס"
+    },
+    "credits": {
+      "disclaimer": "הכלי אינו מחליף את הצוות הרפואי ואינו נותן ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים, והמידע נשמר במכשיר בלבד.",
+      "animations": "האנימציות של רוני הן Noto Animated Emoji של Google, ברישיון CC BY 4.0. דמות רוני מקורית לפרויקט.",
+      "ai": "האיורים של עולם \"ההרפתקה התת-ימית\" נוצרו בעזרת בינה מלאכותית גנרטיבית (Google Gemini) ועובדו בידי צוות העיצוב."
     }
   },
   "en": {
@@ -300,6 +305,11 @@
       "note": "What is ticked here also suggests adaptations worth asking for — they appear below the card itself.",
       "show": "🪪 Show the card to the staff",
       "clear": "Clear the card"
+    },
+    "credits": {
+      "disclaimer": "The tool does not replace the medical team and does not give medical advice. No name or identifying details are needed, and the information is kept on the device only.",
+      "animations": "The animations of Roni are Noto Animated Emoji by Google, under CC BY 4.0. Roni's character is original to the project.",
+      "ai": "The pictures of the \"Underwater adventure\" world were made with generative AI (Google Gemini) and finished by the design team."
     }
   },
   "ru": {
@@ -433,6 +443,11 @@
       "note": "Отмеченное здесь также подсказывает, какие адаптации стоит попросить — они появляются под самой карточкой.",
       "show": "🪪 Показать карточку персоналу",
       "clear": "Очистить карточку"
+    },
+    "credits": {
+      "disclaimer": "Инструмент не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные, а информация хранится только на устройстве.",
+      "animations": "Анимации Рони — это Noto Animated Emoji от Google, лицензия CC BY 4.0. Персонаж Рони создан для проекта.",
+      "ai": "Иллюстрации мира «Подводное приключение» созданы с помощью генеративного ИИ (Google Gemini) и доработаны командой дизайна."
     }
   }
 }
