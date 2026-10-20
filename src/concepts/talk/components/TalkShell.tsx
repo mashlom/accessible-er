@@ -16,10 +16,6 @@ export function TalkShell() {
   return (
     <div className={styles.theme}>
       <div className={styles.app} dir={dir} lang={lang}>
-        <a href="#main" className="skip-link">
-          דילוג לתוכן
-        </a>
-
         <header className={`${styles.topbar} no-print`}>
           {!isHome ? (
             <button

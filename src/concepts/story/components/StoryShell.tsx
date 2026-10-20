@@ -22,10 +22,6 @@ export function StoryShell() {
   return (
     <div className={styles.theme}>
       <div className={styles.shell}>
-        <a href="#main" className="skip-link">
-          דילוג לתוכן
-        </a>
-
         <div className={`${styles.skyDeco} no-print`} aria-hidden>
           <span className={styles.sun} />
           <span className={`${styles.cloud} ${styles.cloudA}`} />

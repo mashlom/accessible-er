@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { Link } from '../../nav'
-import { Mascot } from '../components/Mascot'
-import { PageHeader, Note } from '../components/ui'
-import { usePersistentState } from '../../../hooks/usePersistentState'
-import { DAY_MS } from '../../../lib/storage'
+import { Link } from '../concepts/nav'
+import { Mascot } from './Mascot'
+import { PageHeader, Note } from './ui'
+import { usePersistentState } from '../hooks/usePersistentState'
+import { DAY_MS } from '../lib/storage'
 import styles from './FeedbackPage.module.css'
 
 const HELP_OPTIONS = [

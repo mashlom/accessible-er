@@ -1,18 +1,18 @@
-import { Link } from '../../nav'
-import { Mascot } from '../components/Mascot'
-import { Note } from '../components/ui'
-import { usePersistentState } from '../../../hooks/usePersistentState'
-import { useI18n } from '../../../hooks/useI18n'
-import careI18n from '../../../data/i18n/careCard.json'
-import parentUi from '../../../data/parent/ui.json'
-import { DAY_MS } from '../../../lib/storage'
+import { Link } from '../concepts/nav'
+import { Mascot } from './Mascot'
+import { Note } from './ui'
+import { usePersistentState } from '../hooks/usePersistentState'
+import { useI18n } from '../hooks/useI18n'
+import careI18n from '../data/i18n/careCard.json'
+import parentUi from '../data/parent/ui.json'
+import { DAY_MS } from '../lib/storage'
 import {
   emptyCard,
   emptyCustom,
   isCardEmpty,
   suggestedAdaptations,
   type CareCard,
-} from '../../../data/careCard'
+} from '../data/careCard'
 import styles from './CareCardViewPage.module.css'
 
 interface Row {

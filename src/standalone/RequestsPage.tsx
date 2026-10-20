@@ -1,6 +1,6 @@
-import { useI18n } from '../../../hooks/useI18n'
-import { PageHeader, Note } from '../components/ui'
-import { staffRequests } from '../../../data/support'
+import { useI18n } from '../hooks/useI18n'
+import { PageHeader, Note } from './ui'
+import { staffRequests } from '../data/support'
 import styles from './SupportPages.module.css'
 
 export function RequestsPage() {

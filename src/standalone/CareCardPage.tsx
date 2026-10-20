@@ -1,8 +1,8 @@
-import { useI18n } from '../../../hooks/useI18n'
-import { Link } from '../../nav'
-import { PageHeader } from '../components/ui'
-import { usePersistentState } from '../../../hooks/usePersistentState'
-import { DAY_MS } from '../../../lib/storage'
+import { useI18n } from '../hooks/useI18n'
+import { Link } from '../concepts/nav'
+import { PageHeader } from './ui'
+import { usePersistentState } from '../hooks/usePersistentState'
+import { DAY_MS } from '../lib/storage'
 import {
   cardSections,
   CUSTOM_MAX,
@@ -11,7 +11,7 @@ import {
   isCardEmpty,
   type CardArrayField,
   type CareCard,
-} from '../../../data/careCard'
+} from '../data/careCard'
 import styles from './CareCardPage.module.css'
 
 /**

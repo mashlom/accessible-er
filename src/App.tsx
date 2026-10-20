@@ -1,13 +1,12 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { ConceptBase } from './concepts/nav'
-import CalmConcept from './concepts/calm/CalmConcept'
 import StoryConcept from './concepts/story/StoryConcept'
 import TalkConcept from './concepts/talk/TalkConcept'
 import QuestConcept from './concepts/quest/QuestConcept'
 import BookConcept from './concepts/book/BookConcept'
-import { CareCardPage } from './concepts/calm/pages/CareCardPage'
-import { CareCardViewPage } from './concepts/calm/pages/CareCardViewPage'
-import { RequestsPage } from './concepts/calm/pages/RequestsPage'
+import { CareCardPage } from './standalone/CareCardPage'
+import { CareCardViewPage } from './standalone/CareCardViewPage'
+import { RequestsPage } from './standalone/RequestsPage'
 import { StandaloneCardShell } from './components/StandaloneCardShell'
 
 /**
@@ -50,15 +49,6 @@ export default function App() {
       />
 
       <Route
-        path="/calm/*"
-        element={
-          <ConceptBase base="/calm">
-            <CalmConcept />
-          </ConceptBase>
-        }
-      />
-
-      <Route
         path="/story/*"
         element={
           <ConceptBase base="/story">
@@ -95,7 +85,7 @@ export default function App() {
       />
 
       {/* Legacy links from before the concept menu pointed at the app root. */}
-      <Route path="/settings" element={<Navigate to="/calm/settings" replace />} />
+      <Route path="/settings" element={<Navigate to="/story/settings" replace />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )

@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react'
-import { Link } from '../../nav'
+import { Link } from '../concepts/nav'
 import { Mascot } from './Mascot'
 import styles from './ui.module.css'
 

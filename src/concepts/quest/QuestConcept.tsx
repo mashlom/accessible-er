@@ -15,7 +15,7 @@ import { CardPage } from './pages/CardPage'
 import { DistractPage } from './pages/DistractPage'
 import { CardViewPage } from './pages/CardViewPage'
 import { WaitTimesPage } from './pages/WaitTimesPage'
-import { FeedbackPage } from '../calm/pages/FeedbackPage'
+import { FeedbackPage } from '../../standalone/FeedbackPage'
 
 /** The screens of one world, under /quest/<world>/…, so every link inside a world stays in that world. */
 function WorldRoutes() {
