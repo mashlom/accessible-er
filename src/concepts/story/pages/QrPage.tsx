@@ -5,6 +5,11 @@ import { Scene, Note } from '../components/kit'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
+import parentUi from '../../../data/parent/ui.json'
+
+// the sign is for the team, so its texts are the same in every language
+const staff = (parentUi as unknown as { he: { staffSign: Record<string, string> } }).he.staffSign
+
 /**
  * Staff-only page (reached directly at #/story/settings, deliberately not
  * linked from the family-facing UI): the quick-entry QR the team prints
@@ -27,35 +32,32 @@ export function QrPage() {
 
   return (
     <Scene
-      title="שילוט כניסה מהירה"
-      subtitle="דף זה מיועד לצוות. הדפיסו את הקוד והציבו במזכירות, בטריאז׳ ובחדר ההמתנה — משפחות סורקות ונכנסות, ללא הורדה וללא הרשמה."
+      title={staff.title}
+      subtitle={staff.subtitle}
     >
       <div className={`${styles.qrCard} print-area`}>
         <p style={{ fontWeight: 800, fontSize: '1.1rem' }}>
-          🌈 מה שלומי? · המסע של רוני
+          {staff.storyName}
         </p>
         {src ? (
           <img src={src} alt={`QR code to open the app: ${url}`} className={styles.qrImg} />
         ) : (
-          <p>יוצר קוד…</p>
+          <p>{staff.generating}</p>
         )}
         <p className={styles.qrUrl} dir="ltr">
           {url}
         </p>
-        <p style={{ color: 'var(--s-ink-soft)' }}>סרקו עם מצלמת הטלפון · ללא הורדה</p>
+        <p style={{ color: 'var(--s-ink-soft)' }}>{staff.scan}</p>
       </div>
 
       <div className={`${styles.actions} no-print`}>
         <button type="button" className={shell.bigBtn} onClick={() => window.print()}>
-          🖨️ הדפסה כשילוט
+          🖨️ {staff.print}
         </button>
       </div>
 
       <div className="no-print" style={{ marginTop: 'var(--space-4)' }}>
-        <Note>
-          בדמו הקוד מצביע על הכתובת הנוכחית של הקונספט. בפריסה אמיתית זה הקוד שיוצב
-          בשילוט במלר״ד.
-        </Note>
+        <Note>{staff.demoNote}</Note>
       </div>
     </Scene>
   )
