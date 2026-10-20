@@ -371,142 +371,15 @@
 
 /* ============================================================
    Companion — Roni is present on every screen
-   ============================================================ */
-.companion {
-  position: fixed;
-  inset-inline: 0;
-  bottom: 0;
-  z-index: 40;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-}
 
-.companionInner {
-  pointer-events: auto;
-  width: 100%;
-  max-width: 900px;
-  margin-inline: var(--space-3);
-  margin-bottom: var(--space-3);
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: end;
-  gap: 10px;
-}
 
-.roniBtn {
-  position: relative;
-  border: none;
-  background: transparent;
-  padding: 0;
-  width: 96px;
-  height: 96px;
-  flex: none;
-  border-radius: 50%;
-}
-.roniBtn:hover {
-  filter: brightness(1.03);
-}
 
-.tapHint {
-  position: absolute;
-  bottom: 2px;
-  inset-inline-end: -2px;
-  background: var(--s-sun);
-  color: #4a3a12;
-  font-size: 0.68rem;
-  font-weight: 800;
-  padding: 2px 8px;
-  border-radius: var(--s-r-pill);
-  border: 2px solid #fff;
-  white-space: nowrap;
-}
 
-.companionBubble {
-  position: relative;
-  background: #fff;
-  border: 3px solid var(--s-mint);
-  border-radius: var(--s-r-lg);
-  padding: 12px 16px;
-  margin-bottom: 14px;
-  color: var(--s-ink);
-  font-size: 0.98rem;
-  line-height: 1.5;
-  box-shadow: 0 8px 24px rgba(51, 69, 92, 0.14);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 10px;
-  align-items: center;
-}
 
-.companionBubble::after {
-  content: '';
-  position: absolute;
-  bottom: -12px;
-  inset-inline-start: 20px;
-  width: 20px;
-  height: 14px;
-  background: #fff;
-  border-inline-start: 3px solid var(--s-mint);
-  border-bottom: 3px solid var(--s-mint);
-  border-end-start-radius: 5px;
-  transform: skewX(-18deg);
-}
 
-.hideBtn {
-  border: none;
-  background: var(--s-paper-2);
-  color: var(--s-ink-soft);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  font-size: 1rem;
-  line-height: 1;
-  flex: none;
-}
 
-/* minimised: just Roni's head peeking from the corner */
-.peek {
-  pointer-events: auto;
-  margin: 0 var(--space-3) var(--space-3);
-  border: 3px solid #fff;
-  background: var(--s-mint-soft);
-  border-radius: 50%;
-  width: 66px;
-  height: 66px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(51, 69, 92, 0.18);
-}
 
-.companionAvatar {
-  position: absolute;
-  bottom: 4px;
-  inset-inline-start: -6px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  background: var(--s-sun-soft);
-  display: grid;
-  place-items: center;
-  font-size: 1.2rem;
-  overflow: hidden;
-  box-shadow: 0 3px 8px rgba(51, 69, 92, 0.2);
-}
-.companionAvatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-@media (min-width: 700px) {
-  .companionInner {
-    margin-inline: auto;
-    width: calc(100% - var(--space-5) * 2);
-  }
-}
 
 /* ============================================================
    Full-screen overlay (show a sentence to staff, in big type)
