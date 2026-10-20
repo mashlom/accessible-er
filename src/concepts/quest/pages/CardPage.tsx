@@ -2,6 +2,7 @@ import { Link } from '../../nav'
 import { useReturnTo } from '../useReturnTo'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
+import careI18n from '../../../data/i18n/careCard.json'
 import {
   askIds,
   cardSections,
@@ -21,6 +22,11 @@ export function CardPage() {
   const { t } = useI18n()
   const { goBack, leaveState } = useReturnTo('/stage/reception')
   const [card, setCard, clearCard] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
+
+  // the requests that fit what the parent has ticked (the ticks are the card's choices)
+  const askFor = (careI18n as unknown as { askFor: Record<string, string[]> }).askFor
+  const ticked = [...card.sensitivities, ...card.escalators, ...card.hardMoments, ...card.avoid, ...card.pain, ...card.communication]
+  const relevantAsks = askIds.filter((id) => (askFor[id] ?? []).some((opt) => ticked.includes(opt)))
 
   function toggle(key: CardArrayField, option: string) {
     const list = card[key]
@@ -118,10 +124,11 @@ export function CardPage() {
           )
         })}
 
+        {relevantAsks.length > 0 && (
         <section>
           <h2>{t('careCard.asks.title')}</h2>
           <div className={css.cardChips} role="group" aria-label={t('careCard.asks.title')}>
-            {askIds.map((id) => {
+            {relevantAsks.map((id) => {
               const on = (card.asks ?? []).includes(id)
               return (
                 <button
@@ -138,6 +145,7 @@ export function CardPage() {
             })}
           </div>
         </section>
+        )}
 
         <section>
           <h2>{t('ui.text.anythingElse')}</h2>
