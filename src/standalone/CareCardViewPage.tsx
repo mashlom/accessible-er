@@ -33,14 +33,16 @@ export function CareCardViewPage() {
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   // the chrome around the card is shared with the story's card view (parent/ui.json cardView)
   const cv = (parentUi as unknown as Record<'he' | 'en' | 'ru', { cardView: Record<string, string> }>)[lang].cardView
+  // the empty state is a suggestion to the parent, so it follows the chosen language
+  const emptyText = (parentUi as unknown as Record<'he' | 'en' | 'ru', { card: { empty: { title: string; hint: string } } }>)[lang].card.empty
 
   if (isCardEmpty(card)) {
     return (
       <div className="container">
         <div className={styles.empty}>
           <Mascot size={96} mood="calm" />
-          <h1>{cardText.empty.title}</h1>
-          <p>{cardText.empty.hint}</p>
+          <h1>{emptyText.title}</h1>
+          <p>{emptyText.hint}</p>
           <Link to="/card" className={styles.emptyBtn}>
             {cv.fill}
           </Link>
