@@ -32,6 +32,8 @@ export function HelperChat() {
       <div className={styles.overlay} onClick={closeHelper}>
         <div
           className={styles.sheet}
+          dir={dir}
+          lang={lang}
           role="dialog"
           aria-modal="true"
           aria-label="רוני"

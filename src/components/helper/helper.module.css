@@ -78,3 +78,10 @@
     border-radius: 20px;
   }
 }
+
+/* the conversation is Shevi's teal (#087E8B), the answers band a deeper shade of it */
+.sheet .talkHost {
+  --t-bg: #087e8b;
+  --t-bg-2: #087e8b;
+  --t-answers: #05545c;
+}
