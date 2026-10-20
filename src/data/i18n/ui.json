@@ -129,7 +129,8 @@
         "other": "You collected {n} coins — welcome to the shop!"
       },
       "cardSubtitle": "Tick what fits — under 2 minutes. At the end you get a short card to show the staff on screen or print it.",
-      "privacyD": "What you don't show yourself won't reach the staff. You can fill it in without a name at all."
+      "privacyD": "What you don't show yourself won't reach the staff. You can fill it in without a name at all.",
+      "draft": "draft — awaiting review"
     },
     "careView": {
       "fill": "Fill in the card",
@@ -236,6 +237,24 @@
       "he": "עברית",
       "en": "English",
       "ru": "Русский"
+    },
+    "circles": {
+      "triage-temperature": "Temperature",
+      "triage-oxygen": "Saturation",
+      "triage-pressure": "Blood pressure",
+      "tests-blood-test": "Blood test",
+      "tests-urine": "Urine test",
+      "tests-xray": "X-ray",
+      "tests-ultrasound": "Ultrasound",
+      "tests-ct": "CT scan",
+      "treatment-iv": "Drip",
+      "treatment-medication": "Medicine",
+      "treatment-inhalation": "Inhalation",
+      "treatment-bandage": "Bandage",
+      "treatment-cast": "Cast",
+      "treatment-stitches": "Stitches",
+      "decision-discharge": "Going home",
+      "decision-hospital": "Staying in hospital"
     }
   },
   "ru": {
@@ -369,7 +388,8 @@
         "many": "У тебя есть {n} монет — добро пожаловать в магазин!"
       },
       "cardSubtitle": "Отметьте, что подходит, — меньше 2 минут. В конце получите короткую карточку, которую можно показать персоналу на экране или распечатать.",
-      "privacyD": "То, что вы не покажете сами, не попадёт к персоналу. Можно заполнить вообще без имени."
+      "privacyD": "То, что вы не покажете сами, не попадёт к персоналу. Можно заполнить вообще без имени.",
+      "draft": "черновик — ждёт проверки"
     },
     "careView": {
       "fill": "Заполнить карточку",
@@ -476,6 +496,24 @@
       "he": "עברית",
       "en": "English",
       "ru": "Русский"
+    },
+    "circles": {
+      "triage-temperature": "Температура",
+      "triage-oxygen": "Сатурация",
+      "triage-pressure": "Давление",
+      "tests-blood-test": "Анализ крови",
+      "tests-urine": "Анализ мочи",
+      "tests-xray": "Рентген",
+      "tests-ultrasound": "УЗИ",
+      "tests-ct": "КТ",
+      "treatment-iv": "Капельница",
+      "treatment-medication": "Лекарство",
+      "treatment-inhalation": "Ингаляция",
+      "treatment-bandage": "Повязка",
+      "treatment-cast": "Гипс",
+      "treatment-stitches": "Швы",
+      "decision-discharge": "Выписка",
+      "decision-hospital": "Госпитализация"
     }
   },
   "he": {
@@ -559,7 +597,8 @@
       "coins": {
         "one": "צברת {n} מטבע — ברוכים הבאים לחנות!",
         "other": "צברת {n} מטבעות — ברוכים הבאים לחנות!"
-      }
+      },
+      "draft": "טיוטה — ממתינה לאישור"
     },
     "buttons": {
       "parentInfo": "מידע נוסף להורה",
@@ -613,6 +652,24 @@
       "he": "עברית",
       "en": "English",
       "ru": "Русский"
+    },
+    "circles": {
+      "triage-temperature": "חום",
+      "triage-oxygen": "סטורציה",
+      "triage-pressure": "לחץ דם",
+      "tests-blood-test": "בדיקת דם",
+      "tests-urine": "בדיקת שתן",
+      "tests-xray": "רנטגן",
+      "tests-ultrasound": "אולטרסאונד",
+      "tests-ct": "סי־טי",
+      "treatment-iv": "עירוי",
+      "treatment-medication": "תרופה",
+      "treatment-inhalation": "אינהלציה",
+      "treatment-bandage": "תחבושת",
+      "treatment-cast": "גבס",
+      "treatment-stitches": "תפרים",
+      "decision-discharge": "שחרור הביתה",
+      "decision-hospital": "שהייה בבית החולים"
     }
   }
 }

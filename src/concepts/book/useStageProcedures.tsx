@@ -16,33 +16,32 @@ import { ProcedureLineIcon } from '../quest/components/ProcedureLineIcon'
  * circle per measurement, test, treatment or outcome; each opens a sheet with
  * the child's text, and the sheet's "It's interesting" opens the insert.
  */
-type Names = { ru: string; en: string; he: string }
-type Circle = readonly [key: string, icon: string, names: Names]
+type Circle = readonly [key: string, icon: string]
 
 const CIRCLES: Record<string, readonly Circle[]> = {
   triage: [
-    ['triage-temperature', 'temperature', { ru: 'Температура', en: 'Temperature', he: 'חום' }],
-    ['triage-oxygen', 'saturation', { ru: 'Сатурация', en: 'Saturation', he: 'סטורציה' }],
-    ['triage-pressure', 'blood-pressure', { ru: 'Давление', en: 'Blood pressure', he: 'לחץ דם' }],
+    ['triage-temperature', 'temperature'],
+    ['triage-oxygen', 'saturation'],
+    ['triage-pressure', 'blood-pressure'],
   ],
   tests: [
-    ['tests-blood-test', 'blood-test', { ru: 'Анализ крови', en: 'Blood test', he: 'בדיקת דם' }],
-    ['tests-urine', 'urine', { ru: 'Анализ мочи', en: 'Urine test', he: 'בדיקת שתן' }],
-    ['tests-xray', 'xray', { ru: 'Рентген', en: 'X-ray', he: 'רנטגן' }],
-    ['tests-ultrasound', 'ultrasound', { ru: 'УЗИ', en: 'Ultrasound', he: 'אולטרסאונד' }],
-    ['tests-ct', 'ct', { ru: 'КТ', en: 'CT scan', he: 'סי־טי' }],
+    ['tests-blood-test', 'blood-test'],
+    ['tests-urine', 'urine'],
+    ['tests-xray', 'xray'],
+    ['tests-ultrasound', 'ultrasound'],
+    ['tests-ct', 'ct'],
   ],
   treatment: [
-    ['treatment-iv', 'iv', { ru: 'Капельница', en: 'Drip', he: 'עירוי' }],
-    ['treatment-medication', 'medication', { ru: 'Лекарство', en: 'Medicine', he: 'תרופה' }],
-    ['treatment-inhalation', 'inhalation', { ru: 'Ингаляция', en: 'Inhalation', he: 'אינהלציה' }],
-    ['treatment-bandage', 'bandage', { ru: 'Повязка', en: 'Bandage', he: 'תחבושת' }],
-    ['treatment-cast', 'cast', { ru: 'Гипс', en: 'Cast', he: 'גבס' }],
-    ['treatment-stitches', 'stitches', { ru: 'Швы', en: 'Stitches', he: 'תפרים' }],
+    ['treatment-iv', 'iv'],
+    ['treatment-medication', 'medication'],
+    ['treatment-inhalation', 'inhalation'],
+    ['treatment-bandage', 'bandage'],
+    ['treatment-cast', 'cast'],
+    ['treatment-stitches', 'stitches'],
   ],
   decision: [
-    ['decision-discharge', 'discharge', { ru: 'Выписка', en: 'Going home', he: 'שחרור הביתה' }],
-    ['decision-hospital', 'hospital', { ru: 'Госпитализация', en: 'Staying in hospital', he: 'שהייה בבית החולים' }],
+    ['decision-discharge', 'discharge'],
+    ['decision-hospital', 'hospital'],
   ],
 }
 
@@ -72,18 +71,18 @@ export function useStageProcedures(stageId: string, options: { withVideo?: boole
     setMeasureOpen(null)
   }, [stageId])
 
-  const closeLabel = ({ ru: 'Закрыть', en: 'Close', he: 'סגירה' } as Record<string, string>)[lang] ?? 'סגירה'
+  const closeLabel = t('ui.buttons.close')
   const insertLabel = t('ui.buttons.interesting')
   const circleList = CIRCLES[stageId] ?? []
 
   const circles = circleList.length ? (
     <div className={css.measureRow}>
-      {circleList.map(([key, icon, names]) => (
+      {circleList.map(([key, icon]) => (
         <button key={key} type="button" className={css.measureBtn} onClick={() => setMeasureOpen(key)} aria-haspopup="dialog">
           <span className={quest.procIcon} style={{ width: 64, height: 64, fontSize: 30 }} aria-hidden>
             <ProcedureLineIcon id={icon} />
           </span>
-          <span className={css.measureLabel}>{names[lang as keyof Names] ?? names.he}</span>
+          <span className={css.measureLabel}>{t(`ui.circles.${key}`)}</span>
         </button>
       ))}
     </div>
