@@ -2,50 +2,29 @@ import { Link } from '../../nav'
 import { useReturnTo } from '../useReturnTo'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
-import {
-  emptyCard,
-  emptyCustom,
-  isCardEmpty,
-  suggestedAdaptations,
-  type CareCard,
-} from '../../../data/careCard'
+import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import { useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
-import css from '../quest.module.css'
+import { CareCardView, careCardHeading } from '../../../components/careCard/CareCardView'
 import parentUi from '../../../data/parent/ui.json'
-import careI18n from '../../../data/i18n/careCard.json'
+import css from '../quest.module.css'
 
-// the requests are for the staff, so they are in Hebrew
-const careI18nHe = (careI18n as unknown as { he: { asks: Record<string, string> & { title: string } } }).he
-
-const parentTexts = parentUi as unknown as Record<'he' | 'en' | 'ru', { card: CardText }>
-type CardText = {
-  empty: { title: string; hint: string }
-  viewTitle: string
-  viewTitleNoName: string
-  age: string
-  suggestionsTitle: string
-  rows: Record<'communication' | 'sensitivities' | 'calming' | 'avoid' | 'hardMoments' | 'pain' | 'freeNote', string>
-  nameFallback: string
-}
+type Lang = 'he' | 'en' | 'ru'
 
 export function CardViewPage() {
   const { theme } = useQuestTheme()
   const { t, lang } = useI18n()
-  // the labels and the title follow the language; the saved values the staff reads stay as they are
-  const cardText = parentTexts[lang].card
-  // the card's labels are Hebrew, like its values: the staff reads the card in Hebrew (the note says so)
-  const heRows = (parentUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he.card.rows
   const { goBack, leaveState, passThroughState } = useReturnTo('/card')
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
+  const emptyTexts = (parentUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang].card.empty
 
   if (isCardEmpty(card)) {
     return (
       <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
         <div className={css.stageHero} style={{ background: theme.accentSoft }}>
           <span className={css.stageHeroIcon}>🪪</span>
-          <h1 style={{ color: theme.accent }}>{cardText.empty.title}</h1>
-          <p className={css.stageHeroHint}>{cardText.empty.hint}</p>
+          <h1 style={{ color: theme.accent }}>{emptyTexts.title}</h1>
+          <p className={css.stageHeroHint}>{emptyTexts.hint}</p>
           <div className={css.stageBack}>
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
               {t('ui.buttons.back')}
@@ -65,29 +44,14 @@ export function CardViewPage() {
     )
   }
 
-  const c = card.custom ?? emptyCustom
-  const join = (...parts: string[]) => parts.map((p) => p.trim()).filter(Boolean).join(' · ')
-
-  const rows = [
-    { emoji: '💬', label: heRows.communication, value: join(...card.communication, c.communication) },
-    { emoji: '⚠️', label: heRows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
-    { emoji: '💛', label: heRows.calming, value: join(...card.calming, c.calming) },
-    { emoji: '🚫', label: heRows.avoid, value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid) },
-    { emoji: '🩺', label: heRows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
-    { emoji: '🤕', label: heRows.pain, value: join(...card.pain, c.pain) },
-    { emoji: '✏️', label: heRows.freeNote, value: card.freeNote.trim() },
-  ].filter((r) => r.value)
-
-  // the suggestions the parent reads on screen: in the chosen language (the Hebrew list is the source)
-  const suggestions = suggestedAdaptations(card, (careI18n as unknown as Record<string, { adaptationSuggestions?: Record<string, string> }>)[lang]?.adaptationSuggestions)
-  const name = card.nickname.trim()
+  const heading = careCardHeading(card, lang)
 
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <span className={css.stageHeroIcon}>🪪</span>
-        <h1 style={{ color: theme.accent }}>{name ? cardText.viewTitle.replace('{name}', name) : cardText.viewTitleNoName}</h1>
-        {card.age.trim() && <p className={css.stageHeroHint}>{cardText.age.replace('{age}', card.age.trim())}</p>}
+        <h1 style={{ color: theme.accent }}>{heading.title}</h1>
+        {heading.age && <p className={css.stageHeroHint}>{heading.age}</p>}
         <div className={`${css.stageBack} no-print`}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
             {t('ui.buttons.back')}
@@ -96,47 +60,20 @@ export function CardViewPage() {
       </div>
 
       <div className={css.stageBody}>
-        <p className={css.stageHeroHint}>{t('ui.careView.hebrewNote')}</p>
-        <div className={`${css.cardViewRows} print-area`}>
-          {rows.map((row) => (
-
-            <div key={row.label} className={css.cardViewRow}>
-              <span className={css.cardViewLabel}>
-                <span aria-hidden>{row.emoji}</span> {row.label}
-              </span>
-              <span className={css.cardViewValue}>{row.value}</span>
+        <CareCardView
+          footer={({ print }) => (
+            <div className={`${css.stageBack} no-print`}>
+              <button type="button" className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }} onClick={print}>
+                {t('ui.buttons.savePrint')}
+              </button>
+              <Link to="/card" state={leaveState('/card/view')}>
+                <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
+                  {t('ui.buttons.edit')}
+                </button>
+              </Link>
             </div>
-          ))}
-        </div>
-
-{(card.asks ?? []).length > 0 && (
-          <section>
-            <h2>{careI18nHe.asks.title}</h2>
-            <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
-              {(card.asks ?? []).map((id) => <li key={id}>{careI18nHe.asks[id as keyof typeof careI18nHe.asks]}</li>)}
-            </ul>
-          </section>
-        )}
-
-        {suggestions.length > 0 && (
-          <section className="no-print">
-            <h2>{cardText.suggestionsTitle}</h2>
-            <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
-              {suggestions.map((s) => <li key={s}>{s}</li>)}
-            </ul>
-          </section>
-        )}
-
-        <div className={`${css.stageBack} no-print`}>
-          <button type="button" className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }} onClick={() => window.print()}>
-            {t('ui.buttons.savePrint')}
-          </button>
-          <Link to="/card" state={leaveState('/card/view')}>
-            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              {t('ui.buttons.edit')}
-            </button>
-          </Link>
-        </div>
+          )}
+        />
       </div>
     </div>
   )

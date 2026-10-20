@@ -1,0 +1,91 @@
+import type { ReactNode } from 'react'
+import { usePersistentState } from '../../hooks/usePersistentState'
+import { DAY_MS } from '../../lib/storage'
+import { useI18n } from '../../hooks/useI18n'
+import careI18n from '../../data/i18n/careCard.json'
+import parentUi from '../../data/parent/ui.json'
+import { emptyCard, emptyCustom, suggestedAdaptations, type CareCard } from '../../data/careCard'
+import css from '../../concepts/quest/quest.module.css'
+
+type Lang = 'he' | 'en' | 'ru'
+type CardTexts = {
+  viewTitle: string
+  viewTitleNoName: string
+  age: string
+  suggestionsTitle: string
+  rows: Record<string, string>
+}
+
+/** The title and the age line of the card, in the chosen language. */
+export function careCardHeading(card: CareCard, lang: Lang) {
+  const tx = (parentUi as unknown as Record<Lang, { card: CardTexts }>)[lang].card
+  const name = card.nickname.trim()
+  return {
+    title: name ? tx.viewTitle.replace('{name}', name) : tx.viewTitleNoName,
+    age: card.age.trim() ? tx.age.replace('{age}', card.age.trim()) : '',
+  }
+}
+
+/**
+ * The care card as it is shown and printed. The same on every screen: the
+ * labels follow the language, the values and the requests stay in Hebrew (the staff reads them).
+ */
+export function CareCardView({ footer }: { footer: (state: { print: () => void }) => ReactNode }) {
+  const { t, lang } = useI18n()
+  const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
+  const tx = (parentUi as unknown as Record<Lang, { card: CardTexts }>)[lang].card
+  // the labels of the card are Hebrew, like its values (the note on screen says so)
+  const heRows = (parentUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he.card.rows
+  const heAsks = (careI18n as unknown as { he: { asks: Record<string, string> } }).he.asks
+  const c = card.custom ?? emptyCustom
+  const join = (...parts: string[]) => parts.map((p) => p.trim()).filter(Boolean).join(' · ')
+
+  const rows = [
+    { emoji: '💬', label: heRows.communication, value: join(...card.communication, c.communication) },
+    { emoji: '⚠️', label: heRows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
+    { emoji: '💛', label: heRows.calming, value: join(...card.calming, c.calming) },
+    { emoji: '🚫', label: heRows.avoid, value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid) },
+    { emoji: '🩺', label: heRows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
+    { emoji: '🤕', label: heRows.pain, value: join(...card.pain, c.pain) },
+    { emoji: '✏️', label: heRows.freeNote, value: card.freeNote.trim() },
+  ].filter((r) => r.value)
+
+  // the suggestions the parent reads on screen (not printed): in the chosen language
+  const suggestions = suggestedAdaptations(card, (careI18n as unknown as Record<string, { adaptationSuggestions?: Record<string, string> }>)[lang]?.adaptationSuggestions)
+
+  return (
+    <>
+      <p className={css.stageHeroHint}>{t('ui.careView.hebrewNote')}</p>
+      <div className={`${css.cardViewRows} print-area`}>
+        {rows.map((row) => (
+          <div key={row.label} className={css.cardViewRow}>
+            <span className={css.cardViewLabel}>
+              <span aria-hidden>{row.emoji}</span> {row.label}
+            </span>
+            <span className={css.cardViewValue}>{row.value}</span>
+          </div>
+        ))}
+      </div>
+
+      {(card.asks ?? []).length > 0 && (
+        <section className="print-area">
+          <h2>{heAsks.title}</h2>
+          <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
+            {(card.asks ?? []).map((id) => <li key={id}>{heAsks[id]}</li>)}
+          </ul>
+        </section>
+      )}
+
+      {suggestions.length > 0 && (
+        <section className="no-print">
+          <h2>{tx.suggestionsTitle}</h2>
+          <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
+            {suggestions.map((s) => <li key={s}>{s}</li>)}
+          </ul>
+        </section>
+      )}
+
+      {footer({ print: () => window.print() })}
+    </>
+  )
+}
