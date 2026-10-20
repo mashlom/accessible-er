@@ -33,7 +33,7 @@ type CardViewTexts = {
   sendHint: string
 }
 
-type CardTexts = { viewTitle: string; age: string; nameFallback: string; rows: Record<string, string> }
+type CardTexts = { viewTitle: string; viewTitleNoName: string; age: string; nameFallback: string; rows: Record<string, string> }
 
 export function CardViewPage() {
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
@@ -93,7 +93,7 @@ export function CardViewPage() {
           </span>
           <div>
             <div className={styles.idTitle}>
-              {cardTx.viewTitle.replace('{name}', name || cardTx.nameFallback)}
+              {name ? cardTx.viewTitle.replace('{name}', name) : cardTx.viewTitleNoName}
             </div>
             {card.age.trim() && <div className={styles.idAge}>{cardTx.age.replace('{age}', card.age.trim())}</div>}
             {lang !== 'he' && <div className={styles.idAge}>{tx.hebrewNote}</div>}

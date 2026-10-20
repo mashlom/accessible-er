@@ -19,7 +19,7 @@ import styles from '../talk.module.css'
  * parent physically holds up to staff. It needs to be big, still, printable
  * and on a light ground, so it steps out of the dusk theme on purpose.
  */
-type CardTexts = { viewTitle: string; age: string; nameFallback: string; rows: Record<string, string> }
+type CardTexts = { viewTitle: string; viewTitleNoName: string; age: string; nameFallback: string; rows: Record<string, string> }
 
 export function CardViewPage() {
   const { lang } = useI18n()
@@ -77,7 +77,7 @@ export function CardViewPage() {
             </span>
             <div>
               <div className={styles.idTitle}>
-                {cardTx.viewTitle.replace('{name}', name || cardTx.nameFallback)}
+                {name ? cardTx.viewTitle.replace('{name}', name) : cardTx.viewTitleNoName}
               </div>
               {card.age.trim() && <div>{cardTx.age.replace('{age}', card.age.trim())}</div>}
             </div>

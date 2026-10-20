@@ -18,6 +18,7 @@ const parentTexts = parentUi as unknown as Record<'he' | 'en' | 'ru', { card: Ca
 type CardText = {
   empty: { title: string; hint: string }
   viewTitle: string
+  viewTitleNoName: string
   age: string
   suggestionsTitle: string
   rows: Record<'communication' | 'sensitivities' | 'calming' | 'avoid' | 'hardMoments' | 'pain' | 'freeNote', string>
@@ -78,7 +79,7 @@ export function CardViewPage() {
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <span className={css.stageHeroIcon}>🪪</span>
-        <h1 style={{ color: theme.accent }}>{cardText.viewTitle.replace('{name}', name || cardText.nameFallback)}</h1>
+        <h1 style={{ color: theme.accent }}>{name ? cardText.viewTitle.replace('{name}', name) : cardText.viewTitleNoName}</h1>
         {card.age.trim() && <p className={css.stageHeroHint}>{cardText.age.replace('{age}', card.age.trim())}</p>}
         <div className={`${css.stageBack} no-print`}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>

@@ -157,7 +157,7 @@ export function CelebratePage() {
           onClick={() => setShowCard(false)}
         >
           <div className={css.cardOverlayContent}>
-            <div className={css.cardOverlayName}>{card.nickname.trim() || 'הילד/ה שלנו'}</div>
+            {card.nickname.trim() && <div className={css.cardOverlayName}>{card.nickname.trim()}</div>}
             {[
               { emoji: '💬', items: [...card.communication, card.custom?.communication].filter(Boolean) },
               { emoji: '⚠️', items: [...card.sensitivities, card.custom?.sensitivities].filter(Boolean) },

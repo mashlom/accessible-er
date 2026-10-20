@@ -29,7 +29,7 @@ interface Row {
 export function CareCardViewPage() {
   const { lang } = useI18n()
   // the card is for the staff, so its words are always Hebrew (src/data/parent/ui.json); the buttons follow the language
-  const cardText = (parentUi as unknown as Record<'he', { card: { empty: { title: string; hint: string }; viewTitle: string; age: string; suggestionsTitle: string; rows: Record<string, string>; nameFallback: string } }>).he.card
+  const cardText = (parentUi as unknown as Record<'he', { card: { empty: { title: string; hint: string }; viewTitle: string; viewTitleNoName: string; age: string; suggestionsTitle: string; rows: Record<string, string>; nameFallback: string } }>).he.card
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   // the chrome around the card is shared with the story's card view (parent/ui.json cardView)
   const cv = (parentUi as unknown as Record<'he' | 'en' | 'ru', { cardView: Record<string, string> }>)[lang].cardView
@@ -81,7 +81,7 @@ export function CareCardViewPage() {
           </span>
           <div>
             <div className={styles.cardTitle}>
-              {cardText.viewTitle.replace('{name}', name || cardText.nameFallback)}
+              {name ? cardText.viewTitle.replace('{name}', name) : cardText.viewTitleNoName}
             </div>
             {card.age.trim() && <div className={styles.cardAge}>{cardText.age.replace('{age}', card.age.trim())}</div>}
           </div>

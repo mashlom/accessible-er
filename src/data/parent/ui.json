@@ -73,7 +73,8 @@
         "pain": "ביטוי כאב",
         "freeNote": "עוד"
       },
-      "nameFallback": "הילד/ה"
+      "nameFallback": "הילד/ה",
+      "viewTitleNoName": "חשוב לדעת על הילד/ה שלי"
     },
     "tiles": {
       "card": {
@@ -440,7 +441,8 @@
         "pain": "How pain shows",
         "freeNote": "More"
       },
-      "nameFallback": "my child"
+      "nameFallback": "my child",
+      "viewTitleNoName": "Important to know about my child"
     },
     "tiles": {
       "card": {
@@ -807,7 +809,8 @@
         "pain": "Как проявляется боль",
         "freeNote": "Ещё"
       },
-      "nameFallback": "ребёнок"
+      "nameFallback": "ребёнок",
+      "viewTitleNoName": "Важно знать о моём ребёнке"
     },
     "tiles": {
       "card": {
