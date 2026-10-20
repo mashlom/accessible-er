@@ -1,8 +1,6 @@
 import { Outlet, useNavigate } from 'react-router-dom'
-import { useIsConceptHome } from '../../nav'
 import { LanguagePicker } from '../../../components/LanguagePicker'
 import { useI18n } from '../../../hooks/useI18n'
-import talkJson from '../../../data/parent/talk.json'
 import styles from '../talk.module.css'
 
 /**
@@ -11,29 +9,27 @@ import styles from '../talk.module.css'
  */
 export function TalkShell() {
   const navigate = useNavigate()
-  const isHome = useIsConceptHome()
-  const { dir, lang } = useI18n()
+  const { dir, lang, t } = useI18n()
 
   return (
     <div className={styles.theme}>
       <div className={styles.app} dir={dir} lang={lang}>
         <header className={`${styles.topbar} no-print`}>
-          {!isHome ? (
-            <button
-              type="button"
-              className={styles.topBtn}
-              onClick={() => navigate(-1)}
-              aria-label={(talkJson as unknown as Record<'he' | 'en' | 'ru', { cardView: { back: string } }>)[lang].cardView.back}
-            >
-              <span aria-hidden>›</span>
-            </button>
-          ) : (
-            <span aria-hidden />
-          )}
+          <span aria-hidden />
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <LanguagePicker />
           </div>
+          {/* the cross leaves the helper: the start of the bar in Hebrew, the end in ru and en */}
+          <button
+            type="button"
+            className={styles.topBtn}
+            style={{ marginInlineStart: 'auto' }}
+            onClick={() => (window.history.length > 1 ? navigate(-1) : (window.location.hash = '#/story'))}
+            aria-label={t('ui.buttons.close')}
+          >
+            <span aria-hidden>✕</span>
+          </button>
         </header>
 
         <Outlet />
