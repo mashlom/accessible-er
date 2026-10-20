@@ -92,8 +92,8 @@ export function RoniBookPage() {
     return (
       <div className={css.book} dir={dir} lang={lang}>
         <div className={css.parentSelect}>
-          <p className={css.parentSelectTitle}>{t('book.pages.parent-select.text', 'להורים ולצוות')}</p>
-          <p className={css.parentSelectSub}>{t('book.pages.parent-select.sub', 'בחרו את השלבים הבאים שהרופא/ה קבע/ה')}</p>
+          <p className={css.parentSelectTitle}>{t('book.pages.parent-select.text')}</p>
+          <p className={css.parentSelectSub}>{t('book.pages.parent-select.sub')}</p>
           <div className={css.procGrid}>
             {OPTIONAL_STAGES.map((id) => {
               const on = selected.has(id)
@@ -113,10 +113,10 @@ export function RoniBookPage() {
         </div>
         <div className={css.nav}>
           <button className={css.backBtn} onClick={() => setIndex((i) => Math.max(0, i - 1))}>
-            {t('book.ui.back', 'אחורה')}
+            {t('book.ui.back')}
           </button>
           <button className={css.nextBtn} onClick={() => setChosen(true)}>
-            {selected.size > 0 ? t('book.ui.continue', 'המשיכו') : t('book.ui.toEnd', 'אין הפניות')}
+            {selected.size > 0 ? t('book.ui.continue') : t('book.ui.toEnd')}
           </button>
         </div>
       </div>
@@ -156,11 +156,11 @@ export function RoniBookPage() {
         <div className={css.procGrid}>
           <button className={css.procCard} onClick={() => { setDisposition('home'); setIndex((i) => i + 1) }}>
             <span className={css.procEmoji}>🏠</span>
-            <span className={css.procLabel}>{t('book.ui.choiceHome', 'הביתה')}</span>
+            <span className={css.procLabel}>{t('book.ui.choiceHome')}</span>
           </button>
           <button className={css.procCard} onClick={() => { setDisposition('hospital'); setIndex((i) => i + 1) }}>
             <span className={css.procEmoji}>🏥</span>
-            <span className={css.procLabel}>{t('book.ui.choiceHospital', 'נשארים בבית החולים')}</span>
+            <span className={css.procLabel}>{t('book.ui.choiceHospital')}</span>
           </button>
         </div>
       )}
@@ -169,16 +169,16 @@ export function RoniBookPage() {
       <div className={css.nav}>
         {index > 0 && (
           <button className={css.backBtn} onClick={() => setIndex((i) => i - 1)}>
-            {t('book.ui.back', 'אחורה')}
+            {t('book.ui.back')}
           </button>
         )}
         {isDisposition && !disposition ? null : !isLast ? (
           <button className={css.nextBtn} onClick={() => setIndex((i) => i + 1)}>
-            {t('book.ui.next', 'הלאה')}
+            {t('book.ui.next')}
           </button>
         ) : (
           <button className={css.nextBtn} onClick={restart}>
-            {t('book.ui.restart', 'מההתחלה ↺')}
+            {t('book.ui.restart')}
           </button>
         )}
       </div>
@@ -193,7 +193,7 @@ export function RoniBookPage() {
           aria-haspopup="dialog"
         >
           <span className={quest.parentBtnOceanPill}>
-            {t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
+            {t('ui.buttons.parentInfo')}
             <svg viewBox="33 888 24 24" className={quest.parentBtnOceanIcon} aria-hidden>
               <rect x="33" y="888" width="24" height="24" rx="12" />
               <path d={BOOK_PATH} />
