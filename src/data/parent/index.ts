@@ -39,7 +39,7 @@ import type { JourneyStage, Procedure } from '../types'
 
 /** The stations as shown to the parent: the code's station data with the parent texts of the language on top */
 export function parentJourney(lang: ParentLang): JourneyStage[] {
-  return journeyStages.map((s) => ({ ...s, ...parentTexts(lang).stages[s.id] }))
+  return journeyStages.map((s) => ({ ...s, ...parentTexts(lang).stages[s.id] }) as JourneyStage)
 }
 
 /** A procedure as shown to the parent: the code's procedure (id, emoji, story steps) with the parent texts on top */
