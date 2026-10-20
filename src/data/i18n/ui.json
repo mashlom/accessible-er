@@ -301,7 +301,6 @@
       "distract": "🫧 To the distraction corner — something calm to look at",
       "requests": "🙋 Everything you can ask the staff for",
       "dialog": "Sentence shown to the staff",
-      "close": "Close",
       "tips": [
         {
           "emoji": "🤫",
@@ -468,7 +467,6 @@
       }
     },
     "storyMessage": {
-      "title": "A message to the staff",
       "subtitle": "Would you like to ask for something or say thank you? Write a short sentence and show it to the staff on the screen — or send it by email yourselves.",
       "bubble": "You can start with a ready sentence and change it however you like.",
       "templates": [
@@ -487,14 +485,11 @@
       "mail": "✉️ Send by email",
       "note": "To show: tap \"Show on the screen\" and show the screen to the staff. To send: your email app opens with the message — add the address of the ER and send it yourselves. Nothing is sent automatically.",
       "dialog": "Message shown to the staff",
-      "close": "Close",
       "mailSubject": "הודעה מההורים"
     },
     "cardView": {
-      "emptyTitle": "The card is still empty",
       "emptyHint": "A few quick ticks — and you will have a large card to show the staff.",
       "fill": "Fill in the card",
-      "hebrewNote": "The card is written in Hebrew: the staff reads it in Hebrew.",
       "suggestions": "💡 Based on what you ticked — adaptations worth asking for",
       "fullList": "Full list of what you can ask for",
       "savePdf": "📄 Save as PDF / print",
@@ -514,7 +509,6 @@
     },
     "realBook": {
       "parentBtn": "For parents",
-      "close": "Close",
       "whatHappens": "What happens here",
       "challenge": "What may be hard",
       "canAsk": "What you can ask for",
@@ -837,7 +831,6 @@
       "distract": "🫧 В уголок отвлечения — что-то спокойное, на что можно смотреть",
       "requests": "🙋 Всё, что можно попросить у персонала",
       "dialog": "Фраза, показанная персоналу",
-      "close": "Закрыть",
       "tips": [
         {
           "emoji": "🤫",
@@ -1004,7 +997,6 @@
       }
     },
     "storyMessage": {
-      "title": "Сообщение персоналу",
       "subtitle": "Хотите что-то попросить или сказать спасибо? Напишите короткую фразу и покажите её персоналу на экране — или отправьте письмо сами.",
       "bubble": "Можно начать с готовой фразы и изменить её, как удобно.",
       "templates": [
@@ -1023,14 +1015,11 @@
       "mail": "✉️ Отправить по почте",
       "note": "Чтобы показать: нажмите «Показать на экране» и покажите экран персоналу. Чтобы отправить: откроется письмо с сообщением — добавьте адрес приёмного покоя и отправьте сами. Ничего не отправляется автоматически.",
       "dialog": "Сообщение, показанное персоналу",
-      "close": "Закрыть",
       "mailSubject": "הודעה מההורים"
     },
     "cardView": {
-      "emptyTitle": "Карточка пока пустая",
       "emptyHint": "Несколько быстрых отметок — и у вас будет крупная карточка, чтобы показать персоналу.",
       "fill": "Заполнить карточку",
-      "hebrewNote": "Карточка написана на иврите: персонал читает её на иврите.",
       "suggestions": "💡 По тому, что вы отметили, — адаптации, о которых стоит попросить",
       "fullList": "Полный список того, что можно попросить",
       "savePdf": "📄 Сохранить как PDF / печать",
@@ -1050,7 +1039,6 @@
     },
     "realBook": {
       "parentBtn": "Для родителей",
-      "close": "Закрыть",
       "whatHappens": "Что здесь происходит",
       "challenge": "Что может быть трудно",
       "canAsk": "Что можно попросить",
@@ -1384,7 +1372,6 @@
       "distract": "🫧 לפינת הסחת דעת — משהו רגוע להסתכל עליו",
       "requests": "🙋 לכל מה שאפשר לבקש מהצוות",
       "dialog": "משפט מוצג לצוות",
-      "close": "סגירה",
       "tips": [
         {
           "emoji": "🤫",
@@ -1551,7 +1538,6 @@
       }
     },
     "storyMessage": {
-      "title": "הודעה לצוות",
       "subtitle": "רוצים לבקש משהו או להגיד תודה? כתבו משפט קצר, והראו אותו לצוות על המסך — או שִׁלחו במייל בעצמכם.",
       "bubble": "אפשר להתחיל ממשפט מוכן, ולשנות אותו איך שרוצים.",
       "templates": [
@@ -1570,14 +1556,11 @@
       "mail": "✉️ שליחה במייל",
       "note": "להצגה: לחצו \"להראות על המסך\" והראו את המסך לצוות. לשליחה: ייפתח המייל עם ההודעה — הוסיפו את כתובת המייל של המיון ושִׁלחו בעצמכם. שום דבר לא נשלח אוטומטית.",
       "dialog": "הודעה מוצגת לצוות",
-      "close": "סגירה",
       "mailSubject": "הודעה מההורים"
     },
     "cardView": {
-      "emptyTitle": "הכרטיס עדיין ריק",
       "emptyHint": "כמה סימונים קצרים — ויהיה לכם כרטיס גדול להראות לצוות.",
       "fill": "למילוי הכרטיס",
-      "hebrewNote": "הכרטיס כתוב בעברית: הצוות קורא אותו בעברית.",
       "suggestions": "💡 לפי מה שסימנתם — התאמות שכדאי לבקש",
       "fullList": "לרשימה המלאה של מה אפשר לבקש",
       "savePdf": "📄 שמירה כ־PDF / הדפסה",
@@ -1597,7 +1580,6 @@
     },
     "realBook": {
       "parentBtn": "מידע להורים",
-      "close": "סגירה",
       "whatHappens": "מה קורה כאן",
       "challenge": "מה עלול להיות קשה",
       "canAsk": "מה אפשר לבקש",

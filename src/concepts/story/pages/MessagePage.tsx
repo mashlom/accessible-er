@@ -26,7 +26,7 @@ type MessageTexts = {
  * the screen, or opened in their own mail app. Nothing is sent automatically.
  */
 export function MessagePage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyMessage: MessageTexts }>)[lang], 'i18n/ui').storyMessage
   const [text, setText] = useState('')
   const [shown, setShown] = useState(false)
@@ -36,7 +36,7 @@ export function MessagePage() {
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.message.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
       </div>
@@ -98,7 +98,7 @@ export function MessagePage() {
         >
           <p className={shell.overlayText}>{trimmed}</p>
           <button type="button" className={shell.bigBtn}>
-            {tx.close}
+            {t('ui.buttons.close')}
           </button>
         </div>
       )}

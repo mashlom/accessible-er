@@ -32,7 +32,7 @@ type StoryCalmTexts = {
  */
 export function CalmPage() {
   const [shown, setShown] = useState<string | null>(null)
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   // the ready sentences in the chosen language; Hebrew is the source list
   const sentences = (keyed((supportI18n as unknown as Record<'en' | 'ru', { readySentences?: string[] }>)[lang as 'en' | 'ru'], 'i18n/support')?.readySentences) ?? readySentences
   const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyCalm: StoryCalmTexts }>)[lang], 'i18n/ui').storyCalm
@@ -96,7 +96,7 @@ export function CalmPage() {
         >
           <p className={shell.overlayText}>{shown}</p>
           <button type="button" className={shell.bigBtn}>
-            {tx.close}
+            {t('ui.buttons.close')}
           </button>
         </div>
       )}
