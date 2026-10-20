@@ -2,7 +2,6 @@
   "en": {
     "paths": {
       "fever": {
-        "blurb": "Usually: check-in, initial assessment, a doctor's exam, and if needed a blood test or an X-ray.",
         "route": [
           {
             "title": "Check-in at the reception desk"
@@ -140,7 +139,6 @@
   "ru": {
     "paths": {
       "fever": {
-        "blurb": "Обычно: регистратура, оценка состояния и измерения, осмотр врача и при необходимости анализ крови или рентген.",
         "route": [
           {
             "title": "Оформление в регистратуре"
