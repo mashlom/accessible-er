@@ -2,6 +2,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { useIsConceptHome } from '../../nav'
 import { LanguagePicker } from '../../../components/LanguagePicker'
 import { useI18n } from '../../../hooks/useI18n'
+import talkJson from '../../../data/parent/talk.json'
 import styles from '../talk.module.css'
 
 /**
@@ -22,7 +23,7 @@ export function TalkShell() {
               type="button"
               className={styles.topBtn}
               onClick={() => navigate(-1)}
-              aria-label="חזרה לשיחה"
+              aria-label={(talkJson as unknown as Record<'he' | 'en' | 'ru', { cardView: { back: string } }>)[lang].cardView.back}
             >
               <span aria-hidden>›</span>
             </button>
