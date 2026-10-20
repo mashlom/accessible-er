@@ -1,4 +1,5 @@
-import type { ReactNode } from 'react'
+import { useLayoutEffect, type ReactNode } from 'react'
+import { setI18nEnabled } from '../hooks/useI18n'
 
 /**
  * Wraps the care-card pages when they're reached from the home screen,
@@ -6,6 +7,11 @@ import type { ReactNode } from 'react'
  * concept's own AppShell for a way back, which doesn't exist here.
  */
 export function StandaloneCardShell({ children }: { children: ReactNode }) {
+  // the card pages are translated like the rest of the app
+  useLayoutEffect(() => {
+    setI18nEnabled(true)
+    return () => setI18nEnabled(false)
+  }, [])
   return (
     <div style={{ position: 'relative' }}>
       <a
