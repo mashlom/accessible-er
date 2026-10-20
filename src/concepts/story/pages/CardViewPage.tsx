@@ -33,12 +33,15 @@ type CardViewTexts = {
   sendHint: string
 }
 
+type CardTexts = { viewTitle: string; age: string; nameFallback: string; rows: Record<string, string> }
+
 export function CardViewPage() {
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   const [avatar] = useSessionAvatar()
   const { lang, dir } = useI18n()
   // the chrome around the card follows the parent's language; the card itself stays in Hebrew — the staff reads it
   const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { cardView: CardViewTexts }>)[lang].cardView
+  const cardTx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { card: CardTexts }>)[lang].card
 
   if (isCardEmpty(card)) {
     return (
@@ -63,17 +66,17 @@ export function CardViewPage() {
       .join(' · ')
 
   const rows = [
-    { emoji: '💬', label: 'תקשורת', value: join(...card.communication, c.communication) },
-    { emoji: '⚠️', label: 'רגישויות', value: join(...card.sensitivities, c.sensitivities) },
-    { emoji: '💛', label: 'עוזר לי', value: join(...card.calming, c.calming) },
+    { emoji: '💬', label: cardTx.rows.communication, value: join(...card.communication, c.communication) },
+    { emoji: '⚠️', label: cardTx.rows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
+    { emoji: '💛', label: cardTx.rows.calming, value: join(...card.calming, c.calming) },
     {
       emoji: '🚫',
-      label: 'להימנע',
+      label: cardTx.rows.avoid,
       value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid),
     },
-    { emoji: '🩺', label: 'קשה במיוחד', value: join(...card.hardMoments, c.hardMoments) },
-    { emoji: '🤕', label: 'ככה נראה כאב', value: join(...card.pain, c.pain) },
-    { emoji: '✏️', label: 'עוד', value: card.freeNote.trim() },
+    { emoji: '🩺', label: cardTx.rows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
+    { emoji: '🤕', label: cardTx.rows.pain, value: join(...card.pain, c.pain) },
+    { emoji: '✏️', label: cardTx.rows.freeNote, value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
   const suggestionsIn = (careI18n as unknown as Record<string, { adaptationSuggestions?: Record<string, string> }>)[lang]?.adaptationSuggestions
@@ -90,9 +93,9 @@ export function CardViewPage() {
           </span>
           <div>
             <div className={styles.idTitle}>
-              חשוב לדעת על {name || 'הילד/ה'} שלי
+              {cardTx.viewTitle.replace('{name}', name || cardTx.nameFallback)}
             </div>
-            {card.age.trim() && <div className={styles.idAge}>גיל {card.age.trim()}</div>}
+            {card.age.trim() && <div className={styles.idAge}>{cardTx.age.replace('{age}', card.age.trim())}</div>}
             {lang !== 'he' && <div className={styles.idAge}>{tx.hebrewNote}</div>}
           </div>
         </div>

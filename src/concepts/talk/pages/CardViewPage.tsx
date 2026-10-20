@@ -1,4 +1,7 @@
 import { Link } from '../../nav'
+import { useI18n } from '../../../hooks/useI18n'
+import parentUi from '../../../data/parent/ui.json'
+import talkJson from '../../../data/parent/talk.json'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
 import { DAY_MS } from '../../../lib/storage'
@@ -16,7 +19,13 @@ import styles from '../talk.module.css'
  * parent physically holds up to staff. It needs to be big, still, printable
  * and on a light ground, so it steps out of the dusk theme on purpose.
  */
+type CardTexts = { viewTitle: string; age: string; nameFallback: string; rows: Record<string, string> }
+
 export function CardViewPage() {
+  const { lang } = useI18n()
+  const cardTx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { card: CardTexts }>)[lang].card
+  const cardViewTx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { cardView: { emptyTitle: string } }>)[lang].cardView
+  const talkTx = (talkJson as unknown as Record<'he' | 'en' | 'ru', { cardView: { back: string; emptyText: string } }>)[lang].cardView
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   const [avatar] = useSessionAvatar()
 
@@ -24,10 +33,10 @@ export function CardViewPage() {
     return (
       <div id="main" className={styles.doc}>
         <div className={styles.docInner} style={{ textAlign: 'center' }}>
-          <h1 className={styles.docTitle}>הכרטיס עדיין ריק</h1>
-          <p>חזרו לשיחה עם רוני — הוא ישאל כמה שאלות קצרות, ויהיה כרטיס.</p>
+          <h1 className={styles.docTitle}>{cardViewTx.emptyTitle}</h1>
+          <p>{talkTx.emptyText}</p>
           <Link to="/" className={styles.docBtn}>
-            חזרה לשיחה
+            {talkTx.back}
           </Link>
         </div>
       </div>
@@ -42,17 +51,17 @@ export function CardViewPage() {
       .join(' · ')
 
   const rows = [
-    { emoji: '💬', label: 'תקשורת', value: join(...card.communication, c.communication) },
-    { emoji: '⚠️', label: 'רגישויות', value: join(...card.sensitivities, c.sensitivities) },
-    { emoji: '💛', label: 'עוזר לי', value: join(...card.calming, c.calming) },
+    { emoji: '💬', label: cardTx.rows.communication, value: join(...card.communication, c.communication) },
+    { emoji: '⚠️', label: cardTx.rows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
+    { emoji: '💛', label: cardTx.rows.calming, value: join(...card.calming, c.calming) },
     {
       emoji: '🚫',
-      label: 'להימנע',
+      label: cardTx.rows.avoid,
       value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid),
     },
-    { emoji: '🩺', label: 'קשה במיוחד', value: join(...card.hardMoments, c.hardMoments) },
-    { emoji: '🤕', label: 'ככה נראה כאב', value: join(...card.pain, c.pain) },
-    { emoji: '✏️', label: 'עוד', value: card.freeNote.trim() },
+    { emoji: '🩺', label: cardTx.rows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
+    { emoji: '🤕', label: cardTx.rows.pain, value: join(...card.pain, c.pain) },
+    { emoji: '✏️', label: cardTx.rows.freeNote, value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
   const suggestions = suggestedAdaptations(card)
@@ -68,9 +77,9 @@ export function CardViewPage() {
             </span>
             <div>
               <div className={styles.idTitle}>
-                חשוב לדעת על {name || 'הילד/ה'} שלי
+                {cardTx.viewTitle.replace('{name}', name || cardTx.nameFallback)}
               </div>
-              {card.age.trim() && <div>גיל {card.age.trim()}</div>}
+              {card.age.trim() && <div>{cardTx.age.replace('{age}', card.age.trim())}</div>}
             </div>
           </div>
           {rows.map((row) => (
@@ -103,7 +112,7 @@ export function CardViewPage() {
             📄 שמירה כ־PDF / הדפסה
           </button>
           <Link to="/" className={`${styles.docBtn} ${styles.docBtnGhost}`}>
-            ↩️ חזרה לשיחה
+            ↩️ {talkTx.back}
           </Link>
         </div>
 
