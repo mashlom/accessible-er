@@ -2,7 +2,6 @@
   "en": {
     "paths": {
       "fever": {
-        "label": "Fever / illness",
         "blurb": "Usually: check-in, initial assessment, a doctor's exam, and if needed a blood test or an X-ray.",
         "route": [
           {
@@ -141,7 +140,6 @@
   "ru": {
     "paths": {
       "fever": {
-        "label": "Температура / болезнь",
         "blurb": "Обычно: регистратура, оценка состояния и измерения, осмотр врача и при необходимости анализ крови или рентген.",
         "route": [
           {
