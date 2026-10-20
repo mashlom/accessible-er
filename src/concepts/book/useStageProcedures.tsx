@@ -1,3 +1,4 @@
+import { keyed } from '../../lib/keyed'
 import { useEffect, useState } from 'react'
 import { useI18n } from '../../hooks/useI18n'
 import encyclopedia from '../../data/child/book/encyclopedia.json'
@@ -98,7 +99,7 @@ export function useStageProcedures(stageId: string, options: { withVideo?: boole
       : (pick(measureInfo as never, lang) as Record<string, Measure>)[measureKey]
     if (raw) {
       const info: Measure = raw.armpit ? { ...raw, ...raw.armpit, ...(tempWay === 'mouth' && raw.mouth ? raw.mouth : {}) } : raw
-      const plate = options.withVideo ? (parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang as 'he' | 'en' | 'ru'].procedurePage : null
+      const plate = options.withVideo ? keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang as 'he' | 'en' | 'ru'], 'parent/ui').procedurePage : null
       measureSheet = (
         <div className={css.sheetBackdrop} onClick={() => setMeasureOpen(null)}>
           <div className={css.sheet} role="dialog" aria-modal="true" aria-label={info.title} onClick={(e) => e.stopPropagation()}>

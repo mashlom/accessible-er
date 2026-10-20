@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { Fragment } from 'react'
 import { Link } from '../../nav'
 import { Scene, Panel, Note } from '../components/kit'
@@ -12,7 +13,7 @@ import styles from '../pages.module.css'
 export function ReasonPage() {
   const { reasonId, setReason, clearReason } = useVisitReason()
   const { lang, dir } = useI18n()
-  const tx = homeTexts[lang].reason
+  const tx = keyed(homeTexts[lang], 'parent/home').reason
   const all = parentPaths(lang)
   const path = reasonId ? all.find((p) => p.id === reasonId) : undefined
 

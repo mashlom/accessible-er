@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useEffect, useMemo, useState } from 'react'
 import { ParentSheet } from '../../quest/components/ParentInfo'
 import quest from '../../quest/quest.module.css'
@@ -144,8 +145,8 @@ export function RoniBookPage() {
           <div className={css.videoSlot}>
             <span className={css.videoSlotIcon} aria-hidden>🎬</span>
             <div>
-              <strong>{(parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang].procedurePage.videoTitle}</strong>
-              <p>{(parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang].procedurePage.videoText.replace('{title}', stageOf(stageId)?.title ?? '')}</p>
+              <strong>{keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang], 'parent/ui').procedurePage.videoTitle}</strong>
+              <p>{keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang], 'parent/ui').procedurePage.videoText.replace('{title}', stageOf(stageId)?.title ?? '')}</p>
             </div>
           </div>
         )}

@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from 'react'
+import { keyLabel } from '../lib/keyIndex'
 export type Language = 'he' | 'en' | 'ru'
 
 const KEY = 'quest-lang'
@@ -33,6 +34,8 @@ const snapshot = () => (enabled ? lang : 'he')
 const KEYS_KEY = 'quest-keys'
 let showKeys = (() => { try { return sessionStorage.getItem(KEYS_KEY) === '1' } catch { return false } })()
 export function keysOn() { return showKeys }
+/** The language underneath (the texts of the technical language are looked up in it). */
+export function currentLang(): Language { return enabled ? lang : 'he' }
 export function setKeysOn(on: boolean) {
   showKeys = on
   try { sessionStorage.setItem(KEYS_KEY, on ? '1' : '0') } catch {}
@@ -99,6 +102,12 @@ export function useI18n() {
     dir: current === 'he' ? ('rtl' as const) : ('ltr' as const),
     // without a fallback the text is a string from src/data/i18n
     keysOn: keys,
-    t: <T = string>(key: string, fallback?: T): T => translate(current, key, fallback),
+    t: <T = string>(key: string, fallback?: T): T => {
+      const text = translate(current, key, fallback)
+      if (!keys || typeof text !== 'string') return text
+      // the technical language: the key ('ui.buttons.back' is in i18n/ui.json) and how many times its text is stored
+      const [ns, ...path] = key.split('.')
+      return keyLabel(`i18n/${ns}:${path.join('.')}`, text, current) as unknown as T
+    },
   }
 }

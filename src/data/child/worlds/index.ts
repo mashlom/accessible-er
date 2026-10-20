@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 /**
  * Child texts of each world: src/data/child/worlds/<world>/texts.json, one file per world with all languages.
  * A language that is not translated yet falls back to the Hebrew original in the same file.
@@ -24,5 +25,5 @@ const byWorld: Record<string, Partial<Record<WorldLang, WorldText>>> = Object.fr
 /** The texts of one world in one language (Hebrew when that language is not translated yet). */
 export function worldText(worldId: string, lang: WorldLang): WorldText | undefined {
   const w = byWorld[worldId]
-  return w?.[lang] ?? w?.he
+  return keyed(w?.[lang] ?? w?.he, `child/worlds/${worldId}/texts`)
 }

@@ -8,34 +8,7 @@ import { useI18n } from '../hooks/useI18n'
  * translation file → no_key. Texts are matched against src/data in the
  * language underneath, so the page keeps working while the names are shown.
  */
-type Index = Map<string, string[]>
-
-const files = import.meta.glob<Record<string, unknown>>('../data/**/*.json', { eager: true, import: 'default' })
-
-const indexes: Partial<Record<'he' | 'en' | 'ru', Index>> = {}
-function indexFor(lang: 'he' | 'en' | 'ru'): Index {
-  if (indexes[lang]) return indexes[lang] as Index
-  const index: Index = new Map()
-  for (const [path, data] of Object.entries(files)) {
-    const name = path.replace(/^\.\.\/data\//, '').replace(/\.json$/, '')
-    const tree = (data as Record<string, unknown>)?.[lang]
-    if (!tree) continue
-    const walk = (o: unknown, at: string[]) => {
-      if (typeof o === 'string') {
-        const text = o.trim()
-        if (!text) return
-        const key = `${name}:${at.join('.')}`
-        const list = index.get(text) ?? []
-        list.push(key)
-        index.set(text, list)
-      } else if (Array.isArray(o)) o.forEach((v, i) => walk(v, [...at, String(i)]))
-      else if (o && typeof o === 'object') for (const [k, v] of Object.entries(o)) walk(v, [...at, k])
-    }
-    walk(tree, [])
-  }
-  indexes[lang] = index
-  return index
-}
+import { KEY_LABEL, keyIndex, type KeyIndex as Index } from '../lib/keyIndex'
 
 const LETTER = /\p{L}/u
 
@@ -43,10 +16,12 @@ function nameFor(text: string, index: Index): string | null {
   const trimmed = text.trim()
   // numbers, emoji and punctuation are not texts
   if (!LETTER.test(trimmed)) return null
+  // already named by t() or by the data helpers
+  if (KEY_LABEL.test(trimmed)) return null
   const keys = index.get(trimmed)
   if (!keys) return 'no_key'
   if (keys.length === 1) return keys[0]
-  return keys.map((k) => `! ${k}`).join(' ')
+  return `${keys.map((k) => `! ${k}`).join(' ')} ×${keys.length}`
 }
 
 export function KeysOverlay() {
@@ -54,7 +29,7 @@ export function KeysOverlay() {
 
   useEffect(() => {
     if (!keysOn) return
-    const index = indexFor(lang)
+    const index = keyIndex(lang)
     const original = new WeakMap<Text, string>()
     const shown = new WeakMap<Text, string>()
     const touched = new Set<Text>()

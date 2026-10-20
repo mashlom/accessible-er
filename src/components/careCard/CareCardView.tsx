@@ -1,3 +1,4 @@
+import { keyed } from '../../lib/keyed'
 import type { ReactNode } from 'react'
 import { usePersistentState } from '../../hooks/usePersistentState'
 import { DAY_MS } from '../../lib/storage'
@@ -18,7 +19,7 @@ type CardTexts = {
 
 /** The title and the age line of the card, in the chosen language. */
 export function careCardHeading(card: CareCard, lang: Lang) {
-  const tx = (parentUi as unknown as Record<Lang, { card: CardTexts }>)[lang].card
+  const tx = keyed((parentUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'parent/ui').card
   const name = card.nickname.trim()
   return {
     title: name ? tx.viewTitle.replace('{name}', name) : tx.viewTitleNoName,
@@ -33,10 +34,10 @@ export function careCardHeading(card: CareCard, lang: Lang) {
 export function CareCardView({ footer }: { footer: (state: { print: () => void }) => ReactNode }) {
   const { t, lang } = useI18n()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
-  const tx = (parentUi as unknown as Record<Lang, { card: CardTexts }>)[lang].card
+  const tx = keyed((parentUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'parent/ui').card
   // the labels of the card are Hebrew, like its values (the note on screen says so)
-  const heRows = (parentUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he.card.rows
-  const heAsks = (careI18n as unknown as { he: { asks: Record<string, string> } }).he.asks
+  const heRows = keyed((parentUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he, 'parent/ui').card.rows
+  const heAsks = keyed((careI18n as unknown as { he: { asks: Record<string, string> } }).he, 'i18n/careCard').asks
   const c = card.custom ?? emptyCustom
   const join = (...parts: string[]) => parts.map((p) => p.trim()).filter(Boolean).join(' · ')
 
@@ -51,7 +52,7 @@ export function CareCardView({ footer }: { footer: (state: { print: () => void }
   ].filter((r) => r.value)
 
   // the suggestions the parent reads on screen (not printed): in the chosen language
-  const suggestions = suggestedAdaptations(card, (careI18n as unknown as Record<string, { adaptationSuggestions?: Record<string, string> }>)[lang]?.adaptationSuggestions)
+  const suggestions = suggestedAdaptations(card, keyed((careI18n as unknown as Record<string, { adaptationSuggestions?: Record<string, string> }>)[lang], 'i18n/careCard')?.adaptationSuggestions)
 
   return (
     <>

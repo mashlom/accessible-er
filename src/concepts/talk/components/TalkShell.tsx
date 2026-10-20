@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { useIsConceptHome } from '../../nav'
 import { LanguagePicker } from '../../../components/LanguagePicker'
@@ -23,7 +24,7 @@ export function TalkShell() {
               type="button"
               className={styles.topBtn}
               onClick={() => navigate(-1)}
-              aria-label={(talkJson as unknown as Record<'he' | 'en' | 'ru', { cardView: { back: string } }>)[lang].cardView.back}
+              aria-label={keyed((talkJson as unknown as Record<'he' | 'en' | 'ru', { cardView: { back: string } }>)[lang], 'parent/talk').cardView.back}
             >
               <span aria-hidden>›</span>
             </button>

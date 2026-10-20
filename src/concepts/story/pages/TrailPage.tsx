@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useI18n } from '../../../hooks/useI18n'
 import { useState } from 'react'
 import { Link } from '../../nav'
@@ -23,8 +24,8 @@ import styles from '../pages.module.css'
  */
 export function TrailPage() {
   const { lang, dir } = useI18n()
-  const tx = homeTexts[lang].trail
-  const home = homeTexts[lang]
+  const tx = keyed(homeTexts[lang], 'parent/home').trail
+  const home = keyed(homeTexts[lang], 'parent/home')
   const { reasonId } = useVisitReason()
   const path = reasonId ? parentPaths(lang).find((p) => p.id === reasonId) : undefined
   const [currentId, setCurrentId] = usePersistentState<string | null>(

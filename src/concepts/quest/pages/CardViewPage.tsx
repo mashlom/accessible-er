@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { Link } from '../../nav'
 import { useReturnTo } from '../useReturnTo'
 import { usePersistentState } from '../../../hooks/usePersistentState'
@@ -16,7 +17,7 @@ export function CardViewPage() {
   const { t, lang } = useI18n()
   const { goBack, leaveState, passThroughState } = useReturnTo('/card')
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
-  const emptyTexts = (parentUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang].card.empty
+  const emptyTexts = keyed((parentUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang], 'parent/ui').card.empty
 
   if (isCardEmpty(card)) {
     return (

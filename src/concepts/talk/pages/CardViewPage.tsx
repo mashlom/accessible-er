@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { Link } from '../../nav'
 import { useI18n } from '../../../hooks/useI18n'
 import parentUi from '../../../data/parent/ui.json'
@@ -16,8 +17,8 @@ export function CardViewPage() {
   const { lang } = useI18n()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   const [avatar] = useSessionAvatar()
-  const talkTx = (talkJson as unknown as Record<Lang, { cardView: { back: string; emptyText: string } }>)[lang].cardView
-  const emptyTitle = (parentUi as unknown as Record<Lang, { card: { empty: { title: string } } }>)[lang].card.empty.title
+  const talkTx = keyed((talkJson as unknown as Record<Lang, { cardView: { back: string; emptyText: string } }>)[lang], 'parent/talk').cardView
+  const emptyTitle = keyed((parentUi as unknown as Record<Lang, { card: { empty: { title: string } } }>)[lang], 'parent/ui').card.empty.title
 
   if (isCardEmpty(card)) {
     return (
@@ -52,7 +53,7 @@ export function CardViewPage() {
             footer={({ print }) => (
               <div className="no-print" style={{ display: 'flex', gap: 10, flexWrap: 'wrap', justifyContent: 'center' }}>
                 <button type="button" className={styles.docBtn} onClick={print}>
-                  📄 {(parentUi as unknown as Record<Lang, { cardView: { savePdf: string } }>)[lang].cardView.savePdf}
+                  📄 {keyed((parentUi as unknown as Record<Lang, { cardView: { savePdf: string } }>)[lang], 'parent/ui').cardView.savePdf}
                 </button>
                 <Link to="/" className={`${styles.docBtn} ${styles.docBtnGhost}`}>
                   ↩️ {talkTx.back}

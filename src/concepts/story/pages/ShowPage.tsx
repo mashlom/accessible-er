@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useI18n } from '../../../hooks/useI18n'
 import { Link } from '../../nav'
 import { Scene, Bubble } from '../components/kit'
@@ -26,7 +27,7 @@ function Card({ p }: { p: Procedure }) {
  */
 export function ShowPage() {
   const { lang, dir } = useI18n()
-  const tx = homeTexts[lang].show
+  const tx = keyed(homeTexts[lang], 'parent/home').show
   const { path } = useVisitReason()
 
   const likelyIds = [

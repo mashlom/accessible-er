@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useState } from 'react'
 import { Link } from '../../nav'
 import { Roni } from '../../../components/Roni'
@@ -36,7 +37,7 @@ type FeedbackTexts = {
 const HELP_IDS = ['trail', 'tests', 'map', 'calm', 'ask', 'roni'] as const
 const DIAG_IDS = ['diagnosed', 'inProcess', 'no', 'noAnswer'] as const
 type TeamWords = { help: Record<string, string>; diag: Record<string, string>; rating: Record<string, string>; unset: string; none: string; subject: string; concept: string; labels: Record<string, string> }
-const team = (parentUi as unknown as { he: { storyFeedback: { team: TeamWords } } }).he.storyFeedback.team
+const team = keyed((parentUi as unknown as { he: { storyFeedback: { team: TeamWords } } }).he, 'parent/ui').storyFeedback.team
 
 interface Feedback {
   rating: number | null
@@ -64,7 +65,7 @@ function buildMailto(feedback: Feedback) {
 export function FeedbackPage() {
   const { lang, dir } = useI18n()
   // labels are translated; the stored and mailed values stay in Hebrew, as the team reads them
-  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { storyFeedback: FeedbackTexts }>)[lang].storyFeedback
+  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyFeedback: FeedbackTexts }>)[lang], 'parent/ui').storyFeedback
   const [saved, setSaved] = usePersistentState<Feedback | null>('feedback', null, DAY_MS)
   const [rating, setRating] = useState<number | null>(saved?.rating ?? null)
   const [helped, setHelped] = useState<string[]>(saved?.helped ?? [])

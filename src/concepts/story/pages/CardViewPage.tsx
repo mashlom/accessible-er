@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { Link } from '../../nav'
 import { Roni } from '../../../components/Roni'
 import { Note } from '../components/kit'
@@ -18,8 +19,8 @@ export function CardViewPage() {
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   const [avatar] = useSessionAvatar()
   const { lang, dir } = useI18n()
-  const tx = (parentUi as unknown as Record<Lang, { cardView: Record<string, string> }>)[lang].cardView
-  const emptyTexts = (parentUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang].card.empty
+  const tx = keyed((parentUi as unknown as Record<Lang, { cardView: Record<string, string> }>)[lang], 'parent/ui').cardView
+  const emptyTexts = keyed((parentUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang], 'parent/ui').card.empty
 
   if (isCardEmpty(card)) {
     return (

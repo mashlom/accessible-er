@@ -1,3 +1,4 @@
+import { keyed } from '../../lib/keyed'
 import { useLayoutEffect } from 'react'
 import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
 import { setI18nEnabled, useI18n } from '../../hooks/useI18n'
@@ -23,7 +24,7 @@ export default function BookConcept() {
   const { lang, dir } = useI18n()
   const path = useConceptPath()
   const navigate = useNavigate()
-  const tabs = (parentUi as unknown as Record<'he' | 'en' | 'ru', { books: { tabs: Record<string, string> } }>)[lang]
+  const tabs = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { books: { tabs: Record<string, string> } }>)[lang], 'parent/ui')
     .books.tabs
 
   return (

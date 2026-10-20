@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useState } from 'react'
 import { Link } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
@@ -10,7 +11,7 @@ import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import careI18n from '../../../data/i18n/careCard.json'
 
 // the requests are for the staff, so they are in Hebrew
-const askHe = (careI18n as unknown as { he: { asks: Record<string, string> } }).he.asks
+const askHe = keyed((careI18n as unknown as { he: { asks: Record<string, string> } }).he, 'i18n/careCard').asks
 import css from '../quest.module.css'
 
 // the emoji of each block stay in code; the words come from src/data/parent/ui.json

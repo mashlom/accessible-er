@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useState } from 'react'
 import { Scene, Bubble, Note } from '../components/kit'
 import shell from '../story.module.css'
@@ -26,7 +27,7 @@ type MessageTexts = {
  */
 export function MessagePage() {
   const { lang, dir } = useI18n()
-  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { storyMessage: MessageTexts }>)[lang].storyMessage
+  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyMessage: MessageTexts }>)[lang], 'parent/ui').storyMessage
   const [text, setText] = useState('')
   const [shown, setShown] = useState(false)
 

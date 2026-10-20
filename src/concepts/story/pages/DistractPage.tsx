@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useState } from 'react'
 import { Link } from '../../nav'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
@@ -40,7 +41,7 @@ const bubbles = [
 
 export function DistractPage() {
   const { lang, dir } = useI18n()
-  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { storyDistract: StoryDistractTexts }>)[lang].storyDistract
+  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyDistract: StoryDistractTexts }>)[lang], 'parent/ui').storyDistract
   const watchables = watchEmojis.map((emoji, i) => ({ emoji, label: tx.labels[i] ?? '' }))
   const [pick, setPick] = useState(watchEmojis[0])
   const current = watchables.find((w) => w.emoji === pick) ?? watchables[0]

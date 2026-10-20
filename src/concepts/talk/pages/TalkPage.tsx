@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useConceptPath } from '../../nav'
@@ -67,7 +68,7 @@ export function TalkPage() {
   const topicLabel = (choice: Choice): string => {
     if (choice.go === 'topics') return talkText(lang).topics.back
     if (!topicChoices(lang).some((tc) => tc.go === choice.go)) return choice.label
-    const tiles = (parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string }> }>)[lang]?.tiles
+    const tiles = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string }> }>)[lang], 'parent/ui')?.tiles
     const tile = TOPIC_TILE[choice.go ?? ''] ?? ''
     if (tile && tiles && tiles[tile]) return tiles[tile].title
     return (talkText(lang).topicNames as Record<string, string>)[choice.go ?? ''] ?? choice.label
@@ -161,7 +162,7 @@ export function TalkPage() {
         navigate(path(action.to))
         break
       case 'feedback': {
-        const mail = (talkJson as unknown as { he: { mail: Record<string, string>; buttons: Record<string, string> } }).he
+        const mail = keyed((talkJson as unknown as { he: { mail: Record<string, string>; buttons: Record<string, string> } }).he, 'parent/talk')
         const body = [
           `${mail.mail.rating}: ${mail.buttons[RATING_KEYS[action.rating]]}`,
           mail.mail.concept,

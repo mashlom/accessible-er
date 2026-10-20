@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useMemo, useState } from 'react'
 import { useI18n } from '../../../hooks/useI18n'
 import bookI18n from '../../../data/i18n/book.json'
@@ -34,13 +35,13 @@ const STAGE_ICONS: Record<string, string> = {
 
 export function RealBookPage() {
   const { t, lang, dir } = useI18n()
-  const labels = ((realInfo as unknown as Record<string, { headings: { whatHappens: string; challenge: string; canAsk: string } }>)[lang] ?? (realInfo as unknown as Record<string, { headings: { whatHappens: string; challenge: string; canAsk: string } }>).he).headings
+  const labels = (keyed((realInfo as unknown as Record<string, { headings: { whatHappens: string; challenge: string; canAsk: string } }>)[lang], 'child/book/real-info') ?? keyed((realInfo as unknown as Record<string, { headings: { whatHappens: string; challenge: string; canAsk: string } }>).he, 'child/book/real-info')).headings
   const [index, setIndex] = useState(0)
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [chosen, setChosen] = useState(false)
 
   // the stage texts come in the chosen language, from i18n/book.json (stages)
-  const stages = ((bookI18n as unknown as Record<'he' | 'en' | 'ru', { stages: Record<string, { label: string; hint: string }> }>)[lang] ?? (bookI18n as unknown as Record<'he', { stages: Record<string, { label: string; hint: string }> }>).he).stages
+  const stages = (keyed((bookI18n as unknown as Record<'he' | 'en' | 'ru', { stages: Record<string, { label: string; hint: string }> }>)[lang], 'i18n/book') ?? keyed((bookI18n as unknown as Record<'he', { stages: Record<string, { label: string; hint: string }> }>).he, 'i18n/book')).stages
   const pages: string[] = useMemo(() => {
     const extras = chosen ? OPTIONAL_STAGES.filter((id) => selected.has(id)) : [SELECT_PAGE]
     return [...BASE_STAGES, ...extras, ...END_STAGES].filter((id) => id === SELECT_PAGE || stages[id])
@@ -48,7 +49,7 @@ export function RealBookPage() {
 
   const stageId = pages[index]
   // the stage information, written for the child (data/child/book/real-info.json)
-  const info = ((realInfo as unknown as Record<string, Record<string, { meaning: string; whatHappens: string; challenge: string; canAsk: string[] }>>)[lang] ?? (realInfo as unknown as Record<string, Record<string, { meaning: string; whatHappens: string; challenge: string; canAsk: string[] }>>).he)[stageId]
+  const info = (keyed((realInfo as unknown as Record<string, Record<string, { meaning: string; whatHappens: string; challenge: string; canAsk: string[] }>>)[lang], 'child/book/real-info') ?? keyed((realInfo as unknown as Record<string, Record<string, { meaning: string; whatHappens: string; challenge: string; canAsk: string[] }>>).he, 'child/book/real-info'))[stageId]
   const isSelect = stageId === SELECT_PAGE
   const child = isSelect ? undefined : stages[stageId]
   const isLast = index === pages.length - 1

@@ -1,4 +1,5 @@
 import texts from './texts.json'
+import { keyed } from '../../lib/keyed'
 
 /** Parent texts for the stations and procedures (src/data/parent/texts.json), one file with all languages. */
 export type ParentLang = 'he' | 'en' | 'ru'
@@ -28,7 +29,7 @@ type ParentTexts = {
 }
 
 export function parentTexts(lang: ParentLang): ParentTexts {
-  return (texts as unknown as Record<ParentLang, ParentTexts>)[lang]
+  return keyed((texts as unknown as Record<ParentLang, ParentTexts>)[lang], 'parent/texts')
 }
 
 import { journeyStages } from '../journey'

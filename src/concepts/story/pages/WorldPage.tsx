@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import type { CSSProperties } from 'react'
 import { Link } from '../../nav'
 import { openHelper } from '../../../components/helper/helperStore'
@@ -45,8 +46,8 @@ const calmTiles = parentUi as unknown as Record<HomeLang, { tiles: Record<string
 
 /** Hebrew stays the story's own (the design's names); the other languages reuse the calm wording where the destination is the same */
 function tileText(lang: HomeLang, id: string): Tile {
-  const own = (homeTexts[lang].tiles as Record<string, Partial<Tile> | undefined>)[id]
-  const hebrew = (homeTexts.he.tiles as Record<string, Tile>)[id]
+  const own = (keyed(homeTexts[lang], 'parent/home').tiles as Record<string, Partial<Tile> | undefined>)[id]
+  const hebrew = (keyed(homeTexts.he, 'parent/home').tiles as Record<string, Tile>)[id]
   const calmKey = calmTileOf[id]
   if (lang === 'he' || !calmKey) {
     return { name: own?.name ?? hebrew.name, desc: own?.desc ?? hebrew.desc }
@@ -63,7 +64,7 @@ function tileText(lang: HomeLang, id: string): Tile {
 export function WorldPage() {
   const { path } = useVisitReason()
   const { lang, dir } = useI18n()
-  const tx = homeTexts[lang as HomeLang] ?? homeTexts.he
+  const tx = keyed(homeTexts[lang as HomeLang], 'parent/home') ?? keyed(homeTexts.he, 'parent/home')
   const reasonLabel = path ? parentPaths(lang as HomeLang).find((p) => p.id === path.id)?.label ?? path.label : ''
 
   return (

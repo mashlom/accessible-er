@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { Scene, Bubble, Note } from '../components/kit'
 import { useI18n } from '../../../hooks/useI18n'
 import parentUi from '../../../data/parent/ui.json'
@@ -14,7 +15,7 @@ type StoryRequestsTexts = {
 /** The legitimate asks. Informational — nothing is sent; the parent asks. */
 export function RequestsPage() {
   const { lang, dir } = useI18n()
-  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { storyRequests: StoryRequestsTexts }>)[lang].storyRequests
+  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyRequests: StoryRequestsTexts }>)[lang], 'parent/ui').storyRequests
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
     <Scene title={tx.title} subtitle={tx.subtitle}>

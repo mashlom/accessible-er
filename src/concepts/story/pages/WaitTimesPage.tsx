@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useI18n } from '../../../hooks/useI18n'
 import { parentJourney } from '../../../data/parent'
 import { Scene, Bubble } from '../components/kit'
@@ -5,7 +6,7 @@ import homeTexts from '../../../data/parent/home.json'
 
 export function WaitTimesPage() {
   const { lang, dir } = useI18n()
-  const tx = homeTexts[lang].wait
+  const tx = keyed(homeTexts[lang], 'parent/home').wait
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
     <Scene title={tx.title} subtitle={tx.subtitle}>

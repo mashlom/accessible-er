@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useI18n } from '../../../hooks/useI18n'
 import { Navigate, Link } from '../../nav'
 import { Panel, Note } from '../components/kit'
@@ -14,7 +15,7 @@ import styles from '../pages.module.css'
  */
 export function BookPage() {
   const { lang, dir } = useI18n()
-  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: Record<string, string> }>)[lang].procedurePage
+  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: Record<string, string> }>)[lang], 'parent/ui').procedurePage
   const { id } = useParams()
   const procedure = id ? parentProcedure(lang, id) : undefined
 

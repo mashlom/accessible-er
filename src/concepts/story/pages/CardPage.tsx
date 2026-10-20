@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { Link } from '../../nav'
 import { Scene, Bubble } from '../components/kit'
 import { useI18n } from '../../../hooks/useI18n'
@@ -12,7 +13,7 @@ import styles from '../pages.module.css'
  */
 export function CardPage() {
   const { lang, dir } = useI18n()
-  const tx = homeTexts[lang as 'he' | 'en' | 'ru'].cardPage ?? homeTexts.he.cardPage
+  const tx = keyed(homeTexts[lang as 'he' | 'en' | 'ru'], 'parent/home').cardPage ?? keyed(homeTexts.he, 'parent/home').cardPage
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>

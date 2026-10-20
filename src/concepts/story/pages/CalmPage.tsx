@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { useState } from 'react'
 import { Link } from '../../nav'
 import { Roni } from '../../../components/Roni'
@@ -33,8 +34,8 @@ export function CalmPage() {
   const [shown, setShown] = useState<string | null>(null)
   const { lang, dir } = useI18n()
   // the ready sentences in the chosen language; Hebrew is the source list
-  const sentences = ((supportI18n as unknown as Record<'en' | 'ru', { readySentences?: string[] }>)[lang as 'en' | 'ru']?.readySentences) ?? readySentences
-  const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { storyCalm: StoryCalmTexts }>)[lang].storyCalm
+  const sentences = (keyed((supportI18n as unknown as Record<'en' | 'ru', { readySentences?: string[] }>)[lang as 'en' | 'ru'], 'i18n/support')?.readySentences) ?? readySentences
+  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyCalm: StoryCalmTexts }>)[lang], 'parent/ui').storyCalm
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>

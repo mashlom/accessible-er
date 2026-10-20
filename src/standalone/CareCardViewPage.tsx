@@ -1,3 +1,4 @@
+import { keyed } from '../lib/keyed'
 import { Link } from '../concepts/nav'
 import { Mascot } from './Mascot'
 import { Note } from './ui'
@@ -15,8 +16,8 @@ type Lang = 'he' | 'en' | 'ru'
 export function CareCardViewPage() {
   const { lang } = useI18n()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
-  const cv = (parentUi as unknown as Record<Lang, { cardView: Record<string, string> }>)[lang].cardView
-  const emptyTitle = (parentUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang].card.empty
+  const cv = keyed((parentUi as unknown as Record<Lang, { cardView: Record<string, string> }>)[lang], 'parent/ui').cardView
+  const emptyTitle = keyed((parentUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang], 'parent/ui').card.empty
 
   if (isCardEmpty(card)) {
     return (

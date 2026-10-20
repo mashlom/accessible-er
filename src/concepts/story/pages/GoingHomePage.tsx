@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import { Link } from '../../nav'
 import { useI18n } from '../../../hooks/useI18n'
 import homeTexts from '../../../data/parent/home.json'
@@ -14,7 +15,7 @@ const emojis = ['📝', '🚪', '🏠', '🧰', '🩺']
 
 export function GoingHomePage() {
   const { lang, dir } = useI18n()
-  const tx = homeTexts[lang].goingHome
+  const tx = keyed(homeTexts[lang], 'parent/home').goingHome
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
     <Scene title={tx.title} subtitle={tx.subtitle}>

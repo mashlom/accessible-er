@@ -1,3 +1,4 @@
+import { keyed } from '../../lib/keyed'
 import type { RoniMood } from '../../components/Roni'
 import { getStageIndex } from '../../data/journey'
 import { procedures } from '../../data/procedures'
@@ -23,7 +24,7 @@ const PAUSE_TIP = distressTips.findIndex((tip) => tip.id === 'pause')
 
 /** The ready sentences in the chosen language, for the buttons only */
 const readySentencesIn = (lang: Lang): string[] =>
-  ((supportI18n as unknown as Record<Lang, { readySentences?: string[] }>)[lang]?.readySentences ?? [])
+  (keyed((supportI18n as unknown as Record<Lang, { readySentences?: string[] }>)[lang], 'i18n/support')?.readySentences ?? [])
 
 const distressTipsIn = (lang: Lang) => inLang(distressTips, lang, supportI18n, 'distressTips')
 const staffRequestsIn = (lang: Lang) => inLang(staffRequests, lang, supportI18n, 'staffRequests')
@@ -31,12 +32,12 @@ const staffRequestsIn = (lang: Lang) => inLang(staffRequests, lang, supportI18n,
 /** The translated labels of one section's options, by position (the saved values stay Hebrew) */
 function cardLabels(lang: Lang, n: number): string[] {
   const sec = cardSections[n]
-  const tr = ((careI18n as unknown as Record<Lang, { cardSections: { options: string[] }[] }>)[lang]?.cardSections ?? [])[n]
+  const tr = (keyed((careI18n as unknown as Record<Lang, { cardSections: { options: string[] }[] }>)[lang], 'i18n/careCard')?.cardSections ?? [])[n]
   return sec.options.map((o, i) => tr?.options?.[i] ?? o)
 }
 
 const cardSectionsIn = (lang: Lang) => cardSections.map((sec, i) => {
-  const tr = ((careI18n as unknown as Record<Lang, { cardSections: { title: string }[] }>)[lang]?.cardSections ?? [])[i]
+  const tr = (keyed((careI18n as unknown as Record<Lang, { cardSections: { title: string }[] }>)[lang], 'i18n/careCard')?.cardSections ?? [])[i]
   return { ...sec, title: tr?.title ?? sec.title }
 })
 
@@ -122,13 +123,13 @@ function bullets(items: string[]): string {
 
 /** One block of the discharge texts, the same blocks as on the quest's celebration screen (src/data/parent/ui.json) */
 function dischargeBody(lang: Lang, i: number): string {
-  const blocks = ((parentUi as unknown as Record<Lang, { celebrate: { discharge: { body: string }[] } }>)[lang] ?? (parentUi as unknown as Record<'he', { celebrate: { discharge: { body: string }[] } }>).he).celebrate.discharge
+  const blocks = (keyed((parentUi as unknown as Record<Lang, { celebrate: { discharge: { body: string }[] } }>)[lang], 'parent/ui') ?? keyed((parentUi as unknown as Record<'he', { celebrate: { discharge: { body: string }[] } }>).he, 'parent/ui')).celebrate.discharge
   return blocks[i].body
 }
 
 /** The dialogue lines of this part of the talk, in the chosen language (src/data/parent/talk.json) */
 export function talkText(lang: Lang): typeof talkTexts.he {
-  return (talkTexts as unknown as Record<Lang, typeof talkTexts.he>)[lang] ?? talkTexts.he
+  return keyed(keyed((talkTexts as unknown as Record<Lang, typeof talkTexts.he>)[lang], 'parent/talk') ?? talkTexts.he, 'parent/talk')
 }
 
 function unknown(lang: Lang = 'he'): TalkNode {

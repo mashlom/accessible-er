@@ -1,3 +1,4 @@
+import { keyed } from '../../../lib/keyed'
 import type { CSSProperties } from 'react'
 import { Scene, Bubble, Note } from '../components/kit'
 import {
@@ -33,7 +34,7 @@ const loadFace: Record<MapArea['load'], string> = {
  */
 export function MapPage() {
   const { lang, dir } = useI18n()
-  const tx = homeTexts[lang].mapPage
+  const tx = keyed(homeTexts[lang], 'parent/home').mapPage
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
     <Scene title={tx.title} subtitle={tx.subtitle}>
