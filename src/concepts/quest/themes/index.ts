@@ -64,7 +64,6 @@ export const themes: QuestTheme[] = [
     nightBg: '/worlds/knight/night_castle.JPEG',
     thumbnail: '/worlds/knight/castle.png',
     thumbnailOverlay: '/worlds/knight/knight.png',
-    procedurePrompt: 'בקשו מהגברת היפה (האחות) לבחור את הפרוצדורות שהקוסם הגדול קבע',
     accent: '#7b4f28',
     accentSoft: '#f5e6d0',
     accentText: '#ffffff',
