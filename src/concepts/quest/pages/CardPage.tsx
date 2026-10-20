@@ -1,44 +1,14 @@
 import { Link } from '../../nav'
 import { useReturnTo } from '../useReturnTo'
-import { usePersistentState } from '../../../hooks/usePersistentState'
-import { DAY_MS } from '../../../lib/storage'
-import careI18n from '../../../data/i18n/careCard.json'
-import {
-  askIds,
-  cardSections,
-  CUSTOM_MAX,
-  emptyCard,
-  emptyCustom,
-  isCardEmpty,
-  type CardArrayField,
-  type CareCard,
-} from '../../../data/careCard'
 import { useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
+import { CareCardForm } from '../../../components/careCard/CareCardForm'
 import css from '../quest.module.css'
 
 export function CardPage() {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
   const { goBack, leaveState } = useReturnTo('/stage/reception')
-  const [card, setCard, clearCard] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
-
-  // the requests that fit what the parent has ticked (the ticks are the card's choices)
-  const askFor = (careI18n as unknown as { askFor: Record<string, string[]> }).askFor
-  const ticked = [...card.sensitivities, ...card.escalators, ...card.hardMoments, ...card.avoid, ...card.pain, ...card.communication]
-  const relevantAsks = askIds.filter((id) => (askFor[id] ?? []).some((opt) => ticked.includes(opt)))
-
-  function toggle(key: CardArrayField, option: string) {
-    const list = card[key]
-    const next = list.includes(option) ? list.filter((x) => x !== option) : [...list, option]
-    setCard({ ...card, [key]: next })
-  }
-
-  function setCustom(key: CardArrayField, value: string) {
-    setCard({ ...card, custom: { ...(card.custom ?? emptyCustom), [key]: value } })
-  }
-
-  const empty = isCardEmpty(card)
 
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
@@ -58,122 +28,23 @@ export function CardPage() {
       </div>
 
       <div className={css.stageBody}>
-        <p className={css.parentZoneLabel}>{t('ui.text.aboutMyChild')}</p>
-        <p className={css.cardPrivacy}>
-          {t('ui.text.privacyA')} <strong>{t('ui.text.privacyB')}</strong>{t('ui.text.privacyC')}
-        </p>
-
-        <section>
-          <h2>{t('ui.text.whoWeAre')}</h2>
-          <div className={css.cardIdentity}>
-            <label className={css.cardField}>
-              <span className={css.cardFieldLabel}>{t('ui.text.nickname')}</span>
-              <input
-                className={css.cardInput}
-                value={card.nickname}
-                onChange={(e) => setCard({ ...card, nickname: e.target.value })}
-                maxLength={30}
-                placeholder={t('ui.text.optional')}
-              />
-            </label>
-            <label className={css.cardField} style={{ maxWidth: 100 }}>
-              <span className={css.cardFieldLabel}>{t('ui.text.age')}</span>
-              <input
-                className={css.cardInput}
-                value={card.age}
-                onChange={(e) => setCard({ ...card, age: e.target.value })}
-                maxLength={6}
-                inputMode="numeric"
-                placeholder="—"
-              />
-            </label>
-          </div>
-        </section>
-
-        {cardSections.map((section, si) => {
-          const label = t(`careCard.cardSections.${si}`, section)
-          return (
-          <section key={section.key}>
-            <h2>{section.emoji} {label.title}</h2>
-            <div className={css.cardChips} role="group" aria-label={label.title}>
-              {section.options.map((option, oi) => {
-                const on = card[section.key].includes(option)
-                return (
-                  <button
-                    key={option}
-                    type="button"
-                    className={`${css.cardChip} ${on ? css.cardChipOn : ''}`}
-                    style={on ? { borderColor: theme.accent, background: theme.accentSoft, color: theme.accent } : undefined}
-                    aria-pressed={on}
-                    onClick={() => toggle(section.key, option)}
-                  >
-                    {label.options[oi] ?? option}
-                  </button>
-                )
-              })}
-            </div>
-            <input
-              className={css.cardOtherInput}
-              value={card.custom?.[section.key] ?? ''}
-              onChange={(e) => setCustom(section.key, e.target.value)}
-              maxLength={CUSTOM_MAX}
-              placeholder={t('ui.text.otherPlaceholder')}
-              aria-label={`${t('ui.text.other')} — ${label.title}`}
-            />
-          </section>
-          )
-        })}
-
-        {relevantAsks.length > 0 && (
-        <section>
-          <h2>{t('careCard.asks.title')}</h2>
-          <div className={css.cardChips} role="group" aria-label={t('careCard.asks.title')}>
-            {relevantAsks.map((id) => {
-              const on = (card.asks ?? []).includes(id)
-              return (
-                <button
-                  key={id}
-                  type="button"
-                  className={`${css.cardChip} ${on ? css.cardChipOn : ''}`}
-                  style={on ? { borderColor: theme.accent, background: theme.accentSoft, color: theme.accent } : undefined}
-                  aria-pressed={on}
-                  onClick={() => setCard({ ...card, asks: on ? (card.asks ?? []).filter((x) => x !== id) : [...(card.asks ?? []), id] })}
-                >
-                  {t(`careCard.asks.${id}`)}
+        <CareCardForm
+          colours={{ accent: theme.accent, accentSoft: theme.accentSoft, accentText: theme.accentText }}
+          footer={({ empty, clear }) => (
+            <div className={css.stageBack}>
+              <Link to="/card/view" state={leaveState('/card')}>
+                <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText, opacity: empty ? 0.4 : 1 }} disabled={empty}>
+                  {t('ui.buttons.showCardNext')}
                 </button>
-              )
-            })}
-          </div>
-        </section>
-        )}
-
-        <section>
-          <h2>{t('ui.text.anythingElse')}</h2>
-          <textarea
-            className={css.calmFreeText}
-            rows={3}
-            value={card.freeNote}
-            onChange={(e) => setCard({ ...card, freeNote: e.target.value })}
-            placeholder={t('ui.text.freeNotePlaceholder')}
-          />
-        </section>
-
-        <div className={css.stageBack}>
-          <Link to="/card/view" state={leaveState('/card')}>
-            <button
-              className={css.doneBtn}
-              style={{ background: theme.accent, color: theme.accentText, opacity: empty ? 0.4 : 1 }}
-              disabled={empty}
-            >
-              {t('ui.buttons.showCardNext')}
-            </button>
-          </Link>
-          {!empty && (
-            <button type="button" className={css.backBtn} style={{ borderColor: '#aaa', color: '#888' }} onClick={clearCard}>
-              {t('ui.buttons.clear')}
-            </button>
+              </Link>
+              {!empty && (
+                <button type="button" className={css.backBtn} style={{ borderColor: '#aaa', color: '#888' }} onClick={clear}>
+                  {t('ui.buttons.clear')}
+                </button>
+              )}
+            </div>
           )}
-        </div>
+        />
       </div>
     </div>
   )
