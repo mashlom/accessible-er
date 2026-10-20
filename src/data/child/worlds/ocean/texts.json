@@ -77,6 +77,66 @@
         "הוא מקשיב לגוף עם כלי קסמים — קצת קר, לא כואב.",
         "אולי יסתכל בגרון ובאוזניים עם אור קסמים קטן.",
         "בסוף יידע הקברניט מה לעשות."
+      ],
+      "bandage": [
+        "הבוסמן עוטף את המקום בתחבושת רכה.",
+        "עוטף בעדינות, שכבה אחרי שכבה.",
+        "בסוף מהדק — נעים ובטוח."
+      ],
+      "blood-test": [
+        "הבוסמן מורח על העור קרם שהופך אותו לפחות רגיש.",
+        "גומייה רכה נכרכת סביב זרועו של הצוללן.",
+        "דקירה קטנה ומהירה — אפשר להסתכל על משהו אחר.",
+        "הבוסמן מדביק פלסטר על הפצע הקטן — כל הכבוד, צוללן!"
+      ],
+      "cast": [
+        "הצוללן בוחר אם לשבת או לשכב, ואם אמא או אבא יהיו לידו.",
+        "היד או הרגל עטופות בשכבות רכות.",
+        "עכשיו צריך לחכות בסבלנות ולא לזוז — הגבס צריך להתאים בדיוק לצורה.",
+        "הגבס מתקשה לאט ושומר על העצם — והיא מתרפאת."
+      ],
+      "ct": [
+        "הצוללן שוכב על ספה נוחה.",
+        "הספה נכנסת לאט לתוך טבעת גדולה, כמו פתח של צוללת.",
+        "נשמע זמזום, והצוללן שוכב בשקט, כאילו מתחבא במעמקים.",
+        "הספה יוצאת חזרה — סיימנו."
+      ],
+      "inhalation": [
+        "הבוסמן מניח על פני הצוללן מסיכה רכה עם אוויר קריר — כמעט כמו מסיכת צלילה.",
+        "לא צריך לנשום חזק — הצוללן פשוט נושם כרגיל.",
+        "לפעמים זה מדגדג בעיניים, ואפשר לבקש שהאוויר יזרום לאט יותר.",
+        "בזמן הזה אפשר לצפות בסרט מצויר. אחרי כמה דקות מורידים את המסיכה — סיימנו."
+      ],
+      "iv": [
+        "הבוסמן מורח קרם שמרגיע את העור.",
+        "דקירה קצרה, ואז מכניסים צינורית רכה ודקה.",
+        "המחט יוצאת, אבל הצינורית הרכה נשארת כדי לתת לצוללן מים מרפאים.",
+        "הבוסמן מדביק מדבקה שמחזיקה את הצינורית במקומה."
+      ],
+      "ultrasound": [
+        "הצוללן שוכב בשקט על הספה.",
+        "מורחים על הבטן ג'ל קר מעט.",
+        "מכשיר חלק מחליק ומצייר תמונה על המסך — לפעמים הוא לוחץ קצת, וזה נורמלי.",
+        "אם מפריע, אפשר לבקש הפסקה קצרה.",
+        "מנגבים את הג'ל — סיימנו."
+      ],
+      "urine": [
+        "הצוללן נכנס לשירותים של הצוללת.",
+        "הוא משתין מעט לכוס קטנה.",
+        "הכוס מוסרת לבוסמן — והכול מוכן!"
+      ],
+      "waiting-results": [
+        "כל הבדיקות הסתיימו — כל הכבוד, צוללן!",
+        "עכשיו מחכים לתשובות. אפשר לשחק, לנוח או לצפות בסרט מצויר.",
+        "הקברניט והבוסמן עובדים כדי לעזור לצוללן. לא שכחו ממנו.",
+        "כשהתשובות יהיו מוכנות, הקברניט יבוא ויספר."
+      ],
+      "xray": [
+        "אנחנו נכנסים לחדר עם המכשיר הגדול.",
+        "אולי ישימו עליי שכבה כבדה שמגינה על הגוף, ואולי גם צווארון.",
+        "אני עומד או שוכב בשקט, כאילו מתחבא במעמקים.",
+        "המכשיר מצלם — אני לא מרגיש כלום.",
+        "סיימנו, אפשר לזוז שוב."
       ]
     },
     "procedureVariants": {},
@@ -174,6 +234,66 @@
         "The captain listens to my body with a stethoscope — it's a little cold, but it doesn't hurt.",
         "Maybe he'll look in my throat and ears with a small flashlight.",
         "At the end, he'll know what to do next."
+      ],
+      "bandage": [
+        "The bosun wraps this place in a soft bandage.",
+        "He wraps it gently, layer by layer.",
+        "At the end he fastens it — cosy and secure."
+      ],
+      "blood-test": [
+        "The bosun puts on a cream that makes the skin less sensitive.",
+        "A soft band wraps around the diver's arm.",
+        "A tiny quick poke — you can look at something else.",
+        "The bosun covers the little wound with a plaster — well done, diver!"
+      ],
+      "cast": [
+        "The diver chooses whether to sit or lie down, and whether mum or dad will be nearby.",
+        "The arm or leg is wrapped in soft layers.",
+        "Now you need to wait patiently and keep still — the cast must fit the shape exactly.",
+        "The cast slowly hardens and protects the bone — and it heals."
+      ],
+      "ct": [
+        "The diver lies down on a comfortable couch.",
+        "The couch slowly slides into a big ring, like the hatch of a submarine.",
+        "A hum is heard, and the diver lies calmly, as if hiding in the depths.",
+        "The couch slides back out — done."
+      ],
+      "inhalation": [
+        "The bosun puts a soft mask with cool air on the diver's face — almost like a diving mask.",
+        "You don't need to breathe hard — the diver just breathes as usual.",
+        "Sometimes it tickles the eyes, and you can ask for the air to flow more slowly.",
+        "Meanwhile you can watch a cartoon. After a few minutes the mask is taken off — done."
+      ],
+      "iv": [
+        "The bosun applies a cream that soothes the skin.",
+        "A short prick, and then a soft thin tube is put in.",
+        "The needle is taken out, but the soft tube stays to give the diver healing water.",
+        "The bosun sticks a sticker that holds the tube in place."
+      ],
+      "ultrasound": [
+        "The diver lies calmly on the couch.",
+        "A little cold gel is put on the tummy.",
+        "A smooth scanner glides and draws a picture on the screen — sometimes it presses a little, and that is normal.",
+        "If it bothers you, you can ask for a short break.",
+        "The gel is wiped off — done."
+      ],
+      "urine": [
+        "The diver goes into the submarine's toilet.",
+        "He pees a little into a small cup.",
+        "The cup is handed to the bosun — and everything is done!"
+      ],
+      "waiting-results": [
+        "All the checks are finished — well done, diver!",
+        "Now we wait for the answers. You can play, rest or watch a cartoon.",
+        "The captain and the bosun are working to help the diver. He has not been forgotten.",
+        "When the answers are ready, the captain will come and tell you."
+      ],
+      "xray": [
+        "We go into the room with the big machine.",
+        "A heavy cover may be put on me to protect my body, and maybe a collar too.",
+        "I stand or lie calmly, as if hiding in the depths.",
+        "The machine takes a picture — I don't feel anything.",
+        "Done, I can move again."
       ]
     },
     "procedureVariants": {
