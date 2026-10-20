@@ -26,9 +26,9 @@ type CardText = {
 
 export function CardViewPage() {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
-  // the card is for the staff, so its words are always Hebrew (src/data/parent/ui.json); the buttons follow the language
-  const cardText = parentTexts.he.card
+  const { t, lang } = useI18n()
+  // the labels and the title follow the language; the saved values the staff reads stay as they are
+  const cardText = parentTexts[lang].card
   const { goBack, leaveState, passThroughState } = useReturnTo('/card')
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
 
