@@ -1,7 +1,7 @@
 import { keyed } from '../../../lib/keyed'
 import { Scene, Bubble, Note } from '../components/kit'
 import { useI18n } from '../../../hooks/useI18n'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 import styles from '../pages.module.css'
 
 type StoryRequestsTexts = {
@@ -15,7 +15,7 @@ type StoryRequestsTexts = {
 /** The legitimate asks. Informational — nothing is sent; the parent asks. */
 export function RequestsPage() {
   const { lang, dir } = useI18n()
-  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyRequests: StoryRequestsTexts }>)[lang], 'parent/ui').storyRequests
+  const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyRequests: StoryRequestsTexts }>)[lang], 'i18n/ui').storyRequests
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
     <Scene title={tx.title} subtitle={tx.subtitle}>

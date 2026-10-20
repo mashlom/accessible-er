@@ -4,7 +4,7 @@ import { usePersistentState } from '../../hooks/usePersistentState'
 import { DAY_MS } from '../../lib/storage'
 import { useI18n } from '../../hooks/useI18n'
 import careI18n from '../../data/i18n/careCard.json'
-import parentUi from '../../data/parent/ui.json'
+import i18nUi from '../../data/i18n/ui.json'
 import { emptyCard, emptyCustom, suggestedAdaptations, type CareCard } from '../../data/careCard'
 import css from '../../concepts/quest/quest.module.css'
 
@@ -19,7 +19,7 @@ type CardTexts = {
 
 /** The title and the age line of the card, in the chosen language. */
 export function careCardHeading(card: CareCard, lang: Lang) {
-  const tx = keyed((parentUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'parent/ui').card
+  const tx = keyed((i18nUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'i18n/ui').card
   const name = card.nickname.trim()
   return {
     title: name ? tx.viewTitle.replace('{name}', name) : tx.viewTitleNoName,
@@ -34,9 +34,9 @@ export function careCardHeading(card: CareCard, lang: Lang) {
 export function CareCardView({ footer }: { footer: (state: { print: () => void }) => ReactNode }) {
   const { t, lang } = useI18n()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
-  const tx = keyed((parentUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'parent/ui').card
+  const tx = keyed((i18nUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'i18n/ui').card
   // the labels of the card are Hebrew, like its values (the note on screen says so)
-  const heRows = keyed((parentUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he, 'parent/ui').card.rows
+  const heRows = keyed((i18nUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he, 'i18n/ui').card.rows
   const heAsks = keyed((careI18n as unknown as { he: { asks: Record<string, string> } }).he, 'i18n/careCard').asks
   const c = card.custom ?? emptyCustom
   const join = (...parts: string[]) => parts.map((p) => p.trim()).filter(Boolean).join(' · ')

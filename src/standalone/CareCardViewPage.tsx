@@ -4,7 +4,7 @@ import { Mascot } from './Mascot'
 import { Note } from './ui'
 import { usePersistentState } from '../hooks/usePersistentState'
 import { useI18n } from '../hooks/useI18n'
-import parentUi from '../data/parent/ui.json'
+import i18nUi from '../data/i18n/ui.json'
 import { DAY_MS } from '../lib/storage'
 import { emptyCard, isCardEmpty, type CareCard } from '../data/careCard'
 import { CareCardView, careCardHeading } from '../components/careCard/CareCardView'
@@ -16,8 +16,8 @@ type Lang = 'he' | 'en' | 'ru'
 export function CareCardViewPage() {
   const { lang } = useI18n()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
-  const cv = keyed((parentUi as unknown as Record<Lang, { cardView: Record<string, string> }>)[lang], 'parent/ui').cardView
-  const emptyTitle = keyed((parentUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang], 'parent/ui').card.empty
+  const cv = keyed((i18nUi as unknown as Record<Lang, { cardView: Record<string, string> }>)[lang], 'i18n/ui').cardView
+  const emptyTitle = keyed((i18nUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang], 'i18n/ui').card.empty
 
   if (isCardEmpty(card)) {
     return (

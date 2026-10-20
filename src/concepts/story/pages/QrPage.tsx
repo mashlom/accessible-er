@@ -6,10 +6,10 @@ import { Scene, Note } from '../components/kit'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 
 // the sign is for the team, so its texts are the same in every language
-const staff = keyed((parentUi as unknown as { he: { staffSign: Record<string, string> } }).he, 'parent/ui').staffSign
+const staff = keyed((i18nUi as unknown as { he: { staffSign: Record<string, string> } }).he, 'i18n/ui').staffSign
 
 /**
  * Staff-only page (reached directly at #/story/settings, deliberately not

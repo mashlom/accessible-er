@@ -7,7 +7,7 @@ import { useI18n } from '../../../hooks/useI18n'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { parentPaths } from '../../../data/parent/paths'
 import homeTexts from '../../../data/parent/home.json'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
@@ -28,7 +28,7 @@ const destinations = [
 
 type HomeLang = keyof typeof homeTexts
 
-/** The same destination in the calm concept: its title and line come from parent/ui.json, so the wording is one for the whole app */
+/** The same destination in the calm concept: its title and line come from i18n/ui.json, so the wording is one for the whole app */
 const calmTileOf: Record<string, string> = {
   trail: 'journey',
   'wait-times': 'wait-times',
@@ -42,7 +42,7 @@ const calmTileOf: Record<string, string> = {
   feedback: 'feedback',
 }
 type Tile = { name: string; desc: string }
-const calmTiles = parentUi as unknown as Record<HomeLang, { tiles: Record<string, { title: string; desc: string }> }>
+const calmTiles = i18nUi as unknown as Record<HomeLang, { tiles: Record<string, { title: string; desc: string }> }>
 
 /** Hebrew stays the story's own (the design's names); the other languages reuse the calm wording where the destination is the same */
 function tileText(lang: HomeLang, id: string): Tile {

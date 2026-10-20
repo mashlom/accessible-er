@@ -6,7 +6,7 @@ import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import careI18n from '../../../data/i18n/careCard.json'
 
@@ -14,14 +14,14 @@ import careI18n from '../../../data/i18n/careCard.json'
 const askHe = keyed((careI18n as unknown as { he: { asks: Record<string, string> } }).he, 'i18n/careCard').asks
 import css from '../quest.module.css'
 
-// the emoji of each block stay in code; the words come from src/data/parent/ui.json
+// the emoji of each block stay in code; the words come from src/data/i18n/ui.json
 const BLOCK_EMOJI = {
   discharge: ['📝', '🚪', '🏠', '🧰', '🩺'],
   admission: ['🏥', '🚪', '🛏️', '💙', '📞'],
 } as const
 
 type Block = { title: string; body: string }
-const parentCelebrate = parentUi as unknown as Record<'he' | 'en' | 'ru', { celebrate: Record<'discharge' | 'admission', Block[]> }>
+const parentCelebrate = i18nUi as unknown as Record<'he' | 'en' | 'ru', { celebrate: Record<'discharge' | 'admission', Block[]> }>
 
 function blocksFor(lang: 'he' | 'en' | 'ru', kind: 'discharge' | 'admission') {
   const texts = (parentCelebrate[lang] ?? parentCelebrate.he).celebrate[kind]

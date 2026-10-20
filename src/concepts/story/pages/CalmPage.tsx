@@ -6,7 +6,7 @@ import { Scene, Bubble } from '../components/kit'
 import { readySentences } from '../../../data/support'
 import supportI18n from '../../../data/i18n/support.json'
 import { useI18n } from '../../../hooks/useI18n'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
@@ -35,7 +35,7 @@ export function CalmPage() {
   const { lang, dir } = useI18n()
   // the ready sentences in the chosen language; Hebrew is the source list
   const sentences = (keyed((supportI18n as unknown as Record<'en' | 'ru', { readySentences?: string[] }>)[lang as 'en' | 'ru'], 'i18n/support')?.readySentences) ?? readySentences
-  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyCalm: StoryCalmTexts }>)[lang], 'parent/ui').storyCalm
+  const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyCalm: StoryCalmTexts }>)[lang], 'i18n/ui').storyCalm
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>

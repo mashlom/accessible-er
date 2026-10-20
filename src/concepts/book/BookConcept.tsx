@@ -3,7 +3,7 @@ import { useLayoutEffect } from 'react'
 import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
 import { setI18nEnabled, useI18n } from '../../hooks/useI18n'
 import { useConceptPath } from '../nav'
-import parentUi from '../../data/parent/ui.json'
+import i18nUi from '../../data/i18n/ui.json'
 import { LanguagePicker } from '../../components/LanguagePicker'
 import { StoryPage } from './pages/StoryPage'
 import { RealBookPage } from './pages/RealBookPage'
@@ -24,7 +24,7 @@ export default function BookConcept() {
   const { lang, dir } = useI18n()
   const path = useConceptPath()
   const navigate = useNavigate()
-  const tabs = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { books: { tabs: Record<string, string> } }>)[lang], 'parent/ui')
+  const tabs = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { books: { tabs: Record<string, string> } }>)[lang], 'i18n/ui')
     .books.tabs
 
   return (
