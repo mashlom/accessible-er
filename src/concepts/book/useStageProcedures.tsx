@@ -162,7 +162,7 @@ export function useStageProcedures(stageId: string, options: { withVideo?: boole
         <h2 className={css.sheetTitle}>{insert.title}</h2>
         {insert.draft && (
           <p style={{ marginTop: '0.25rem', marginBottom: '0.75rem' }}>
-            <strong><em>{({ ru: 'черновик — ждёт проверки', en: 'draft — awaiting review', he: 'טיוטה — ממתינה לאישור' } as Record<string, string>)[lang] ?? 'טיוטה'}</em></strong>
+            <strong><em>{t('ui.text.draft')}</em></strong>
           </p>
         )}
         <p style={{ whiteSpace: 'pre-line' }}>{insert.text}</p>
