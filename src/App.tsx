@@ -6,7 +6,6 @@ import QuestConcept from './concepts/quest/QuestConcept'
 import BookConcept from './concepts/book/BookConcept'
 import { CareCardPage } from './standalone/CareCardPage'
 import { CareCardViewPage } from './standalone/CareCardViewPage'
-import { RequestsPage } from './standalone/RequestsPage'
 import { StandaloneCardShell } from './components/StandaloneCardShell'
 
 /**
@@ -36,14 +35,6 @@ export default function App() {
         element={
           <StandaloneCardShell>
             <CareCardViewPage />
-          </StandaloneCardShell>
-        }
-      />
-      <Route
-        path="/requests"
-        element={
-          <StandaloneCardShell>
-            <RequestsPage />
           </StandaloneCardShell>
         }
       />
