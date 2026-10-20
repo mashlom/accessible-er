@@ -1,107 +1,49 @@
 import type { DistressTip, StaffRequest } from './types'
+import supportI18n from './i18n/support.json'
+
+// the Hebrew words are the source lists; en and ru follow them by position (src/data/i18n/support.json)
+const he = (supportI18n as unknown as {
+  he: {
+    distressTips: { title: string; body: string }[]
+    readySentences: string[]
+    staffRequests: { title: string; detail: string }[]
+  }
+}).he
 
 /**
  * Short parent guidance for moments of distress (module 5).
  * Reassuring, actionable, low-cognitive-load.
  */
-export const distressTips: DistressTip[] = [
-  {
-    emoji: '🤫',
-    id: 'fewer-words',
-    title: 'להפחית מילים',
-    body: 'בזמן הצפה, פחות מילים עוזרות יותר. משפט קצר אחד, קול רגוע, והמון סבלנות בין המשפטים.',
-  },
-  {
-    emoji: '🧍',
-    id: 'more-space',
-    title: 'לפנות מרחב',
-    body: 'בקשו מהצוות שאדם אחד בלבד יישאר קרוב, ושאר האנשים יתרחקו קצת. פחות גירויים = יותר רוגע.',
-  },
-  {
-    emoji: '🎧',
-    id: 'less-stimuli',
-    title: 'להוריד גירויים',
-    body: 'אוזניות, כובע, הורדת אור, או חפץ מרגיע. אפשר לבקש מהצוות מרחב שקט.',
-  },
-  {
-    emoji: '⏸️',
-    id: 'pause',
-    title: 'לבקש הפסקה',
-    body: 'מותר לעצור. אפשר להגיד לצוות "אנחנו צריכים דקה" — רוב הפעולות יכולות לחכות רגע קצר.',
-  },
-  {
-    emoji: '🧸',
-    id: 'familiar',
-    title: 'לחזור למוכר',
-    body: 'חפץ, שיר, סרטון או משחק מוכר מהבית עוזרים לעגן. שגרה קטנה ומוכרת מרגיעה בתוך מקום זר.',
-  },
-  {
-    emoji: '💬',
-    id: 'mediate',
-    title: 'לתווך לצוות',
-    body: 'אתם המומחים לילד שלכם. אמרו לצוות במשפט קצר מה עוזר ומה מסלים — זה בסדר גמור לכוון אותם.',
-  },
+const tipIcons: Pick<DistressTip, 'emoji' | 'id'>[] = [
+  { emoji: '🤫', id: 'fewer-words' },
+  { emoji: '🧍', id: 'more-space' },
+  { emoji: '🎧', id: 'less-stimuli' },
+  { emoji: '⏸️', id: 'pause' },
+  { emoji: '🧸', id: 'familiar' },
+  { emoji: '💬', id: 'mediate' },
 ]
+export const distressTips: DistressTip[] = tipIcons.map((tip, i) => ({ ...tip, ...he.distressTips[i] }))
 
 /**
  * Ready-made short sentences a parent can say — or show on screen in
  * large type — to staff during a hard moment (the spec's "what to tell
  * the staff in one short sentence"). Nothing is sent; the parent shows/reads them.
+ * They stay Hebrew on the screen, because they are for the staff.
  */
-export const readySentences: string[] = [
-  'הילד/ה שלי אוטיסט/ית. הכי עוזר לו/לה הסבר קצר לפני כל פעולה.',
-  'בבקשה — שאדם אחד ידבר, לאט ובשקט.',
-  'הוא/היא לא מדבר/ת, אבל מבין/ה. דברו ישירות, במשפטים קצרים.',
-  'אנחנו צריכים כמה דקות להירגע. נקרא לכם כשנהיה מוכנים.',
-  'אפשר לעבור למקום שקט יותר? הרעש מציף אותו/ה.',
-  'לפני הדקירה — אפשר משחה מאלחשת וקצת זמן הכנה?',
-  'בבקשה לא לגעת בילד/ה בלי להגיד קודם מה עומד לקרות.',
-]
+export const readySentences: string[] = he.readySentences
 
 /**
  * Legitimate things a parent can ask the staff for (informational —
  * this does not send anything to staff; the parent chooses to ask).
  */
-export const staffRequests: StaffRequest[] = [
-  {
-    emoji: '🌙',
-    title: 'חדר שקט / סנוזלן',
-    detail: 'מרחב מותאם עם פחות רעש ואור, למי שמוצף או צריך להירגע.',
-  },
-  {
-    emoji: '👤',
-    title: 'פחות אנשי צוות בחדר',
-    detail: 'שאדם אחד יוביל וידבר, ושאר הצוות ימתין בחוץ ככל האפשר.',
-  },
-  {
-    emoji: '🗣️',
-    title: 'הסבר לפני מגע',
-    detail: 'שכל נגיעה או פעולה יוסברו קודם, כדי שלא יהיו הפתעות.',
-  },
-  {
-    emoji: '🙌',
-    title: 'מיקרו־בחירות',
-    detail:
-      'לאפשר לילד/ה בחירות קטנות — לעמוד או לשבת, יד ימין או שמאל, איזו אצבע, מאיפה מתחילים. בחירה קטנה נותנת תחושת שליטה ומקלה.',
-  },
-  {
-    emoji: '⏱️',
-    title: 'זמן עיבוד ותגובה',
-    detail: 'זמן קצר בין הוראה לביצוע, ובין שאלה לתשובה, בלי למהר.',
-  },
-  {
-    emoji: '💉',
-    title: 'הכנה לפרוצדורה',
-    detail: 'הסבר מראש, משחה מאלחשת לפני דקירה, והסחת דעת בזמן הפעולה.',
-  },
-  {
-    emoji: '🔇',
-    title: 'הפחתת גירויים',
-    detail: 'הנמכת אור, הורדת רעש, וסגירת דלת — כדי להפחית עומס חושי.',
-  },
-  {
-    emoji: '🖼️',
-    title: 'תקשורת חלופית',
-    detail: 'שימוש בתמונות, הצבעה או אמצעי תקשורת אחר, אם דיבור קשה לילד כרגע.',
-  },
+const requestIcons: Pick<StaffRequest, 'emoji'>[] = [
+  { emoji: '🌙' },
+  { emoji: '👤' },
+  { emoji: '🗣️' },
+  { emoji: '🙌' },
+  { emoji: '⏱️' },
+  { emoji: '💉' },
+  { emoji: '🔇' },
+  { emoji: '🖼️' },
 ]
+export const staffRequests: StaffRequest[] = requestIcons.map((request, i) => ({ ...request, ...he.staffRequests[i] }))
