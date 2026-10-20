@@ -45,8 +45,8 @@ export const distressTips: DistressTip[] = [
 
 /**
  * Ready-made short sentences a parent can say — or show on screen in
- * large type — to staff during a hard moment (the spec's "מה לומר
- * לצוות במשפט קצר"). Nothing is sent; the parent shows/reads them.
+ * large type — to staff during a hard moment (the spec's "what to tell
+ * the staff in one short sentence"). Nothing is sent; the parent shows/reads them.
  */
 export const readySentences: string[] = [
   'הילד/ה שלי אוטיסט/ית. הכי עוזר לו/לה הסבר קצר לפני כל פעולה.',

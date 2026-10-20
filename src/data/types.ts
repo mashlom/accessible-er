@@ -3,7 +3,7 @@ export type Icon = string // emoji glyph, used as a calm, wordless cue
 /** A reason-for-visit path. Tailors the "road ahead" shown to the family. */
 export interface VisitPath {
   id: string
-  label: string // e.g. "חום גבוה"
+  label: string // e.g. "High fever"
   emoji: Icon
   blurb: string // one calm sentence describing the typical route
   /** Ordered stops for this reason, referencing procedure ids where relevant. */
@@ -14,7 +14,7 @@ export interface RouteStop {
   title: string
   /** procedure id from procedures.ts, if this stop maps to a known procedure */
   procedureId?: string
-  optional?: boolean // "לפי הצורך"
+  optional?: boolean // "as needed"
 }
 
 /** A generic stage of any ER visit (module 3 in the spec). */
@@ -50,7 +50,7 @@ export interface Procedure {
   id: string
   title: string
   emoji: Icon
-  duration: string // e.g. "1–2 דקות"
+  duration: string // e.g. "1–2 minutes"
   who: string // who performs it
   what: string // short explanation
   feel: string // what the child may feel/experience
@@ -69,7 +69,7 @@ export interface Procedure {
 
 /** One labelled step-by-step story, used when a procedure has several methods. */
 export interface StoryVariant {
-  label: string // short toggle label, e.g. "בפה"
+  label: string // short toggle label, e.g. "by mouth"
   steps: string[]
 }
 
@@ -93,7 +93,7 @@ export interface MapArea {
   note: string // what happens here / what to expect
   /** the station of the journey this room belongs to (its 'here we are' line is the room's description) */
   stage?: string
-  /** where one usually continues from here ("לאן עוברים אחרי כל שלב") */
+  /** where one usually continues from here ("where you go after each step") */
   next?: string
 }
 
