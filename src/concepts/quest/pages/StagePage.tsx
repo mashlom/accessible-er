@@ -97,13 +97,6 @@ export function StagePage() {
         doneIsChoice={isLastStage}
         backTo={isOptional ? '/night-map' : '/map'}
       >
-        {/* the first station's way to the visit's route: the same as on the other worlds' station sheets */}
-        {id === 'reception' && (
-          <>
-            <p className={css.reasonHint}>{t('ui.text.reasonHint')}</p>
-            <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits')}</Link>
-          </>
-        )}
         {inlineProc && inlineSteps && inlineSteps.length > 0 && (
           <ol className={css.procedureSteps} style={{ color: theme.accent }}>
             {inlineSteps.map((step, i) => <li key={i}>{step}</li>)}
@@ -194,12 +187,6 @@ export function StagePage() {
           <section>
             <h2>{t('ui.text.weAreHere')}</h2>
             <p>{data.meaning}</p>
-            {id === 'reception' && (
-              <>
-                <p className={css.reasonHint}>{t('ui.text.reasonHint')}</p>
-                <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits')}</Link>
-              </>
-            )}
           </section>
         )}
 
