@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useI18n } from '../../../hooks/useI18n'
-import realTexts from '../../../data/child/worlds/real/texts.json'
+import bookI18n from '../../../data/i18n/book.json'
 import realInfo from '../../../data/child/book/real-info.json'
 import css from '../book.module.css'
 import { useStageProcedures } from '../useStageProcedures'
@@ -39,8 +39,8 @@ export function RealBookPage() {
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [chosen, setChosen] = useState(false)
 
-  // the stage texts come in the chosen language; Hebrew is the source
-  const stages = ((realTexts as unknown as Record<'he' | 'en' | 'ru', { stages: Record<string, { label: string; hint: string }> }>)[lang] ?? (realTexts as unknown as Record<'he', { stages: Record<string, { label: string; hint: string }> }>).he).stages
+  // the stage texts come in the chosen language, from i18n/book.json (stages)
+  const stages = ((bookI18n as unknown as Record<'he' | 'en' | 'ru', { stages: Record<string, { label: string; hint: string }> }>)[lang] ?? (bookI18n as unknown as Record<'he', { stages: Record<string, { label: string; hint: string }> }>).he).stages
   const pages: string[] = useMemo(() => {
     const extras = chosen ? OPTIONAL_STAGES.filter((id) => selected.has(id)) : [SELECT_PAGE]
     return [...BASE_STAGES, ...extras, ...END_STAGES].filter((id) => id === SELECT_PAGE || stages[id])
