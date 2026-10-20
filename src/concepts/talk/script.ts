@@ -542,7 +542,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
           { text: tip.body },
         ],
         choices: [
-          ...(isPause ? [{ emoji: '⏸️', label: talkText(ctx.lang).staffPause, action: { kind: 'showBig', text: 'אנחנו צריכים דקה' } as Action }] : []),
+          ...(isPause ? [{ emoji: '⏸️', label: talkText(ctx.lang).staffPause, action: { kind: 'showBig', text: talkText(ctx.lang).staffPauseBig } as Action }] : []),
           { label: talkText(ctx.lang).calm.moreHelpBtn, go: 'calm:tips' },
           // the break tip already has its own button for the staff
           ...(isPause ? [] : [{ emoji: '🗣️', label: talkText(ctx.lang).calm.howSayBtn, go: 'calm:say' }]),

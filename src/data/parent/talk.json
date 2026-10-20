@@ -158,7 +158,8 @@
     "cardView": {
       "back": "חזרה לשיחה",
       "emptyText": "חזרו לשיחה עם רוני — הוא ישאל כמה שאלות קצרות, ויהיה כרטיס."
-    }
+    },
+    "staffPauseBig": "אנחנו צריכים דקה"
   },
   "en": {
     "intro": {
@@ -319,7 +320,8 @@
     "cardView": {
       "back": "Back to the conversation",
       "emptyText": "Go back to the conversation with Roni — he will ask a few short questions, and there will be a card."
-    }
+    },
+    "staffPauseBig": "We need a minute"
   },
   "ru": {
     "intro": {
@@ -480,6 +482,7 @@
     "cardView": {
       "back": "Назад к разговору",
       "emptyText": "Вернитесь к разговору с Рони — он задаст несколько коротких вопросов, и появится карточка."
-    }
+    },
+    "staffPauseBig": "Нам нужна минута"
   }
 }

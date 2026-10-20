@@ -3,6 +3,7 @@ import { Link } from '../../nav'
 import { Roni } from '../../../components/Roni'
 import { Scene, Bubble } from '../components/kit'
 import { readySentences } from '../../../data/support'
+import supportI18n from '../../../data/i18n/support.json'
 import { useI18n } from '../../../hooks/useI18n'
 import parentUi from '../../../data/parent/ui.json'
 import shell from '../story.module.css'
@@ -31,6 +32,8 @@ type StoryCalmTexts = {
 export function CalmPage() {
   const [shown, setShown] = useState<string | null>(null)
   const { lang, dir } = useI18n()
+  // the ready sentences in the chosen language; Hebrew is the source list
+  const sentences = ((supportI18n as unknown as Record<'en' | 'ru', { readySentences?: string[] }>)[lang as 'en' | 'ru']?.readySentences) ?? readySentences
   const tx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { storyCalm: StoryCalmTexts }>)[lang].storyCalm
 
   return (
@@ -68,7 +71,7 @@ export function CalmPage() {
         </Bubble>
       </div>
       <div className={styles.sentences}>
-        {readySentences.map((s) => (
+        {sentences.map((s) => (
           <button key={s} type="button" className={styles.sentence} onClick={() => setShown(s)}>
             {s}
           </button>

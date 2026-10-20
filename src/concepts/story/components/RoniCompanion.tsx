@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useConceptBase } from '../../nav'
 import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
-import { lineFor, tapLines } from '../companionLines'
+import { lineFor, tapLinesFor } from '../companionLines'
+import { useI18n } from '../../../hooks/useI18n'
 import { Roni } from '../../../components/Roni'
 import styles from '../story.module.css'
 
@@ -19,13 +20,15 @@ export function RoniCompanion() {
   const base = useConceptBase()
   const { pathname } = useLocation()
   const [avatar] = useSessionAvatar()
+  const { lang } = useI18n()
+  const tapLines = tapLinesFor(lang)
   const [minimised, setMinimised] = useState(false)
   const [tapped, setTapped] = useState<number | null>(null)
   const [bounce, setBounce] = useState(0)
   const timer = useRef<number>()
 
   const sub = pathname.startsWith(base) ? pathname.slice(base.length).replace(/^\//, '') : ''
-  const routeLine = lineFor(sub)
+  const routeLine = lineFor(sub, lang)
   const line = tapped == null ? routeLine : tapLines[tapped]
 
   // A tapped reaction is temporary — Roni goes back to narrating the place.
