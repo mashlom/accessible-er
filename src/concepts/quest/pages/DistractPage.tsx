@@ -33,8 +33,8 @@ export function DistractPage() {
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       {/* ── Child zone ── */}
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
-        <h1 style={{ color: theme.accent }}>{theme.distractTitle ?? t('ui.text.distractDefault', 'פינת הסחת דעת')}</h1>
-        <p className={css.stageHeroHint}>{t('ui.text.distractHint', 'בחרי/בחר מה רוצים לראות ↓')}</p>
+        <h1 style={{ color: theme.accent }}>{theme.distractTitle ?? t('ui.text.distractDefault')}</h1>
+        <p className={css.stageHeroHint}>{t('ui.text.distractHint')}</p>
 
         <div className={css.distractStage}>
           <div className={css.distractBubbleField} aria-hidden>
@@ -55,7 +55,7 @@ export function DistractPage() {
           <AnimatedIcon emoji={pick.emoji} size={180} className={css.distractArt} />
         </div>
 
-        <div className={css.distractPicker} role="group" aria-label={t('ui.text.distractAria', 'מה רוצים לראות')}>
+        <div className={css.distractPicker} role="group" aria-label={t('ui.text.distractAria')}>
           {watchables.map((w, wi) => (
             <button
               key={w.emoji}
@@ -73,19 +73,19 @@ export function DistractPage() {
 
         <div className={css.stageBack}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
-            {t('ui.buttons.back', 'חזרה →')}
+            {t('ui.buttons.back')}
           </button>
         </div>
       </div>
 
       {/* ── Parent zone ── */}
       <div className={css.stageBody}>
-        <p className={css.parentZoneLabel}>{t('ui.text.distractWhy', 'הסחת דעת — למה זה עוזר')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.text.distractWhy')}</p>
         <section>
-          <p>{t('ui.text.distractP1', 'אפשר להסתכל יחד לכאן במקום על היד או על המכשיר. בחרו ביחד מה הכי מעניין את הילד/ה — עצם הבחירה כבר נותנת תחושת שליטה.')}</p>
+          <p>{t('ui.text.distractP1')}</p>
         </section>
         <p className={css.cardPrivacy}>
-          {t('ui.text.distractP2', 'אם המכשיר מוגדר ל"הפחתת תנועה", האנימציות לא ירוצו. אפשר גם פשוט לספור יחד עד עשר — גם זו הסחת דעת טובה.')}
+          {t('ui.text.distractP2')}
         </p>
       </div>
     </div>

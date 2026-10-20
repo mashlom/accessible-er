@@ -41,7 +41,7 @@ export function CardViewPage() {
           <p className={css.stageHeroHint}>{cardText.empty.hint}</p>
           <div className={css.stageBack}>
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
-              {t('ui.buttons.back', 'חזרה →')}
+              {t('ui.buttons.back')}
             </button>
           </div>
         </div>
@@ -49,7 +49,7 @@ export function CardViewPage() {
           <div className={css.stageBack}>
             <Link to="/card" state={passThroughState}>
               <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
-                {t('ui.buttons.fillCard', 'למילוי הכרטיס ←')}
+                {t('ui.buttons.fillCard')}
               </button>
             </Link>
           </div>
@@ -82,13 +82,13 @@ export function CardViewPage() {
         {card.age.trim() && <p className={css.stageHeroHint}>{cardText.age.replace('{age}', card.age.trim())}</p>}
         <div className={`${css.stageBack} no-print`}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
-            {t('ui.buttons.back', 'חזרה →')}
+            {t('ui.buttons.back')}
           </button>
         </div>
       </div>
 
       <div className={css.stageBody}>
-        <p className={css.stageHeroHint}>{t('ui.careView.hebrewNote', 'הכרטיס כתוב בעברית: הצוות קורא אותו בעברית.')}</p>
+        <p className={css.stageHeroHint}>{t('ui.careView.hebrewNote')}</p>
         <div className={`${css.cardViewRows} print-area`}>
           {rows.map((row) => (
 
@@ -112,11 +112,11 @@ export function CardViewPage() {
 
         <div className={`${css.stageBack} no-print`}>
           <button type="button" className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }} onClick={() => window.print()}>
-            {t('ui.buttons.savePrint', '📄 שמירה / הדפסה')}
+            {t('ui.buttons.savePrint')}
           </button>
           <Link to="/card" state={leaveState('/card/view')}>
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              {t('ui.buttons.edit', '✏️ עריכה →')}
+              {t('ui.buttons.edit')}
             </button>
           </Link>
         </div>

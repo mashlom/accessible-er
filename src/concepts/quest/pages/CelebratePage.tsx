@@ -43,7 +43,7 @@ export function CelebratePage() {
         )}
         <div className={css.celebrateContent}>
           <p className={css.celebrateTitle} style={{ color: theme.accent }}>
-            {celebrateSkin?.label ?? t('ui.text.weDidIt', 'עשינו את זה! 🎉')}
+            {celebrateSkin?.label ?? t('ui.text.weDidIt')}
           </p>
           {doneCount > 0 && (
             <p className={css.celebrateCoins}>
@@ -63,7 +63,7 @@ export function CelebratePage() {
         <div className={css.stageBack}>
           <Link to="/shop" style={{ flex: 2, display: 'flex' }}>
             <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText, flex: 1 }}>
-              {t('ui.buttons.toShop', 'לחנות 🛍️')}
+              {t('ui.buttons.toShop')}
             </button>
           </Link>
           <Link to="/" style={{ flex: 1, display: 'flex' }}>
@@ -72,7 +72,7 @@ export function CelebratePage() {
               style={{ borderColor: theme.accent, color: theme.accent, flex: 1 }}
               onClick={reset}
             >
-              {t('ui.buttons.chooseWorld', 'לבחירת עולם →')}
+              {t('ui.buttons.chooseWorld')}
             </button>
           </Link>
         </div>
@@ -82,21 +82,21 @@ export function CelebratePage() {
       <div className={css.stageBody}>
         {!outcome && (
           <div className={css.outcomeChoice}>
-            <p className={css.outcomeLabel}>{t('ui.text.outcomeLabel', 'מה קורה כעת?')}</p>
+            <p className={css.outcomeLabel}>{t('ui.text.outcomeLabel')}</p>
             <div className={css.outcomeButtons}>
               <button
                 className={css.outcomeBtn}
                 onClick={() => setOutcome('discharge')}
                 style={{ background: theme.accent, color: theme.accentText }}
               >
-                {t('ui.buttons.discharge', '🏠 שחרור הביתה')}
+                {t('ui.buttons.discharge')}
               </button>
               <button
                 className={css.outcomeBtn}
                 onClick={() => setOutcome('admission')}
                 style={{ background: theme.accent, color: theme.accentText }}
               >
-                {t('ui.buttons.admission', '🏥 המשך אשפוז')}
+                {t('ui.buttons.admission')}
               </button>
             </div>
           </div>
@@ -105,7 +105,7 @@ export function CelebratePage() {
         {outcome && (
           <>
             <p className={css.parentZoneLabel}>
-              {outcome === 'discharge' ? t('ui.text.towardsDischarge', 'לקראת שחרור הביתה') : t('ui.text.towardsAdmission', 'לקראת המשך אשפוז')}
+              {outcome === 'discharge' ? t('ui.text.towardsDischarge') : t('ui.text.towardsAdmission')}
             </p>
 
             {blocksFor(lang, outcome).map((b, i) => (
@@ -122,7 +122,7 @@ export function CelebratePage() {
                     className={css.doneBtn}
                     style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
                   >
-                    {t('ui.buttons.fillCard', '🪪 למילוי הכרטיס ←')}
+                    {t('ui.buttons.fillCard')}
                   </button>
                 </Link>
               ) : (
@@ -131,7 +131,7 @@ export function CelebratePage() {
                   onClick={() => setShowCard(true)}
                   style={{ background: theme.accent, color: theme.accentText }}
                 >
-                  {t('ui.buttons.showCard', '🪪 הצגת הכרטיס לצוות')}
+                  {t('ui.buttons.showCard')}
                 </button>
               )
             )}
@@ -141,11 +141,11 @@ export function CelebratePage() {
               onClick={() => setOutcome(null)}
               style={{ marginTop: '1rem', color: theme.accent, background: 'none', border: 'none', cursor: 'pointer' }}
             >
-              {t('ui.buttons.changeChoice', '← שנה בחירה')}
+              {t('ui.buttons.changeChoice')}
             </button>
 
             <Link to="/feedback" className={css.calmLink}>
-              {t('ui.buttons.feedback', '💬 איך היה לכם? ספרו לנו →')}
+              {t('ui.buttons.feedback')}
             </Link>
           </>
         )}
@@ -195,7 +195,7 @@ export function CelebratePage() {
             className={css.calmOverlayClose}
             onClick={() => setShowCard(false)}
           >
-            {t('ui.buttons.close', 'סגירה')}
+            {t('ui.buttons.close')}
           </button>
         </div>
       )}

@@ -48,7 +48,7 @@ export function QuestShell() {
             type="button"
             className={css.questTopBtn}
             onClick={() => navigate(-1)}
-            aria-label={t('ui.shell.back', 'חזרה')}
+            aria-label={t('ui.shell.back')}
           >
             <span aria-hidden>›</span>
           </button>
@@ -57,7 +57,7 @@ export function QuestShell() {
         )}
 
         {!isMapPage ? (
-          <Link to={mapTarget} className={css.questTopBrand} aria-label={t('ui.shell.map', 'למפת המסע')}>
+          <Link to={mapTarget} className={css.questTopBrand} aria-label={t('ui.shell.map')}>
             <span aria-hidden>🗺️</span>
           </Link>
         ) : (
@@ -66,7 +66,7 @@ export function QuestShell() {
 
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end', paddingInlineEnd: '0.5rem' }}>
           <LanguagePicker />
-          <a href="#/" className={css.questTopBtn} aria-label={t('ui.shell.menu', 'לתפריט הקונספטים')}>
+          <a href="#/" className={css.questTopBtn} aria-label={t('ui.shell.menu')}>
             <span aria-hidden>🏁</span>
           </a>
         </div>

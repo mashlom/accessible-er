@@ -40,7 +40,7 @@ export function WorldSelectPage() {
             className={css.worldCard}
             style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}
             onClick={() => choose(theme.id)}
-            aria-label={`${t('ui.buttons.chooseWorldAria', 'בחר עולם:')} ${name}`}
+            aria-label={`${t('ui.buttons.chooseWorldAria')} ${name}`}
           >
             {theme.thumbnailOverlay ? (
               <div
@@ -57,7 +57,7 @@ export function WorldSelectPage() {
             <span className={css.worldCardName}>{name}</span>
             <span className={css.worldCardCta}>
               <span className={css.worldCardArrow} aria-hidden>↖</span>
-              {t('ui.buttons.startJourney', 'להתחיל במסע')}
+              {t('ui.buttons.startJourney')}
             </span>
           </button>
           )

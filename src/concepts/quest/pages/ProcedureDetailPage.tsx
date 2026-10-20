@@ -84,12 +84,12 @@ export function ProcedureDetailPage() {
             >
               {isDone
                 ? <em className={css.doneBtnCoin}>{theme.doneEmoji ?? '✓'}</em>
-                : t('ui.buttons.done', 'הצלחתי! ←')}
+                : t('ui.buttons.done')}
             </button>
           )}
           {(!isDone || !parentIsActive) && (
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
-              {t('ui.buttons.back', 'חזרה →')}
+              {t('ui.buttons.back')}
             </button>
           )}
         </div>
@@ -99,29 +99,29 @@ export function ProcedureDetailPage() {
         <p className={css.waitRange}>
           {procedure.who && <span>👤 {procedure.who}</span>}
           {procedure.who && procedure.duration && <span> · </span>}
-          {procedure.duration && <span>{t('ui.text.estimated', '⏱ זמן משוער:')} {procedure.duration}</span>}
+          {procedure.duration && <span>{t('ui.text.estimated')} {procedure.duration}</span>}
         </p>
       )}
 
       <div className={css.stageBody}>
         <section>
-          <h2>{t('ui.text.whatActuallyHappens', 'מה קורה בפועל')}</h2>
+          <h2>{t('ui.text.whatActuallyHappens')}</h2>
           <p>{procedure.what}</p>
         </section>
 
         <section>
-          <h2>{t('ui.text.childMayFeel', 'מה הילד/ה עשוי/ה להרגיש')}</h2>
+          <h2>{t('ui.text.childMayFeel')}</h2>
           <p>{procedure.feel}</p>
         </section>
 
         <section>
-          <h2>{t('ui.text.prepareChild', 'איך להכין את הילד/ה')}</h2>
+          <h2>{t('ui.text.prepareChild')}</h2>
           <p>{procedure.prepare}</p>
         </section>
 
         {procedure.adaptations && procedure.adaptations.length > 0 && (
           <section>
-            <h2>{t('ui.text.askStaff', 'מה לבקש מהצוות')}</h2>
+            <h2>{t('ui.text.askStaff')}</h2>
             <ul>
               {procedure.adaptations.map((item, i) => <li key={i}>{item}</li>)}
             </ul>

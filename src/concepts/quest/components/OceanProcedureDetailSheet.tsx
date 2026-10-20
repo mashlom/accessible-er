@@ -74,7 +74,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
           aria-label={procedure.title}
           onClick={(e) => e.stopPropagation()}
         >
-          <button ref={handleRef} type="button" className={css.sheetHandle} onClick={back} aria-label={t('ui.buttons.close', 'סגירה')}>
+          <button ref={handleRef} type="button" className={css.sheetHandle} onClick={back} aria-label={t('ui.buttons.close')}>
             <span aria-hidden />
           </button>
 
@@ -128,12 +128,12 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
                   back()
                 }}
               >
-                {isDone ? (theme.doneEmoji ?? '✓') : t('ui.buttons.oceanDone', 'הצלחתי! ←')}
+                {isDone ? (theme.doneEmoji ?? '✓') : t('ui.buttons.oceanDone')}
               </button>
             )}
             {(!isDone || !stageActive) && (
               <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={back}>
-                {t('ui.buttons.backToStation', 'חזרה לתחנה →')}
+                {t('ui.buttons.backToStation')}
               </button>
             )}
           </div>

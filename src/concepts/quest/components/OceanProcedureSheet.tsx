@@ -39,8 +39,8 @@ export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
   }, [])
 
   // Texts are the app's own (not the mockup's wording)
-  const title = t('ui.text.oceanDecisionTitle', 'החלטת הקפטן')
-  const prompt = theme.procedurePrompt ?? t('ui.text.procedurePrompt', 'בחרו את הפרוצדורות שנקבעו')
+  const title = t('ui.text.oceanDecisionTitle')
+  const prompt = theme.procedurePrompt ?? t('ui.text.procedurePrompt')
 
   return (
     <>
@@ -53,13 +53,13 @@ export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
           aria-label={title}
           onClick={(e) => e.stopPropagation()}
         >
-          <button ref={handleRef} type="button" className={css.sheetHandle} onClick={close} aria-label={t('ui.buttons.close', 'סגירה')}>
+          <button ref={handleRef} type="button" className={css.sheetHandle} onClick={close} aria-label={t('ui.buttons.close')}>
             <span aria-hidden />
           </button>
 
           <h1 className={css.pickTitle}>{title}</h1>
           <p className={css.pickSub}>{prompt}</p>
-          <p className={css.pickNote}>{t('ui.text.staffNote', 'אחות או רופא: בחרו את הבדיקות או הטיפולים שהרופא הנחה')}</p>
+          <p className={css.pickNote}>{t('ui.text.staffNote')}</p>
 
           <div className={css.pickGrid}>
             {OPTIONAL_STAGES.map((id) => {
@@ -88,11 +88,11 @@ export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
 
           {selected.size > 0 ? (
             <button type="button" className={css.pickBtn} onClick={onContinue}>
-              {t('ui.buttons.continue', 'המשיכו ←')}
+              {t('ui.buttons.continue')}
             </button>
           ) : (
             <button type="button" className={css.pickBtn} onClick={onSkip}>
-              {t('ui.buttons.finish', 'לסיום ←')}
+              {t('ui.buttons.finish')}
             </button>
           )}
         </div>

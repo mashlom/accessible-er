@@ -107,7 +107,7 @@ function StripNightMapPage() {
                   className={pinClass}
                   onClick={() => allOptionalsDone && navigate(conceptPath('/celebrate'))}
                   disabled={!allOptionalsDone}
-                  aria-label={skin?.label ?? t('ui.buttons.happyEnd', 'סוף טוב')}
+                  aria-label={skin?.label ?? t('ui.buttons.happyEnd')}
                 >
                   <div className={css.pinImageWrap} style={allOptionalsDone ? {} : { opacity: 0.6 }}>
                     {theme.shopImage ?? skin?.image ? (
@@ -117,7 +117,7 @@ function StripNightMapPage() {
                     )}
                     {allOptionalsDone && <span className={css.pinPulse} aria-hidden />}
                   </div>
-                  <span className={css.pinLabel}>{skin?.label ?? t('ui.buttons.happyEnd', 'סוף טוב')}</span>
+                  <span className={css.pinLabel}>{skin?.label ?? t('ui.buttons.happyEnd')}</span>
                 </button>
               )
             })()}

@@ -29,7 +29,7 @@ export function ShopPage() {
             style={{ borderColor: theme.accent, color: theme.accent, background: 'rgba(255,255,255,0.9)' }}
             onClick={reset}
           >
-            {t('ui.buttons.chooseWorld', 'לבחירת עולם →')}
+            {t('ui.buttons.chooseWorld')}
           </button>
         </Link>
       </div>

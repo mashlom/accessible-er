@@ -43,14 +43,14 @@ export function ProcedureSelectPage() {
     return <OceanProcedureSheet selected={selected} onToggle={toggle} onContinue={handleContinue} onSkip={handleSkip} />
   }
 
-  const prompt = theme.procedurePrompt ?? t('ui.text.procedurePrompt', 'בחרו את הפרוצדורות שנקבעו')
+  const prompt = theme.procedurePrompt ?? t('ui.text.procedurePrompt')
 
   return (
     <div className={css.selectPage} style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}>
-      <h1 className={css.selectTitle} style={{ color: theme.accent }}>{t('ui.text.nextStep', 'שלב הבא')}</h1>
+      <h1 className={css.selectTitle} style={{ color: theme.accent }}>{t('ui.text.nextStep')}</h1>
       <p className={css.selectSub}>{prompt}</p>
       <p className={css.selectNote} style={{ color: theme.accent, fontSize: '0.95rem', marginTop: '0.5rem', opacity: 0.85 }}>
-        {t('ui.text.staffNote', 'אחות או רופא: בחרו את הבדיקות או הטיפולים שהרופא הנחה')}
+        {t('ui.text.staffNote')}
       </p>
 
       <div className={css.worldGrid}>
@@ -86,7 +86,7 @@ export function ProcedureSelectPage() {
             style={{ background: theme.accent, color: theme.accentText }}
             onClick={handleContinue}
           >
-            {t('ui.buttons.continue', 'המשיכו ←')}
+            {t('ui.buttons.continue')}
           </button>
         ) : (
           <button
@@ -94,7 +94,7 @@ export function ProcedureSelectPage() {
             style={{ background: theme.accent, color: theme.accentText }}
             onClick={handleSkip}
           >
-            {t('ui.buttons.finish', 'לסיום ←')}
+            {t('ui.buttons.finish')}
           </button>
         )}
       </div>

@@ -86,7 +86,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
           aria-label={label}
           onClick={(e) => e.stopPropagation()}
         >
-          <button ref={handleRef} type="button" className={css.sheetHandle} onClick={close} aria-label={t('ui.buttons.close', 'סגירה')}>
+          <button ref={handleRef} type="button" className={css.sheetHandle} onClick={close} aria-label={t('ui.buttons.close')}>
             <span aria-hidden />
           </button>
 
@@ -124,16 +124,16 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
                 className={`${css.oceanBtn} ${css.oceanBtnDone}`}
                 onClick={onDone}
               >
-                {doneIsChoice ? t('ui.buttons.oceanDecision', 'החלטת הקפטן ←') : t('ui.buttons.oceanDone', 'הצלחתי! ←')}
+                {doneIsChoice ? t('ui.buttons.oceanDecision') : t('ui.buttons.oceanDone')}
               </button>
             )}
             {showChooseTests && !isActive && (
               <Link to="/procedures" className={`${css.oceanBtn} ${css.oceanBtnDone}`}>
-                {t('ui.buttons.oceanDecision', 'החלטת הקפטן ←')}
+                {t('ui.buttons.oceanDecision')}
               </Link>
             )}
             <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={close}>
-              {t('ui.buttons.backToMap', 'חזרה למפה →')}
+              {t('ui.buttons.backToMap')}
             </button>
           </div>
         </div>
