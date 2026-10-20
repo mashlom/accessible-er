@@ -159,6 +159,12 @@
         "what": "What will happen here",
         "feel": "What may be hard",
         "canAsk": "What can you ask for?"
+      },
+      "adult": {
+        "weAreHere": "We are here",
+        "whatHappens": "What happens here",
+        "challenge": "What may be hard",
+        "canAsk": "You can ask for"
       }
     }
   },
@@ -321,6 +327,12 @@
         "what": "Что здесь будет",
         "feel": "Что может быть трудно",
         "canAsk": "О чём ты можешь попросить"
+      },
+      "adult": {
+        "weAreHere": "Мы здесь",
+        "whatHappens": "Что здесь происходит",
+        "challenge": "Что может быть трудно",
+        "canAsk": "О чем можно попросить"
       }
     }
   },
@@ -484,6 +496,12 @@
         "what": "מה קורה כאן",
         "feel": "מה עלול להיות קשה",
         "canAsk": "על מה אפשר לבקש?"
+      },
+      "adult": {
+        "weAreHere": "אנחנו כאן",
+        "whatHappens": "מה קורה כאן",
+        "challenge": "מה עלול להיות קשה",
+        "canAsk": "מה אפשר לבקש"
       }
     }
   }

@@ -153,7 +153,7 @@ export function ParentSheet({
 
         {data.meaning && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.text.weAreHere')}</h2>
+            <h2>{t('ui.labels.adult.weAreHere')}</h2>
             <p>{data.meaning}</p>
             {stageId === 'reception' && questLinks && (
               <>
@@ -179,9 +179,7 @@ export function ParentSheet({
           data.whatHappens && (
             <section className={css.sheetCard}>
               <h2>
-                {stageId === 'wait-before-triage'
-                  ? t('ui.text.whatHappensHere')
-                  : t('ui.text.whatHappens')}
+                {t('ui.labels.adult.whatHappens')}
               </h2>
               <p>{data.whatHappens}</p>
             </section>
@@ -190,7 +188,7 @@ export function ParentSheet({
 
         {data.challenge && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.text.whatMayBeHard')}</h2>
+            <h2>{t('ui.labels.adult.challenge')}</h2>
             <p>{data.challenge}</p>
             {stageId === 'reception' && questLinks && (
               <>
@@ -230,7 +228,7 @@ export function ParentSheet({
           const asks = singleProc?.adaptations?.length ? singleProc.adaptations : data.canAsk
           return asks && asks.length > 0 ? (
             <section className={css.sheetCard}>
-              <h2>{singleProc?.adaptations?.length ? t('ui.text.askStaff') : t('ui.text.canAsk')}</h2>
+              <h2>{singleProc?.adaptations?.length ? t('ui.text.askStaff') : t('ui.labels.adult.canAsk')}</h2>
               <ul>
                 {asks.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
