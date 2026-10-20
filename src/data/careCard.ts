@@ -6,6 +6,8 @@
  * Nothing is ever transmitted anywhere.
  */
 
+import careI18n from './i18n/careCard.json'
+
 export interface CareCard {
   /** optional nickname — the app works without any identifying detail */
   nickname: string
@@ -72,110 +74,28 @@ export interface CardSection {
   options: string[]
 }
 
-export const cardSections: CardSection[] = [
-  {
-    key: 'communication',
-    title: 'איך הילד/ה מתקשר/ת?',
-    emoji: '💬',
-    options: [
-      'מדבר/ת',
-      'מדבר/ת מעט',
-      'לא ורבלי/ת',
-      'תקשורת בתמונות (תת״ח)',
-      'מבין/ה הוראות קצרות',
-      'צריך/ה זמן תגובה',
-    ],
-  },
-  {
-    key: 'sensitivities',
-    title: 'רגישויות חושיות',
-    emoji: '⚠️',
-    options: ['רעש', 'אור חזק', 'מגע', 'ריחות', 'הרבה אנשים', 'המתנה ממושכת'],
-  },
-  {
-    key: 'calming',
-    title: 'מה מרגיע אותו/ה?',
-    emoji: '💛',
-    options: [
-      'חפץ מרגיע מהבית',
-      'סרטון או מוזיקה',
-      'חיבוק מההורה',
-      'הסבר מראש',
-      'ספירה יחד',
-      'משחק',
-    ],
-  },
-  {
-    key: 'escalators',
-    title: 'מה עלול להסלים מצוקה?',
-    emoji: '⚡',
-    options: [
-      'מגע בלי הכנה',
-      'רעש פתאומי',
-      'הרבה אנשים מסביב',
-      'אורות חזקים',
-      'דיבור מהיר או צעקות',
-      'הפתעות ושינויים',
-    ],
-  },
-  {
-    key: 'hardMoments',
-    title: 'קשה במיוחד עם…',
-    emoji: '🩺',
-    options: [
-      'מחטים ודקירות',
-      'מדידת לחץ דם',
-      'מגע בפנים או בראש',
-      'שכיבה על מיטת בדיקה',
-      'מכשירים על הגוף',
-      'להישאר במקום אחד',
-    ],
-  },
-  {
-    key: 'pain',
-    title: 'איך הוא/היא מבטא/ת כאב?',
-    emoji: '🤕',
-    options: [
-      'אומר/ת במילים',
-      'מצביע/ה על המקום',
-      'בכי או צעקות',
-      'נהיה/נהיית שקט/ה ומסתגר/ת',
-      'תנועות גוף',
-      'סולם פרצופים עוזר',
-    ],
-  },
-  {
-    key: 'avoid',
-    title: 'חשוב לא לעשות',
-    emoji: '🚫',
-    options: [
-      'לגעת בלי להסביר',
-      'לדבר מעל הראש שלו/ה',
-      'להחזיק בכוח',
-      'למהר ולזרז',
-      'הרבה הוראות בבת אחת',
-      'לקחת את החפץ המרגיע',
-    ],
-  },
+// the section keys and icons; the Hebrew titles and options are in i18n/careCard.json (he)
+const sectionMeta: { key: CardArrayField; emoji: string }[] = [
+  { key: 'communication', emoji: '💬' },
+  { key: 'sensitivities', emoji: '⚠️' },
+  { key: 'calming', emoji: '💛' },
+  { key: 'escalators', emoji: '⚡' },
+  { key: 'hardMoments', emoji: '🩺' },
+  { key: 'pain', emoji: '🤕' },
+  { key: 'avoid', emoji: '🚫' },
 ]
+
+export const cardSections: CardSection[] = sectionMeta.map((m, i) => ({
+  ...m,
+  title: (careI18n as unknown as { he: { cardSections: { title: string; options: string[] }[] } }).he.cardSections[i].title,
+  options: (careI18n as unknown as { he: { cardSections: { title: string; options: string[] }[] } }).he.cardSections[i].options,
+}))
 
 /**
  * Marking a sensitivity/trigger opens matching adaptation suggestions
  * (the spec's "סימון רגישות יאפשר לפתוח הצעות להתאמות מסוימות").
  */
-const adaptationSuggestions: Record<string, string> = {
-  רעש: 'אוזניות, אטמי אוזניים או מרחב שקט',
-  'אור חזק': 'עמעום האור בחדר',
-  מגע: 'הסבר קצר לפני כל נגיעה',
-  'הרבה אנשים': 'פחות אנשי צוות בחדר — אחד מוביל ומדבר',
-  'המתנה ממושכת': 'פינה שקטה לזמן ההמתנה',
-  'מחטים ודקירות': 'משחה מאלחשת וזמן הכנה לפני דקירה',
-  'מגע בלי הכנה': 'הסבר קצר לפני כל נגיעה',
-  'הרבה אנשים מסביב': 'פחות אנשי צוות בחדר — אחד מוביל ומדבר',
-  'רעש פתאומי': 'סביבה שקטה ודלת סגורה',
-  'אורות חזקים': 'עמעום האור בחדר',
-  'להישאר במקום אחד': 'הפסקות קצרות ותנועה בין שלבים',
-}
+const adaptationSuggestions: Record<string, string> = (careI18n as unknown as { he: { adaptationSuggestions: Record<string, string> } }).he.adaptationSuggestions
 
 export function suggestedAdaptations(
   card: CareCard,
