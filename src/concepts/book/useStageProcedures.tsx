@@ -60,7 +60,7 @@ const pick = <T,>(data: Record<string, T> | Record<string, Record<string, T>>, l
 export function useStageProcedures(stageId: string, options: { withVideo?: boolean; withInserts?: boolean } = {}) {
   // the books that show the video stories have no "It's interesting" inserts
   const withInserts = options.withInserts ?? true
-  const { lang } = useI18n()
+  const { lang, t } = useI18n()
   const [insertKey, setInsertKey] = useState<string | null>(null)
   const [measureOpen, setMeasureOpen] = useState<string | null>(null)
   // the temperature can be taken under the arm or in the mouth
@@ -73,7 +73,7 @@ export function useStageProcedures(stageId: string, options: { withVideo?: boole
   }, [stageId])
 
   const closeLabel = ({ ru: 'Закрыть', en: 'Close', he: 'סגירה' } as Record<string, string>)[lang] ?? 'סגירה'
-  const insertLabel = ({ ru: 'Это интересно', en: 'It is interesting', he: 'מעניין' } as Record<string, string>)[lang] ?? 'Это интересно'
+  const insertLabel = t('ui.buttons.interesting')
   const circleList = CIRCLES[stageId] ?? []
 
   const circles = circleList.length ? (

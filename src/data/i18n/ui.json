@@ -37,7 +37,8 @@
       "discharge": "🏠 Go home",
       "admission": "🏥 Continue hospitalization",
       "changeChoice": "← Change choice",
-      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות"
+      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות",
+      "interesting": "It is interesting"
     },
     "shell": {
       "skip": "Skip to content",
@@ -275,7 +276,8 @@
       "discharge": "🏠 Выписка домой",
       "admission": "🏥 Госпитализация",
       "changeChoice": "← Изменить выбор",
-      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות"
+      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות",
+      "interesting": "Это интересно"
     },
     "shell": {
       "skip": "Перейти к содержимому",
@@ -595,7 +597,8 @@
       "selectProcedures": "בחירת בדיקות",
       "happyEnd": "סוף טוב",
       "chooseWorldAria": "בחר עולם:",
-      "startJourney": "להתחיל במסע"
+      "startJourney": "להתחיל במסע",
+      "interesting": "מעניין"
     },
     "shell": {
       "back": "חזרה",
