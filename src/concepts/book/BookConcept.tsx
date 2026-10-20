@@ -38,7 +38,7 @@ export default function BookConcept() {
           <span aria-hidden />
           <div className={css.topGroup}>
             <LanguagePicker />
-            <a href="#/" className={css.topFlag} aria-label="לתפריט">
+            <a href="#/" className={css.topFlag}>
               <span aria-hidden>🏁</span>
             </a>
           </div>
