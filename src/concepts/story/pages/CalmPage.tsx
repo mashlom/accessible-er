@@ -72,8 +72,9 @@ export function CalmPage() {
         </Bubble>
       </div>
       <div className={styles.sentences}>
-        {sentences.map((s) => (
-          <button key={s} type="button" className={styles.sentence} onClick={() => setShown(s)}>
+        {sentences.map((s, i) => (
+          // the button is in the parent's language; the big screen is for the staff, so it stays Hebrew
+          <button key={s} type="button" className={styles.sentence} onClick={() => setShown(readySentences[i] ?? s)}>
             {s}
           </button>
         ))}

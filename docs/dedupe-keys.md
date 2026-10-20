@@ -28,10 +28,7 @@ At the start, 185 texts were stored under more than one key (325 extra copies, c
 ### Checked in the browser
 - Talk with Roni (ru): all 16 procedures, a procedure's text and asks, the calm tips (the pause tip is found by id), the ready sentences (shown to the staff in Hebrew), the staff requests.
 - Worlds' "when it's hard" page: the tip icons show in he, en and ru; the ready sentence shown to the staff is Hebrew.
-- Story calm page: the overlay's close button reads `ui.buttons.close`.
-
-### Open question
-- On the story calm page the ready sentence on the big screen follows the chosen language, while the worlds and the talk show it to the staff in Hebrew. This is older than this PR; left as it is.
+- Story calm page: the overlay's close button reads `ui.buttons.close`; the ready sentence on the big screen is now Hebrew for the staff, like in the worlds and the talk (the button stays in the parent's language).
 
 ### Out of scope
 - No rewording and no new translations — only moving keys.
