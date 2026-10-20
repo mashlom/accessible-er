@@ -120,7 +120,7 @@ export function CalmPage() {
           type="button"
           className={css.calmHelpBtn}
           style={{ background: theme.accent, color: theme.accentText }}
-          onClick={() => setShown('אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות')}
+          onClick={() => setShown(t('ui.buttons.staffHelpMessage'))}
         >
           {t('ui.buttons.needHelp')}
         </button>

@@ -36,7 +36,8 @@
       "selectProcedures": "Choose the checks",
       "discharge": "🏠 Go home",
       "admission": "🏥 Continue hospitalization",
-      "changeChoice": "← Change choice"
+      "changeChoice": "← Change choice",
+      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות"
     },
     "shell": {
       "skip": "Skip to content",
@@ -268,7 +269,8 @@
       "selectProcedures": "Выбор процедур",
       "discharge": "🏠 Выписка домой",
       "admission": "🏥 Госпитализация",
-      "changeChoice": "← Изменить выбор"
+      "changeChoice": "← Изменить выбор",
+      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות"
     },
     "shell": {
       "skip": "Перейти к содержимому",
@@ -528,7 +530,8 @@
       "showToStaff": "להציג לצוות ←",
       "makeCard": "🪪 להכנת כרטיס התאמות",
       "showCard": "🪪 להצגת הכרטיס לצוות",
-      "needHelp": "🆘 נזדקקנו לעזרה"
+      "needHelp": "🆘 נזדקקנו לעזרה",
+      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות"
     }
   }
 }
