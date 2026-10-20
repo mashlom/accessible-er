@@ -7,7 +7,7 @@ import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
 /**
- * "הכרטיס שלי" — the care card as the parent fills it in. The same form as
+ * "My card" — the care card as the parent fills it in. The same form as
  * on every other screen (src/components/careCard); this screen gives its frame.
  */
 export function CardPage() {

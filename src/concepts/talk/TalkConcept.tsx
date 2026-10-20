@@ -8,7 +8,7 @@ import { CardViewPage } from './pages/CardViewPage'
 import { QrPage } from './pages/QrPage'
 
 /**
- * Concept 3 — "לדבר עם רוני". Mounted at /talk by App.tsx.
+ * Concept 3 — "Talk with Roni". Mounted at /talk by App.tsx.
  *
  * Almost everything happens on the index route: the conversation *is* the
  * app. The only extra routes are the two things a dialogue cannot be — a

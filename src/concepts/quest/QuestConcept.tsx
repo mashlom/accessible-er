@@ -40,7 +40,7 @@ function WorldRoutes() {
   )
 }
 
-/** Concept 4 — "מסע עם מפה". Mounted at /quest by App.tsx. */
+/** Concept 4 — "journey with a map". Mounted at /quest by App.tsx. */
 export default function QuestConcept() {
   return (
     <Routes>

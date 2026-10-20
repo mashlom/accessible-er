@@ -6,7 +6,7 @@ interface MascotProps {
 }
 
 /**
- * "רוני" — a soft, low-arousal companion character that guides the
+ * "Roni" — a soft, low-arousal companion character that guides the
  * child through the journey. Deliberately simple, rounded and gentle:
  * muted colours, a calm face, no sudden features.
  */

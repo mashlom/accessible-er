@@ -6,7 +6,7 @@ import css from '../book.module.css'
 import { useStageProcedures } from '../useStageProcedures'
 
 /**
- * "How it works" — the אני world retold as a book (issue #10): one stage per
+ * "How it works" — the "I" world retold as a book (issue #10): one stage per
  * page, the child's line in front, and the parent's text on a bottom sheet.
  * Like the picture book, the extra stages (tests, treatment, consult, waiting
  * for results) are chosen by the parent on a selection page mid-book.

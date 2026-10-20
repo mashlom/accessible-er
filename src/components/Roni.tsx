@@ -36,7 +36,7 @@ const moodLabel: Record<RoniMood, string> = {
 }
 
 /**
- * רוני — the companion character of the "story" concept.
+ * Roni — the companion character of the "story" concept.
  *
  * Deliberately much more expressive than the calm concept's mascot: a big
  * rounded creature with a scarf, arms and feet, eight moods, blinking and
