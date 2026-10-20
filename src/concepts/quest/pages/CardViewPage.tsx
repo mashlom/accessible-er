@@ -13,6 +13,7 @@ import { useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 import parentUi from '../../../data/parent/ui.json'
+import careI18n from '../../../data/i18n/careCard.json'
 
 const parentTexts = parentUi as unknown as Record<'he' | 'en' | 'ru', { card: CardText }>
 type CardText = {
@@ -74,7 +75,8 @@ export function CardViewPage() {
     { emoji: '✏️', label: heRows.freeNote, value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
-  const suggestions = suggestedAdaptations(card)
+  // the suggestions the parent reads on screen: in the chosen language (the Hebrew list is the source)
+  const suggestions = suggestedAdaptations(card, (careI18n as unknown as Record<string, { adaptationSuggestions?: Record<string, string> }>)[lang]?.adaptationSuggestions)
   const name = card.nickname.trim()
 
   return (
