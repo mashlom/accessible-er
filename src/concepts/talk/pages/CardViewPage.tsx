@@ -24,6 +24,8 @@ type CardTexts = { viewTitle: string; viewTitleNoName: string; age: string; name
 export function CardViewPage() {
   const { lang } = useI18n()
   const cardTx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { card: CardTexts }>)[lang].card
+  // the card's labels are Hebrew, like its values: the staff reads the card in Hebrew (the note says so)
+  const heRows = (parentUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he.card.rows
   const cardViewTx = (parentUi as unknown as Record<'he' | 'en' | 'ru', { cardView: { emptyTitle: string } }>)[lang].cardView
   const talkTx = (talkJson as unknown as Record<'he' | 'en' | 'ru', { cardView: { back: string; emptyText: string } }>)[lang].cardView
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
@@ -51,17 +53,17 @@ export function CardViewPage() {
       .join(' · ')
 
   const rows = [
-    { emoji: '💬', label: cardTx.rows.communication, value: join(...card.communication, c.communication) },
-    { emoji: '⚠️', label: cardTx.rows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
-    { emoji: '💛', label: cardTx.rows.calming, value: join(...card.calming, c.calming) },
+    { emoji: '💬', label: heRows.communication, value: join(...card.communication, c.communication) },
+    { emoji: '⚠️', label: heRows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
+    { emoji: '💛', label: heRows.calming, value: join(...card.calming, c.calming) },
     {
       emoji: '🚫',
-      label: cardTx.rows.avoid,
+      label: heRows.avoid,
       value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid),
     },
-    { emoji: '🩺', label: cardTx.rows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
-    { emoji: '🤕', label: cardTx.rows.pain, value: join(...card.pain, c.pain) },
-    { emoji: '✏️', label: cardTx.rows.freeNote, value: card.freeNote.trim() },
+    { emoji: '🩺', label: heRows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
+    { emoji: '🤕', label: heRows.pain, value: join(...card.pain, c.pain) },
+    { emoji: '✏️', label: heRows.freeNote, value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
   const suggestions = suggestedAdaptations(card)

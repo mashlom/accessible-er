@@ -30,6 +30,8 @@ export function CardViewPage() {
   const { t, lang } = useI18n()
   // the labels and the title follow the language; the saved values the staff reads stay as they are
   const cardText = parentTexts[lang].card
+  // the card's labels are Hebrew, like its values: the staff reads the card in Hebrew (the note says so)
+  const heRows = (parentUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he.card.rows
   const { goBack, leaveState, passThroughState } = useReturnTo('/card')
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
 
@@ -63,13 +65,13 @@ export function CardViewPage() {
   const join = (...parts: string[]) => parts.map((p) => p.trim()).filter(Boolean).join(' · ')
 
   const rows = [
-    { emoji: '💬', label: cardText.rows.communication, value: join(...card.communication, c.communication) },
-    { emoji: '⚠️', label: cardText.rows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
-    { emoji: '💛', label: cardText.rows.calming, value: join(...card.calming, c.calming) },
-    { emoji: '🚫', label: cardText.rows.avoid, value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid) },
-    { emoji: '🩺', label: cardText.rows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
-    { emoji: '🤕', label: cardText.rows.pain, value: join(...card.pain, c.pain) },
-    { emoji: '✏️', label: cardText.rows.freeNote, value: card.freeNote.trim() },
+    { emoji: '💬', label: heRows.communication, value: join(...card.communication, c.communication) },
+    { emoji: '⚠️', label: heRows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
+    { emoji: '💛', label: heRows.calming, value: join(...card.calming, c.calming) },
+    { emoji: '🚫', label: heRows.avoid, value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid) },
+    { emoji: '🩺', label: heRows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
+    { emoji: '🤕', label: heRows.pain, value: join(...card.pain, c.pain) },
+    { emoji: '✏️', label: heRows.freeNote, value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
   const suggestions = suggestedAdaptations(card)
