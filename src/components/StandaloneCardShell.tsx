@@ -1,5 +1,4 @@
 import { useLayoutEffect, type ReactNode } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { setI18nEnabled } from '../hooks/useI18n'
 import { LanguagePicker } from './LanguagePicker'
 import styles from '../concepts/story/story.module.css'
@@ -10,7 +9,6 @@ import styles from '../concepts/story/story.module.css'
  * the rest of the app: a way back, the language choice and a way home.
  */
 export function StandaloneCardShell({ children }: { children: ReactNode }) {
-  const navigate = useNavigate()
   // the card pages are translated like the rest of the app
   useLayoutEffect(() => {
     setI18nEnabled(true)
@@ -20,9 +18,7 @@ export function StandaloneCardShell({ children }: { children: ReactNode }) {
     <div className={styles.theme}>
       <header className={`${styles.topbar} no-print`}>
         <div className={styles.topbarInner}>
-          <button type="button" className={styles.topBtn} onClick={() => navigate(-1)} aria-label="back">
-            <span aria-hidden>›</span>
-          </button>
+          <span className={styles.topBtn} aria-hidden />
           <span className={styles.topTitle} aria-hidden />
           <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'flex-end' }}>
             <LanguagePicker />
