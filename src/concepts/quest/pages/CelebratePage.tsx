@@ -115,7 +115,7 @@ export function CelebratePage() {
 
             {outcome === 'admission' && (
               cardEmpty ? (
-                <Link to="/card" className={css.calmLink}>
+                <Link to="/card" state={{ from: '/celebrate' }} className={css.calmLink}>
                   <button
                     className={css.doneBtn}
                     style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
