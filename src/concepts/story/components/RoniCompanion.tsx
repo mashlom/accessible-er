@@ -56,7 +56,7 @@ export function RoniCompanion() {
           type="button"
           className={styles.peek}
           onClick={() => setMinimised(false)}
-          aria-label="להחזיר את רוני"
+          aria-label="Show Roni"
           style={{ marginInlineEnd: 'auto' }}
         >
           <Roni size={78} mood="curious" decorative />
@@ -72,7 +72,7 @@ export function RoniCompanion() {
           type="button"
           className={styles.roniBtn}
           onClick={onTapRoni}
-          aria-label="ללחוץ על רוני"
+          aria-label="Tap Roni"
         >
           <Roni size={96} mood={line.mood} float bounceKey={bounce} decorative />
           <span className={styles.tapHint} aria-hidden>
@@ -89,7 +89,7 @@ export function RoniCompanion() {
             type="button"
             className={styles.hideBtn}
             onClick={() => setMinimised(true)}
-            aria-label="להקטין את רוני"
+            aria-label="Minimise Roni"
           >
             <span aria-hidden>−</span>
           </button>

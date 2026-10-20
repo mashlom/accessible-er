@@ -35,7 +35,7 @@ export function QrPage() {
           🌈 מה שלומי? · המסע של רוני
         </p>
         {src ? (
-          <img src={src} alt={`קוד QR לכניסה לאפליקציה: ${url}`} className={styles.qrImg} />
+          <img src={src} alt={`QR code to open the app: ${url}`} className={styles.qrImg} />
         ) : (
           <p>יוצר קוד…</p>
         )}

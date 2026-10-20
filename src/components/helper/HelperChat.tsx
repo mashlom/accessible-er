@@ -36,10 +36,10 @@ export function HelperChat() {
           lang={lang}
           role="dialog"
           aria-modal="true"
-          aria-label="רוני"
+          aria-label="Roni"
           onClick={(e) => e.stopPropagation()}
         >
-          <button type="button" className={styles.close} onClick={closeHelper} aria-label="סגירה">
+          <button type="button" className={styles.close} onClick={closeHelper} aria-label="Close">
             ✕
           </button>
           <div className={`${talkStyles.theme} ${styles.talkHost}`}>
@@ -54,7 +54,7 @@ export function HelperChat() {
         type="button"
         className={styles.fab}
         onClick={openHelper}
-        aria-label="רוני"
+        aria-label="Roni"
         aria-haspopup="dialog"
       >
         <Roni size={44} mood="calm" headOnly decorative />

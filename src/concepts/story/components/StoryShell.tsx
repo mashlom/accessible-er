@@ -36,7 +36,7 @@ export function StoryShell() {
 
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'flex-end' }}>
               <LanguagePicker />
-              <a href="#/" className={styles.topFlag}>
+              <a href="#/" className={styles.topFlag} aria-label="Home">
                 <span aria-hidden>🏁</span>
               </a>
             </div>

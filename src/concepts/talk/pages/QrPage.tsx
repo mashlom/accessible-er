@@ -31,7 +31,7 @@ export function QrPage() {
         <div className={`${styles.qrCard} print-area`}>
           <p style={{ fontWeight: 800, fontSize: '1.1rem' }}>💬 מה שלומי? · לדבר עם רוני</p>
           {src ? (
-            <img src={src} alt={`קוד QR לכניסה לאפליקציה: ${url}`} className={styles.qrImg} />
+            <img src={src} alt={`QR code to open the app: ${url}`} className={styles.qrImg} />
           ) : (
             <p>יוצר קוד…</p>
           )}

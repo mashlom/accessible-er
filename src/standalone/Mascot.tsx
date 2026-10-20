@@ -18,7 +18,7 @@ export function Mascot({ size = 96, mood = 'calm', className }: MascotProps) {
       height={size}
       viewBox="0 0 120 120"
       role="img"
-      aria-label="רוני, החבר שמלווה אותנו"
+      aria-label="Roni, the friend who accompanies us"
     >
       {/* body */}
       <ellipse cx="60" cy="66" rx="42" ry="40" fill="#bfe3df" />
