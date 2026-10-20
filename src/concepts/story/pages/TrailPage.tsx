@@ -107,7 +107,6 @@ export function TrailPage() {
                       </span>
                     )}
                   </span>
-                  <span className={styles.stopMeaning}>{stage.meaning}</span>
                 </button>
 
                 {isOpen && (

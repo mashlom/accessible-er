@@ -42,12 +42,6 @@ export function WaitTimesPage() {
                 <span style={{ fontSize: '1.1em' }}>{stage.waitRange}</span>
               </p>
             )}
-
-            {stage.meaning && (
-              <p style={{ margin: 0, fontSize: '0.9em', color: 'var(--c-story)', opacity: 0.85 }}>
-                {stage.meaning}
-              </p>
-            )}
           </div>
         ))}
       </div>
