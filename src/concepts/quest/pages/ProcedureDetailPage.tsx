@@ -64,12 +64,7 @@ export function ProcedureDetailPage() {
             )}
             <ol className={css.procedureSteps} style={{ color: theme.accent }}>
               {steps.map((step, i) => {
-                const m = /^(לפני|בזמן|אחרי):\s*(.*)$/s.exec(step)
-                return (
-                  <li key={i}>
-                    {m ? <><strong>{m[1]}:</strong> {m[2]}</> : step}
-                  </li>
-                )
+                return <li key={i}>{step}</li>
               })}
             </ol>
           </div>
