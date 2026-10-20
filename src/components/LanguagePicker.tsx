@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useI18n } from '../hooks/useI18n'
+import { setKeysOn, useI18n } from '../hooks/useI18n'
 import css from './LanguagePicker.module.css'
 
 const languages = [
@@ -17,7 +17,7 @@ export function LanguagePicker({
   /** which edge of the trigger the menu opens from; use 'start' near the left edge of the screen */
   align?: 'start' | 'end'
 }) {
-  const { lang, setLang, t } = useI18n()
+  const { lang, setLang, t, keysOn } = useI18n()
   const [open, setOpen] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
   const current = languages.find((l) => l.code === lang) ?? languages[0]
@@ -71,6 +71,22 @@ export function LanguagePicker({
               </button>
             </li>
           ))}
+          {/* the technical switch: the texts are replaced by their keys (for the team, to see what is not translated) */}
+          <li role="none">
+            <button
+              type="button"
+              role="menuitemcheckbox"
+              aria-checked={keysOn}
+              className={`${css.item} ${keysOn ? css.active : ''}`}
+              onClick={() => {
+                setKeysOn(!keysOn)
+                setOpen(false)
+              }}
+            >
+              <span aria-hidden>🔧</span>
+              <span>text_name</span>
+            </button>
+          </li>
         </ul>
       )}
     </div>

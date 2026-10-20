@@ -29,6 +29,16 @@ const subscribe = (l: () => void) => {
 }
 const snapshot = () => (enabled ? lang : 'he')
 
+// the technical 'text_name' switch: while it is on, t() returns the keys instead of the texts
+const KEYS_KEY = 'quest-keys'
+let showKeys = (() => { try { return sessionStorage.getItem(KEYS_KEY) === '1' } catch { return false } })()
+export function keysOn() { return showKeys }
+export function setKeysOn(on: boolean) {
+  showKeys = on
+  try { sessionStorage.setItem(KEYS_KEY, on ? '1' : '0') } catch {}
+  notify()
+}
+
 export function setLang(next: Language) {
   lang = next
   try { sessionStorage.setItem(KEY, next) } catch {}
@@ -81,11 +91,16 @@ export function translate<T>(l: Language, key: string, fallback?: T): T {
 
 export function useI18n() {
   const current = useSyncExternalStore(subscribe, snapshot)
+  // re-render when the keys switch changes (the store notifies on every change)
+  const keys = useSyncExternalStore(subscribe, () => showKeys)
   return {
     lang: current,
     setLang,
     dir: current === 'he' ? ('rtl' as const) : ('ltr' as const),
     // without a fallback the text is a string from src/data/i18n
-    t: <T = string>(key: string, fallback?: T): T => translate(current, key, fallback),
+    keysOn: keys,
+    // the keys switch shows the key for a text; structured fallbacks (lists, objects) keep their shape
+    t: <T = string>(key: string, fallback?: T): T =>
+      keys && (fallback === undefined || typeof fallback === 'string') ? (key as unknown as T) : translate(current, key, fallback),
   }
 }
