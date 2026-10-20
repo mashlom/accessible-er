@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
+import { KeysOverlay } from './components/KeysOverlay'
 import { ConceptBase } from './concepts/nav'
 import StoryConcept from './concepts/story/StoryConcept'
 import TalkConcept from './concepts/talk/TalkConcept'
@@ -14,6 +15,8 @@ import { StandaloneCardShell } from './components/StandaloneCardShell'
  */
 export default function App() {
   return (
+    <>
+    <KeysOverlay />
     <Routes>
       {/* the start of the site is the story home; the old concept menu address falls back to it */}
       <Route index element={<Navigate to="/story" replace />} />
@@ -79,5 +82,6 @@ export default function App() {
       <Route path="/settings" element={<Navigate to="/story/settings" replace />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    </>
   )
 }

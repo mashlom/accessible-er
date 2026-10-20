@@ -39,16 +39,16 @@ export function LanguagePicker({
   }, [open])
 
   return (
-    <div className={css.picker} ref={rootRef}>
+    <div className={css.picker} ref={rootRef} data-keys-skip>
       <button
         type="button"
         className={variant === 'overlay' ? `${css.trigger} ${css.overlay}` : css.trigger}
         onClick={() => setOpen((o) => !o)}
         aria-haspopup="menu"
         aria-expanded={open}
-        aria-label={`Language: ${t(`ui.language.${current.code}`)}`}
+        aria-label={`Language: ${keysOn ? 'text_name' : t(`ui.language.${current.code}`)}`}
       >
-        <span aria-hidden>{variant === 'overlay' ? current.short : current.flag}</span>
+        <span aria-hidden>{keysOn ? (variant === 'overlay' ? 'KEY' : '🔧') : variant === 'overlay' ? current.short : current.flag}</span>
         <span className={css.caret} aria-hidden>▾</span>
       </button>
 
@@ -59,10 +59,11 @@ export function LanguagePicker({
               <button
                 type="button"
                 role="menuitemradio"
-                aria-checked={l.code === lang}
-                className={`${css.item} ${l.code === lang ? css.active : ''}`}
+                aria-checked={!keysOn && l.code === lang}
+                className={`${css.item} ${!keysOn && l.code === lang ? css.active : ''}`}
                 onClick={() => {
                   setLang(l.code)
+                  setKeysOn(false)
                   setOpen(false)
                 }}
               >
@@ -71,15 +72,15 @@ export function LanguagePicker({
               </button>
             </li>
           ))}
-          {/* the technical switch: the texts are replaced by their keys (for the team, to see what is not translated) */}
+          {/* the fourth, technical language: every text shows the key it comes from (for the team) */}
           <li role="none">
             <button
               type="button"
-              role="menuitemcheckbox"
+              role="menuitemradio"
               aria-checked={keysOn}
               className={`${css.item} ${keysOn ? css.active : ''}`}
               onClick={() => {
-                setKeysOn(!keysOn)
+                setKeysOn(true)
                 setOpen(false)
               }}
             >

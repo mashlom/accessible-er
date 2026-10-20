@@ -99,8 +99,6 @@ export function useI18n() {
     dir: current === 'he' ? ('rtl' as const) : ('ltr' as const),
     // without a fallback the text is a string from src/data/i18n
     keysOn: keys,
-    // the keys switch shows the key for a text; structured fallbacks (lists, objects) keep their shape
-    t: <T = string>(key: string, fallback?: T): T =>
-      keys && (fallback === undefined || typeof fallback === 'string') ? (key as unknown as T) : translate(current, key, fallback),
+    t: <T = string>(key: string, fallback?: T): T => translate(current, key, fallback),
   }
 }
