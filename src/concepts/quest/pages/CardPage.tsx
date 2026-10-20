@@ -38,39 +38,39 @@ export function CardPage() {
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <span className={css.stageHeroIcon}>🪪</span>
         <h1 style={{ color: theme.accent }}>
-          {theme.cardChildHero?.title ?? t('ui.text.cardTitle', 'כרטיס התאמות')}
+          {theme.cardChildHero?.title ?? t('ui.text.cardTitle')}
         </h1>
         {theme.cardChildHero?.subtitle && (
           <p className={css.stageHeroHint}>{theme.cardChildHero.subtitle}</p>
         )}
         <div className={css.stageBack}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
-            {t('ui.buttons.back', 'חזרה →')}
+            {t('ui.buttons.back')}
           </button>
         </div>
       </div>
 
       <div className={css.stageBody}>
-        <p className={css.parentZoneLabel}>{t('ui.text.aboutMyChild', 'מה חשוב לדעת על הילד/ה שלי')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.text.aboutMyChild')}</p>
         <p className={css.cardPrivacy}>
-          {t('ui.text.privacyA', '🔒 הכל נשמר')} <strong>{t('ui.text.privacyB', 'במכשיר הזה בלבד')}</strong>{t('ui.text.privacyC', ', נמחק אחרי 24 שעות, ולא נשלח לשום מקום.')}
+          {t('ui.text.privacyA')} <strong>{t('ui.text.privacyB')}</strong>{t('ui.text.privacyC')}
         </p>
 
         <section>
-          <h2>{t('ui.text.whoWeAre', '🧒 מי אנחנו (לא חובה)')}</h2>
+          <h2>{t('ui.text.whoWeAre')}</h2>
           <div className={css.cardIdentity}>
             <label className={css.cardField}>
-              <span className={css.cardFieldLabel}>{t('ui.text.nickname', 'כינוי / שם פרטי')}</span>
+              <span className={css.cardFieldLabel}>{t('ui.text.nickname')}</span>
               <input
                 className={css.cardInput}
                 value={card.nickname}
                 onChange={(e) => setCard({ ...card, nickname: e.target.value })}
                 maxLength={30}
-                placeholder={t('ui.text.optional', 'לא חובה')}
+                placeholder={t('ui.text.optional')}
               />
             </label>
             <label className={css.cardField} style={{ maxWidth: 100 }}>
-              <span className={css.cardFieldLabel}>{t('ui.text.age', 'גיל')}</span>
+              <span className={css.cardFieldLabel}>{t('ui.text.age')}</span>
               <input
                 className={css.cardInput}
                 value={card.age}
@@ -110,21 +110,21 @@ export function CardPage() {
               value={card.custom?.[section.key] ?? ''}
               onChange={(e) => setCustom(section.key, e.target.value)}
               maxLength={CUSTOM_MAX}
-              placeholder={t('ui.text.otherPlaceholder', 'אחר… (אפשר לכתוב בחופשי)')}
-              aria-label={`${t('ui.text.other', 'אחר')} — ${label.title}`}
+              placeholder={t('ui.text.otherPlaceholder')}
+              aria-label={`${t('ui.text.other')} — ${label.title}`}
             />
           </section>
           )
         })}
 
         <section>
-          <h2>{t('ui.text.anythingElse', '✏️ עוד משהו שעוזר? (לא חובה)')}</h2>
+          <h2>{t('ui.text.anythingElse')}</h2>
           <textarea
             className={css.calmFreeText}
             rows={3}
             value={card.freeNote}
             onChange={(e) => setCard({ ...card, freeNote: e.target.value })}
-            placeholder={t('ui.text.freeNotePlaceholder', 'למשל: אוהב שמספרים לו מה קורה בקול שקט…')}
+            placeholder={t('ui.text.freeNotePlaceholder')}
           />
         </section>
 
@@ -135,12 +135,12 @@ export function CardPage() {
               style={{ background: theme.accent, color: theme.accentText, opacity: empty ? 0.4 : 1 }}
               disabled={empty}
             >
-              {t('ui.buttons.showCardNext', '🪪 הצגת הכרטיס לצוות ←')}
+              {t('ui.buttons.showCardNext')}
             </button>
           </Link>
           {!empty && (
             <button type="button" className={css.backBtn} style={{ borderColor: '#aaa', color: '#888' }} onClick={clearCard}>
-              {t('ui.buttons.clear', 'ניקוי')}
+              {t('ui.buttons.clear')}
             </button>
           )}
         </div>
