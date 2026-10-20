@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { MenuPage } from './menu/MenuPage'
 import { ConceptBase } from './concepts/nav'
 import CalmConcept from './concepts/calm/CalmConcept'
 import StoryConcept from './concepts/story/StoryConcept'
@@ -12,16 +11,14 @@ import { RequestsPage } from './concepts/calm/pages/RequestsPage'
 import { StandaloneCardShell } from './components/StandaloneCardShell'
 
 /**
- * Top level: a concept menu at `/`, and every UI concept mounted under
- * its own base path. See `src/concepts/registry.ts` for the catalogue and
- * CLAUDE.md for how to add a new concept.
+ * Top level: the story home at `/`, and every UI concept mounted under
+ * its own base path. See CLAUDE.md for how to add a new concept.
  */
 export default function App() {
   return (
     <Routes>
-      {/* the start of the site is the story home; the old concept menu lives at /concepts */}
+      {/* the start of the site is the story home; the old concept menu address falls back to it */}
       <Route index element={<Navigate to="/story" replace />} />
-      <Route path="/concepts" element={<MenuPage />} />
 
       {/* Reachable before picking a concept — per Rotem's feedback (issue #8):
           the care card should be visible on the home screen, not buried
