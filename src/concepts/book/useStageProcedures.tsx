@@ -50,8 +50,7 @@ const CIRCLES: Record<string, readonly Circle[]> = {
 const NO_STAGE_INSERT = ['triage', 'tests', 'treatment']
 
 type Way = { label: string; what: string; feel: string; prepare: string }
-type Heads = { what: string; feel: string; prepare: string; canAsk: string }
-type Measure = { title: string; videoName?: string; videoText?: string; world?: string; what?: string; feel?: string; prepare?: string; canAsk?: string[]; headings?: Heads; armpit?: Way; mouth?: Way }
+type Measure = { title: string; videoName?: string; videoText?: string; world?: string; what?: string; feel?: string; prepare?: string; canAsk?: string[]; armpit?: Way; mouth?: Way }
 type Insert = { title: string; text: string; draft?: boolean }
 
 const pick = <T,>(data: Record<string, T> | Record<string, Record<string, T>>, lang: string) =>
@@ -114,15 +113,14 @@ export function useStageProcedures(stageId: string, options: { withVideo?: boole
               </div>
             )}
             {info.world && <p style={{ fontStyle: 'italic' }}>{info.world}</p>}
-            {info.headings && <h3 className={css.sheetLabel}>{info.headings.what}</h3>}
+            <h3 className={css.sheetLabel}>{t('ui.labels.book.what')}</h3>
             <p>{info.what}</p>
-            {info.headings && <h3 className={css.sheetLabel}>{info.headings.feel}</h3>}
+            <h3 className={css.sheetLabel}>{t('ui.labels.book.feel')}</h3>
             <p>{info.feel}</p>
-            {info.headings?.prepare && <h3 className={css.sheetLabel}>{info.headings.prepare}</h3>}
             <p>{info.prepare}</p>
             {info.canAsk && info.canAsk.length > 0 && (
               <>
-                {info.headings && <h3 className={css.sheetLabel}>{info.headings.canAsk}</h3>}
+                <h3 className={css.sheetLabel}>{t('ui.labels.book.canAsk')}</h3>
                 <ul className={css.sheetList}>
                   {info.canAsk.map((a) => (
                     <li key={a}>{a}</li>

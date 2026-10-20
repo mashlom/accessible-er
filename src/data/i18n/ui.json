@@ -153,6 +153,13 @@
       "treatment-stitches": "Stitches",
       "decision-discharge": "Going home",
       "decision-hospital": "Staying in hospital"
+    },
+    "labels": {
+      "book": {
+        "what": "What will happen here",
+        "feel": "What may be hard",
+        "canAsk": "What can you ask for?"
+      }
     }
   },
   "ru": {
@@ -308,6 +315,13 @@
       "treatment-stitches": "Швы",
       "decision-discharge": "Выписка",
       "decision-hospital": "Госпитализация"
+    },
+    "labels": {
+      "book": {
+        "what": "Что здесь будет",
+        "feel": "Что может быть трудно",
+        "canAsk": "О чём ты можешь попросить"
+      }
     }
   },
   "he": {
@@ -464,6 +478,13 @@
       "treatment-stitches": "תפרים",
       "decision-discharge": "שחרור הביתה",
       "decision-hospital": "שהייה בבית החולים"
+    },
+    "labels": {
+      "book": {
+        "what": "מה קורה כאן",
+        "feel": "מה עלול להיות קשה",
+        "canAsk": "על מה אפשר לבקש?"
+      }
     }
   }
 }

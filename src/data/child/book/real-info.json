@@ -1,11 +1,5 @@
 {
   "ru": {
-    "headings": {
-      "meaning": "",
-      "whatHappens": "Что здесь будет",
-      "challenge": "Что может быть трудно",
-      "canAsk": "О чём ты можешь попросить"
-    },
     "reception": {
       "meaning": "Это первый шаг визита. Отсюда мы идём на осмотр медсестры.",
       "whatHappens": "Тебя спрашивают, как тебя зовут и что случилось. Обычно дают браслет с именем. Иногда приходится стоять близко к другим людям.",
@@ -105,12 +99,6 @@
     }
   },
   "en": {
-    "headings": {
-      "meaning": "",
-      "whatHappens": "What will happen here",
-      "challenge": "What may be hard",
-      "canAsk": "What can you ask for?"
-    },
     "reception": {
       "meaning": "This is the first step of the visit. From here we go to the nurse.",
       "whatHappens": "They ask your name and what happened. You usually get a wristband with your name. Sometimes you have to stand close to other people.",
@@ -210,12 +198,6 @@
     }
   },
   "he": {
-    "headings": {
-      "meaning": "",
-      "whatHappens": "מה קורה כאן",
-      "challenge": "מה עלול להיות קשה",
-      "canAsk": "על מה אפשר לבקש?"
-    },
     "reception": {
       "meaning": "זה השלב הראשון בביקור. מכאן הולכים לאחות.",
       "whatHappens": "שואלים איך קוראים לך ומה קרה. בדרך כלל נותנים צמיד עם השם. לפעמים צריך לעמוד קרוב לאנשים אחרים.",
