@@ -25,10 +25,13 @@ At the start, 185 texts were stored under more than one key (325 extra copies, c
 - `npm run build` passes (it runs the duplicate check).
 - he/en/ru screens show the same texts as before.
 
-### Not checked in the browser yet
-- Talk with Roni after the procedures and support changes.
-- The tip icons on the worlds' "when it's hard" page (they now show in en and ru too).
-- The close button inside the overlay on the story calm page.
+### Checked in the browser
+- Talk with Roni (ru): all 16 procedures, a procedure's text and asks, the calm tips (the pause tip is found by id), the ready sentences (shown to the staff in Hebrew), the staff requests.
+- Worlds' "when it's hard" page: the tip icons show in he, en and ru; the ready sentence shown to the staff is Hebrew.
+- Story calm page: the overlay's close button reads `ui.buttons.close`.
+
+### Open question
+- On the story calm page the ready sentence on the big screen follows the chosen language, while the worlds and the talk show it to the staff in Hebrew. This is older than this PR; left as it is.
 
 ### Out of scope
 - No rewording and no new translations — only moving keys.
