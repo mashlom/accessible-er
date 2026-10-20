@@ -154,8 +154,9 @@
   margin-top: var(--space-4);
   margin-bottom: var(--space-4);
   padding: 12px var(--space-3);
-  background: #fbf6e9;
-  border: 1px solid #efe2c2;
+  /* informative, not a warning: light blue (Shevi's info colour), not the warm cream */
+  background: #e5f2f7;
+  border: 1px solid #c6e0ea;
   border-radius: 14px;
   font-weight: 700;
   color: var(--s-ink);

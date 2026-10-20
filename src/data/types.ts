@@ -91,6 +91,8 @@ export interface MapArea {
   /** multi-channel sensory index (Keren/Rotem, K5) — level 0–5 per channel */
   sensory: SensoryLevels
   note: string // what happens here / what to expect
+  /** the station of the journey this room belongs to (its 'here we are' line is the room's description) */
+  stage?: string
   /** where one usually continues from here ("לאן עוברים אחרי כל שלב") */
   next?: string
 }

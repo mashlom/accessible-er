@@ -146,17 +146,10 @@
       "eyebrow": "What happens now",
       "title": "Our journey in the emergency room",
       "subtitle": "These are the stages of every visit. Mark where we are now, and I will show what comes next.",
-      "notice": "The order and times here are only a general estimate; they can change depending on the team's decision and how busy the emergency room is. Not every visit goes through all the stages, and sometimes the order is different.",
       "reasonLabel": "We came because of:",
       "character": "🐾 My character moves along the journey",
-      "railAria": "Progress through the journey",
-      "letsGo": "Let's go…",
-      "weAreHereSuffix": " — we are here",
-      "durationLabel": "Estimated duration",
-      "waitLabel": "Estimated waiting time",
       "markHere": "Mark: we are here",
-      "prepareChild": "🎬 Prepare the child for what happens here",
-      "beforeDischarge": "🏠 Before going home →"
+      "prepareChild": "🎬 Prepare the child for what happens here"
     },
     "calmWaitTimes": {
       "title": "Estimated times",
@@ -167,14 +160,9 @@
     "calmProcedures": {
       "eyebrow": "What is going to happen",
       "title": "Preparing for tests and procedures",
-      "subtitle": "Choose an action to see what is going to happen, how long it takes, and what you can ask for. Roni will explain it to the child step by step.",
-      "relevant": "Relevant to our visit",
-      "allActions": "All actions",
-      "commonActions": "Common actions"
+      "subtitle": "Choose an action to see what is going to happen, how long it takes, and what you can ask for. Roni will explain it to the child step by step."
     },
     "calmProcedureDetail": {
-      "storyLabel": "🎬 Let's see what happens, step by step",
-      "measureWays": "How we measure",
       "prev": "Previous",
       "next": "Next →",
       "again": "Again ↻",
@@ -185,19 +173,15 @@
       "ask": "What you can ask the staff"
     },
     "calmHome": {
-      "reasonPrompt": "👉 Tell me why you came today — so you can see what may be ahead",
       "reasonLabel": "We came because of",
       "change": "Change",
-      "canDo": "What you can do here",
       "footer": "This tool is meant to make the visit easier to understand and reduce uncertainty. It does not replace the medical team and does not give medical advice. No need to enter a name or personal details."
     },
     "calmPage": {
       "eyebrow": "When it's hard",
       "title": "A moment of distress? We are here",
       "subtitle": "When a child is overwhelmed, a few small things help. Take a breath — you are doing great work.",
-      "readyHint": "Hard to talk at such a moment? Tap a sentence to show it to the staff in large text on the screen.",
-      "askLink": "🙋 To the list of what you can ask the staff ←",
-      "sentenceShown": "Sentence shown to the staff"
+      "readyHint": "Hard to talk at such a moment? Tap a sentence to show it to the staff in large text on the screen."
     },
     "calmRequests": {
       "eyebrow": "What we can ask for",
@@ -209,7 +193,6 @@
       "eyebrow": "Discharge",
       "title": "Getting ready to go home",
       "subtitle": "What happens at the end of the visit, and how to get ready to go home.",
-      "draftNote": "The text here is a first draft, to be finalised together with the team.",
       "home": "Back to the home page"
     },
     "calmMessage": {
@@ -218,11 +201,7 @@
       "subtitle": "Would you like to ask for something or say thank you? Write a short sentence — you can show it to the staff on the screen, or send it by email yourself.",
       "placeholder": "For example: we would be glad if we could wait in a quieter corner · thank you very much for your patience.",
       "request": "🙏 Request",
-      "thanks": "💛 Thanks",
-      "showOnScreen": "🖥️ Show to the staff on the screen",
-      "sendEmail": "✉️ Send by email",
-      "howTo": "To show it: tap \"Show to the staff\" and show the screen. To send it: an email opens with the message — add the email address of the emergency room and send it yourself. Nothing is sent automatically.",
-      "shownAria": "Message shown to the staff"
+      "thanks": "💛 Thanks"
     },
     "calmReason": {
       "eyebrow": "Why we came",
@@ -405,17 +384,10 @@
       "eyebrow": "Что происходит сейчас",
       "title": "Наш путь в приёмном покое",
       "subtitle": "Это этапы любого визита. Отметьте, где мы сейчас, и я покажу, что будет дальше.",
-      "notice": "Порядок и время здесь — общая оценка. Они могут меняться по решению команды и из-за загруженности приёмного покоя. Не каждый визит проходит все этапы, и порядок иногда другой.",
       "reasonLabel": "Мы пришли из-за:",
       "character": "🐾 Мой персонаж идёт по пути",
-      "railAria": "Прогресс по пути",
-      "letsGo": "Идём…",
-      "weAreHereSuffix": " — мы здесь",
-      "durationLabel": "Примерная длительность",
-      "waitLabel": "Примерное время ожидания",
       "markHere": "Отметить: мы здесь",
-      "prepareChild": "🎬 Подготовить ребёнка к тому, что здесь будет",
-      "beforeDischarge": "🏠 К выписке домой →"
+      "prepareChild": "🎬 Подготовить ребёнка к тому, что здесь будет"
     },
     "calmWaitTimes": {
       "title": "Примерное время",
@@ -426,14 +398,9 @@
     "calmProcedures": {
       "eyebrow": "Что будет дальше",
       "title": "Подготовка к обследованиям и процедурам",
-      "subtitle": "Выберите действие, чтобы увидеть, что будет, сколько это займёт и что можно попросить. Рони объяснит ребёнку шаг за шагом.",
-      "relevant": "Подходит для нашего визита",
-      "allActions": "Все действия",
-      "commonActions": "Частые действия"
+      "subtitle": "Выберите действие, чтобы увидеть, что будет, сколько это займёт и что можно попросить. Рони объяснит ребёнку шаг за шагом."
     },
     "calmProcedureDetail": {
-      "storyLabel": "🎬 Посмотрим, что будет, шаг за шагом",
-      "measureWays": "Как измеряем",
       "prev": "Назад",
       "next": "Дальше →",
       "again": "Ещё раз ↻",
@@ -444,19 +411,15 @@
       "ask": "Что можно попросить у персонала"
     },
     "calmHome": {
-      "reasonPrompt": "👉 Расскажите, зачем вы пришли сегодня, чтобы узнать, что может вас ожидать",
       "reasonLabel": "Мы пришли из-за",
       "change": "Изменить",
-      "canDo": "Что можно сделать здесь",
       "footer": "Инструмент помогает сделать визит понятнее и снизить неопределённость. Он не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные."
     },
     "calmPage": {
       "eyebrow": "Когда трудно",
       "title": "Момент тревоги? Мы рядом",
       "subtitle": "Когда ребёнок перегружен, помогают несколько маленьких вещей. Сделайте вдох — вы делаете отличную работу.",
-      "readyHint": "Трудно говорить в такой момент? Нажмите на фразу, чтобы показать её персоналу крупным текстом на экране.",
-      "askLink": "🙋 К списку того, что можно попросить у персонала ←",
-      "sentenceShown": "Фраза, показанная персоналу"
+      "readyHint": "Трудно говорить в такой момент? Нажмите на фразу, чтобы показать её персоналу крупным текстом на экране."
     },
     "calmRequests": {
       "eyebrow": "Что можно попросить",
@@ -468,7 +431,6 @@
       "eyebrow": "Выписка",
       "title": "Готовимся к возвращению домой",
       "subtitle": "Что происходит в конце визита и как подготовиться к возвращению домой.",
-      "draftNote": "Текст здесь — первый черновик, окончательную формулировку согласуем с командой.",
       "home": "Назад на главную"
     },
     "calmMessage": {
@@ -477,11 +439,7 @@
       "subtitle": "Хотите что-то попросить или сказать спасибо? Напишите короткую фразу — её можно показать персоналу на экране или отправить по почте самостоятельно.",
       "placeholder": "Например: мы будем рады, если можно будет подождать в более тихом углу · большое спасибо за терпение.",
       "request": "🙏 Просьба",
-      "thanks": "💛 Спасибо",
-      "showOnScreen": "🖥️ Показать персоналу на экране",
-      "sendEmail": "✉️ Отправить по почте",
-      "howTo": "Чтобы показать: нажмите «Показать персоналу» и покажите экран. Чтобы отправить: откроется письмо с сообщением — добавьте адрес почты приёмного покоя и отправьте сами. Ничего не отправляется автоматически.",
-      "shownAria": "Сообщение, показанное персоналу"
+      "thanks": "💛 Спасибо"
     },
     "calmReason": {
       "eyebrow": "Почему мы пришли",

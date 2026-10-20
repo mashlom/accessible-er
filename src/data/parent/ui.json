@@ -368,35 +368,6 @@
         "note": "התמונה נשארת במכשיר לזמן השימוש בלבד ונמחקת ביציאה. שום דבר לא נשלח או נשמר."
       }
     },
-    "companion": {
-      "route": {
-        "": "שלום! אני רוני. נעבור את היום הזה יחד.",
-        "reason": "ספרו לי למה באנו, ואראה את הדרך שלנו.",
-        "trail": "כל תחנה היא עוד צעד קטן. לא ממהרים.",
-        "show": "בואו נציץ מה עומד לקרות.",
-        "map": "אראה לכם איפה רועש ואיפה אפשר לנוח.",
-        "calm": "קשה עכשיו? ננשום יחד. אני נשאר כאן.",
-        "distract": "תסתכלו לכאן. אני איתכם עד שזה נגמר.",
-        "requests": "מותר לבקש! הנה מה שאפשר.",
-        "card": "נכין כרטיס שמספר מה חשוב לדעת עליי.",
-        "card/view": "אפשר להראות את הכרטיס לצוות מהמסך.",
-        "going-home": "עוד מעט הביתה. ניקח את הזמן.",
-        "message": "רוצים לבקש משהו או להגיד תודה?",
-        "feedback": "איך היה לכם היום?",
-        "settings": "הדף הזה לצוות — הקוד לשילוט.",
-        "show/": "אני כאן לאורך כל הסיפור. אפשר לעצור בכל עמוד."
-      },
-      "tap": [
-        "היי! נגעתם בי 😊",
-        "אני כאן. לא הולך לשום מקום.",
-        "רוצים לנשום איתי? פנימה… והחוצה…",
-        "אתם עושים את זה מצוין!",
-        "אפשר גם רק לשבת בשקט. גם זה בסדר.",
-        "מה נראה עכשיו? אני סקרן.",
-        "אני גאה בכם 🌟",
-        "שלום שלום! 👋"
-      ]
-    },
     "staffSign": {
       "title": "שילוט כניסה מהירה",
       "subtitle": "דף זה מיועד לצוות. הדפיסו את הקוד והציבו במזכירות, בטריאז׳ ובחדר ההמתנה — משפחות סורקות ונכנסות, ללא הורדה וללא הרשמה.",
@@ -767,35 +738,6 @@
         "note": "The photo stays on the device only while you use it and is deleted when you leave. Nothing is sent or stored."
       }
     },
-    "companion": {
-      "route": {
-        "": "Hi! I'm Roni. We'll go through this day together, step by step.",
-        "reason": "Tell me why we came, and I'll show you our route.",
-        "trail": "Each stop is one more small step. We are not in a hurry.",
-        "show": "Let's look at what is going to happen.",
-        "map": "I'll show you where it's loud and where you can rest.",
-        "calm": "Is it hard right now? Let's breathe together. I'm here.",
-        "distract": "Look here. I'm with you until it's over.",
-        "requests": "You can ask! Here is what you can ask for.",
-        "card": "Let's make a card that tells what is important to know about me.",
-        "card/view": "This card can be shown to the staff from the screen.",
-        "going-home": "Going home soon. We won't rush.",
-        "message": "Would you like to ask for something or say thank you?",
-        "feedback": "How was your day today?",
-        "settings": "This page is for the team — the code for the sign.",
-        "show/": "I'm here all the way. You can stop on any page."
-      },
-      "tap": [
-        "Hi! You touched me 😊",
-        "I'm here. I'm not going anywhere.",
-        "Want to breathe with me? In… and out…",
-        "You're doing really well!",
-        "You can also just sit quietly. That is fine too.",
-        "What do you see now? I am curious.",
-        "I am proud of you 🌟",
-        "Hello, hello! 👋"
-      ]
-    },
     "staffSign": {
       "title": "שילוט כניסה מהירה",
       "subtitle": "דף זה מיועד לצוות. הדפיסו את הקוד והציבו במזכירות, בטריאז׳ ובחדר ההמתנה — משפחות סורקות ונכנסות, ללא הורדה וללא הרשמה.",
@@ -1165,35 +1107,6 @@
         "remove": "✕ Убрать",
         "note": "Фотография остаётся на устройстве только на время использования и удаляется при выходе. Ничего не отправляется и не сохраняется."
       }
-    },
-    "companion": {
-      "route": {
-        "": "Привет! Я Рони. Мы пройдём этот день вместе, шаг за шагом.",
-        "reason": "Расскажите, зачем мы пришли, и я покажу наш путь.",
-        "trail": "Каждая остановка — ещё один маленький шаг. Мы не спешим.",
-        "show": "Давайте посмотрим, что будет дальше.",
-        "map": "Я покажу, где шумно, а где можно отдохнуть.",
-        "calm": "Сейчас тяжело? Давайте вместе подышим. Я рядом.",
-        "distract": "Смотрите сюда. Я с вами, пока всё не закончится.",
-        "requests": "Можно попросить! Вот что можно.",
-        "card": "Сделаем карточку, которая расскажет, что важно знать обо мне.",
-        "card/view": "Эту карточку можно показать персоналу с экрана.",
-        "going-home": "Скоро домой. Не будем спешить.",
-        "message": "Хотите что-то попросить или сказать спасибо?",
-        "feedback": "Как прошёл ваш сегодняшний день?",
-        "settings": "Эта страница для команды — код для вывески.",
-        "show/": "Я рядом всё время. Можно остановиться на любой странице."
-      },
-      "tap": [
-        "Привет! Вы до меня дотронулись 😊",
-        "Я здесь. Никуда не ухожу.",
-        "Хотите подышать со мной? Вдох… и выдох…",
-        "У вас отлично получается!",
-        "Можно и просто посидеть тихо. Это тоже нормально.",
-        "Что вы видите сейчас? Мне интересно.",
-        "Я горжусь вами 🌟",
-        "Привет-привет! 👋"
-      ]
     },
     "staffSign": {
       "title": "שילוט כניסה מהירה",
