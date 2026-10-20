@@ -27,7 +27,7 @@ export function CalmPage() {
       {/* ── Child zone ── */}
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <AnimatedIcon emoji="😌" size={200} className={`${css.stageHeroImg} ${css.calmBreath}`} />
-        {(theme.calmLines ?? [t('ui.text.calmDefault', 'רגע, נושמים יחד 💙')]).map((line, i) => (
+        {(theme.calmLines ?? [t('ui.text.calmDefault')]).map((line, i) => (
           <p key={i} className={i === 0 ? css.calmChildMain : css.calmChildLine} style={{ color: theme.accent }}>
             {line}
           </p>
@@ -38,14 +38,14 @@ export function CalmPage() {
             style={{ borderColor: theme.accent, color: theme.accent }}
             onClick={goBack}
           >
-            {t('ui.buttons.back', 'חזרה →')}
+            {t('ui.buttons.back')}
           </button>
         </div>
       </div>
 
       {/* ── Parent zone ── */}
       <div className={css.stageBody}>
-        <p className={css.parentZoneLabel}>{t('ui.text.whenHard', 'כשקשה — מה עוזר')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.text.whenHard')}</p>
 
         {t('support.distressTips', distressTips).map((tip, i) => (
           <section key={i}>
@@ -53,16 +53,16 @@ export function CalmPage() {
             <p>{tip.body}</p>
             {i === REDUCE_STIMULATION_TIP && (
               <Link to="/distract" state={leaveState('/calm')} className={css.calmLink} style={{ marginTop: '0.5rem' }}>
-                {t('ui.buttons.distractAnimations', '🎬 אנימציות להסחת דעת →')}
+                {t('ui.buttons.distractAnimations')}
               </Link>
             )}
           </section>
         ))}
 
-        <p className={css.parentZoneLabel}>{t('ui.text.readySentences', 'משפטים מוכנים לצוות')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.text.readySentences')}</p>
         <section>
           <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
-            {t('ui.text.readyHint', 'קשה לדבר ברגע כזה? לחצו על משפט כדי להציג אותו לצוות בגדול על המסך.')}
+            {t('ui.text.readyHint')}
           </p>
           <div className={css.calmSentences}>
             {readySentences.map((s, i) => (
@@ -79,16 +79,16 @@ export function CalmPage() {
           </div>
         </section>
 
-        <p className={css.parentZoneLabel}>{t('ui.text.freeMessage', 'הודעה חופשית לצוות')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.text.freeMessage')}</p>
         <section>
           <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
-            {t('ui.text.freeHint', 'רוצים לומר משהו שלא מופיע למעלה? כתבו כאן והציגו לצוות.')}
+            {t('ui.text.freeHint')}
           </p>
           <textarea
             className={css.calmFreeText}
             value={freeText}
             onChange={(e) => setFreeText(e.target.value)}
-            placeholder={t('ui.text.writeHere', 'כתבו כאן...')}
+            placeholder={t('ui.text.writeHere')}
             rows={3}
             dir="rtl"
           />
@@ -99,20 +99,20 @@ export function CalmPage() {
               style={{ borderColor: theme.accent, color: theme.accent, marginTop: '0.5rem' }}
               onClick={() => setShown(freeText.trim())}
             >
-              {t('ui.buttons.showToStaff', 'להציג לצוות ←')}
+              {t('ui.buttons.showToStaff')}
             </button>
           )}
         </section>
 
-        <p className={css.parentZoneLabel}>{t('ui.text.cardTitle', 'כרטיס התאמות')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.text.cardTitle')}</p>
         <section>
           <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
-            {t('ui.text.cardDesc', 'הכרטיס מרכז את מה שחשוב לדעת על הילד/ה — להציג לצוות במקום להסביר במילים.')}
+            {t('ui.text.cardDesc')}
           </p>
           {cardEmpty ? (
-            <Link to="/card" state={leaveState('/calm')} className={css.calmLink}>{t('ui.buttons.makeCard', '🪪 להכנת כרטיס התאמות')}</Link>
+            <Link to="/card" state={leaveState('/calm')} className={css.calmLink}>{t('ui.buttons.makeCard')}</Link>
           ) : (
-            <Link to="/card/view" state={leaveState('/calm')} className={css.calmLink}>{t('ui.buttons.showCard', '🪪 להצגת הכרטיס לצוות')}</Link>
+            <Link to="/card/view" state={leaveState('/calm')} className={css.calmLink}>{t('ui.buttons.showCard')}</Link>
           )}
         </section>
 
@@ -122,7 +122,7 @@ export function CalmPage() {
           style={{ background: theme.accent, color: theme.accentText }}
           onClick={() => setShown('אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות')}
         >
-          {t('ui.buttons.needHelp', '🆘 נזדקקנו לעזרה')}
+          {t('ui.buttons.needHelp')}
         </button>
       </div>
 
@@ -135,7 +135,7 @@ export function CalmPage() {
         >
           <p className={css.calmOverlayText}>{shown}</p>
           <button type="button" className={css.calmOverlayClose} onClick={() => setShown(null)}>
-            {t('ui.buttons.close', 'סגירה')}
+            {t('ui.buttons.close')}
           </button>
         </div>
       )}
