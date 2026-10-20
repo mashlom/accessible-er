@@ -11,6 +11,7 @@ import i18nUi from '../../data/i18n/ui.json'
 import careI18n from '../../data/i18n/careCard.json'
 import { distressTips, readySentences, staffRequests } from '../../data/support'
 import { cardSections, type CardArrayField, type CareCard } from '../../data/careCard'
+import type { Procedure } from '../../data/types'
 
 type Lang = 'he' | 'en' | 'ru'
 
@@ -363,8 +364,8 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       ]
       const showAll = rest[0] === 'all' || likelyIds.length === 0
       const list = showAll
-        ? procedures.map((p) => parentProcedure(ctx.lang, p.id) ?? p)
-        : likelyIds.map((id) => parentProcedure(ctx.lang, id)).filter((p): p is (typeof procedures)[number] => !!p)
+        ? procedures.map((p) => parentProcedure(ctx.lang, p.id)).filter((p): p is Procedure => !!p)
+        : likelyIds.map((id) => parentProcedure(ctx.lang, id)).filter((p): p is Procedure => !!p)
 
       return {
         say: [
