@@ -25,14 +25,14 @@ interface RoniProps {
 }
 
 const moodLabel: Record<RoniMood, string> = {
-  calm: 'רוני מחייך חיוך רגוע',
-  happy: 'רוני שמח',
-  wave: 'רוני מנופף לשלום',
-  cheer: 'רוני מריע בשתי הידיים',
-  hug: 'רוני פורש ידיים לחיבוק',
-  sleepy: 'רוני נח בעיניים עצומות',
-  curious: 'רוני סקרן',
-  proud: 'רוני גאה',
+  calm: 'Roni smiling calmly',
+  happy: 'Roni is happy',
+  wave: 'Roni waving hello',
+  cheer: 'Roni cheering with both hands',
+  hug: 'Roni opening arms for a hug',
+  sleepy: 'Roni resting with eyes closed',
+  curious: 'Roni is curious',
+  proud: 'Roni is proud',
 }
 
 /**

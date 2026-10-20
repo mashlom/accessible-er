@@ -5,13 +5,13 @@ import { useReturnTo } from '../useReturnTo'
 import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
-const watchables: { emoji: string; label: string }[] = [
-  { emoji: '🌈', label: 'קשת' },
-  { emoji: '💧', label: 'טיפה' },
-  { emoji: '🌟', label: 'כוכב' },
-  { emoji: '💗', label: 'לב' },
-  { emoji: '🌀', label: 'סחרחורת' },
-  { emoji: '⭐', label: 'כוכבון' },
+const watchables: { emoji: string }[] = [
+  { emoji: '🌈' },
+  { emoji: '💧' },
+  { emoji: '🌟' },
+  { emoji: '💗' },
+  { emoji: '🌀' },
+  { emoji: '⭐' },
 ]
 
 const bubbles = [
@@ -66,7 +66,7 @@ export function DistractPage() {
               aria-pressed={pick.emoji === w.emoji}
             >
               <span aria-hidden>{w.emoji}</span>
-              {t(`ui.text.distractLabels.${wi}`, w.label)}
+              {t(`ui.text.distractLabels.${wi}`)}
             </button>
           ))}
         </div>
