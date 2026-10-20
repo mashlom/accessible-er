@@ -33,9 +33,6 @@ export function TalkShell() {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <LanguagePicker />
-            <a href="#/" className={styles.topBtn} aria-label="לתפריט הקונספטים">
-              <span aria-hidden>🏁</span>
-            </a>
           </div>
         </header>
 
