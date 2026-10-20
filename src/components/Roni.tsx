@@ -40,7 +40,8 @@ const moodLabel: Record<RoniMood, string> = {
  *
  * Deliberately much more expressive than the calm concept's mascot: a big
  * rounded creature with a scarf, arms and feet, eight moods, blinking and
- * an optional float. Children can tap him (see RoniCompanion), which is
+ * an optional float. Children can tap him (the story's companion did, before
+ * it was removed), which is
  * where the `bounceKey` prop comes in — a small dose of agency, per the
  * feedback asking that the avatar be something the child can act on.
  */
