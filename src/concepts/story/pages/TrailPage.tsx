@@ -111,6 +111,8 @@ export function TrailPage() {
 
                 {isOpen && (
                   <div className={styles.stopDetail}>
+                    {/* 'here we are' comes right after the station's title */}
+                    <p className={styles.stopMeaning}>{stage.meaning}</p>
                     <p className={styles.detailRow}>
                       <span className={styles.detailLabel}>{tx.whatHappens}</span>
                       {stage.whatHappens}
