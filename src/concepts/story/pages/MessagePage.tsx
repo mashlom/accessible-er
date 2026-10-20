@@ -7,6 +7,7 @@ import parentUi from '../../../data/parent/ui.json'
 
 type MessageTexts = {
   title: string
+  mailSubject: string
   subtitle: string
   bubble: string
   templates: { label: string; starter: string }[]
@@ -30,7 +31,7 @@ export function MessagePage() {
   const [shown, setShown] = useState(false)
 
   const trimmed = text.trim()
-  const mailto = `mailto:?subject=${encodeURIComponent('הודעה מההורים')}&body=${encodeURIComponent(trimmed)}`
+  const mailto = `mailto:?subject=${encodeURIComponent(tx.mailSubject)}&body=${encodeURIComponent(trimmed)}`
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>

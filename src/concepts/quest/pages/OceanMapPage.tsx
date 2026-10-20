@@ -222,14 +222,14 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
       )}
       {!underSheet && (
         <div className={wide ? `${css.oceanTopRow} ${css.oceanTopRowWide}` : css.oceanTopRow}>
-          <Link to="/" className={css.oceanTopBtn} aria-label={t('ui.shell.worlds', 'לבחירת עולם אחר')}>
+          <Link to="/" className={css.oceanTopBtn} aria-label={t('ui.shell.worlds')}>
             <svg viewBox="0 0 24 24" aria-hidden className={css.oceanTopIcon} style={{ scale: dir === 'rtl' ? '1' : '-1 1' }}>
               <path d="M9 5l7 7-7 7" />
             </svg>
           </Link>
           <div className={css.oceanTopGroup}>
             <LanguagePicker variant="overlay" />
-            <a href="#/" className={css.oceanTopBtn} aria-label={t('ui.shell.menu', 'לתפריט הקונספטים')}>
+            <a href="#/" className={css.oceanTopBtn} aria-label={t('ui.shell.menu')}>
               <svg viewBox="0 0 24 24" aria-hidden className={css.oceanTopIcon}>
                 <path d="M4 11l8-7 8 7M6 10v9h4v-5h4v5h4v-9" />
               </svg>
@@ -241,7 +241,7 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
         <div
           className={wide ? `${css.oceanStarsTotal} ${css.oceanStarsTotalWide}` : css.oceanStarsTotal}
           role="img"
-          aria-label={`${t('ui.text.starsEarned', 'כוכבים שהרווחת')}: ${starsTotal}`}
+          aria-label={`${t('ui.text.starsEarned')}: ${starsTotal}`}
         >
           {Array.from({ length: starsTotal ?? 0 }, (_, j) => <span key={j} aria-hidden>⭐</span>)}
         </div>
@@ -281,7 +281,7 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
           })}
         </svg>
         {!noTitle && (() => {
-          const text = t('ui.text.oceanHeadline', 'המסע שלך מתחיל כאן')
+          const text = t('ui.text.oceanHeadline')
           const cut = text.lastIndexOf(' ')
           // longer wording (other languages) gets a smaller font and wraps to two lines, so it stays inside the pill
           const shrink = text.length > 22 ? 0.78 : 1
@@ -317,7 +317,7 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
                   className={css.oceanStars}
                   style={{ left: pctX(slot.x + slot.w / 2), top: pctY(slot.y + slot.h * 0.88) }}
                   role="img"
-                  aria-label={`${t('ui.text.done', 'בוצע')}: ${item.stars}`}
+                  aria-label={`${t('ui.text.done')}: ${item.stars}`}
                 >
                   {Array.from({ length: item.stars ?? 0 }, (_, j) => <span key={j} className={css.oceanStar} aria-hidden>⭐</span>)}
                 </span>
@@ -335,7 +335,7 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
         <div
           className={wide ? `${css.oceanProgress} ${css.oceanProgressWide}` : css.oceanProgress}
           role="progressbar"
-          aria-label={t('ui.text.journeyProgress', 'התקדמות במסע')}
+          aria-label={t('ui.text.journeyProgress')}
           aria-valuemin={0}
           aria-valuemax={progress.total}
           aria-valuenow={progress.done}

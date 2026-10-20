@@ -1,13 +1,14 @@
 /* ============================================================
-   Concept 3 — "לדבר עם רוני"
+   Concept 3 — "Talk with Roni"
    A dusk-lit conversation. Dark, warm and low-glare: an ER visit
    is often at night, and a bright screen is one more stimulus.
    Roni is not decoration here — he is the interface, so he gets a
    permanent, lit stage across the top third of the screen.
    ============================================================ */
 .theme {
-  --t-bg: #241c33;
-  --t-bg-2: #3a2a4f;
+  --t-bg: #087e8b;
+  --t-bg-2: #087e8b;
+  --t-answers: #05545c;
   --t-stage: #4b3566;
   --t-glow: rgba(255, 190, 110, 0.3);
 
@@ -230,7 +231,7 @@
 .answers {
   flex: none;
   padding: var(--space-3);
-  background: rgba(0, 0, 0, 0.22);
+  background: var(--t-answers, rgba(0, 0, 0, 0.22));
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   max-height: 42vh;
   overflow-y: auto;

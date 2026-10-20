@@ -1,27 +1,22 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { MenuPage } from './menu/MenuPage'
 import { ConceptBase } from './concepts/nav'
-import CalmConcept from './concepts/calm/CalmConcept'
 import StoryConcept from './concepts/story/StoryConcept'
 import TalkConcept from './concepts/talk/TalkConcept'
 import QuestConcept from './concepts/quest/QuestConcept'
 import BookConcept from './concepts/book/BookConcept'
-import { CareCardPage } from './concepts/calm/pages/CareCardPage'
-import { CareCardViewPage } from './concepts/calm/pages/CareCardViewPage'
-import { RequestsPage } from './concepts/calm/pages/RequestsPage'
+import { CareCardPage } from './standalone/CareCardPage'
+import { CareCardViewPage } from './standalone/CareCardViewPage'
 import { StandaloneCardShell } from './components/StandaloneCardShell'
 
 /**
- * Top level: a concept menu at `/`, and every UI concept mounted under
- * its own base path. See `src/concepts/registry.ts` for the catalogue and
- * CLAUDE.md for how to add a new concept.
+ * Top level: the story home at `/`, and every UI concept mounted under
+ * its own base path. See CLAUDE.md for how to add a new concept.
  */
 export default function App() {
   return (
     <Routes>
-      {/* the start of the site is the story home; the old concept menu lives at /concepts */}
+      {/* the start of the site is the story home; the old concept menu address falls back to it */}
       <Route index element={<Navigate to="/story" replace />} />
-      <Route path="/concepts" element={<MenuPage />} />
 
       {/* Reachable before picking a concept — per Rotem's feedback (issue #8):
           the care card should be visible on the home screen, not buried
@@ -41,23 +36,6 @@ export default function App() {
           <StandaloneCardShell>
             <CareCardViewPage />
           </StandaloneCardShell>
-        }
-      />
-      <Route
-        path="/requests"
-        element={
-          <StandaloneCardShell>
-            <RequestsPage />
-          </StandaloneCardShell>
-        }
-      />
-
-      <Route
-        path="/calm/*"
-        element={
-          <ConceptBase base="/calm">
-            <CalmConcept />
-          </ConceptBase>
         }
       />
 
@@ -98,7 +76,7 @@ export default function App() {
       />
 
       {/* Legacy links from before the concept menu pointed at the app root. */}
-      <Route path="/settings" element={<Navigate to="/calm/settings" replace />} />
+      <Route path="/settings" element={<Navigate to="/story/settings" replace />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )

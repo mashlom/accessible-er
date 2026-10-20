@@ -91,6 +91,17 @@
       "רעש פתאומי": "A quiet environment and a closed door",
       "אורות חזקים": "Dimming the lights in the room",
       "להישאר במקום אחד": "Short breaks and movement between steps"
+    },
+    "asks": {
+      "title": "What we ask the staff for",
+      "noise": "Headphones, earplugs or a quiet space",
+      "light": "Dimming the lights in the room",
+      "touch": "A short explanation before every touch",
+      "staff": "Fewer staff in the room — one person leads and talks",
+      "waiting": "A quiet corner while waiting",
+      "needle": "Numbing cream and time to prepare before a needle",
+      "sudden": "A quiet environment and a closed door",
+      "breaks": "Short breaks and movement between steps"
     }
   },
   "ru": {
@@ -185,6 +196,59 @@
       "רעש פתאומי": "Тихая обстановка и закрытая дверь",
       "אורות חזקים": "Приглушить свет в комнате",
       "להישאר במקום אחד": "Короткие перерывы и движение между этапами"
+    },
+    "asks": {
+      "title": "Что попросим у персонала",
+      "noise": "Наушники, беруши или тихое место",
+      "light": "Приглушить свет в комнате",
+      "touch": "Короткое объяснение перед каждым прикосновением",
+      "staff": "Меньше персонала в палате — один ведёт и говорит",
+      "waiting": "Тихий уголок на время ожидания",
+      "needle": "Обезболивающий крем и время на подготовку перед уколом",
+      "sudden": "Тихая обстановка и закрытая дверь",
+      "breaks": "Короткие перерывы и движение между этапами"
     }
+  },
+  "he": {
+    "asks": {
+      "title": "מה נבקש מהצוות",
+      "noise": "אוזניות, אטמי אוזניים או מרחב שקט",
+      "light": "עמעום האור בחדר",
+      "touch": "הסבר קצר לפני כל נגיעה",
+      "staff": "פחות אנשי צוות בחדר — אחד מוביל ומדבר",
+      "waiting": "פינה שקטה לזמן ההמתנה",
+      "needle": "משחה מאלחשת וזמן הכנה לפני דקירה",
+      "sudden": "סביבה שקטה ודלת סגורה",
+      "breaks": "הפסקות קצרות ותנועה בין שלבים"
+    }
+  },
+  "askFor": {
+    "noise": [
+      "רעש"
+    ],
+    "light": [
+      "אור חזק",
+      "אורות חזקים"
+    ],
+    "touch": [
+      "מגע",
+      "מגע בלי הכנה"
+    ],
+    "staff": [
+      "הרבה אנשים",
+      "הרבה אנשים מסביב"
+    ],
+    "waiting": [
+      "המתנה ממושכת"
+    ],
+    "needle": [
+      "מחטים ודקירות"
+    ],
+    "sudden": [
+      "רעש פתאומי"
+    ],
+    "breaks": [
+      "להישאר במקום אחד"
+    ]
   }
 }

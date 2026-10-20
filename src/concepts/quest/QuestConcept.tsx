@@ -15,7 +15,7 @@ import { CardPage } from './pages/CardPage'
 import { DistractPage } from './pages/DistractPage'
 import { CardViewPage } from './pages/CardViewPage'
 import { WaitTimesPage } from './pages/WaitTimesPage'
-import { FeedbackPage } from '../calm/pages/FeedbackPage'
+import { FeedbackPage } from '../story/pages/FeedbackPage'
 
 /** The screens of one world, under /quest/<world>/…, so every link inside a world stays in that world. */
 function WorldRoutes() {
@@ -40,7 +40,7 @@ function WorldRoutes() {
   )
 }
 
-/** Concept 4 — "מסע עם מפה". Mounted at /quest by App.tsx. */
+/** Concept 4 — "journey with a map". Mounted at /quest by App.tsx. */
 export default function QuestConcept() {
   return (
     <Routes>

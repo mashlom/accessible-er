@@ -151,6 +151,12 @@ export function WorldPage() {
       </nav>
 
       <p className={styles.footNote}>{tx.foot}</p>
+      {/* the credits of the animations and the pictures (CC BY 4.0 and the AI disclosure) */}
+      <footer className={styles.footNote}>
+        <p>{tx.credits.disclaimer}</p>
+        <p>{tx.credits.animations}</p>
+        <p>{tx.credits.ai}</p>
+      </footer>
     </div>
   )
 }

@@ -17,8 +17,8 @@ type StoryDistractTexts = {
 }
 
 /**
- * "פינת הסחת דעת" — the distraction the spec keeps listing as an adaptation
- * ("הסחת דעת: סרטון, בועות, ספירה"). Something calm and looping to look at
+ * "Distraction corner" — the distraction the spec keeps listing as an adaptation
+ * ("distraction: video, bubbles, counting"). Something calm and looping to look at
  * during a needle, a cast or a long wait, with the choice of *what* to watch
  * left to the child: another small piece of control at a moment with very
  * little of it.

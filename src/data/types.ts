@@ -97,6 +97,8 @@ export interface MapArea {
 
 /** Short parent guidance for moments of distress (module 5). */
 export interface DistressTip {
+  /** a stable name for the tip, so the code does not look it up by its text */
+  id?: string
   emoji: Icon
   title: string
   body: string

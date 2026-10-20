@@ -6,7 +6,7 @@ interface MascotProps {
 }
 
 /**
- * "רוני" — a soft, low-arousal companion character that guides the
+ * "Roni" — a soft, low-arousal companion character that guides the
  * child through the journey. Deliberately simple, rounded and gentle:
  * muted colours, a calm face, no sudden features.
  */
@@ -18,7 +18,7 @@ export function Mascot({ size = 96, mood = 'calm', className }: MascotProps) {
       height={size}
       viewBox="0 0 120 120"
       role="img"
-      aria-label="רוני, החבר שמלווה אותנו"
+      aria-label="Roni, the friend who accompanies us"
     >
       {/* body */}
       <ellipse cx="60" cy="66" rx="42" ry="40" fill="#bfe3df" />

@@ -9,10 +9,10 @@ interface Props {
 }
 
 const CHANNELS = [
-  { key: 'sound',  emoji: '🔊', label: 'רעש' },
-  { key: 'light',  emoji: '💡', label: 'אור' },
-  { key: 'smell',  emoji: '👃', label: 'ריח' },
-  { key: 'people', emoji: '👥', label: 'אנשים' },
+  { key: 'sound',  emoji: '🔊' },
+  { key: 'light',  emoji: '💡' },
+  { key: 'smell',  emoji: '👃' },
+  { key: 'people', emoji: '👥' },
 ] as const
 
 function levelClass(n: number): string {
@@ -25,14 +25,14 @@ export function SensoryBar({ sensory, ocean }: Props) {
   const { t } = useI18n()
   return (
     <div className={ocean ? `${css.bar} ${css.ocean}` : css.bar}>
-      <p className={css.title}>{t('ui.text.sensoryTitle', 'מה לצפות כאן')}</p>
+      <p className={css.title}>{t('ui.text.sensoryTitle')}</p>
       <div className={css.channels}>
-        {CHANNELS.map(({ key, emoji, label }, ci) => {
+        {CHANNELS.map(({ key, emoji }, ci) => {
           const val = sensory[key]
           return (
             <div key={key} className={css.channel}>
               <span className={css.emoji}>{emoji}</span>
-              <span className={css.channelLabel}>{t(`ui.text.sensoryLabels.${ci}`, label)}</span>
+              <span className={css.channelLabel}>{t(`ui.text.sensoryLabels.${ci}`)}</span>
               <div className={css.dots}>
                 {[1, 2, 3, 4, 5].map((i) => (
                   <span

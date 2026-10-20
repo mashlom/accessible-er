@@ -2,6 +2,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { useIsConceptHome } from '../../nav'
 import { LanguagePicker } from '../../../components/LanguagePicker'
 import { useI18n } from '../../../hooks/useI18n'
+import talkJson from '../../../data/parent/talk.json'
 import styles from '../talk.module.css'
 
 /**
@@ -16,17 +17,13 @@ export function TalkShell() {
   return (
     <div className={styles.theme}>
       <div className={styles.app} dir={dir} lang={lang}>
-        <a href="#main" className="skip-link">
-          דילוג לתוכן
-        </a>
-
         <header className={`${styles.topbar} no-print`}>
           {!isHome ? (
             <button
               type="button"
               className={styles.topBtn}
               onClick={() => navigate(-1)}
-              aria-label="חזרה לשיחה"
+              aria-label={(talkJson as unknown as Record<'he' | 'en' | 'ru', { cardView: { back: string } }>)[lang].cardView.back}
             >
               <span aria-hidden>›</span>
             </button>
@@ -36,9 +33,6 @@ export function TalkShell() {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <LanguagePicker />
-            <a href="#/" className={styles.topBtn} aria-label="לתפריט הקונספטים">
-              <span aria-hidden>🏁</span>
-            </a>
           </div>
         </header>
 

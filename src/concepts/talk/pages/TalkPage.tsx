@@ -10,6 +10,7 @@ import { emptyCard, type CardArrayField, type CareCard } from '../../../data/car
 import { resolveNode, talkText, topicChoices, type Action, type Choice, type Say } from '../script'
 import { useI18n } from '../../../hooks/useI18n'
 import parentUi from '../../../data/parent/ui.json'
+import talkJson from '../../../data/parent/talk.json'
 import styles from '../talk.module.css'
 
 /** One exchange: what Roni said, and what the family answered to it. */
@@ -20,10 +21,11 @@ interface Turn {
 
 const TRAIL_KEY = 'talk-trail'
 const FEEDBACK_EMAIL = 'posicel@gmail.com'
-const RATING_LABELS: Record<number, string> = {
-  1: 'פחות עזר',
-  2: 'עזר קצת',
-  3: 'עזר מאוד',
+// the rating's key in talk.json's buttons (the team's mail takes the Hebrew wording)
+const RATING_KEYS: Record<number, 'helpedLess' | 'helpedSome' | 'helpedMuch'> = {
+  1: 'helpedLess',
+  2: 'helpedSome',
+  3: 'helpedMuch',
 }
 
 /** Roni's asides when the child taps him — not part of the conversation. Texts per language in talk.json. */
@@ -64,7 +66,7 @@ export function TalkPage() {
   const ui = talkText(lang).ui
   const topicLabel = (choice: Choice): string => {
     if (choice.go === 'topics') return talkText(lang).topics.back
-    if (!topicChoices.some((tc) => tc.go === choice.go && tc.label === choice.label)) return choice.label
+    if (!topicChoices(lang).some((tc) => tc.go === choice.go)) return choice.label
     const tiles = (parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string }> }>)[lang]?.tiles
     const tile = TOPIC_TILE[choice.go ?? ''] ?? ''
     if (tile && tiles && tiles[tile]) return tiles[tile].title
@@ -159,11 +161,12 @@ export function TalkPage() {
         navigate(path(action.to))
         break
       case 'feedback': {
+        const mail = (talkJson as unknown as { he: { mail: Record<string, string>; buttons: Record<string, string> } }).he
         const body = [
-          `דירוג: ${RATING_LABELS[action.rating]}`,
-          'קונספט: לדבר עם רוני',
+          `${mail.mail.rating}: ${mail.buttons[RATING_KEYS[action.rating]]}`,
+          mail.mail.concept,
         ].join('\n')
-        window.location.href = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent('משוב על "מה שלומי?"')}&body=${encodeURIComponent(body)}`
+        window.location.href = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(mail.mail.subject)}&body=${encodeURIComponent(body)}`
         break
       }
       case 'restart':

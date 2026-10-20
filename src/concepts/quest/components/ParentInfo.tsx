@@ -48,7 +48,7 @@ export function ParentInfo({ stageId: stageOverride, inline, ocean, initialProc 
           aria-haspopup="dialog"
         >
           <span className={css.parentBtnOceanPill}>
-            {t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
+            {t('ui.buttons.parentInfo')}
             <svg viewBox="33 888 24 24" className={css.parentBtnOceanIcon} aria-hidden>
               <rect x="33" y="888" width="24" height="24" rx="12" />
               <path d={BOOK_PATH} />
@@ -64,7 +64,7 @@ export function ParentInfo({ stageId: stageOverride, inline, ocean, initialProc 
           aria-haspopup="dialog"
         >
           <span className={css.parentBtnArrow} aria-hidden>↖</span>
-          {t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
+          {t('ui.buttons.parentInfo')}
         </button>
       )}
       {open && <ParentSheet stageId={stageId} onClose={close} initialProc={initialProc} />}
@@ -125,7 +125,7 @@ export function ParentSheet({
         className={ocean ? `${css.sheet} ${css.oceanSheet}` : css.sheet}
         role="dialog"
         aria-modal="true"
-        aria-label={t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
+        aria-label={t('ui.buttons.parentInfo')}
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -133,7 +133,7 @@ export function ParentSheet({
           type="button"
           className={css.sheetHandle}
           onClick={onClose}
-          aria-label={t('ui.buttons.close', 'סגירה')}
+          aria-label={t('ui.buttons.close')}
         >
           <span aria-hidden />
         </button>
@@ -147,18 +147,18 @@ export function ParentSheet({
           <p className={css.sheetWait}>
             {singleProc?.who && <span>👤 {singleProc.who}</span>}
             {singleProc?.who && data.waitRange && <span> · </span>}
-            {data.waitRange && <span>{t('ui.text.estimated', '⏱ זמן משוער:')} {data.waitRange}</span>}
+            {data.waitRange && <span>{t('ui.text.estimated')} {data.waitRange}</span>}
           </p>
         )}
 
         {data.meaning && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.text.weAreHere', 'אנחנו כאן')}</h2>
+            <h2>{t('ui.text.weAreHere')}</h2>
             <p>{data.meaning}</p>
             {stageId === 'reception' && questLinks && (
               <>
-                <p className={css.sheetHint}>{t('ui.text.reasonHint', 'בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.')}</p>
-                <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits', '🗺️ מה מחכה לנו היום?')}</Link>
+                <p className={css.sheetHint}>{t('ui.text.reasonHint')}</p>
+                <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits')}</Link>
               </>
             )}
           </section>
@@ -167,11 +167,11 @@ export function ParentSheet({
         {singleProc ? (
           <>
             <section className={css.sheetCard}>
-              <h2>{t('ui.text.whatActuallyHappens', 'מה קורה בפועל')}</h2>
+              <h2>{t('ui.text.whatActuallyHappens')}</h2>
               <p>{singleProc.what}</p>
             </section>
             <section className={css.sheetCard}>
-              <h2>{t('ui.text.childMayFeel', 'מה הילד/ה עשוי/ה להרגיש')}</h2>
+              <h2>{t('ui.text.childMayFeel')}</h2>
               <p>{singleProc.feel}</p>
             </section>
           </>
@@ -180,8 +180,8 @@ export function ParentSheet({
             <section className={css.sheetCard}>
               <h2>
                 {stageId === 'wait-before-triage'
-                  ? t('ui.text.whatHappensHere', 'מה קורה כאן')
-                  : t('ui.text.whatHappens', 'מה קורה')}
+                  ? t('ui.text.whatHappensHere')
+                  : t('ui.text.whatHappens')}
               </h2>
               <p>{data.whatHappens}</p>
             </section>
@@ -190,12 +190,12 @@ export function ParentSheet({
 
         {data.challenge && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.text.whatMayBeHard', 'מה יכול להיות קשה?')}</h2>
+            <h2>{t('ui.text.whatMayBeHard')}</h2>
             <p>{data.challenge}</p>
             {stageId === 'reception' && questLinks && (
               <>
-                <p className={css.sheetHint}>{t('ui.text.cardHint', 'בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.')}</p>
-                <Link to="/card" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.cardForStaff', '🪪 כרטיס התאמות לצוות')}</Link>
+                <p className={css.sheetHint}>{t('ui.text.cardHint')}</p>
+                <Link to="/card" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.cardForStaff')}</Link>
               </>
             )}
           </section>
@@ -203,7 +203,7 @@ export function ParentSheet({
 
         {stageId === 'wait-before-triage' && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.text.prepareMeasurements', 'איך להכין את הילד/ה למדידות שעומדות לקרות')}</h2>
+            <h2>{t('ui.text.prepareMeasurements')}</h2>
             {data.nextStagePrepare && <p>{data.nextStagePrepare}</p>}
             {WAIT_PROCS.map((pid) => {
               const proc = parentProcedure(lang, pid)
@@ -221,7 +221,7 @@ export function ParentSheet({
 
         {stageId !== 'wait-before-triage' && data.nextStagePrepare && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.text.prepareChild', 'איך להכין את הילד/ה')}</h2>
+            <h2>{t('ui.text.prepareChild')}</h2>
             <p>{data.nextStagePrepare}</p>
           </section>
         )}
@@ -230,7 +230,7 @@ export function ParentSheet({
           const asks = singleProc?.adaptations?.length ? singleProc.adaptations : data.canAsk
           return asks && asks.length > 0 ? (
             <section className={css.sheetCard}>
-              <h2>{singleProc?.adaptations?.length ? t('ui.text.askStaff', 'מה לבקש מהצוות') : t('ui.text.canAsk', 'אפשר לבקש')}</h2>
+              <h2>{singleProc?.adaptations?.length ? t('ui.text.askStaff') : t('ui.text.canAsk')}</h2>
               <ul>
                 {asks.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
@@ -240,7 +240,7 @@ export function ParentSheet({
 
         {!singleProc && data.procedureIds && data.procedureIds.length > 0 && stageId !== 'wait-before-triage' && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.text.stageProcedures', 'פרוצדורות בשלב הזה')}</h2>
+            <h2>{t('ui.text.stageProcedures')}</h2>
             <ul className={css.sheetLinks}>
               {data.procedureIds.map((pid) => {
                 const proc = parentProcedure(lang, pid)
@@ -261,7 +261,7 @@ export function ParentSheet({
           </section>
         )}
 
-        {!ocean && <Link to="/calm" state={{ from: '/map' }} className={css.calmLink}><span aria-hidden className={css.heartIcon}>💙</span> {t('ui.buttons.hardNow', 'קשה לנו כרגע')}</Link>}
+        {!ocean && <Link to="/calm" state={{ from: '/map' }} className={css.calmLink}><span aria-hidden className={css.heartIcon}>💙</span> {t('ui.buttons.hardNow')}</Link>}
           </>
         )}
 
@@ -273,10 +273,10 @@ export function ParentSheet({
               state={{ from: '/map' }}
               className={`${css.oceanBtn} ${css.oceanBtnDone}`}
             >
-              {t('ui.buttons.oceanHardNow', '💙 קשה לנו כרגע')}
+              {t('ui.buttons.oceanHardNow')}
             </Link>
             <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={onClose}>
-              {t('ui.buttons.close', 'סגירה')}
+              {t('ui.buttons.close')}
             </button>
           </div>
         )}
@@ -296,7 +296,7 @@ function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
   return (
     <div className={css.procPanel} style={{ '--slide': dir === 'rtl' ? -1 : 1 } as React.CSSProperties}>
       {onBack && (
-        <button type="button" className={css.procBack} onClick={onBack} aria-label={t('ui.buttons.back', 'חזרה →')}>
+        <button type="button" className={css.procBack} onClick={onBack} aria-label={t('ui.buttons.back')}>
           <span aria-hidden>{dir === 'rtl' ? '→' : '←'}</span>
         </button>
       )}
@@ -311,25 +311,25 @@ function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
 
       {proc.what && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.text.whatActuallyHappens', 'מה קורה בפועל')}</h2>
+          <h2>{t('ui.text.whatActuallyHappens')}</h2>
           <p>{proc.what}</p>
         </section>
       )}
       {proc.feel && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.text.childMayFeel', 'מה הילד/ה עשוי/ה להרגיש')}</h2>
+          <h2>{t('ui.text.childMayFeel')}</h2>
           <p>{proc.feel}</p>
         </section>
       )}
       {proc.prepare && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.text.prepareChild', 'איך להכין את הילד/ה')}</h2>
+          <h2>{t('ui.text.prepareChild')}</h2>
           <p>{proc.prepare}</p>
         </section>
       )}
       {proc.adaptations && proc.adaptations.length > 0 && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.text.askStaff', 'מה לבקש מהצוות')}</h2>
+          <h2>{t('ui.text.askStaff')}</h2>
           <ul>
             {proc.adaptations.map((item: string, i: number) => <li key={i}>{item}</li>)}
           </ul>

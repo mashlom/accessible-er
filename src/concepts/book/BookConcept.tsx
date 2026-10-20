@@ -32,13 +32,13 @@ export default function BookConcept() {
       <header className={css.topbar}>
         {/* pinned RTL, like the other top bars, so it doesn't flip with the language */}
         <div className={css.topbarInner} dir="rtl">
-          <button type="button" className={css.topBtn} onClick={() => navigate(-1)} aria-label="חזרה">
+          <button type="button" className={css.topBtn} onClick={() => navigate(-1)} aria-label="Back">
             <span aria-hidden>›</span>
           </button>
           <span aria-hidden />
           <div className={css.topGroup}>
             <LanguagePicker />
-            <a href="#/" className={css.topFlag} aria-label="לתפריט">
+            <a href="#/" className={css.topFlag} aria-label="Home">
               <span aria-hidden>🏁</span>
             </a>
           </div>

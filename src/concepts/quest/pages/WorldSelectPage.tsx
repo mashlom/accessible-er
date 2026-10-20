@@ -19,11 +19,10 @@ export function WorldSelectPage() {
     navigate(conceptPath(`/${id}`))
   }
 
-  // the אני world lives on the Books shelf now (issue #10), so it is not offered as a game
   const ORDER = ['ocean', 'knight', 'dollhouse', 'dino', 'fairy', 'safari', 'space']
   const ordered = [
     ...ORDER.map((id) => themes.find((t) => t.id === id)!).filter(Boolean),
-    ...themes.filter((t) => !ORDER.includes(t.id) && t.id !== 'real'),
+    ...themes.filter((t) => !ORDER.includes(t.id)),
   ]
 
   return (
@@ -41,7 +40,7 @@ export function WorldSelectPage() {
             className={css.worldCard}
             style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}
             onClick={() => choose(theme.id)}
-            aria-label={`${t('ui.buttons.chooseWorldAria', 'בחר עולם:')} ${name}`}
+            aria-label={`${t('ui.buttons.chooseWorldAria')} ${name}`}
           >
             {theme.thumbnailOverlay ? (
               <div
@@ -58,7 +57,7 @@ export function WorldSelectPage() {
             <span className={css.worldCardName}>{name}</span>
             <span className={css.worldCardCta}>
               <span className={css.worldCardArrow} aria-hidden>↖</span>
-              {t('ui.buttons.startJourney', 'להתחיל במסע')}
+              {t('ui.buttons.startJourney')}
             </span>
           </button>
           )

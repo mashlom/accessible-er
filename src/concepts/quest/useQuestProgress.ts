@@ -122,7 +122,7 @@ export function useQuestProgress() {
     update(next)
   }
 
-  /** Reveal an optional stage (nurse decides rентgen needed etc.) */
+  /** Reveal an optional stage (the nurse decides whether an X-ray is needed, etc.) */
   function revealOptional(id: StageId) {
     const next = load().map((s) =>
       s.id === id ? { ...s, visible: true, status: 'active' as const } : s

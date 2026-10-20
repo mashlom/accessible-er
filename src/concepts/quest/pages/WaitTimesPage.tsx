@@ -60,12 +60,12 @@ export function WaitTimesPage() {
               style={{ background: theme.accent, color: theme.accentText }}
               onClick={handleDone}
             >
-              {t('ui.buttons.done', 'הצלחתי! ←')}
+              {t('ui.buttons.done')}
             </button>
           )}
           <Link to="/map">
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              {t('ui.buttons.backToMap', 'חזרה למפה →')}
+              {t('ui.buttons.backToMap')}
             </button>
           </Link>
         </div>
@@ -73,33 +73,33 @@ export function WaitTimesPage() {
 
       {data.sensory && <SensoryBar sensory={data.sensory} />}
       <p className={css.waitRange}>
-        {data.waitRange && <span>{t('ui.text.estimated', '⏱ זמן משוער:')} {data.waitRange}</span>}
+        {data.waitRange && <span>{t('ui.text.estimated')} {data.waitRange}</span>}
       </p>
 
       <div className={css.stageBody}>
         {data.meaning && (
           <section>
-            <h2>{t('ui.text.weAreHere', 'אנחנו כאן')}</h2>
+            <h2>{t('ui.text.weAreHere')}</h2>
             <p>{data.meaning}</p>
           </section>
         )}
 
         {data.whatHappens && (
           <section>
-            <h2>{t('ui.text.whatHappensHere', 'מה קורה כאן')}</h2>
+            <h2>{t('ui.text.whatHappensHere')}</h2>
             <p>{data.whatHappens}</p>
           </section>
         )}
 
         {data.challenge && (
           <section>
-            <h2>{t('ui.text.whatMayBeHard', 'מה יכול להיות קשה?')}</h2>
+            <h2>{t('ui.text.whatMayBeHard')}</h2>
             <p>{data.challenge}</p>
           </section>
         )}
 
         <section>
-          <h2>{t('ui.text.prepareMeasurements', 'איך להכין את הילד/ה למדידות שעומדות לקרות')}</h2>
+          <h2>{t('ui.text.prepareMeasurements')}</h2>
           <p style={{ marginBottom: 'var(--space-3)' }}>{data.nextStagePrepare}</p>
 
           {procIds.map((pid) => {
@@ -123,7 +123,7 @@ export function WaitTimesPage() {
 
         {data.canAsk && data.canAsk.length > 0 && (
           <section>
-            <h2>{t('ui.text.canAsk', 'אפשר לבקש')}</h2>
+            <h2>{t('ui.text.canAsk')}</h2>
             <ul>
               {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
             </ul>

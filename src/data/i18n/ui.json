@@ -36,7 +36,9 @@
       "selectProcedures": "Choose the checks",
       "discharge": "🏠 Go home",
       "admission": "🏥 Continue hospitalization",
-      "changeChoice": "← Change choice"
+      "changeChoice": "← Change choice",
+      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות",
+      "interesting": "It is interesting"
     },
     "shell": {
       "skip": "Skip to content",
@@ -127,7 +129,8 @@
         "other": "You collected {n} coins — welcome to the shop!"
       },
       "cardSubtitle": "Tick what fits — under 2 minutes. At the end you get a short card to show the staff on screen or print it.",
-      "privacyD": "What you don't show yourself won't reach the staff. You can fill it in without a name at all."
+      "privacyD": "What you don't show yourself won't reach the staff. You can fill it in without a name at all.",
+      "draft": "draft — awaiting review"
     },
     "careView": {
       "fill": "Fill in the card",
@@ -229,6 +232,29 @@
     },
     "talkTopics": {
       "where": "Where we are in the process"
+    },
+    "language": {
+      "he": "עברית",
+      "en": "English",
+      "ru": "Русский"
+    },
+    "circles": {
+      "triage-temperature": "Temperature",
+      "triage-oxygen": "Saturation",
+      "triage-pressure": "Blood pressure",
+      "tests-blood-test": "Blood test",
+      "tests-urine": "Urine test",
+      "tests-xray": "X-ray",
+      "tests-ultrasound": "Ultrasound",
+      "tests-ct": "CT scan",
+      "treatment-iv": "Drip",
+      "treatment-medication": "Medicine",
+      "treatment-inhalation": "Inhalation",
+      "treatment-bandage": "Bandage",
+      "treatment-cast": "Cast",
+      "treatment-stitches": "Stitches",
+      "decision-discharge": "Going home",
+      "decision-hospital": "Staying in hospital"
     }
   },
   "ru": {
@@ -268,7 +294,9 @@
       "selectProcedures": "Выбор процедур",
       "discharge": "🏠 Выписка домой",
       "admission": "🏥 Госпитализация",
-      "changeChoice": "← Изменить выбор"
+      "changeChoice": "← Изменить выбор",
+      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות",
+      "interesting": "Это интересно"
     },
     "shell": {
       "skip": "Перейти к содержимому",
@@ -360,7 +388,8 @@
         "many": "У тебя есть {n} монет — добро пожаловать в магазин!"
       },
       "cardSubtitle": "Отметьте, что подходит, — меньше 2 минут. В конце получите короткую карточку, которую можно показать персоналу на экране или распечатать.",
-      "privacyD": "То, что вы не покажете сами, не попадёт к персоналу. Можно заполнить вообще без имени."
+      "privacyD": "То, что вы не покажете сами, не попадёт к персоналу. Можно заполнить вообще без имени.",
+      "draft": "черновик — ждёт проверки"
     },
     "careView": {
       "fill": "Заполнить карточку",
@@ -462,6 +491,185 @@
     },
     "talkTopics": {
       "where": "Где мы сейчас в процессе"
+    },
+    "language": {
+      "he": "עברית",
+      "en": "English",
+      "ru": "Русский"
+    },
+    "circles": {
+      "triage-temperature": "Температура",
+      "triage-oxygen": "Сатурация",
+      "triage-pressure": "Давление",
+      "tests-blood-test": "Анализ крови",
+      "tests-urine": "Анализ мочи",
+      "tests-xray": "Рентген",
+      "tests-ultrasound": "УЗИ",
+      "tests-ct": "КТ",
+      "treatment-iv": "Капельница",
+      "treatment-medication": "Лекарство",
+      "treatment-inhalation": "Ингаляция",
+      "treatment-bandage": "Повязка",
+      "treatment-cast": "Гипс",
+      "treatment-stitches": "Швы",
+      "decision-discharge": "Выписка",
+      "decision-hospital": "Госпитализация"
+    }
+  },
+  "he": {
+    "text": {
+      "sensoryTitle": "מה לצפות כאן",
+      "sensoryLabels": [
+        "רעש",
+        "אור",
+        "ריח",
+        "אנשים"
+      ],
+      "estimated": "⏱ זמן משוער:",
+      "weAreHere": "אנחנו כאן",
+      "reasonHint": "בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.",
+      "whatActuallyHappens": "מה קורה בפועל",
+      "childMayFeel": "מה הילד/ה עשוי/ה להרגיש",
+      "whatHappensHere": "מה קורה כאן",
+      "whatHappens": "מה קורה",
+      "whatMayBeHard": "מה יכול להיות קשה?",
+      "cardHint": "בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.",
+      "prepareMeasurements": "איך להכין את הילד/ה למדידות שעומדות לקרות",
+      "prepareChild": "איך להכין את הילד/ה",
+      "askStaff": "מה לבקש מהצוות",
+      "canAsk": "אפשר לבקש",
+      "stageProcedures": "פרוצדורות בשלב הזה",
+      "cardTitle": "כרטיס התאמות",
+      "aboutMyChild": "מה חשוב לדעת על הילד/ה שלי",
+      "cardSubtitle": "סמנו את מה שמתאים — פחות מ־2 דקות. בסוף מקבלים כרטיס קצר שמציגים לצוות מהמסך או בהדפסה.",
+      "privacyA": "🔒 הכל נשמר",
+      "privacyB": "במכשיר הזה בלבד",
+      "privacyC": ", נמחק אחרי 24 שעות, ולא נשלח לשום מקום.",
+      "privacyD": "מה שלא תציגו בעצמכם — לא יגיע לצוות. אפשר למלא בלי שם בכלל.",
+      "whoWeAre": "🧒 מי אנחנו (לא חובה)",
+      "nickname": "כינוי / שם פרטי",
+      "optional": "לא חובה",
+      "age": "גיל",
+      "otherPlaceholder": "אחר… (אפשר לכתוב בחופשי)",
+      "other": "אחר",
+      "anythingElse": "✏️ עוד משהו שעוזר? (לא חובה)",
+      "freeNotePlaceholder": "למשל: אוהב שמספרים לו מה קורה בקול שקט…",
+      "calmDefault": "רגע, נושמים יחד 💙",
+      "whenHard": "כשקשה — מה עוזר",
+      "readySentences": "משפטים מוכנים לצוות",
+      "readyHint": "קשה לדבר ברגע כזה? לחצו על משפט כדי להציג אותו לצוות בגדול על המסך.",
+      "freeMessage": "הודעה חופשית לצוות",
+      "freeHint": "רוצים לומר משהו שלא מופיע למעלה? כתבו כאן והציגו לצוות.",
+      "writeHere": "כתבו כאן...",
+      "cardDesc": "הכרטיס מרכז את מה שחשוב לדעת על הילד/ה — להציג לצוות במקום להסביר במילים.",
+      "oceanDecisionTitle": "החלטת הקפטן",
+      "procedurePrompt": "בחרו את הפרוצדורות שנקבעו",
+      "staffNote": "אחות או רופא: בחרו את הבדיקות או הטיפולים שהרופא הנחה",
+      "weDidIt": "עשינו את זה! 🎉",
+      "outcomeLabel": "מה קורה כעת?",
+      "towardsDischarge": "לקראת שחרור הביתה",
+      "towardsAdmission": "לקראת המשך אשפוז",
+      "distractDefault": "פינת הסחת דעת",
+      "distractHint": "בחרי/בחר מה רוצים לראות ↓",
+      "distractAria": "מה רוצים לראות",
+      "distractWhy": "הסחת דעת — למה זה עוזר",
+      "distractP1": "אפשר להסתכל יחד לכאן במקום על היד או על המכשיר. בחרו ביחד מה הכי מעניין את הילד/ה — עצם הבחירה כבר נותנת תחושת שליטה.",
+      "distractP2": "אם המכשיר מוגדר ל\"הפחתת תנועה\", האנימציות לא ירוצו. אפשר גם פשוט לספור יחד עד עשר — גם זו הסחת דעת טובה.",
+      "starsEarned": "כוכבים שהרווחת",
+      "oceanHeadline": "המסע שלך מתחיל כאן",
+      "done": "בוצע",
+      "journeyProgress": "התקדמות במסע",
+      "nextStep": "שלב הבא",
+      "reasonTitle": "מה הביא אתכם היום?",
+      "reasonHintTop": "הבחירה עוזרת לראות את המסלול הצפוי שלכם",
+      "reasonAria": "סיבת ההגעה",
+      "expectedRoute": "המסלול הצפוי שלנו",
+      "ifNeeded": "לפי הצורך",
+      "routeNote": "זהו מסלול לדוגמה בלבד. המסלול המדויק נקבע על ידי הצוות הרפואי.",
+      "distractLabels": [
+        "קשת",
+        "טיפה",
+        "כוכב",
+        "לב",
+        "סחרחורת",
+        "כוכבון"
+      ],
+      "coins": {
+        "one": "צברת {n} מטבע — ברוכים הבאים לחנות!",
+        "other": "צברת {n} מטבעות — ברוכים הבאים לחנות!"
+      },
+      "draft": "טיוטה — ממתינה לאישור"
+    },
+    "buttons": {
+      "parentInfo": "מידע נוסף להורה",
+      "close": "סגירה",
+      "whatAwaits": "🗺️ מה מחכה לנו היום?",
+      "cardForStaff": "🪪 כרטיס התאמות לצוות",
+      "hardNow": "קשה לנו כרגע",
+      "oceanHardNow": "💙 קשה לנו כרגע",
+      "back": "חזרה →",
+      "done": "הצלחתי! ←",
+      "chooseTests": "לבחירת הבדיקות ←",
+      "backToMap": "חזרה למפה →",
+      "showCardNext": "🪪 הצגת הכרטיס לצוות ←",
+      "clear": "ניקוי",
+      "distractAnimations": "🎬 אנימציות להסחת דעת →",
+      "showToStaff": "להציג לצוות ←",
+      "makeCard": "🪪 להכנת כרטיס התאמות",
+      "showCard": "🪪 להצגת הכרטיס לצוות",
+      "needHelp": "🆘 נזדקקנו לעזרה",
+      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות",
+      "oceanDone": "הצלחתי! ←",
+      "backToStation": "חזרה לתחנה →",
+      "continue": "המשיכו ←",
+      "finish": "לסיום ←",
+      "oceanDecision": "החלטת הקפטן ←",
+      "fillCard": "🪪 למילוי הכרטיס ←",
+      "savePrint": "📄 שמירה / הדפסה",
+      "edit": "✏️ עריכה →",
+      "toShop": "לחנות 🛍️",
+      "chooseWorld": "לבחירת עולם →",
+      "discharge": "🏠 שחרור הביתה",
+      "admission": "🏥 המשך אשפוז",
+      "changeChoice": "← שנה בחירה",
+      "feedback": "💬 איך היה לכם? ספרו לנו →",
+      "selectProcedures": "בחירת בדיקות",
+      "happyEnd": "סוף טוב",
+      "chooseWorldAria": "בחר עולם:",
+      "startJourney": "להתחיל במסע",
+      "interesting": "מעניין"
+    },
+    "shell": {
+      "back": "חזרה",
+      "map": "למפת המסע",
+      "menu": "לתפריט הקונספטים",
+      "worlds": "לבחירת עולם אחר"
+    },
+    "careView": {
+      "hebrewNote": "הכרטיס כתוב בעברית: הצוות קורא אותו בעברית."
+    },
+    "language": {
+      "he": "עברית",
+      "en": "English",
+      "ru": "Русский"
+    },
+    "circles": {
+      "triage-temperature": "חום",
+      "triage-oxygen": "סטורציה",
+      "triage-pressure": "לחץ דם",
+      "tests-blood-test": "בדיקת דם",
+      "tests-urine": "בדיקת שתן",
+      "tests-xray": "רנטגן",
+      "tests-ultrasound": "אולטרסאונד",
+      "tests-ct": "סי־טי",
+      "treatment-iv": "עירוי",
+      "treatment-medication": "תרופה",
+      "treatment-inhalation": "אינהלציה",
+      "treatment-bandage": "תחבושת",
+      "treatment-cast": "גבס",
+      "treatment-stitches": "תפרים",
+      "decision-discharge": "שחרור הביתה",
+      "decision-hospital": "שהייה בבית החולים"
     }
   }
 }

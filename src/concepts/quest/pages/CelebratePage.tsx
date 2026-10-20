@@ -7,6 +7,10 @@ import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
 import parentUi from '../../../data/parent/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
+import careI18n from '../../../data/i18n/careCard.json'
+
+// the requests are for the staff, so they are in Hebrew
+const askHe = (careI18n as unknown as { he: { asks: Record<string, string> } }).he.asks
 import css from '../quest.module.css'
 
 // the emoji of each block stay in code; the words come from src/data/parent/ui.json
@@ -43,7 +47,7 @@ export function CelebratePage() {
         )}
         <div className={css.celebrateContent}>
           <p className={css.celebrateTitle} style={{ color: theme.accent }}>
-            {celebrateSkin?.label ?? t('ui.text.weDidIt', 'עשינו את זה! 🎉')}
+            {celebrateSkin?.label ?? t('ui.text.weDidIt')}
           </p>
           {doneCount > 0 && (
             <p className={css.celebrateCoins}>
@@ -54,16 +58,14 @@ export function CelebratePage() {
           )}
           <p className={css.celebrateHint}>
             {doneCount > 0
-              ? (lang === 'he'
-                ? `צברת ${doneCount} ${doneCount === 1 ? 'מטבע' : 'מטבעות'} — ברוכים הבאים לחנות!`
-                : t(`ui.text.coins.${new Intl.PluralRules(lang).select(doneCount)}`, '').replace('{n}', String(doneCount)))
+              ? t(`ui.text.coins.${lang === 'he' ? (doneCount === 1 ? 'one' : 'other') : new Intl.PluralRules(lang).select(doneCount)}`).replace('{n}', String(doneCount))
               : (celebrateSkin?.hint ?? '')}
           </p>
         </div>
         <div className={css.stageBack}>
           <Link to="/shop" style={{ flex: 2, display: 'flex' }}>
             <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText, flex: 1 }}>
-              {t('ui.buttons.toShop', 'לחנות 🛍️')}
+              {t('ui.buttons.toShop')}
             </button>
           </Link>
           <Link to="/" style={{ flex: 1, display: 'flex' }}>
@@ -72,7 +74,7 @@ export function CelebratePage() {
               style={{ borderColor: theme.accent, color: theme.accent, flex: 1 }}
               onClick={reset}
             >
-              {t('ui.buttons.chooseWorld', 'לבחירת עולם →')}
+              {t('ui.buttons.chooseWorld')}
             </button>
           </Link>
         </div>
@@ -82,21 +84,21 @@ export function CelebratePage() {
       <div className={css.stageBody}>
         {!outcome && (
           <div className={css.outcomeChoice}>
-            <p className={css.outcomeLabel}>{t('ui.text.outcomeLabel', 'מה קורה כעת?')}</p>
+            <p className={css.outcomeLabel}>{t('ui.text.outcomeLabel')}</p>
             <div className={css.outcomeButtons}>
               <button
                 className={css.outcomeBtn}
                 onClick={() => setOutcome('discharge')}
                 style={{ background: theme.accent, color: theme.accentText }}
               >
-                {t('ui.buttons.discharge', '🏠 שחרור הביתה')}
+                {t('ui.buttons.discharge')}
               </button>
               <button
                 className={css.outcomeBtn}
                 onClick={() => setOutcome('admission')}
                 style={{ background: theme.accent, color: theme.accentText }}
               >
-                {t('ui.buttons.admission', '🏥 המשך אשפוז')}
+                {t('ui.buttons.admission')}
               </button>
             </div>
           </div>
@@ -105,7 +107,7 @@ export function CelebratePage() {
         {outcome && (
           <>
             <p className={css.parentZoneLabel}>
-              {outcome === 'discharge' ? t('ui.text.towardsDischarge', 'לקראת שחרור הביתה') : t('ui.text.towardsAdmission', 'לקראת המשך אשפוז')}
+              {outcome === 'discharge' ? t('ui.text.towardsDischarge') : t('ui.text.towardsAdmission')}
             </p>
 
             {blocksFor(lang, outcome).map((b, i) => (
@@ -117,12 +119,12 @@ export function CelebratePage() {
 
             {outcome === 'admission' && (
               cardEmpty ? (
-                <Link to="/card" className={css.calmLink}>
+                <Link to="/card" state={{ from: '/celebrate' }} className={css.calmLink}>
                   <button
                     className={css.doneBtn}
                     style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
                   >
-                    {t('ui.buttons.fillCard', '🪪 למילוי הכרטיס ←')}
+                    {t('ui.buttons.fillCard')}
                   </button>
                 </Link>
               ) : (
@@ -131,7 +133,7 @@ export function CelebratePage() {
                   onClick={() => setShowCard(true)}
                   style={{ background: theme.accent, color: theme.accentText }}
                 >
-                  {t('ui.buttons.showCard', '🪪 הצגת הכרטיס לצוות')}
+                  {t('ui.buttons.showCard')}
                 </button>
               )
             )}
@@ -141,11 +143,11 @@ export function CelebratePage() {
               onClick={() => setOutcome(null)}
               style={{ marginTop: '1rem', color: theme.accent, background: 'none', border: 'none', cursor: 'pointer' }}
             >
-              {t('ui.buttons.changeChoice', '← שנה בחירה')}
+              {t('ui.buttons.changeChoice')}
             </button>
 
             <Link to="/feedback" className={css.calmLink}>
-              {t('ui.buttons.feedback', '💬 איך היה לכם? ספרו לנו →')}
+              {t('ui.buttons.feedback')}
             </Link>
           </>
         )}
@@ -159,7 +161,7 @@ export function CelebratePage() {
           onClick={() => setShowCard(false)}
         >
           <div className={css.cardOverlayContent}>
-            <div className={css.cardOverlayName}>{card.nickname.trim() || 'הילד/ה שלנו'}</div>
+            {card.nickname.trim() && <div className={css.cardOverlayName}>{card.nickname.trim()}</div>}
             {[
               { emoji: '💬', items: [...card.communication, card.custom?.communication].filter(Boolean) },
               { emoji: '⚠️', items: [...card.sensitivities, card.custom?.sensitivities].filter(Boolean) },
@@ -181,6 +183,16 @@ export function CelebratePage() {
                   </div>
                 </div>
               ))}
+            {(card.asks ?? []).length > 0 && (
+              <div className={css.cardOverlaySection}>
+                <div className={css.cardOverlayEmoji}>🙋</div>
+                <div className={css.cardOverlayItems}>
+                  {(card.asks ?? []).map((id) => (
+                    <div key={id} className={css.cardOverlayItem}>{askHe[id]}</div>
+                  ))}
+                </div>
+              </div>
+            )}
             {card.freeNote.trim() && (
               <div className={css.cardOverlaySection}>
                 <div className={css.cardOverlayEmoji}>✏️</div>
@@ -195,7 +207,7 @@ export function CelebratePage() {
             className={css.calmOverlayClose}
             onClick={() => setShowCard(false)}
           >
-            {t('ui.buttons.close', 'סגירה')}
+            {t('ui.buttons.close')}
           </button>
         </div>
       )}

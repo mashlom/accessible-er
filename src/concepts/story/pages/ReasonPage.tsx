@@ -8,7 +8,7 @@ import { useVisitReason } from '../../../hooks/useVisitReason'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
-/** "למה באנו היום?" — the answer draws the family's stepping-stone route. */
+/** "Why we came today?" — the answer draws the family's stepping-stone route. */
 export function ReasonPage() {
   const { reasonId, setReason, clearReason } = useVisitReason()
   const { lang, dir } = useI18n()

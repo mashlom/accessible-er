@@ -13,7 +13,7 @@ import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
 /**
- * "השביל שלנו" — the visit as a winding trail of stops. The child's own
+ * "Our trail" — the visit as a winding trail of stops. The child's own
  * figure stands on the current stop, passed stops get a star. Opening a
  * stop tells what it means, what may be hard, and what can be asked for
  * (the spec's status + meaning + action, not status alone).

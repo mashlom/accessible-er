@@ -70,7 +70,12 @@ function merge<T>(orig: T, tr: unknown): T {
   return orig
 }
 
-export function translate<T>(l: Language, key: string, fallback: T): T {
+export function translate<T>(l: Language, key: string, fallback?: T): T {
+  // without a fallback the text comes only from src/data/i18n (a missing one shows its key)
+  if (fallback === undefined) {
+    const v = lookup(l, key)
+    return (v ?? key) as T
+  }
   return l === 'he' ? fallback : merge(fallback, lookup(l, key))
 }
 
@@ -80,6 +85,7 @@ export function useI18n() {
     lang: current,
     setLang,
     dir: current === 'he' ? ('rtl' as const) : ('ltr' as const),
-    t: <T,>(key: string, fallback: T): T => translate(current, key, fallback),
+    // without a fallback the text is a string from src/data/i18n
+    t: <T = string>(key: string, fallback?: T): T => translate(current, key, fallback),
   }
 }

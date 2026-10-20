@@ -201,7 +201,7 @@ export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {})
   const endingOpen = allOptionalsDone || visibleOptionals.length === 0
   items.push({
     id: 'decision',
-    label: finale?.label ?? t('ui.buttons.happyEnd', 'סוף טוב'),
+    label: finale?.label ?? t('ui.buttons.happyEnd'),
     status: endingOpen ? 'active' : 'locked',
     image: OCEAN_IMAGES.decision,
     // locked, it still opens (like the other stations) as a sheet with only the way back

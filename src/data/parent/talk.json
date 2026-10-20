@@ -154,7 +154,17 @@
       "אתם עושים את זה מצוין!",
       "אפשר גם רק לשבת בשקט. גם זה בסדר.",
       "אני גאה בכם 🌟"
-    ]
+    ],
+    "cardView": {
+      "back": "חזרה לשיחה",
+      "emptyText": "חזרו לשיחה עם רוני — הוא ישאל כמה שאלות קצרות, ויהיה כרטיס."
+    },
+    "staffPauseBig": "אנחנו צריכים דקה",
+    "mail": {
+      "subject": "משוב על \"מה שלומי?\"",
+      "rating": "דירוג",
+      "concept": "קונספט: לדבר עם רוני"
+    }
   },
   "en": {
     "intro": {
@@ -311,7 +321,12 @@
       "You are doing it really well!",
       "You can also just sit quietly. That's okay too.",
       "I'm proud of you 🌟"
-    ]
+    ],
+    "cardView": {
+      "back": "Back to the conversation",
+      "emptyText": "Go back to the conversation with Roni — he will ask a few short questions, and there will be a card."
+    },
+    "staffPauseBig": "We need a minute"
   },
   "ru": {
     "intro": {
@@ -468,6 +483,11 @@
       "У вас отлично получается!",
       "Можно и просто посидеть тихо. Это тоже нормально.",
       "Я горжусь вами 🌟"
-    ]
+    ],
+    "cardView": {
+      "back": "Назад к разговору",
+      "emptyText": "Вернитесь к разговору с Рони — он задаст несколько коротких вопросов, и появится карточка."
+    },
+    "staffPauseBig": "Нам нужна минута"
   }
 }

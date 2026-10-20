@@ -68,7 +68,7 @@
   color: var(--c-primary-dark);
 }
 
-/* per-section "אחר" free-text line */
+/* per-section "other" free-text line */
 .otherRow {
   display: flex;
   align-items: center;

@@ -32,19 +32,11 @@ type FeedbackTexts = {
   back: string
 }
 
-// the values are stored and mailed in Hebrew; the labels come from parent/ui.json
-const HELP_OPTIONS = [
-  'השביל של הביקור',
-  'הסיפורים על הבדיקות',
-  'המפה',
-  'מה עושים כשקשה',
-  'מה אפשר לבקש',
-  'רוני, הדמות המלווה',
-]
-
-// Optional and anonymous — to learn who uses the tool and how well it
-// serves different populations (Keren/Rotem; options confirmed by Rotem).
-const DIAGNOSIS_OPTIONS = ['מאובחן/ת', 'בתהליך אבחון', 'לא', 'מעדיף/ה לא לענות']
+// the choices are stored by id; the team's Hebrew words for them are in parent/ui.json (storyFeedback.team)
+const HELP_IDS = ['trail', 'tests', 'map', 'calm', 'ask', 'roni'] as const
+const DIAG_IDS = ['diagnosed', 'inProcess', 'no', 'noAnswer'] as const
+type TeamWords = { help: Record<string, string>; diag: Record<string, string>; rating: Record<string, string>; unset: string; none: string; subject: string; concept: string; labels: Record<string, string> }
+const team = (parentUi as unknown as { he: { storyFeedback: { team: TeamWords } } }).he.storyFeedback.team
 
 interface Feedback {
   rating: number | null
@@ -54,24 +46,19 @@ interface Feedback {
 }
 
 const FEEDBACK_EMAIL = 'posicel@gmail.com'
-const RATING_LABELS: Record<number, string> = {
-  1: 'פחות עזר',
-  2: 'עזר קצת',
-  3: 'עזר מאוד',
-}
 
 function buildText({ rating, helped, diagnosis, note }: Feedback) {
   return [
-    `דירוג: ${rating ? RATING_LABELS[rating] : 'לא צוין'}`,
-    `מה עזר: ${helped.length ? helped.join(', ') : '—'}`,
-    `אבחון: ${diagnosis ?? 'לא צוין'}`,
-    `הערה: ${note.trim() || '—'}`,
-    'קונספט: המסע של רוני',
+    `${team.labels.rating}: ${rating ? team.rating[String(rating)] : team.unset}`,
+    `${team.labels.helped}: ${helped.length ? helped.map((id) => team.help[id]).join(', ') : team.none}`,
+    `${team.labels.diagnosis}: ${diagnosis ? team.diag[diagnosis] : team.unset}`,
+    `${team.labels.note}: ${note.trim() || team.none}`,
+    team.concept,
   ].join('\n')
 }
 
 function buildMailto(feedback: Feedback) {
-  return `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent('משוב על "מה שלומי?"')}&body=${encodeURIComponent(buildText(feedback))}`
+  return `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(team.subject)}&body=${encodeURIComponent(buildText(feedback))}`
 }
 
 export function FeedbackPage() {
@@ -150,7 +137,7 @@ export function FeedbackPage() {
 
         <Panel title={tx.helpTitle} emoji="💛">
           <div className={shell.chipRow}>
-            {HELP_OPTIONS.map((item, i) => (
+            {HELP_IDS.map((item, i) => (
               <ChipButton
                 key={item}
                 on={helped.includes(item)}
@@ -168,7 +155,7 @@ export function FeedbackPage() {
 
         <Panel title={tx.diagTitle} emoji="🧩">
           <div className={shell.chipRow}>
-            {DIAGNOSIS_OPTIONS.map((opt, i) => (
+            {DIAG_IDS.map((opt, i) => (
               <ChipButton
                 key={opt}
                 on={diagnosis === opt}

@@ -25,22 +25,23 @@ interface RoniProps {
 }
 
 const moodLabel: Record<RoniMood, string> = {
-  calm: 'רוני מחייך חיוך רגוע',
-  happy: 'רוני שמח',
-  wave: 'רוני מנופף לשלום',
-  cheer: 'רוני מריע בשתי הידיים',
-  hug: 'רוני פורש ידיים לחיבוק',
-  sleepy: 'רוני נח בעיניים עצומות',
-  curious: 'רוני סקרן',
-  proud: 'רוני גאה',
+  calm: 'Roni smiling calmly',
+  happy: 'Roni is happy',
+  wave: 'Roni waving hello',
+  cheer: 'Roni cheering with both hands',
+  hug: 'Roni opening arms for a hug',
+  sleepy: 'Roni resting with eyes closed',
+  curious: 'Roni is curious',
+  proud: 'Roni is proud',
 }
 
 /**
- * רוני — the companion character of the "story" concept.
+ * Roni — the companion character of the "story" concept.
  *
  * Deliberately much more expressive than the calm concept's mascot: a big
  * rounded creature with a scarf, arms and feet, eight moods, blinking and
- * an optional float. Children can tap him (see RoniCompanion), which is
+ * an optional float. Children can tap him (the story's companion did, before
+ * it was removed), which is
  * where the `bounceKey` prop comes in — a small dose of agency, per the
  * feedback asking that the avatar be something the child can act on.
  */

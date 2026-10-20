@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { useIsConceptHome } from '../../nav'
 import { HelperChat } from '../../../components/helper/HelperChat'
 import { LanguagePicker } from '../../../components/LanguagePicker'
@@ -11,7 +11,6 @@ import styles from '../story.module.css'
  * routed screen, and Roni at the bottom of every single screen.
  */
 export function StoryShell() {
-  const navigate = useNavigate()
   const isHome = useIsConceptHome()
   // translations are on across the parent side of the app (home, pages, helper)
   useLayoutEffect(() => {
@@ -22,10 +21,6 @@ export function StoryShell() {
   return (
     <div className={styles.theme}>
       <div className={styles.shell}>
-        <a href="#main" className="skip-link">
-          דילוג לתוכן
-        </a>
-
         <div className={`${styles.skyDeco} no-print`} aria-hidden>
           <span className={styles.sun} />
           <span className={`${styles.cloud} ${styles.cloudA}`} />
@@ -35,24 +30,13 @@ export function StoryShell() {
         {!isHome && (
         <header className={`${styles.topbar} no-print`}>
           <div className={styles.topbarInner}>
-            {!isHome ? (
-              <button
-                type="button"
-                className={styles.topBtn}
-                onClick={() => navigate(-1)}
-                aria-label="חזרה"
-              >
-                <span aria-hidden>›</span>
-              </button>
-            ) : (
-              <span className={`${styles.topBtn} ${styles.topBtnGhost}`} aria-hidden />
-            )}
+            <span className={`${styles.topBtn} ${styles.topBtnGhost}`} aria-hidden />
 
             <span className={styles.topTitle} aria-hidden />
 
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'flex-end' }}>
               <LanguagePicker />
-              <a href="#/" className={styles.topFlag} aria-label="לתפריט הקונספטים">
+              <a href="#/" className={styles.topFlag} aria-label="Home">
                 <span aria-hidden>🏁</span>
               </a>
             </div>

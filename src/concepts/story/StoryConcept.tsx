@@ -18,7 +18,7 @@ import { FeedbackPage } from './pages/FeedbackPage'
 import { WaitTimesPage } from './pages/WaitTimesPage'
 import { QrPage } from './pages/QrPage'
 
-/** Concept 2 — "המסע של רוני". Mounted at /story by App.tsx. */
+/** Concept 2 — "Roni's journey". Mounted at /story by App.tsx. */
 export default function StoryConcept() {
   return (
     <Routes>

@@ -100,8 +100,8 @@ export function StagePage() {
         {/* the first station's way to the visit's route: the same as on the other worlds' station sheets */}
         {id === 'reception' && (
           <>
-            <p className={css.reasonHint}>{t('ui.text.reasonHint', 'בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.')}</p>
-            <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits', '🗺️ מה מחכה לנו היום?')}</Link>
+            <p className={css.reasonHint}>{t('ui.text.reasonHint')}</p>
+            <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits')}</Link>
           </>
         )}
         {inlineProc && inlineSteps && inlineSteps.length > 0 && (
@@ -161,7 +161,7 @@ export function StagePage() {
               style={{ background: theme.accent, color: theme.accentText }}
               onClick={handleDone}
             >
-              {t('ui.buttons.done', 'הצלחתי! ←')}
+              {t('ui.buttons.done')}
             </button>
           )}
           {isLastStage && !isActive && (
@@ -170,13 +170,13 @@ export function StagePage() {
                 className={css.doneBtn}
                 style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
               >
-                {t('ui.buttons.chooseTests', 'לבחירת הבדיקות ←')}
+                {t('ui.buttons.chooseTests')}
               </button>
             </Link>
           )}
           <Link to={isOptional ? '/night-map' : '/map'}>
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              {t('ui.buttons.backToMap', 'חזרה למפה →')}
+              {t('ui.buttons.backToMap')}
             </button>
           </Link>
         </div>
@@ -186,18 +186,18 @@ export function StagePage() {
       <p className={css.waitRange}>
         {inlineProc?.who && <span>👤 {inlineProc.who}</span>}
         {inlineProc?.who && data.waitRange && <span> · </span>}
-        {data.waitRange && <span>{t('ui.text.estimated', '⏱ זמן משוער:')} {data.waitRange}</span>}
+        {data.waitRange && <span>{t('ui.text.estimated')} {data.waitRange}</span>}
       </p>
 
       <div className={css.stageBody}>
         {data.meaning && (
           <section>
-            <h2>{t('ui.text.weAreHere', 'אנחנו כאן')}</h2>
+            <h2>{t('ui.text.weAreHere')}</h2>
             <p>{data.meaning}</p>
             {id === 'reception' && (
               <>
-                <p className={css.reasonHint}>{t('ui.text.reasonHint', 'בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.')}</p>
-                <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits', '🗺️ מה מחכה לנו היום?')}</Link>
+                <p className={css.reasonHint}>{t('ui.text.reasonHint')}</p>
+                <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits')}</Link>
               </>
             )}
           </section>
@@ -206,22 +206,22 @@ export function StagePage() {
         {inlineProc ? (
           <>
             <section>
-              <h2>{t('ui.text.whatActuallyHappens', 'מה קורה בפועל')}</h2>
+              <h2>{t('ui.text.whatActuallyHappens')}</h2>
               <p>{inlineProc.what}</p>
             </section>
             <section>
-              <h2>{t('ui.text.childMayFeel', 'מה הילד/ה עשוי/ה להרגיש')}</h2>
+              <h2>{t('ui.text.childMayFeel')}</h2>
               <p>{inlineProc.feel}</p>
             </section>
             {data.challenge && (
               <section>
-                <h2>{t('ui.text.whatMayBeHard', 'מה יכול להיות קשה?')}</h2>
+                <h2>{t('ui.text.whatMayBeHard')}</h2>
                 <p>{data.challenge}</p>
               </section>
             )}
             {inlineProc.adaptations && inlineProc.adaptations.length > 0 && (
               <section>
-                <h2>{t('ui.text.askStaff', 'מה לבקש מהצוות')}</h2>
+                <h2>{t('ui.text.askStaff')}</h2>
                 <ul>
                   {inlineProc.adaptations.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
@@ -230,7 +230,7 @@ export function StagePage() {
             {/* skip data.canAsk when inline procedure already has adaptations */}
             {(!inlineProc.adaptations || inlineProc.adaptations.length === 0) && data.canAsk && data.canAsk.length > 0 && (
               <section>
-                <h2>{t('ui.text.canAsk', 'אפשר לבקש')}</h2>
+                <h2>{t('ui.text.canAsk')}</h2>
                 <ul>
                   {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
@@ -240,25 +240,25 @@ export function StagePage() {
         ) : (
           <>
             <section>
-              <h2>{t('ui.text.whatHappens', 'מה קורה')}</h2>
+              <h2>{t('ui.text.whatHappens')}</h2>
               <p>{data.whatHappens}</p>
               {data.nextStagePrepare && <p>{data.nextStagePrepare}</p>}
             </section>
             {data.challenge && (
               <section>
-                <h2>{t('ui.text.whatMayBeHard', 'מה יכול להיות קשה?')}</h2>
+                <h2>{t('ui.text.whatMayBeHard')}</h2>
                 <p>{data.challenge}</p>
                 {id === 'reception' && (
                   <>
-                    <p className={css.reasonHint}>{t('ui.text.cardHint', 'בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.')}</p>
-                    <Link to="/card" state={{ from: `/stage/${id}` }} className={css.calmLink}>{t('ui.buttons.cardForStaff', '🪪 כרטיס התאמות לצוות')}</Link>
+                    <p className={css.reasonHint}>{t('ui.text.cardHint')}</p>
+                    <Link to="/card" state={{ from: `/stage/${id}` }} className={css.calmLink}>{t('ui.buttons.cardForStaff')}</Link>
                   </>
                 )}
               </section>
             )}
             {data.canAsk && data.canAsk.length > 0 && (
               <section>
-                <h2>{t('ui.text.canAsk', 'אפשר לבקש')}</h2>
+                <h2>{t('ui.text.canAsk')}</h2>
                 <ul>
                   {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
                 </ul>
@@ -267,7 +267,7 @@ export function StagePage() {
           </>
         )}
         <Link to="/calm" state={{ from: `/stage/${id}` }} className={css.calmLink}>
-          <span aria-hidden className={css.heartIcon}>💙</span> {t('ui.buttons.hardNow', 'קשה לנו כרגע')}
+          <span aria-hidden className={css.heartIcon}>💙</span> {t('ui.buttons.hardNow')}
         </Link>
       </div>
     </div>

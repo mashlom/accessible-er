@@ -15,12 +15,12 @@ export function ReasonPage() {
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <span className={css.stageHeroIcon}>🗺️</span>
-        <h1 style={{ color: theme.accent }}>{t('ui.text.reasonTitle', 'מה הביא אתכם היום?')}</h1>
-        <p className={css.stageHeroHint}>{t('ui.text.reasonHintTop', 'הבחירה עוזרת לראות את המסלול הצפוי שלכם')}</p>
+        <h1 style={{ color: theme.accent }}>{t('ui.text.reasonTitle')}</h1>
+        <p className={css.stageHeroHint}>{t('ui.text.reasonHintTop')}</p>
       </div>
 
       <div className={css.stageBody}>
-        <div className={css.reasonOptions} role="radiogroup" aria-label={t('ui.text.reasonAria', 'סיבת ההגעה')}>
+        <div className={css.reasonOptions} role="radiogroup" aria-label={t('ui.text.reasonAria')}>
           {parentPaths(lang).map((p) => {
             const selected = p.id === reasonId
             return (
@@ -46,26 +46,26 @@ export function ReasonPage() {
 
         {localPath && (
           <section className={css.reasonRoute}>
-            <h2>{localPath.emoji} {t('ui.text.expectedRoute', 'המסלול הצפוי שלנו')}</h2>
+            <h2>{localPath.emoji} {t('ui.text.expectedRoute')}</h2>
             <ol className={css.reasonRouteList}>
               {localPath.route.map((stop, i) => (
                 <li key={i} className={css.reasonRouteItem}>
                   <span className={css.reasonRouteDot} style={{ background: theme.accentSoft, color: theme.accent }}>{i + 1}</span>
                   <span className={css.reasonRouteLabel}>
                     {stop.title}
-                    {stop.optional && <span className={css.reasonOptional}>{t('ui.text.ifNeeded', 'לפי הצורך')}</span>}
+                    {stop.optional && <span className={css.reasonOptional}>{t('ui.text.ifNeeded')}</span>}
                   </span>
                 </li>
               ))}
             </ol>
-            <p className={css.reasonNote}>{t('ui.text.routeNote', 'זהו מסלול לדוגמה בלבד. המסלול המדויק נקבע על ידי הצוות הרפואי.')}</p>
+            <p className={css.reasonNote}>{t('ui.text.routeNote')}</p>
           </section>
         )}
 
         <div className={css.stageBack}>
           <Link to="/stage/reception">
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
-              {t('ui.buttons.back', 'חזרה →')}
+              {t('ui.buttons.back')}
             </button>
           </Link>
         </div>

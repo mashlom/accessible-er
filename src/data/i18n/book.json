@@ -71,6 +71,48 @@
         "text": "We wait until we are called",
         "sub": "You can sit, look around, or breathe slowly."
       }
+    },
+    "stages": {
+      "reception": {
+        "label": "Front desk",
+        "hint": "We open a file for the visit"
+      },
+      "wait-before-triage": {
+        "label": "Waiting for the health check",
+        "hint": "We wait for the nurse"
+      },
+      "triage": {
+        "label": "Assessment and measurements",
+        "hint": "A nurse measures and checks"
+      },
+      "wait-doctor": {
+        "label": "Waiting for the doctor",
+        "hint": "We wait in the waiting room"
+      },
+      "doctor": {
+        "label": "Doctor examination",
+        "hint": "The doctor checks and decides"
+      },
+      "decision": {
+        "label": "Discharge or hospital stay",
+        "hint": "The end of the visit"
+      },
+      "tests": {
+        "label": "Tests",
+        "hint": "Blood tests, X-ray and more"
+      },
+      "treatment": {
+        "label": "Treatment",
+        "hint": "The treatment that was decided"
+      },
+      "consult": {
+        "label": "Specialist consult",
+        "hint": "A specialist doctor comes to check"
+      },
+      "wait-results": {
+        "label": "Waiting for results",
+        "hint": "We wait for the answers"
+      }
     }
   },
   "ru": {
@@ -145,13 +187,59 @@
         "text": "Ждём, пока нас позовут",
         "sub": "Можно посидеть, посмотреть вокруг или медленно подышать."
       }
+    },
+    "stages": {
+      "reception": {
+        "label": "Регистратура",
+        "hint": "Открываем карту визита"
+      },
+      "wait-before-triage": {
+        "label": "Ожидание осмотра медсестры",
+        "hint": "Ждём медсестру"
+      },
+      "triage": {
+        "label": "Оценка состояния и измерения",
+        "hint": "Медсестра измеряет и проверяет"
+      },
+      "wait-doctor": {
+        "label": "Ожидание врача",
+        "hint": "Ждём в зале ожидания"
+      },
+      "doctor": {
+        "label": "Осмотр врача",
+        "hint": "Врач осматривает и решает"
+      },
+      "decision": {
+        "label": "Выписка или госпитализация",
+        "hint": "Конец визита"
+      },
+      "tests": {
+        "label": "Обследования",
+        "hint": "Анализы крови, рентген и другое"
+      },
+      "treatment": {
+        "label": "Лечение",
+        "hint": "Лечение, которое назначили"
+      },
+      "consult": {
+        "label": "Консультация специалиста",
+        "hint": "Приходит врач-специалист"
+      },
+      "wait-results": {
+        "label": "Ожидание результатов",
+        "hint": "Ждём ответы"
+      }
     }
   },
   "he": {
     "ui": {
       "toEnd": "אין הפניות",
       "choiceHome": "הביתה",
-      "choiceHospital": "נשארים בבית החולים"
+      "choiceHospital": "נשארים בבית החולים",
+      "back": "אחורה",
+      "continue": "המשיכו",
+      "next": "הלאה",
+      "restart": "מההתחלה ↺"
     },
     "pages": {
       "disposition": {
@@ -167,11 +255,94 @@
         "sub": "כאן שומרים עלינו מקרוב, ותמיד יש מי שיהיה לידנו. אפשר לשאול כמה לילות."
       },
       "arrival": {
-        "sub": "ליד הכניסה יש שולחן. שם רושמים את השם שלך, שואלים מה קרה ורושמים הכול. אפשר לענות בעצמך, ואפשר לתת להורים לענות."
+        "sub": "ליד הכניסה יש שולחן. שם רושמים את השם שלך, שואלים מה קרה ורושמים הכול. אפשר לענות בעצמך, ואפשר לתת להורים לענות.",
+        "text": "מגיעים לבית החולים"
       },
       "wait-before-triage": {
         "text": "מחכים שיקראו לנו",
         "sub": "אפשר לשבת, להסתכל מסביב, או לנשום לאט. אני לידך."
+      },
+      "parent-select": {
+        "text": "להורים ולצוות",
+        "sub": "בחרו את השלבים הבאים שהרופא/ה קבע/ה"
+      },
+      "triage": {
+        "text": "אחות מגיעה לבדוק",
+        "sub": "מודדים לך חום, לחץ דם ודופק. זה לוקח כמה דקות ולא כואב."
+      },
+      "wait-doctor": {
+        "text": "ממתינים",
+        "sub": "מחכים עד שהרופא פנוי. אפשר לשבת, לנשום, ולחכות בשקט."
+      },
+      "doctor": {
+        "text": "בחדר הרופא/ה",
+        "sub": "הרופא/ה שואל/ת שאלות ובודק/ת. גם את/ה יכול/ה לשאול משהו."
+      },
+      "tests": {
+        "text": "הולכים לבדיקות",
+        "sub": "לפעמים צריך בדיקת דם או רנטגן. זה עוזר לרופא להבין מה קורה."
+      },
+      "treatment": {
+        "text": "מקבלים טיפול",
+        "sub": "לפעמים נותנים תרופה או עושים טיפול קטן. זה עוזר להרגיש טוב יותר."
+      },
+      "consult": {
+        "text": "רופא נוסף מגיע",
+        "sub": "רופא נוסף צריך לבדוק אותך. הוא יגיד מה לעשות הלאה."
+      },
+      "wait-results": {
+        "text": "ממתינים לתוצאות",
+        "sub": "הבדיקות לוקחות זמן. ממתינים — ואז הרופא מספר מה גילו."
+      },
+      "decision": {
+        "text": "הרופא מסביר מה עכשיו",
+        "sub": "לפעמים חוזרים הביתה. לפעמים צריך עוד בדיקות. בכל מקרה — מסבירים."
+      },
+      "end": {
+        "text": "עשינו את זה!",
+        "sub": "הביקור בבית החולים הסתיים. אפשר להיות גאים."
+      }
+    },
+    "stages": {
+      "reception": {
+        "label": "קבלה במזכירות",
+        "hint": "פותחים תיק ביקור"
+      },
+      "wait-before-triage": {
+        "label": "המתנה לבדיקת מצב בריאות",
+        "hint": "ממתינים לבדיקה של האחות"
+      },
+      "triage": {
+        "label": "הערכת מצב ומדידות",
+        "hint": "אחות מודדת ובודקת"
+      },
+      "wait-doctor": {
+        "label": "המתנה לרופא/ה",
+        "hint": "ממתינים בחדר ההמתנה"
+      },
+      "doctor": {
+        "label": "בדיקת רופא/ה",
+        "hint": "הרופא/ה בודק/ת ומחליט/ה"
+      },
+      "decision": {
+        "label": "שחרור או אשפוז",
+        "hint": "סוף הביקור"
+      },
+      "tests": {
+        "label": "בדיקות",
+        "hint": "בדיקות דם, רנטגן ועוד"
+      },
+      "treatment": {
+        "label": "טיפול",
+        "hint": "הטיפול שהוחלט עליו"
+      },
+      "consult": {
+        "label": "ייעוץ מומחה",
+        "hint": "רופא מומחה מגיע לבדוק"
+      },
+      "wait-results": {
+        "label": "המתנה לתוצאות",
+        "hint": "ממתינים לתשובות"
       }
     }
   }
