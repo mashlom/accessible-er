@@ -298,7 +298,8 @@
       "mail": "✉️ שליחה במייל",
       "note": "להצגה: לחצו \"להראות על המסך\" והראו את המסך לצוות. לשליחה: ייפתח המייל עם ההודעה — הוסיפו את כתובת המייל של המיון ושִׁלחו בעצמכם. שום דבר לא נשלח אוטומטית.",
       "dialog": "הודעה מוצגת לצוות",
-      "close": "סגירה"
+      "close": "סגירה",
+      "mailSubject": "הודעה מההורים"
     },
     "cardView": {
       "emptyTitle": "הכרטיס עדיין ריק",
@@ -654,7 +655,8 @@
       "mail": "✉️ Send by email",
       "note": "To show: tap \"Show on the screen\" and show the screen to the staff. To send: your email app opens with the message — add the address of the ER and send it yourselves. Nothing is sent automatically.",
       "dialog": "Message shown to the staff",
-      "close": "Close"
+      "close": "Close",
+      "mailSubject": "הודעה מההורים"
     },
     "cardView": {
       "emptyTitle": "The card is still empty",
@@ -1010,7 +1012,8 @@
       "mail": "✉️ Отправить по почте",
       "note": "Чтобы показать: нажмите «Показать на экране» и покажите экран персоналу. Чтобы отправить: откроется письмо с сообщением — добавьте адрес приёмного покоя и отправьте сами. Ничего не отправляется автоматически.",
       "dialog": "Сообщение, показанное персоналу",
-      "close": "Закрыть"
+      "close": "Закрыть",
+      "mailSubject": "הודעה מההורים"
     },
     "cardView": {
       "emptyTitle": "Карточка пока пустая",

@@ -230,6 +230,11 @@
     },
     "talkTopics": {
       "where": "Where we are in the process"
+    },
+    "language": {
+      "he": "עברית",
+      "en": "English",
+      "ru": "Русский"
     }
   },
   "ru": {
@@ -464,6 +469,11 @@
     },
     "talkTopics": {
       "where": "Где мы сейчас в процессе"
+    },
+    "language": {
+      "he": "עברית",
+      "en": "English",
+      "ru": "Русский"
     }
   },
   "he": {
@@ -583,6 +593,11 @@
     },
     "careView": {
       "hebrewNote": "הכרטיס כתוב בעברית: הצוות קורא אותו בעברית."
+    },
+    "language": {
+      "he": "עברית",
+      "en": "English",
+      "ru": "Русский"
     }
   }
 }
