@@ -21,5 +21,6 @@ parent/
 
 ## Status
 
-- `texts.json` created from `src/data/journey.ts`, `src/data/procedures.ts` and their translations.
-- Not yet wired: the app still reads the old places (`journey.ts`, `procedures.ts`, `i18n/journey.json`, `i18n/procedures.json`). The next step switches it to this file and removes the duplicates.
+- `texts.json` holds the parent words for the stations and procedures, in he, en and ru.
+- Done: `journey.ts` keeps only ids, icons, sensory levels and procedure ids. Its words come from this file. The unused `i18n/journey.json`, `i18n/paths.json` and `i18n/procedures.json` are removed.
+- Not yet: `procedures.ts` still holds Hebrew text. `ShowPage` and `talk/script.ts` read it. The next step moves that text here and removes the copy.
