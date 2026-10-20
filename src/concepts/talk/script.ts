@@ -97,21 +97,24 @@ export interface Ctx {
   lang: Lang
 }
 
-const TOPICS: Choice[] = [
-  { emoji: '💭', label: 'למה באנו היום', go: 'reason' },
-  { emoji: '📍', label: 'איפה אנחנו בתהליך', go: 'where' },
-  { emoji: '🎬', label: 'מה עומד לקרות', go: 'prep' },
-  { emoji: '🪪', label: 'מה חשוב לדעת עליי', go: 'card' },
-  { emoji: '🗺️', label: 'איפה אנחנו במיון', go: 'map' },
-  { emoji: '💗', label: 'קשה לנו עכשיו', go: 'calm' },
-  { emoji: '🙋', label: 'מה אפשר לבקש', go: 'ask' },
-  { emoji: '🏠', label: 'מה יהיה בסוף', go: 'home' },
+// the topics of the helper: the labels come from talk.json (topicNames) in the chosen language
+const TOPIC_IDS: { emoji: string; go: string }[] = [
+  { emoji: '💭', go: 'reason' },
+  { emoji: '📍', go: 'where' },
+  { emoji: '🎬', go: 'prep' },
+  { emoji: '🪪', go: 'card' },
+  { emoji: '🗺️', go: 'map' },
+  { emoji: '💗', go: 'calm' },
+  { emoji: '🙋', go: 'ask' },
+  { emoji: '🏠', go: 'home' },
 ]
+export const topicChoices = (lang: Lang): Choice[] =>
+  TOPIC_IDS.map((t) => ({ ...t, label: talkText(lang).topicNames[t.go as keyof (typeof talkTexts.he)['topicNames']] }))
 
 /** Every node offers a way back to the topics — a thread you cannot leave is a trap. */
-const BACK: Choice = { emoji: '↩️', label: talkTexts.he.topics.back, go: 'topics', quiet: true }
+// the label of the way back is shown by the page (its topics text), so the choice itself carries none
+const BACK: Choice = { emoji: '↩️', label: '', go: 'topics', quiet: true }
 
-export const topicChoices = TOPICS
 
 function bullets(items: string[]): string {
   return items.map((i) => `· ${i}`).join('\n')
@@ -131,7 +134,7 @@ export function talkText(lang: Lang): typeof talkTexts.he {
 function unknown(lang: Lang = 'he'): TalkNode {
   return {
     say: [{ text: talkText(lang).unknown, mood: 'curious' }],
-    choices: [...TOPICS],
+    choices: topicChoices(lang),
   }
 }
 
@@ -272,13 +275,13 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
           { text: talkText(ctx.lang).intro.line1, mood: 'happy' },
           { text: talkText(ctx.lang).intro.line2, mood: 'curious' },
         ],
-        choices: [...TOPICS],
+        choices: topicChoices(ctx.lang),
       }
 
     case 'topics':
       return {
         say: [{ text: talkText(ctx.lang).topics.ask, mood: 'curious' }],
-        choices: [...TOPICS],
+        choices: topicChoices(ctx.lang),
       }
 
     /* ---------- reason ---------- */

@@ -66,7 +66,7 @@ export function TalkPage() {
   const ui = talkText(lang).ui
   const topicLabel = (choice: Choice): string => {
     if (choice.go === 'topics') return talkText(lang).topics.back
-    if (!topicChoices.some((tc) => tc.go === choice.go && tc.label === choice.label)) return choice.label
+    if (!topicChoices(lang).some((tc) => tc.go === choice.go)) return choice.label
     const tiles = (parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string }> }>)[lang]?.tiles
     const tile = TOPIC_TILE[choice.go ?? ''] ?? ''
     if (tile && tiles && tiles[tile]) return tiles[tile].title

@@ -52,7 +52,7 @@ export function CardViewPage() {
             footer={({ print }) => (
               <div className="no-print" style={{ display: 'flex', gap: 10, flexWrap: 'wrap', justifyContent: 'center' }}>
                 <button type="button" className={styles.docBtn} onClick={print}>
-                  📄 שמירה כ־PDF / הדפסה
+                  📄 {(parentUi as unknown as Record<Lang, { cardView: { savePdf: string } }>)[lang].cardView.savePdf}
                 </button>
                 <Link to="/" className={`${styles.docBtn} ${styles.docBtnGhost}`}>
                   ↩️ {talkTx.back}
