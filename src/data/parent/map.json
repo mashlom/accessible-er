@@ -4,17 +4,20 @@
       "entrance": {
         "name": "כניסה וקבלה",
         "note": "הכניסה למלר״ד ודלפק המזכירות. כאן פותחים תיק ונרשמים.",
-        "next": "טריאז׳ — ממש בסמוך"
+        "next": "טריאז׳ — ממש בסמוך",
+        "stage": "reception"
       },
       "triage": {
         "name": "עמדת טריאז׳",
         "note": "כאן אחות מודדת ובודקת מצב ראשוני. סמוך לכניסה.",
-        "next": "חדר ההמתנה, עד שקוראים לרופא/ה"
+        "next": "חדר ההמתנה, עד שקוראים לרופא/ה",
+        "stage": "triage"
       },
       "waiting": {
         "name": "חדר המתנה",
         "note": "אזור ישיבה להמתנה. לרוב האזור הכי עמוס ורועש. אפשר לבקש פינה שקטה יותר.",
-        "next": "חדר בדיקה, כשמגיע התור"
+        "next": "חדר בדיקה, כשמגיע התור",
+        "stage": "wait-doctor"
       },
       "outside": {
         "name": "המתנה בחוץ / באזור סמוך",
@@ -29,12 +32,14 @@
       "treatment": {
         "name": "חדרי בדיקה וטיפול",
         "note": "כאן בודק הרופא/ה ומבצעים טיפולים. לרוב חדר סגור ושקט יחסית.",
-        "next": "בדיקות נוספות, המתנה לתוצאות או שחרור"
+        "next": "בדיקות נוספות, המתנה לתוצאות או שחרור",
+        "stage": "treatment"
       },
       "imaging": {
         "name": "חדרי דימות (צילום / CT)",
         "note": "כאן מצלמים רנטגן, אולטרסאונד או CT. המכונות גדולות ולפעמים רועשות.",
-        "next": "חוזרים להמתין לתוצאות"
+        "next": "חוזרים להמתין לתוצאות",
+        "stage": "tests"
       },
       "restroom": {
         "name": "שירותים",
@@ -43,7 +48,8 @@
       "discharge": {
         "name": "שחרור",
         "note": "כאן מקבלים הנחיות סיום ומשתחררים הביתה.",
-        "next": "הביתה, עם הנחיות להמשך 🏠"
+        "next": "הביתה, עם הנחיות להמשך 🏠",
+        "stage": "decision"
       }
     },
     "load": {
@@ -63,17 +69,20 @@
       "entrance": {
         "name": "Entrance and reception",
         "note": "The entrance to the ER and the desk of the secretaries. This is where your file is opened and you register.",
-        "next": "Triage — right nearby"
+        "next": "Triage — right nearby",
+        "stage": "reception"
       },
       "triage": {
         "name": "Initial assessment",
         "note": "A nurse measures and checks the first condition here. Close to the entrance.",
-        "next": "The waiting room, until the doctor calls you"
+        "next": "The waiting room, until the doctor calls you",
+        "stage": "triage"
       },
       "waiting": {
         "name": "Waiting room",
         "note": "Seating for waiting. Usually the busiest and loudest area. You can ask for a quieter corner.",
-        "next": "An examination room, when your turn comes"
+        "next": "An examination room, when your turn comes",
+        "stage": "wait-doctor"
       },
       "outside": {
         "name": "Waiting outside / in a nearby area",
@@ -88,12 +97,14 @@
       "treatment": {
         "name": "Examination and treatment rooms",
         "note": "The doctor examines here and treatments are done. Usually a closed and relatively quiet room.",
-        "next": "Further tests, waiting for results, or discharge"
+        "next": "Further tests, waiting for results, or discharge",
+        "stage": "treatment"
       },
       "imaging": {
         "name": "Imaging rooms (X-ray / CT)",
         "note": "X-ray, ultrasound or CT scans are taken here. The machines are large and sometimes loud.",
-        "next": "Back to waiting for the results"
+        "next": "Back to waiting for the results",
+        "stage": "tests"
       },
       "restroom": {
         "name": "Toilets",
@@ -102,7 +113,8 @@
       "discharge": {
         "name": "Discharge",
         "note": "This is where you get the instructions for after and go home.",
-        "next": "Home, with instructions for what comes next 🏠"
+        "next": "Home, with instructions for what comes next 🏠",
+        "stage": "decision"
       }
     },
     "load": {
@@ -122,17 +134,20 @@
       "entrance": {
         "name": "Вход и регистратура",
         "note": "Вход в приёмный покой и стойка регистратуры. Здесь открывают карту и регистрируют вас.",
-        "next": "Триаж — совсем рядом"
+        "next": "Триаж — совсем рядом",
+        "stage": "reception"
       },
       "triage": {
         "name": "Оценка состояния",
         "note": "Здесь медсестра измеряет показатели и оценивает первичное состояние. Рядом со входом.",
-        "next": "Зал ожидания, пока не позовут к врачу"
+        "next": "Зал ожидания, пока не позовут к врачу",
+        "stage": "triage"
       },
       "waiting": {
         "name": "Зал ожидания",
         "note": "Зона для ожидания с сидячими местами. Обычно самая людная и шумная. Можно попросить более тихий уголок.",
-        "next": "Смотровая, когда подойдёт очередь"
+        "next": "Смотровая, когда подойдёт очередь",
+        "stage": "wait-doctor"
       },
       "outside": {
         "name": "Ожидание снаружи / в соседней зоне",
@@ -147,12 +162,14 @@
       "treatment": {
         "name": "Смотровые и процедурные",
         "note": "Здесь врач осматривает и проводятся процедуры. Обычно закрытая и относительно тихая комната.",
-        "next": "Дополнительные анализы, ожидание результатов или выписка"
+        "next": "Дополнительные анализы, ожидание результатов или выписка",
+        "stage": "treatment"
       },
       "imaging": {
         "name": "Кабинеты визуализации (рентген / КТ)",
         "note": "Здесь делают снимки: рентген, УЗИ или КТ. Аппараты большие и иногда шумные.",
-        "next": "Возвращаемся ждать результаты"
+        "next": "Возвращаемся ждать результаты",
+        "stage": "tests"
       },
       "restroom": {
         "name": "Туалеты",
@@ -161,7 +178,8 @@
       "discharge": {
         "name": "Выписка",
         "note": "Здесь получают рекомендации на дальнейшее и уходят домой.",
-        "next": "Домой, с рекомендациями на дальнейшее 🏠"
+        "next": "Домой, с рекомендациями на дальнейшее 🏠",
+        "stage": "decision"
       }
     },
     "load": {
