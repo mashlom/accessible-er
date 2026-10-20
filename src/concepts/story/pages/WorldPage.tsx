@@ -65,7 +65,7 @@ export function WorldPage() {
   const { path } = useVisitReason()
   const { lang, dir } = useI18n()
   const tx = keyed(homeTexts[lang as HomeLang], 'parent/home') ?? keyed(homeTexts.he, 'parent/home')
-  const reasonLabel = path ? parentPaths(lang as HomeLang).find((p) => p.id === path.id)?.label ?? path.label : ''
+  const reasonLabel = path ? parentPaths(lang as HomeLang).find((p) => p.id === path.id)?.label ?? '' : ''
 
   return (
     <div className={shell.page} dir={dir} lang={lang}>

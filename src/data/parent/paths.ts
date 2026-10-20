@@ -14,7 +14,7 @@ export function parentPaths(lang: 'he' | 'en' | 'ru'): VisitPath[] {
       ...p,
       label: x.label,
       blurb: x.blurb,
-      route: p.route.map((stop, i) => ({ ...stop, title: x.route[i] ?? stop.title })),
+      route: p.route.map((stop, i) => ({ ...stop, title: x.route[i] ?? '' })),
     }
   })
 }
