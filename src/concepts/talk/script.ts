@@ -19,7 +19,7 @@ function inLang<T extends object>(src: T[], lang: Lang, bucket: Record<string, u
   return src.map((item, i) => ({ ...item, ...(tr[i] ?? {}) }))
 }
 // the position of the 'ask for a break' tip in the support list
-const PAUSE_TIP = distressTips.findIndex((tip) => tip.title === 'לבקש הפסקה')
+const PAUSE_TIP = distressTips.findIndex((tip) => tip.id === 'pause')
 
 /** The ready sentences in the chosen language, for the buttons only */
 const readySentencesIn = (lang: Lang): string[] =>

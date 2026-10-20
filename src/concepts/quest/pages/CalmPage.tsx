@@ -11,7 +11,7 @@ import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
 // the tip that links to the distraction page: found by its place in the data, so it works in every language
-const REDUCE_STIMULATION_TIP = distressTips.findIndex((tip) => tip.title === 'להוריד גירויים')
+const REDUCE_STIMULATION_TIP = distressTips.findIndex((tip) => tip.id === 'less-stimuli')
 
 export function CalmPage() {
   const { theme } = useQuestTheme()
