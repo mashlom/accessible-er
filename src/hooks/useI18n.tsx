@@ -85,6 +85,7 @@ export function useI18n() {
     lang: current,
     setLang,
     dir: current === 'he' ? ('rtl' as const) : ('ltr' as const),
-    t: <T,>(key: string, fallback?: T): T => translate(current, key, fallback),
+    // without a fallback the text is a string from src/data/i18n
+    t: <T = string>(key: string, fallback?: T): T => translate(current, key, fallback),
   }
 }

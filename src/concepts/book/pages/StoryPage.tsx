@@ -30,7 +30,9 @@ const BOOK_PATH = 'M40.75 903C41.3553 903 41.9445 903.066 42.5176 903.197C43.090
 export function StoryPage() {
   const { t, dir, lang } = useI18n()
   // the page's own text, or its translation from data/i18n/book.json (keyed by the page id)
-  const pageText = (id: string, field: 'text' | 'sub', fallback: string) => t(`book.pages.${id}.${field}`, fallback)
+  const pageText = (id: string, field: 'text' | 'sub') => t(`book.pages.${id}.${field}`)
+  // a page has a sub-line when its translation exists (a missing one comes back as its key)
+  const hasSub = (id: string) => pageText(id, 'sub') !== `book.pages.${id}.sub`
   const [index, setIndex] = useState(0)
   const [selectedProcs, setSelectedProcs] = useState<Set<string>>(new Set())
   const [procChosen, setProcChosen] = useState(false)
@@ -92,8 +94,8 @@ export function StoryPage() {
         </div>
 
         <div className={css.parentSelect}>
-          <p className={css.parentSelectTitle}>{pageText('parent-select', 'text', 'להורים ולצוות')}</p>
-          <p className={css.parentSelectSub}>{pageText('parent-select', 'sub', 'בחרו את השלבים הבאים שהרופא/ה קבע/ה')}</p>
+          <p className={css.parentSelectTitle}>{pageText('parent-select', 'text')}</p>
+          <p className={css.parentSelectSub}>{pageText('parent-select', 'sub')}</p>
           <div className={css.procGrid}>
             {procedureOptions.map((proc) => {
               const on = selectedProcs.has(proc.id)
@@ -105,7 +107,7 @@ export function StoryPage() {
                   aria-pressed={on}
                 >
                   <span className={css.procEmoji}>{proc.emoji}</span>
-                  <span className={css.procLabel}>{pageText(proc.id, 'text', proc.text)}</span>
+                  <span className={css.procLabel}>{pageText(proc.id, 'text')}</span>
                 </button>
               )
             })}
@@ -113,9 +115,9 @@ export function StoryPage() {
         </div>
 
         <div className={css.nav}>
-          <button className={css.backBtn} onClick={goBack}>{t('book.ui.back', 'אחורה')}</button>
+          <button className={css.backBtn} onClick={goBack}>{t('book.ui.back')}</button>
           <button className={css.nextBtn} onClick={confirmProcs}>
-            {selectedProcs.size > 0 ? t('book.ui.continue', 'המשיכו') : t('book.ui.toEnd', 'אין הפניות')}
+            {selectedProcs.size > 0 ? t('book.ui.continue') : t('book.ui.toEnd')}
           </button>
         </div>
       </div>
@@ -134,31 +136,31 @@ export function StoryPage() {
         <div className={css.illustration}>{page.emoji}</div>
         <p className={css.mainText}>
           {page.id !== 'parent-select' && `${allPages.filter((p) => p.id !== 'parent-select').indexOf(page) + 1}. `}
-          {pageText(page.id, 'text', page.text)}
+          {pageText(page.id, 'text')}
         </p>
-        {page.sub && <p className={css.subText}>{pageText(page.id, 'sub', page.sub)}</p>}
+        {hasSub(page.id) && <p className={css.subText}>{pageText(page.id, 'sub')}</p>}
       </div>
 
       {page.id === 'disposition' ? (
         <div className={css.procGrid}>
           <button className={css.procCard} onClick={() => { setDisposition('home'); setIndex((i) => i + 1) }}>
             <span className={css.procEmoji}>🏠</span>
-            <span className={css.procLabel}>{t('book.ui.choiceHome', 'הביתה')}</span>
+            <span className={css.procLabel}>{t('book.ui.choiceHome')}</span>
           </button>
           <button className={css.procCard} onClick={() => { setDisposition('hospital'); setIndex((i) => i + 1) }}>
             <span className={css.procEmoji}>🏥</span>
-            <span className={css.procLabel}>{t('book.ui.choiceHospital', 'נשארים בבית החולים')}</span>
+            <span className={css.procLabel}>{t('book.ui.choiceHospital')}</span>
           </button>
         </div>
       ) : (
         <div className={css.nav}>
           {!isFirst && (
-            <button className={css.backBtn} onClick={goBack}>{t('book.ui.back', 'אחורה')}</button>
+            <button className={css.backBtn} onClick={goBack}>{t('book.ui.back')}</button>
           )}
           {!isLast ? (
-            <button className={css.nextBtn} onClick={goNext}>{t('book.ui.next', 'הלאה')}</button>
+            <button className={css.nextBtn} onClick={goNext}>{t('book.ui.next')}</button>
           ) : (
-            <button className={css.nextBtn} onClick={restart}>{t('book.ui.restart', 'מההתחלה ↺')}</button>
+            <button className={css.nextBtn} onClick={restart}>{t('book.ui.restart')}</button>
           )}
         </div>
       )}
@@ -173,7 +175,7 @@ export function StoryPage() {
           aria-haspopup="dialog"
         >
           <span className={quest.parentBtnOceanPill}>
-            {t('ui.buttons.parentInfo', 'מידע נוסף להורה')}
+            {t('ui.buttons.parentInfo')}
             <svg viewBox="33 888 24 24" className={quest.parentBtnOceanIcon} aria-hidden>
               <rect x="33" y="888" width="24" height="24" rx="12" />
               <path d={BOOK_PATH} />
