@@ -12,6 +12,7 @@ import { resolveNode, talkText, topicChoices, type Action, type Choice, type Say
 import { useI18n } from '../../../hooks/useI18n'
 import i18nUi from '../../../data/i18n/ui.json'
 import talkJson from '../../../data/parent/talk.json'
+import homeJson from '../../../data/parent/home.json'
 import styles from '../talk.module.css'
 
 /** One exchange: what Roni said, and what the family answered to it. */
@@ -165,7 +166,9 @@ export function TalkPage() {
         // the team reads Hebrew: the question the parent was asked and the answer the parent chose, as the parent saw them
         const he = keyed((talkJson as unknown as { he: { mail: Record<string, string>; bye: Record<string, string>; buttons: Record<string, string> } }).he, 'parent/talk')
         const body = [he.bye.ask, he.buttons[RATING_KEYS[action.rating]]].join('\n')
-        window.location.href = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(he.mail.subject)}&body=${encodeURIComponent(body)}`
+        // the subject in the parent's language: the prefix and the app name, as the home page shows it
+        const subject = `${(talkJson as unknown as Record<'he'|'en'|'ru', { mail: { subjectPrefix: string } }>)[lang].mail.subjectPrefix} "${(homeJson as unknown as Record<'he'|'en'|'ru', { title: string }>)[lang].title}"`
+        window.location.href = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
         break
       }
       case 'restart':
