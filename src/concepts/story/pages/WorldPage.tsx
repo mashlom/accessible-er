@@ -48,7 +48,9 @@ const calmTiles = i18nUi as unknown as Record<HomeLang, { tiles: Record<string, 
 function tileText(lang: HomeLang, id: string): Tile {
   const own = (keyed(homeTexts[lang], 'parent/home').tiles as Record<string, Partial<Tile> | undefined> | undefined)?.[id]
   if (lang === 'he' && own?.name) return { name: own.name, desc: own.desc ?? '' }
-  const c = calmTiles[lang].tiles[calmTileOf[id]]
+  const calmKey = calmTileOf[id]
+  if (!calmKey) return { name: own?.name ?? '', desc: own?.desc ?? '' }
+  const c = calmTiles[lang].tiles[calmKey]
   return { name: c?.title ?? '', desc: c?.desc ?? '' }
 }
 
