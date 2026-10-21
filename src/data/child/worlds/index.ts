@@ -12,7 +12,6 @@ export interface WorldText {
   procedureSteps?: Record<string, string[]>
   procedureVariants?: Record<string, { label: string; steps: string[] }[]>
   calmLines?: string[]
-  cardChildHero?: { title: string; subtitle: string }
   distractTitle?: string
 }
 

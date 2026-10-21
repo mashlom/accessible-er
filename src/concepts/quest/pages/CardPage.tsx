@@ -15,11 +15,10 @@ export function CardPage() {
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <span className={css.stageHeroIcon}>🪪</span>
         <h1 style={{ color: theme.accent }}>
-          {theme.cardChildHero?.title ?? t('ui.text.cardTitle')}
+          {t('ui.tiles.card.title')}
         </h1>
-        {theme.cardChildHero?.subtitle && (
-          <p className={css.stageHeroHint}>{theme.cardChildHero.subtitle}</p>
-        )}
+        {/* the card is the same on every page and in every world: the same heading as the parent's card page */}
+        <p className={css.stageHeroHint}>{t('ui.text.cardSubtitle')}</p>
         <div className={css.stageBack}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
             {t('ui.buttons.back')}

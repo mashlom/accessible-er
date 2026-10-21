@@ -42,7 +42,6 @@ export function useQuestTheme(): { theme: QuestTheme; setThemeId: (id: string) =
       procedureSteps: tx.procedureSteps,
       procedureVariants: tx.procedureVariants,
       calmLines: tx.calmLines,
-      cardChildHero: tx.cardChildHero,
       distractTitle: tx.distractTitle,
     }
   }, [current, lang])

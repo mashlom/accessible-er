@@ -17,7 +17,7 @@ export function CardPage() {
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-      <Scene title={t('ui.tiles.card.title')} subtitle={tx.subtitle}>
+      <Scene title={t('ui.tiles.card.title')} subtitle={t('ui.text.cardSubtitle')}>
         <div style={{ marginBottom: 'var(--space-4)' }}>
           <Bubble>{tx.bubble}</Bubble>
         </div>

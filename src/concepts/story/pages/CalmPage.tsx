@@ -86,6 +86,9 @@ export function CalmPage() {
       <Link to="/requests" className={styles.crossLink}>
         {tx.requests}
       </Link>
+      <Link to="/card/view" className={styles.crossLink}>
+        {t('ui.buttons.showCard')}
+      </Link>
 
       {shown && (
         <div

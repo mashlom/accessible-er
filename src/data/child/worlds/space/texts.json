@@ -204,10 +204,7 @@
       "רגע, נושמים יחד 💙",
       "קשה עכשיו? זה בסדר גמור. אני כאן.",
       "אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…"
-    ],
-    "cardChildHero": {
-      "title": "כרטיס התאמות"
-    }
+    ]
   },
   "en": {
     "name": "Astronaut in Space",
@@ -414,10 +411,7 @@
       "A moment — let's breathe together 💙",
       "Is it hard right now? That's completely okay. I'm here.",
       "We can also count slowly to ten together. One… two… three…"
-    ],
-    "cardChildHero": {
-      "title": "Accommodations card"
-    }
+    ]
   },
   "ru": {
     "name": "Космос",
@@ -624,9 +618,6 @@
       "Минутку — дышим вместе 💙",
       "Сейчас трудно? Это совершенно нормально. Я рядом.",
       "Можно ещё медленно посчитать со мной до десяти. Один… два… три…"
-    ],
-    "cardChildHero": {
-      "title": "Карточка адаптаций"
-    }
+    ]
   }
 }

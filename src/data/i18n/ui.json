@@ -127,7 +127,7 @@
         "many": "You collected {n} coins — welcome to the shop!",
         "other": "You collected {n} coins — welcome to the shop!"
       },
-      "cardSubtitle": "Tick what fits — under 2 minutes. At the end you get a short card to show the staff on screen or print it.",
+      "cardSubtitle": "Tick what fits — less than two minutes. At the end you get a short, large card, which you can show the staff on the screen or print.",
       "draft": "draft — awaiting review"
     },
     "careView": {
@@ -643,7 +643,7 @@
         "other": "У тебя есть {n} монет — добро пожаловать в магазин!",
         "two": "У тебя есть {n} монет — добро пожаловать в магазин!"
       },
-      "cardSubtitle": "Отметьте, что подходит, — меньше 2 минут. В конце получите короткую карточку, которую можно показать персоналу на экране или распечатать.",
+      "cardSubtitle": "Отметьте подходящее — это займёт меньше двух минут. В конце получится короткая крупная карточка, которую можно показать персоналу с экрана или распечатать.",
       "draft": "черновик — ждёт проверки"
     },
     "careView": {
@@ -1056,7 +1056,7 @@
       "stageProcedures": "פרוצדורות בשלב הזה",
       "cardTitle": "כרטיס התאמות",
       "aboutMyChild": "מה חשוב לדעת על הילד/ה שלי",
-      "cardSubtitle": "סמנו את מה שמתאים — פחות מ־2 דקות. בסוף מקבלים כרטיס קצר שמציגים לצוות מהמסך או בהדפסה.",
+      "cardSubtitle": "סמנו את מה שמתאים — פחות משתי דקות. בסוף יוצא כרטיס קצר וגדול, שאפשר להראות לצוות מהמסך או להדפיס.",
       "privacyA": "🔒 הכל נשמר",
       "privacyB": "במכשיר הזה בלבד",
       "privacyC": ", נמחק אחרי 24 שעות, ולא נשלח לשום מקום.",

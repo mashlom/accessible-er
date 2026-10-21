@@ -165,10 +165,6 @@
       "כשקשה לאביר, הוא נושם עמוק מאוד",
       "נשום איתי — שאיפה… נשיפה…"
     ],
-    "cardChildHero": {
-      "title": "מכתב המלצה לקוסם הגדול",
-      "subtitle": "כדי שהקוסם ידע בדיוק איך לעזור לאביר שלנו"
-    },
     "distractTitle": "הצלחית הקסומה 🪄",
     "procedureVariants": {
       "temperature": [
@@ -380,10 +376,6 @@
       "When a knight finds it hard, they breathe very deeply",
       "Breathe with me — in… out…"
     ],
-    "cardChildHero": {
-      "title": "A recommendation letter for the great wizard",
-      "subtitle": "So the wizard knows exactly how to help our knight"
-    },
     "distractTitle": "The Magic Bowl 🪄",
     "procedureVariants": {
       "temperature": [
@@ -595,10 +587,6 @@
       "Когда рыцарю трудно, он очень глубоко дышит",
       "Дыши со мной — вдох… выдох…"
     ],
-    "cardChildHero": {
-      "title": "Рекомендательное письмо великому волшебнику",
-      "subtitle": "Чтобы волшебник точно знал, как помочь нашему рыцарю"
-    },
     "distractTitle": "Волшебная чаша 🪄",
     "procedureVariants": {
       "temperature": [

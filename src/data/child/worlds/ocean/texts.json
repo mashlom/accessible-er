@@ -204,10 +204,6 @@
       "כשקשה לצוללן, הוא נושם עמוק מאוד",
       "נשום איתי — שאיפה… נשיפה…"
     ],
-    "cardChildHero": {
-      "title": "מכתב הוראות לקברניט",
-      "subtitle": "כדי שקברניט הצוללת ידע בדיוק איך לעזור לצוללן שלנו"
-    },
     "distractTitle": "חדר ההידרופונים 🎧"
   },
   "en": {
@@ -415,10 +411,6 @@
       "When a diver finds it hard, they breathe very deeply",
       "Breathe with me — in… and out…"
     ],
-    "cardChildHero": {
-      "title": "A Letter to the Captain",
-      "subtitle": "So the captain knows exactly how to help our diver"
-    },
     "distractTitle": "Sonar Sounds 📡"
   },
   "ru": {
@@ -626,10 +618,6 @@
       "Когда водолазу трудно, он дышит очень глубоко",
       "Дыши со мной — вдох… выдох…"
     ],
-    "cardChildHero": {
-      "title": "Письмо капитану",
-      "subtitle": "Чтобы капитан подводной лодки знал, как помочь нашему водолазу"
-    },
     "distractTitle": "Звуки локатора 📡"
   }
 }
