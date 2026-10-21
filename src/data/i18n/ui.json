@@ -230,12 +230,11 @@
         "pain": "How pain shows",
         "freeNote": "More"
       },
-      "nameFallback": "my child",
-      "viewTitleNoName": "Important to know about my child"
+      "nameFallback": "my child"
     },
     "tiles": {
       "card": {
-        "title": "Your card",
+        "title": "Important to know about my child",
         "desc": "A short card of adaptations to show the staff"
       },
       "journey": {
@@ -760,8 +759,7 @@
         "pain": "Как проявляется боль",
         "freeNote": "Ещё"
       },
-      "nameFallback": "ребёнок",
-      "viewTitleNoName": "Важно знать о моём ребёнке"
+      "nameFallback": "ребёнок"
     },
     "tiles": {
       "card": {
@@ -1301,8 +1299,7 @@
         "pain": "ביטוי כאב",
         "freeNote": "עוד"
       },
-      "nameFallback": "הילד/ה",
-      "viewTitleNoName": "חשוב לדעת על הילד/ה שלי"
+      "nameFallback": "הילד/ה"
     },
     "tiles": {
       "card": {

@@ -11,7 +11,6 @@ import css from '../../concepts/quest/quest.module.css'
 type Lang = 'he' | 'en' | 'ru'
 type CardTexts = {
   viewTitle: string
-  viewTitleNoName: string
   age: string
   suggestionsTitle: string
   rows: Record<string, string>
@@ -19,10 +18,12 @@ type CardTexts = {
 
 /** The title and the age line of the card, in the chosen language. */
 export function careCardHeading(card: CareCard, lang: Lang) {
-  const tx = keyed((i18nUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'i18n/ui').card
+  const ui = keyed((i18nUi as unknown as Record<Lang, { card: CardTexts; tiles: { card: { title: string } } }>)[lang], 'i18n/ui')
+  const tx = ui.card
   const name = card.nickname.trim()
   return {
-    title: name ? tx.viewTitle.replace('{name}', name) : tx.viewTitleNoName,
+    // without a name the card has the same title as its tile
+    title: name ? tx.viewTitle.replace('{name}', name) : ui.tiles.card.title,
     age: card.age.trim() ? tx.age.replace('{age}', card.age.trim()) : '',
   }
 }
