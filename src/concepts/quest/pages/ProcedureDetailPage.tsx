@@ -32,8 +32,9 @@ export function ProcedureDetailPage() {
   if (theme.id === 'ocean' && id) return <OceanProcedureDetailSheet id={id} />
 
   const themedSteps = id ? theme.procedureSteps?.[id] : undefined
-  const variants = themedSteps ? undefined : (theme.procedureVariants?.[id!] ?? procedure.storyVariants)
-  const steps = themedSteps ?? (variants ? (variants[variant] ?? variants[0]).steps : procedure.story)
+  // the variants (the methods) come first; a world without them shows its own steps, else the shared story
+  const variants = theme.procedureVariants?.[id!] ?? procedure.storyVariants
+  const steps = variants ? (variants[variant] ?? variants[0]).steps : (themedSteps ?? procedure.story)
 
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>

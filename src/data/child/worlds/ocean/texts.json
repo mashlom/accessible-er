@@ -65,7 +65,8 @@
       "medication": [
         "מקבלים תרופת ים שעוזרת לגוף.",
         "לפעמים צריך לשתות אותה, ולפעמים מכניסים אותה ליד דרך צינורית רכה.",
-        "אם שתינו אותה, אפשר לשתות מים אחרי, כדי להעביר את הטעם."
+        "אם שתינו אותה, אפשר לשתות מים אחרי, כדי להעביר את הטעם.",
+        "אפשר לשתות מים אחרי — המרקחת קיבלה."
       ],
       "blood-pressure": [
         "שמים לי שרוול רך על הזרוע.",
@@ -76,7 +77,8 @@
       "doctor-exam": [
         "הוא מקשיב לגוף עם כלי קסמים — קצת קר, לא כואב.",
         "אולי יסתכל בגרון ובאוזניים עם אור קסמים קטן.",
-        "בסוף יידע הקברניט מה לעשות."
+        "בסוף יידע הקברניט מה לעשות.",
+        "בסוף יידע הקוסם איזה קסם ריפוי נדרש."
       ],
       "bandage": [
         "הבוסמן עוטף את המקום בתחבושת רכה.",
@@ -123,7 +125,8 @@
       "urine": [
         "הצוללן נכנס לשירותים של הצוללת.",
         "הוא משתין מעט לכוס קטנה.",
-        "הכוס מוסרת לבוסמן — והכול מוכן!"
+        "הכוס מוסרת לבוסמן — והכול מוכן!",
+        "המשימה הסודית הושלמה!"
       ],
       "waiting-results": [
         "כל הבדיקות הסתיימו — כל הכבוד, צוללן!",
@@ -141,7 +144,20 @@
       "saturation": [
         "שמים לי אטב קטן ורך על האצבע.",
         "נדלק בו אור אדום קטן.",
-        "הוא רק מסתכל — לא עושה כלום, ואחרי רגע מורידים לי אותו."
+        "הוא רק מסתכל — לא עושה כלום, ואחרי רגע מורידים לי אותו.",
+        "מורידים את הטבעת — הקסם נקרא."
+      ],
+      "temperature": [
+        "מכניסים שרביט קסמים קטן לפה.",
+        "סוגרים את הפה חזק — כאילו שומרים על סוד.",
+        "מחכים רגע בשקט עד שהשרביט מסיים לקרוא את הקסם.",
+        "שומעים צפצוף קטן — הקוסם קרא את החום הפנימי."
+      ],
+      "stitches": [
+        "לפעמים שמים קסם קור על הפצע ומכסים במגן שקוף — מחכים שיעבוד.",
+        "הרפואן סוגר את הפצע בדבק מיוחד או בחוט ריפוי — לא כואב.",
+        "אפשר להסתכל על משהו אחר בזמן הזה.",
+        "שמים חבישת הגנה מלמעלה — הפצע בדרך להחלמה."
       ]
     },
     "procedureVariants": {
@@ -264,12 +280,14 @@
       "medication": [
         "The diver gets sea medicine that helps the body.",
         "Sometimes it is drunk, and sometimes it goes into the arm through a soft tube.",
-        "If it was drunk, there can be some water afterwards to wash the taste away."
+        "If it was drunk, there can be some water afterwards to wash the taste away.",
+        "We can drink water after — the potion has been received."
       ],
       "saturation": [
         "The diver puts a small, soft clip on their finger.",
         "A little red light turns on inside it.",
-        "It only looks — it doesn't do anything. Once the boatswain says it's okay, it comes off."
+        "It only looks — it doesn't do anything. Once the boatswain says it's okay, it comes off.",
+        "We take the ring off — the magic has been read."
       ],
       "blood-pressure": [
         "The boatswain puts a soft cuff on the diver's arm.",
@@ -280,7 +298,8 @@
       "doctor-exam": [
         "The captain listens to my body with a stethoscope — it's a little cold, but it doesn't hurt.",
         "Maybe he'll look in my throat and ears with a small flashlight.",
-        "At the end, he'll know what to do next."
+        "At the end, he'll know what to do next.",
+        "In the end the wizard will know which healing magic is needed."
       ],
       "bandage": [
         "The bosun wraps this place in a soft bandage.",
@@ -327,7 +346,8 @@
       "urine": [
         "The diver goes into the submarine's toilet.",
         "He pees a little into a small cup.",
-        "The cup is handed to the bosun — and everything is done!"
+        "The cup is handed to the bosun — and everything is done!",
+        "The secret mission is complete!"
       ],
       "waiting-results": [
         "All the checks are finished — well done, diver!",
@@ -341,6 +361,18 @@
         "I stand or lie calmly, as if hiding in the depths.",
         "The machine takes a picture — I don't feel anything.",
         "Done, I can move again."
+      ],
+      "temperature": [
+        "We put a small magic sceptre in the mouth.",
+        "We close the mouth tight — as if we are keeping a secret.",
+        "We wait quietly until the sceptre finishes reading the magic.",
+        "We hear a small beep — the wizard has read the inner heat."
+      ],
+      "stitches": [
+        "Sometimes we put cold magic on the wound and cover it with a clear shield — we wait for it to work.",
+        "The healer closes the wound with a special glue or healing thread — it does not hurt.",
+        "We can look at something else during this.",
+        "We put a protective dressing on top — the wound is on its way to healing."
       ]
     },
     "procedureVariants": {
@@ -476,7 +508,8 @@
       "urine": [
         "Водолаз заходит в гальюн подводной лодки.",
         "Он писает немного в маленький стаканчик.",
-        "Стаканчик отдают боцману — и всё готово!"
+        "Стаканчик отдают боцману — и всё готово!",
+        "Тайное задание выполнено!"
       ],
       "ultrasound": [
         "Водолаз спокойно лежит на кушетке.",
@@ -500,7 +533,8 @@
       "medication": [
         "Водолаз получает морское лекарство, которое помогает его телу.",
         "Иногда его нужно выпить, а иногда его вводят в руку через мягкую трубочку.",
-        "Если лекарство пили, потом можно попить воды, чтобы убрать вкус."
+        "Если лекарство пили, потом можно попить воды, чтобы убрать вкус.",
+        "После можно выпить воды — зелье принято."
       ],
       "inhalation": [
         "Боцман надевает на лицо водолаза мягкую маску с прохладным воздухом — почти как маска для дайвинга.",
@@ -528,7 +562,8 @@
       "saturation": [
         "Водолаз надевает на палец маленькую мягкую прищепку.",
         "В ней загорается маленький красный огонёк.",
-        "Она только смотрит — ничего не делает. Когда боцман разрешит, её можно снять."
+        "Она только смотрит — ничего не делает. Когда боцман разрешит, её можно снять.",
+        "Снимаем кольцо — волшебство прочитано."
       ],
       "blood-pressure": [
         "Боцман надевает на руку мягкую манжету.",
@@ -539,7 +574,20 @@
       "doctor-exam": [
         "Капитан слушает стетоскопом, как дышит водолаз, и как бьется его сердце. Это немного холодно, но не больно.",
         "Может быть, он посмотрит в горло и уши с помощью маленького фонарика.",
-        "В конце он скажет, что делать дальше."
+        "В конце он скажет, что делать дальше.",
+        "В конце волшебник узнает, какое целебное волшебство нужно."
+      ],
+      "temperature": [
+        "В рот кладём маленький волшебный скипетр.",
+        "Рот закрываем крепко — как будто храним секрет.",
+        "Тихо ждём, пока скипетр дочитает заклинание.",
+        "Слышим короткий писк — волшебник прочитал внутренний жар."
+      ],
+      "stitches": [
+        "Иногда на рану кладут холодное волшебство и закрывают прозрачным щитом — ждём, пока оно подействует.",
+        "Лекарь закрывает рану особым клеем или целебной нитью — не больно.",
+        "Во время этого можно смотреть на что-то другое.",
+        "Сверху накладывают защитную повязку — рана идёт на поправку."
       ]
     },
     "procedureVariants": {

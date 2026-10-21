@@ -61,6 +61,157 @@
       "cast": "על היד או הרגל של הבובה מניחים עטיפה רכה שמחזיקה אותה במקום, עד שהכול מתרפא.",
       "bandage": "הברך של הבובה מקבלת חבישה רכה, מסודרת כמו מתנה יפה.",
       "waiting-results": "הבובה מחכה בפינה נעימה של הבית, עד שהתוצאות מוכנות, עם ספר ביד."
+    },
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "בפה",
+          "steps": [
+            "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
+            "סוגרים את הפה חזק־חזק, כאילו יש לי סוכריה בפנים.",
+            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
+            "שומעים ביפ קטן — וזהו, סיימנו."
+          ]
+        },
+        {
+          "label": "מתחת לבית השחי",
+          "steps": [
+            "שמים חתיכת פלסטיק קטנה עם חוט מתחת לבית השחי.",
+            "מצמידים את הזרוע לגוף ומחזיקים בעדינות.",
+            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
+            "שומעים ביפ קטן — וזהו, סיימנו."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "עם אלחוש",
+          "steps": [
+            "שמים קודם חומר קריר שמרדים את האזור, ומכסים במדבקה שקופה.",
+            "מחכים קצת עד שהקסם עובד והאזור של החתך \"הולך לישון\".",
+            "הרופא/ה מחזיק/ה את האזור וסוגר/ת אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
+            "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים לי חבישה נקייה מלמעלה."
+          ]
+        },
+        {
+          "label": "בלי אלחוש",
+          "steps": [
+            "לא צריך להרדים את האזור — מתחילים ישר.",
+            "הרופא/ה מחזיק/ה את האזור ושם/ה עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+            "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים לי חבישה נקייה מלמעלה."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "medication": [
+        "מקבלים תרופת ים שעוזרת לגוף.",
+        "לפעמים צריך לשתות אותה, ולפעמים מכניסים אותה ליד דרך צינורית רכה.",
+        "אם שתינו אותה, אפשר לשתות מים אחרי, כדי להעביר את הטעם.",
+        "אפשר לשתות מים אחרי — המרקחת קיבלה."
+      ],
+      "blood-pressure": [
+        "שמים לי שרוול רך על הזרוע.",
+        "השרוול מתנפח ולוחץ, כמו לחץ המים בעומק.",
+        "סופרים: אחת, שתיים, שלוש...",
+        "אחר כך האוויר יוצא מהשרוול. אפשר להוריד אותו."
+      ],
+      "doctor-exam": [
+        "הוא מקשיב לגוף עם כלי קסמים — קצת קר, לא כואב.",
+        "אולי יסתכל בגרון ובאוזניים עם אור קסמים קטן.",
+        "בסוף יידע הקברניט מה לעשות.",
+        "בסוף יידע הקוסם איזה קסם ריפוי נדרש."
+      ],
+      "bandage": [
+        "הבוסמן עוטף את המקום בתחבושת רכה.",
+        "עוטף בעדינות, שכבה אחרי שכבה.",
+        "בסוף מהדק — נעים ובטוח."
+      ],
+      "blood-test": [
+        "הבוסמן מורח על העור קרם שהופך אותו לפחות רגיש.",
+        "גומייה רכה נכרכת סביב זרועו של הצוללן.",
+        "דקירה קטנה ומהירה — אפשר להסתכל על משהו אחר.",
+        "הבוסמן מדביק פלסטר על הפצע הקטן — כל הכבוד, צוללן!"
+      ],
+      "cast": [
+        "הצוללן בוחר אם לשבת או לשכב, ואם אמא או אבא יהיו לידו.",
+        "היד או הרגל עטופות בשכבות רכות.",
+        "עכשיו צריך לחכות בסבלנות ולא לזוז — הגבס צריך להתאים בדיוק לצורה.",
+        "הגבס מתקשה לאט ושומר על העצם — והיא מתרפאת."
+      ],
+      "ct": [
+        "הצוללן שוכב על ספה נוחה.",
+        "הספה נכנסת לאט לתוך טבעת גדולה, כמו פתח של צוללת.",
+        "נשמע זמזום, והצוללן שוכב בשקט, כאילו מתחבא במעמקים.",
+        "הספה יוצאת חזרה — סיימנו."
+      ],
+      "inhalation": [
+        "הבוסמן מניח על פני הצוללן מסיכה רכה עם אוויר קריר — כמעט כמו מסיכת צלילה.",
+        "לא צריך לנשום חזק — הצוללן פשוט נושם כרגיל.",
+        "לפעמים זה מדגדג בעיניים, ואפשר לבקש שהאוויר יזרום לאט יותר.",
+        "בזמן הזה אפשר לצפות בסרט מצויר. אחרי כמה דקות מורידים את המסיכה — סיימנו."
+      ],
+      "iv": [
+        "הבוסמן מורח קרם שמרגיע את העור.",
+        "דקירה קצרה, ואז מכניסים צינורית רכה ודקה.",
+        "המחט יוצאת, אבל הצינורית הרכה נשארת כדי לתת לצוללן מים מרפאים.",
+        "הבוסמן מדביק מדבקה שמחזיקה את הצינורית במקומה."
+      ],
+      "ultrasound": [
+        "הצוללן שוכב בשקט על הספה.",
+        "מורחים על הבטן ג'ל קר מעט.",
+        "מכשיר חלק מחליק ומצייר תמונה על המסך — לפעמים הוא לוחץ קצת, וזה נורמלי.",
+        "אם מפריע, אפשר לבקש הפסקה קצרה.",
+        "מנגבים את הג'ל — סיימנו."
+      ],
+      "urine": [
+        "הצוללן נכנס לשירותים של הצוללת.",
+        "הוא משתין מעט לכוס קטנה.",
+        "הכוס מוסרת לבוסמן — והכול מוכן!",
+        "המשימה הסודית הושלמה!"
+      ],
+      "waiting-results": [
+        "כל הבדיקות הסתיימו — כל הכבוד, צוללן!",
+        "עכשיו מחכים לתשובות. אפשר לשחק, לנוח או לצפות בסרט מצויר.",
+        "הקברניט והבוסמן עובדים כדי לעזור לצוללן. לא שכחו ממנו.",
+        "כשהתשובות יהיו מוכנות, הקברניט יבוא ויספר."
+      ],
+      "xray": [
+        "אנחנו נכנסים לחדר עם המכשיר הגדול.",
+        "אולי ישימו עליי שכבה כבדה שמגינה על הגוף, ואולי גם צווארון.",
+        "אני עומד או שוכב בשקט, כאילו מתחבא במעמקים.",
+        "המכשיר מצלם — אני לא מרגיש כלום.",
+        "סיימנו, אפשר לזוז שוב."
+      ],
+      "saturation": [
+        "שמים לי אטב קטן ורך על האצבע.",
+        "נדלק בו אור אדום קטן.",
+        "הוא רק מסתכל — לא עושה כלום, ואחרי רגע מורידים לי אותו.",
+        "מורידים את הטבעת — הקסם נקרא."
+      ],
+      "temperature": [
+        "מכניסים שרביט קסמים קטן לפה.",
+        "סוגרים את הפה חזק — כאילו שומרים על סוד.",
+        "מחכים רגע בשקט עד שהשרביט מסיים לקרוא את הקסם.",
+        "שומעים צפצוף קטן — הקוסם קרא את החום הפנימי."
+      ],
+      "stitches": [
+        "לפעמים שמים קסם קור על הפצע ומכסים במגן שקוף — מחכים שיעבוד.",
+        "הרפואן סוגר את הפצע בדבק מיוחד או בחוט ריפוי — לא כואב.",
+        "אפשר להסתכל על משהו אחר בזמן הזה.",
+        "שמים חבישת הגנה מלמעלה — הפצע בדרך להחלמה."
+      ]
+    },
+    "calmLines": [
+      "גם לצוללנים קשה לפעמים 🤿",
+      "כשקשה לצוללן, הוא נושם עמוק מאוד",
+      "נשום איתי — שאיפה… נשיפה…"
+    ],
+    "cardChildHero": {
+      "title": "מכתב הוראות לקברניט",
+      "subtitle": "כדי שקברניט הצוללת ידע בדיוק איך לעזור לצוללן שלנו"
     }
   },
   "en": {
@@ -125,6 +276,157 @@
       "cast": "A soft wrap goes on the doll’s arm or leg to keep it still while it heals.",
       "bandage": "The doll’s knee gets a soft bandage, neat like a present.",
       "waiting-results": "The doll waits in a cosy corner of the house until the results are ready, with a book in its hands."
+    },
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "In the mouth",
+          "steps": [
+            "A small plastic tip with a wire goes into my mouth.",
+            "I close my mouth tight-tight, like I have a candy inside.",
+            "I wait quietly for a short moment, until the device is done.",
+            "I hear a little beep — and that's it, we're done."
+          ]
+        },
+        {
+          "label": "Under the armpit",
+          "steps": [
+            "A small plastic tip with a wire goes under my armpit.",
+            "I press my arm to my body and hold it gently.",
+            "I wait quietly for a short moment, until the device is done.",
+            "I hear a little beep — and that's it, we're done."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "With numbing",
+          "steps": [
+            "First they put something cool on the spot to make it sleepy, and cover it with a clear sticker.",
+            "We wait a little until the magic works and the spot around the cut “goes to sleep”.",
+            "The doctor holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
+            "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
+          ]
+        },
+        {
+          "label": "Without numbing",
+          "steps": [
+            "There's no need to make the spot sleepy — we start right away.",
+            "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+            "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "medication": [
+        "The diver gets sea medicine that helps the body.",
+        "Sometimes it is drunk, and sometimes it goes into the arm through a soft tube.",
+        "If it was drunk, there can be some water afterwards to wash the taste away.",
+        "We can drink water after — the potion has been received."
+      ],
+      "saturation": [
+        "The diver puts a small, soft clip on their finger.",
+        "A little red light turns on inside it.",
+        "It only looks — it doesn't do anything. Once the boatswain says it's okay, it comes off.",
+        "We take the ring off — the magic has been read."
+      ],
+      "blood-pressure": [
+        "The boatswain puts a soft cuff on the diver's arm.",
+        "The cuff fills with air and squeezes, like the water pressure down deep.",
+        "The diver counts: one, two, three...",
+        "Then the air goes out of the cuff. It can come off."
+      ],
+      "doctor-exam": [
+        "The captain listens to my body with a stethoscope — it's a little cold, but it doesn't hurt.",
+        "Maybe he'll look in my throat and ears with a small flashlight.",
+        "At the end, he'll know what to do next.",
+        "In the end the wizard will know which healing magic is needed."
+      ],
+      "bandage": [
+        "The bosun wraps this place in a soft bandage.",
+        "He wraps it gently, layer by layer.",
+        "At the end he fastens it — cosy and secure."
+      ],
+      "blood-test": [
+        "The bosun puts on a cream that makes the skin less sensitive.",
+        "A soft band wraps around the diver's arm.",
+        "A tiny quick poke — you can look at something else.",
+        "The bosun covers the little wound with a plaster — well done, diver!"
+      ],
+      "cast": [
+        "The diver chooses whether to sit or lie down, and whether mum or dad will be nearby.",
+        "The arm or leg is wrapped in soft layers.",
+        "Now you need to wait patiently and keep still — the cast must fit the shape exactly.",
+        "The cast slowly hardens and protects the bone — and it heals."
+      ],
+      "ct": [
+        "The diver lies down on a comfortable couch.",
+        "The couch slowly slides into a big ring, like the hatch of a submarine.",
+        "A hum is heard, and the diver lies calmly, as if hiding in the depths.",
+        "The couch slides back out — done."
+      ],
+      "inhalation": [
+        "The bosun puts a soft mask with cool air on the diver's face — almost like a diving mask.",
+        "You don't need to breathe hard — the diver just breathes as usual.",
+        "Sometimes it tickles the eyes, and you can ask for the air to flow more slowly.",
+        "Meanwhile you can watch a cartoon. After a few minutes the mask is taken off — done."
+      ],
+      "iv": [
+        "The bosun applies a cream that soothes the skin.",
+        "A short prick, and then a soft thin tube is put in.",
+        "The needle is taken out, but the soft tube stays to give the diver healing water.",
+        "The bosun sticks a sticker that holds the tube in place."
+      ],
+      "ultrasound": [
+        "The diver lies calmly on the couch.",
+        "A little cold gel is put on the tummy.",
+        "A smooth scanner glides and draws a picture on the screen — sometimes it presses a little, and that is normal.",
+        "If it bothers you, you can ask for a short break.",
+        "The gel is wiped off — done."
+      ],
+      "urine": [
+        "The diver goes into the submarine's toilet.",
+        "He pees a little into a small cup.",
+        "The cup is handed to the bosun — and everything is done!",
+        "The secret mission is complete!"
+      ],
+      "waiting-results": [
+        "All the checks are finished — well done, diver!",
+        "Now we wait for the answers. You can play, rest or watch a cartoon.",
+        "The captain and the bosun are working to help the diver. He has not been forgotten.",
+        "When the answers are ready, the captain will come and tell you."
+      ],
+      "xray": [
+        "We go into the room with the big machine.",
+        "A heavy cover may be put on me to protect my body, and maybe a collar too.",
+        "I stand or lie calmly, as if hiding in the depths.",
+        "The machine takes a picture — I don't feel anything.",
+        "Done, I can move again."
+      ],
+      "temperature": [
+        "We put a small magic sceptre in the mouth.",
+        "We close the mouth tight — as if we are keeping a secret.",
+        "We wait quietly until the sceptre finishes reading the magic.",
+        "We hear a small beep — the wizard has read the inner heat."
+      ],
+      "stitches": [
+        "Sometimes we put cold magic on the wound and cover it with a clear shield — we wait for it to work.",
+        "The healer closes the wound with a special glue or healing thread — it does not hurt.",
+        "We can look at something else during this.",
+        "We put a protective dressing on top — the wound is on its way to healing."
+      ]
+    },
+    "calmLines": [
+      "Even divers find it hard sometimes 🤿",
+      "When a diver finds it hard, they breathe very deeply",
+      "Breathe with me — in… and out…"
+    ],
+    "cardChildHero": {
+      "title": "A Letter to the Captain",
+      "subtitle": "So the captain knows exactly how to help our diver"
     }
   },
   "ru": {
@@ -189,6 +491,157 @@
       "cast": "На ручку или ножку куклы надевают мягкую повязку, которая держит её, пока всё заживает.",
       "bandage": "Коленку куклы аккуратно перевязывают мягким бинтом, как красивый подарок.",
       "waiting-results": "Кукла ждёт в уютном уголке домика, пока будут готовы результаты, с книжкой в руках."
+    },
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "Во рту",
+          "steps": [
+            "Мне кладут в рот маленький пластиковый наконечник с проводком.",
+            "Я крепко-крепко закрываю рот, как будто там конфета.",
+            "Я тихонько жду чуть-чуть, пока прибор закончит.",
+            "Я слышу тихое «бип» — и всё, готово."
+          ]
+        },
+        {
+          "label": "Под мышкой",
+          "steps": [
+            "Мне кладут под мышку маленький пластиковый наконечник с проводком.",
+            "Я прижимаю руку к телу и мягко держу.",
+            "Я тихонько жду чуть-чуть, пока прибор закончит.",
+            "Я слышу тихое «бип» — и всё, готово."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "С обезболиванием",
+          "steps": [
+            "Сначала мажут прохладное средство, от которого место засыпает, и закрывают его прозрачной наклейкой.",
+            "Немного ждём, пока волшебство подействует и место пореза «уснёт».",
+            "Врач держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
+            "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+            "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
+          ]
+        },
+        {
+          "label": "Без обезболивания",
+          "steps": [
+            "Обезболивать не нужно — начинают сразу.",
+            "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+            "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+            "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "xray": [
+        "Мы заходим в комнату с большим аппаратом.",
+        "Может быть на меня наденут тяжёлую накидку, которая защищает тело, а может быть ещё и воротник.",
+        "Я спокойно стою или лежу, как будто затаившись в глубине.",
+        "Аппарат делает снимок — я ничего не чувствую.",
+        "Готово, можно снова двигаться."
+      ],
+      "blood-test": [
+        "Боцман наносит на кожу крем, от которого она становится менее чувствительной.",
+        "Мягкий жгут обхватывает руку водолаза.",
+        "Маленький быстрый укол — можно смотреть на что-то другое.",
+        "Боцман заклеивает ранку пластырем — водолаз молодец!"
+      ],
+      "urine": [
+        "Водолаз заходит в гальюн подводной лодки.",
+        "Он писает немного в маленький стаканчик.",
+        "Стаканчик отдают боцману — и всё готово!",
+        "Тайное задание выполнено!"
+      ],
+      "ultrasound": [
+        "Водолаз спокойно лежит на кушетке.",
+        "На живот наносят немного холодный гель.",
+        "Гладкий локатор скользит и рисует картинку на экране — иногда немного надавливает, и это нормально.",
+        "Если мешает, можно попросить маленький перерыв.",
+        "Гель вытирают — и готово."
+      ],
+      "ct": [
+        "Водолаз ложится на удобную кушетку.",
+        "Кушетка медленно заезжает в большое кольцо, похожее на люк подводной лодки.",
+        "Слышен гул, и водолаз лежит спокойно, как будто затаившись в глубине.",
+        "Кушетка выезжает обратно — готово."
+      ],
+      "iv": [
+        "Боцман наносит крем, который успокаивает кожу.",
+        "Короткий укол, а потом вводят мягкую тонкую трубочку.",
+        "Иглу вынимают, а мягкая трубочка остаётся, чтобы давать водолазу целебную воду.",
+        "Боцман приклеивает наклейку, которая держит трубочку на месте."
+      ],
+      "medication": [
+        "Водолаз получает морское лекарство, которое помогает его телу.",
+        "Иногда его нужно выпить, а иногда его вводят в руку через мягкую трубочку.",
+        "Если лекарство пили, потом можно попить воды, чтобы убрать вкус.",
+        "После можно выпить воды — зелье принято."
+      ],
+      "inhalation": [
+        "Боцман надевает на лицо водолаза мягкую маску с прохладным воздухом — почти как маска для дайвинга.",
+        "Не нужно дышать сильно — водолаз просто дышит как обычно.",
+        "Иногда немного щекочет глаза, и можно попросить, чтобы воздух шёл медленнее.",
+        "В это время можно смотреть мультик. Через несколько минут маску снимают — готово."
+      ],
+      "cast": [
+        "Водолаз выбирает, сидеть или лежать, и будет ли рядом мама или папа.",
+        "Руку или ногу обматывают мягкими слоями.",
+        "Теперь нужно терпеливо подождать и не двигаться — гипс должен точно подойти по форме.",
+        "Гипс медленно твердеет и бережёт кость — и она заживает."
+      ],
+      "bandage": [
+        "Боцман обматывает это место мягким бинтом.",
+        "Обматывает бережно, слой за слоем.",
+        "В конце закрепляет — уютно и надёжно."
+      ],
+      "waiting-results": [
+        "Все проверки закончены — водолаз молодец!",
+        "Теперь ждём ответов. Можно поиграть, отдохнуть или посмотреть мультик.",
+        "Капитан и боцман работают, чтобы помочь водолазу. Про него не забыли.",
+        "Когда будут ответы, капитан придёт и расскажет."
+      ],
+      "saturation": [
+        "Водолаз надевает на палец маленькую мягкую прищепку.",
+        "В ней загорается маленький красный огонёк.",
+        "Она только смотрит — ничего не делает. Когда боцман разрешит, её можно снять.",
+        "Снимаем кольцо — волшебство прочитано."
+      ],
+      "blood-pressure": [
+        "Боцман надевает на руку мягкую манжету.",
+        "Манжета надувается и сжимает, как вода на глубине.",
+        "Водолаз считает: раз, два, три, ...",
+        "Потом воздух выходит из манжеты. Её можно снять."
+      ],
+      "doctor-exam": [
+        "Капитан слушает стетоскопом, как дышит водолаз, и как бьется его сердце. Это немного холодно, но не больно.",
+        "Может быть, он посмотрит в горло и уши с помощью маленького фонарика.",
+        "В конце он скажет, что делать дальше.",
+        "В конце волшебник узнает, какое целебное волшебство нужно."
+      ],
+      "temperature": [
+        "В рот кладём маленький волшебный скипетр.",
+        "Рот закрываем крепко — как будто храним секрет.",
+        "Тихо ждём, пока скипетр дочитает заклинание.",
+        "Слышим короткий писк — волшебник прочитал внутренний жар."
+      ],
+      "stitches": [
+        "Иногда на рану кладут холодное волшебство и закрывают прозрачным щитом — ждём, пока оно подействует.",
+        "Лекарь закрывает рану особым клеем или целебной нитью — не больно.",
+        "Во время этого можно смотреть на что-то другое.",
+        "Сверху накладывают защитную повязку — рана идёт на поправку."
+      ]
+    },
+    "calmLines": [
+      "Даже водолазам бывает трудно 🤿",
+      "Когда водолазу трудно, он дышит очень глубоко",
+      "Дыши со мной — вдох… выдох…"
+    ],
+    "cardChildHero": {
+      "title": "Письмо капитану",
+      "subtitle": "Чтобы капитан подводной лодки знал, как помочь нашему водолазу"
     }
   }
 }
