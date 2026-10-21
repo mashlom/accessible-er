@@ -487,35 +487,17 @@
       "mailSubject": "הודעה מההורים"
     },
     "cardView": {
-      "emptyHint": "A few quick ticks — and you will have a large card to show the staff.",
       "fill": "Fill in the card",
-      "suggestions": "💡 Based on what you ticked — adaptations worth asking for",
-      "fullList": "Full list of what you can ask for",
       "savePdf": "📄 Save as PDF / print",
       "edit": "✏️ Edit",
       "sendHint": "To send it to the staff: tap \"Save as PDF\", choose \"Save as PDF\" in the print window, and send the file yourselves. The card is kept on this device only, deleted after 24 hours, and nothing is sent automatically.",
       "print": "🖨️ Print"
     },
     "books": {
-      "title": "Reading in the ER",
       "tabs": {
         "picture": "Picture book",
         "roni": "A story with Roni",
         "real": "How it works"
-      },
-      "soonRoni": "The story with Roni is in preparation — meanwhile you can read the picture book.",
-      "soonReal": "The \"How it works\" book is in preparation — how an X-ray works, who invented it, and more."
-    },
-    "realBook": {
-      "parentBtn": "For parents",
-      "whatHappens": "What happens here",
-      "challenge": "What may be hard",
-      "canAsk": "What you can ask for",
-      "avatar": {
-        "label": "Choose how you will look on the journey:",
-        "photo": "📷 Photo",
-        "remove": "✕ Remove",
-        "note": "The photo stays on the device only while you use it and is deleted when you leave. Nothing is sent or stored."
       }
     },
     "staffSign": {
@@ -1016,35 +998,17 @@
       "mailSubject": "הודעה מההורים"
     },
     "cardView": {
-      "emptyHint": "Несколько быстрых отметок — и у вас будет крупная карточка, чтобы показать персоналу.",
       "fill": "Заполнить карточку",
-      "suggestions": "💡 По тому, что вы отметили, — адаптации, о которых стоит попросить",
-      "fullList": "Полный список того, что можно попросить",
       "savePdf": "📄 Сохранить как PDF / печать",
       "edit": "✏️ Изменить",
       "sendHint": "Чтобы отправить персоналу: нажмите «Сохранить как PDF», в окне печати выберите «Сохранить как PDF» и отправьте файл сами. Карточка хранится только на этом устройстве, удаляется через 24 часа, и ничего не отправляется автоматически.",
       "print": "🖨️ Печать"
     },
     "books": {
-      "title": "Читаем в приёмном покое",
       "tabs": {
         "picture": "Книжка с картинками",
         "roni": "История с Рони",
         "real": "Как это устроено"
-      },
-      "soonRoni": "История с Рони готовится — пока можно читать книжку с картинками.",
-      "soonReal": "Книга «Как это устроено» готовится — как работает рентген, кто его придумал и не только."
-    },
-    "realBook": {
-      "parentBtn": "Для родителей",
-      "whatHappens": "Что здесь происходит",
-      "challenge": "Что может быть трудно",
-      "canAsk": "Что можно попросить",
-      "avatar": {
-        "label": "Выбери, как ты будешь выглядеть в путешествии:",
-        "photo": "📷 Фото",
-        "remove": "✕ Убрать",
-        "note": "Фотография остаётся на устройстве только на время использования и удаляется при выходе. Ничего не отправляется и не сохраняется."
       }
     },
     "staffSign": {
@@ -1556,35 +1520,17 @@
       "mailSubject": "הודעה מההורים"
     },
     "cardView": {
-      "emptyHint": "כמה סימונים קצרים — ויהיה לכם כרטיס גדול להראות לצוות.",
       "fill": "למילוי הכרטיס",
-      "suggestions": "💡 לפי מה שסימנתם — התאמות שכדאי לבקש",
-      "fullList": "לרשימה המלאה של מה אפשר לבקש",
       "savePdf": "📄 שמירה כ־PDF / הדפסה",
       "edit": "✏️ עריכה",
       "sendHint": "לשליחה לצוות: לחצו \"שמירה כ־PDF\", בחרו \"שמירה כ־PDF\" בחלון ההדפסה, ושִׁלחו את הקובץ בעצמכם. הכרטיס נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ושום דבר לא נשלח אוטומטית.",
       "print": "🖨️ הדפסה"
     },
     "books": {
-      "title": "קוראים במיון",
       "tabs": {
         "picture": "ספר תמונות",
         "roni": "סיפור עם רוני",
         "real": "איך זה עובד"
-      },
-      "soonRoni": "הסיפור עם רוני בהכנה — בינתיים אפשר לקרוא את ספר התמונות.",
-      "soonReal": "ספר \"איך זה עובד\" בהכנה — איך עובד רנטגן, מי המציא אותו ועוד."
-    },
-    "realBook": {
-      "parentBtn": "מידע להורים",
-      "whatHappens": "מה קורה כאן",
-      "challenge": "מה עלול להיות קשה",
-      "canAsk": "מה אפשר לבקש",
-      "avatar": {
-        "label": "בחר/י איך תיראה במסע:",
-        "photo": "📷 תמונה",
-        "remove": "✕ הסרה",
-        "note": "התמונה נשארת במכשיר לזמן השימוש בלבד ונמחקת ביציאה. שום דבר לא נשלח או נשמר."
       }
     },
     "staffSign": {
