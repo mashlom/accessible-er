@@ -162,12 +162,10 @@ export function TalkPage() {
         navigate(path(action.to))
         break
       case 'feedback': {
-        const mail = keyed((talkJson as unknown as { he: { mail: Record<string, string>; buttons: Record<string, string> } }).he, 'parent/talk')
-        const body = [
-          `${mail.mail.rating}: ${mail.buttons[RATING_KEYS[action.rating]]}`,
-          mail.mail.concept,
-        ].join('\n')
-        window.location.href = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(mail.mail.subject)}&body=${encodeURIComponent(body)}`
+        // the team reads Hebrew: the question the parent was asked and the answer the parent chose, as the parent saw them
+        const he = keyed((talkJson as unknown as { he: { mail: Record<string, string>; bye: Record<string, string>; buttons: Record<string, string> } }).he, 'parent/talk')
+        const body = [he.bye.ask, he.buttons[RATING_KEYS[action.rating]]].join('\n')
+        window.location.href = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(he.mail.subject)}&body=${encodeURIComponent(body)}`
         break
       }
       case 'restart':
