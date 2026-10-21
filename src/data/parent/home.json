@@ -34,10 +34,6 @@
         "name": "איך מכינים את הילד/ה?",
         "desc": "סיפור לכל בדיקה, עמוד אחרי עמוד"
       },
-      "card": {
-        "name": "הכרטיס שלך",
-        "desc": "מה חשוב לדעת עליך"
-      },
       "map": {
         "name": "איפה אנחנו?",
         "desc": "מפה עם מקומות שקטים"
@@ -149,7 +145,6 @@
       "note": "הטקסט כאן טיוטה ראשונית — לניסוח סופי יחד עם חגית."
     },
     "cardPage": {
-      "title": "הכרטיס שלך",
       "subtitle": "סמנו את מה שמתאים — פחות משתי דקות. בסוף יוצא כרטיס קצר וגדול, שאפשר להראות לצוות מהמסך או להדפיס.",
       "bubble": "🔒 הכל נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ולא נשלח לשום מקום. מה שלא תראו בעצמכם — לא יגיע לצוות. אפשר למלא גם בלי שם.",
       "me": "מי אני (לא חובה)",
@@ -284,7 +279,6 @@
       "note": "The text here is a first draft — the final wording will be agreed with Hagit."
     },
     "cardPage": {
-      "title": "Your card",
       "subtitle": "Tick what fits — less than two minutes. At the end you get a short, large card, which you can show the staff on the screen or print.",
       "bubble": "🔒 Everything is saved on this device only, deleted after 24 hours, and not sent anywhere. What you do not show yourself will not reach the staff. You can fill it in without a name.",
       "me": "About the child (optional)",
@@ -419,7 +413,6 @@
       "note": "Текст здесь — первый черновик. Окончательную формулировку согласуем с Хагит."
     },
     "cardPage": {
-      "title": "Важно знать о моём ребёнке",
       "subtitle": "Отметьте подходящее — это займёт меньше двух минут. В конце получится короткая крупная карточка, которую можно показать персоналу с экрана или распечатать.",
       "bubble": "🔒 Всё сохраняется только на этом устройстве, удаляется через 24 часа и никуда не отправляется. То, что вы не покажете сами, не попадёт к персоналу. Можно заполнить и без имени.",
       "me": "О ребёнке (необязательно)",

@@ -12,12 +12,12 @@ import styles from '../pages.module.css'
  * on every other screen (src/components/careCard); this screen gives its frame.
  */
 export function CardPage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang as 'he' | 'en' | 'ru'], 'parent/home').cardPage ?? keyed(homeTexts.he, 'parent/home').cardPage
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-      <Scene title={tx.title} subtitle={tx.subtitle}>
+      <Scene title={t('ui.tiles.card.title')} subtitle={tx.subtitle}>
         <div style={{ marginBottom: 'var(--space-4)' }}>
           <Bubble>{tx.bubble}</Bubble>
         </div>
