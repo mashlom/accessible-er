@@ -1,7 +1,6 @@
 {
   "en": {
     "ui": {
-      "menu": "To the menu",
       "back": "Back",
       "next": "Next",
       "continue": "Continue",
@@ -117,7 +116,6 @@
   },
   "ru": {
     "ui": {
-      "menu": "В меню",
       "back": "Назад",
       "next": "Дальше",
       "continue": "Продолжить",

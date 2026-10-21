@@ -71,7 +71,6 @@
       "question": "במה אפשר לעזור עכשיו?"
     },
     "where": {
-      "ask": "איפה אתם עכשיו?",
       "hint": "סמנו את השלב, ואספר לכם מה קורה בו."
     },
     "stage": {
@@ -91,7 +90,6 @@
     "prep": {
       "for": "להתכונן ל{title}",
       "whoDur": "מי עושה את זה: {who}\nכמה זמן: {duration}",
-      "letsSee": "בואו נראה איך זה הולך, שלב אחרי שלב",
       "feel": "מה הילד/ה עשוי/ה להרגיש?",
       "howPrepare": "איך אפשר להתכונן:",
       "askBefore": "לפני {title} אפשר לבקש:",
@@ -235,7 +233,6 @@
       "question": "What would help you most right now?"
     },
     "where": {
-      "ask": "Where are you now?",
       "hint": "Mark the stage, and I will tell you what happens there."
     },
     "stage": {
@@ -255,7 +252,6 @@
     "prep": {
       "for": "Get ready: {title}",
       "whoDur": "Who does it: {who}\nHow long: {duration}",
-      "letsSee": "Let's see how it goes, step by step",
       "feel": "What might the child feel?",
       "howPrepare": "How to get ready:",
       "askBefore": "Before {title}, you can ask for:",
@@ -394,7 +390,6 @@
       "question": "Что вам сейчас нужно?"
     },
     "where": {
-      "ask": "Где вы сейчас?",
       "hint": "Отметьте этап, и я расскажу, что там происходит."
     },
     "stage": {
@@ -414,7 +409,6 @@
     "prep": {
       "for": "Как подготовиться: {title}",
       "whoDur": "Кто делает: {who}\nСколько времени: {duration}",
-      "letsSee": "Посмотрим, как это проходит, шаг за шагом",
       "feel": "Что может почувствовать ребёнок?",
       "howPrepare": "Как подготовиться:",
       "askBefore": "Перед {title} можно попросить:",

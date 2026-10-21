@@ -125,7 +125,6 @@
         "other": "You collected {n} coins — welcome to the shop!"
       },
       "cardSubtitle": "Tick what fits — under 2 minutes. At the end you get a short card to show the staff on screen or print it.",
-      "privacyD": "What you don't show yourself won't reach the staff. You can fill it in without a name at all.",
       "draft": "draft — awaiting review"
     },
     "careView": {
@@ -229,8 +228,7 @@
         "hardMoments": "Especially hard",
         "pain": "How pain shows",
         "freeNote": "More"
-      },
-      "nameFallback": "my child"
+      }
     },
     "tiles": {
       "card": {
@@ -266,8 +264,7 @@
         "desc": "What happens at the end of the visit and going home"
       },
       "reason": {
-        "title": "Reason for the visit",
-        "desc": "Choose the reason for the visit to adapt the route"
+        "title": "Reason for the visit"
       },
       "message": {
         "title": "A message to the staff",
@@ -636,7 +633,6 @@
         "one": "У тебя есть {n} монета — добро пожаловать в магазин!"
       },
       "cardSubtitle": "Отметьте, что подходит, — меньше 2 минут. В конце получите короткую карточку, которую можно показать персоналу на экране или распечатать.",
-      "privacyD": "То, что вы не покажете сами, не попадёт к персоналу. Можно заполнить вообще без имени.",
       "draft": "черновик — ждёт проверки"
     },
     "careView": {
@@ -740,8 +736,7 @@
         "hardMoments": "Особенно тяжело",
         "pain": "Как проявляется боль",
         "freeNote": "Ещё"
-      },
-      "nameFallback": "ребёнок"
+      }
     },
     "tiles": {
       "card": {
@@ -777,8 +772,7 @@
         "desc": "Что происходит в конце визита и при возвращении домой"
       },
       "reason": {
-        "title": "Причина визита",
-        "desc": "Выберите причину визита, чтобы подстроить маршрут"
+        "title": "Причина визита"
       },
       "message": {
         "title": "Сообщение персоналу",
@@ -1051,7 +1045,6 @@
       "privacyA": "🔒 הכל נשמר",
       "privacyB": "במכשיר הזה בלבד",
       "privacyC": ", נמחק אחרי 24 שעות, ולא נשלח לשום מקום.",
-      "privacyD": "מה שלא תציגו בעצמכם — לא יגיע לצוות. אפשר למלא בלי שם בכלל.",
       "aboutChild": "🧒 על הילד/ה שלי (לא חובה)",
       "nickname": "כינוי / שם פרטי",
       "optional": "לא חובה",
@@ -1262,8 +1255,7 @@
         "hardMoments": "קשה במיוחד",
         "pain": "ביטוי כאב",
         "freeNote": "עוד"
-      },
-      "nameFallback": "הילד/ה"
+      }
     },
     "tiles": {
       "card": {
@@ -1299,8 +1291,7 @@
         "desc": "מה קורה בסיום הביקור והחזרה הביתה"
       },
       "reason": {
-        "title": "למה הגענו?",
-        "desc": "בחירת סיבת ההגעה להתאמת המסלול"
+        "title": "למה הגענו?"
       },
       "message": {
         "title": "הודעה לצוות",

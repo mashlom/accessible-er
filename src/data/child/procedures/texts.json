@@ -1,12 +1,6 @@
 {
   "he": {
     "temperature": {
-      "story": [
-        "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-        "סוגרים את הפה חזק־חזק, כאילו יש לי סוכריה בפנים.",
-        "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-        "שומעים ביפ קטן — וזהו, סיימנו."
-      ],
       "storyVariants": [
         {
           "label": "בפה",
@@ -115,13 +109,6 @@
       ]
     },
     "stitches": {
-      "story": [
-        "לפעמים שמים קודם חומר קריר שמרדים את האזור, ומכסים במדבקה שקופה.",
-        "מחכים קצת עד שהקסם עובד והאזור \"הולך לישון\" — ולפעמים לא צריך, ומתחילים ישר.",
-        "הרופא/ה מחזיק/ה את האזור וסוגר/ת אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
-        "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים לי חבישה נקייה מלמעלה."
-      ],
       "storyVariants": [
         {
           "label": "עם אלחוש",
@@ -170,12 +157,6 @@
   },
   "en": {
     "temperature": {
-      "story": [
-        "A small plastic tip with a wire goes into my mouth.",
-        "I close my mouth tight-tight, like I have a candy inside.",
-        "I wait quietly for a short moment, until the device is done.",
-        "I hear a little beep — and that's it, we're done."
-      ],
       "storyVariants": [
         {
           "label": "In the mouth",
@@ -284,13 +265,6 @@
       ]
     },
     "stitches": {
-      "story": [
-        "Sometimes they first put something cool on the spot to make it sleepy, and cover it with a clear sticker.",
-        "We wait a little until the magic works and the spot “goes to sleep” — and sometimes it's not needed, and we start right away.",
-        "The doctor holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
-        "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
-        "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
-      ],
       "storyVariants": [
         {
           "label": "With numbing",
@@ -339,12 +313,6 @@
   },
   "ru": {
     "temperature": {
-      "story": [
-        "Мне кладут в рот маленький пластиковый наконечник с проводком.",
-        "Я крепко-крепко закрываю рот, как будто там конфета.",
-        "Я тихонько жду чуть-чуть, пока прибор закончит.",
-        "Я слышу тихое «бип» — и всё, готово."
-      ],
       "storyVariants": [
         {
           "label": "Во рту",
@@ -453,13 +421,6 @@
       ]
     },
     "stitches": {
-      "story": [
-        "Иногда сначала мажут прохладное средство, от которого место засыпает, и закрывают его прозрачной наклейкой.",
-        "Немного ждём, пока волшебство подействует и место «уснёт», — а иногда это не нужно, и начинают сразу.",
-        "Врач держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
-        "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-        "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
-      ],
       "storyVariants": [
         {
           "label": "С обезболиванием",
