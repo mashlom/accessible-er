@@ -138,7 +138,7 @@ export function ParentSheet({
           <span aria-hidden />
         </button>
 
-        {ocean && proc ? (
+        {proc ? (
           <ProcedurePanel pid={proc} onBack={initialProc ? undefined : () => setProc(null)} />
         ) : (
           <>
@@ -311,6 +311,14 @@ function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
           {narrative && <p>{narrative}</p>}
         </div>
       </header>
+
+      {(proc.who || proc.duration) && (
+        <p className={css.sheetWait}>
+          {proc.who && <span>👤 {proc.who}</span>}
+          {proc.who && proc.duration && <span> · </span>}
+          {proc.duration && <span>{t('ui.text.estimated')} {proc.duration}</span>}
+        </p>
+      )}
 
       {proc.what && (
         <section className={css.sheetCard}>

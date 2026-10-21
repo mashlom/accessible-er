@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import { Link } from '../../nav'
-import { parentJourney, parentProcedure } from '../../../data/parent'
+import { parentJourney } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
-import { SensoryBar } from '../../../components/SensoryBar'
 import { useQuestProgress, loadProcs } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
 import { OceanStageSheet } from '../components/OceanStageSheet'
+import { ParentInfo } from '../components/ParentInfo'
 import { OCEAN_IMAGES } from './OceanMapPage'
 import css from '../quest.module.css'
 
@@ -29,7 +29,6 @@ export function WaitTimesPage() {
   const data = parentJourney(lang).find((j) => j.id === 'wait-before-triage')
   if (!data) return <div>Error: stage not found</div>
 
-  const procIds = ['temperature', 'saturation', 'blood-pressure']
   const skin = theme.stages['wait-before-triage']
 
   if (theme.id === 'ocean') {
@@ -71,64 +70,9 @@ export function WaitTimesPage() {
         </div>
       </div>
 
-      {data.sensory && <SensoryBar sensory={data.sensory} />}
-      <p className={css.waitRange}>
-        {data.waitRange && <span>{t('ui.text.estimated')} {data.waitRange}</span>}
-      </p>
-
       <div className={css.stageBody}>
-        {data.meaning && (
-          <section>
-            <h2>{t('ui.text.weAreHere')}</h2>
-            <p>{data.meaning}</p>
-          </section>
-        )}
-
-        {data.whatHappens && (
-          <section>
-            <h2>{t('ui.text.whatHappensHere')}</h2>
-            <p>{data.whatHappens}</p>
-          </section>
-        )}
-
-        {data.challenge && (
-          <section>
-            <h2>{t('ui.text.whatMayBeHard')}</h2>
-            <p>{data.challenge}</p>
-          </section>
-        )}
-
-        <section>
-          <h2>{t('ui.text.prepareMeasurements')}</h2>
-          <p style={{ marginBottom: 'var(--space-3)' }}>{data.nextStagePrepare}</p>
-
-          {procIds.map((pid) => {
-            const proc = parentProcedure(lang, pid)
-            if (!proc) return null
-            return (
-              <div key={pid} style={{ marginBottom: 'var(--space-3)' }}>
-                <p style={{ margin: 0, marginBottom: 'var(--space-2)' }}>
-                  <strong>{proc.emoji} {proc.title}</strong>
-                </p>
-                <p style={{ margin: 0, marginBottom: 'var(--space-1)', fontSize: '0.95em', lineHeight: '1.5' }}>
-                  {proc.what} {proc.feel}
-                </p>
-                <p style={{ margin: 0, marginBottom: 'var(--space-2)', fontSize: '0.95em', lineHeight: '1.5', fontStyle: 'italic' }}>
-                  💡 {proc.prepare}
-                </p>
-              </div>
-            )
-          })}
-        </section>
-
-        {data.canAsk && data.canAsk.length > 0 && (
-          <section>
-            <h2>{t('ui.text.canAsk')}</h2>
-            <ul>
-              {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
-            </ul>
-          </section>
-        )}
+        {/* the parent's part is the same block in every world */}
+        <ParentInfo stageId="wait-before-triage" inline />
       </div>
     </div>
   )
