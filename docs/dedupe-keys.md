@@ -33,3 +33,29 @@ At the start, 185 texts were stored under more than one key (325 extra copies, c
 ### Out of scope
 - No rewording and no new translations — only moving keys.
 - Staff texts stay Hebrew.
+
+### TODO: Hebrew without slash forms (not started)
+- Remove the gendered slash forms (הרופא/ה, מחזיק/ה, הילד/ה) from the Hebrew texts. Use impersonal or neutral wording.
+- Count: 146 Hebrew texts. Child texts: 44. Parent and staff texts: 102; these include medical wording, so they need MLR approval first.
+  - parent/texts: 32
+  - i18n/ui: 27
+  - i18n/careCard: 12
+  - child/book/real-info: 11
+  - i18n/book: 7
+  - parent/talk: 7
+  - child/book/roni: 6
+  - child/procedures/texts: 5
+  - child/worlds/ocean/texts: 5
+  - i18n/support: 5
+  - parent/paths: 5
+  - child/worlds/knight/texts: 4
+  - parent/map: 4
+  - child/worlds/dino/texts: 3
+  - child/worlds/safari/texts: 3
+  - child/worlds/space/texts: 3
+  - parent/home: 3
+  - child/book/encyclopedia: 2
+  - child/book/measure-info: 1
+  - child/book/tests-info: 1
+- Keep the station names in each world separate. Do not replace them with shared labels.
+- Also check the grammar of "הרופא/ה יבואו" (shared child texts: doctor-exam.story.3, waiting-results.story.3): plural verb with a singular subject.
