@@ -43,7 +43,25 @@
         "hint": "ממתינים לתשובות"
       }
     },
-    "distractTitle": "חדר המשחקים 🎪"
+    "distractTitle": "חדר המשחקים 🎪",
+    "procedureNarratives": {
+      "temperature": "הדובי מקבל בדיקת חום קצרה — כדי לוודא שהוא חם ומוכן לשחק.",
+      "saturation": "קליפס קטן על האצבע של הבובה מראה כמה אוויר נכנס לריאות הקטנות שלה.",
+      "blood-pressure": "הרצועה מחבקת בעדינות את היד של הבובה, מתהדקת ואז משתחררת — כמו חיבוק גדול.",
+      "doctor-exam": "דובי-רופא מקשיב לחזה של הבובה ומסתכל באוזניים, כדי לבדוק הכול בבית.",
+      "blood-test": "דקירה קטנה בקצה האצבע של הבובה — טיפה אחת של דם לבדיקה.",
+      "urine": "הבובה משתמשת בכוס קטנה בשירותים של הבית כדי לתת דגימה לבדיקה.",
+      "xray": "הבובה שוכבת על כרית רכה, והמצלמה מצלמת את העצמות שלה.",
+      "ultrasound": "ג׳ל רך ומכשיר עדין מראים את הבטן של הבובה על מסך קטן.",
+      "ct": "הבובה נכנסת לאט לתוך מנהרה עגולה ושוכבת בשקט, והמצלמה מצלמת אותה מכל הצדדים.",
+      "iv": "צינור רך וקטן מונח ביד של הבובה, והמים נוזלים לאט כדי שייטב לה.",
+      "medication": "הבובה לוקחת מעט תרופה בכפית קטנה, כמו שעושים כשלא מרגישים טוב.",
+      "inhalation": "הבובה נושמת אדים חמים דרך מסכה רכה, כמו בועות באמבטיה.",
+      "stitches": "דובי-רופא סוגר את השריטה הקטנה של הבובה בתפרים זעירים או בדבק — זה לא כואב.",
+      "cast": "על היד או הרגל של הבובה מניחים עטיפה רכה שמחזיקה אותה במקום, עד שהכול מתרפא.",
+      "bandage": "הברך של הבובה מקבלת חבישה רכה, מסודרת כמו מתנה יפה.",
+      "waiting-results": "הבובה מחכה בפינה נעימה של הבית, עד שהתוצאות מוכנות, עם ספר ביד."
+    }
   },
   "en": {
     "name": "Dollhouse",
@@ -89,7 +107,25 @@
         "hint": "We wait for the answers"
       }
     },
-    "distractTitle": "The Playroom 🎪"
+    "distractTitle": "The Playroom 🎪",
+    "procedureNarratives": {
+      "temperature": "The teddy bear gets a quick thermometer check — to make sure it is warm and ready to play.",
+      "saturation": "A tiny clip on the doll’s finger shows how much air gets into its little lungs.",
+      "blood-pressure": "The cuff gently hugs the doll’s arm, tightens, and lets go — like a big hug.",
+      "doctor-exam": "The teddy-bear doctor listens to the doll’s chest and looks in its ears to check everything in the house.",
+      "blood-test": "A small pinch on the doll’s finger takes one tiny drop of blood for a check-up.",
+      "urine": "The doll uses a little cup in the dollhouse bathroom to give a sample for a check.",
+      "xray": "The doll lies on a soft pillow while a camera takes a picture of its bones.",
+      "ultrasound": "A soft gel and a gentle wand show the doll’s tummy on a little screen.",
+      "ct": "The doll slides slowly into a round tunnel and lies still while the camera takes pictures from all sides.",
+      "iv": "A tiny soft tube sits in the doll’s arm, and water drips in slowly to help it feel well.",
+      "medication": "The doll takes a little medicine from a tiny spoon, the way dolls do when they do not feel well.",
+      "inhalation": "The doll breathes in warm mist through a soft mask, like bubbles in the bath.",
+      "stitches": "The teddy-bear doctor closes the doll’s little scratch with tiny stitches or glue — it does not hurt.",
+      "cast": "A soft wrap goes on the doll’s arm or leg to keep it still while it heals.",
+      "bandage": "The doll’s knee gets a soft bandage, neat like a present.",
+      "waiting-results": "The doll waits in a cosy corner of the house until the results are ready, with a book in its hands."
+    }
   },
   "ru": {
     "name": "Кукольный домик",
@@ -135,6 +171,24 @@
         "hint": "Ждём ответов"
       }
     },
-    "distractTitle": "Игровая комната 🎪"
+    "distractTitle": "Игровая комната 🎪",
+    "procedureNarratives": {
+      "temperature": "Мишка получает быструю проверку градусником — чтобы убедиться, что он тёплый и готов играть.",
+      "saturation": "Маленький зажим на пальце куклы показывает, сколько воздуха попадает в её крошечные лёгкие.",
+      "blood-pressure": "Манжета мягко обнимает руку куклы, крепче, потом отпускает — как большое объятие.",
+      "doctor-exam": "Мишка-доктор слушает грудку куклы и смотрит в ушки, чтобы проверить всё в домике.",
+      "blood-test": "Маленький укол на пальчике куклы — одна капелька крови для проверки.",
+      "urine": "Кукла пользуется маленькой баночкой в ванной домика, чтобы сдать образец для проверки.",
+      "xray": "Кукла лежит на мягкой подушке, пока камера фотографирует её косточки.",
+      "ultrasound": "Мягкий гель и нежная палочка показывают животик куклы на маленьком экране.",
+      "ct": "Кукла медленно въезжает в круглый тоннель и лежит тихо, пока камера фотографирует её со всех сторон.",
+      "iv": "В ручку куклы ставят крошечную мягкую трубочку, и водичка медленно капает, чтобы ей стало лучше.",
+      "medication": "Кукла принимает немного лекарства маленькой ложечкой, как когда ей немножко нездоровится.",
+      "inhalation": "Кукла вдыхает тёплый туман через мягкую маску, как пузырьки в ванне.",
+      "stitches": "Мишка-доктор закрывает царапинку куклы крошечными швами или клеем — это не больно.",
+      "cast": "На ручку или ножку куклы надевают мягкую повязку, которая держит её, пока всё заживает.",
+      "bandage": "Коленку куклы аккуратно перевязывают мягким бинтом, как красивый подарок.",
+      "waiting-results": "Кукла ждёт в уютном уголке домика, пока будут готовы результаты, с книжкой в руках."
+    }
   }
 }
