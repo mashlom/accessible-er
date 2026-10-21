@@ -115,12 +115,14 @@
       "saturation": [
         "שמים לי אטב קטן ורך על האצבע.",
         "נדלק בו אור אדום קטן.",
-        "הוא רק מסתכל — לא עושה כלום, ואחרי רגע מורידים לי אותו."
+        "הוא רק מסתכל — לא עושה כלום.",
+        "אחרי רגע מורידים לי אותו."
       ],
       "blood-pressure": [
         "שמים לי שרוול רך על הזרוע.",
         "הוא מתנפח ולוחץ כמו חיבוק חזק.",
-        "סופרים עד כמה, והוא משחרר לבד."
+        "סופרים עד כמה, והוא משחרר לבד.",
+        "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
         "נפגוש רופא או רופאה שרוצים לעזור לי.",
@@ -137,7 +139,8 @@
       "urine": [
         "הולכים לשירותים כמו תמיד.",
         "עושים קצת פיפי לתוך כוס קטנה.",
-        "נותנים את הכוס לאחות. זהו!"
+        "נותנים את הכוס לאחות.",
+        "זהו!"
       ],
       "xray": [
         "נכנסים לחדר עם מכונה גדולה.",
@@ -167,7 +170,8 @@
       ],
       "medication": [
         "מקבלים תרופה שעוזרת לגוף.",
-        "לפעמים שותים קצת סירופ, לפעמים דרך הצינור הרך.",
+        "לפעמים שותים קצת סירופ.",
+        "ולפעמים דרך הצינור הרך.",
         "ואפשר מים אחרי בשביל הטעם."
       ],
       "inhalation": [
@@ -322,12 +326,14 @@
       "saturation": [
         "They put a small, soft clip on my finger.",
         "A little red light turns on inside it.",
-        "It only looks — it doesn't do anything, and after a moment they take it off."
+        "It only looks — it doesn't do anything.",
+        "After a moment they take it off."
       ],
       "blood-pressure": [
         "They put a soft cuff on my arm.",
         "It fills with air and squeezes like a big hug.",
-        "We count together, and it lets go by itself."
+        "We count together, and it lets go by itself.",
+        "Then they take the cuff off — and that's it, all done."
       ],
       "doctor-exam": [
         "I'm going to meet a doctor who wants to help me.",
@@ -344,7 +350,8 @@
       "urine": [
         "I go to the toilet like always.",
         "I pee a little into a small cup.",
-        "I give the cup to the nurse. That's it!"
+        "I give the cup to the nurse.",
+        "That's it!"
       ],
       "xray": [
         "We go into a room with a big machine.",
@@ -374,7 +381,8 @@
       ],
       "medication": [
         "I get medicine that helps my body.",
-        "Sometimes I drink a little syrup, sometimes it goes in through the soft tube.",
+        "Sometimes I drink a little syrup.",
+        "Sometimes it goes in through the soft tube.",
         "And I can have some water afterwards for the taste."
       ],
       "inhalation": [
@@ -529,12 +537,14 @@
       "saturation": [
         "Мне надевают на палец маленькую мягкую прищепку.",
         "В ней загорается маленький красный огонёк.",
-        "Она только смотрит — ничего не делает, и через минутку её снимают."
+        "Она только смотрит — ничего не делает.",
+        "Через минутку её снимают."
       ],
       "blood-pressure": [
         "Мне надевают на руку мягкую манжету.",
         "Она надувается и сжимает, как крепкие объятия.",
-        "Мы считаем, и она сама отпускает."
+        "Мы считаем, и она сама отпускает.",
+        "Потом манжету снимают — и всё, готово."
       ],
       "doctor-exam": [
         "Я встречу врача, который хочет мне помочь.",
@@ -551,7 +561,8 @@
       "urine": [
         "Я иду в туалет, как всегда.",
         "Я писаю немного в маленький стаканчик.",
-        "Я отдаю стаканчик медсестре или медбрату. Всё!"
+        "Я отдаю стаканчик медсестре или медбрату.",
+        "Всё!"
       ],
       "xray": [
         "Мы заходим в комнату с большим аппаратом.",
@@ -581,7 +592,8 @@
       ],
       "medication": [
         "Я получаю лекарство, которое помогает моему телу.",
-        "Иногда я пью немного сиропа, иногда оно идёт через мягкую трубочку.",
+        "Иногда я пью немного сиропа.",
+        "Иногда оно идёт через мягкую трубочку.",
         "А потом можно попить воды, чтобы убрать вкус."
       ],
       "inhalation": [

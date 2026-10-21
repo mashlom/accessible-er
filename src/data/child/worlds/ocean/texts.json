@@ -64,7 +64,8 @@
     "procedureSteps": {
       "medication": [
         "מקבלים תרופת ים שעוזרת לגוף.",
-        "לפעמים צריך לשתות אותה, ולפעמים מכניסים אותה ליד דרך צינורית רכה.",
+        "לפעמים צריך לשתות אותה.",
+        "ולפעמים מכניסים אותה ליד דרך צינורית רכה.",
         "אם שתינו אותה, אפשר לשתות מים אחרי, כדי להעביר את הטעם."
       ],
       "blood-pressure": [
@@ -74,7 +75,8 @@
         "אחר כך האוויר יוצא מהשרוול. אפשר להוריד אותו."
       ],
       "doctor-exam": [
-        "הוא מקשיב לגוף עם כלי קסמים — קצת קר, לא כואב.",
+        "הוא מקשיב לגוף עם כלי קסמים.",
+        "קצת קר, לא כואב.",
         "אולי יסתכל בגרון ובאוזניים עם אור קסמים קטן.",
         "בסוף יידע הקברניט מה לעשות."
       ],
@@ -123,7 +125,8 @@
       "urine": [
         "הצוללן נכנס לשירותים של הצוללת.",
         "הוא משתין מעט לכוס קטנה.",
-        "הכוס מוסרת לבוסמן — והכול מוכן!"
+        "הכוס מוסרת לבוסמן.",
+        "והכול מוכן!"
       ],
       "waiting-results": [
         "כל הבדיקות הסתיימו — כל הכבוד, צוללן!",
@@ -141,7 +144,8 @@
       "saturation": [
         "שמים לי אטב קטן ורך על האצבע.",
         "נדלק בו אור אדום קטן.",
-        "הוא רק מסתכל — לא עושה כלום, ואחרי רגע מורידים לי אותו."
+        "הוא רק מסתכל — לא עושה כלום.",
+        "אחרי רגע מורידים לי אותו."
       ],
       "temperature": [
         "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
@@ -271,13 +275,15 @@
     "procedureSteps": {
       "medication": [
         "The diver gets sea medicine that helps the body.",
-        "Sometimes it is drunk, and sometimes it goes into the arm through a soft tube.",
+        "Sometimes it is drunk.",
+        "And sometimes it goes into the arm through a soft tube.",
         "If it was drunk, there can be some water afterwards to wash the taste away."
       ],
       "saturation": [
         "The diver puts a small, soft clip on their finger.",
         "A little red light turns on inside it.",
-        "It only looks — it doesn't do anything. Once the boatswain says it's okay, it comes off."
+        "It only looks — it doesn't do anything.",
+        "Once the boatswain says it's okay, it comes off."
       ],
       "blood-pressure": [
         "The boatswain puts a soft cuff on the diver's arm.",
@@ -286,7 +292,8 @@
         "Then the air goes out of the cuff. It can come off."
       ],
       "doctor-exam": [
-        "The captain listens to my body with a stethoscope — it's a little cold, but it doesn't hurt.",
+        "The captain listens to my body with a stethoscope.",
+        "It's a little cold, but it doesn't hurt.",
         "Maybe he'll look in my throat and ears with a small flashlight.",
         "At the end, he'll know what to do next."
       ],
@@ -335,7 +342,8 @@
       "urine": [
         "The diver goes into the submarine's toilet.",
         "He pees a little into a small cup.",
-        "The cup is handed to the bosun — and everything is done!"
+        "The cup is handed to the bosun.",
+        "And everything is done!"
       ],
       "waiting-results": [
         "All the checks are finished — well done, diver!",
@@ -492,7 +500,8 @@
       "urine": [
         "Водолаз заходит в гальюн подводной лодки.",
         "Он писает немного в маленький стаканчик.",
-        "Стаканчик отдают боцману — и всё готово!"
+        "Стаканчик отдают боцману.",
+        "И всё готово!"
       ],
       "ultrasound": [
         "Водолаз спокойно лежит на кушетке.",
@@ -515,7 +524,8 @@
       ],
       "medication": [
         "Водолаз получает морское лекарство, которое помогает его телу.",
-        "Иногда его нужно выпить, а иногда его вводят в руку через мягкую трубочку.",
+        "Иногда его нужно выпить.",
+        "А иногда его вводят в руку через мягкую трубочку.",
         "Если лекарство пили, потом можно попить воды, чтобы убрать вкус."
       ],
       "inhalation": [
@@ -544,7 +554,8 @@
       "saturation": [
         "Водолаз надевает на палец маленькую мягкую прищепку.",
         "В ней загорается маленький красный огонёк.",
-        "Она только смотрит — ничего не делает. Когда боцман разрешит, её можно снять."
+        "Она только смотрит — ничего не делает.",
+        "Когда боцман разрешит, её можно снять."
       ],
       "blood-pressure": [
         "Боцман надевает на руку мягкую манжету.",
@@ -553,7 +564,8 @@
         "Потом воздух выходит из манжеты. Её можно снять."
       ],
       "doctor-exam": [
-        "Капитан слушает стетоскопом, как дышит водолаз, и как бьется его сердце. Это немного холодно, но не больно.",
+        "Капитан слушает стетоскопом, как дышит водолаз, и как бьется его сердце.",
+        "Это немного холодно, но не больно.",
         "Может быть, он посмотрит в горло и уши с помощью маленького фонарика.",
         "В конце он скажет, что делать дальше."
       ],
