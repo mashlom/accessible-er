@@ -59,7 +59,7 @@ export function CelebratePage() {
           )}
           <p className={css.celebrateHint}>
             {doneCount > 0
-              ? t(`ui.text.coins.${lang === 'he' ? (doneCount === 1 ? 'one' : 'other') : new Intl.PluralRules(lang).select(doneCount)}`).replace('{n}', String(doneCount))
+              ? t(`ui.text.coins.${new Intl.PluralRules(lang).select(doneCount)}`).replace('{n}', String(doneCount))
               : (celebrateSkin?.hint ?? '')}
           </p>
         </div>

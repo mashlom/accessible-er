@@ -137,9 +137,56 @@
         "אני עומד או שוכב בשקט, כאילו מתחבא במעמקים.",
         "המכשיר מצלם — אני לא מרגיש כלום.",
         "סיימנו, אפשר לזוז שוב."
+      ],
+      "saturation": [
+        "שמים לי אטב קטן ורך על האצבע.",
+        "נדלק בו אור אדום קטן.",
+        "הוא רק מסתכל — לא עושה כלום, ואחרי רגע מורידים לי אותו."
       ]
     },
-    "procedureVariants": {},
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "בפה",
+          "steps": [
+            "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
+            "סוגרים את הפה חזק־חזק, כאילו יש לי סוכריה בפנים.",
+            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
+            "שומעים ביפ קטן — וזהו, סיימנו."
+          ]
+        },
+        {
+          "label": "מתחת לבית השחי",
+          "steps": [
+            "שמים חתיכת פלסטיק קטנה עם חוט מתחת לבית השחי.",
+            "מצמידים את הזרוע לגוף ומחזיקים בעדינות.",
+            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
+            "שומעים ביפ קטן — וזהו, סיימנו."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "עם אלחוש",
+          "steps": [
+            "שמים קודם חומר קריר שמרדים את האזור, ומכסים במדבקה שקופה.",
+            "מחכים קצת עד שהקסם עובד והאזור של החתך \"הולך לישון\".",
+            "הרופא/ה מחזיק/ה את האזור וסוגר/ת אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
+            "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים לי חבישה נקייה מלמעלה."
+          ]
+        },
+        {
+          "label": "בלי אלחוש",
+          "steps": [
+            "לא צריך להרדים את האזור — מתחילים ישר.",
+            "הרופא/ה מחזיק/ה את האזור ושם/ה עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+            "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים לי חבישה נקייה מלמעלה."
+          ]
+        }
+      ]
+    },
     "calmLines": [
       "גם לצוללנים קשה לפעמים 🤿",
       "כשקשה לצוללן, הוא נושם עמוק מאוד",
@@ -314,6 +361,27 @@
             "They press their arm to their body and hold it gently.",
             "We need to wait until the device is done.",
             "A soft beep — and that's it, all done."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "With numbing",
+          "steps": [
+            "First they put something cool on the spot to make it sleepy, and cover it with a clear sticker.",
+            "We wait a little until the magic works and the spot around the cut “goes to sleep”.",
+            "The doctor holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
+            "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
+          ]
+        },
+        {
+          "label": "Without numbing",
+          "steps": [
+            "There's no need to make the spot sleepy — we start right away.",
+            "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+            "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
           ]
         }
       ]

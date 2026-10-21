@@ -122,6 +122,9 @@
       ],
       "coins": {
         "one": "You collected {n} coin — welcome to the shop!",
+        "two": "You collected {n} coins — welcome to the shop!",
+        "few": "You collected {n} coins — welcome to the shop!",
+        "many": "You collected {n} coins — welcome to the shop!",
         "other": "You collected {n} coins — welcome to the shop!"
       },
       "cardSubtitle": "Tick what fits — under 2 minutes. At the end you get a short card to show the staff on screen or print it.",
@@ -636,7 +639,9 @@
       "coins": {
         "one": "У тебя есть {n} монета — добро пожаловать в магазин!",
         "few": "У тебя есть {n} монеты — добро пожаловать в магазин!",
-        "many": "У тебя есть {n} монет — добро пожаловать в магазин!"
+        "many": "У тебя есть {n} монет — добро пожаловать в магазин!",
+        "other": "У тебя есть {n} монет — добро пожаловать в магазин!",
+        "two": "У тебя есть {n} монет — добро пожаловать в магазин!"
       },
       "cardSubtitle": "Отметьте, что подходит, — меньше 2 минут. В конце получите короткую карточку, которую можно показать персоналу на экране или распечатать.",
       "draft": "черновик — ждёт проверки"
@@ -1105,6 +1110,9 @@
       ],
       "coins": {
         "one": "צברת {n} מטבע — ברוכים הבאים לחנות!",
+        "two": "צברת {n} מטבעות — ברוכים הבאים לחנות!",
+        "few": "צברת {n} מטבעות — ברוכים הבאים לחנות!",
+        "many": "צברת {n} מטבעות — ברוכים הבאים לחנות!",
         "other": "צברת {n} מטבעות — ברוכים הבאים לחנות!"
       },
       "draft": "טיוטה — ממתינה לאישור"
