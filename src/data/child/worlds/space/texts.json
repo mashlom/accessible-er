@@ -104,6 +104,107 @@
           ]
         }
       ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
+        "סוגרים את הפה חזק־חזק, כאילו יש לי סוכריה בפנים.",
+        "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
+        "שומעים ביפ קטן — וזהו, סיימנו."
+      ],
+      "saturation": [
+        "שמים לי אטב קטן ורך על האצבע.",
+        "נדלק בו אור אדום קטן.",
+        "הוא רק מסתכל — לא עושה כלום, ואחרי רגע מורידים לי אותו."
+      ],
+      "blood-pressure": [
+        "שמים לי שרוול רך על הזרוע.",
+        "הוא מתנפח ולוחץ כמו חיבוק חזק.",
+        "סופרים עד כמה, והוא משחרר לבד."
+      ],
+      "doctor-exam": [
+        "נפגוש רופא או רופאה שרוצים לעזור לי.",
+        "הם מקשיבים לגוף שלי עם סטטוסקופ — קצת קר, לא כואב.",
+        "אולי יסתכלו בגרון ובאוזניים עם אור קטן.",
+        "בסוף הבדיקה הרופא/ה יידעו מה כדאי לעשות כדי לעזור לי."
+      ],
+      "blood-test": [
+        "שמים לי משחה שעושה את העור פחות רגיש.",
+        "גומייה רכה מתהדקת על הזרוע.",
+        "דקירה קטנה וקצרה — ואפשר להסתכל על משהו אחר.",
+        "שמים לי פלסטר, ואני גיבור/ה."
+      ],
+      "urine": [
+        "הולכים לשירותים כמו תמיד.",
+        "עושים קצת פיפי לתוך כוס קטנה.",
+        "נותנים את הכוס לאחות. זהו!"
+      ],
+      "xray": [
+        "נכנסים לחדר עם מכונה גדולה.",
+        "לפעמים מלבישים עליי לבוש כבד שמגן על הגוף, ולפעמים גם צווארון.",
+        "עומדים או שוכבים בנחת, כמו פסל.",
+        "המכונה מצלמת תמונה — לא מרגישים כלום.",
+        "סיימנו, אפשר לזוז שוב."
+      ],
+      "ultrasound": [
+        "שוכבים בנחת על מיטה.",
+        "מורחים לי ג׳ל קצת קר על הבטן.",
+        "מכשיר חלק מחליק ומצייר תמונה על מסך — לפעמים לוחצים קצת, וזה בסדר.",
+        "אם מפריע אפשר לבקש רגע הפסקה.",
+        "מנגבים לי את הג׳ל — וסיימנו."
+      ],
+      "ct": [
+        "שוכבים על מיטה נוחה.",
+        "המיטה זזה לאט לתוך טבעת גדולה.",
+        "שומעים רעש, ושוכבים בנחת כמו פסל.",
+        "המיטה חוזרת החוצה — סיימנו."
+      ],
+      "iv": [
+        "שמים לי משחה שמרגיעה את העור.",
+        "דקירה קצרה, ואז מכניסים צינור רך ודק.",
+        "מוציאים את המחט, והצינור הרך נשאר לתת נוזלים.",
+        "מדביקים לי מדבקה שמחזיקה את הצינור הרך במקום."
+      ],
+      "medication": [
+        "מקבלים תרופה שעוזרת לגוף.",
+        "לפעמים שותים קצת סירופ, לפעמים דרך הצינור הרך.",
+        "ואפשר מים אחרי בשביל הטעם."
+      ],
+      "inhalation": [
+        "שמים על הפנים מסכה רכה עם אוויר קריר.",
+        "לא צריך לנשום בכוח — רק נושמים רגיל.",
+        "לפעמים טיפה מדגדג בעיניים, ואפשר לבקש שהאוויר ייצא לאט יותר.",
+        "אפשר לצפות בסרטון בזמן הזה. אחרי כמה דקות מסירים — סיימנו."
+      ],
+      "stitches": [
+        "לא צריך להרדים את האזור — מתחילים ישר.",
+        "הרופא/ה מחזיק/ה את האזור ושם/ה עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+        "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים לי חבישה נקייה מלמעלה."
+      ],
+      "cast": [
+        "בוחרים אם לשבת או לשכב, ואם אמא או אבא לידי או לבד.",
+        "עוטפים לי את היד או הרגל בשכבות רכות.",
+        "עכשיו מחכים רגע בסבלנות בלי לזוז — אי אפשר לעצור באמצע, כדי שהגבס יתאים לי בדיוק.",
+        "הגבס מתקשה לאט, שומר על העצם — ונותנים לו להחלים."
+      ],
+      "bandage": [
+        "עוטפים לי תחבושת רכה סביב האזור.",
+        "עוטפים בנחת, שכבה על שכבה.",
+        "מדביקים בסוף — נעים ומוגן."
+      ],
+      "waiting-results": [
+        "סיימנו את הבדיקות — כל הכבוד לי!",
+        "עכשיו מחכים לתשובות. אפשר לשחק, לנוח או לראות סרטון.",
+        "הצוות עובד בשביל לעזור לי. לא שכחו אותי.",
+        "כשיהיו תשובות — הרופא/ה יבואו לספר לנו."
+      ]
+    },
+    "calmLines": [
+      "רגע, נושמים יחד 💙"
+    ],
+    "cardChildHero": {
+      "title": "כרטיס התאמות"
     }
   },
   "en": {
@@ -211,6 +312,107 @@
           ]
         }
       ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "A small plastic tip with a wire goes into my mouth.",
+        "I close my mouth tight-tight, like I have a candy inside.",
+        "I wait quietly for a short moment, until the device is done.",
+        "I hear a little beep — and that's it, we're done."
+      ],
+      "saturation": [
+        "They put a small, soft clip on my finger.",
+        "A little red light turns on inside it.",
+        "It only looks — it doesn't do anything, and after a moment they take it off."
+      ],
+      "blood-pressure": [
+        "They put a soft cuff on my arm.",
+        "It fills with air and squeezes like a big hug.",
+        "We count together, and it lets go by itself."
+      ],
+      "doctor-exam": [
+        "I'm going to meet a doctor who wants to help me.",
+        "The doctor listens to my body with a stethoscope — a little cold, but it doesn't hurt.",
+        "Maybe they will look in my throat and ears with a small light.",
+        "At the end, the doctor will know what to do to help me."
+      ],
+      "blood-test": [
+        "They put a cream on me that makes my skin less sensitive.",
+        "A soft band gets snug around my arm.",
+        "A tiny, quick prick — and I can look at something else.",
+        "They put a small bandage on me, and I was so brave!"
+      ],
+      "urine": [
+        "I go to the toilet like always.",
+        "I pee a little into a small cup.",
+        "I give the cup to the nurse. That's it!"
+      ],
+      "xray": [
+        "We go into a room with a big machine.",
+        "Sometimes they put a heavy cover on me that protects my body, and sometimes a collar too.",
+        "I stand or lie calmly, like a statue.",
+        "The machine takes a picture — I don't feel anything.",
+        "We're done, I can move again."
+      ],
+      "ultrasound": [
+        "I lie calmly on a bed.",
+        "They spread a slightly cold gel on my tummy.",
+        "A smooth device glides and draws a picture on a screen — sometimes it presses a little, and that's okay.",
+        "If it bothers me, I can ask for a little break.",
+        "They wipe off the gel — and we're done."
+      ],
+      "ct": [
+        "I lie on a comfy bed.",
+        "The bed slowly moves into a big ring.",
+        "I hear a noise, and I lie calmly like a statue.",
+        "The bed comes back out — we're done."
+      ],
+      "iv": [
+        "They put a cream on me that calms my skin.",
+        "A short prick, and then a soft, thin tube goes in.",
+        "They take the needle out, and the soft tube stays to give me fluids.",
+        "They put a sticker on me that holds the soft tube in place."
+      ],
+      "medication": [
+        "I get medicine that helps my body.",
+        "Sometimes I drink a little syrup, sometimes it goes in through the soft tube.",
+        "And I can have some water afterwards for the taste."
+      ],
+      "inhalation": [
+        "They put a soft mask with cool air on my face.",
+        "I don't need to breathe hard — I just breathe normally.",
+        "Sometimes it tickles my eyes a little, and I can ask for the air to come out slower.",
+        "I can watch a video meanwhile. After a few minutes they take it off — we're done."
+      ],
+      "stitches": [
+        "There's no need to make the spot sleepy — we start right away.",
+        "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+        "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
+        "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
+      ],
+      "cast": [
+        "I choose whether to sit or lie down, and whether mom or dad stays next to me.",
+        "They wrap my arm or leg in soft layers.",
+        "Now I wait patiently for a moment without moving — we can't stop in the middle, so the cast fits me just right.",
+        "The cast slowly gets hard and keeps my bone safe — and lets it heal."
+      ],
+      "bandage": [
+        "They wrap a soft bandage around the spot.",
+        "They wrap it gently, layer after layer.",
+        "At the end they stick it down — cosy and protected."
+      ],
+      "waiting-results": [
+        "We finished the tests — well done, me!",
+        "Now we wait for the answers. I can play, rest or watch a video.",
+        "The team is working to help me. They haven't forgotten me.",
+        "When the answers are ready, the doctor will come and tell us."
+      ]
+    },
+    "calmLines": [
+      "A moment — let's breathe together 💙"
+    ],
+    "cardChildHero": {
+      "title": "Accommodations card"
     }
   },
   "ru": {
@@ -318,6 +520,107 @@
           ]
         }
       ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "Мне кладут в рот маленький пластиковый наконечник с проводком.",
+        "Я крепко-крепко закрываю рот, как будто там конфета.",
+        "Я тихонько жду чуть-чуть, пока прибор закончит.",
+        "Я слышу тихое «бип» — и всё, готово."
+      ],
+      "saturation": [
+        "Мне надевают на палец маленькую мягкую прищепку.",
+        "В ней загорается маленький красный огонёк.",
+        "Она только смотрит — ничего не делает, и через минутку её снимают."
+      ],
+      "blood-pressure": [
+        "Мне надевают на руку мягкую манжету.",
+        "Она надувается и сжимает, как крепкие объятия.",
+        "Мы считаем, и она сама отпускает."
+      ],
+      "doctor-exam": [
+        "Я встречу врача, который хочет мне помочь.",
+        "Врач слушает моё тело стетоскопом — немного холодно, но не больно.",
+        "Может быть, мне посмотрят горло и уши маленьким фонариком.",
+        "В конце врач будет знать, как мне помочь."
+      ],
+      "blood-test": [
+        "Мне мажут крем, от которого кожа становится менее чувствительной.",
+        "Мягкая резинка плотно обхватывает руку.",
+        "Маленький быстрый укол — а я могу смотреть на что-то другое.",
+        "Мне клеят пластырь, и я молодец!"
+      ],
+      "urine": [
+        "Я иду в туалет, как всегда.",
+        "Я писаю немного в маленький стаканчик.",
+        "Я отдаю стаканчик медсестре или медбрату. Всё!"
+      ],
+      "xray": [
+        "Мы заходим в комнату с большим аппаратом.",
+        "Может быть на меня наденут тяжёлую накидку, которая защищает тело, а может быть ещё и воротник.",
+        "Я спокойно стою или лежу, как статуя.",
+        "Аппарат делает снимок — я ничего не чувствую.",
+        "Готово, можно снова двигаться."
+      ],
+      "ultrasound": [
+        "Я спокойно лежу на кровати.",
+        "Мне мажут на живот немного холодный гель.",
+        "Гладкий датчик скользит и рисует картинку на экране — иногда немного надавливают, и это нормально.",
+        "Если мешает, можно попросить маленький перерыв.",
+        "Мне вытирают гель — и готово."
+      ],
+      "ct": [
+        "Я ложусь на удобную кровать.",
+        "Кровать медленно заезжает в большое кольцо.",
+        "Я слышу шум и лежу спокойно, как статуя.",
+        "Кровать выезжает обратно — готово."
+      ],
+      "iv": [
+        "Мне мажут крем, который успокаивает кожу.",
+        "Короткий укол, а потом вводят мягкую тонкую трубочку.",
+        "Иглу вынимают, а мягкая трубочка остаётся, чтобы давать мне жидкость.",
+        "Мне приклеивают наклейку, которая держит мягкую трубочку на месте."
+      ],
+      "medication": [
+        "Я получаю лекарство, которое помогает моему телу.",
+        "Иногда я пью немного сиропа, иногда оно идёт через мягкую трубочку.",
+        "А потом можно попить воды, чтобы убрать вкус."
+      ],
+      "inhalation": [
+        "Мне надевают на лицо мягкую маску с прохладным воздухом.",
+        "Не нужно дышать сильно — я просто дышу как обычно.",
+        "Иногда немного щекочет глаза, и можно попросить, чтобы воздух шёл медленнее.",
+        "В это время можно смотреть мультик. Через несколько минут маску снимают — готово."
+      ],
+      "stitches": [
+        "Обезболивать не нужно — начинают сразу.",
+        "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+        "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+        "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
+      ],
+      "cast": [
+        "Я выбираю, сидеть или лежать, и будут ли мама или папа рядом со мной.",
+        "Мне обматывают руку или ногу мягкими слоями.",
+        "Теперь я терпеливо жду немного и не двигаюсь — останавливаться посередине нельзя, чтобы гипс подошёл мне точно.",
+        "Гипс медленно твердеет и бережёт кость — и она заживает."
+      ],
+      "bandage": [
+        "Мне обматывают это место мягким бинтом.",
+        "Обматывают бережно, слой за слоем.",
+        "В конце закрепляют — уютно и надёжно."
+      ],
+      "waiting-results": [
+        "Мы закончили все проверки — я молодец!",
+        "Теперь ждём ответов. Можно поиграть, отдохнуть или посмотреть мультик.",
+        "Врачи и медсёстры работают, чтобы мне помочь. Про меня не забыли.",
+        "Когда будут ответы, врач придёт и расскажет нам."
+      ]
+    },
+    "calmLines": [
+      "Минутку — дышим вместе 💙"
+    ],
+    "cardChildHero": {
+      "title": "Карточка адаптаций"
     }
   }
 }

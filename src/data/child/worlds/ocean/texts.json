@@ -142,6 +142,18 @@
         "שמים לי אטב קטן ורך על האצבע.",
         "נדלק בו אור אדום קטן.",
         "הוא רק מסתכל — לא עושה כלום, ואחרי רגע מורידים לי אותו."
+      ],
+      "temperature": [
+        "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
+        "סוגרים את הפה חזק־חזק, כאילו יש לי סוכריה בפנים.",
+        "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
+        "שומעים ביפ קטן — וזהו, סיימנו."
+      ],
+      "stitches": [
+        "לא צריך להרדים את האזור — מתחילים ישר.",
+        "הרופא/ה מחזיק/ה את האזור ושם/ה עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+        "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים לי חבישה נקייה מלמעלה."
       ]
     },
     "procedureVariants": {
@@ -341,6 +353,18 @@
         "I stand or lie calmly, as if hiding in the depths.",
         "The machine takes a picture — I don't feel anything.",
         "Done, I can move again."
+      ],
+      "temperature": [
+        "A small plastic tip with a wire goes into my mouth.",
+        "I close my mouth tight-tight, like I have a candy inside.",
+        "I wait quietly for a short moment, until the device is done.",
+        "I hear a little beep — and that's it, we're done."
+      ],
+      "stitches": [
+        "There's no need to make the spot sleepy — we start right away.",
+        "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+        "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
+        "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
       ]
     },
     "procedureVariants": {
@@ -540,6 +564,18 @@
         "Капитан слушает стетоскопом, как дышит водолаз, и как бьется его сердце. Это немного холодно, но не больно.",
         "Может быть, он посмотрит в горло и уши с помощью маленького фонарика.",
         "В конце он скажет, что делать дальше."
+      ],
+      "temperature": [
+        "Мне кладут в рот маленький пластиковый наконечник с проводком.",
+        "Я крепко-крепко закрываю рот, как будто там конфета.",
+        "Я тихонько жду чуть-чуть, пока прибор закончит.",
+        "Я слышу тихое «бип» — и всё, готово."
+      ],
+      "stitches": [
+        "Обезболивать не нужно — начинают сразу.",
+        "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+        "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+        "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
       ]
     },
     "procedureVariants": {
