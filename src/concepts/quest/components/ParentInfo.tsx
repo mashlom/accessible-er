@@ -190,10 +190,15 @@ export function ParentSheet({
           <section className={css.sheetCard}>
             <h2>{t('ui.labels.adult.challenge')}</h2>
             <p>{data.challenge}</p>
-            {stageId === 'reception' && questLinks && (
+            {stageId === 'reception' && (
               <>
                 <p className={css.sheetHint}>{t('ui.text.cardHint')}</p>
-                <Link to="/card" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.cardForStaff')}</Link>
+                {/* the card is the parent's on every page: the quest opens its own card screen, the books open the shared one */}
+                {questLinks ? (
+                  <Link to="/card" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.cardForStaff')}</Link>
+                ) : (
+                  <a href="#/card" className={css.calmLink}>{t('ui.buttons.cardForStaff')}</a>
+                )}
               </>
             )}
           </section>
