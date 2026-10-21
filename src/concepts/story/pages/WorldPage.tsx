@@ -40,17 +40,14 @@ const calmTileOf: Record<string, string> = {
   'going-home': 'discharge',
   message: 'message',
   feedback: 'feedback',
+  distract: 'distract',
 }
 type Tile = { name: string; desc: string }
 const calmTiles = i18nUi as unknown as Record<HomeLang, { tiles: Record<string, { title: string; desc: string }> }>
 
-/** Hebrew keeps the story's own names where it has them (the design's names); everything else uses the app's wording in i18n/ui.json */
+/** The home tiles: their names and lines are the app's wording in i18n/ui.json (tiles), in every language */
 function tileText(lang: HomeLang, id: string): Tile {
-  const own = (keyed(homeTexts[lang], 'parent/home').tiles as Record<string, Partial<Tile> | undefined> | undefined)?.[id]
-  if (lang === 'he' && own?.name) return { name: own.name, desc: own.desc ?? '' }
-  const calmKey = calmTileOf[id]
-  if (!calmKey) return { name: own?.name ?? '', desc: own?.desc ?? '' }
-  const c = calmTiles[lang].tiles[calmKey]
+  const c = calmTiles[lang].tiles[calmTileOf[id]]
   return { name: c?.title ?? '', desc: c?.desc ?? '' }
 }
 

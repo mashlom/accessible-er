@@ -273,6 +273,10 @@
       "feedback": {
         "title": "How was it?",
         "desc": "Tell us how it was, so we can improve"
+      },
+      "distract": {
+        "title": "A distraction",
+        "desc": "Something calm to look at"
       }
     },
     "procedurePage": {
@@ -783,6 +787,10 @@
       "feedback": {
         "title": "Как прошло?",
         "desc": "Расскажите, как всё прошло, — чтобы мы стали лучше"
+      },
+      "distract": {
+        "title": "Отвлечься",
+        "desc": "Что-то спокойное, на что можно смотреть"
       }
     },
     "procedurePage": {
@@ -1292,6 +1300,10 @@
       "feedback": {
         "title": "משוב קצר",
         "desc": "ספרו לנו איך היה — כדי שנשתפר"
+      },
+      "distract": {
+        "title": "הסחת דעת",
+        "desc": "משהו רגוע להסתכל עליו"
       }
     },
     "procedurePage": {

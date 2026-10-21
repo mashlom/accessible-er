@@ -21,48 +21,6 @@
     "reasonLabel": "באנו היום בגלל",
     "reasonChange": "שינוי",
     "foot": "הכלי נועד להנגיש את הביקור ולהפחית אי־ודאות. הוא אינו מחליף את הצוות הרפואי ואינו מספק ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים.",
-    "tiles": {
-      "trail": {
-        "name": "השביל שלנו",
-        "desc": "איפה אנחנו עכשיו ומה הלאה"
-      },
-      "wait-times": {
-        "name": "זמנים משוערים",
-        "desc": "כמה זמן כל שלב יכול לקחת"
-      },
-      "show": {
-        "name": "איך מכינים את הילד/ה?",
-        "desc": "סיפור לכל בדיקה, עמוד אחרי עמוד"
-      },
-      "map": {
-        "name": "איפה אנחנו?",
-        "desc": "מפה עם מקומות שקטים"
-      },
-      "calm": {
-        "name": "כשקשה",
-        "desc": "לנשום יחד, ומה עוזר"
-      },
-      "distract": {
-        "name": "הסחת דעת",
-        "desc": "משהו רגוע להסתכל עליו"
-      },
-      "requests": {
-        "name": "מה אפשר לבקש",
-        "desc": "מותר לבקש מהצוות"
-      },
-      "going-home": {
-        "name": "סוף השביל",
-        "desc": "איך נגמר היום"
-      },
-      "message": {
-        "name": "הודעה לצוות",
-        "desc": "בקשה קטנה או תודה"
-      },
-      "feedback": {
-        "name": "איך היה?",
-        "desc": "לספר לנו במשפט"
-      }
-    },
     "reason": {
       "title": "למה באנו היום?",
       "subtitle": "הבחירה עוזרת לי להראות לכם את הדרך הצפויה. אפשר לשנות בכל רגע — וכל ביקור מתחיל אותו דבר.",
@@ -172,15 +130,6 @@
     "reasonLabel": "Reason for the visit",
     "reasonChange": "Change",
     "foot": "This tool is meant to make the visit easier to follow and to reduce uncertainty. It does not replace the medical team and does not give medical advice. There is no need to enter a name or identifying details.",
-    "tiles": {
-      "distract": {
-        "name": "A distraction",
-        "desc": "Something calm to look at"
-      },
-      "going-home": {
-        "desc": "How the day ends"
-      }
-    },
     "reason": {
       "title": "Why did we come today?",
       "subtitle": "Your choice helps me show you the expected route. You can change it at any time — every visit starts the same way.",
@@ -290,15 +239,6 @@
     "reasonLabel": "Причина визита",
     "reasonChange": "Изменить",
     "foot": "Инструмент помогает сделать визит понятнее и снизить неопределённость. Он не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные.",
-    "tiles": {
-      "distract": {
-        "name": "Отвлечься",
-        "desc": "Что-то спокойное, на что можно смотреть"
-      },
-      "going-home": {
-        "desc": "Как закончится день"
-      }
-    },
     "reason": {
       "title": "Почему мы пришли сегодня?",
       "subtitle": "Выбор помогает показать вам ожидаемый путь. Его можно изменить в любой момент — любой визит начинается одинаково.",
