@@ -8,11 +8,11 @@
       },
       "wait-before-triage": {
         "label": "גשר הפרפרים",
-        "hint": "מחכים על הגשר עד שהפיה הרפואית קוראת"
+        "hint": "מחכים על הגשר עד שהשדון העוזר קורא"
       },
       "triage": {
         "label": "בדיקת הקסמים",
-        "hint": "הפיה הרפואית בודקת את הקסם שלך"
+        "hint": "השדון העוזר בודק את הקסם שלנו"
       },
       "wait-doctor": {
         "label": "פינת הפרחים",
@@ -23,8 +23,8 @@
         "hint": "הפיה מחליטה איזה קסם תרפא"
       },
       "decision": {
-        "label": "פרח הניצחון",
-        "hint": "קיבלתם פרח קסמים — נרפאתם!"
+        "label": "יוצאים מהגן היפה",
+        "hint": "להתראות, פיות!"
       },
       "tests": {
         "label": "קסם הראייה",
@@ -32,11 +32,11 @@
       },
       "treatment": {
         "label": "שרביט הריפוי",
-        "hint": "הפיה מרפאה בשרביטה"
+        "hint": "הגמד הגנן מטפל במה שצריך"
       },
       "consult": {
         "label": "מועצת הפיות",
-        "hint": "פיה נוספת מגיעה לעזור"
+        "hint": "הפיה החכמה מגיעה לעזור"
       },
       "wait-results": {
         "label": "ממתינים לקסם",
@@ -44,20 +44,20 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "פיית הריפוי בודקת את אש הפנים של הגיבור — כדי לדעת איזה קסם יעזור.",
+      "temperature": "השדון העוזר בודק את אש הפנים של האורח — כדי לדעת איזה קסם יעזור.",
       "saturation": "טבעת הקסם הוורודה על האצבע בודקת שקסם האוויר זורם בדם כמו שצריך.",
-      "blood-pressure": "שרוול הפיות לוחץ קלות ובודק את עוצמת הלב הקסום של הגיבור.",
-      "doctor-exam": "פיית הריפוי בוחנת בעדינות את כוחות הגיבור — ממנה יבוא הקסם המתאים.",
+      "blood-pressure": "שרוול הפיות לוחץ קלות ובודק את עוצמת הלב הקסום של האורח.",
+      "doctor-exam": "פיית הריפוי בוחנת בעדינות את כוחות האורח — מהם יבוא הקסם המתאים.",
       "blood-test": "הפיה צריכה טיפה קסומה קטנה כדי לבשל את הקסם הנכון לריפוי.",
-      "urine": "כוסית הקסם הכחולה תגלה לפיית הריפוי את סודות הגוף.",
+      "urine": "כוסית קטנה תגלה לפיית הריפוי את סודות הגוף.",
       "xray": "מראת הגן מסתכלת לעומק הגוף ורואה הכל — בלי שמרגישים כלום.",
       "ultrasound": "ג׳ל הגן על העור מאפשר לשרביט לשוטט בפנים ולמצוא מה שצריך לרפא.",
       "ct": "הטבעת הקסומה סורקת לאט ומצלמת תמונה של כל מה שנמצא בפנים.",
-      "iv": "הצינור הדק של הפיה שולח קסם ריפוי ישירות לדם של הגיבור.",
-      "medication": "פיית הריפוי הכינה קסם מיוחד — סירופ או תרכובת שתחזק את הגיבור.",
+      "iv": "הצינור הדק של הגמד הגנן שולח קסם ריפוי ישירות לדם של האורח.",
+      "medication": "הגמד הגנן הכין קסם מיוחד — סירופ או תרכובת שתחזק את האורח.",
       "inhalation": "אדי הקסם מגיעים דרך המסכה ועוזרים לנשימה לזרום בקלות ובשמחה.",
-      "stitches": "הפיה סוגרת את הפצע בזהירות עם דבק הקסמים או חוט הריפוי הזהוב.",
-      "cast": "שריון גבס הפיות עוטף את העצם ומחזיק אותה עד שיחלים בשלמות.",
+      "stitches": "הגמד הגנן סוגר את הפצע בזהירות עם דבק הקסמים או חוט הריפוי הזהוב.",
+      "cast": "פקעת גבס, כמו של פרפר, עוטפת את העצם ומחזיקה אותה עד שתחלים לגמרי.",
       "bandage": "תחבושת הגן עוטפת את הפצע ומגנה עליו עד שהקסם יעשה את שלו.",
       "waiting-results": "הגביש הקסום מעבד את הבדיקות — עוד מעט תגיע תשובת הקסם."
     },
@@ -219,11 +219,11 @@
       },
       "wait-before-triage": {
         "label": "Butterfly Bridge",
-        "hint": "We wait on the bridge until the healing fairy calls"
+        "hint": "We wait on the bridge until the elf helper calls"
       },
       "triage": {
         "label": "Magic Check",
-        "hint": "The healing fairy checks your magic"
+        "hint": "The elf helper checks our magic"
       },
       "wait-doctor": {
         "label": "Flower Corner",
@@ -234,8 +234,8 @@
         "hint": "The fairy decides which magic will heal"
       },
       "decision": {
-        "label": "Victory Flower",
-        "hint": "You got a magic flower — you are healed!"
+        "label": "Leaving the Beautiful Garden",
+        "hint": "Goodbye, fairies!"
       },
       "tests": {
         "label": "Magic Sight",
@@ -243,11 +243,11 @@
       },
       "treatment": {
         "label": "Healing Wand",
-        "hint": "The fairy heals with her wand"
+        "hint": "The garden gnome treats what needs treating"
       },
       "consult": {
         "label": "Council of Fairies",
-        "hint": "Another fairy comes to help"
+        "hint": "The wise fairy comes to help"
       },
       "wait-results": {
         "label": "Waiting for the Magic",
@@ -255,20 +255,20 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "The healing fairy checks the hero's inner fire — to know which magic will help.",
+      "temperature": "The elf helper checks the guest's inner fire — to know which magic will help.",
       "saturation": "The pink magic ring on the finger checks that the magic of air flows in the blood as it should.",
-      "blood-pressure": "The fairies' sleeve presses gently and checks the strength of the hero's magic heart.",
-      "doctor-exam": "The healing fairy gently examines the hero's powers — the right magic will come from it.",
+      "blood-pressure": "The fairies' sleeve presses gently and checks the strength of the guest's magic heart.",
+      "doctor-exam": "The healing fairy gently examines the guest's powers — the right magic will come from it.",
       "blood-test": "The fairy needs one small magic drop to brew the right healing magic.",
-      "urine": "The blue magic cup will reveal the body's secrets to the healing fairy.",
-      "xray": "The garden mirror looks deep into the body and sees everything — without you feeling anything.",
+      "urine": "A small cup will reveal the body's secrets to the healing fairy.",
+      "xray": "The garden mirror looks deep into the body and sees everything — without us feeling anything.",
       "ultrasound": "The garden gel on the skin lets the wand wander inside and find what needs healing.",
       "ct": "The magic ring scans slowly and takes a picture of everything inside.",
-      "iv": "The fairy's thin tube sends healing magic straight into the hero's blood.",
-      "medication": "The healing fairy has brewed a special magic — a syrup or a mixture that will strengthen the hero.",
+      "iv": "The garden gnome's thin tube sends healing magic straight into the guest's blood.",
+      "medication": "The garden gnome has prepared a special magic — a syrup or a mixture that will strengthen the guest.",
       "inhalation": "Magic vapours come through the mask and help breathing flow easily and happily.",
-      "stitches": "The fairy carefully closes the wound with magic glue or a golden healing thread.",
-      "cast": "The fairies' plaster armour wraps the bone and holds it until it fully heals.",
+      "stitches": "The garden gnome carefully closes the wound with magic glue or a golden healing thread.",
+      "cast": "A plaster cocoon, like a butterfly's, wraps the bone and holds it until it fully heals.",
       "bandage": "The garden dressing wraps the wound and protects it until the magic does its work.",
       "waiting-results": "The magic crystal processes the tests — soon the magic answer will come."
     },
@@ -430,11 +430,11 @@
       },
       "wait-before-triage": {
         "label": "Мост бабочек",
-        "hint": "Ждём на мосту, пока нас позовёт целительница-фея"
+        "hint": "Ждём на мосту, пока нас позовёт эльф-помощник"
       },
       "triage": {
         "label": "Проверка волшебства",
-        "hint": "Целительница-фея проверяет твоё волшебство"
+        "hint": "Эльф-помощник проверяет наше волшебство"
       },
       "wait-doctor": {
         "label": "Цветочный уголок",
@@ -445,8 +445,8 @@
         "hint": "Фея решает, какое волшебство исцелит"
       },
       "decision": {
-        "label": "Цветок победы",
-        "hint": "Ты получил(а) волшебный цветок — ты исцелён(а)!"
+        "label": "Выходим из прекрасного сада",
+        "hint": "До свидания, феи!"
       },
       "tests": {
         "label": "Волшебное зрение",
@@ -454,11 +454,11 @@
       },
       "treatment": {
         "label": "Целебная палочка",
-        "hint": "Фея исцеляет своей палочкой"
+        "hint": "Гном-садовник лечит то, что нужно"
       },
       "consult": {
         "label": "Совет фей",
-        "hint": "Ещё одна фея приходит помочь"
+        "hint": "Мудрая фея приходит помочь"
       },
       "wait-results": {
         "label": "Ждём волшебства",
@@ -466,20 +466,20 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "Фея-целительница проверяет внутренний огонь героя — чтобы узнать, какое волшебство поможет.",
+      "temperature": "Эльф-помощник проверяет внутренний огонь гостя — чтобы узнать, какое волшебство поможет.",
       "saturation": "Розовое волшебное кольцо на пальце проверяет, что волшебный воздух течёт в крови как надо.",
-      "blood-pressure": "Рукав фей мягко сжимается и проверяет силу волшебного сердца героя.",
-      "doctor-exam": "Фея-целительница мягко изучает силы героя — от них придёт подходящее волшебство.",
+      "blood-pressure": "Рукав фей мягко сжимается и проверяет силу волшебного сердца гостя.",
+      "doctor-exam": "Фея-целительница мягко изучает силы гостя — от них придёт подходящее волшебство.",
       "blood-test": "Фее нужна одна маленькая волшебная капля, чтобы сварить нужное целебное волшебство.",
-      "urine": "Синяя волшебная чашка раскроет фее-целительнице тайны тела.",
-      "xray": "Садовое зеркало заглядывает глубоко в тело и видит всё — ты при этом ничего не чувствуешь.",
+      "urine": "Маленький стаканчик раскроет фее-целительнице тайны тела.",
+      "xray": "Садовое зеркало заглядывает глубоко в тело и видит всё — мы при этом ничего не чувствуем.",
       "ultrasound": "Садовый гель на коже позволяет палочке бродить внутри и найти то, что нужно вылечить.",
       "ct": "Волшебное кольцо медленно сканирует и делает снимок всего, что внутри.",
-      "iv": "Тонкая трубка феи посылает целебное волшебство прямо в кровь героя.",
-      "medication": "Фея-целительница сварила особое волшебство — сироп или смесь, которая укрепит героя.",
+      "iv": "Тонкая трубка гнома-садовника посылает целебное волшебство прямо в кровь гостя.",
+      "medication": "Гном-садовник приготовил особое волшебство — сироп или смесь, которая укрепит гостя.",
       "inhalation": "Волшебные пары приходят через маску и помогают дышать легко и радостно.",
-      "stitches": "Фея аккуратно закрывает рану волшебным клеем или золотой целебной нитью.",
-      "cast": "Гипсовый доспех фей обхватывает кость и держит её, пока она полностью не заживёт.",
+      "stitches": "Гном-садовник аккуратно закрывает рану волшебным клеем или золотой целебной нитью.",
+      "cast": "Гипсовый кокон, как у бабочки, обхватывает кость и держит её, пока она полностью не заживёт.",
       "bandage": "Садовая повязка обхватывает рану и защищает её, пока волшебство делает своё дело.",
       "waiting-results": "Волшебный кристалл обрабатывает анализы — скоро придёт волшебный ответ."
     },
