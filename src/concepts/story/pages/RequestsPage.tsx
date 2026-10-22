@@ -8,7 +8,6 @@ import { staffRequests } from '../../../data/support'
 import styles from '../pages.module.css'
 
 type StoryRequestsTexts = {
-  title: string
   subtitle: string
   bubble: string
   note: string
@@ -24,7 +23,7 @@ export function RequestsPage() {
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.labels.adult.canAsk')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
       </div>

@@ -137,7 +137,7 @@ const sharedWords = (lang: Lang) => {
   const care = (careI18n as unknown as Record<Lang, { cardSections: { title: string }[] }>)[lang].cardSections
   return {
     calm: { watchBtn: ui.tiles.distract.desc },
-    topicNames: { ask: ui.storyRequests.title, prep: ui.tiles.procedures.title, calm: ui.buttons.hardNow, reason: home.reason.title },
+    topicNames: { ask: ui.labels.adult.canAsk, prep: ui.tiles.procedures.title, calm: ui.buttons.hardNow, reason: home.reason.title },
     buttons: { helpedLess: ui.storyFeedback.team.rating[1], helpedSome: ui.storyFeedback.team.rating[2], helpedMuch: ui.storyFeedback.team.rating[3] },
     card: { cardNextStep: ui.buttons.continue, questions: { communication: care[0].title, sensitivities: care[1].title, calming: care[2].title, escalators: care[3].title, hardMoments: care[4].title, pain: care[5].title, avoid: care[6].title } },
     prep: { feel: ui.procedurePage.feel },
@@ -147,11 +147,10 @@ const sharedWords = (lang: Lang) => {
 
 type UiWords = {
   tiles: { distract: { desc: string }; procedures: { title: string } }
-  storyRequests: { title: string }
   buttons: { hardNow: string; continue: string }
   storyFeedback: { team: { rating: Record<string, string> } }
   procedurePage: { feel: string }
-  labels: { adult: { expectedRoute: string } }
+  labels: { adult: { expectedRoute: string; canAsk: string } }
 }
 
 export function talkText(lang: Lang) {
