@@ -26,8 +26,12 @@ export function useConceptBase(): string {
   return useContext(ConceptBaseContext)
 }
 
+/** The card is one page at the app's own address, reached from every concept: its links are never prefixed. */
+const APP_PAGES = ['/card']
+
 function resolve(base: string, to: string): string {
   if (!base || !to.startsWith('/')) return to
+  if (APP_PAGES.some((p) => to === p || to.startsWith(p + '/'))) return to
   return to === '/' ? base : base + to
 }
 
