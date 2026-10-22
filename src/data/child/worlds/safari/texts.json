@@ -87,20 +87,20 @@
         {
           "label": "עם אלחוש",
           "steps": [
-            "שמים קודם חומר קריר שמרדים את האזור, ומכסים במדבקה שקופה.",
-            "מחכים קצת עד שהקסם עובד והאזור של החתך \"הולך לישון\".",
-            "הרופא או הרופאה מחזיקים את האזור וסוגרים אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
+            "קודם המרפא מורח חומר קריר שמרדים את האזור, ומכסה בסרט שקוף.",
+            "מחכים קצת עד שהאזור של החתך \"הולך לישון\", כמו אריה אחרי ארוחת צהריים.",
+            "המרפא מחזיק את האזור וסוגר אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
             "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והמרפא שם חבישה נקייה מלמעלה."
           ]
         },
         {
           "label": "בלי אלחוש",
           "steps": [
-            "לא צריך להרדים את האזור — מתחילים ישר.",
-            "הרופא או הרופאה מחזיקים את האזור ושמים עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+            "לא צריך להרדים את האזור — המרפא מתחיל מיד.",
+            "המרפא מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
             "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והמרפא שם חבישה נקייה מלמעלה."
           ]
         }
       ]
@@ -163,39 +163,39 @@
         "המיטה חוזרת החוצה — סיימנו."
       ],
       "iv": [
-        "שמים משחה שמרגיעה את העור.",
-        "דקירה קצרה, ואז מכניסים צינור רך ודק.",
-        "מוציאים את המחט, והצינור הרך נשאר לתת נוזלים.",
-        "מדביקים מדבקה שמחזיקה את הצינור הרך במקום."
+        "המרפא מורח משחה שמרגיעה את העור.",
+        "דקירה קצרה, ואז המרפא מכניס צינור רך ודק.",
+        "מוציאים את המחט, והצינור הרך נשאר כדי שהמים יטפטפו לאט — כמו מהמימייה של הטיול.",
+        "המרפא מדביק פלסטר שמחזיק את הצינור במקום."
       ],
       "medication": [
-        "מקבלים תרופה שעוזרת לגוף.",
-        "לפעמים שותים קצת סירופ.",
-        "ולפעמים דרך הצינור הרך.",
-        "ואפשר מים אחרי בשביל הטעם."
+        "המרפא מביא תרופה שעוזרת לגוף.",
+        "לפעמים שותים קצת מיץ של פרי הבאובב, מכפית קטנה.",
+        "ולפעמים התרופה נכנסת דרך הצינור הרך.",
+        "ואפשר לשתות מים מהמימייה אחרי, בשביל הטעם."
       ],
       "inhalation": [
-        "שמים על הפנים מסכה רכה עם אוויר קריר.",
-        "לא צריך לנשום בכוח — רק נושמים רגיל.",
-        "לפעמים טיפה מדגדג בעיניים, ואפשר לבקש שהאוויר ייצא לאט יותר.",
-        "אפשר לצפות בסרטון בזמן הזה. אחרי כמה דקות מסירים — סיימנו."
+        "המרפא שם על הפנים מסכה רכה עם אוויר קריר.",
+        "לא צריך לנשום בכוח — רק נושמים רגיל, כמו ביער שקט בבוקר.",
+        "לפעמים טיפה מדגדג באף, ואפשר לבקש שהאוויר ייצא לאט יותר.",
+        "אפשר לצפות בסרטון בזמן הזה. אחרי כמה דקות המרפא מוריד את המסכה — סיימנו."
       ],
       "stitches": [
-        "לא צריך להרדים את האזור — מתחילים ישר.",
-        "הרופא או הרופאה מחזיקים את האזור ושמים עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+        "לא צריך להרדים את האזור — המרפא מתחיל מיד.",
+        "המרפא מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
         "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
+        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והמרפא שם חבישה נקייה מלמעלה."
       ],
       "cast": [
         "בוחרים אם לשבת או לשכב, ואם אמא או אבא יהיו לידנו.",
-        "עוטפים את היד או הרגל בשכבות רכות.",
-        "עכשיו מחכים רגע בסבלנות בלי לזוז — אי אפשר לעצור באמצע, כדי שהגבס יתאים בדיוק.",
-        "הגבס מתקשה לאט ושומר על העצם — וכך היא מחלימה."
+        "המרפא עוטף את היד או הרגל בשכבות רכות.",
+        "עכשיו מחכים רגע בסבלנות בלי לזוז, כמו איילה בשיחים — אי אפשר לעצור באמצע, כדי שהגבס יתאים בדיוק.",
+        "הגבס מתקשה לאט ושומר על העצם — וכך היא מחלימה, כמו עץ שגדל ישר."
       ],
       "bandage": [
-        "עוטפים תחבושת רכה סביב האזור.",
-        "עוטפים בנחת, שכבה על שכבה.",
-        "מדביקים בסוף — נעים ומוגן."
+        "המרפא עוטף תחבושת רכה סביב האזור.",
+        "בעדינות, שכבה על שכבה, כמו גפן סביב ענף.",
+        "בסוף המרפא מדביק — נעים ומוגן, ואפשר להמשיך בשביל."
       ],
       "waiting-results": [
         "סיימנו את הבדיקות — כל הכבוד לנו!",
@@ -298,20 +298,20 @@
         {
           "label": "With numbing",
           "steps": [
-            "First they put something cool on the spot to make it sleepy, and cover it with a clear sticker.",
-            "We wait a little until the magic works and the spot around the cut “goes to sleep”.",
-            "The doctor holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
+            "First the herbalist puts something cool on the spot to make it sleepy, and covers it with a clear film.",
+            "We wait a little until the spot around the cut “goes to sleep”, like a lion after lunch.",
+            "The herbalist holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
             "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
-            "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
+            "If the glue gets a little warm, someone blows cool air on the face, and the herbalist puts a clean bandage on top."
           ]
         },
         {
           "label": "Without numbing",
           "steps": [
-            "There's no need to make the spot sleepy — we start right away.",
-            "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+            "There's no need to make the spot sleepy — the herbalist starts right away.",
+            "The herbalist holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
             "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
-            "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
+            "If the glue gets a little warm, someone blows cool air on the face, and the herbalist puts a clean bandage on top."
           ]
         }
       ]
@@ -374,39 +374,39 @@
         "The bed comes back out — we're done."
       ],
       "iv": [
-        "They put a cream on the skin that calms it.",
-        "A short prick, and then a soft, thin tube goes in.",
-        "They take the needle out, and the soft tube stays to give fluids.",
-        "They put a sticker on that holds the soft tube in place."
+        "The herbalist puts a cream on the skin that calms it.",
+        "A short prick, and then the herbalist puts in a soft, thin tube.",
+        "They take the needle out, and the soft tube stays so water can drip in slowly — like from a canteen.",
+        "The herbalist puts on a plaster that holds the tube in place."
       ],
       "medication": [
-        "We get medicine that helps the body.",
-        "Sometimes we drink a little syrup.",
-        "Sometimes it goes in through the soft tube.",
-        "And we can have some water afterwards for the taste."
+        "The herbalist brings medicine that helps the body.",
+        "Sometimes we drink a little baobab juice from a tiny spoon.",
+        "Sometimes the medicine goes in through the soft tube.",
+        "And we can have some water from the canteen afterwards for the taste."
       ],
       "inhalation": [
-        "We put a soft mask with cool air on the face.",
-        "We don't need to breathe hard — we just breathe normally.",
-        "Sometimes it tickles the eyes a little, and we can ask for the air to come out slower.",
-        "We can watch a video meanwhile. After a few minutes they take it off — we're done."
+        "The herbalist puts a soft mask with cool air on the face.",
+        "We don't need to breathe hard — we just breathe normally, like in a quiet morning forest.",
+        "Sometimes it tickles the nose a little, and we can ask for the air to come out slower.",
+        "We can watch a video meanwhile. After a few minutes the herbalist takes the mask off — we're done."
       ],
       "stitches": [
-        "There's no need to make the spot sleepy — we start right away.",
-        "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+        "There's no need to make the spot sleepy — the herbalist starts right away.",
+        "The herbalist holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
         "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
-        "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
+        "If the glue gets a little warm, someone blows cool air on the face, and the herbalist puts a clean bandage on top."
       ],
       "cast": [
         "We choose whether to sit or lie down, and whether mom or dad stays close.",
-        "They wrap the arm or leg in soft layers.",
-        "Now we wait patiently for a moment without moving — we can't stop in the middle, so the cast fits just right.",
-        "The cast slowly gets hard and keeps the bone safe — and lets it heal."
+        "The herbalist wraps the arm or leg in soft layers.",
+        "Now we wait patiently for a moment without moving, like a gazelle in the bushes — we can't stop in the middle, so the cast fits just right.",
+        "The cast slowly hardens and keeps the bone safe — and it heals, like a tree that grows straight."
       ],
       "bandage": [
-        "They wrap a soft bandage around the spot.",
-        "They wrap it gently, layer after layer.",
-        "At the end they stick it down — cosy and protected."
+        "The herbalist wraps a soft bandage around the spot.",
+        "Gently, layer after layer, like a vine around a branch.",
+        "At the end the herbalist sticks it down — cosy and protected, ready for the trail."
       ],
       "waiting-results": [
         "We finished the tests — well done!",
@@ -509,20 +509,20 @@
         {
           "label": "С обезболиванием",
           "steps": [
-            "Сначала мажут прохладное средство, от которого место засыпает, и закрывают его прозрачной наклейкой.",
-            "Немного ждём, пока волшебство подействует и место пореза «уснёт».",
-            "Врач держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
+            "Сначала травник мажет прохладное средство, от которого место засыпает, и закрывает его прозрачной плёнкой.",
+            "Немного ждём, пока место пореза «уснёт», как лев после обеда.",
+            "Травник держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
             "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху травник накладывает чистую повязку."
           ]
         },
         {
           "label": "Без обезболивания",
           "steps": [
-            "Обезболивать не нужно — начинают сразу.",
-            "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+            "Обезболивать не нужно — травник начинает сразу.",
+            "Травник держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
             "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху травник накладывает чистую повязку."
           ]
         }
       ]
@@ -585,39 +585,39 @@
         "Кровать выезжает обратно — готово."
       ],
       "iv": [
-        "На кожу мажут крем, который её успокаивает.",
-        "Короткий укол, а потом вводят мягкую тонкую трубочку.",
-        "Иглу вынимают, а мягкая трубочка остаётся, чтобы давать жидкость.",
-        "Приклеивают наклейку, которая держит мягкую трубочку на месте."
+        "Травник мажет на кожу крем, который её успокаивает.",
+        "Короткий укол, а потом травник вводит мягкую тонкую трубочку.",
+        "Иглу вынимают, а мягкая трубочка остаётся, чтобы водичка понемногу капала — как из походной фляжки.",
+        "Травник приклеивает пластырь, который держит трубочку на месте."
       ],
       "medication": [
-        "Получаем лекарство, которое помогает телу.",
-        "Иногда пьём немного сиропа.",
-        "Иногда оно идёт через мягкую трубочку.",
-        "А потом можно попить воды, чтобы убрать вкус."
+        "Травник приносит лекарство, которое помогает телу.",
+        "Иногда пьём немного сока из плода баобаба, из маленькой ложечки.",
+        "Иногда лекарство идёт через мягкую трубочку.",
+        "А потом можно попить воды из фляжки, чтобы убрать вкус."
       ],
       "inhalation": [
-        "На лицо надеваем мягкую маску с прохладным воздухом.",
-        "Не нужно дышать сильно — просто дышим как обычно.",
-        "Иногда немного щекочет глаза, и можно попросить, чтобы воздух шёл медленнее.",
-        "В это время можно смотреть мультик. Через несколько минут маску снимают — готово."
+        "Травник надевает на лицо мягкую маску с прохладным воздухом.",
+        "Не нужно дышать сильно — просто дышим как обычно, как в тихом утреннем лесу.",
+        "Иногда немного щекочет в носу, и можно попросить, чтобы воздух шёл медленнее.",
+        "В это время можно смотреть мультик. Через несколько минут травник снимает маску — готово."
       ],
       "stitches": [
-        "Обезболивать не нужно — начинают сразу.",
-        "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+        "Обезболивать не нужно — травник начинает сразу.",
+        "Травник держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
         "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-        "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
+        "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху травник накладывает чистую повязку."
       ],
       "cast": [
         "Выбираем, сидеть или лежать, и будут ли мама или папа рядом.",
-        "Руку или ногу обматывают мягкими слоями.",
-        "Теперь терпеливо ждём немного и не двигаемся — останавливаться посередине нельзя, чтобы гипс подошёл точно.",
-        "Гипс медленно твердеет и бережёт кость — и она заживает."
+        "Травник обматывает руку или ногу мягкими слоями.",
+        "Теперь терпеливо ждём немного и не двигаемся, как лань в кустах — останавливаться посередине нельзя, чтобы гипс подошёл точно.",
+        "Гипс медленно твердеет и бережёт кость — и она заживает, как дерево, которое растёт прямо."
       ],
       "bandage": [
-        "Это место обматывают мягким бинтом.",
-        "Обматывают бережно, слой за слоем.",
-        "В конце закрепляют — уютно и надёжно."
+        "Травник обматывает это место мягким бинтом.",
+        "Обматывает бережно, слой за слоем, как лиана вокруг ветки.",
+        "В конце закрепляет — уютно и надёжно, можно идти дальше по тропе."
       ],
       "waiting-results": [
         "Мы закончили все проверки — молодцы!",
