@@ -67,19 +67,19 @@
         {
           "label": "בפה",
           "steps": [
-            "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-            "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
-            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-            "שומעים ביפ קטן — וזהו, סיימנו."
+            "מהנדס הטיסה נותן לנו מדחום קטן — שמים אותו בפה.",
+            "סוגרים את הפה חזק־חזק, כאילו יש בפנים כוכב קטן.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר להסתכל על הכוכבים מהחלון.",
+            "שומעים ביפ קטן — מהנדס הטיסה כותב ביומן התחנה, וסיימנו."
           ]
         },
         {
           "label": "מתחת לבית השחי",
           "steps": [
-            "שמים חתיכת פלסטיק קטנה עם חוט מתחת לבית השחי.",
-            "מצמידים את הזרוע לגוף ומחזיקים בעדינות.",
-            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-            "שומעים ביפ קטן — וזהו, סיימנו."
+            "מהנדס הטיסה שם מדחום קטן מתחת לבית השחי.",
+            "מצמידים את הזרוע לגוף, כאילו סוגרים חליפת חלל.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר להסתכל על הכוכבים מהחלון.",
+            "שומעים ביפ קטן — מהנדס הטיסה כותב ביומן התחנה, וסיימנו."
           ]
         }
       ],
@@ -107,21 +107,21 @@
     },
     "procedureSteps": {
       "temperature": [
-        "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-        "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
-        "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-        "שומעים ביפ קטן — וזהו, סיימנו."
+        "מהנדס הטיסה נותן לנו מדחום קטן — שמים אותו בפה.",
+        "סוגרים את הפה חזק־חזק, כאילו יש בפנים כוכב קטן.",
+        "מחכים בשקט עד שהמדחום מסיים — אפשר להסתכל על הכוכבים מהחלון.",
+        "שומעים ביפ קטן — מהנדס הטיסה כותב ביומן התחנה, וסיימנו."
       ],
       "saturation": [
-        "שמים אטב קטן ורך על האצבע.",
-        "נדלק בו אור אדום קטן.",
+        "מהנדס הטיסה שם אטב קטן ורך על האצבע.",
+        "נדלק בו אור אדום — כמו נורית על לוח התחנה.",
         "הוא רק מסתכל — לא עושה כלום.",
-        "אחרי רגע מורידים אותו."
+        "אחרי רגע מהנדס הטיסה מוריד אותו."
       ],
       "blood-pressure": [
-        "שמים שרוול רך על הזרוע.",
-        "הוא מתנפח ולוחץ כמו חיבוק חזק.",
-        "סופרים עד כמה, והוא משחרר לבד.",
+        "מהנדס הטיסה שם שרוול רך על הזרוע.",
+        "הוא מתנפח ומחבק את הזרוע, כמו חליפת חלל רכה.",
+        "סופרים יחד עם מהנדס הטיסה, והשרוול משחרר לבד.",
         "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
@@ -278,19 +278,19 @@
         {
           "label": "In the mouth",
           "steps": [
-            "We put a small plastic tip with a wire in the mouth.",
-            "We close the mouth tight-tight, like there's a candy inside.",
-            "We wait quietly for a short moment, until the device is done.",
-            "We hear a little beep — and that's it, we're done."
+            "The flight engineer gives us a little thermometer — we put it in the mouth.",
+            "We close the mouth tight-tight, as if there is a tiny star inside.",
+            "We wait quietly until the thermometer is done — we can look at the stars through the window.",
+            "We hear a little beep — the flight engineer writes it in the station log, and we're done."
           ]
         },
         {
           "label": "Under the armpit",
           "steps": [
-            "We put a small plastic tip with a wire under the arm.",
-            "We press the arm to the body and hold it gently.",
-            "We wait quietly for a short moment, until the device is done.",
-            "We hear a little beep — and that's it, we're done."
+            "The flight engineer puts a little thermometer under the arm.",
+            "We press the arm to the body, as if zipping up a spacesuit.",
+            "We wait quietly until the thermometer is done — we can look at the stars through the window.",
+            "We hear a little beep — the flight engineer writes it in the station log, and we're done."
           ]
         }
       ],
@@ -318,22 +318,22 @@
     },
     "procedureSteps": {
       "temperature": [
-        "We put a small plastic tip with a wire in the mouth.",
-        "We close the mouth tight-tight, like there's a candy inside.",
-        "We wait quietly for a short moment, until the device is done.",
-        "We hear a little beep — and that's it, we're done."
+        "The flight engineer gives us a little thermometer — we put it in the mouth.",
+        "We close the mouth tight-tight, as if there is a tiny star inside.",
+        "We wait quietly until the thermometer is done — we can look at the stars through the window.",
+        "We hear a little beep — the flight engineer writes it in the station log, and we're done."
       ],
       "saturation": [
-        "We put a small, soft clip on the finger.",
-        "A little red light turns on inside it.",
+        "The flight engineer puts a small, soft clip on the finger.",
+        "A red light turns on inside it — like an indicator on the station panel.",
         "It only looks — it doesn't do anything.",
-        "After a moment they take it off."
+        "After a moment the flight engineer takes it off."
       ],
       "blood-pressure": [
-        "We put a soft cuff on the arm.",
-        "It fills with air and squeezes like a big hug.",
-        "We count together, and it lets go by itself.",
-        "Then they take the cuff off — and that's it, all done."
+        "The flight engineer puts a soft cuff on the arm.",
+        "It fills with air and hugs the arm, like a soft spacesuit.",
+        "We count together with the flight engineer, and the cuff lets go by itself.",
+        "Then the cuff comes off — and that's it, all done."
       ],
       "doctor-exam": [
         "We meet a doctor who wants to help us.",
@@ -489,19 +489,19 @@
         {
           "label": "Во рту",
           "steps": [
-            "В рот кладём маленький пластиковый наконечник с проводком.",
-            "Крепко-крепко закрываем рот, как будто там конфета.",
-            "Тихонько ждём чуть-чуть, пока прибор закончит.",
-            "Слышим тихое «бип» — и всё, готово."
+            "Бортинженер даёт нам маленький градусник — кладём его в рот.",
+            "Крепко-крепко закрываем рот, как будто там маленькая звёздочка.",
+            "Тихонько ждём, пока градусник закончит, — можно посмотреть в иллюминатор на звёзды.",
+            "Слышим тихое «бип» — бортинженер записывает в журнал станции, и всё, готово."
           ]
         },
         {
           "label": "Под мышкой",
           "steps": [
-            "Под мышку кладём маленький пластиковый наконечник с проводком.",
-            "Прижимаем руку к телу и мягко держим.",
-            "Тихонько ждём чуть-чуть, пока прибор закончит.",
-            "Слышим тихое «бип» — и всё, готово."
+            "Бортинженер кладёт маленький градусник под мышку.",
+            "Прижимаем руку к телу, как будто застёгиваем скафандр.",
+            "Тихонько ждём, пока градусник закончит, — можно посмотреть в иллюминатор на звёзды.",
+            "Слышим тихое «бип» — бортинженер записывает в журнал станции, и всё, готово."
           ]
         }
       ],
@@ -529,21 +529,21 @@
     },
     "procedureSteps": {
       "temperature": [
-        "В рот кладём маленький пластиковый наконечник с проводком.",
-        "Крепко-крепко закрываем рот, как будто там конфета.",
-        "Тихонько ждём чуть-чуть, пока прибор закончит.",
-        "Слышим тихое «бип» — и всё, готово."
+        "Бортинженер даёт нам маленький градусник — кладём его в рот.",
+        "Крепко-крепко закрываем рот, как будто там маленькая звёздочка.",
+        "Тихонько ждём, пока градусник закончит, — можно посмотреть в иллюминатор на звёзды.",
+        "Слышим тихое «бип» — бортинженер записывает в журнал станции, и всё, готово."
       ],
       "saturation": [
-        "На палец надеваем маленькую мягкую прищепку.",
-        "В ней загорается маленький красный огонёк.",
+        "Бортинженер надевает на палец маленькую мягкую прищепку.",
+        "В ней загорается красный огонёк — как индикатор на пульте станции.",
         "Она только смотрит — ничего не делает.",
-        "Через минутку её снимают."
+        "Через минутку бортинженер её снимает."
       ],
       "blood-pressure": [
-        "На руку надеваем мягкую манжету.",
-        "Она надувается и сжимает, как крепкие объятия.",
-        "Мы считаем, и она сама отпускает.",
+        "Бортинженер надевает на руку мягкую манжету.",
+        "Она надувается и обнимает руку, как мягкий скафандр.",
+        "Мы считаем вместе с бортинженером, и манжета сама отпускает.",
         "Потом манжету снимают — и всё, готово."
       ],
       "doctor-exam": [
