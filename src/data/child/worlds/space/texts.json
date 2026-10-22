@@ -125,10 +125,10 @@
         "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
-        "נפגוש רופא או רופאה שרוצים לעזור לנו.",
-        "הם מקשיבים לגוף עם סטטוסקופ — קצת קר, לא כואב.",
-        "אולי יסתכלו בגרון ובאוזניים עם אור קטן.",
-        "בסוף הבדיקה הצוות יידע מה כדאי לעשות כדי לעזור לנו."
+        "נפגוש את מפקד החללית, שרוצה לעזור לנו.",
+        "מפקד החללית מקשיב לגוף עם צינור — קצת קריר, לא כואב.",
+        "אולי מפקד החללית יסתכל בגרון ובאוזניים עם אור קטן, כמו כוכב.",
+        "בסוף מפקד החללית יידע איזה טיפול נחוץ לנו."
       ],
       "blood-test": [
         "מהנדס הטיסה מורח משחה שעושה את העור פחות רגיש.",
@@ -198,10 +198,10 @@
         "בסוף הטכנאי מדביק — נעים ומוגן, ואפשר להמשיך בתחנה."
       ],
       "waiting-results": [
-        "סיימנו את הבדיקות — כל הכבוד לנו!",
-        "עכשיו מחכים לתשובות. אפשר לשחק, לנוח או לראות סרטון.",
-        "הצוות עובד בשביל לעזור לנו. לא שכחו אותנו.",
-        "כשיהיו תשובות — הרופא או הרופאה יבואו לספר לנו."
+        "סיימנו את כל הבדיקות — כל הכבוד לנו!",
+        "עכשיו מחכים לתוצאות בתא. אפשר לשחק, לנוח או לראות סרטון.",
+        "מעבדת התחנה בודקת את הדגימות שלנו, ומהנדס הטיסה והטכנאי לא שכחו אותנו.",
+        "כשיהיו תוצאות — מפקד החללית יבוא לספר לנו."
       ]
     },
     "calmLines": [
@@ -336,10 +336,10 @@
         "Then the cuff comes off — and that's it, all done."
       ],
       "doctor-exam": [
-        "We meet a doctor who wants to help us.",
-        "The doctor listens to the body with a stethoscope — a little cold, but it doesn't hurt.",
-        "Maybe the doctor will look in the throat and ears with a small light.",
-        "At the end, the doctor will know what to do to help us."
+        "We meet the ship commander, who wants to help us.",
+        "The commander listens to the body with a tube — a little cool, but it does not hurt.",
+        "Maybe the commander will look in the throat and ears with a small light, like a little star.",
+        "At the end the commander will know what treatment we need."
       ],
       "blood-test": [
         "The flight engineer puts a cream on the skin that makes it less sensitive.",
@@ -409,10 +409,10 @@
         "At the end the technician sticks it down — cosy and protected, ready to move on through the station."
       ],
       "waiting-results": [
-        "We finished the tests — well done!",
-        "Now we wait for the answers. We can play, rest or watch a video.",
-        "The team is working to help us. They haven't forgotten us.",
-        "When the answers are ready, the doctor will come and tell us."
+        "We finished all the checks — well done!",
+        "Now we wait for the results in the cabin. We can play, rest or watch a video.",
+        "The station lab is studying our samples, and the flight engineer and the technician haven't forgotten us.",
+        "When the results are ready, the commander will come and tell us."
       ]
     },
     "calmLines": [
@@ -547,10 +547,10 @@
         "Потом манжету снимают — и всё, готово."
       ],
       "doctor-exam": [
-        "Встречаем врача, который хочет нам помочь.",
-        "Врач слушает тело стетоскопом — немного холодно, но не больно.",
-        "Может быть, врач посмотрит горло и уши маленьким фонариком.",
-        "В конце врач будет знать, как нам помочь."
+        "Встречаем командира корабля, который хочет нам помочь.",
+        "Командир слушает тело трубочкой — немного прохладно, но не больно.",
+        "Может быть, командир посмотрит горло и уши маленьким фонариком, как звёздочку.",
+        "В конце командир будет знать, какое лечение нам нужно."
       ],
       "blood-test": [
         "Бортинженер мажет на кожу крем, от которого она становится менее чувствительной.",
@@ -621,9 +621,9 @@
       ],
       "waiting-results": [
         "Мы закончили все проверки — молодцы!",
-        "Теперь ждём ответов. Можно поиграть, отдохнуть или посмотреть мультик.",
-        "Врачи и медсёстры работают, чтобы нам помочь. Про нас не забыли.",
-        "Когда будут ответы, врач придёт и расскажет нам."
+        "Теперь ждём результатов в каюте. Можно поиграть, отдохнуть или посмотреть мультик.",
+        "Лаборатория станции изучает наши образцы, а бортинженер и техник помнят про нас.",
+        "Когда будут результаты, командир придёт и расскажет нам."
       ]
     },
     "calmLines": [
