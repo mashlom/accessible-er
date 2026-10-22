@@ -11,9 +11,9 @@ export function CareCardPage() {
   return (
     <div className="container">
       <PageHeader
-        eyebrow={t('ui.text.cardTitle')}
+        eyebrow={t('ui.labels.adult.cardTitle')}
         title={t('ui.tiles.card.title')}
-        subtitle={t('ui.text.cardSubtitle')}
+        subtitle={t('ui.labels.adult.cardSubtitle')}
       />
 
       <CareCardForm

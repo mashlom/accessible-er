@@ -98,7 +98,6 @@
     },
     "ui": {
       "showAll": "להראות הכול עכשיו",
-      "close": "סגירה",
       "roni": "רוני",
       "multiGroup": "אפשר לסמן כמה תשובות",
       "bigSentence": "משפט מוצג לצוות"
@@ -258,7 +257,6 @@
     },
     "ui": {
       "showAll": "Show everything now",
-      "close": "Close",
       "roni": "Roni",
       "multiGroup": "You can tick more than one answer",
       "bigSentence": "Sentence shown to the staff"
@@ -418,7 +416,6 @@
     },
     "ui": {
       "showAll": "Показать всё сейчас",
-      "close": "Закрыть",
       "roni": "Рони",
       "multiGroup": "Можно отметить несколько ответов",
       "bigSentence": "Фраза, показанная персоналу"

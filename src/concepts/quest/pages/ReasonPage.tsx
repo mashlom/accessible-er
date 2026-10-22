@@ -15,12 +15,12 @@ export function ReasonPage() {
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <span className={css.stageHeroIcon}>🗺️</span>
-        <h1 style={{ color: theme.accent }}>{t('ui.text.reasonTitle')}</h1>
-        <p className={css.stageHeroHint}>{t('ui.text.reasonHintTop')}</p>
+        <h1 style={{ color: theme.accent }}>{t('ui.labels.adult.reasonTitle')}</h1>
+        <p className={css.stageHeroHint}>{t('ui.labels.adult.reasonHintTop')}</p>
       </div>
 
       <div className={css.stageBody}>
-        <div className={css.reasonOptions} role="radiogroup" aria-label={t('ui.text.reasonAria')}>
+        <div className={css.reasonOptions} role="radiogroup" aria-label={t('ui.labels.adult.reasonAria')}>
           {parentPaths(lang).map((p) => {
             const selected = p.id === reasonId
             return (
@@ -46,19 +46,19 @@ export function ReasonPage() {
 
         {localPath && (
           <section className={css.reasonRoute}>
-            <h2>{localPath.emoji} {t('ui.text.expectedRoute')}</h2>
+            <h2>{localPath.emoji} {t('ui.labels.adult.expectedRoute')}</h2>
             <ol className={css.reasonRouteList}>
               {localPath.route.map((stop, i) => (
                 <li key={i} className={css.reasonRouteItem}>
                   <span className={css.reasonRouteDot} style={{ background: theme.accentSoft, color: theme.accent }}>{i + 1}</span>
                   <span className={css.reasonRouteLabel}>
                     {stop.title}
-                    {stop.optional && <span className={css.reasonOptional}>{t('ui.text.ifNeeded')}</span>}
+                    {stop.optional && <span className={css.reasonOptional}>{t('ui.labels.adult.ifNeeded')}</span>}
                   </span>
                 </li>
               ))}
             </ol>
-            <p className={css.reasonNote}>{t('ui.text.routeNote')}</p>
+            <p className={css.reasonNote}>{t('ui.labels.adult.routeNote')}</p>
           </section>
         )}
 

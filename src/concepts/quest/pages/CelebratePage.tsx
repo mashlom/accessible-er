@@ -85,7 +85,7 @@ export function CelebratePage() {
       <div className={css.stageBody}>
         {!outcome && (
           <div className={css.outcomeChoice}>
-            <p className={css.outcomeLabel}>{t('ui.text.outcomeLabel')}</p>
+            <p className={css.outcomeLabel}>{t('ui.labels.adult.outcomeLabel')}</p>
             <div className={css.outcomeButtons}>
               <button
                 className={css.outcomeBtn}

@@ -64,7 +64,7 @@ function readTrail(): Turn[] {
 const TOPIC_TILE: Record<string, string> = { reason: 'reason', prep: 'procedures', card: 'card', map: 'map', ask: 'requests', home: 'discharge' }
 
 export function TalkPage() {
-  const { lang } = useI18n()
+  const { lang, t } = useI18n()
   const ui = talkText(lang).ui
   const topicLabel = (choice: Choice): string => {
     if (choice.go === 'topics') return talkText(lang).topics.back
@@ -333,7 +333,7 @@ export function TalkPage() {
         >
           <p className={styles.overlayText}>{big}</p>
           <button type="button" className={styles.overlayClose}>
-            {ui.close}
+            {t('ui.buttons.close')}
           </button>
         </div>
       )}

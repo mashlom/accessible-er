@@ -25,7 +25,7 @@ export function SensoryBar({ sensory, ocean }: Props) {
   const { t } = useI18n()
   return (
     <div className={ocean ? `${css.bar} ${css.ocean}` : css.bar}>
-      <p className={css.title}>{t('ui.text.sensoryTitle')}</p>
+      <p className={css.title}>{t('ui.labels.adult.sensoryTitle')}</p>
       <div className={css.channels}>
         {CHANNELS.map(({ key, emoji }, ci) => {
           const val = sensory[key]

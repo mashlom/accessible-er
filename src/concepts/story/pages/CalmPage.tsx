@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from '../../nav'
 import { Roni } from '../../../components/Roni'
 import { Scene, Bubble } from '../components/kit'
-import { readySentences } from '../../../data/support'
+import { distressTips, readySentences } from '../../../data/support'
 import supportI18n from '../../../data/i18n/support.json'
 import { useI18n } from '../../../hooks/useI18n'
 import i18nUi from '../../../data/i18n/ui.json'
@@ -37,6 +37,9 @@ export function CalmPage() {
   const sentences = (keyed((supportI18n as unknown as Record<'en' | 'ru', { readySentences?: string[] }>)[lang as 'en' | 'ru'], 'i18n/support')?.readySentences) ?? readySentences
   const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyCalm: StoryCalmTexts }>)[lang], 'i18n/ui').storyCalm
 
+  // the tips: the emoji from the code, the words from the support source (the worlds' calm page uses the same)
+  const tips = distressTips.map((d, i) => ({ ...d, ...(supportI18n as unknown as Record<string, { distressTips: { title: string; body: string }[] }>)[lang].distressTips[i] }))
+
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
     <Scene title={tx.title} subtitle={tx.subtitle}>
@@ -52,7 +55,7 @@ export function CalmPage() {
 
       <h2 className={styles.sectionLabel}>{tx.tipsLabel}</h2>
       <div className={styles.tips}>
-        {tx.tips.map((tip) => (
+        {tips.map((tip) => (
           <div key={tip.title} className={styles.tip}>
             <span className={styles.tipEmoji} aria-hidden>
               {tip.emoji}

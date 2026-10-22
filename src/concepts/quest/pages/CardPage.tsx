@@ -18,7 +18,7 @@ export function CardPage() {
           {t('ui.tiles.card.title')}
         </h1>
         {/* the card is the same on every page and in every world: the same heading as the parent's card page */}
-        <p className={css.stageHeroHint}>{t('ui.text.cardSubtitle')}</p>
+        <p className={css.stageHeroHint}>{t('ui.labels.adult.cardSubtitle')}</p>
         <div className={css.stageBack}>
           <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
             {t('ui.buttons.back')}

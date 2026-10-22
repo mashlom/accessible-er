@@ -27,7 +27,7 @@ export function CalmPage() {
       {/* ── Child zone ── */}
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
         <AnimatedIcon emoji="😌" size={200} className={`${css.stageHeroImg} ${css.calmBreath}`} />
-        {(theme.calmLines ?? [t('ui.text.calmDefault')]).map((line, i) => (
+        {(theme.calmLines ?? [t('ui.labels.adult.calmDefault')]).map((line, i) => (
           <p key={i} className={i === 0 ? css.calmChildMain : css.calmChildLine} style={{ color: theme.accent }}>
             {line}
           </p>
@@ -45,7 +45,7 @@ export function CalmPage() {
 
       {/* ── Parent zone ── */}
       <div className={css.stageBody}>
-        <p className={css.parentZoneLabel}>{t('ui.text.whenHard')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.labels.adult.whenHard')}</p>
 
         {t('support.distressTips', distressTips).map((tip, i) => (
           <section key={i}>
@@ -59,10 +59,10 @@ export function CalmPage() {
           </section>
         ))}
 
-        <p className={css.parentZoneLabel}>{t('ui.text.readySentences')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.labels.adult.readySentences')}</p>
         <section>
           <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
-            {t('ui.text.readyHint')}
+            {t('ui.labels.adult.readyHint')}
           </p>
           <div className={css.calmSentences}>
             {readySentences.map((s, i) => (
@@ -79,16 +79,16 @@ export function CalmPage() {
           </div>
         </section>
 
-        <p className={css.parentZoneLabel}>{t('ui.text.freeMessage')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.labels.adult.freeMessage')}</p>
         <section>
           <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
-            {t('ui.text.freeHint')}
+            {t('ui.labels.adult.freeHint')}
           </p>
           <textarea
             className={css.calmFreeText}
             value={freeText}
             onChange={(e) => setFreeText(e.target.value)}
-            placeholder={t('ui.text.writeHere')}
+            placeholder={t('ui.labels.adult.writeHere')}
             rows={3}
             dir="rtl"
           />
@@ -104,10 +104,10 @@ export function CalmPage() {
           )}
         </section>
 
-        <p className={css.parentZoneLabel}>{t('ui.text.cardTitle')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.labels.adult.cardTitle')}</p>
         <section>
           <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
-            {t('ui.text.cardDesc')}
+            {t('ui.labels.adult.cardDesc')}
           </p>
           {cardEmpty ? (
             <Link to="/card" state={leaveState('/calm')} className={css.calmLink}>{t('ui.buttons.makeCard')}</Link>

@@ -128,7 +128,7 @@ export function ParentSheet({
           <p className={css.sheetWait}>
             {singleProc?.who && <span>👤 {singleProc.who}</span>}
             {singleProc?.who && data.waitRange && <span> · </span>}
-            {data.waitRange && <span>{t('ui.text.estimated')} {data.waitRange}</span>}
+            {data.waitRange && <span>{t('ui.labels.adult.estimated')} {data.waitRange}</span>}
           </p>
         )}
 
@@ -138,7 +138,7 @@ export function ParentSheet({
             <p>{data.meaning}</p>
             {stageId === 'reception' && questLinks && (
               <>
-                <p className={css.sheetHint}>{t('ui.text.reasonHint')}</p>
+                <p className={css.sheetHint}>{t('ui.labels.adult.reasonHint')}</p>
                 <Link to="/reason" className={css.calmLink}>{t('ui.buttons.whatAwaits')}</Link>
               </>
             )}
@@ -148,11 +148,11 @@ export function ParentSheet({
         {singleProc ? (
           <>
             <section className={css.sheetCard}>
-              <h2>{t('ui.text.whatActuallyHappens')}</h2>
+              <h2>{t('ui.labels.adult.whatActuallyHappens')}</h2>
               <p>{singleProc.what}</p>
             </section>
             <section className={css.sheetCard}>
-              <h2>{t('ui.text.childMayFeel')}</h2>
+              <h2>{t('ui.labels.adult.childMayFeel')}</h2>
               <p>{singleProc.feel}</p>
             </section>
           </>
@@ -173,7 +173,7 @@ export function ParentSheet({
             <p>{data.challenge}</p>
             {stageId === 'reception' && (
               <>
-                <p className={css.sheetHint}>{t('ui.text.cardHint')}</p>
+                <p className={css.sheetHint}>{t('ui.labels.adult.cardHint')}</p>
                 {/* the card is the parent's on every page: the quest opens its own card screen, the books open the shared one */}
                 {questLinks ? (
                   <Link to="/card" state={{ from: '/map' }} className={css.calmLink}>{t('ui.buttons.cardForStaff')}</Link>
@@ -187,7 +187,7 @@ export function ParentSheet({
 
         {stageId === 'wait-before-triage' && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.text.prepareMeasurements')}</h2>
+            <h2>{t('ui.labels.adult.prepareMeasurements')}</h2>
             {data.nextStagePrepare && <p>{data.nextStagePrepare}</p>}
             {WAIT_PROCS.map((pid) => {
               const proc = parentProcedure(lang, pid)
@@ -205,7 +205,7 @@ export function ParentSheet({
 
         {stageId !== 'wait-before-triage' && data.nextStagePrepare && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.text.prepareChild')}</h2>
+            <h2>{t('ui.labels.adult.prepareChild')}</h2>
             <p>{data.nextStagePrepare}</p>
           </section>
         )}
@@ -214,7 +214,7 @@ export function ParentSheet({
           const asks = singleProc?.adaptations?.length ? singleProc.adaptations : data.canAsk
           return asks && asks.length > 0 ? (
             <section className={css.sheetCard}>
-              <h2>{singleProc?.adaptations?.length ? t('ui.text.askStaff') : t('ui.labels.adult.canAsk')}</h2>
+              <h2>{singleProc?.adaptations?.length ? t('ui.labels.adult.askStaff') : t('ui.labels.adult.canAsk')}</h2>
               <ul>
                 {asks.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
@@ -224,7 +224,7 @@ export function ParentSheet({
 
         {!singleProc && data.procedureIds && data.procedureIds.length > 0 && stageId !== 'wait-before-triage' && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.text.stageProcedures')}</h2>
+            <h2>{t('ui.labels.adult.stageProcedures')}</h2>
             <ul className={css.sheetLinks}>
               {data.procedureIds.map((pid) => {
                 const proc = parentProcedure(lang, pid)
@@ -292,31 +292,31 @@ function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
         <p className={css.sheetWait}>
           {proc.who && <span>👤 {proc.who}</span>}
           {proc.who && proc.duration && <span> · </span>}
-          {proc.duration && <span>{t('ui.text.estimated')} {proc.duration}</span>}
+          {proc.duration && <span>{t('ui.labels.adult.estimated')} {proc.duration}</span>}
         </p>
       )}
 
       {proc.what && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.text.whatActuallyHappens')}</h2>
+          <h2>{t('ui.labels.adult.whatActuallyHappens')}</h2>
           <p>{proc.what}</p>
         </section>
       )}
       {proc.feel && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.text.childMayFeel')}</h2>
+          <h2>{t('ui.labels.adult.childMayFeel')}</h2>
           <p>{proc.feel}</p>
         </section>
       )}
       {proc.prepare && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.text.prepareChild')}</h2>
+          <h2>{t('ui.labels.adult.prepareChild')}</h2>
           <p>{proc.prepare}</p>
         </section>
       )}
       {proc.adaptations && proc.adaptations.length > 0 && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.text.askStaff')}</h2>
+          <h2>{t('ui.labels.adult.askStaff')}</h2>
           <ul>
             {proc.adaptations.map((item: string, i: number) => <li key={i}>{item}</li>)}
           </ul>

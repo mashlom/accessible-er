@@ -3,6 +3,8 @@ import { Link } from '../../nav'
 import { Scene, Bubble, Note } from '../components/kit'
 import { useI18n } from '../../../hooks/useI18n'
 import i18nUi from '../../../data/i18n/ui.json'
+import supportI18n from '../../../data/i18n/support.json'
+import { staffRequests } from '../../../data/support'
 import styles from '../pages.module.css'
 
 type StoryRequestsTexts = {
@@ -17,6 +19,9 @@ type StoryRequestsTexts = {
 export function RequestsPage() {
   const { lang, dir, t } = useI18n()
   const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyRequests: StoryRequestsTexts }>)[lang], 'i18n/ui').storyRequests
+  // the requests: the emoji from the code, the words from the support source
+  const items = staffRequests.map((d, i) => ({ ...d, ...(supportI18n as unknown as Record<string, { staffRequests: { title: string; detail: string }[] }>)[lang].staffRequests[i] }))
+
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
     <Scene title={tx.title} subtitle={tx.subtitle}>
@@ -25,7 +30,7 @@ export function RequestsPage() {
       </div>
 
       <div className={styles.requests}>
-        {tx.items.map((r) => (
+        {items.map((r) => (
           <div key={r.title} className={styles.request}>
             <span className={styles.requestEmoji} aria-hidden>
               {r.emoji}
