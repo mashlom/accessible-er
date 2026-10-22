@@ -148,11 +148,11 @@ export function ParentSheet({
         {singleProc ? (
           <>
             <section className={css.sheetCard}>
-              <h2>{t('ui.labels.adult.whatActuallyHappens')}</h2>
+              <h2>{t('ui.procedurePage.what')}</h2>
               <p>{singleProc.what}</p>
             </section>
             <section className={css.sheetCard}>
-              <h2>{t('ui.labels.adult.childMayFeel')}</h2>
+              <h2>{t('ui.procedurePage.feel')}</h2>
               <p>{singleProc.feel}</p>
             </section>
           </>
@@ -205,7 +205,7 @@ export function ParentSheet({
 
         {stageId !== 'wait-before-triage' && data.nextStagePrepare && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.tiles.procedures.title')}</h2>
+            <h2>{t('ui.procedurePage.prepare')}</h2>
             <p>{data.nextStagePrepare}</p>
           </section>
         )}
@@ -298,19 +298,19 @@ function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
 
       {proc.what && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.labels.adult.whatActuallyHappens')}</h2>
+          <h2>{t('ui.procedurePage.what')}</h2>
           <p>{proc.what}</p>
         </section>
       )}
       {proc.feel && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.labels.adult.childMayFeel')}</h2>
+          <h2>{t('ui.procedurePage.feel')}</h2>
           <p>{proc.feel}</p>
         </section>
       )}
       {proc.prepare && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.tiles.procedures.title')}</h2>
+          <h2>{t('ui.procedurePage.prepare')}</h2>
           <p>{proc.prepare}</p>
         </section>
       )}
