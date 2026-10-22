@@ -117,7 +117,7 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
         </section>
       )}
 
-      <p className={css.cardPrivacy}>{t('ui.careView.hebrewNote')}</p>
+      {lang !== 'he' && <p className={css.cardPrivacy}>{t('ui.careView.hebrewNote')}</p>}
 
       {footer({ empty: isCardEmpty(card), clear: clearCard })}
     </>
