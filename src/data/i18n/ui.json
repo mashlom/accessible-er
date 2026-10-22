@@ -111,7 +111,6 @@
         "weAreHere": "We are here",
         "whatHappens": "What happens here",
         "challenge": "What may be hard",
-        "canAsk": "You can ask for",
         "aboutChild": "🧒 About my child (optional)",
         "aboutMyChild": "What's important to know about my child",
         "age": "Age",
@@ -546,7 +545,6 @@
         "weAreHere": "Мы здесь",
         "whatHappens": "Что здесь происходит",
         "challenge": "Что может быть трудно",
-        "canAsk": "О чём можно попросить?",
         "aboutChild": "🧒 О ребёнке (необязательно)",
         "aboutMyChild": "Что важно знать о моём ребёнке",
         "age": "Возраст",
@@ -688,7 +686,7 @@
         "desc": "Короткие советы родителю в моменты тревоги"
       },
       "requests": {
-        "title": "Что можно попросить?",
+        "title": "О чём можно попросить?",
         "desc": "Адаптации, о которых можно попросить персонал"
       },
       "discharge": {
@@ -981,7 +979,6 @@
         "weAreHere": "אנחנו כאן",
         "whatHappens": "מה קורה כאן",
         "challenge": "מה עלול להיות קשה",
-        "canAsk": "מה אפשר לבקש",
         "aboutChild": "🧒 על הילד/ה שלי (לא חובה)",
         "aboutMyChild": "מה חשוב לדעת על הילד/ה שלי",
         "age": "גיל",
@@ -1123,7 +1120,7 @@
         "desc": "הנחיות קצרות להורה ברגעי מצוקה"
       },
       "requests": {
-        "title": "מה אפשר לבקש?",
+        "title": "על מה אפשר לבקש",
         "desc": "התאמות שאפשר לבקש מהצוות"
       },
       "discharge": {

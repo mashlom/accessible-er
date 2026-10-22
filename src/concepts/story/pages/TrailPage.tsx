@@ -123,7 +123,7 @@ export function TrailPage() {
                       {stage.challenge}
                     </p>
                     <div className={styles.detailRow}>
-                      <span className={styles.detailLabel}>{t('ui.labels.adult.canAsk')}</span>
+                      <span className={styles.detailLabel}>{t('ui.tiles.requests.title')}</span>
                       <ul className={styles.askList}>
                         {stage.canAsk.map((a) => (
                           <li key={a}>{a}</li>

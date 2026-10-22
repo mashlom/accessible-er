@@ -23,7 +23,7 @@ export function RequestsPage() {
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={t('ui.labels.adult.canAsk')} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.requests.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
       </div>

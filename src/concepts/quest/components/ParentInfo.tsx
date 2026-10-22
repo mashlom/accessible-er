@@ -214,7 +214,7 @@ export function ParentSheet({
           const asks = singleProc?.adaptations?.length ? singleProc.adaptations : data.canAsk
           return asks && asks.length > 0 ? (
             <section className={css.sheetCard}>
-              <h2>{singleProc?.adaptations?.length ? t('ui.labels.adult.askStaff') : t('ui.labels.adult.canAsk')}</h2>
+              <h2>{singleProc?.adaptations?.length ? t('ui.labels.adult.askStaff') : t('ui.tiles.requests.title')}</h2>
               <ul>
                 {asks.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
