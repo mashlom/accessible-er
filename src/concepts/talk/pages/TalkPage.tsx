@@ -328,7 +328,7 @@ export function TalkPage() {
           className={styles.overlay}
           role="dialog"
           aria-modal="true"
-          aria-label={ui.bigSentence}
+          aria-label={t('ui.storyCalm.dialog')}
           onClick={() => setBig(null)}
         >
           <p className={styles.overlayText}>{big}</p>

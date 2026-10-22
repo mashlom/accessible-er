@@ -8,6 +8,7 @@ import supportI18n from '../../data/i18n/support.json'
 import talkTexts from '../../data/parent/talk.json'
 import { parentChannelLabel, parentLoadLabel, parentMapAreas } from '../../data/parent/map'
 import i18nUi from '../../data/i18n/ui.json'
+import homeJson from '../../data/parent/home.json'
 import careI18n from '../../data/i18n/careCard.json'
 import { distressTips, readySentences, staffRequests } from '../../data/support'
 import { cardSections, type CardArrayField, type CareCard } from '../../data/careCard'
@@ -133,6 +134,10 @@ export function talkText(lang: Lang): typeof talkTexts.he {
   return keyed(keyed((talkTexts as unknown as Record<Lang, typeof talkTexts.he>)[lang], 'parent/talk') ?? talkTexts.he, 'parent/talk')
 }
 
+const talkHome = (lang: Lang) => keyed((homeJson as unknown as Record<Lang, { reasonAsk: string }>)[lang], 'parent/home') ?? homeJson.he
+const uiTiles = (lang: Lang) =>
+  (keyed((i18nUi as unknown as Record<Lang, { tiles: Record<string, { title: string }> }>)[lang], 'i18n/ui') ?? i18nUi.he).tiles
+
 function unknown(lang: Lang = 'he'): TalkNode {
   return {
     say: [{ text: talkText(lang).unknown, mood: 'curious' }],
@@ -199,7 +204,7 @@ function stageNode(id: string, tail: string | undefined, lang: Lang): TalkNode |
 
   const choices: Choice[] = [
     { label: talkText(lang).stage.hard, go: `stage:${id}:hard` },
-    { label: talkText(lang).stage.ask, go: `stage:${id}:ask` },
+    { label: uiTiles(lang).requests.title, go: `stage:${id}:ask` },
   ]
   for (const pid of stage.procedureIds ?? []) {
     const p = parentProcedure(lang, pid)
@@ -226,7 +231,7 @@ function prepNode(pid: string, rest: string[], lang: Lang): TalkNode | null {
         { text: `${talkText(lang).prep.howPrepare} ${p.prepare}`, mood: 'calm' },
       ],
       choices: [
-        { label: talkText(lang).stage.ask, go: `prep:${pid}:ask` },
+        { label: uiTiles(lang).requests.title, go: `prep:${pid}:ask` },
         BACK,
       ],
     }
@@ -248,7 +253,7 @@ function prepNode(pid: string, rest: string[], lang: Lang): TalkNode | null {
   // the procedure's opening card
   const choices: Choice[] = []
   choices.push({ label: talkText(lang).prep.feel, go: `prep:${pid}:feel` })
-  choices.push({ label: talkText(lang).stage.ask, go: `prep:${pid}:ask` })
+  choices.push({ label: uiTiles(lang).requests.title, go: `prep:${pid}:ask` })
   choices.push(BACK)
 
   return {
@@ -290,7 +295,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     case 'reason':
       return {
         say: [
-          { text: talkText(ctx.lang).reason.ask, mood: 'curious' },
+          { text: talkHome(ctx.lang).reasonAsk, mood: 'curious' },
           { text: talkText(ctx.lang).reason.hint },
         ],
         choices: [
@@ -324,7 +329,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
         ],
         choices: [
           { emoji: '📍', label: talkText(ctx.lang).reason.where, go: 'where' },
-          { emoji: '🎬', label: talkText(ctx.lang).reason.prep, go: 'prep' },
+          { emoji: '🎬', label: uiTiles(ctx.lang).procedures.title, go: 'prep' },
           { label: talkText(ctx.lang).reason.change, go: 'reason', quiet: true },
           BACK,
         ],

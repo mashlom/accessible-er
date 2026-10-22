@@ -12,13 +12,11 @@
     "unknown": "רגע, איבדתי את החוט. בואו נחזור לרשימה.",
     "staffPause": "להראות לצוות: «אנחנו צריכים דקה»",
     "reason": {
-      "ask": "ספרו לי — מה הביא אתכם היום?",
       "hint": "זה יעזור לי להראות לכם את הדרך הצפויה.",
       "understood": "הבנתי — {label}.",
       "routeHeading": "הדרך הצפויה שלנו:",
       "note": "חשוב לדעת: הסדר והזמנים יכולים להשתנות לפי החלטת הצוות והעומס. זה לא סימן שמשהו לא בסדר.",
       "where": "איפה אנחנו עכשיו?",
-      "prep": "איך מכינים את הילד/ה?",
       "change": "לשנות את הסיבה",
       "optional": " (לפי הצורך)"
     },
@@ -77,7 +75,6 @@
       "waitShort": "זה לוקח בערך {range}. זה טווח בלבד.",
       "waitLong": "ההמתנה כאן היא בערך {range}. זה טווח בלבד — הצוות מחליט לפי המצב והעומס.",
       "hard": "מה עלול להיות קשה כאן?",
-      "ask": "מה אפשר לבקש?",
       "askHere": "מה אפשר לבקש כאן?",
       "after": "ומה אחרי זה?",
       "next": "ומה השלב הבא?",
@@ -99,8 +96,7 @@
     "ui": {
       "showAll": "להראות הכול עכשיו",
       "roni": "רוני",
-      "multiGroup": "אפשר לסמן כמה תשובות",
-      "bigSentence": "משפט מוצג לצוות"
+      "multiGroup": "אפשר לסמן כמה תשובות"
     },
     "buttons": {
       "allTests": "להראות לי את כל הבדיקות",
@@ -171,13 +167,11 @@
     "unknown": "Wait, I lost the thread. Let's go back to the list.",
     "staffPause": "Show the staff: \"we need a minute\"",
     "reason": {
-      "ask": "Tell me — what brought you here today?",
       "hint": "This will help me show you the expected route.",
       "understood": "Got it — {label}.",
       "routeHeading": "Our expected route:",
       "note": "Good to know: the order and times can change depending on the team's decision and how busy it is. This does not mean anything is wrong.",
       "where": "Where are we now?",
-      "prep": "What is going to happen?",
       "change": "Change the reason",
       "optional": " (if needed)"
     },
@@ -236,7 +230,6 @@
       "waitShort": "It takes about {range}. That is only a range.",
       "waitLong": "The wait here is about {range}. It is only a range — the team decides by the situation and how busy it is.",
       "hard": "What may be hard here?",
-      "ask": "What can I ask for?",
       "askHere": "What can I ask for here?",
       "after": "And what comes after that?",
       "next": "And what is the next stage?",
@@ -258,8 +251,7 @@
     "ui": {
       "showAll": "Show everything now",
       "roni": "Roni",
-      "multiGroup": "You can tick more than one answer",
-      "bigSentence": "Sentence shown to the staff"
+      "multiGroup": "You can tick more than one answer"
     },
     "buttons": {
       "allTests": "Show me all the tests",
@@ -330,13 +322,11 @@
     "unknown": "Секунду, я потерял нить. Вернёмся к списку.",
     "staffPause": "Показать персоналу: «Нам нужна минута»",
     "reason": {
-      "ask": "Расскажите — что привело вас сегодня?",
       "hint": "Это поможет мне показать вам ожидаемый маршрут.",
       "understood": "Понятно — {label}.",
       "routeHeading": "Ожидаемый маршрут:",
       "note": "Важно знать: порядок и время могут меняться по решению команды и из-за загруженности. Это не значит, что что-то идёт не так.",
       "where": "Где мы сейчас?",
-      "prep": "Как подготовить ребёнка?",
       "change": "Изменить причину",
       "optional": " (по необходимости)"
     },
@@ -395,7 +385,6 @@
       "waitShort": "Это занимает примерно {range}. Это только ориентир.",
       "waitLong": "Ожидание здесь примерно {range}. Это только ориентир — команда решает по состоянию и загруженности.",
       "hard": "Что здесь может быть трудно?",
-      "ask": "Что можно попросить?",
       "askHere": "Что здесь можно попросить?",
       "after": "А что будет потом?",
       "next": "Какой следующий этап?",
@@ -417,8 +406,7 @@
     "ui": {
       "showAll": "Показать всё сейчас",
       "roni": "Рони",
-      "multiGroup": "Можно отметить несколько ответов",
-      "bigSentence": "Фраза, показанная персоналу"
+      "multiGroup": "Можно отметить несколько ответов"
     },
     "buttons": {
       "allTests": "Показать все обследования",
