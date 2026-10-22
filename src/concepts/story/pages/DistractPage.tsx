@@ -8,7 +8,6 @@ import { useI18n } from '../../../hooks/useI18n'
 import i18nUi from '../../../data/i18n/ui.json'
 
 type StoryDistractTexts = {
-  title: string
   subtitle: string
   bubble: string
   labels: string[]
@@ -40,7 +39,7 @@ const bubbles = [
 ]
 
 export function DistractPage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyDistract: StoryDistractTexts }>)[lang], 'i18n/ui').storyDistract
   const watchables = watchEmojis.map((emoji, i) => ({ emoji, label: tx.labels[i] ?? '' }))
   const [pick, setPick] = useState(watchEmojis[0])
@@ -48,7 +47,7 @@ export function DistractPage() {
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.distract.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
       </div>

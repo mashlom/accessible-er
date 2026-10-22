@@ -123,7 +123,6 @@
         "cardTitle": "Accommodations card",
         "childMayFeel": "What your child may feel",
         "distractAria": "What would you like to see",
-        "distractDefault": "Distraction corner",
         "distractHint": "Choose what you'd like to see ↓",
         "distractP1": "You can look here together instead of at the hand or the device. Choose together what interests your child most — the act of choosing already gives a sense of control.",
         "distractP2": "If the device is set to \"reduce motion\", the animations won't play. You can also simply count to ten together — that's a good distraction too.",
@@ -271,7 +270,7 @@
         "desc": "Tell us how it was, so we can improve"
       },
       "distract": {
-        "title": "A distraction",
+        "title": "Distraction corner",
         "desc": "Something calm to look at"
       }
     },
@@ -299,7 +298,6 @@
       "dialog": "Sentence shown to the staff"
     },
     "storyDistract": {
-      "title": "Distraction corner",
       "subtitle": "Something calm to look at during a test, a needle or a long wait. The child chooses what to watch.",
       "bubble": "You can look here instead of at your hand. I stay with you until it is over.",
       "labels": [
@@ -557,7 +555,6 @@
         "cardTitle": "Карточка адаптаций",
         "childMayFeel": "Что может почувствовать ребёнок",
         "distractAria": "Что хочешь посмотреть",
-        "distractDefault": "Уголок, чтобы отвлечься",
         "distractHint": "Выбери, что хочешь посмотреть ↓",
         "distractP1": "Можно смотреть сюда вместе, а не на руку или прибор. Выберите вместе, что больше всего интересно ребёнку, — сам выбор уже даёт ощущение контроля.",
         "distractP2": "Если на устройстве включено «уменьшение движения», анимации не запустятся. Можно просто вместе посчитать до десяти — это тоже хорошее отвлечение.",
@@ -705,7 +702,7 @@
         "desc": "Расскажите, как всё прошло, — чтобы мы стали лучше"
       },
       "distract": {
-        "title": "Отвлечься",
+        "title": "Уголок, чтобы отвлечься",
         "desc": "Что-то спокойное, на что можно смотреть"
       }
     },
@@ -733,7 +730,6 @@
       "dialog": "Фраза, показанная персоналу"
     },
     "storyDistract": {
-      "title": "Отвлечься",
       "subtitle": "Что-то спокойное, на что можно смотреть во время обследования, укола или долгого ожидания. Ребёнок выбирает, что смотреть.",
       "bubble": "Можно смотреть сюда, а не на руку. Я остаюсь с вами, пока всё не закончится.",
       "labels": [
@@ -991,7 +987,6 @@
         "cardTitle": "כרטיס התאמות",
         "childMayFeel": "מה הילד/ה עשוי/ה להרגיש",
         "distractAria": "מה רוצים לראות",
-        "distractDefault": "פינת הסחת דעת",
         "distractHint": "בחרי/בחר מה רוצים לראות ↓",
         "distractP1": "אפשר להסתכל יחד לכאן במקום על היד או על המכשיר. בחרו ביחד מה הכי מעניין את הילד/ה — עצם הבחירה כבר נותנת תחושת שליטה.",
         "distractP2": "אם המכשיר מוגדר ל\"הפחתת תנועה\", האנימציות לא ירוצו. אפשר גם פשוט לספור יחד עד עשר — גם זו הסחת דעת טובה.",
@@ -1139,7 +1134,7 @@
         "desc": "ספרו לנו איך היה — כדי שנשתפר"
       },
       "distract": {
-        "title": "הסחת דעת",
+        "title": "פינת הסחת דעת",
         "desc": "משהו רגוע להסתכל עליו"
       }
     },
@@ -1167,7 +1162,6 @@
       "dialog": "משפט מוצג לצוות"
     },
     "storyDistract": {
-      "title": "הסחת דעת",
       "subtitle": "משהו רגוע להסתכל עליו בזמן בדיקה, דקירה או המתנה ארוכה. הילד/ה בוחר/ת מה לראות.",
       "bubble": "אפשר להסתכל לכאן במקום על היד. אני נשאר איתכם עד שזה נגמר.",
       "labels": [

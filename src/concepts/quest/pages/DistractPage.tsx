@@ -33,7 +33,7 @@ export function DistractPage() {
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       {/* ── Child zone ── */}
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
-        <h1 style={{ color: theme.accent }}>{theme.distractTitle ?? t('ui.labels.adult.distractDefault')}</h1>
+        <h1 style={{ color: theme.accent }}>{theme.distractTitle ?? t('ui.tiles.distract.title')}</h1>
         <p className={css.stageHeroHint}>{t('ui.labels.adult.distractHint')}</p>
 
         <div className={css.distractStage}>
