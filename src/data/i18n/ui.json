@@ -286,7 +286,6 @@
       "videoText": "A real video of {title} from the Laniado ER, or a filmed social story. In the demo this is only a placeholder — the filming has to be done in the department itself."
     },
     "storyCalm": {
-      "title": "When it is hard",
       "subtitle": "When your child is overwhelmed, a few small things help. Take a breath — you are doing great work.",
       "breathe": "Breathe together with the circle: when it grows — breathe in. When it gets smaller — breathe out.",
       "circle": "Breathe",
@@ -717,7 +716,6 @@
       "videoText": "Настоящее видео: {title} в приёмном покое Ланиадо или снятая социальная история. В демо здесь только место — съёмку нужно делать в самом отделении."
     },
     "storyCalm": {
-      "title": "Когда трудно",
       "subtitle": "Когда ребёнок перегружен, помогают несколько маленьких вещей. Сделайте вдох — вы делаете отличную работу.",
       "breathe": "Дышите вместе с кругом: когда он растёт — вдох. Когда уменьшается — выдох.",
       "circle": "Дыхание",
@@ -1148,7 +1146,6 @@
       "videoText": "סרטון אמיתי של {title} מהמלר״ד בלניאדו, או סיפור חברתי מצולם. בדמו זה שמור מקום בלבד — הצילום צריך להיעשות במחלקה עצמה."
     },
     "storyCalm": {
-      "title": "כשקשה",
       "subtitle": "כשהילד/ה מוצף/ת, כמה דברים קטנים עוזרים. קחו נשימה — אתם עושים עבודה נהדרת.",
       "breathe": "אפשר לנשום יחד עם העיגול: כשהוא גדל — שואפים. כשהוא קטן — נושפים.",
       "circle": "נשימה",
