@@ -7,6 +7,7 @@
  */
 
 import careI18n from './i18n/careCard.json'
+import supportI18n from './i18n/support.json'
 
 export interface CareCard {
   /** optional nickname — the app works without any identifying detail */
@@ -27,7 +28,7 @@ export interface CareCard {
 }
 
 /** The requests the parent can pick. The Hebrew text is what the staff reads. */
-export const askIds = ['noise', 'light', 'touch', 'staff', 'waiting', 'needle', 'sudden', 'breaks'] as const
+export const askIds = ['noise', 'light', 'touch', 'staff', 'waiting', 'needle', 'sudden', 'micro', 'alt'] as const
 
 export type CardArrayField =
   | 'communication'
@@ -95,21 +96,29 @@ export const cardSections: CardSection[] = sectionMeta.map((m, i) => ({
  * Marking a sensitivity/trigger opens matching adaptation suggestions
  * (the spec: "marking a sensitivity opens suggestions for matching adaptations").
  */
-// the suggestion texts are the card's asks: each trigger points at an ask id, so the text lives once
+// the requests the card and the requests page share: their text is the page's title (one source)
+const PAGE_ASK: Record<string, number> = { noise: 0, staff: 1, touch: 2, waiting: 4, needle: 5, light: 6, micro: 3, alt: 7 }
+
+/** The text of every request id in the language: the page's title for the shared ones, the card's own for the rest. */
+export function askTexts(lang: 'he' | 'en' | 'ru'): Record<string, string> {
+  const own = (careI18n as unknown as Record<string, { asks: Record<string, string> }>)[lang].asks
+  const page = (supportI18n as unknown as Record<string, { staffRequests: { title: string }[] }>)[lang].staffRequests
+  const out: Record<string, string> = { ...own }
+  for (const [id, i] of Object.entries(PAGE_ASK)) out[id] = page[i].title
+  return out
+}
+
+// the suggestions: the requests whose answers the parent has ticked (askFor: request id → answers), in the order of askIds
 export function suggestedAdaptations(
   card: CareCard,
-  copy: { asks: Record<string, string>; adaptationFor: Record<string, string> },
+  copy: { asks: Record<string, string> },
+  askFor: Record<string, string[]>,
 ): string[] {
   const picked = [...card.sensitivities, ...card.escalators, ...card.hardMoments]
-  return [
-    ...new Set(
-      picked
-        .map((p) => copy.adaptationFor[p])
-        .filter(Boolean)
-        .map((id) => copy.asks[id])
-        .filter(Boolean),
-    ),
-  ]
+  return askIds
+    .filter((id) => (askFor[id] ?? []).some((answer) => picked.includes(answer)))
+    .map((id) => copy.asks[id])
+    .filter(Boolean)
 }
 
 export function isCardEmpty(card: CareCard): boolean {

@@ -3,7 +3,7 @@ import { usePersistentState } from '../../hooks/usePersistentState'
 import { DAY_MS } from '../../lib/storage'
 import careI18n from '../../data/i18n/careCard.json'
 import i18nUi from '../../data/i18n/ui.json'
-import { emptyCard, emptyCustom, suggestedAdaptations, type CareCard } from '../../data/careCard'
+import { askTexts, emptyCard, emptyCustom, suggestedAdaptations, type CareCard } from '../../data/careCard'
 import css from '../../concepts/quest/quest.module.css'
 
 type Lang = 'he' | 'en' | 'ru'
@@ -32,7 +32,7 @@ export function careCardHeading(card: CareCard, lang: Lang) {
  */
 /** The requests the card suggests, in the language of the card (Hebrew): the staff reads them. */
 export function suggestionsFor(card: CareCard, lang: Lang): string[] {
-  return suggestedAdaptations(card, keyed((careI18n as unknown as Record<Lang, { asks: Record<string, string>; adaptationFor: Record<string, string> }>)[lang], 'i18n/careCard'))
+  return suggestedAdaptations(card, { asks: askTexts(lang) }, (careI18n as unknown as { askFor: Record<string, string[]> }).askFor)
 }
 
 export function CareCardView() {
@@ -40,7 +40,7 @@ export function CareCardView() {
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   // the labels of the card are Hebrew, like its values (the note on screen says so)
   const heRows = keyed((i18nUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he, 'i18n/ui').card.rows
-  const heAsks = keyed((careI18n as unknown as { he: { asks: Record<string, string> } }).he, 'i18n/careCard').asks
+  const heAsks = askTexts('he')
   const c = card.custom ?? emptyCustom
   const join = (...parts: (string | undefined)[]) => parts.map((p) => (p ?? '').trim()).filter(Boolean).join(' · ')
 

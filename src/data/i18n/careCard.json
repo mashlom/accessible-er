@@ -81,27 +81,7 @@
     ],
     "asks": {
       "title": "What we ask the staff for",
-      "noise": "Headphones, earplugs or a quiet space",
-      "light": "Dimming the lights in the room",
-      "touch": "A short explanation before every touch",
-      "staff": "Fewer staff in the room",
-      "waiting": "Time to process and respond",
-      "needle": "Numbing cream",
-      "sudden": "A quiet environment and a closed door",
-      "breaks": "Short breaks and movement between steps"
-    },
-    "adaptationFor": {
-      "רעש": "noise",
-      "אור חזק": "light",
-      "מגע": "touch",
-      "הרבה אנשים": "staff",
-      "המתנה ממושכת": "waiting",
-      "מחטים ודקירות": "needle",
-      "מגע בלי הכנה": "touch",
-      "הרבה אנשים מסביב": "staff",
-      "רעש פתאומי": "sudden",
-      "אורות חזקים": "light",
-      "להישאר במקום אחד": "breaks"
+      "sudden": "A quiet environment and a closed door"
     }
   },
   "ru": {
@@ -186,40 +166,13 @@
     ],
     "asks": {
       "title": "Что попросим у персонала",
-      "noise": "Наушники, беруши или тихое место",
-      "light": "Приглушить свет",
-      "touch": "Короткое объяснение перед каждым прикосновением",
-      "staff": "Меньше персонала в комнате",
-      "waiting": "Время на осмысление и ответ",
-      "needle": "Анестезирующая мазь",
-      "sudden": "Тихая обстановка и закрытая дверь",
-      "breaks": "Короткие перерывы и движение между этапами"
-    },
-    "adaptationFor": {
-      "רעש": "noise",
-      "אור חזק": "light",
-      "מגע": "touch",
-      "הרבה אנשים": "staff",
-      "המתנה ממושכת": "waiting",
-      "מחטים ודקירות": "needle",
-      "מגע בלי הכנה": "touch",
-      "הרבה אנשים מסביב": "staff",
-      "רעש פתאומי": "sudden",
-      "אורות חזקים": "light",
-      "להישאר במקום אחד": "breaks"
+      "sudden": "Тихая обстановка и закрытая дверь"
     }
   },
   "he": {
     "asks": {
       "title": "מה נבקש מהצוות",
-      "noise": "אוזניות, אטמי אוזניים או מרחב שקט",
-      "light": "עמעום האור בחדר",
-      "touch": "הסבר קצר לפני כל נגיעה",
-      "staff": "פחות אנשי צוות בחדר",
-      "waiting": "זמן עיבוד ותגובה",
-      "needle": "משחה מאלחשת",
-      "sudden": "סביבה שקטה ודלת סגורה",
-      "breaks": "הפסקות קצרות ותנועה בין שלבים"
+      "sudden": "סביבה שקטה ודלת סגורה"
     },
     "cardSections": [
       {
@@ -299,20 +252,7 @@
           "לקחת את החפץ המרגיע"
         ]
       }
-    ],
-    "adaptationFor": {
-      "רעש": "noise",
-      "אור חזק": "light",
-      "מגע": "touch",
-      "הרבה אנשים": "staff",
-      "המתנה ממושכת": "waiting",
-      "מחטים ודקירות": "needle",
-      "מגע בלי הכנה": "touch",
-      "הרבה אנשים מסביב": "staff",
-      "רעש פתאומי": "sudden",
-      "אורות חזקים": "light",
-      "להישאר במקום אחד": "breaks"
-    }
+    ]
   },
   "askFor": {
     "noise": [
@@ -331,7 +271,8 @@
       "הרבה אנשים מסביב"
     ],
     "waiting": [
-      "המתנה ממושכת"
+      "המתנה ממושכת",
+      "להישאר במקום אחד"
     ],
     "needle": [
       "מחטים ודקירות"
@@ -339,8 +280,12 @@
     "sudden": [
       "רעש פתאומי"
     ],
-    "breaks": [
-      "להישאר במקום אחד"
+    "micro": [
+      "מבין/ה הוראות קצרות"
+    ],
+    "alt": [
+      "לא ורבלי/ת",
+      "תקשורת בתמונות (תת״ח)"
     ]
   }
 }

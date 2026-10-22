@@ -3,7 +3,7 @@ import { usePersistentState } from '../../hooks/usePersistentState'
 import { DAY_MS } from '../../lib/storage'
 import { useI18n } from '../../hooks/useI18n'
 import careI18n from '../../data/i18n/careCard.json'
-import { askIds, cardSections, CUSTOM_MAX, emptyCard, emptyCustom, isCardEmpty, type CardArrayField, type CareCard } from '../../data/careCard'
+import { askIds, askTexts, cardSections, CUSTOM_MAX, emptyCard, emptyCustom, isCardEmpty, type CardArrayField, type CareCard } from '../../data/careCard'
 import css from '../../concepts/quest/quest.module.css'
 import { suggestionsFor } from './CareCardView'
 
@@ -95,7 +95,7 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
               const on = (card.asks ?? []).includes(id)
               return (
                 <button key={id} type="button" className={`${css.cardChip} ${on ? css.cardChipOn : ''}`} style={chipStyle(on)} aria-pressed={on} onClick={() => setCard({ ...card, asks: on ? (card.asks ?? []).filter((x) => x !== id) : [...(card.asks ?? []), id] })}>
-                  {t(`careCard.asks.${id}`)}
+                  {askTexts(lang)[id]}
                 </button>
               )
             })}
