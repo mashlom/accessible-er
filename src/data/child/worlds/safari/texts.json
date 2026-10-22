@@ -15,12 +15,12 @@
         "hint": "המדריך בודק שאתה מוכן/ה לצאת לשטח"
       },
       "wait-doctor": {
-        "label": "ממתינים לאריה",
-        "hint": "האריה עסוק — מחכים בסבלנות"
+        "label": "ממתינים לראש השבט",
+        "hint": "ראש השבט עסוק — מחכים בסבלנות"
       },
       "doctor": {
         "label": "פגישה עם ראש השבט",
-        "hint": "הפיל הזקן מחליט מה עושים"
+        "hint": "ראש השבט מחליט מה עושים"
       },
       "decision": {
         "label": "חזרה למחנה!",
@@ -32,7 +32,7 @@
       },
       "treatment": {
         "label": "עמדת הטיפול",
-        "hint": "הרופא הווטרינר עוזר"
+        "hint": "המרפא עוזר"
       },
       "consult": {
         "label": "מומחה מהסוואנה",
@@ -49,14 +49,14 @@
       "blood-pressure": "המדריך מודד את עוצמת הלב — כדי לוודא שהגיבור מוכן/ה לתנאי השדה.",
       "doctor-exam": "ראש השבט בוחן את המטייל/ת ומחליט מהו הטיפול הנכון לחזרה לשטח.",
       "blood-test": "מעבדת השדה צריכה דגימת דם קטנה כדי לגלות מה קורה בגוף.",
-      "urine": "כוסית הדגימה תגלה לרופא השבט מה מתרחש בגוף הגיבור.",
+      "urine": "כוסית הדגימה תגלה לראש השבט מה מתרחש בגוף הגיבור.",
       "xray": "ציוד הסריקה של הספארי מצלם את פנים הגוף — רואים הכל בלי להרגיש כלום.",
       "ultrasound": "ג׳ל הבדיקה מאפשר לציוד לסרוק בתוך הגוף ולמצוא מה שצריך לטפל בו.",
       "ct": "הטבעת הסורקת עוברת לאט ומצלמת מפה מפורטת של כל מה שבפנים.",
       "iv": "הצינור הדק מזרים נוזלי ריפוי ישירות לדם — כמו שמחזירים כוח לחיות השדה.",
       "medication": "ראש השבט הכין את תרופת הג׳ונגל — סירופ או תרכובת שתחזיר את הכוח.",
       "inhalation": "אדי הריפוי של השדה נכנסים דרך המסכה ועוזרים לנשימה לזרום בחופשיות.",
-      "stitches": "הרופא של השבט מתקן את הפצע בזהירות — דבק מיוחד או חוט שיאחה.",
+      "stitches": "המרפא מתקן את הפצע בזהירות — דבק מיוחד או חוט שיאחה.",
       "cast": "מגן הגבס עוטף את העצם כמו שעץ חזק תומך בגזע — ומחזיק עד שיחלים.",
       "bandage": "תחבושת השדה עוטפת את הפצע ומגנה עליו מהסביבה עד שיתרפא.",
       "waiting-results": "מעבדת השטח מנתחת את הדגימות — עוד מעט נדע מה גילה הספארי."
@@ -67,19 +67,19 @@
         {
           "label": "בפה",
           "steps": [
-            "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-            "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
-            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-            "שומעים ביפ קטן — וזהו, סיימנו."
+            "המדריך נותן לנו מדחום קטן — שמים אותו בפה.",
+            "סוגרים את הפה חזק־חזק, כמו איילה שמסתתרת בעשב הגבוה.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את העצים לאורך הדרך.",
+            "שומעים ביפ קטן — המדריך כותב במחברת השטח, וסיימנו."
           ]
         },
         {
           "label": "מתחת לבית השחי",
           "steps": [
-            "שמים חתיכת פלסטיק קטנה עם חוט מתחת לבית השחי.",
-            "מצמידים את הזרוע לגוף ומחזיקים בעדינות.",
-            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-            "שומעים ביפ קטן — וזהו, סיימנו."
+            "המדריך שם מדחום קטן מתחת לבית השחי.",
+            "מצמידים את הזרוע לגוף, כמו מטייל שמחזיק תרמיל.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את העצים לאורך הדרך.",
+            "שומעים ביפ קטן — המדריך כותב במחברת השטח, וסיימנו."
           ]
         }
       ],
@@ -87,121 +87,121 @@
         {
           "label": "עם אלחוש",
           "steps": [
-            "שמים קודם חומר קריר שמרדים את האזור, ומכסים במדבקה שקופה.",
-            "מחכים קצת עד שהקסם עובד והאזור של החתך \"הולך לישון\".",
-            "הרופא או הרופאה מחזיקים את האזור וסוגרים אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
+            "קודם המרפא מורח חומר קריר שמרדים את האזור, ומכסה בסרט שקוף.",
+            "מחכים קצת עד שהאזור של החתך \"הולך לישון\", כמו אריה אחרי ארוחת צהריים.",
+            "המרפא מחזיק את האזור וסוגר אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
             "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והמרפא שם חבישה נקייה מלמעלה."
           ]
         },
         {
           "label": "בלי אלחוש",
           "steps": [
-            "לא צריך להרדים את האזור — מתחילים ישר.",
-            "הרופא או הרופאה מחזיקים את האזור ושמים עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+            "לא צריך להרדים את האזור — המרפא מתחיל מיד.",
+            "המרפא מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
             "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והמרפא שם חבישה נקייה מלמעלה."
           ]
         }
       ]
     },
     "procedureSteps": {
       "temperature": [
-        "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-        "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
-        "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-        "שומעים ביפ קטן — וזהו, סיימנו."
+        "המדריך נותן לנו מדחום קטן — שמים אותו בפה.",
+        "סוגרים את הפה חזק־חזק, כמו איילה שמסתתרת בעשב הגבוה.",
+        "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את העצים לאורך הדרך.",
+        "שומעים ביפ קטן — המדריך כותב במחברת השטח, וסיימנו."
       ],
       "saturation": [
-        "שמים אטב קטן ורך על האצבע.",
-        "נדלק בו אור אדום קטן.",
+        "המדריך שם אטב קטן ורך על האצבע.",
+        "נדלק בו אור אדום — כמו מדורה בסוואנה בלילה.",
         "הוא רק מסתכל — לא עושה כלום.",
-        "אחרי רגע מורידים אותו."
+        "אחרי רגע המדריך מוריד אותו."
       ],
       "blood-pressure": [
-        "שמים שרוול רך על הזרוע.",
-        "הוא מתנפח ולוחץ כמו חיבוק חזק.",
-        "סופרים עד כמה, והוא משחרר לבד.",
+        "המדריך שם שרוול רך על הזרוע.",
+        "הוא מתנפח ומחבק את הזרוע, כמו שמיכה חמה ליד המדורה.",
+        "סופרים יחד עם המדריך, והשרוול משחרר לבד.",
         "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
-        "נפגוש רופא או רופאה שרוצים לעזור לנו.",
-        "הם מקשיבים לגוף עם סטטוסקופ — קצת קר, לא כואב.",
-        "אולי יסתכלו בגרון ובאוזניים עם אור קטן.",
-        "בסוף הבדיקה הצוות יידע מה כדאי לעשות כדי לעזור לנו."
+        "נפגוש את ראש השבט, שרוצה לעזור לנו.",
+        "ראש השבט מקשיב לגוף עם צינור — קצת קריר, לא כואב.",
+        "אולי ראש השבט יסתכל בגרון ובאוזניים עם אור קטן, כמו בלילה בסוואנה.",
+        "בסוף ראש השבט יידע איזה טיפול נחוץ לנו."
       ],
       "blood-test": [
-        "שמים משחה שעושה את העור פחות רגיש.",
-        "גומייה רכה מתהדקת על הזרוע.",
-        "דקירה קטנה וקצרה — ואפשר להסתכל על משהו אחר.",
-        "שמים פלסטר — כל הכבוד לנו!"
+        "המדריך מורח משחה שעושה את העור פחות רגיש.",
+        "גומייה רכה מתהדקת על הזרוע, כמו רצועה של תרמיל טיולים.",
+        "דקירה קטנה וקצרה — ומסתכלים על הסוואנה מהחלון.",
+        "טיפת הדם נשלחת למעבדת השטח, והמדריך מדביק פלסטר — כל הכבוד לנו!"
       ],
       "urine": [
-        "הולכים לשירותים כמו תמיד.",
+        "הולכים לשירותים, כמו תמיד.",
         "עושים קצת פיפי לתוך כוס קטנה.",
-        "נותנים את הכוס לאחות.",
+        "נותנים את הכוס למדריך, והוא לוקח את הדגימה למעבדת השטח.",
         "זהו!"
       ],
       "xray": [
-        "נכנסים לחדר עם מכונה גדולה.",
-        "לפעמים מלבישים לבוש כבד שמגן על הגוף, ולפעמים גם צווארון.",
-        "עומדים או שוכבים בנחת, כמו פסל.",
-        "המכונה מצלמת תמונה — לא מרגישים כלום.",
+        "נכנסים לחדר עם סורק גדול.",
+        "לפעמים מלבישים לבוש כבד שמגן על הגוף.",
+        "עומדים או שוכבים בנחת, כמו איילה בשיחים כשאריה עובר לידה.",
+        "הסורק מצלם את העצמות — לא מרגישים כלום.",
         "סיימנו, אפשר לזוז שוב."
       ],
       "ultrasound": [
-        "שוכבים בנחת על מיטה.",
+        "שוכבים בנחת על מיטה, כמו באוהל.",
         "מורחים ג׳ל קצת קר על הבטן.",
-        "מכשיר חלק מחליק ומצייר תמונה על מסך — לפעמים לוחצים קצת, וזה בסדר.",
+        "חיישן חלק מחליק ומצייר מפה על המסך — לפעמים לוחצים קצת, וזה בסדר.",
         "אם מפריע אפשר לבקש רגע הפסקה.",
         "מנגבים את הג׳ל — וסיימנו."
       ],
       "ct": [
         "שוכבים על מיטה נוחה.",
-        "המיטה זזה לאט לתוך טבעת גדולה.",
-        "שומעים רעש, ושוכבים בנחת כמו פסל.",
+        "המיטה זזה לאט לתוך טבעת גדולה, כמו קשת ליד הדרך.",
+        "שומעים רעש, ושוכבים בשקט, כמו איילה בשיחים כשאריה עובר לידה.",
         "המיטה חוזרת החוצה — סיימנו."
       ],
       "iv": [
-        "שמים משחה שמרגיעה את העור.",
-        "דקירה קצרה, ואז מכניסים צינור רך ודק.",
-        "מוציאים את המחט, והצינור הרך נשאר לתת נוזלים.",
-        "מדביקים מדבקה שמחזיקה את הצינור הרך במקום."
+        "המרפא מורח משחה שמרגיעה את העור.",
+        "דקירה קצרה, ואז המרפא מכניס צינור רך ודק.",
+        "מוציאים את המחט, והצינור הרך נשאר כדי שהמים יטפטפו לאט — כמו מהמימייה של הטיול.",
+        "המרפא מדביק פלסטר שמחזיק את הצינור במקום."
       ],
       "medication": [
-        "מקבלים תרופה שעוזרת לגוף.",
-        "לפעמים שותים קצת סירופ.",
-        "ולפעמים דרך הצינור הרך.",
-        "ואפשר מים אחרי בשביל הטעם."
+        "המרפא מביא תרופה שעוזרת לגוף.",
+        "לפעמים שותים קצת מיץ של פרי הבאובב, מכפית קטנה.",
+        "ולפעמים התרופה נכנסת דרך הצינור הרך.",
+        "ואפשר לשתות מים מהמימייה אחרי, בשביל הטעם."
       ],
       "inhalation": [
-        "שמים על הפנים מסכה רכה עם אוויר קריר.",
-        "לא צריך לנשום בכוח — רק נושמים רגיל.",
-        "לפעמים טיפה מדגדג בעיניים, ואפשר לבקש שהאוויר ייצא לאט יותר.",
-        "אפשר לצפות בסרטון בזמן הזה. אחרי כמה דקות מסירים — סיימנו."
+        "המרפא שם על הפנים מסכה רכה עם אוויר קריר.",
+        "לא צריך לנשום בכוח — רק נושמים רגיל, כמו ביער שקט בבוקר.",
+        "לפעמים טיפה מדגדג באף, ואפשר לבקש שהאוויר ייצא לאט יותר.",
+        "אפשר לצפות בסרטון בזמן הזה. אחרי כמה דקות המרפא מוריד את המסכה — סיימנו."
       ],
       "stitches": [
-        "לא צריך להרדים את האזור — מתחילים ישר.",
-        "הרופא או הרופאה מחזיקים את האזור ושמים עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+        "לא צריך להרדים את האזור — המרפא מתחיל מיד.",
+        "המרפא מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
         "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
+        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והמרפא שם חבישה נקייה מלמעלה."
       ],
       "cast": [
         "בוחרים אם לשבת או לשכב, ואם אמא או אבא יהיו לידנו.",
-        "עוטפים את היד או הרגל בשכבות רכות.",
-        "עכשיו מחכים רגע בסבלנות בלי לזוז — אי אפשר לעצור באמצע, כדי שהגבס יתאים בדיוק.",
-        "הגבס מתקשה לאט ושומר על העצם — וכך היא מחלימה."
+        "המרפא עוטף את היד או הרגל בשכבות רכות.",
+        "עכשיו מחכים רגע בסבלנות בלי לזוז, כמו איילה בשיחים — אי אפשר לעצור באמצע, כדי שהגבס יתאים בדיוק.",
+        "הגבס מתקשה לאט ושומר על העצם — וכך היא מחלימה, כמו עץ שגדל ישר."
       ],
       "bandage": [
-        "עוטפים תחבושת רכה סביב האזור.",
-        "עוטפים בנחת, שכבה על שכבה.",
-        "מדביקים בסוף — נעים ומוגן."
+        "המרפא עוטף תחבושת רכה סביב האזור.",
+        "בעדינות, שכבה על שכבה, כמו גפן סביב ענף.",
+        "בסוף המרפא מדביק — נעים ומוגן, ואפשר להמשיך בשביל."
       ],
       "waiting-results": [
-        "סיימנו את הבדיקות — כל הכבוד לנו!",
-        "עכשיו מחכים לתשובות. אפשר לשחק, לנוח או לראות סרטון.",
-        "הצוות עובד בשביל לעזור לנו. לא שכחו אותנו.",
-        "כשיהיו תשובות — הרופא או הרופאה יבואו לספר לנו."
+        "סיימנו את כל הבדיקות — כל הכבוד לנו!",
+        "עכשיו מחכים לתשובות במחנה. אפשר לשחק, לנוח או לראות סרטון.",
+        "מעבדת השטח בודקת את הדגימות שלנו, והמדריך והמרפא לא שכחו אותנו.",
+        "כשיהיו תשובות — ראש השבט יבוא לספר לנו."
       ]
     },
     "calmLines": [
@@ -226,12 +226,12 @@
         "hint": "The guide checks that you are ready to go out into the field"
       },
       "wait-doctor": {
-        "label": "Waiting for the Lion",
-        "hint": "The lion is busy — we wait patiently"
+        "label": "Waiting for the Chief",
+        "hint": "The chief is busy — we wait patiently"
       },
       "doctor": {
         "label": "Meeting the Chief",
-        "hint": "The old elephant decides what to do"
+        "hint": "The chief decides what to do"
       },
       "decision": {
         "label": "Back to Camp!",
@@ -243,7 +243,7 @@
       },
       "treatment": {
         "label": "Treatment Post",
-        "hint": "The veterinarian helps"
+        "hint": "The herbalist helps"
       },
       "consult": {
         "label": "Expert from the Savanna",
@@ -260,15 +260,15 @@
       "blood-pressure": "The guide measures the strength of the heart — to make sure the hero is ready for field conditions.",
       "doctor-exam": "The chief examines the traveller and decides the right treatment for going back out into the field.",
       "blood-test": "The field lab needs one small blood sample to find out what is happening in the body.",
-      "urine": "The sample cup will show the tribe's doctor what is happening in the hero's body.",
+      "urine": "The sample cup will show the chief what is happening in the hero's body.",
       "xray": "The safari scanner takes a picture of the inside of the body — everything is seen without feeling anything.",
       "ultrasound": "The test gel lets the equipment scan inside the body and find what needs treatment.",
       "ct": "The scanning ring moves slowly and makes a detailed map of everything inside.",
       "iv": "A thin tube sends healing liquid straight into the blood — like giving strength back to animals in the field.",
       "medication": "The chief has prepared the jungle medicine — a syrup or a mixture that will bring back strength.",
       "inhalation": "Healing vapours of the field come through the mask and help breathing flow freely.",
-      "stitches": "The tribe's doctor carefully repairs the wound — a special glue or a thread that will close it.",
-      "cast": "The plaster armour wraps the bone like a strong tree supports its trunk — and holds it until it heals.",
+      "stitches": "The herbalist carefully repairs the wound — a special glue or a thread that will close it.",
+      "cast": "The plaster wrap holds the bone like a strong tree supports its trunk — until it heals.",
       "bandage": "The field dressing wraps the wound and protects it from the surroundings until it heals.",
       "waiting-results": "The field lab analyses the samples — soon we will know what the safari found."
     },
@@ -278,19 +278,19 @@
         {
           "label": "In the mouth",
           "steps": [
-            "We put a small plastic tip with a wire in the mouth.",
-            "We close the mouth tight-tight, like there's a candy inside.",
-            "We wait quietly for a short moment, until the device is done.",
-            "We hear a little beep — and that's it, we're done."
+            "The guide gives us a little thermometer — we put it in the mouth.",
+            "We close the mouth tight-tight, like a deer hiding in the tall grass.",
+            "We wait quietly until the thermometer is done — we can count the trees by the road.",
+            "We hear a little beep — the guide writes it in the field notebook, and we're done."
           ]
         },
         {
           "label": "Under the armpit",
           "steps": [
-            "We put a small plastic tip with a wire under the arm.",
-            "We press the arm to the body and hold it gently.",
-            "We wait quietly for a short moment, until the device is done.",
-            "We hear a little beep — and that's it, we're done."
+            "The guide puts a little thermometer under the arm.",
+            "We press the arm to the body, like a traveller holding a backpack.",
+            "We wait quietly until the thermometer is done — we can count the trees by the road.",
+            "We hear a little beep — the guide writes it in the field notebook, and we're done."
           ]
         }
       ],
@@ -298,121 +298,121 @@
         {
           "label": "With numbing",
           "steps": [
-            "First they put something cool on the spot to make it sleepy, and cover it with a clear sticker.",
-            "We wait a little until the magic works and the spot around the cut “goes to sleep”.",
-            "The doctor holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
+            "First the herbalist puts something cool on the spot to make it sleepy, and covers it with a clear film.",
+            "We wait a little until the spot around the cut “goes to sleep”, like a lion after lunch.",
+            "The herbalist holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
             "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
-            "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
+            "If the glue gets a little warm, someone blows cool air on the face, and the herbalist puts a clean bandage on top."
           ]
         },
         {
           "label": "Without numbing",
           "steps": [
-            "There's no need to make the spot sleepy — we start right away.",
-            "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+            "There's no need to make the spot sleepy — the herbalist starts right away.",
+            "The herbalist holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
             "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
-            "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
+            "If the glue gets a little warm, someone blows cool air on the face, and the herbalist puts a clean bandage on top."
           ]
         }
       ]
     },
     "procedureSteps": {
       "temperature": [
-        "We put a small plastic tip with a wire in the mouth.",
-        "We close the mouth tight-tight, like there's a candy inside.",
-        "We wait quietly for a short moment, until the device is done.",
-        "We hear a little beep — and that's it, we're done."
+        "The guide gives us a little thermometer — we put it in the mouth.",
+        "We close the mouth tight-tight, like a deer hiding in the tall grass.",
+        "We wait quietly until the thermometer is done — we can count the trees by the road.",
+        "We hear a little beep — the guide writes it in the field notebook, and we're done."
       ],
       "saturation": [
-        "We put a small, soft clip on the finger.",
-        "A little red light turns on inside it.",
+        "The guide puts a small, soft clip on the finger.",
+        "A red light turns on inside it — like a campfire in the night savanna.",
         "It only looks — it doesn't do anything.",
-        "After a moment they take it off."
+        "After a moment the guide takes it off."
       ],
       "blood-pressure": [
-        "We put a soft cuff on the arm.",
-        "It fills with air and squeezes like a big hug.",
-        "We count together, and it lets go by itself.",
-        "Then they take the cuff off — and that's it, all done."
+        "The guide puts a soft cuff on the arm.",
+        "It fills with air and hugs the arm, like a warm blanket by the campfire.",
+        "We count together with the guide, and the cuff lets go by itself.",
+        "Then the cuff comes off — and that's it, all done."
       ],
       "doctor-exam": [
-        "We meet a doctor who wants to help us.",
-        "The doctor listens to the body with a stethoscope — a little cold, but it doesn't hurt.",
-        "Maybe the doctor will look in the throat and ears with a small light.",
-        "At the end, the doctor will know what to do to help us."
+        "We meet the chief, who wants to help us.",
+        "The chief listens to the body with a tube — a little cool, but it does not hurt.",
+        "Maybe the chief will look in the throat and ears with a small light, like at night in the savanna.",
+        "At the end the chief will know what treatment we need."
       ],
       "blood-test": [
-        "They put a cream on the skin that makes it less sensitive.",
-        "A soft band gets snug around the arm.",
-        "A tiny, quick prick — and we can look at something else.",
-        "They put a small bandage on — well done!"
+        "The guide puts a cream on the skin that makes it less sensitive.",
+        "A soft band wraps around the arm, like a backpack strap.",
+        "A tiny, quick prick — and we look at the savanna outside the window.",
+        "The drop of blood goes to the field lab, and the guide puts on a plaster — well done!"
       ],
       "urine": [
-        "We go to the toilet like always.",
+        "We go to the toilet, like always.",
         "We pee a little into a small cup.",
-        "We give the cup to the nurse.",
+        "We give the cup to the guide, who takes the sample to the field lab.",
         "That's it!"
       ],
       "xray": [
-        "We go into a room with a big machine.",
-        "Sometimes they put a heavy cover on that protects the body, and sometimes a collar too.",
-        "We stand or lie calmly, like a statue.",
-        "The machine takes a picture — we don't feel anything.",
+        "We go into a room with a big scanner.",
+        "Sometimes they put a heavy cover on that protects the body.",
+        "We stand or lie calmly, like a gazelle in the bushes when a lion walks by.",
+        "The scanner takes a picture of the bones — we do not feel anything.",
         "We're done, we can move again."
       ],
       "ultrasound": [
-        "We lie calmly on a bed.",
+        "We lie calmly on a bed, like in a tent.",
         "They spread a slightly cold gel on the tummy.",
-        "A smooth device glides and draws a picture on a screen — sometimes it presses a little, and that's okay.",
+        "A smooth sensor glides and draws a map on the screen — sometimes it presses a little, and that's okay.",
         "If it bothers us, we can ask for a little break.",
         "They wipe off the gel — and we're done."
       ],
       "ct": [
         "We lie on a comfy bed.",
-        "The bed slowly moves into a big ring.",
-        "We hear a noise, and we lie calmly like a statue.",
+        "The bed slowly moves into a big ring, like an arch by the road.",
+        "We hear a noise and lie very still, like a gazelle in the bushes when a lion walks by.",
         "The bed comes back out — we're done."
       ],
       "iv": [
-        "They put a cream on the skin that calms it.",
-        "A short prick, and then a soft, thin tube goes in.",
-        "They take the needle out, and the soft tube stays to give fluids.",
-        "They put a sticker on that holds the soft tube in place."
+        "The herbalist puts a cream on the skin that calms it.",
+        "A short prick, and then the herbalist puts in a soft, thin tube.",
+        "They take the needle out, and the soft tube stays so water can drip in slowly — like from a canteen.",
+        "The herbalist puts on a plaster that holds the tube in place."
       ],
       "medication": [
-        "We get medicine that helps the body.",
-        "Sometimes we drink a little syrup.",
-        "Sometimes it goes in through the soft tube.",
-        "And we can have some water afterwards for the taste."
+        "The herbalist brings medicine that helps the body.",
+        "Sometimes we drink a little baobab juice from a tiny spoon.",
+        "Sometimes the medicine goes in through the soft tube.",
+        "And we can have some water from the canteen afterwards for the taste."
       ],
       "inhalation": [
-        "We put a soft mask with cool air on the face.",
-        "We don't need to breathe hard — we just breathe normally.",
-        "Sometimes it tickles the eyes a little, and we can ask for the air to come out slower.",
-        "We can watch a video meanwhile. After a few minutes they take it off — we're done."
+        "The herbalist puts a soft mask with cool air on the face.",
+        "We don't need to breathe hard — we just breathe normally, like in a quiet morning forest.",
+        "Sometimes it tickles the nose a little, and we can ask for the air to come out slower.",
+        "We can watch a video meanwhile. After a few minutes the herbalist takes the mask off — we're done."
       ],
       "stitches": [
-        "There's no need to make the spot sleepy — we start right away.",
-        "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+        "There's no need to make the spot sleepy — the herbalist starts right away.",
+        "The herbalist holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
         "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
-        "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
+        "If the glue gets a little warm, someone blows cool air on the face, and the herbalist puts a clean bandage on top."
       ],
       "cast": [
         "We choose whether to sit or lie down, and whether mom or dad stays close.",
-        "They wrap the arm or leg in soft layers.",
-        "Now we wait patiently for a moment without moving — we can't stop in the middle, so the cast fits just right.",
-        "The cast slowly gets hard and keeps the bone safe — and lets it heal."
+        "The herbalist wraps the arm or leg in soft layers.",
+        "Now we wait patiently for a moment without moving, like a gazelle in the bushes — we can't stop in the middle, so the cast fits just right.",
+        "The cast slowly hardens and keeps the bone safe — and it heals, like a tree that grows straight."
       ],
       "bandage": [
-        "They wrap a soft bandage around the spot.",
-        "They wrap it gently, layer after layer.",
-        "At the end they stick it down — cosy and protected."
+        "The herbalist wraps a soft bandage around the spot.",
+        "Gently, layer after layer, like a vine around a branch.",
+        "At the end the herbalist sticks it down — cosy and protected, ready for the trail."
       ],
       "waiting-results": [
-        "We finished the tests — well done!",
-        "Now we wait for the answers. We can play, rest or watch a video.",
-        "The team is working to help us. They haven't forgotten us.",
-        "When the answers are ready, the doctor will come and tell us."
+        "We finished all the checks — well done!",
+        "Now we wait for the answers at the camp. We can play, rest or watch a video.",
+        "The field lab is studying our samples, and the guide and the herbalist haven't forgotten us.",
+        "When the answers are ready, the chief will come and tell us."
       ]
     },
     "calmLines": [
@@ -437,12 +437,12 @@
         "hint": "Проводник проверяет, что ты готов(а) выйти в поле"
       },
       "wait-doctor": {
-        "label": "Ждём льва",
-        "hint": "Лев занят — терпеливо ждём"
+        "label": "Ждём вождя",
+        "hint": "Вождь занят — терпеливо ждём"
       },
       "doctor": {
         "label": "Встреча с вождём",
-        "hint": "Старый слон решает, что делать"
+        "hint": "Вождь решает, что делать"
       },
       "decision": {
         "label": "Возвращаемся в лагерь!",
@@ -454,7 +454,7 @@
       },
       "treatment": {
         "label": "Пост лечения",
-        "hint": "Ветеринар помогает"
+        "hint": "Травник помогает"
       },
       "consult": {
         "label": "Эксперт из саванны",
@@ -471,15 +471,15 @@
       "blood-pressure": "Проводник измеряет силу сердца — чтобы убедиться, что герой готов к условиям поля.",
       "doctor-exam": "Вождь осматривает путешественника и решает, какое лечение нужно, чтобы вернуться в поле.",
       "blood-test": "Полевой лаборатории нужен один маленький образец крови, чтобы понять, что происходит в теле.",
-      "urine": "Чашка с образцом покажет врачу племени, что происходит в теле героя.",
+      "urine": "Чашка с образцом покажет вождю, что происходит в теле героя.",
       "xray": "Сканер сафари снимает внутреннее строение тела — всё видно, и ничего не чувствуешь.",
       "ultrasound": "Гель для проверки позволяет аппарату сканировать внутри тела и найти то, что нужно лечить.",
       "ct": "Сканирующее кольцо движется медленно и строит подробную карту всего внутри.",
       "iv": "Тонкая трубка доставляет целебную жидкость прямо в кровь — как возвращают силы животным в поле.",
       "medication": "Вождь приготовил лекарство джунглей — сироп или смесь, которая вернёт силы.",
       "inhalation": "Целебные пары поля проходят через маску и помогают дыханию идти свободно.",
-      "stitches": "Врач племени аккуратно чинит рану — особый клей или нитка, которые её закроют.",
-      "cast": "Гипсовый доспех обхватывает кость, как крепкое дерево поддерживает ствол, и держит её, пока она не заживёт.",
+      "stitches": "Травник аккуратно чинит рану — особый клей или нитка, которые её закроют.",
+      "cast": "Гипсовая повязка обхватывает кость, как крепкое дерево поддерживает ствол, и держит её, пока она не заживёт.",
       "bandage": "Полевая повязка обхватывает рану и защищает её от окружающей среды, пока она не заживёт.",
       "waiting-results": "Полевая лаборатория анализирует образцы — скоро мы узнаем, что нашло сафари."
     },
@@ -489,19 +489,19 @@
         {
           "label": "Во рту",
           "steps": [
-            "В рот кладём маленький пластиковый наконечник с проводком.",
-            "Крепко-крепко закрываем рот, как будто там конфета.",
-            "Тихонько ждём чуть-чуть, пока прибор закончит.",
-            "Слышим тихое «бип» — и всё, готово."
+            "Проводник даёт нам маленький градусник — кладём его в рот.",
+            "Крепко-крепко закрываем рот, как лань, притаившаяся в траве.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать деревья у дороги.",
+            "Слышим тихое «бип» — проводник записывает в походный блокнот, и всё, готово."
           ]
         },
         {
           "label": "Под мышкой",
           "steps": [
-            "Под мышку кладём маленький пластиковый наконечник с проводком.",
-            "Прижимаем руку к телу и мягко держим.",
-            "Тихонько ждём чуть-чуть, пока прибор закончит.",
-            "Слышим тихое «бип» — и всё, готово."
+            "Проводник кладёт маленький градусник под мышку.",
+            "Прижимаем руку к телу, как путешественник, который держит рюкзак.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать деревья у дороги.",
+            "Слышим тихое «бип» — проводник записывает в походный блокнот, и всё, готово."
           ]
         }
       ],
@@ -509,121 +509,121 @@
         {
           "label": "С обезболиванием",
           "steps": [
-            "Сначала мажут прохладное средство, от которого место засыпает, и закрывают его прозрачной наклейкой.",
-            "Немного ждём, пока волшебство подействует и место пореза «уснёт».",
-            "Врач держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
+            "Сначала травник мажет прохладное средство, от которого место засыпает, и закрывает его прозрачной плёнкой.",
+            "Немного ждём, пока место пореза «уснёт», как лев после обеда.",
+            "Травник держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
             "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху травник накладывает чистую повязку."
           ]
         },
         {
           "label": "Без обезболивания",
           "steps": [
-            "Обезболивать не нужно — начинают сразу.",
-            "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+            "Обезболивать не нужно — травник начинает сразу.",
+            "Травник держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
             "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху травник накладывает чистую повязку."
           ]
         }
       ]
     },
     "procedureSteps": {
       "temperature": [
-        "В рот кладём маленький пластиковый наконечник с проводком.",
-        "Крепко-крепко закрываем рот, как будто там конфета.",
-        "Тихонько ждём чуть-чуть, пока прибор закончит.",
-        "Слышим тихое «бип» — и всё, готово."
+        "Проводник даёт нам маленький градусник — кладём его в рот.",
+        "Крепко-крепко закрываем рот, как лань, притаившаяся в траве.",
+        "Тихонько ждём, пока градусник закончит, — можно посчитать деревья у дороги.",
+        "Слышим тихое «бип» — проводник записывает в походный блокнот, и всё, готово."
       ],
       "saturation": [
-        "На палец надеваем маленькую мягкую прищепку.",
-        "В ней загорается маленький красный огонёк.",
+        "Проводник надевает на палец маленькую мягкую прищепку.",
+        "В ней загорается красный огонёк — как костёр в ночной саванне.",
         "Она только смотрит — ничего не делает.",
-        "Через минутку её снимают."
+        "Через минутку проводник её снимает."
       ],
       "blood-pressure": [
-        "На руку надеваем мягкую манжету.",
-        "Она надувается и сжимает, как крепкие объятия.",
-        "Мы считаем, и она сама отпускает.",
+        "Проводник надевает на руку мягкую манжету.",
+        "Она надувается и обнимает руку, как тёплый плед у костра.",
+        "Мы считаем вместе с проводником, и манжета сама отпускает.",
         "Потом манжету снимают — и всё, готово."
       ],
       "doctor-exam": [
-        "Встречаем врача, который хочет нам помочь.",
-        "Врач слушает тело стетоскопом — немного холодно, но не больно.",
-        "Может быть, врач посмотрит горло и уши маленьким фонариком.",
-        "В конце врач будет знать, как нам помочь."
+        "Встречаем вождя, который хочет нам помочь.",
+        "Вождь слушает тело трубочкой — немного прохладно, но не больно.",
+        "Может быть, вождь посмотрит горло и уши маленьким фонариком, как ночью в саванне.",
+        "В конце вождь будет знать, какое лечение нам нужно."
       ],
       "blood-test": [
-        "На кожу мажут крем, от которого она становится менее чувствительной.",
-        "Мягкая резинка плотно обхватывает руку.",
-        "Маленький быстрый укол — а мы можем смотреть на что-то другое.",
-        "Клеим пластырь — молодцы!"
+        "Проводник мажет на кожу крем, от которого она становится менее чувствительной.",
+        "Мягкая резинка обхватывает руку, как ремешок походного рюкзака.",
+        "Маленький быстрый укол — а мы смотрим на саванну за окном.",
+        "Капелька крови едет в полевую лабораторию, а проводник клеит пластырь — молодцы!"
       ],
       "urine": [
         "Идём в туалет, как всегда.",
         "Немного писаем в маленький стаканчик.",
-        "Отдаём стаканчик медсестре или медбрату.",
+        "Отдаём стаканчик проводнику — он отнесёт образец в полевую лабораторию.",
         "Всё!"
       ],
       "xray": [
-        "Мы заходим в комнату с большим аппаратом.",
-        "Может быть, наденут тяжёлую накидку, которая защищает тело, а может быть ещё и воротник.",
-        "Спокойно стоим или лежим, как статуя.",
-        "Аппарат делает снимок — мы ничего не чувствуем.",
+        "Заходим в комнату с большим сканером.",
+        "Может быть, наденут тяжёлую накидку, которая защищает тело.",
+        "Спокойно стоим или лежим, как лань в кустах, когда мимо идёт лев.",
+        "Сканер делает снимок костей — мы ничего не чувствуем.",
         "Готово, можно снова двигаться."
       ],
       "ultrasound": [
-        "Спокойно ложимся на кровать.",
+        "Спокойно ложимся на кровать, как на коврик в палатке.",
         "На живот мажут немного холодный гель.",
-        "Гладкий датчик скользит и рисует картинку на экране — иногда немного надавливают, и это нормально.",
+        "Гладкий датчик скользит и рисует на экране карту — иногда немного надавливают, и это нормально.",
         "Если мешает, можно попросить маленький перерыв.",
         "Гель вытирают — и готово."
       ],
       "ct": [
         "Ложимся на удобную кровать.",
-        "Кровать медленно заезжает в большое кольцо.",
-        "Слышим шум и лежим спокойно, как статуя.",
+        "Кровать медленно заезжает в большое кольцо, как в арку у дороги.",
+        "Слышим шум и лежим тихо, как лань в кустах, когда мимо идёт лев.",
         "Кровать выезжает обратно — готово."
       ],
       "iv": [
-        "На кожу мажут крем, который её успокаивает.",
-        "Короткий укол, а потом вводят мягкую тонкую трубочку.",
-        "Иглу вынимают, а мягкая трубочка остаётся, чтобы давать жидкость.",
-        "Приклеивают наклейку, которая держит мягкую трубочку на месте."
+        "Травник мажет на кожу крем, который её успокаивает.",
+        "Короткий укол, а потом травник вводит мягкую тонкую трубочку.",
+        "Иглу вынимают, а мягкая трубочка остаётся, чтобы водичка понемногу капала — как из походной фляжки.",
+        "Травник приклеивает пластырь, который держит трубочку на месте."
       ],
       "medication": [
-        "Получаем лекарство, которое помогает телу.",
-        "Иногда пьём немного сиропа.",
-        "Иногда оно идёт через мягкую трубочку.",
-        "А потом можно попить воды, чтобы убрать вкус."
+        "Травник приносит лекарство, которое помогает телу.",
+        "Иногда пьём немного сока из плода баобаба, из маленькой ложечки.",
+        "Иногда лекарство идёт через мягкую трубочку.",
+        "А потом можно попить воды из фляжки, чтобы убрать вкус."
       ],
       "inhalation": [
-        "На лицо надеваем мягкую маску с прохладным воздухом.",
-        "Не нужно дышать сильно — просто дышим как обычно.",
-        "Иногда немного щекочет глаза, и можно попросить, чтобы воздух шёл медленнее.",
-        "В это время можно смотреть мультик. Через несколько минут маску снимают — готово."
+        "Травник надевает на лицо мягкую маску с прохладным воздухом.",
+        "Не нужно дышать сильно — просто дышим как обычно, как в тихом утреннем лесу.",
+        "Иногда немного щекочет в носу, и можно попросить, чтобы воздух шёл медленнее.",
+        "В это время можно смотреть мультик. Через несколько минут травник снимает маску — готово."
       ],
       "stitches": [
-        "Обезболивать не нужно — начинают сразу.",
-        "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+        "Обезболивать не нужно — травник начинает сразу.",
+        "Травник держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
         "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-        "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
+        "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху травник накладывает чистую повязку."
       ],
       "cast": [
         "Выбираем, сидеть или лежать, и будут ли мама или папа рядом.",
-        "Руку или ногу обматывают мягкими слоями.",
-        "Теперь терпеливо ждём немного и не двигаемся — останавливаться посередине нельзя, чтобы гипс подошёл точно.",
-        "Гипс медленно твердеет и бережёт кость — и она заживает."
+        "Травник обматывает руку или ногу мягкими слоями.",
+        "Теперь терпеливо ждём немного и не двигаемся, как лань в кустах — останавливаться посередине нельзя, чтобы гипс подошёл точно.",
+        "Гипс медленно твердеет и бережёт кость — и она заживает, как дерево, которое растёт прямо."
       ],
       "bandage": [
-        "Это место обматывают мягким бинтом.",
-        "Обматывают бережно, слой за слоем.",
-        "В конце закрепляют — уютно и надёжно."
+        "Травник обматывает это место мягким бинтом.",
+        "Обматывает бережно, слой за слоем, как лиана вокруг ветки.",
+        "В конце закрепляет — уютно и надёжно, можно идти дальше по тропе."
       ],
       "waiting-results": [
         "Мы закончили все проверки — молодцы!",
-        "Теперь ждём ответов. Можно поиграть, отдохнуть или посмотреть мультик.",
-        "Врачи и медсёстры работают, чтобы нам помочь. Про нас не забыли.",
-        "Когда будут ответы, врач придёт и расскажет нам."
+        "Теперь ждём ответов в лагере. Можно поиграть, отдохнуть или посмотреть мультик.",
+        "Полевая лаборатория изучает наши образцы, а проводник и травник помнят про нас.",
+        "Когда будут ответы, вождь придёт и расскажет нам."
       ]
     },
     "calmLines": [
