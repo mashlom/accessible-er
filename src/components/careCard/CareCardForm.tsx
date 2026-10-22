@@ -52,7 +52,6 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
           </button>
         </div>
       )}
-      <p className={css.cardPrivacy}>{t('ui.careView.hebrewNote')}</p>
 
       <section>
         <h2>{t('ui.labels.adult.aboutChild')}</h2>
@@ -117,6 +116,8 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
           </ul>
         </section>
       )}
+
+      <p className={css.cardPrivacy}>{t('ui.careView.hebrewNote')}</p>
 
       {footer({ empty: isCardEmpty(card), clear: clearCard })}
     </>
