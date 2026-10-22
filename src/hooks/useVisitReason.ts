@@ -1,7 +1,7 @@
 import { usePersistentState } from './usePersistentState'
 import { DAY_MS } from '../lib/storage'
 import { getPath } from '../data/paths'
-import type { VisitPath } from '../data/types'
+import type { PathBase } from '../data/paths'
 
 const KEY = 'visit-reason'
 
@@ -17,7 +17,7 @@ export function useVisitReason() {
     DAY_MS,
   )
 
-  const path: VisitPath | undefined = reasonId ? getPath(reasonId) : undefined
+  const path: PathBase | undefined = reasonId ? getPath(reasonId) : undefined
 
   return {
     reasonId,

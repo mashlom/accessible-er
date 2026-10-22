@@ -6,10 +6,11 @@
   "description": "אפליקציית הנגשה למסע משפחה במלר\"ד ילדים עבור ילדים אוטיסטים",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "node scripts/dups.mjs --check && tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "anim": "node scripts/fetch-animations.mjs"
+    "anim": "node scripts/fetch-animations.mjs",
+    "dups": "node scripts/dups.mjs"
   },
   "dependencies": {
     "lottie-web": "^5.12.2",

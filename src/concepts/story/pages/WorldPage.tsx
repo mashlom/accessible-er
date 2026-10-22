@@ -7,7 +7,7 @@ import { useI18n } from '../../../hooks/useI18n'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import { parentPaths } from '../../../data/parent/paths'
 import homeTexts from '../../../data/parent/home.json'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
@@ -28,7 +28,7 @@ const destinations = [
 
 type HomeLang = keyof typeof homeTexts
 
-/** The same destination in the calm concept: its title and line come from parent/ui.json, so the wording is one for the whole app */
+/** The same destination in the calm concept: its title and line come from i18n/ui.json, so the wording is one for the whole app */
 const calmTileOf: Record<string, string> = {
   trail: 'journey',
   'wait-times': 'wait-times',
@@ -40,20 +40,15 @@ const calmTileOf: Record<string, string> = {
   'going-home': 'discharge',
   message: 'message',
   feedback: 'feedback',
+  distract: 'distract',
 }
 type Tile = { name: string; desc: string }
-const calmTiles = parentUi as unknown as Record<HomeLang, { tiles: Record<string, { title: string; desc: string }> }>
+const calmTiles = i18nUi as unknown as Record<HomeLang, { tiles: Record<string, { title: string; desc: string }> }>
 
-/** Hebrew stays the story's own (the design's names); the other languages reuse the calm wording where the destination is the same */
+/** The home tiles: their names and lines are the app's wording in i18n/ui.json (tiles), in every language */
 function tileText(lang: HomeLang, id: string): Tile {
-  const own = (keyed(homeTexts[lang], 'parent/home').tiles as Record<string, Partial<Tile> | undefined>)[id]
-  const hebrew = (keyed(homeTexts.he, 'parent/home').tiles as Record<string, Tile>)[id]
-  const calmKey = calmTileOf[id]
-  if (lang === 'he' || !calmKey) {
-    return { name: own?.name ?? hebrew.name, desc: own?.desc ?? hebrew.desc }
-  }
-  const c = calmTiles[lang].tiles[calmKey]
-  return { name: c.title, desc: c.desc }
+  const c = calmTiles[lang].tiles[calmTileOf[id]]
+  return { name: c?.title ?? '', desc: c?.desc ?? '' }
 }
 
 /**
@@ -65,7 +60,7 @@ export function WorldPage() {
   const { path } = useVisitReason()
   const { lang, dir } = useI18n()
   const tx = keyed(homeTexts[lang as HomeLang], 'parent/home') ?? keyed(homeTexts.he, 'parent/home')
-  const reasonLabel = path ? parentPaths(lang as HomeLang).find((p) => p.id === path.id)?.label ?? path.label : ''
+  const reasonLabel = path ? parentPaths(lang as HomeLang).find((p) => p.id === path.id)?.label ?? '' : ''
 
   return (
     <div className={shell.page} dir={dir} lang={lang}>

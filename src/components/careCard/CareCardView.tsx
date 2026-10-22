@@ -4,14 +4,13 @@ import { usePersistentState } from '../../hooks/usePersistentState'
 import { DAY_MS } from '../../lib/storage'
 import { useI18n } from '../../hooks/useI18n'
 import careI18n from '../../data/i18n/careCard.json'
-import parentUi from '../../data/parent/ui.json'
+import i18nUi from '../../data/i18n/ui.json'
 import { emptyCard, emptyCustom, suggestedAdaptations, type CareCard } from '../../data/careCard'
 import css from '../../concepts/quest/quest.module.css'
 
 type Lang = 'he' | 'en' | 'ru'
 type CardTexts = {
   viewTitle: string
-  viewTitleNoName: string
   age: string
   suggestionsTitle: string
   rows: Record<string, string>
@@ -19,10 +18,12 @@ type CardTexts = {
 
 /** The title and the age line of the card, in the chosen language. */
 export function careCardHeading(card: CareCard, lang: Lang) {
-  const tx = keyed((parentUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'parent/ui').card
+  const ui = keyed((i18nUi as unknown as Record<Lang, { card: CardTexts; tiles: { card: { title: string } } }>)[lang], 'i18n/ui')
+  const tx = ui.card
   const name = card.nickname.trim()
   return {
-    title: name ? tx.viewTitle.replace('{name}', name) : tx.viewTitleNoName,
+    // without a name the card has the same title as its tile
+    title: name ? tx.viewTitle.replace('{name}', name) : ui.tiles.card.title,
     age: card.age.trim() ? tx.age.replace('{age}', card.age.trim()) : '',
   }
 }
@@ -34,9 +35,9 @@ export function careCardHeading(card: CareCard, lang: Lang) {
 export function CareCardView({ footer }: { footer: (state: { print: () => void }) => ReactNode }) {
   const { t, lang } = useI18n()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
-  const tx = keyed((parentUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'parent/ui').card
+  const tx = keyed((i18nUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'i18n/ui').card
   // the labels of the card are Hebrew, like its values (the note on screen says so)
-  const heRows = keyed((parentUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he, 'parent/ui').card.rows
+  const heRows = keyed((i18nUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he, 'i18n/ui').card.rows
   const heAsks = keyed((careI18n as unknown as { he: { asks: Record<string, string> } }).he, 'i18n/careCard').asks
   const c = card.custom ?? emptyCustom
   const join = (...parts: string[]) => parts.map((p) => p.trim()).filter(Boolean).join(' · ')
@@ -52,7 +53,7 @@ export function CareCardView({ footer }: { footer: (state: { print: () => void }
   ].filter((r) => r.value)
 
   // the suggestions the parent reads on screen (not printed): in the chosen language
-  const suggestions = suggestedAdaptations(card, keyed((careI18n as unknown as Record<string, { adaptationSuggestions?: Record<string, string> }>)[lang], 'i18n/careCard')?.adaptationSuggestions)
+  const suggestions = suggestedAdaptations(card, keyed((careI18n as unknown as Record<string, { asks: Record<string, string>; adaptationFor: Record<string, string> }>)[lang], 'i18n/careCard'))
 
   return (
     <>

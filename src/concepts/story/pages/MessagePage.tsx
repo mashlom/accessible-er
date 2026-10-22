@@ -4,7 +4,7 @@ import { Scene, Bubble, Note } from '../components/kit'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 import { useI18n } from '../../../hooks/useI18n'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 
 type MessageTexts = {
   title: string
@@ -26,8 +26,8 @@ type MessageTexts = {
  * the screen, or opened in their own mail app. Nothing is sent automatically.
  */
 export function MessagePage() {
-  const { lang, dir } = useI18n()
-  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyMessage: MessageTexts }>)[lang], 'parent/ui').storyMessage
+  const { lang, dir, t } = useI18n()
+  const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyMessage: MessageTexts }>)[lang], 'i18n/ui').storyMessage
   const [text, setText] = useState('')
   const [shown, setShown] = useState(false)
 
@@ -36,7 +36,7 @@ export function MessagePage() {
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.message.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
       </div>
@@ -98,7 +98,7 @@ export function MessagePage() {
         >
           <p className={shell.overlayText}>{trimmed}</p>
           <button type="button" className={shell.bigBtn}>
-            {tx.close}
+            {t('ui.buttons.close')}
           </button>
         </div>
       )}

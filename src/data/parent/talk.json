@@ -34,9 +34,6 @@
       "cardShow": "להראות את הכרטיס",
       "cardFix": "לחזור ולתקן",
       "cardPickMany": "אפשר לסמן כמה שרוצים.",
-      "cardNext": "הבא ←",
-      "cardLast": "סיימנו ←",
-      "cardSkip": "לדלג על השאלה",
       "cardLastStep": "סיימנו ←",
       "cardNextStep": "הבא ←",
       "cardSkipQ": "לדלג על השאלה",
@@ -74,7 +71,6 @@
       "question": "במה אפשר לעזור עכשיו?"
     },
     "where": {
-      "ask": "איפה אתם עכשיו?",
       "hint": "סמנו את השלב, ואספר לכם מה קורה בו."
     },
     "stage": {
@@ -94,7 +90,6 @@
     "prep": {
       "for": "להתכונן ל{title}",
       "whoDur": "מי עושה את זה: {who}\nכמה זמן: {duration}",
-      "letsSee": "בואו נראה איך זה הולך, שלב אחרי שלב",
       "feel": "מה הילד/ה עשוי/ה להרגיש?",
       "howPrepare": "איך אפשר להתכונן:",
       "askBefore": "לפני {title} אפשר לבקש:",
@@ -161,9 +156,7 @@
     },
     "staffPauseBig": "אנחנו צריכים דקה",
     "mail": {
-      "subject": "משוב על \"מה שלומי?\"",
-      "rating": "דירוג",
-      "concept": "קונספט: לדבר עם רוני"
+      "subjectPrefix": "משוב על"
     }
   },
   "en": {
@@ -201,9 +194,6 @@
       "cardShow": "Show the card",
       "cardFix": "Go back and change",
       "cardPickMany": "You can tick as many as you like.",
-      "cardNext": "Next →",
-      "cardLast": "Done →",
-      "cardSkip": "Skip this question",
       "cardLastStep": "Done →",
       "cardNextStep": "Next →",
       "cardSkipQ": "Skip this question",
@@ -241,7 +231,6 @@
       "question": "What would help you most right now?"
     },
     "where": {
-      "ask": "Where are you now?",
       "hint": "Mark the stage, and I will tell you what happens there."
     },
     "stage": {
@@ -261,7 +250,6 @@
     "prep": {
       "for": "Get ready: {title}",
       "whoDur": "Who does it: {who}\nHow long: {duration}",
-      "letsSee": "Let's see how it goes, step by step",
       "feel": "What might the child feel?",
       "howPrepare": "How to get ready:",
       "askBefore": "Before {title}, you can ask for:",
@@ -326,7 +314,10 @@
       "back": "Back to the conversation",
       "emptyText": "Go back to the conversation with Roni — he will ask a few short questions, and there will be a card."
     },
-    "staffPauseBig": "We need a minute"
+    "staffPauseBig": "We need a minute",
+    "mail": {
+      "subjectPrefix": "Feedback on"
+    }
   },
   "ru": {
     "intro": {
@@ -363,9 +354,6 @@
       "cardShow": "Показать карточку",
       "cardFix": "Вернуться и поправить",
       "cardPickMany": "Можно отметить сколько угодно.",
-      "cardNext": "Дальше →",
-      "cardLast": "Готово →",
-      "cardSkip": "Пропустить вопрос",
       "cardLastStep": "Готово →",
       "cardNextStep": "Дальше →",
       "cardSkipQ": "Пропустить вопрос",
@@ -403,7 +391,6 @@
       "question": "Что вам сейчас нужно?"
     },
     "where": {
-      "ask": "Где вы сейчас?",
       "hint": "Отметьте этап, и я расскажу, что там происходит."
     },
     "stage": {
@@ -423,7 +410,6 @@
     "prep": {
       "for": "Как подготовиться: {title}",
       "whoDur": "Кто делает: {who}\nСколько времени: {duration}",
-      "letsSee": "Посмотрим, как это проходит, шаг за шагом",
       "feel": "Что может почувствовать ребёнок?",
       "howPrepare": "Как подготовиться:",
       "askBefore": "Перед {title} можно попросить:",
@@ -488,6 +474,9 @@
       "back": "Назад к разговору",
       "emptyText": "Вернитесь к разговору с Рони — он задаст несколько коротких вопросов, и появится карточка."
     },
-    "staffPauseBig": "Нам нужна минута"
+    "staffPauseBig": "Нам нужна минута",
+    "mail": {
+      "subjectPrefix": "Отзыв о"
+    }
   }
 }

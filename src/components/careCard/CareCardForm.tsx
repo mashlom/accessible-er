@@ -46,7 +46,7 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
       </p>
 
       <section>
-        <h2>{t('ui.text.whoWeAre')}</h2>
+        <h2>{t('ui.text.aboutChild')}</h2>
         <div className={css.cardIdentity}>
           <label className={css.cardField}>
             <span className={css.cardFieldLabel}>{t('ui.text.nickname')}</span>

@@ -8,19 +8,19 @@
       },
       "wait-before-triage": {
         "label": "הספסל במסדרון",
-        "hint": "יושבים על הספסל עד שהדובי קורא"
+        "hint": "יושבים על הספסל עד שהארנבון קורא"
       },
       "triage": {
         "label": "חדר המדידות",
-        "hint": "הדובי עוזר למדוד ולבדוק"
+        "hint": "הארנבון עוזר למדוד ולבדוק"
       },
       "wait-doctor": {
         "label": "חדר האורחים",
         "hint": "ממתינים בנחת עד שקוראים בשם"
       },
       "doctor": {
-        "label": "החדר של הדוקטורית",
-        "hint": "הדוקטורית בודקת בעדינות"
+        "label": "החדר של הדובי הרופא",
+        "hint": "הדובי הרופא בודק בעדינות"
       },
       "decision": {
         "label": "חזרה הביתה",
@@ -32,18 +32,183 @@
       },
       "treatment": {
         "label": "פינת הטיפול",
-        "hint": "הטיפול שהוחלט עליו"
+        "hint": "הארנבון מטפל במה שצריך"
       },
       "consult": {
-        "label": "ביקור של דוקטור נוסף",
-        "hint": "עוד דוקטור מצטרף לעזור"
+        "label": "הינשופה באה לבקר",
+        "hint": "הינשופה החכמה באה לעזור"
       },
       "wait-results": {
         "label": "חדר ההמתנה השקט",
         "hint": "ממתינים לתשובות"
       }
     },
-    "distractTitle": "חדר המשחקים 🎪"
+    "distractTitle": "חדר המשחקים 🎪",
+    "procedureNarratives": {
+      "temperature": "הארנבון בודק לבובה חום במהירות — כדי לוודא שהיא חמה ומוכנה לשחק.",
+      "saturation": "קליפס קטן על האצבע של הבובה מראה כמה אוויר נכנס לריאות הקטנות שלה.",
+      "blood-pressure": "הרצועה מחבקת בעדינות את היד של הבובה, מתהדקת ואז משתחררת — כמו חיבוק גדול.",
+      "doctor-exam": "הדובי הרופא מקשיב לחזה של הבובה ומסתכל באוזניים, כדי לבדוק הכול בבית.",
+      "blood-test": "דקירה קטנה בקצה האצבע של הבובה — טיפה אחת של דם לבדיקה.",
+      "urine": "הבובה משתמשת בכוס קטנה בשירותים של הבית כדי לתת דגימה לבדיקה.",
+      "xray": "הבובה שוכבת על כרית רכה, והמצלמה מצלמת את העצמות שלה.",
+      "ultrasound": "ג׳ל רך ומכשיר עדין מראים את הבטן של הבובה על מסך קטן.",
+      "ct": "הבובה נכנסת לאט לתוך מנהרה עגולה ושוכבת בשקט, והמצלמה מצלמת אותה מכל הצדדים.",
+      "iv": "צינור רך וקטן מונח ביד של הבובה, והמים נוזלים לאט כדי שייטב לה.",
+      "medication": "הבובה לוקחת מעט תרופה בכפית קטנה, כמו שעושים כשלא מרגישים טוב.",
+      "inhalation": "הבובה נושמת אדים חמים דרך מסכה רכה, כמו בועות באמבטיה.",
+      "stitches": "הארנבון סוגר את השריטה הקטנה של הבובה בתפרים זעירים או בדבק — זה לא כואב.",
+      "cast": "על היד או הרגל של הבובה מניחים עטיפה רכה שמחזיקה אותה במקום, עד שהכול מתרפא.",
+      "bandage": "הברך של הבובה מקבלת חבישה רכה, מסודרת כמו מתנה יפה.",
+      "waiting-results": "הבובה מחכה בפינה נעימה של הבית, עד שהתוצאות מוכנות, עם ספר ביד."
+    },
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "בפה",
+          "steps": [
+            "הארנבון נותן לנו מדחום קטן — שמים אותו בפה.",
+            "סוגרים את הפה חזק־חזק, כאילו יש בפנים סוכרייה מהמזנון של הבובות.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הצעצועים על המדף.",
+            "שומעים ביפ קטן — הארנבון מסתכל על המדחום, וסיימנו."
+          ]
+        },
+        {
+          "label": "מתחת לבית השחי",
+          "steps": [
+            "הארנבון שם מדחום קטן מתחת לבית השחי.",
+            "מצמידים את הזרוע לגוף, כאילו מחבקים צעצוע אהוב.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הצעצועים על המדף.",
+            "שומעים ביפ קטן — הארנבון מסתכל על המדחום, וסיימנו."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "עם אלחוש",
+          "steps": [
+            "קודם הארנבון מורח חומר קריר שמרדים את האזור, ומכסה במדבקה שקופה.",
+            "מחכים קצת עד שהאזור של החתך \"הולך לישון\", כמו בובה בעריסה.",
+            "הארנבון מחזיק את האזור וסוגר אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
+            "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והארנבון שם חבישה נקייה מלמעלה."
+          ]
+        },
+        {
+          "label": "בלי אלחוש",
+          "steps": [
+            "לא צריך להרדים את האזור — הארנבון מתחיל מיד.",
+            "הארנבון מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+            "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והארנבון שם חבישה נקייה מלמעלה."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "הארנבון נותן לנו מדחום קטן — שמים אותו בפה.",
+        "סוגרים את הפה חזק־חזק, כאילו יש בפנים סוכרייה מהמזנון של הבובות.",
+        "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הצעצועים על המדף.",
+        "שומעים ביפ קטן — הארנבון מסתכל על המדחום, וסיימנו."
+      ],
+      "saturation": [
+        "הארנבון שם אטב קטן ורך על האצבע.",
+        "נדלק בו אור אדום — כמו מנורת לילה בחדר השינה של הבובות.",
+        "הוא רק מסתכל — לא עושה כלום.",
+        "אחרי רגע הארנבון מוריד אותו."
+      ],
+      "blood-pressure": [
+        "הארנבון שם שרוול רך על הזרוע.",
+        "הוא מתנפח ומחבק את הזרוע, כמו דובי.",
+        "סופרים יחד עם הארנבון, והשרוול משחרר לבד.",
+        "אחר כך מורידים את השרוול — וזהו, סיימנו."
+      ],
+      "doctor-exam": [
+        "נפגוש את הדובי הרופא שרוצה לעזור לנו.",
+        "הדובי מקשיב לגוף עם סטטוסקופ — קצת קר, לא כואב.",
+        "אולי הדובי יסתכל בגרון ובאוזניים עם אור קטן.",
+        "בסוף הדובי יידע איך לעזור לנו."
+      ],
+      "blood-test": [
+        "הארנבון מורח משחה שעושה את העור פחות רגיש.",
+        "גומייה רכה מחבקת את הזרוע, כמו צמיד של בובה.",
+        "דקירה קטנה וקצרה — ומסתכלים על הצעצועים על המדף.",
+        "הארנבון מדביק פלסטר עם ציור — כל הכבוד לנו!"
+      ],
+      "urine": [
+        "הולכים לשירותים, כמו בבית.",
+        "עושים קצת פיפי לתוך כוס קטנה.",
+        "נותנים את הכוס לארנבון.",
+        "זהו!"
+      ],
+      "xray": [
+        "נכנסים לחדר עם מצלמה גדולה.",
+        "לפעמים מלבישים לבוש כבד, כמו שמיכה של בובות — הוא מגן על הגוף.",
+        "עומדים או שוכבים בנחת, כמו בובה על המדף.",
+        "המצלמה מצלמת תמונה — לא מרגישים כלום.",
+        "סיימנו, אפשר לזוז שוב."
+      ],
+      "ultrasound": [
+        "שוכבים בנחת על מיטה, כמו בובה בחדר השינה.",
+        "מורחים ג׳ל קצת קר על הבטן.",
+        "מקל חלק מחליק ומצייר תמונה על מסך — לפעמים לוחצים קצת, וזה בסדר.",
+        "אם מפריע אפשר לבקש רגע הפסקה.",
+        "מנגבים את הג׳ל — וסיימנו."
+      ],
+      "ct": [
+        "שוכבים על מיטה נוחה.",
+        "המיטה זזה לאט לתוך טבעת גדולה, כמו מנהרה של בובות.",
+        "שומעים רעש, ושוכבים בנחת כמו בובה על המדף.",
+        "המיטה חוזרת החוצה — סיימנו."
+      ],
+      "iv": [
+        "הארנבון מורח משחה שמרגיעה את העור.",
+        "דקירה קצרה, ואז הארנבון מכניס צינור רך ודק.",
+        "מוציאים את המחט, והצינור הרך נשאר כדי שהמים יטפטפו לאט — כמו ממזלף של בובות.",
+        "הארנבון מדביק מדבקה שמחזיקה את הצינור במקום."
+      ],
+      "medication": [
+        "הארנבון מביא תרופה שעוזרת לגוף.",
+        "לפעמים שותים קצת סירופ מכפית קטנה, כמו בובה.",
+        "ולפעמים התרופה נכנסת דרך הצינור הרך.",
+        "ואפשר לשתות מים מכוס קטנה אחרי, בשביל הטעם."
+      ],
+      "inhalation": [
+        "הארנבון שם על הפנים מסכה רכה עם אוויר קריר.",
+        "לא צריך לנשום בכוח — רק נושמים רגיל, כמו בובה שישנה.",
+        "לפעמים טיפה מדגדג בעיניים, ואפשר לבקש שהאוויר ייצא לאט יותר.",
+        "אפשר לצפות בסרטון בזמן הזה. אחרי כמה דקות הארנבון מוריד את המסכה — סיימנו."
+      ],
+      "stitches": [
+        "לא צריך להרדים את האזור — הארנבון מתחיל מיד.",
+        "הארנבון מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+        "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והארנבון שם חבישה נקייה מלמעלה."
+      ],
+      "cast": [
+        "בוחרים אם לשבת או לשכב, ואם אמא או אבא יהיו לידנו.",
+        "הארנבון עוטף את היד או הרגל בשכבות רכות.",
+        "עכשיו מחכים רגע בסבלנות בלי לזוז, כמו בובה על המדף — אי אפשר לעצור באמצע, כדי שהגבס יתאים בדיוק.",
+        "הגבס מתקשה לאט ושומר על העצם — וכך היא מחלימה."
+      ],
+      "bandage": [
+        "הארנבון עוטף תחבושת רכה סביב האזור.",
+        "בעדינות, שכבה על שכבה, כמו לבובה.",
+        "בסוף הארנבון מדביק — נעים ומוגן."
+      ],
+      "waiting-results": [
+        "סיימנו את כל הבדיקות — כל הכבוד לנו!",
+        "עכשיו מחכים לתשובות בחדר השקט. אפשר לשחק בצעצועים, לנוח או לראות סרטון.",
+        "הדובי והארנבון עובדים בשביל לעזור לנו. לא שכחו אותנו.",
+        "כשיהיו תשובות — הדובי יבוא לספר לנו."
+      ]
+    },
+    "calmLines": [
+      "רגע, נושמים יחד 💙",
+      "קשה עכשיו? זה בסדר גמור. אני כאן.",
+      "אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…"
+    ]
   },
   "en": {
     "name": "Dollhouse",
@@ -54,11 +219,11 @@
       },
       "wait-before-triage": {
         "label": "The Corridor Bench",
-        "hint": "We sit on the bench until the teddy bear calls"
+        "hint": "We sit on the bench until the bunny calls"
       },
       "triage": {
         "label": "Measuring Room",
-        "hint": "The teddy bear helps to measure and check"
+        "hint": "The bunny helps to measure and check"
       },
       "wait-doctor": {
         "label": "The Guest Room",
@@ -66,7 +231,7 @@
       },
       "doctor": {
         "label": "The Doctor's Room",
-        "hint": "The doctor checks gently"
+        "hint": "The teddy-bear doctor checks gently"
       },
       "decision": {
         "label": "Going Home",
@@ -78,18 +243,183 @@
       },
       "treatment": {
         "label": "The Treatment Corner",
-        "hint": "The treatment that was decided on"
+        "hint": "The bunny treats what needs treating"
       },
       "consult": {
-        "label": "Visit from Another Doctor",
-        "hint": "Another doctor joins to help"
+        "label": "The Owl Comes to Visit",
+        "hint": "The wise owl comes to help"
       },
       "wait-results": {
         "label": "The Quiet Waiting Room",
         "hint": "We wait for the answers"
       }
     },
-    "distractTitle": "The Playroom 🎪"
+    "distractTitle": "The Playroom 🎪",
+    "procedureNarratives": {
+      "temperature": "The bunny quickly checks the doll with a thermometer — to make sure it is warm and ready to play.",
+      "saturation": "A tiny clip on the doll’s finger shows how much air gets into its little lungs.",
+      "blood-pressure": "The cuff gently hugs the doll’s arm, tightens, and lets go — like a big hug.",
+      "doctor-exam": "The teddy-bear doctor listens to the doll’s chest and looks in its ears to check everything in the house.",
+      "blood-test": "A small pinch on the doll’s finger takes one tiny drop of blood for a check-up.",
+      "urine": "The doll uses a little cup in the dollhouse bathroom to give a sample for a check.",
+      "xray": "The doll lies on a soft pillow while a camera takes a picture of its bones.",
+      "ultrasound": "A soft gel and a gentle wand show the doll’s tummy on a little screen.",
+      "ct": "The doll slides slowly into a round tunnel and lies still while the camera takes pictures from all sides.",
+      "iv": "A tiny soft tube sits in the doll’s arm, and water drips in slowly to help it feel well.",
+      "medication": "The doll takes a little medicine from a tiny spoon, the way dolls do when they do not feel well.",
+      "inhalation": "The doll breathes in warm mist through a soft mask, like bubbles in the bath.",
+      "stitches": "The bunny closes the doll’s little scratch with tiny stitches or glue — it does not hurt.",
+      "cast": "A soft wrap goes on the doll’s arm or leg to keep it still while it heals.",
+      "bandage": "The doll’s knee gets a soft bandage, neat like a present.",
+      "waiting-results": "The doll waits in a cosy corner of the house until the results are ready, with a book in its hands."
+    },
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "In the mouth",
+          "steps": [
+            "The bunny gives us a little thermometer — we put it in the mouth.",
+            "We close the mouth tight-tight, as if there's a sweet from the doll's cupboard inside.",
+            "We wait quietly until the thermometer is done — we can count the toys on the shelf.",
+            "We hear a little beep — the bunny looks at the thermometer, and we're done."
+          ]
+        },
+        {
+          "label": "Under the armpit",
+          "steps": [
+            "The bunny puts a little thermometer under the arm.",
+            "We press the arm to the body, as if hugging a favourite toy.",
+            "We wait quietly until the thermometer is done — we can count the toys on the shelf.",
+            "We hear a little beep — the bunny looks at the thermometer, and we're done."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "With numbing",
+          "steps": [
+            "First the bunny puts something cool on the spot to make it sleepy, and covers it with a clear sticker.",
+            "We wait a little until the spot around the cut “goes to sleep”, like a doll in its cot.",
+            "The bunny holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
+            "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on the face, and the bunny puts a clean bandage on top."
+          ]
+        },
+        {
+          "label": "Without numbing",
+          "steps": [
+            "There's no need to make the spot sleepy — the bunny starts right away.",
+            "The bunny holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+            "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on the face, and the bunny puts a clean bandage on top."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "The bunny gives us a little thermometer — we put it in the mouth.",
+        "We close the mouth tight-tight, as if there's a sweet from the doll's cupboard inside.",
+        "We wait quietly until the thermometer is done — we can count the toys on the shelf.",
+        "We hear a little beep — the bunny looks at the thermometer, and we're done."
+      ],
+      "saturation": [
+        "The bunny puts a small, soft clip on the finger.",
+        "A red light turns on inside it — like the night light in the doll's bedroom.",
+        "It only looks — it doesn't do anything.",
+        "After a moment the bunny takes it off."
+      ],
+      "blood-pressure": [
+        "The bunny puts a soft cuff on the arm.",
+        "It fills with air and hugs the arm, like a teddy bear.",
+        "We count together with the bunny, and the cuff lets go by itself.",
+        "Then the cuff comes off — and that's it, all done."
+      ],
+      "doctor-exam": [
+        "We meet the teddy-bear doctor, who wants to help us.",
+        "The teddy bear listens to the body with a stethoscope — a little cold, but it doesn't hurt.",
+        "Maybe the teddy bear will look in the throat and ears with a small light.",
+        "At the end, the teddy bear will know how to help us."
+      ],
+      "blood-test": [
+        "The bunny puts a cream on the skin that makes it less sensitive.",
+        "A soft band hugs the arm, like a doll's bracelet.",
+        "A tiny, quick prick — and we look at the toys on the shelf.",
+        "The bunny puts on a plaster with a picture — well done!"
+      ],
+      "urine": [
+        "We go to the bathroom, like at home.",
+        "We pee a little into a small cup.",
+        "We give the cup to the bunny.",
+        "That's it!"
+      ],
+      "xray": [
+        "We go into a room with a big camera.",
+        "Sometimes they put a heavy cover on, like a doll's blanket — it protects the body.",
+        "We stand or lie calmly, like a doll on the shelf.",
+        "The camera takes a picture — we don't feel anything.",
+        "We're done, we can move again."
+      ],
+      "ultrasound": [
+        "We lie calmly on a bed, like a doll in the doll's bedroom.",
+        "They spread a slightly cold gel on the tummy.",
+        "A smooth wand glides and draws a picture on a screen — sometimes it presses a little, and that's okay.",
+        "If it bothers us, we can ask for a little break.",
+        "They wipe off the gel — and we're done."
+      ],
+      "ct": [
+        "We lie on a comfy bed.",
+        "The bed slowly moves into a big ring, like a doll's tunnel.",
+        "We hear a noise and lie calmly, like a doll on the shelf.",
+        "The bed comes back out — we're done."
+      ],
+      "iv": [
+        "The bunny puts a cream on the skin that calms it.",
+        "A short prick, and then the bunny puts in a soft, thin tube.",
+        "They take the needle out, and the soft tube stays so water can drip in slowly — like from a doll's watering can.",
+        "The bunny puts a sticker on that holds the tube in place."
+      ],
+      "medication": [
+        "The bunny brings medicine that helps the body.",
+        "Sometimes we drink a little syrup from a tiny spoon, like a doll.",
+        "Sometimes the medicine goes in through the soft tube.",
+        "And we can have some water from a little cup afterwards for the taste."
+      ],
+      "inhalation": [
+        "The bunny puts a soft mask with cool air on the face.",
+        "We don't need to breathe hard — we just breathe normally, like a doll asleep.",
+        "Sometimes it tickles the eyes a little, and we can ask for the air to come out slower.",
+        "We can watch a video meanwhile. After a few minutes the bunny takes the mask off — we're done."
+      ],
+      "stitches": [
+        "There's no need to make the spot sleepy — the bunny starts right away.",
+        "The bunny holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+        "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+        "If the glue gets a little warm, someone blows cool air on the face, and the bunny puts a clean bandage on top."
+      ],
+      "cast": [
+        "We choose whether to sit or lie down, and whether mom or dad stays close.",
+        "The bunny wraps the arm or leg in soft layers.",
+        "Now we wait patiently for a moment without moving, like a doll on the shelf — we can't stop in the middle, so the cast fits just right.",
+        "The cast slowly gets hard and keeps the bone safe — and lets it heal."
+      ],
+      "bandage": [
+        "The bunny wraps a soft bandage around the spot.",
+        "Gently, layer after layer, like on a doll.",
+        "At the end the bunny sticks it down — cosy and protected."
+      ],
+      "waiting-results": [
+        "We finished all the checks — well done!",
+        "Now we wait for the answers in the quiet room. We can play with the toys, rest or watch a video.",
+        "The teddy bear and the bunny are working to help us. They haven't forgotten us.",
+        "When the answers are ready, the teddy bear will come and tell us."
+      ]
+    },
+    "calmLines": [
+      "A moment — let's breathe together 💙",
+      "Is it hard right now? That's completely okay. I'm here.",
+      "We can also count slowly to ten together. One… two… three…"
+    ]
   },
   "ru": {
     "name": "Кукольный домик",
@@ -100,11 +430,11 @@
       },
       "wait-before-triage": {
         "label": "Скамейка в коридоре",
-        "hint": "Сидим на скамейке, пока нас позовёт мишка"
+        "hint": "Сидим на скамейке, пока нас позовёт зайчик"
       },
       "triage": {
         "label": "Комната измерений",
-        "hint": "Мишка помогает измерить и проверить"
+        "hint": "Зайчик помогает измерить и проверить"
       },
       "wait-doctor": {
         "label": "Комната гостей",
@@ -112,7 +442,7 @@
       },
       "doctor": {
         "label": "Комната доктора",
-        "hint": "Доктор аккуратно проверяет"
+        "hint": "Мишка-доктор аккуратно проверяет"
       },
       "decision": {
         "label": "Возвращаемся домой",
@@ -124,17 +454,182 @@
       },
       "treatment": {
         "label": "Уголок лечения",
-        "hint": "Лечение, которое решили назначить"
+        "hint": "Зайчик лечит то, что нужно"
       },
       "consult": {
-        "label": "Визит другого доктора",
-        "hint": "Ещё один доктор приходит помочь"
+        "label": "Сова приходит в гости",
+        "hint": "Мудрая сова приходит помочь"
       },
       "wait-results": {
         "label": "Тихая комната ожидания",
         "hint": "Ждём ответов"
       }
     },
-    "distractTitle": "Игровая комната 🎪"
+    "distractTitle": "Игровая комната 🎪",
+    "procedureNarratives": {
+      "temperature": "Зайчик быстро проверяет куклу градусником — чтобы убедиться, что она тёплая и готова играть.",
+      "saturation": "Маленький зажим на пальце куклы показывает, сколько воздуха попадает в её крошечные лёгкие.",
+      "blood-pressure": "Манжета мягко обнимает руку куклы, крепче, потом отпускает — как большое объятие.",
+      "doctor-exam": "Мишка-доктор слушает грудку куклы и смотрит в ушки, чтобы проверить всё в домике.",
+      "blood-test": "Маленький укол на пальчике куклы — одна капелька крови для проверки.",
+      "urine": "Кукла пользуется маленькой баночкой в ванной домика, чтобы сдать образец для проверки.",
+      "xray": "Кукла лежит на мягкой подушке, пока камера фотографирует её косточки.",
+      "ultrasound": "Мягкий гель и нежная палочка показывают животик куклы на маленьком экране.",
+      "ct": "Кукла медленно въезжает в круглый тоннель и лежит тихо, пока камера фотографирует её со всех сторон.",
+      "iv": "В ручку куклы ставят крошечную мягкую трубочку, и водичка медленно капает, чтобы ей стало лучше.",
+      "medication": "Кукла принимает немного лекарства маленькой ложечкой, как когда ей немножко нездоровится.",
+      "inhalation": "Кукла вдыхает тёплый туман через мягкую маску, как пузырьки в ванне.",
+      "stitches": "Зайчик закрывает царапинку куклы крошечными швами или клеем — это не больно.",
+      "cast": "На ручку или ножку куклы надевают мягкую повязку, которая держит её, пока всё заживает.",
+      "bandage": "Коленку куклы аккуратно перевязывают мягким бинтом, как красивый подарок.",
+      "waiting-results": "Кукла ждёт в уютном уголке домика, пока будут готовы результаты, с книжкой в руках."
+    },
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "Во рту",
+          "steps": [
+            "Зайчик даёт нам маленький градусник — кладём его в рот.",
+            "Крепко-крепко закрываем рот, как будто там конфетка из кукольного буфета.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать игрушки на полке.",
+            "Слышим тихое «бип» — зайчик смотрит градусник, и всё, готово."
+          ]
+        },
+        {
+          "label": "Под мышкой",
+          "steps": [
+            "Зайчик кладёт маленький градусник под мышку.",
+            "Прижимаем руку к телу, как будто обнимаем любимую игрушку.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать игрушки на полке.",
+            "Слышим тихое «бип» — зайчик смотрит градусник, и всё, готово."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "С обезболиванием",
+          "steps": [
+            "Сначала зайчик мажет прохладное средство, от которого место засыпает, и закрывает его прозрачной наклейкой.",
+            "Немного ждём, пока место пореза «уснёт», как кукла в кроватке.",
+            "Зайчик держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
+            "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху зайчик накладывает чистую повязку."
+          ]
+        },
+        {
+          "label": "Без обезболивания",
+          "steps": [
+            "Обезболивать не нужно — зайчик начинает сразу.",
+            "Зайчик держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+            "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху зайчик накладывает чистую повязку."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "Зайчик даёт нам маленький градусник — кладём его в рот.",
+        "Крепко-крепко закрываем рот, как будто там конфетка из кукольного буфета.",
+        "Тихонько ждём, пока градусник закончит, — можно посчитать игрушки на полке.",
+        "Слышим тихое «бип» — зайчик смотрит градусник, и всё, готово."
+      ],
+      "saturation": [
+        "Зайчик надевает на палец маленькую мягкую прищепку.",
+        "В ней загорается красный огонёк — как ночник в кукольной спальне.",
+        "Она только смотрит — ничего не делает.",
+        "Через минутку зайчик её снимает."
+      ],
+      "blood-pressure": [
+        "Зайчик надевает на руку мягкую манжету.",
+        "Она надувается и обнимает руку, как плюшевый мишка.",
+        "Мы считаем вместе с зайчиком, и манжета сама отпускает.",
+        "Потом манжету снимают — и всё, готово."
+      ],
+      "doctor-exam": [
+        "Встречаем мишку-доктора, который хочет нам помочь.",
+        "Мишка слушает тело стетоскопом — немного холодно, но не больно.",
+        "Может быть, мишка посмотрит горло и уши маленьким фонариком.",
+        "В конце мишка будет знать, как нам помочь."
+      ],
+      "blood-test": [
+        "Зайчик мажет на кожу крем, от которого она становится менее чувствительной.",
+        "Мягкая резинка обнимает руку, как браслет куклы.",
+        "Маленький быстрый укол — а мы смотрим на игрушки на полке.",
+        "Зайчик клеит пластырь с картинкой — молодцы!"
+      ],
+      "urine": [
+        "Идём в туалет, как дома.",
+        "Немного писаем в маленький стаканчик.",
+        "Отдаём стаканчик зайчику.",
+        "Всё!"
+      ],
+      "xray": [
+        "Заходим в комнату с большим фотоаппаратом.",
+        "Может быть, наденут тяжёлую накидку, как кукольное одеяло, — она защищает тело.",
+        "Спокойно стоим или лежим, как кукла на полке.",
+        "Фотоаппарат делает снимок — мы ничего не чувствуем.",
+        "Готово, можно снова двигаться."
+      ],
+      "ultrasound": [
+        "Спокойно ложимся на кровать, как кукла в кукольной спальне.",
+        "На живот мажут немного холодный гель.",
+        "Гладкая палочка скользит и рисует картинку на экране — иногда немного надавливают, и это нормально.",
+        "Если мешает, можно попросить маленький перерыв.",
+        "Гель вытирают — и готово."
+      ],
+      "ct": [
+        "Ложимся на удобную кровать.",
+        "Кровать медленно заезжает в большое кольцо, как в кукольный туннель.",
+        "Слышим шум и лежим спокойно, как кукла на полке.",
+        "Кровать выезжает обратно — готово."
+      ],
+      "iv": [
+        "Зайчик мажет на кожу крем, который её успокаивает.",
+        "Короткий укол, а потом зайчик вводит мягкую тонкую трубочку.",
+        "Иглу вынимают, а мягкая трубочка остаётся, чтобы водичка понемногу капала — как из кукольной лейки.",
+        "Зайчик приклеивает наклейку, которая держит трубочку на месте."
+      ],
+      "medication": [
+        "Зайчик приносит лекарство, которое помогает телу.",
+        "Иногда пьём немного сиропа из маленькой ложечки, как кукла.",
+        "Иногда лекарство идёт через мягкую трубочку.",
+        "А потом можно попить воды из маленькой чашки, чтобы убрать вкус."
+      ],
+      "inhalation": [
+        "Зайчик надевает на лицо мягкую маску с прохладным воздухом.",
+        "Не нужно дышать сильно — просто дышим как обычно, как кукла во сне.",
+        "Иногда немного щекочет глаза, и можно попросить, чтобы воздух шёл медленнее.",
+        "В это время можно смотреть мультик. Через несколько минут зайчик снимает маску — готово."
+      ],
+      "stitches": [
+        "Обезболивать не нужно — зайчик начинает сразу.",
+        "Зайчик держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+        "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+        "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху зайчик накладывает чистую повязку."
+      ],
+      "cast": [
+        "Выбираем, сидеть или лежать, и будут ли мама или папа рядом.",
+        "Зайчик обматывает руку или ногу мягкими слоями.",
+        "Теперь терпеливо ждём немного и не двигаемся, как кукла на полке, — останавливаться посередине нельзя, чтобы гипс подошёл точно.",
+        "Гипс медленно твердеет и бережёт кость — и она заживает."
+      ],
+      "bandage": [
+        "Зайчик обматывает это место мягким бинтом.",
+        "Обматывает бережно, слой за слоем, как кукле.",
+        "В конце закрепляет — уютно и надёжно."
+      ],
+      "waiting-results": [
+        "Мы закончили все проверки — молодцы!",
+        "Теперь ждём ответов в тихой комнате. Можно поиграть с игрушками, отдохнуть или посмотреть мультик.",
+        "Мишка и зайчик работают, чтобы нам помочь. Про нас не забыли.",
+        "Когда будут ответы, мишка придёт и расскажет нам."
+      ]
+    },
+    "calmLines": [
+      "Минутку — дышим вместе 💙",
+      "Сейчас трудно? Это совершенно нормально. Я рядом.",
+      "Можно ещё медленно посчитать со мной до десяти. Один… два… три…"
+    ]
   }
 }

@@ -48,7 +48,6 @@ export interface QuestTheme {
   /** Lines shown in the child zone of CalmPage — themed calming message for the child */
   calmLines?: string[]
   /** Title and subtitle shown in the hero zone of CardPage — themed framing for the child */
-  cardChildHero?: { title: string; subtitle: string }
   /** Title shown in the hero zone of DistractPage — themed framing for the child */
   distractTitle?: string
 }

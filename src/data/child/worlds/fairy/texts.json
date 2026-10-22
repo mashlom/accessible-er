@@ -8,11 +8,11 @@
       },
       "wait-before-triage": {
         "label": "גשר הפרפרים",
-        "hint": "מחכים על הגשר עד שהפיה הרפואית קוראת"
+        "hint": "מחכים על הגשר עד שהשדון העוזר קורא"
       },
       "triage": {
         "label": "בדיקת הקסמים",
-        "hint": "הפיה הרפואית בודקת את הקסם שלך"
+        "hint": "השדון העוזר בודק את הקסם שלנו"
       },
       "wait-doctor": {
         "label": "פינת הפרחים",
@@ -23,8 +23,8 @@
         "hint": "הפיה מחליטה איזה קסם תרפא"
       },
       "decision": {
-        "label": "פרח הניצחון",
-        "hint": "קיבלתם פרח קסמים — נרפאתם!"
+        "label": "יוצאים מהגן היפה",
+        "hint": "להתראות, פיות!"
       },
       "tests": {
         "label": "קסם הראייה",
@@ -32,11 +32,11 @@
       },
       "treatment": {
         "label": "שרביט הריפוי",
-        "hint": "הפיה מרפאה בשרביטה"
+        "hint": "הגמד הגנן מטפל במה שצריך"
       },
       "consult": {
         "label": "מועצת הפיות",
-        "hint": "פיה נוספת מגיעה לעזור"
+        "hint": "הפיה החכמה מגיעה לעזור"
       },
       "wait-results": {
         "label": "ממתינים לקסם",
@@ -44,24 +44,171 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "פיית הריפוי בודקת את אש הפנים של הגיבור — כדי לדעת איזה קסם יעזור.",
+      "temperature": "השדון העוזר בודק את אש הפנים של האורח — כדי לדעת איזה קסם יעזור.",
       "saturation": "טבעת הקסם הוורודה על האצבע בודקת שקסם האוויר זורם בדם כמו שצריך.",
-      "blood-pressure": "שרוול הפיות לוחץ קלות ובודק את עוצמת הלב הקסום של הגיבור.",
-      "doctor-exam": "פיית הריפוי בוחנת בעדינות את כוחות הגיבור — ממנה יבוא הקסם המתאים.",
+      "blood-pressure": "שרוול הפיות לוחץ קלות ובודק את עוצמת הלב הקסום של האורח.",
+      "doctor-exam": "פיית הריפוי בוחנת בעדינות את כוחות האורח — מהם יבוא הקסם המתאים.",
       "blood-test": "הפיה צריכה טיפה קסומה קטנה כדי לבשל את הקסם הנכון לריפוי.",
-      "urine": "כוסית הקסם הכחולה תגלה לפיית הריפוי את סודות הגוף.",
+      "urine": "כוסית קטנה תגלה לפיית הריפוי את סודות הגוף.",
       "xray": "מראת הגן מסתכלת לעומק הגוף ורואה הכל — בלי שמרגישים כלום.",
       "ultrasound": "ג׳ל הגן על העור מאפשר לשרביט לשוטט בפנים ולמצוא מה שצריך לרפא.",
       "ct": "הטבעת הקסומה סורקת לאט ומצלמת תמונה של כל מה שנמצא בפנים.",
-      "iv": "הצינור הדק של הפיה שולח קסם ריפוי ישירות לדם של הגיבור.",
-      "medication": "פיית הריפוי הכינה קסם מיוחד — סירופ או תרכובת שתחזק את הגיבור.",
+      "iv": "הצינור הדק של הגמד הגנן שולח קסם ריפוי ישירות לדם של האורח.",
+      "medication": "הגמד הגנן הכין קסם מיוחד — סירופ או תרכובת שתחזק את האורח.",
       "inhalation": "אדי הקסם מגיעים דרך המסכה ועוזרים לנשימה לזרום בקלות ובשמחה.",
-      "stitches": "הפיה סוגרת את הפצע בזהירות עם דבק הקסמים או חוט הריפוי הזהוב.",
-      "cast": "שריון גבס הפיות עוטף את העצם ומחזיק אותה עד שיחלים בשלמות.",
+      "stitches": "הגמד הגנן סוגר את הפצע בזהירות עם דבק הקסמים או חוט הריפוי הזהוב.",
+      "cast": "פקעת גבס, כמו של פרפר, עוטפת את העצם ומחזיקה אותה עד שתחלים לגמרי.",
       "bandage": "תחבושת הגן עוטפת את הפצע ומגנה עליו עד שהקסם יעשה את שלו.",
       "waiting-results": "הגביש הקסום מעבד את הבדיקות — עוד מעט תגיע תשובת הקסם."
     },
-    "distractTitle": "שרביט הקסומים ✨"
+    "distractTitle": "שרביט הקסומים ✨",
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "בפה",
+          "steps": [
+            "השדון העוזר נותן לנו מדחום קטן — שמים אותו בפה.",
+            "סוגרים את הפה חזק־חזק, כאילו יש בפנים פרי קסום.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הפרחים בגן.",
+            "שומעים ביפ קטן — השדון כותב ביומן הקסמים, וסיימנו."
+          ]
+        },
+        {
+          "label": "מתחת לבית השחי",
+          "steps": [
+            "השדון העוזר שם מדחום קטן מתחת לבית השחי.",
+            "מצמידים את הזרוע לגוף, כמו מקפלים כנף קטנה.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הפרחים בגן.",
+            "שומעים ביפ קטן — השדון כותב ביומן הקסמים, וסיימנו."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "עם אלחוש",
+          "steps": [
+            "קודם הגמד מורח חומר קריר שמרדים את האזור, ומכסה במעין קורי עכביש שקופים.",
+            "מחכים קצת עד שהאזור של החתך \"הולך לישון\", כמו פרח בניצן.",
+            "הגמד מחזיק את האזור וסוגר אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
+            "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והגמד שם חבישה נקייה מלמעלה."
+          ]
+        },
+        {
+          "label": "בלי אלחוש",
+          "steps": [
+            "לא צריך להרדים את האזור — הגמד מתחיל מיד.",
+            "הגמד מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+            "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והגמד שם חבישה נקייה מלמעלה."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "השדון העוזר נותן לנו מדחום קטן — שמים אותו בפה.",
+        "סוגרים את הפה חזק־חזק, כאילו יש בפנים פרי קסום.",
+        "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הפרחים בגן.",
+        "שומעים ביפ קטן — השדון כותב ביומן הקסמים, וסיימנו."
+      ],
+      "saturation": [
+        "השדון העוזר שם אטב קטן ורך על האצבע.",
+        "נדלק בו אור ורוד — כמו גחלילית בדשא.",
+        "הוא רק מסתכל — לא עושה כלום.",
+        "אחרי רגע השדון מוריד אותו."
+      ],
+      "blood-pressure": [
+        "השדון העוזר שם שרוול רך על הזרוע.",
+        "הוא מתנפח ומחבק את הזרוע, כמו עלה שמחבק ענף.",
+        "סופרים יחד עם השדון, והשרוול משחרר לבד.",
+        "אחר כך מורידים את השרוול — וזהו, סיימנו."
+      ],
+      "doctor-exam": [
+        "נפגוש את פיית הריפוי שרוצה לעזור לנו.",
+        "הפיה מקשיבה לגוף עם צינור קסום — קצת קריר, לא כואב.",
+        "אולי הפיה תסתכל בגרון ובאוזניים עם אור קסום קטן.",
+        "בסוף הפיה תדע איזה קסם יעזור לנו."
+      ],
+      "blood-test": [
+        "השדון העוזר מורח משחה שעושה את העור פחות רגיש.",
+        "סרט רך מתעטף סביב הזרוע, כמו עלה כותרת.",
+        "דקירה קטנה וקצרה — ומסתכלים על הפרחים בגן.",
+        "טיפת הדם נשלחת למעבדת הקסמים, והשדון מדביק פלסטר עם פרח — כל הכבוד לנו!"
+      ],
+      "urine": [
+        "הולכים לשירותים, כמו תמיד.",
+        "עושים קצת פיפי לתוך כוס קטנה.",
+        "נותנים את הכוס לשדון, והוא לוקח את הדגימה למעבדת הקסמים.",
+        "זהו!"
+      ],
+      "xray": [
+        "נכנסים לחדר עם מראת הגן.",
+        "לפעמים מלבישים לבוש כבד שמגן על הגוף.",
+        "עומדים או שוכבים בנחת, כמו פרח בגן.",
+        "המראה מצלמת תמונה — לא מרגישים כלום.",
+        "סיימנו, אפשר לזוז שוב."
+      ],
+      "ultrasound": [
+        "שוכבים בנחת על מיטה רכה, כמו על עלה כותרת.",
+        "מורחים ג׳ל קצת קר על הבטן.",
+        "מקל חלק מחליק ומצייר תמונה על המסך — לפעמים לוחצים קצת, וזה בסדר.",
+        "אם מפריע אפשר לבקש רגע הפסקה.",
+        "מנגבים את הג׳ל — וסיימנו."
+      ],
+      "ct": [
+        "שוכבים על מיטה נוחה.",
+        "המיטה זזה לאט לתוך טבעת קסומה גדולה.",
+        "שומעים זמזום שקט, ושוכבים בנחת כמו פרח.",
+        "המיטה חוזרת החוצה — סיימנו."
+      ],
+      "iv": [
+        "גמד הגן מורח משחה שמרגיעה את העור.",
+        "דקירה קצרה, ואז הגמד מכניס צינור רך ודק.",
+        "מוציאים את המחט, והצינור הרך נשאר כדי שהמים יטפטפו לאט — כמו מהמשקה של הגן.",
+        "הגמד מדביק מדבקה בצורת עלה שמחזיקה את הצינור במקום."
+      ],
+      "medication": [
+        "גמד הגן מביא תרופה שעוזרת לגוף.",
+        "לפעמים שותים קצת סירופ פירות מכפית קטנה.",
+        "ולפעמים התרופה נכנסת דרך הצינור הרך.",
+        "ואפשר לשתות מים מהמשקה אחרי, בשביל הטעם."
+      ],
+      "inhalation": [
+        "הגמד שם על הפנים מסכה רכה עם אוויר קריר.",
+        "לא צריך לנשום בכוח — רק נושמים רגיל, כאילו מריחים פרחים.",
+        "לפעמים טיפה מדגדג באף, ואפשר לבקש שהאוויר ייצא לאט יותר.",
+        "אפשר לצפות בסרטון בזמן הזה. אחרי כמה דקות הגמד מוריד את המסכה — סיימנו."
+      ],
+      "stitches": [
+        "לא צריך להרדים את האזור — הגמד מתחיל מיד.",
+        "הגמד מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+        "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והגמד שם חבישה נקייה מלמעלה."
+      ],
+      "cast": [
+        "בוחרים אם לשבת או לשכב, ואם אמא או אבא יהיו לידנו.",
+        "הגמד עוטף את היד או הרגל בשכבות רכות.",
+        "עכשיו מחכים רגע בסבלנות בלי לזוז, כמו פרפר בתוך גולם — אי אפשר לעצור באמצע, כדי שהגבס יתאים בדיוק.",
+        "הגבס מתקשה לאט, כמו גולם, ושומר על העצם — וכך היא מחלימה."
+      ],
+      "bandage": [
+        "הגמד עוטף תחבושת רכה סביב האזור.",
+        "בעדינות, שכבה על שכבה, כמו עלה סביב ענף.",
+        "בסוף הגמד מדביק — נעים ומוגן, ואפשר להמשיך בשביל הגן."
+      ],
+      "waiting-results": [
+        "סיימנו את כל הבדיקות — כל הכבוד לנו!",
+        "עכשיו מחכים לתשובות בגן. אפשר לשחק, לנוח או לראות סרטון.",
+        "הגביש הקסום במעבדה בודק את הדגימות שלנו, והשדון והגמד לא שכחו אותנו.",
+        "כשיהיו תשובות — הפיה תבוא לספר לנו."
+      ]
+    },
+    "calmLines": [
+      "רגע, נושמים יחד 💙",
+      "קשה עכשיו? זה בסדר גמור. אני כאן.",
+      "אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…"
+    ]
   },
   "en": {
     "name": "Magic Garden",
@@ -72,11 +219,11 @@
       },
       "wait-before-triage": {
         "label": "Butterfly Bridge",
-        "hint": "We wait on the bridge until the healing fairy calls"
+        "hint": "We wait on the bridge until the elf helper calls"
       },
       "triage": {
         "label": "Magic Check",
-        "hint": "The healing fairy checks your magic"
+        "hint": "The elf helper checks our magic"
       },
       "wait-doctor": {
         "label": "Flower Corner",
@@ -87,8 +234,8 @@
         "hint": "The fairy decides which magic will heal"
       },
       "decision": {
-        "label": "Victory Flower",
-        "hint": "You got a magic flower — you are healed!"
+        "label": "Leaving the Beautiful Garden",
+        "hint": "Goodbye, fairies!"
       },
       "tests": {
         "label": "Magic Sight",
@@ -96,11 +243,11 @@
       },
       "treatment": {
         "label": "Healing Wand",
-        "hint": "The fairy heals with her wand"
+        "hint": "The garden gnome treats what needs treating"
       },
       "consult": {
         "label": "Council of Fairies",
-        "hint": "Another fairy comes to help"
+        "hint": "The wise fairy comes to help"
       },
       "wait-results": {
         "label": "Waiting for the Magic",
@@ -108,24 +255,171 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "The healing fairy checks the hero's inner fire — to know which magic will help.",
+      "temperature": "The elf helper checks the guest's inner fire — to know which magic will help.",
       "saturation": "The pink magic ring on the finger checks that the magic of air flows in the blood as it should.",
-      "blood-pressure": "The fairies' sleeve presses gently and checks the strength of the hero's magic heart.",
-      "doctor-exam": "The healing fairy gently examines the hero's powers — the right magic will come from it.",
+      "blood-pressure": "The fairies' sleeve presses gently and checks the strength of the guest's magic heart.",
+      "doctor-exam": "The healing fairy gently examines the guest's powers — the right magic will come from it.",
       "blood-test": "The fairy needs one small magic drop to brew the right healing magic.",
-      "urine": "The blue magic cup will reveal the body's secrets to the healing fairy.",
-      "xray": "The garden mirror looks deep into the body and sees everything — without you feeling anything.",
+      "urine": "A small cup will reveal the body's secrets to the healing fairy.",
+      "xray": "The garden mirror looks deep into the body and sees everything — without us feeling anything.",
       "ultrasound": "The garden gel on the skin lets the wand wander inside and find what needs healing.",
       "ct": "The magic ring scans slowly and takes a picture of everything inside.",
-      "iv": "The fairy's thin tube sends healing magic straight into the hero's blood.",
-      "medication": "The healing fairy has brewed a special magic — a syrup or a mixture that will strengthen the hero.",
+      "iv": "The garden gnome's thin tube sends healing magic straight into the guest's blood.",
+      "medication": "The garden gnome has prepared a special magic — a syrup or a mixture that will strengthen the guest.",
       "inhalation": "Magic vapours come through the mask and help breathing flow easily and happily.",
-      "stitches": "The fairy carefully closes the wound with magic glue or a golden healing thread.",
-      "cast": "The fairies' plaster armour wraps the bone and holds it until it fully heals.",
+      "stitches": "The garden gnome carefully closes the wound with magic glue or a golden healing thread.",
+      "cast": "A plaster cocoon, like a butterfly's, wraps the bone and holds it until it fully heals.",
       "bandage": "The garden dressing wraps the wound and protects it until the magic does its work.",
       "waiting-results": "The magic crystal processes the tests — soon the magic answer will come."
     },
-    "distractTitle": "The Magic Wand ✨"
+    "distractTitle": "The Magic Wand ✨",
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "In the mouth",
+          "steps": [
+            "The elf helper gives us a little thermometer — we put it in the mouth.",
+            "We close the mouth tight-tight, as if there is a magic berry inside.",
+            "We wait quietly until the thermometer is done — we can count the flowers in the garden.",
+            "We hear a little beep — the elf writes it in the magic journal, and we're done."
+          ]
+        },
+        {
+          "label": "Under the armpit",
+          "steps": [
+            "The elf helper puts a little thermometer under the arm.",
+            "We press the arm to the body, as if tucking in a little wing.",
+            "We wait quietly until the thermometer is done — we can count the flowers in the garden.",
+            "We hear a little beep — the elf writes it in the magic journal, and we're done."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "With numbing",
+          "steps": [
+            "First the gnome puts something cool on the spot to make it sleepy, and covers it with a clear cobweb.",
+            "We wait a little until the spot around the cut “goes to sleep”, like a flower in bud.",
+            "The gnome holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
+            "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on the face, and the gnome puts a clean bandage on top."
+          ]
+        },
+        {
+          "label": "Without numbing",
+          "steps": [
+            "There's no need to make the spot sleepy — the gnome starts right away.",
+            "The gnome holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+            "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on the face, and the gnome puts a clean bandage on top."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "The elf helper gives us a little thermometer — we put it in the mouth.",
+        "We close the mouth tight-tight, as if there is a magic berry inside.",
+        "We wait quietly until the thermometer is done — we can count the flowers in the garden.",
+        "We hear a little beep — the elf writes it in the magic journal, and we're done."
+      ],
+      "saturation": [
+        "The elf helper puts a small, soft clip on the finger.",
+        "A pink light turns on inside it — like a firefly in the grass.",
+        "It only looks — it doesn't do anything.",
+        "After a moment the elf takes it off."
+      ],
+      "blood-pressure": [
+        "The elf helper puts a soft cuff on the arm.",
+        "It fills with air and hugs the arm, like a leaf hugs a branch.",
+        "We count together with the elf, and the cuff lets go by itself.",
+        "Then the cuff comes off — and that's it, all done."
+      ],
+      "doctor-exam": [
+        "We meet the healing fairy, who wants to help us.",
+        "The fairy listens to the body with a magic tube — a little cool, but it does not hurt.",
+        "Maybe the fairy will look in the throat and ears with a small magic light.",
+        "At the end, the fairy will know which magic will help us."
+      ],
+      "blood-test": [
+        "The elf helper puts a cream on the skin that makes it less sensitive.",
+        "A soft ribbon wraps around the arm, like a petal.",
+        "A tiny, quick prick — and we look at the flowers in the garden.",
+        "The drop of blood goes to the magic lab, and the elf puts on a plaster with a flower — well done!"
+      ],
+      "urine": [
+        "We go to the toilet, like always.",
+        "We pee a little into a small cup.",
+        "We give the cup to the elf, who takes the sample to the magic lab.",
+        "That's it!"
+      ],
+      "xray": [
+        "We go into a room with a garden mirror.",
+        "Sometimes they put a heavy cover on that protects the body.",
+        "We stand or lie calmly, like a flower in the garden.",
+        "The mirror takes a picture — we don't feel anything.",
+        "We're done, we can move again."
+      ],
+      "ultrasound": [
+        "We lie calmly on a soft bed, like on a petal.",
+        "They spread a slightly cold gel on the tummy.",
+        "A smooth wand glides and draws a picture on the screen — sometimes it presses a little, and that's okay.",
+        "If it bothers us, we can ask for a little break.",
+        "They wipe off the gel — and we're done."
+      ],
+      "ct": [
+        "We lie on a comfy bed.",
+        "The bed slowly moves into a big magic ring.",
+        "We hear a quiet hum and lie calmly, like a flower.",
+        "The bed comes back out — we're done."
+      ],
+      "iv": [
+        "The garden gnome puts a cream on the skin that calms it.",
+        "A short prick, and then the gnome puts in a soft, thin tube.",
+        "They take the needle out, and the soft tube stays so water can drip in slowly — like from a garden watering can.",
+        "The gnome puts on a leaf-shaped sticker that holds the tube in place."
+      ],
+      "medication": [
+        "The garden gnome brings medicine that helps the body.",
+        "Sometimes we drink a little berry syrup from a tiny spoon.",
+        "Sometimes the medicine goes in through the soft tube.",
+        "And we can have some water from the watering can afterwards for the taste."
+      ],
+      "inhalation": [
+        "The gnome puts a soft mask with cool air on the face.",
+        "We don't need to breathe hard — we just breathe normally, as if smelling the flowers.",
+        "Sometimes it tickles the nose a little, and we can ask for the air to come out slower.",
+        "We can watch a video meanwhile. After a few minutes the gnome takes the mask off — we're done."
+      ],
+      "stitches": [
+        "There's no need to make the spot sleepy — the gnome starts right away.",
+        "The gnome holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+        "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+        "If the glue gets a little warm, someone blows cool air on the face, and the gnome puts a clean bandage on top."
+      ],
+      "cast": [
+        "We choose whether to sit or lie down, and whether mom or dad stays close.",
+        "The gnome wraps the arm or leg in soft layers.",
+        "Now we wait patiently for a moment without moving, like a butterfly in its cocoon — we can't stop in the middle, so the cast fits just right.",
+        "The cast slowly hardens, like a cocoon, and keeps the bone safe — and lets it heal."
+      ],
+      "bandage": [
+        "The gnome wraps a soft bandage around the spot.",
+        "Gently, layer after layer, like a leaf around a branch.",
+        "At the end the gnome sticks it down — cosy and protected, ready for the garden path."
+      ],
+      "waiting-results": [
+        "We finished all the checks — well done!",
+        "Now we wait for the answers in the garden. We can play, rest or watch a video.",
+        "The magic crystal in the lab is studying our samples, and the elf and the gnome haven't forgotten us.",
+        "When the answers are ready, the fairy will come and tell us."
+      ]
+    },
+    "calmLines": [
+      "A moment — let's breathe together 💙",
+      "Is it hard right now? That's completely okay. I'm here.",
+      "We can also count slowly to ten together. One… two… three…"
+    ]
   },
   "ru": {
     "name": "Волшебный сад",
@@ -136,11 +430,11 @@
       },
       "wait-before-triage": {
         "label": "Мост бабочек",
-        "hint": "Ждём на мосту, пока нас позовёт целительница-фея"
+        "hint": "Ждём на мосту, пока нас позовёт эльф-помощник"
       },
       "triage": {
         "label": "Проверка волшебства",
-        "hint": "Целительница-фея проверяет твоё волшебство"
+        "hint": "Эльф-помощник проверяет наше волшебство"
       },
       "wait-doctor": {
         "label": "Цветочный уголок",
@@ -151,8 +445,8 @@
         "hint": "Фея решает, какое волшебство исцелит"
       },
       "decision": {
-        "label": "Цветок победы",
-        "hint": "Ты получил(а) волшебный цветок — ты исцелён(а)!"
+        "label": "Выходим из прекрасного сада",
+        "hint": "До свидания, феи!"
       },
       "tests": {
         "label": "Волшебное зрение",
@@ -160,11 +454,11 @@
       },
       "treatment": {
         "label": "Целебная палочка",
-        "hint": "Фея исцеляет своей палочкой"
+        "hint": "Гном-садовник лечит то, что нужно"
       },
       "consult": {
         "label": "Совет фей",
-        "hint": "Ещё одна фея приходит помочь"
+        "hint": "Мудрая фея приходит помочь"
       },
       "wait-results": {
         "label": "Ждём волшебства",
@@ -172,23 +466,170 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "Фея-целительница проверяет внутренний огонь героя — чтобы узнать, какое волшебство поможет.",
+      "temperature": "Эльф-помощник проверяет внутренний огонь гостя — чтобы узнать, какое волшебство поможет.",
       "saturation": "Розовое волшебное кольцо на пальце проверяет, что волшебный воздух течёт в крови как надо.",
-      "blood-pressure": "Рукав фей мягко сжимается и проверяет силу волшебного сердца героя.",
-      "doctor-exam": "Фея-целительница мягко изучает силы героя — от них придёт подходящее волшебство.",
+      "blood-pressure": "Рукав фей мягко сжимается и проверяет силу волшебного сердца гостя.",
+      "doctor-exam": "Фея-целительница мягко изучает силы гостя — от них придёт подходящее волшебство.",
       "blood-test": "Фее нужна одна маленькая волшебная капля, чтобы сварить нужное целебное волшебство.",
-      "urine": "Синяя волшебная чашка раскроет фее-целительнице тайны тела.",
-      "xray": "Садовое зеркало заглядывает глубоко в тело и видит всё — ты при этом ничего не чувствуешь.",
+      "urine": "Маленький стаканчик раскроет фее-целительнице тайны тела.",
+      "xray": "Садовое зеркало заглядывает глубоко в тело и видит всё — мы при этом ничего не чувствуем.",
       "ultrasound": "Садовый гель на коже позволяет палочке бродить внутри и найти то, что нужно вылечить.",
       "ct": "Волшебное кольцо медленно сканирует и делает снимок всего, что внутри.",
-      "iv": "Тонкая трубка феи посылает целебное волшебство прямо в кровь героя.",
-      "medication": "Фея-целительница сварила особое волшебство — сироп или смесь, которая укрепит героя.",
+      "iv": "Тонкая трубка гнома-садовника посылает целебное волшебство прямо в кровь гостя.",
+      "medication": "Гном-садовник приготовил особое волшебство — сироп или смесь, которая укрепит гостя.",
       "inhalation": "Волшебные пары приходят через маску и помогают дышать легко и радостно.",
-      "stitches": "Фея аккуратно закрывает рану волшебным клеем или золотой целебной нитью.",
-      "cast": "Гипсовый доспех фей обхватывает кость и держит её, пока она полностью не заживёт.",
+      "stitches": "Гном-садовник аккуратно закрывает рану волшебным клеем или золотой целебной нитью.",
+      "cast": "Гипсовый кокон, как у бабочки, обхватывает кость и держит её, пока она полностью не заживёт.",
       "bandage": "Садовая повязка обхватывает рану и защищает её, пока волшебство делает своё дело.",
       "waiting-results": "Волшебный кристалл обрабатывает анализы — скоро придёт волшебный ответ."
     },
-    "distractTitle": "Волшебная палочка ✨"
+    "distractTitle": "Волшебная палочка ✨",
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "Во рту",
+          "steps": [
+            "Эльф-помощник даёт нам маленький градусник — кладём его в рот.",
+            "Крепко-крепко закрываем рот, как будто там волшебная ягодка.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать цветы в саду.",
+            "Слышим тихое «бип» — эльф записывает в волшебный журнал, и всё, готово."
+          ]
+        },
+        {
+          "label": "Под мышкой",
+          "steps": [
+            "Эльф-помощник кладёт маленький градусник под мышку.",
+            "Прижимаем руку к телу, как будто прячем крылышко.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать цветы в саду.",
+            "Слышим тихое «бип» — эльф записывает в волшебный журнал, и всё, готово."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "С обезболиванием",
+          "steps": [
+            "Сначала гном мажет прохладное средство, от которого место засыпает, и закрывает его прозрачной паутинкой.",
+            "Немного ждём, пока место пореза «уснёт», как цветок в бутоне.",
+            "Гном держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими стежками — не больно.",
+            "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху гном накладывает чистую повязку."
+          ]
+        },
+        {
+          "label": "Без обезболивания",
+          "steps": [
+            "Обезболивать не нужно — гном начинает сразу.",
+            "Гном держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+            "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху гном накладывает чистую повязку."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "Эльф-помощник даёт нам маленький градусник — кладём его в рот.",
+        "Крепко-крепко закрываем рот, как будто там волшебная ягодка.",
+        "Тихонько ждём, пока градусник закончит, — можно посчитать цветы в саду.",
+        "Слышим тихое «бип» — эльф записывает в волшебный журнал, и всё, готово."
+      ],
+      "saturation": [
+        "Эльф-помощник надевает на палец маленькую мягкую прищепку.",
+        "В ней загорается розовый огонёк — как светлячок в траве.",
+        "Она только смотрит — ничего не делает.",
+        "Через минутку эльф её снимает."
+      ],
+      "blood-pressure": [
+        "Эльф-помощник надевает на руку мягкую манжету.",
+        "Она надувается и обнимает руку, как листик обнимает ветку.",
+        "Мы считаем вместе с эльфом, и манжета сама отпускает.",
+        "Потом манжету снимают — и всё, готово."
+      ],
+      "doctor-exam": [
+        "Встречаем фею-целительницу, которая хочет нам помочь.",
+        "Фея слушает тело волшебной трубочкой — немного прохладно, но не больно.",
+        "Может быть, фея посмотрит горло и уши маленьким волшебным фонариком.",
+        "В конце фея будет знать, какое волшебство нам поможет."
+      ],
+      "blood-test": [
+        "Эльф-помощник мажет на кожу крем, от которого она становится менее чувствительной.",
+        "Мягкая ленточка обнимает руку, как лепесток.",
+        "Маленький быстрый укол — а мы смотрим на цветы в саду.",
+        "Капелька крови отправляется в волшебную лабораторию, а эльф клеит пластырь с цветочком — молодцы!"
+      ],
+      "urine": [
+        "Идём в туалет, как всегда.",
+        "Немного писаем в маленький стаканчик.",
+        "Отдаём стаканчик эльфу — он отнесёт образец в волшебную лабораторию.",
+        "Всё!"
+      ],
+      "xray": [
+        "Заходим в комнату с садовым зеркалом.",
+        "Может быть, наденут тяжёлую накидку, которая защищает тело.",
+        "Спокойно стоим или лежим, как цветок в саду.",
+        "Зеркало делает снимок — мы ничего не чувствуем.",
+        "Готово, можно снова двигаться."
+      ],
+      "ultrasound": [
+        "Спокойно ложимся на мягкую кровать, как на лепесток.",
+        "На живот мажут немного холодный гель.",
+        "Гладкая палочка скользит и рисует на экране картинку — иногда немного надавливают, и это нормально.",
+        "Если мешает, можно попросить маленький перерыв.",
+        "Гель вытирают — и готово."
+      ],
+      "ct": [
+        "Ложимся на удобную кровать.",
+        "Кровать медленно въезжает в большое волшебное кольцо.",
+        "Слышим тихий шум и лежим спокойно, как цветок.",
+        "Кровать выезжает обратно — готово."
+      ],
+      "iv": [
+        "Гном-садовник мажет на кожу крем, который её успокаивает.",
+        "Короткий укол, а потом гном вводит мягкую тонкую трубочку.",
+        "Иглу вынимают, а мягкая трубочка остаётся, чтобы водичка понемногу капала — как из садовой лейки.",
+        "Гном приклеивает наклейку-листик, которая держит трубочку на месте."
+      ],
+      "medication": [
+        "Гном-садовник приносит лекарство, которое помогает телу.",
+        "Иногда пьём немного ягодного сиропа из маленькой ложечки.",
+        "Иногда лекарство идёт через мягкую трубочку.",
+        "А потом можно попить воды из лейки, чтобы убрать вкус."
+      ],
+      "inhalation": [
+        "Гном надевает на лицо мягкую маску с прохладным воздухом.",
+        "Не нужно дышать сильно — просто дышим как обычно, как будто нюхаем цветы.",
+        "Иногда немного щекочет в носу, и можно попросить, чтобы воздух шёл медленнее.",
+        "В это время можно смотреть мультик. Через несколько минут гном снимает маску — готово."
+      ],
+      "stitches": [
+        "Обезболивать не нужно — гном начинает сразу.",
+        "Гном держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+        "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+        "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху гном накладывает чистую повязку."
+      ],
+      "cast": [
+        "Выбираем, сидеть или лежать, и будут ли мама или папа рядом.",
+        "Гном обматывает руку или ногу мягкими слоями.",
+        "Теперь терпеливо ждём немного и не двигаемся, как бабочка в коконе, — останавливаться посередине нельзя, чтобы гипс подошёл точно.",
+        "Гипс медленно твердеет, как кокон, и бережёт кость — и она заживает."
+      ],
+      "bandage": [
+        "Гном обматывает это место мягким бинтом.",
+        "Обматывает бережно, слой за слоем, как листик вокруг ветки.",
+        "В конце закрепляет — уютно и надёжно, можно идти дальше по дорожке сада."
+      ],
+      "waiting-results": [
+        "Мы закончили все проверки — молодцы!",
+        "Теперь ждём ответов в саду. Можно поиграть, отдохнуть или посмотреть мультик.",
+        "Волшебный кристалл в лаборатории изучает наши образцы, а эльф и гном помнят про нас.",
+        "Когда будут ответы, фея придёт и расскажет нам."
+      ]
+    },
+    "calmLines": [
+      "Минутку — дышим вместе 💙",
+      "Сейчас трудно? Это совершенно нормально. Я рядом.",
+      "Можно ещё медленно посчитать со мной до десяти. Один… два… три…"
+    ]
   }
 }

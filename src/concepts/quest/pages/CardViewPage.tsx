@@ -7,7 +7,7 @@ import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import { useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
 import { CareCardView, careCardHeading } from '../../../components/careCard/CareCardView'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 import css from '../quest.module.css'
 
 type Lang = 'he' | 'en' | 'ru'
@@ -17,7 +17,7 @@ export function CardViewPage() {
   const { t, lang } = useI18n()
   const { goBack, leaveState, passThroughState } = useReturnTo('/card')
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
-  const emptyTexts = keyed((parentUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang], 'parent/ui').card.empty
+  const emptyTexts = keyed((i18nUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang], 'i18n/ui').card.empty
 
   if (isCardEmpty(card)) {
     return (

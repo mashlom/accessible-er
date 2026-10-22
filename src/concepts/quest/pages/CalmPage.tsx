@@ -49,7 +49,7 @@ export function CalmPage() {
 
         {t('support.distressTips', distressTips).map((tip, i) => (
           <section key={i}>
-            <h2>{tip.emoji} {tip.title}</h2>
+            <h2>{distressTips[i].emoji} {tip.title}</h2>
             <p>{tip.body}</p>
             {i === REDUCE_STIMULATION_TIP && (
               <Link to="/distract" state={leaveState('/calm')} className={css.calmLink} style={{ marginTop: '0.5rem' }}>

@@ -5,7 +5,7 @@ import { AnimatedIcon } from '../../../components/AnimatedIcon'
 import { Scene, Bubble, Note } from '../components/kit'
 import styles from '../pages.module.css'
 import { useI18n } from '../../../hooks/useI18n'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 
 type StoryDistractTexts = {
   title: string
@@ -41,7 +41,7 @@ const bubbles = [
 
 export function DistractPage() {
   const { lang, dir } = useI18n()
-  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyDistract: StoryDistractTexts }>)[lang], 'parent/ui').storyDistract
+  const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyDistract: StoryDistractTexts }>)[lang], 'i18n/ui').storyDistract
   const watchables = watchEmojis.map((emoji, i) => ({ emoji, label: tx.labels[i] ?? '' }))
   const [pick, setPick] = useState(watchEmojis[0])
   const current = watchables.find((w) => w.emoji === pick) ?? watchables[0]

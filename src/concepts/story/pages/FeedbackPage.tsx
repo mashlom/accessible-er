@@ -9,7 +9,7 @@ import { DAY_MS } from '../../../lib/storage'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 import { useI18n } from '../../../hooks/useI18n'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 
 type FeedbackTexts = {
   title: string
@@ -33,11 +33,11 @@ type FeedbackTexts = {
   back: string
 }
 
-// the choices are stored by id; the team's Hebrew words for them are in parent/ui.json (storyFeedback.team)
+// the choices are stored by id; the team's Hebrew words for them are in i18n/ui.json (storyFeedback.team)
 const HELP_IDS = ['trail', 'tests', 'map', 'calm', 'ask', 'roni'] as const
 const DIAG_IDS = ['diagnosed', 'inProcess', 'no', 'noAnswer'] as const
 type TeamWords = { help: Record<string, string>; diag: Record<string, string>; rating: Record<string, string>; unset: string; none: string; subject: string; concept: string; labels: Record<string, string> }
-const team = keyed((parentUi as unknown as { he: { storyFeedback: { team: TeamWords } } }).he, 'parent/ui').storyFeedback.team
+const team = keyed((i18nUi as unknown as { he: { storyFeedback: { team: TeamWords } } }).he, 'i18n/ui').storyFeedback.team
 
 interface Feedback {
   rating: number | null
@@ -65,7 +65,7 @@ function buildMailto(feedback: Feedback) {
 export function FeedbackPage() {
   const { lang, dir } = useI18n()
   // labels are translated; the stored and mailed values stay in Hebrew, as the team reads them
-  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyFeedback: FeedbackTexts }>)[lang], 'parent/ui').storyFeedback
+  const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyFeedback: FeedbackTexts }>)[lang], 'i18n/ui').storyFeedback
   const [saved, setSaved] = usePersistentState<Feedback | null>('feedback', null, DAY_MS)
   const [rating, setRating] = useState<number | null>(saved?.rating ?? null)
   const [helped, setHelped] = useState<string[]>(saved?.helped ?? [])

@@ -20,16 +20,6 @@
       "text": "בהתחלה רופאים לחצו את האוזן לגב של אדם והקשיבו לנשימה ולפעימות הלב. אבל האוזן שומעת צלילים שקטים לא טוב, וגם קשה ללחוץ את האוזן לחזה של מישהו אחר. אז מישהו המציא צינור. הוא נקרא סטטוסקופ: המילה \"סטטוס\" ביוונית פירושה \"חזה\".\n\nהצינור אוסף את הקול מתוך הגוף ומוביל אותו ישר לאוזן, כאילו מקרב אותו. לכן הצלילים נשמעים חזק וברור יותר, והרעש מהחדר כמעט לא מפריע.\n\nלקצה הסטטוסקופ יש ראש מתכת עם שני צדדים. צד אחד הוא דיסק דק מפלסטיק, שנקרא ממברנה. הוא שומע טוב צלילים גבוהים, כמו נשימה ופעולת שסתומי הלב. הצד השני דומה לכוס קטנה. הוא שומע טוב יותר צלילים נמוכים. הרופא/ה מהפך/ת את הראש כדי להקשיב לדברים שונים.\n\nהסטטוסקופ הופך את הצלילים של הגוף לברורים, שקטים ומובנים.",
       "draft": true
     },
-    "tests": {
-      "title": "איך עושים בדיקת דם?",
-      "text": "לוקחים מעט דם מהיד בעזרת מחט דקה מאוד. זה רגע קצר, ואחריו מטפלים במקום.",
-      "draft": true
-    },
-    "treatment": {
-      "title": "איך עובד טיפול?",
-      "text": "תרופות נכנסות לגוף ועוזרות לו להחלים. לכל טיפול יש סיבה, והצוות מסביר אותה.",
-      "draft": true
-    },
     "consult": {
       "title": "מי הם מומחים?",
       "draft": true,
@@ -137,16 +127,6 @@
       "text": "At first, doctors pressed their ear to a person's back and listened to breathing and the heartbeat. But the ear hears quiet sounds poorly, and it is awkward to press your ear to someone's chest. So someone invented a tube. It was called a stethoscope: the Greek word \"stethos\" means \"chest\".\n\nThe tube gathers the sound from inside the body and leads it straight to the ear, as if bringing it closer. That is why the sounds become louder and clearer, and the noise from the room hardly gets in the way.\n\nThe end of the stethoscope has a metal head with two sides. One side is a thin plastic disc, called the diaphragm. It hears high sounds well, such as breathing and the work of the heart valves. The other side looks like a little cup. It hears low sounds better. The doctor turns the head over to listen to different things.\n\nA stethoscope makes the sounds of the body clear, calm and easy to understand.",
       "draft": true
     },
-    "tests": {
-      "title": "How is a blood test done?",
-      "text": "A very thin needle takes a small amount of blood from the arm. It is quick, and then the place is looked after.",
-      "draft": true
-    },
-    "treatment": {
-      "title": "How does treatment work?",
-      "text": "Medicines go into the body and help it get better. Every treatment has a reason, and the team explains it.",
-      "draft": true
-    },
     "consult": {
       "title": "Who are specialists?",
       "draft": true,
@@ -252,16 +232,6 @@
     "doctor": {
       "title": "Как работает стетоскоп?",
       "text": "Сначала врачи прижимали ухо к спине и слушали дыхание и биение сердца. Но ухо слышит тихие звуки плохо, да и прижиматься к чужой груди неудобно. Тогда кто-то придумал трубочку. Её назвали стетоскопом: слово «стетос» по-гречески значит «грудь».\n\nТрубочка собирает звук изнутри тела и ведёт его прямо к уху, как будто подносит его ближе. Поэтому звуки становятся громче и яснее, а шум из комнаты почти не мешает.\n\nНа конце стетоскопа есть металлическая головка с двумя сторонами. Одна сторона — тонкий пластиковый диск, его называют мембраной. Он хорошо слышит высокие звуки, например дыхание и работу сердечных клапанов. Другая сторона похожа на чашечку. Она лучше слышит низкие звуки. Врач переворачивает головку, чтобы послушать разное.\n\nСтетоскоп делает звуки тела слышными, спокойными и понятными.",
-      "draft": true
-    },
-    "tests": {
-      "title": "Как берут анализ крови?",
-      "text": "Очень тонкой иголкой берут немного крови из руки. Это быстро, а потом место заботливо обрабатывают.",
-      "draft": true
-    },
-    "treatment": {
-      "title": "Как работает лечение?",
-      "text": "Лекарства попадают в тело и помогают ему выздороветь. У каждого лечения есть причина, и команда её объясняет.",
       "draft": true
     },
     "consult": {

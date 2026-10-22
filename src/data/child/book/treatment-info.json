@@ -10,13 +10,7 @@
         "Обезболивающий крем заранее",
         "Отвлечься, и чтобы рядом был один человек, который всё объясняет",
         "Заклеить трубочку наклейкой, чтобы на неё не смотреть"
-      ],
-      "headings": {
-        "what": "Что здесь будет",
-        "feel": "Что может быть трудно",
-        "prepare": "",
-        "canAsk": "О чём ты можешь попросить"
-      }
+      ]
     },
     "medication": {
       "title": "Лекарство",
@@ -29,12 +23,6 @@
         "Попросить воду или перекус после",
         "Самому подержать стаканчик"
       ],
-      "headings": {
-        "what": "Что здесь будет",
-        "feel": "Что может быть трудно",
-        "prepare": "",
-        "canAsk": "О чём ты можешь попросить"
-      },
       "videoName": "Приём лекарства"
     },
     "inhalation": {
@@ -47,13 +35,7 @@
         "Держать маску вместе с мамой или папой",
         "Попросить уменьшить поток воздуха, если щекочет глаза или лицо",
         "Сидеть на коленях у мамы или папы"
-      ],
-      "headings": {
-        "what": "Что здесь будет",
-        "feel": "Что может быть трудно",
-        "prepare": "",
-        "canAsk": "О чём ты можешь попросить"
-      }
+      ]
     },
     "bandage": {
       "title": "Повязка",
@@ -65,13 +47,7 @@
         "Выбрать цвет или вид бинта",
         "Попросить делать медленно",
         "Подержать конец бинта"
-      ],
-      "headings": {
-        "what": "Что здесь будет",
-        "feel": "Что может быть трудно",
-        "prepare": "",
-        "canAsk": "О чём ты можешь попросить"
-      }
+      ]
     },
     "cast": {
       "title": "Гипс или лангета",
@@ -83,13 +59,7 @@
         "Выбрать, сидеть или лежать",
         "Выбрать, будут ли рядом мама или папа, или ты побудешь без них",
         "Чтобы тебе медленно объясняли каждый шаг перед началом"
-      ],
-      "headings": {
-        "what": "Что здесь будет",
-        "feel": "Что может быть трудно",
-        "prepare": "",
-        "canAsk": "О чём ты можешь попросить"
-      }
+      ]
     },
     "stitches": {
       "title": "Заклеивание раны или швы",
@@ -102,13 +72,7 @@
         "Держать маму или папу за руку, смотреть что-нибудь в телефоне или слушать сказку",
         "Попросить подуть прохладным воздухом на лицо, когда клей нагревается",
         "Закрыть это место, чтобы не видеть"
-      ],
-      "headings": {
-        "what": "Что здесь будет",
-        "feel": "Что может быть трудно",
-        "prepare": "",
-        "canAsk": "О чём ты можешь попросить"
-      }
+      ]
     }
   },
   "en": {
@@ -122,13 +86,7 @@
         "A numbing cream beforehand",
         "Something to distract you, and one person who explains everything",
         "A sticker over the tube, so you do not have to look at it"
-      ],
-      "headings": {
-        "what": "What will happen here",
-        "feel": "What may be hard",
-        "prepare": "",
-        "canAsk": "What can you ask for?"
-      }
+      ]
     },
     "medication": {
       "title": "Medicine",
@@ -141,12 +99,6 @@
         "Ask for water or a snack afterwards",
         "Hold the cup yourself"
       ],
-      "headings": {
-        "what": "What will happen here",
-        "feel": "What may be hard",
-        "prepare": "",
-        "canAsk": "What can you ask for?"
-      },
       "videoName": "Taking medicine"
     },
     "inhalation": {
@@ -159,13 +111,7 @@
         "Hold the mask together with mum or dad",
         "Ask for less airflow if it tickles your eyes or face",
         "Sit on mum's or dad's lap"
-      ],
-      "headings": {
-        "what": "What will happen here",
-        "feel": "What may be hard",
-        "prepare": "",
-        "canAsk": "What can you ask for?"
-      }
+      ]
     },
     "bandage": {
       "title": "Bandage",
@@ -177,13 +123,7 @@
         "Choose the colour or kind of bandage",
         "Ask them to go slowly",
         "Hold the end of the bandage"
-      ],
-      "headings": {
-        "what": "What will happen here",
-        "feel": "What may be hard",
-        "prepare": "",
-        "canAsk": "What can you ask for?"
-      }
+      ]
     },
     "cast": {
       "title": "Cast or splint",
@@ -195,13 +135,7 @@
         "Choose whether to sit or lie down",
         "Choose whether mum or dad will be with you, or you stay without them",
         "Ask for each step to be explained slowly before it starts"
-      ],
-      "headings": {
-        "what": "What will happen here",
-        "feel": "What may be hard",
-        "prepare": "",
-        "canAsk": "What can you ask for?"
-      }
+      ]
     },
     "stitches": {
       "title": "Glue or stitches for the wound",
@@ -214,13 +148,7 @@
         "Hold mum's or dad's hand, look at something on a phone or listen to a story",
         "Ask for cool air on your face when the glue warms up",
         "Cover the place so you do not have to see it"
-      ],
-      "headings": {
-        "what": "What will happen here",
-        "feel": "What may be hard",
-        "prepare": "",
-        "canAsk": "What can you ask for?"
-      }
+      ]
     }
   },
   "he": {
@@ -234,13 +162,7 @@
         "קרם משכך כאב מראש",
         "משהו שיסיח את הדעת, ואדם אחד שמסביר הכול",
         "מדבקה על הצינורית, כדי לא להסתכל עליה"
-      ],
-      "headings": {
-        "what": "מה קורה כאן",
-        "feel": "מה עלול להיות קשה",
-        "prepare": "",
-        "canAsk": "על מה אפשר לבקש?"
-      }
+      ]
     },
     "medication": {
       "title": "תרופה",
@@ -253,12 +175,6 @@
         "לבקש מים או נשנוש אחרי",
         "להחזיק את הכוס בעצמך"
       ],
-      "headings": {
-        "what": "מה קורה כאן",
-        "feel": "מה עלול להיות קשה",
-        "prepare": "",
-        "canAsk": "על מה אפשר לבקש?"
-      },
       "videoName": "נטילת תרופה"
     },
     "inhalation": {
@@ -271,13 +187,7 @@
         "להחזיק את המסכה יחד עם אמא או אבא",
         "לבקש להקטין את זרימת האוויר אם זה מדגדג בעיניים או בפנים",
         "לשבת על הברכיים של אמא או אבא"
-      ],
-      "headings": {
-        "what": "מה קורה כאן",
-        "feel": "מה עלול להיות קשה",
-        "prepare": "",
-        "canAsk": "על מה אפשר לבקש?"
-      }
+      ]
     },
     "bandage": {
       "title": "תחבושת",
@@ -289,13 +199,7 @@
         "לבחור צבע או סוג של תחבושת",
         "לבקש לעשות לאט",
         "להחזיק את קצה התחבושת"
-      ],
-      "headings": {
-        "what": "מה קורה כאן",
-        "feel": "מה עלול להיות קשה",
-        "prepare": "",
-        "canAsk": "על מה אפשר לבקש?"
-      }
+      ]
     },
     "cast": {
       "title": "גבס או סד",
@@ -307,13 +211,7 @@
         "לבחור אם לשבת או לשכב",
         "לבחור אם אמא או אבא יהיו לידך, או שתהיה בלעדיהם",
         "שיסבירו לאט כל שלב לפני שמתחילים"
-      ],
-      "headings": {
-        "what": "מה קורה כאן",
-        "feel": "מה עלול להיות קשה",
-        "prepare": "",
-        "canAsk": "על מה אפשר לבקש?"
-      }
+      ]
     },
     "stitches": {
       "title": "הדבקת הפצע או תפרים",
@@ -326,13 +224,7 @@
         "להחזיק את היד של אמא או אבא, להסתכל על משהו בטלפון או להקשיב לסיפור",
         "לבקש אוויר קריר על הפנים כשהדבק מתחמם",
         "לכסות את המקום כדי לא לראות אותו"
-      ],
-      "headings": {
-        "what": "מה קורה כאן",
-        "feel": "מה עלול להיות קשה",
-        "prepare": "",
-        "canAsk": "על מה אפשר לבקש?"
-      }
+      ]
     }
   }
 }

@@ -1,89 +1,82 @@
 import type { VisitPath } from './types'
 
+/** A reason as the code knows it: the words (label, blurb, the title of each stop) are in src/data/parent/paths.json. */
+export type PathBase = Omit<VisitPath, 'label' | 'blurb' | 'route'> & { route: Omit<VisitPath['route'][number], 'title'>[] }
+
 /**
  * Reasons for the visit. Each tailors the "road ahead" (the likely
  * sequence of stops) shown to the family. Based on the common ER
  * routes in the spec. The route is illustrative — the real path is
  * always decided by the medical team.
  */
-export const paths: VisitPath[] = [
+export const paths: PathBase[] = [
   {
     id: 'fever',
-    label: 'חום / מחלה',
     emoji: '🌡️',
-    blurb: 'בדרך כלל: קבלה, הערכה של מצב בריאות, בדיקת רופא, ולפי הצורך בדיקת דם או צילום.',
     route: [
-      { title: 'קבלה במזכירות' },
-      { title: 'הערכה של מצב בריאות ומדידות' },
-      { title: 'בדיקת רופא/ה', procedureId: 'doctor-exam' },
-      { title: 'בדיקת דם', procedureId: 'blood-test', optional: true },
-      { title: 'צילום חזה', procedureId: 'xray', optional: true },
-      { title: 'טיפול ושחרור או המשך בירור' },
+      {},
+      {},
+      { procedureId: 'doctor-exam' },
+      { procedureId: 'blood-test', optional: true },
+      { procedureId: 'xray', optional: true },
+      {},
     ],
   },
   {
     id: 'abdominal',
-    label: 'כאבי בטן',
     emoji: '😣',
-    blurb: 'בדרך כלל: קבלה, הערכה של מצב בריאות, בדיקת רופא, ולפי הצורך בדיקות דם, אולטרסאונד או ייעוץ.',
     route: [
-      { title: 'קבלה במזכירות' },
-      { title: 'הערכה של מצב בריאות ומדידות' },
-      { title: 'בדיקת רופא/ה', procedureId: 'doctor-exam' },
-      { title: 'בדיקת דם', procedureId: 'blood-test', optional: true },
-      { title: 'בדיקת שתן', procedureId: 'urine', optional: true },
-      { title: 'אולטרסאונד בטן', procedureId: 'ultrasound', optional: true },
-      { title: 'CT בטן', procedureId: 'ct', optional: true },
-      { title: 'ייעוץ מומחה', optional: true },
-      { title: 'טיפול ושחרור או אשפוז' },
+      {},
+      {},
+      { procedureId: 'doctor-exam' },
+      { procedureId: 'blood-test', optional: true },
+      { procedureId: 'urine', optional: true },
+      { procedureId: 'ultrasound', optional: true },
+      { procedureId: 'ct', optional: true },
+      { optional: true },
+      {},
     ],
   },
   {
     id: 'limb-injury',
-    label: 'חבלה ביד או ברגל',
     emoji: '🦴',
-    blurb: 'בדרך כלל: קבלה, הערכה של מצב בריאות, בדיקת רופא, צילום, ולפי הצורך גבס או חבישה.',
     route: [
-      { title: 'קבלה במזכירות' },
-      { title: 'הערכה של מצב בריאות ומדידות' },
-      { title: 'בדיקת רופא/ה', procedureId: 'doctor-exam' },
-      { title: 'צילום רנטגן', procedureId: 'xray' },
-      { title: 'ייעוץ אורתופדי', optional: true },
-      { title: 'גבס או סד', procedureId: 'cast', optional: true },
-      { title: 'שחרור עם הנחיות' },
+      {},
+      {},
+      { procedureId: 'doctor-exam' },
+      { procedureId: 'xray' },
+      { optional: true },
+      { procedureId: 'cast', optional: true },
+      {},
     ],
   },
   {
     id: 'cut',
-    label: 'חתך או פציעה בעור',
     emoji: '🩹',
-    blurb: 'בדרך כלל: קבלה, הערכה של מצב בריאות, בדיקת רופא, אלחוש, סגירת הפצע וחבישה.',
     route: [
-      { title: 'קבלה במזכירות' },
-      { title: 'הערכה של מצב בריאות ומדידות' },
-      { title: 'בדיקת רופא/ה', procedureId: 'doctor-exam' },
-      { title: 'אלחוש מקומי', optional: true },
-      { title: 'צילום', procedureId: 'xray', optional: true },
-      { title: 'הדבקת פצע או תפירה', procedureId: 'stitches' },
-      { title: 'חבישה והדרכה', procedureId: 'bandage' },
-      { title: 'שחרור עם הנחיות' },
+      {},
+      {},
+      { procedureId: 'doctor-exam' },
+      { optional: true },
+      { procedureId: 'xray', optional: true },
+      { procedureId: 'stitches' },
+      { procedureId: 'bandage' },
+      {},
     ],
   },
   {
     id: 'other',
-    label: 'סיבה אחרת / עדיין לא בטוחים',
     emoji: '💭',
-    blurb: 'כל ביקור מתחיל אותו דבר: קבלה, הערכה של מצב בריאות ובדיקת רופא. משם הצוות מתאים את ההמשך.',
     route: [
-      { title: 'קבלה במזכירות' },
-      { title: 'הערכה של מצב בריאות ומדידות' },
-      { title: 'בדיקת רופא/ה', procedureId: 'doctor-exam' },
-      { title: 'בדיקות לפי הצורך', optional: true },
-      { title: 'טיפול והחלטה על ההמשך' },
+      {},
+      {},
+      { procedureId: 'doctor-exam' },
+      { optional: true },
+      {},
     ],
   },
 ]
 
-export function getPath(id: string): VisitPath | undefined {
+export function getPath(id: string): PathBase | undefined {
   return paths.find((p) => p.id === id)
 }

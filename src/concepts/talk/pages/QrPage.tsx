@@ -4,10 +4,10 @@ import QRCode from 'qrcode'
 import { useConceptBase } from '../../nav'
 import styles from '../talk.module.css'
 
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 
 // the sign is for the team, so its texts are the same in every language
-const staff = keyed((parentUi as unknown as { he: { staffSign: Record<string, string> } }).he, 'parent/ui').staffSign
+const staff = keyed((i18nUi as unknown as { he: { staffSign: Record<string, string> } }).he, 'i18n/ui').staffSign
 
 /** Staff-only signage page, reached directly at #/talk/settings. */
 export function QrPage() {

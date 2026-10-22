@@ -4,10 +4,10 @@ import { useConceptPath } from '../../nav'
 import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES, loadProcs } from '../useQuestProgress'
-import { SensoryBar } from '../../../components/SensoryBar'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
 import { OceanStageSheet } from '../components/OceanStageSheet'
+import { ParentInfo } from '../components/ParentInfo'
 import { OceanProcedureIcons } from '../components/OceanProcedureIcons'
 import { OCEAN_IMAGES, OCEAN_SYMBOLS, OCEAN_SHEET_PICTURES } from './OceanMapPage'
 import css from '../quest.module.css'
@@ -175,87 +175,9 @@ export function StagePage() {
         </div>
       </div>
 
-      {data.sensory && <SensoryBar sensory={data.sensory} />}
-      <p className={css.waitRange}>
-        {inlineProc?.who && <span>👤 {inlineProc.who}</span>}
-        {inlineProc?.who && data.waitRange && <span> · </span>}
-        {data.waitRange && <span>{t('ui.text.estimated')} {data.waitRange}</span>}
-      </p>
-
-      <div className={css.stageBody}>
-        {data.meaning && (
-          <section>
-            <h2>{t('ui.text.weAreHere')}</h2>
-            <p>{data.meaning}</p>
-          </section>
-        )}
-
-        {inlineProc ? (
-          <>
-            <section>
-              <h2>{t('ui.text.whatActuallyHappens')}</h2>
-              <p>{inlineProc.what}</p>
-            </section>
-            <section>
-              <h2>{t('ui.text.childMayFeel')}</h2>
-              <p>{inlineProc.feel}</p>
-            </section>
-            {data.challenge && (
-              <section>
-                <h2>{t('ui.text.whatMayBeHard')}</h2>
-                <p>{data.challenge}</p>
-              </section>
-            )}
-            {inlineProc.adaptations && inlineProc.adaptations.length > 0 && (
-              <section>
-                <h2>{t('ui.text.askStaff')}</h2>
-                <ul>
-                  {inlineProc.adaptations.map((item, i) => <li key={i}>{item}</li>)}
-                </ul>
-              </section>
-            )}
-            {/* skip data.canAsk when inline procedure already has adaptations */}
-            {(!inlineProc.adaptations || inlineProc.adaptations.length === 0) && data.canAsk && data.canAsk.length > 0 && (
-              <section>
-                <h2>{t('ui.text.canAsk')}</h2>
-                <ul>
-                  {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
-                </ul>
-              </section>
-            )}
-          </>
-        ) : (
-          <>
-            <section>
-              <h2>{t('ui.text.whatHappens')}</h2>
-              <p>{data.whatHappens}</p>
-              {data.nextStagePrepare && <p>{data.nextStagePrepare}</p>}
-            </section>
-            {data.challenge && (
-              <section>
-                <h2>{t('ui.text.whatMayBeHard')}</h2>
-                <p>{data.challenge}</p>
-                {id === 'reception' && (
-                  <>
-                    <p className={css.reasonHint}>{t('ui.text.cardHint')}</p>
-                    <Link to="/card" state={{ from: `/stage/${id}` }} className={css.calmLink}>{t('ui.buttons.cardForStaff')}</Link>
-                  </>
-                )}
-              </section>
-            )}
-            {data.canAsk && data.canAsk.length > 0 && (
-              <section>
-                <h2>{t('ui.text.canAsk')}</h2>
-                <ul>
-                  {data.canAsk.map((item, i) => <li key={i}>{item}</li>)}
-                </ul>
-              </section>
-            )}
-          </>
-        )}
-        <Link to="/calm" state={{ from: `/stage/${id}` }} className={css.calmLink}>
-          <span aria-hidden className={css.heartIcon}>💙</span> {t('ui.buttons.hardNow')}
-        </Link>
+      <div className={css.parentRow}>
+        {/* the parent's part is the same block in every world */}
+        <ParentInfo stageId={id} inline />
       </div>
     </div>
   )

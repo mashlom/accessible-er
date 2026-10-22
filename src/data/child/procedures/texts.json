@@ -1,18 +1,12 @@
 {
   "he": {
     "temperature": {
-      "story": [
-        "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-        "סוגרים את הפה חזק־חזק, כאילו יש לי סוכריה בפנים.",
-        "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-        "שומעים ביפ קטן — וזהו, סיימנו."
-      ],
       "storyVariants": [
         {
           "label": "בפה",
           "steps": [
             "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-            "סוגרים את הפה חזק־חזק, כאילו יש לי סוכריה בפנים.",
+            "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
             "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
             "שומעים ביפ קטן — וזהו, סיימנו."
           ]
@@ -30,45 +24,48 @@
     },
     "saturation": {
       "story": [
-        "שמים לי אטב קטן ורך על האצבע.",
+        "שמים אטב קטן ורך על האצבע.",
         "נדלק בו אור אדום קטן.",
-        "הוא רק מסתכל — לא עושה כלום, ואחרי רגע מורידים לי אותו."
+        "הוא רק מסתכל — לא עושה כלום.",
+        "אחרי רגע מורידים אותו."
       ]
     },
     "blood-pressure": {
       "story": [
-        "שמים לי שרוול רך על הזרוע.",
+        "שמים שרוול רך על הזרוע.",
         "הוא מתנפח ולוחץ כמו חיבוק חזק.",
-        "סופרים עד כמה, והוא משחרר לבד."
+        "סופרים עד כמה, והוא משחרר לבד.",
+        "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ]
     },
     "doctor-exam": {
       "story": [
-        "נפגוש רופא או רופאה שרוצים לעזור לי.",
-        "הם מקשיבים לגוף שלי עם סטטוסקופ — קצת קר, לא כואב.",
+        "נפגוש רופא או רופאה שרוצים לעזור לנו.",
+        "הם מקשיבים לגוף עם סטטוסקופ — קצת קר, לא כואב.",
         "אולי יסתכלו בגרון ובאוזניים עם אור קטן.",
-        "בסוף הבדיקה הרופא/ה יידעו מה כדאי לעשות כדי לעזור לי."
+        "בסוף הבדיקה הצוות יידע מה כדאי לעשות כדי לעזור לנו."
       ]
     },
     "blood-test": {
       "story": [
-        "שמים לי משחה שעושה את העור פחות רגיש.",
+        "שמים משחה שעושה את העור פחות רגיש.",
         "גומייה רכה מתהדקת על הזרוע.",
         "דקירה קטנה וקצרה — ואפשר להסתכל על משהו אחר.",
-        "שמים לי פלסטר, ואני גיבור/ה."
+        "שמים פלסטר — כל הכבוד לנו!"
       ]
     },
     "urine": {
       "story": [
         "הולכים לשירותים כמו תמיד.",
         "עושים קצת פיפי לתוך כוס קטנה.",
-        "נותנים את הכוס לאחות. זהו!"
+        "נותנים את הכוס לאחות.",
+        "זהו!"
       ]
     },
     "xray": {
       "story": [
         "נכנסים לחדר עם מכונה גדולה.",
-        "לפעמים מלבישים עליי לבוש כבד שמגן על הגוף, ולפעמים גם צווארון.",
+        "לפעמים מלבישים לבוש כבד שמגן על הגוף, ולפעמים גם צווארון.",
         "עומדים או שוכבים בנחת, כמו פסל.",
         "המכונה מצלמת תמונה — לא מרגישים כלום.",
         "סיימנו, אפשר לזוז שוב."
@@ -77,10 +74,10 @@
     "ultrasound": {
       "story": [
         "שוכבים בנחת על מיטה.",
-        "מורחים לי ג׳ל קצת קר על הבטן.",
+        "מורחים ג׳ל קצת קר על הבטן.",
         "מכשיר חלק מחליק ומצייר תמונה על מסך — לפעמים לוחצים קצת, וזה בסדר.",
         "אם מפריע אפשר לבקש רגע הפסקה.",
-        "מנגבים לי את הג׳ל — וסיימנו."
+        "מנגבים את הג׳ל — וסיימנו."
       ]
     },
     "ct": {
@@ -93,16 +90,17 @@
     },
     "iv": {
       "story": [
-        "שמים לי משחה שמרגיעה את העור.",
+        "שמים משחה שמרגיעה את העור.",
         "דקירה קצרה, ואז מכניסים צינור רך ודק.",
         "מוציאים את המחט, והצינור הרך נשאר לתת נוזלים.",
-        "מדביקים לי מדבקה שמחזיקה את הצינור הרך במקום."
+        "מדביקים מדבקה שמחזיקה את הצינור הרך במקום."
       ]
     },
     "medication": {
       "story": [
         "מקבלים תרופה שעוזרת לגוף.",
-        "לפעמים שותים קצת סירופ, לפעמים דרך הצינור הרך.",
+        "לפעמים שותים קצת סירופ.",
+        "ולפעמים דרך הצינור הרך.",
         "ואפשר מים אחרי בשביל הטעם."
       ]
     },
@@ -115,182 +113,166 @@
       ]
     },
     "stitches": {
-      "story": [
-        "לפעמים שמים קודם חומר קריר שמרדים את האזור, ומכסים במדבקה שקופה.",
-        "מחכים קצת עד שהקסם עובד והאזור \"הולך לישון\" — ולפעמים לא צריך, ומתחילים ישר.",
-        "הרופא/ה מחזיק/ה את האזור וסוגר/ת אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
-        "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים לי חבישה נקייה מלמעלה."
-      ],
       "storyVariants": [
         {
           "label": "עם אלחוש",
           "steps": [
             "שמים קודם חומר קריר שמרדים את האזור, ומכסים במדבקה שקופה.",
             "מחכים קצת עד שהקסם עובד והאזור של החתך \"הולך לישון\".",
-            "הרופא/ה מחזיק/ה את האזור וסוגר/ת אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
+            "הרופא או הרופאה מחזיקים את האזור וסוגרים אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
             "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים לי חבישה נקייה מלמעלה."
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
           ]
         },
         {
           "label": "בלי אלחוש",
           "steps": [
             "לא צריך להרדים את האזור — מתחילים ישר.",
-            "הרופא/ה מחזיק/ה את האזור ושם/ה עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+            "הרופא או הרופאה מחזיקים את האזור ושמים עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
             "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים לי חבישה נקייה מלמעלה."
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
           ]
         }
       ]
     },
     "cast": {
       "story": [
-        "בוחרים אם לשבת או לשכב, ואם אמא או אבא לידי או לבד.",
-        "עוטפים לי את היד או הרגל בשכבות רכות.",
-        "עכשיו מחכים רגע בסבלנות בלי לזוז — אי אפשר לעצור באמצע, כדי שהגבס יתאים לי בדיוק.",
-        "הגבס מתקשה לאט, שומר על העצם — ונותנים לו להחלים."
+        "בוחרים אם לשבת או לשכב, ואם אמא או אבא יהיו לידנו.",
+        "עוטפים את היד או הרגל בשכבות רכות.",
+        "עכשיו מחכים רגע בסבלנות בלי לזוז — אי אפשר לעצור באמצע, כדי שהגבס יתאים בדיוק.",
+        "הגבס מתקשה לאט ושומר על העצם — וכך היא מחלימה."
       ]
     },
     "bandage": {
       "story": [
-        "עוטפים לי תחבושת רכה סביב האזור.",
+        "עוטפים תחבושת רכה סביב האזור.",
         "עוטפים בנחת, שכבה על שכבה.",
         "מדביקים בסוף — נעים ומוגן."
       ]
     },
     "waiting-results": {
       "story": [
-        "סיימנו את הבדיקות — כל הכבוד לי!",
+        "סיימנו את הבדיקות — כל הכבוד לנו!",
         "עכשיו מחכים לתשובות. אפשר לשחק, לנוח או לראות סרטון.",
-        "הצוות עובד בשביל לעזור לי. לא שכחו אותי.",
-        "כשיהיו תשובות — הרופא/ה יבואו לספר לנו."
+        "הצוות עובד בשביל לעזור לנו. לא שכחו אותנו.",
+        "כשיהיו תשובות — הרופא או הרופאה יבואו לספר לנו."
       ]
     }
   },
   "en": {
     "temperature": {
-      "story": [
-        "A small plastic tip with a wire goes into my mouth.",
-        "I close my mouth tight-tight, like I have a candy inside.",
-        "I wait quietly for a short moment, until the device is done.",
-        "I hear a little beep — and that's it, we're done."
-      ],
       "storyVariants": [
         {
           "label": "In the mouth",
           "steps": [
-            "A small plastic tip with a wire goes into my mouth.",
-            "I close my mouth tight-tight, like I have a candy inside.",
-            "I wait quietly for a short moment, until the device is done.",
-            "I hear a little beep — and that's it, we're done."
+            "We put a small plastic tip with a wire in the mouth.",
+            "We close the mouth tight-tight, like there's a candy inside.",
+            "We wait quietly for a short moment, until the device is done.",
+            "We hear a little beep — and that's it, we're done."
           ]
         },
         {
           "label": "Under the armpit",
           "steps": [
-            "A small plastic tip with a wire goes under my armpit.",
-            "I press my arm to my body and hold it gently.",
-            "I wait quietly for a short moment, until the device is done.",
-            "I hear a little beep — and that's it, we're done."
+            "We put a small plastic tip with a wire under the arm.",
+            "We press the arm to the body and hold it gently.",
+            "We wait quietly for a short moment, until the device is done.",
+            "We hear a little beep — and that's it, we're done."
           ]
         }
       ]
     },
     "saturation": {
       "story": [
-        "They put a small, soft clip on my finger.",
+        "We put a small, soft clip on the finger.",
         "A little red light turns on inside it.",
-        "It only looks — it doesn't do anything, and after a moment they take it off."
+        "It only looks — it doesn't do anything.",
+        "After a moment they take it off."
       ]
     },
     "blood-pressure": {
       "story": [
-        "They put a soft cuff on my arm.",
+        "We put a soft cuff on the arm.",
         "It fills with air and squeezes like a big hug.",
-        "We count together, and it lets go by itself."
+        "We count together, and it lets go by itself.",
+        "Then they take the cuff off — and that's it, all done."
       ]
     },
     "doctor-exam": {
       "story": [
-        "I'm going to meet a doctor who wants to help me.",
-        "The doctor listens to my body with a stethoscope — a little cold, but it doesn't hurt.",
-        "Maybe they will look in my throat and ears with a small light.",
-        "At the end, the doctor will know what to do to help me."
+        "We meet a doctor who wants to help us.",
+        "The doctor listens to the body with a stethoscope — a little cold, but it doesn't hurt.",
+        "Maybe the doctor will look in the throat and ears with a small light.",
+        "At the end, the doctor will know what to do to help us."
       ]
     },
     "blood-test": {
       "story": [
-        "They put a cream on me that makes my skin less sensitive.",
-        "A soft band gets snug around my arm.",
-        "A tiny, quick prick — and I can look at something else.",
-        "They put a small bandage on me, and I was so brave!"
+        "They put a cream on the skin that makes it less sensitive.",
+        "A soft band gets snug around the arm.",
+        "A tiny, quick prick — and we can look at something else.",
+        "They put a small bandage on — well done!"
       ]
     },
     "urine": {
       "story": [
-        "I go to the toilet like always.",
-        "I pee a little into a small cup.",
-        "I give the cup to the nurse. That's it!"
+        "We go to the toilet like always.",
+        "We pee a little into a small cup.",
+        "We give the cup to the nurse.",
+        "That's it!"
       ]
     },
     "xray": {
       "story": [
         "We go into a room with a big machine.",
-        "Sometimes they put a heavy cover on me that protects my body, and sometimes a collar too.",
-        "I stand or lie calmly, like a statue.",
-        "The machine takes a picture — I don't feel anything.",
-        "We're done, I can move again."
+        "Sometimes they put a heavy cover on that protects the body, and sometimes a collar too.",
+        "We stand or lie calmly, like a statue.",
+        "The machine takes a picture — we don't feel anything.",
+        "We're done, we can move again."
       ]
     },
     "ultrasound": {
       "story": [
-        "I lie calmly on a bed.",
-        "They spread a slightly cold gel on my tummy.",
+        "We lie calmly on a bed.",
+        "They spread a slightly cold gel on the tummy.",
         "A smooth device glides and draws a picture on a screen — sometimes it presses a little, and that's okay.",
-        "If it bothers me, I can ask for a little break.",
+        "If it bothers us, we can ask for a little break.",
         "They wipe off the gel — and we're done."
       ]
     },
     "ct": {
       "story": [
-        "I lie on a comfy bed.",
+        "We lie on a comfy bed.",
         "The bed slowly moves into a big ring.",
-        "I hear a noise, and I lie calmly like a statue.",
+        "We hear a noise, and we lie calmly like a statue.",
         "The bed comes back out — we're done."
       ]
     },
     "iv": {
       "story": [
-        "They put a cream on me that calms my skin.",
+        "They put a cream on the skin that calms it.",
         "A short prick, and then a soft, thin tube goes in.",
-        "They take the needle out, and the soft tube stays to give me fluids.",
-        "They put a sticker on me that holds the soft tube in place."
+        "They take the needle out, and the soft tube stays to give fluids.",
+        "They put a sticker on that holds the soft tube in place."
       ]
     },
     "medication": {
       "story": [
-        "I get medicine that helps my body.",
-        "Sometimes I drink a little syrup, sometimes it goes in through the soft tube.",
-        "And I can have some water afterwards for the taste."
+        "We get medicine that helps the body.",
+        "Sometimes we drink a little syrup.",
+        "Sometimes it goes in through the soft tube.",
+        "And we can have some water afterwards for the taste."
       ]
     },
     "inhalation": {
       "story": [
-        "They put a soft mask with cool air on my face.",
-        "I don't need to breathe hard — I just breathe normally.",
-        "Sometimes it tickles my eyes a little, and I can ask for the air to come out slower.",
-        "I can watch a video meanwhile. After a few minutes they take it off — we're done."
+        "We put a soft mask with cool air on the face.",
+        "We don't need to breathe hard — we just breathe normally.",
+        "Sometimes it tickles the eyes a little, and we can ask for the air to come out slower.",
+        "We can watch a video meanwhile. After a few minutes they take it off — we're done."
       ]
     },
     "stitches": {
-      "story": [
-        "Sometimes they first put something cool on the spot to make it sleepy, and cover it with a clear sticker.",
-        "We wait a little until the magic works and the spot “goes to sleep” — and sometimes it's not needed, and we start right away.",
-        "The doctor holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
-        "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
-        "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
-      ],
       "storyVariants": [
         {
           "label": "With numbing",
@@ -298,8 +280,8 @@
             "First they put something cool on the spot to make it sleepy, and cover it with a clear sticker.",
             "We wait a little until the magic works and the spot around the cut “goes to sleep”.",
             "The doctor holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
-            "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
-            "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
+            "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
           ]
         },
         {
@@ -307,18 +289,18 @@
           "steps": [
             "There's no need to make the spot sleepy — we start right away.",
             "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
-            "Meanwhile I can watch something on the phone, talk with mom and dad, or listen to a story.",
-            "If the glue gets a little warm, someone blows cool air on my face, and they put a clean bandage on top."
+            "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
           ]
         }
       ]
     },
     "cast": {
       "story": [
-        "I choose whether to sit or lie down, and whether mom or dad stays next to me.",
-        "They wrap my arm or leg in soft layers.",
-        "Now I wait patiently for a moment without moving — we can't stop in the middle, so the cast fits me just right.",
-        "The cast slowly gets hard and keeps my bone safe — and lets it heal."
+        "We choose whether to sit or lie down, and whether mom or dad stays close.",
+        "They wrap the arm or leg in soft layers.",
+        "Now we wait patiently for a moment without moving — we can't stop in the middle, so the cast fits just right.",
+        "The cast slowly gets hard and keeps the bone safe — and lets it heal."
       ]
     },
     "bandage": {
@@ -330,136 +312,127 @@
     },
     "waiting-results": {
       "story": [
-        "We finished the tests — well done, me!",
-        "Now we wait for the answers. I can play, rest or watch a video.",
-        "The team is working to help me. They haven't forgotten me.",
+        "We finished the tests — well done!",
+        "Now we wait for the answers. We can play, rest or watch a video.",
+        "The team is working to help us. They haven't forgotten us.",
         "When the answers are ready, the doctor will come and tell us."
       ]
     }
   },
   "ru": {
     "temperature": {
-      "story": [
-        "Мне кладут в рот маленький пластиковый наконечник с проводком.",
-        "Я крепко-крепко закрываю рот, как будто там конфета.",
-        "Я тихонько жду чуть-чуть, пока прибор закончит.",
-        "Я слышу тихое «бип» — и всё, готово."
-      ],
       "storyVariants": [
         {
           "label": "Во рту",
           "steps": [
-            "Мне кладут в рот маленький пластиковый наконечник с проводком.",
-            "Я крепко-крепко закрываю рот, как будто там конфета.",
-            "Я тихонько жду чуть-чуть, пока прибор закончит.",
-            "Я слышу тихое «бип» — и всё, готово."
+            "В рот кладём маленький пластиковый наконечник с проводком.",
+            "Крепко-крепко закрываем рот, как будто там конфета.",
+            "Тихонько ждём чуть-чуть, пока прибор закончит.",
+            "Слышим тихое «бип» — и всё, готово."
           ]
         },
         {
           "label": "Под мышкой",
           "steps": [
-            "Мне кладут под мышку маленький пластиковый наконечник с проводком.",
-            "Я прижимаю руку к телу и мягко держу.",
-            "Я тихонько жду чуть-чуть, пока прибор закончит.",
-            "Я слышу тихое «бип» — и всё, готово."
+            "Под мышку кладём маленький пластиковый наконечник с проводком.",
+            "Прижимаем руку к телу и мягко держим.",
+            "Тихонько ждём чуть-чуть, пока прибор закончит.",
+            "Слышим тихое «бип» — и всё, готово."
           ]
         }
       ]
     },
     "saturation": {
       "story": [
-        "Мне надевают на палец маленькую мягкую прищепку.",
+        "На палец надеваем маленькую мягкую прищепку.",
         "В ней загорается маленький красный огонёк.",
-        "Она только смотрит — ничего не делает, и через минутку её снимают."
+        "Она только смотрит — ничего не делает.",
+        "Через минутку её снимают."
       ]
     },
     "blood-pressure": {
       "story": [
-        "Мне надевают на руку мягкую манжету.",
+        "На руку надеваем мягкую манжету.",
         "Она надувается и сжимает, как крепкие объятия.",
-        "Мы считаем, и она сама отпускает."
+        "Мы считаем, и она сама отпускает.",
+        "Потом манжету снимают — и всё, готово."
       ]
     },
     "doctor-exam": {
       "story": [
-        "Я встречу врача, который хочет мне помочь.",
-        "Врач слушает моё тело стетоскопом — немного холодно, но не больно.",
-        "Может быть, мне посмотрят горло и уши маленьким фонариком.",
-        "В конце врач будет знать, как мне помочь."
+        "Встречаем врача, который хочет нам помочь.",
+        "Врач слушает тело стетоскопом — немного холодно, но не больно.",
+        "Может быть, врач посмотрит горло и уши маленьким фонариком.",
+        "В конце врач будет знать, как нам помочь."
       ]
     },
     "blood-test": {
       "story": [
-        "Мне мажут крем, от которого кожа становится менее чувствительной.",
+        "На кожу мажут крем, от которого она становится менее чувствительной.",
         "Мягкая резинка плотно обхватывает руку.",
-        "Маленький быстрый укол — а я могу смотреть на что-то другое.",
-        "Мне клеят пластырь, и я молодец!"
+        "Маленький быстрый укол — а мы можем смотреть на что-то другое.",
+        "Клеим пластырь — молодцы!"
       ]
     },
     "urine": {
       "story": [
-        "Я иду в туалет, как всегда.",
-        "Я писаю немного в маленький стаканчик.",
-        "Я отдаю стаканчик медсестре или медбрату. Всё!"
+        "Идём в туалет, как всегда.",
+        "Немного писаем в маленький стаканчик.",
+        "Отдаём стаканчик медсестре или медбрату.",
+        "Всё!"
       ]
     },
     "xray": {
       "story": [
         "Мы заходим в комнату с большим аппаратом.",
-        "Может быть на меня наденут тяжёлую накидку, которая защищает тело, а может быть ещё и воротник.",
-        "Я спокойно стою или лежу, как статуя.",
-        "Аппарат делает снимок — я ничего не чувствую.",
+        "Может быть, наденут тяжёлую накидку, которая защищает тело, а может быть ещё и воротник.",
+        "Спокойно стоим или лежим, как статуя.",
+        "Аппарат делает снимок — мы ничего не чувствуем.",
         "Готово, можно снова двигаться."
       ]
     },
     "ultrasound": {
       "story": [
-        "Я спокойно лежу на кровати.",
-        "Мне мажут на живот немного холодный гель.",
+        "Спокойно ложимся на кровать.",
+        "На живот мажут немного холодный гель.",
         "Гладкий датчик скользит и рисует картинку на экране — иногда немного надавливают, и это нормально.",
         "Если мешает, можно попросить маленький перерыв.",
-        "Мне вытирают гель — и готово."
+        "Гель вытирают — и готово."
       ]
     },
     "ct": {
       "story": [
-        "Я ложусь на удобную кровать.",
+        "Ложимся на удобную кровать.",
         "Кровать медленно заезжает в большое кольцо.",
-        "Я слышу шум и лежу спокойно, как статуя.",
+        "Слышим шум и лежим спокойно, как статуя.",
         "Кровать выезжает обратно — готово."
       ]
     },
     "iv": {
       "story": [
-        "Мне мажут крем, который успокаивает кожу.",
+        "На кожу мажут крем, который её успокаивает.",
         "Короткий укол, а потом вводят мягкую тонкую трубочку.",
-        "Иглу вынимают, а мягкая трубочка остаётся, чтобы давать мне жидкость.",
-        "Мне приклеивают наклейку, которая держит мягкую трубочку на месте."
+        "Иглу вынимают, а мягкая трубочка остаётся, чтобы давать жидкость.",
+        "Приклеивают наклейку, которая держит мягкую трубочку на месте."
       ]
     },
     "medication": {
       "story": [
-        "Я получаю лекарство, которое помогает моему телу.",
-        "Иногда я пью немного сиропа, иногда оно идёт через мягкую трубочку.",
+        "Получаем лекарство, которое помогает телу.",
+        "Иногда пьём немного сиропа.",
+        "Иногда оно идёт через мягкую трубочку.",
         "А потом можно попить воды, чтобы убрать вкус."
       ]
     },
     "inhalation": {
       "story": [
-        "Мне надевают на лицо мягкую маску с прохладным воздухом.",
-        "Не нужно дышать сильно — я просто дышу как обычно.",
+        "На лицо надеваем мягкую маску с прохладным воздухом.",
+        "Не нужно дышать сильно — просто дышим как обычно.",
         "Иногда немного щекочет глаза, и можно попросить, чтобы воздух шёл медленнее.",
         "В это время можно смотреть мультик. Через несколько минут маску снимают — готово."
       ]
     },
     "stitches": {
-      "story": [
-        "Иногда сначала мажут прохладное средство, от которого место засыпает, и закрывают его прозрачной наклейкой.",
-        "Немного ждём, пока волшебство подействует и место «уснёт», — а иногда это не нужно, и начинают сразу.",
-        "Врач держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
-        "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-        "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
-      ],
       "storyVariants": [
         {
           "label": "С обезболиванием",
@@ -468,7 +441,7 @@
             "Немного ждём, пока волшебство подействует и место пореза «уснёт».",
             "Врач держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
             "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-            "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
           ]
         },
         {
@@ -477,31 +450,31 @@
             "Обезболивать не нужно — начинают сразу.",
             "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
             "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-            "Если клей немного нагревается — мне дуют на лицо прохладным воздухом, а сверху накладывают чистую повязку."
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
           ]
         }
       ]
     },
     "cast": {
       "story": [
-        "Я выбираю, сидеть или лежать, и будут ли мама или папа рядом со мной.",
-        "Мне обматывают руку или ногу мягкими слоями.",
-        "Теперь я терпеливо жду немного и не двигаюсь — останавливаться посередине нельзя, чтобы гипс подошёл мне точно.",
+        "Выбираем, сидеть или лежать, и будут ли мама или папа рядом.",
+        "Руку или ногу обматывают мягкими слоями.",
+        "Теперь терпеливо ждём немного и не двигаемся — останавливаться посередине нельзя, чтобы гипс подошёл точно.",
         "Гипс медленно твердеет и бережёт кость — и она заживает."
       ]
     },
     "bandage": {
       "story": [
-        "Мне обматывают это место мягким бинтом.",
+        "Это место обматывают мягким бинтом.",
         "Обматывают бережно, слой за слоем.",
         "В конце закрепляют — уютно и надёжно."
       ]
     },
     "waiting-results": {
       "story": [
-        "Мы закончили все проверки — я молодец!",
+        "Мы закончили все проверки — молодцы!",
         "Теперь ждём ответов. Можно поиграть, отдохнуть или посмотреть мультик.",
-        "Врачи и медсёстры работают, чтобы мне помочь. Про меня не забыли.",
+        "Врачи и медсёстры работают, чтобы нам помочь. Про нас не забыли.",
         "Когда будут ответы, врач придёт и расскажет нам."
       ]
     }

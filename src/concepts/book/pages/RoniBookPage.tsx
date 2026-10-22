@@ -6,7 +6,7 @@ import { useI18n } from '../../../hooks/useI18n'
 import { Roni, type RoniMood } from '../../../components/Roni'
 import { useSessionAvatar } from '../../../hooks/useSessionAvatar'
 import { parentJourney } from '../../../data/parent'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 import roniLines from '../../../data/child/book/roni.json'
 import css from '../book.module.css'
 import { useStageProcedures } from '../useStageProcedures'
@@ -145,8 +145,8 @@ export function RoniBookPage() {
           <div className={css.videoSlot}>
             <span className={css.videoSlotIcon} aria-hidden>🎬</span>
             <div>
-              <strong>{keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang], 'parent/ui').procedurePage.videoTitle}</strong>
-              <p>{keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang], 'parent/ui').procedurePage.videoText.replace('{title}', stageOf(stageId)?.title ?? '')}</p>
+              <strong>{keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang], 'i18n/ui').procedurePage.videoTitle}</strong>
+              <p>{keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang], 'i18n/ui').procedurePage.videoText.replace('{title}', stageOf(stageId)?.title ?? '')}</p>
             </div>
           </div>
         )}
@@ -203,7 +203,7 @@ export function RoniBookPage() {
         </button>
       )}
       {parentOpen && !isIntro && !isSelect && (
-        <ParentSheet stageId={stageId} onClose={() => setParentOpen(false)} oceanLook questLinks={false} />
+        <ParentSheet stageId={stageId} onClose={() => setParentOpen(false)} questLinks={false} />
       )}
     </div>
   )

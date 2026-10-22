@@ -6,7 +6,7 @@ import { Scene, Bubble } from '../components/kit'
 import { readySentences } from '../../../data/support'
 import supportI18n from '../../../data/i18n/support.json'
 import { useI18n } from '../../../hooks/useI18n'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
@@ -32,10 +32,10 @@ type StoryCalmTexts = {
  */
 export function CalmPage() {
   const [shown, setShown] = useState<string | null>(null)
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   // the ready sentences in the chosen language; Hebrew is the source list
   const sentences = (keyed((supportI18n as unknown as Record<'en' | 'ru', { readySentences?: string[] }>)[lang as 'en' | 'ru'], 'i18n/support')?.readySentences) ?? readySentences
-  const tx = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { storyCalm: StoryCalmTexts }>)[lang], 'parent/ui').storyCalm
+  const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyCalm: StoryCalmTexts }>)[lang], 'i18n/ui').storyCalm
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
@@ -72,8 +72,9 @@ export function CalmPage() {
         </Bubble>
       </div>
       <div className={styles.sentences}>
-        {sentences.map((s) => (
-          <button key={s} type="button" className={styles.sentence} onClick={() => setShown(s)}>
+        {sentences.map((s, i) => (
+          // the button is in the parent's language; the big screen is for the staff, so it stays Hebrew
+          <button key={s} type="button" className={styles.sentence} onClick={() => setShown(readySentences[i] ?? s)}>
             {s}
           </button>
         ))}
@@ -84,6 +85,9 @@ export function CalmPage() {
       </Link>
       <Link to="/requests" className={styles.crossLink}>
         {tx.requests}
+      </Link>
+      <Link to="/card/view" className={styles.crossLink}>
+        {t('ui.buttons.showCard')}
       </Link>
 
       {shown && (
@@ -96,7 +100,7 @@ export function CalmPage() {
         >
           <p className={shell.overlayText}>{shown}</p>
           <button type="button" className={shell.bigBtn}>
-            {tx.close}
+            {t('ui.buttons.close')}
           </button>
         </div>
       )}

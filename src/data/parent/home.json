@@ -21,52 +21,6 @@
     "reasonLabel": "באנו היום בגלל",
     "reasonChange": "שינוי",
     "foot": "הכלי נועד להנגיש את הביקור ולהפחית אי־ודאות. הוא אינו מחליף את הצוות הרפואי ואינו מספק ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים.",
-    "tiles": {
-      "trail": {
-        "name": "השביל שלנו",
-        "desc": "איפה אנחנו עכשיו ומה הלאה"
-      },
-      "wait-times": {
-        "name": "זמנים משוערים",
-        "desc": "כמה זמן כל שלב יכול לקחת"
-      },
-      "show": {
-        "name": "איך מכינים את הילד/ה?",
-        "desc": "סיפור לכל בדיקה, עמוד אחרי עמוד"
-      },
-      "card": {
-        "name": "הכרטיס שלך",
-        "desc": "מה חשוב לדעת עליך"
-      },
-      "map": {
-        "name": "איפה אנחנו?",
-        "desc": "מפה עם מקומות שקטים"
-      },
-      "calm": {
-        "name": "כשקשה",
-        "desc": "לנשום יחד, ומה עוזר"
-      },
-      "distract": {
-        "name": "הסחת דעת",
-        "desc": "משהו רגוע להסתכל עליו"
-      },
-      "requests": {
-        "name": "מה אפשר לבקש",
-        "desc": "מותר לבקש מהצוות"
-      },
-      "going-home": {
-        "name": "סוף השביל",
-        "desc": "איך נגמר היום"
-      },
-      "message": {
-        "name": "הודעה לצוות",
-        "desc": "בקשה קטנה או תודה"
-      },
-      "feedback": {
-        "name": "איך היה?",
-        "desc": "לספר לנו במשפט"
-      }
-    },
     "reason": {
       "title": "למה באנו היום?",
       "subtitle": "הבחירה עוזרת לי להראות לכם את הדרך הצפויה. אפשר לשנות בכל רגע — וכל ביקור מתחיל אותו דבר.",
@@ -80,16 +34,7 @@
     "trail": {
       "title": "השביל שלנו",
       "subtitle": "כל עיגול הוא תחנה בביקור. לוחצים על תחנה כדי לראות מה קורה בה, מה עלול להיות קשה, ומה אפשר לבקש.",
-      "bubbleStart": "באנו בגלל",
-      "bubbleBody": "כל ילד/ה מתחיל/ה אותו דבר — קבלה, הערכה של מצב בריאות ובדיקת רופא/ה — ומשם הצוות מתאים את ההמשך.",
-      "bubbleChange": "שינוי הסיבה",
-      "bubbleNone": "עוד לא סיפרתם לי למה באנו.",
-      "bubbleAsk": "אפשר לספר לי כאן",
-      "bubbleEnd": "ואתאים את הדרך.",
       "hereSuffix": " — אנחנו כאן",
-      "whatHappens": "מה קורה כאן",
-      "challenge": "מה עלול להיות קשה",
-      "canAsk": "מה אפשר לבקש",
       "hereOn": "📍 אנחנו כאן — לביטול",
       "markHere": "לסמן: אנחנו כאן",
       "note": "הזמנים הם טווחים להמחשה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.",
@@ -152,19 +97,7 @@
       "note": "הטקסט כאן טיוטה ראשונית — לניסוח סופי יחד עם חגית."
     },
     "cardPage": {
-      "title": "הכרטיס שלך",
-      "subtitle": "סמנו את מה שמתאים — פחות משתי דקות. בסוף יוצא כרטיס קצר וגדול, שאפשר להראות לצוות מהמסך או להדפיס.",
       "bubble": "🔒 הכל נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ולא נשלח לשום מקום. מה שלא תראו בעצמכם — לא יגיע לצוות. אפשר למלא גם בלי שם.",
-      "me": "מי אני (לא חובה)",
-      "nickname": "כינוי / שם פרטי",
-      "nickPh": "לא חובה",
-      "age": "גיל",
-      "agePh": "—",
-      "otherPh": "אחר… (אפשר לכתוב בחופשי)",
-      "other": "אחר — {title}",
-      "freeTitle": "עוד משהו שעוזר לי? (לא חובה)",
-      "freePh": "למשל: אוהב שמספרים לי מה קורה בקול שקט; נרגעת עם הדובי הכחול…",
-      "note": "מה שמסמנים כאן פותח גם הצעות להתאמות שכדאי לבקש — הן מופיעות מתחת לכרטיס עצמו.",
       "show": "🪪 להראות את הכרטיס לצוות",
       "clear": "ניקוי הכרטיס"
     },
@@ -196,15 +129,6 @@
     "reasonLabel": "Reason for the visit",
     "reasonChange": "Change",
     "foot": "This tool is meant to make the visit easier to follow and to reduce uncertainty. It does not replace the medical team and does not give medical advice. There is no need to enter a name or identifying details.",
-    "tiles": {
-      "distract": {
-        "name": "A distraction",
-        "desc": "Something calm to look at"
-      },
-      "going-home": {
-        "desc": "How the day ends"
-      }
-    },
     "reason": {
       "title": "Why did we come today?",
       "subtitle": "Your choice helps me show you the expected route. You can change it at any time — every visit starts the same way.",
@@ -218,16 +142,7 @@
     "trail": {
       "title": "Our trail",
       "subtitle": "Each circle is a stop of the visit. Tap a stop to see what happens there, what may be hard, and what you can ask for.",
-      "bubbleStart": "Reason for the visit:",
-      "bubbleBody": "Every child starts the same way — registration, a check of the health condition and a doctor's examination — and from there the team adapts what comes next.",
-      "bubbleChange": "Change the reason",
-      "bubbleNone": "You have not told me yet why we came.",
-      "bubbleAsk": "You can tell me here",
-      "bubbleEnd": "and I will adapt the route.",
       "hereSuffix": " — we are here",
-      "whatHappens": "What happens here",
-      "challenge": "What may be hard",
-      "canAsk": "What can I ask for",
       "hereOn": "📍 We are here — tap to undo",
       "markHere": "Mark: we are here",
       "note": "The times are ranges for illustration only. The order and times may change depending on the medical team's decision and how busy the ER is.",
@@ -290,19 +205,7 @@
       "note": "The text here is a first draft — the final wording will be agreed with Hagit."
     },
     "cardPage": {
-      "title": "Your card",
-      "subtitle": "Tick what fits — less than two minutes. At the end you get a short, large card, which you can show the staff on the screen or print.",
       "bubble": "🔒 Everything is saved on this device only, deleted after 24 hours, and not sent anywhere. What you do not show yourself will not reach the staff. You can fill it in without a name.",
-      "me": "About the child (optional)",
-      "nickname": "Nickname or first name",
-      "nickPh": "Optional",
-      "age": "Age",
-      "agePh": "—",
-      "otherPh": "Other… (you can write freely)",
-      "other": "Other — {title}",
-      "freeTitle": "Anything else that helps? (optional)",
-      "freePh": "For example: likes being told calmly what is happening; calms down with the blue teddy…",
-      "note": "What is ticked here also suggests adaptations worth asking for — they appear below the card itself.",
       "show": "🪪 Show the card to the staff",
       "clear": "Clear the card"
     },
@@ -334,15 +237,6 @@
     "reasonLabel": "Причина визита",
     "reasonChange": "Изменить",
     "foot": "Инструмент помогает сделать визит понятнее и снизить неопределённость. Он не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные.",
-    "tiles": {
-      "distract": {
-        "name": "Отвлечься",
-        "desc": "Что-то спокойное, на что можно смотреть"
-      },
-      "going-home": {
-        "desc": "Как закончится день"
-      }
-    },
     "reason": {
       "title": "Почему мы пришли сегодня?",
       "subtitle": "Выбор помогает показать вам ожидаемый путь. Его можно изменить в любой момент — любой визит начинается одинаково.",
@@ -356,16 +250,7 @@
     "trail": {
       "title": "Наш путь",
       "subtitle": "Каждый кружок — это этап визита. Нажмите на этап, чтобы увидеть, что там происходит, что может быть трудно и что можно попросить.",
-      "bubbleStart": "Причина визита:",
-      "bubbleBody": "Каждый ребёнок начинает одинаково: регистрация, оценка состояния и осмотр врача, а дальше команда подстраивает продолжение.",
-      "bubbleChange": "Изменить причину",
-      "bubbleNone": "Вы ещё не рассказали, зачем мы пришли.",
-      "bubbleAsk": "Можно рассказать здесь",
-      "bubbleEnd": "и я подстрою путь.",
       "hereSuffix": " — мы здесь",
-      "whatHappens": "Что здесь происходит",
-      "challenge": "Что может быть трудно",
-      "canAsk": "Что можно попросить",
       "hereOn": "📍 Мы здесь — отменить",
       "markHere": "Отметить: мы здесь",
       "note": "Указано ориентировочное время. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
@@ -428,19 +313,7 @@
       "note": "Текст здесь — первый черновик. Окончательную формулировку согласуем с Хагит."
     },
     "cardPage": {
-      "title": "Важно знать о моём ребёнке",
-      "subtitle": "Отметьте подходящее — это займёт меньше двух минут. В конце получится короткая крупная карточка, которую можно показать персоналу с экрана или распечатать.",
       "bubble": "🔒 Всё сохраняется только на этом устройстве, удаляется через 24 часа и никуда не отправляется. То, что вы не покажете сами, не попадёт к персоналу. Можно заполнить и без имени.",
-      "me": "О ребёнке (необязательно)",
-      "nickname": "Имя или прозвище",
-      "nickPh": "Необязательно",
-      "age": "Возраст",
-      "agePh": "—",
-      "otherPh": "Другое… (можно написать свободно)",
-      "other": "Другое — {title}",
-      "freeTitle": "Что ещё помогает? (необязательно)",
-      "freePh": "Например: любит, когда ему спокойно рассказывают, что происходит; успокаивается с синим мишкой…",
-      "note": "Отмеченное здесь также подсказывает, какие адаптации стоит попросить — они появляются под самой карточкой.",
       "show": "🪪 Показать карточку персоналу",
       "clear": "Очистить карточку"
     },

@@ -8,11 +8,11 @@
       },
       "wait-before-triage": {
         "label": "שביל הכניסה",
-        "hint": "מחכים על השביל עד שהחוקר קורא לנו"
+        "hint": "מחכים על השביל עד ששומר השמורה קורא לנו"
       },
       "triage": {
-        "label": "בדיקת חוקר",
-        "hint": "החוקר בודק שאתה בריא/ה למסע"
+        "label": "בדיקת שומר השמורה",
+        "hint": "שומר השמורה בודק שהכול מוכן למסע"
       },
       "wait-doctor": {
         "label": "מחנה ההמתנה",
@@ -23,8 +23,8 @@
         "hint": "המדריך מחליט איזה מסלול נעשה"
       },
       "decision": {
-        "label": "בריחה מהגעש!",
-        "hint": "יצאנו בשלום — המסע הסתיים!"
+        "label": "חוזרים מהמסע",
+        "hint": "המסע הסתיים — הולכים הביתה!"
       },
       "tests": {
         "label": "מעבדת הממצאים",
@@ -32,7 +32,7 @@
       },
       "treatment": {
         "label": "עמדת הטיפול",
-        "hint": "מטפלים בפצע מהמסע"
+        "hint": "חובש המשלחת מטפל בפצע מהמסע"
       },
       "consult": {
         "label": "מומחה השטח",
@@ -44,24 +44,171 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "החוקר מודד את חום הגוף של הדינוזאור הצעיר — כדי לוודא שהוא בריא/ה למסע.",
+      "temperature": "שומר השמורה מודד את חום הגוף של החוקר — כדי לוודא שהכול מוכן למסע.",
       "saturation": "חיישן הדגימה על האצבע בודק שמספיק חמצן זורם בדם — בדיוק כמו שבודקים דינוזאורים בשמורה.",
-      "blood-pressure": "המדריך בודק את עוצמת זרם החיים בזרוע — כדי לדעת כמה כוח יש להגיבור המסע.",
-      "doctor-exam": "המדריך הראשי בוחן את הדינוזאור הצעיר — ממנו/ה יוחלט איזה מסלול נמשיך.",
+      "blood-pressure": "שומר השמורה בודק את עוצמת זרם החיים בזרוע — כדי לדעת כמה כוח יש לחוקר למסע.",
+      "doctor-exam": "המדריך הראשי בוחן את החוקר — לפי הבדיקה יוחלט איזה מסלול נמשיך.",
       "blood-test": "המעבדה צריכה טיפת דגימה אחת — ממש כמו שחוקרים בודקים עצמות דינוזאורים.",
-      "urine": "כוסית הדגימה הנוזלית תגלה לחוקר מה קורה בגוף הדינוזאור הצעיר.",
+      "urine": "כוסית הדגימה תגלה למדריך מה קורה בגוף של החוקר.",
       "xray": "מכשיר הסריקה רואה לתוך הגוף ומצלם את העצמות — בדיוק כמו שמוצאים שלדי דינוזאורים.",
       "ultrasound": "ג׳ל הגילוי מאפשר לסורק לשוטט בתוך הגוף ולמפות מה שנמצא שם.",
       "ct": "הטבעת הגדולה סורקת לאט ויוצרת מפה מפורטת של הגוף — כמו ארכיאולוגים שחושפים מאובן.",
       "iv": "הצינור הדק מעביר נוזלי ריפוי ישירות לדם — כמו שמדענים מזינים דינוזאורים חולים בשמורה.",
-      "medication": "החוקר הכין תרופה מיוחדת שתעזור לגוף הדינוזאור הצעיר להחלים.",
+      "medication": "חובש המשלחת הכין תרופה מיוחדת שתעזור לגוף של החוקר להחלים.",
       "inhalation": "אדי הריפוי נכנסים לריאות ועוזרים לנשום בקלות — כמו אוויר יער קדמון נקי.",
-      "stitches": "הרופא של השמורה מחבר את הפצע בזהירות — בדיוק כמו שמאחים עצמות דינוזאור.",
-      "cast": "שריון הגבס עוטף את העצם ומחזיק אותה יציבה עד שתתרפא לגמרי.",
+      "stitches": "חובש המשלחת מחבר את הפצע בזהירות — בדיוק כמו שמאחים עצמות דינוזאור.",
+      "cast": "קליפת גבס, כמו של ביצת דינוזאור, עוטפת את העצם ומחזיקה אותה יציבה עד שתתרפא לגמרי.",
       "bandage": "תחבושת ההגנה עוטפת את הפצע ושומרת עליו מהסביבה עד שיתרפא.",
       "waiting-results": "המעבדה מנתחת את הדגימות — עוד מעט נדע מה גילתה הבדיקה."
     },
-    "distractTitle": "טבעת המאובנים 🦴"
+    "distractTitle": "טבעת המאובנים 🦴",
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "בפה",
+          "steps": [
+            "שומר השמורה נותן לנו מדחום קטן — שמים אותו בפה.",
+            "סוגרים את הפה חזק־חזק, כמו דינוזאור שמתחבא בשיחים.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הדינוזאורים בתמונה.",
+            "שומעים ביפ קטן — שומר השמורה כותב ביומן המסע, וסיימנו."
+          ]
+        },
+        {
+          "label": "מתחת לבית השחי",
+          "steps": [
+            "שומר השמורה שם מדחום קטן מתחת לבית השחי.",
+            "מצמידים את הזרוע לגוף, כמו דינוזאור קטן שמקפל את הכף.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הדינוזאורים בתמונה.",
+            "שומעים ביפ קטן — שומר השמורה כותב ביומן המסע, וסיימנו."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "עם אלחוש",
+          "steps": [
+            "קודם החובש מורח חומר קריר שמרדים את האזור, ומכסה במדבקה שקופה.",
+            "מחכים קצת עד שהאזור של החתך \"הולך לישון\", כמו דינוזאור בקן.",
+            "החובש מחזיק את האזור וסוגר אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
+            "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והחובש שם חבישה נקייה מלמעלה."
+          ]
+        },
+        {
+          "label": "בלי אלחוש",
+          "steps": [
+            "לא צריך להרדים את האזור — החובש מתחיל מיד.",
+            "החובש מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+            "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והחובש שם חבישה נקייה מלמעלה."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "שומר השמורה נותן לנו מדחום קטן — שמים אותו בפה.",
+        "סוגרים את הפה חזק־חזק, כמו דינוזאור שמתחבא בשיחים.",
+        "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הדינוזאורים בתמונה.",
+        "שומעים ביפ קטן — שומר השמורה כותב ביומן המסע, וסיימנו."
+      ],
+      "saturation": [
+        "שומר השמורה שם אטב קטן ורך על האצבע.",
+        "נדלק בו אור אדום — כמו פנס באוהל.",
+        "הוא רק מסתכל — לא עושה כלום.",
+        "אחרי רגע שומר השמורה מוריד אותו."
+      ],
+      "blood-pressure": [
+        "שומר השמורה שם שרוול רך על הזרוע.",
+        "הוא מתנפח ולוחץ על הזרוע, כמו חיבוק של דינוזאור גדול.",
+        "סופרים יחד עם שומר השמורה, והשרוול משחרר לבד.",
+        "אחר כך מורידים את השרוול — וזהו, סיימנו."
+      ],
+      "doctor-exam": [
+        "נפגוש את המדריך הראשי שרוצה לעזור לנו.",
+        "המדריך מקשיב לגוף עם סטטוסקופ — קצת קר, לא כואב.",
+        "אולי המדריך יסתכל בגרון ובאוזניים עם אור קטן.",
+        "בסוף המדריך יידע באיזה מסלול ממשיכים."
+      ],
+      "blood-test": [
+        "שומר השמורה מורח משחה שעושה את העור פחות רגיש.",
+        "גומייה רכה מתהדקת על הזרוע, כמו רצועה של תרמיל.",
+        "דקירה קטנה וקצרה — ומסתכלים על תמונה של דינוזאורים.",
+        "טיפת הדם נוסעת למעבדת הממצאים, ושומר השמורה מדביק פלסטר — כל הכבוד לנו!"
+      ],
+      "urine": [
+        "הולכים לשירותים, כמו תמיד.",
+        "עושים קצת פיפי לתוך כוס קטנה.",
+        "נותנים את הכוס לשומר השמורה, והוא לוקח את הדגימה למעבדה.",
+        "זהו!"
+      ],
+      "xray": [
+        "נכנסים לחדר עם סורק גדול.",
+        "לפעמים מלבישים לבוש כבד שמגן על הגוף.",
+        "עומדים או שוכבים בנחת, כמו מאובן בתוך סלע.",
+        "הסורק מצלם את העצמות, כמו שלד במוזיאון — לא מרגישים כלום.",
+        "סיימנו, אפשר לזוז שוב."
+      ],
+      "ultrasound": [
+        "שוכבים בנחת על מיטה, כמו באוהל.",
+        "מורחים ג׳ל קצת קר על הבטן.",
+        "חיישן חלק מחליק ומצייר על המסך מפה, כמו של חוקר — לפעמים לוחצים קצת, וזה בסדר.",
+        "אם מפריע אפשר לבקש רגע הפסקה.",
+        "מנגבים את הג׳ל — וסיימנו."
+      ],
+      "ct": [
+        "שוכבים על מיטה נוחה.",
+        "המיטה זזה לאט לתוך טבעת גדולה, כמו דרך קשת בשמורה.",
+        "שומעים רעש, ושוכבים בנחת כמו מאובן.",
+        "המיטה חוזרת החוצה — סיימנו."
+      ],
+      "iv": [
+        "חובש המשלחת מורח משחה שמרגיעה את העור.",
+        "דקירה קצרה, ואז החובש מכניס צינור רך ודק.",
+        "מוציאים את המחט, והצינור הרך נשאר כדי שהמים יטפטפו לאט — כמו ממימייה של טיול.",
+        "החובש מדביק מדבקה שמחזיקה את הצינור במקום."
+      ],
+      "medication": [
+        "חובש המשלחת מביא תרופה שעוזרת לגוף.",
+        "לפעמים שותים קצת סירופ מכוס טיולים קטנה.",
+        "ולפעמים התרופה נכנסת דרך הצינור הרך.",
+        "ואפשר לשתות מים מהמימייה אחרי, בשביל הטעם."
+      ],
+      "inhalation": [
+        "החובש שם על הפנים מסכה רכה עם אוויר קריר.",
+        "לא צריך לנשום בכוח — רק נושמים רגיל, כאילו מטיילים ביער עתיק.",
+        "לפעמים טיפה מדגדג בעיניים, ואפשר לבקש שהאוויר ייצא לאט יותר.",
+        "אפשר לצפות בסרטון בזמן הזה. אחרי כמה דקות החובש מוריד את המסכה — סיימנו."
+      ],
+      "stitches": [
+        "לא צריך להרדים את האזור — החובש מתחיל מיד.",
+        "החובש מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+        "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
+        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והחובש שם חבישה נקייה מלמעלה."
+      ],
+      "cast": [
+        "בוחרים אם לשבת או לשכב, ואם אמא או אבא יהיו לידנו.",
+        "החובש עוטף את היד או הרגל בשכבות רכות.",
+        "עכשיו מחכים רגע בסבלנות בלי לזוז, כמו מאובן — אי אפשר לעצור באמצע, כדי שהגבס יתאים בדיוק.",
+        "הגבס מתקשה לאט, כמו קליפה של ביצת דינוזאור, ושומר על העצם — וכך היא מחלימה."
+      ],
+      "bandage": [
+        "החובש עוטף תחבושת רכה סביב האזור.",
+        "בעדינות, שכבה על שכבה.",
+        "בסוף החובש מדביק — נעים ומוגן, ואפשר להמשיך בשביל."
+      ],
+      "waiting-results": [
+        "סיימנו את כל הבדיקות — כל הכבוד לנו!",
+        "עכשיו מחכים לתשובות במחנה. אפשר לשחק, לנוח או לראות סרטון.",
+        "מעבדת הממצאים בודקת את הדגימות שלנו, ושומר השמורה והמדריך לא שכחו אותנו.",
+        "כשיהיו תשובות — המדריך יבוא לספר לנו."
+      ]
+    },
+    "calmLines": [
+      "רגע, נושמים יחד 💙",
+      "קשה עכשיו? זה בסדר גמור. אני כאן.",
+      "אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…"
+    ]
   },
   "en": {
     "name": "Dinosaurs",
@@ -72,11 +219,11 @@
       },
       "wait-before-triage": {
         "label": "The Entrance Path",
-        "hint": "We wait on the path until the explorer calls us"
+        "hint": "We wait on the path until the reserve ranger calls us"
       },
       "triage": {
-        "label": "Explorer Check",
-        "hint": "The explorer checks that you are fit for the trip"
+        "label": "Ranger Check",
+        "hint": "The reserve ranger checks that everything is ready for the trip"
       },
       "wait-doctor": {
         "label": "Waiting Camp",
@@ -87,8 +234,8 @@
         "hint": "The guide decides which route we take"
       },
       "decision": {
-        "label": "Escape from the Volcano!",
-        "hint": "We got out safely — the trip is over!"
+        "label": "Heading Home from the Trip",
+        "hint": "The trip is over — time to go home!"
       },
       "tests": {
         "label": "Findings Lab",
@@ -96,7 +243,7 @@
       },
       "treatment": {
         "label": "Treatment Post",
-        "hint": "We treat a wound from the trip"
+        "hint": "The expedition medic treats the wound from the trip"
       },
       "consult": {
         "label": "Field Expert",
@@ -108,24 +255,171 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "The explorer measures the young dinosaur's body temperature — to make sure they are fit for the trip.",
+      "temperature": "The reserve ranger measures the explorer's body temperature — to make sure everything is ready for the trip.",
       "saturation": "The sample sensor on the finger checks that enough oxygen flows in the blood — just like the checks on dinosaurs in the reserve.",
-      "blood-pressure": "The guide checks the strength of the flow of life in the arm — to know how much strength the trip hero has.",
-      "doctor-exam": "The head guide examines the young dinosaur — the route we take next will be decided from it.",
+      "blood-pressure": "The ranger checks the strength of the flow of life in the arm — to know how much strength the explorer has for the trip.",
+      "doctor-exam": "The head guide examines the explorer — the route we take next will be decided from it.",
       "blood-test": "The lab needs one drop of sample — just like explorers study dinosaur bones.",
-      "urine": "The liquid sample cup will show the explorer what is happening in the young dinosaur's body.",
+      "urine": "The sample cup will show the guide what is happening in the explorer's body.",
       "xray": "The scanner looks inside the body and takes a picture of the bones — just like finding dinosaur skeletons.",
       "ultrasound": "The discovery gel lets the scanner wander inside the body and map what is there.",
       "ct": "The big ring scans slowly and makes a detailed map of the body — like archaeologists uncovering a fossil.",
       "iv": "A thin tube sends healing liquid straight into the blood — like scientists feeding sick dinosaurs in the reserve.",
-      "medication": "The explorer has prepared a special medicine to help the young dinosaur's body recover.",
+      "medication": "The expedition medic has prepared a special medicine to help the explorer's body recover.",
       "inhalation": "Healing vapours go into the lungs and help breathing feel easy — like clean ancient forest air.",
-      "stitches": "The reserve doctor carefully closes the wound — just like joining a dinosaur's bones.",
-      "cast": "The plaster armour wraps the bone and keeps it still until it fully heals.",
+      "stitches": "The expedition medic carefully closes the wound — just like joining a dinosaur's bones.",
+      "cast": "A plaster shell, like a dinosaur's egg, wraps the bone and keeps it still until it fully heals.",
       "bandage": "A protective dressing wraps the wound and keeps it safe from the surroundings until it heals.",
       "waiting-results": "The lab analyses the samples — soon we will know what the test found."
     },
-    "distractTitle": "The Fossil Ring 🦴"
+    "distractTitle": "The Fossil Ring 🦴",
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "In the mouth",
+          "steps": [
+            "The ranger gives us a little thermometer — we put it in the mouth.",
+            "We close the mouth tight-tight, like a dinosaur hiding in the bushes.",
+            "We wait quietly until the thermometer is done — we can count the dinosaurs in the picture.",
+            "We hear a little beep — the ranger writes it in the trip log, and we're done."
+          ]
+        },
+        {
+          "label": "Under the armpit",
+          "steps": [
+            "The ranger puts a little thermometer under the arm.",
+            "We press the arm to the body, like a little dinosaur tucking in its paw.",
+            "We wait quietly until the thermometer is done — we can count the dinosaurs in the picture.",
+            "We hear a little beep — the ranger writes it in the trip log, and we're done."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "With numbing",
+          "steps": [
+            "First the medic puts something cool on the spot to make it sleepy, and covers it with a clear sticker.",
+            "We wait a little until the spot around the cut “goes to sleep”, like a dinosaur in its nest.",
+            "The medic holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
+            "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on the face, and the medic puts a clean bandage on top."
+          ]
+        },
+        {
+          "label": "Without numbing",
+          "steps": [
+            "There's no need to make the spot sleepy — the medic starts right away.",
+            "The medic holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+            "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+            "If the glue gets a little warm, someone blows cool air on the face, and the medic puts a clean bandage on top."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "The ranger gives us a little thermometer — we put it in the mouth.",
+        "We close the mouth tight-tight, like a dinosaur hiding in the bushes.",
+        "We wait quietly until the thermometer is done — we can count the dinosaurs in the picture.",
+        "We hear a little beep — the ranger writes it in the trip log, and we're done."
+      ],
+      "saturation": [
+        "The ranger puts a small, soft clip on the finger.",
+        "A red light turns on inside it — like a torch in the tent.",
+        "It only looks — it doesn't do anything.",
+        "After a moment the ranger takes it off."
+      ],
+      "blood-pressure": [
+        "The ranger puts a soft cuff on the arm.",
+        "It fills with air and squeezes the arm, like a big dinosaur's hug.",
+        "We count together with the ranger, and the cuff lets go by itself.",
+        "Then the cuff comes off — and that's it, all done."
+      ],
+      "doctor-exam": [
+        "We meet the head guide, who wants to help us.",
+        "The guide listens to the body with a stethoscope — a little cold, but it doesn't hurt.",
+        "Maybe the guide will look in the throat and ears with a small light.",
+        "At the end, the guide will know which route to take next."
+      ],
+      "blood-test": [
+        "The ranger puts a cream on the skin that makes it less sensitive.",
+        "A soft band snugs around the arm, like a backpack strap.",
+        "A tiny, quick prick — and we look at a picture of dinosaurs.",
+        "The drop of blood goes to the finds lab, and the ranger puts on a plaster — well done!"
+      ],
+      "urine": [
+        "We go to the toilet, like always.",
+        "We pee a little into a small cup.",
+        "We give the cup to the ranger, who takes the sample to the lab.",
+        "That's it!"
+      ],
+      "xray": [
+        "We go into a room with a big scanner.",
+        "Sometimes they put a heavy cover on that protects the body.",
+        "We stand or lie calmly, like a fossil in a rock.",
+        "The scanner takes a picture of the bones, like a skeleton in a museum — we don't feel anything.",
+        "We're done, we can move again."
+      ],
+      "ultrasound": [
+        "We lie calmly on a bed, like in the tent.",
+        "They spread a slightly cold gel on the tummy.",
+        "A smooth sensor glides and draws a map on the screen, like an explorer's map — sometimes it presses a little, and that's okay.",
+        "If it bothers us, we can ask for a little break.",
+        "They wipe off the gel — and we're done."
+      ],
+      "ct": [
+        "We lie on a comfy bed.",
+        "The bed slowly moves into a big ring, like through an arch in the reserve.",
+        "We hear a noise and lie calmly, like a fossil.",
+        "The bed comes back out — we're done."
+      ],
+      "iv": [
+        "The expedition medic puts a cream on the skin that calms it.",
+        "A short prick, and then the medic puts in a soft, thin tube.",
+        "They take the needle out, and the soft tube stays so water can drip in slowly — like from a canteen.",
+        "The medic puts a sticker on that holds the tube in place."
+      ],
+      "medication": [
+        "The expedition medic brings medicine that helps the body.",
+        "Sometimes we drink a little syrup from a small camping cup.",
+        "Sometimes the medicine goes in through the soft tube.",
+        "And we can have some water from the canteen afterwards for the taste."
+      ],
+      "inhalation": [
+        "The medic puts a soft mask with cool air on the face.",
+        "We don't need to breathe hard — we just breathe normally, as if walking in an ancient forest.",
+        "Sometimes it tickles the eyes a little, and we can ask for the air to come out slower.",
+        "We can watch a video meanwhile. After a few minutes the medic takes the mask off — we're done."
+      ],
+      "stitches": [
+        "There's no need to make the spot sleepy — the medic starts right away.",
+        "The medic holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+        "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
+        "If the glue gets a little warm, someone blows cool air on the face, and the medic puts a clean bandage on top."
+      ],
+      "cast": [
+        "We choose whether to sit or lie down, and whether mom or dad stays close.",
+        "The medic wraps the arm or leg in soft layers.",
+        "Now we wait patiently for a moment without moving, like a fossil — we can't stop in the middle, so the cast fits just right.",
+        "The cast slowly gets hard, like a dinosaur egg's shell, and keeps the bone safe — and lets it heal."
+      ],
+      "bandage": [
+        "The medic wraps a soft bandage around the spot.",
+        "Gently, layer after layer.",
+        "At the end the medic sticks it down — cosy and protected, ready for the trail."
+      ],
+      "waiting-results": [
+        "We finished all the checks — well done!",
+        "Now we wait for the answers at the camp. We can play, rest or watch a video.",
+        "The finds lab is studying our samples, and the ranger and the guide haven't forgotten us.",
+        "When the answers are ready, the guide will come and tell us."
+      ]
+    },
+    "calmLines": [
+      "A moment — let's breathe together 💙",
+      "Is it hard right now? That's completely okay. I'm here.",
+      "We can also count slowly to ten together. One… two… three…"
+    ]
   },
   "ru": {
     "name": "Динозавры",
@@ -136,11 +430,11 @@
       },
       "wait-before-triage": {
         "label": "Дорожка у входа",
-        "hint": "Ждём на дорожке, пока нас позовёт исследователь"
+        "hint": "Ждём на дорожке, пока нас позовёт смотритель заповедника"
       },
       "triage": {
-        "label": "Проверка исследователя",
-        "hint": "Исследователь проверяет, что ты здоров(а) для похода"
+        "label": "Проверка смотрителя",
+        "hint": "Смотритель заповедника проверяет, что всё готово к походу"
       },
       "wait-doctor": {
         "label": "Лагерь ожидания",
@@ -151,8 +445,8 @@
         "hint": "Проводник решает, по какому маршруту пойдём"
       },
       "decision": {
-        "label": "Бегство от вулкана!",
-        "hint": "Выбрались в безопасности — поход окончен!"
+        "label": "Возвращаемся из похода",
+        "hint": "Поход окончен — пора домой!"
       },
       "tests": {
         "label": "Лаборатория находок",
@@ -160,7 +454,7 @@
       },
       "treatment": {
         "label": "Пост лечения",
-        "hint": "Лечим рану, полученную в походе"
+        "hint": "Медик экспедиции лечит рану, полученную в походе"
       },
       "consult": {
         "label": "Эксперт по местности",
@@ -172,23 +466,170 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "Исследователь измеряет температуру тела молодого динозавра — чтобы убедиться, что он готов к походу.",
+      "temperature": "Смотритель заповедника измеряет температуру тела исследователя — чтобы убедиться, что всё готово к походу.",
       "saturation": "Датчик образцов на пальце проверяет, что в крови достаточно кислорода — точно так же, как проверяют динозавров в заповеднике.",
-      "blood-pressure": "Проводник проверяет силу потока жизни в руке — чтобы знать, сколько сил у героя похода.",
-      "doctor-exam": "Главный проводник осматривает молодого динозавра — по этому осмотру решат, каким маршрутом пойдём дальше.",
+      "blood-pressure": "Смотритель проверяет силу потока жизни в руке — чтобы знать, сколько сил у исследователя для похода.",
+      "doctor-exam": "Главный проводник осматривает исследователя — по этому осмотру решат, каким маршрутом пойдём дальше.",
       "blood-test": "Лаборатории нужна одна капля образца — точно так же, как исследователи изучают кости динозавров.",
-      "urine": "Чашка с жидким образцом расскажет исследователю, что происходит в теле молодого динозавра.",
+      "urine": "Стаканчик с образцом расскажет проводнику, что происходит в теле исследователя.",
       "xray": "Аппарат-сканер смотрит внутрь тела и снимает кости — так же, как находят скелеты динозавров.",
       "ultrasound": "Гель для поиска позволяет сканеру бродить внутри тела и наносить на карту, что там есть.",
       "ct": "Большое кольцо медленно сканирует и строит подробную карту тела — как археологи, которые откапывают окаменелость.",
       "iv": "Тонкая трубка передаёт целебную жидкость прямо в кровь — как учёные кормят больных динозавров в заповеднике.",
-      "medication": "Исследователь приготовил особое лекарство, которое поможет телу молодого динозавра выздороветь.",
+      "medication": "Медик экспедиции приготовил особое лекарство, которое поможет телу исследователя выздороветь.",
       "inhalation": "Целебные пары попадают в лёгкие и помогают легко дышать — как чистый воздух древнего леса.",
-      "stitches": "Врач заповедника аккуратно закрывает рану — точно так же, как соединяют кости динозавра.",
-      "cast": "Гипсовый доспех обхватывает кость и держит её неподвижно, пока она полностью не заживёт.",
+      "stitches": "Медик экспедиции аккуратно закрывает рану — точно так же, как соединяют кости динозавра.",
+      "cast": "Гипсовая скорлупа, как у яйца динозавра, обхватывает кость и держит её неподвижно, пока она полностью не заживёт.",
       "bandage": "Защитная повязка обхватывает рану и бережёт её от окружения, пока она не заживёт.",
       "waiting-results": "Лаборатория анализирует образцы — скоро мы узнаем, что показал анализ."
     },
-    "distractTitle": "Кольцо окаменелостей 🦴"
+    "distractTitle": "Кольцо окаменелостей 🦴",
+    "procedureVariants": {
+      "temperature": [
+        {
+          "label": "Во рту",
+          "steps": [
+            "Смотритель даёт нам маленький градусник — кладём его в рот.",
+            "Крепко-крепко закрываем рот, как динозавр, который затаился в кустах.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать динозавров на картинке.",
+            "Слышим тихое «бип» — смотритель записывает в походный журнал, и всё, готово."
+          ]
+        },
+        {
+          "label": "Под мышкой",
+          "steps": [
+            "Смотритель кладёт маленький градусник под мышку.",
+            "Прижимаем руку к телу, как динозаврик прячет лапку.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать динозавров на картинке.",
+            "Слышим тихое «бип» — смотритель записывает в походный журнал, и всё, готово."
+          ]
+        }
+      ],
+      "stitches": [
+        {
+          "label": "С обезболиванием",
+          "steps": [
+            "Сначала медик мажет прохладное средство, от которого место засыпает, и закрывает его прозрачной наклейкой.",
+            "Немного ждём, пока место пореза «уснёт», как динозавр в гнезде.",
+            "Медик держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
+            "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху медик накладывает чистую повязку."
+          ]
+        },
+        {
+          "label": "Без обезболивания",
+          "steps": [
+            "Обезболивать не нужно — медик начинает сразу.",
+            "Медик держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+            "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху медик накладывает чистую повязку."
+          ]
+        }
+      ]
+    },
+    "procedureSteps": {
+      "temperature": [
+        "Смотритель даёт нам маленький градусник — кладём его в рот.",
+        "Крепко-крепко закрываем рот, как динозавр, который затаился в кустах.",
+        "Тихонько ждём, пока градусник закончит, — можно посчитать динозавров на картинке.",
+        "Слышим тихое «бип» — смотритель записывает в походный журнал, и всё, готово."
+      ],
+      "saturation": [
+        "Смотритель надевает на палец маленькую мягкую прищепку.",
+        "В ней загорается красный огонёк — как фонарик в палатке.",
+        "Она только смотрит — ничего не делает.",
+        "Через минутку смотритель её снимает."
+      ],
+      "blood-pressure": [
+        "Смотритель надевает на руку мягкую манжету.",
+        "Она надувается и сжимает руку, как крепкие объятия большого динозавра.",
+        "Мы считаем вместе со смотрителем, и манжета сама отпускает.",
+        "Потом манжету снимают — и всё, готово."
+      ],
+      "doctor-exam": [
+        "Встречаем главного проводника, который хочет нам помочь.",
+        "Проводник слушает тело стетоскопом — немного холодно, но не больно.",
+        "Может быть, проводник посмотрит горло и уши маленьким фонариком.",
+        "В конце проводник будет знать, по какому маршруту идти дальше."
+      ],
+      "blood-test": [
+        "Смотритель мажет на кожу крем, от которого она становится менее чувствительной.",
+        "Мягкая резинка обхватывает руку, как ремешок рюкзака.",
+        "Маленький быстрый укол — а мы смотрим на картинку с динозаврами.",
+        "Капелька крови едет в лабораторию находок, а смотритель клеит пластырь — молодцы!"
+      ],
+      "urine": [
+        "Идём в туалет, как всегда.",
+        "Немного писаем в маленький стаканчик.",
+        "Отдаём стаканчик смотрителю — он отнесёт образец в лабораторию.",
+        "Всё!"
+      ],
+      "xray": [
+        "Заходим в комнату с большим сканером.",
+        "Может быть, наденут тяжёлую накидку, которая защищает тело.",
+        "Спокойно стоим или лежим, как окаменелость в камне.",
+        "Сканер делает снимок костей, как у скелета в музее, — мы ничего не чувствуем.",
+        "Готово, можно снова двигаться."
+      ],
+      "ultrasound": [
+        "Спокойно ложимся на кровать, как в палатке.",
+        "На живот мажут немного холодный гель.",
+        "Гладкий датчик скользит и рисует на экране карту, как у исследователя, — иногда немного надавливают, и это нормально.",
+        "Если мешает, можно попросить маленький перерыв.",
+        "Гель вытирают — и готово."
+      ],
+      "ct": [
+        "Ложимся на удобную кровать.",
+        "Кровать медленно заезжает в большое кольцо, как в арку в заповеднике.",
+        "Слышим шум и лежим спокойно, как окаменелость.",
+        "Кровать выезжает обратно — готово."
+      ],
+      "iv": [
+        "Медик экспедиции мажет на кожу крем, который её успокаивает.",
+        "Короткий укол, а потом медик вводит мягкую тонкую трубочку.",
+        "Иглу вынимают, а мягкая трубочка остаётся, чтобы водичка понемногу капала — как из походной фляжки.",
+        "Медик приклеивает наклейку, которая держит трубочку на месте."
+      ],
+      "medication": [
+        "Медик экспедиции приносит лекарство, которое помогает телу.",
+        "Иногда пьём немного сиропа из маленького походного стаканчика.",
+        "Иногда лекарство идёт через мягкую трубочку.",
+        "А потом можно попить воды из фляжки, чтобы убрать вкус."
+      ],
+      "inhalation": [
+        "Медик надевает на лицо мягкую маску с прохладным воздухом.",
+        "Не нужно дышать сильно — просто дышим как обычно, как будто гуляем в древнем лесу.",
+        "Иногда немного щекочет глаза, и можно попросить, чтобы воздух шёл медленнее.",
+        "В это время можно смотреть мультик. Через несколько минут медик снимает маску — готово."
+      ],
+      "stitches": [
+        "Обезболивать не нужно — медик начинает сразу.",
+        "Медик держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+        "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
+        "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху медик накладывает чистую повязку."
+      ],
+      "cast": [
+        "Выбираем, сидеть или лежать, и будут ли мама или папа рядом.",
+        "Медик обматывает руку или ногу мягкими слоями.",
+        "Теперь терпеливо ждём немного и не двигаемся, как окаменелость, — останавливаться посередине нельзя, чтобы гипс подошёл точно.",
+        "Гипс медленно твердеет, как скорлупа яйца динозавра, и бережёт кость — и она заживает."
+      ],
+      "bandage": [
+        "Медик обматывает это место мягким бинтом.",
+        "Обматывает бережно, слой за слоем.",
+        "В конце закрепляет — уютно и надёжно, можно идти дальше по тропе."
+      ],
+      "waiting-results": [
+        "Мы закончили все проверки — молодцы!",
+        "Теперь ждём ответов в лагере. Можно поиграть, отдохнуть или посмотреть мультик.",
+        "Лаборатория находок изучает наши образцы, а смотритель и проводник помнят про нас.",
+        "Когда будут ответы, проводник придёт и расскажет нам."
+      ]
+    },
+    "calmLines": [
+      "Минутку — дышим вместе 💙",
+      "Сейчас трудно? Это совершенно нормально. Я рядом.",
+      "Можно ещё медленно посчитать со мной до десяти. Один… два… три…"
+    ]
   }
 }

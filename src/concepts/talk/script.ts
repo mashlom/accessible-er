@@ -7,10 +7,11 @@ import { parentPaths } from '../../data/parent/paths'
 import supportI18n from '../../data/i18n/support.json'
 import talkTexts from '../../data/parent/talk.json'
 import { parentChannelLabel, parentLoadLabel, parentMapAreas } from '../../data/parent/map'
-import parentUi from '../../data/parent/ui.json'
+import i18nUi from '../../data/i18n/ui.json'
 import careI18n from '../../data/i18n/careCard.json'
 import { distressTips, readySentences, staffRequests } from '../../data/support'
 import { cardSections, type CardArrayField, type CareCard } from '../../data/careCard'
+import type { Procedure } from '../../data/types'
 
 type Lang = 'he' | 'en' | 'ru'
 
@@ -121,9 +122,9 @@ function bullets(items: string[]): string {
   return items.map((i) => `· ${i}`).join('\n')
 }
 
-/** One block of the discharge texts, the same blocks as on the quest's celebration screen (src/data/parent/ui.json) */
+/** One block of the discharge texts, the same blocks as on the quest's celebration screen (src/data/i18n/ui.json) */
 function dischargeBody(lang: Lang, i: number): string {
-  const blocks = (keyed((parentUi as unknown as Record<Lang, { celebrate: { discharge: { body: string }[] } }>)[lang], 'parent/ui') ?? keyed((parentUi as unknown as Record<'he', { celebrate: { discharge: { body: string }[] } }>).he, 'parent/ui')).celebrate.discharge
+  const blocks = (keyed((i18nUi as unknown as Record<Lang, { celebrate: { discharge: { body: string }[] } }>)[lang], 'i18n/ui') ?? keyed((i18nUi as unknown as Record<'he', { celebrate: { discharge: { body: string }[] } }>).he, 'i18n/ui')).celebrate.discharge
   return blocks[i].body
 }
 
@@ -363,8 +364,8 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
       ]
       const showAll = rest[0] === 'all' || likelyIds.length === 0
       const list = showAll
-        ? procedures.map((p) => parentProcedure(ctx.lang, p.id) ?? p)
-        : likelyIds.map((id) => parentProcedure(ctx.lang, id)).filter((p): p is (typeof procedures)[number] => !!p)
+        ? procedures.map((p) => parentProcedure(ctx.lang, p.id)).filter((p): p is Procedure => !!p)
+        : likelyIds.map((id) => parentProcedure(ctx.lang, id)).filter((p): p is Procedure => !!p)
 
       return {
         say: [

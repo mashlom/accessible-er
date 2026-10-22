@@ -59,8 +59,9 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
   if (!procedure) return null
 
   const themedSteps = theme.procedureSteps?.[id]
-  const variants = themedSteps ? undefined : (theme.procedureVariants?.[id] ?? procedure.storyVariants)
-  const steps = themedSteps ?? (variants ? (variants[variant] ?? variants[0]).steps : procedure.story)
+  // the variants (the methods) come first; a world without them shows its own steps, else the shared story
+  const variants = theme.procedureVariants?.[id] ?? procedure.storyVariants
+  const steps = variants ? (variants[variant] ?? variants[0]).steps : (themedSteps ?? procedure.story)
   const narrative = theme.procedureNarratives?.[id]
 
   return (
@@ -115,7 +116,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
             </div>
           )}
 
-          <ParentInfo stageId={stageId} inline ocean initialProc={id} />
+          <ParentInfo stageId={stageId} inline initialProc={id} />
 
           <div className={css.stageSheetActions}>
             {stageActive && (

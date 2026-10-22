@@ -1938,7 +1938,7 @@
 /* Parent pill of the ocean sheets, from the mockup: a white pill with a book icon (the button itself is
    at least 44px tall for touch; the visible pill sits inside it). */
 .parentBtnOcean {
-  min-height: max(calc(44 * var(--u)), 44px);
+  min-height: max(calc(44 * var(--u, 1px)), 44px);
   display: flex;
   align-items: center;
   padding: 0;
@@ -1955,7 +1955,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  height: max(calc(36 * var(--u)), 34px);
+  height: max(calc(36 * var(--u, 1px)), 34px);
   box-sizing: border-box;
   padding-inline: 0.9rem 4px;
   background: #fff;
@@ -3178,4 +3178,11 @@ path.oceanTrailLit {
 /* the heart on the 'it's hard for us' button: a gap before the words */
 .heartIcon {
   margin-inline-end: 0.4em;
+}
+
+/* the parent button under a stage or procedure page: its own row, so the page styles do not reach the sheet */
+.parentRow {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 16px;
 }

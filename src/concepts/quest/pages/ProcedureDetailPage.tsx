@@ -6,6 +6,7 @@ import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { OceanProcedureDetailSheet } from '../components/OceanProcedureDetailSheet'
+import { ParentInfo } from '../components/ParentInfo'
 import css from '../quest.module.css'
 
 export function ProcedureDetailPage() {
@@ -32,8 +33,9 @@ export function ProcedureDetailPage() {
   if (theme.id === 'ocean' && id) return <OceanProcedureDetailSheet id={id} />
 
   const themedSteps = id ? theme.procedureSteps?.[id] : undefined
-  const variants = themedSteps ? undefined : (theme.procedureVariants?.[id!] ?? procedure.storyVariants)
-  const steps = themedSteps ?? (variants ? (variants[variant] ?? variants[0]).steps : procedure.story)
+  // the variants (the methods) come first; a world without them shows its own steps, else the shared story
+  const variants = theme.procedureVariants?.[id!] ?? procedure.storyVariants
+  const steps = variants ? (variants[variant] ?? variants[0]).steps : (themedSteps ?? procedure.story)
 
   return (
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
@@ -90,38 +92,9 @@ export function ProcedureDetailPage() {
         </div>
       </div>
 
-      {(procedure.who || procedure.duration) && (
-        <p className={css.waitRange}>
-          {procedure.who && <span>👤 {procedure.who}</span>}
-          {procedure.who && procedure.duration && <span> · </span>}
-          {procedure.duration && <span>{t('ui.text.estimated')} {procedure.duration}</span>}
-        </p>
-      )}
-
-      <div className={css.stageBody}>
-        <section>
-          <h2>{t('ui.text.whatActuallyHappens')}</h2>
-          <p>{procedure.what}</p>
-        </section>
-
-        <section>
-          <h2>{t('ui.text.childMayFeel')}</h2>
-          <p>{procedure.feel}</p>
-        </section>
-
-        <section>
-          <h2>{t('ui.text.prepareChild')}</h2>
-          <p>{procedure.prepare}</p>
-        </section>
-
-        {procedure.adaptations && procedure.adaptations.length > 0 && (
-          <section>
-            <h2>{t('ui.text.askStaff')}</h2>
-            <ul>
-              {procedure.adaptations.map((item, i) => <li key={i}>{item}</li>)}
-            </ul>
-          </section>
-        )}
+      <div className={css.parentRow}>
+        {/* the parent's part is the same block in every world, opened on this procedure */}
+        <ParentInfo stageId={parentStage?.id} inline initialProc={id} />
       </div>
     </div>
   )

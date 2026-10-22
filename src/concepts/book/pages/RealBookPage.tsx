@@ -35,7 +35,7 @@ const STAGE_ICONS: Record<string, string> = {
 
 export function RealBookPage() {
   const { t, lang, dir } = useI18n()
-  const labels = (keyed((realInfo as unknown as Record<string, { headings: { whatHappens: string; challenge: string; canAsk: string } }>)[lang], 'child/book/real-info') ?? keyed((realInfo as unknown as Record<string, { headings: { whatHappens: string; challenge: string; canAsk: string } }>).he, 'child/book/real-info')).headings
+  const labels = { whatHappens: t('ui.labels.book.what'), challenge: t('ui.labels.book.feel'), canAsk: t('ui.labels.book.canAsk') }
   const [index, setIndex] = useState(0)
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [chosen, setChosen] = useState(false)

@@ -21,7 +21,8 @@
           "מרחב שקט יותר או מקום שפחות צפוף",
           "מידע על כמה זמן קרוב"
         ],
-        "waitRange": "5–15 דקות"
+        "waitRange": "5–15 דקות",
+        "nextStagePrepare": "זה זמן טוב להכין את הילד/ה למדידות שהולכות לקרות: חום, חמצן, לחץ דם. אפשר לדבר על המכשירים ולתרגל."
       },
       "triage": {
         "title": "הערכה של מצב בריאות ומדידות",
@@ -44,7 +45,8 @@
           "מרחב שקט יותר או פינת המתנה רגועה",
           "הערכת זמן משוערת (בטווחים)"
         ],
-        "waitRange": "30–90 דקות"
+        "waitRange": "30–90 דקות",
+        "nextStagePrepare": "אפשר לשחק \"רופא\" עם בובה לפני, ולהסביר שהרופא/ה רק מסתכל/ת ומקשיב/ה כדי לעזור."
       },
       "doctor": {
         "title": "בדיקת רופא/ה",
@@ -358,7 +360,8 @@
           "A quieter space or a less crowded spot",
           "Information about how long it might take"
         ],
-        "waitRange": "5–15 minutes"
+        "waitRange": "5–15 minutes",
+        "nextStagePrepare": "This is a good time to prepare your child for the measurements coming up: temperature, oxygen, blood pressure. You can talk about the devices and practice together."
       },
       "triage": {
         "title": "Initial assessment and measurements",
@@ -381,7 +384,8 @@
           "A quieter space or a calm waiting corner",
           "An estimated time (as a range)"
         ],
-        "waitRange": "30–90 minutes"
+        "waitRange": "30–90 minutes",
+        "nextStagePrepare": "You can play \"doctor\" with a doll beforehand, and explain that the doctor only looks and listens in order to help."
       },
       "doctor": {
         "title": "Doctor's exam",
@@ -695,7 +699,8 @@
           "Более тихое или менее людное место",
           "Узнать, сколько примерно ещё ждать"
         ],
-        "waitRange": "5–15 минут"
+        "waitRange": "5–15 минут",
+        "nextStagePrepare": "Это хорошее время, чтобы подготовить ребёнка к измерениям: температура, кислород, давление. Можно поговорить о приборах и потренироваться."
       },
       "triage": {
         "title": "Оценка состояния и измерения у медсестры",
@@ -718,7 +723,8 @@
           "Более тихое место или спокойный уголок для ожидания",
           "Примерное время ожидания (в диапазоне)"
         ],
-        "waitRange": "30–90 минут"
+        "waitRange": "30–90 минут",
+        "nextStagePrepare": "Можно заранее поиграть с куклой «в доктора» и объяснить, что врач только смотрит и слушает, чтобы помочь."
       },
       "doctor": {
         "title": "Осмотр врача",

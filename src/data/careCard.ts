@@ -1,5 +1,5 @@
 /**
- * "כרטיס התאמות מהיר" (module 1 in the spec) — what the staff should
+ * "Quick adaptations card" (module 1 in the spec) — what the staff should
  * know about my child. Filled quickly by the parent (chips-first, so it
  * works even when arriving in a hurry), stored ONLY on this device with
  * a 1-day expiry, and shown to staff physically (screen or print).
@@ -19,7 +19,7 @@ export interface CareCard {
   hardMoments: string[]
   pain: string[]
   avoid: string[]
-  /** per-section free text ("אחר"), keyed by section — max 150 chars each */
+  /** per-section free text ("Other"), keyed by section — max 150 chars each */
   custom: Record<CardArrayField, string>
   /** the requests the parent picked for the staff (ids, see askIds; the text is in i18n/careCard.json) */
   asks: string[]
@@ -38,7 +38,7 @@ export type CardArrayField =
   | 'pain'
   | 'avoid'
 
-/** Max length of each per-section "אחר" free-text line. */
+/** Max length of each per-section "Other" free-text line. */
 export const CUSTOM_MAX = 150
 
 export const emptyCustom: Record<CardArrayField, string> = {
@@ -93,20 +93,20 @@ export const cardSections: CardSection[] = sectionMeta.map((m, i) => ({
 
 /**
  * Marking a sensitivity/trigger opens matching adaptation suggestions
- * (the spec's "סימון רגישות יאפשר לפתוח הצעות להתאמות מסוימות").
+ * (the spec: "marking a sensitivity opens suggestions for matching adaptations").
  */
-const adaptationSuggestions: Record<string, string> = (careI18n as unknown as { he: { adaptationSuggestions: Record<string, string> } }).he.adaptationSuggestions
-
+// the suggestion texts are the card's asks: each trigger points at an ask id, so the text lives once
 export function suggestedAdaptations(
   card: CareCard,
-  // translations keyed by the Hebrew option (src/data/i18n/careCard.json); missing entries fall back to Hebrew
-  translated?: Record<string, string>,
+  copy: { asks: Record<string, string>; adaptationFor: Record<string, string> },
 ): string[] {
   const picked = [...card.sensitivities, ...card.escalators, ...card.hardMoments]
   return [
     ...new Set(
       picked
-        .map((p) => (translated?.[p] && adaptationSuggestions[p] ? translated[p] : adaptationSuggestions[p]))
+        .map((p) => copy.adaptationFor[p])
+        .filter(Boolean)
+        .map((id) => copy.asks[id])
         .filter(Boolean),
     ),
   ]

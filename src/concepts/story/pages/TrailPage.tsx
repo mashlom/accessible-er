@@ -23,7 +23,7 @@ import styles from '../pages.module.css'
  * concepts mid-visit keeps their place.
  */
 export function TrailPage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang], 'parent/home').trail
   const home = keyed(homeTexts[lang], 'parent/home')
   const { reasonId } = useVisitReason()
@@ -115,15 +115,15 @@ export function TrailPage() {
                     {/* 'here we are' comes right after the station's title */}
                     <p className={styles.stopMeaning}>{stage.meaning}</p>
                     <p className={styles.detailRow}>
-                      <span className={styles.detailLabel}>{tx.whatHappens}</span>
+                      <span className={styles.detailLabel}>{t('ui.labels.adult.whatHappens')}</span>
                       {stage.whatHappens}
                     </p>
                     <p className={styles.detailRow}>
-                      <span className={styles.detailLabel}>{tx.challenge}</span>
+                      <span className={styles.detailLabel}>{t('ui.labels.adult.challenge')}</span>
                       {stage.challenge}
                     </p>
                     <div className={styles.detailRow}>
-                      <span className={styles.detailLabel}>{tx.canAsk}</span>
+                      <span className={styles.detailLabel}>{t('ui.labels.adult.canAsk')}</span>
                       <ul className={styles.askList}>
                         {stage.canAsk.map((a) => (
                           <li key={a}>{a}</li>

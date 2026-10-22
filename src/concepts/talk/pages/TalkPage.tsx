@@ -10,8 +10,9 @@ import { DAY_MS } from '../../../lib/storage'
 import { emptyCard, type CardArrayField, type CareCard } from '../../../data/careCard'
 import { resolveNode, talkText, topicChoices, type Action, type Choice, type Say } from '../script'
 import { useI18n } from '../../../hooks/useI18n'
-import parentUi from '../../../data/parent/ui.json'
+import i18nUi from '../../../data/i18n/ui.json'
 import talkJson from '../../../data/parent/talk.json'
+import homeJson from '../../../data/parent/home.json'
 import styles from '../talk.module.css'
 
 /** One exchange: what Roni said, and what the family answered to it. */
@@ -59,7 +60,7 @@ function readTrail(): Turn[] {
  * throw the family back to the beginning. It is rebuilt by re-resolving each
  * node, so no message text is ever persisted.
  */
-// the topic buttons use the same words as the home tiles (src/data/parent/ui.json), in the chosen language
+// the topic buttons use the same words as the home tiles (src/data/i18n/ui.json), in the chosen language
 const TOPIC_TILE: Record<string, string> = { reason: 'reason', prep: 'procedures', card: 'card', map: 'map', ask: 'requests', home: 'discharge' }
 
 export function TalkPage() {
@@ -68,7 +69,7 @@ export function TalkPage() {
   const topicLabel = (choice: Choice): string => {
     if (choice.go === 'topics') return talkText(lang).topics.back
     if (!topicChoices(lang).some((tc) => tc.go === choice.go)) return choice.label
-    const tiles = keyed((parentUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string }> }>)[lang], 'parent/ui')?.tiles
+    const tiles = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { tiles: Record<string, { title: string }> }>)[lang], 'i18n/ui')?.tiles
     const tile = TOPIC_TILE[choice.go ?? ''] ?? ''
     if (tile && tiles && tiles[tile]) return tiles[tile].title
     return (talkText(lang).topicNames as Record<string, string>)[choice.go ?? ''] ?? choice.label
@@ -162,12 +163,12 @@ export function TalkPage() {
         navigate(path(action.to))
         break
       case 'feedback': {
-        const mail = keyed((talkJson as unknown as { he: { mail: Record<string, string>; buttons: Record<string, string> } }).he, 'parent/talk')
-        const body = [
-          `${mail.mail.rating}: ${mail.buttons[RATING_KEYS[action.rating]]}`,
-          mail.mail.concept,
-        ].join('\n')
-        window.location.href = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(mail.mail.subject)}&body=${encodeURIComponent(body)}`
+        // the team reads Hebrew: the question the parent was asked and the answer the parent chose, as the parent saw them
+        const he = keyed((talkJson as unknown as { he: { mail: Record<string, string>; bye: Record<string, string>; buttons: Record<string, string> } }).he, 'parent/talk')
+        const body = [he.bye.ask, he.buttons[RATING_KEYS[action.rating]]].join('\n')
+        // the subject in the parent's language: the prefix and the app name, as the home page shows it
+        const subject = `${(talkJson as unknown as Record<'he'|'en'|'ru', { mail: { subjectPrefix: string } }>)[lang].mail.subjectPrefix} "${(homeJson as unknown as Record<'he'|'en'|'ru', { title: string }>)[lang].title}"`
+        window.location.href = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
         break
       }
       case 'restart':

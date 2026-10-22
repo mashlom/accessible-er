@@ -12,7 +12,7 @@ export function CareCardPage() {
     <div className="container">
       <PageHeader
         eyebrow={t('ui.text.cardTitle')}
-        title={t('ui.text.aboutMyChild')}
+        title={t('ui.tiles.card.title')}
         subtitle={t('ui.text.cardSubtitle')}
       />
 

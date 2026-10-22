@@ -36,7 +36,7 @@ export function ShowPage() {
     ),
   ]
   const likely = likelyIds.map((id) => parentProcedure(lang, id)).filter((p): p is Procedure => !!p)
-  const rest = procedures.filter((p) => !likelyIds.includes(p.id)).map((p) => parentProcedure(lang, p.id) ?? p)
+  const rest = procedures.filter((p) => !likelyIds.includes(p.id)).map((p) => parentProcedure(lang, p.id)).filter((p): p is Procedure => !!p)
 
   return (
     <div dir={dir} lang={lang} style={{ display: 'contents' }}>

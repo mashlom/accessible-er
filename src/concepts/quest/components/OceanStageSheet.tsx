@@ -115,7 +115,7 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
 
           {children}
 
-          {!noParent && <ParentInfo stageId={stageId} inline ocean />}
+          {!noParent && <ParentInfo stageId={stageId} inline />}
 
           <div className={css.stageSheetActions}>
             {isActive && (
