@@ -229,3 +229,9 @@
 .staffScreen [class*="cardViewLabel"]::after {
   content: ": ";
 }
+
+/* margins on both sides: the lines and the requests do not touch the edges (the green head stays full width) */
+.staffScreen [class*="cardViewRow"],
+.staffScreen section {
+  padding-inline: 1.25rem;
+}
