@@ -14,7 +14,7 @@
         "stage": "triage"
       },
       "waiting": {
-        "name": "המסדרון שבו מחכים",
+        "name": "חדר המתנה",
         "note": "אזור ישיבה להמתנה. לרוב האזור הכי עמוס ורועש. אפשר לבקש פינה שקטה יותר.",
         "next": "חדר בדיקה, כשמגיע התור",
         "stage": "wait-doctor"
@@ -44,6 +44,10 @@
       "restroom": {
         "name": "שירותים",
         "note": "שירותים לשימוש המשפחות, וגם מקום לבדיקת שתן. לחלק מהילדים זה מרחב מציף — יש ריח, ולפעמים רעש חזק של ההדחה. אפשר להיכנס לרגע קצר ולצאת."
+      },
+      "doctor": {
+        "name": "חדר רופאים",
+        "note": "כאן בודקים את הילד ומחליטים איזה טיפול נדרש."
       }
     },
     "load": {
@@ -73,7 +77,7 @@
         "stage": "triage"
       },
       "waiting": {
-        "name": "The corridor where we wait",
+        "name": "Waiting room",
         "note": "Seating for waiting. Usually the busiest and loudest area. You can ask for a quieter corner.",
         "next": "An examination room, when your turn comes",
         "stage": "wait-doctor"
@@ -103,6 +107,10 @@
       "restroom": {
         "name": "Toilet",
         "note": "Toilets for families, and also a place for a urine test. For some children this is an overwhelming space — there is a smell, and sometimes a loud flush. You can go in for a short moment and come out."
+      },
+      "doctor": {
+        "name": "Doctor's room",
+        "note": "The doctor examines the child here and decides what treatment is needed."
       }
     },
     "load": {
@@ -132,7 +140,7 @@
         "stage": "triage"
       },
       "waiting": {
-        "name": "Коридор, где мы ждем",
+        "name": "Зал ожидания",
         "note": "Зона для ожидания с сидячими местами. Обычно самая людная и шумная. Можно попросить более тихий уголок.",
         "next": "Смотровая, когда подойдёт очередь",
         "stage": "wait-doctor"
@@ -162,6 +170,10 @@
       "restroom": {
         "name": "Туалет",
         "note": "Туалеты для семей, а также место для анализа мочи. Для некоторых детей это переполняющее пространство: есть запах, а иногда громко работает смыв. Можно зайти ненадолго и выйти."
+      },
+      "doctor": {
+        "name": "Кабинет врача",
+        "note": "Здесь врач смотрит ребёнка и решает, какое лечение нужно."
       }
     },
     "load": {
