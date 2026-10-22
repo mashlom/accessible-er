@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from '../../nav'
-import { useParentTheme as useQuestTheme } from '../useQuestTheme'
+import { useParentTheme, useQuestTheme } from '../useQuestTheme'
+import { useLocation } from 'react-router-dom'
 import { useReturnTo } from '../useReturnTo'
 import { distressTips, readySentences } from '../../../data/support'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
@@ -14,7 +15,11 @@ import css from '../quest.module.css'
 const REDUCE_STIMULATION_TIP = distressTips.findIndex((tip) => tip.id === 'less-stimuli')
 
 export function CalmPage() {
-  const { theme } = useQuestTheme()
+  // opened from a world: that world's colours; otherwise the parent's turquoise
+  const fromWorld = (useLocation().state as { fromWorld?: boolean } | null)?.fromWorld === true
+  const world = useQuestTheme().theme
+  const parent = useParentTheme().theme
+  const theme = fromWorld ? world : parent
   const { t } = useI18n()
   const { goBack, leaveState } = useReturnTo('/map')
   const [shown, setShown] = useState<string | null>(null)
