@@ -413,7 +413,7 @@
     },
     "cardView": {
       "fill": "Fill in the card",
-      "savePdf": "📄 Save as PDF / print",
+      "savePdf": "📄 Save as PDF",
       "edit": "✏️ Edit",
       "sendHint": "To send it to the staff: tap \"Save as PDF\", choose \"Save as PDF\" in the print window, and send the file yourselves. The card is kept on this device only, deleted after 24 hours, and nothing is sent automatically.",
       "print": "🖨️ Print"
@@ -850,7 +850,7 @@
     },
     "cardView": {
       "fill": "Заполнить карточку",
-      "savePdf": "📄 Сохранить как PDF / печать",
+      "savePdf": "📄 Сохранить как PDF",
       "edit": "✏️ Изменить",
       "sendHint": "Чтобы отправить персоналу: нажмите «Сохранить как PDF», в окне печати выберите «Сохранить как PDF» и отправьте файл сами. Карточка хранится только на этом устройстве, удаляется через 24 часа, и ничего не отправляется автоматически.",
       "print": "🖨️ Печать"
@@ -1287,7 +1287,7 @@
     },
     "cardView": {
       "fill": "למילוי הכרטיס",
-      "savePdf": "📄 שמירה כ־PDF / הדפסה",
+      "savePdf": "📄 שמירה כ־PDF",
       "edit": "✏️ עריכה",
       "sendHint": "לשליחה לצוות: לחצו \"שמירה כ־PDF\", בחרו \"שמירה כ־PDF\" בחלון ההדפסה, ושִׁלחו את הקובץ בעצמכם. הכרטיס נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ושום דבר לא נשלח אוטומטית.",
       "print": "🖨️ הדפסה"
