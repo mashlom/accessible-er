@@ -11,7 +11,7 @@ import i18nUi from '../../data/i18n/ui.json'
 import homeJson from '../../data/parent/home.json'
 import careI18n from '../../data/i18n/careCard.json'
 import { distressTips, readySentences, staffRequests } from '../../data/support'
-import { cardSections, type CardArrayField, type CareCard } from '../../data/careCard'
+import { cardSections, isCardEmpty, type CardArrayField, type CareCard } from '../../data/careCard'
 import type { Procedure } from '../../data/types'
 
 type Lang = 'he' | 'en' | 'ru'
@@ -425,6 +425,20 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
 
     /* ---------- adaptations card ---------- */
     case 'card': {
+      // a card that is already filled (here or on another page) is shown, not offered to fill again
+      if (rest.length === 0 && !isCardEmpty(ctx.card)) {
+        return {
+          say: [
+            { text: talkText(ctx.lang).card.cardDone, mood: 'proud' },
+            { text: talkText(ctx.lang).card.cardDoneShow },
+          ],
+          choices: [
+            { emoji: '🪪', label: talkText(ctx.lang).card.cardShow, action: { kind: 'open', to: '/card/view' } },
+            BACK,
+          ],
+        }
+      }
+
       if (rest.length === 0) {
         return {
           say: [
