@@ -37,7 +37,7 @@
     ],
     "staffRequests": [
       {
-        "title": "חדר שקט / סנוזלן",
+        "title": "אוזניות, אטמי אוזניים או מרחב שקט",
         "detail": "מרחב מותאם עם פחות רעש ואור, למי שמוצף או צריך להירגע."
       },
       {
@@ -45,7 +45,7 @@
         "detail": "שאדם אחד יוביל וידבר, ושאר הצוות ימתין בחוץ ככל האפשר."
       },
       {
-        "title": "הסבר לפני מגע",
+        "title": "הסבר קצר לפני כל נגיעה",
         "detail": "שכל נגיעה או פעולה יוסברו קודם, כדי שלא יהיו הפתעות."
       },
       {
@@ -57,11 +57,11 @@
         "detail": "זמן קצר בין הוראה לביצוע, ובין שאלה לתשובה, בלי למהר."
       },
       {
-        "title": "הכנה לפרוצדורה",
+        "title": "משחה מאלחשת",
         "detail": "הסבר מראש, משחה מאלחשת לפני דקירה, והסחת דעת בזמן הפעולה."
       },
       {
-        "title": "הפחתת גירויים",
+        "title": "עמעום האור בחדר",
         "detail": "הנמכת אור, הורדת רעש, וסגירת דלת — כדי להפחית עומס חושי."
       },
       {
@@ -108,7 +108,7 @@
     ],
     "staffRequests": [
       {
-        "title": "Quiet room / sensory room",
+        "title": "Headphones, earplugs or a quiet space",
         "detail": "An adapted space with less noise and light, for a child who is overwhelmed or needs to calm down."
       },
       {
@@ -116,7 +116,7 @@
         "detail": "One person leads and talks, and the rest of the team waits outside as much as possible."
       },
       {
-        "title": "Explain before touching",
+        "title": "A short explanation before every touch",
         "detail": "Every touch or procedure is explained first, so there are no surprises."
       },
       {
@@ -128,11 +128,11 @@
         "detail": "A little time between an instruction and doing it, and between a question and an answer, without rushing."
       },
       {
-        "title": "Preparing for a procedure",
+        "title": "Numbing cream",
         "detail": "An explanation in advance, numbing cream before a needle, and distraction during the procedure."
       },
       {
-        "title": "Less sensory input",
+        "title": "Dimming the lights in the room",
         "detail": "Dimming the lights, lowering noise, and closing the door — to reduce sensory overload."
       },
       {
@@ -179,15 +179,15 @@
     ],
     "staffRequests": [
       {
-        "title": "Тихая комната / сенсорная комната",
+        "title": "Наушники, беруши или тихое место",
         "detail": "Специальное пространство с меньшим шумом и светом — для ребёнка, который перегружен или которому нужно успокоиться."
       },
       {
-        "title": "Меньше персонала в палате",
+        "title": "Меньше персонала в комнате",
         "detail": "Один человек ведёт и говорит, а остальные по возможности ждут снаружи."
       },
       {
-        "title": "Объяснение перед прикосновением",
+        "title": "Короткое объяснение перед каждым прикосновением",
         "detail": "Каждое прикосновение или действие сначала объясняют, чтобы не было неожиданностей."
       },
       {
@@ -199,11 +199,11 @@
         "detail": "Немного времени между просьбой и её выполнением, между вопросом и ответом — без спешки."
       },
       {
-        "title": "Подготовка к процедуре",
+        "title": "Анестезирующая мазь",
         "detail": "Объяснение заранее, обезболивающий крем перед уколом и отвлечение во время процедуры."
       },
       {
-        "title": "Меньше раздражителей",
+        "title": "Приглушить свет",
         "detail": "Приглушить свет, уменьшить шум и закрыть дверь — чтобы снизить сенсорную нагрузку."
       },
       {
