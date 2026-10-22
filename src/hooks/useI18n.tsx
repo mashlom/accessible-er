@@ -4,10 +4,10 @@ export type Language = 'he' | 'en' | 'ru'
 
 const KEY = 'quest-lang'
 
-// Each file in data/i18n is a namespace named after the file: ocean.json → t('ocean.…').
+// Each file in data/i18n (and the children's book texts, child/book/book.json) is a namespace named after the file: ocean.json → t('ocean.…').
 const dictionaries: Record<string, Record<string, unknown>> = Object.fromEntries(
   Object.entries(
-    import.meta.glob<Record<string, unknown>>('../data/i18n/*.json', { eager: true, import: 'default' }),
+    import.meta.glob<Record<string, unknown>>(['../data/i18n/*.json', '../data/child/book/book.json'], { eager: true, import: 'default' }),
   ).map(([path, data]) => [path.replace(/^.*\/(.+)\.json$/, '$1'), data]),
 )
 
