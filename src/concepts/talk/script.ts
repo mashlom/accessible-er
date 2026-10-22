@@ -133,13 +133,15 @@ function dischargeBody(lang: Lang, i: number): string {
 // the words Roni shares with the ui and the care card: read from there, not copied into talk.json
 const sharedWords = (lang: Lang) => {
   const ui = (i18nUi as unknown as Record<Lang, UiWords>)[lang]
+  const home = (homeJson as unknown as Record<Lang, { reason: { title: string; optional: string } }>)[lang]
   const care = (careI18n as unknown as Record<Lang, { cardSections: { title: string }[] }>)[lang].cardSections
   return {
     calm: { watchBtn: ui.tiles.distract.desc },
-    topicNames: { ask: ui.storyRequests.title, prep: ui.tiles.procedures.title, calm: ui.buttons.hardNow },
+    topicNames: { ask: ui.storyRequests.title, prep: ui.tiles.procedures.title, calm: ui.buttons.hardNow, reason: home.reason.title },
     buttons: { helpedLess: ui.storyFeedback.team.rating[1], helpedSome: ui.storyFeedback.team.rating[2], helpedMuch: ui.storyFeedback.team.rating[3] },
     card: { cardNextStep: ui.buttons.continue, questions: { communication: care[0].title, calming: care[2].title, escalators: care[3].title } },
     prep: { feel: ui.procedurePage.feel },
+    reason: { routeHeading: ui.labels.adult.expectedRoute, optional: home.reason.optional },
   }
 }
 
@@ -149,6 +151,7 @@ type UiWords = {
   buttons: { hardNow: string; continue: string }
   storyFeedback: { team: { rating: Record<string, string> } }
   procedurePage: { feel: string }
+  labels: { adult: { expectedRoute: string } }
 }
 
 export function talkText(lang: Lang) {
@@ -161,6 +164,7 @@ export function talkText(lang: Lang) {
     buttons: { ...base.buttons, ...s.buttons },
     card: { ...base.card, cardNextStep: s.card.cardNextStep, questions: { ...base.card.questions, ...s.card.questions } },
     prep: { ...base.prep, ...s.prep },
+    reason: { ...base.reason, ...s.reason },
   }
 }
 
