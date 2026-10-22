@@ -52,8 +52,8 @@ export function CareCardView({ footer }: { footer: (state: { print: () => void }
     { emoji: '✏️', label: heRows.freeNote, value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
-  // the suggestions the parent reads on screen (not printed): in the chosen language
-  const suggestions = suggestedAdaptations(card, keyed((careI18n as unknown as Record<string, { asks: Record<string, string>; adaptationFor: Record<string, string> }>)[lang], 'i18n/careCard'))
+  // the suggestions are requests to the staff: in Hebrew, like the card itself
+  const suggestions = suggestedAdaptations(card, keyed((careI18n as unknown as Record<string, { asks: Record<string, string>; adaptationFor: Record<string, string> }>).he, 'i18n/careCard'))
 
   return (
     <>
