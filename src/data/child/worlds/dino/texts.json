@@ -67,19 +67,19 @@
         {
           "label": "בפה",
           "steps": [
-            "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-            "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
-            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-            "שומעים ביפ קטן — וזהו, סיימנו."
+            "שומר השמורה נותן לנו מדחום קטן — שמים אותו בפה.",
+            "סוגרים את הפה חזק־חזק, כמו דינוזאור שמתחבא בשיחים.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הדינוזאורים בתמונה.",
+            "שומעים ביפ קטן — שומר השמורה כותב ביומן המסע, וסיימנו."
           ]
         },
         {
           "label": "מתחת לבית השחי",
           "steps": [
-            "שמים חתיכת פלסטיק קטנה עם חוט מתחת לבית השחי.",
-            "מצמידים את הזרוע לגוף ומחזיקים בעדינות.",
-            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-            "שומעים ביפ קטן — וזהו, סיימנו."
+            "שומר השמורה שם מדחום קטן מתחת לבית השחי.",
+            "מצמידים את הזרוע לגוף, כמו דינוזאור קטן שמקפל את הכף.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הדינוזאורים בתמונה.",
+            "שומעים ביפ קטן — שומר השמורה כותב ביומן המסע, וסיימנו."
           ]
         }
       ],
@@ -107,21 +107,21 @@
     },
     "procedureSteps": {
       "temperature": [
-        "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-        "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
-        "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-        "שומעים ביפ קטן — וזהו, סיימנו."
+        "שומר השמורה נותן לנו מדחום קטן — שמים אותו בפה.",
+        "סוגרים את הפה חזק־חזק, כמו דינוזאור שמתחבא בשיחים.",
+        "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הדינוזאורים בתמונה.",
+        "שומעים ביפ קטן — שומר השמורה כותב ביומן המסע, וסיימנו."
       ],
       "saturation": [
-        "שמים אטב קטן ורך על האצבע.",
-        "נדלק בו אור אדום קטן.",
+        "שומר השמורה שם אטב קטן ורך על האצבע.",
+        "נדלק בו אור אדום — כמו פנס באוהל.",
         "הוא רק מסתכל — לא עושה כלום.",
-        "אחרי רגע מורידים אותו."
+        "אחרי רגע שומר השמורה מוריד אותו."
       ],
       "blood-pressure": [
-        "שמים שרוול רך על הזרוע.",
-        "הוא מתנפח ולוחץ כמו חיבוק חזק.",
-        "סופרים עד כמה, והוא משחרר לבד.",
+        "שומר השמורה שם שרוול רך על הזרוע.",
+        "הוא מתנפח ולוחץ על הזרוע, כמו חיבוק של דינוזאור גדול.",
+        "סופרים יחד עם שומר השמורה, והשרוול משחרר לבד.",
         "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
@@ -278,19 +278,19 @@
         {
           "label": "In the mouth",
           "steps": [
-            "We put a small plastic tip with a wire in the mouth.",
-            "We close the mouth tight-tight, like there's a candy inside.",
-            "We wait quietly for a short moment, until the device is done.",
-            "We hear a little beep — and that's it, we're done."
+            "The ranger gives us a little thermometer — we put it in the mouth.",
+            "We close the mouth tight-tight, like a dinosaur hiding in the bushes.",
+            "We wait quietly until the thermometer is done — we can count the dinosaurs in the picture.",
+            "We hear a little beep — the ranger writes it in the trip log, and we're done."
           ]
         },
         {
           "label": "Under the armpit",
           "steps": [
-            "We put a small plastic tip with a wire under the arm.",
-            "We press the arm to the body and hold it gently.",
-            "We wait quietly for a short moment, until the device is done.",
-            "We hear a little beep — and that's it, we're done."
+            "The ranger puts a little thermometer under the arm.",
+            "We press the arm to the body, like a little dinosaur tucking in its paw.",
+            "We wait quietly until the thermometer is done — we can count the dinosaurs in the picture.",
+            "We hear a little beep — the ranger writes it in the trip log, and we're done."
           ]
         }
       ],
@@ -318,22 +318,22 @@
     },
     "procedureSteps": {
       "temperature": [
-        "We put a small plastic tip with a wire in the mouth.",
-        "We close the mouth tight-tight, like there's a candy inside.",
-        "We wait quietly for a short moment, until the device is done.",
-        "We hear a little beep — and that's it, we're done."
+        "The ranger gives us a little thermometer — we put it in the mouth.",
+        "We close the mouth tight-tight, like a dinosaur hiding in the bushes.",
+        "We wait quietly until the thermometer is done — we can count the dinosaurs in the picture.",
+        "We hear a little beep — the ranger writes it in the trip log, and we're done."
       ],
       "saturation": [
-        "We put a small, soft clip on the finger.",
-        "A little red light turns on inside it.",
+        "The ranger puts a small, soft clip on the finger.",
+        "A red light turns on inside it — like a torch in the tent.",
         "It only looks — it doesn't do anything.",
-        "After a moment they take it off."
+        "After a moment the ranger takes it off."
       ],
       "blood-pressure": [
-        "We put a soft cuff on the arm.",
-        "It fills with air and squeezes like a big hug.",
-        "We count together, and it lets go by itself.",
-        "Then they take the cuff off — and that's it, all done."
+        "The ranger puts a soft cuff on the arm.",
+        "It fills with air and squeezes the arm, like a big dinosaur's hug.",
+        "We count together with the ranger, and the cuff lets go by itself.",
+        "Then the cuff comes off — and that's it, all done."
       ],
       "doctor-exam": [
         "We meet a doctor who wants to help us.",
@@ -489,19 +489,19 @@
         {
           "label": "Во рту",
           "steps": [
-            "В рот кладём маленький пластиковый наконечник с проводком.",
-            "Крепко-крепко закрываем рот, как будто там конфета.",
-            "Тихонько ждём чуть-чуть, пока прибор закончит.",
-            "Слышим тихое «бип» — и всё, готово."
+            "Смотритель даёт нам маленький градусник — кладём его в рот.",
+            "Крепко-крепко закрываем рот, как динозавр, который затаился в кустах.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать динозавров на картинке.",
+            "Слышим тихое «бип» — смотритель записывает в походный журнал, и всё, готово."
           ]
         },
         {
           "label": "Под мышкой",
           "steps": [
-            "Под мышку кладём маленький пластиковый наконечник с проводком.",
-            "Прижимаем руку к телу и мягко держим.",
-            "Тихонько ждём чуть-чуть, пока прибор закончит.",
-            "Слышим тихое «бип» — и всё, готово."
+            "Смотритель кладёт маленький градусник под мышку.",
+            "Прижимаем руку к телу, как динозаврик прячет лапку.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать динозавров на картинке.",
+            "Слышим тихое «бип» — смотритель записывает в походный журнал, и всё, готово."
           ]
         }
       ],
@@ -529,21 +529,21 @@
     },
     "procedureSteps": {
       "temperature": [
-        "В рот кладём маленький пластиковый наконечник с проводком.",
-        "Крепко-крепко закрываем рот, как будто там конфета.",
-        "Тихонько ждём чуть-чуть, пока прибор закончит.",
-        "Слышим тихое «бип» — и всё, готово."
+        "Смотритель даёт нам маленький градусник — кладём его в рот.",
+        "Крепко-крепко закрываем рот, как динозавр, который затаился в кустах.",
+        "Тихонько ждём, пока градусник закончит, — можно посчитать динозавров на картинке.",
+        "Слышим тихое «бип» — смотритель записывает в походный журнал, и всё, готово."
       ],
       "saturation": [
-        "На палец надеваем маленькую мягкую прищепку.",
-        "В ней загорается маленький красный огонёк.",
+        "Смотритель надевает на палец маленькую мягкую прищепку.",
+        "В ней загорается красный огонёк — как фонарик в палатке.",
         "Она только смотрит — ничего не делает.",
-        "Через минутку её снимают."
+        "Через минутку смотритель её снимает."
       ],
       "blood-pressure": [
-        "На руку надеваем мягкую манжету.",
-        "Она надувается и сжимает, как крепкие объятия.",
-        "Мы считаем, и она сама отпускает.",
+        "Смотритель надевает на руку мягкую манжету.",
+        "Она надувается и сжимает руку, как крепкие объятия большого динозавра.",
+        "Мы считаем вместе со смотрителем, и манжета сама отпускает.",
         "Потом манжету снимают — и всё, готово."
       ],
       "doctor-exam": [
