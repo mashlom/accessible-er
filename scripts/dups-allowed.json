@@ -611,7 +611,8 @@
     "parent/texts:stages.wait-doctor.nextStagePrepare",
     "parent/texts:stages.wait-doctor.title",
     "parent/texts:stages.wait-results.canAsk.0",
-    "parent/texts:stages.wait-results.title"
+    "parent/texts:stages.wait-results.title",
+    "i18n/ui:labels.book.canAsk"
   ],
   "en": [
     "child/book/decision-info:discharge.title",
