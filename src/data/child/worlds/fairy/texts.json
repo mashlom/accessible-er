@@ -131,35 +131,35 @@
         "בסוף הבדיקה הצוות יידע מה כדאי לעשות כדי לעזור לנו."
       ],
       "blood-test": [
-        "שמים משחה שעושה את העור פחות רגיש.",
-        "גומייה רכה מתהדקת על הזרוע.",
-        "דקירה קטנה וקצרה — ואפשר להסתכל על משהו אחר.",
-        "שמים פלסטר — כל הכבוד לנו!"
+        "השדון העוזר מורח משחה שעושה את העור פחות רגיש.",
+        "סרט רך מתעטף סביב הזרוע, כמו עלה כותרת.",
+        "דקירה קטנה וקצרה — ומסתכלים על הפרחים בגן.",
+        "טיפת הדם נשלחת למעבדת הקסמים, והשדון מדביק פלסטר עם פרח — כל הכבוד לנו!"
       ],
       "urine": [
-        "הולכים לשירותים כמו תמיד.",
+        "הולכים לשירותים, כמו תמיד.",
         "עושים קצת פיפי לתוך כוס קטנה.",
-        "נותנים את הכוס לאחות.",
+        "נותנים את הכוס לשדון, והוא לוקח את הדגימה למעבדת הקסמים.",
         "זהו!"
       ],
       "xray": [
-        "נכנסים לחדר עם מכונה גדולה.",
-        "לפעמים מלבישים לבוש כבד שמגן על הגוף, ולפעמים גם צווארון.",
-        "עומדים או שוכבים בנחת, כמו פסל.",
-        "המכונה מצלמת תמונה — לא מרגישים כלום.",
+        "נכנסים לחדר עם מראת הגן.",
+        "לפעמים מלבישים לבוש כבד שמגן על הגוף.",
+        "עומדים או שוכבים בנחת, כמו פרח בגן.",
+        "המראה מצלמת תמונה — לא מרגישים כלום.",
         "סיימנו, אפשר לזוז שוב."
       ],
       "ultrasound": [
-        "שוכבים בנחת על מיטה.",
+        "שוכבים בנחת על מיטה רכה, כמו על עלה כותרת.",
         "מורחים ג׳ל קצת קר על הבטן.",
-        "מכשיר חלק מחליק ומצייר תמונה על מסך — לפעמים לוחצים קצת, וזה בסדר.",
+        "מקל חלק מחליק ומצייר תמונה על המסך — לפעמים לוחצים קצת, וזה בסדר.",
         "אם מפריע אפשר לבקש רגע הפסקה.",
         "מנגבים את הג׳ל — וסיימנו."
       ],
       "ct": [
         "שוכבים על מיטה נוחה.",
-        "המיטה זזה לאט לתוך טבעת גדולה.",
-        "שומעים רעש, ושוכבים בנחת כמו פסל.",
+        "המיטה זזה לאט לתוך טבעת קסומה גדולה.",
+        "שומעים זמזום שקט, ושוכבים בנחת כמו פרח.",
         "המיטה חוזרת החוצה — סיימנו."
       ],
       "iv": [
@@ -342,35 +342,35 @@
         "At the end, the doctor will know what to do to help us."
       ],
       "blood-test": [
-        "They put a cream on the skin that makes it less sensitive.",
-        "A soft band gets snug around the arm.",
-        "A tiny, quick prick — and we can look at something else.",
-        "They put a small bandage on — well done!"
+        "The elf helper puts a cream on the skin that makes it less sensitive.",
+        "A soft ribbon wraps around the arm, like a petal.",
+        "A tiny, quick prick — and we look at the flowers in the garden.",
+        "The drop of blood goes to the magic lab, and the elf puts on a plaster with a flower — well done!"
       ],
       "urine": [
-        "We go to the toilet like always.",
+        "We go to the toilet, like always.",
         "We pee a little into a small cup.",
-        "We give the cup to the nurse.",
+        "We give the cup to the elf, who takes the sample to the magic lab.",
         "That's it!"
       ],
       "xray": [
-        "We go into a room with a big machine.",
-        "Sometimes they put a heavy cover on that protects the body, and sometimes a collar too.",
-        "We stand or lie calmly, like a statue.",
-        "The machine takes a picture — we don't feel anything.",
+        "We go into a room with a garden mirror.",
+        "Sometimes they put a heavy cover on that protects the body.",
+        "We stand or lie calmly, like a flower in the garden.",
+        "The mirror takes a picture — we don't feel anything.",
         "We're done, we can move again."
       ],
       "ultrasound": [
-        "We lie calmly on a bed.",
+        "We lie calmly on a soft bed, like on a petal.",
         "They spread a slightly cold gel on the tummy.",
-        "A smooth device glides and draws a picture on a screen — sometimes it presses a little, and that's okay.",
+        "A smooth wand glides and draws a picture on the screen — sometimes it presses a little, and that's okay.",
         "If it bothers us, we can ask for a little break.",
         "They wipe off the gel — and we're done."
       ],
       "ct": [
         "We lie on a comfy bed.",
-        "The bed slowly moves into a big ring.",
-        "We hear a noise, and we lie calmly like a statue.",
+        "The bed slowly moves into a big magic ring.",
+        "We hear a quiet hum and lie calmly, like a flower.",
         "The bed comes back out — we're done."
       ],
       "iv": [
@@ -553,35 +553,35 @@
         "В конце врач будет знать, как нам помочь."
       ],
       "blood-test": [
-        "На кожу мажут крем, от которого она становится менее чувствительной.",
-        "Мягкая резинка плотно обхватывает руку.",
-        "Маленький быстрый укол — а мы можем смотреть на что-то другое.",
-        "Клеим пластырь — молодцы!"
+        "Эльф-помощник мажет на кожу крем, от которого она становится менее чувствительной.",
+        "Мягкая ленточка обнимает руку, как лепесток.",
+        "Маленький быстрый укол — а мы смотрим на цветы в саду.",
+        "Капелька крови отправляется в волшебную лабораторию, а эльф клеит пластырь с цветочком — молодцы!"
       ],
       "urine": [
         "Идём в туалет, как всегда.",
         "Немного писаем в маленький стаканчик.",
-        "Отдаём стаканчик медсестре или медбрату.",
+        "Отдаём стаканчик эльфу — он отнесёт образец в волшебную лабораторию.",
         "Всё!"
       ],
       "xray": [
-        "Мы заходим в комнату с большим аппаратом.",
-        "Может быть, наденут тяжёлую накидку, которая защищает тело, а может быть ещё и воротник.",
-        "Спокойно стоим или лежим, как статуя.",
-        "Аппарат делает снимок — мы ничего не чувствуем.",
+        "Заходим в комнату с садовым зеркалом.",
+        "Может быть, наденут тяжёлую накидку, которая защищает тело.",
+        "Спокойно стоим или лежим, как цветок в саду.",
+        "Зеркало делает снимок — мы ничего не чувствуем.",
         "Готово, можно снова двигаться."
       ],
       "ultrasound": [
-        "Спокойно ложимся на кровать.",
+        "Спокойно ложимся на мягкую кровать, как на лепесток.",
         "На живот мажут немного холодный гель.",
-        "Гладкий датчик скользит и рисует картинку на экране — иногда немного надавливают, и это нормально.",
+        "Гладкая палочка скользит и рисует на экране картинку — иногда немного надавливают, и это нормально.",
         "Если мешает, можно попросить маленький перерыв.",
         "Гель вытирают — и готово."
       ],
       "ct": [
         "Ложимся на удобную кровать.",
-        "Кровать медленно заезжает в большое кольцо.",
-        "Слышим шум и лежим спокойно, как статуя.",
+        "Кровать медленно въезжает в большое волшебное кольцо.",
+        "Слышим тихий шум и лежим спокойно, как цветок.",
         "Кровать выезжает обратно — готово."
       ],
       "iv": [
