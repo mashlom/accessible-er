@@ -203,7 +203,7 @@ export function RoniBookPage() {
         </button>
       )}
       {parentOpen && !isIntro && !isSelect && (
-        <ParentSheet stageId={stageId} onClose={() => setParentOpen(false)} oceanLook questLinks={false} />
+        <ParentSheet stageId={stageId} onClose={() => setParentOpen(false)} questLinks={false} />
       )}
     </div>
   )

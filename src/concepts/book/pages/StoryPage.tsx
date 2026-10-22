@@ -185,7 +185,7 @@ export function StoryPage() {
       )}
 
       {parentOpen && PAGE_STAGE[page.id] && (
-        <ParentSheet stageId={PAGE_STAGE[page.id]} onClose={() => setParentOpen(false)} oceanLook questLinks={false} />
+        <ParentSheet stageId={PAGE_STAGE[page.id]} onClose={() => setParentOpen(false)} questLinks={false} />
       )}
     </div>
   )

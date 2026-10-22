@@ -116,7 +116,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
             </div>
           )}
 
-          <ParentInfo stageId={stageId} inline ocean initialProc={id} />
+          <ParentInfo stageId={stageId} inline initialProc={id} />
 
           <div className={css.stageSheetActions}>
             {stageActive && (

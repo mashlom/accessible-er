@@ -18,13 +18,11 @@ const WAIT_PROCS = ['temperature', 'saturation', 'blood-pressure']
 interface ParentInfoProps {
   stageId?: string
   inline?: boolean
-  /** ocean: the mockup's pill with the book icon */
-  ocean?: boolean
   /** Open straight on this procedure's details (from the procedure's own child page) */
   initialProc?: string
 }
 
-export function ParentInfo({ stageId: stageOverride, inline, ocean, initialProc }: ParentInfoProps) {
+export function ParentInfo({ stageId: stageOverride, inline, initialProc }: ParentInfoProps) {
   const [open, setOpen] = useState(false)
   const { t } = useI18n()
   const { active } = useQuestProgress()
@@ -39,34 +37,22 @@ export function ParentInfo({ stageId: stageOverride, inline, ocean, initialProc 
 
   return (
     <>
-      {ocean ? (
-        <button
-          ref={triggerRef}
-          type="button"
-          className={inline ? `${css.parentBtnOcean} ${css.parentBtnOceanInline}` : css.parentBtnOcean}
-          onClick={() => setOpen(true)}
-          aria-haspopup="dialog"
-        >
-          <span className={css.parentBtnOceanPill}>
-            {t('ui.buttons.parentInfo')}
-            <svg viewBox="33 888 24 24" className={css.parentBtnOceanIcon} aria-hidden>
-              <rect x="33" y="888" width="24" height="24" rx="12" />
-              <path d={BOOK_PATH} />
-            </svg>
-          </span>
-        </button>
-      ) : (
-        <button
-          ref={triggerRef}
-          type="button"
-          className={inline ? `${css.parentBtn} ${css.parentBtnInline}` : css.parentBtn}
-          onClick={() => setOpen(true)}
-          aria-haspopup="dialog"
-        >
-          <span className={css.parentBtnArrow} aria-hidden>↖</span>
+      {/* the same pill with the book icon in every world (the ocean's design) */}
+      <button
+        ref={triggerRef}
+        type="button"
+        className={inline ? `${css.parentBtnOcean} ${css.parentBtnOceanInline}` : css.parentBtnOcean}
+        onClick={() => setOpen(true)}
+        aria-haspopup="dialog"
+      >
+        <span className={css.parentBtnOceanPill}>
           {t('ui.buttons.parentInfo')}
-        </button>
-      )}
+          <svg viewBox="33 888 24 24" className={css.parentBtnOceanIcon} aria-hidden>
+            <rect x="33" y="888" width="24" height="24" rx="12" />
+            <path d={BOOK_PATH} />
+          </svg>
+        </span>
+      </button>
       {open && <ParentSheet stageId={stageId} onClose={close} initialProc={initialProc} />}
     </>
   )
@@ -77,22 +63,17 @@ export function ParentSheet({
   stageId,
   onClose,
   initialProc,
-  oceanLook,
   questLinks = true,
 }: {
   stageId: string
   onClose: () => void
   initialProc?: string
-  /** force the ocean styling outside the quest (the books) */
-  oceanLook?: boolean
   /** the reason/card links lead into the quest, so the books hide them */
   questLinks?: boolean
 }) {
   const { t, lang, dir } = useI18n()
-  const { theme } = useQuestTheme()
   const closeRef = useRef<HTMLButtonElement>(null)
-  const ocean = oceanLook ?? theme.id === 'ocean'
-  // ocean: a procedure's details slide in inside this same sheet
+  // a procedure's details slide in inside this same sheet
   const [proc, setProc] = useState<string | null>(initialProc ?? null)
   const procRef = useRef(proc)
   procRef.current = proc
@@ -122,7 +103,7 @@ export function ParentSheet({
   return (
     <div className={css.sheetBackdrop} onClick={onClose}>
       <div
-        className={ocean ? `${css.sheet} ${css.oceanSheet}` : css.sheet}
+        className={`${css.sheet} ${css.oceanSheet}`}
         role="dialog"
         aria-modal="true"
         aria-label={t('ui.buttons.parentInfo')}
@@ -142,7 +123,7 @@ export function ParentSheet({
           <ProcedurePanel pid={proc} onBack={initialProc ? undefined : () => setProc(null)} />
         ) : (
           <>
-        {data.sensory && <SensoryBar sensory={data.sensory} ocean={ocean} />}
+        {data.sensory && <SensoryBar sensory={data.sensory} ocean />}
         {(singleProc?.who || data.waitRange) && (
           <p className={css.sheetWait}>
             {singleProc?.who && <span>👤 {singleProc.who}</span>}
@@ -249,14 +230,10 @@ export function ParentSheet({
                 const proc = parentProcedure(lang, pid)
                 return (
                   <li key={pid}>
-                    {ocean ? (
-                      <button type="button" className={css.sheetProcBtn} onClick={() => setProc(pid)}>
-                        <span>{proc?.emoji} {proc?.title ?? pid}</span>
-                        <span aria-hidden>{dir === 'rtl' ? '‹' : '›'}</span>
-                      </button>
-                    ) : (
-                      <Link to={`/procedure/${pid}`}>{proc?.emoji} {proc?.title ?? pid}</Link>
-                    )}
+                    <button type="button" className={css.sheetProcBtn} onClick={() => setProc(pid)}>
+                      <span>{proc?.emoji} {proc?.title ?? pid}</span>
+                      <span aria-hidden>{dir === 'rtl' ? '‹' : '›'}</span>
+                    </button>
                   </li>
                 )
               })}
@@ -264,12 +241,11 @@ export function ParentSheet({
           </section>
         )}
 
-        {!ocean && <Link to="/calm" state={{ from: '/map' }} className={css.calmLink}><span aria-hidden className={css.heartIcon}>💙</span> {t('ui.buttons.hardNow')}</Link>}
           </>
         )}
 
         {/* Parent side: ask for calm help or close. No "I did it" here: that belongs to the child's sheet. */}
-        {ocean && (
+        {(
           <div className={css.sheetFooter}>
             <Link
               to="/calm"

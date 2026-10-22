@@ -175,7 +175,7 @@ export function StagePage() {
         </div>
       </div>
 
-      <div className={css.stageBody}>
+      <div className={css.parentRow}>
         {/* the parent's part is the same block in every world */}
         <ParentInfo stageId={id} inline />
       </div>
