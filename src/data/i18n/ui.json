@@ -316,7 +316,6 @@
       "cross": "💗 More things that help when it is hard"
     },
     "storyRequests": {
-      "title": "What can I ask for?",
       "subtitle": "These are completely legitimate requests. The staff is used to them, and it is fine to ask.",
       "bubble": "You are the experts on your child. If something would help, you can simply ask — even in the middle.",
       "note": "Whether each adaptation is available depends on the medical situation, the equipment and how busy it is at that moment. Even when it is not possible — it is worth asking."
@@ -541,7 +540,7 @@
       "book": {
         "what": "Что здесь будет",
         "feel": "Что может быть трудно",
-        "canAsk": "О чём ты можешь попросить"
+        "canAsk": "О чём можно попросить?"
       },
       "adult": {
         "weAreHere": "Мы здесь",
@@ -752,7 +751,6 @@
       "cross": "💗 Ещё то, что помогает, когда трудно"
     },
     "storyRequests": {
-      "title": "О чём можно попросить?",
       "subtitle": "Это совершенно законные просьбы. Персонал к ним привык, и просить — совершенно нормально.",
       "bubble": "Вы — эксперты в своём ребёнке. Если что-то поможет, можно просто попросить — даже в середине.",
       "note": "Возможность каждой адаптации зависит от медицинской ситуации, оборудования и загруженности в этот момент. Даже если сейчас не получится — стоит спросить."
@@ -1188,7 +1186,6 @@
       "cross": "💗 לעוד דברים שעוזרים כשקשה"
     },
     "storyRequests": {
-      "title": "על מה אפשר לבקש?",
       "subtitle": "אלה בקשות לגיטימיות לגמרי. הצוות רגיל אליהן, וזה בסדר גמור לבקש.",
       "bubble": "אתם המומחים לילד/ה שלכם. אם משהו יעזור — אפשר פשוט לבקש, גם באמצע.",
       "note": "הזמינות של כל התאמה תלויה במצב הרפואי, בציוד ובעומס באותו רגע. גם כשלא מתאפשר — שווה לשאול."
