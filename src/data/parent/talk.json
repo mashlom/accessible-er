@@ -33,13 +33,9 @@
       "cardFix": "לחזור ולתקן",
       "cardPickMany": "אפשר לסמן כמה שרוצים.",
       "cardLastStep": "סיימנו ←",
-      "cardNextStep": "הבא ←",
       "cardSkipQ": "לדלג על השאלה",
       "questions": {
-        "communication": "איך הילד/ה מתקשר/ת?",
         "sensitivities": "למה הילד/ה רגיש/ה?",
-        "calming": "מה מרגיע את הילד/ה?",
-        "escalators": "מה עלול להגביר את הלחץ?",
         "hardMoments": "מה קשה במיוחד?",
         "pain": "איך הילד/ה מראה כאב?",
         "avoid": "מה חשוב לא לעשות?"
@@ -55,13 +51,10 @@
       "sayHint2": "ככה אפשר פשוט להראות אותו לצוות, בלי להסביר.",
       "watchOne": "אפשר להסתכל לכאן במקום על היד. אני נשאר איתכם.",
       "watchTwo": "תסתכלו על הקשת… היא לא הולכת לשום מקום, וגם אני לא.",
-      "watchThree": "אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…",
       "again": "עוד פעם",
       "moreHelp": "מה עוד עוזר?",
-      "hardNow1": "קשה עכשיו? זה בסדר גמור. אני כאן.",
       "hardNow2": "קודם כל — ננשום יחד. פנימה… והחוצה… עוד פעם, לאט.",
       "hardNow3": "אתם עושים עבודה נהדרת. באמת.",
-      "watchBtn": "משהו רגוע להסתכל עליו",
       "helpBtn": "מה עוזר עכשיו?",
       "sayBtn": "קשה לי לדבר עם הצוות",
       "moreHelpBtn": "עוד משהו שעוזר",
@@ -87,7 +80,6 @@
     "prep": {
       "for": "להתכונן ל{title}",
       "whoDur": "מי עושה את זה: {who}\nכמה זמן: {duration}",
-      "feel": "מה הילד/ה עשוי/ה להרגיש?",
       "howPrepare": "איך אפשר להתכונן:",
       "askBefore": "לפני {title} אפשר לבקש:",
       "intro": "לפי מה שסיפרתם לי, אלה הדברים שכנראה נפגוש היום. על מה נדבר?",
@@ -104,10 +96,7 @@
       "quietPlace": "אפשר לבקש מקום שקט?",
       "moreAsk": "מה עוד אפשר לבקש?",
       "howAsk": "איך מבקשים את זה?",
-      "restart": "להתחיל שיחה מחדש",
-      "helpedMuch": "עזר מאוד",
-      "helpedSome": "עזר קצת",
-      "helpedLess": "פחות עזר"
+      "restart": "להתחיל שיחה מחדש"
     },
     "ask": {
       "askGeneral": "מותר לבקש! הצוות רגיל לזה, וזה בסדר גמור.",
@@ -130,11 +119,8 @@
     "topicNames": {
       "reason": "למה באנו היום",
       "where": "איפה אנחנו בתהליך",
-      "prep": "איך מכינים את הילד/ה?",
       "card": "מה חשוב לדעת עליי",
       "map": "איפה אנחנו במיון",
-      "calm": "קשה לנו עכשיו",
-      "ask": "מה אפשר לבקש",
       "home": "מה יהיה בסוף"
     },
     "asides": [
@@ -188,13 +174,9 @@
       "cardFix": "Go back and change",
       "cardPickMany": "You can tick as many as you like.",
       "cardLastStep": "Done →",
-      "cardNextStep": "Next →",
       "cardSkipQ": "Skip this question",
       "questions": {
-        "communication": "How does your child communicate?",
         "sensitivities": "What is your child sensitive to?",
-        "calming": "What calms your child?",
-        "escalators": "What can make stress worse?",
         "hardMoments": "What is especially hard?",
         "pain": "How does your child show pain?",
         "avoid": "What is important not to do?"
@@ -210,13 +192,10 @@
       "sayHint2": "That way you can simply show it to the staff, without explaining.",
       "watchOne": "You can look here instead of at your hand. I am staying with you.",
       "watchTwo": "Look at the rainbow… it is not going anywhere, and neither am I.",
-      "watchThree": "We can also count slowly to ten together. One… two… three…",
       "again": "Again",
       "moreHelp": "What else helps?",
-      "hardNow1": "Is it hard right now? That's completely okay. I'm here.",
       "hardNow2": "First of all — let us breathe together. In… and out… once more, slowly.",
       "hardNow3": "You are doing great work. Really.",
-      "watchBtn": "I need something calm for my child to look at",
       "helpBtn": "Tell me what could help us right now",
       "sayBtn": "It is hard for me to talk to the staff",
       "moreHelpBtn": "Something else that helps",
@@ -242,7 +221,6 @@
     "prep": {
       "for": "Get ready: {title}",
       "whoDur": "Who does it: {who}\nHow long: {duration}",
-      "feel": "What might the child feel?",
       "howPrepare": "How to get ready:",
       "askBefore": "Before {title}, you can ask for:",
       "intro": "Based on what you told me, these are the things we will probably meet today. What shall we talk about?",
@@ -259,10 +237,7 @@
       "quietPlace": "Can I ask for a quiet place?",
       "moreAsk": "What else can I ask for?",
       "howAsk": "How do I ask for this?",
-      "restart": "Start the talk again",
-      "helpedMuch": "It helped a lot",
-      "helpedSome": "It helped a little",
-      "helpedLess": "It helped less"
+      "restart": "Start the talk again"
     },
     "ask": {
       "askGeneral": "You can ask! The staff is used to it, and it is completely fine.",
@@ -285,11 +260,8 @@
     "topicNames": {
       "reason": "Why we came today",
       "where": "Where we are in the process",
-      "prep": "What is going to happen",
       "card": "What is important to know about me",
       "map": "Where we are in the ER",
-      "calm": "It is hard for us right now",
-      "ask": "What can I ask for",
       "home": "What will happen at the end"
     },
     "asides": [
@@ -343,13 +315,9 @@
       "cardFix": "Вернуться и поправить",
       "cardPickMany": "Можно отметить сколько угодно.",
       "cardLastStep": "Готово →",
-      "cardNextStep": "Дальше →",
       "cardSkipQ": "Пропустить вопрос",
       "questions": {
-        "communication": "Как ребёнок общается?",
         "sensitivities": "К чему ребёнок особенно чувствителен?",
-        "calming": "Что успокаивает ребёнка?",
-        "escalators": "Что может усилить стресс?",
         "hardMoments": "Что особенно трудно?",
         "pain": "Как ребёнок показывает боль?",
         "avoid": "Чего важно не делать?"
@@ -365,13 +333,10 @@
       "sayHint2": "Так можно просто показать её персоналу, ничего не объясняя.",
       "watchOne": "Можно смотреть сюда, а не на руку. Я остаюсь с вами.",
       "watchTwo": "Посмотрите на радугу… она никуда не уходит, и я тоже.",
-      "watchThree": "Можно ещё медленно посчитать со мной до десяти. Один… два… три…",
       "again": "Ещё раз",
       "moreHelp": "Что ещё помогает?",
-      "hardNow1": "Сейчас трудно? Это совершенно нормально. Я рядом.",
       "hardNow2": "Прежде всего — давайте подышим вместе. Вдох… и выдох… ещё раз, медленно.",
       "hardNow3": "Вы делаете отличную работу. Правда.",
-      "watchBtn": "Мне нужно что-то спокойное, чтобы ребёнок мог посмотреть",
       "helpBtn": "Расскажи, что может нам помочь сейчас",
       "sayBtn": "Мне трудно говорить с персоналом",
       "moreHelpBtn": "Что-то ещё, что помогает",
@@ -397,7 +362,6 @@
     "prep": {
       "for": "Как подготовиться: {title}",
       "whoDur": "Кто делает: {who}\nСколько времени: {duration}",
-      "feel": "Что может почувствовать ребёнок?",
       "howPrepare": "Как подготовиться:",
       "askBefore": "Перед {title} можно попросить:",
       "intro": "Судя по тому, что вы рассказали, это то, что, скорее всего, встретится сегодня. О чём поговорим?",
@@ -414,10 +378,7 @@
       "quietPlace": "Можно попросить тихое место?",
       "moreAsk": "Что ещё можно попросить?",
       "howAsk": "Как это попросить?",
-      "restart": "Начать разговор заново",
-      "helpedMuch": "Очень помогло",
-      "helpedSome": "Немного помогло",
-      "helpedLess": "Помогло меньше"
+      "restart": "Начать разговор заново"
     },
     "ask": {
       "askGeneral": "Можно просить! Персонал к этому привык, и это совершенно нормально.",
@@ -440,11 +401,8 @@
     "topicNames": {
       "reason": "Зачем мы пришли сегодня",
       "where": "Где мы на пути",
-      "prep": "Как подготовить ребёнка?",
       "card": "Что важно знать обо мне",
       "map": "Где мы в приёмном покое",
-      "calm": "Нам сейчас тяжело",
-      "ask": "Что можно попросить",
       "home": "Что будет в конце"
     },
     "asides": [

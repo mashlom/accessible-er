@@ -6,6 +6,7 @@ import { parentJourney, parentProcedure } from '../../data/parent'
 import { parentPaths } from '../../data/parent/paths'
 import supportI18n from '../../data/i18n/support.json'
 import talkTexts from '../../data/parent/talk.json'
+import dinoTexts from '../../data/child/worlds/dino/texts.json'
 import { parentChannelLabel, parentLoadLabel, parentMapAreas } from '../../data/parent/map'
 import i18nUi from '../../data/i18n/ui.json'
 import homeJson from '../../data/parent/home.json'
@@ -130,8 +131,39 @@ function dischargeBody(lang: Lang, i: number): string {
 }
 
 /** The dialogue lines of this part of the talk, in the chosen language (src/data/parent/talk.json) */
-export function talkText(lang: Lang): typeof talkTexts.he {
-  return keyed(keyed((talkTexts as unknown as Record<Lang, typeof talkTexts.he>)[lang], 'parent/talk') ?? talkTexts.he, 'parent/talk')
+// the words Roni shares with the ui, the card and the dino world: read from there, not copied into talk.json
+const sharedWords = (lang: Lang) => {
+  const ui = (i18nUi as unknown as Record<Lang, UiWords>)[lang]
+  const care = (careI18n as unknown as Record<Lang, { cardSections: { title: string }[] }>)[lang].cardSections
+  const calm = (dinoTexts as unknown as Record<Lang, { calmLines: string[] }>)[lang].calmLines
+  return {
+    calm: { hardNow1: calm[1], watchThree: calm[2], watchBtn: ui.tiles.distract.desc },
+    topicNames: { ask: ui.storyRequests.title, prep: ui.tiles.procedures.title, calm: ui.buttons.hardNow },
+    buttons: { helpedLess: ui.storyFeedback.team.rating[1], helpedSome: ui.storyFeedback.team.rating[2], helpedMuch: ui.storyFeedback.team.rating[3] },
+    card: { cardNextStep: ui.buttons.continue, questions: { communication: care[0].title, calming: care[2].title, escalators: care[3].title } },
+    prep: { feel: ui.procedurePage.feel },
+  }
+}
+
+type UiWords = {
+  tiles: { distract: { desc: string }; procedures: { title: string } }
+  storyRequests: { title: string }
+  buttons: { hardNow: string; continue: string }
+  storyFeedback: { team: { rating: Record<string, string> } }
+  procedurePage: { feel: string }
+}
+
+export function talkText(lang: Lang) {
+  const base = keyed(keyed((talkTexts as unknown as Record<Lang, typeof talkTexts.he>)[lang], 'parent/talk') ?? talkTexts.he, 'parent/talk')
+  const s = sharedWords(lang)
+  return {
+    ...base,
+    calm: { ...base.calm, ...s.calm },
+    topicNames: { ...base.topicNames, ...s.topicNames },
+    buttons: { ...base.buttons, ...s.buttons },
+    card: { ...base.card, cardNextStep: s.card.cardNextStep, questions: { ...base.card.questions, ...s.card.questions } },
+    prep: { ...base.prep, ...s.prep },
+  }
 }
 
 const talkHome = (lang: Lang) => keyed((homeJson as unknown as Record<Lang, { reasonAsk: string }>)[lang], 'parent/home') ?? homeJson.he
