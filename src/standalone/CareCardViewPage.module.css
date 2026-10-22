@@ -217,3 +217,15 @@
   font-family: inherit;
   font-weight: 700;
 }
+
+/* the answer follows the label on the same line, after a colon */
+.staffScreen [class*="cardViewRow"] {
+  display: block;
+}
+.staffScreen [class*="cardViewLabel"],
+.staffScreen [class*="cardViewValue"] {
+  display: inline;
+}
+.staffScreen [class*="cardViewLabel"]::after {
+  content: ":";
+}
