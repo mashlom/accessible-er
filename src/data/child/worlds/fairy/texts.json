@@ -67,19 +67,19 @@
         {
           "label": "בפה",
           "steps": [
-            "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-            "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
-            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-            "שומעים ביפ קטן — וזהו, סיימנו."
+            "השדון העוזר נותן לנו מדחום קטן — שמים אותו בפה.",
+            "סוגרים את הפה חזק־חזק, כאילו יש בפנים פרי קסום.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הפרחים בגן.",
+            "שומעים ביפ קטן — השדון כותב ביומן הקסמים, וסיימנו."
           ]
         },
         {
           "label": "מתחת לבית השחי",
           "steps": [
-            "שמים חתיכת פלסטיק קטנה עם חוט מתחת לבית השחי.",
-            "מצמידים את הזרוע לגוף ומחזיקים בעדינות.",
-            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-            "שומעים ביפ קטן — וזהו, סיימנו."
+            "השדון העוזר שם מדחום קטן מתחת לבית השחי.",
+            "מצמידים את הזרוע לגוף, כמו מקפלים כנף קטנה.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הפרחים בגן.",
+            "שומעים ביפ קטן — השדון כותב ביומן הקסמים, וסיימנו."
           ]
         }
       ],
@@ -107,21 +107,21 @@
     },
     "procedureSteps": {
       "temperature": [
-        "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-        "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
-        "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-        "שומעים ביפ קטן — וזהו, סיימנו."
+        "השדון העוזר נותן לנו מדחום קטן — שמים אותו בפה.",
+        "סוגרים את הפה חזק־חזק, כאילו יש בפנים פרי קסום.",
+        "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הפרחים בגן.",
+        "שומעים ביפ קטן — השדון כותב ביומן הקסמים, וסיימנו."
       ],
       "saturation": [
-        "שמים אטב קטן ורך על האצבע.",
-        "נדלק בו אור אדום קטן.",
+        "השדון העוזר שם אטב קטן ורך על האצבע.",
+        "נדלק בו אור ורוד — כמו גחלילית בדשא.",
         "הוא רק מסתכל — לא עושה כלום.",
-        "אחרי רגע מורידים אותו."
+        "אחרי רגע השדון מוריד אותו."
       ],
       "blood-pressure": [
-        "שמים שרוול רך על הזרוע.",
-        "הוא מתנפח ולוחץ כמו חיבוק חזק.",
-        "סופרים עד כמה, והוא משחרר לבד.",
+        "השדון העוזר שם שרוול רך על הזרוע.",
+        "הוא מתנפח ומחבק את הזרוע, כמו עלה שמחבק ענף.",
+        "סופרים יחד עם השדון, והשרוול משחרר לבד.",
         "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
@@ -278,19 +278,19 @@
         {
           "label": "In the mouth",
           "steps": [
-            "We put a small plastic tip with a wire in the mouth.",
-            "We close the mouth tight-tight, like there's a candy inside.",
-            "We wait quietly for a short moment, until the device is done.",
-            "We hear a little beep — and that's it, we're done."
+            "The elf helper gives us a little thermometer — we put it in the mouth.",
+            "We close the mouth tight-tight, as if there is a magic berry inside.",
+            "We wait quietly until the thermometer is done — we can count the flowers in the garden.",
+            "We hear a little beep — the elf writes it in the magic journal, and we're done."
           ]
         },
         {
           "label": "Under the armpit",
           "steps": [
-            "We put a small plastic tip with a wire under the arm.",
-            "We press the arm to the body and hold it gently.",
-            "We wait quietly for a short moment, until the device is done.",
-            "We hear a little beep — and that's it, we're done."
+            "The elf helper puts a little thermometer under the arm.",
+            "We press the arm to the body, as if tucking in a little wing.",
+            "We wait quietly until the thermometer is done — we can count the flowers in the garden.",
+            "We hear a little beep — the elf writes it in the magic journal, and we're done."
           ]
         }
       ],
@@ -318,22 +318,22 @@
     },
     "procedureSteps": {
       "temperature": [
-        "We put a small plastic tip with a wire in the mouth.",
-        "We close the mouth tight-tight, like there's a candy inside.",
-        "We wait quietly for a short moment, until the device is done.",
-        "We hear a little beep — and that's it, we're done."
+        "The elf helper gives us a little thermometer — we put it in the mouth.",
+        "We close the mouth tight-tight, as if there is a magic berry inside.",
+        "We wait quietly until the thermometer is done — we can count the flowers in the garden.",
+        "We hear a little beep — the elf writes it in the magic journal, and we're done."
       ],
       "saturation": [
-        "We put a small, soft clip on the finger.",
-        "A little red light turns on inside it.",
+        "The elf helper puts a small, soft clip on the finger.",
+        "A pink light turns on inside it — like a firefly in the grass.",
         "It only looks — it doesn't do anything.",
-        "After a moment they take it off."
+        "After a moment the elf takes it off."
       ],
       "blood-pressure": [
-        "We put a soft cuff on the arm.",
-        "It fills with air and squeezes like a big hug.",
-        "We count together, and it lets go by itself.",
-        "Then they take the cuff off — and that's it, all done."
+        "The elf helper puts a soft cuff on the arm.",
+        "It fills with air and hugs the arm, like a leaf hugs a branch.",
+        "We count together with the elf, and the cuff lets go by itself.",
+        "Then the cuff comes off — and that's it, all done."
       ],
       "doctor-exam": [
         "We meet a doctor who wants to help us.",
@@ -489,19 +489,19 @@
         {
           "label": "Во рту",
           "steps": [
-            "В рот кладём маленький пластиковый наконечник с проводком.",
-            "Крепко-крепко закрываем рот, как будто там конфета.",
-            "Тихонько ждём чуть-чуть, пока прибор закончит.",
-            "Слышим тихое «бип» — и всё, готово."
+            "Эльф-помощник даёт нам маленький градусник — кладём его в рот.",
+            "Крепко-крепко закрываем рот, как будто там волшебная ягодка.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать цветы в саду.",
+            "Слышим тихое «бип» — эльф записывает в волшебный журнал, и всё, готово."
           ]
         },
         {
           "label": "Под мышкой",
           "steps": [
-            "Под мышку кладём маленький пластиковый наконечник с проводком.",
-            "Прижимаем руку к телу и мягко держим.",
-            "Тихонько ждём чуть-чуть, пока прибор закончит.",
-            "Слышим тихое «бип» — и всё, готово."
+            "Эльф-помощник кладёт маленький градусник под мышку.",
+            "Прижимаем руку к телу, как будто прячем крылышко.",
+            "Тихонько ждём, пока градусник закончит, — можно посчитать цветы в саду.",
+            "Слышим тихое «бип» — эльф записывает в волшебный журнал, и всё, готово."
           ]
         }
       ],
@@ -529,21 +529,21 @@
     },
     "procedureSteps": {
       "temperature": [
-        "В рот кладём маленький пластиковый наконечник с проводком.",
-        "Крепко-крепко закрываем рот, как будто там конфета.",
-        "Тихонько ждём чуть-чуть, пока прибор закончит.",
-        "Слышим тихое «бип» — и всё, готово."
+        "Эльф-помощник даёт нам маленький градусник — кладём его в рот.",
+        "Крепко-крепко закрываем рот, как будто там волшебная ягодка.",
+        "Тихонько ждём, пока градусник закончит, — можно посчитать цветы в саду.",
+        "Слышим тихое «бип» — эльф записывает в волшебный журнал, и всё, готово."
       ],
       "saturation": [
-        "На палец надеваем маленькую мягкую прищепку.",
-        "В ней загорается маленький красный огонёк.",
+        "Эльф-помощник надевает на палец маленькую мягкую прищепку.",
+        "В ней загорается розовый огонёк — как светлячок в траве.",
         "Она только смотрит — ничего не делает.",
-        "Через минутку её снимают."
+        "Через минутку эльф её снимает."
       ],
       "blood-pressure": [
-        "На руку надеваем мягкую манжету.",
-        "Она надувается и сжимает, как крепкие объятия.",
-        "Мы считаем, и она сама отпускает.",
+        "Эльф-помощник надевает на руку мягкую манжету.",
+        "Она надувается и обнимает руку, как листик обнимает ветку.",
+        "Мы считаем вместе с эльфом, и манжета сама отпускает.",
         "Потом манжету снимают — и всё, готово."
       ],
       "doctor-exam": [
