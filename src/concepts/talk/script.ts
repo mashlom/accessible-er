@@ -172,6 +172,8 @@ const talkHome = (lang: Lang) => keyed((homeJson as unknown as Record<Lang, { re
 const uiTiles = (lang: Lang) =>
   (keyed((i18nUi as unknown as Record<Lang, { tiles: Record<string, { title: string }> }>)[lang], 'i18n/ui') ?? i18nUi.he).tiles
 
+const hebrewNote = (lang: Lang) => (i18nUi as unknown as Record<Lang, { careView: { hebrewNote: string } }>)[lang].careView.hebrewNote
+
 function unknown(lang: Lang = 'he'): TalkNode {
   return {
     say: [{ text: talkText(lang).unknown, mood: 'curious' }],
@@ -431,6 +433,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
           say: [
             { text: talkText(ctx.lang).card.cardDone, mood: 'proud' },
             { text: talkText(ctx.lang).card.cardDoneShow },
+            { text: hebrewNote(ctx.lang) },
           ],
           choices: [
             { emoji: '🪪', label: talkText(ctx.lang).card.cardShow, action: { kind: 'open', to: '/card/view' } },
@@ -447,6 +450,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
               text: talkText(ctx.lang).card.cardPrivacy,
               mood: 'calm',
             },
+            { text: hebrewNote(ctx.lang) },
             { text: talkText(ctx.lang).card.cardQuestions },
           ],
           choices: [

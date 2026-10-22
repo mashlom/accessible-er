@@ -145,3 +145,15 @@
   color: #fff;
   font-weight: 700;
 }
+
+/* the staff reads the card on black, as the staff screens do */
+.staffScreen {
+  min-height: 100dvh;
+  background: #000;
+  color: #fff;
+  padding: 16px;
+}
+.staffScreen * {
+  color: inherit;
+  border-color: #444;
+}

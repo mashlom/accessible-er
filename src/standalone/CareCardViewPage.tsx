@@ -1,9 +1,9 @@
+import { useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { keyed } from '../lib/keyed'
 import { Link } from '../concepts/nav'
 import { Mascot } from './Mascot'
-import { Note } from './ui'
 import { usePersistentState } from '../hooks/usePersistentState'
-import { useI18n } from '../hooks/useI18n'
 import i18nUi from '../data/i18n/ui.json'
 import { DAY_MS } from '../lib/storage'
 import { emptyCard, isCardEmpty, type CareCard } from '../data/careCard'
@@ -12,12 +12,18 @@ import styles from './CareCardViewPage.module.css'
 
 type Lang = 'he' | 'en' | 'ru'
 
-/** The card as the staff reads it: the same view as on every other screen. */
+/** The card as the staff reads it: Hebrew, on black. The form opens it with ?print to print or save it. */
 export function CareCardViewPage() {
-  const { lang } = useI18n()
+  const lang: Lang = 'he'
+  const [params] = useSearchParams()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   const cv = keyed((i18nUi as unknown as Record<Lang, { cardView: Record<string, string> }>)[lang], 'i18n/ui').cardView
   const emptyTitle = keyed((i18nUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang], 'i18n/ui').card.empty
+  const printNow = params.has('print')
+
+  useEffect(() => {
+    if (printNow) window.print()
+  }, [printNow])
 
   if (isCardEmpty(card)) {
     return (
@@ -35,36 +41,20 @@ export function CareCardViewPage() {
   const heading = careCardHeading(card, lang)
 
   return (
-    <div className="container">
-      <div className={`${styles.card} print-area`}>
-        <div className={styles.cardHead}>
-          <span className={styles.cardHeadIcon} aria-hidden>
-            🧒
-          </span>
-          <div>
-            <div className={styles.cardTitle}>{heading.title}</div>
-            {heading.age && <div className={styles.cardAge}>{heading.age}</div>}
-          </div>
-        </div>
-        <CareCardView
-          footer={({ print }) => (
-            <div className={`${styles.controls} no-print`}>
-              <button type="button" className={styles.pdfBtn} onClick={print}>
-                {cv.savePdf}
-              </button>
-              <button type="button" className={styles.printBtn} onClick={print}>
-                {cv.print}
-              </button>
-              <Link to="/card" className={styles.editBtn}>
-                {cv.edit}
-              </Link>
+    <div className={styles.staffScreen}>
+      <div className="container">
+        <div className={`${styles.card} print-area`}>
+          <div className={styles.cardHead}>
+            <span className={styles.cardHeadIcon} aria-hidden>
+              🧒
+            </span>
+            <div>
+              <div className={styles.cardTitle}>{heading.title}</div>
+              {heading.age && <div className={styles.cardAge}>{heading.age}</div>}
             </div>
-          )}
-        />
-      </div>
-
-      <div className="no-print" style={{ marginTop: 'var(--space-3)' }}>
-        <Note>{cv.sendHint}</Note>
+          </div>
+          <CareCardView />
+        </div>
       </div>
     </div>
   )

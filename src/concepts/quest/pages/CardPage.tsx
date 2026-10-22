@@ -29,18 +29,23 @@ export function CardPage() {
       <div className={css.stageBody}>
         <CareCardForm
           colours={{ accent: theme.accent, accentSoft: theme.accentSoft, accentText: theme.accentText }}
-          footer={({ empty, clear }) => (
+          footer={({ empty }) => (
             <div className={css.stageBack}>
               <Link to="/card/view" state={leaveState('/card')}>
                 <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText, opacity: empty ? 0.4 : 1 }} disabled={empty}>
                   {t('ui.buttons.showCardNext')}
                 </button>
               </Link>
-              {!empty && (
-                <button type="button" className={css.backBtn} style={{ borderColor: '#aaa', color: '#888' }} onClick={clear}>
-                  {t('ui.buttons.clear')}
+              <Link to="/card/view?print=1" style={empty ? { pointerEvents: 'none', opacity: 0.4 } : undefined}>
+                <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} disabled={empty}>
+                  {t('ui.cardView.savePdf')}
                 </button>
-              )}
+              </Link>
+              <Link to="/card/view?print=1" style={empty ? { pointerEvents: 'none', opacity: 0.4 } : undefined}>
+                <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} disabled={empty}>
+                  {t('ui.cardView.print')}
+                </button>
+              </Link>
             </div>
           )}
         />
