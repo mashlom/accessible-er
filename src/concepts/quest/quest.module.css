@@ -597,7 +597,7 @@
 }
 
 .calmBreath {
-  animation: breathe 8s ease-in-out infinite;
+  animation: breathe 9s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

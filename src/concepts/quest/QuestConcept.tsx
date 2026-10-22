@@ -9,7 +9,6 @@ import { ProcedureSelectPage } from './pages/ProcedureSelectPage'
 import { NightMapPage } from './pages/NightMapPage'
 import { ProcedureDetailPage } from './pages/ProcedureDetailPage'
 import { ShopPage } from './pages/ShopPage'
-import { CalmPage } from './pages/CalmPage'
 import { ReasonPage } from './pages/ReasonPage'
 import { DistractPage } from './pages/DistractPage'
 import { WaitTimesPage } from './pages/WaitTimesPage'
@@ -27,7 +26,6 @@ function WorldRoutes() {
       <Route path="celebrate" element={<CelebratePage />} />
       <Route path="shop" element={<ShopPage />} />
       <Route path="procedure/:id" element={<ProcedureDetailPage />} />
-      <Route path="calm" element={<CalmPage />} />
       <Route path="reason" element={<ReasonPage />} />
       <Route path="wait-times" element={<WaitTimesPage />} />
       <Route path="distract" element={<DistractPage />} />
