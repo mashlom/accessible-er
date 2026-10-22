@@ -58,12 +58,6 @@ export const mapAreas: Omit<MapArea, 'name' | 'note' | 'next'>[] = [
     load: 'medium',
     sensory: { sound: 3, light: 2, smell: 4, people: 2 },
   },
-  {
-    id: 'discharge',
-    emoji: '🏁',
-    load: 'medium',
-    sensory: { sound: 2, light: 3, smell: 1, people: 3 },
-  },
 ]
 
 export const loadLabels: Record<MapArea['load'], { color: string }> = {

@@ -44,12 +44,6 @@
       "restroom": {
         "name": "שירותים",
         "note": "שירותים לשימוש המשפחות, וגם מקום לבדיקת שתן. לחלק מהילדים זה מרחב מציף — יש ריח, ולפעמים רעש חזק של ההדחה. אפשר להיכנס לרגע קצר ולצאת."
-      },
-      "discharge": {
-        "name": "שחרור",
-        "note": "כאן מקבלים הנחיות סיום ומשתחררים הביתה.",
-        "next": "הביתה, עם הנחיות להמשך 🏠",
-        "stage": "decision"
       }
     },
     "load": {
@@ -109,12 +103,6 @@
       "restroom": {
         "name": "Toilet",
         "note": "Toilets for families, and also a place for a urine test. For some children this is an overwhelming space — there is a smell, and sometimes a loud flush. You can go in for a short moment and come out."
-      },
-      "discharge": {
-        "name": "Discharge",
-        "note": "This is where you get the instructions for after and go home.",
-        "next": "Home, with instructions for what comes next 🏠",
-        "stage": "decision"
       }
     },
     "load": {
@@ -174,12 +162,6 @@
       "restroom": {
         "name": "Туалет",
         "note": "Туалеты для семей, а также место для анализа мочи. Для некоторых детей это переполняющее пространство: есть запах, а иногда громко работает смыв. Можно зайти ненадолго и выйти."
-      },
-      "discharge": {
-        "name": "Выписка",
-        "note": "Здесь получают рекомендации на дальнейшее и уходят домой.",
-        "next": "Домой, с рекомендациями на дальнейшее 🏠",
-        "stage": "decision"
       }
     },
     "load": {
