@@ -318,7 +318,6 @@
       "note": "Whether each adaptation is available depends on the medical situation, the equipment and how busy it is at that moment. Even when it is not possible — it is worth asking."
     },
     "storyFeedback": {
-      "title": "How was it?",
       "subtitle": "A few short questions — so we can improve the tool. No name or identifying details are needed.",
       "ratingTitle": "How much did the tool help you today?",
       "faces": [
@@ -750,7 +749,6 @@
       "note": "Возможность каждой адаптации зависит от медицинской ситуации, оборудования и загруженности в этот момент. Даже если сейчас не получится — стоит спросить."
     },
     "storyFeedback": {
-      "title": "Как прошло?",
       "subtitle": "Несколько коротких вопросов — чтобы мы могли улучшить инструмент. Имя или личные данные не нужны.",
       "ratingTitle": "Насколько инструмент помог вам сегодня?",
       "faces": [
@@ -1130,7 +1128,7 @@
         "desc": "בקשה או תודה — להצגה על המסך או לשליחה במייל"
       },
       "feedback": {
-        "title": "משוב קצר",
+        "title": "איך היה?",
         "desc": "ספרו לנו איך היה — כדי שנשתפר"
       },
       "distract": {
@@ -1182,7 +1180,6 @@
       "note": "הזמינות של כל התאמה תלויה במצב הרפואי, בציוד ובעומס באותו רגע. גם כשלא מתאפשר — שווה לשאול."
     },
     "storyFeedback": {
-      "title": "איך היה?",
       "subtitle": "כמה שאלות קצרות — כדי שנוכל לשפר את הכלי. אין צורך בשם או בפרטים מזהים.",
       "ratingTitle": "עד כמה הכלי עזר לכם היום?",
       "faces": [
