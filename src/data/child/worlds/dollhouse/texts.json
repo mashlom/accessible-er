@@ -8,19 +8,19 @@
       },
       "wait-before-triage": {
         "label": "הספסל במסדרון",
-        "hint": "יושבים על הספסל עד שהדובי קורא"
+        "hint": "יושבים על הספסל עד שהארנבון קורא"
       },
       "triage": {
         "label": "חדר המדידות",
-        "hint": "הדובי עוזר למדוד ולבדוק"
+        "hint": "הארנבון עוזר למדוד ולבדוק"
       },
       "wait-doctor": {
         "label": "חדר האורחים",
         "hint": "ממתינים בנחת עד שקוראים בשם"
       },
       "doctor": {
-        "label": "החדר של הדוקטורית",
-        "hint": "הדוקטורית בודקת בעדינות"
+        "label": "החדר של הדובי הרופא",
+        "hint": "הדובי הרופא בודק בעדינות"
       },
       "decision": {
         "label": "חזרה הביתה",
@@ -32,11 +32,11 @@
       },
       "treatment": {
         "label": "פינת הטיפול",
-        "hint": "הטיפול שהוחלט עליו"
+        "hint": "הארנבון מטפל במה שצריך"
       },
       "consult": {
-        "label": "ביקור של דוקטור נוסף",
-        "hint": "עוד דוקטור מצטרף לעזור"
+        "label": "הינשופה באה לבקר",
+        "hint": "הינשופה החכמה באה לעזור"
       },
       "wait-results": {
         "label": "חדר ההמתנה השקט",
@@ -45,10 +45,10 @@
     },
     "distractTitle": "חדר המשחקים 🎪",
     "procedureNarratives": {
-      "temperature": "הדובי מקבל בדיקת חום קצרה — כדי לוודא שהוא חם ומוכן לשחק.",
+      "temperature": "הארנבון בודק לבובה חום במהירות — כדי לוודא שהיא חמה ומוכנה לשחק.",
       "saturation": "קליפס קטן על האצבע של הבובה מראה כמה אוויר נכנס לריאות הקטנות שלה.",
       "blood-pressure": "הרצועה מחבקת בעדינות את היד של הבובה, מתהדקת ואז משתחררת — כמו חיבוק גדול.",
-      "doctor-exam": "דובי-רופא מקשיב לחזה של הבובה ומסתכל באוזניים, כדי לבדוק הכול בבית.",
+      "doctor-exam": "הדובי הרופא מקשיב לחזה של הבובה ומסתכל באוזניים, כדי לבדוק הכול בבית.",
       "blood-test": "דקירה קטנה בקצה האצבע של הבובה — טיפה אחת של דם לבדיקה.",
       "urine": "הבובה משתמשת בכוס קטנה בשירותים של הבית כדי לתת דגימה לבדיקה.",
       "xray": "הבובה שוכבת על כרית רכה, והמצלמה מצלמת את העצמות שלה.",
@@ -57,7 +57,7 @@
       "iv": "צינור רך וקטן מונח ביד של הבובה, והמים נוזלים לאט כדי שייטב לה.",
       "medication": "הבובה לוקחת מעט תרופה בכפית קטנה, כמו שעושים כשלא מרגישים טוב.",
       "inhalation": "הבובה נושמת אדים חמים דרך מסכה רכה, כמו בועות באמבטיה.",
-      "stitches": "דובי-רופא סוגר את השריטה הקטנה של הבובה בתפרים זעירים או בדבק — זה לא כואב.",
+      "stitches": "הארנבון סוגר את השריטה הקטנה של הבובה בתפרים זעירים או בדבק — זה לא כואב.",
       "cast": "על היד או הרגל של הבובה מניחים עטיפה רכה שמחזיקה אותה במקום, עד שהכול מתרפא.",
       "bandage": "הברך של הבובה מקבלת חבישה רכה, מסודרת כמו מתנה יפה.",
       "waiting-results": "הבובה מחכה בפינה נעימה של הבית, עד שהתוצאות מוכנות, עם ספר ביד."
@@ -219,11 +219,11 @@
       },
       "wait-before-triage": {
         "label": "The Corridor Bench",
-        "hint": "We sit on the bench until the teddy bear calls"
+        "hint": "We sit on the bench until the bunny calls"
       },
       "triage": {
         "label": "Measuring Room",
-        "hint": "The teddy bear helps to measure and check"
+        "hint": "The bunny helps to measure and check"
       },
       "wait-doctor": {
         "label": "The Guest Room",
@@ -231,7 +231,7 @@
       },
       "doctor": {
         "label": "The Doctor's Room",
-        "hint": "The doctor checks gently"
+        "hint": "The teddy-bear doctor checks gently"
       },
       "decision": {
         "label": "Going Home",
@@ -243,11 +243,11 @@
       },
       "treatment": {
         "label": "The Treatment Corner",
-        "hint": "The treatment that was decided on"
+        "hint": "The bunny treats what needs treating"
       },
       "consult": {
-        "label": "Visit from Another Doctor",
-        "hint": "Another doctor joins to help"
+        "label": "The Owl Comes to Visit",
+        "hint": "The wise owl comes to help"
       },
       "wait-results": {
         "label": "The Quiet Waiting Room",
@@ -256,7 +256,7 @@
     },
     "distractTitle": "The Playroom 🎪",
     "procedureNarratives": {
-      "temperature": "The teddy bear gets a quick thermometer check — to make sure it is warm and ready to play.",
+      "temperature": "The bunny quickly checks the doll with a thermometer — to make sure it is warm and ready to play.",
       "saturation": "A tiny clip on the doll’s finger shows how much air gets into its little lungs.",
       "blood-pressure": "The cuff gently hugs the doll’s arm, tightens, and lets go — like a big hug.",
       "doctor-exam": "The teddy-bear doctor listens to the doll’s chest and looks in its ears to check everything in the house.",
@@ -268,7 +268,7 @@
       "iv": "A tiny soft tube sits in the doll’s arm, and water drips in slowly to help it feel well.",
       "medication": "The doll takes a little medicine from a tiny spoon, the way dolls do when they do not feel well.",
       "inhalation": "The doll breathes in warm mist through a soft mask, like bubbles in the bath.",
-      "stitches": "The teddy-bear doctor closes the doll’s little scratch with tiny stitches or glue — it does not hurt.",
+      "stitches": "The bunny closes the doll’s little scratch with tiny stitches or glue — it does not hurt.",
       "cast": "A soft wrap goes on the doll’s arm or leg to keep it still while it heals.",
       "bandage": "The doll’s knee gets a soft bandage, neat like a present.",
       "waiting-results": "The doll waits in a cosy corner of the house until the results are ready, with a book in its hands."
@@ -430,11 +430,11 @@
       },
       "wait-before-triage": {
         "label": "Скамейка в коридоре",
-        "hint": "Сидим на скамейке, пока нас позовёт мишка"
+        "hint": "Сидим на скамейке, пока нас позовёт зайчик"
       },
       "triage": {
         "label": "Комната измерений",
-        "hint": "Мишка помогает измерить и проверить"
+        "hint": "Зайчик помогает измерить и проверить"
       },
       "wait-doctor": {
         "label": "Комната гостей",
@@ -442,7 +442,7 @@
       },
       "doctor": {
         "label": "Комната доктора",
-        "hint": "Доктор аккуратно проверяет"
+        "hint": "Мишка-доктор аккуратно проверяет"
       },
       "decision": {
         "label": "Возвращаемся домой",
@@ -454,11 +454,11 @@
       },
       "treatment": {
         "label": "Уголок лечения",
-        "hint": "Лечение, которое решили назначить"
+        "hint": "Зайчик лечит то, что нужно"
       },
       "consult": {
-        "label": "Визит другого доктора",
-        "hint": "Ещё один доктор приходит помочь"
+        "label": "Сова приходит в гости",
+        "hint": "Мудрая сова приходит помочь"
       },
       "wait-results": {
         "label": "Тихая комната ожидания",
@@ -467,7 +467,7 @@
     },
     "distractTitle": "Игровая комната 🎪",
     "procedureNarratives": {
-      "temperature": "Мишка получает быструю проверку градусником — чтобы убедиться, что он тёплый и готов играть.",
+      "temperature": "Зайчик быстро проверяет куклу градусником — чтобы убедиться, что она тёплая и готова играть.",
       "saturation": "Маленький зажим на пальце куклы показывает, сколько воздуха попадает в её крошечные лёгкие.",
       "blood-pressure": "Манжета мягко обнимает руку куклы, крепче, потом отпускает — как большое объятие.",
       "doctor-exam": "Мишка-доктор слушает грудку куклы и смотрит в ушки, чтобы проверить всё в домике.",
@@ -479,7 +479,7 @@
       "iv": "В ручку куклы ставят крошечную мягкую трубочку, и водичка медленно капает, чтобы ей стало лучше.",
       "medication": "Кукла принимает немного лекарства маленькой ложечкой, как когда ей немножко нездоровится.",
       "inhalation": "Кукла вдыхает тёплый туман через мягкую маску, как пузырьки в ванне.",
-      "stitches": "Мишка-доктор закрывает царапинку куклы крошечными швами или клеем — это не больно.",
+      "stitches": "Зайчик закрывает царапинку куклы крошечными швами или клеем — это не больно.",
       "cast": "На ручку или ножку куклы надевают мягкую повязку, которая держит её, пока всё заживает.",
       "bandage": "Коленку куклы аккуратно перевязывают мягким бинтом, как красивый подарок.",
       "waiting-results": "Кукла ждёт в уютном уголке домика, пока будут готовы результаты, с книжкой в руках."
