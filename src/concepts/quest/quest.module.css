@@ -1302,6 +1302,11 @@
   text-align: center;
   margin: -0.5rem 0 -0.25rem;
 }
+/* in English and Russian the section labels sit on the left, like their text */
+[lang="en"] .parentZoneLabel,
+[lang="ru"] .parentZoneLabel {
+  text-align: start;
+}
 
 .waitRange {
   font-size: 0.85rem;

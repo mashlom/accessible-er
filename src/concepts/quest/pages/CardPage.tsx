@@ -7,12 +7,12 @@ import css from '../quest.module.css'
 
 export function CardPage() {
   const { theme } = useQuestTheme()
-  const { t } = useI18n()
+  const { t, lang, dir } = useI18n()
   const { goBack, leaveState } = useReturnTo('/stage/reception')
 
   return (
-    <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
-      <div className={css.stageHero} style={{ background: theme.accentSoft }}>
+    <div className={css.stagePage} dir={dir} lang={lang} style={{ '--accent': theme.accent, textAlign: 'start' } as React.CSSProperties}>
+      <div className={css.stageHero} style={{ background: theme.accentSoft, ...(lang === 'he' ? {} : { alignItems: 'flex-start', textAlign: 'start' }) }}>
         <span className={css.stageHeroIcon}>🪪</span>
         <h1 style={{ color: theme.accent }}>
           {t('ui.tiles.card.title')}
