@@ -180,3 +180,31 @@
 .staffScreen [class*="cardViewValue"] {
   color: #fff;
 }
+
+/* one size and weight for every line of the staff card; no frame; the green head spans the full width */
+.staffScreen {
+  padding: 0;
+}
+.staffScreen :global(.container) {
+  max-width: none;
+  padding: 0;
+}
+.staffScreen .card {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+.staffScreen .cardHead {
+  border-radius: 0;
+  margin: 0;
+}
+.staffScreen [class*="cardViewLabel"],
+.staffScreen [class*="cardViewValue"],
+.staffScreen li,
+.staffScreen h2 {
+  font-size: clamp(1.6rem, 1.1rem + 3.4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.35;
+}
