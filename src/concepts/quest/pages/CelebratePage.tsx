@@ -1,4 +1,3 @@
-import { keyed } from '../../../lib/keyed'
 import { useState } from 'react'
 import { Link } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
@@ -8,10 +7,6 @@ import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
 import i18nUi from '../../../data/i18n/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
-import careI18n from '../../../data/i18n/careCard.json'
-
-// the requests are for the staff, so they are in Hebrew
-const askHe = keyed((careI18n as unknown as { he: { asks: Record<string, string> } }).he, 'i18n/careCard').asks
 import css from '../quest.module.css'
 
 // the emoji of each block stay in code; the words come from src/data/i18n/ui.json
@@ -30,7 +25,6 @@ function blocksFor(lang: 'he' | 'en' | 'ru', kind: 'discharge' | 'admission') {
 
 export function CelebratePage() {
   const [outcome, setOutcome] = useState<'discharge' | 'admission' | null>(null)
-  const [showCard, setShowCard] = useState(false)
   const { theme } = useQuestTheme()
   const { t, lang } = useI18n()
   const { reset, doneProcedures } = useQuestProgress()
@@ -129,13 +123,14 @@ export function CelebratePage() {
                   </button>
                 </Link>
               ) : (
-                <button
-                  className={css.calmLink}
-                  onClick={() => setShowCard(true)}
-                  style={{ background: theme.accent, color: theme.accentText }}
-                >
-                  {t('ui.buttons.showCard')}
-                </button>
+                <Link to="/card/view" state={{ from: '/celebrate' }} className={css.calmLink}>
+                  <button
+                    className={css.doneBtn}
+                    style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
+                  >
+                    {t('ui.buttons.showCard')}
+                  </button>
+                </Link>
               )
             )}
 
@@ -154,64 +149,6 @@ export function CelebratePage() {
         )}
       </div>
 
-      {showCard && !cardEmpty && (
-        <div
-          className={css.calmOverlay}
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setShowCard(false)}
-        >
-          <div className={css.cardOverlayContent}>
-            {card.nickname.trim() && <div className={css.cardOverlayName}>{card.nickname.trim()}</div>}
-            {[
-              { emoji: '💬', items: [...card.communication, card.custom?.communication].filter(Boolean) },
-              { emoji: '⚠️', items: [...card.sensitivities, card.custom?.sensitivities].filter(Boolean) },
-              { emoji: '💛', items: [...card.calming, card.custom?.calming].filter(Boolean) },
-              { emoji: '🚫', items: [...card.escalators, ...card.avoid, card.custom?.escalators, card.custom?.avoid].filter(Boolean) },
-              { emoji: '🩺', items: [...card.hardMoments, card.custom?.hardMoments].filter(Boolean) },
-              { emoji: '🤕', items: [...card.pain, card.custom?.pain].filter(Boolean) },
-            ]
-              .filter((section) => section.items.length > 0)
-              .map((section, i) => (
-                <div key={i} className={css.cardOverlaySection}>
-                  <div className={css.cardOverlayEmoji}>{section.emoji}</div>
-                  <div className={css.cardOverlayItems}>
-                    {section.items.map((item, j) => (
-                      <div key={j} className={css.cardOverlayItem}>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            {(card.asks ?? []).length > 0 && (
-              <div className={css.cardOverlaySection}>
-                <div className={css.cardOverlayEmoji}>🙋</div>
-                <div className={css.cardOverlayItems}>
-                  {(card.asks ?? []).map((id) => (
-                    <div key={id} className={css.cardOverlayItem}>{askHe[id]}</div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {card.freeNote.trim() && (
-              <div className={css.cardOverlaySection}>
-                <div className={css.cardOverlayEmoji}>✏️</div>
-                <div className={css.cardOverlayItems}>
-                  <div className={css.cardOverlayItem}>{card.freeNote.trim()}</div>
-                </div>
-              </div>
-            )}
-          </div>
-          <button
-            type="button"
-            className={css.calmOverlayClose}
-            onClick={() => setShowCard(false)}
-          >
-            {t('ui.buttons.close')}
-          </button>
-        </div>
-      )}
     </div>
   )
 }
