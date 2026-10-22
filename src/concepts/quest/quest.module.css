@@ -770,7 +770,6 @@
   border-radius: 10px;
   font-size: 1rem;
   font-family: inherit;
-  direction: rtl;
   width: 100%;
   box-sizing: border-box;
 }
@@ -809,7 +808,6 @@
   border-radius: 10px;
   font-size: 0.95rem;
   font-family: inherit;
-  direction: rtl;
   color: #444;
 }
 
