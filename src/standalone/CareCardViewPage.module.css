@@ -208,3 +208,12 @@
   font-weight: 800;
   line-height: 1.35;
 }
+
+/* the lines use the page's font, the same as the title */
+.staffScreen [class*="cardViewLabel"],
+.staffScreen [class*="cardViewValue"],
+.staffScreen li,
+.staffScreen h2 {
+  font-family: inherit;
+  font-weight: 700;
+}
