@@ -241,3 +241,10 @@
 .staffScreen h2 {
   margin-inline: 1.25rem;
 }
+
+/* no borders at all on the card: no frame around the lines, no lines between them */
+.staffScreen [class*="cardViewRows"],
+.staffScreen [class*="cardViewRow"] {
+  border: 0;
+  border-radius: 0;
+}
