@@ -235,3 +235,9 @@
 .staffScreen section {
   padding-inline: 1.25rem;
 }
+
+/* the requests keep their margins too: the list and its heading */
+.staffScreen ul,
+.staffScreen h2 {
+  margin-inline: 1.25rem;
+}
