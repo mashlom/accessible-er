@@ -45,8 +45,8 @@
         "detail": "שאדם אחד יוביל וידבר, ושאר הצוות ימתין בחוץ ככל האפשר."
       },
       {
-        "title": "הסבר קצר לפני כל נגיעה",
-        "detail": "שכל נגיעה או פעולה יוסברו קודם, כדי שלא יהיו הפתעות."
+        "title": "הסבר לפני נגיעה",
+        "detail": "קודם מסבירים, ואחר כך נוגעים או מבצעים פעולה. חשוב שלא תהיה הפתעה לילד."
       },
       {
         "title": "מיקרו־בחירות",
@@ -116,8 +116,8 @@
         "detail": "One person leads and talks, and the rest of the team waits outside as much as possible."
       },
       {
-        "title": "A short explanation before every touch",
-        "detail": "Every touch or procedure is explained first, so there are no surprises."
+        "title": "Explanation before touch",
+        "detail": "First an explanation, then the touch or action. It is important that it is not a surprise for the child."
       },
       {
         "title": "Small choices",
