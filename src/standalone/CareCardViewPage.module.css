@@ -227,5 +227,5 @@
   display: inline;
 }
 .staffScreen [class*="cardViewLabel"]::after {
-  content: ":";
+  content: ": ";
 }
