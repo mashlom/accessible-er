@@ -205,7 +205,7 @@ export function ParentSheet({
 
         {stageId !== 'wait-before-triage' && data.nextStagePrepare && (
           <section className={css.sheetCard}>
-            <h2>{t('ui.labels.adult.prepareChild')}</h2>
+            <h2>{t('ui.tiles.procedures.title')}</h2>
             <p>{data.nextStagePrepare}</p>
           </section>
         )}
@@ -310,7 +310,7 @@ function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
       )}
       {proc.prepare && (
         <section className={css.sheetCard}>
-          <h2>{t('ui.labels.adult.prepareChild')}</h2>
+          <h2>{t('ui.tiles.procedures.title')}</h2>
           <p>{proc.prepare}</p>
         </section>
       )}

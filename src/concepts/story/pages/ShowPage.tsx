@@ -26,7 +26,7 @@ function Card({ p }: { p: Procedure }) {
  * family has told us why they came, the ones on their likely route come first.
  */
 export function ShowPage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang], 'parent/home').show
   const { path } = useVisitReason()
 
@@ -40,7 +40,7 @@ export function ShowPage() {
 
   return (
     <div dir={dir} lang={lang} style={{ display: 'contents' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.procedures.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
       </div>

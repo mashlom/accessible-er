@@ -75,7 +75,6 @@
     "prep": {
       "for": "להתכונן ל{title}",
       "whoDur": "מי עושה את זה: {who}\nכמה זמן: {duration}",
-      "howPrepare": "איך אפשר להתכונן:",
       "askBefore": "לפני {title} אפשר לבקש:",
       "intro": "לפי מה שסיפרתם לי, אלה הדברים שכנראה נפגוש היום. על מה נדבר?",
       "whatAll": "על מה נכין את עצמנו?"
@@ -210,7 +209,6 @@
     "prep": {
       "for": "Get ready: {title}",
       "whoDur": "Who does it: {who}\nHow long: {duration}",
-      "howPrepare": "How to get ready:",
       "askBefore": "Before {title}, you can ask for:",
       "intro": "Based on what you told me, these are the things we will probably meet today. What shall we talk about?",
       "whatAll": "What shall we prepare for?"
@@ -345,7 +343,6 @@
     "prep": {
       "for": "Как подготовиться: {title}",
       "whoDur": "Кто делает: {who}\nСколько времени: {duration}",
-      "howPrepare": "Как подготовиться:",
       "askBefore": "Перед {title} можно попросить:",
       "intro": "Судя по тому, что вы рассказали, это то, что, скорее всего, встретится сегодня. О чём поговорим?",
       "whatAll": "К чему будем готовиться?"

@@ -173,6 +173,8 @@ const uiTiles = (lang: Lang) =>
   (keyed((i18nUi as unknown as Record<Lang, { tiles: Record<string, { title: string }> }>)[lang], 'i18n/ui') ?? i18nUi.he).tiles
 
 // the Hebrew note is for the other languages: a Hebrew-speaking parent does not need it
+const procedureReadyLabel = (lang: Lang) => (i18nUi as unknown as Record<Lang, { procedurePage: { prepare: string } }>)[lang].procedurePage.prepare
+
 const hebrewNote = (lang: Lang) => (i18nUi as unknown as Record<Lang, { careView: { hebrewNote: string } }>)[lang].careView.hebrewNote
 
 function unknown(lang: Lang = 'he'): TalkNode {
@@ -265,7 +267,7 @@ function prepNode(pid: string, rest: string[], lang: Lang): TalkNode | null {
     return {
       say: [
         { text: p.feel, mood: 'curious' },
-        { text: `${talkText(lang).prep.howPrepare} ${p.prepare}`, mood: 'calm' },
+        { text: `${procedureReadyLabel(lang)}: ${p.prepare}`, mood: 'calm' },
       ],
       choices: [
         { label: uiTiles(lang).requests.title, go: `prep:${pid}:ask` },
