@@ -274,9 +274,9 @@
     },
     "procedureSteps": {
       "temperature": [
-        "We put a small magic sceptre in the mouth.",
+        "We put a small magic wand in the mouth.",
         "We close the mouth tight — as if we are keeping a secret.",
-        "We wait quietly until the sceptre finishes reading the magic.",
+        "We wait quietly until the wand finishes reading the magic.",
         "We hear a small beep — the healer has read the inner heat."
       ],
       "saturation": [
@@ -485,9 +485,9 @@
     },
     "procedureSteps": {
       "temperature": [
-        "В рот кладём маленький волшебный скипетр.",
+        "В рот кладём маленькую волшебную палочку.",
         "Рот закрываем крепко — как будто храним секрет.",
-        "Тихо ждём, пока скипетр дочитает заклинание.",
+        "Тихо ждём, пока палочка дочитает заклинание.",
         "Слышим короткий писк — лекарь прочитал внутренний жар."
       ],
       "saturation": [
