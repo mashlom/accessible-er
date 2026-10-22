@@ -6,7 +6,6 @@ import { parentJourney, parentProcedure } from '../../data/parent'
 import { parentPaths } from '../../data/parent/paths'
 import supportI18n from '../../data/i18n/support.json'
 import talkTexts from '../../data/parent/talk.json'
-import dinoTexts from '../../data/child/worlds/dino/texts.json'
 import { parentChannelLabel, parentLoadLabel, parentMapAreas } from '../../data/parent/map'
 import i18nUi from '../../data/i18n/ui.json'
 import homeJson from '../../data/parent/home.json'
@@ -131,13 +130,12 @@ function dischargeBody(lang: Lang, i: number): string {
 }
 
 /** The dialogue lines of this part of the talk, in the chosen language (src/data/parent/talk.json) */
-// the words Roni shares with the ui, the card and the dino world: read from there, not copied into talk.json
+// the words Roni shares with the ui and the care card: read from there, not copied into talk.json
 const sharedWords = (lang: Lang) => {
   const ui = (i18nUi as unknown as Record<Lang, UiWords>)[lang]
   const care = (careI18n as unknown as Record<Lang, { cardSections: { title: string }[] }>)[lang].cardSections
-  const calm = (dinoTexts as unknown as Record<Lang, { calmLines: string[] }>)[lang].calmLines
   return {
-    calm: { hardNow1: calm[1], watchThree: calm[2], watchBtn: ui.tiles.distract.desc },
+    calm: { watchBtn: ui.tiles.distract.desc },
     topicNames: { ask: ui.storyRequests.title, prep: ui.tiles.procedures.title, calm: ui.buttons.hardNow },
     buttons: { helpedLess: ui.storyFeedback.team.rating[1], helpedSome: ui.storyFeedback.team.rating[2], helpedMuch: ui.storyFeedback.team.rating[3] },
     card: { cardNextStep: ui.buttons.continue, questions: { communication: care[0].title, calming: care[2].title, escalators: care[3].title } },
