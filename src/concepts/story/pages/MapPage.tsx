@@ -9,7 +9,6 @@ import {
   SENSORY_MAX,
 } from '../../../data/map'
 import { parentMapAreas, parentLoadLabel, parentChannelLabel } from '../../../data/parent/map'
-import { parentJourney } from '../../../data/parent'
 import homeTexts from '../../../data/parent/home.json'
 import { useI18n } from '../../../hooks/useI18n'
 import type { MapArea } from '../../../data/types'
@@ -65,7 +64,7 @@ export function MapPage() {
               </div>
 
               <div className={styles.roomBody}>
-                <p>{area.stage ? parentJourney(lang).find((st) => st.id === area.stage)?.meaning : area.note}</p>
+                <p>{area.note}</p>
 
                 <div className={styles.weather}>
                   {sensoryChannels.map((ch) => {
@@ -100,12 +99,6 @@ export function MapPage() {
                   })}
                 </div>
 
-                {area.next && (
-                  <p className={styles.roomNext}>
-                    <span aria-hidden>➡️ </span>
-                    <span className={styles.roomNextLabel}>{tx.next}</span> {area.next}
-                  </p>
-                )}
               </div>
             </article>
           )

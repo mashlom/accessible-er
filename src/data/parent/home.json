@@ -61,7 +61,6 @@
       "title": "איפה אנחנו?",
       "subtitle": "לכל מקום במיון יש אופי משלו. כאן רואים איפה רועש, איפה אפשר לנוח, ולאן ממשיכים משם.",
       "bubble": "העיגולים הצבעוניים מספרים כמה רעש, אור, ריח ואנשים יש בכל מקום. ירוק = מעט, אדום = הרבה.",
-      "next": "ממשיכים מכאן אל:",
       "ofFive": "{level} מתוך {max}",
       "note": "המפה והדירוג החושי הם הערכה ראשונית לצורך הדמו, ויעודכנו יחד עם צוות המלר״ד ואלו״ט. מיקום מדויק של אזורים ייקבע לפי המחלקה בפועל."
     },
@@ -169,7 +168,6 @@
       "title": "Where are we?",
       "subtitle": "Every place in the ER has its own character. Here you can see where it is loud, where you can rest, and where you go next from there.",
       "bubble": "The coloured circles show how much noise, light, smell and people there are in each place. Green = a little, red = a lot.",
-      "next": "What's next?",
       "ofFive": "{level} of {max}",
       "note": "The map and the sensory ratings are a first estimate for the demo, and will be updated together with the Laniado ER team. The exact locations of the areas will be set by the actual department."
     },
@@ -277,7 +275,6 @@
       "title": "Где мы?",
       "subtitle": "В каждом месте приёмного покоя свой характер. Здесь видно, где шумно, где можно отдохнуть и куда идти дальше.",
       "bubble": "Цветные кружки показывают, сколько шума, света, запахов и людей есть в каждом месте. Зелёный = мало, красный = много.",
-      "next": "Что дальше?",
       "ofFive": "{level} из {max}",
       "note": "Карта и сенсорные оценки — первичная оценка для демо. Их обновят вместе с командой приёмного покоя Ланиадо. Точное расположение зон определится по самому отделению."
     },
