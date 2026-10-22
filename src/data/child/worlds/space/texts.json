@@ -8,19 +8,19 @@
       },
       "wait-before-triage": {
         "label": "תא ההמתנה",
-        "hint": "ממתינים בתחנה עד שהטכנאי קורא לבדיקה"
+        "hint": "ממתינים בתחנה עד שמהנדס הטיסה קורא לבדיקה"
       },
       "triage": {
         "label": "בדיקות לפני המראה",
-        "hint": "הטכנאי בודק שאתה מוכן/ה לטיסה"
+        "hint": "מהנדס הטיסה בודק שאנחנו מוכנים לטיסה"
       },
       "wait-doctor": {
         "label": "חדר בקרה",
         "hint": "ממתינים לקברניט שיסיים תדרוך"
       },
       "doctor": {
-        "label": "פגישה עם הקברניט",
-        "hint": "הקברניט קובע את מסלול הטיסה"
+        "label": "פגישה עם מפקד החללית",
+        "hint": "מפקד החללית קובע את מסלול הטיסה"
       },
       "decision": {
         "label": "נחיתה מוצלחת!",
@@ -44,17 +44,17 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "הטכנאי מודד את חום גוף האסטרונאוט לפני ההמראה — כדי לוודא שהגוף כשיר למשימה.",
+      "temperature": "מהנדס הטיסה מודד את חום גוף האסטרונאוט לפני ההמראה — כדי לוודא שהגוף כשיר למשימה.",
       "saturation": "חיישן החמצן בודק שמספיק אוויר זורם בדם — בדיוק כמו שעובד בחליפת החלל.",
-      "blood-pressure": "הטכנאי מודד את לחץ הדם כדי לוודא שהגוף מוכן לתנאי המשימה.",
-      "doctor-exam": "הקברניט בוחן את האסטרונאוט לפני ההמראה — ממנו/ה יוחלט מהי המשימה הבאה.",
+      "blood-pressure": "מהנדס הטיסה מודד את לחץ הדם כדי לוודא שהגוף מוכן לתנאי המשימה.",
+      "doctor-exam": "מפקד החללית בוחן את האסטרונאוט לפני ההמראה — לפי הבדיקה יוחלט מהי המשימה הבאה.",
       "blood-test": "מעבדת התחנה צריכה דגימת דם קטנה כדי לנתח את מצב הגוף לקראת הטיסה.",
       "urine": "בדיקת דגימה מיוחדת — כוסית שתגלה לקברניט שהגוף מוכן לתנאי החלל.",
       "xray": "סורק התחנה מצלם את מבנה הגוף מבפנים — בדיוק כמו סריקות שמבצעים באסטרונאוטים.",
       "ultrasound": "ג׳ל הסריקה מאפשר לסונאר לנוע בתוך הגוף ולמצוא מה שצריך לתקן.",
       "ct": "הטבעת הגדולה בונה מפה תלת-ממדית של הגוף — כמו מיפוי כוכב לא ידוע.",
       "iv": "הצינור הדק מזרים נוזלי חיוניים ישירות לדם — כמו מערכת ההזנה של תחנת החלל.",
-      "medication": "הקברניט הכין את תרכובת הריפוי — כמוסה או סירופ שיחזיר את האסטרונאוט לכוחותיו/ה.",
+      "medication": "הטכנאי הכין את תרכובת הריפוי — כמוסה או סירופ שיחזיר את האסטרונאוט לכוחותיו.",
       "inhalation": "אדי התרופה דרך המסכה פותחים את נתיב האוויר — בדיוק כמו מערכת הנשמה בחלל.",
       "stitches": "הטכנאי מתקן את הפגיעה בזהירות — דבק מיוחד שיאחה מה שנפגע במשימה.",
       "cast": "שריון גבס מחזיק את העצם יציבה — כמו מסגרת התחנה שמחזיקה הכל במקום.",
@@ -67,19 +67,19 @@
         {
           "label": "בפה",
           "steps": [
-            "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-            "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
-            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-            "שומעים ביפ קטן — וזהו, סיימנו."
+            "מהנדס הטיסה נותן לנו מדחום קטן — שמים אותו בפה.",
+            "סוגרים את הפה חזק־חזק, כאילו יש בפנים כוכב קטן.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר להסתכל על הכוכבים מהחלון.",
+            "שומעים ביפ קטן — מהנדס הטיסה כותב ביומן התחנה, וסיימנו."
           ]
         },
         {
           "label": "מתחת לבית השחי",
           "steps": [
-            "שמים חתיכת פלסטיק קטנה עם חוט מתחת לבית השחי.",
-            "מצמידים את הזרוע לגוף ומחזיקים בעדינות.",
-            "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-            "שומעים ביפ קטן — וזהו, סיימנו."
+            "מהנדס הטיסה שם מדחום קטן מתחת לבית השחי.",
+            "מצמידים את הזרוע לגוף, כאילו סוגרים חליפת חלל.",
+            "מחכים בשקט עד שהמדחום מסיים — אפשר להסתכל על הכוכבים מהחלון.",
+            "שומעים ביפ קטן — מהנדס הטיסה כותב ביומן התחנה, וסיימנו."
           ]
         }
       ],
@@ -87,121 +87,121 @@
         {
           "label": "עם אלחוש",
           "steps": [
-            "שמים קודם חומר קריר שמרדים את האזור, ומכסים במדבקה שקופה.",
-            "מחכים קצת עד שהקסם עובד והאזור של החתך \"הולך לישון\".",
-            "הרופא או הרופאה מחזיקים את האזור וסוגרים אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
+            "קודם הטכנאי מורח חומר קריר שמרדים את האזור, ומכסה בסרט שקוף.",
+            "מחכים קצת עד שהאזור של החתך \"הולך לישון\", כמו בחוסר משקל.",
+            "הטכנאי מחזיק את האזור וסוגר אותו בדבק (כמו דבק מהגן, רק נקי) או בתפרים קטנים — לא כואב.",
             "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והטכנאי שם חבישה נקייה מלמעלה."
           ]
         },
         {
           "label": "בלי אלחוש",
           "steps": [
-            "לא צריך להרדים את האזור — מתחילים ישר.",
-            "הרופא או הרופאה מחזיקים את האזור ושמים עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+            "לא צריך להרדים את האזור — הטכנאי מתחיל מיד.",
+            "הטכנאי מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
             "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
+            "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והטכנאי שם חבישה נקייה מלמעלה."
           ]
         }
       ]
     },
     "procedureSteps": {
       "temperature": [
-        "מכניסים לפה חתיכת פלסטיק קטנה עם חוט.",
-        "סוגרים את הפה חזק־חזק, כאילו יש סוכריה בפנים.",
-        "מחכים רגע קצר בשקט, עד שהמכשיר מסיים.",
-        "שומעים ביפ קטן — וזהו, סיימנו."
+        "מהנדס הטיסה נותן לנו מדחום קטן — שמים אותו בפה.",
+        "סוגרים את הפה חזק־חזק, כאילו יש בפנים כוכב קטן.",
+        "מחכים בשקט עד שהמדחום מסיים — אפשר להסתכל על הכוכבים מהחלון.",
+        "שומעים ביפ קטן — מהנדס הטיסה כותב ביומן התחנה, וסיימנו."
       ],
       "saturation": [
-        "שמים אטב קטן ורך על האצבע.",
-        "נדלק בו אור אדום קטן.",
+        "מהנדס הטיסה שם אטב קטן ורך על האצבע.",
+        "נדלק בו אור אדום — כמו נורית על לוח התחנה.",
         "הוא רק מסתכל — לא עושה כלום.",
-        "אחרי רגע מורידים אותו."
+        "אחרי רגע מהנדס הטיסה מוריד אותו."
       ],
       "blood-pressure": [
-        "שמים שרוול רך על הזרוע.",
-        "הוא מתנפח ולוחץ כמו חיבוק חזק.",
-        "סופרים עד כמה, והוא משחרר לבד.",
+        "מהנדס הטיסה שם שרוול רך על הזרוע.",
+        "הוא מתנפח ומחבק את הזרוע, כמו חליפת חלל רכה.",
+        "סופרים יחד עם מהנדס הטיסה, והשרוול משחרר לבד.",
         "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
-        "נפגוש רופא או רופאה שרוצים לעזור לנו.",
-        "הם מקשיבים לגוף עם סטטוסקופ — קצת קר, לא כואב.",
-        "אולי יסתכלו בגרון ובאוזניים עם אור קטן.",
-        "בסוף הבדיקה הצוות יידע מה כדאי לעשות כדי לעזור לנו."
+        "נפגוש את מפקד החללית, שרוצה לעזור לנו.",
+        "מפקד החללית מקשיב לגוף עם צינור — קצת קריר, לא כואב.",
+        "אולי מפקד החללית יסתכל בגרון ובאוזניים עם אור קטן, כמו כוכב.",
+        "בסוף מפקד החללית יידע איזה טיפול נחוץ לנו."
       ],
       "blood-test": [
-        "שמים משחה שעושה את העור פחות רגיש.",
-        "גומייה רכה מתהדקת על הזרוע.",
-        "דקירה קטנה וקצרה — ואפשר להסתכל על משהו אחר.",
-        "שמים פלסטר — כל הכבוד לנו!"
+        "מהנדס הטיסה מורח משחה שעושה את העור פחות רגיש.",
+        "סרט רך מתהדק על הזרוע, כמו רצועה של חליפת חלל.",
+        "דקירה קטנה וקצרה — ומסתכלים על הכוכבים מהחלון.",
+        "טיפת הדם נשלחת למעבדת התחנה, ומהנדס הטיסה מדביק פלסטר — כל הכבוד לנו!"
       ],
       "urine": [
-        "הולכים לשירותים כמו תמיד.",
+        "הולכים לשירותים, כמו תמיד.",
         "עושים קצת פיפי לתוך כוס קטנה.",
-        "נותנים את הכוס לאחות.",
+        "נותנים את הכוס למהנדס הטיסה, והוא לוקח את הדגימה למעבדת התחנה.",
         "זהו!"
       ],
       "xray": [
-        "נכנסים לחדר עם מכונה גדולה.",
-        "לפעמים מלבישים לבוש כבד שמגן על הגוף, ולפעמים גם צווארון.",
-        "עומדים או שוכבים בנחת, כמו פסל.",
-        "המכונה מצלמת תמונה — לא מרגישים כלום.",
+        "נכנסים לחדר הסורק של התחנה.",
+        "לפעמים מלבישים לבוש כבד שמגן על הגוף.",
+        "עומדים או שוכבים בנחת, כמו בחוסר משקל.",
+        "הסורק מצלם את העצמות — לא מרגישים כלום.",
         "סיימנו, אפשר לזוז שוב."
       ],
       "ultrasound": [
-        "שוכבים בנחת על מיטה.",
+        "שוכבים בנחת על מיטה, כמו בתא.",
         "מורחים ג׳ל קצת קר על הבטן.",
-        "מכשיר חלק מחליק ומצייר תמונה על מסך — לפעמים לוחצים קצת, וזה בסדר.",
+        "חיישן חלק מחליק ומצייר מפה על המסך — לפעמים לוחצים קצת, וזה בסדר.",
         "אם מפריע אפשר לבקש רגע הפסקה.",
         "מנגבים את הג׳ל — וסיימנו."
       ],
       "ct": [
         "שוכבים על מיטה נוחה.",
-        "המיטה זזה לאט לתוך טבעת גדולה.",
-        "שומעים רעש, ושוכבים בנחת כמו פסל.",
+        "המיטה זזה לאט לתוך הטבעת הגדולה של התחנה.",
+        "שומעים זמזום שקט, ושוכבים בנחת, כמו בחוסר משקל.",
         "המיטה חוזרת החוצה — סיימנו."
       ],
       "iv": [
-        "שמים משחה שמרגיעה את העור.",
-        "דקירה קצרה, ואז מכניסים צינור רך ודק.",
-        "מוציאים את המחט, והצינור הרך נשאר לתת נוזלים.",
-        "מדביקים מדבקה שמחזיקה את הצינור הרך במקום."
+        "טכנאי התחנה מורח משחה שמרגיעה את העור.",
+        "דקירה קצרה, ואז הטכנאי מכניס צינור רך ודק.",
+        "מוציאים את המחט, והצינור הרך נשאר כדי שהמים יטפטפו לאט — כמו ממערכת האספקה של התחנה.",
+        "הטכנאי מדביק פלסטר שמחזיק את הצינור במקום."
       ],
       "medication": [
-        "מקבלים תרופה שעוזרת לגוף.",
-        "לפעמים שותים קצת סירופ.",
-        "ולפעמים דרך הצינור הרך.",
-        "ואפשר מים אחרי בשביל הטעם."
+        "טכנאי התחנה מביא תרופה שעוזרת לגוף.",
+        "לפעמים שותים קצת סירופ מכפית קטנה.",
+        "ולפעמים התרופה נכנסת דרך הצינור הרך.",
+        "ואפשר לשתות מים מבקבוק קטן אחרי, בשביל הטעם."
       ],
       "inhalation": [
-        "שמים על הפנים מסכה רכה עם אוויר קריר.",
-        "לא צריך לנשום בכוח — רק נושמים רגיל.",
-        "לפעמים טיפה מדגדג בעיניים, ואפשר לבקש שהאוויר ייצא לאט יותר.",
-        "אפשר לצפות בסרטון בזמן הזה. אחרי כמה דקות מסירים — סיימנו."
+        "הטכנאי שם על הפנים מסכה רכה עם אוויר קריר.",
+        "לא צריך לנשום בכוח — רק נושמים רגיל, כמו בתא שקט.",
+        "לפעמים טיפה מדגדג באף, ואפשר לבקש שהאוויר ייצא לאט יותר.",
+        "אפשר לצפות בסרטון בזמן הזה. אחרי כמה דקות הטכנאי מוריד את המסכה — סיימנו."
       ],
       "stitches": [
-        "לא צריך להרדים את האזור — מתחילים ישר.",
-        "הרופא או הרופאה מחזיקים את האזור ושמים עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
+        "לא צריך להרדים את האזור — הטכנאי מתחיל מיד.",
+        "הטכנאי מחזיק את האזור ושם עליו דבק (כמו דבק מהגן, רק נקי) — לא כואב.",
         "בזמן הזה אפשר לצפות בפלאפון, לדבר עם אמא ואבא או לשמוע סיפור.",
-        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, ושמים חבישה נקייה מלמעלה."
+        "אם הדבק מתחמם קצת — עושים אוויר קר בפנים, והטכנאי שם חבישה נקייה מלמעלה."
       ],
       "cast": [
         "בוחרים אם לשבת או לשכב, ואם אמא או אבא יהיו לידנו.",
-        "עוטפים את היד או הרגל בשכבות רכות.",
-        "עכשיו מחכים רגע בסבלנות בלי לזוז — אי אפשר לעצור באמצע, כדי שהגבס יתאים בדיוק.",
-        "הגבס מתקשה לאט ושומר על העצם — וכך היא מחלימה."
+        "הטכנאי עוטף את היד או הרגל בשכבות רכות.",
+        "עכשיו מחכים רגע בסבלנות בלי לזוז, כמו בחוסר משקל — אי אפשר לעצור באמצע, כדי שהגבס יתאים בדיוק.",
+        "הגבס מתקשה לאט ומחזיק את העצם במקום, כמו שלד התחנה מחזיק הכל — וכך היא מחלימה."
       ],
       "bandage": [
-        "עוטפים תחבושת רכה סביב האזור.",
-        "עוטפים בנחת, שכבה על שכבה.",
-        "מדביקים בסוף — נעים ומוגן."
+        "הטכנאי עוטף תחבושת רכה סביב האזור.",
+        "בעדינות, שכבה על שכבה, כמו מעטפת מגן.",
+        "בסוף הטכנאי מדביק — נעים ומוגן, ואפשר להמשיך בתחנה."
       ],
       "waiting-results": [
-        "סיימנו את הבדיקות — כל הכבוד לנו!",
-        "עכשיו מחכים לתשובות. אפשר לשחק, לנוח או לראות סרטון.",
-        "הצוות עובד בשביל לעזור לנו. לא שכחו אותנו.",
-        "כשיהיו תשובות — הרופא או הרופאה יבואו לספר לנו."
+        "סיימנו את כל הבדיקות — כל הכבוד לנו!",
+        "עכשיו מחכים לתוצאות בתא. אפשר לשחק, לנוח או לראות סרטון.",
+        "מעבדת התחנה בודקת את הדגימות שלנו, ומהנדס הטיסה והטכנאי לא שכחו אותנו.",
+        "כשיהיו תוצאות — מפקד החללית יבוא לספר לנו."
       ]
     },
     "calmLines": [
@@ -219,19 +219,19 @@
       },
       "wait-before-triage": {
         "label": "Waiting Cabin",
-        "hint": "We wait at the station until the technician calls us for the check"
+        "hint": "We wait at the station until the flight engineer calls us for the check"
       },
       "triage": {
         "label": "Checks Before Launch",
-        "hint": "The technician checks that you are ready to fly"
+        "hint": "The flight engineer checks that we are ready to fly"
       },
       "wait-doctor": {
         "label": "Control Room",
-        "hint": "We wait for the commander to finish the briefing"
+        "hint": "We wait for the ship commander to finish the briefing"
       },
       "doctor": {
-        "label": "Meeting the Commander",
-        "hint": "The commander sets the flight route"
+        "label": "Meeting the Ship Commander",
+        "hint": "The ship commander sets the flight route"
       },
       "decision": {
         "label": "Successful Landing!",
@@ -255,17 +255,17 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "The technician measures the astronaut's body temperature before the launch — to make sure the body is fit for the mission.",
+      "temperature": "The flight engineer measures the astronaut's body temperature before the launch — to make sure the body is fit for the mission.",
       "saturation": "The oxygen sensor checks that enough air flows in the blood — just like in a space suit.",
-      "blood-pressure": "The technician measures the blood pressure to make sure the body is ready for the conditions of the mission.",
-      "doctor-exam": "The commander examines the astronaut before the launch — the next mission will be decided from it.",
+      "blood-pressure": "The flight engineer measures the blood pressure to make sure the body is ready for the conditions of the mission.",
+      "doctor-exam": "The ship commander examines the astronaut before the launch — the next mission will be decided from it.",
       "blood-test": "The station lab needs a small blood sample to analyse the state of the body before the flight.",
-      "urine": "A special sample test — a cup that will show the commander that the body is ready for space conditions.",
+      "urine": "A special sample test — a cup that will show the ship commander that the body is ready for space conditions.",
       "xray": "The station scanner takes a picture of the body's structure from the inside — just like the scans done on astronauts.",
       "ultrasound": "The scanning gel lets the sonar move inside the body and find what needs fixing.",
       "ct": "The big ring builds a 3D map of the body — like mapping an unknown star.",
       "iv": "A thin tube sends essential liquids straight into the blood — like the feeding system of a space station.",
-      "medication": "The commander has prepared a healing mixture — a capsule or a syrup that will return the astronaut to full strength.",
+      "medication": "The station technician has prepared a healing mixture — a capsule or a syrup that will return the astronaut to full strength.",
       "inhalation": "Medicine vapours through the mask open the airway — just like the breathing system in space.",
       "stitches": "The technician carefully repairs the injury — a special glue that will join what was damaged on the mission.",
       "cast": "A plaster armour holds the bone still — like the station's frame that keeps everything in place.",
@@ -278,19 +278,19 @@
         {
           "label": "In the mouth",
           "steps": [
-            "We put a small plastic tip with a wire in the mouth.",
-            "We close the mouth tight-tight, like there's a candy inside.",
-            "We wait quietly for a short moment, until the device is done.",
-            "We hear a little beep — and that's it, we're done."
+            "The flight engineer gives us a little thermometer — we put it in the mouth.",
+            "We close the mouth tight-tight, as if there is a tiny star inside.",
+            "We wait quietly until the thermometer is done — we can look at the stars through the window.",
+            "We hear a little beep — the flight engineer writes it in the station log, and we're done."
           ]
         },
         {
           "label": "Under the armpit",
           "steps": [
-            "We put a small plastic tip with a wire under the arm.",
-            "We press the arm to the body and hold it gently.",
-            "We wait quietly for a short moment, until the device is done.",
-            "We hear a little beep — and that's it, we're done."
+            "The flight engineer puts a little thermometer under the arm.",
+            "We press the arm to the body, as if zipping up a spacesuit.",
+            "We wait quietly until the thermometer is done — we can look at the stars through the window.",
+            "We hear a little beep — the flight engineer writes it in the station log, and we're done."
           ]
         }
       ],
@@ -298,121 +298,121 @@
         {
           "label": "With numbing",
           "steps": [
-            "First they put something cool on the spot to make it sleepy, and cover it with a clear sticker.",
-            "We wait a little until the magic works and the spot around the cut “goes to sleep”.",
-            "The doctor holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
+            "First the technician puts something cool on the spot to make it sleepy, and covers it with a clear film.",
+            "We wait a little until the spot around the cut “goes to sleep”, like in weightlessness.",
+            "The technician holds the spot and closes it with glue (like kindergarten glue, only clean) or with tiny stitches — it doesn't hurt.",
             "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
-            "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
+            "If the glue gets a little warm, someone blows cool air on the face, and the technician puts a clean bandage on top."
           ]
         },
         {
           "label": "Without numbing",
           "steps": [
-            "There's no need to make the spot sleepy — we start right away.",
-            "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+            "There's no need to make the spot sleepy — the technician starts right away.",
+            "The technician holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
             "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
-            "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
+            "If the glue gets a little warm, someone blows cool air on the face, and the technician puts a clean bandage on top."
           ]
         }
       ]
     },
     "procedureSteps": {
       "temperature": [
-        "We put a small plastic tip with a wire in the mouth.",
-        "We close the mouth tight-tight, like there's a candy inside.",
-        "We wait quietly for a short moment, until the device is done.",
-        "We hear a little beep — and that's it, we're done."
+        "The flight engineer gives us a little thermometer — we put it in the mouth.",
+        "We close the mouth tight-tight, as if there is a tiny star inside.",
+        "We wait quietly until the thermometer is done — we can look at the stars through the window.",
+        "We hear a little beep — the flight engineer writes it in the station log, and we're done."
       ],
       "saturation": [
-        "We put a small, soft clip on the finger.",
-        "A little red light turns on inside it.",
+        "The flight engineer puts a small, soft clip on the finger.",
+        "A red light turns on inside it — like an indicator on the station panel.",
         "It only looks — it doesn't do anything.",
-        "After a moment they take it off."
+        "After a moment the flight engineer takes it off."
       ],
       "blood-pressure": [
-        "We put a soft cuff on the arm.",
-        "It fills with air and squeezes like a big hug.",
-        "We count together, and it lets go by itself.",
-        "Then they take the cuff off — and that's it, all done."
+        "The flight engineer puts a soft cuff on the arm.",
+        "It fills with air and hugs the arm, like a soft spacesuit.",
+        "We count together with the flight engineer, and the cuff lets go by itself.",
+        "Then the cuff comes off — and that's it, all done."
       ],
       "doctor-exam": [
-        "We meet a doctor who wants to help us.",
-        "The doctor listens to the body with a stethoscope — a little cold, but it doesn't hurt.",
-        "Maybe the doctor will look in the throat and ears with a small light.",
-        "At the end, the doctor will know what to do to help us."
+        "We meet the ship commander, who wants to help us.",
+        "The commander listens to the body with a tube — a little cool, but it does not hurt.",
+        "Maybe the commander will look in the throat and ears with a small light, like a little star.",
+        "At the end the commander will know what treatment we need."
       ],
       "blood-test": [
-        "They put a cream on the skin that makes it less sensitive.",
-        "A soft band gets snug around the arm.",
-        "A tiny, quick prick — and we can look at something else.",
-        "They put a small bandage on — well done!"
+        "The flight engineer puts a cream on the skin that makes it less sensitive.",
+        "A soft band wraps around the arm, like a spacesuit strap.",
+        "A tiny, quick prick — and we look at the stars through the window.",
+        "The drop of blood goes to the station lab, and the flight engineer puts on a plaster — well done!"
       ],
       "urine": [
-        "We go to the toilet like always.",
+        "We go to the toilet, like always.",
         "We pee a little into a small cup.",
-        "We give the cup to the nurse.",
+        "We give the cup to the flight engineer, who takes the sample to the station lab.",
         "That's it!"
       ],
       "xray": [
-        "We go into a room with a big machine.",
-        "Sometimes they put a heavy cover on that protects the body, and sometimes a collar too.",
-        "We stand or lie calmly, like a statue.",
-        "The machine takes a picture — we don't feel anything.",
+        "We go into the station scanner room.",
+        "Sometimes they put a heavy cover on that protects the body.",
+        "We stand or lie calmly, like in weightlessness.",
+        "The scanner takes a picture of the bones — we don't feel anything.",
         "We're done, we can move again."
       ],
       "ultrasound": [
-        "We lie calmly on a bed.",
+        "We lie calmly on a bed, like in the cabin.",
         "They spread a slightly cold gel on the tummy.",
-        "A smooth device glides and draws a picture on a screen — sometimes it presses a little, and that's okay.",
+        "A smooth sensor glides and draws a map on the screen — sometimes it presses a little, and that's okay.",
         "If it bothers us, we can ask for a little break.",
         "They wipe off the gel — and we're done."
       ],
       "ct": [
         "We lie on a comfy bed.",
-        "The bed slowly moves into a big ring.",
-        "We hear a noise, and we lie calmly like a statue.",
+        "The bed slowly moves into the big ring of the station.",
+        "We hear a quiet hum and lie calmly, like in weightlessness.",
         "The bed comes back out — we're done."
       ],
       "iv": [
-        "They put a cream on the skin that calms it.",
-        "A short prick, and then a soft, thin tube goes in.",
-        "They take the needle out, and the soft tube stays to give fluids.",
-        "They put a sticker on that holds the soft tube in place."
+        "The station technician puts a cream on the skin that calms it.",
+        "A short prick, and then the technician puts in a soft, thin tube.",
+        "They take the needle out, and the soft tube stays so water can drip in slowly — like from the station feeding system.",
+        "The technician puts on a plaster that holds the tube in place."
       ],
       "medication": [
-        "We get medicine that helps the body.",
-        "Sometimes we drink a little syrup.",
-        "Sometimes it goes in through the soft tube.",
-        "And we can have some water afterwards for the taste."
+        "The station technician brings medicine that helps the body.",
+        "Sometimes we drink a little syrup from a tiny spoon.",
+        "Sometimes the medicine goes in through the soft tube.",
+        "And we can have some water from a small bottle afterwards for the taste."
       ],
       "inhalation": [
-        "We put a soft mask with cool air on the face.",
-        "We don't need to breathe hard — we just breathe normally.",
-        "Sometimes it tickles the eyes a little, and we can ask for the air to come out slower.",
-        "We can watch a video meanwhile. After a few minutes they take it off — we're done."
+        "The technician puts a soft mask with cool air on the face.",
+        "We don't need to breathe hard — we just breathe normally, like in a quiet cabin.",
+        "Sometimes it tickles the nose a little, and we can ask for the air to come out slower.",
+        "We can watch a video meanwhile. After a few minutes the technician takes the mask off — we're done."
       ],
       "stitches": [
-        "There's no need to make the spot sleepy — we start right away.",
-        "The doctor holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
+        "There's no need to make the spot sleepy — the technician starts right away.",
+        "The technician holds the spot and puts glue on it (like kindergarten glue, only clean) — it doesn't hurt.",
         "Meanwhile we can watch something on the phone, talk with mom and dad, or listen to a story.",
-        "If the glue gets a little warm, someone blows cool air on the face, and they put a clean bandage on top."
+        "If the glue gets a little warm, someone blows cool air on the face, and the technician puts a clean bandage on top."
       ],
       "cast": [
         "We choose whether to sit or lie down, and whether mom or dad stays close.",
-        "They wrap the arm or leg in soft layers.",
-        "Now we wait patiently for a moment without moving — we can't stop in the middle, so the cast fits just right.",
-        "The cast slowly gets hard and keeps the bone safe — and lets it heal."
+        "The technician wraps the arm or leg in soft layers.",
+        "Now we wait patiently for a moment without moving, like in weightlessness — we can't stop in the middle, so the cast fits just right.",
+        "The cast slowly hardens and holds the bone in place, like the station frame holds everything — and it heals."
       ],
       "bandage": [
-        "They wrap a soft bandage around the spot.",
-        "They wrap it gently, layer after layer.",
-        "At the end they stick it down — cosy and protected."
+        "The technician wraps a soft bandage around the spot.",
+        "Gently, layer after layer, like a protective shell.",
+        "At the end the technician sticks it down — cosy and protected, ready to move on through the station."
       ],
       "waiting-results": [
-        "We finished the tests — well done!",
-        "Now we wait for the answers. We can play, rest or watch a video.",
-        "The team is working to help us. They haven't forgotten us.",
-        "When the answers are ready, the doctor will come and tell us."
+        "We finished all the checks — well done!",
+        "Now we wait for the results in the cabin. We can play, rest or watch a video.",
+        "The station lab is studying our samples, and the flight engineer and the technician haven't forgotten us.",
+        "When the results are ready, the commander will come and tell us."
       ]
     },
     "calmLines": [
@@ -430,19 +430,19 @@
       },
       "wait-before-triage": {
         "label": "Каюта ожидания",
-        "hint": "Ждём на станции, пока техник позовёт на проверку"
+        "hint": "Ждём на станции, пока бортинженер позовёт на проверку"
       },
       "triage": {
         "label": "Проверки перед взлётом",
-        "hint": "Техник проверяет, что ты готов(а) к полёту"
+        "hint": "Бортинженер проверяет, что мы готовы к полёту"
       },
       "wait-doctor": {
         "label": "Диспетчерская",
-        "hint": "Ждём, пока командир закончит инструктаж"
+        "hint": "Ждём, пока командир корабля закончит инструктаж"
       },
       "doctor": {
         "label": "Встреча с командиром",
-        "hint": "Командир определяет маршрут полёта"
+        "hint": "Командир корабля определяет маршрут полёта"
       },
       "decision": {
         "label": "Удачная посадка!",
@@ -466,17 +466,17 @@
       }
     },
     "procedureNarratives": {
-      "temperature": "Техник измеряет температуру тела космонавта перед стартом — чтобы убедиться, что тело готово к миссии.",
+      "temperature": "Бортинженер измеряет температуру тела космонавта перед стартом — чтобы убедиться, что тело готово к миссии.",
       "saturation": "Датчик кислорода проверяет, что в крови течёт достаточно воздуха — точно так же, как в скафандре.",
-      "blood-pressure": "Техник измеряет давление, чтобы убедиться, что тело готово к условиям миссии.",
-      "doctor-exam": "Командир осматривает космонавта перед стартом — по этому осмотру решат, какая миссия будет следующей.",
+      "blood-pressure": "Бортинженер измеряет давление, чтобы убедиться, что тело готово к условиям миссии.",
+      "doctor-exam": "Командир корабля осматривает космонавта перед стартом — по этому осмотру решат, какая миссия будет следующей.",
       "blood-test": "Лаборатории станции нужен небольшой образец крови, чтобы проанализировать состояние тела перед полётом.",
-      "urine": "Особый анализ образца — чашка, которая покажет командиру, что тело готово к условиям космоса.",
+      "urine": "Особый анализ образца — чашка, которая покажет командиру корабля, что тело готово к условиям космоса.",
       "xray": "Сканер станции снимает строение тела изнутри — точно так же, как сканируют космонавтов.",
       "ultrasound": "Гель для сканирования позволяет сонару двигаться внутри тела и находить то, что нужно починить.",
       "ct": "Большое кольцо строит трёхмерную карту тела — как картографирование неизвестной звезды.",
       "iv": "Тонкая трубка подаёт жизненно важные жидкости прямо в кровь — как система питания космической станции.",
-      "medication": "Командир приготовил целебную смесь — капсулу или сироп, которые вернут космонавта к силам.",
+      "medication": "Техник станции приготовил целебную смесь — капсулу или сироп, которые вернут космонавта к силам.",
       "inhalation": "Пары лекарства через маску открывают дыхательные пути — точно так же, как система дыхания в космосе.",
       "stitches": "Техник аккуратно чинит повреждение — особый клей соединит то, что пострадало в миссии.",
       "cast": "Гипсовый доспех держит кость неподвижно — как каркас станции, который удерживает всё на месте.",
@@ -489,19 +489,19 @@
         {
           "label": "Во рту",
           "steps": [
-            "В рот кладём маленький пластиковый наконечник с проводком.",
-            "Крепко-крепко закрываем рот, как будто там конфета.",
-            "Тихонько ждём чуть-чуть, пока прибор закончит.",
-            "Слышим тихое «бип» — и всё, готово."
+            "Бортинженер даёт нам маленький градусник — кладём его в рот.",
+            "Крепко-крепко закрываем рот, как будто там маленькая звёздочка.",
+            "Тихонько ждём, пока градусник закончит, — можно посмотреть в иллюминатор на звёзды.",
+            "Слышим тихое «бип» — бортинженер записывает в журнал станции, и всё, готово."
           ]
         },
         {
           "label": "Под мышкой",
           "steps": [
-            "Под мышку кладём маленький пластиковый наконечник с проводком.",
-            "Прижимаем руку к телу и мягко держим.",
-            "Тихонько ждём чуть-чуть, пока прибор закончит.",
-            "Слышим тихое «бип» — и всё, готово."
+            "Бортинженер кладёт маленький градусник под мышку.",
+            "Прижимаем руку к телу, как будто застёгиваем скафандр.",
+            "Тихонько ждём, пока градусник закончит, — можно посмотреть в иллюминатор на звёзды.",
+            "Слышим тихое «бип» — бортинженер записывает в журнал станции, и всё, готово."
           ]
         }
       ],
@@ -509,121 +509,121 @@
         {
           "label": "С обезболиванием",
           "steps": [
-            "Сначала мажут прохладное средство, от которого место засыпает, и закрывают его прозрачной наклейкой.",
-            "Немного ждём, пока волшебство подействует и место пореза «уснёт».",
-            "Врач держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
+            "Сначала техник мажет прохладное средство, от которого место засыпает, и закрывает его прозрачной плёнкой.",
+            "Немного ждём, пока место пореза «уснёт», как в невесомости.",
+            "Техник держит это место и закрывает его клеем (как клей из садика, только чистый) или маленькими швами — не больно.",
             "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху техник накладывает чистую повязку."
           ]
         },
         {
           "label": "Без обезболивания",
           "steps": [
-            "Обезболивать не нужно — начинают сразу.",
-            "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+            "Обезболивать не нужно — техник начинает сразу.",
+            "Техник держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
             "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
+            "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху техник накладывает чистую повязку."
           ]
         }
       ]
     },
     "procedureSteps": {
       "temperature": [
-        "В рот кладём маленький пластиковый наконечник с проводком.",
-        "Крепко-крепко закрываем рот, как будто там конфета.",
-        "Тихонько ждём чуть-чуть, пока прибор закончит.",
-        "Слышим тихое «бип» — и всё, готово."
+        "Бортинженер даёт нам маленький градусник — кладём его в рот.",
+        "Крепко-крепко закрываем рот, как будто там маленькая звёздочка.",
+        "Тихонько ждём, пока градусник закончит, — можно посмотреть в иллюминатор на звёзды.",
+        "Слышим тихое «бип» — бортинженер записывает в журнал станции, и всё, готово."
       ],
       "saturation": [
-        "На палец надеваем маленькую мягкую прищепку.",
-        "В ней загорается маленький красный огонёк.",
+        "Бортинженер надевает на палец маленькую мягкую прищепку.",
+        "В ней загорается красный огонёк — как индикатор на пульте станции.",
         "Она только смотрит — ничего не делает.",
-        "Через минутку её снимают."
+        "Через минутку бортинженер её снимает."
       ],
       "blood-pressure": [
-        "На руку надеваем мягкую манжету.",
-        "Она надувается и сжимает, как крепкие объятия.",
-        "Мы считаем, и она сама отпускает.",
+        "Бортинженер надевает на руку мягкую манжету.",
+        "Она надувается и обнимает руку, как мягкий скафандр.",
+        "Мы считаем вместе с бортинженером, и манжета сама отпускает.",
         "Потом манжету снимают — и всё, готово."
       ],
       "doctor-exam": [
-        "Встречаем врача, который хочет нам помочь.",
-        "Врач слушает тело стетоскопом — немного холодно, но не больно.",
-        "Может быть, врач посмотрит горло и уши маленьким фонариком.",
-        "В конце врач будет знать, как нам помочь."
+        "Встречаем командира корабля, который хочет нам помочь.",
+        "Командир слушает тело трубочкой — немного прохладно, но не больно.",
+        "Может быть, командир посмотрит горло и уши маленьким фонариком, как звёздочку.",
+        "В конце командир будет знать, какое лечение нам нужно."
       ],
       "blood-test": [
-        "На кожу мажут крем, от которого она становится менее чувствительной.",
-        "Мягкая резинка плотно обхватывает руку.",
-        "Маленький быстрый укол — а мы можем смотреть на что-то другое.",
-        "Клеим пластырь — молодцы!"
+        "Бортинженер мажет на кожу крем, от которого она становится менее чувствительной.",
+        "Мягкая лента обхватывает руку, как ремешок скафандра.",
+        "Маленький быстрый укол — а мы смотрим на звёзды в иллюминатор.",
+        "Капелька крови уезжает в лабораторию станции, а бортинженер клеит пластырь — молодцы!"
       ],
       "urine": [
         "Идём в туалет, как всегда.",
         "Немного писаем в маленький стаканчик.",
-        "Отдаём стаканчик медсестре или медбрату.",
+        "Отдаём стаканчик бортинженеру — он отнесёт образец в лабораторию станции.",
         "Всё!"
       ],
       "xray": [
-        "Мы заходим в комнату с большим аппаратом.",
-        "Может быть, наденут тяжёлую накидку, которая защищает тело, а может быть ещё и воротник.",
-        "Спокойно стоим или лежим, как статуя.",
-        "Аппарат делает снимок — мы ничего не чувствуем.",
+        "Заходим в комнату со сканером станции.",
+        "Может быть, наденут тяжёлую накидку, которая защищает тело.",
+        "Спокойно стоим или лежим, как в невесомости.",
+        "Сканер делает снимок костей — мы ничего не чувствуем.",
         "Готово, можно снова двигаться."
       ],
       "ultrasound": [
-        "Спокойно ложимся на кровать.",
+        "Спокойно ложимся на кровать, как в каюте.",
         "На живот мажут немного холодный гель.",
-        "Гладкий датчик скользит и рисует картинку на экране — иногда немного надавливают, и это нормально.",
+        "Гладкий датчик скользит и рисует на экране карту — иногда немного надавливают, и это нормально.",
         "Если мешает, можно попросить маленький перерыв.",
         "Гель вытирают — и готово."
       ],
       "ct": [
         "Ложимся на удобную кровать.",
-        "Кровать медленно заезжает в большое кольцо.",
-        "Слышим шум и лежим спокойно, как статуя.",
+        "Кровать медленно заезжает в большое кольцо станции.",
+        "Слышим тихий шум и лежим спокойно, как в невесомости.",
         "Кровать выезжает обратно — готово."
       ],
       "iv": [
-        "На кожу мажут крем, который её успокаивает.",
-        "Короткий укол, а потом вводят мягкую тонкую трубочку.",
-        "Иглу вынимают, а мягкая трубочка остаётся, чтобы давать жидкость.",
-        "Приклеивают наклейку, которая держит мягкую трубочку на месте."
+        "Техник станции мажет на кожу крем, который её успокаивает.",
+        "Короткий укол, а потом техник вводит мягкую тонкую трубочку.",
+        "Иглу вынимают, а мягкая трубочка остаётся, чтобы водичка понемногу капала — как из системы питания станции.",
+        "Техник приклеивает пластырь, который держит трубочку на месте."
       ],
       "medication": [
-        "Получаем лекарство, которое помогает телу.",
-        "Иногда пьём немного сиропа.",
-        "Иногда оно идёт через мягкую трубочку.",
-        "А потом можно попить воды, чтобы убрать вкус."
+        "Техник станции приносит лекарство, которое помогает телу.",
+        "Иногда пьём немного сиропа из маленькой тюбика-ложечки.",
+        "Иногда лекарство идёт через мягкую трубочку.",
+        "А потом можно попить воды из бутылочки, чтобы убрать вкус."
       ],
       "inhalation": [
-        "На лицо надеваем мягкую маску с прохладным воздухом.",
-        "Не нужно дышать сильно — просто дышим как обычно.",
-        "Иногда немного щекочет глаза, и можно попросить, чтобы воздух шёл медленнее.",
-        "В это время можно смотреть мультик. Через несколько минут маску снимают — готово."
+        "Техник надевает на лицо мягкую маску с прохладным воздухом.",
+        "Не нужно дышать сильно — просто дышим как обычно, как в тихой каюте.",
+        "Иногда немного щекочет в носу, и можно попросить, чтобы воздух шёл медленнее.",
+        "В это время можно смотреть мультик. Через несколько минут техник снимает маску — готово."
       ],
       "stitches": [
-        "Обезболивать не нужно — начинают сразу.",
-        "Врач держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
+        "Обезболивать не нужно — техник начинает сразу.",
+        "Техник держит это место и наносит на него клей (как клей из садика, только чистый) — не больно.",
         "В это время можно смотреть что-нибудь в телефоне, разговаривать с мамой и папой или слушать сказку.",
-        "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху накладывают чистую повязку."
+        "Если клей немного нагревается — на лицо дуют прохладным воздухом, а сверху техник накладывает чистую повязку."
       ],
       "cast": [
         "Выбираем, сидеть или лежать, и будут ли мама или папа рядом.",
-        "Руку или ногу обматывают мягкими слоями.",
-        "Теперь терпеливо ждём немного и не двигаемся — останавливаться посередине нельзя, чтобы гипс подошёл точно.",
-        "Гипс медленно твердеет и бережёт кость — и она заживает."
+        "Техник обматывает руку или ногу мягкими слоями.",
+        "Теперь терпеливо ждём немного и не двигаемся, как в невесомости — останавливаться посередине нельзя, чтобы гипс подошёл точно.",
+        "Гипс медленно твердеет и держит кость на месте, как каркас станции держит всё, — и она заживает."
       ],
       "bandage": [
-        "Это место обматывают мягким бинтом.",
-        "Обматывают бережно, слой за слоем.",
-        "В конце закрепляют — уютно и надёжно."
+        "Техник обматывает это место мягким бинтом.",
+        "Обматывает бережно, слой за слоем, как защитная оболочка.",
+        "В конце закрепляет — уютно и надёжно, можно идти дальше по станции."
       ],
       "waiting-results": [
         "Мы закончили все проверки — молодцы!",
-        "Теперь ждём ответов. Можно поиграть, отдохнуть или посмотреть мультик.",
-        "Врачи и медсёстры работают, чтобы нам помочь. Про нас не забыли.",
-        "Когда будут ответы, врач придёт и расскажет нам."
+        "Теперь ждём результатов в каюте. Можно поиграть, отдохнуть или посмотреть мультик.",
+        "Лаборатория станции изучает наши образцы, а бортинженер и техник помнят про нас.",
+        "Когда будут результаты, командир придёт и расскажет нам."
       ]
     },
     "calmLines": [
