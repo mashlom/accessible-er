@@ -61,7 +61,9 @@ export function MapPage() {
               <div className={styles.roomBody}>
                 <p>{area.note}</p>
 
-                <SensoryBar sensory={area.sensory} />
+                <div className={styles.roomSense}>
+                  <SensoryBar sensory={area.sensory} />
+                </div>
 
               </div>
             </article>

@@ -1336,6 +1336,11 @@ button.dest {
 }
 
 
+/* the sensory panel sits at the bottom of every room card, so the cards in a row line up */
+.roomSense {
+  margin-top: auto;
+}
+
 /* the description keeps the same gap above the sensory marks as the marks keep above the next step; extra room goes above the marks */
 .roomBody > p:first-child {
   margin: 0 0 var(--space-4);
