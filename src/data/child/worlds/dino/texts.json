@@ -125,10 +125,10 @@
         "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
-        "נפגוש רופא או רופאה שרוצים לעזור לנו.",
-        "הם מקשיבים לגוף עם סטטוסקופ — קצת קר, לא כואב.",
-        "אולי יסתכלו בגרון ובאוזניים עם אור קטן.",
-        "בסוף הבדיקה הצוות יידע מה כדאי לעשות כדי לעזור לנו."
+        "נפגוש את המדריך הראשי שרוצה לעזור לנו.",
+        "המדריך מקשיב לגוף עם סטטוסקופ — קצת קר, לא כואב.",
+        "אולי המדריך יסתכל בגרון ובאוזניים עם אור קטן.",
+        "בסוף המדריך יידע באיזה מסלול ממשיכים."
       ],
       "blood-test": [
         "שומר השמורה מורח משחה שעושה את העור פחות רגיש.",
@@ -198,10 +198,10 @@
         "בסוף החובש מדביק — נעים ומוגן, ואפשר להמשיך בשביל."
       ],
       "waiting-results": [
-        "סיימנו את הבדיקות — כל הכבוד לנו!",
-        "עכשיו מחכים לתשובות. אפשר לשחק, לנוח או לראות סרטון.",
-        "הצוות עובד בשביל לעזור לנו. לא שכחו אותנו.",
-        "כשיהיו תשובות — הרופא או הרופאה יבואו לספר לנו."
+        "סיימנו את כל הבדיקות — כל הכבוד לנו!",
+        "עכשיו מחכים לתשובות במחנה. אפשר לשחק, לנוח או לראות סרטון.",
+        "מעבדת הממצאים בודקת את הדגימות שלנו, ושומר השמורה והמדריך לא שכחו אותנו.",
+        "כשיהיו תשובות — המדריך יבוא לספר לנו."
       ]
     },
     "calmLines": [
@@ -336,10 +336,10 @@
         "Then the cuff comes off — and that's it, all done."
       ],
       "doctor-exam": [
-        "We meet a doctor who wants to help us.",
-        "The doctor listens to the body with a stethoscope — a little cold, but it doesn't hurt.",
-        "Maybe the doctor will look in the throat and ears with a small light.",
-        "At the end, the doctor will know what to do to help us."
+        "We meet the head guide, who wants to help us.",
+        "The guide listens to the body with a stethoscope — a little cold, but it doesn't hurt.",
+        "Maybe the guide will look in the throat and ears with a small light.",
+        "At the end, the guide will know which route to take next."
       ],
       "blood-test": [
         "The ranger puts a cream on the skin that makes it less sensitive.",
@@ -409,10 +409,10 @@
         "At the end the medic sticks it down — cosy and protected, ready for the trail."
       ],
       "waiting-results": [
-        "We finished the tests — well done!",
-        "Now we wait for the answers. We can play, rest or watch a video.",
-        "The team is working to help us. They haven't forgotten us.",
-        "When the answers are ready, the doctor will come and tell us."
+        "We finished all the checks — well done!",
+        "Now we wait for the answers at the camp. We can play, rest or watch a video.",
+        "The finds lab is studying our samples, and the ranger and the guide haven't forgotten us.",
+        "When the answers are ready, the guide will come and tell us."
       ]
     },
     "calmLines": [
@@ -547,10 +547,10 @@
         "Потом манжету снимают — и всё, готово."
       ],
       "doctor-exam": [
-        "Встречаем врача, который хочет нам помочь.",
-        "Врач слушает тело стетоскопом — немного холодно, но не больно.",
-        "Может быть, врач посмотрит горло и уши маленьким фонариком.",
-        "В конце врач будет знать, как нам помочь."
+        "Встречаем главного проводника, который хочет нам помочь.",
+        "Проводник слушает тело стетоскопом — немного холодно, но не больно.",
+        "Может быть, проводник посмотрит горло и уши маленьким фонариком.",
+        "В конце проводник будет знать, по какому маршруту идти дальше."
       ],
       "blood-test": [
         "Смотритель мажет на кожу крем, от которого она становится менее чувствительной.",
@@ -621,9 +621,9 @@
       ],
       "waiting-results": [
         "Мы закончили все проверки — молодцы!",
-        "Теперь ждём ответов. Можно поиграть, отдохнуть или посмотреть мультик.",
-        "Врачи и медсёстры работают, чтобы нам помочь. Про нас не забыли.",
-        "Когда будут ответы, врач придёт и расскажет нам."
+        "Теперь ждём ответов в лагере. Можно поиграть, отдохнуть или посмотреть мультик.",
+        "Лаборатория находок изучает наши образцы, а смотритель и проводник помнят про нас.",
+        "Когда будут ответы, проводник придёт и расскажет нам."
       ]
     },
     "calmLines": [
