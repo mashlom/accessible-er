@@ -265,7 +265,7 @@ export function ParentSheet({
 }
 
 /** One procedure's details for the parent, shown inside the parent sheet (slides in from the "forward" side) */
-function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
+export function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
   const { t, lang, dir } = useI18n()
   const { theme } = useQuestTheme()
   const proc = parentProcedure(lang, pid)

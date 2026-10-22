@@ -1,9 +1,10 @@
 import { keyed } from '../../../lib/keyed'
 import { useI18n } from '../../../hooks/useI18n'
 import { Navigate, Link } from '../../nav'
-import { Panel, Note } from '../components/kit'
+import { Note } from '../components/kit'
 import { useParams } from 'react-router-dom'
 import { parentProcedure } from '../../../data/parent'
+import { ProcedurePanel } from '../../quest/components/ParentInfo'
 import i18nUi from '../../../data/i18n/ui.json'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
@@ -30,31 +31,8 @@ export function BookPage() {
         </h1>
       </header>
 
-      <div className={styles.bookMeta}>
-        <span className={styles.bookMetaChip}>⏱️ {procedure.duration}</span>
-        <span className={styles.bookMetaChip}>👤 {procedure.who}</span>
-      </div>
-
       <div className={shell.stack} style={{ marginTop: 'var(--space-5)' }}>
-        <Panel title={tx.what} emoji="ℹ️">
-          <p>{procedure.what}</p>
-        </Panel>
-        <Panel title={tx.feel} emoji="💛">
-          <p>{procedure.feel}</p>
-        </Panel>
-        <Panel title={tx.prepare} emoji="🎒">
-          <p>{procedure.prepare}</p>
-        </Panel>
-        <Panel title={tx.ask} emoji="🙋">
-          <ul className={styles.suggestList}>
-            {procedure.adaptations.map((a) => (
-              <li key={a}>{a}</li>
-            ))}
-          </ul>
-          <Link to="/distract" className={styles.prepLink} style={{ marginTop: 'var(--space-3)' }}>
-            {tx.distract}
-          </Link>
-        </Panel>
+        <ProcedurePanel pid={procedure.id} />
 
         {/* Placeholder, not a feature: the spec and the first round of feedback
             both ask for filmed clips and social stories alongside the text.
