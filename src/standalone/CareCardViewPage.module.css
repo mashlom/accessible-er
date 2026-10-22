@@ -146,7 +146,7 @@
   font-weight: 700;
 }
 
-/* the staff reads the card on black, as the staff screens do */
+/* the staff reads the card on black, as the staff screens do: no white boxes, large bold text */
 .staffScreen {
   min-height: 100dvh;
   background: #000;
@@ -156,4 +156,27 @@
 .staffScreen * {
   color: inherit;
   border-color: #444;
+}
+.staffScreen [class*="cardViewRows"],
+.staffScreen [class*="cardViewRow"] {
+  background: transparent;
+}
+.staffScreen [class*="cardViewLabel"],
+.staffScreen [class*="cardViewValue"] {
+  font-size: clamp(1.6rem, 1.1rem + 3.4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+/* the card's own boxes are not white on the black screen; the text is white and large */
+.staffScreen .card,
+.staffScreen [class*="print-area"],
+.staffScreen [class*="cardViewRows"],
+.staffScreen [class*="cardViewRow"] {
+  background: transparent;
+  box-shadow: none;
+}
+.staffScreen [class*="cardViewLabel"],
+.staffScreen [class*="cardViewValue"] {
+  color: #fff;
 }

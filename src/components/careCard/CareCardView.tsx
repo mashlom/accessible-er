@@ -42,7 +42,7 @@ export function CareCardView() {
   const heRows = keyed((i18nUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he, 'i18n/ui').card.rows
   const heAsks = keyed((careI18n as unknown as { he: { asks: Record<string, string> } }).he, 'i18n/careCard').asks
   const c = card.custom ?? emptyCustom
-  const join = (...parts: string[]) => parts.map((p) => p.trim()).filter(Boolean).join(' · ')
+  const join = (...parts: (string | undefined)[]) => parts.map((p) => (p ?? '').trim()).filter(Boolean).join(' · ')
 
   const rows = [
     { emoji: '💬', label: heRows.communication, value: join(...card.communication, c.communication) },
