@@ -59,6 +59,12 @@ export const mapAreas: Omit<MapArea, 'name' | 'note' | 'next'>[] = [
     sensory: { sound: 4, light: 2, smell: 1, people: 2 },
   },
   {
+    id: 'ct',
+    emoji: '🌀',
+    load: 'medium',
+    sensory: { sound: 4, light: 1, smell: 1, people: 1 },
+  },
+  {
     id: 'restroom',
     emoji: '🚻',
     load: 'medium',

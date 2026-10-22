@@ -37,7 +37,7 @@
       },
       "imaging": {
         "name": "חדר רנטגן",
-        "note": "כאן מצלמים רנטגן, אולטרסאונד או CT. המכונות גדולות ולפעמים רועשות.",
+        "note": "כאן מצלמים תמונה של העצמות. הילד עומד או שוכב בנחת לרגע.",
         "next": "חוזרים להמתין לתוצאות",
         "stage": "tests"
       },
@@ -48,18 +48,16 @@
       "doctor": {
         "name": "חדר רופאים",
         "note": "כאן בודקים את הילד ומחליטים איזה טיפול נדרש."
+      },
+      "ct": {
+        "name": "חדר CT",
+        "note": "כאן מצלמים תמונה של הגוף. הילד שוכב על מיטה שנכנסת לטבעת גדולה ושומר על שכיבה שקטה."
       }
     },
     "load": {
       "calm": "שקט",
       "medium": "בינוני",
       "busy": "עמוס"
-    },
-    "channels": {
-      "sound": "רעש",
-      "light": "אור",
-      "smell": "ריח",
-      "people": "אנשים"
     }
   },
   "en": {
@@ -100,7 +98,7 @@
       },
       "imaging": {
         "name": "X-ray room",
-        "note": "X-ray, ultrasound or CT scans are taken here. The machines are large and sometimes loud.",
+        "note": "Here pictures of the bones are taken. The child stands or lies still for a moment.",
         "next": "Back to waiting for the results",
         "stage": "tests"
       },
@@ -111,18 +109,16 @@
       "doctor": {
         "name": "Doctor's room",
         "note": "The doctor examines the child here and decides what treatment is needed."
+      },
+      "ct": {
+        "name": "CT room",
+        "note": "Here the body is scanned. The child lies on a bed that slides into a big ring and stays very still."
       }
     },
     "load": {
       "calm": "Calm",
       "medium": "Medium",
       "busy": "Busy"
-    },
-    "channels": {
-      "sound": "Noise",
-      "light": "Light",
-      "smell": "Smell",
-      "people": "People"
     }
   },
   "ru": {
@@ -163,7 +159,7 @@
       },
       "imaging": {
         "name": "Рентген кабинет",
-        "note": "Здесь делают снимки: рентген, УЗИ или КТ. Аппараты большие и иногда шумные.",
+        "note": "Здесь делают снимки костей. Ребёнок стоит или лежит спокойно, не двигаясь.",
         "next": "Возвращаемся ждать результаты",
         "stage": "tests"
       },
@@ -174,18 +170,16 @@
       "doctor": {
         "name": "Кабинет врача",
         "note": "Здесь врач смотрит ребёнка и решает, какое лечение нужно."
+      },
+      "ct": {
+        "name": "Кабинет КТ",
+        "note": "Здесь делают снимки тела. Ребёнок лежит на кровати, которая въезжает в большое кольцо, и не двигается."
       }
     },
     "load": {
       "calm": "Тихо",
       "medium": "Средне",
       "busy": "Людно"
-    },
-    "channels": {
-      "sound": "Шум",
-      "light": "Свет",
-      "smell": "Запах",
-      "people": "Люди"
     }
   }
 }
