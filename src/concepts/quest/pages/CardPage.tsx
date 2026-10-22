@@ -1,6 +1,6 @@
 import { Link } from '../../nav'
 import { useReturnTo } from '../useReturnTo'
-import { useQuestTheme } from '../useQuestTheme'
+import { useParentTheme as useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
 import { CareCardForm } from '../../../components/careCard/CareCardForm'
 import css from '../quest.module.css'

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from '../../nav'
-import { useQuestTheme } from '../useQuestTheme'
+import { useParentTheme as useQuestTheme } from '../useQuestTheme'
 import { useReturnTo } from '../useReturnTo'
 import { distressTips, readySentences } from '../../../data/support'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'

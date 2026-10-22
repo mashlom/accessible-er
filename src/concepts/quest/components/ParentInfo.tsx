@@ -5,7 +5,7 @@ import { SensoryBar } from '../../../components/SensoryBar'
 import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
-import { useQuestTheme } from '../useQuestTheme'
+import { useParentTheme as useQuestTheme } from '../useQuestTheme'
 import { ProcedureLineIcon } from './ProcedureLineIcon'
 import css from '../quest.module.css'
 
