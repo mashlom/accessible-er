@@ -14,11 +14,11 @@ import styles from '../pages.module.css'
 const emojis = ['📝', '🚪', '🏠', '🧰', '🩺']
 
 export function GoingHomePage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang], 'parent/home').goingHome
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.discharge.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
       </div>
