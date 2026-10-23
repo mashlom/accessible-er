@@ -9,7 +9,7 @@ export function WaitTimesPage() {
   const tx = keyed(homeTexts[lang], 'parent/home').wait
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={t('ui.tiles.wait-times.title')} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.wait-times.title')} subtitle={t('ui.tiles.wait-times.desc')}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>
           {tx.note}
