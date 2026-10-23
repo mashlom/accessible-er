@@ -323,7 +323,6 @@
         ]
       },
       "waiting-results": {
-        "title": "המתנה לתוצאות",
         "duration": "לפעמים שעה או יותר",
         "who": "ממתינים יחד; הצוות והמעבדה עובדים בינתיים",
         "what": "אחרי הבדיקות, המעבדה והמכונות עובדות על התשובות. זה לוקח זמן. הרופא/ה יבוא/תבוא לספר כשיהיו תוצאות.",
@@ -662,7 +661,6 @@
         ]
       },
       "waiting-results": {
-        "title": "Waiting for results",
         "duration": "Sometimes an hour or more",
         "who": "You wait together; meanwhile the staff and the lab are working",
         "what": "After the tests, the lab and the machines work on the answers. This takes time. The doctor will come and tell you when the results are ready.",
@@ -1001,7 +999,6 @@
         ]
       },
       "waiting-results": {
-        "title": "Ожидание результатов",
         "duration": "Иногда час или больше",
         "who": "Вы ждёте вместе; в это время персонал и лаборатория работают",
         "what": "После обследований лаборатория и аппараты работают над ответами. Это занимает время. Врач придёт и расскажет, когда будут результаты.",

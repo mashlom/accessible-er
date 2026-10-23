@@ -48,5 +48,7 @@ export function parentProcedure(lang: ParentLang, id: string): Procedure | undef
   const tx = parentTexts(lang).procedures[id]
   // the steps a child hears are shared by all worlds: their own file (src/data/child/procedures)
   const steps = procedureSteps(lang, id)
-  return base && tx ? ({ ...base, ...tx, ...steps } as Procedure) : undefined
+  // the waiting for results has the station's title
+  const title = id === 'waiting-results' ? parentTexts(lang).stages['wait-results'].title : undefined
+  return base && tx ? ({ ...base, ...tx, ...(title ? { title } : {}), ...steps } as Procedure) : undefined
 }
