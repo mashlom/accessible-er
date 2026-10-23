@@ -1,6 +1,7 @@
 import type { SensoryLevels } from '../data/types'
 import { useI18n } from '../hooks/useI18n'
 import css from './SensoryBar.module.css'
+import { soundLabel } from '../data/careCard'
 
 interface Props {
   sensory: SensoryLevels
@@ -22,17 +23,17 @@ function levelClass(n: number): string {
 }
 
 export function SensoryBar({ sensory, ocean }: Props) {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   return (
     <div className={ocean ? `${css.bar} ${css.ocean}` : css.bar}>
       <p className={css.title}>{t('ui.labels.adult.sensoryTitle')}</p>
       <div className={css.channels}>
-        {CHANNELS.map(({ key, emoji }, ci) => {
+        {CHANNELS.map(({ key, emoji }) => {
           const val = sensory[key]
           return (
             <div key={key} className={css.channel}>
               <span className={css.emoji}>{emoji}</span>
-              <span className={css.channelLabel}>{t(`ui.text.sensoryLabels.${ci}`)}</span>
+              <span className={css.channelLabel}>{key === 'sound' ? soundLabel(lang) : t(`ui.text.sensoryLabels.${key}`)}</span>
               <div className={css.dots}>
                 {[1, 2, 3, 4, 5].map((i) => (
                   <span

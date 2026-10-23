@@ -59,12 +59,11 @@
         "Dizzy",
         "Big star"
       ],
-      "sensoryLabels": [
-        "Noise",
-        "Light",
-        "Smell",
-        "People"
-      ],
+      "sensoryLabels": {
+        "light": "Light",
+        "smell": "Smell",
+        "people": "People"
+      },
       "coins": {
         "one": "You collected {n} coin — welcome to the shop!",
         "two": "You collected {n} coins — welcome to the shop!",
@@ -478,12 +477,11 @@
         "Водоворот",
         "Большая звезда"
       ],
-      "sensoryLabels": [
-        "Шум",
-        "Свет",
-        "Запах",
-        "Люди"
-      ],
+      "sensoryLabels": {
+        "light": "Свет",
+        "smell": "Запах",
+        "people": "Люди"
+      },
       "coins": {
         "one": "У тебя есть {n} монета — добро пожаловать в магазин!",
         "few": "У тебя есть {n} монеты — добро пожаловать в магазин!",
@@ -839,12 +837,11 @@
   },
   "he": {
     "text": {
-      "sensoryLabels": [
-        "רעש",
-        "אור",
-        "ריח",
-        "אנשים"
-      ],
+      "sensoryLabels": {
+        "light": "אור",
+        "smell": "ריח",
+        "people": "אנשים"
+      },
       "oceanDecisionTitle": "החלטת הקפטן",
       "weDidIt": "עשינו את זה! 🎉",
       "towardsDischarge": "לקראת שחרור הביתה",

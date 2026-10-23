@@ -9,6 +9,11 @@
 import careI18n from './i18n/careCard.json'
 import supportI18n from './i18n/support.json'
 
+/** The word for sound on the map and the sensory bar: the card's own sensitivity option (noise). */
+export function soundLabel(lang: 'he' | 'en' | 'ru'): string {
+  return (careI18n as unknown as Record<string, { cardSections: { options: string[] }[] }>)[lang].cardSections[1].options[0]
+}
+
 export interface CareCard {
   /** optional nickname — the app works without any identifying detail */
   nickname: string
