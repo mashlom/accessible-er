@@ -155,7 +155,8 @@
         "stageProcedures": "Procedures at this stage",
         "whatActuallyHappens": "What actually happens",
         "whenHard": "When it's hard — what helps",
-        "writeHere": "Write here..."
+        "writeHere": "Write here...",
+        "whoNurse": "A nurse"
       }
     },
     "celebrate": {
@@ -572,7 +573,8 @@
         "stageProcedures": "Процедуры на этом этапе",
         "whatActuallyHappens": "Что происходит на самом деле",
         "whenHard": "Когда трудно — что помогает",
-        "writeHere": "Напишите здесь..."
+        "writeHere": "Напишите здесь...",
+        "whoNurse": "Медсестра или медбрат"
       }
     },
     "celebrate": {
@@ -989,7 +991,8 @@
         "stageProcedures": "פרוצדורות בשלב הזה",
         "whatActuallyHappens": "מה קורה בפועל",
         "whenHard": "כשקשה — מה עוזר",
-        "writeHere": "כתבו כאן..."
+        "writeHere": "כתבו כאן...",
+        "whoNurse": "אח או אחות"
       }
     },
     "celebrate": {

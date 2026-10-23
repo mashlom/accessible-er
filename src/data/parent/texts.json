@@ -124,7 +124,6 @@
       "temperature": {
         "title": "מדידת חום",
         "duration": "כדקה",
-        "who": "אח או אחות",
         "what": "בודקים כמה חום יש בגוף. מכניסים לפה חתיכת פלסטיק קטנה עם חוט, ומחזיקים את הפה סגור חזק־חזק לרגע — כאילו יש לי סוכריה בפה. לפעמים מודדים במקום זה מתחת לבית השחי.",
         "feel": "לא כואב. צריך רק להחזיק את הפה סגור לרגע, או להצמיד את היד לגוף אם מודדים בבית השחי.",
         "prepare": "אפשר לתרגל \"לסגור את הפה חזק כמו שיש סוכריה בפנים\" לכמה שניות, או להצמיד יד לגוף.",
@@ -137,7 +136,6 @@
       "saturation": {
         "title": "מדידת חמצן (סטורציה)",
         "duration": "כדקה",
-        "who": "אח או אחות",
         "what": "שמים אטב קטן ורך על האצבע. אור אדום קטן בודק את החמצן בדם. אין מחט.",
         "feel": "הרגשה של לחיצה עדינה על האצבע. לא כואב.",
         "prepare": "אפשר לקרוא לזה \"אטב עם אור קסם\". להראות שהוא נדלק באדום.",
@@ -150,7 +148,6 @@
       "blood-pressure": {
         "title": "מדידת לחץ דם",
         "duration": "כדקה",
-        "who": "אח או אחות",
         "what": "שרוול רך מתנפח על הזרוע ולוחץ קצת, ואז משתחרר לבד.",
         "feel": "לחיצה מתהדקת על הזרוע לכמה שניות, ואז מרפה.",
         "prepare": "אפשר להגיד \"היד מקבלת חיבוק חזק לרגע ואז משחרר\".",
@@ -246,7 +243,6 @@
       "iv": {
         "title": "עירוי נוזלים",
         "duration": "הכנסה: כמה דקות",
-        "who": "אח או אחות",
         "what": "מכניסים צינור דק ורך ליד דרך מחט קטנה, ודרכו נותנים נוזלים או תרופה. המחט יוצאת והצינור הרך נשאר.",
         "feel": "דקירה קצרה בהתחלה, ואחר כך רק תחושת הצינור הרך על היד. כשהנוזלים נכנסים מרגישים לפעמים קצת קר בהתחלה, אבל אם ממתינים רגע התחושה נעלמת וכמעט לא מרגישים כלום.",
         "prepare": "לבקש משחה מאלחשת מראש. לסכם הסחת דעת. להסביר שהצינור רך ולא מחט.",
@@ -259,7 +255,6 @@
       "medication": {
         "title": "תרופות",
         "duration": "כמה דקות",
-        "who": "אח או אחות",
         "what": "נותנים תרופה — לפעמים סירופ לשתייה, לפעמים דרך העירוי. עוזר לגוף להרגיש טוב יותר.",
         "feel": "סירופ יכול להיות מתוק או עם טעם. דרך עירוי לא מרגישים כמעט כלום.",
         "prepare": "לשאול איזה טעם, ואם אפשר לבחור. להכין מים או משהו לטעם אחרי.",
@@ -272,7 +267,6 @@
       "inhalation": {
         "title": "אינהלציה",
         "duration": "5–10 דקות",
-        "who": "אח או אחות",
         "what": "לא צריך לנשום בכוח. שמים על הפנים מסכה רכה שיוצא ממנה אוויר קריר עם תרופה, ופשוט נושמים רגיל. זה עוזר לנשימה.",
         "feel": "מרגישים אוויר לח וקריר על הפנים. לפעמים זה טיפה מדגדג בעיניים. שומעים רעש קטן של המכונה.",
         "prepare": "להראות את המסכה מראש, לתת להריח. להסביר שלא צריך לנשום בכוח — רק להחזיק את המסכה על הפנים ולנשום רגיל.",
@@ -462,7 +456,6 @@
       "temperature": {
         "title": "Temperature check",
         "duration": "about a minute",
-        "who": "A nurse",
         "what": "We check how warm the body is. A small plastic tip with a wire goes into the mouth, and your child keeps their mouth closed tight for a moment — as if holding a candy inside. Sometimes it is measured under the armpit instead.",
         "feel": "It doesn't hurt. Your child just keeps their mouth closed for a moment, or holds their arm against their body if it is measured under the armpit.",
         "prepare": "You can practice “closing your mouth tight, like there's a candy inside” for a few seconds, or pressing an arm against the body.",
@@ -475,7 +468,6 @@
       "saturation": {
         "title": "Oxygen level (saturation)",
         "duration": "about a minute",
-        "who": "A nurse",
         "what": "A small, soft clip goes on the finger. A little red light checks the oxygen in the blood. There is no needle.",
         "feel": "A gentle squeeze on the finger. It doesn't hurt.",
         "prepare": "You can call it a “clip with a magic light”. Show your child how it lights up red.",
@@ -488,7 +480,6 @@
       "blood-pressure": {
         "title": "Blood pressure check",
         "duration": "about a minute",
-        "who": "A nurse",
         "what": "A soft cuff on the arm fills with air and squeezes a little, then lets go by itself.",
         "feel": "A tightening squeeze on the arm for a few seconds, and then it relaxes.",
         "prepare": "You can say: “Your arm gets a big hug for a moment, and then it lets go.”",
@@ -584,7 +575,6 @@
       "iv": {
         "title": "IV line (fluids)",
         "duration": "Putting it in: a few minutes",
-        "who": "A nurse",
         "what": "A thin, soft tube is put into the arm through a small needle, and fluids or medicine are given through it. The needle comes out and the soft tube stays in.",
         "feel": "A short prick at first, and after that only the feeling of the soft tube on the arm. When the fluids go in, it sometimes feels a little cold at first, but after a moment the feeling goes away and your child hardly feels anything.",
         "prepare": "Ask for numbing cream in advance. Agree on a distraction. Explain that the tube is soft and is not a needle.",
@@ -597,7 +587,6 @@
       "medication": {
         "title": "Medicine",
         "duration": "A few minutes",
-        "who": "A nurse",
         "what": "Your child is given medicine — sometimes a syrup to drink, sometimes through the IV line. It helps the body feel better.",
         "feel": "Syrup can be sweet or have a taste. Through the IV line, your child hardly feels anything.",
         "prepare": "Ask what flavor it has and whether you can choose. Have water or something else ready for the taste afterwards.",
@@ -610,7 +599,6 @@
       "inhalation": {
         "title": "Inhalation (nebulizer)",
         "duration": "5–10 minutes",
-        "who": "A nurse",
         "what": "There's no need to breathe hard. A soft mask that gives out cool air with medicine is placed on the face, and your child simply breathes normally. It helps with breathing.",
         "feel": "Moist, cool air on the face. Sometimes it tickles the eyes a little. The machine makes a small noise.",
         "prepare": "Show the mask in advance and let your child smell it. Explain that there's no need to breathe hard — just keep the mask on the face and breathe normally.",
@@ -800,7 +788,6 @@
       "temperature": {
         "title": "Измерение температуры",
         "duration": "около минуты",
-        "who": "Медсестра или медбрат",
         "what": "Проверяем, какая температура у тела. В рот кладут маленький пластиковый наконечник с проводком, и нужно ненадолго крепко-крепко закрыть рот — как будто там конфета. Иногда вместо этого температуру измеряют под мышкой.",
         "feel": "Не больно. Нужно только ненадолго держать рот закрытым или прижать руку к телу, если измеряют под мышкой.",
         "prepare": "Можно потренироваться несколько секунд «крепко закрывать рот, как будто там конфета» или прижимать руку к телу.",
@@ -813,7 +800,6 @@
       "saturation": {
         "title": "Уровень кислорода (сатурация)",
         "duration": "около минуты",
-        "who": "Медсестра или медбрат",
         "what": "На палец надевают маленькую мягкую прищепку. Маленький красный огонёк проверяет кислород в крови. Иглы нет.",
         "feel": "Ощущение лёгкого нажатия на палец. Не больно.",
         "prepare": "Можно назвать её «прищепкой с волшебным огоньком». Показать ребёнку, как она загорается красным.",
@@ -826,7 +812,6 @@
       "blood-pressure": {
         "title": "Измерение давления",
         "duration": "около минуты",
-        "who": "Медсестра или медбрат",
         "what": "Мягкая манжета на руке надувается и немного сжимает, а потом сама отпускает.",
         "feel": "Руку несколько секунд сжимает всё сильнее, а потом отпускает.",
         "prepare": "Можно сказать: «Руку ненадолго крепко обнимут, а потом отпустят».",
@@ -922,7 +907,6 @@
       "iv": {
         "title": "Капельница (катетер)",
         "duration": "Установка: несколько минут",
-        "who": "Медсестра или медбрат",
         "what": "Через маленькую иглу в руку вводят тонкую мягкую трубочку, и через неё дают жидкость или лекарство. Игла выходит, а мягкая трубочка остаётся.",
         "feel": "Сначала короткий укол, а потом только ощущение мягкой трубочки на руке. Когда жидкость начинает поступать, иногда сначала немного холодно, но если подождать минутку, это ощущение проходит и почти ничего не чувствуется.",
         "prepare": "Заранее попросить обезболивающий крем. Договориться, чем отвлечься. Объяснить, что трубочка мягкая и это не игла.",
@@ -935,7 +919,6 @@
       "medication": {
         "title": "Лекарства",
         "duration": "Несколько минут",
-        "who": "Медсестра или медбрат",
         "what": "Дают лекарство — иногда сироп, чтобы выпить, иногда через капельницу. Оно помогает телу почувствовать себя лучше.",
         "feel": "Сироп может быть сладким или с привкусом. Через капельницу почти ничего не чувствуется.",
         "prepare": "Спросить, какой у лекарства вкус и можно ли выбрать. Приготовить воду или что-нибудь, чтобы заесть вкус.",
@@ -948,7 +931,6 @@
       "inhalation": {
         "title": "Ингаляция",
         "duration": "5–10 минут",
-        "who": "Медсестра или медбрат",
         "what": "Не нужно дышать с силой. На лицо надевают мягкую маску, из которой идёт прохладный воздух с лекарством, и ребёнок просто дышит как обычно. Это помогает дыханию.",
         "feel": "На лице ощущается влажный прохладный воздух. Иногда немного щекочет глаза. Аппарат тихо шумит.",
         "prepare": "Заранее показать маску, дать её понюхать. Объяснить, что не нужно дышать с силой — только держать маску на лице и дышать как обычно.",
