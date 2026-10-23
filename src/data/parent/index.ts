@@ -1,6 +1,7 @@
 import texts from './texts.json'
 import { keyed } from '../../lib/keyed'
 import i18nUi from '../i18n/ui.json'
+import { TIMES } from './times'
 
 /** Parent texts for the stations and procedures (src/data/parent/texts.json), one file with all languages. */
 export type ParentLang = 'he' | 'en' | 'ru'
@@ -38,10 +39,11 @@ import { getProcedure } from '../procedures'
 import { procedureSteps } from '../child/procedures'
 import type { JourneyStage, Procedure } from '../types'
 
-/** A number range from the data ("5–15") with the unit of the language ("минут"); other texts ("около минуты") as they are. */
+/** A time code from the data ("t10-20") as its number ("10–20") and the unit of the language ("минут"); other texts ("около минуты") as they are. */
 function withUnit(lang: ParentLang, text: string | undefined): string | undefined {
   if (!text) return text
-  return /^\d/.test(text) ? `${text} ${keyed((i18nUi as unknown as Record<ParentLang, { labels: { adult: { minutes: string } } }>)[lang], 'i18n/ui').labels.adult.minutes}` : text
+  const number = TIMES[text]
+  return number ? `${number} ${keyed((i18nUi as unknown as Record<ParentLang, { labels: { adult: { minutes: string } } }>)[lang], 'i18n/ui').labels.adult.minutes}` : text
 }
 
 /** The stations as shown to the parent: the code's station data with the parent texts of the language on top */

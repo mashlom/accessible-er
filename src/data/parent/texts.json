@@ -10,7 +10,7 @@
           "לשבת במקום שקט יותר בזמן ההמתנה",
           "לקבל הסבר קצר מה השלב הבא"
         ],
-        "waitRange": "5–15"
+        "waitRange": "t5-15"
       },
       "wait-before-triage": {
         "title": "המתנה להערכה של מצב בריאות",
@@ -21,7 +21,7 @@
           "מרחב שקט יותר או מקום שפחות צפוף",
           "מידע על כמה זמן קרוב"
         ],
-        "waitRange": "5–15",
+        "waitRange": "t5-15",
         "nextStagePrepare": "זה זמן טוב להכין את הילד/ה למדידות שהולכות לקרות: חום, חמצן, לחץ דם. אפשר לדבר על המכשירים ולתרגל."
       },
       "triage": {
@@ -34,7 +34,7 @@
           "לבצע את המדידות אחת־אחת ובקצב שלנו",
           "להראות את המכשירים על ההורה קודם"
         ],
-        "waitRange": "10–20"
+        "waitRange": "t10-20"
       },
       "wait-doctor": {
         "title": "המתנה לרופא/ה",
@@ -45,7 +45,7 @@
           "מרחב שקט יותר או פינת המתנה רגועה",
           "הערכת זמן משוערת (בטווחים)"
         ],
-        "waitRange": "30–90",
+        "waitRange": "t30-90",
         "nextStagePrepare": "אפשר לשחק \"רופא\" עם בובה לפני, ולהסביר שהרופא/ה רק מסתכל/ת ומקשיב/ה כדי לעזור."
       },
       "doctor": {
@@ -58,7 +58,7 @@
           "הסבר לפני כל נגיעה",
           "זמן עיבוד קצר בין שאלה לתשובה"
         ],
-        "waitRange": "10–20"
+        "waitRange": "t10-20"
       },
       "tests": {
         "title": "בדיקות (לפי הצורך)",
@@ -82,7 +82,7 @@
           "שהמומחה יקבל מראש את מה שחשוב לדעת על הילד/ה",
           "שההסברים יינתנו שוב, בקצרה ובפשטות"
         ],
-        "waitRange": "20–60"
+        "waitRange": "t20-60"
       },
       "wait-results": {
         "title": "המתנה לתוצאות",
@@ -94,7 +94,7 @@
           "מרחב שקט להמתנה",
           "הערכת זמן משוערת לתוצאות"
         ],
-        "waitRange": "45–120"
+        "waitRange": "t45-120"
       },
       "treatment": {
         "title": "טיפול במהלך הביקור",
@@ -155,7 +155,7 @@
         ]
       },
       "doctor-exam": {
-        "duration": "10–20",
+        "duration": "t10-20",
         "who": "רופא או רופאה",
         "what": "הרופא/ה שואל/ת שאלות ובודק/ת את הגוף: מקשיב/ה עם סטטוסקופ, מסתכל/ת בגרון ובאוזניים, ולפעמים ממשש/ת את הבטן. בסוף הרופא/ה מחליט/ה מה צריך בהמשך, ומסביר/ה לכם.",
         "feel": "מגע עדין, מכשיר קצת קר על החזה או הגב, ואור קטן שמסתכלים איתו. בדרך כלל לא כואב.",
@@ -169,7 +169,7 @@
       },
       "blood-test": {
         "title": "בדיקת דם",
-        "duration": "2–5",
+        "duration": "t2-5",
         "who": "אח/אחות או טכנאי/ת מעבדה",
         "what": "לוקחים טיפת דם קטנה מהיד, בדרך כלל עם מחט דקה. לפני כן אפשר לשים משחה שמפחיתה תחושה.",
         "feel": "דקירה קצרה, כמו צביטה קטנה. אפשר להרגיש לחץ של הגומייה סביב הזרוע.",
@@ -197,7 +197,7 @@
       },
       "xray": {
         "title": "צילום רנטגן",
-        "duration": "5–10",
+        "duration": "t5-10",
         "who": "טכנאי/ת רנטגן",
         "what": "מכונה גדולה מצלמת תמונה של העצמות מבפנים. צריך לעמוד או לשכב בנחת לרגע ולא לזוז. לפעמים נותנים ללבוש חלק לבוש כבד שמגן על הגוף, ולפעמים גם צווארון שמגן על הצוואר.",
         "feel": "לא כואב ולא מרגישים כלום. הלבוש המגן קצת כבד, והמכונה יכולה לזוז ולהשמיע רעש קל.",
@@ -211,7 +211,7 @@
       },
       "ultrasound": {
         "title": "אולטרסאונד",
-        "duration": "10–20",
+        "duration": "t10-20",
         "who": "רופא/ה או טכנאי/ת",
         "what": "מורחים ג׳ל קר על העור ומעבירים מכשיר חלק. רואים תמונה של הבטן מבפנים על מסך. לפעמים, כדי לראות טוב, צריך ללחוץ קצת עם המכשיר.",
         "feel": "הג׳ל קצת קר ולח. המכשיר מחליק על העור. כשלוחצים קצת זה לפעמים מדגדג ולפעמים טיפה כואב. אם זה מפריע — אפשר לבקש שיפסיקו או לחכות רגע.",
@@ -225,7 +225,7 @@
       },
       "ct": {
         "title": "CT (סי־טי)",
-        "duration": "10–15",
+        "duration": "t10-15",
         "who": "טכנאי/ת דימות",
         "what": "שוכבים על מיטה שנכנסת לתוך טבעת גדולה שמצלמת. צריך לשכב בנחת בלי לזוז.",
         "feel": "לא כואב. שומעים רעש של המכונה, והמיטה זזה לאט.",
@@ -262,7 +262,7 @@
       },
       "inhalation": {
         "title": "אינהלציה",
-        "duration": "5–10",
+        "duration": "t5-10",
         "what": "לא צריך לנשום בכוח. שמים על הפנים מסכה רכה שיוצא ממנה אוויר קריר עם תרופה, ופשוט נושמים רגיל. זה עוזר לנשימה.",
         "feel": "מרגישים אוויר לח וקריר על הפנים. לפעמים זה טיפה מדגדג בעיניים. שומעים רעש קטן של המכונה.",
         "prepare": "להראות את המסכה מראש, לתת להריח. להסביר שלא צריך לנשום בכוח — רק להחזיק את המסכה על הפנים ולנשום רגיל.",
@@ -274,7 +274,7 @@
       },
       "stitches": {
         "title": "הדבקת פצע או תפירה",
-        "duration": "10–20",
+        "duration": "t10-20",
         "who": "רופא/ה",
         "what": "סוגרים את הפצע — בדבק מיוחד או בתפרים קטנים. לפעמים שמים קודם חומר שמרדים את האזור: הוא קריר, מכסים אותו במדבקה שקופה, ואז מחכים קצת (עד 45 דקות) עד שהקסם עובד והאזור של החתך \"הולך לישון\". לפעמים לא צריך להרדים בכלל, ורק מדביקים. הדבק הוא בדיוק כמו הדבק שאנחנו מכירים מהגן או מבית הספר, רק נקי, והוא מחזיק את העור.",
         "feel": "אחרי החומר שמרדים, האזור נהיה רדום ולא מרגישים כאב — אולי רק נגיעה או לחץ. לפעמים כשהדבק מתקשה מרגישים קצת חם, ואפשר לעשות אוויר קר בפנים כדי שלא ארגיש את זה.",
@@ -288,7 +288,7 @@
       },
       "cast": {
         "title": "גבס או סד",
-        "duration": "15–25",
+        "duration": "t15-25",
         "who": "רופא/ה או טכנאי/ת גבס",
         "what": "עוטפים את היד או הרגל בחומר רך שמתקשה ומחזיק את העצם בנחת כדי שתחלים. כשמתחילים לעטוף אי אפשר לעשות הפסקות — כי הגבס מתקשה, וצריך שיתאים בדיוק לגוף. לכן מחכים רגע בסבלנות בזמן שהרופא/ה מתאים/ה את הגבס.",
         "feel": "הגבס יכול להרגיש חמים לרגע כשהוא מתקשה, ואז נעשה יציב וכבד קצת.",
@@ -301,7 +301,7 @@
       },
       "bandage": {
         "title": "חבישה",
-        "duration": "5",
+        "duration": "t5",
         "who": "אח/אחות או רופא/ה",
         "what": "מכסים אזור בגוף בתחבושת נקייה ורכה כדי לשמור עליו.",
         "feel": "תחושת עטיפה רכה. בדרך כלל נעים ולא כואב.",
@@ -338,7 +338,7 @@
           "Sit in a quieter area while waiting",
           "Get a short explanation of what comes next"
         ],
-        "waitRange": "5–15"
+        "waitRange": "t5-15"
       },
       "wait-before-triage": {
         "title": "Waiting before the nurse's assessment",
@@ -349,7 +349,7 @@
           "A quieter space or a less crowded spot",
           "Information about how long it might take"
         ],
-        "waitRange": "5–15",
+        "waitRange": "t5-15",
         "nextStagePrepare": "This is a good time to prepare your child for the measurements coming up: temperature, oxygen, blood pressure. You can talk about the devices and practice together."
       },
       "triage": {
@@ -362,7 +362,7 @@
           "Do the measurements one at a time, at our pace",
           "Show the devices on the parent first"
         ],
-        "waitRange": "10–20"
+        "waitRange": "t10-20"
       },
       "wait-doctor": {
         "title": "Waiting for the doctor",
@@ -373,7 +373,7 @@
           "A quieter space or a calm waiting corner",
           "An estimated time (as a range)"
         ],
-        "waitRange": "30–90",
+        "waitRange": "t30-90",
         "nextStagePrepare": "You can play \"doctor\" with a doll beforehand, and explain that the doctor only looks and listens in order to help."
       },
       "doctor": {
@@ -386,7 +386,7 @@
           "An explanation before each touch",
           "A little time to think between a question and an answer"
         ],
-        "waitRange": "10–20"
+        "waitRange": "t10-20"
       },
       "tests": {
         "title": "Tests (if needed)",
@@ -410,7 +410,7 @@
           "That the specialist is told in advance what is important to know about your child",
           "That explanations are given again, briefly and simply"
         ],
-        "waitRange": "20–60"
+        "waitRange": "t20-60"
       },
       "wait-results": {
         "title": "Waiting for results",
@@ -422,7 +422,7 @@
           "A quiet space to wait",
           "An estimated time for the results"
         ],
-        "waitRange": "45–120"
+        "waitRange": "t45-120"
       },
       "treatment": {
         "title": "Treatment during the visit",
@@ -483,7 +483,7 @@
         ]
       },
       "doctor-exam": {
-        "duration": "10–20",
+        "duration": "t10-20",
         "who": "A doctor",
         "what": "The doctor asks questions and examines the body: listens with a stethoscope, looks in the throat and ears, and sometimes gently feels the tummy. At the end, the doctor decides what is needed next and explains it to you.",
         "feel": "Gentle touch, a slightly cold tool on the chest or back, and a small light used for looking. Usually it doesn't hurt.",
@@ -497,7 +497,7 @@
       },
       "blood-test": {
         "title": "Blood test",
-        "duration": "2–5",
+        "duration": "t2-5",
         "who": "A nurse or a lab technician",
         "what": "A small drop of blood is taken from the arm, usually with a thin needle. Before that, a numbing cream can be put on the skin.",
         "feel": "A short prick, like a small pinch. Your child may feel the rubber band pressing around the arm.",
@@ -525,7 +525,7 @@
       },
       "xray": {
         "title": "X-ray",
-        "duration": "5–10",
+        "duration": "t5-10",
         "who": "An X-ray technician",
         "what": "A big machine takes a picture of the bones inside the body. Your child needs to stand or lie calmly for a moment and not move. Sometimes they are given a heavy garment to wear that protects the body, and sometimes also a collar that protects the neck.",
         "feel": "It doesn't hurt, and your child won't feel anything. The protective garment is a bit heavy, and the machine may move and make a soft noise.",
@@ -539,7 +539,7 @@
       },
       "ultrasound": {
         "title": "Ultrasound",
-        "duration": "10–20",
+        "duration": "t10-20",
         "who": "A doctor or a technician",
         "what": "A cold gel is spread on the skin and a smooth device is moved over it. A picture of the inside of the tummy shows up on a screen. Sometimes, to see well, the device needs to press a little.",
         "feel": "The gel is a bit cold and wet. The device glides over the skin. When it presses a little, it sometimes tickles and sometimes hurts a tiny bit. If it bothers your child, you can ask them to stop or to wait a moment.",
@@ -553,7 +553,7 @@
       },
       "ct": {
         "title": "CT scan",
-        "duration": "10–15",
+        "duration": "t10-15",
         "who": "An imaging technician",
         "what": "Your child lies on a bed that slides into a big ring that takes pictures. They need to lie calmly without moving.",
         "feel": "It doesn't hurt. The machine makes noise, and the bed moves slowly.",
@@ -590,7 +590,7 @@
       },
       "inhalation": {
         "title": "Inhalation (nebulizer)",
-        "duration": "5–10",
+        "duration": "t5-10",
         "what": "There's no need to breathe hard. A soft mask that gives out cool air with medicine is placed on the face, and your child simply breathes normally. It helps with breathing.",
         "feel": "Moist, cool air on the face. Sometimes it tickles the eyes a little. The machine makes a small noise.",
         "prepare": "Show the mask in advance and let your child smell it. Explain that there's no need to breathe hard — just keep the mask on the face and breathe normally.",
@@ -602,7 +602,7 @@
       },
       "stitches": {
         "title": "Wound glue or stitches",
-        "duration": "10–20",
+        "duration": "t10-20",
         "who": "A doctor",
         "what": "The wound is closed — with special glue or with small stitches. Sometimes a numbing medicine is put on first: it feels cool, it is covered with a clear sticker, and then you wait a little (up to 45 minutes) until the magic works and the area around the cut “goes to sleep”. Sometimes no numbing is needed at all, and the wound is just glued. The glue is just like the glue we know from kindergarten or school, only clean, and it holds the skin together.",
         "feel": "After the numbing medicine, the area becomes numb and there is no pain — maybe just a touch or some pressure. Sometimes, as the glue hardens, it feels a little warm, and someone can blow cool air on the face so it isn't felt.",
@@ -616,7 +616,7 @@
       },
       "cast": {
         "title": "Cast or splint",
-        "duration": "15–25",
+        "duration": "t15-25",
         "who": "A doctor or a cast technician",
         "what": "The arm or leg is wrapped in a soft material that hardens and holds the bone still so it can heal. Once the wrapping starts, there can be no breaks — because the cast hardens and has to fit the body exactly. So your child waits patiently for a moment while the doctor shapes the cast.",
         "feel": "The cast may feel warm for a moment as it hardens, and then it becomes firm and a little heavy.",
@@ -629,7 +629,7 @@
       },
       "bandage": {
         "title": "Bandaging",
-        "duration": "5",
+        "duration": "t5",
         "who": "A nurse or a doctor",
         "what": "A part of the body is covered with a clean, soft bandage to protect it.",
         "feel": "A soft, wrapped feeling. Usually pleasant and painless.",
@@ -666,7 +666,7 @@
           "Посидеть в более тихом месте, пока ждёте",
           "Коротко объяснить, что будет дальше"
         ],
-        "waitRange": "5–15"
+        "waitRange": "t5-15"
       },
       "wait-before-triage": {
         "title": "Ожидание перед оценкой состояния",
@@ -677,7 +677,7 @@
           "Более тихое или менее людное место",
           "Узнать, сколько примерно ещё ждать"
         ],
-        "waitRange": "5–15",
+        "waitRange": "t5-15",
         "nextStagePrepare": "Это хорошее время, чтобы подготовить ребёнка к измерениям: температура, кислород, давление. Можно поговорить о приборах и потренироваться."
       },
       "triage": {
@@ -690,7 +690,7 @@
           "Делать измерения по одному, в нашем темпе",
           "Сначала показать приборы на родителе"
         ],
-        "waitRange": "10–20"
+        "waitRange": "t10-20"
       },
       "wait-doctor": {
         "title": "Ожидание врача",
@@ -701,7 +701,7 @@
           "Более тихое место или спокойный уголок для ожидания",
           "Примерное время ожидания (в диапазоне)"
         ],
-        "waitRange": "30–90",
+        "waitRange": "t30-90",
         "nextStagePrepare": "Можно заранее поиграть с куклой «в доктора» и объяснить, что врач только смотрит и слушает, чтобы помочь."
       },
       "doctor": {
@@ -714,7 +714,7 @@
           "Объяснять перед каждым прикосновением",
           "Немного времени на обдумывание между вопросом и ответом"
         ],
-        "waitRange": "10–20"
+        "waitRange": "t10-20"
       },
       "tests": {
         "title": "Обследования (если нужно)",
@@ -738,7 +738,7 @@
           "Чтобы специалисту заранее рассказали, что важно знать о ребёнке",
           "Чтобы объяснения повторили — коротко и просто"
         ],
-        "waitRange": "20–60"
+        "waitRange": "t20-60"
       },
       "wait-results": {
         "title": "Ожидание результатов",
@@ -750,7 +750,7 @@
           "Тихое место для ожидания",
           "Примерное время до результатов"
         ],
-        "waitRange": "45–120"
+        "waitRange": "t45-120"
       },
       "treatment": {
         "title": "Лечение во время визита",
@@ -811,7 +811,7 @@
         ]
       },
       "doctor-exam": {
-        "duration": "10–20",
+        "duration": "t10-20",
         "who": "Врач",
         "what": "Врач задаёт вопросы и осматривает тело: слушает стетоскопом, смотрит горло и уши, иногда ощупывает живот. В конце врач решает, что нужно дальше, и объясняет вам.",
         "feel": "Мягкие прикосновения, немного холодный прибор на груди или спине и маленький фонарик, которым смотрят. Обычно не больно.",
@@ -825,7 +825,7 @@
       },
       "blood-test": {
         "title": "Анализ крови",
-        "duration": "2–5",
+        "duration": "t2-5",
         "who": "Медсестра, медбрат или лаборант",
         "what": "Из руки берут маленькую капельку крови, обычно тонкой иглой. Перед этим можно нанести обезболивающий крем.",
         "feel": "Короткий укол, как маленький щипок. Может ощущаться давление жгута вокруг руки.",
@@ -853,7 +853,7 @@
       },
       "xray": {
         "title": "Рентген",
-        "duration": "5–10",
+        "duration": "t5-10",
         "who": "Рентген-лаборант",
         "what": "Большой аппарат делает снимок костей изнутри. Нужно ненадолго спокойно постоять или полежать и не двигаться. Иногда дают надеть тяжёлую накидку, которая защищает тело, а иногда ещё и воротник, который защищает шею.",
         "feel": "Не больно, и ничего не чувствуется. Защитная накидка немного тяжёлая, а аппарат может двигаться и тихо шуметь.",
@@ -867,7 +867,7 @@
       },
       "ultrasound": {
         "title": "УЗИ",
-        "duration": "10–20",
+        "duration": "t10-20",
         "who": "Врач или лаборант",
         "what": "На кожу наносят холодный гель и водят по ней гладким датчиком. На экране видна картинка живота изнутри. Иногда, чтобы хорошо рассмотреть, датчиком нужно немного надавить.",
         "feel": "Гель немного холодный и влажный. Датчик скользит по коже. Когда немного надавливают, иногда щекотно, а иногда чуть-чуть больно. Если это мешает — можно попросить остановиться или подождать минутку.",
@@ -881,7 +881,7 @@
       },
       "ct": {
         "title": "КТ (компьютерная томография)",
-        "duration": "10–15",
+        "duration": "t10-15",
         "who": "Лаборант кабинета КТ",
         "what": "Ребёнок лежит на кровати, которая заезжает в большое кольцо, делающее снимки. Нужно спокойно лежать и не двигаться.",
         "feel": "Не больно. Слышен шум аппарата, а кровать медленно двигается.",
@@ -918,7 +918,7 @@
       },
       "inhalation": {
         "title": "Ингаляция",
-        "duration": "5–10",
+        "duration": "t5-10",
         "what": "Не нужно дышать с силой. На лицо надевают мягкую маску, из которой идёт прохладный воздух с лекарством, и ребёнок просто дышит как обычно. Это помогает дыханию.",
         "feel": "На лице ощущается влажный прохладный воздух. Иногда немного щекочет глаза. Аппарат тихо шумит.",
         "prepare": "Заранее показать маску, дать её понюхать. Объяснить, что не нужно дышать с силой — только держать маску на лице и дышать как обычно.",
@@ -930,7 +930,7 @@
       },
       "stitches": {
         "title": "Заклеивание раны или швы",
-        "duration": "10–20",
+        "duration": "t10-20",
         "who": "Врач",
         "what": "Рану закрывают — специальным клеем или маленькими швами. Иногда сначала наносят обезболивающее средство: оно прохладное, его закрывают прозрачной наклейкой, а потом немного ждут (до 45 минут), пока волшебство подействует и место пореза «уснёт». Иногда обезболивать совсем не нужно, и рану просто заклеивают. Клей — точно как тот, что мы знаем по садику или школе, только чистый, и он держит кожу.",
         "feel": "После обезболивающего средства это место немеет и боли не чувствуется — может быть, только прикосновение или давление. Иногда, когда клей застывает, становится немного тепло, и можно подуть прохладным воздухом на лицо, чтобы этого не чувствовать.",
@@ -944,7 +944,7 @@
       },
       "cast": {
         "title": "Гипс или лангета",
-        "duration": "15–25",
+        "duration": "t15-25",
         "who": "Врач или гипсовый техник",
         "what": "Руку или ногу обматывают мягким материалом, который затвердевает и бережно держит кость, чтобы она зажила. Когда начали обматывать, перерывы делать нельзя — гипс застывает и должен точно подойти по форме тела. Поэтому нужно немного терпеливо подождать, пока врач подгоняет гипс.",
         "feel": "Когда гипс застывает, он может ненадолго стать тёплым, а потом становится твёрдым и немного тяжёлым.",
@@ -957,7 +957,7 @@
       },
       "bandage": {
         "title": "Перевязка",
-        "duration": "5",
+        "duration": "t5",
         "who": "Медсестра, медбрат или врач",
         "what": "Место на теле закрывают чистым мягким бинтом, чтобы его защитить.",
         "feel": "Ощущение мягкого обёртывания. Обычно приятно и не больно.",
