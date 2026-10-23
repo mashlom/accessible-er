@@ -1,11 +1,9 @@
 import { keyed } from '../../lib/keyed'
-import type { ReactNode } from 'react'
 import { usePersistentState } from '../../hooks/usePersistentState'
 import { DAY_MS } from '../../lib/storage'
-import { useI18n } from '../../hooks/useI18n'
 import careI18n from '../../data/i18n/careCard.json'
 import i18nUi from '../../data/i18n/ui.json'
-import { emptyCard, emptyCustom, suggestedAdaptations, type CareCard } from '../../data/careCard'
+import { askTexts, emptyCard, emptyCustom, suggestedAdaptations, type CareCard } from '../../data/careCard'
 import css from '../../concepts/quest/quest.module.css'
 
 type Lang = 'he' | 'en' | 'ru'
@@ -32,15 +30,19 @@ export function careCardHeading(card: CareCard, lang: Lang) {
  * The care card as it is shown and printed. The same on every screen: the
  * labels follow the language, the values and the requests stay in Hebrew (the staff reads them).
  */
-export function CareCardView({ footer }: { footer: (state: { print: () => void }) => ReactNode }) {
-  const { t, lang } = useI18n()
+/** The requests the card suggests, in the language of the card (Hebrew): the staff reads them. */
+export function suggestionsFor(card: CareCard, lang: Lang): string[] {
+  return suggestedAdaptations(card, { asks: askTexts(lang) }, (careI18n as unknown as { askFor: Record<string, string[]> }).askFor)
+}
+
+export function CareCardView() {
+  const lang: Lang = 'he'
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
-  const tx = keyed((i18nUi as unknown as Record<Lang, { card: CardTexts }>)[lang], 'i18n/ui').card
   // the labels of the card are Hebrew, like its values (the note on screen says so)
   const heRows = keyed((i18nUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he, 'i18n/ui').card.rows
-  const heAsks = keyed((careI18n as unknown as { he: { asks: Record<string, string> } }).he, 'i18n/careCard').asks
+  const heAsks = askTexts('he')
   const c = card.custom ?? emptyCustom
-  const join = (...parts: string[]) => parts.map((p) => p.trim()).filter(Boolean).join(' · ')
+  const join = (...parts: (string | undefined)[]) => parts.map((p) => (p ?? '').trim()).filter(Boolean).join(' · ')
 
   const rows = [
     { emoji: '💬', label: heRows.communication, value: join(...card.communication, c.communication) },
@@ -52,12 +54,10 @@ export function CareCardView({ footer }: { footer: (state: { print: () => void }
     { emoji: '✏️', label: heRows.freeNote, value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
-  // the suggestions the parent reads on screen (not printed): in the chosen language
-  const suggestions = suggestedAdaptations(card, keyed((careI18n as unknown as Record<string, { asks: Record<string, string>; adaptationFor: Record<string, string> }>)[lang], 'i18n/careCard'))
+  const suggestions = suggestionsFor(card, lang)
 
   return (
     <>
-      <p className={css.stageHeroHint}>{t('ui.careView.hebrewNote')}</p>
       <div className={`${css.cardViewRows} print-area`}>
         {rows.map((row) => (
           <div key={row.label} className={css.cardViewRow}>
@@ -80,14 +80,12 @@ export function CareCardView({ footer }: { footer: (state: { print: () => void }
 
       {suggestions.length > 0 && (
         <section className="no-print">
-          <h2>{tx.suggestionsTitle}</h2>
           <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
             {suggestions.map((s) => <li key={s}>{s}</li>)}
           </ul>
         </section>
       )}
 
-      {footer({ print: () => window.print() })}
     </>
   )
 }

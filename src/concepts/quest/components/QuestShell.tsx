@@ -48,7 +48,7 @@ export function QuestShell() {
             type="button"
             className={css.questTopBtn}
             onClick={() => navigate(-1)}
-            aria-label={t('ui.shell.back')}
+            aria-label={t('ui.buttons.back')}
           >
             <span aria-hidden>›</span>
           </button>

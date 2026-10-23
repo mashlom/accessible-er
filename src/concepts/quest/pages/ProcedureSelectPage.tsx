@@ -43,11 +43,11 @@ export function ProcedureSelectPage() {
     return <OceanProcedureSheet selected={selected} onToggle={toggle} onContinue={handleContinue} onSkip={handleSkip} />
   }
 
-  const prompt = theme.procedurePrompt ?? t('ui.text.procedurePrompt')
+  const prompt = theme.procedurePrompt ?? t('ui.labels.adult.procedurePrompt')
 
   return (
     <div className={css.selectPage} style={{ '--accent': theme.accent, '--accent-soft': theme.accentSoft } as React.CSSProperties}>
-      <h1 className={css.selectTitle} style={{ color: theme.accent }}>{t('ui.text.nextStep')}</h1>
+      <h1 className={css.selectTitle} style={{ color: theme.accent }}>{t('ui.labels.adult.nextStep')}</h1>
       <p className={css.selectSub}>{prompt}</p>
 
       <div className={css.worldGrid}>

@@ -1,7 +1,7 @@
 import { keyed } from '../../../lib/keyed'
 import { useMemo, useState } from 'react'
 import { useI18n } from '../../../hooks/useI18n'
-import bookI18n from '../../../data/i18n/book.json'
+import bookI18n from '../../../data/child/book/book.json'
 import realInfo from '../../../data/child/book/real-info.json'
 import css from '../book.module.css'
 import { useStageProcedures } from '../useStageProcedures'

@@ -8,9 +8,10 @@ import supportI18n from '../../data/i18n/support.json'
 import talkTexts from '../../data/parent/talk.json'
 import { parentChannelLabel, parentLoadLabel, parentMapAreas } from '../../data/parent/map'
 import i18nUi from '../../data/i18n/ui.json'
+import homeJson from '../../data/parent/home.json'
 import careI18n from '../../data/i18n/careCard.json'
 import { distressTips, readySentences, staffRequests } from '../../data/support'
-import { cardSections, type CardArrayField, type CareCard } from '../../data/careCard'
+import { cardSections, isCardEmpty, type CardArrayField, type CareCard } from '../../data/careCard'
 import type { Procedure } from '../../data/types'
 
 type Lang = 'he' | 'en' | 'ru'
@@ -129,9 +130,51 @@ function dischargeBody(lang: Lang, i: number): string {
 }
 
 /** The dialogue lines of this part of the talk, in the chosen language (src/data/parent/talk.json) */
-export function talkText(lang: Lang): typeof talkTexts.he {
-  return keyed(keyed((talkTexts as unknown as Record<Lang, typeof talkTexts.he>)[lang], 'parent/talk') ?? talkTexts.he, 'parent/talk')
+// the words Roni shares with the ui and the care card: read from there, not copied into talk.json
+const sharedWords = (lang: Lang) => {
+  const ui = (i18nUi as unknown as Record<Lang, UiWords>)[lang]
+  const home = (homeJson as unknown as Record<Lang, { reason: { title: string; optional: string } }>)[lang]
+  const care = (careI18n as unknown as Record<Lang, { cardSections: { title: string }[] }>)[lang].cardSections
+  return {
+    calm: { watchBtn: ui.tiles.distract.desc },
+    topicNames: { ask: ui.tiles.requests.title, prep: ui.tiles.procedures.title, calm: ui.buttons.hardNow, reason: home.reason.title },
+    buttons: { helpedLess: ui.storyFeedback.team.rating[1], helpedSome: ui.storyFeedback.team.rating[2], helpedMuch: ui.storyFeedback.team.rating[3] },
+    card: { cardNextStep: ui.buttons.continue, questions: { communication: care[0].title, sensitivities: care[1].title, calming: care[2].title, escalators: care[3].title, hardMoments: care[4].title, pain: care[5].title, avoid: care[6].title } },
+    prep: { feel: ui.procedurePage.feel },
+    reason: { routeHeading: ui.labels.adult.expectedRoute, optional: home.reason.optional },
+  }
 }
+
+type UiWords = {
+  tiles: { distract: { desc: string }; procedures: { title: string }; requests: { title: string } }
+  buttons: { hardNow: string; continue: string }
+  storyFeedback: { team: { rating: Record<string, string> } }
+  procedurePage: { feel: string }
+  labels: { adult: { expectedRoute: string } }
+}
+
+export function talkText(lang: Lang) {
+  const base = keyed(keyed((talkTexts as unknown as Record<Lang, typeof talkTexts.he>)[lang], 'parent/talk') ?? talkTexts.he, 'parent/talk')
+  const s = sharedWords(lang)
+  return {
+    ...base,
+    calm: { ...base.calm, ...s.calm },
+    topicNames: { ...base.topicNames, ...s.topicNames },
+    buttons: { ...base.buttons, ...s.buttons },
+    card: { ...base.card, cardNextStep: s.card.cardNextStep, questions: { ...base.card.questions, ...s.card.questions } },
+    prep: { ...base.prep, ...s.prep },
+    reason: { ...base.reason, ...s.reason },
+  }
+}
+
+const talkHome = (lang: Lang) => keyed((homeJson as unknown as Record<Lang, { reasonAsk: string }>)[lang], 'parent/home') ?? homeJson.he
+const uiTiles = (lang: Lang) =>
+  (keyed((i18nUi as unknown as Record<Lang, { tiles: Record<string, { title: string }> }>)[lang], 'i18n/ui') ?? i18nUi.he).tiles
+
+// the Hebrew note is for the other languages: a Hebrew-speaking parent does not need it
+const procedureReadyLabel = (lang: Lang) => (i18nUi as unknown as Record<Lang, { procedurePage: { prepare: string } }>)[lang].procedurePage.prepare
+
+const hebrewNote = (lang: Lang) => (i18nUi as unknown as Record<Lang, { careView: { hebrewNote: string } }>)[lang].careView.hebrewNote
 
 function unknown(lang: Lang = 'he'): TalkNode {
   return {
@@ -199,7 +242,7 @@ function stageNode(id: string, tail: string | undefined, lang: Lang): TalkNode |
 
   const choices: Choice[] = [
     { label: talkText(lang).stage.hard, go: `stage:${id}:hard` },
-    { label: talkText(lang).stage.ask, go: `stage:${id}:ask` },
+    { label: uiTiles(lang).requests.title, go: `stage:${id}:ask` },
   ]
   for (const pid of stage.procedureIds ?? []) {
     const p = parentProcedure(lang, pid)
@@ -223,10 +266,10 @@ function prepNode(pid: string, rest: string[], lang: Lang): TalkNode | null {
     return {
       say: [
         { text: p.feel, mood: 'curious' },
-        { text: `${talkText(lang).prep.howPrepare} ${p.prepare}`, mood: 'calm' },
+        { text: `${procedureReadyLabel(lang)}: ${p.prepare}`, mood: 'calm' },
       ],
       choices: [
-        { label: talkText(lang).stage.ask, go: `prep:${pid}:ask` },
+        { label: uiTiles(lang).requests.title, go: `prep:${pid}:ask` },
         BACK,
       ],
     }
@@ -248,7 +291,7 @@ function prepNode(pid: string, rest: string[], lang: Lang): TalkNode | null {
   // the procedure's opening card
   const choices: Choice[] = []
   choices.push({ label: talkText(lang).prep.feel, go: `prep:${pid}:feel` })
-  choices.push({ label: talkText(lang).stage.ask, go: `prep:${pid}:ask` })
+  choices.push({ label: uiTiles(lang).requests.title, go: `prep:${pid}:ask` })
   choices.push(BACK)
 
   return {
@@ -290,7 +333,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
     case 'reason':
       return {
         say: [
-          { text: talkText(ctx.lang).reason.ask, mood: 'curious' },
+          { text: talkHome(ctx.lang).reasonAsk, mood: 'curious' },
           { text: talkText(ctx.lang).reason.hint },
         ],
         choices: [
@@ -324,7 +367,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
         ],
         choices: [
           { emoji: '📍', label: talkText(ctx.lang).reason.where, go: 'where' },
-          { emoji: '🎬', label: talkText(ctx.lang).reason.prep, go: 'prep' },
+          { emoji: '🎬', label: uiTiles(ctx.lang).procedures.title, go: 'prep' },
           { label: talkText(ctx.lang).reason.change, go: 'reason', quiet: true },
           BACK,
         ],
@@ -386,6 +429,21 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
 
     /* ---------- adaptations card ---------- */
     case 'card': {
+      // a card that is already filled (here or on another page) is shown, not offered to fill again
+      if (rest.length === 0 && !isCardEmpty(ctx.card)) {
+        return {
+          say: [
+            { text: talkText(ctx.lang).card.cardDone, mood: 'proud' },
+            { text: talkText(ctx.lang).card.cardDoneShow },
+            ...(ctx.lang === 'he' ? [] : [{ text: hebrewNote(ctx.lang) }]),
+          ],
+          choices: [
+            { emoji: '🪪', label: talkText(ctx.lang).card.cardShow, action: { kind: 'open', to: '/card/view' } },
+            BACK,
+          ],
+        }
+      }
+
       if (rest.length === 0) {
         return {
           say: [
@@ -394,6 +452,7 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
               text: talkText(ctx.lang).card.cardPrivacy,
               mood: 'calm',
             },
+            ...(ctx.lang === 'he' ? [] : [{ text: hebrewNote(ctx.lang) }]),
             { text: talkText(ctx.lang).card.cardQuestions },
           ],
           choices: [

@@ -5,11 +5,11 @@ import { Scene, Bubble } from '../components/kit'
 import homeTexts from '../../../data/parent/home.json'
 
 export function WaitTimesPage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang], 'parent/home').wait
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.wait-times.title')} subtitle={t('ui.tiles.wait-times.desc')}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>
           {tx.note}
@@ -64,7 +64,7 @@ export function WaitTimesPage() {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
           >
-            {tx.back}
+            {t('ui.buttons.back')}
           </button>
         </a>
       </div>

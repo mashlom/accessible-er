@@ -1,15 +1,9 @@
 import { keyed } from '../../../lib/keyed'
 import type { CSSProperties } from 'react'
 import { Scene, Bubble, Note } from '../components/kit'
-import {
-  loadLabels,
-  sensoryChannels,
-  sensoryColor,
-  sensoryColorSoft,
-  SENSORY_MAX,
-} from '../../../data/map'
-import { parentMapAreas, parentLoadLabel, parentChannelLabel } from '../../../data/parent/map'
-import { parentJourney } from '../../../data/parent'
+import { loadLabels } from '../../../data/map'
+import { parentMapAreas, parentLoadLabel } from '../../../data/parent/map'
+import { SensoryBar } from '../../../components/SensoryBar'
 import homeTexts from '../../../data/parent/home.json'
 import { useI18n } from '../../../hooks/useI18n'
 import type { MapArea } from '../../../data/types'
@@ -33,11 +27,11 @@ const loadFace: Record<MapArea['load'], string> = {
  * bright, how smelly, how crowded — and where you usually go next.
  */
 export function MapPage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang], 'parent/home').mapPage
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.map.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
       </div>
@@ -65,47 +59,12 @@ export function MapPage() {
               </div>
 
               <div className={styles.roomBody}>
-                <p>{area.stage ? parentJourney(lang).find((st) => st.id === area.stage)?.meaning : area.note}</p>
+                <p>{area.note}</p>
 
-                <div className={styles.weather}>
-                  {sensoryChannels.map((ch) => {
-                    const level = area.sensory[ch.key]
-                    return (
-                      <span
-                        key={ch.key}
-                        className={styles.weatherChip}
-                        style={{ background: sensoryColorSoft(level) }}
-                        title={`${parentChannelLabel(lang, ch.key)}: ${tx.ofFive.replace('{level}', String(level)).replace('{max}', String(SENSORY_MAX))}`}
-                      >
-                        <span aria-hidden>{ch.emoji}</span>
-                        {parentChannelLabel(lang, ch.key)}
-                        <span className={styles.weatherBars} aria-hidden>
-                          {Array.from({ length: SENSORY_MAX }, (_, i) => (
-                            <span
-                              key={i}
-                              className={styles.weatherBar}
-                              style={
-                                i < level
-                                  ? { background: sensoryColor(level) }
-                                  : undefined
-                              }
-                            />
-                          ))}
-                        </span>
-                        <span className="visually-hidden">
-                          {tx.ofFive.replace('{level}', String(level)).replace('{max}', String(SENSORY_MAX))}
-                        </span>
-                      </span>
-                    )
-                  })}
+                <div className={styles.roomSense}>
+                  <SensoryBar sensory={area.sensory} />
                 </div>
 
-                {area.next && (
-                  <p className={styles.roomNext}>
-                    <span aria-hidden>➡️ </span>
-                    <span className={styles.roomNextLabel}>{tx.next}</span> {area.next}
-                  </p>
-                )}
               </div>
             </article>
           )

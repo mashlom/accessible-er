@@ -40,81 +40,30 @@
       "interesting": "It is interesting"
     },
     "shell": {
-      "back": "Back",
       "map": "To the journey map",
       "menu": "To the concepts menu",
       "worlds": "Choose another world"
     },
     "text": {
       "starsEarned": "Stars earned",
-      "estimated": "⏱ Estimated time:",
-      "done": "Done",
       "oceanDecisionTitle": "Captain's decision",
-      "staffNote": "Nurse or doctor: choose the tests or treatments the doctor ordered",
-      "stageProcedures": "Procedures at this stage",
-      "reasonHint": "Tap the button to choose the reason for your visit and see your expected visit plan.",
-      "whatActuallyHappens": "What actually happens",
-      "childMayFeel": "What your child may feel",
-      "askStaff": "What to ask the staff",
-      "cardHint": "Tap the button to make a short card for the staff describing your child's particular needs.",
-      "prepareMeasurements": "How to prepare your child for the upcoming measurements",
-      "prepareChild": "How to prepare your child",
-      "calmDefault": "A moment — let's breathe together 💙",
-      "whenHard": "When it's hard — what helps",
-      "readySentences": "Ready-made sentences for staff",
-      "readyHint": "Hard to talk right now? Tap a sentence to show it to the staff in large text on the screen — it will appear in Hebrew.",
-      "freeMessage": "Free message to staff",
-      "freeHint": "Want to say something not listed above? Write it here and show it to the staff.",
-      "writeHere": "Write here...",
-      "cardTitle": "Accommodations card",
-      "cardDesc": "The card gathers what's important to know about your child — show it to the staff instead of explaining in words.",
-      "aboutMyChild": "What's important to know about my child",
-      "privacyA": "🔒 Everything is saved",
-      "privacyB": "on this device only",
-      "privacyC": ", deleted after 24 hours, and never sent anywhere.",
-      "aboutChild": "🧒 About my child (optional)",
-      "nickname": "Nickname / first name",
-      "optional": "Optional",
-      "age": "Age",
-      "otherPlaceholder": "Other… (free text)",
-      "other": "Other",
-      "anythingElse": "✏️ Anything else that helps? (optional)",
-      "freeNotePlaceholder": "For example: likes being told what's happening in a quiet voice…",
-      "reasonTitle": "What brought you here today?",
-      "reasonHintTop": "Your choice helps show your expected route",
-      "reasonAria": "Reason for the visit",
-      "expectedRoute": "Our expected route",
-      "ifNeeded": "if needed",
-      "routeNote": "This is only an example route. The exact route is decided by the medical staff.",
       "weDidIt": "We did it! 🎉",
       "oceanHeadline": "Your journey starts here",
-      "journeyProgress": "Journey progress",
       "towardsDischarge": "Getting ready to go home",
       "towardsAdmission": "Getting ready for continued hospitalization",
-      "outcomeLabel": "What happens now?",
-      "distractDefault": "Distraction corner",
-      "distractHint": "Choose what you'd like to see ↓",
-      "distractAria": "What would you like to see",
-      "distractWhy": "Distraction — why it helps",
-      "distractP1": "You can look here together instead of at the hand or the device. Choose together what interests your child most — the act of choosing already gives a sense of control.",
-      "distractP2": "If the device is set to \"reduce motion\", the animations won't play. You can also simply count to ten together — that's a good distraction too.",
-      "procedurePrompt": "Choose the procedures that were ordered",
-      "nextStep": "Next step",
-      "sensoryTitle": "Sensory load",
       "distractLabels": [
         "Rainbow",
         "Drop",
         "Star",
         "Heart",
-        "Whirl",
-        "Little star"
+        "Dizzy",
+        "Big star"
       ],
-      "sensoryLabels": [
-        "Noise",
-        "Light",
-        "Smell",
-        "People"
-      ],
+      "sensoryLabels": {
+        "light": "Light",
+        "smell": "Smell",
+        "people": "People"
+      },
       "coins": {
         "one": "You collected {n} coin — welcome to the shop!",
         "two": "You collected {n} coins — welcome to the shop!",
@@ -122,7 +71,6 @@
         "many": "You collected {n} coins — welcome to the shop!",
         "other": "You collected {n} coins — welcome to the shop!"
       },
-      "cardSubtitle": "Tick what fits — less than two minutes. At the end you get a short, large card, which you can show the staff on the screen or print.",
       "draft": "draft — awaiting review"
     },
     "careView": {
@@ -161,7 +109,56 @@
         "weAreHere": "We are here",
         "whatHappens": "What happens here",
         "challenge": "What may be hard",
-        "canAsk": "You can ask for"
+        "aboutChild": "🧒 About my child (optional)",
+        "aboutMyChild": "What's important to know about my child",
+        "age": "Age",
+        "anythingElse": "✏️ Anything else that helps? (optional)",
+        "askStaff": "What to ask the staff",
+        "calmDefault": "A moment — let's breathe together 💙",
+        "cardDesc": "The card gathers what's important to know about your child — show it to the staff instead of explaining in words.",
+        "cardHint": "Tap the button to make a short card for the staff describing your child's particular needs.",
+        "cardSubtitle": "Tick what fits — less than two minutes. At the end you get a short, large card, which you can show the staff on the screen or print.",
+        "cardTitle": "Accommodations card",
+        "childMayFeel": "What your child may feel",
+        "distractAria": "What would you like to see",
+        "distractHint": "Choose what you'd like to see ↓",
+        "distractP1": "You can look here together instead of at the hand or the device. Choose together what interests your child most — the act of choosing already gives a sense of control.",
+        "distractP2": "If the device is set to \"reduce motion\", the animations won't play. You can also simply count to ten together — that's a good distraction too.",
+        "distractWhy": "Distraction — why it helps",
+        "done": "Done",
+        "estimated": "⏱ Estimated time:",
+        "expectedRoute": "Our expected route",
+        "freeHint": "Want to say something not listed above? Write it here and show it to the staff.",
+        "freeMessage": "Free message to staff",
+        "freeNotePlaceholder": "For example: likes being told what's happening in a quiet voice…",
+        "ifNeeded": "if needed",
+        "journeyProgress": "Journey progress",
+        "nextStep": "Next step",
+        "nickname": "Nickname / first name",
+        "optional": "Optional",
+        "other": "Other",
+        "otherPlaceholder": "Other… (free text)",
+        "outcomeLabel": "What happens now?",
+        "prepareMeasurements": "How to prepare your child for the upcoming measurements",
+        "privacyA": "🔒 Everything is saved",
+        "privacyB": "on this device only",
+        "privacyC": ", deleted after 24 hours, and never sent anywhere.",
+        "procedurePrompt": "Choose the procedures that were ordered",
+        "readyHint": "Hard to talk right now? Tap a sentence to show it to the staff in large text on the screen — it will appear in Hebrew.",
+        "readySentences": "Ready sentences for the staff",
+        "reasonHint": "Tap the button to choose the reason for your visit and see your expected visit plan.",
+        "reasonHintTop": "Your choice helps show your expected route",
+        "reasonTitle": "What brought you here today?",
+        "routeNote": "This is only an example route. The exact route is decided by the medical staff.",
+        "sensoryTitle": "Sensory load",
+        "staffNote": "Nurse or doctor: choose the tests or treatments the doctor ordered",
+        "stageProcedures": "Procedures at this stage",
+        "whatActuallyHappens": "What actually happens",
+        "whenHard": "When it's hard — what helps",
+        "writeHere": "Write here...",
+        "whoNurse": "A nurse",
+        "durationMinute": "about a minute",
+        "minutes": "minutes"
       }
     },
     "celebrate": {
@@ -189,7 +186,6 @@
       ],
       "admission": [
         {
-          "title": "What happens now",
           "body": "The team has decided to continue care in the hospital. Your child will be transferred to an inpatient unit where they will receive close monitoring and care tailored to their needs."
         },
         {
@@ -273,7 +269,7 @@
         "desc": "Tell us how it was, so we can improve"
       },
       "distract": {
-        "title": "A distraction",
+        "title": "Distraction corner",
         "desc": "Something calm to look at"
       }
     },
@@ -289,115 +285,28 @@
       "videoText": "A real video of {title} from the Laniado ER, or a filmed social story. In the demo this is only a placeholder — the filming has to be done in the department itself."
     },
     "storyCalm": {
-      "title": "When it is hard",
       "subtitle": "When your child is overwhelmed, a few small things help. Take a breath — you are doing great work.",
       "breathe": "Breathe together with the circle: when it grows — breathe in. When it gets smaller — breathe out.",
       "circle": "Breathe",
       "tipsLabel": "What helps now",
-      "sentencesLabel": "Ready sentences for the staff",
       "sentencesHint": "Hard to talk right now? Tap a sentence — it will appear large on the screen, and you can simply show it to the staff.",
       "distract": "🫧 To the distraction corner — something calm to look at",
       "requests": "🙋 Everything you can ask the staff for",
-      "dialog": "Sentence shown to the staff",
-      "tips": [
-        {
-          "emoji": "🤫",
-          "title": "Use fewer words",
-          "body": "When your child is overwhelmed, fewer words help more. One short sentence, a calm voice, and lots of patience between sentences."
-        },
-        {
-          "emoji": "🧍",
-          "title": "Make some space",
-          "body": "Ask the staff to keep just one person close, and for everyone else to step back a little. Less stimulation = more calm."
-        },
-        {
-          "emoji": "🎧",
-          "title": "Reduce stimulation",
-          "body": "Headphones, a hat, dimmer lights, or a comfort object. You can ask the staff for a quiet space."
-        },
-        {
-          "emoji": "⏸️",
-          "title": "Ask for a break",
-          "body": "It's okay to pause. You can tell the staff \"we need a minute\" — most procedures can wait a short moment."
-        },
-        {
-          "emoji": "🧸",
-          "title": "Go back to the familiar",
-          "body": "A familiar object, song, video or game from home helps your child feel grounded. A small, familiar routine is calming in an unfamiliar place."
-        },
-        {
-          "emoji": "💬",
-          "title": "Guide the staff",
-          "body": "You are the experts on your child. Tell the staff in one short sentence what helps and what makes things worse — it's completely fine to guide them."
-        }
-      ]
+      "dialog": "Sentence shown to the staff"
     },
     "storyDistract": {
-      "title": "Distraction corner",
       "subtitle": "Something calm to look at during a test, a needle or a long wait. The child chooses what to watch.",
       "bubble": "You can look here instead of at your hand. I stay with you until it is over.",
-      "labels": [
-        "Rainbow",
-        "Drop",
-        "Star",
-        "Heart",
-        "Dizzy",
-        "Big star"
-      ],
       "aria": "What to watch",
       "note": "If the device is set to reduce motion, the animations will not run — the bubbles and the picture stay still. You can also simply count together to ten; that is a good distraction too.",
       "cross": "💗 More things that help when it is hard"
     },
     "storyRequests": {
-      "title": "What can I ask for?",
       "subtitle": "These are completely legitimate requests. The staff is used to them, and it is fine to ask.",
       "bubble": "You are the experts on your child. If something would help, you can simply ask — even in the middle.",
-      "note": "Whether each adaptation is available depends on the medical situation, the equipment and how busy it is at that moment. Even when it is not possible — it is worth asking.",
-      "items": [
-        {
-          "emoji": "🌙",
-          "title": "Quiet room / sensory room",
-          "detail": "An adapted space with less noise and light, for a child who is overwhelmed or needs to calm down."
-        },
-        {
-          "emoji": "👤",
-          "title": "Fewer staff in the room",
-          "detail": "One person leads and talks, and the rest of the team waits outside as much as possible."
-        },
-        {
-          "emoji": "🗣️",
-          "title": "Explain before touching",
-          "detail": "Every touch or procedure is explained first, so there are no surprises."
-        },
-        {
-          "emoji": "🙌",
-          "title": "Small choices",
-          "detail": "Let your child make small choices — stand or sit, right hand or left, which finger, where to start. A small choice gives a sense of control and makes things easier."
-        },
-        {
-          "emoji": "⏱️",
-          "title": "Time to process and respond",
-          "detail": "A little time between an instruction and doing it, and between a question and an answer, without rushing."
-        },
-        {
-          "emoji": "💉",
-          "title": "Preparing for a procedure",
-          "detail": "An explanation in advance, numbing cream before a needle, and distraction during the procedure."
-        },
-        {
-          "emoji": "🔇",
-          "title": "Less sensory input",
-          "detail": "Dimming the lights, lowering noise, and closing the door — to reduce sensory overload."
-        },
-        {
-          "emoji": "🖼️",
-          "title": "Alternative communication",
-          "detail": "Using pictures, pointing or another way of communicating, if speaking is hard for your child right now."
-        }
-      ]
+      "note": "Whether each adaptation is available depends on the medical situation, the equipment and how busy it is at that moment. Even when it is not possible — it is worth asking."
     },
     "storyFeedback": {
-      "title": "How was it?",
       "subtitle": "A few short questions — so we can improve the tool. No name or identifying details are needed.",
       "ratingTitle": "How much did the tool help you today?",
       "faces": [
@@ -448,9 +357,9 @@
           "noAnswer": "מעדיף/ה לא לענות"
         },
         "rating": {
-          "1": "פחות עזר",
-          "2": "עזר קצת",
-          "3": "עזר מאוד"
+          "1": "It helped less",
+          "2": "It helped a little",
+          "3": "It helped a lot"
         },
         "unset": "לא צוין",
         "none": "—",
@@ -487,7 +396,7 @@
     },
     "cardView": {
       "fill": "Fill in the card",
-      "savePdf": "📄 Save as PDF / print",
+      "savePdf": "📄 Save as PDF",
       "edit": "✏️ Edit",
       "sendHint": "To send it to the staff: tap \"Save as PDF\", choose \"Save as PDF\" in the print window, and send the file yourselves. The card is kept on this device only, deleted after 24 hours, and nothing is sent automatically.",
       "print": "🖨️ Print"
@@ -551,81 +460,30 @@
       "interesting": "Это интересно"
     },
     "shell": {
-      "back": "Назад",
       "map": "К карте путешествия",
       "menu": "В меню концепций",
       "worlds": "Выбрать другой мир"
     },
     "text": {
       "starsEarned": "Заработанные звёзды",
-      "done": "Выполнено",
       "oceanDecisionTitle": "Решение капитана",
-      "staffNote": "Медсестра или врач: выберите обследования или процедуры, которые назначил врач",
-      "estimated": "⏱ Примерное время:",
-      "stageProcedures": "Процедуры на этом этапе",
-      "reasonHint": "Нажмите на кнопку, чтобы выбрать причину визита и увидеть ожидаемый план визита.",
-      "whatActuallyHappens": "Что происходит на самом деле",
-      "childMayFeel": "Что может почувствовать ребёнок",
-      "askStaff": "О чём попросить персонал",
-      "cardHint": "Нажмите на кнопку, чтобы подготовить для персонала короткую карточку об особенностях вашего ребёнка.",
-      "prepareMeasurements": "Как подготовить ребёнка к предстоящим измерениям",
-      "prepareChild": "Как подготовить ребёнка",
-      "calmDefault": "Минутку — дышим вместе 💙",
-      "whenHard": "Когда трудно — что помогает",
-      "readySentences": "Готовые фразы для персонала",
-      "readyHint": "Трудно говорить в такой момент? Нажмите на фразу, чтобы показать её персоналу крупно на экране — она появится на иврите.",
-      "freeMessage": "Своё сообщение персоналу",
-      "freeHint": "Хотите сказать то, чего нет выше? Напишите здесь и покажите персоналу.",
-      "writeHere": "Напишите здесь...",
-      "cardTitle": "Карточка адаптаций",
-      "cardDesc": "В карточке собрано главное о ребёнке — покажите её персоналу, вместо того чтобы объяснять словами.",
-      "aboutMyChild": "Что важно знать о моём ребёнке",
-      "privacyA": "🔒 Всё хранится",
-      "privacyB": "только на этом устройстве",
-      "privacyC": ", удаляется через 24 часа и никуда не отправляется.",
-      "aboutChild": "🧒 О ребёнке (необязательно)",
-      "nickname": "Прозвище / имя",
-      "optional": "Необязательно",
-      "age": "Возраст",
-      "otherPlaceholder": "Другое… (можно своими словами)",
-      "other": "Другое",
-      "anythingElse": "✏️ Что-то ещё, что помогает? (необязательно)",
-      "freeNotePlaceholder": "Например: любит, когда тихим голосом рассказывают, что происходит…",
-      "reasonTitle": "Что привело вас сегодня?",
-      "reasonHintTop": "Выбор поможет увидеть ваш ожидаемый маршрут",
-      "reasonAria": "Причина визита",
-      "expectedRoute": "Ожидаемый маршрут",
-      "ifNeeded": "при необходимости",
-      "routeNote": "Это лишь примерный маршрут. Точный маршрут определяет медицинский персонал.",
       "weDidIt": "Мы справились! 🎉",
       "oceanHeadline": "Твоё путешествие начинается здесь",
-      "journeyProgress": "Прогресс пути",
       "towardsDischarge": "Готовимся к выписке домой",
       "towardsAdmission": "Готовимся к госпитализации",
-      "outcomeLabel": "Что происходит дальше?",
-      "distractDefault": "Уголок, чтобы отвлечься",
-      "distractHint": "Выбери, что хочешь посмотреть ↓",
-      "distractAria": "Что хочешь посмотреть",
-      "distractWhy": "Отвлечение — почему это помогает",
-      "distractP1": "Можно смотреть сюда вместе, а не на руку или прибор. Выберите вместе, что больше всего интересно ребёнку, — сам выбор уже даёт ощущение контроля.",
-      "distractP2": "Если на устройстве включено «уменьшение движения», анимации не запустятся. Можно просто вместе посчитать до десяти — это тоже хорошее отвлечение.",
-      "procedurePrompt": "Выберите назначенные процедуры",
-      "nextStep": "Следующий шаг",
-      "sensoryTitle": "Уровень нагрузки",
       "distractLabels": [
         "Радуга",
         "Капля",
         "Звезда",
         "Сердце",
-        "Вихрь",
-        "Звёздочка"
+        "Водоворот",
+        "Большая звезда"
       ],
-      "sensoryLabels": [
-        "Шум",
-        "Свет",
-        "Запах",
-        "Люди"
-      ],
+      "sensoryLabels": {
+        "light": "Свет",
+        "smell": "Запах",
+        "people": "Люди"
+      },
       "coins": {
         "one": "У тебя есть {n} монета — добро пожаловать в магазин!",
         "few": "У тебя есть {n} монеты — добро пожаловать в магазин!",
@@ -633,11 +491,10 @@
         "other": "У тебя есть {n} монет — добро пожаловать в магазин!",
         "two": "У тебя есть {n} монет — добро пожаловать в магазин!"
       },
-      "cardSubtitle": "Отметьте подходящее — это займёт меньше двух минут. В конце получится короткая крупная карточка, которую можно показать персоналу с экрана или распечатать.",
       "draft": "черновик — ждёт проверки"
     },
     "careView": {
-      "hebrewNote": "Карточка написана на иврите: персонал читает её на иврите."
+      "hebrewNote": "Карточка будет написана на иврите: персонал читает её на иврите."
     },
     "language": {
       "he": "עברית",
@@ -672,7 +529,56 @@
         "weAreHere": "Мы здесь",
         "whatHappens": "Что здесь происходит",
         "challenge": "Что может быть трудно",
-        "canAsk": "Можно попросить"
+        "aboutChild": "🧒 О ребёнке (необязательно)",
+        "aboutMyChild": "Что важно знать о моём ребёнке",
+        "age": "Возраст",
+        "anythingElse": "✏️ Что-то ещё, что помогает? (необязательно)",
+        "askStaff": "О чём попросить персонал",
+        "calmDefault": "Минутку — дышим вместе 💙",
+        "cardDesc": "В карточке собрано главное о ребёнке — покажите её персоналу, вместо того чтобы объяснять словами.",
+        "cardHint": "Нажмите на кнопку, чтобы подготовить для персонала короткую карточку об особенностях вашего ребёнка.",
+        "cardSubtitle": "Отметьте подходящее — это займёт меньше двух минут. В конце получится короткая крупная карточка, которую можно показать персоналу с экрана или распечатать.",
+        "cardTitle": "Карточка адаптаций",
+        "childMayFeel": "Что может почувствовать ребёнок",
+        "distractAria": "Что хочешь посмотреть",
+        "distractHint": "Выбери, что хочешь посмотреть ↓",
+        "distractP1": "Можно смотреть сюда вместе, а не на руку или прибор. Выберите вместе, что больше всего интересно ребёнку, — сам выбор уже даёт ощущение контроля.",
+        "distractP2": "Если на устройстве включено «уменьшение движения», анимации не запустятся. Можно просто вместе посчитать до десяти — это тоже хорошее отвлечение.",
+        "distractWhy": "Отвлечение — почему это помогает",
+        "done": "Выполнено",
+        "estimated": "⏱ Примерное время:",
+        "expectedRoute": "Ожидаемый маршрут",
+        "freeHint": "Хотите сказать то, чего нет выше? Напишите здесь и покажите персоналу.",
+        "freeMessage": "Своё сообщение персоналу",
+        "freeNotePlaceholder": "Например: любит, когда тихим голосом рассказывают, что происходит…",
+        "ifNeeded": "при необходимости",
+        "journeyProgress": "Прогресс пути",
+        "nextStep": "Следующий шаг",
+        "nickname": "Прозвище / имя",
+        "optional": "Необязательно",
+        "other": "Другое",
+        "otherPlaceholder": "Другое… (можно своими словами)",
+        "outcomeLabel": "Что происходит дальше?",
+        "prepareMeasurements": "Как подготовить ребёнка к предстоящим измерениям",
+        "privacyA": "🔒 Всё хранится",
+        "privacyB": "только на этом устройстве",
+        "privacyC": ", удаляется через 24 часа и никуда не отправляется.",
+        "procedurePrompt": "Выберите назначенные процедуры",
+        "readyHint": "Трудно говорить в такой момент? Нажмите на фразу, чтобы показать её персоналу крупно на экране — она появится на иврите.",
+        "readySentences": "Готовые фразы для персонала",
+        "reasonHint": "Нажмите на кнопку, чтобы выбрать причину визита и увидеть ожидаемый план визита.",
+        "reasonHintTop": "Выбор поможет увидеть ваш ожидаемый маршрут",
+        "reasonTitle": "Что привело вас сегодня?",
+        "routeNote": "Это лишь примерный маршрут. Точный маршрут определяет медицинский персонал.",
+        "sensoryTitle": "Уровень нагрузки",
+        "staffNote": "Медсестра или врач: выберите обследования или процедуры, которые назначил врач",
+        "stageProcedures": "Процедуры на этом этапе",
+        "whatActuallyHappens": "Что происходит на самом деле",
+        "whenHard": "Когда трудно — что помогает",
+        "writeHere": "Напишите здесь...",
+        "whoNurse": "Медсестра или медбрат",
+        "durationMinute": "около минуты",
+        "minutes": "минут"
       }
     },
     "celebrate": {
@@ -700,7 +606,6 @@
       ],
       "admission": [
         {
-          "title": "Что происходит сейчас",
           "body": "Команда решила продолжить лечение в больнице. Ребёнка переведут в отделение интенсивной терапии, где будет постоянный мониторинг и помощь, подобранная под его нужды."
         },
         {
@@ -765,7 +670,7 @@
         "desc": "Короткие советы родителю в моменты тревоги"
       },
       "requests": {
-        "title": "Что можно попросить?",
+        "title": "О чём можно попросить?",
         "desc": "Адаптации, о которых можно попросить персонал"
       },
       "discharge": {
@@ -784,7 +689,7 @@
         "desc": "Расскажите, как всё прошло, — чтобы мы стали лучше"
       },
       "distract": {
-        "title": "Отвлечься",
+        "title": "Уголок, чтобы отвлечься",
         "desc": "Что-то спокойное, на что можно смотреть"
       }
     },
@@ -800,115 +705,28 @@
       "videoText": "Настоящее видео: {title} в приёмном покое Ланиадо или снятая социальная история. В демо здесь только место — съёмку нужно делать в самом отделении."
     },
     "storyCalm": {
-      "title": "Когда трудно",
       "subtitle": "Когда ребёнок перегружен, помогают несколько маленьких вещей. Сделайте вдох — вы делаете отличную работу.",
       "breathe": "Дышите вместе с кругом: когда он растёт — вдох. Когда уменьшается — выдох.",
       "circle": "Дыхание",
       "tipsLabel": "Что помогает сейчас",
-      "sentencesLabel": "Готовые фразы для персонала",
       "sentencesHint": "Трудно говорить сейчас? Нажмите на фразу — она появится крупно на экране, и её можно просто показать персоналу.",
       "distract": "🫧 В уголок отвлечения — что-то спокойное, на что можно смотреть",
       "requests": "🙋 Всё, что можно попросить у персонала",
-      "dialog": "Фраза, показанная персоналу",
-      "tips": [
-        {
-          "emoji": "🤫",
-          "title": "Меньше слов",
-          "body": "Когда ребёнок перегружен, чем меньше слов, тем лучше. Одна короткая фраза, спокойный голос и много терпения между фразами."
-        },
-        {
-          "emoji": "🧍",
-          "title": "Дать больше пространства",
-          "body": "Попросите персонал, чтобы рядом остался только один человек, а остальные немного отошли. Меньше раздражителей = больше спокойствия."
-        },
-        {
-          "emoji": "🎧",
-          "title": "Убрать раздражители",
-          "body": "Наушники, шапка, приглушённый свет или успокаивающий предмет. Можно попросить у персонала тихое место."
-        },
-        {
-          "emoji": "⏸️",
-          "title": "Попросить паузу",
-          "body": "Остановиться — можно. Скажите персоналу: «Нам нужна минута» — большинство процедур могут немного подождать."
-        },
-        {
-          "emoji": "🧸",
-          "title": "Вернуться к привычному",
-          "body": "Знакомый предмет, песня, видео или игра из дома помогают ребёнку почувствовать опору. Маленький привычный ритуал успокаивает в незнакомом месте."
-        },
-        {
-          "emoji": "💬",
-          "title": "Подсказать персоналу",
-          "body": "Вы лучше всех знаете своего ребёнка. Скажите персоналу коротко, что помогает, а что усиливает стресс, — направлять их совершенно нормально."
-        }
-      ]
+      "dialog": "Фраза, показанная персоналу"
     },
     "storyDistract": {
-      "title": "Отвлечься",
       "subtitle": "Что-то спокойное, на что можно смотреть во время обследования, укола или долгого ожидания. Ребёнок выбирает, что смотреть.",
       "bubble": "Можно смотреть сюда, а не на руку. Я остаюсь с вами, пока всё не закончится.",
-      "labels": [
-        "Радуга",
-        "Капля",
-        "Звёздочка",
-        "Сердце",
-        "Водоворот",
-        "Большая звезда"
-      ],
       "aria": "Что хотим посмотреть",
       "note": "Если на устройстве включено «уменьшение движения», анимации не будут работать — пузыри и картинка останутся на месте. Можно просто посчитать вместе до десяти — это тоже хорошее отвлечение.",
       "cross": "💗 Ещё то, что помогает, когда трудно"
     },
     "storyRequests": {
-      "title": "Что можно попросить?",
       "subtitle": "Это совершенно законные просьбы. Персонал к ним привык, и просить — совершенно нормально.",
       "bubble": "Вы — эксперты в своём ребёнке. Если что-то поможет, можно просто попросить — даже в середине.",
-      "note": "Возможность каждой адаптации зависит от медицинской ситуации, оборудования и загруженности в этот момент. Даже если сейчас не получится — стоит спросить.",
-      "items": [
-        {
-          "emoji": "🌙",
-          "title": "Тихая комната / сенсорная комната",
-          "detail": "Специальное пространство с меньшим шумом и светом — для ребёнка, который перегружен или которому нужно успокоиться."
-        },
-        {
-          "emoji": "👤",
-          "title": "Меньше персонала в палате",
-          "detail": "Один человек ведёт и говорит, а остальные по возможности ждут снаружи."
-        },
-        {
-          "emoji": "🗣️",
-          "title": "Объяснение перед прикосновением",
-          "detail": "Каждое прикосновение или действие сначала объясняют, чтобы не было неожиданностей."
-        },
-        {
-          "emoji": "🙌",
-          "title": "Маленькие выборы",
-          "detail": "Дать ребёнку маленький выбор — стоять или сидеть, правая рука или левая, какой палец, с чего начать. Даже небольшой выбор даёт ощущение контроля и облегчает ситуацию."
-        },
-        {
-          "emoji": "⏱️",
-          "title": "Время на осмысление и ответ",
-          "detail": "Немного времени между просьбой и её выполнением, между вопросом и ответом — без спешки."
-        },
-        {
-          "emoji": "💉",
-          "title": "Подготовка к процедуре",
-          "detail": "Объяснение заранее, обезболивающий крем перед уколом и отвлечение во время процедуры."
-        },
-        {
-          "emoji": "🔇",
-          "title": "Меньше раздражителей",
-          "detail": "Приглушить свет, уменьшить шум и закрыть дверь — чтобы снизить сенсорную нагрузку."
-        },
-        {
-          "emoji": "🖼️",
-          "title": "Альтернативная коммуникация",
-          "detail": "Картинки, указывание или другой способ общения, если ребёнку сейчас трудно говорить."
-        }
-      ]
+      "note": "Возможность каждой адаптации зависит от медицинской ситуации, оборудования и загруженности в этот момент. Даже если сейчас не получится — стоит спросить."
     },
     "storyFeedback": {
-      "title": "Как прошло?",
       "subtitle": "Несколько коротких вопросов — чтобы мы могли улучшить инструмент. Имя или личные данные не нужны.",
       "ratingTitle": "Насколько инструмент помог вам сегодня?",
       "faces": [
@@ -959,9 +777,9 @@
           "noAnswer": "מעדיף/ה לא לענות"
         },
         "rating": {
-          "1": "פחות עזר",
-          "2": "עזר קצת",
-          "3": "עזר מאוד"
+          "1": "Помогло меньше",
+          "2": "Немного помогло",
+          "3": "Очень помогло"
         },
         "unset": "לא צוין",
         "none": "—",
@@ -998,7 +816,7 @@
     },
     "cardView": {
       "fill": "Заполнить карточку",
-      "savePdf": "📄 Сохранить как PDF / печать",
+      "savePdf": "📄 Сохранить как PDF",
       "edit": "✏️ Изменить",
       "sendHint": "Чтобы отправить персоналу: нажмите «Сохранить как PDF», в окне печати выберите «Сохранить как PDF» и отправьте файл сами. Карточка хранится только на этом устройстве, удаляется через 24 часа, и ничего не отправляется автоматически.",
       "print": "🖨️ Печать"
@@ -1023,68 +841,17 @@
   },
   "he": {
     "text": {
-      "sensoryTitle": "מה לצפות כאן",
-      "sensoryLabels": [
-        "רעש",
-        "אור",
-        "ריח",
-        "אנשים"
-      ],
-      "estimated": "⏱ זמן משוער:",
-      "reasonHint": "בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.",
-      "whatActuallyHappens": "מה קורה בפועל",
-      "childMayFeel": "מה הילד/ה עשוי/ה להרגיש",
-      "cardHint": "בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.",
-      "prepareMeasurements": "איך להכין את הילד/ה למדידות שעומדות לקרות",
-      "prepareChild": "איך להכין את הילד/ה",
-      "askStaff": "מה לבקש מהצוות",
-      "stageProcedures": "פרוצדורות בשלב הזה",
-      "cardTitle": "כרטיס התאמות",
-      "aboutMyChild": "מה חשוב לדעת על הילד/ה שלי",
-      "cardSubtitle": "סמנו את מה שמתאים — פחות משתי דקות. בסוף יוצא כרטיס קצר וגדול, שאפשר להראות לצוות מהמסך או להדפיס.",
-      "privacyA": "🔒 הכל נשמר",
-      "privacyB": "במכשיר הזה בלבד",
-      "privacyC": ", נמחק אחרי 24 שעות, ולא נשלח לשום מקום.",
-      "aboutChild": "🧒 על הילד/ה שלי (לא חובה)",
-      "nickname": "כינוי / שם פרטי",
-      "optional": "לא חובה",
-      "age": "גיל",
-      "otherPlaceholder": "אחר… (אפשר לכתוב בחופשי)",
-      "other": "אחר",
-      "anythingElse": "✏️ עוד משהו שעוזר? (לא חובה)",
-      "freeNotePlaceholder": "למשל: אוהב שמספרים לו מה קורה בקול שקט…",
-      "calmDefault": "רגע, נושמים יחד 💙",
-      "whenHard": "כשקשה — מה עוזר",
-      "readySentences": "משפטים מוכנים לצוות",
-      "readyHint": "קשה לדבר ברגע כזה? לחצו על משפט כדי להציג אותו לצוות בגדול על המסך.",
-      "freeMessage": "הודעה חופשית לצוות",
-      "freeHint": "רוצים לומר משהו שלא מופיע למעלה? כתבו כאן והציגו לצוות.",
-      "writeHere": "כתבו כאן...",
-      "cardDesc": "הכרטיס מרכז את מה שחשוב לדעת על הילד/ה — להציג לצוות במקום להסביר במילים.",
+      "sensoryLabels": {
+        "light": "אור",
+        "smell": "ריח",
+        "people": "אנשים"
+      },
       "oceanDecisionTitle": "החלטת הקפטן",
-      "procedurePrompt": "בחרו את הפרוצדורות שנקבעו",
-      "staffNote": "אחות או רופא: בחרו את הבדיקות או הטיפולים שהרופא הנחה",
       "weDidIt": "עשינו את זה! 🎉",
-      "outcomeLabel": "מה קורה כעת?",
       "towardsDischarge": "לקראת שחרור הביתה",
       "towardsAdmission": "לקראת המשך אשפוז",
-      "distractDefault": "פינת הסחת דעת",
-      "distractHint": "בחרי/בחר מה רוצים לראות ↓",
-      "distractAria": "מה רוצים לראות",
-      "distractWhy": "הסחת דעת — למה זה עוזר",
-      "distractP1": "אפשר להסתכל יחד לכאן במקום על היד או על המכשיר. בחרו ביחד מה הכי מעניין את הילד/ה — עצם הבחירה כבר נותנת תחושת שליטה.",
-      "distractP2": "אם המכשיר מוגדר ל\"הפחתת תנועה\", האנימציות לא ירוצו. אפשר גם פשוט לספור יחד עד עשר — גם זו הסחת דעת טובה.",
       "starsEarned": "כוכבים שהרווחת",
       "oceanHeadline": "המסע שלך מתחיל כאן",
-      "done": "בוצע",
-      "journeyProgress": "התקדמות במסע",
-      "nextStep": "שלב הבא",
-      "reasonTitle": "מה הביא אתכם היום?",
-      "reasonHintTop": "הבחירה עוזרת לראות את המסלול הצפוי שלכם",
-      "reasonAria": "סיבת ההגעה",
-      "expectedRoute": "המסלול הצפוי שלנו",
-      "ifNeeded": "לפי הצורך",
-      "routeNote": "זהו מסלול לדוגמה בלבד. המסלול המדויק נקבע על ידי הצוות הרפואי.",
       "distractLabels": [
         "קשת",
         "טיפה",
@@ -1142,7 +909,6 @@
       "interesting": "מעניין"
     },
     "shell": {
-      "back": "חזרה",
       "map": "למפת המסע",
       "menu": "לתפריט הקונספטים",
       "worlds": "לבחירת עולם אחר"
@@ -1183,7 +949,56 @@
         "weAreHere": "אנחנו כאן",
         "whatHappens": "מה קורה כאן",
         "challenge": "מה עלול להיות קשה",
-        "canAsk": "מה אפשר לבקש"
+        "aboutChild": "🧒 על הילד/ה שלי (לא חובה)",
+        "aboutMyChild": "מה חשוב לדעת על הילד/ה שלי",
+        "age": "גיל",
+        "anythingElse": "✏️ עוד משהו שעוזר? (לא חובה)",
+        "askStaff": "מה לבקש מהצוות",
+        "calmDefault": "רגע, נושמים יחד 💙",
+        "cardDesc": "הכרטיס מרכז את מה שחשוב לדעת על הילד/ה — להציג לצוות במקום להסביר במילים.",
+        "cardHint": "בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.",
+        "cardSubtitle": "סמנו את מה שמתאים — פחות משתי דקות. בסוף יוצא כרטיס קצר וגדול, שאפשר להראות לצוות מהמסך או להדפיס.",
+        "cardTitle": "כרטיס התאמות",
+        "childMayFeel": "מה הילד/ה עשוי/ה להרגיש",
+        "distractAria": "מה רוצים לראות",
+        "distractHint": "בחרי/בחר מה רוצים לראות ↓",
+        "distractP1": "אפשר להסתכל יחד לכאן במקום על היד או על המכשיר. בחרו ביחד מה הכי מעניין את הילד/ה — עצם הבחירה כבר נותנת תחושת שליטה.",
+        "distractP2": "אם המכשיר מוגדר ל\"הפחתת תנועה\", האנימציות לא ירוצו. אפשר גם פשוט לספור יחד עד עשר — גם זו הסחת דעת טובה.",
+        "distractWhy": "הסחת דעת — למה זה עוזר",
+        "done": "בוצע",
+        "estimated": "⏱ זמן משוער:",
+        "expectedRoute": "המסלול הצפוי שלנו",
+        "freeHint": "רוצים לומר משהו שלא מופיע למעלה? כתבו כאן והציגו לצוות.",
+        "freeMessage": "הודעה חופשית לצוות",
+        "freeNotePlaceholder": "למשל: אוהב שמספרים לו מה קורה בקול שקט…",
+        "ifNeeded": "לפי הצורך",
+        "journeyProgress": "התקדמות במסע",
+        "nextStep": "שלב הבא",
+        "nickname": "כינוי / שם פרטי",
+        "optional": "לא חובה",
+        "other": "אחר",
+        "otherPlaceholder": "אחר… (אפשר לכתוב בחופשי)",
+        "outcomeLabel": "מה קורה כעת?",
+        "prepareMeasurements": "איך להכין את הילד/ה למדידות שעומדות לקרות",
+        "privacyA": "🔒 הכל נשמר",
+        "privacyB": "במכשיר הזה בלבד",
+        "privacyC": ", נמחק אחרי 24 שעות, ולא נשלח לשום מקום.",
+        "procedurePrompt": "בחרו את הפרוצדורות שנקבעו",
+        "readyHint": "קשה לדבר ברגע כזה? לחצו על משפט כדי להציג אותו לצוות בגדול על המסך.",
+        "readySentences": "משפטים מוכנים לצוות",
+        "reasonHint": "בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.",
+        "reasonHintTop": "הבחירה עוזרת לראות את המסלול הצפוי שלכם",
+        "reasonTitle": "מה הביא אתכם היום?",
+        "routeNote": "זהו מסלול לדוגמה בלבד. המסלול המדויק נקבע על ידי הצוות הרפואי.",
+        "sensoryTitle": "מה לצפות כאן",
+        "staffNote": "אחות או רופא: בחרו את הבדיקות או הטיפולים שהרופא הנחה",
+        "stageProcedures": "פרוצדורות בשלב הזה",
+        "whatActuallyHappens": "מה קורה בפועל",
+        "whenHard": "כשקשה — מה עוזר",
+        "writeHere": "כתבו כאן...",
+        "whoNurse": "אח או אחות",
+        "durationMinute": "כדקה",
+        "minutes": "דקות"
       }
     },
     "celebrate": {
@@ -1211,7 +1026,6 @@
       ],
       "admission": [
         {
-          "title": "מה קורה עכשיו",
           "body": "הצוות החליט להמשיך עם טיפול בבית חולים. הילד/ה יעבור למחלקת אשפוז, שם יהיה מעקב מקרוב והתאמה בהתאם לצרכים."
         },
         {
@@ -1256,7 +1070,7 @@
         "desc": "כרטיס התאמות קצר להצגה לצוות"
       },
       "journey": {
-        "title": "מה קורה עכשיו?",
+        "title": "השביל שלנו",
         "desc": "שלבי הביקור במיון, ומה צפוי בהמשך"
       },
       "wait-times": {
@@ -1276,7 +1090,7 @@
         "desc": "הנחיות קצרות להורה ברגעי מצוקה"
       },
       "requests": {
-        "title": "מה אפשר לבקש?",
+        "title": "על מה אפשר לבקש?",
         "desc": "התאמות שאפשר לבקש מהצוות"
       },
       "discharge": {
@@ -1291,11 +1105,11 @@
         "desc": "בקשה או תודה — להצגה על המסך או לשליחה במייל"
       },
       "feedback": {
-        "title": "משוב קצר",
+        "title": "איך היה?",
         "desc": "ספרו לנו איך היה — כדי שנשתפר"
       },
       "distract": {
-        "title": "הסחת דעת",
+        "title": "פינת הסחת דעת",
         "desc": "משהו רגוע להסתכל עליו"
       }
     },
@@ -1311,115 +1125,28 @@
       "videoText": "סרטון אמיתי של {title} מהמלר״ד בלניאדו, או סיפור חברתי מצולם. בדמו זה שמור מקום בלבד — הצילום צריך להיעשות במחלקה עצמה."
     },
     "storyCalm": {
-      "title": "כשקשה",
       "subtitle": "כשהילד/ה מוצף/ת, כמה דברים קטנים עוזרים. קחו נשימה — אתם עושים עבודה נהדרת.",
       "breathe": "אפשר לנשום יחד עם העיגול: כשהוא גדל — שואפים. כשהוא קטן — נושפים.",
       "circle": "נשימה",
       "tipsLabel": "מה עוזר עכשיו",
-      "sentencesLabel": "משפטים מוכנים לצוות",
       "sentencesHint": "קשה לדבר עכשיו? לחצו על משפט — הוא יופיע בגדול על המסך, ואפשר פשוט להראות אותו לצוות.",
       "distract": "🫧 לפינת הסחת דעת — משהו רגוע להסתכל עליו",
       "requests": "🙋 לכל מה שאפשר לבקש מהצוות",
-      "dialog": "משפט מוצג לצוות",
-      "tips": [
-        {
-          "emoji": "🤫",
-          "title": "להפחית מילים",
-          "body": "בזמן הצפה, פחות מילים עוזרות יותר. משפט קצר אחד, קול רגוע, והמון סבלנות בין המשפטים."
-        },
-        {
-          "emoji": "🧍",
-          "title": "לפנות מרחב",
-          "body": "בקשו מהצוות שאדם אחד בלבד יישאר קרוב, ושאר האנשים יתרחקו קצת. פחות גירויים = יותר רוגע."
-        },
-        {
-          "emoji": "🎧",
-          "title": "להוריד גירויים",
-          "body": "אוזניות, כובע, הורדת אור, או חפץ מרגיע. אפשר לבקש מהצוות מרחב שקט."
-        },
-        {
-          "emoji": "⏸️",
-          "title": "לבקש הפסקה",
-          "body": "מותר לעצור. אפשר להגיד לצוות \"אנחנו צריכים דקה\" — רוב הפעולות יכולות לחכות רגע קצר."
-        },
-        {
-          "emoji": "🧸",
-          "title": "לחזור למוכר",
-          "body": "חפץ, שיר, סרטון או משחק מוכר מהבית עוזרים לעגן. שגרה קטנה ומוכרת מרגיעה בתוך מקום זר."
-        },
-        {
-          "emoji": "💬",
-          "title": "לתווך לצוות",
-          "body": "אתם המומחים לילד שלכם. אמרו לצוות במשפט קצר מה עוזר ומה מסלים — זה בסדר גמור לכוון אותם."
-        }
-      ]
+      "dialog": "משפט מוצג לצוות"
     },
     "storyDistract": {
-      "title": "הסחת דעת",
       "subtitle": "משהו רגוע להסתכל עליו בזמן בדיקה, דקירה או המתנה ארוכה. הילד/ה בוחר/ת מה לראות.",
       "bubble": "אפשר להסתכל לכאן במקום על היד. אני נשאר איתכם עד שזה נגמר.",
-      "labels": [
-        "קשת",
-        "טיפה",
-        "כוכב",
-        "לב",
-        "סחרחורת",
-        "כוכבון"
-      ],
       "aria": "מה רוצים לראות",
       "note": "אם המכשיר מוגדר ל\"הפחתת תנועה\", האנימציות לא ירוצו — הבועות והציור יישארו במקום. אפשר גם פשוט לספור יחד עד עשר; גם זו הסחת דעת טובה.",
       "cross": "💗 לעוד דברים שעוזרים כשקשה"
     },
     "storyRequests": {
-      "title": "מה אפשר לבקש",
       "subtitle": "אלה בקשות לגיטימיות לגמרי. הצוות רגיל אליהן, וזה בסדר גמור לבקש.",
       "bubble": "אתם המומחים לילד/ה שלכם. אם משהו יעזור — אפשר פשוט לבקש, גם באמצע.",
-      "note": "הזמינות של כל התאמה תלויה במצב הרפואי, בציוד ובעומס באותו רגע. גם כשלא מתאפשר — שווה לשאול.",
-      "items": [
-        {
-          "emoji": "🌙",
-          "title": "חדר שקט / סנוזלן",
-          "detail": "מרחב מותאם עם פחות רעש ואור, למי שמוצף או צריך להירגע."
-        },
-        {
-          "emoji": "👤",
-          "title": "פחות אנשי צוות בחדר",
-          "detail": "שאדם אחד יוביל וידבר, ושאר הצוות ימתין בחוץ ככל האפשר."
-        },
-        {
-          "emoji": "🗣️",
-          "title": "הסבר לפני מגע",
-          "detail": "שכל נגיעה או פעולה יוסברו קודם, כדי שלא יהיו הפתעות."
-        },
-        {
-          "emoji": "🙌",
-          "title": "מיקרו־בחירות",
-          "detail": "לאפשר לילד/ה בחירות קטנות — לעמוד או לשבת, יד ימין או שמאל, איזו אצבע, מאיפה מתחילים. בחירה קטנה נותנת תחושת שליטה ומקלה."
-        },
-        {
-          "emoji": "⏱️",
-          "title": "זמן עיבוד ותגובה",
-          "detail": "זמן קצר בין הוראה לביצוע, ובין שאלה לתשובה, בלי למהר."
-        },
-        {
-          "emoji": "💉",
-          "title": "הכנה לפרוצדורה",
-          "detail": "הסבר מראש, משחה מאלחשת לפני דקירה, והסחת דעת בזמן הפעולה."
-        },
-        {
-          "emoji": "🔇",
-          "title": "הפחתת גירויים",
-          "detail": "הנמכת אור, הורדת רעש, וסגירת דלת — כדי להפחית עומס חושי."
-        },
-        {
-          "emoji": "🖼️",
-          "title": "תקשורת חלופית",
-          "detail": "שימוש בתמונות, הצבעה או אמצעי תקשורת אחר, אם דיבור קשה לילד כרגע."
-        }
-      ]
+      "note": "הזמינות של כל התאמה תלויה במצב הרפואי, בציוד ובעומס באותו רגע. גם כשלא מתאפשר — שווה לשאול."
     },
     "storyFeedback": {
-      "title": "איך היה?",
       "subtitle": "כמה שאלות קצרות — כדי שנוכל לשפר את הכלי. אין צורך בשם או בפרטים מזהים.",
       "ratingTitle": "עד כמה הכלי עזר לכם היום?",
       "faces": [
@@ -1509,7 +1236,7 @@
     },
     "cardView": {
       "fill": "למילוי הכרטיס",
-      "savePdf": "📄 שמירה כ־PDF / הדפסה",
+      "savePdf": "📄 שמירה כ־PDF",
       "edit": "✏️ עריכה",
       "sendHint": "לשליחה לצוות: לחצו \"שמירה כ־PDF\", בחרו \"שמירה כ־PDF\" בחלון ההדפסה, ושִׁלחו את הקובץ בעצמכם. הכרטיס נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ושום דבר לא נשלח אוטומטית.",
       "print": "🖨️ הדפסה"

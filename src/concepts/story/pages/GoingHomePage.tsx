@@ -14,17 +14,20 @@ import styles from '../pages.module.css'
 const emojis = ['📝', '🚪', '🏠', '🧰', '🩺']
 
 export function GoingHomePage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang], 'parent/home').goingHome
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.discharge.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
       </div>
 
       <div className={styles.tips}>
-        {tx.blocks.map(([title, body], i) => (
+        {tx.blocks.map(([rawTitle, body], i) => {
+          // the first title is the same as the celebration's first title (one key)
+          const title = rawTitle ?? t('ui.celebrate.discharge.0.title')
+          return (
           <div key={title} className={styles.tip}>
             <span className={styles.tipEmoji} aria-hidden>
               {emojis[i]}
@@ -34,7 +37,8 @@ export function GoingHomePage() {
               <p className={styles.tipBody}>{body}</p>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
 
       <div className={styles.center} style={{ marginTop: 'var(--space-5)' }}>
@@ -48,7 +52,7 @@ export function GoingHomePage() {
           {tx.feedback}
         </Link>
         <Link to="/" className={shell.ghostBtn}>
-          {tx.back}
+          {t('ui.storyFeedback.back')}
         </Link>
       </div>
 

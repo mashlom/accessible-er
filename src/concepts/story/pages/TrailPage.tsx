@@ -41,7 +41,7 @@ export function TrailPage() {
     <div className={shell.page} dir={dir} lang={lang}>
       <header className={styles.trailHead}>
         <h1 className={styles.trailTitle}>
-          {tx.title}
+          {t('ui.tiles.journey.title')}
           <span className={styles.trailLead}>{tx.lead}</span>
         </h1>
         <p className={styles.trailSub}>{tx.subtitle}</p>
@@ -123,7 +123,7 @@ export function TrailPage() {
                       {stage.challenge}
                     </p>
                     <div className={styles.detailRow}>
-                      <span className={styles.detailLabel}>{t('ui.labels.adult.canAsk')}</span>
+                      <span className={styles.detailLabel}>{t('ui.tiles.requests.title')}</span>
                       <ul className={styles.askList}>
                         {stage.canAsk.map((a) => (
                           <li key={a}>{a}</li>

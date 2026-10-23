@@ -7,11 +7,9 @@ import { TrailPage } from './pages/TrailPage'
 import { ShowPage } from './pages/ShowPage'
 import { BookPage } from './pages/BookPage'
 import { MapPage } from './pages/MapPage'
-import { CalmPage } from './pages/CalmPage'
+import { CalmPage } from '../quest/pages/CalmPage'
 import { DistractPage } from './pages/DistractPage'
 import { RequestsPage } from './pages/RequestsPage'
-import { CardPage } from './pages/CardPage'
-import { CardViewPage } from './pages/CardViewPage'
 import { GoingHomePage } from './pages/GoingHomePage'
 import { MessagePage } from './pages/MessagePage'
 import { FeedbackPage } from './pages/FeedbackPage'
@@ -33,8 +31,6 @@ export default function StoryConcept() {
         <Route path="calm" element={<CalmPage />} />
         <Route path="distract" element={<DistractPage />} />
         <Route path="requests" element={<RequestsPage />} />
-        <Route path="card" element={<CardPage />} />
-        <Route path="card/view" element={<CardViewPage />} />
         <Route path="going-home" element={<GoingHomePage />} />
         <Route path="message" element={<MessagePage />} />
         <Route path="feedback" element={<FeedbackPage />} />

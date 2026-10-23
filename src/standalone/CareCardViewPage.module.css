@@ -145,3 +145,106 @@
   color: #fff;
   font-weight: 700;
 }
+
+/* the staff reads the card on black, as the staff screens do: no white boxes, large bold text */
+.staffScreen {
+  min-height: 100dvh;
+  background: #000;
+  color: #fff;
+  padding: 16px;
+}
+.staffScreen * {
+  color: inherit;
+  border-color: #444;
+}
+.staffScreen [class*="cardViewRows"],
+.staffScreen [class*="cardViewRow"] {
+  background: transparent;
+}
+.staffScreen [class*="cardViewLabel"],
+.staffScreen [class*="cardViewValue"] {
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+/* the card's own boxes are not white on the black screen; the text is white and large */
+.staffScreen .card,
+.staffScreen [class*="print-area"],
+.staffScreen [class*="cardViewRows"],
+.staffScreen [class*="cardViewRow"] {
+  background: transparent;
+  box-shadow: none;
+}
+.staffScreen [class*="cardViewLabel"],
+.staffScreen [class*="cardViewValue"] {
+  color: #fff;
+}
+
+/* one size and weight for every line of the staff card; no frame; the green head spans the full width */
+.staffScreen {
+  padding: 0;
+}
+.staffScreen :global(.container) {
+  max-width: none;
+  padding: 0;
+}
+.staffScreen .card {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+.staffScreen .cardHead {
+  border-radius: 0;
+  margin: 0;
+}
+.staffScreen [class*="cardViewLabel"],
+.staffScreen [class*="cardViewValue"],
+.staffScreen li,
+.staffScreen h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+/* the lines use the page's font, the same as the title */
+.staffScreen [class*="cardViewLabel"],
+.staffScreen [class*="cardViewValue"],
+.staffScreen li,
+.staffScreen h2 {
+  font-family: inherit;
+  font-weight: 700;
+}
+
+/* the answer follows the label on the same line, after a colon */
+.staffScreen [class*="cardViewRow"] {
+  display: block;
+}
+.staffScreen [class*="cardViewLabel"],
+.staffScreen [class*="cardViewValue"] {
+  display: inline;
+}
+.staffScreen [class*="cardViewLabel"]::after {
+  content: ": ";
+}
+
+/* margins on both sides: the lines and the requests do not touch the edges (the green head stays full width) */
+.staffScreen [class*="cardViewRow"],
+.staffScreen section {
+  padding-inline: 1.25rem;
+}
+
+/* the requests keep their margins too: the list and its heading */
+.staffScreen ul,
+.staffScreen h2 {
+  margin-inline: 1.25rem;
+}
+
+/* no borders at all on the card: no frame around the lines, no lines between them */
+.staffScreen [class*="cardViewRows"],
+.staffScreen [class*="cardViewRow"] {
+  border: 0;
+  border-radius: 0;
+}

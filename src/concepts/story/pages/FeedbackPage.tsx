@@ -12,7 +12,6 @@ import { useI18n } from '../../../hooks/useI18n'
 import i18nUi from '../../../data/i18n/ui.json'
 
 type FeedbackTexts = {
-  title: string
   subtitle: string
   ratingTitle: string
   faces: string[]
@@ -63,7 +62,7 @@ function buildMailto(feedback: Feedback) {
 }
 
 export function FeedbackPage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   // labels are translated; the stored and mailed values stay in Hebrew, as the team reads them
   const tx = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { storyFeedback: FeedbackTexts }>)[lang], 'i18n/ui').storyFeedback
   const [saved, setSaved] = usePersistentState<Feedback | null>('feedback', null, DAY_MS)
@@ -113,7 +112,7 @@ export function FeedbackPage() {
 
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.feedback.title')} subtitle={tx.subtitle}>
       <div className={shell.stack}>
         <Panel title={tx.ratingTitle} emoji="🌤️">
           <div className={styles.faces}>

@@ -40,7 +40,7 @@ export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
 
   // Texts are the app's own (not the mockup's wording)
   const title = t('ui.text.oceanDecisionTitle')
-  const prompt = theme.procedurePrompt ?? t('ui.text.procedurePrompt')
+  const prompt = theme.procedurePrompt ?? t('ui.labels.adult.procedurePrompt')
 
   return (
     <>
@@ -59,7 +59,7 @@ export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
 
           <h1 className={css.pickTitle}>{title}</h1>
           <p className={css.pickSub}>{prompt}</p>
-          <p className={css.pickNote}>{t('ui.text.staffNote')}</p>
+          <p className={css.pickNote}>{t('ui.labels.adult.staffNote')}</p>
 
           <div className={css.pickGrid}>
             {OPTIONAL_STAGES.map((id) => {
