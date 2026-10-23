@@ -123,7 +123,6 @@
     "procedures": {
       "temperature": {
         "title": "מדידת חום",
-        "duration": "כדקה",
         "what": "בודקים כמה חום יש בגוף. מכניסים לפה חתיכת פלסטיק קטנה עם חוט, ומחזיקים את הפה סגור חזק־חזק לרגע — כאילו יש לי סוכריה בפה. לפעמים מודדים במקום זה מתחת לבית השחי.",
         "feel": "לא כואב. צריך רק להחזיק את הפה סגור לרגע, או להצמיד את היד לגוף אם מודדים בבית השחי.",
         "prepare": "אפשר לתרגל \"לסגור את הפה חזק כמו שיש סוכריה בפנים\" לכמה שניות, או להצמיד יד לגוף.",
@@ -135,7 +134,6 @@
       },
       "saturation": {
         "title": "מדידת חמצן (סטורציה)",
-        "duration": "כדקה",
         "what": "שמים אטב קטן ורך על האצבע. אור אדום קטן בודק את החמצן בדם. אין מחט.",
         "feel": "הרגשה של לחיצה עדינה על האצבע. לא כואב.",
         "prepare": "אפשר לקרוא לזה \"אטב עם אור קסם\". להראות שהוא נדלק באדום.",
@@ -147,7 +145,6 @@
       },
       "blood-pressure": {
         "title": "מדידת לחץ דם",
-        "duration": "כדקה",
         "what": "שרוול רך מתנפח על הזרוע ולוחץ קצת, ואז משתחרר לבד.",
         "feel": "לחיצה מתהדקת על הזרוע לכמה שניות, ואז מרפה.",
         "prepare": "אפשר להגיד \"היד מקבלת חיבוק חזק לרגע ואז משחרר\".",
@@ -454,7 +451,6 @@
     "procedures": {
       "temperature": {
         "title": "Temperature check",
-        "duration": "about a minute",
         "what": "We check how warm the body is. A small plastic tip with a wire goes into the mouth, and your child keeps their mouth closed tight for a moment — as if holding a candy inside. Sometimes it is measured under the armpit instead.",
         "feel": "It doesn't hurt. Your child just keeps their mouth closed for a moment, or holds their arm against their body if it is measured under the armpit.",
         "prepare": "You can practice “closing your mouth tight, like there's a candy inside” for a few seconds, or pressing an arm against the body.",
@@ -466,7 +462,6 @@
       },
       "saturation": {
         "title": "Oxygen level (saturation)",
-        "duration": "about a minute",
         "what": "A small, soft clip goes on the finger. A little red light checks the oxygen in the blood. There is no needle.",
         "feel": "A gentle squeeze on the finger. It doesn't hurt.",
         "prepare": "You can call it a “clip with a magic light”. Show your child how it lights up red.",
@@ -478,7 +473,6 @@
       },
       "blood-pressure": {
         "title": "Blood pressure check",
-        "duration": "about a minute",
         "what": "A soft cuff on the arm fills with air and squeezes a little, then lets go by itself.",
         "feel": "A tightening squeeze on the arm for a few seconds, and then it relaxes.",
         "prepare": "You can say: “Your arm gets a big hug for a moment, and then it lets go.”",
@@ -785,7 +779,6 @@
     "procedures": {
       "temperature": {
         "title": "Измерение температуры",
-        "duration": "около минуты",
         "what": "Проверяем, какая температура у тела. В рот кладут маленький пластиковый наконечник с проводком, и нужно ненадолго крепко-крепко закрыть рот — как будто там конфета. Иногда вместо этого температуру измеряют под мышкой.",
         "feel": "Не больно. Нужно только ненадолго держать рот закрытым или прижать руку к телу, если измеряют под мышкой.",
         "prepare": "Можно потренироваться несколько секунд «крепко закрывать рот, как будто там конфета» или прижимать руку к телу.",
@@ -797,7 +790,6 @@
       },
       "saturation": {
         "title": "Уровень кислорода (сатурация)",
-        "duration": "около минуты",
         "what": "На палец надевают маленькую мягкую прищепку. Маленький красный огонёк проверяет кислород в крови. Иглы нет.",
         "feel": "Ощущение лёгкого нажатия на палец. Не больно.",
         "prepare": "Можно назвать её «прищепкой с волшебным огоньком». Показать ребёнку, как она загорается красным.",
@@ -809,7 +801,6 @@
       },
       "blood-pressure": {
         "title": "Измерение давления",
-        "duration": "около минуты",
         "what": "Мягкая манжета на руке надувается и немного сжимает, а потом сама отпускает.",
         "feel": "Руку несколько секунд сжимает всё сильнее, а потом отпускает.",
         "prepare": "Можно сказать: «Руку ненадолго крепко обнимут, а потом отпустят».",

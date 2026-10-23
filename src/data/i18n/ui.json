@@ -156,7 +156,8 @@
         "whatActuallyHappens": "What actually happens",
         "whenHard": "When it's hard — what helps",
         "writeHere": "Write here...",
-        "whoNurse": "A nurse"
+        "whoNurse": "A nurse",
+        "durationMinute": "about a minute"
       }
     },
     "celebrate": {
@@ -574,7 +575,8 @@
         "whatActuallyHappens": "Что происходит на самом деле",
         "whenHard": "Когда трудно — что помогает",
         "writeHere": "Напишите здесь...",
-        "whoNurse": "Медсестра или медбрат"
+        "whoNurse": "Медсестра или медбрат",
+        "durationMinute": "около минуты"
       }
     },
     "celebrate": {
@@ -992,7 +994,8 @@
         "whatActuallyHappens": "מה קורה בפועל",
         "whenHard": "כשקשה — מה עוזר",
         "writeHere": "כתבו כאן...",
-        "whoNurse": "אח או אחות"
+        "whoNurse": "אח או אחות",
+        "durationMinute": "כדקה"
       }
     },
     "celebrate": {
