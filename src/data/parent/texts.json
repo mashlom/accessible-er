@@ -158,7 +158,6 @@
         ]
       },
       "doctor-exam": {
-        "title": "בדיקת רופא/ה",
         "duration": "10–20 דקות",
         "who": "רופא או רופאה",
         "what": "הרופא/ה שואל/ת שאלות ובודק/ת את הגוף: מקשיב/ה עם סטטוסקופ, מסתכל/ת בגרון ובאוזניים, ולפעמים ממשש/ת את הבטן. בסוף הרופא/ה מחליט/ה מה צריך בהמשך, ומסביר/ה לכם.",
@@ -490,7 +489,6 @@
         ]
       },
       "doctor-exam": {
-        "title": "Doctor's exam",
         "duration": "10–20 minutes",
         "who": "A doctor",
         "what": "The doctor asks questions and examines the body: listens with a stethoscope, looks in the throat and ears, and sometimes gently feels the tummy. At the end, the doctor decides what is needed next and explains it to you.",
@@ -822,7 +820,6 @@
         ]
       },
       "doctor-exam": {
-        "title": "Осмотр врача",
         "duration": "10–20 минут",
         "who": "Врач",
         "what": "Врач задаёт вопросы и осматривает тело: слушает стетоскопом, смотрит горло и уши, иногда ощупывает живот. В конце врач решает, что нужно дальше, и объясняет вам.",

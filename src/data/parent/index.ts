@@ -50,7 +50,9 @@ export function parentProcedure(lang: ParentLang, id: string): Procedure | undef
   // the steps a child hears are shared by all worlds: their own file (src/data/child/procedures)
   const steps = procedureSteps(lang, id)
   // the waiting for results has the station's title
-  const title = id === 'waiting-results' ? parentTexts(lang).stages['wait-results'].title : undefined
+  // these two procedures have their station's title
+  const STATION_TITLE: Record<string, string> = { 'waiting-results': 'wait-results', 'doctor-exam': 'doctor' }
+  const title = STATION_TITLE[id] ? parentTexts(lang).stages[STATION_TITLE[id]].title : undefined
   // a nurse does these: the same words for each of them (one key)
   const NURSE_PROCEDURES = ['temperature', 'saturation', 'blood-pressure', 'iv', 'medication', 'inhalation']
   const who = NURSE_PROCEDURES.includes(id) ? keyed((i18nUi as unknown as Record<ParentLang, { labels: { adult: { whoNurse: string } } }>)[lang], 'i18n/ui').labels.adult.whoNurse : undefined
