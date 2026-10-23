@@ -68,7 +68,9 @@ export function parentProcedure(lang: ParentLang, id: string): Procedure | undef
   const NURSE_PROCEDURES = ['temperature', 'saturation', 'blood-pressure', 'iv', 'medication', 'inhalation']
   const who = NURSE_PROCEDURES.includes(id) ? keyed((i18nUi as unknown as Record<ParentLang, { labels: { adult: { whoNurse: string } } }>)[lang], 'i18n/ui').labels.adult.whoNurse : undefined
   // about a minute: the same words for these three (one key)
+  // the doctor exam lasts as long as the doctor station (one time)
+  const DOCTOR_TIME = id === 'doctor-exam' ? parentTexts(lang).stages.doctor.waitRange : undefined
   const MINUTE_PROCEDURES = ['temperature', 'saturation', 'blood-pressure']
   const duration = MINUTE_PROCEDURES.includes(id) ? keyed((i18nUi as unknown as Record<ParentLang, { labels: { adult: { durationMinute: string } } }>)[lang], 'i18n/ui').labels.adult.durationMinute : undefined
-  return base && tx ? ({ ...base, ...tx, ...(title ? { title } : {}), ...(who ? { who } : {}), ...(duration ? { duration } : { duration: withUnit(lang, tx.duration) }), ...steps } as Procedure) : undefined
+  return base && tx ? ({ ...base, ...tx, ...(title ? { title } : {}), ...(who ? { who } : {}), ...(duration ? { duration } : { duration: withUnit(lang, DOCTOR_TIME ?? tx.duration) }), ...steps } as Procedure) : undefined
 }
