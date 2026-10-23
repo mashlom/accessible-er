@@ -183,7 +183,6 @@
       ],
       "admission": [
         {
-          "title": "What happens now",
           "body": "The team has decided to continue care in the hospital. Your child will be transferred to an inpatient unit where they will receive close monitoring and care tailored to their needs."
         },
         {
@@ -601,7 +600,6 @@
       ],
       "admission": [
         {
-          "title": "Что происходит сейчас",
           "body": "Команда решила продолжить лечение в больнице. Ребёнка переведут в отделение интенсивной терапии, где будет постоянный мониторинг и помощь, подобранная под его нужды."
         },
         {
@@ -1019,7 +1017,6 @@
       ],
       "admission": [
         {
-          "title": "מה קורה עכשיו",
           "body": "הצוות החליט להמשיך עם טיפול בבית חולים. הילד/ה יעבור למחלקת אשפוז, שם יהיה מעקב מקרוב והתאמה בהתאם לצרכים."
         },
         {
