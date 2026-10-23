@@ -20,7 +20,7 @@ export function ReasonPage() {
       </div>
 
       <div className={css.stageBody}>
-        <div className={css.reasonOptions} role="radiogroup" aria-label={t('ui.labels.adult.reasonAria')}>
+        <div className={css.reasonOptions} role="radiogroup" aria-label={t('ui.tiles.reason.title')}>
           {parentPaths(lang).map((p) => {
             const selected = p.id === reasonId
             return (
