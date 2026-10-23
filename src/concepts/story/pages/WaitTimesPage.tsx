@@ -5,11 +5,11 @@ import { Scene, Bubble } from '../components/kit'
 import homeTexts from '../../../data/parent/home.json'
 
 export function WaitTimesPage() {
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang], 'parent/home').wait
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={t('ui.tiles.wait-times.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>
           {tx.note}

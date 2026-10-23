@@ -48,7 +48,6 @@
       "ours": "הסיפורים שלנו"
     },
     "wait": {
-      "title": "זמנים משוערים",
       "subtitle": "כל שלב יכול לקחת בערך כמה דקות",
       "note": "הזמנים בעמוד הזה הם טווחים בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.",
       "duration": "⏱️ משך זמן משוער",
@@ -152,7 +151,6 @@
       "ours": "Our stories"
     },
     "wait": {
-      "title": "Estimated times",
       "subtitle": "About how long each stage can take",
       "note": "The times on this page are ranges only. The order and times may change depending on the team's decision and how busy the ER is.",
       "duration": "⏱️ Estimated duration",
@@ -256,7 +254,6 @@
       "ours": "Наши истории"
     },
     "wait": {
-      "title": "Примерное время",
       "subtitle": "Сколько примерно может занять каждый этап",
       "note": "Указано ориентировочное время. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
       "duration": "⏱️ Примерная длительность",
