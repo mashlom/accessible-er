@@ -41,7 +41,7 @@ export function TrailPage() {
     <div className={shell.page} dir={dir} lang={lang}>
       <header className={styles.trailHead}>
         <h1 className={styles.trailTitle}>
-          {tx.title}
+          {t('ui.tiles.journey.title')}
           <span className={styles.trailLead}>{tx.lead}</span>
         </h1>
         <p className={styles.trailSub}>{tx.subtitle}</p>
