@@ -12,6 +12,8 @@ export interface VisitPath {
 
 export interface RouteStop {
   title: string
+  /** station id from the journey (src/data/journey.ts), if this stop is a station */
+  stageId?: string
   /** procedure id from procedures.ts, if this stop maps to a known procedure */
   procedureId?: string
   optional?: boolean // "as needed"
