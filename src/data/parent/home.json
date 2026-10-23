@@ -62,7 +62,7 @@
       "bubble": "עשיתם היום משהו גדול. עכשיו הולכים הביתה — לאט, בקצב שלכם.",
       "blocks": [
         [
-          "מה קורה עכשיו",
+          null,
           "הצוות מסכם איתכם את הביקור, נותן הנחיות להמשך, ולפעמים מרשם. אחר כך משתחררים הביתה."
         ],
         [
@@ -160,7 +160,7 @@
       "bubble": "You did something big today. Now we go home — slowly, at your own pace.",
       "blocks": [
         [
-          "What happens now",
+          null,
           "The team goes over the visit with you, gives instructions for what comes next, and sometimes a prescription. Then you go home."
         ],
         [
@@ -258,7 +258,7 @@
       "bubble": "Сегодня вы сделали что-то очень важное и сложное. Теперь идём домой — медленно, в своём темпе. Можно выдохнуть!",
       "blocks": [
         [
-          "Что происходит сейчас",
+          null,
           "Команда подводит итог визита, даёт рекомендации на дальнейшее и иногда рецепт. Затем вы уходите домой."
         ],
         [

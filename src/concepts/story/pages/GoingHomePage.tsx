@@ -24,7 +24,10 @@ export function GoingHomePage() {
       </div>
 
       <div className={styles.tips}>
-        {tx.blocks.map(([title, body], i) => (
+        {tx.blocks.map(([rawTitle, body], i) => {
+          // the first title is the same as the celebration's first title (one key)
+          const title = rawTitle ?? t('ui.celebrate.discharge.0.title')
+          return (
           <div key={title} className={styles.tip}>
             <span className={styles.tipEmoji} aria-hidden>
               {emojis[i]}
@@ -34,7 +37,8 @@ export function GoingHomePage() {
               <p className={styles.tipBody}>{body}</p>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
 
       <div className={styles.center} style={{ marginTop: 'var(--space-5)' }}>
