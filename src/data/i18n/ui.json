@@ -40,7 +40,6 @@
       "interesting": "It is interesting"
     },
     "shell": {
-      "back": "Back",
       "map": "To the journey map",
       "menu": "To the concepts menu",
       "worlds": "Choose another world"
@@ -460,7 +459,6 @@
       "interesting": "Это интересно"
     },
     "shell": {
-      "back": "Назад",
       "map": "К карте путешествия",
       "menu": "В меню концепций",
       "worlds": "Выбрать другой мир"
@@ -910,7 +908,6 @@
       "interesting": "מעניין"
     },
     "shell": {
-      "back": "חזרה",
       "map": "למפת המסע",
       "menu": "לתפריט הקונספטים",
       "worlds": "לבחירת עולם אחר"

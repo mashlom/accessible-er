@@ -64,7 +64,7 @@ export function WaitTimesPage() {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
           >
-            {tx.back}
+            {t('ui.buttons.back')}
           </button>
         </a>
       </div>

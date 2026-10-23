@@ -48,7 +48,7 @@ export function GoingHomePage() {
           {tx.feedback}
         </Link>
         <Link to="/" className={shell.ghostBtn}>
-          {tx.back}
+          {t('ui.storyFeedback.back')}
         </Link>
       </div>
 
