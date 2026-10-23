@@ -38,9 +38,18 @@ import { getProcedure } from '../procedures'
 import { procedureSteps } from '../child/procedures'
 import type { JourneyStage, Procedure } from '../types'
 
+/** A number range from the data ("5–15") with the unit of the language ("минут"); other texts ("около минуты") as they are. */
+function withUnit(lang: ParentLang, text: string | undefined): string | undefined {
+  if (!text) return text
+  return /^\d/.test(text) ? `${text} ${keyed((i18nUi as unknown as Record<ParentLang, { labels: { adult: { minutes: string } } }>)[lang], 'i18n/ui').labels.adult.minutes}` : text
+}
+
 /** The stations as shown to the parent: the code's station data with the parent texts of the language on top */
 export function parentJourney(lang: ParentLang): JourneyStage[] {
-  return journeyStages.map((s) => ({ ...s, ...parentTexts(lang).stages[s.id] }) as JourneyStage)
+  return journeyStages.map((s) => {
+    const tx = parentTexts(lang).stages[s.id]
+    return { ...s, ...tx, ...(tx?.waitRange ? { waitRange: withUnit(lang, tx.waitRange) } : {}) } as JourneyStage
+  })
 }
 
 /** A procedure as shown to the parent: the code's procedure (id, emoji, story steps) with the parent texts on top */
@@ -59,5 +68,5 @@ export function parentProcedure(lang: ParentLang, id: string): Procedure | undef
   // about a minute: the same words for these three (one key)
   const MINUTE_PROCEDURES = ['temperature', 'saturation', 'blood-pressure']
   const duration = MINUTE_PROCEDURES.includes(id) ? keyed((i18nUi as unknown as Record<ParentLang, { labels: { adult: { durationMinute: string } } }>)[lang], 'i18n/ui').labels.adult.durationMinute : undefined
-  return base && tx ? ({ ...base, ...tx, ...(title ? { title } : {}), ...(who ? { who } : {}), ...(duration ? { duration } : {}), ...steps } as Procedure) : undefined
+  return base && tx ? ({ ...base, ...tx, ...(title ? { title } : {}), ...(who ? { who } : {}), ...(duration ? { duration } : { duration: withUnit(lang, tx.duration) }), ...steps } as Procedure) : undefined
 }

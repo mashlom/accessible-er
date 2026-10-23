@@ -157,7 +157,8 @@
         "whenHard": "When it's hard — what helps",
         "writeHere": "Write here...",
         "whoNurse": "A nurse",
-        "durationMinute": "about a minute"
+        "durationMinute": "about a minute",
+        "minutes": "minutes"
       }
     },
     "celebrate": {
@@ -576,7 +577,8 @@
         "whenHard": "Когда трудно — что помогает",
         "writeHere": "Напишите здесь...",
         "whoNurse": "Медсестра или медбрат",
-        "durationMinute": "около минуты"
+        "durationMinute": "около минуты",
+        "minutes": "минут"
       }
     },
     "celebrate": {
@@ -995,7 +997,8 @@
         "whenHard": "כשקשה — מה עוזר",
         "writeHere": "כתבו כאן...",
         "whoNurse": "אח או אחות",
-        "durationMinute": "כדקה"
+        "durationMinute": "כדקה",
+        "minutes": "דקות"
       }
     },
     "celebrate": {
