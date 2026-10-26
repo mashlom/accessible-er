@@ -249,7 +249,7 @@ export function ParentSheet({
           <div className={css.sheetFooter}>
             <Link
               to="/calm"
-              state={{ from: '/map', fromWorld: true }}
+              state={{ from: '/map', fromWorld: true, back: window.location.hash.replace(/^#/, '').split('?')[0] }}
               className={`${css.oceanBtn} ${css.oceanBtnDone}`}
             >
               {t('ui.buttons.oceanHardNow')}

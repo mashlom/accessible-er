@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from '../../nav'
 import { useParentTheme, useQuestTheme } from '../useQuestTheme'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useReturnTo } from '../useReturnTo'
 import { distressTips, readySentences } from '../../../data/support'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
@@ -16,7 +16,11 @@ const REDUCE_STIMULATION_TIP = distressTips.findIndex((tip) => tip.id === 'less-
 
 export function CalmPage() {
   // opened from a world: that world's colours; otherwise the parent's turquoise
-  const fromWorld = (useLocation().state as { fromWorld?: boolean } | null)?.fromWorld === true
+  const location = useLocation()
+  const navigate = useNavigate()
+  const from = location.state as { fromWorld?: boolean; back?: string } | null
+  const fromWorld = from?.fromWorld === true
+  // from a world: back to that world, where the parent was
   const world = useQuestTheme().theme
   const parent = useParentTheme().theme
   const theme = fromWorld ? world : parent
@@ -41,7 +45,7 @@ export function CalmPage() {
           <button
             className={css.backBtn}
             style={{ borderColor: theme.accent, color: theme.accent }}
-            onClick={goBack}
+            onClick={from?.back ? () => navigate(from.back as string) : goBack}
           >
             {t('ui.buttons.back')}
           </button>
