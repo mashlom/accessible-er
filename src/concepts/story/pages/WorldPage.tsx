@@ -133,6 +133,7 @@ export function WorldPage() {
             <Link
               key={d.to}
               to={d.to}
+              state={{ from: '/' }}
               className={styles.dest}
               style={{ '--tint': d.tint } as CSSProperties}
             >

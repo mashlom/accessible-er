@@ -4,7 +4,6 @@ import { setI18nEnabled } from '../../hooks/useI18n'
 import { Navigate } from '../nav'
 import { TalkShell } from './components/TalkShell'
 import { TalkPage } from './pages/TalkPage'
-import { CardViewPage } from './pages/CardViewPage'
 import { QrPage } from './pages/QrPage'
 
 /**
@@ -24,7 +23,6 @@ export default function TalkConcept() {
     <Routes>
       <Route element={<TalkShell />}>
         <Route index element={<TalkPage />} />
-        <Route path="card/view" element={<CardViewPage />} />
         {/* staff-only page, deliberately not reachable from the conversation */}
         <Route path="settings" element={<QrPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />

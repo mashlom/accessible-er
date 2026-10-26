@@ -33,8 +33,8 @@ export function DistractPage() {
     <div className={css.stagePage} style={{ '--accent': theme.accent } as React.CSSProperties}>
       {/* ── Child zone ── */}
       <div className={css.stageHero} style={{ background: theme.accentSoft }}>
-        <h1 style={{ color: theme.accent }}>{theme.distractTitle ?? t('ui.text.distractDefault')}</h1>
-        <p className={css.stageHeroHint}>{t('ui.text.distractHint')}</p>
+        <h1 style={{ color: theme.accent }}>{theme.distractTitle ?? t('ui.tiles.distract.title')}</h1>
+        <p className={css.stageHeroHint}>{t('ui.labels.adult.distractHint')}</p>
 
         <div className={css.distractStage}>
           <div className={css.distractBubbleField} aria-hidden>
@@ -55,7 +55,7 @@ export function DistractPage() {
           <AnimatedIcon emoji={pick.emoji} size={180} className={css.distractArt} />
         </div>
 
-        <div className={css.distractPicker} role="group" aria-label={t('ui.text.distractAria')}>
+        <div className={css.distractPicker} role="group" aria-label={t('ui.labels.adult.distractAria')}>
           {watchables.map((w, wi) => (
             <button
               key={w.emoji}
@@ -80,12 +80,12 @@ export function DistractPage() {
 
       {/* ── Parent zone ── */}
       <div className={css.stageBody}>
-        <p className={css.parentZoneLabel}>{t('ui.text.distractWhy')}</p>
+        <p className={css.parentZoneLabel}>{t('ui.labels.adult.distractWhy')}</p>
         <section>
-          <p>{t('ui.text.distractP1')}</p>
+          <p>{t('ui.labels.adult.distractP1')}</p>
         </section>
         <p className={css.cardPrivacy}>
-          {t('ui.text.distractP2')}
+          {t('ui.labels.adult.distractP2')}
         </p>
       </div>
     </div>

@@ -317,7 +317,7 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
                   className={css.oceanStars}
                   style={{ left: pctX(slot.x + slot.w / 2), top: pctY(slot.y + slot.h * 0.88) }}
                   role="img"
-                  aria-label={`${t('ui.text.done')}: ${item.stars}`}
+                  aria-label={`${t('ui.labels.adult.done')}: ${item.stars}`}
                 >
                   {Array.from({ length: item.stars ?? 0 }, (_, j) => <span key={j} className={css.oceanStar} aria-hidden>⭐</span>)}
                 </span>
@@ -335,7 +335,7 @@ export function OceanMapView({ portrait, landscape, items, underSheet, progress,
         <div
           className={wide ? `${css.oceanProgress} ${css.oceanProgressWide}` : css.oceanProgress}
           role="progressbar"
-          aria-label={t('ui.text.journeyProgress')}
+          aria-label={t('ui.labels.adult.journeyProgress')}
           aria-valuemin={0}
           aria-valuemax={progress.total}
           aria-valuenow={progress.done}

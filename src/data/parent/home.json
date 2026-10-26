@@ -32,7 +32,6 @@
       "clear": "ניקוי הבחירה"
     },
     "trail": {
-      "title": "השביל שלנו",
       "subtitle": "כל עיגול הוא תחנה בביקור. לוחצים על תחנה כדי לראות מה קורה בה, מה עלול להיות קשה, ומה אפשר לבקש.",
       "hereSuffix": " — אנחנו כאן",
       "hereOn": "📍 אנחנו כאן — לביטול",
@@ -42,7 +41,6 @@
       "lead": "איפה אנחנו עכשיו ומה הלאה"
     },
     "show": {
-      "title": "איך מכינים את הילד/ה?",
       "subtitle": "כל בדיקה היא סיפור קצר עם ציור, ואני מספר אותו עמוד אחרי עמוד. אפשר לעצור בכל רגע ולחזור אחורה.",
       "bubble": "אפשר לקרוא את הסיפור לפני שנכנסים — ככה כבר יודעים מה יקרה, ואין הפתעות.",
       "likely": "כנראה נפגוש את אלה היום",
@@ -50,28 +48,21 @@
       "ours": "הסיפורים שלנו"
     },
     "wait": {
-      "title": "זמנים משוערים",
-      "subtitle": "כל שלב יכול לקחת בערך כמה דקות",
       "note": "הזמנים בעמוד הזה הם טווחים בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.",
       "duration": "⏱️ משך זמן משוער",
-      "wait": "⏳ זמן המתנה משוער",
-      "back": "חזרה"
+      "wait": "⏳ זמן המתנה משוער"
     },
     "mapPage": {
-      "title": "איפה אנחנו?",
-      "subtitle": "לכל מקום במיון יש אופי משלו. כאן רואים איפה רועש, איפה אפשר לנוח, ולאן ממשיכים משם.",
+      "subtitle": "לכל מקום במיון יש אופי משלו. כאן רואים איפה רועש ואיפה אפשר לנוח.",
       "bubble": "העיגולים הצבעוניים מספרים כמה רעש, אור, ריח ואנשים יש בכל מקום. ירוק = מעט, אדום = הרבה.",
-      "next": "ממשיכים מכאן אל:",
-      "ofFive": "{level} מתוך {max}",
       "note": "המפה והדירוג החושי הם הערכה ראשונית לצורך הדמו, ויעודכנו יחד עם צוות המלר״ד ואלו״ט. מיקום מדויק של אזורים ייקבע לפי המחלקה בפועל."
     },
     "goingHome": {
-      "title": "סוף השביל",
       "subtitle": "מה קורה בסיום הביקור, ואיך מתכוננים לחזרה הביתה.",
       "bubble": "עשיתם היום משהו גדול. עכשיו הולכים הביתה — לאט, בקצב שלכם.",
       "blocks": [
         [
-          "מה קורה עכשיו",
+          null,
           "הצוות מסכם איתכם את הביקור, נותן הנחיות להמשך, ולפעמים מרשם. אחר כך משתחררים הביתה."
         ],
         [
@@ -93,7 +84,6 @@
       ],
       "closing": "כל הכבוד לכם. נתראה — ושיהיה לכם רק טוב 💛",
       "feedback": "לספר לנו איך היה",
-      "back": "חזרה לעולם של רוני",
       "note": "הטקסט כאן טיוטה ראשונית — לניסוח סופי יחד עם חגית."
     },
     "cardPage": {
@@ -140,7 +130,6 @@
       "clear": "Clear the choice"
     },
     "trail": {
-      "title": "Our trail",
       "subtitle": "Each circle is a stop of the visit. Tap a stop to see what happens there, what may be hard, and what you can ask for.",
       "hereSuffix": " — we are here",
       "hereOn": "📍 We are here — tap to undo",
@@ -150,7 +139,6 @@
       "lead": "Where we are now and what comes next"
     },
     "show": {
-      "title": "What is going to happen?",
       "subtitle": "Each test is a short story with pictures, and I tell it page by page. You can stop at any time and go back.",
       "bubble": "You can read the story before we go in — then you already know what will happen, and there are no surprises.",
       "likely": "We will probably meet these today",
@@ -158,28 +146,21 @@
       "ours": "Our stories"
     },
     "wait": {
-      "title": "Estimated times",
-      "subtitle": "About how long each stage can take",
       "note": "The times on this page are ranges only. The order and times may change depending on the team's decision and how busy the ER is.",
       "duration": "⏱️ Estimated duration",
-      "wait": "⏳ Estimated waiting time",
-      "back": "Back"
+      "wait": "⏳ Estimated waiting time"
     },
     "mapPage": {
-      "title": "Where are we?",
-      "subtitle": "Every place in the ER has its own character. Here you can see where it is loud, where you can rest, and where you go next from there.",
+      "subtitle": "Every place in the ER has its own character. Here you can see where it is loud and where you can rest.",
       "bubble": "The coloured circles show how much noise, light, smell and people there are in each place. Green = a little, red = a lot.",
-      "next": "What's next?",
-      "ofFive": "{level} of {max}",
       "note": "The map and the sensory ratings are a first estimate for the demo, and will be updated together with the Laniado ER team. The exact locations of the areas will be set by the actual department."
     },
     "goingHome": {
-      "title": "End of the Journey",
       "subtitle": "What happens at the end of the visit, and how to get ready for going home.",
       "bubble": "You did something big today. Now we go home — slowly, at your own pace.",
       "blocks": [
         [
-          "What happens now",
+          null,
           "The team goes over the visit with you, gives instructions for what comes next, and sometimes a prescription. Then you go home."
         ],
         [
@@ -201,7 +182,6 @@
       ],
       "closing": "Well done, all of you. See you — and wishing you only good things 💛",
       "feedback": "Tell us how it was",
-      "back": "Back to the start",
       "note": "The text here is a first draft — the final wording will be agreed with Hagit."
     },
     "cardPage": {
@@ -238,7 +218,7 @@
     "reasonChange": "Изменить",
     "foot": "Инструмент помогает сделать визит понятнее и снизить неопределённость. Он не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные.",
     "reason": {
-      "title": "Почему мы пришли сегодня?",
+      "title": "Почему вы пришли сегодня?",
       "subtitle": "Выбор помогает показать вам ожидаемый путь. Его можно изменить в любой момент — любой визит начинается одинаково.",
       "aria": "Причина визита",
       "routeHeading": "Наш ожидаемый путь",
@@ -248,7 +228,6 @@
       "clear": "Сбросить выбор"
     },
     "trail": {
-      "title": "Наш путь",
       "subtitle": "Каждый кружок — это этап визита. Нажмите на этап, чтобы увидеть, что там происходит, что может быть трудно и что можно попросить.",
       "hereSuffix": " — мы здесь",
       "hereOn": "📍 Мы здесь — отменить",
@@ -258,7 +237,6 @@
       "lead": "Где мы сейчас и что дальше"
     },
     "show": {
-      "title": "Как подготовить ребёнка?",
       "subtitle": "Каждое обследование — это короткая история с картинками, и я рассказываю её страница за страницей. Можно остановиться в любой момент и вернуться назад.",
       "bubble": "Можно прочитать историю до того, как зайдём, — тогда уже знаешь, что будет, и нет неожиданностей.",
       "likely": "Скорее всего, сегодня понадобится",
@@ -266,28 +244,21 @@
       "ours": "Наши истории"
     },
     "wait": {
-      "title": "Примерное время",
-      "subtitle": "Сколько примерно может занять каждый этап",
       "note": "Указано ориентировочное время. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
       "duration": "⏱️ Примерная длительность",
-      "wait": "⏳ Примерное время ожидания",
-      "back": "Назад"
+      "wait": "⏳ Примерное время ожидания"
     },
     "mapPage": {
-      "title": "Где мы?",
-      "subtitle": "В каждом месте приёмного покоя свой характер. Здесь видно, где шумно, где можно отдохнуть и куда идти дальше.",
+      "subtitle": "В каждом месте приёмного покоя свой характер. Здесь видно, где шумно и где можно отдохнуть.",
       "bubble": "Цветные кружки показывают, сколько шума, света, запахов и людей есть в каждом месте. Зелёный = мало, красный = много.",
-      "next": "Что дальше?",
-      "ofFive": "{level} из {max}",
       "note": "Карта и сенсорные оценки — первичная оценка для демо. Их обновят вместе с командой приёмного покоя Ланиадо. Точное расположение зон определится по самому отделению."
     },
     "goingHome": {
-      "title": "Завершение пути",
       "subtitle": "Что происходит в конце визита и как подготовиться к возвращению домой.",
       "bubble": "Сегодня вы сделали что-то очень важное и сложное. Теперь идём домой — медленно, в своём темпе. Можно выдохнуть!",
       "blocks": [
         [
-          "Что происходит сейчас",
+          null,
           "Команда подводит итог визита, даёт рекомендации на дальнейшее и иногда рецепт. Затем вы уходите домой."
         ],
         [
@@ -309,7 +280,6 @@
       ],
       "closing": "Вы молодцы! До встречи — и пусть всё будет хорошо!",
       "feedback": "Расскажите, как всё прошло",
-      "back": "Назад, на главную",
       "note": "Текст здесь — первый черновик. Окончательную формулировку согласуем с Хагит."
     },
     "cardPage": {

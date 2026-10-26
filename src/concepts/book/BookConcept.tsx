@@ -16,7 +16,7 @@ import css from './book.module.css'
  * Only the picture book exists today; the other two tabs hold their place.
  */
 export default function BookConcept() {
-  // the book has its own translations (data/i18n/book.json), so they are on while it is open
+  // the book has its own translations (data/child/book/book.json), so they are on while it is open
   useLayoutEffect(() => {
     setI18nEnabled(true)
     return () => setI18nEnabled(false)

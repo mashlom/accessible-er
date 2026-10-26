@@ -29,7 +29,7 @@ const BOOK_PATH = 'M40.75 903C41.3553 903 41.9445 903.066 42.5176 903.197C43.090
 
 export function StoryPage() {
   const { t, dir, lang } = useI18n()
-  // the page's own text, or its translation from data/i18n/book.json (keyed by the page id)
+  // the page's own text, or its translation from data/child/book/book.json (keyed by the page id)
   const pageText = (id: string, field: 'text' | 'sub') => t(`book.pages.${id}.${field}`)
   // a page has a sub-line when its translation exists (a missing one comes back as its key)
   const hasSub = (id: string) => pageText(id, 'sub') !== `book.pages.${id}.sub`

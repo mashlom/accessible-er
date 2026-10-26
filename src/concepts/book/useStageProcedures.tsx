@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useI18n } from '../../hooks/useI18n'
 import encyclopedia from '../../data/child/book/encyclopedia.json'
 import measureInfo from '../../data/child/book/measure-info.json'
+import { parentProcedure } from '../../data/parent'
 import testsInfo from '../../data/child/book/tests-info.json'
 import treatmentInfo from '../../data/child/book/treatment-info.json'
 import decisionInfo from '../../data/child/book/decision-info.json'
@@ -97,7 +98,9 @@ export function useStageProcedures(stageId: string, options: { withVideo?: boole
       ? (pick(extra as never, lang) as Record<string, Measure>)[measureOpen.slice(measureOpen.indexOf('-') + 1)]
       : (pick(measureInfo as never, lang) as Record<string, Measure>)[measureKey]
     if (raw) {
-      const info: Measure = raw.armpit ? { ...raw, ...raw.armpit, ...(tempWay === 'mouth' && raw.mouth ? raw.mouth : {}) } : raw
+      const info0: Measure = raw.armpit ? { ...raw, ...raw.armpit, ...(tempWay === 'mouth' && raw.mouth ? raw.mouth : {}) } : raw
+      // the measurement's title is the adult text of the same procedure
+      const info: Measure = { ...info0, title: (!extra && parentProcedure(lang, measureKey)?.title) || info0.title }
       const plate = options.withVideo ? keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { procedurePage: { videoTitle: string; videoText: string } }>)[lang as 'he' | 'en' | 'ru'], 'i18n/ui').procedurePage : null
       measureSheet = (
         <div className={css.sheetBackdrop} onClick={() => setMeasureOpen(null)}>

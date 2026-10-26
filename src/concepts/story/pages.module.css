@@ -914,44 +914,7 @@
   color: var(--s-ink-soft);
 }
 
-.weather {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: auto;
-}
-.weatherChip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  border-radius: var(--s-r-pill);
-  padding: 5px 11px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--s-ink);
-}
-.weatherBars {
-  display: inline-flex;
-  gap: 2px;
-}
-.weatherBar {
-  width: 5px;
-  height: 12px;
-  border-radius: 2px;
-  background: rgba(51, 69, 92, 0.18);
-}
 
-.roomNext {
-  margin-top: var(--space-4);
-  padding-top: 0;
-  font-size: 0.86rem;
-  font-weight: 400;
-  color: var(--s-ink);
-  background: var(--s-paper-2);
-  border-radius: var(--s-r);
-  padding: 8px 12px;
-}
 
 /* ============================================================
    Calm
@@ -1373,9 +1336,9 @@ button.dest {
 }
 
 
-/* the question in the next-step line is bold, the answer is plain */
-.roomNextLabel {
-  font-weight: 700;
+/* the sensory panel sits at the bottom of every room card, so the cards in a row line up */
+.roomSense {
+  margin-top: auto;
 }
 
 /* the description keeps the same gap above the sensory marks as the marks keep above the next step; extra room goes above the marks */

@@ -13,7 +13,7 @@
         ]
       },
       {
-        "title": "Sensory sensitivities",
+        "title": "What is your child sensitive to?",
         "options": [
           "Noise",
           "Bright light",
@@ -46,7 +46,7 @@
         ]
       },
       {
-        "title": "Especially hard with…",
+        "title": "What is especially hard?",
         "options": [
           "Needles and injections",
           "Blood pressure measurement",
@@ -57,7 +57,7 @@
         ]
       },
       {
-        "title": "How do they show pain?",
+        "title": "How does your child show pain?",
         "options": [
           "Says it in words",
           "Points to where it hurts",
@@ -68,7 +68,7 @@
         ]
       },
       {
-        "title": "Important not to do",
+        "title": "What is important not to do?",
         "options": [
           "Touch without explaining",
           "Talk over their head",
@@ -81,27 +81,7 @@
     ],
     "asks": {
       "title": "What we ask the staff for",
-      "noise": "Headphones, earplugs or a quiet space",
-      "light": "Dimming the lights in the room",
-      "touch": "A short explanation before every touch",
-      "staff": "Fewer staff in the room — one person leads and talks",
-      "waiting": "A quiet corner while waiting",
-      "needle": "Numbing cream and time to prepare before a needle",
-      "sudden": "A quiet environment and a closed door",
-      "breaks": "Short breaks and movement between steps"
-    },
-    "adaptationFor": {
-      "רעש": "noise",
-      "אור חזק": "light",
-      "מגע": "touch",
-      "הרבה אנשים": "staff",
-      "המתנה ממושכת": "waiting",
-      "מחטים ודקירות": "needle",
-      "מגע בלי הכנה": "touch",
-      "הרבה אנשים מסביב": "staff",
-      "רעש פתאומי": "sudden",
-      "אורות חזקים": "light",
-      "להישאר במקום אחד": "breaks"
+      "sudden": "A quiet environment and a closed door"
     }
   },
   "ru": {
@@ -118,7 +98,7 @@
         ]
       },
       {
-        "title": "Сенсорная чувствительность",
+        "title": "К чему ребёнок особенно чувствителен?",
         "options": [
           "Шум",
           "Яркий свет",
@@ -151,7 +131,7 @@
         ]
       },
       {
-        "title": "Особенно трудно, когда…",
+        "title": "Что особенно трудно?",
         "options": [
           "Иглы и уколы",
           "Измерение давления",
@@ -162,7 +142,7 @@
         ]
       },
       {
-        "title": "Как ребёнок выражает боль?",
+        "title": "Как ребёнок показывает боль?",
         "options": [
           "Говорит словами",
           "Показывает, где болит",
@@ -173,7 +153,7 @@
         ]
       },
       {
-        "title": "Важно не делать",
+        "title": "Чего важно не делать?",
         "options": [
           "Прикасаться без объяснения",
           "Говорить о ребёнке так, будто его нет рядом",
@@ -186,40 +166,13 @@
     ],
     "asks": {
       "title": "Что попросим у персонала",
-      "noise": "Наушники, беруши или тихое место",
-      "light": "Приглушить свет в комнате",
-      "touch": "Короткое объяснение перед каждым прикосновением",
-      "staff": "Меньше персонала в палате — один ведёт и говорит",
-      "waiting": "Тихий уголок на время ожидания",
-      "needle": "Обезболивающий крем и время на подготовку перед уколом",
-      "sudden": "Тихая обстановка и закрытая дверь",
-      "breaks": "Короткие перерывы и движение между этапами"
-    },
-    "adaptationFor": {
-      "רעש": "noise",
-      "אור חזק": "light",
-      "מגע": "touch",
-      "הרבה אנשים": "staff",
-      "המתנה ממושכת": "waiting",
-      "מחטים ודקירות": "needle",
-      "מגע בלי הכנה": "touch",
-      "הרבה אנשים מסביב": "staff",
-      "רעש פתאומי": "sudden",
-      "אורות חזקים": "light",
-      "להישאר במקום אחד": "breaks"
+      "sudden": "Тихая обстановка и закрытая дверь"
     }
   },
   "he": {
     "asks": {
       "title": "מה נבקש מהצוות",
-      "noise": "אוזניות, אטמי אוזניים או מרחב שקט",
-      "light": "עמעום האור בחדר",
-      "touch": "הסבר קצר לפני כל נגיעה",
-      "staff": "פחות אנשי צוות בחדר — אחד מוביל ומדבר",
-      "waiting": "פינה שקטה לזמן ההמתנה",
-      "needle": "משחה מאלחשת וזמן הכנה לפני דקירה",
-      "sudden": "סביבה שקטה ודלת סגורה",
-      "breaks": "הפסקות קצרות ותנועה בין שלבים"
+      "sudden": "סביבה שקטה ודלת סגורה"
     },
     "cardSections": [
       {
@@ -234,7 +187,7 @@
         ]
       },
       {
-        "title": "רגישויות חושיות",
+        "title": "למה הילד/ה רגיש/ה?",
         "options": [
           "רעש",
           "אור חזק",
@@ -267,7 +220,7 @@
         ]
       },
       {
-        "title": "קשה במיוחד עם…",
+        "title": "מה קשה במיוחד?",
         "options": [
           "מחטים ודקירות",
           "מדידת לחץ דם",
@@ -278,7 +231,7 @@
         ]
       },
       {
-        "title": "איך הוא/היא מבטא/ת כאב?",
+        "title": "איך הילד/ה מראה כאב?",
         "options": [
           "אומר/ת במילים",
           "מצביע/ה על המקום",
@@ -289,7 +242,7 @@
         ]
       },
       {
-        "title": "חשוב לא לעשות",
+        "title": "מה חשוב לא לעשות?",
         "options": [
           "לגעת בלי להסביר",
           "לדבר מעל הראש שלו/ה",
@@ -299,20 +252,7 @@
           "לקחת את החפץ המרגיע"
         ]
       }
-    ],
-    "adaptationFor": {
-      "רעש": "noise",
-      "אור חזק": "light",
-      "מגע": "touch",
-      "הרבה אנשים": "staff",
-      "המתנה ממושכת": "waiting",
-      "מחטים ודקירות": "needle",
-      "מגע בלי הכנה": "touch",
-      "הרבה אנשים מסביב": "staff",
-      "רעש פתאומי": "sudden",
-      "אורות חזקים": "light",
-      "להישאר במקום אחד": "breaks"
-    }
+    ]
   },
   "askFor": {
     "noise": [
@@ -331,7 +271,8 @@
       "הרבה אנשים מסביב"
     ],
     "waiting": [
-      "המתנה ממושכת"
+      "המתנה ממושכת",
+      "להישאר במקום אחד"
     ],
     "needle": [
       "מחטים ודקירות"
@@ -339,8 +280,12 @@
     "sudden": [
       "רעש פתאומי"
     ],
-    "breaks": [
-      "להישאר במקום אחד"
+    "micro": [
+      "מבין/ה הוראות קצרות"
+    ],
+    "alt": [
+      "לא ורבלי/ת",
+      "תקשורת בתמונות (תת״ח)"
     ]
   }
 }
