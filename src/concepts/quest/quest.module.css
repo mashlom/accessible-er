@@ -2079,12 +2079,14 @@
   background: linear-gradient(var(--w-water), transparent);
 }
 
-/* on a wide screen the headline is at the top of the page, on the sky, below the top row: the same size and
-   the same place across as in the scene (the scene is the full width, so its unit is 100vw / 1920) */
+/* on a wide screen the headline is at the top of the page, on the sky, below the top row, centred (clear of the
+   language picker); the same size as in the scene (the scene is the full width, so its unit is 100vw / 1920) */
 .worldTitleTop {
   --u: calc(100vw / 1920);
   z-index: 15;
   top: 72px;
+  left: 50%;
+  translate: -50% 0;
 }
 
 .worldSceneWide {
