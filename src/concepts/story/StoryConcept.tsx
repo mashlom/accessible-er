@@ -15,6 +15,7 @@ import { MessagePage } from './pages/MessagePage'
 import { FeedbackPage } from './pages/FeedbackPage'
 import { WaitTimesPage } from './pages/WaitTimesPage'
 import { QrPage } from './pages/QrPage'
+import styles from './story.module.css'
 
 /** Concept 2 — "Roni's journey". Mounted at /story by App.tsx. */
 export default function StoryConcept() {
@@ -28,7 +29,7 @@ export default function StoryConcept() {
         <Route path="show" element={<ShowPage />} />
         <Route path="show/:id" element={<BookPage />} />
         <Route path="map" element={<MapPage />} />
-        <Route path="calm" element={<CalmPage />} />
+        <Route path="calm" element={<div className={styles.column}><CalmPage /></div>} />
         <Route path="distract" element={<DistractPage />} />
         <Route path="requests" element={<RequestsPage />} />
         <Route path="going-home" element={<GoingHomePage />} />

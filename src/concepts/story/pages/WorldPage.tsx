@@ -26,6 +26,9 @@ const destinations = [
   { to: '/feedback', id: 'feedback', emoji: '💬', tint: 'var(--s-sea-soft)' },
 ]
 
+/** "Reading in the ER" (the books, #/book) is hidden from the home for now; the books themselves stay */
+const SHOW_READ_CARD = false
+
 type HomeLang = keyof typeof homeTexts
 
 /** The same destination in the calm concept: its title and line come from i18n/ui.json, so the wording is one for the whole app */
@@ -86,12 +89,14 @@ export function WorldPage() {
             <span className={styles.childCardDesc}>{tx.start.desc}</span>
             <span className={styles.childCardAction}>{tx.start.action} {dir === 'rtl' ? '←' : '→'}</span>
           </a>
-          <a href="#/book" className={styles.childCard}>
-            <span className={styles.childCardIcon} aria-hidden>📖</span>
-            <span className={styles.childCardName}>{tx.read.title}</span>
-            <span className={styles.childCardDesc}>{tx.read.desc}</span>
-            <span className={styles.childCardAction}>{tx.read.action} {dir === 'rtl' ? '←' : '→'}</span>
-          </a>
+          {SHOW_READ_CARD && (
+            <a href="#/book" className={styles.childCard}>
+              <span className={styles.childCardIcon} aria-hidden>📖</span>
+              <span className={styles.childCardName}>{tx.read.title}</span>
+              <span className={styles.childCardDesc}>{tx.read.desc}</span>
+              <span className={styles.childCardAction}>{tx.read.action} {dir === 'rtl' ? '←' : '→'}</span>
+            </a>
+          )}
         </div>
       </section>
 

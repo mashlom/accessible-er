@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
 import { keyed } from '../lib/keyed'
 import { Link } from '../concepts/nav'
 import { Mascot } from './Mascot'
@@ -12,19 +10,12 @@ import styles from './CareCardViewPage.module.css'
 
 type Lang = 'he' | 'en' | 'ru'
 
-/** The card as the staff reads it: Hebrew, on black. The form opens it with ?print to print or save it. */
+/** The card as the staff reads it: Hebrew, on black. */
 export function CareCardViewPage() {
   const lang: Lang = 'he'
-  const [params] = useSearchParams()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   const cv = keyed((i18nUi as unknown as Record<Lang, { cardView: Record<string, string> }>)[lang], 'i18n/ui').cardView
   const emptyTitle = keyed((i18nUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang], 'i18n/ui').card.empty
-  const printNow = params.has('print')
-
-  useEffect(() => {
-    if (printNow) window.print()
-  }, [printNow])
-
   if (isCardEmpty(card)) {
     return (
       <div className={styles.empty}>

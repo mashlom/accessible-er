@@ -58,7 +58,7 @@ export function CareCardView() {
 
   return (
     <>
-      <div className={`${css.cardViewRows} print-area`}>
+      <div className={css.cardViewRows}>
         {rows.map((row) => (
           <div key={row.label} className={css.cardViewRow}>
             <span className={css.cardViewLabel}>
@@ -70,7 +70,7 @@ export function CareCardView() {
       </div>
 
       {(card.asks ?? []).length > 0 && (
-        <section className="print-area">
+        <section>
           <h2>{heAsks.title}</h2>
           <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
             {(card.asks ?? []).map((id) => <li key={id}>{heAsks[id]}</li>)}

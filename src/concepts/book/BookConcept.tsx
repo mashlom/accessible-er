@@ -39,9 +39,8 @@ export default function BookConcept() {
           <span aria-hidden />
           <div className={css.topGroup}>
             <LanguagePicker />
-            {/* a word, not a picture: the button is for the adult */}
-            <a href="#/" className={`${css.topFlag} ${css.navWord}`}>
-              {t('ui.shell.home')}
+            <a href="#/" className={css.topFlag} aria-label={t('ui.shell.home')}>
+              <span aria-hidden>🏠</span>
             </a>
           </div>
         </div>

@@ -140,9 +140,8 @@
   background: #fff;
 }
 
+/* the full width, so the language and the home sit in the top left corner, as in the worlds */
 .topbarInner {
-  max-width: 900px;
-  margin-inline: auto;
   display: grid;
   grid-template-columns: 52px 1fr 52px;
   align-items: center;
@@ -199,6 +198,13 @@
   max-width: 900px;
   margin-inline: auto;
   padding: var(--space-3) var(--space-4) calc(var(--s-companion) + var(--space-5));
+}
+
+/* a page drawn by another concept (the calm page, the card form): as wide as the home's tiles */
+.column {
+  width: 100%;
+  max-width: calc(900px - 2 * var(--space-4));
+  margin-inline: auto;
 }
 
 .sceneHead {

@@ -82,8 +82,8 @@ export function QuestShell() {
 
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end', paddingInlineEnd: '0.5rem' }}>
           <LanguagePicker />
-          <a href="#/" className={`${css.questTopBtn} ${css.navWord}`}>
-            {t('ui.shell.home')}
+          <a href="#/" className={`${css.questTopBtn} ${css.homeIcon}`} aria-label={t('ui.shell.home')}>
+            <span aria-hidden>🏠</span>
           </a>
         </div>
       </header>}

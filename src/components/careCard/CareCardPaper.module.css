@@ -1,0 +1,97 @@
+/* The card on A4 paper, as it goes into the PDF: dark text on white, the green head,
+   a line between the rows. 794px is the width of an A4 page at 96 dpi. */
+/* out of sight; the picture is taken of the paper inside, which is laid out as usual */
+.offscreen {
+  position: fixed;
+  top: 0;
+  left: -10000px;
+}
+
+.paper {
+  width: 794px;
+  padding: 53px; /* 14mm */
+  box-sizing: border-box;
+  background: #fff;
+  color: #1a1a1a;
+  font-family: inherit;
+}
+
+.card {
+  border: 2px solid var(--c-primary);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.head {
+  background: var(--c-primary);
+  color: #fff;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.headIcon {
+  font-size: 28px;
+}
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.age {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* the app's own suggestions are for the screen, not the paper */
+.paper :global(.no-print) {
+  display: none;
+}
+
+/* the rows and the requests come from CareCardView */
+.paper [class*="cardViewRows"] {
+  border: 0;
+  border-radius: 0;
+}
+.paper [class*="cardViewRow"] {
+  display: block;
+  padding: 11px 20px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.paper [class*="cardViewRow"]:last-child {
+  border-bottom: 0;
+}
+.paper [class*="cardViewLabel"],
+.paper [class*="cardViewValue"] {
+  display: inline;
+  width: auto;
+  font-size: 17px;
+  line-height: 1.5;
+}
+.paper [class*="cardViewLabel"] {
+  font-weight: 800;
+  color: var(--c-primary-dark);
+}
+.paper [class*="cardViewLabel"]::after {
+  content: ": ";
+}
+.paper [class*="cardViewValue"] {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+.paper section {
+  border-top: 2px solid var(--c-primary);
+}
+.paper h2 {
+  margin: 14px 20px 4px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--c-primary-dark);
+}
+.paper ul {
+  margin: 0 20px 14px;
+}
+.paper li {
+  font-size: 17px;
+  font-weight: 500;
+}

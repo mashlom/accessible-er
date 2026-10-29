@@ -3537,6 +3537,17 @@ path.worldTrailLit {
   text-decoration: none;
 }
 
+/* the home button: a house, the same on every page of the app */
+.homeIcon {
+  font-size: 1.5rem;
+  line-height: 1;
+  text-decoration: none;
+}
+.worldTopBtn.homeIcon {
+  font-size: 30px;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
+}
+
 /* the parent's button in the middle of the world choice's top bar */
 .questTopParent {
   justify-self: center;

@@ -1287,6 +1287,10 @@
   gap: 0.75rem;
   margin-top: 0.75rem;
 }
+/* a single card takes the whole row */
+.childCards:has(> :only-child) {
+  grid-template-columns: 1fr;
+}
 .childCard {
   border: none;
   box-shadow: 0 6px 18px rgba(23, 59, 77, 0.06);

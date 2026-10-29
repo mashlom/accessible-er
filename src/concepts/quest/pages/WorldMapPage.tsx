@@ -223,8 +223,8 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
           </button>
           <div className={css.worldTopGroup}>
             <LanguagePicker variant="overlay" />
-            <a href="#/" className={`${css.worldTopBtn} ${css.navWord}`}>
-              {t('ui.shell.home')}
+            <a href="#/" className={`${css.worldTopBtn} ${css.homeIcon}`} aria-label={t('ui.shell.home')}>
+              <span aria-hidden>🏠</span>
             </a>
           </div>
         </div>
