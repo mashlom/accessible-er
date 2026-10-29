@@ -2061,7 +2061,8 @@
   min-height: 100dvh;
   position: relative;
   overflow: clip;
-  background: var(--w-water, #1f6f80);
+  /* the sky above the picture: `skyTop` at the top of the screen (when the world has one) into `water` */
+  background: linear-gradient(var(--w-skyTop, var(--w-water, #1f6f80)), var(--w-water, #1f6f80) 70%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* the picture falls to the bottom of the screen */

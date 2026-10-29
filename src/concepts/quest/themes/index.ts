@@ -72,7 +72,8 @@ export interface WorldDesign {
   }
   /** Design tokens. text/text2/action/page/card/mint/blue/coral/yellow for the sheets and the world's screens;
    *  water (behind the landscape map), waterTop (the gradient at the top of the map), waterLight (behind the
-   *  portrait map); progress: the colours of the progress sticks, alternating */
+   *  portrait map); skyTop (optional: the sky at the very top of the screen, turning into `water` towards the
+   *  picture); progress: the colours of the progress sticks, alternating */
   /** The colours, each one a `--w-<name>` variable on the shell (`trail`: the dots of the route, white by default) */
   colors: Record<string, string> & { progress?: string[] }
   /** The pictures of each station (every required and optional stage, and 'decision' for the ending) */
