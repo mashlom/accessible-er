@@ -2077,7 +2077,22 @@
 .worldSceneFade { background: transparent; }
 .worldSceneFade::after {
   top: -2px;
-  height: calc(380 * var(--u));
+  height: calc(30 * var(--u));
+  /* the far-away top is a little blurred too, as if further off; a world can keep one spot (a head) clear */
+  backdrop-filter: blur(calc(4 * var(--u)));
+  mask-image:
+    linear-gradient(#000 40%, transparent),
+    radial-gradient(
+      calc(var(--keep0-rx, 0) * var(--u)) calc(var(--keep0-ry, 0) * var(--u))
+        at calc(var(--keep0-x, -9999) * var(--u)) calc(var(--keep0-y, -9999) * var(--u) + 2px),
+      transparent 35%, #000 100%
+    ),
+    radial-gradient(
+      calc(var(--keep1-rx, 0) * var(--u)) calc(var(--keep1-ry, 0) * var(--u))
+        at calc(var(--keep1-x, -9999) * var(--u)) calc(var(--keep1-y, -9999) * var(--u) + 2px),
+      transparent 35%, #000 100%
+    );
+  mask-composite: intersect;
   /* eased, so neither the start nor the end of the fade shows as a line */
   background: linear-gradient(
     var(--w-water) 0%,
@@ -2132,6 +2147,16 @@
 
 /* the mirrored piece sits right above the scene, tucked 2px under it so no hairline shows */
 .worldTileVTop { bottom: calc(var(--sh) - 2px); }
+
+/* Worlds with a sky above the picture: a short reflection of its top, blurred, fading into the sky (the mask is
+   drawn before the flip: its top is the edge next to the scene). The blurred picture is a little larger than
+   the piece, so its soft rim stays outside. */
+.worldTileV.worldTileVSoft {
+  mask-image: linear-gradient(#000, transparent calc(var(--sw) * 110 / 1920));
+}
+.worldTileV.worldTileVSoft .worldSideBgW { filter: blur(14px); scale: 1.06; }
+/* the reflection is the way into the sky now: no light band over the picture's own top */
+.worldSceneFade::after { display: none; }
 
 /* The mirrored pieces on the left and right of the scene, on a screen wider than 16:9 (see below) */
 .worldTileH {
@@ -3299,6 +3324,7 @@ path.worldTrailLit {
   /* the scene reaches the top of the screen: no sky above it to fade into */
   .worldSceneFade::after,
   .worldTileHFade::after { display: none; }
+  .worldTileVSoft { display: none; }
   .worldTileH { display: block; bottom: calc((100dvh - var(--sh)) / 2); }
   /* the sides: the picture mirrored, sharp at the seam so the scene's own edge stays untouched; further out a
      blurred copy comes in, and further still the picture's own sky and ground colours (set by the page, see
