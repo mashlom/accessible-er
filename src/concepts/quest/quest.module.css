@@ -3271,6 +3271,12 @@ path.worldTrailLit {
     /* no own colour at the edge: the mirrored piece under it shows through any fraction of a pixel */
     background: transparent;
   }
+  /* the picture's outermost pixel columns are blurred by scaling: push them just past the seam */
+  .worldSceneWide::before,
+  .worldTileH .worldSideBgW {
+    background-size: calc(100% + 6px) 100%;
+    background-position: center top;
+  }
   .worldTileH { display: block; }
   .worldTileHLeft { left: calc((100vw - var(--sw)) / 2 - var(--sw) + 4px); }
   .worldTileHRight { left: calc((100vw + var(--sw)) / 2 - 4px); }
