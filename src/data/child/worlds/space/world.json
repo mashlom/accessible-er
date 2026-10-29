@@ -1,0 +1,44 @@
+{
+  "id": "space",
+  "order": 7,
+  "emoji": "🚀",
+  "doneEmoji": "⭐",
+  "shopImage": "/worlds/knight/shop.JPEG",
+  "bg": "/worlds/space/space.jpg",
+  "accent": "#1a3a6b",
+  "accentSoft": "#d0dcf5",
+  "accentText": "#ffffff",
+  "completedColor": "#5c8de8",
+  "stages": {
+    "reception": {
+      "icon": "🛸"
+    },
+    "wait-before-triage": {
+      "icon": "🧑‍🚀"
+    },
+    "triage": {
+      "icon": "📡"
+    },
+    "wait-doctor": {
+      "icon": "🌍"
+    },
+    "doctor": {
+      "icon": "👨‍🚀"
+    },
+    "decision": {
+      "icon": "🌙"
+    },
+    "tests": {
+      "icon": "🔭"
+    },
+    "treatment": {
+      "icon": "🔧"
+    },
+    "consult": {
+      "icon": "📻"
+    },
+    "wait-results": {
+      "icon": "💻"
+    }
+  }
+}

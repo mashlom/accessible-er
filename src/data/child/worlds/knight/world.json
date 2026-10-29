@@ -1,0 +1,57 @@
+{
+  "id": "knight",
+  "order": 2,
+  "emoji": "⚔️",
+  "doneEmoji": "🪙",
+  "shopImage": "/worlds/knight/shop.JPEG",
+  "bg": "/worlds/knight/castle_v.jpg",
+  "bgLandscape": "/worlds/knight/castle_h.jpeg",
+  "nightBg": "/worlds/knight/night_castle.JPEG",
+  "thumbnail": "/worlds/knight/castle.png",
+  "thumbnailOverlay": "/worlds/knight/knight.png",
+  "accent": "#7b4f28",
+  "accentSoft": "#f5e6d0",
+  "accentText": "#ffffff",
+  "completedColor": "#c9a84c",
+  "stages": {
+    "reception": {
+      "icon": "🏰",
+      "image": "/worlds/knight/tower.jpg"
+    },
+    "wait-before-triage": {
+      "icon": "🛡️"
+    },
+    "triage": {
+      "icon": "⚔️",
+      "image": "/worlds/knight/tests.jpeg"
+    },
+    "wait-doctor": {
+      "icon": "🚪",
+      "image": "/worlds/knight/door.JPEG"
+    },
+    "doctor": {
+      "icon": "🧙",
+      "image": "/worlds/knight/wizard.JPEG"
+    },
+    "decision": {
+      "icon": "🏆",
+      "image": "/worlds/knight/celebrating.jpg"
+    },
+    "tests": {
+      "icon": "🪄",
+      "image": "/worlds/knight/rentgen.jpeg"
+    },
+    "treatment": {
+      "icon": "🔧",
+      "image": "/worlds/knight/procedures.jpeg"
+    },
+    "consult": {
+      "icon": "📜",
+      "image": "/worlds/knight/wizard2.JPEG"
+    },
+    "wait-results": {
+      "icon": "🔮",
+      "image": "/worlds/knight/wait.JPEG"
+    }
+  }
+}

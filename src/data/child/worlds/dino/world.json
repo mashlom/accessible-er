@@ -1,0 +1,45 @@
+{
+  "id": "dino",
+  "order": 4,
+  "emoji": "🦕",
+  "doneEmoji": "⭐",
+  "shopImage": "/worlds/knight/shop.JPEG",
+  "bg": "",
+  "thumbnail": "/worlds/dino/dino.jpeg",
+  "accent": "#4a7c3f",
+  "accentSoft": "#dcefd8",
+  "accentText": "#ffffff",
+  "completedColor": "#8bc34a",
+  "stages": {
+    "reception": {
+      "icon": "🌿"
+    },
+    "wait-before-triage": {
+      "icon": "🦕"
+    },
+    "triage": {
+      "icon": "🔭"
+    },
+    "wait-doctor": {
+      "icon": "🏕️"
+    },
+    "doctor": {
+      "icon": "🦖"
+    },
+    "decision": {
+      "icon": "🌋"
+    },
+    "tests": {
+      "icon": "🧪"
+    },
+    "treatment": {
+      "icon": "🩹"
+    },
+    "consult": {
+      "icon": "🗺️"
+    },
+    "wait-results": {
+      "icon": "⏳"
+    }
+  }
+}

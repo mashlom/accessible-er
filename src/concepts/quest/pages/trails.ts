@@ -1,4 +1,4 @@
-import type { Pt } from './OceanMapPage'
+import type { Pt } from './WorldMapPage'
 
 /** Dots about every 7 units along a cubic Bezier */
 export function dotsAlong(p0: Pt, p1: Pt, p2: Pt, p3: Pt): Pt[] {

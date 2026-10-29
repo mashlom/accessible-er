@@ -5,7 +5,8 @@ import { SensoryBar } from '../../../components/SensoryBar'
 import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
-import { useParentTheme as useQuestTheme } from '../useQuestTheme'
+import { PARENT_WORLD, useParentTheme as useQuestTheme } from '../useQuestTheme'
+import { designVars, getTheme } from '../themes'
 import { ProcedureLineIcon } from './ProcedureLineIcon'
 import css from '../quest.module.css'
 
@@ -103,7 +104,9 @@ export function ParentSheet({
   return (
     <div className={css.sheetBackdrop} onClick={onClose}>
       <div
-        className={`${css.sheet} ${css.oceanSheet}`}
+        className={`${css.sheet} ${css.worldSheet}`}
+        // the parent's sheet keeps the parent's colours in every world
+        style={designVars(getTheme(PARENT_WORLD).design)}
         role="dialog"
         aria-modal="true"
         aria-label={t('ui.buttons.parentInfo')}
@@ -250,11 +253,11 @@ export function ParentSheet({
             <Link
               to="/calm"
               state={{ from: '/map', fromWorld: true, back: window.location.hash.replace(/^#/, '').split('?')[0] }}
-              className={`${css.oceanBtn} ${css.oceanBtnDone}`}
+              className={`${css.worldBtn} ${css.worldBtnDone}`}
             >
               {t('ui.buttons.oceanHardNow')}
             </Link>
-            <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={onClose}>
+            <button type="button" className={`${css.worldBtn} ${css.worldBtnBack}`} onClick={onClose}>
               {t('ui.buttons.close')}
             </button>
           </div>

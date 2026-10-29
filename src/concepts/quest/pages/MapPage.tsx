@@ -5,7 +5,7 @@ import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
-import { OceanMapPage } from './OceanMapPage'
+import { WorldMapPage } from './WorldMapPage'
 import css from '../quest.module.css'
 
 export function MapPage() {
@@ -15,7 +15,7 @@ export function MapPage() {
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
 
-  if (theme.id === 'ocean') return <OceanMapPage />
+  if (theme.design) return <WorldMapPage />
 
   const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
   const lastStage = stages.find((s) => s.id === LAST_REQUIRED)

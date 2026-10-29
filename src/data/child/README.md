@@ -10,7 +10,8 @@ child/
   book/          the book for the youngest children (page by page)
   procedures/    the steps a child hears before each procedure, shared by all worlds
   worlds/
-    ocean/       station names and hints, stories about procedures, steps, calm lines (ocean world)
+    ocean/       texts.json: station names and hints, stories about procedures, steps, calm lines (ocean world)
+                 world.json: the world's look (not texts) — see worlds/README.md
     knight/      (to be moved)
     dino/        (to be moved)
     fairy/       (to be moved)

@@ -7,7 +7,7 @@ import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
 import css from '../quest.module.css'
-import { OceanNightMapPage } from './OceanNightMapPage'
+import { WorldNightMapPage } from './WorldNightMapPage'
 
 // All coin IDs that can be earned on the day map (required stages)
 const DAY_COIN_IDS = new Set<string>(
@@ -130,5 +130,5 @@ function StripNightMapPage() {
 
 export function NightMapPage() {
   const { theme } = useQuestTheme()
-  return theme.id === 'ocean' ? <OceanNightMapPage /> : <StripNightMapPage />
+  return theme.design ? <WorldNightMapPage /> : <StripNightMapPage />
 }

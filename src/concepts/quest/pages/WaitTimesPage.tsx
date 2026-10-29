@@ -1,20 +1,18 @@
-import { useNavigate } from 'react-router-dom'
-import { Link } from '../../nav'
+import { Link, useGoBackTo } from '../../nav'
 import { parentJourney } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, loadProcs } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
-import { OceanStageSheet } from '../components/OceanStageSheet'
+import { WorldStageSheet } from '../components/WorldStageSheet'
 import { ParentInfo } from '../components/ParentInfo'
-import { OCEAN_IMAGES } from './OceanMapPage'
 import css from '../quest.module.css'
 
 export function WaitTimesPage() {
   const { theme } = useQuestTheme()
   const { t, lang } = useI18n()
   const { active, completeProcedure, completeActive } = useQuestProgress()
-  const navigate = useNavigate()
+  const goBackTo = useGoBackTo()
 
   const isActive = active?.id === 'wait-before-triage'
 
@@ -23,7 +21,7 @@ export function WaitTimesPage() {
     const anyProcDone = procIds.some((pid) => loadProcs().has(pid))
     if (!anyProcDone) completeProcedure('wait-before-triage')
     completeActive()
-    navigate('/quest/map')
+    goBackTo('/map')
   }
 
   const data = parentJourney(lang).find((j) => j.id === 'wait-before-triage')
@@ -31,13 +29,12 @@ export function WaitTimesPage() {
 
   const skin = theme.stages['wait-before-triage']
 
-  if (theme.id === 'ocean') {
+  if (theme.design) {
     return (
-      <OceanStageSheet
+      <WorldStageSheet
         stageId="wait-before-triage"
         label={skin?.label ?? data.title}
         hint={skin?.hint ?? data.meaning}
-        image={skin?.heroImage ?? skin?.image ?? OCEAN_IMAGES['wait-before-triage']}
         isActive={isActive}
         onDone={handleDone}
         backTo="/map"

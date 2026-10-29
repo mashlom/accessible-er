@@ -1,0 +1,43 @@
+{
+  "id": "dollhouse",
+  "order": 3,
+  "emoji": "🏠",
+  "bg": "",
+  "thumbnail": "/worlds/dollhouse/dollhouse.png",
+  "accent": "#c2618f",
+  "accentSoft": "#fbe6ef",
+  "accentText": "#ffffff",
+  "completedColor": "#e0a8c4",
+  "stages": {
+    "reception": {
+      "icon": "📋"
+    },
+    "wait-before-triage": {
+      "icon": "🛋️"
+    },
+    "triage": {
+      "icon": "🧸"
+    },
+    "wait-doctor": {
+      "icon": "🪑"
+    },
+    "doctor": {
+      "icon": "🩺"
+    },
+    "decision": {
+      "icon": "🏡"
+    },
+    "tests": {
+      "icon": "🔬"
+    },
+    "treatment": {
+      "icon": "💊"
+    },
+    "consult": {
+      "icon": "🧑‍⚕️"
+    },
+    "wait-results": {
+      "icon": "🕰️"
+    }
+  }
+}

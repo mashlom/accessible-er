@@ -5,7 +5,7 @@ import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, OPTIONAL_STAGES, StageId } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
-import { OceanProcedureSheet } from '../components/OceanProcedureSheet'
+import { WorldProcedureSheet } from '../components/WorldProcedureSheet'
 import css from '../quest.module.css'
 
 export function ProcedureSelectPage() {
@@ -32,15 +32,16 @@ export function ProcedureSelectPage() {
 
   function handleContinue() {
     revealMultiple([...selected])
-    navigate(conceptPath('/night-map'))
+    // the second map takes the choice's place: going back from it returns to the first map, not to the choice
+    navigate(conceptPath('/night-map'), { replace: true })
   }
 
   function handleSkip() {
-    navigate(conceptPath('/celebrate'))
+    navigate(conceptPath('/celebrate'), { replace: true })
   }
 
-  if (theme.id === 'ocean') {
-    return <OceanProcedureSheet selected={selected} onToggle={toggle} onContinue={handleContinue} onSkip={handleSkip} />
+  if (theme.design) {
+    return <WorldProcedureSheet selected={selected} onToggle={toggle} onContinue={handleContinue} onSkip={handleSkip} />
   }
 
   const prompt = theme.procedurePrompt ?? t('ui.labels.adult.procedurePrompt')
