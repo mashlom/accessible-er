@@ -32,9 +32,10 @@ export function useWide(): boolean {
 }
 
 /** The picture's colours row by row (sky on top, grass below), without what stands on them: for each band of rows
- *  the median colour across the whole width. Fills the sides of a very wide screen as a vertical gradient. */
-function useSideColours(ref: React.RefObject<HTMLElement | null>, on: boolean, key: unknown): string | undefined {
-  const [grad, setGrad] = useState<string>()
+ *  the median colour across the outer third of the picture on that side. Fills the sides of a very wide screen as
+ *  a vertical gradient: [left, right]. */
+function useSideColours(ref: React.RefObject<HTMLElement | null>, on: boolean, key: unknown): (string | undefined)[] {
+  const [grad, setGrad] = useState<(string | undefined)[]>([])
   useEffect(() => {
     if (!on || !ref.current) return
     const url = getComputedStyle(ref.current).getPropertyValue('--w-background-wide').match(/url\(["']?([^"')]+)/)?.[1]
@@ -50,11 +51,14 @@ function useSideColours(ref: React.RefObject<HTMLElement | null>, on: boolean, k
       g.drawImage(img, 0, 0, W, H)
       const d = g.getImageData(0, 0, W, H).data
       const med = (a: number[]) => a.sort((x, y) => x - y)[a.length >> 1]
-      const stops = Array.from({ length: H }, (_, y) => {
-        const ch = [0, 1, 2].map((k) => med(Array.from({ length: W }, (_, x) => d[(y * W + x) * 4 + k])))
-        return `rgb(${ch.join(' ')}) ${((y + 0.5) / H * 100).toFixed(1)}%`
-      })
-      setGrad(`linear-gradient(${stops.join(', ')})`)
+      const side = (x0: number) => {
+        const stops = Array.from({ length: H }, (_, y) => {
+          const ch = [0, 1, 2].map((k) => med(Array.from({ length: W / 3 }, (_, x) => d[(y * W + x0 + x) * 4 + k])))
+          return `rgb(${ch.join(' ')}) ${((y + 0.5) / H * 100).toFixed(1)}%`
+        })
+        return `linear-gradient(${stops.join(', ')})`
+      }
+      setGrad([side(0), side(W - W / 3)])
     }
     img.src = url
   }, [ref, on, key])
@@ -166,11 +170,11 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
         <>
           <div className={`${css.worldTileH} ${css.worldTileHLeft} ${theme.design?.mirrorAbove === false ? css.worldTileHFade : ''}`} aria-hidden>
             <div className={css.worldSideBgW} />
-            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} style={sideBg ? { background: sideBg } : undefined} />
+            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} style={sideBg[0] ? { background: sideBg[0] } : undefined} />
           </div>
           <div className={`${css.worldTileH} ${css.worldTileHRight} ${theme.design?.mirrorAbove === false ? css.worldTileHFade : ''}`} aria-hidden>
             <div className={css.worldSideBgW} />
-            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} style={sideBg ? { background: sideBg } : undefined} />
+            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} style={sideBg[1] ? { background: sideBg[1] } : undefined} />
           </div>
         </>
       )}
