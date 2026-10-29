@@ -65,6 +65,11 @@ function useSideColours(ref: React.RefObject<HTMLElement | null>, on: boolean, k
   return grad
 }
 
+/** The part of the picture's top kept clear of the sky fade, as the scene's CSS variables (see .worldSceneFade) */
+function skyKeepVars(k?: { x: number; y: number; rx: number; ry: number }): Record<string, number> {
+  return k ? { '--keep-x': k.x, '--keep-y': k.y, '--keep-rx': k.rx, '--keep-ry': k.ry } : {}
+}
+
 /** Cuts the end of a polyline where it enters a circle (when it ends inside or next to it) */
 function trimAtCircle(pts: Pt[], c: Pt, r: number): Pt[] {
   const d = (p: Pt) => Math.hypot(p[0] - c[0], p[1] - c[1])
@@ -229,7 +234,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
       <div
         // a world without the mirrored water above (all but the ocean): the picture's top fades into the sky colour
         className={wide ? `${css.worldScene} ${css.worldSceneWide} ${theme.design?.mirrorAbove === false ? css.worldSceneFade : ''}` : css.worldScene}
-        style={{ aspectRatio: `${W} / ${H}`, '--u': `calc(100cqw / ${W})`, ...vars } as React.CSSProperties}
+        style={{ aspectRatio: `${W} / ${H}`, '--u': `calc(100cqw / ${W})`, ...vars, ...skyKeepVars(theme.design?.skyKeep) } as React.CSSProperties}
       >
         <svg viewBox={`0 0 ${W} ${H}`} className={css.worldPath} aria-hidden>
           {/* a trail lights up once the station it leaves is done */}

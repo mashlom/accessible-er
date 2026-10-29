@@ -83,6 +83,9 @@ export interface WorldDesign {
   /** Landscape: on a window taller than the scene, the space above it shows the scene's top mirrored (the
    *  default); false leaves it the plain `water` colour (for a picture whose top is a plain sky) */
   mirrorAbove?: boolean
+  /** With mirrorAbove false: a part of the picture's top kept clear of the fade into the sky (a head that reaches the
+   *  top edge): an ellipse, centre and radii in the landscape scene's units (1920 x 1080) */
+  skyKeep?: { x: number; y: number; rx: number; ry: number }
   /** Bubbles behind a picture on its sheet: centre (x, y) and diameter in % of the panel */
   bubbles?: { x: number; y: number; d: number }[]
   /** The first map: the required stations, as drawn in the designer's frames */
