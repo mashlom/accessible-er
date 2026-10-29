@@ -2077,7 +2077,7 @@
 .worldSceneFade { background: transparent; }
 .worldSceneFade::after {
   top: -2px;
-  height: calc(240 * var(--u));
+  height: calc(140 * var(--u));
   /* the far-away top is a little blurred too, as if further off; a world can keep one spot (a head) clear */
   backdrop-filter: blur(calc(4 * var(--u)));
   mask-image:
