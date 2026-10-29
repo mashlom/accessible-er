@@ -216,8 +216,8 @@ src/
 | אנימציות האייקונים (`public/anim/*.json`) | [Noto Animated Emoji](https://googlefonts.github.io/noto-emoji-animation/) של Google | CC BY 4.0 — **מחייב ייחוס** |
 | דמות רוני (`Roni.tsx`) | נכתבה לפרויקט | חלק מהריפו |
 | שאר האיורים | אימוג'י מהמערכת + SVG/CSS | — |
-| איורי עולם האביר (`public/worlds/knight/art/*`) | צוירו בקוד (SVG) לפרויקט, `scripts/art/knight.py` | חלק מהריפו |
-| איורי עולם הדינוזאורים (`public/worlds/dino/art/*`) | צוירו בקוד (SVG) לפרויקט, `scripts/art/dino.py` | חלק מהריפו |
+| איורי עולם האביר (`public/worlds/knight/art/*`) | צוירו בקוד (SVG → WebP) לפרויקט, `scripts/art/knight.py` | חלק מהריפו |
+| איורי עולם הדינוזאורים (`public/worlds/dino/art/*`) | צוירו בקוד (SVG → WebP) לפרויקט, `scripts/art/dino.py` | חלק מהריפו |
 | ציורי עולם האוקיינוס (`public/worlds/ocean/*`) | נוצרו ב־Gemini (גרסה חינמית) ועובדו ע״י שבי | **טרם נסגר** — ראו [NOTICE.txt](public/worlds/ocean/NOTICE.txt); חובה לציין ב־README ובתחתית דף הבית שנוצרו ב־AI |
 
 CC BY 4.0 מחייב ייחוס, ולכן הקרדיט מופיע בשלושה מקומות שאסור להסיר:

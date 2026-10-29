@@ -11,6 +11,9 @@ import random
 import zlib
 
 
+# how high the 3D light raises the edges (a world may raise it)
+RELIEF = 3
+
 # ---------- palette ----------
 SKY0, SKY1 = '#4f8bc4', '#dcedf7'
 STONE = '#cfc6b4'
@@ -91,9 +94,9 @@ class Doc:
 <feColorMatrix in="blur" type="luminanceToAlpha" result="lum"/>
 <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="ablur"/>
 <feComposite in="lum" in2="ablur" operator="arithmetic" k2="0.6" k3="{0.6 if edges else 0}" result="height"/>
-<feSpecularLighting in="height" surfaceScale="3" specularConstant="0.5" specularExponent="16" lighting-color="#fff8ec" result="spec"><feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
+<feSpecularLighting in="height" surfaceScale="{RELIEF}" specularConstant="0.5" specularExponent="16" lighting-color="#fff8ec" result="spec"><feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
 <feComposite in="spec" in2="SourceAlpha" operator="in" result="specIn"/>
-<feDiffuseLighting in="height" surfaceScale="3" diffuseConstant="1.3" lighting-color="#fff" result="diff"><feDistantLight azimuth="235" elevation="50"/></feDiffuseLighting>
+<feDiffuseLighting in="height" surfaceScale="{RELIEF}" diffuseConstant="1.3" lighting-color="#fff" result="diff"><feDistantLight azimuth="235" elevation="50"/></feDiffuseLighting>
 <feBlend in="SourceGraphic" in2="diff" mode="multiply" result="lit"/>
 <feComposite in="lit" in2="SourceAlpha" operator="in" result="litIn"/>
 <feComposite in="litIn" in2="specIn" operator="arithmetic" k2="1" k3="0.5"/>
@@ -583,10 +586,39 @@ def band(W, H, y0, amp, phase, color):
     return f'<path d="{d}" fill="{color}"/>'
 
 
-def write(out, files):
-    """Writes the pictures into a world's folder"""
-    os.makedirs(out, exist_ok=True)
+ART = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.join(ART, '..', '..')
+
+
+def write(world, files):
+    """Writes a world's pictures: the SVGs into scripts/art/build/<world>/ (not kept in the repository), rendered
+    into WebP images in public/worlds/<world>/art/, which the app uses"""
+    import shutil
+    import subprocess
+    from PIL import Image
+    svg_dir = os.path.join(ART, 'build', world, 'svg')
+    png_dir = os.path.join(ART, 'build', world, 'png')
+    out = os.path.join(ROOT, 'public', 'worlds', world, 'art')
+    for dr in (svg_dir, png_dir):
+        shutil.rmtree(dr, ignore_errors=True)
+        os.makedirs(dr)
     for n, s in files.items():
-        with open(os.path.join(out, n), 'w') as fh:
+        with open(os.path.join(svg_dir, n), 'w') as fh:
             fh.write(s)
-    print(len(files), 'files,', sum(len(s) for s in files.values()) // 1024, 'KB')
+    if os.environ.get('ART_SVG_ONLY'):
+        # a quick look while drawing: the SVGs only (open them from scripts/art/build/<world>/svg)
+        print(len(files), 'SVGs in', os.path.relpath(svg_dir, ROOT))
+        return
+    subprocess.run(['node', os.path.join(ART, 'render.cjs'), svg_dir, png_dir], check=True)
+    os.makedirs(out, exist_ok=True)
+    for f in os.listdir(out):
+        if f.endswith(('.svg', '.webp')):
+            os.remove(os.path.join(out, f))
+    total = 0
+    for n in sorted(os.listdir(png_dir)):
+        im = Image.open(os.path.join(png_dir, n))
+        dest = os.path.join(out, n.replace('.png', '.webp'))
+        # the big pictures (the maps' backgrounds) a little more compressed: their fine grain costs the most
+        im.save(dest, 'WEBP', quality=78 if n.startswith('map-') else 86, method=6)
+        total += os.path.getsize(dest)
+    print(len(files), 'pictures,', total // 1024, 'KB in', os.path.relpath(out, ROOT))

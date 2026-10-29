@@ -3,10 +3,10 @@
   "order": 4,
   "emoji": "🦕",
   "doneEmoji": "⭐",
-  "shopImage": "/worlds/dino/art/celebrate.svg",
+  "shopImage": "/worlds/dino/art/celebrate.webp",
   "bg": "",
-  "thumbnail": "/worlds/dino/art/map-portrait.svg",
-  "thumbnailOverlay": "/worlds/dino/art/card.svg",
+  "thumbnail": "/worlds/dino/art/map-portrait.webp",
+  "thumbnailOverlay": "/worlds/dino/art/card.webp",
   "accent": "#3f7330",
   "accentSoft": "#dcefd8",
   "accentText": "#ffffff",
@@ -45,9 +45,9 @@
   },
   "design": {
     "assets": {
-      "background": "/worlds/dino/art/map-portrait.svg",
-      "backgroundWide": "/worlds/dino/art/map-landscape.svg",
-      "sheetSeabed": "/worlds/dino/art/sheet-floor.svg"
+      "background": "/worlds/dino/art/map-portrait.webp",
+      "backgroundWide": "/worlds/dino/art/map-landscape.webp",
+      "sheetSeabed": "/worlds/dino/art/sheet-floor.webp"
     },
     "colors": {
       "text": "#26331f",
@@ -70,113 +70,113 @@
     "mirrorAbove": false,
     "stations": {
       "reception": {
-        "map": "/worlds/dino/art/station-gate.svg",
-        "sheet": "/worlds/dino/art/scene-gate.svg",
+        "map": "/worlds/dino/art/station-gate.webp",
+        "sheet": "/worlds/dino/art/scene-gate.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-gate.svg"
+        "choice": "/worlds/dino/art/station-gate.webp"
       },
       "wait-before-triage": {
-        "map": "/worlds/dino/art/station-path.svg",
-        "sheet": "/worlds/dino/art/scene-path.svg",
+        "map": "/worlds/dino/art/station-path.webp",
+        "sheet": "/worlds/dino/art/scene-path.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-path.svg"
+        "choice": "/worlds/dino/art/station-path.webp"
       },
       "triage": {
-        "map": "/worlds/dino/art/station-ranger.svg",
-        "sheet": "/worlds/dino/art/scene-ranger.svg",
+        "map": "/worlds/dino/art/station-ranger.webp",
+        "sheet": "/worlds/dino/art/scene-ranger.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-ranger.svg"
+        "choice": "/worlds/dino/art/station-ranger.webp"
       },
       "wait-doctor": {
-        "map": "/worlds/dino/art/station-camp.svg",
-        "sheet": "/worlds/dino/art/scene-camp.svg",
+        "map": "/worlds/dino/art/station-camp.webp",
+        "sheet": "/worlds/dino/art/scene-camp.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-camp.svg"
+        "choice": "/worlds/dino/art/station-camp.webp"
       },
       "doctor": {
-        "map": "/worlds/dino/art/station-guide.svg",
-        "sheet": "/worlds/dino/art/scene-guide.svg",
+        "map": "/worlds/dino/art/station-guide.webp",
+        "sheet": "/worlds/dino/art/scene-guide.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-guide.svg"
+        "choice": "/worlds/dino/art/station-guide.webp"
       },
       "tests": {
-        "map": "/worlds/dino/art/station-lab.svg",
-        "sheet": "/worlds/dino/art/scene-lab.svg",
+        "map": "/worlds/dino/art/station-lab.webp",
+        "sheet": "/worlds/dino/art/scene-lab.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-lab.svg"
+        "choice": "/worlds/dino/art/station-lab.webp"
       },
       "treatment": {
-        "map": "/worlds/dino/art/station-medic.svg",
-        "sheet": "/worlds/dino/art/scene-medic.svg",
+        "map": "/worlds/dino/art/station-medic.webp",
+        "sheet": "/worlds/dino/art/scene-medic.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-medic.svg"
+        "choice": "/worlds/dino/art/station-medic.webp"
       },
       "consult": {
-        "map": "/worlds/dino/art/station-expert.svg",
-        "sheet": "/worlds/dino/art/scene-expert.svg",
+        "map": "/worlds/dino/art/station-expert.webp",
+        "sheet": "/worlds/dino/art/scene-expert.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-expert.svg"
+        "choice": "/worlds/dino/art/station-expert.webp"
       },
       "wait-results": {
-        "map": "/worlds/dino/art/station-results.svg",
-        "sheet": "/worlds/dino/art/scene-results.svg",
+        "map": "/worlds/dino/art/station-results.webp",
+        "sheet": "/worlds/dino/art/scene-results.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-results.svg"
+        "choice": "/worlds/dino/art/station-results.webp"
       },
       "decision": {
-        "map": "/worlds/dino/art/station-home.svg",
-        "sheet": "/worlds/dino/art/scene-home.svg",
+        "map": "/worlds/dino/art/station-home.webp",
+        "sheet": "/worlds/dino/art/scene-home.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-home.svg"
+        "choice": "/worlds/dino/art/station-home.webp"
       }
     },
     "images": {
-      "/worlds/dino/art/station-gate.svg": {
+      "/worlds/dino/art/station-gate.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/dino/art/station-path.svg": {
+      "/worlds/dino/art/station-path.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/dino/art/station-ranger.svg": {
+      "/worlds/dino/art/station-ranger.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/dino/art/station-camp.svg": {
+      "/worlds/dino/art/station-camp.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/dino/art/station-guide.svg": {
+      "/worlds/dino/art/station-guide.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/dino/art/station-lab.svg": {
+      "/worlds/dino/art/station-lab.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/dino/art/station-medic.svg": {
+      "/worlds/dino/art/station-medic.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/dino/art/station-expert.svg": {
+      "/worlds/dino/art/station-expert.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/dino/art/station-results.svg": {
+      "/worlds/dino/art/station-results.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/dino/art/station-home.svg": {
+      "/worlds/dino/art/station-home.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
