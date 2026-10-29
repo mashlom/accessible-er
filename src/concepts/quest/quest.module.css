@@ -2072,6 +2072,27 @@
   background-image: var(--w-background-wide, var(--w-background));
 }
 
+/* the top of a landscape picture fades into the sky colour above it (worlds without the mirrored water) */
+.worldSceneFade::after {
+  top: -2px;
+  height: calc(140 * var(--u));
+  background: linear-gradient(var(--w-water), transparent);
+}
+
+/* on a wide screen the headline is at the top of the page, on the sky, below the top row */
+.worldTitleTop {
+  position: absolute;
+  z-index: 15;
+  top: 72px;
+  left: 50%;
+  translate: -50% 0;
+  width: auto;
+  height: auto;
+  max-width: 80vw;
+  padding: 0.5em 1.6em;
+  font-size: calc(clamp(18px, 1.7vw, 30px) * var(--title-shrink, 1));
+}
+
 .worldSceneWide {
   position: relative;
   width: 100%;

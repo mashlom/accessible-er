@@ -99,6 +99,18 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
   const { theme } = useQuestTheme()
   const { W, H, slots, dots, lines, vars } = wide ? landscape : portrait
   const pctX = (v: number) => `${(v / W) * 100}%`
+  // the headline: in the scene on a narrow screen; on a wide one at the top of the page, on the sky
+  const title = noTitle ? null : (() => {
+    const text = headline ?? t<string>('ui.text.worldHeadline')
+    const cut = text.lastIndexOf(' ')
+    // longer wording (other languages) gets a smaller font and wraps to two lines, so it stays inside the pill
+    const shrink = text.length > 22 ? 0.78 : 1
+    return (
+      <h1 className={wide ? `${css.worldTitle} ${css.worldTitleTop}` : css.worldTitle} style={{ '--title-shrink': shrink } as React.CSSProperties}>
+        <span>{text.slice(0, cut + 1)}<strong>{text.slice(cut + 1)}</strong></span>
+      </h1>
+    )
+  })()
   const pctY = (v: number) => `${(v / H) * 100}%`
 
   return (
@@ -160,8 +172,10 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
           {Array.from({ length: starsTotal ?? 0 }, (_, j) => <span key={j} aria-hidden>⭐</span>)}
         </div>
       )}
+      {wide && title}
       <div
-        className={wide ? `${css.worldScene} ${css.worldSceneWide}` : css.worldScene}
+        // a world without the mirrored water above (all but the ocean): the picture's top fades into the sky colour
+        className={wide ? `${css.worldScene} ${css.worldSceneWide} ${theme.design?.mirrorAbove === false ? css.worldSceneFade : ''}` : css.worldScene}
         style={{ aspectRatio: `${W} / ${H}`, '--u': `calc(100cqw / ${W})`, ...vars } as React.CSSProperties}
       >
         <svg viewBox={`0 0 ${W} ${H}`} className={css.worldPath} aria-hidden>
@@ -194,17 +208,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
             )
           })}
         </svg>
-        {!noTitle && (() => {
-          const text = headline ?? t<string>('ui.text.worldHeadline')
-          const cut = text.lastIndexOf(' ')
-          // longer wording (other languages) gets a smaller font and wraps to two lines, so it stays inside the pill
-          const shrink = text.length > 22 ? 0.78 : 1
-          return (
-            <h1 className={css.worldTitle} style={{ '--title-shrink': shrink } as React.CSSProperties}>
-              <span>{text.slice(0, cut + 1)}<strong>{text.slice(cut + 1)}</strong></span>
-            </h1>
-          )
-        })()}
+        {!wide && title}
         {items.map((item, i) => {
           const slot = slots[i]
           if (!slot) return null
