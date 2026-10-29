@@ -3,10 +3,8 @@
   "order": 2,
   "emoji": "⚔️",
   "doneEmoji": "🪙",
-  "shopImage": "/worlds/knight/placeholder/sheet-floor.svg",
-  "bg": "/worlds/knight/castle_v.jpg",
-  "bgLandscape": "/worlds/knight/castle_h.jpeg",
-  "nightBg": "/worlds/knight/night_castle.JPEG",
+  "shopImage": "/worlds/knight/art/celebrate.svg",
+  "bg": "",
   "thumbnail": "/worlds/knight/castle.png",
   "thumbnailOverlay": "/worlds/knight/knight.png",
   "accent": "#7b4f28",
@@ -15,50 +13,41 @@
   "completedColor": "#c9a84c",
   "stages": {
     "reception": {
-      "icon": "🏰",
-      "image": "/worlds/knight/tower.jpg"
+      "icon": "🏰"
     },
     "wait-before-triage": {
       "icon": "🛡️"
     },
     "triage": {
-      "icon": "⚔️",
-      "image": "/worlds/knight/tests.jpeg"
+      "icon": "⚔️"
     },
     "wait-doctor": {
-      "icon": "🚪",
-      "image": "/worlds/knight/door.JPEG"
+      "icon": "🚪"
     },
     "doctor": {
-      "icon": "🧙",
-      "image": "/worlds/knight/wizard.JPEG"
+      "icon": "🧙"
     },
     "decision": {
-      "icon": "🏆",
-      "image": "/worlds/knight/celebrating.jpg"
+      "icon": "🏆"
     },
     "tests": {
-      "icon": "🪄",
-      "image": "/worlds/knight/rentgen.jpeg"
+      "icon": "🪄"
     },
     "treatment": {
-      "icon": "🔧",
-      "image": "/worlds/knight/procedures.jpeg"
+      "icon": "🔧"
     },
     "consult": {
-      "icon": "📜",
-      "image": "/worlds/knight/wizard2.JPEG"
+      "icon": "📜"
     },
     "wait-results": {
-      "icon": "🔮",
-      "image": "/worlds/knight/wait.JPEG"
+      "icon": "🔮"
     }
   },
   "design": {
     "assets": {
-      "background": "/worlds/knight/placeholder/background.svg",
-      "backgroundWide": "/worlds/knight/placeholder/background-wide.svg",
-      "sheetSeabed": "/worlds/knight/placeholder/sheet-floor.svg"
+      "background": "/worlds/knight/art/map-portrait.svg",
+      "backgroundWide": "/worlds/knight/art/map-landscape.svg",
+      "sheetSeabed": "/worlds/knight/art/sheet-floor.svg"
     },
     "colors": {
       "text": "#2b2238",
@@ -69,117 +58,118 @@
       "mint": "#f3e9d6",
       "blue": "#f5e6d0",
       "coral": "#b5473a",
-      "yellow": "#e0b43a",
-      "water": "#9cc3e6",
-      "waterTop": "#9cc3e6",
-      "waterLight": "#9cc3e6",
+      "yellow": "#e8b84a",
+      "water": "#4f8bc4",
+      "waterTop": "#4f8bc4",
+      "waterLight": "#4f8bc4",
       "progress": [
-        "#c9a84c",
-        "#9cc3e6"
+        "#e8b84a",
+        "#c8553d"
       ]
     },
+    "mirrorAbove": false,
     "stations": {
       "reception": {
-        "map": "/worlds/knight/placeholder/station-gate.svg",
-        "sheet": "/worlds/knight/placeholder/station-gate.svg",
+        "map": "/worlds/knight/art/station-gate.svg",
+        "sheet": "/worlds/knight/art/station-gate.svg",
         "panel": "plain"
       },
       "wait-before-triage": {
-        "map": "/worlds/knight/placeholder/station-courtyard.svg",
-        "sheet": "/worlds/knight/placeholder/station-courtyard.svg",
+        "map": "/worlds/knight/art/station-courtyard.svg",
+        "sheet": "/worlds/knight/art/station-courtyard.svg",
         "panel": "plain"
       },
       "triage": {
-        "map": "/worlds/knight/placeholder/station-checks.svg",
-        "sheet": "/worlds/knight/placeholder/station-checks.svg",
+        "map": "/worlds/knight/art/station-tent.svg",
+        "sheet": "/worlds/knight/art/station-tent.svg",
         "panel": "plain"
       },
       "wait-doctor": {
-        "map": "/worlds/knight/placeholder/station-hall.svg",
-        "sheet": "/worlds/knight/placeholder/station-hall.svg",
+        "map": "/worlds/knight/art/station-hall.svg",
+        "sheet": "/worlds/knight/art/station-hall.svg",
         "panel": "plain"
       },
       "doctor": {
-        "map": "/worlds/knight/placeholder/station-wizard.svg",
-        "sheet": "/worlds/knight/placeholder/station-wizard.svg",
+        "map": "/worlds/knight/art/station-wizard.svg",
+        "sheet": "/worlds/knight/art/station-wizard.svg",
         "panel": "plain"
       },
       "tests": {
-        "map": "/worlds/knight/placeholder/station-mirror.svg",
-        "sheet": "/worlds/knight/placeholder/station-mirror.svg",
+        "map": "/worlds/knight/art/station-mirror.svg",
+        "sheet": "/worlds/knight/art/station-mirror.svg",
         "panel": "plain"
       },
       "treatment": {
-        "map": "/worlds/knight/placeholder/station-forge.svg",
-        "sheet": "/worlds/knight/placeholder/station-forge.svg",
+        "map": "/worlds/knight/art/station-forge.svg",
+        "sheet": "/worlds/knight/art/station-forge.svg",
         "panel": "plain"
       },
       "consult": {
-        "map": "/worlds/knight/placeholder/station-council.svg",
-        "sheet": "/worlds/knight/placeholder/station-council.svg",
+        "map": "/worlds/knight/art/station-council.svg",
+        "sheet": "/worlds/knight/art/station-council.svg",
         "panel": "plain"
       },
       "wait-results": {
-        "map": "/worlds/knight/placeholder/station-prophecy.svg",
-        "sheet": "/worlds/knight/placeholder/station-prophecy.svg",
+        "map": "/worlds/knight/art/station-prophecy.svg",
+        "sheet": "/worlds/knight/art/station-prophecy.svg",
         "panel": "plain"
       },
       "decision": {
-        "map": "/worlds/knight/placeholder/station-victory.svg",
-        "sheet": "/worlds/knight/placeholder/station-victory.svg",
+        "map": "/worlds/knight/art/station-victory.svg",
+        "sheet": "/worlds/knight/art/station-victory.svg",
         "panel": "plain"
       }
     },
     "images": {
-      "/worlds/knight/placeholder/station-gate.svg": {
-        "aspect": 1.3636363636363635,
-        "visible": 0.9,
-        "lift": 0.08
+      "/worlds/knight/art/station-gate.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
       },
-      "/worlds/knight/placeholder/station-courtyard.svg": {
-        "aspect": 1.3636363636363635,
-        "visible": 0.9,
-        "lift": 0.08
+      "/worlds/knight/art/station-courtyard.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
       },
-      "/worlds/knight/placeholder/station-checks.svg": {
-        "aspect": 1.3636363636363635,
-        "visible": 0.9,
-        "lift": 0.08
+      "/worlds/knight/art/station-tent.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
       },
-      "/worlds/knight/placeholder/station-hall.svg": {
-        "aspect": 1.3636363636363635,
-        "visible": 0.9,
-        "lift": 0.08
+      "/worlds/knight/art/station-hall.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
       },
-      "/worlds/knight/placeholder/station-wizard.svg": {
-        "aspect": 1.3636363636363635,
-        "visible": 0.9,
-        "lift": 0.08
+      "/worlds/knight/art/station-wizard.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
       },
-      "/worlds/knight/placeholder/station-mirror.svg": {
-        "aspect": 1.3636363636363635,
-        "visible": 0.9,
-        "lift": 0.08
+      "/worlds/knight/art/station-mirror.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
       },
-      "/worlds/knight/placeholder/station-forge.svg": {
-        "aspect": 1.3636363636363635,
-        "visible": 0.9,
-        "lift": 0.08
+      "/worlds/knight/art/station-forge.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
       },
-      "/worlds/knight/placeholder/station-council.svg": {
-        "aspect": 1.3636363636363635,
-        "visible": 0.9,
-        "lift": 0.08
+      "/worlds/knight/art/station-council.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
       },
-      "/worlds/knight/placeholder/station-prophecy.svg": {
-        "aspect": 1.3636363636363635,
-        "visible": 0.9,
-        "lift": 0.08
+      "/worlds/knight/art/station-prophecy.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
       },
-      "/worlds/knight/placeholder/station-victory.svg": {
-        "aspect": 1.3636363636363635,
-        "visible": 0.9,
-        "lift": 0.08
+      "/worlds/knight/art/station-victory.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
       }
     },
     "dayMap": {
@@ -188,101 +178,72 @@
         "H": 939,
         "slots": [
           {
-            "x": -27,
-            "y": 108,
-            "w": 211,
-            "h": 155,
-            "badge": [92, 176]
+            "x": 4,
+            "y": 136,
+            "w": 210,
+            "h": 154,
+            "badge": [109, 151]
           },
           {
-            "x": 241,
-            "y": 242,
-            "w": 189,
-            "h": 139,
-            "badge": [265, 277]
+            "x": 206,
+            "y": 286,
+            "w": 200,
+            "h": 147,
+            "badge": [306, 301]
           },
           {
-            "x": 16,
-            "y": 408,
-            "w": 211,
-            "h": 155,
-            "badge": [116, 411]
+            "x": 10,
+            "y": 446,
+            "w": 200,
+            "h": 147,
+            "badge": [110, 461]
           },
           {
-            "x": 177,
-            "y": 566,
-            "w": 189,
-            "h": 139,
-            "badge": [272, 567]
+            "x": 204,
+            "y": 606,
+            "w": 200,
+            "h": 147,
+            "badge": [304, 621]
           },
           {
-            "x": 41,
-            "y": 748,
-            "w": 193,
-            "h": 142,
-            "badge": [123, 745]
+            "x": 18,
+            "y": 768,
+            "w": 200,
+            "h": 147,
+            "badge": [118, 783]
           }
         ],
         "dots": [
-          [
-            [180, 271],
-            [184, 268],
-            [189, 266],
-            [195, 263],
-            [201, 262],
-            [207, 260],
-            [213, 260],
-            [219, 259],
-            [225, 260],
-            [231, 260],
-            [237, 262],
-            [243, 264],
-            [248, 266],
-            [254, 269],
-            [259, 272],
-            [264, 275]
-          ],
-          [
-            [252, 380],
-            [247, 382],
-            [241, 383],
-            [235, 382],
-            [229, 382],
-            [223, 381],
-            [217, 380],
-            [211, 380],
-            [205, 379],
-            [199, 378],
-            [194, 378],
-            [188, 377],
-            [182, 377],
-            [176, 378],
-            [170, 378],
-            [164, 379],
-            [158, 380],
-            [152, 381],
-            [147, 383],
-            [141, 386],
-            [136, 389],
-            [131, 393],
-            [127, 397],
-            [123, 401],
-            [120, 406]
-          ],
           {
             "bezier": [
-              [183, 517],
-              [215, 520],
-              [240, 552],
-              [272, 567]
+              [189, 259],
+              [189, 310],
+              [306, 269],
+              [306, 301]
             ]
           },
           {
             "bezier": [
-              [255, 691],
-              [200, 700],
-              [140, 702],
-              [123, 745]
+              [230, 404],
+              [230, 463],
+              [110, 414],
+              [110, 461]
+            ]
+          },
+          {
+            "bezier": [
+              [186, 564],
+              [186, 623],
+              [304, 574],
+              [304, 621]
+            ]
+          },
+          {
+            "bezier": [
+              [228, 724],
+              [228, 784],
+              [118, 734],
+              [118, 783]
             ]
           }
         ],
@@ -290,17 +251,17 @@
           "--bg-x": 0,
           "--bg-y": 0,
           "--bg-w": 412,
-          "--bg-h": 939,
-          "--grad-y": 0,
+          "--bg-h": 1100,
           "--grad-h": 0,
           "--title-x": 64.5,
-          "--title-y": 72,
+          "--title-y": 64,
           "--title-w": 283,
           "--title-h": 50,
           "--title-fs": 21,
           "--badge": 24,
           "--badge-fs": 15,
           "--star": 30,
+          "--map-bg": "#4f8bc4",
           "--title-bg": "rgba(43, 34, 56, 0.55)"
         }
       },
@@ -309,147 +270,81 @@
         "H": 1080,
         "slots": [
           {
-            "x": 1494,
-            "y": 521,
-            "w": 493,
-            "h": 362,
-            "badge": [1628, 772]
+            "x": 1470,
+            "y": 690,
+            "w": 420,
+            "h": 308,
+            "badge": [1680, 721]
           },
           {
-            "x": 1035,
-            "y": 456,
-            "w": 442,
-            "h": 324,
-            "badge": [1276.5, 839.5]
+            "x": 1060,
+            "y": 410,
+            "w": 400,
+            "h": 293,
+            "badge": [1260, 439]
           },
           {
-            "x": 651,
-            "y": 156,
-            "w": 487,
-            "h": 357,
-            "badge": [1132.5, 339.5]
+            "x": 680,
+            "y": 680,
+            "w": 400,
+            "h": 293,
+            "badge": [880, 709]
           },
           {
-            "x": 180,
-            "y": 589,
-            "w": 475,
-            "h": 348,
-            "badge": [423, 549]
+            "x": 300,
+            "y": 400,
+            "w": 400,
+            "h": 293,
+            "badge": [500, 429]
           },
           {
-            "x": -64,
-            "y": 151,
-            "w": 461,
-            "h": 338,
-            "badge": [106.5, 452.5]
+            "x": -10,
+            "y": 640,
+            "w": 400,
+            "h": 293,
+            "badge": [190, 669]
           }
         ],
         "lines": [
-          [
-            [1648.2, 788.2],
-            [1636.1, 781.8],
-            [1620.7, 778.5],
-            [1604.8, 778.5],
-            [1589.1, 780.7],
-            [1573.8, 784.3],
-            [1558.7, 789],
-            [1543.8, 794.2],
-            [1529, 799.9],
-            [1514.4, 805.9],
-            [1499.8, 812],
-            [1485.2, 818.2],
-            [1470.6, 824.4],
-            [1456, 830.4],
-            [1441.3, 836.3],
-            [1426.5, 841.8],
-            [1411.6, 846.9],
-            [1396.4, 851.5],
-            [1381.1, 855.4],
-            [1365.5, 858.3],
-            [1349.8, 860],
-            [1333.9, 860],
-            [1318.3, 857.9],
-            [1303.2, 853.3],
-            [1289.3, 845.9],
-            [1278.4, 837.4]
-          ],
-          [
-            [1222.4, 478.4],
-            [1209.1, 474.8],
-            [1197.8, 464.4],
-            [1190.7, 450.4],
-            [1186.2, 435.2],
-            [1183.1, 419.7],
-            [1180.6, 404],
-            [1178, 388.4],
-            [1174.8, 372.9],
-            [1169.8, 357.9],
-            [1160.6, 345.5],
-            [1145.7, 341.2],
-            [1132.3, 344.2]
-          ],
-          [
-            [817.8, 456.2],
-            [811.2, 468],
-            [798.4, 477],
-            [783.5, 482.4],
-            [768.1, 485.7],
-            [752.4, 487.9],
-            [736.7, 489.2],
-            [720.9, 490],
-            [705.1, 490.5],
-            [689.3, 490.7],
-            [673.5, 490.8],
-            [657.6, 490.8],
-            [641.8, 490.7],
-            [626, 490.7],
-            [610.2, 490.8],
-            [594.4, 491],
-            [578.6, 491.4],
-            [562.8, 492.1],
-            [547.1, 493.1],
-            [531.3, 494.6],
-            [515.6, 496.7],
-            [500.1, 499.5],
-            [484.7, 503.4],
-            [469.8, 508.6],
-            [455.7, 515.6],
-            [443.1, 525.1],
-            [433.4, 537.3],
-            [428, 550]
-          ],
-          [
-            [225.9, 739.9],
-            [212.2, 736.6],
-            [200.6, 726.1],
-            [194.2, 711.4],
-            [190.9, 695.6],
-            [189, 679.5],
-            [187.7, 663.4],
-            [186.3, 647.4],
-            [184.6, 631.3],
-            [181.9, 615.4],
-            [177.7, 599.8],
-            [172.4, 586.8],
-            [170.6, 583.3],
-            [163.7, 571.6],
-            [154.8, 558.8],
-            [145.1, 546.7],
-            [135.1, 534.8],
-            [125.6, 522.5],
-            [117.6, 509.3],
-            [112, 494.9],
-            [109.3, 479.6],
-            [109, 463.9],
-            [110.2, 450.4]
-          ]
+          {
+            "bezier": [
+              [1520, 936],
+              [1520, 718],
+              [1260, 946],
+              [1260, 439]
+            ]
+          },
+          {
+            "bezier": [
+              [1108, 644],
+              [1108, 707],
+              [880, 654],
+              [880, 709]
+            ]
+          },
+          {
+            "bezier": [
+              [728, 914],
+              [728, 702],
+              [500, 924],
+              [500, 429]
+            ]
+          },
+          {
+            "bezier": [
+              [348, 634],
+              [348, 682],
+              [190, 644],
+              [190, 669]
+            ]
+          }
         ],
         "vars": {
           "--bg-x": 0,
           "--bg-y": 0,
           "--bg-w": 1920,
           "--bg-h": 1080,
-          "--map-bg": "#9cc3e6",
+          "--map-bg": "#4f8bc4",
           "--title-x": 1270,
           "--title-y": 94,
           "--title-w": 550,
@@ -464,12 +359,14 @@
     },
     "nightMap": {
       "portrait": {
-        "shoreY": 820,
-        "finaleWidth": 210,
+        "shoreY": 900,
+        "finaleWidth": 220,
         "vars": {
           "--bg-x": 0,
           "--bg-w": 412,
-          "--bg-h": 939,
+          "--bg-h": 1100,
+          "--grad-h": 0,
+          "--map-bg": "#4f8bc4",
           "--title-x": 64.5,
           "--title-y": 44.5,
           "--title-w": 283,
@@ -478,70 +375,67 @@
           "--badge": 24,
           "--badge-fs": 15,
           "--star": 30,
-          "--title-bg": "rgba(43, 34, 56, 0.4)",
-          "--grad-h": 0,
-          "--map-bg": "#9cc3e6"
+          "--title-bg": "rgba(43, 34, 56, 0.55)"
         }
       },
       "landscape": {
         "places": [
           {
-            "cx": 1640,
-            "top": 190,
-            "visible": 430,
-            "badge": [1685, 465]
+            "cx": 1660,
+            "top": 380,
+            "visible": 360,
+            "badge": [1660, 392]
           },
           {
-            "cx": 1500,
-            "top": 590,
-            "visible": 470,
-            "badge": [1500, 549]
+            "cx": 1260,
+            "top": 680,
+            "visible": 360,
+            "badge": [1260, 692]
           },
           {
-            "cx": 1050,
-            "top": 190,
-            "visible": 440,
-            "badge": [1050, 518]
+            "cx": 860,
+            "top": 390,
+            "visible": 360,
+            "badge": [860, 402]
           },
           {
-            "cx": 664,
-            "top": 465,
-            "visible": 428,
-            "badge": [664, 852]
+            "cx": 520,
+            "top": 690,
+            "visible": 340,
+            "badge": [520, 702]
           }
         ],
         "curves": [
           [
-            [1690, 540],
-            [1620, 580]
+            [1600, 620],
+            [1320, 600]
           ],
           [
-            [1380, 520],
-            [1200, 560]
+            [1180, 560],
+            [920, 560]
           ],
           [
-            [1020, 760],
-            [840, 920]
+            [800, 620],
+            [580, 600]
           ]
         ],
         "finale": {
-          "x": -40,
-          "y": 640,
-          "w": 440,
-          "badge": [180, 640]
+          "x": -20,
+          "y": 360,
+          "w": 420,
+          "badge": [190, 380]
         },
         "finaleTrail": {
-          "end": [300, 700],
-          "c1": [-70, 30],
-          "c2": [90, 10]
+          "end": [300, 560],
+          "c1": [-80, -40],
+          "c2": [60, 60]
         },
         "vars": {
           "--bg-x": 0,
           "--bg-y": 0,
           "--bg-w": 1920,
           "--bg-h": 1080,
-          "--bg-sx": -1,
-          "--map-bg": "#9cc3e6",
+          "--map-bg": "#4f8bc4",
           "--title-x": 1270,
           "--title-y": 94,
           "--title-w": 550,

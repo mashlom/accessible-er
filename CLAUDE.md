@@ -157,7 +157,7 @@ src/
 
 - **עולם מעוצב** הוא עולם שיש לו `design` ב־`world.json` (`theme.design`): **האוקיינוס**
   ("הרפתקה תת-ימית"), לפי המוקאפ של שבי (Figma "Mashlom.me"), ו**האביר** — על אותו מבנה,
-  עם תמונות זמניות עד שיגיעו הציורים. עולם בלי
+  באיורים וקטוריים שצוירו בקוד ([scripts/knight-art.py](scripts/knight-art.py)). עולם בלי
   `design` מקבל את המסכים הפשוטים הישנים (רצועת תחנות ודפים). **אל תבדקו
   `theme.id === 'ocean'` בקוד** — שאלו `theme.design`, וכל מה שספציפי לעולם הולך ל־JSON.
 - **מפות:** [WorldMapPage](src/concepts/quest/pages/WorldMapPage.tsx) (שלב 1, 5 תחנות,
@@ -216,7 +216,7 @@ src/
 | אנימציות האייקונים (`public/anim/*.json`) | [Noto Animated Emoji](https://googlefonts.github.io/noto-emoji-animation/) של Google | CC BY 4.0 — **מחייב ייחוס** |
 | דמות רוני (`Roni.tsx`) | נכתבה לפרויקט | חלק מהריפו |
 | שאר האיורים | אימוג'י מהמערכת + SVG/CSS | — |
-| תמונות זמניות של עולם האביר (`public/worlds/knight/placeholder/*`) | צוירו בקוד (SVG) לפרויקט | חלק מהריפו; להחלפה בציורי המעצבת |
+| איורי עולם האביר (`public/worlds/knight/art/*`) | צוירו בקוד (SVG) לפרויקט, `scripts/knight-art.py` | חלק מהריפו |
 | ציורי עולם האוקיינוס (`public/worlds/ocean/*`) | נוצרו ב־Gemini (גרסה חינמית) ועובדו ע״י שבי | **טרם נסגר** — ראו [NOTICE.txt](public/worlds/ocean/NOTICE.txt); חובה לציין ב־README ובתחתית דף הבית שנוצרו ב־AI |
 
 CC BY 4.0 מחייב ייחוס, ולכן הקרדיט מופיע בשלושה מקומות שאסור להסיר:

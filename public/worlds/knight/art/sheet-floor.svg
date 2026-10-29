@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364 340" width="364" height="340">
+<!-- Knight world: the panel behind a picture on its sheet -->
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaf4fb"/><stop offset="0.55" stop-color="#f4efe2"/><stop offset="1" stop-color="#e3d6b8"/></linearGradient></defs>
+<rect width="364" height="340" fill="url(#g)"/>
+<path d="M0 219 Q23 222 46 220 Q68 224 91 214 Q114 218 136 209 Q159 213 182 213 Q205 216 228 220 Q250 223 273 220 Q296 223 318 213 Q341 216 364 209 L364 340 L0 340 Z" fill="#c9dcb0"/>
+<path d="M0 259 Q23 262 46 254 Q68 257 91 250 Q114 253 136 254 Q159 257 182 259 Q205 262 228 259 Q250 262 273 253 Q296 256 318 250 Q341 253 364 255 L364 340 L0 340 Z" fill="#b5d197"/>
+<g fill="#fff" opacity="0.9"><ellipse cx="70" cy="60" rx="27.200000000000003" ry="10.4"/><circle cx="60.4" cy="53.6" r="10.4"/><circle cx="78.0" cy="50.4" r="12.8"/></g><g fill="#fff" opacity="0.9"><ellipse cx="290" cy="40" rx="20.4" ry="7.8"/><circle cx="282.8" cy="35.2" r="7.8"/><circle cx="296.0" cy="32.8" r="9.6"/></g>
+</svg>

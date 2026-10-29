@@ -75,6 +75,9 @@ export interface WorldDesign {
   /** Shape of the station pictures used on the second map: width/height, and how much of the width is the
    *  visible object and how far below the top it starts (the pictures have margins) */
   images: Record<string, { aspect: number; visible?: number; lift?: number }>
+  /** Landscape: on a window taller than the scene, the space above it shows the scene's top mirrored (the
+   *  default); false leaves it the plain `water` colour (for a picture whose top is a plain sky) */
+  mirrorAbove?: boolean
   /** Bubbles behind a picture on its sheet: centre (x, y) and diameter in % of the panel */
   bubbles?: { x: number; y: number; d: number }[]
   /** The first map: the required stations, as drawn in the designer's frames */

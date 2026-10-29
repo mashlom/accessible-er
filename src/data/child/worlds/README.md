@@ -24,7 +24,8 @@
 1. שמים את התמונות ב־`public/worlds/<world>/` (ומתעדים את הרישיון, ראו CLAUDE.md).
 2. מעתיקים את `design` מ־`ocean/world.json` ל־`world.json` של העולם, ומחליפים:
 3. `assets` — רקע המפה (`background`; ואם למפה האופקית יש תמונה משלה — `backgroundWide`), ופאנל התמונה
-   בגיליון (`sheetFade` מעל `sheetSeabed`).
+   בגיליון (`sheetFade` מעל `sheetSeabed`). `mirrorAbove: false` — באופקי, מעל הסצנה צבע `water`
+   חלק במקום המשך משוקף של התמונה (לתמונה שהחלק העליון שלה שמיים חלקים).
 4. `colors` — הטוקנים של המעצבת: `text`, `text2`, `action`, `page`, `card`, `mint`, `blue`,
    `coral`, `yellow`; צבעי המים סביב המפה: `water` (מאחורי המפה האופקית), `waterTop` (המעבר
    בראש המפה), `waterLight` (מאחורי המפה האנכית); `progress` — צבעי המקלות בפס ההתקדמות.
@@ -59,10 +60,10 @@
 ## מצב העולמות
 
 - `ocean` — מעוצב, לפי המוקאפ של שבי.
-- `knight` — על המבנה המעוצב, עם **תמונות זמניות** שצוירו בקוד
-  (`public/worlds/knight/placeholder/`, ראו NOTICE.txt שם). המיקומים על המפות הם עדיין של
-  האוקיינוס. כשמגיעים הציורים של המעצבת: מחליפים את הקבצים, ומעדכנים ב־`design` את
-  `slots`, השבילים, `images` ו־`nightMap` לפי המסגרות שלה.
+- `knight` — מעוצב, באיורים וקטוריים (SVG) שצוירו בקוד לפרויקט: `public/worlds/knight/art/`,
+  נוצרים ע״י `python3 scripts/knight-art.py`. המיקומים והשבילים על המפות — של האביר עצמו.
+  אם המעצבת תצייר עולם משלה: מחליפים את הקבצים, ומעדכנים ב־`design` את `slots`, השבילים,
+  `images` ו־`nightMap` לפי המסגרות שלה.
 - השאר — מסכים פשוטים (בלי `design`).
 
 ## שאר השדות ב־`world.json`

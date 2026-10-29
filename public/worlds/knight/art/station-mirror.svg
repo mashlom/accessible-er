@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" width="300" height="220">
+<!-- Knight world: the magic mirror (imaging) -->
+<ellipse cx="150" cy="200" rx="132" ry="14" fill="#000" opacity="0.12"/>
+<path d="M18 182 Q150 222 282 182 L282 186 Q150 230 18 186 Z" fill="#6fa548"/>
+<ellipse cx="150" cy="182" rx="132" ry="24" fill="#8cc05a"/>
+<ellipse cx="128" cy="178" rx="92" ry="12" fill="#a8d57a" opacity="0.6"/>
+<path d="M126 182 L136 150 L164 150 L174 182 Z" fill="#c99a32"/>
+<rect x="144" y="134" width="12" height="20" fill="#c99a32"/>
+<ellipse cx="150" cy="84" rx="50" ry="62" fill="#e8b84a"/>
+<ellipse cx="150" cy="84" rx="40" ry="52" fill="#bfe3f5"/>
+<path d="M124 64 Q140 44 162 40 Q138 56 130 80 Z" fill="#fff" opacity="0.75"/>
+<path d="M150 118 Q168 108 176 90 Q172 112 156 122 Z" fill="#fff" opacity="0.5"/>
+<polygon points="150.0,15.0 151.9,19.5 156.7,19.8 153.0,23.0 154.1,27.7 150.0,25.1 145.9,27.7 147.0,23.0 143.3,19.8 148.1,19.5" fill="#e8b84a"/>
+<path d="M92 61 Q93.62 68.38 101 70 Q93.62 71.62 92 79 Q90.38 71.62 83 70 Q90.38 68.38 92 61 Z" fill="#e8b84a"/>
+<path d="M212 96 Q213.44 102.56 220 104 Q213.44 105.44 212 112 Q210.56 105.44 204 104 Q210.56 102.56 212 96 Z" fill="#e8b84a"/>
+<path d="M204 45 Q204.9 49.1 209 50 Q204.9 50.9 204 55 Q203.1 50.9 199 50 Q203.1 49.1 204 45 Z" fill="#fff"/>
+</svg>

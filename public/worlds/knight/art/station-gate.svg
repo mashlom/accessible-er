@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" width="300" height="220">
+<!-- Knight world: the castle gate (reception) -->
+<ellipse cx="150" cy="200" rx="132" ry="14" fill="#000" opacity="0.12"/>
+<path d="M18 182 Q150 222 282 182 L282 186 Q150 230 18 186 Z" fill="#6fa548"/>
+<ellipse cx="150" cy="182" rx="132" ry="24" fill="#8cc05a"/>
+<ellipse cx="128" cy="178" rx="92" ry="12" fill="#a8d57a" opacity="0.6"/>
+<rect x="96" y="92" width="108" height="90" fill="#cfc7b6"/>
+<rect x="96.0" y="84" width="12.0" height="9" fill="#cfc7b6"/>
+<rect x="120.0" y="84" width="12.0" height="9" fill="#cfc7b6"/>
+<rect x="144.0" y="84" width="12.0" height="9" fill="#cfc7b6"/>
+<rect x="168.0" y="84" width="12.0" height="9" fill="#cfc7b6"/>
+<rect x="192.0" y="84" width="12.0" height="9" fill="#cfc7b6"/>
+<path d="M124 182 L124 130 Q150 104 176 130 L176 182 Z" fill="#3b3346"/>
+<path d="M128 182 L128 132 Q150 110 172 132 L172 182 Z" fill="#8a5a3b"/>
+<line x1="136" y1="128" x2="136" y2="182" stroke="#6b4329" stroke-width="2"/>
+<line x1="146" y1="122" x2="146" y2="182" stroke="#6b4329" stroke-width="2"/>
+<line x1="156" y1="122" x2="156" y2="182" stroke="#6b4329" stroke-width="2"/>
+<line x1="166" y1="128" x2="166" y2="182" stroke="#6b4329" stroke-width="2"/>
+<path d="M124 130 Q150 104 176 130" fill="none" stroke="#a89f8e" stroke-width="5"/>
+<rect x="56" y="70" width="44" height="112" fill="#cfc7b6"/>
+<rect x="83.28" y="70" width="16.72" height="112" fill="#a89f8e" opacity="0.45"/>
+<path d="M51 71 L78.0 36 L105 71 Z" fill="#4a6fa5"/>
+<path d="M78.0 36 L105 71 L80.0 71 Z" fill="#000" opacity="0.14"/>
+<rect x="74.0" y="103.6" width="8" height="13" rx="4" fill="#3b3346"/>
+<rect x="200" y="70" width="44" height="112" fill="#cfc7b6"/>
+<rect x="227.28" y="70" width="16.72" height="112" fill="#a89f8e" opacity="0.45"/>
+<path d="M195 71 L222.0 36 L249 71 Z" fill="#4a6fa5"/>
+<path d="M222.0 36 L249 71 L224.0 71 Z" fill="#000" opacity="0.14"/>
+<rect x="218.0" y="103.6" width="8" height="13" rx="4" fill="#3b3346"/>
+<line x1="78" y1="18" x2="78" y2="44" stroke="#6b4329" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M78 19 L98 24 L78 30 Z" fill="#c8553d"/>
+<line x1="222" y1="18" x2="222" y2="44" stroke="#6b4329" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M222 19 L242 24 L222 30 Z" fill="#c8553d"/>
+<rect x="246" y="160" width="5" height="22" fill="#6b4329"/>
+<path d="M232 152 L248 158 L264 152 L264 162 L248 168 L232 162 Z" fill="#f6ecd6" stroke="#6b4329" stroke-width="1.5"/>
+<line x1="248" y1="158" x2="248" y2="168" stroke="#6b4329" stroke-width="1.2"/>
+</svg>

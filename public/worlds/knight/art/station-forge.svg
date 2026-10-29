@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" width="300" height="220">
+<!-- Knight world: the forge (treatment) -->
+<ellipse cx="150" cy="200" rx="132" ry="14" fill="#000" opacity="0.12"/>
+<path d="M18 182 Q150 222 282 182 L282 186 Q150 230 18 186 Z" fill="#6fa548"/>
+<ellipse cx="150" cy="182" rx="132" ry="24" fill="#8cc05a"/>
+<ellipse cx="128" cy="178" rx="92" ry="12" fill="#a8d57a" opacity="0.6"/>
+<rect x="60" y="96" width="120" height="86" fill="#cfc7b6"/>
+<rect x="140" y="96" width="40" height="86" fill="#a89f8e" opacity="0.4"/>
+<rect x="146" y="44" width="22" height="60" fill="#a89f8e"/>
+<path d="M50 98 L120 60 L190 98 Z" fill="#8a5a3b"/><path d="M120 60 L190 98 L120 98 Z" fill="#6b4329"/>
+<circle cx="160" cy="34" r="8" fill="#e9e6ee" opacity="0.8"/><circle cx="170" cy="20" r="6" fill="#e9e6ee" opacity="0.6"/>
+<path d="M86 182 L86 136 Q110 112 134 136 L134 182 Z" fill="#3b3346"/>
+<path d="M94 182 L94 150 Q110 134 126 150 L126 182 Z" fill="#f08a3c"/>
+<path d="M102 182 Q104 160 110 152 Q116 160 118 182 Z" fill="#ffd97a"/>
+<path d="M196 150 L252 150 Q252 160 240 162 L228 162 L228 174 L238 182 L210 182 L220 174 L220 162 L204 162 Q196 158 196 150 Z" fill="#5b5f6b"/>
+<path d="M196 150 L252 150 L250 146 L200 146 Z" fill="#7a7f8c"/>
+<rect x="232" y="126" width="5" height="26" rx="2" transform="rotate(-30 234 139)" fill="#8a5a3b"/>
+<rect x="224" y="118" width="20" height="11" rx="2" transform="rotate(-30 234 124)" fill="#7a7f8c"/>
+</svg>

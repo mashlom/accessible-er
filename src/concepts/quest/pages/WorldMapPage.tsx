@@ -95,6 +95,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
   const { t, dir } = useI18n()
   const wide = useWide()
   const goBackTo = useGoBackTo()
+  const { theme } = useQuestTheme()
   const { W, H, slots, dots, lines, vars } = wide ? landscape : portrait
   const pctX = (v: number) => `${(v / W) * 100}%`
   const pctY = (v: number) => `${(v / H) * 100}%`
@@ -107,7 +108,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
       // behind a sheet the map is only a picture: seen, but not reachable by touch, keyboard or screen reader
       {...(underSheet ? { inert: '', 'aria-hidden': true } : {})}
     >
-      {wide && (
+      {wide && theme.design?.mirrorAbove !== false && (
         // the scene sits on the bottom of the screen; only what is above it is filled with the mirrored picture
         <div className={`${css.worldTileV} ${css.worldTileVTop}`} aria-hidden>
           <div className={css.worldSideBgW} />

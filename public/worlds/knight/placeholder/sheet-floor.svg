@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364 340" width="364" height="340" preserveAspectRatio="none">
-<!-- placeholder: the floor behind a station picture on its sheet -->
-<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6efe0"/><stop offset="0.6" stop-color="#eadcc0"/><stop offset="1" stop-color="#c9b48d"/></linearGradient></defs>
-<rect width="364" height="340" fill="url(#g)"/>
-</svg>
