@@ -2081,11 +2081,15 @@
   /* eased, so neither the start nor the end of the fade shows as a line */
   background: linear-gradient(
     var(--w-water) 0%,
-    color-mix(in srgb, var(--w-water) 92%, transparent) 15%,
-    color-mix(in srgb, var(--w-water) 70%, transparent) 35%,
-    color-mix(in srgb, var(--w-water) 40%, transparent) 55%,
-    color-mix(in srgb, var(--w-water) 15%, transparent) 75%,
-    color-mix(in srgb, var(--w-water) 4%, transparent) 90%,
+    color-mix(in srgb, var(--w-water) 98%, transparent) 10%,
+    color-mix(in srgb, var(--w-water) 93%, transparent) 20%,
+    color-mix(in srgb, var(--w-water) 84%, transparent) 30%,
+    color-mix(in srgb, var(--w-water) 72%, transparent) 40%,
+    color-mix(in srgb, var(--w-water) 58%, transparent) 50%,
+    color-mix(in srgb, var(--w-water) 43%, transparent) 60%,
+    color-mix(in srgb, var(--w-water) 29%, transparent) 70%,
+    color-mix(in srgb, var(--w-water) 16%, transparent) 80%,
+    color-mix(in srgb, var(--w-water) 6%, transparent) 90%,
     transparent 100%
   );
 }
