@@ -3547,22 +3547,3 @@ path.worldTrailLit {
   font-size: 30px;
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
 }
-
-/* the parent's button in the middle of the world choice's top bar */
-.questTopParent {
-  justify-self: center;
-  margin: 0;
-}
-/* a narrow phone: the middle column takes what the two sides leave, and the button's words wrap */
-@media (max-width: 480px) {
-  .questTopbar { grid-template-columns: auto minmax(0, 1fr) auto; }
-  .questTopParent { min-width: 0; }
-  .questTopParent .parentBtnOceanPill {
-    white-space: normal;
-    height: auto;
-    min-height: 34px;
-    padding-block: 2px;
-    line-height: 1.15;
-    font-size: 13px;
-  }
-}
