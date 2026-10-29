@@ -2072,6 +2072,28 @@
   background-image: var(--w-background-wide, var(--w-background));
 }
 
+/* the top of a landscape picture fades into the sky colour above it (worlds without the mirrored water) */
+.worldSceneFade::after {
+  top: -2px;
+  height: calc(140 * var(--u));
+  background: linear-gradient(var(--w-water), transparent);
+}
+
+/* on a wide screen the headline is at the top of the page, on the sky, below the top row, centred (clear of the
+   language picker); the same size as in the scene (the scene is the full width, so its unit is 100vw / 1920) */
+.worldTitleTop {
+  z-index: 15;
+  top: 72px;
+  left: 50%;
+  translate: -50% 0;
+  /* always large, whatever the window's width: the pill fits its words */
+  width: max-content;
+  max-width: calc(100vw - 2 * 170px);
+  height: auto;
+  padding: 0.45em 1.4em;
+  font-size: 30px;
+}
+
 .worldSceneWide {
   position: relative;
   width: 100%;
@@ -2842,9 +2864,10 @@ path.worldTrailLit {
 .worldProgressStick[data-on='true']:nth-child(odd) { background: var(--w-progress-1, #d9a53a); }
 .worldProgressStick[data-on='true']:nth-child(even) { background: var(--w-progress-2, #84dccb); }
 
-/* Landscape: the case at the right edge, longer: from the home button down to the house station */
+/* Landscape: the case at the right edge, longer; at the top of the page, level with the headline (the same
+   size as before, when it followed the scene down) */
 .worldProgressWide {
-  top: calc(max(0px, 100dvh - var(--S) * 9 / 16) + var(--S) * 118 / 1920);
+  top: 72px;
   width: calc(var(--S) * 26 / 1920);
   padding: calc(var(--S) * 5 / 1920);
   gap: calc(var(--S) * 5 / 1920);
