@@ -9,7 +9,6 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib import *  # noqa: E402,F403
 
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'public', 'worlds', 'knight', 'art')
 
 
 def draw_gate(d):
@@ -680,7 +679,7 @@ def background(W, H, horizon, castle, trees, bushes, clouds, seed, comment):
         d.add(tree(d, *t))
     for b in bushes:
         d.add(bush(d, *b, berries=True))
-    return d.svg(f'Knight world: {comment}', grain=0.08, wobble=1.0, clay=False)
+    return d.svg(f'Knight world: {comment}', grain=0.025, wobble=1.0, clay=False)
 
 
 def portrait_bg():
@@ -739,4 +738,4 @@ files['map-portrait.svg'] = portrait_bg()
 files['map-landscape.svg'] = landscape_bg()
 files['sheet-floor.svg'] = sheet_floor()
 files['celebrate.svg'] = celebrate()
-write(OUT, files)
+write('knight', files)

@@ -13,8 +13,11 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from lib import *  # noqa: E402,F403
 from lib import SW, SH  # noqa: E402
+import lib  # noqa: E402
 
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'public', 'worlds', 'dino', 'art')
+# the dinosaurs are round: the 3D light raises their edges higher than the knight's walls
+lib.RELIEF = 4.5
+
 WORLD = 'Dinosaur'
 
 # ---------- palette ----------
@@ -181,7 +184,17 @@ def spots(d, cx, cy, rx, ry, n, color):
 
 
 def body_fill(d, color):
-    return d.lin([(0, shade(color, 0.28)), (0.55, color), (1, shade(color, -0.35))])
+    """A body lit like a ball: light at the top left, deep colour at the bottom right"""
+    return d.rad([(0, shade(color, 0.42)), (0.45, shade(color, 0.08)), (0.8, color), (1, shade(color, -0.42))], 0.36, 0.3, 0.78)
+
+
+def shine(cx, cy, rx, ry):
+    """The soft glint on a round body"""
+    return f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="#fff" opacity="0.32"/><ellipse cx="{cx - rx * 0.25:.1f}" cy="{cy - ry * 0.2:.1f}" rx="{rx * 0.35:.1f}" ry="{ry * 0.35:.1f}" fill="#fff" opacity="0.45"/>'
+
+
+def rim(color):
+    return f'stroke="{shade(color, -0.5)}" stroke-width="1.1"'
 
 
 def bronto(d, x, y, s=1.0, face=1, color=BRONTO, neck=1.0):
@@ -194,10 +207,10 @@ def bronto(d, x, y, s=1.0, face=1, color=BRONTO, neck=1.0):
            f'<rect x="-22" y="-26" width="11" height="26" rx="5" fill="{far}"/><rect x="16" y="-26" width="11" height="26" rx="5" fill="{far}"/>',
            f'<path d="M-30 -36 Q-62 -30 -84 -10 Q-60 -18 -28 -20 Z" fill="{f}"/>',
            f'<path d="M22 -46 Q32 {-60 * neck:.0f} {hx - 12} {hy + 6:.0f} L{hx + 2} {hy + 8:.0f} Q46 {-56 * neck:.0f} 36 -30 Z" fill="{f}"/>',
-           f'<ellipse cx="0" cy="-34" rx="40" ry="25" fill="{f}"/>',
+           f'<ellipse cx="0" cy="-34" rx="40" ry="25" fill="{f}" {rim(color)}/>',
            f'<ellipse cx="2" cy="-22" rx="30" ry="11" fill="{belly}" opacity="0.8"/>',
            spots(d, -4, -42, 30, 14, 6, shade(color, -0.3)),
-           f'<ellipse cx="-10" cy="-50" rx="18" ry="6" fill="#fff" opacity="0.22"/>',
+           shine(-12, -48, 16, 6),
            f'<rect x="-28" y="-24" width="13" height="26" rx="6" fill="{f}"/><rect x="10" y="-24" width="13" height="26" rx="6" fill="{f}"/>',
            ''.join(f'<rect x="{lx + k * 3.5}" y="-1" width="2.6" height="3" rx="1" fill="{shade(color, 0.45)}"/>' for lx in (-27, 11) for k in range(3)),
            f'<ellipse cx="{hx}" cy="{hy:.0f}" rx="15" ry="10" fill="{f}"/>',
@@ -216,12 +229,13 @@ def rex(d, x, y, s=1.0, face=1, color=REX):
     out = [f'<ellipse cx="0" cy="2" rx="30" ry="5" fill="#000" opacity="0.15"/>',
            f'<rect x="-12" y="-20" width="11" height="22" rx="5" fill="{far}"/>',
            f'<path d="M-14 -30 Q-44 -22 -54 -4 Q-34 -12 -12 -14 Z" fill="{f}"/>',
-           f'<ellipse cx="0" cy="-34" rx="22" ry="28" fill="{f}"/>',
+           f'<ellipse cx="0" cy="-34" rx="22" ry="28" fill="{f}" {rim(color)}/>',
            f'<ellipse cx="4" cy="-28" rx="14" ry="18" fill="{shade(color, 0.38)}" opacity="0.85"/>',
            ''.join(f'<path d="M{-2 - k} {-34 + k * 7} q6 2 12 0" stroke="{shade(color, 0.1)}" stroke-width="1.2" fill="none"/>' for k in range(3)),
            f'<rect x="2" y="-20" width="12" height="22" rx="6" fill="{f}"/>',
            f'<path d="M16 -40 q10 2 12 9" stroke="{shade(color, -0.1)}" stroke-width="5" stroke-linecap="round" fill="none"/>',
-           f'<circle cx="8" cy="-70" r="20" fill="{f}"/>',
+           f'<circle cx="8" cy="-70" r="20" fill="{f}" {rim(color)}/>',
+           shine(0, -80, 7, 4),
            f'<ellipse cx="22" cy="-64" rx="14" ry="10" fill="{f}"/>',
            f'<path d="M12 -60 q12 6 22 -2" stroke="#2c2433" stroke-width="1.6" fill="none" stroke-linecap="round"/>',
            eye(12, -76, 5),
@@ -239,7 +253,8 @@ def trike(d, x, y, s=1.0, face=1, color=TRIKE):
     out = [f'<ellipse cx="0" cy="2" rx="42" ry="6" fill="#000" opacity="0.15"/>',
            f'<rect x="-20" y="-22" width="11" height="22" rx="5" fill="{far}"/><rect x="14" y="-22" width="11" height="22" rx="5" fill="{far}"/>',
            f'<path d="M-28 -28 Q-52 -24 -62 -8 Q-44 -14 -26 -16 Z" fill="{f}"/>',
-           f'<ellipse cx="0" cy="-28" rx="34" ry="21" fill="{f}"/>',
+           f'<ellipse cx="0" cy="-28" rx="34" ry="21" fill="{f}" {rim(color)}/>',
+           shine(-10, -40, 13, 5),
            f'<ellipse cx="0" cy="-18" rx="24" ry="8" fill="{shade(color, 0.35)}" opacity="0.8"/>',
            spots(d, -6, -34, 24, 10, 5, shade(color, -0.3)),
            f'<rect x="-26" y="-20" width="12" height="22" rx="6" fill="{f}"/><rect x="8" y="-20" width="12" height="22" rx="6" fill="{f}"/>',
@@ -254,6 +269,106 @@ def trike(d, x, y, s=1.0, face=1, color=TRIKE):
            f'<path d="M50 -24 q5 3 10 -1" stroke="#2c2433" stroke-width="1.4" fill="none" stroke-linecap="round"/>',
            f'<circle cx="42" cy="-26" r="3" fill="#f2a38f" opacity="0.5"/>']
     return f'<g transform="translate({x} {y}) scale({s * face} {s})">' + '\n'.join(out) + '</g>'
+
+
+STEGO, STEGO_PLATE = '#e3b04f', '#e07a5f'
+PTERO = '#ef8fae'
+ANKY = '#d08a5e'
+PARA = '#6fa8dc'
+
+
+def stego(d, x, y, s=1.0, face=1, color=STEGO, plate=STEGO_PLATE):
+    """A stegosaurus: an arched back with soft round plates, a little head, a tail with blunt tips"""
+    f = body_fill(d, color)
+    pf = d.lin([(0, shade(plate, 0.3)), (1, shade(plate, -0.25))])
+    far = shade(color, -0.25)
+    out = [f'<ellipse cx="0" cy="2" rx="44" ry="6" fill="#000" opacity="0.15"/>',
+           f'<rect x="-22" y="-20" width="11" height="20" rx="5" fill="{far}"/><rect x="16" y="-20" width="11" height="20" rx="5" fill="{far}"/>']
+    for k, (px, py, h) in enumerate(((-26, -40, 12), (-14, -50, 16), (0, -54, 18), (14, -50, 16), (26, -40, 12))):
+        out.append(f'<path d="M{px - h * 0.5:.1f} {py + h * 0.5:.1f} Q{px - h * 0.55:.1f} {py - h * 0.4:.1f} {px} {py - h * 0.8:.1f} Q{px + h * 0.55:.1f} {py - h * 0.4:.1f} {px + h * 0.5:.1f} {py + h * 0.5:.1f} Z" fill="{pf}" {rim(plate)}/>')
+    out += [f'<path d="M-30 -24 Q-58 -22 -72 -10 Q-52 -12 -28 -12 Z" fill="{f}"/>',
+            ''.join(f'<path d="M{tx} {ty} l{-2} -9 l6 6 Z" fill="{shade(plate, 0.15)}"/>' for tx, ty in ((-60, -14), (-68, -10))),
+            f'<path d="M-38 -14 Q-40 -46 0 -48 Q40 -46 38 -14 Q0 -4 -38 -14 Z" fill="{f}" {rim(color)}/>',
+            f'<ellipse cx="0" cy="-14" rx="28" ry="6" fill="{shade(color, 0.35)}" opacity="0.8"/>',
+            spots(d, 0, -30, 26, 10, 5, shade(color, -0.3)),
+            shine(-12, -38, 12, 5),
+            f'<path d="M30 -26 Q44 -30 50 -20 Q48 -12 36 -14 Z" fill="{f}" {rim(color)}/>',
+            eye(42, -22, 2.8),
+            f'<path d="M44 -15 q3 2 6 -1" stroke="#2c2433" stroke-width="1.2" fill="none" stroke-linecap="round"/>',
+            f'<rect x="-28" y="-18" width="12" height="20" rx="6" fill="{f}"/><rect x="10" y="-18" width="12" height="20" rx="6" fill="{f}"/>']
+    return f'<g transform="translate({x} {y}) scale({s * face} {s})">' + '\n'.join(out) + '</g>'
+
+
+def ptero(d, x, y, s=1.0, face=1, color=PTERO):
+    """A pterosaur gliding in the sky: wide soft wings, a crest, a smile"""
+    f = body_fill(d, color)
+    wing = d.lin([(0, shade(color, 0.3)), (1, shade(color, -0.25))])
+    out = [f'<path d="M-6 -2 Q-30 -26 -58 -18 Q-40 -10 -34 4 Q-20 -4 -6 4 Z" fill="{wing}" {rim(color)}/>',
+           f'<path d="M6 -2 Q30 -26 58 -18 Q40 -10 34 4 Q20 -4 6 4 Z" fill="{shade(color, -0.12)}" {rim(color)}/>',
+           f'<path d="M-50 -16 Q-40 -12 -36 -2 M-42 -20 Q-30 -12 -24 -2" stroke="{shade(color, -0.35)}" stroke-width="0.9" fill="none"/>',
+           f'<ellipse cx="0" cy="0" rx="10" ry="7" fill="{f}" {rim(color)}/>',
+           f'<circle cx="8" cy="-8" r="7" fill="{f}" {rim(color)}/>',
+           f'<path d="M4 -14 Q-6 -24 -12 -22 Q-4 -16 2 -10 Z" fill="{shade(color, -0.15)}"/>',
+           f'<path d="M14 -8 Q24 -6 26 -3 Q20 -2 14 -4 Z" fill="#f6d36b"/>',
+           eye(10, -9, 2.2),
+           f'<path d="M-4 6 l-2 5 M4 6 l2 5" stroke="{shade(color, -0.3)}" stroke-width="1.6" stroke-linecap="round"/>']
+    return f'<g transform="translate({x} {y}) scale({s * face} {s})">' + '\n'.join(out) + '</g>'
+
+
+def ankylo(d, x, y, s=1.0, face=1, color=ANKY):
+    """An ankylosaurus: low and wide, an armoured dome of round scales, a club at the tail"""
+    f = body_fill(d, color)
+    far = shade(color, -0.25)
+    out = [f'<ellipse cx="0" cy="2" rx="44" ry="6" fill="#000" opacity="0.15"/>',
+           f'<rect x="-22" y="-14" width="11" height="14" rx="5" fill="{far}"/><rect x="16" y="-14" width="11" height="14" rx="5" fill="{far}"/>',
+           f'<path d="M-30 -14 Q-50 -14 -62 -10" stroke="{f}" stroke-width="8" stroke-linecap="round" fill="none"/>',
+           f'<ellipse cx="-66" cy="-10" rx="9" ry="7" fill="{shade(color, -0.1)}" {rim(color)}/>',
+           f'<path d="M-40 -10 Q-38 -40 0 -42 Q38 -40 40 -10 Q0 -2 -40 -10 Z" fill="{f}" {rim(color)}/>']
+    for row, (yy, n, r) in enumerate(((-34, 5, 4.2), (-25, 7, 4.6), (-15, 8, 4))):
+        for k in range(n):
+            xx = -30 + 60 * (k + 0.5) / n
+            out.append(f'<circle cx="{xx:.1f}" cy="{yy}" r="{r}" fill="{shade(color, 0.12 - row * 0.06)}" stroke="{shade(color, -0.4)}" stroke-width="0.8"/>')
+    out += [shine(-12, -34, 12, 4),
+            f'<ellipse cx="40" cy="-14" rx="12" ry="9" fill="{f}" {rim(color)}/>',
+            eye(42, -17, 2.8),
+            f'<path d="M44 -9 q4 2 8 -1" stroke="#2c2433" stroke-width="1.2" fill="none" stroke-linecap="round"/>',
+            f'<rect x="-28" y="-12" width="12" height="14" rx="6" fill="{f}"/><rect x="10" y="-12" width="12" height="14" rx="6" fill="{f}"/>']
+    return f'<g transform="translate({x} {y}) scale({s * face} {s})">' + '\n'.join(out) + '</g>'
+
+
+def para(d, x, y, s=1.0, face=1, color=PARA):
+    """A parasaurolophus standing on its hind legs, a long crest curving back from its head"""
+    f = body_fill(d, color)
+    far = shade(color, -0.25)
+    out = [f'<ellipse cx="0" cy="2" rx="30" ry="5" fill="#000" opacity="0.15"/>',
+           f'<rect x="-12" y="-22" width="11" height="24" rx="5" fill="{far}"/>',
+           f'<path d="M-14 -30 Q-46 -26 -58 -8 Q-36 -14 -12 -16 Z" fill="{f}"/>',
+           f'<ellipse cx="0" cy="-36" rx="20" ry="26" fill="{f}" {rim(color)}/>',
+           f'<ellipse cx="5" cy="-30" rx="12" ry="16" fill="{shade(color, 0.35)}" opacity="0.8"/>',
+           shine(-6, -48, 7, 5),
+           f'<path d="M8 -56 Q14 -70 20 -76 L28 -72 Q20 -64 18 -54 Z" fill="{f}"/>',
+           f'<ellipse cx="26" cy="-78" rx="12" ry="8" fill="{f}" {rim(color)}/>',
+           f'<path d="M22 -84 Q8 -98 -10 -100 Q2 -92 18 -78 Z" fill="{shade(color, -0.2)}" {rim(color)}/>',
+           f'<ellipse cx="36" cy="-76" rx="6" ry="4" fill="{shade(color, 0.15)}"/>',
+           eye(26, -81, 2.8),
+           f'<path d="M30 -73 q4 2 8 -1" stroke="#2c2433" stroke-width="1.2" fill="none" stroke-linecap="round"/>',
+           f'<path d="M14 -40 q10 4 12 12" stroke="{shade(color, -0.1)}" stroke-width="5" stroke-linecap="round" fill="none"/>',
+           f'<rect x="2" y="-22" width="12" height="24" rx="6" fill="{f}"/>']
+    return f'<g transform="translate({x} {y}) scale({s * face} {s})">' + '\n'.join(out) + '</g>'
+
+
+def hatchling(d, x, y, s=1.0, color=REX):
+    """A baby dinosaur looking out of its cracked egg"""
+    f = body_fill(d, color)
+    shell = d.rad([(0, '#fffaf0'), (1, '#d8cdb4')], 0.35, 0.3, 0.8)
+    out = [f'<ellipse cx="0" cy="2" rx="14" ry="3" fill="#000" opacity="0.15"/>',
+           f'<circle cx="0" cy="-22" r="10" fill="{f}" {rim(color)}/>',
+           eye(-3, -24, 2.4, 0.1), eye(4, -24, 2.4, 0.1),
+           f'<path d="M-3 -18 q3 3 6 0" stroke="#2c2433" stroke-width="1" fill="none" stroke-linecap="round"/>',
+           f'<path d="M-6 -33 l3 -5 l3 5 Z" fill="#fffaf0" stroke="#bfb39a" stroke-width="0.6"/>',
+           f'<path d="M-13 -12 L-9 -17 L-5 -12 L0 -17 L5 -12 L9 -17 L13 -12 C13 0 -13 0 -13 -12 Z" fill="{shell}" stroke="#bfb39a" stroke-width="0.8"/>',
+           ''.join(f'<ellipse cx="{dx}" cy="{dy}" rx="1.4" ry="1" fill="#a9c08a"/>' for dx, dy in ((-6, -6), (4, -4), (8, -9)))]
+    return f'<g transform="translate({x} {y}) scale({s})">' + '\n'.join(out) + '</g>'
 
 
 def egg(d, cx, cy, s=1.0, color='#f4ecd8', speckle='#a9c08a'):
@@ -419,6 +534,7 @@ def draw_gate(d):
     # the open way in, a ticket hut, a long neck looking over the fence
     d.add(contact(d, 150, 182, 230))
     d.add(bronto(d, 236, 158, 0.6, -1, BRONTO, 1.15))
+    d.add(para(d, 36, 140, 0.48, 1))
     d.add(palisade(d, 24, 182, 64, 70, 11))
     d.add(palisade(d, 210, 182, 50, 64, 11))
     # the way in: the path runs through the gate and on into the reserve
@@ -439,6 +555,8 @@ def draw_gate(d):
     d.add(thatch(d, 230, 280, 150, 20))
     d.add(f'<rect x="244" y="156" width="22" height="12" rx="2" fill="#ffd98a" stroke="{shade(LOG, -0.4)}" stroke-width="2"/>')
     d.add(''.join(f'<circle cx="{249 + k * 6}" cy="174" r="2.6" fill="none" stroke="{c}" stroke-width="1.8"/>' for k, c in enumerate(('#ef9f55', '#5fae9a', '#9b88d0'))))
+    d.add(ptero(d, 238, 40, 0.55, -1))
+    d.add(hatchling(d, 214, 186, 0.7, TRIKE))
 
 
 def draw_path(d):
@@ -456,6 +574,8 @@ def draw_path(d):
     d.add(post(d, 124, 160, 8, 18))
     d.add(post(d, 164, 160, 8, 18))
     d.add(signboard(d, 30, 138, 34, 18))
+    d.add(ankylo(d, 150, 196, 0.6, 1))
+    d.add(ptero(d, 110, 50, 0.5, 1))
 
 
 def draw_ranger(d):
@@ -477,6 +597,8 @@ def draw_ranger(d):
     d.add(kit(d, 238, 162, 28, 20))
     d.add(flag(d, 155, 6, LEAF, 18))
     d.add(fern(d, 46, 182, 1.0))
+    d.add(trike(d, 58, 190, 0.52, 1))
+    d.add(ptero(d, 250, 34, 0.5, -1))
 
 
 def draw_camp(d):
@@ -487,8 +609,11 @@ def draw_camp(d):
     d.add(campfire(d, 150, 186, 0.9))
     d.add(log(d, 98, 186, 34, 10))
     d.add(log(d, 172, 188, 34, 10))
+    d.add(stego(d, 236, 150, 0.5, -1))
     d.add(lantern(d, 56, 158, 0.6))
     d.add(f'<line x1="56" y1="166" x2="56" y2="186" stroke="#4e4a52" stroke-width="2.2"/>')
+    d.add(rex(d, 116, 196, 0.42, 1))
+    d.add(hatchling(d, 196, 196, 0.7, PARA))
     d.add(fern(d, 262, 186, 0.9))
 
 
@@ -507,6 +632,8 @@ def draw_guide(d):
     d.add(fern(d, 54, 182, 1.1))
     d.add(lantern(d, 124, 150, 0.45))
     d.add(bronto(d, 256, 184, 0.72, -1, BRONTO, 1.2))
+    d.add(para(d, 40, 192, 0.5, 1))
+    d.add(ptero(d, 70, 40, 0.5, 1))
 
 
 def draw_lab(d):
@@ -524,7 +651,9 @@ def draw_lab(d):
     d.add(f'<path d="M180 140 q10 -18 24 -8 q-4 10 -24 8 Z" fill="#e4d6b8" stroke="#a08c6a" stroke-width="1"/>')
     d.add(''.join(f'<path d="M{186 + k * 5} 136 q2 -4 4 -2" stroke="#a08c6a" stroke-width="1" fill="none"/>' for k in range(3)))
     d.add(''.join(f'<rect x="{196 + k * 9}" y="{122 + (k % 2) * 3}" width="7" height="{18 - (k % 2) * 3}" rx="2" fill="{c}"/>' for k, c in enumerate(('#b9d7ee', '#c8e2b4', '#f3c58d'))))
-    d.add(egg(d, 140, 176, 0.7))
+    d.add(hatchling(d, 140, 184, 0.8, REX))
+    d.add(ankylo(d, 234, 196, 0.42, -1))
+    d.add(ptero(d, 250, 36, 0.45, -1))
     d.add(fern(d, 254, 182, 0.9))
 
 
@@ -539,6 +668,9 @@ def draw_medic(d):
     d.add(flag(d, 130, 54, LEAF, 22))
     d.add(fern(d, 262, 184, 0.9))
     d.add(palm(d, 46, 176, 0.8, 0.25, 6))
+    d.add(stego(d, 226, 198, 0.45, -1))
+    d.add(f'<rect x="232" y="186" width="9" height="5" rx="2" fill="#fff" stroke="{LEAF}" stroke-width="1"/>')
+    d.add(trike(d, 70, 196, 0.4, 1))
 
 
 def draw_expert(d):
@@ -557,6 +689,8 @@ def draw_expert(d):
     d.add(radio(d, 232, 182, 0.6))
     d.add(f'<rect x="210" y="160" width="0" height="0"/>')
     d.add(rex(d, 70, 182, 0.5, 1))
+    d.add(bronto(d, 238, 150, 0.5, -1, BRONTO, 1.1))
+    d.add(ptero(d, 196, 22, 0.45, -1))
     d.add(fern(d, 268, 186, 0.8))
 
 
@@ -564,20 +698,25 @@ def draw_results(d):
     # waiting for the samples: a nest of eggs, an hourglass on a stump, a magnifying glass
     d.add(palm(d, 236, 170, 0.95, -0.3))
     d.add(nest(d, 130, 176, 96))
-    for x, y, c in ((108, 164, '#f4ecd8'), (132, 160, '#e8f0e0'), (154, 166, '#f6e6d2')):
+    d.add(para(d, 70, 176, 0.58, 1))
+    for x, y, c in ((108, 164, '#f4ecd8'), (154, 166, '#f6e6d2')):
         d.add(egg(d, x, y, 1.2, c))
+    d.add(hatchling(d, 132, 178, 1.1, PARA))
     d.add(post(d, 196, 154, 28, 28))
     d.add(hourglass(d, 210, 156, 0.8))
     d.add(f'<circle cx="74" cy="170" r="11" fill="#d9eef7" opacity="0.7" stroke="#5b5f6b" stroke-width="3"/><line x1="66" y1="178" x2="56" y2="188" stroke="{LOG}" stroke-width="5" stroke-linecap="round"/>')
     d.add(fern(d, 262, 186, 0.9))
-    d.add(fern(d, 40, 184, 0.8))
+    d.add(ankylo(d, 220, 200, 0.4, -1))
 
 
 def draw_home(d):
     # going home: the jeep ready to go, the reserve's sign, a triceratops saying goodbye
     d.add(signboard(d, 34, 134, 40, 20))
+    d.add(bronto(d, 250, 160, 0.5, -1, BRONTO, 1.1))
     d.add(trike(d, 210, 172, 0.75, -1))
     d.add(jeep(d, 126, 184, 1.0, -1))
+    d.add(stego(d, 60, 196, 0.4, 1))
+    d.add(ptero(d, 200, 40, 0.5, -1))
     d.add(f'<rect x="96" y="104" width="22" height="16" rx="3" fill="#c4553f"/><rect x="120" y="106" width="18" height="14" rx="3" fill="#5fae9a"/>')
     d.add(flag(d, 98, 78, LEAF, 26))
     d.add(fern(d, 268, 186, 0.9))
@@ -614,7 +753,9 @@ def sc_gate(d):
     # through the open gate: the path into the reserve and a long neck in the distance
     d.add(f'<path d="M140 340 Q170 260 178 212 L192 212 Q206 260 246 340 Z" fill="{SAND}"/>')
     d.add(bronto(d, 214, 214, 0.7, -1, BRONTO, 1.1))
+    d.add(stego(d, 160, 226, 0.45, 1))
     d.add(fern(d, 140, 218, 1.2))
+    d.add(ptero(d, 300, 40, 0.8, -1))
     d.add(palisade(d, -10, 250, 70, 190, 22))
     d.add(palisade(d, 300, 250, 74, 190, 22))
     for x in (56, 262):
@@ -632,6 +773,7 @@ def sc_gate(d):
     d.add(f'<rect x="316" y="252" width="48" height="32" rx="3" fill="#ffd98a" stroke="{shade(LOG, -0.4)}" stroke-width="4"/>')
     d.add(''.join(f'<circle cx="{326 + k * 11}" cy="270" r="4.5" fill="none" stroke="{c}" stroke-width="3"/>' for k, c in enumerate(('#ef9f55', '#5fae9a', '#9b88d0'))))
     d.add(fern(d, 18, 340, 2.2))
+    d.add(para(d, 118, 340, 0.9, 1))
 
 
 def sc_path(d):
@@ -646,6 +788,8 @@ def sc_path(d):
     d.add(palm(d, 250, 214, 0.85, -0.2))
     # a little long-neck peeking out from the ferns
     d.add(bronto(d, 300, 262, 0.75, -1, BRONTO, 0.8))
+    d.add(ankylo(d, 186, 236, 0.55, -1))
+    d.add(ptero(d, 90, 70, 0.8, 1))
     d.add(fern(d, 280, 280, 2.4))
     d.add(fern(d, 330, 300, 2.0))
     d.add(fern(d, 80, 300, 2.2))
@@ -654,6 +798,7 @@ def sc_path(d):
     d.add(post(d, 26, 296, 18, 44))
     d.add(post(d, 136, 296, 18, 44))
     d.add(signboard(d, 196, 206, 50, 24))
+    d.add(hatchling(d, 70, 334, 1.6, TRIKE))
 
 
 def sc_ranger(d):
@@ -662,7 +807,8 @@ def sc_ranger(d):
     d.add(log_wall(d, 70, 50, 224, 172, 12))
     # the window with the view of the reserve, a long neck in it
     clip = d.clip('<rect x="110" y="76" width="144" height="90" rx="4"/>')
-    view = [sky(d, SH, D_SKY0, D_SKY1), band(SW, SH, 140, 5, 0.4, '#7fae74'), bronto(d, 200, 168, 0.55, -1, BRONTO, 1.0), palm(d, 128, 170, 0.6, 0.3)]
+    view = [sky(d, SH, D_SKY0, D_SKY1), band(SW, SH, 140, 5, 0.4, '#7fae74'), bronto(d, 200, 168, 0.55, -1, BRONTO, 1.0), palm(d, 128, 170, 0.6, 0.3),
+            trike(d, 242, 166, 0.35, -1), ptero(d, 150, 98, 0.45, 1)]
     d.add(f'<g clip-path="{clip}">' + '\n'.join(view) + '</g>')
     d.add(f'<rect x="110" y="76" width="144" height="90" rx="4" fill="none" stroke="{shade(LOG, -0.4)}" stroke-width="7"/><line x1="182" y1="76" x2="182" y2="166" stroke="{shade(LOG, -0.4)}" stroke-width="4"/>')
     d.add(f'<path d="M84 52 l0 30 q8 -6 14 0 l0 -30" fill="{KHAKI}"/>')
@@ -674,6 +820,7 @@ def sc_ranger(d):
     d.add(footprint(176, 228, 0.5, '#8a6a4a'))
     d.add(binoculars(232, 222, 1.6))
     d.add(kit(d, 260, 192, 52, 34))
+    d.add(rex(d, 300, 340, 1.0, -1))
     d.add(lantern(d, 62, 204, 1.0))
 
 
@@ -684,7 +831,11 @@ def sc_camp(d):
     d.add(palm(d, 300, 200, 1.3, -0.3))
     d.add(tent(d, 90, 252, 170, 130, CANVAS, shade(LEAF, -0.05)))
     d.add(tent(d, 282, 232, 110, 90, '#e9d3a8', '#c4553f'))
+    d.add(ptero(d, 150, 60, 0.8, 1))
+    d.add(stego(d, 196, 252, 0.62, 1))
     d.add(campfire(d, 190, 290, 1.9))
+    d.add(rex(d, 266, 318, 0.9, -1))
+    d.add(hatchling(d, 120, 296, 1.4, PARA))
     d.add(log(d, 60, 300, 110, 24))
     d.add(log(d, 220, 310, 120, 24))
     d.add(lantern(d, 344, 250, 1.1))
@@ -700,7 +851,12 @@ def sc_guide(d):
     d.add(f'<rect x="96" y="58" width="80" height="54" fill="#f4ead3" stroke="#a08c6a" stroke-width="2"/>')
     d.add(bone(136, 85, 50, -10))
     d.add(f'<rect x="210" y="58" width="60" height="64" rx="3" fill="{LEAF}"/>' + footprint(240, 92, 1.3, '#fbf3e0'))
+    clip = d.clip('<polygon points="312,60 352,40 352,170 312,170"/>')
+    view = [sky(d, SH, D_SKY0, D_SKY1), band(SW, SH, 140, 5, 0.4, '#7fae74'), bronto(d, 380, 196, 0.8, -1, BRONTO, 1.15), ptero(d, 336, 70, 0.35, -1)]
+    d.add(f'<g clip-path="{clip}">' + '\n'.join(view) + '</g>')
+    d.add(f'<polygon points="312,60 352,40 352,170 312,170" fill="none" stroke="{shade(LOG, -0.4)}" stroke-width="5"/>')
     d.add(explorer(d, 182, 222, 1.6, wave=True))
+    d.add(hatchling(d, 290, 226, 1.3, TRIKE))
     top = d.lin([(0, shade(LOG, 0.3)), (1, LOG)])
     d.add(f'<rect x="40" y="222" width="284" height="20" rx="4" fill="{top}"/><rect x="52" y="242" width="260" height="98" fill="{shade(LOG, -0.3)}"/>')
     d.add(f'<path d="M100 216 L264 210 L276 236 L92 240 Z" fill="#f4ead3" stroke="#a08c6a" stroke-width="1.6"/>')
@@ -727,7 +883,10 @@ def sc_lab(d):
     d.add(bone(240, 226, 64, -10))
     d.add(f'<circle cx="300" cy="214" r="18" fill="#d9eef7" opacity="0.7" stroke="#5b5f6b" stroke-width="4"/><line x1="312" y1="228" x2="330" y2="246" stroke="{LOG}" stroke-width="7" stroke-linecap="round"/>')
     d.add(book(d, 64, 222, 70, -6))
-    d.add(egg(d, 200, 228, 1.0))
+    d.add(hatchling(d, 200, 236, 1.8, REX))
+    clip = d.clip('<rect x="104" y="44" width="70" height="40" rx="4"/>')
+    d.add(f'<g clip-path="{clip}">' + sky(d, SH, D_SKY0, D_SKY1) + band(SW, SH, 70, 3, 0.4, '#7fae74') + ankylo(d, 150, 84, 0.3, -1) + ptero(d, 124, 58, 0.25, 1) + '</g>')
+    d.add(f'<rect x="104" y="44" width="70" height="40" rx="4" fill="none" stroke="{shade(LOG, -0.3)}" stroke-width="4"/>')
 
 
 def sc_medic(d):
@@ -747,6 +906,10 @@ def sc_medic(d):
     d.add(kit(d, 236, 172, 48, 32))
     d.add(f'<rect x="294" y="188" width="44" height="16" rx="8" fill="#fff" stroke="#c9d3da" stroke-width="1.4"/><line x1="300" y1="196" x2="332" y2="196" stroke="#c9d3da" stroke-width="1"/>')
     d.add(lantern(d, 160, 150, 1.0))
+    # a little stegosaurus patient with a leaf bandage, a triceratops keeping it company
+    d.add(stego(d, 98, 300, 0.75, 1))
+    d.add(f'<rect x="106" y="286" width="16" height="9" rx="3" fill="#fff" stroke="{LEAF}" stroke-width="1.4"/>')
+    d.add(trike(d, 300, 316, 0.7, -1))
 
 
 def sc_expert(d):
@@ -757,7 +920,8 @@ def sc_expert(d):
     clip = d.clip('<rect x="186" y="66" width="96" height="84" rx="4"/>')
     view = [sky(d, SH, D_SKY0, D_SKY1), band(SW, SH, 120, 4, 0.4, '#7fae74'),
             f'<line x1="250" y1="140" x2="236" y2="76" stroke="#6b5a4a" stroke-width="4"/><line x1="236" y1="76" x2="236" y2="60" stroke="#5b5f6b" stroke-width="2"/>',
-            f'<path d="M224 74 q12 -8 24 0 M220 68 q16 -12 32 0" stroke="#fff" stroke-width="2" fill="none"/>']
+            f'<path d="M224 74 q12 -8 24 0 M220 68 q16 -12 32 0" stroke="#fff" stroke-width="2" fill="none"/>',
+            ptero(d, 206, 96, 0.4, 1), bronto(d, 272, 150, 0.45, -1, BRONTO, 1.1)]
     d.add(f'<g clip-path="{clip}">' + '\n'.join(view) + '</g>')
     d.add(f'<rect x="186" y="66" width="96" height="84" rx="4" fill="none" stroke="{shade(LOG, -0.4)}" stroke-width="6"/>')
     d.add(f'<rect x="84" y="70" width="80" height="60" rx="3" fill="#f4ead3" stroke="#a08c6a" stroke-width="2"/><path d="M94 112 Q114 84 134 104 T158 96" fill="none" stroke="#3f8aa6" stroke-width="2" stroke-dasharray="4 3"/>')
@@ -765,6 +929,7 @@ def sc_expert(d):
     d.add(f'<rect x="30" y="226" width="304" height="18" rx="4" fill="{top}"/><rect x="44" y="244" width="276" height="96" fill="{shade(LOG, -0.3)}"/>')
     d.add(radio(d, 170, 228, 2.4))
     d.add(f'<path d="M262 226 L268 196" stroke="#3b3346" stroke-width="4"/><rect x="260" y="180" width="16" height="22" rx="8" fill="#3b3346"/><rect x="250" y="222" width="34" height="6" rx="3" fill="#3b3346"/>')
+    d.add(rex(d, 316, 340, 0.85, -1))
     d.add(f'<path d="M48 214 q0 -30 30 -30 q30 0 30 30" stroke="#3b3346" stroke-width="5" fill="none"/><rect x="40" y="206" width="16" height="22" rx="6" fill="#3b3346"/><rect x="100" y="206" width="16" height="22" rx="6" fill="#3b3346"/>')
 
 
@@ -775,8 +940,12 @@ def sc_results(d):
     d.add(palm(d, 40, 230, 1.4, 0.3))
     d.add(palm(d, 326, 222, 1.3, -0.3))
     d.add(nest(d, 160, 270, 230))
-    for x, y, c in ((104, 240, '#f4ecd8'), (154, 232, '#e8f0e0'), (204, 244, '#f6e6d2')):
+    d.add(para(d, 50, 300, 1.2, 1))
+    for x, y, c in ((104, 240, '#f4ecd8'), (204, 244, '#f6e6d2')):
         d.add(egg(d, x, y, 3.0, c))
+    d.add(hatchling(d, 154, 270, 3.0, PARA))
+    d.add(ankylo(d, 250, 196, 0.5, -1))
+    d.add(ptero(d, 200, 60, 0.8, -1))
     d.add(post(d, 272, 240, 70, 100))
     d.add(hourglass(d, 306, 244, 2.0))
     d.add(f'<rect x="20" y="290" width="90" height="56" rx="4" fill="#f4ead3" stroke="#a08c6a" stroke-width="2"/>' + ''.join(f'<line x1="30" y1="{304 + k * 10}" x2="96" y2="{304 + k * 10}" stroke="#c9b99a" stroke-width="2"/>' for k in range(4)))
@@ -790,8 +959,13 @@ def sc_home(d):
     d.add(f'<path d="M60 340 Q150 250 170 184 L196 184 Q220 250 330 340 Z" fill="{SAND}"/>')
     d.add(bronto(d, 64, 236, 1.1, 1, BRONTO, 1.05))
     d.add(trike(d, 300, 226, 0.75, -1))
+    d.add(para(d, 150, 214, 0.6, 1))
+    d.add(stego(d, 240, 226, 0.5, -1))
+    d.add(ptero(d, 110, 70, 0.8, 1))
+    d.add(ptero(d, 250, 50, 0.55, -1))
     d.add(jeep(d, 176, 318, 1.9, -1))
     d.add(rex(d, 326, 330, 0.95, -1))
+    d.add(ankylo(d, 40, 336, 0.8, 1))
     d.add(fern(d, 16, 340, 1.8))
     d.add(fern(d, 356, 340, 1.8))
 
@@ -829,7 +1003,7 @@ def background(W, H, horizon, palms, ferns, clouds, volcano, seed, comment):
         d.add(palm(d, *p))
     for fx, fy, fs in ferns:
         d.add(fern(d, fx, fy, fs))
-    return d.svg(f'{WORLD} world: {comment}', grain=0.08, wobble=1.0, clay=False)
+    return d.svg(f'{WORLD} world: {comment}', grain=0.025, wobble=1.0, clay=False)
 
 
 def portrait_bg():
@@ -866,8 +1040,13 @@ def celebrate():
     figures = Doc(640, 480, 32, prefix='v')
     figures.add(bronto(figures, 170, 380, 1.6, 1, BRONTO, 1.05))
     figures.add(trike(figures, 500, 400, 1.3, -1))
+    figures.add(stego(figures, 330, 330, 0.9, 1))
+    figures.add(para(figures, 590, 360, 0.9, -1))
+    figures.add(ptero(figures, 230, 160, 1.2, 1))
+    figures.add(ptero(figures, 420, 200, 0.9, -1))
     figures.add(jeep(figures, 320, 440, 1.6, -1))
     figures.add(rex(figures, 430, 452, 1.0, -1))
+    figures.add(ankylo(figures, 90, 460, 0.9, 1))
     d.defs.extend(figures.defs)
     d.add('<g filter="url(#clay)">' + '\n'.join(figures.body) + '</g>')
     cols = ['#c4553f', '#e3b34a', '#3f8aa6', LEAF]
@@ -887,6 +1066,8 @@ def card():
     d.add(d_mound(d))
     d.add(palm(d, 250, 172, 1.0, -0.3))
     d.add(bronto(d, 150, 182, 1.25, 1, BRONTO, 1.0))
+    d.add(rex(d, 250, 196, 0.55, -1))
+    d.add(ptero(d, 70, 44, 0.6, 1))
     d.add(fern(d, 60, 184, 1.2))
     return d.svg(f'{WORLD} world: the card on the world select screen')
 
@@ -901,4 +1082,4 @@ files['map-landscape.svg'] = landscape_bg()
 files['sheet-floor.svg'] = sheet_floor()
 files['celebrate.svg'] = celebrate()
 files['card.svg'] = card()
-write(OUT, files)
+write('dino', files)

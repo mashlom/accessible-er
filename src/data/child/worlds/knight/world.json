@@ -3,7 +3,7 @@
   "order": 2,
   "emoji": "⚔️",
   "doneEmoji": "🪙",
-  "shopImage": "/worlds/knight/art/celebrate.svg",
+  "shopImage": "/worlds/knight/art/celebrate.webp",
   "bg": "",
   "thumbnail": "/worlds/knight/castle.png",
   "thumbnailOverlay": "/worlds/knight/knight.png",
@@ -45,9 +45,9 @@
   },
   "design": {
     "assets": {
-      "background": "/worlds/knight/art/map-portrait.svg",
-      "backgroundWide": "/worlds/knight/art/map-landscape.svg",
-      "sheetSeabed": "/worlds/knight/art/sheet-floor.svg"
+      "background": "/worlds/knight/art/map-portrait.webp",
+      "backgroundWide": "/worlds/knight/art/map-landscape.webp",
+      "sheetSeabed": "/worlds/knight/art/sheet-floor.webp"
     },
     "colors": {
       "text": "#2b2238",
@@ -70,113 +70,113 @@
     "mirrorAbove": false,
     "stations": {
       "reception": {
-        "map": "/worlds/knight/art/station-gate.svg",
-        "sheet": "/worlds/knight/art/scene-gate.svg",
+        "map": "/worlds/knight/art/station-gate.webp",
+        "sheet": "/worlds/knight/art/scene-gate.webp",
         "panel": "scene",
-        "choice": "/worlds/knight/art/station-gate.svg"
+        "choice": "/worlds/knight/art/station-gate.webp"
       },
       "wait-before-triage": {
-        "map": "/worlds/knight/art/station-courtyard.svg",
-        "sheet": "/worlds/knight/art/scene-courtyard.svg",
+        "map": "/worlds/knight/art/station-courtyard.webp",
+        "sheet": "/worlds/knight/art/scene-courtyard.webp",
         "panel": "scene",
-        "choice": "/worlds/knight/art/station-courtyard.svg"
+        "choice": "/worlds/knight/art/station-courtyard.webp"
       },
       "triage": {
-        "map": "/worlds/knight/art/station-tent.svg",
-        "sheet": "/worlds/knight/art/scene-tent.svg",
+        "map": "/worlds/knight/art/station-tent.webp",
+        "sheet": "/worlds/knight/art/scene-tent.webp",
         "panel": "scene",
-        "choice": "/worlds/knight/art/station-tent.svg"
+        "choice": "/worlds/knight/art/station-tent.webp"
       },
       "wait-doctor": {
-        "map": "/worlds/knight/art/station-hall.svg",
-        "sheet": "/worlds/knight/art/scene-hall.svg",
+        "map": "/worlds/knight/art/station-hall.webp",
+        "sheet": "/worlds/knight/art/scene-hall.webp",
         "panel": "scene",
-        "choice": "/worlds/knight/art/station-hall.svg"
+        "choice": "/worlds/knight/art/station-hall.webp"
       },
       "doctor": {
-        "map": "/worlds/knight/art/station-wizard.svg",
-        "sheet": "/worlds/knight/art/scene-wizard.svg",
+        "map": "/worlds/knight/art/station-wizard.webp",
+        "sheet": "/worlds/knight/art/scene-wizard.webp",
         "panel": "scene",
-        "choice": "/worlds/knight/art/station-wizard.svg"
+        "choice": "/worlds/knight/art/station-wizard.webp"
       },
       "tests": {
-        "map": "/worlds/knight/art/station-mirror.svg",
-        "sheet": "/worlds/knight/art/scene-mirror.svg",
+        "map": "/worlds/knight/art/station-mirror.webp",
+        "sheet": "/worlds/knight/art/scene-mirror.webp",
         "panel": "scene",
-        "choice": "/worlds/knight/art/station-mirror.svg"
+        "choice": "/worlds/knight/art/station-mirror.webp"
       },
       "treatment": {
-        "map": "/worlds/knight/art/station-forge.svg",
-        "sheet": "/worlds/knight/art/scene-forge.svg",
+        "map": "/worlds/knight/art/station-forge.webp",
+        "sheet": "/worlds/knight/art/scene-forge.webp",
         "panel": "scene",
-        "choice": "/worlds/knight/art/station-forge.svg"
+        "choice": "/worlds/knight/art/station-forge.webp"
       },
       "consult": {
-        "map": "/worlds/knight/art/station-council.svg",
-        "sheet": "/worlds/knight/art/scene-council.svg",
+        "map": "/worlds/knight/art/station-council.webp",
+        "sheet": "/worlds/knight/art/scene-council.webp",
         "panel": "scene",
-        "choice": "/worlds/knight/art/station-council.svg"
+        "choice": "/worlds/knight/art/station-council.webp"
       },
       "wait-results": {
-        "map": "/worlds/knight/art/station-prophecy.svg",
-        "sheet": "/worlds/knight/art/scene-prophecy.svg",
+        "map": "/worlds/knight/art/station-prophecy.webp",
+        "sheet": "/worlds/knight/art/scene-prophecy.webp",
         "panel": "scene",
-        "choice": "/worlds/knight/art/station-prophecy.svg"
+        "choice": "/worlds/knight/art/station-prophecy.webp"
       },
       "decision": {
-        "map": "/worlds/knight/art/station-victory.svg",
-        "sheet": "/worlds/knight/art/scene-victory.svg",
+        "map": "/worlds/knight/art/station-victory.webp",
+        "sheet": "/worlds/knight/art/scene-victory.webp",
         "panel": "scene",
-        "choice": "/worlds/knight/art/station-victory.svg"
+        "choice": "/worlds/knight/art/station-victory.webp"
       }
     },
     "images": {
-      "/worlds/knight/art/station-gate.svg": {
+      "/worlds/knight/art/station-gate.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/knight/art/station-courtyard.svg": {
+      "/worlds/knight/art/station-courtyard.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/knight/art/station-tent.svg": {
+      "/worlds/knight/art/station-tent.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/knight/art/station-hall.svg": {
+      "/worlds/knight/art/station-hall.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/knight/art/station-wizard.svg": {
+      "/worlds/knight/art/station-wizard.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/knight/art/station-mirror.svg": {
+      "/worlds/knight/art/station-mirror.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/knight/art/station-forge.svg": {
+      "/worlds/knight/art/station-forge.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/knight/art/station-council.svg": {
+      "/worlds/knight/art/station-council.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/knight/art/station-prophecy.svg": {
+      "/worlds/knight/art/station-prophecy.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
       },
-      "/worlds/knight/art/station-victory.svg": {
+      "/worlds/knight/art/station-victory.webp": {
         "aspect": 1.3636,
         "visible": 0.92,
         "lift": 0.02
