@@ -1,4 +1,4 @@
-"""The fairy world's pictures (public/worlds/fairy/art): a magic garden where the elf helper checks the magic, the
+"""The fairy world's earlier pictures, drawn in code (drafts in scripts/art/build/fairy/; the app uses the delivered ones): a magic garden where the elf helper checks the magic, the
 healing fairy decides, the gnome gardener treats and the wise fairy comes to help.
 
     python3 scripts/art/fairy.py

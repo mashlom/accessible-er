@@ -94,7 +94,7 @@
     "credits": {
       "disclaimer": "הכלי אינו מחליף את הצוות הרפואי ואינו נותן ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים, והמידע נשמר במכשיר בלבד.",
       "animations": "האנימציות של אייקוני האמוג׳י הן Noto Animated Emoji של Google, ברישיון CC BY 4.0. רוני מצויר ומונפש לפרויקט.",
-      "ai": "האיורים של עולם \"ההרפתקה התת-ימית\" נוצרו בעזרת בינה מלאכותית גנרטיבית (Google Gemini) ועובדו בידי צוות העיצוב."
+      "ai": "האיורים של עולמות המסע נוצרו בעזרת בינה מלאכותית גנרטיבית: עולם \"ההרפתקה התת-ימית\" ב־Google Gemini, ועובד בידי צוות העיצוב; שאר העולמות ב־OpenAI GPT Image וב־Google Gemini."
     }
   },
   "en": {
@@ -192,7 +192,7 @@
     "credits": {
       "disclaimer": "The tool does not replace the medical team and does not give medical advice. No name or identifying details are needed, and the information is kept on the device only.",
       "animations": "The emoji icon animations are Noto Animated Emoji by Google, under CC BY 4.0. Roni is drawn and animated for the project.",
-      "ai": "The pictures of the \"Underwater adventure\" world were made with generative AI (Google Gemini) and finished by the design team."
+      "ai": "The pictures of the journey's worlds were made with generative AI: the \"Underwater adventure\" world with Google Gemini, finished by the design team; the other worlds with OpenAI GPT Image and Google Gemini."
     }
   },
   "ru": {
@@ -290,7 +290,7 @@
     "credits": {
       "disclaimer": "Инструмент не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные, а информация хранится только на устройстве.",
       "animations": "Анимации эмодзи-иконок — Noto Animated Emoji от Google, лицензия CC BY 4.0. Рони нарисован и анимирован для проекта.",
-      "ai": "Иллюстрации мира «Подводное приключение» созданы с помощью генеративного ИИ (Google Gemini) и доработаны командой дизайна."
+      "ai": "Иллюстрации миров путешествия созданы с помощью генеративного ИИ: мир «Подводное приключение» — Google Gemini, доработан командой дизайна; остальные миры — OpenAI GPT Image и Google Gemini."
     }
   }
 }

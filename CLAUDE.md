@@ -157,7 +157,8 @@ src/
 
 - **עולם מעוצב** הוא עולם שיש לו `design` ב־`world.json` (`theme.design`): **האוקיינוס**
   ("הרפתקה תת-ימית"), לפי המוקאפ של שבי (Figma "Mashlom.me"), **האביר**, **הדינוזאורים**, **בית הבובות**, **הפיות**, **הספארי** ו**החלל** — על אותו מבנה,
-  באיורים וקטוריים שצוירו בקוד ([scripts/art/](scripts/art/), כלים משותפים ב־`lib.py`). עולם בלי
+  באיורים שנוצרו ב־AI ונכנסו עם [import_world.py](scripts/art/import_world.py) (מ־manifest ו־PNG; הוא בודק מידות,
+  שקיפות וניגודיות). הציורים הקודמים שצוירו בקוד ([scripts/art/](scripts/art/)) נשארו כטיוטות ב־`scripts/art/build/`. עולם בלי
   `design` מקבל את המסכים הפשוטים הישנים (רצועת תחנות ודפים). **אל תבדקו
   `theme.id === 'ocean'` בקוד** — שאלו `theme.design`, וכל מה שספציפי לעולם הולך ל־JSON.
 - **מפות:** [WorldMapPage](src/concepts/quest/pages/WorldMapPage.tsx) (שלב 1, 5 תחנות,
@@ -216,12 +217,12 @@ src/
 | אנימציות האייקונים (`public/anim/*.json`) | [Noto Animated Emoji](https://googlefonts.github.io/noto-emoji-animation/) של Google | CC BY 4.0 — **מחייב ייחוס** |
 | דמות רוני (`Roni.tsx`) | נכתבה לפרויקט | חלק מהריפו |
 | שאר האיורים | אימוג'י מהמערכת + SVG/CSS | — |
-| איורי עולם האביר (`public/worlds/knight/art/*`) | צוירו בקוד (SVG → WebP) לפרויקט, `scripts/art/knight.py` | חלק מהריפו |
-| איורי עולם הדינוזאורים (`public/worlds/dino/art/*`) | צוירו בקוד (SVG → WebP) לפרויקט, `scripts/art/dino.py` | חלק מהריפו |
-| איורי בית הבובות (`public/worlds/dollhouse/art/*`) | צוירו בקוד (SVG → WebP) לפרויקט, `scripts/art/dollhouse.py` | חלק מהריפו |
-| איורי עולם הפיות (`public/worlds/fairy/art/*`) | צוירו בקוד (SVG → WebP) לפרויקט, `scripts/art/fairy.py` | חלק מהריפו |
-| איורי עולם הספארי (`public/worlds/safari/art/*`) | צוירו בקוד (SVG → WebP) לפרויקט, `scripts/art/safari.py` | חלק מהריפו |
-| איורי עולם החלל (`public/worlds/space/art/*`) | צוירו בקוד (SVG → WebP) לפרויקט, `scripts/art/space.py` | חלק מהריפו |
+| איורי עולם האביר (`public/worlds/knight/art/*`) | נוצרו ב־OpenAI GPT Image ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
+| איורי עולם הדינוזאורים (`public/worlds/dino/art/*`) | נוצרו ב־OpenAI GPT Image ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
+| איורי בית הבובות (`public/worlds/dollhouse/art/*`) | נוצרו ב־OpenAI GPT Image ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
+| איורי עולם הפיות (`public/worlds/fairy/art/*`) | נוצרו ב־OpenAI GPT Image ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
+| איורי עולם הספארי (`public/worlds/safari/art/*`) | נוצרו ב־Google Gemini ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
+| איורי עולם החלל (`public/worlds/space/art/*`) | נוצרו ב־Google Gemini ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
 | ציורי עולם האוקיינוס (`public/worlds/ocean/*`) | נוצרו ב־Gemini (גרסה חינמית) ועובדו ע״י שבי | **טרם נסגר** — ראו [NOTICE.txt](public/worlds/ocean/NOTICE.txt); חובה לציין ב־README ובתחתית דף הבית שנוצרו ב־AI |
 
 CC BY 4.0 מחייב ייחוס, ולכן הקרדיט מופיע בשלושה מקומות שאסור להסיר:

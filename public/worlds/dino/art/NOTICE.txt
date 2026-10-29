@@ -1,4 +1,3 @@
-The dinosaur world's pictures (map backgrounds, stations, scenes, sheet floor, celebration, card) were drawn as
-SVG for this project, in code, and rendered into WebP: scripts/art/dino.py writes every file here, with the shared tools in
-scripts/art/lib.py. They are part of the repository, free to use.
-To change a picture, change the script and run: python3 scripts/art/dino.py
+The dino world's pictures (map backgrounds, stations, scenes, sheet floor, celebration, card) were
+delivered as PNG with a manifest and converted to WebP by scripts/art/import_world.py.
+Made with: OpenAI GPT Image (high-quality image generation/editing); commercial use permitted under OpenAI Services Agreement section 4.1: customer owns output to the extent permitted by law, no attribution requirement. Outputs may not be unique; no guarantee of copyright protection or third-party clearance. https://openai.com/policies/services-agreement/

@@ -1,4 +1,4 @@
-"""The safari world's pictures (public/worlds/safari/art): a safari camp in the savanna. The guide checks the gear;
+"""The safari world's earlier pictures, drawn in code (drafts in scripts/art/build/safari/; the app uses the delivered ones): a safari camp in the savanna. The guide checks the gear;
 the chief, a wise old lion (the king of the savanna), decides what to do; friendly animals all around.
 
     python3 scripts/art/safari.py
