@@ -1676,10 +1676,12 @@
 
 
 .worldStage.pin--active .worldObj {
-  animation: oceanBob 2.4s ease-in-out infinite;
+  animation: worldBob 2.4s ease-in-out infinite;
+  /* the picture is drawn once and only moved (a heavy SVG is not redrawn on every frame) */
+  will-change: translate;
 }
 
-@keyframes oceanBob {
+@keyframes worldBob {
   0%, 100% { translate: 0 0; }
   50% { translate: 0 -1.2cqw; }
 }
