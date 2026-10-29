@@ -4,43 +4,61 @@
     "stages": {
       "reception": {
         "label": "כניסה לשמורה",
-        "hint": "נרשמים בשמורת הדינוזאורים ומקבלים צמיד חוקר"
+        "hint": "נרשמים בשמורת הדינוזאורים ומקבלים צמיד חוקר",
+        "story": "כשמגיעים לשמורת הדינוזאורים, נרשמים בכניסה ומקבלים צמיד חוקר, איתו אפשר לטייל בכל השמורה. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "done": "קיבלתי את צמיד החוקר!"
       },
       "wait-before-triage": {
         "label": "שביל הכניסה",
-        "hint": "מחכים על השביל עד ששומר השמורה קורא לנו"
+        "hint": "מחכים על השביל עד ששומר השמורה קורא לנו",
+        "story": "לפני שנכנסים לשמורה, מחכים על שביל הכניסה עד ששומר השמורה קורא לנו. גם במיון, מחכים בחדר ההמתנה עד שהאחות קוראת לנו. לפעמים יש שם הרבה אנשים ורעש.",
+        "done": "חיכיתי על שביל הכניסה!"
       },
       "triage": {
         "label": "בדיקת שומר השמורה",
-        "hint": "שומר השמורה בודק שהכול מוכן למסע"
+        "hint": "שומר השמורה בודק שהכול מוכן למסע",
+        "story": "שומר השמורה בודק שהחוקרים מוכנים למסע. גם במיון, האחות בודקת איך אנחנו מרגישים: מודדת חום, שמה אטב קטן על האצבע ושרוול רך על הזרוע.",
+        "done": "עברתי את הבדיקה של שומר השמורה!"
       },
       "wait-doctor": {
         "label": "מחנה ההמתנה",
-        "hint": "נחים במחנה עד שהמדריך מוכן"
+        "hint": "נחים במחנה עד שהמדריך מוכן",
+        "story": "המדריך הראשי עוזר לכל החוקרים בשמורה, ולכן לפעמים מחכים לו במחנה. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
+        "done": "נחתי במחנה ההמתנה!"
       },
       "doctor": {
         "label": "פגישה עם המדריך הראשי",
-        "hint": "המדריך מחליט איזה מסלול נעשה"
+        "hint": "המדריך מחליט איזה מסלול נעשה",
+        "story": "המדריך הראשי מקשיב ובודק, ואז מחליט באיזה מסלול ממשיכים. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
       },
       "decision": {
         "label": "חוזרים מהמסע",
-        "hint": "המסע הסתיים — הולכים הביתה!"
+        "hint": "המסע הסתיים — הולכים הביתה!",
+        "story": "בסוף המסע בשמורת הדינוזאורים חוזרים מהשטח. גם במיון, בסוף הצוות מסכם איתנו מה הלאה: לרוב חוזרים הביתה, ולפעמים נשארים לישון בבית החולים כדי להמשיך לטפל בנו."
       },
       "tests": {
         "label": "מעבדת הממצאים",
-        "hint": "בודקים את הדגימות שנמצאו"
+        "hint": "בודקים את הדגימות שנמצאו",
+        "story": "במעבדת הממצאים בודקים דגימות, כמו שחוקרים בודקים עצמות דינוזאורים, כדי לגלות דברים שלא רואים בעיניים. גם במיון, לפעמים צריך בדיקות, כמו בדיקת דם, בדיקת שתן או צילום. עושים רק את הבדיקות שהרופא החליט עליהן.",
+        "done": "סיימתי במעבדת הממצאים!"
       },
       "treatment": {
         "label": "עמדת הטיפול",
-        "hint": "חובש המשלחת מטפל בפצע מהמסע"
+        "hint": "חובש המשלחת מטפל בפצע מהמסע",
+        "story": "בעמדת הטיפול חובש המשלחת עוזר לחוקרים שצריכים טיפול. גם במיון, אם צריך, נותנים לנו את הטיפול שהרופא החליט עליו, כמו תרופה, אינהלציה או תחבושת.",
+        "done": "סיימתי אצל חובש המשלחת!"
       },
       "consult": {
         "label": "מומחה השטח",
-        "hint": "מומחה נוסף מגיע לעזור"
+        "hint": "מומחה נוסף מגיע לעזור",
+        "story": "לפעמים המדריך הראשי קורא למומחה שטח שמכיר היטב חלק אחד של השמורה. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
+        "done": "פגשתי את מומחה השטח!"
       },
       "wait-results": {
         "label": "ממתינים לתוצאות הדגימות",
-        "hint": "המעבדה עובדת"
+        "hint": "המעבדה עובדת",
+        "story": "הדגימות במעבדת הממצאים, ומחכים לשמוע מה הן גילו. גם במיון, אחרי הבדיקות מחכים לתשובות, ולפעמים זה לוקח זמן. כשיהיו תשובות, הרופא יבוא לספר לנו.",
+        "done": "חיכיתי לתוצאות הדגימות!"
       }
     },
     "procedureNarratives": {
@@ -211,7 +229,8 @@
     ],
     "ui": {
       "decision": "החלטת המדריך ←",
-      "decisionTitle": "החלטת המדריך"
+      "decisionTitle": "החלטת המדריך",
+      "intro": "המסע במיון הילדים דומה למסע בשמורת הדינוזאורים. מוכנים לצאת לחקור?"
     }
   },
   "en": {
@@ -219,43 +238,61 @@
     "stages": {
       "reception": {
         "label": "Reserve Entrance",
-        "hint": "We register at the dinosaur reserve and get an explorer's bracelet"
+        "hint": "We register at the dinosaur reserve and get an explorer's bracelet",
+        "story": "When we arrive at the dinosaur reserve, we register at the entrance and get an explorer's bracelet, so we can walk around the whole reserve. In the ER too, we get a number that goes with us from station to station.",
+        "done": "I got my explorer's bracelet!"
       },
       "wait-before-triage": {
         "label": "The Entrance Path",
-        "hint": "We wait on the path until the reserve ranger calls us"
+        "hint": "We wait on the path until the reserve ranger calls us",
+        "story": "Before we go into the reserve, we wait on the entrance path until the reserve ranger calls us. In the ER too, we wait in the waiting room until the nurse calls us. Sometimes it is busy and noisy there.",
+        "done": "I waited on the entrance path!"
       },
       "triage": {
         "label": "Ranger Check",
-        "hint": "The reserve ranger checks that everything is ready for the trip"
+        "hint": "The reserve ranger checks that everything is ready for the trip",
+        "story": "The reserve ranger checks that the explorers are ready for the trip. In the ER too, the nurse checks how we feel: takes our temperature, puts a little clip on a finger and a soft cuff on the arm.",
+        "done": "I passed the ranger check!"
       },
       "wait-doctor": {
         "label": "Waiting Camp",
-        "hint": "We rest at the camp until the guide is ready"
+        "hint": "We rest at the camp until the guide is ready",
+        "story": "The head guide helps every explorer in the reserve, so sometimes we wait for him at the camp. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
+        "done": "I rested at the waiting camp!"
       },
       "doctor": {
         "label": "Meeting the Head Guide",
-        "hint": "The guide decides which route we take"
+        "hint": "The guide decides which route we take",
+        "story": "The head guide listens and checks, and then decides which route we take. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
       },
       "decision": {
         "label": "Heading Home from the Trip",
-        "hint": "The trip is over — time to go home!"
+        "hint": "The trip is over — time to go home!",
+        "story": "At the end of the trip through the dinosaur reserve we head back from the field. In the ER too, at the end the team tells us what comes next: most often we go home, and sometimes we stay the night in the hospital so they can keep looking after us."
       },
       "tests": {
         "label": "Findings Lab",
-        "hint": "We check the samples that were found"
+        "hint": "We check the samples that were found",
+        "story": "At the findings lab they check samples, like explorers study dinosaur bones, to find out things we can't see with our eyes. In the ER too, sometimes we need tests, like a blood test, a urine test or an X-ray. We only do the tests the doctor decided on.",
+        "done": "I finished at the findings lab!"
       },
       "treatment": {
         "label": "Treatment Post",
-        "hint": "The expedition medic treats the wound from the trip"
+        "hint": "The expedition medic treats the wound from the trip",
+        "story": "At the treatment post the expedition medic helps explorers who need treatment. In the ER too, if we need it, we get the treatment the doctor decided on, like medicine, an inhaler mask or a bandage.",
+        "done": "I finished with the expedition medic!"
       },
       "consult": {
         "label": "Field Expert",
-        "hint": "Another expert comes to help"
+        "hint": "Another expert comes to help",
+        "story": "Sometimes the head guide calls a field expert who knows one part of the reserve very well. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
+        "done": "I met the field expert!"
       },
       "wait-results": {
         "label": "Waiting for Sample Results",
-        "hint": "The lab is working"
+        "hint": "The lab is working",
+        "story": "The samples are at the findings lab, and we wait to hear what they found. In the ER too, after the tests we wait for the answers, and sometimes it takes a while. When the answers are ready, the doctor will come and tell us.",
+        "done": "I waited for the sample results!"
       }
     },
     "procedureNarratives": {
@@ -426,7 +463,8 @@
     ],
     "ui": {
       "decision": "Guide decides →",
-      "decisionTitle": "The guide's decision"
+      "decisionTitle": "The guide's decision",
+      "intro": "A visit to the children's ER is like a trip to the dinosaur reserve. Ready to explore?"
     }
   },
   "ru": {
@@ -434,43 +472,61 @@
     "stages": {
       "reception": {
         "label": "Вход в заповедник",
-        "hint": "Регистрируемся в заповеднике динозавров и получаем браслет исследователя"
+        "hint": "Регистрируемся в заповеднике динозавров и получаем браслет исследователя",
+        "story": "Когда приходим в заповедник динозавров, мы регистрируемся у входа и получаем браслет исследователя, с которым можно ходить по всему заповеднику. В приёмном покое тоже нам дадут номер, который будет с нами на всех остановках.",
+        "done": "Я получил(а) браслет исследователя!"
       },
       "wait-before-triage": {
         "label": "Дорожка у входа",
-        "hint": "Ждём на дорожке, пока нас позовёт смотритель заповедника"
+        "hint": "Ждём на дорожке, пока нас позовёт смотритель заповедника",
+        "story": "Перед тем как войти в заповедник, мы ждём на дорожке у входа, пока нас не позовёт смотритель заповедника. В приёмном покое тоже мы ждём в зале ожидания, пока нас не позовёт медсестра. Иногда там много людей и шумно.",
+        "done": "Я подождал(а) на дорожке у входа!"
       },
       "triage": {
         "label": "Проверка смотрителя",
-        "hint": "Смотритель заповедника проверяет, что всё готово к походу"
+        "hint": "Смотритель заповедника проверяет, что всё готово к походу",
+        "story": "Смотритель заповедника проверяет, что исследователи готовы к походу. В приёмном покое тоже медсестра проверяет, как мы себя чувствуем: измеряет температуру, надевает маленькую прищепку на палец и мягкую манжету на руку.",
+        "done": "Я прошёл(прошла) проверку смотрителя!"
       },
       "wait-doctor": {
         "label": "Лагерь ожидания",
-        "hint": "Отдыхаем в лагере, пока проводник готов"
+        "hint": "Отдыхаем в лагере, пока проводник готов",
+        "story": "Главный проводник помогает всем исследователям в заповеднике, поэтому иногда его приходится ждать в лагере. В приёмном покое тоже мы ждём врача. Ждать бывает долго, но про нас не забыли.",
+        "done": "Я отдохнул(а) в лагере ожидания!"
       },
       "doctor": {
         "label": "Встреча с главным проводником",
-        "hint": "Проводник решает, по какому маршруту пойдём"
+        "hint": "Проводник решает, по какому маршруту пойдём",
+        "story": "Главный проводник слушает и осматривает, а потом решает, по какому маршруту пойдём. В приёмном покое тоже врач разговаривает с нами и осматривает тело, а в конце осмотра знает, что лучше сделать."
       },
       "decision": {
         "label": "Возвращаемся из похода",
-        "hint": "Поход окончен — пора домой!"
+        "hint": "Поход окончен — пора домой!",
+        "story": "В конце похода по заповеднику динозавров мы возвращаемся из похода. В приёмном покое тоже в конце команда рассказывает нам, что дальше: чаще всего мы едем домой, а иногда остаёмся ночевать в больнице, чтобы о нас продолжали заботиться."
       },
       "tests": {
         "label": "Лаборатория находок",
-        "hint": "Проверяем найденные образцы"
+        "hint": "Проверяем найденные образцы",
+        "story": "В лаборатории находок проверяют образцы, как исследователи изучают кости динозавров, чтобы узнать то, чего не видно глазами. В приёмном покое тоже иногда нужны анализы — например, анализ крови, анализ мочи или рентген. Делают только те анализы, которые решил врач.",
+        "done": "Я закончил(а) в лаборатории находок!"
       },
       "treatment": {
         "label": "Пост лечения",
-        "hint": "Медик экспедиции лечит рану, полученную в походе"
+        "hint": "Медик экспедиции лечит рану, полученную в походе",
+        "story": "На посту лечения медик экспедиции помогает исследователям, которым нужно лечение. В приёмном покое тоже, если нужно, нам дают лечение, которое решил врач, — например, лекарство, ингаляцию или повязку.",
+        "done": "Я закончил(а) у медика экспедиции!"
       },
       "consult": {
         "label": "Эксперт по местности",
-        "hint": "Приходит ещё один эксперт помочь"
+        "hint": "Приходит ещё один эксперт помочь",
+        "story": "Иногда главный проводник зовёт эксперта по местности, который хорошо знает одну часть заповедника. В приёмном покое тоже иногда приходит ещё один врач, специалист, чтобы нас осмотреть. Это не значит, что что-то плохо, — просто хотят узнать больше.",
+        "done": "Я познакомился(лась) с экспертом по местности!"
       },
       "wait-results": {
         "label": "Ждём результатов образцов",
-        "hint": "Лаборатория работает"
+        "hint": "Лаборатория работает",
+        "story": "Образцы в лаборатории находок, и мы ждём, что они покажут. В приёмном покое тоже после анализов мы ждём ответов, и иногда это долго. Когда ответы будут готовы, врач придёт и расскажет нам.",
+        "done": "Я дождался(лась) результатов образцов!"
       }
     },
     "procedureNarratives": {
@@ -641,7 +697,8 @@
     ],
     "ui": {
       "decision": "Решение проводника →",
-      "decisionTitle": "Решение проводника"
+      "decisionTitle": "Решение проводника",
+      "intro": "Поход в детский приёмный покой похож на поход к динозаврам. Готовы исследовать?"
     }
   }
 }

@@ -123,10 +123,12 @@ interface ViewProps {
   starsTotal?: number
   /** The world's own wording of the "your journey starts here" pill */
   headline?: string
+  /** The world's sentence that says the ER visit is like its journey: shown in the pill instead of the headline */
+  intro?: string
 }
 
 /** The map scene with its top row, progress capsule and parent button; both layouts share it. */
-export function WorldMapView({ portrait, landscape, items, underSheet, progress, numbers, firstNumber = 1, noTitle, starsTotal, headline }: ViewProps) {
+export function WorldMapView({ portrait, landscape, items, underSheet, progress, numbers, firstNumber = 1, noTitle, starsTotal, headline, intro }: ViewProps) {
   const { t } = useI18n()
   const wide = useWide()
   const mapRef = useRef<HTMLDivElement>(null)
@@ -136,7 +138,15 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
   const { W, H, slots, dots, lines, vars } = wide ? landscape : portrait
   const pctX = (v: number) => `${(v / W) * 100}%`
   // the headline: in the scene on a narrow screen; on a wide one at the top of the page, on the sky
-  const title = noTitle ? null : (() => {
+  const title = noTitle ? null : intro ? (
+    // a whole sentence: the pill grows to fit it, with no bold last word; a long one (other languages) gets a smaller font
+    <h1
+      className={wide ? `${css.worldTitle} ${css.worldTitleTop} ${css.worldTitleIntro}` : `${css.worldTitle} ${css.worldTitleIntro}`}
+      style={{ '--title-shrink': intro.length > 80 ? 0.88 : 1 } as React.CSSProperties}
+    >
+      <span>{intro}</span>
+    </h1>
+  ) : (() => {
     const text = headline ?? t<string>('ui.text.worldHeadline')
     const cut = text.lastIndexOf(' ')
     // longer wording (other languages) gets a smaller font and wraps to two lines, so it stays inside the pill
@@ -368,6 +378,7 @@ export function WorldMapPage({ underSheet }: { underSheet?: boolean } = {}) {
       progress={{ done: doneStages, total: dayStages.length }}
       numbers
       headline={theme.ui?.headline}
+      intro={theme.ui?.intro}
     />
   )
 }

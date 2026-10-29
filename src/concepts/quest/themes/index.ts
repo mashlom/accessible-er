@@ -11,6 +11,10 @@ export interface StageTheme {
   icon: string
   /** Short flavour description shown on the map pin */
   hint?: string
+  /** How this station is like the same step in the ER; shown on the designed sheet instead of the hint */
+  story?: string
+  /** The station's own wording of the "I did it" button on the designed sheet */
+  done?: string
   /** Optional image shown on the map strip (path relative to /public) */
   image?: string
   /** If set, shown as hero on the stage detail page instead of image */
@@ -156,7 +160,7 @@ export interface QuestTheme {
   /** Title shown in the hero zone of DistractPage — themed framing for the child */
   distractTitle?: string
   /** The world's own wording for the designed screens' buttons and titles (from its texts.json) */
-  ui?: { done?: string; decision?: string; decisionTitle?: string; headline?: string }
+  ui?: { done?: string; decision?: string; decisionTitle?: string; headline?: string; intro?: string }
 }
 
 const files = import.meta.glob<QuestTheme>('../../../data/child/worlds/*/world.json', { eager: true, import: 'default' })

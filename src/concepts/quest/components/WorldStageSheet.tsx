@@ -63,6 +63,8 @@ export function WorldStageSheet({ stageId, label, hint, children, isActive, onDo
   const panel = design.stations[stageId]?.panel ?? 'plain'
   const bubbles = panel === 'bubbles'
   const isHouse = panel === 'bleed'
+  // the world's own words for this station: how it is like the ER, and its button
+  const skin = theme.stages[stageId]
 
   const close = () => goBackTo(backTo)
 
@@ -118,7 +120,7 @@ export function WorldStageSheet({ stageId, label, hint, children, isActive, onDo
             </div>
           )}
           <h1 className={css.stageSheetTitle} style={{ color: theme.accent }}>{label}</h1>
-          {hint && <p className={css.stageSheetHint}>{hint}</p>}
+          {(skin?.story ?? hint) && <p className={css.stageSheetHint}>{skin?.story ?? hint}</p>}
 
           {children}
 
@@ -131,7 +133,7 @@ export function WorldStageSheet({ stageId, label, hint, children, isActive, onDo
                 className={`${css.worldBtn} ${css.worldBtnDone}`}
                 onClick={onDone}
               >
-                {doneIsChoice ? buttons.decision : buttons.done}
+                {doneIsChoice ? buttons.decision : skin?.done ?? buttons.done}
               </button>
             )}
             {showChooseTests && !isActive && (

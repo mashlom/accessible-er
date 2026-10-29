@@ -4,43 +4,61 @@
     "stages": {
       "reception": {
         "label": "כניסה למחנה",
-        "hint": "נרשמים במחנה הספארי ומקבלים צמיד מסייר"
+        "hint": "נרשמים במחנה הספארי ומקבלים צמיד מסייר",
+        "story": "כשנכנסים לספארי, יש להרשם בכניסה ולקבל צמיד של סיירים, איתו נוכל להסתובב ברחבי הספארי. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "done": "קיבלתי את צמיד הסיירים!"
       },
       "wait-before-triage": {
         "label": "בצל העץ",
-        "hint": "נחים בצל העץ עד שהמדריך קורא"
+        "hint": "נחים בצל העץ עד שהמדריך קורא",
+        "story": "לפני שיוצאים לשטח, נחים בצל העץ עד שהמדריך קורא לנו. גם במיון, מחכים בחדר ההמתנה עד שהאחות קוראת לנו. לפעמים יש שם הרבה אנשים ורעש.",
+        "done": "נחתי בצל העץ!"
       },
       "triage": {
         "label": "בדיקת הציוד",
-        "hint": "המדריך בודק שאתה מוכן/ה לצאת לשטח"
+        "hint": "המדריך בודק שאתה מוכן/ה לצאת לשטח",
+        "story": "לפני שיוצאים לשטח, המדריך בודק שהכול מוכן לדרך. גם במיון, האחות בודקת איך אנחנו מרגישים: מודדת חום, שמה אטב קטן על האצבע ושרוול רך על הזרוע.",
+        "done": "הציוד שלי מוכן!"
       },
       "wait-doctor": {
         "label": "ממתינים לראש השבט",
-        "hint": "ראש השבט עסוק — מחכים בסבלנות"
+        "hint": "ראש השבט עסוק — מחכים בסבלנות",
+        "story": "ראש השבט עוזר לכל המטיילים בספארי, ולכן לפעמים מחכים לו. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
+        "done": "חיכיתי לראש השבט בסבלנות!"
       },
       "doctor": {
         "label": "פגישה עם ראש השבט",
-        "hint": "ראש השבט מחליט מה עושים"
+        "hint": "ראש השבט מחליט מה עושים",
+        "story": "ראש השבט מקשיב ובודק, ואז מחליט איך ממשיכים במסע. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
       },
       "decision": {
         "label": "חזרה למחנה!",
-        "hint": "השקיעה יפה — המסע הסתיים!"
+        "hint": "השקיעה יפה — המסע הסתיים!",
+        "story": "בסוף המסע בספארי חוזרים למחנה. גם במיון, בסוף הצוות מסכם איתנו מה הלאה: לרוב חוזרים הביתה, ולפעמים נשארים לישון בבית החולים כדי להמשיך לטפל בנו."
       },
       "tests": {
         "label": "מעבדת השטח",
-        "hint": "בודקים את הדגימות מהשטח"
+        "hint": "בודקים את הדגימות מהשטח",
+        "story": "במעבדת השטח בודקים דגימות כדי לגלות דברים שלא רואים בעיניים. גם במיון, לפעמים צריך בדיקות, כמו בדיקת דם, בדיקת שתן או צילום. עושים רק את הבדיקות שהרופא החליט עליהן.",
+        "done": "סיימתי במעבדת השטח!"
       },
       "treatment": {
         "label": "עמדת הטיפול",
-        "hint": "המרפא עוזר"
+        "hint": "המרפא עוזר",
+        "story": "בעמדת הטיפול המרפא עוזר למטיילים שצריכים טיפול. גם במיון, אם צריך, נותנים לנו את הטיפול שהרופא החליט עליו, כמו תרופה, אינהלציה או תחבושת.",
+        "done": "סיימתי בעמדת הטיפול!"
       },
       "consult": {
         "label": "מומחה מהסוואנה",
-        "hint": "מומחה נוסף מגיע"
+        "hint": "מומחה נוסף מגיע",
+        "story": "לפעמים ראש השבט קורא למומחה שמכיר היטב חלק אחד של הסוואנה. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
+        "done": "פגשתי את המומחה מהסוואנה!"
       },
       "wait-results": {
         "label": "ממתינים לתוצאות",
-        "hint": "הדגימות בבדיקה"
+        "hint": "הדגימות בבדיקה",
+        "story": "הדגימות במעבדת השטח, ומחכים לשמוע מה הן גילו. גם במיון, אחרי הבדיקות מחכים לתשובות, ולפעמים זה לוקח זמן. כשיהיו תשובות, הרופא יבוא לספר לנו.",
+        "done": "חיכיתי לתוצאות מהשטח!"
       }
     },
     "procedureNarratives": {
@@ -211,7 +229,8 @@
     ],
     "ui": {
       "decision": "החלטת ראש השבט ←",
-      "decisionTitle": "החלטת ראש השבט"
+      "decisionTitle": "החלטת ראש השבט",
+      "intro": "המסע במיון הילדים דומה למסע בספארי. מוכנים לצאת לדרך?"
     }
   },
   "en": {
@@ -219,43 +238,61 @@
     "stages": {
       "reception": {
         "label": "Camp Entrance",
-        "hint": "We register at the safari camp and get a ranger's bracelet"
+        "hint": "We register at the safari camp and get a ranger's bracelet",
+        "story": "When we arrive at the safari, we sign in at the entrance and get a ranger's bracelet, so we can walk around the whole safari. In the ER too, we get a number that goes with us from station to station.",
+        "done": "I got my ranger's bracelet!"
       },
       "wait-before-triage": {
         "label": "In the Tree's Shade",
-        "hint": "We rest in the shade of the tree until the guide calls"
+        "hint": "We rest in the shade of the tree until the guide calls",
+        "story": "Before we go out into the field, we rest in the shade of the tree until the guide calls us. In the ER too, we wait in the waiting room until the nurse calls us. Sometimes it is busy and noisy there.",
+        "done": "I rested in the shade!"
       },
       "triage": {
         "label": "Equipment Check",
-        "hint": "The guide checks that you are ready to go out into the field"
+        "hint": "The guide checks that you are ready to go out into the field",
+        "story": "Before we go out into the field, the guide checks that everything is ready. In the ER too, the nurse checks how we feel: takes our temperature, puts a little clip on a finger and a soft cuff on the arm.",
+        "done": "My equipment is ready!"
       },
       "wait-doctor": {
         "label": "Waiting for the Chief",
-        "hint": "The chief is busy — we wait patiently"
+        "hint": "The chief is busy — we wait patiently",
+        "story": "The chief helps every traveller in the safari, so sometimes we wait for him. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
+        "done": "I waited patiently for the chief!"
       },
       "doctor": {
         "label": "Meeting the Chief",
-        "hint": "The chief decides what to do"
+        "hint": "The chief decides what to do",
+        "story": "The chief listens and checks, and then decides how the journey goes on. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
       },
       "decision": {
         "label": "Back to Camp!",
-        "hint": "The sunset is beautiful — the journey is over!"
+        "hint": "The sunset is beautiful — the journey is over!",
+        "story": "At the end of the safari journey we go back to camp. In the ER too, at the end the team tells us what comes next: most often we go home, and sometimes we stay the night in the hospital so they can keep looking after us."
       },
       "tests": {
         "label": "Field Lab",
-        "hint": "We check the samples from the field"
+        "hint": "We check the samples from the field",
+        "story": "At the field lab they check samples to find out things we can't see with our eyes. In the ER too, sometimes we need tests, like a blood test, a urine test or an X-ray. We only do the tests the doctor decided on.",
+        "done": "I finished at the field lab!"
       },
       "treatment": {
         "label": "Treatment Post",
-        "hint": "The herbalist helps"
+        "hint": "The herbalist helps",
+        "story": "At the treatment post the herbalist helps travellers who need treatment. In the ER too, if we need it, we get the treatment the doctor decided on, like medicine, an inhaler mask or a bandage.",
+        "done": "I finished at the treatment post!"
       },
       "consult": {
         "label": "Expert from the Savanna",
-        "hint": "Another expert is coming"
+        "hint": "Another expert is coming",
+        "story": "Sometimes the chief calls an expert who knows one part of the savanna very well. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
+        "done": "I met the savanna expert!"
       },
       "wait-results": {
         "label": "Waiting for Results",
-        "hint": "The samples are being tested"
+        "hint": "The samples are being tested",
+        "story": "The samples are at the field lab, and we wait to hear what they found. In the ER too, after the tests we wait for the answers, and sometimes it takes a while. When the answers are ready, the doctor will come and tell us.",
+        "done": "I waited for the field results!"
       }
     },
     "procedureNarratives": {
@@ -426,7 +463,8 @@
     ],
     "ui": {
       "decision": "Chief decides →",
-      "decisionTitle": "The chief's decision"
+      "decisionTitle": "The chief's decision",
+      "intro": "A visit to the children's ER is like a journey through the safari. Ready to set off?"
     }
   },
   "ru": {
@@ -434,43 +472,61 @@
     "stages": {
       "reception": {
         "label": "Вход в лагерь",
-        "hint": "Регистрируемся в сафари-лагере и получаем браслет следопыта"
+        "hint": "Регистрируемся в сафари-лагере и получаем браслет следопыта",
+        "story": "Когда приходим в сафари, мы регистрируемся у входа и получаем браслет следопыта, с которым можно ходить по всему сафари. В приёмном покое тоже нам дадут номер, который будет с нами на всех остановках.",
+        "done": "Я получил(а) браслет следопыта!"
       },
       "wait-before-triage": {
         "label": "В тени дерева",
-        "hint": "Отдыхаем в тени дерева, пока нас позовёт проводник"
+        "hint": "Отдыхаем в тени дерева, пока нас позовёт проводник",
+        "story": "Перед выходом в поле мы отдыхаем в тени дерева, пока нас не позовёт проводник. В приёмном покое тоже мы ждём в зале ожидания, пока нас не позовёт медсестра. Иногда там много людей и шумно.",
+        "done": "Я отдохнул(а) в тени!"
       },
       "triage": {
         "label": "Проверка снаряжения",
-        "hint": "Проводник проверяет, что ты готов(а) выйти в поле"
+        "hint": "Проводник проверяет, что ты готов(а) выйти в поле",
+        "story": "Перед выходом в поле проводник проверяет, что всё готово. В приёмном покое тоже медсестра проверяет, как мы себя чувствуем: измеряет температуру, надевает маленькую прищепку на палец и мягкую манжету на руку.",
+        "done": "Моё снаряжение готово!"
       },
       "wait-doctor": {
         "label": "Ждём вождя",
-        "hint": "Вождь занят — терпеливо ждём"
+        "hint": "Вождь занят — терпеливо ждём",
+        "story": "Вождь помогает всем путешественникам в сафари, поэтому иногда его приходится ждать. В приёмном покое тоже мы ждём врача. Ждать бывает долго, но про нас не забыли.",
+        "done": "Я терпеливо ждал(а) вождя!"
       },
       "doctor": {
         "label": "Встреча с вождём",
-        "hint": "Вождь решает, что делать"
+        "hint": "Вождь решает, что делать",
+        "story": "Вождь слушает и осматривает, а потом решает, как продолжить путешествие. В приёмном покое тоже врач разговаривает с нами и осматривает тело, а в конце осмотра знает, что лучше сделать."
       },
       "decision": {
         "label": "Возвращаемся в лагерь!",
-        "hint": "Закат красивый — путешествие окончено!"
+        "hint": "Закат красивый — путешествие окончено!",
+        "story": "В конце путешествия по сафари мы возвращаемся в лагерь. В приёмном покое тоже в конце команда рассказывает нам, что дальше: чаще всего мы едем домой, а иногда остаёмся ночевать в больнице, чтобы о нас продолжали заботиться."
       },
       "tests": {
         "label": "Полевая лаборатория",
-        "hint": "Проверяем образцы из поля"
+        "hint": "Проверяем образцы из поля",
+        "story": "В полевой лаборатории проверяют образцы, чтобы узнать то, чего не видно глазами. В приёмном покое тоже иногда нужны анализы — например, анализ крови, анализ мочи или рентген. Делают только те анализы, которые решил врач.",
+        "done": "Я закончил(а) в полевой лаборатории!"
       },
       "treatment": {
         "label": "Пост лечения",
-        "hint": "Травник помогает"
+        "hint": "Травник помогает",
+        "story": "На посту лечения травник помогает путешественникам, которым нужно лечение. В приёмном покое тоже, если нужно, нам дают лечение, которое решил врач, — например, лекарство, ингаляцию или повязку.",
+        "done": "Я закончил(а) на посту лечения!"
       },
       "consult": {
         "label": "Эксперт из саванны",
-        "hint": "Скоро придёт ещё один эксперт"
+        "hint": "Скоро придёт ещё один эксперт",
+        "story": "Иногда вождь зовёт эксперта, который хорошо знает одну часть саванны. В приёмном покое тоже иногда приходит ещё один врач, специалист, чтобы нас осмотреть. Это не значит, что что-то плохо, — просто хотят узнать больше.",
+        "done": "Я познакомился(лась) с экспертом из саванны!"
       },
       "wait-results": {
         "label": "Ждём результатов",
-        "hint": "Образцы проверяются"
+        "hint": "Образцы проверяются",
+        "story": "Образцы в полевой лаборатории, и мы ждём, что они покажут. В приёмном покое тоже после анализов мы ждём ответов, и иногда это долго. Когда ответы будут готовы, врач придёт и расскажет нам.",
+        "done": "Я дождался(лась) результатов из поля!"
       }
     },
     "procedureNarratives": {
@@ -641,7 +697,8 @@
     ],
     "ui": {
       "decision": "Решение вождя →",
-      "decisionTitle": "Решение вождя"
+      "decisionTitle": "Решение вождя",
+      "intro": "Поход в детский приёмный покой похож на путешествие по сафари. Готовы отправиться в путь?"
     }
   }
 }

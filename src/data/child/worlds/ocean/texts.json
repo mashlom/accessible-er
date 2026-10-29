@@ -4,43 +4,61 @@
     "stages": {
       "reception": {
         "label": "על הרציף",
-        "hint": "נרשמים בבסיס ומקבלים צמיד צוללן"
+        "hint": "נרשמים בבסיס ומקבלים צמיד צוללן",
+        "story": "לפני שיוצאים לצלילה, נרשמים בבסיס שעל הרציף ומקבלים צמיד צוללן, שמלווה אותנו לאורך כל ההרפתקה. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "done": "קיבלתי את צמיד הצוללן!"
       },
       "wait-before-triage": {
         "label": "כניסה לצוללת",
-        "hint": "עולים לצוללת ומחכים שהבוסמן יקרא לנו"
+        "hint": "עולים לצוללת ומחכים שהבוסמן יקרא לנו",
+        "story": "עולים לצוללת ומחכים עד שהבוסמן קורא לנו. גם במיון, מחכים בחדר ההמתנה עד שהאחות קוראת לנו. לפעמים יש שם הרבה אנשים ורעש.",
+        "done": "עליתי לצוללת!"
       },
       "triage": {
         "label": "בדיקות לצלילה",
-        "hint": "הבוסמן בודק שהכול מוכן לצלילה"
+        "hint": "הבוסמן בודק שהכול מוכן לצלילה",
+        "story": "לפני הצלילה, הבוסמן בודק שהכול מוכן לרדת למים. גם במיון, האחות בודקת איך אנחנו מרגישים: מודדת חום, שמה אטב קטן על האצבע ושרוול רך על הזרוע.",
+        "done": "הציוד שלי מוכן לצלילה!"
       },
       "wait-doctor": {
         "label": "ממתינים בתא",
-        "hint": "דגים עוברים בחוץ, ממתינים לקברניט"
+        "hint": "דגים עוברים בחוץ, ממתינים לקברניט",
+        "story": "הקברניט עוזר לכל הצוללנים בצוללת, ולכן לפעמים מחכים לו בתא ומסתכלים על הדגים שבחוץ. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
+        "done": "חיכיתי לקברניט בסבלנות!"
       },
       "doctor": {
         "label": "פגישה עם קברניט הצוללת",
-        "hint": "הקברניט מחליט מה לעשות"
+        "hint": "הקברניט מחליט מה לעשות",
+        "story": "הקברניט מקשיב ובודק, ואז מחליט לאן הצוללת ממשיכה. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
       },
       "decision": {
         "label": "עלייה לפני השטח!",
-        "hint": "צפנו בעולם התת-ימי — חוזרים!"
+        "hint": "צפנו בעולם התת-ימי — חוזרים!",
+        "story": "בסוף הצלילה עולים בחזרה אל פני השטח. גם במיון, בסוף הצוות מסכם איתנו מה הלאה: לרוב חוזרים הביתה, ולפעמים נשארים לישון בבית החולים כדי להמשיך לטפל בנו."
       },
       "tests": {
         "label": "סונאר הצוללת",
-        "hint": "הסונאר רואה דרך המים"
+        "hint": "הסונאר רואה דרך המים",
+        "story": "הסונאר של הצוללת רואה דרך המים דברים שלא רואים בעיניים. גם במיון, לפעמים צריך בדיקות, כמו בדיקת דם, בדיקת שתן או צילום. עושים רק את הבדיקות שהרופא החליט עליהן.",
+        "done": "סיימתי בסונאר של הצוללת!"
       },
       "treatment": {
         "label": "תיקון הצוללת",
-        "hint": "המהנדס מתקן את מה שצריך"
+        "hint": "המהנדס מתקן את מה שצריך",
+        "story": "המהנדס של הצוללת מתקן את מה שצריך. גם במיון, אם צריך, נותנים לנו את הטיפול שהרופא החליט עליו, כמו תרופה, אינהלציה או תחבושת.",
+        "done": "סיימתי בתיקון הצוללת!"
       },
       "consult": {
         "label": "קשר עם הבסיס",
-        "hint": "מומחה מהבסיס מתחבר"
+        "hint": "מומחה מהבסיס מתחבר",
+        "story": "לפעמים הקברניט יוצר קשר עם מומחה מהבסיס שמכיר היטב חלק אחד של הים. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
+        "done": "דיברתי עם המומחה מהבסיס!"
       },
       "wait-results": {
         "label": "עיבוד נתוני הסונאר",
-        "hint": "הסונאר מעבד נתונים"
+        "hint": "הסונאר מעבד נתונים",
+        "story": "הסונאר מעבד את הנתונים, ומחכים לשמוע מה הוא גילה. גם במיון, אחרי הבדיקות מחכים לתשובות, ולפעמים זה לוקח זמן. כשיהיו תשובות, הרופא יבוא לספר לנו.",
+        "done": "חיכיתי לנתוני הסונאר!"
       }
     },
     "procedureNarratives": {
@@ -211,7 +229,8 @@
     "distractTitle": "חדר ההידרופונים 🎧",
     "ui": {
       "decision": "החלטת הקפטן ←",
-      "decisionTitle": "החלטת הקפטן"
+      "decisionTitle": "החלטת הקפטן",
+      "intro": "המסע במיון הילדים דומה להרפתקה תת-ימית. מוכנים לצלול?"
     }
   },
   "en": {
@@ -219,43 +238,61 @@
     "stages": {
       "reception": {
         "label": "On the Dock",
-        "hint": "You sign the ship's log and get a diver's bracelet"
+        "hint": "You sign the ship's log and get a diver's bracelet",
+        "story": "Before the dive, we sign in at the base on the dock and get a diver's bracelet that stays with us for the whole adventure. In the ER too, we get a number that goes with us from station to station.",
+        "done": "I got my diver's bracelet!"
       },
       "wait-before-triage": {
         "label": "Boarding the Submarine",
-        "hint": "We climb aboard and wait for the bosun to call us"
+        "hint": "We climb aboard and wait for the bosun to call us",
+        "story": "We climb aboard the submarine and wait until the bosun calls us. In the ER too, we wait in the waiting room until the nurse calls us. Sometimes it is busy and noisy there.",
+        "done": "I climbed aboard the submarine!"
       },
       "triage": {
         "label": "Pre-dive Checkup",
-        "hint": "The bosun checks that we're ready to dive"
+        "hint": "The bosun checks that we're ready to dive",
+        "story": "Before the dive, the bosun checks that everything is ready to go into the water. In the ER too, the nurse checks how we feel: takes our temperature, puts a little clip on a finger and a soft cuff on the arm.",
+        "done": "My diving gear is ready!"
       },
       "wait-doctor": {
         "label": "Waiting in the Cabin",
-        "hint": "Fish swim past the porthole while we wait for the captain"
+        "hint": "Fish swim past the porthole while we wait for the captain",
+        "story": "The captain helps every diver on the submarine, so sometimes we wait for him in the cabin and watch the fish outside. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
+        "done": "I waited patiently for the captain!"
       },
       "doctor": {
         "label": "Meeting the Captain",
-        "hint": "The captain decides what to do"
+        "hint": "The captain decides what to do",
+        "story": "The captain listens and checks, and then decides where the submarine goes next. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
       },
       "decision": {
         "label": "Back to the Surface!",
-        "hint": "We explored the deep — time to go home!"
+        "hint": "We explored the deep — time to go home!",
+        "story": "At the end of the dive we rise back up to the surface. In the ER too, at the end the team tells us what comes next: most often we go home, and sometimes we stay the night in the hospital so they can keep looking after us."
       },
       "tests": {
         "label": "Submarine Sonar",
-        "hint": "The sonar sees through the water"
+        "hint": "The sonar sees through the water",
+        "story": "The submarine's sonar sees through the water and finds things we can't see with our eyes. In the ER too, sometimes we need tests, like a blood test, a urine test or an X-ray. We only do the tests the doctor decided on.",
+        "done": "I finished at the submarine sonar!"
       },
       "treatment": {
         "label": "Submarine Repairs",
-        "hint": "The engineer fixes what needs fixing"
+        "hint": "The engineer fixes what needs fixing",
+        "story": "The submarine's engineer fixes what needs fixing. In the ER too, if we need it, we get the treatment the doctor decided on, like medicine, an inhaler mask or a bandage.",
+        "done": "I finished the submarine repairs!"
       },
       "consult": {
         "label": "Link with the Base",
-        "hint": "An expert from the base connects"
+        "hint": "An expert from the base connects",
+        "story": "Sometimes the captain contacts an expert at the base who knows one part of the sea very well. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
+        "done": "I talked with the expert from the base!"
       },
       "wait-results": {
         "label": "Sonar Data Processing",
-        "hint": "The sonar is processing the data"
+        "hint": "The sonar is processing the data",
+        "story": "The sonar is processing the data, and we wait to hear what it found. In the ER too, after the tests we wait for the answers, and sometimes it takes a while. When the answers are ready, the doctor will come and tell us.",
+        "done": "I waited for the sonar data!"
       }
     },
     "procedureNarratives": {
@@ -426,7 +463,8 @@
     "distractTitle": "Sonar Sounds 📡",
     "ui": {
       "decision": "Captain decides →",
-      "decisionTitle": "Captain's decision"
+      "decisionTitle": "Captain's decision",
+      "intro": "A visit to the children's ER is like an underwater adventure. Ready to dive in?"
     }
   },
   "ru": {
@@ -434,43 +472,61 @@
     "stages": {
       "reception": {
         "label": "На причале",
-        "hint": "Записываемся в бортовой журнал и получаем браслет водолаза"
+        "hint": "Записываемся в бортовой журнал и получаем браслет водолаза",
+        "story": "Перед погружением мы записываемся на базе у причала и получаем браслет водолаза, который будет с нами всё приключение. В приёмном покое тоже нам дадут номер, который будет с нами на всех остановках.",
+        "done": "Я получил(а) браслет водолаза!"
       },
       "wait-before-triage": {
         "label": "Вход в подводную лодку",
-        "hint": "Поднимаемся на борт и ждём, пока боцман позовёт нас"
+        "hint": "Поднимаемся на борт и ждём, пока боцман позовёт нас",
+        "story": "Мы поднимаемся на борт подводной лодки и ждём, пока нас не позовёт боцман. В приёмном покое тоже мы ждём в зале ожидания, пока нас не позовёт медсестра. Иногда там много людей и шумно.",
+        "done": "Я поднялся(лась) на борт подводной лодки!"
       },
       "triage": {
         "label": "Проверка перед погружением",
-        "hint": "Боцман проверяет, готов ли водолаз к погружению"
+        "hint": "Боцман проверяет, готов ли водолаз к погружению",
+        "story": "Перед погружением боцман проверяет, что всё готово, чтобы спуститься под воду. В приёмном покое тоже медсестра проверяет, как мы себя чувствуем: измеряет температуру, надевает маленькую прищепку на палец и мягкую манжету на руку.",
+        "done": "Моё снаряжение готово к погружению!"
       },
       "wait-doctor": {
         "label": "Ожидание в каюте",
-        "hint": "За иллюминатором плавают рыбы, ждём капитана"
+        "hint": "За иллюминатором плавают рыбы, ждём капитана",
+        "story": "Капитан помогает всем водолазам на подводной лодке, поэтому иногда мы ждём его в каюте и смотрим на рыб за иллюминатором. В приёмном покое тоже мы ждём врача. Ждать бывает долго, но про нас не забыли.",
+        "done": "Я терпеливо ждал(а) капитана!"
       },
       "doctor": {
         "label": "Встреча с капитаном подводной лодки",
-        "hint": "Капитан решает, что делать"
+        "hint": "Капитан решает, что делать",
+        "story": "Капитан слушает и осматривает, а потом решает, куда плыть подводной лодке. В приёмном покое тоже врач разговаривает с нами и осматривает тело, а в конце осмотра знает, что лучше сделать."
       },
       "decision": {
         "label": "Всплываем!",
-        "hint": "Мы исследовали подводный мир — пора возвращаться!"
+        "hint": "Мы исследовали подводный мир — пора возвращаться!",
+        "story": "В конце погружения мы всплываем обратно на поверхность. В приёмном покое тоже в конце команда рассказывает нам, что дальше: чаще всего мы едем домой, а иногда остаёмся ночевать в больнице, чтобы о нас продолжали заботиться."
       },
       "tests": {
         "label": "Локатор подводной лодки",
-        "hint": "Локатор видит сквозь воду"
+        "hint": "Локатор видит сквозь воду",
+        "story": "Локатор подводной лодки видит сквозь воду то, чего не видно глазами. В приёмном покое тоже иногда нужны анализы — например, анализ крови, анализ мочи или рентген. Делают только те анализы, которые решил врач.",
+        "done": "Я закончил(а) у локатора подводной лодки!"
       },
       "treatment": {
         "label": "Ремонт подводной лодки",
-        "hint": "Инженер чинит то, что нужно"
+        "hint": "Инженер чинит то, что нужно",
+        "story": "Инженер подводной лодки чинит то, что нужно. В приёмном покое тоже, если нужно, нам дают лечение, которое решил врач, — например, лекарство, ингаляцию или повязку.",
+        "done": "Я закончил(а) с ремонтом подводной лодки!"
       },
       "consult": {
         "label": "Связь с базой",
-        "hint": "Специалист с базы выходит на связь"
+        "hint": "Специалист с базы выходит на связь",
+        "story": "Иногда капитан выходит на связь со специалистом с базы, который хорошо знает одну часть моря. В приёмном покое тоже иногда приходит ещё один врач, специалист, чтобы нас осмотреть. Это не значит, что что-то плохо, — просто хотят узнать больше.",
+        "done": "Я поговорил(а) со специалистом с базы!"
       },
       "wait-results": {
         "label": "Обработка данных локатора",
-        "hint": "Локатор обрабатывает данные"
+        "hint": "Локатор обрабатывает данные",
+        "story": "Локатор обрабатывает данные, и мы ждём, что он покажет. В приёмном покое тоже после анализов мы ждём ответов, и иногда это долго. Когда ответы будут готовы, врач придёт и расскажет нам.",
+        "done": "Я дождался(лась) данных локатора!"
       }
     },
     "procedureNarratives": {
@@ -641,7 +697,8 @@
     "distractTitle": "Звуки локатора 📡",
     "ui": {
       "decision": "Что решили →",
-      "decisionTitle": "Решение капитана"
+      "decisionTitle": "Решение капитана",
+      "intro": "Поход в детский приёмный покой похож на подводное приключение. Готовы к погружению?"
     }
   }
 }
