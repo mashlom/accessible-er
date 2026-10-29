@@ -63,9 +63,9 @@
         "#e3b34a",
         "#5fae9a"
       ],
-      "water": "#35566D",
-      "waterTop": "#35566D",
-      "waterLight": "#35566D"
+      "water": "#6A8DA6",
+      "waterTop": "#6A8DA6",
+      "waterLight": "#6A8DA6"
     },
     "mirrorAbove": false,
     "stations": {

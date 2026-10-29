@@ -2075,7 +2075,7 @@
 /* the top of a landscape picture fades into the sky colour above it (worlds without the mirrored water) */
 .worldSceneFade::after {
   top: -2px;
-  height: calc(140 * var(--u));
+  height: calc(260 * var(--u));
   background: linear-gradient(var(--w-water), transparent);
 }
 
