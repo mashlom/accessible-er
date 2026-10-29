@@ -111,6 +111,7 @@ export function WorldStageSheet({ stageId, label, hint, children, isActive, onDo
                   // on the landscape map it is mirrored (the ocean's pier points left): so it is on its sheet
                   isHouse && wide ? css.stageSheetImgFlip : '',
                   panel === 'symbol' ? css.stageSheetImgSymbol : '',
+                  panel === 'scene' ? css.stageSheetImgScene : '',
                 ].join(' ')}
               />
               {bubbles && <Bubbles />}
