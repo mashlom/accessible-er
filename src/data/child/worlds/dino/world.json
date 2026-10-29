@@ -7,7 +7,7 @@
   "bg": "",
   "thumbnail": "/worlds/dino/art/map-portrait.webp",
   "thumbnailOverlay": "/worlds/dino/art/card.webp",
-  "accent": "#3f7330",
+  "accent": "#2E7D4F",
   "accentSoft": "#dcefd8",
   "accentText": "#ffffff",
   "completedColor": "#8bc34a",
@@ -50,136 +50,136 @@
       "sheetSeabed": "/worlds/dino/art/sheet-floor.webp"
     },
     "colors": {
-      "text": "#26331f",
-      "text2": "#55604f",
-      "action": "#3f7330",
-      "page": "#f6f8f1",
+      "text": "#21352A",
+      "text2": "#55675A",
+      "action": "#2E7D4F",
+      "page": "#F4F6EA",
       "card": "#ffffff",
       "mint": "#e4f0d8",
       "blue": "#eaf2e1",
       "coral": "#b5473a",
       "yellow": "#e3b34a",
-      "water": "#3f8aa6",
-      "waterTop": "#3f8aa6",
-      "waterLight": "#3f8aa6",
       "progress": [
         "#e3b34a",
         "#5fae9a"
-      ]
+      ],
+      "water": "#556850",
+      "waterTop": "#556850",
+      "waterLight": "#556850"
     },
     "mirrorAbove": false,
     "stations": {
       "reception": {
-        "map": "/worlds/dino/art/station-gate.webp",
-        "sheet": "/worlds/dino/art/scene-gate.webp",
+        "map": "/worlds/dino/art/station-reception.webp",
+        "sheet": "/worlds/dino/art/scene-reception.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-gate.webp"
+        "choice": "/worlds/dino/art/station-reception.webp"
       },
       "wait-before-triage": {
-        "map": "/worlds/dino/art/station-path.webp",
-        "sheet": "/worlds/dino/art/scene-path.webp",
+        "map": "/worlds/dino/art/station-wait-before-triage.webp",
+        "sheet": "/worlds/dino/art/scene-wait-before-triage.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-path.webp"
+        "choice": "/worlds/dino/art/station-wait-before-triage.webp"
       },
       "triage": {
-        "map": "/worlds/dino/art/station-ranger.webp",
-        "sheet": "/worlds/dino/art/scene-ranger.webp",
+        "map": "/worlds/dino/art/station-triage.webp",
+        "sheet": "/worlds/dino/art/scene-triage.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-ranger.webp"
+        "choice": "/worlds/dino/art/station-triage.webp"
       },
       "wait-doctor": {
-        "map": "/worlds/dino/art/station-camp.webp",
-        "sheet": "/worlds/dino/art/scene-camp.webp",
+        "map": "/worlds/dino/art/station-wait-doctor.webp",
+        "sheet": "/worlds/dino/art/scene-wait-doctor.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-camp.webp"
+        "choice": "/worlds/dino/art/station-wait-doctor.webp"
       },
       "doctor": {
-        "map": "/worlds/dino/art/station-guide.webp",
-        "sheet": "/worlds/dino/art/scene-guide.webp",
+        "map": "/worlds/dino/art/station-doctor.webp",
+        "sheet": "/worlds/dino/art/scene-doctor.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-guide.webp"
+        "choice": "/worlds/dino/art/station-doctor.webp"
       },
       "tests": {
-        "map": "/worlds/dino/art/station-lab.webp",
-        "sheet": "/worlds/dino/art/scene-lab.webp",
+        "map": "/worlds/dino/art/station-tests.webp",
+        "sheet": "/worlds/dino/art/scene-tests.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-lab.webp"
+        "choice": "/worlds/dino/art/station-tests.webp"
       },
       "treatment": {
-        "map": "/worlds/dino/art/station-medic.webp",
-        "sheet": "/worlds/dino/art/scene-medic.webp",
+        "map": "/worlds/dino/art/station-treatment.webp",
+        "sheet": "/worlds/dino/art/scene-treatment.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-medic.webp"
+        "choice": "/worlds/dino/art/station-treatment.webp"
       },
       "consult": {
-        "map": "/worlds/dino/art/station-expert.webp",
-        "sheet": "/worlds/dino/art/scene-expert.webp",
+        "map": "/worlds/dino/art/station-consult.webp",
+        "sheet": "/worlds/dino/art/scene-consult.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-expert.webp"
+        "choice": "/worlds/dino/art/station-consult.webp"
       },
       "wait-results": {
-        "map": "/worlds/dino/art/station-results.webp",
-        "sheet": "/worlds/dino/art/scene-results.webp",
+        "map": "/worlds/dino/art/station-wait-results.webp",
+        "sheet": "/worlds/dino/art/scene-wait-results.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-results.webp"
+        "choice": "/worlds/dino/art/station-wait-results.webp"
       },
       "decision": {
-        "map": "/worlds/dino/art/station-home.webp",
-        "sheet": "/worlds/dino/art/scene-home.webp",
+        "map": "/worlds/dino/art/station-decision.webp",
+        "sheet": "/worlds/dino/art/scene-decision.webp",
         "panel": "scene",
-        "choice": "/worlds/dino/art/station-home.webp"
+        "choice": "/worlds/dino/art/station-decision.webp"
       }
     },
     "images": {
-      "/worlds/dino/art/station-gate.webp": {
+      "/worlds/dino/art/station-reception.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.02
+        "visible": 0.895,
+        "lift": 0.05
       },
-      "/worlds/dino/art/station-path.webp": {
+      "/worlds/dino/art/station-wait-before-triage.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.02
+        "visible": 0.895,
+        "lift": 0.05
       },
-      "/worlds/dino/art/station-ranger.webp": {
+      "/worlds/dino/art/station-triage.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.02
+        "visible": 0.895,
+        "lift": 0.05
       },
-      "/worlds/dino/art/station-camp.webp": {
+      "/worlds/dino/art/station-wait-doctor.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.02
+        "visible": 0.895,
+        "lift": 0.05
       },
-      "/worlds/dino/art/station-guide.webp": {
+      "/worlds/dino/art/station-doctor.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.02
+        "visible": 0.895,
+        "lift": 0.05
       },
-      "/worlds/dino/art/station-lab.webp": {
+      "/worlds/dino/art/station-tests.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.02
+        "visible": 0.895,
+        "lift": 0.05
       },
-      "/worlds/dino/art/station-medic.webp": {
+      "/worlds/dino/art/station-treatment.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.02
+        "visible": 0.895,
+        "lift": 0.05
       },
-      "/worlds/dino/art/station-expert.webp": {
+      "/worlds/dino/art/station-consult.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.02
+        "visible": 0.895,
+        "lift": 0.05
       },
-      "/worlds/dino/art/station-results.webp": {
+      "/worlds/dino/art/station-wait-results.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.02
+        "visible": 0.895,
+        "lift": 0.05
       },
-      "/worlds/dino/art/station-home.webp": {
+      "/worlds/dino/art/station-decision.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.02
+        "visible": 0.895,
+        "lift": 0.05
       }
     },
     "dayMap": {
@@ -271,8 +271,8 @@
           "--badge": 24,
           "--badge-fs": 15,
           "--star": 30,
-          "--map-bg": "#3f8aa6",
-          "--title-bg": "rgba(30, 52, 28, 0.55)"
+          "--map-bg": "#556850",
+          "--title-bg": "rgba(51, 62, 48, 0.55)"
         }
       },
       "landscape": {
@@ -354,7 +354,7 @@
           "--bg-y": 0,
           "--bg-w": 1920,
           "--bg-h": 1080,
-          "--map-bg": "#3f8aa6",
+          "--map-bg": "#556850",
           "--title-x": 1270,
           "--title-y": 94,
           "--title-w": 550,
@@ -363,7 +363,7 @@
           "--badge": 42,
           "--badge-fs": 26,
           "--star": 56,
-          "--title-bg": "rgba(30, 52, 28, 0.55)"
+          "--title-bg": "rgba(51, 62, 48, 0.55)"
         }
       }
     },
@@ -377,7 +377,7 @@
           "--bg-w": 412,
           "--bg-h": 1100,
           "--grad-h": 0,
-          "--map-bg": "#3f8aa6",
+          "--map-bg": "#556850",
           "--title-x": 64.5,
           "--title-y": 44.5,
           "--title-w": 283,
@@ -386,7 +386,7 @@
           "--badge": 24,
           "--badge-fs": 15,
           "--star": 30,
-          "--title-bg": "rgba(30, 52, 28, 0.55)"
+          "--title-bg": "rgba(51, 62, 48, 0.55)"
         }
       },
       "landscape": {
@@ -446,7 +446,7 @@
           "--bg-y": 0,
           "--bg-w": 1920,
           "--bg-h": 1080,
-          "--map-bg": "#3f8aa6",
+          "--map-bg": "#556850",
           "--title-x": 1270,
           "--title-y": 94,
           "--title-w": 550,

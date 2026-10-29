@@ -1,4 +1,4 @@
-"""The knight world's pictures (public/worlds/knight/art).
+"""The knight world's earlier pictures, drawn in code (drafts in scripts/art/build/knight/; the app uses the delivered ones).
 
     python3 scripts/art/knight.py
 """

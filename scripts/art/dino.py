@@ -1,4 +1,4 @@
-"""The dinosaur world's pictures (public/worlds/dino/art): a reserve of friendly dinosaurs in a green valley.
+"""The dinosaur world's earlier pictures, drawn in code (drafts in scripts/art/build/dino/; the app uses the delivered ones): a reserve of friendly dinosaurs in a green valley.
 
     python3 scripts/art/dino.py
 

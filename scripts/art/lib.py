@@ -591,14 +591,16 @@ ROOT = os.path.join(ART, '..', '..')
 
 
 def write(world, files):
-    """Writes a world's pictures: the SVGs into scripts/art/build/<world>/ (not kept in the repository), rendered
-    into WebP images in public/worlds/<world>/art/, which the app uses"""
+    """Writes a world's pictures drawn in code: the SVGs into scripts/art/build/<world>/ (not kept in the
+    repository), rendered into WebP images in scripts/art/build/<world>/webp/. The app's pictures in
+    public/worlds/<world>/art/ are the delivered ones (scripts/art/import_world.py), so these drawings never
+    overwrite them; they are the earlier drawn versions, kept as drafts"""
     import shutil
     import subprocess
     from PIL import Image
     svg_dir = os.path.join(ART, 'build', world, 'svg')
     png_dir = os.path.join(ART, 'build', world, 'png')
-    out = os.path.join(ROOT, 'public', 'worlds', world, 'art')
+    out = os.path.join(ART, 'build', world, 'webp')
     for dr in (svg_dir, png_dir):
         shutil.rmtree(dr, ignore_errors=True)
         os.makedirs(dr)

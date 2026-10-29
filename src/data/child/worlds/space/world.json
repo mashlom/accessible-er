@@ -7,7 +7,7 @@
   "bg": "",
   "thumbnail": "/worlds/space/art/map-portrait.webp",
   "thumbnailOverlay": "/worlds/space/art/card.webp",
-  "accent": "#3a4bb8",
+  "accent": "#4579B5",
   "accentSoft": "#d0dcf5",
   "accentText": "#ffffff",
   "completedColor": "#5c8de8",
@@ -50,10 +50,10 @@
       "sheetSeabed": "/worlds/space/art/sheet-floor.webp"
     },
     "colors": {
-      "text": "#1e2448",
-      "text2": "#4f5680",
-      "action": "#3a4bb8",
-      "page": "#f5f6fc",
+      "text": "#2A3050",
+      "text2": "#5E6688",
+      "action": "#4579B5",
+      "page": "#F2EFF9",
       "card": "#ffffff",
       "mint": "#e6e9f8",
       "blue": "#eceefa",
@@ -63,122 +63,123 @@
         "#7f8cf0",
         "#4a5bd0"
       ],
-      "water": "#1c2350",
-      "waterTop": "#1c2350",
-      "waterLight": "#1c2350"
+      "water": "#34457A",
+      "waterTop": "#34457A",
+      "waterLight": "#34457A",
+      "trail": "#34457A"
     },
     "mirrorAbove": false,
     "stations": {
       "reception": {
-        "map": "/worlds/space/art/station-entrance.webp",
-        "sheet": "/worlds/space/art/scene-entrance.webp",
+        "map": "/worlds/space/art/station-reception.webp",
+        "sheet": "/worlds/space/art/scene-reception.webp",
         "panel": "scene",
-        "choice": "/worlds/space/art/station-entrance.webp"
+        "choice": "/worlds/space/art/station-reception.webp"
       },
       "wait-before-triage": {
-        "map": "/worlds/space/art/station-cabin.webp",
-        "sheet": "/worlds/space/art/scene-cabin.webp",
+        "map": "/worlds/space/art/station-wait-before-triage.webp",
+        "sheet": "/worlds/space/art/scene-wait-before-triage.webp",
         "panel": "scene",
-        "choice": "/worlds/space/art/station-cabin.webp"
+        "choice": "/worlds/space/art/station-wait-before-triage.webp"
       },
       "triage": {
-        "map": "/worlds/space/art/station-checks.webp",
-        "sheet": "/worlds/space/art/scene-checks.webp",
+        "map": "/worlds/space/art/station-triage.webp",
+        "sheet": "/worlds/space/art/scene-triage.webp",
         "panel": "scene",
-        "choice": "/worlds/space/art/station-checks.webp"
+        "choice": "/worlds/space/art/station-triage.webp"
       },
       "wait-doctor": {
-        "map": "/worlds/space/art/station-control.webp",
-        "sheet": "/worlds/space/art/scene-control.webp",
+        "map": "/worlds/space/art/station-wait-doctor.webp",
+        "sheet": "/worlds/space/art/scene-wait-doctor.webp",
         "panel": "scene",
-        "choice": "/worlds/space/art/station-control.webp"
+        "choice": "/worlds/space/art/station-wait-doctor.webp"
       },
       "doctor": {
-        "map": "/worlds/space/art/station-commander.webp",
-        "sheet": "/worlds/space/art/scene-commander.webp",
+        "map": "/worlds/space/art/station-doctor.webp",
+        "sheet": "/worlds/space/art/scene-doctor.webp",
         "panel": "scene",
-        "choice": "/worlds/space/art/station-commander.webp"
+        "choice": "/worlds/space/art/station-doctor.webp"
       },
       "tests": {
-        "map": "/worlds/space/art/station-scanner.webp",
-        "sheet": "/worlds/space/art/scene-scanner.webp",
+        "map": "/worlds/space/art/station-tests.webp",
+        "sheet": "/worlds/space/art/scene-tests.webp",
         "panel": "scene",
-        "choice": "/worlds/space/art/station-scanner.webp"
+        "choice": "/worlds/space/art/station-tests.webp"
       },
       "treatment": {
-        "map": "/worlds/space/art/station-repair.webp",
-        "sheet": "/worlds/space/art/scene-repair.webp",
+        "map": "/worlds/space/art/station-treatment.webp",
+        "sheet": "/worlds/space/art/scene-treatment.webp",
         "panel": "scene",
-        "choice": "/worlds/space/art/station-repair.webp"
+        "choice": "/worlds/space/art/station-treatment.webp"
       },
       "consult": {
-        "map": "/worlds/space/art/station-command.webp",
-        "sheet": "/worlds/space/art/scene-command.webp",
+        "map": "/worlds/space/art/station-consult.webp",
+        "sheet": "/worlds/space/art/scene-consult.webp",
         "panel": "scene",
-        "choice": "/worlds/space/art/station-command.webp"
+        "choice": "/worlds/space/art/station-consult.webp"
       },
       "wait-results": {
-        "map": "/worlds/space/art/station-data.webp",
-        "sheet": "/worlds/space/art/scene-data.webp",
+        "map": "/worlds/space/art/station-wait-results.webp",
+        "sheet": "/worlds/space/art/scene-wait-results.webp",
         "panel": "scene",
-        "choice": "/worlds/space/art/station-data.webp"
+        "choice": "/worlds/space/art/station-wait-results.webp"
       },
       "decision": {
-        "map": "/worlds/space/art/station-landing.webp",
-        "sheet": "/worlds/space/art/scene-landing.webp",
+        "map": "/worlds/space/art/station-decision.webp",
+        "sheet": "/worlds/space/art/scene-decision.webp",
         "panel": "scene",
-        "choice": "/worlds/space/art/station-landing.webp"
+        "choice": "/worlds/space/art/station-decision.webp"
       }
     },
     "images": {
-      "/worlds/space/art/station-entrance.webp": {
+      "/worlds/space/art/station-reception.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
+        "visible": 0.919,
         "lift": 0.05
       },
-      "/worlds/space/art/station-cabin.webp": {
+      "/worlds/space/art/station-wait-before-triage.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
+        "visible": 0.919,
         "lift": 0.05
       },
-      "/worlds/space/art/station-checks.webp": {
+      "/worlds/space/art/station-triage.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
+        "visible": 0.919,
         "lift": 0.05
       },
-      "/worlds/space/art/station-control.webp": {
+      "/worlds/space/art/station-wait-doctor.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
+        "visible": 0.919,
         "lift": 0.05
       },
-      "/worlds/space/art/station-commander.webp": {
+      "/worlds/space/art/station-doctor.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
+        "visible": 0.919,
         "lift": 0.05
       },
-      "/worlds/space/art/station-scanner.webp": {
+      "/worlds/space/art/station-tests.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
+        "visible": 0.919,
         "lift": 0.05
       },
-      "/worlds/space/art/station-repair.webp": {
+      "/worlds/space/art/station-treatment.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
+        "visible": 0.919,
         "lift": 0.05
       },
-      "/worlds/space/art/station-command.webp": {
+      "/worlds/space/art/station-consult.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
+        "visible": 0.919,
         "lift": 0.05
       },
-      "/worlds/space/art/station-data.webp": {
+      "/worlds/space/art/station-wait-results.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
+        "visible": 0.919,
         "lift": 0.05
       },
-      "/worlds/space/art/station-landing.webp": {
+      "/worlds/space/art/station-decision.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
+        "visible": 0.919,
         "lift": 0.05
       }
     },
@@ -271,8 +272,8 @@
           "--badge": 24,
           "--badge-fs": 15,
           "--star": 30,
-          "--map-bg": "#1c2350",
-          "--title-bg": "rgba(28, 35, 80, 0.55)"
+          "--map-bg": "#34457A",
+          "--title-bg": "rgba(31, 41, 73, 0.55)"
         }
       },
       "landscape": {
@@ -354,7 +355,7 @@
           "--bg-y": 0,
           "--bg-w": 1920,
           "--bg-h": 1080,
-          "--map-bg": "#1c2350",
+          "--map-bg": "#34457A",
           "--title-x": 1270,
           "--title-y": 94,
           "--title-w": 550,
@@ -363,7 +364,7 @@
           "--badge": 42,
           "--badge-fs": 26,
           "--star": 56,
-          "--title-bg": "rgba(28, 35, 80, 0.55)"
+          "--title-bg": "rgba(31, 41, 73, 0.55)"
         }
       }
     },
@@ -377,7 +378,7 @@
           "--bg-w": 412,
           "--bg-h": 1100,
           "--grad-h": 0,
-          "--map-bg": "#1c2350",
+          "--map-bg": "#34457A",
           "--title-x": 64.5,
           "--title-y": 44.5,
           "--title-w": 283,
@@ -386,7 +387,7 @@
           "--badge": 24,
           "--badge-fs": 15,
           "--star": 30,
-          "--title-bg": "rgba(28, 35, 80, 0.55)"
+          "--title-bg": "rgba(31, 41, 73, 0.55)"
         }
       },
       "landscape": {
@@ -446,7 +447,7 @@
           "--bg-y": 0,
           "--bg-w": 1920,
           "--bg-h": 1080,
-          "--map-bg": "#1c2350",
+          "--map-bg": "#34457A",
           "--title-x": 1270,
           "--title-y": 94,
           "--title-w": 550,

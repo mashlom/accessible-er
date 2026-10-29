@@ -41,6 +41,15 @@ def contrast(a, b):
     return (la + 0.05) / (lb + 0.05)
 
 
+def darkened(color, against, need):
+    """The colour, darkened just enough (same hue) to reach the contrast it needs against a lighter colour"""
+    r, g, b = (int(color.lstrip('#')[i:i + 2], 16) for i in (0, 2, 4))
+    k = 1.0
+    while contrast(f'#{int(r * k):02x}{int(g * k):02x}{int(b * k):02x}', against) < need and k > 0:
+        k -= 0.01
+    return f'#{int(r * k):02X}{int(g * k):02X}{int(b * k):02X}'
+
+
 def check_picture(path, want_w, want_h, transparent):
     """The problems of one delivered picture (empty when it can be used)"""
     im = Image.open(path)
@@ -107,14 +116,18 @@ def main():
         if k not in colors:
             stop.append(f'colors.{k}: missing from the manifest')
     if all(k in colors for k in ('top', 'text', 'text2', 'action', 'page')):
-        for what, a, b, need in (('text on page', colors['text'], colors['page'], 4.5),
-                                 ('text2 on page', colors['text2'], colors['page'], 4.5),
-                                 ('white on action (buttons)', '#ffffff', colors['action'], 4.5),
-                                 ('white on top (the icons over the map)', '#ffffff', colors['top'], 3)):
-            r = contrast(a, b)
+        # (what, the colour that may be darkened, the colour it stands on, the contrast it needs)
+        for what, key, against, need in (('text on page', 'text', colors['page'], 4.5),
+                                         ('text2 on page', 'text2', colors['page'], 4.5),
+                                         ('white on action (buttons)', 'action', '#ffffff', 4.5),
+                                         ('white on top (the icons over the map)', 'top', '#ffffff', 3)):
+            r = contrast(colors[key], against)
             print(f'  contrast {what}: {r:.2f}' + ('' if r >= need else f'  (below {need})'))
             if r < need:
-                notes.append(f'contrast of {what} is {r:.2f}, below {need}')
+                fixed = darkened(colors[key], against, need)
+                notes.append(f'contrast of {what} is {r:.2f}, below {need}: {key} {colors[key]} is darkened to '
+                             f'{fixed} ({contrast(fixed, against):.2f})')
+                colors[key] = fixed
 
     for n in notes:
         print('  note:', n)

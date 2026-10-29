@@ -2,11 +2,12 @@
   "id": "dollhouse",
   "order": 3,
   "emoji": "🏠",
+  "doneEmoji": "⭐",
   "shopImage": "/worlds/dollhouse/art/celebrate.webp",
   "bg": "",
   "thumbnail": "/worlds/dollhouse/art/map-portrait.webp",
   "thumbnailOverlay": "/worlds/dollhouse/art/card.webp",
-  "accent": "#b04a7a",
+  "accent": "#B24E66",
   "accentSoft": "#fbe6ef",
   "accentText": "#ffffff",
   "completedColor": "#e0a8c4",
@@ -49,136 +50,136 @@
       "sheetSeabed": "/worlds/dollhouse/art/sheet-floor.webp"
     },
     "colors": {
-      "text": "#3a2633",
-      "text2": "#6a5663",
-      "action": "#b04a7a",
-      "page": "#fcf6f8",
+      "text": "#4A3239",
+      "text2": "#87686F",
+      "action": "#B24E66",
+      "page": "#FBF4EE",
       "card": "#ffffff",
       "mint": "#f7e3ea",
       "blue": "#f6eaf0",
       "coral": "#b5473a",
       "yellow": "#e3b34a",
-      "water": "#6d4a6b",
-      "waterTop": "#6d4a6b",
-      "waterLight": "#6d4a6b",
       "progress": [
         "#e3b34a",
         "#c2618f"
-      ]
+      ],
+      "water": "#C15F72",
+      "waterTop": "#C15F72",
+      "waterLight": "#C15F72"
     },
     "mirrorAbove": false,
     "stations": {
       "reception": {
-        "map": "/worlds/dollhouse/art/station-desk.webp",
-        "sheet": "/worlds/dollhouse/art/scene-desk.webp",
+        "map": "/worlds/dollhouse/art/station-reception.webp",
+        "sheet": "/worlds/dollhouse/art/scene-reception.webp",
         "panel": "scene",
-        "choice": "/worlds/dollhouse/art/station-desk.webp"
+        "choice": "/worlds/dollhouse/art/station-reception.webp"
       },
       "wait-before-triage": {
-        "map": "/worlds/dollhouse/art/station-bench.webp",
-        "sheet": "/worlds/dollhouse/art/scene-bench.webp",
+        "map": "/worlds/dollhouse/art/station-wait-before-triage.webp",
+        "sheet": "/worlds/dollhouse/art/scene-wait-before-triage.webp",
         "panel": "scene",
-        "choice": "/worlds/dollhouse/art/station-bench.webp"
+        "choice": "/worlds/dollhouse/art/station-wait-before-triage.webp"
       },
       "triage": {
-        "map": "/worlds/dollhouse/art/station-measure.webp",
-        "sheet": "/worlds/dollhouse/art/scene-measure.webp",
+        "map": "/worlds/dollhouse/art/station-triage.webp",
+        "sheet": "/worlds/dollhouse/art/scene-triage.webp",
         "panel": "scene",
-        "choice": "/worlds/dollhouse/art/station-measure.webp"
+        "choice": "/worlds/dollhouse/art/station-triage.webp"
       },
       "wait-doctor": {
-        "map": "/worlds/dollhouse/art/station-guest.webp",
-        "sheet": "/worlds/dollhouse/art/scene-guest.webp",
+        "map": "/worlds/dollhouse/art/station-wait-doctor.webp",
+        "sheet": "/worlds/dollhouse/art/scene-wait-doctor.webp",
         "panel": "scene",
-        "choice": "/worlds/dollhouse/art/station-guest.webp"
+        "choice": "/worlds/dollhouse/art/station-wait-doctor.webp"
       },
       "doctor": {
-        "map": "/worlds/dollhouse/art/station-teddy.webp",
-        "sheet": "/worlds/dollhouse/art/scene-teddy.webp",
+        "map": "/worlds/dollhouse/art/station-doctor.webp",
+        "sheet": "/worlds/dollhouse/art/scene-doctor.webp",
         "panel": "scene",
-        "choice": "/worlds/dollhouse/art/station-teddy.webp"
+        "choice": "/worlds/dollhouse/art/station-doctor.webp"
       },
       "tests": {
-        "map": "/worlds/dollhouse/art/station-xray.webp",
-        "sheet": "/worlds/dollhouse/art/scene-xray.webp",
+        "map": "/worlds/dollhouse/art/station-tests.webp",
+        "sheet": "/worlds/dollhouse/art/scene-tests.webp",
         "panel": "scene",
-        "choice": "/worlds/dollhouse/art/station-xray.webp"
+        "choice": "/worlds/dollhouse/art/station-tests.webp"
       },
       "treatment": {
-        "map": "/worlds/dollhouse/art/station-care.webp",
-        "sheet": "/worlds/dollhouse/art/scene-care.webp",
+        "map": "/worlds/dollhouse/art/station-treatment.webp",
+        "sheet": "/worlds/dollhouse/art/scene-treatment.webp",
         "panel": "scene",
-        "choice": "/worlds/dollhouse/art/station-care.webp"
+        "choice": "/worlds/dollhouse/art/station-treatment.webp"
       },
       "consult": {
-        "map": "/worlds/dollhouse/art/station-owl.webp",
-        "sheet": "/worlds/dollhouse/art/scene-owl.webp",
+        "map": "/worlds/dollhouse/art/station-consult.webp",
+        "sheet": "/worlds/dollhouse/art/scene-consult.webp",
         "panel": "scene",
-        "choice": "/worlds/dollhouse/art/station-owl.webp"
+        "choice": "/worlds/dollhouse/art/station-consult.webp"
       },
       "wait-results": {
-        "map": "/worlds/dollhouse/art/station-quiet.webp",
-        "sheet": "/worlds/dollhouse/art/scene-quiet.webp",
+        "map": "/worlds/dollhouse/art/station-wait-results.webp",
+        "sheet": "/worlds/dollhouse/art/scene-wait-results.webp",
         "panel": "scene",
-        "choice": "/worlds/dollhouse/art/station-quiet.webp"
+        "choice": "/worlds/dollhouse/art/station-wait-results.webp"
       },
       "decision": {
-        "map": "/worlds/dollhouse/art/station-home.webp",
-        "sheet": "/worlds/dollhouse/art/scene-home.webp",
+        "map": "/worlds/dollhouse/art/station-decision.webp",
+        "sheet": "/worlds/dollhouse/art/scene-decision.webp",
         "panel": "scene",
-        "choice": "/worlds/dollhouse/art/station-home.webp"
+        "choice": "/worlds/dollhouse/art/station-decision.webp"
       }
     },
     "images": {
-      "/worlds/dollhouse/art/station-desk.webp": {
+      "/worlds/dollhouse/art/station-reception.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.08
+        "visible": 0.909,
+        "lift": 0.05
       },
-      "/worlds/dollhouse/art/station-bench.webp": {
+      "/worlds/dollhouse/art/station-wait-before-triage.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.08
+        "visible": 0.909,
+        "lift": 0.05
       },
-      "/worlds/dollhouse/art/station-measure.webp": {
+      "/worlds/dollhouse/art/station-triage.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.08
+        "visible": 0.909,
+        "lift": 0.05
       },
-      "/worlds/dollhouse/art/station-guest.webp": {
+      "/worlds/dollhouse/art/station-wait-doctor.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.08
+        "visible": 0.909,
+        "lift": 0.05
       },
-      "/worlds/dollhouse/art/station-teddy.webp": {
+      "/worlds/dollhouse/art/station-doctor.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.08
+        "visible": 0.909,
+        "lift": 0.05
       },
-      "/worlds/dollhouse/art/station-xray.webp": {
+      "/worlds/dollhouse/art/station-tests.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.08
+        "visible": 0.909,
+        "lift": 0.05
       },
-      "/worlds/dollhouse/art/station-care.webp": {
+      "/worlds/dollhouse/art/station-treatment.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.08
+        "visible": 0.909,
+        "lift": 0.05
       },
-      "/worlds/dollhouse/art/station-owl.webp": {
+      "/worlds/dollhouse/art/station-consult.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.08
+        "visible": 0.909,
+        "lift": 0.05
       },
-      "/worlds/dollhouse/art/station-quiet.webp": {
+      "/worlds/dollhouse/art/station-wait-results.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.08
+        "visible": 0.909,
+        "lift": 0.05
       },
-      "/worlds/dollhouse/art/station-home.webp": {
+      "/worlds/dollhouse/art/station-decision.webp": {
         "aspect": 1.3636,
-        "visible": 0.92,
-        "lift": 0.08
+        "visible": 0.909,
+        "lift": 0.05
       }
     },
     "dayMap": {
@@ -270,8 +271,8 @@
           "--badge": 24,
           "--badge-fs": 15,
           "--star": 30,
-          "--map-bg": "#6d4a6b",
-          "--title-bg": "rgba(58, 30, 54, 0.6)"
+          "--map-bg": "#C15F72",
+          "--title-bg": "rgba(115, 57, 68, 0.55)"
         }
       },
       "landscape": {
@@ -353,7 +354,7 @@
           "--bg-y": 0,
           "--bg-w": 1920,
           "--bg-h": 1080,
-          "--map-bg": "#6d4a6b",
+          "--map-bg": "#C15F72",
           "--title-x": 1270,
           "--title-y": 94,
           "--title-w": 550,
@@ -362,7 +363,7 @@
           "--badge": 42,
           "--badge-fs": 26,
           "--star": 56,
-          "--title-bg": "rgba(58, 30, 54, 0.6)"
+          "--title-bg": "rgba(115, 57, 68, 0.55)"
         }
       }
     },
@@ -376,7 +377,7 @@
           "--bg-w": 412,
           "--bg-h": 1100,
           "--grad-h": 0,
-          "--map-bg": "#6d4a6b",
+          "--map-bg": "#C15F72",
           "--title-x": 64.5,
           "--title-y": 44.5,
           "--title-w": 283,
@@ -385,7 +386,7 @@
           "--badge": 24,
           "--badge-fs": 15,
           "--star": 30,
-          "--title-bg": "rgba(58, 30, 54, 0.6)"
+          "--title-bg": "rgba(115, 57, 68, 0.55)"
         }
       },
       "landscape": {
@@ -445,7 +446,7 @@
           "--bg-y": 0,
           "--bg-w": 1920,
           "--bg-h": 1080,
-          "--map-bg": "#6d4a6b",
+          "--map-bg": "#C15F72",
           "--title-x": 1270,
           "--title-y": 94,
           "--title-w": 550,
@@ -457,6 +458,5 @@
         }
       }
     }
-  },
-  "doneEmoji": "⭐"
+  }
 }

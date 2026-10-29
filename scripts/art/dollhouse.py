@@ -1,4 +1,4 @@
-"""The dollhouse world's pictures (public/worlds/dollhouse/art): the rooms of a dollhouse in a playroom, where the
+"""The dollhouse world's earlier pictures, drawn in code (drafts in scripts/art/build/dollhouse/; the app uses the delivered ones): the rooms of a dollhouse in a playroom, where the
 bunny helps, the teddy-bear doctor checks gently and the wise owl comes to visit; the doll is the patient.
 
     python3 scripts/art/dollhouse.py

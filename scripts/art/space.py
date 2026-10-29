@@ -1,4 +1,4 @@
-"""The space world's pictures (public/worlds/space/art): a space station on little asteroids. The flight engineer (a
+"""The space world's earlier pictures, drawn in code (drafts in scripts/art/build/space/; the app uses the delivered ones): a space station on little asteroids. The flight engineer (a
 friendly robot) checks before take-off, the ship's commander (an astronaut) sets the route, the technician robot
 repairs, and in the end the capsule lands safely back on Earth.
 
