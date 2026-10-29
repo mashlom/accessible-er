@@ -48,6 +48,7 @@
     "text": {
       "starsEarned": "Stars earned",
       "weDidIt": "We did it! 🎉",
+      "procedureButtonsHint": "Tap a button to learn about it",
       "worldHeadline": "Your journey starts here",
       "towardsDischarge": "Getting ready to go home",
       "towardsAdmission": "Getting ready for continued hospitalization",
@@ -482,6 +483,7 @@
     "text": {
       "starsEarned": "Заработанные звёзды",
       "weDidIt": "Мы справились! 🎉",
+      "procedureButtonsHint": "Нажми на кнопку, чтобы узнать об этом",
       "worldHeadline": "Твоё путешествие начинается здесь",
       "towardsDischarge": "Готовимся к выписке домой",
       "towardsAdmission": "Готовимся к госпитализации",
@@ -875,6 +877,7 @@
         "people": "אנשים"
       },
       "weDidIt": "עשינו את זה! 🎉",
+      "procedureButtonsHint": "אפשר ללחוץ על כפתור כדי ללמוד עליו",
       "towardsDischarge": "לקראת שחרור הביתה",
       "towardsAdmission": "לקראת המשך אשפוז",
       "starsEarned": "כוכבים שהרווחת",

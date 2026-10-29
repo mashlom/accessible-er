@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useGoBackTo } from '../../nav'
 import { WORLD_SELECT } from '../components/WorldScope'
+import { useWide } from './WorldMapPage'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
@@ -26,9 +27,21 @@ function blocksFor(lang: 'he' | 'en' | 'ru', kind: 'discharge' | 'admission') {
   return texts.map((b, i) => ({ emoji: BLOCK_EMOJI[kind][i], ...b, title: i === 0 ? first : b.title }))
 }
 
+/** The shop is hidden unless the address asks for it: ?enable_store=true (before the # or after the screen's path) */
+function storeEnabled(): boolean {
+  const hashQuery = window.location.hash.split('?')[1] ?? ''
+  return [window.location.search, hashQuery].some((q) => new URLSearchParams(q).get('enable_store') === 'true')
+}
+
 export function CelebratePage() {
   const [outcome, setOutcome] = useState<'discharge' | 'admission' | null>(null)
   const { theme } = useQuestTheme()
+  const wide = useWide()
+  const withStore = storeEnabled()
+  // a designed world: the page stands on the world's own map picture (the landscape one on a wide screen)
+  const worldBg = theme.design
+    ? ({ '--celebrate-bg': wide ? 'var(--w-background-wide, var(--w-background))' : 'var(--w-background)' } as React.CSSProperties)
+    : undefined
   const { t, lang } = useI18n()
   const { reset, doneProcedures } = useQuestProgress()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
@@ -43,9 +56,9 @@ export function CelebratePage() {
   }
 
   return (
-    <div className={css.celebratePage}>
+    <div className={`${css.celebratePage} ${worldBg ? css.celebrateWorld : ''}`} style={worldBg}>
       {/* ── Child zone ── */}
-      <div className={css.celebrateChildZone} style={{ background: theme.accentSoft }}>
+      <div className={css.celebrateChildZone} style={worldBg ? undefined : { background: theme.accentSoft }}>
         {theme.shopImage && (
           <img src={theme.shopImage} alt="" className={css.celebrateImg} />
         )}
@@ -61,31 +74,32 @@ export function CelebratePage() {
             </p>
           )}
           <p className={css.celebrateHint}>
-            {doneCount > 0
+            {/* the coins line welcomes to the shop: only when there is one */}
+            {doneCount > 0 && withStore
               ? t(`ui.text.coins.${new Intl.PluralRules(lang).select(doneCount)}`).replace('{n}', String(doneCount))
               : (celebrateSkin?.hint ?? '')}
           </p>
         </div>
-        <div className={css.stageBack}>
-          <Link to="/shop" style={{ flex: 2, display: 'flex' }}>
-            <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText, flex: 1 }}>
-              {t('ui.buttons.toShop')}
-            </button>
-          </Link>
-          <div style={{ flex: 1, display: 'flex' }}>
-            <button
-              className={css.backBtn}
-              style={{ borderColor: theme.accent, color: theme.accent, flex: 1 }}
-              onClick={chooseWorld}
-            >
-              {t('ui.buttons.chooseWorld')}
-            </button>
-          </div>
+        <div className={css.celebrateActions}>
+          {withStore && (
+            <Link to="/shop">
+              <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
+                {t('ui.buttons.toShop')}
+              </button>
+            </Link>
+          )}
+          <button
+            className={css.backBtn}
+            style={{ borderColor: theme.accent, color: theme.accent }}
+            onClick={chooseWorld}
+          >
+            {t('ui.buttons.chooseWorld')}
+          </button>
         </div>
       </div>
 
       {/* ── Parent zone ── */}
-      <div className={css.stageBody}>
+      <div className={`${css.stageBody} ${css.celebrateParentZone}`}>
         {!outcome && (
           <div className={css.outcomeChoice}>
             <p className={css.outcomeLabel}>{t('ui.labels.adult.outcomeLabel')}</p>
@@ -146,7 +160,7 @@ export function CelebratePage() {
             <button
               className={css.calmLink}
               onClick={() => setOutcome(null)}
-              style={{ marginTop: '1rem', color: theme.accent, background: 'none', border: 'none', cursor: 'pointer' }}
+              style={{ color: theme.accent, background: 'none', border: 'none', cursor: 'pointer' }}
             >
               {t('ui.buttons.changeChoice')}
             </button>

@@ -586,8 +586,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1.25rem 2rem;
-  gap: 1.5rem;
+  padding: 1.75rem 1.25rem 2rem;
+  gap: 1.25rem;
   text-align: center;
 }
 
@@ -1087,13 +1087,82 @@
   direction: rtl;
 }
 
-.celebrateParentZone {
-  background: #fff;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  padding: 1.5rem 1.25rem 3rem;
-  display: flex;
-  flex-direction: column;
+/* A designed world's celebration stands on the world's map picture: the picture fills the screen behind (it stays
+   while the parent's part scrolls), and the picture, the words and the buttons sit on a light card in the middle */
+.celebrateWorld {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+  justify-content: center;
+  padding: 1.25rem 16px 2rem;
+  box-sizing: border-box;
   gap: 1rem;
+}
+
+.celebrateWorld::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--celebrate-bg) center bottom / cover no-repeat, var(--w-page, #f5f5f5);
+}
+
+.celebrateWorld .celebrateChildZone {
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 1.25rem 1.25rem 1.5rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.celebrateWorld .celebrateImg {
+  max-height: 34dvh;
+}
+
+.celebrateWorld .stageBody.celebrateParentZone {
+  padding: 0;
+}
+
+.celebrateWorld .celebrateParentZone .outcomeChoice,
+.celebrateWorld .celebrateParentZone > section {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+}
+
+/* "change the choice" has no background of its own (inline): on the picture it needs one */
+.celebrateWorld .celebrateParentZone .calmLink {
+  background: rgba(255, 255, 255, 0.94) !important;
+}
+
+.celebrateWorld .parentZoneLabel {
+  margin: 0;
+  padding: 0.4rem 0.9rem;
+  align-self: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--tok-text2, #526570);
+}
+
+/* the parent's part of the celebration: the same narrow column as the child's part, in the middle of a wide screen */
+.stageBody.celebrateParentZone {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.celebrateParentZone .outcomeChoice {
+  margin-bottom: 0;
+  padding: 1.5rem 1.25rem;
+}
+
+.celebrateParentZone .calmLink {
+  margin-top: 0;
 }
 
 .dischargeBlock {
@@ -1124,8 +1193,9 @@
 }
 
 .celebrateImg {
-  max-width: 100%;
-  max-height: 55dvh;
+  width: 100%;
+  max-width: 440px;
+  max-height: 40dvh;
   object-fit: contain;
   border-radius: 1.25rem;
 }
@@ -1198,13 +1268,28 @@
   margin: 0;
 }
 
+/* The child's two buttons, one above the other: the shop first, then another world */
 .celebrateActions {
   width: 100%;
-  max-width: 320px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .celebrateActions a {
   display: flex;
+  text-decoration: none;
+}
+
+.celebrateActions .doneBtn,
+.celebrateActions .backBtn {
+  width: 100%;
+  min-height: 52px;
+}
+
+.celebrateActions .backBtn {
+  border: 2px solid;
 }
 
 /* ── Stage detail ──────────────────────────────────────────────────── */
@@ -3009,6 +3094,86 @@ path.worldTrailLit {
 .worldSheet .procedureIconBtn {
   background: var(--tok-blue);
   color: var(--tok-text);
+}
+
+/* A stage's procedure buttons: a line that says they can be tapped, then real buttons (icon + name) two in a row */
+.procedureBtnBlock {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8 * var(--u));
+  margin-top: calc(14 * var(--u));
+}
+
+.procedureBtnHint {
+  margin: 0;
+  font-size: max(calc(14 * var(--u)), 14px);
+  font-weight: 600;
+  color: var(--tok-text2);
+}
+
+.procedureBtnGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(10 * var(--u));
+}
+
+.procedureBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  min-height: max(calc(56 * var(--u)), 48px);
+  padding: calc(6 * var(--u)) calc(10 * var(--u));
+  box-sizing: border-box;
+  border: 1.5px solid var(--tok-action);
+  border-radius: calc(12 * var(--u));
+  background: var(--tok-card);
+  color: var(--tok-text);
+  text-decoration: none;
+  font-size: max(calc(15 * var(--u)), 14px);
+  font-weight: 700;
+  line-height: 1.25;
+  box-shadow: 0 3px 0 var(--tok-action);
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.procedureBtn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--tok-action);
+}
+
+.procedureBtn:focus-visible {
+  outline: 3px solid #0a6b8a;
+  outline-offset: 2px;
+}
+
+.procedureBtnIcon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: max(calc(36 * var(--u)), 34px);
+  height: max(calc(36 * var(--u)), 34px);
+  border-radius: 50%;
+  background: var(--tok-blue);
+  font-size: max(calc(22 * var(--u)), 20px);
+  line-height: 1;
+}
+
+.procedureBtnLabel {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.procedureBtnDone {
+  position: absolute;
+  top: -8px;
+  inset-inline-end: -6px;
+  font-size: 1.1rem;
+  line-height: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
 }
 
 /* the parent panel's cards: light blue with a yellow book circle before each heading */

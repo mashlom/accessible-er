@@ -16,6 +16,14 @@ const subscribe = (l: () => void) => {
   return () => listeners.delete(l)
 }
 
+/** The chosen world's id (the first world when none is chosen yet), outside of React */
+export function currentWorldId(): string {
+  return getTheme(id).id
+}
+
+/** Calls back when the chosen world changes */
+export const subscribeWorld = subscribe
+
 function setThemeId(newId: string) {
   id = newId
   try { sessionStorage.setItem(KEY, newId) } catch {}

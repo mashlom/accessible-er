@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { journeyStages } from '../../data/journey'
+import { readStored, removeStored, writeStored } from '../../lib/storage'
+import { currentWorldId, subscribeWorld } from './useQuestTheme'
 
 /** Required stage ids in order */
 export const REQUIRED_STAGES = ['reception', 'wait-before-triage', 'triage', 'wait-doctor', 'doctor'] as const
@@ -19,22 +21,41 @@ export interface StageState {
   parentId?: typeof REQUIRED_STAGES[number]
 }
 
-const KEY = 'quest-progress'
-const PROC_KEY = 'quest-procedures-done'
+/**
+ * Each world keeps its own journey (localStorage, `quest-progress:<world>`): the stations and the procedures done.
+ * It is cleared 10 hours after that world's journey began, so a child who comes back another day starts anew.
+ */
+const KEY_PREFIX = 'quest-progress:'
+export const PROGRESS_TTL_MS = 10 * 60 * 60 * 1000
+
+interface Saved {
+  /** when this world's journey began (the 10 hours count from here) */
+  since: number
+  stages?: StageState[]
+  procs?: string[]
+}
+
+const keyOf = () => KEY_PREFIX + currentWorldId()
+
+function readSaved(): Saved | null {
+  return readStored<Saved | null>(keyOf(), null)
+}
+
+function writeSaved(patch: Partial<Saved>) {
+  const prev = readSaved()
+  const since = prev?.since ?? Date.now()
+  writeStored<Saved>(keyOf(), { ...prev, ...patch, since }, since + PROGRESS_TTL_MS - Date.now())
+}
 
 export function loadProcs(): Set<string> {
-  try {
-    const raw = sessionStorage.getItem(PROC_KEY)
-    if (raw) return new Set(JSON.parse(raw))
-  } catch {}
-  return new Set()
+  return new Set(readSaved()?.procs ?? [])
 }
 
 /** Tells every component using this hook that the done procedures changed (they each keep their own copy) */
 const PROCS_EVENT = 'quest-procs-changed'
 
 function saveProcs(procs: Set<string>) {
-  try { sessionStorage.setItem(PROC_KEY, JSON.stringify([...procs])) } catch {}
+  writeSaved({ procs: [...procs] })
   try { window.dispatchEvent(new Event(PROCS_EVENT)) } catch {}
 }
 
@@ -55,10 +76,9 @@ function initialStages(): StageState[] {
 
 function load(): StageState[] {
   try {
-    const raw = sessionStorage.getItem(KEY)
-    if (raw) {
+    const saved = readSaved()?.stages
+    if (saved) {
       // Saved progress may predate newly added stages — merge it into the current stage list
-      const saved: StageState[] = JSON.parse(raw)
       const byId = new Map(saved.map((s) => [s.id, s]))
       const merged = initialStages().map((s) => byId.get(s.id) ?? { ...s, status: 'locked' as const })
       const activeIdx = merged.findIndex((s) => s.status === 'active')
@@ -79,7 +99,7 @@ function load(): StageState[] {
 const STAGES_EVENT = 'quest-stages-changed'
 
 function save(stages: StageState[]) {
-  try { sessionStorage.setItem(KEY, JSON.stringify(stages)) } catch {}
+  writeSaved({ stages })
   try { window.dispatchEvent(new Event(STAGES_EVENT)) } catch {}
 }
 
@@ -90,11 +110,15 @@ export function useQuestProgress() {
   useEffect(() => {
     const on = () => setDoneProcedures(loadProcs())
     const onStages = () => setStages(load())
+    // another world is another journey: read its own progress
+    const onWorld = () => { on(); onStages() }
     window.addEventListener(PROCS_EVENT, on)
     window.addEventListener(STAGES_EVENT, onStages)
+    const unsubscribe = subscribeWorld(onWorld)
     return () => {
       window.removeEventListener(PROCS_EVENT, on)
       window.removeEventListener(STAGES_EVENT, onStages)
+      unsubscribe()
     }
   }, [])
 
@@ -147,12 +171,17 @@ export function useQuestProgress() {
     setDoneProcedures(new Set(current))
   }
 
-  function resetProcs() {
-    saveProcs(new Set())
+  /** A new journey in this world: its progress is gone, and its 10 hours start again */
+  function reset() {
+    removeStored(keyOf())
+    const fresh = initialStages()
+    setStages(fresh)
     setDoneProcedures(new Set())
+    try {
+      window.dispatchEvent(new Event(STAGES_EVENT))
+      window.dispatchEvent(new Event(PROCS_EVENT))
+    } catch {}
   }
-
-  function reset() { update(initialStages()); resetProcs() }
 
   function resetOptionals() {
     const next = load().map((s) =>
