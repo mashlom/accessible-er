@@ -170,11 +170,13 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
         <>
           <div className={`${css.worldTileH} ${css.worldTileHLeft} ${theme.design?.mirrorAbove === false ? css.worldTileHFade : ''}`} aria-hidden>
             <div className={css.worldSideBgW} />
-            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} style={sideBg[0] ? { background: sideBg[0] } : undefined} />
+            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} />
+            <div className={css.worldSideColour} style={sideBg[0] ? { background: sideBg[0] } : undefined} />
           </div>
           <div className={`${css.worldTileH} ${css.worldTileHRight} ${theme.design?.mirrorAbove === false ? css.worldTileHFade : ''}`} aria-hidden>
             <div className={css.worldSideBgW} />
-            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} style={sideBg[1] ? { background: sideBg[1] } : undefined} />
+            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} />
+            <div className={css.worldSideColour} style={sideBg[1] ? { background: sideBg[1] } : undefined} />
           </div>
         </>
       )}
