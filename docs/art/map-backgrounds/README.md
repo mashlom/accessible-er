@@ -11,7 +11,7 @@ monitor, shows real landscape.
 | Picture | Today | New size | Frame with the stations (keep as it is) |
 | --- | --- | --- | --- |
 | Landscape (`map-landscape`) | 1920 x 1080 | **2560 x 1920** | 1920 x 1080, at the **bottom, centred** (x 320 to 2240, y 840 to 1920) |
-| Portrait (`map-portrait`) | 824 x 2200 | **2200 x 2200** | 824 x 2200, **centred** (x 688 to 1512) |
+| Portrait (`map-portrait`) | 824 x 2200 | **2200 x 2800** | 824 x 2200, at the **bottom, centred** (x 688 to 1512, y 600 to 2800) |
 
 Together they cover every screen shape from a tall phone up to a square window (portrait) and from a square window
 up to a wide 21:9 monitor (landscape).
@@ -41,7 +41,7 @@ coordinates inside the frame, so nothing inside it may move.
   night, space; for the ocean, the bright water near the surface), open and calm, with a few soft clouds or stars;
   no text. Where a picture has little sky of its own today (the dinosaurs: the mountains and trees reach the top),
   first let what is cut finish naturally (tree tops, mountain peaks, the pterodactyl's wings), then open up into
-  a wide sky. In the portrait pictures too, the top part above the first station stays sky.
+  a wide sky. In the portrait pictures, 600 px of the same open sky above the frame.
 - Same style as the worlds: soft 3D clay-and-felt miniature, matte textures, warm soft light from the top left,
   pastel colours, no outlines.
 
