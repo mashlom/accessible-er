@@ -168,7 +168,8 @@ export function WorldNightMapPage({ underSheet }: { underSheet?: boolean } = {})
       label: skin?.label ?? data?.title ?? s.id,
       status: s.status === 'done' ? 'done' : i === firstOpen ? 'active' : 'locked',
       image: stationPicture(design, s.id),
-      stars: starsFor(data?.procedureIds, s.id, doneProcedures),
+      // stars only on a finished station (stars left from an earlier choice don't count)
+      stars: s.status === 'done' ? starsFor(data?.procedureIds, s.id, doneProcedures) : 0,
       onOpen: () => navigate(conceptPath(`/stage/${s.id}`)),
     }
   })

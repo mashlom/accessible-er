@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { journeyStages } from '../../data/journey'
 
 /** Required stage ids in order */
 export const REQUIRED_STAGES = ['reception', 'wait-before-triage', 'triage', 'wait-doctor', 'doctor'] as const
@@ -160,6 +161,11 @@ export function useQuestProgress() {
         : s
     )
     update(next)
+    // their stars go with them: the procedures done there (or the station itself, when it has none)
+    const gone = new Set<string>(OPTIONAL_STAGES.flatMap((id) => [id, ...(journeyStages.find((j) => j.id === id)?.procedureIds ?? [])]))
+    const procs = new Set([...loadProcs()].filter((p) => !gone.has(p)))
+    saveProcs(procs)
+    setDoneProcedures(procs)
   }
 
   const visible = stages.filter((s) => s.visible)
