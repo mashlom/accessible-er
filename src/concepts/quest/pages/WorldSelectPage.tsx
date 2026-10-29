@@ -54,7 +54,7 @@ export function WorldSelectPage() {
             <span className={css.worldCardName}>{name}</span>
             <span className={css.worldCardCta}>
               <span className={css.worldCardArrow} aria-hidden>↖</span>
-              {t('ui.buttons.startJourney')}
+              {t('ui.buttons.playWorld')}
             </span>
           </button>
           )

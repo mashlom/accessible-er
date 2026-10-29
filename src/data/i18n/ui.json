@@ -29,7 +29,7 @@
       "oceanHardNow": "💙 It's hard for us",
       "happyEnd": "Happy ending",
       "chooseWorldAria": "Choose a world:",
-      "startJourney": "Start the journey",
+      "playWorld": "Play in this world",
       "parentInfo": "More info for parents",
       "selectProcedures": "Choose the checks",
       "discharge": "🏠 Go home",
@@ -421,7 +421,16 @@
     "worldChoiceParent": {
       "title": "Choose a world and start playing",
       "text": "Here you get to know the ER visit through play. Choose a world to start.",
-      "about": "About “How are you?”"
+      "about": "About “How are you?”",
+      "worlds": {
+        "dino": "Get to know the ER visit through play in the world of the dinosaurs.",
+        "dollhouse": "Get to know the ER visit through play in the world of the dollhouse.",
+        "fairy": "Get to know the ER visit through play in the world of the magic garden.",
+        "knight": "Get to know the ER visit through play in the world of the castle.",
+        "ocean": "Get to know the ER visit through play in the underwater world.",
+        "safari": "Get to know the ER visit through play in the world of the safari.",
+        "space": "Get to know the ER visit through play in the world of space."
+      }
     }
   },
   "ru": {
@@ -454,7 +463,7 @@
       "oceanHardNow": "💙 Нам тяжело",
       "happyEnd": "Счастливый конец",
       "chooseWorldAria": "Выбрать мир:",
-      "startJourney": "В путь!",
+      "playWorld": "Играть в этом мире",
       "parentInfo": "Подробнее для родителя",
       "selectProcedures": "Выбор процедур",
       "discharge": "🏠 Выписка домой",
@@ -846,7 +855,16 @@
     "worldChoiceParent": {
       "title": "Выберите мир и начните играть",
       "text": "Здесь можно познакомиться с визитом в приёмный покой через игру. Выберите мир, чтобы начать.",
-      "about": "Об инструменте «Как вы?»"
+      "about": "Об инструменте «Как вы?»",
+      "worlds": {
+        "dino": "Знакомимся с визитом в приёмный покой через игру в мире динозавров.",
+        "dollhouse": "Знакомимся с визитом в приёмный покой через игру в мире кукольного домика.",
+        "fairy": "Знакомимся с визитом в приёмный покой через игру в мире волшебного сада.",
+        "knight": "Знакомимся с визитом в приёмный покой через игру в мире замка.",
+        "ocean": "Знакомимся с визитом в приёмный покой через игру в подводном мире.",
+        "safari": "Знакомимся с визитом в приёмный покой через игру в мире сафари.",
+        "space": "Знакомимся с визитом в приёмный покой через игру в мире космоса."
+      }
     }
   },
   "he": {
@@ -913,7 +931,7 @@
       "selectProcedures": "בחירת בדיקות",
       "happyEnd": "סוף טוב",
       "chooseWorldAria": "בחר עולם:",
-      "startJourney": "להתחיל במסע",
+      "playWorld": "למשחק בעולם הזה",
       "interesting": "מעניין"
     },
     "shell": {
@@ -1271,7 +1289,16 @@
     "worldChoiceParent": {
       "title": "בוחרים עולם ומתחילים לשחק",
       "text": "כאן מכירים את הביקור במיון דרך משחק. בחרו עולם כדי להתחיל.",
-      "about": "להסבר על מה שלומי?"
+      "about": "להסבר על מה שלומי?",
+      "worlds": {
+        "dino": "מכירים את הביקור במיון דרך משחק בעולם הדינוזאורים.",
+        "dollhouse": "מכירים את הביקור במיון דרך משחק בעולם בית הבובות.",
+        "fairy": "מכירים את הביקור במיון דרך משחק בעולם גן הקסמים.",
+        "knight": "מכירים את הביקור במיון דרך משחק בעולם הטירה.",
+        "ocean": "מכירים את הביקור במיון דרך משחק בעולם התת-ימי.",
+        "safari": "מכירים את הביקור במיון דרך משחק בעולם הספארי.",
+        "space": "מכירים את הביקור במיון דרך משחק בעולם החלל."
+      }
     }
   }
 }

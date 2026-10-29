@@ -7,7 +7,8 @@ import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { PARENT_WORLD, useParentTheme as useQuestTheme } from '../useQuestTheme'
-import { designVars, getTheme } from '../themes'
+import { designVars, getTheme, themes } from '../themes'
+import { worldText, type WorldLang } from '../../../data/child/worlds'
 import { ProcedureLineIcon } from './ProcedureLineIcon'
 import { keyed } from '../../../lib/keyed'
 import homeTexts from '../../../data/parent/home.json'
@@ -101,6 +102,14 @@ export function WorldChoiceParentSheet({ onClose }: { onClose: () => void }) {
           <h2>{t('ui.worldChoiceParent.title')}</h2>
           <p>{t('ui.worldChoiceParent.text')}</p>
           <a href="#/" className={css.calmLink}>{t('ui.worldChoiceParent.about')}</a>
+        </section>
+        {/* every world follows the same route: what each one is, in one line */}
+        <section className={css.sheetCard}>
+          {themes.map((w) => (
+            <p key={w.id}>
+              <strong>{worldText(w.id, lang as WorldLang)?.name ?? w.name}:</strong> {t(`ui.worldChoiceParent.worlds.${w.id}`)}
+            </p>
+          ))}
         </section>
       </div>
     </div>
