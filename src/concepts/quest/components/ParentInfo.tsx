@@ -69,7 +69,7 @@ export function ParentInfo({ stageId: stageOverride, inline, initialProc, sheet,
 
 /** The parent's sheet on the world choice: what this part of the app is, and the way to the home page */
 export function WorldChoiceParentSheet({ onClose }: { onClose: () => void }) {
-  const { t, lang } = useI18n()
+  const { t, lang, dir } = useI18n()
   const home = keyed(homeTexts[lang as keyof typeof homeTexts] ?? homeTexts.he, 'parent/home')
   const closeRef = useRef<HTMLButtonElement>(null)
   useEffect(() => {
@@ -88,6 +88,9 @@ export function WorldChoiceParentSheet({ onClose }: { onClose: () => void }) {
       <div
         className={`${css.sheet} ${css.worldSheet}`}
         style={designVars(getTheme(PARENT_WORLD).design)}
+        // the sheet is drawn outside the shell (in the page body), so it takes the language's direction itself
+        dir={dir}
+        lang={lang}
         role="dialog"
         aria-modal="true"
         aria-label={t('ui.buttons.parentInfo')}
