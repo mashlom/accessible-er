@@ -425,7 +425,7 @@
       ]
     },
     "ui": {
-      "decision": "The wizard's decision →",
+      "decision": "Wizard decides →",
       "decisionTitle": "The wizard's decision"
     }
   },

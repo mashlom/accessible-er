@@ -425,7 +425,7 @@
       "We can also count slowly to ten together. One… two… three…"
     ],
     "ui": {
-      "decision": "The healing fairy's decision →",
+      "decision": "Fairy decides →",
       "decisionTitle": "The healing fairy's decision"
     }
   },

@@ -425,7 +425,7 @@
       "We can also count slowly to ten together. One… two… three…"
     ],
     "ui": {
-      "decision": "What the teddy doctor decided →",
+      "decision": "Teddy doctor decides →",
       "decisionTitle": "What the teddy doctor decided"
     }
   },
