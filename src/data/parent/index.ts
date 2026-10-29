@@ -39,7 +39,7 @@ import { getProcedure } from '../procedures'
 import { procedureSteps } from '../child/procedures'
 import type { JourneyStage, Procedure } from '../types'
 
-/** A time code from the data ("t10-20") as its number ("10–20") and the unit of the language ("минут"); other texts ("около минуты") as they are. */
+/** A time code from the data ("t10-20") as its number ("10–20") and the unit of the language ("minutes"); other texts ("about a minute") as they are. */
 function withUnit(lang: ParentLang, text: string | undefined): string | undefined {
   if (!text) return text
   const number = TIMES[text]
