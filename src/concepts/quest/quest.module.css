@@ -3346,3 +3346,9 @@ path.worldTrailLit {
   white-space: nowrap;
   text-decoration: none;
 }
+
+/* the parent's button in the middle of the world choice's top bar */
+.questTopParent {
+  justify-self: center;
+  margin: 0;
+}

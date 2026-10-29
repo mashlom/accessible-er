@@ -1,5 +1,6 @@
 import { lockBodyScroll } from '../../../lib/scrollLock'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { Link } from '../../nav'
 import { SensoryBar } from '../../../components/SensoryBar'
 import { parentJourney, parentProcedure } from '../../../data/parent'
@@ -8,6 +9,8 @@ import { useI18n } from '../../../hooks/useI18n'
 import { PARENT_WORLD, useParentTheme as useQuestTheme } from '../useQuestTheme'
 import { designVars, getTheme } from '../themes'
 import { ProcedureLineIcon } from './ProcedureLineIcon'
+import { keyed } from '../../../lib/keyed'
+import homeTexts from '../../../data/parent/home.json'
 import css from '../quest.module.css'
 
 /** Open-book icon from the ocean mockup (drawn inside a 24×24 circle at 33,888 in the frame) */
@@ -21,9 +24,12 @@ interface ParentInfoProps {
   inline?: boolean
   /** Open straight on this procedure's details (from the procedure's own child page) */
   initialProc?: string
+  /** A screen that isn't a stage (the world choice): its own sheet instead of the stage's */
+  sheet?: (onClose: () => void) => ReactNode
+  className?: string
 }
 
-export function ParentInfo({ stageId: stageOverride, inline, initialProc }: ParentInfoProps) {
+export function ParentInfo({ stageId: stageOverride, inline, initialProc, sheet, className }: ParentInfoProps) {
   const [open, setOpen] = useState(false)
   const { t } = useI18n()
   const { active } = useQuestProgress()
@@ -42,7 +48,7 @@ export function ParentInfo({ stageId: stageOverride, inline, initialProc }: Pare
       <button
         ref={triggerRef}
         type="button"
-        className={inline ? `${css.parentBtnOcean} ${css.parentBtnOceanInline}` : css.parentBtnOcean}
+        className={[css.parentBtnOcean, inline ? css.parentBtnOceanInline : '', className ?? ''].join(' ')}
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
       >
@@ -54,8 +60,50 @@ export function ParentInfo({ stageId: stageOverride, inline, initialProc }: Pare
           </svg>
         </span>
       </button>
-      {open && <ParentSheet stageId={stageId} onClose={close} initialProc={initialProc} />}
+      {/* a screen's own sheet goes to the page body: the top bar it is opened from would clip it */}
+      {open && (sheet ? createPortal(sheet(close), document.body) : <ParentSheet stageId={stageId} onClose={close} initialProc={initialProc} />)}
     </>
+  )
+}
+
+/** The parent's sheet on the world choice: what this part of the app is, and the way to the home page */
+export function WorldChoiceParentSheet({ onClose }: { onClose: () => void }) {
+  const { t, lang } = useI18n()
+  const home = keyed(homeTexts[lang as keyof typeof homeTexts] ?? homeTexts.he, 'parent/home')
+  const closeRef = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    closeRef.current?.focus()
+    const unlock = lockBodyScroll()
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
+    window.addEventListener('keydown', onKey)
+    return () => {
+      unlock()
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [onClose])
+
+  return (
+    <div className={css.sheetBackdrop} onClick={onClose}>
+      <div
+        className={`${css.sheet} ${css.worldSheet}`}
+        style={designVars(getTheme(PARENT_WORLD).design)}
+        role="dialog"
+        aria-modal="true"
+        aria-label={t('ui.buttons.parentInfo')}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button ref={closeRef} type="button" className={css.sheetHandle} onClick={onClose} aria-label={t('ui.buttons.close')}>
+          <span aria-hidden />
+        </button>
+        <section className={css.sheetCard}>
+          {/* the label is the home page's own words: the child's world / games in the ER */}
+          <p className={css.sheetHint}>{home.childLabel} / {home.start.title}</p>
+          <h2>{t('ui.worldChoiceParent.title')}</h2>
+          <p>{t('ui.worldChoiceParent.text')}</p>
+          <a href="#/" className={css.calmLink}>{t('ui.worldChoiceParent.about')}</a>
+        </section>
+      </div>
+    </div>
   )
 }
 
