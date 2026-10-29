@@ -1,3 +1,10 @@
+/**
+ * The worlds of the quest. Each world is a folder src/data/child/worlds/<world>/ with two files:
+ *   world.json  — the look: colours, pictures, and (for a designed world) the map scenes and the sheets
+ *   texts.json  — the words, in every language (read by useQuestTheme)
+ * A new world is a new folder; no code changes. See src/data/child/worlds/README.md.
+ */
+
 export interface StageTheme {
   /** text fields are optional: a world may keep them in its child texts file instead */
   label?: string
@@ -10,8 +17,105 @@ export interface StageTheme {
   heroImage?: string
 }
 
+export type Pt = [number, number]
+/** Coordinates are in the scene's units: picture box (x, y, w, h) and the number badge's center */
+export type Slot = { x: number; y: number; w: number; h: number; badge: Pt; flip?: boolean }
+/** A trail: its points, or a cubic Bezier (four points) that is turned into points */
+export type Trail = Pt[] | { bezier: [Pt, Pt, Pt, Pt] }
+
+/** A map scene drawn in the units of its design frame (a portrait frame such as 412×939, a landscape one such as 1920×1080) */
+export interface Scene {
+  W: number
+  H: number
+  slots: Slot[]
+  /** Dotted trails, one per station (trail i leaves station i) */
+  dots?: Trail[]
+  /** Dashed trails */
+  lines?: Trail[]
+  /** CSS variables in frame units: background box (--bg-x/y/w/h, --bg-rot, --bg-sx), title pill (--title-*),
+   *  badge and star sizes (--badge, --badge-fs, --star), the top gradient (--grad-y/h), --map-bg, --title-bg */
+  vars: Record<string, string | number>
+}
+
+/** How a station's picture stands on its sheet */
+export type SheetPanel =
+  /** on the sea-floor panel, with bubbles behind it */
+  | 'bubbles'
+  /** cut straight at one edge and pushed off the sheet's edge (mirrored on the landscape map) */
+  | 'bleed'
+  /** on the panel, no bubbles */
+  | 'plain'
+  /** a small golden symbol in the middle of the panel */
+  | 'symbol'
+  /** a whole scene (the place as seen by someone standing in it) filling the panel */
+  | 'scene'
+
+export interface StationDesign {
+  /** The picture on the map */
+  map: string
+  /** The picture on the station's sheet (falls back to map) */
+  sheet?: string
+  panel?: SheetPanel
+  /** The picture on the card of the choice sheet (falls back to sheet, then map) */
+  choice?: string
+}
+
+export interface WorldDesign {
+  assets: {
+    /** The map's background picture (the scenes place it with --bg-*) */
+    background: string
+    /** The landscape map's own background, if it is a different picture (else `background`) */
+    backgroundWide?: string
+    /** The sheet's picture panel: a veil over a floor picture */
+    sheetFade?: string
+    sheetSeabed?: string
+  }
+  /** Design tokens. text/text2/action/page/card/mint/blue/coral/yellow for the sheets and the world's screens;
+   *  water (behind the landscape map), waterTop (the gradient at the top of the map), waterLight (behind the
+   *  portrait map); progress: the colours of the progress sticks, alternating */
+  /** The colours, each one a `--w-<name>` variable on the shell (`trail`: the dots of the route, white by default) */
+  colors: Record<string, string> & { progress?: string[] }
+  /** The pictures of each station (every required and optional stage, and 'decision' for the ending) */
+  stations: Record<string, StationDesign>
+  /** Shape of the station pictures used on the second map: width/height, and how much of the width is the
+   *  visible object and how far below the top it starts (the pictures have margins) */
+  images: Record<string, { aspect: number; visible?: number; lift?: number }>
+  /** Landscape: on a window taller than the scene, the space above it shows the scene's top mirrored (the
+   *  default); false leaves it the plain `water` colour (for a picture whose top is a plain sky) */
+  mirrorAbove?: boolean
+  /** Bubbles behind a picture on its sheet: centre (x, y) and diameter in % of the panel */
+  bubbles?: { x: number; y: number; d: number }[]
+  /** The first map: the required stations, as drawn in the designer's frames */
+  dayMap: { portrait: Scene; landscape: Scene }
+  /** The second map: built from the stations the doctor ordered */
+  nightMap: {
+    portrait: {
+      /** Where the shore meets the right edge on the background picture (the ending stands on it) */
+      shoreY: number
+      /** Width of the ending's picture */
+      finaleWidth: number
+      /** The ending's picture is mirrored (the ocean's pier points into the sea); default true */
+      finaleFlip?: boolean
+      vars: Scene['vars']
+    }
+    landscape: {
+      /** The places of the ordered stations, in order: visible width, centre x, top, and the number's place */
+      places: { cx: number; top: number; visible: number; badge: Pt }[]
+      /** Control points of the trails between consecutive places */
+      curves: [Pt, Pt][]
+      /** The ending's picture box (its height follows from the picture's shape) */
+      finale: Omit<Slot, 'h'>
+      /** The trail from the last station to the ending: its end, and the control points relative to start / end */
+      finaleTrail: { end: Pt; c1: Pt; c2: Pt }
+      vars: Scene['vars']
+    }
+  }
+}
+
 export interface QuestTheme {
   id: string
+  /** Place on the world select screen */
+  order?: number
   /** the world's name: from src/data/child/worlds/<world>/texts.json (this is only a fallback) */
   name?: string
   emoji: string
@@ -40,6 +144,8 @@ export interface QuestTheme {
   completedColor: string
   /** Per-stage overrides — only required stages need entries */
   stages: Record<string, StageTheme>
+  /** A designed world (the ocean's layout: drawn maps and sheets). Without it the world uses the simple screens. */
+  design?: WorldDesign
   /** Short flavour text shown on procedure detail pages in this world */
   procedureNarratives?: Record<string, string>
   /** World-flavoured step-by-step story overriding the neutral steps from procedures.ts */
@@ -47,183 +153,34 @@ export interface QuestTheme {
   procedureVariants?: Record<string, { label: string; steps: string[] }[]>
   /** Lines shown in the child zone of CalmPage — themed calming message for the child */
   calmLines?: string[]
-  /** Title and subtitle shown in the hero zone of CardPage — themed framing for the child */
   /** Title shown in the hero zone of DistractPage — themed framing for the child */
   distractTitle?: string
+  /** The world's own wording for the designed screens' buttons and titles (from its texts.json) */
+  ui?: { done?: string; decision?: string; decisionTitle?: string; headline?: string }
 }
 
-export const themes: QuestTheme[] = [
-  {
-    id: 'knight',
-    emoji: '⚔️',
-    doneEmoji: '🪙',
-    shopImage: '/worlds/knight/shop.JPEG',
-    bg: '/worlds/knight/castle_v.jpg',
-    bgLandscape: '/worlds/knight/castle_h.jpeg',
-    nightBg: '/worlds/knight/night_castle.JPEG',
-    thumbnail: '/worlds/knight/castle.png',
-    thumbnailOverlay: '/worlds/knight/knight.png',
-    accent: '#7b4f28',
-    accentSoft: '#f5e6d0',
-    accentText: '#ffffff',
-    completedColor: '#c9a84c',
-    stages: {
-      reception: {icon: '🏰',image: '/worlds/knight/tower.jpg' },
-      'wait-before-triage': {icon: '🛡️',},
-      triage: {icon: '⚔️',image: '/worlds/knight/tests.jpeg' },
-      'wait-doctor': {icon: '🚪',image: '/worlds/knight/door.JPEG' },
-      doctor: {icon: '🧙',image: '/worlds/knight/wizard.JPEG' },
-      decision: {icon: '🏆',image: '/worlds/knight/celebrating.jpg' },
-      // secret rooms
-      tests: {icon: '🪄',image: '/worlds/knight/rentgen.jpeg' },
-      treatment: {icon: '🔧',image: '/worlds/knight/procedures.jpeg' },
-      consult: {icon: '📜',image: '/worlds/knight/wizard2.JPEG' },
-      'wait-results': {icon: '🔮',image: '/worlds/knight/wait.JPEG' },
-    },
-  },
-  {
-    id: 'dino',
-    emoji: '🦕',
-    doneEmoji: '⭐',
-    shopImage: '/worlds/knight/shop.JPEG',
-    bg: '',
-    thumbnail: '/worlds/dino/dino.jpeg',
-    accent: '#4a7c3f',
-    accentSoft: '#dcefd8',
-    accentText: '#ffffff',
-    completedColor: '#8bc34a',
-    stages: {
-      reception: {icon: '🌿',},
-      'wait-before-triage': {icon: '🦕',},
-      triage: {icon: '🔭',},
-      'wait-doctor': {icon: '🏕️',},
-      doctor: {icon: '🦖',},
-      decision: {icon: '🌋',},
-      tests: {icon: '🧪',},
-      treatment: {icon: '🩹',},
-      consult: {icon: '🗺️',},
-      'wait-results': {icon: '⏳',},
-    },
-  },
-  {
-    id: 'fairy',
-    doneEmoji: '⭐',
-    shopImage: '/worlds/knight/shop.JPEG',
-    emoji: '🧚',
-    bg: '/worlds/fairy/6bf9b600-f83d-4d9e-90ce-4233e11f4b30.JPEG',
-    accent: '#9c5ab5',
-    accentSoft: '#f0e0f7',
-    accentText: '#ffffff',
-    completedColor: '#d4a8e8',
-    stages: {
-      reception: {icon: '🌸',},
-      'wait-before-triage': {icon: '🦋',},
-      triage: {icon: '✨',},
-      'wait-doctor': {icon: '🌺',},
-      doctor: {icon: '🧚',},
-      decision: {icon: '🌟',},
-      tests: {icon: '🔮',},
-      treatment: {icon: '🪄',},
-      consult: {icon: '🌈',},
-      'wait-results': {icon: '💫',},
-    },
-  },
-  {
-    id: 'space',
-    emoji: '🚀',
-    doneEmoji: '⭐',
-    shopImage: '/worlds/knight/shop.JPEG',
-    bg: '/worlds/space/space.jpg',
-    accent: '#1a3a6b',
-    accentSoft: '#d0dcf5',
-    accentText: '#ffffff',
-    completedColor: '#5c8de8',
-    stages: {
-      reception: {icon: '🛸',},
-      'wait-before-triage': {icon: '🧑‍🚀',},
-      triage: {icon: '📡',},
-      'wait-doctor': {icon: '🌍',},
-      doctor: {icon: '👨‍🚀',},
-      decision: {icon: '🌙',},
-      tests: {icon: '🔭',},
-      treatment: {icon: '🔧',},
-      consult: {icon: '📻',},
-      'wait-results': {icon: '💻',},
-    },
-  },
-  {
-    id: 'safari',
-    doneEmoji: '⭐',
-    shopImage: '/worlds/knight/shop.JPEG',
-    emoji: '🦁',
-    bg: '/worlds/safari/safari.JPEG',
-    accent: '#b5720a',
-    accentSoft: '#fcefd0',
-    accentText: '#ffffff',
-    completedColor: '#e8a825',
-    stages: {
-      reception: {icon: '⛺',},
-      'wait-before-triage': {icon: '🌳',},
-      triage: {icon: '🎒',},
-      'wait-doctor': {icon: '🦁',},
-      doctor: {icon: '🐘',},
-      decision: {icon: '🌅',},
-      tests: {icon: '🔬',},
-      treatment: {icon: '🩹',},
-      consult: {icon: '🦒',},
-      'wait-results': {icon: '🕐',},
-    },
-  },
-  {
-    id: 'ocean',
-    doneEmoji: '⭐',
-    // the picture of the celebration and shop screens: the sea floor of the sheets
-    shopImage: '/worlds/ocean/sheet-seabed.jpg',
-    emoji: '🐠',
-    bg: '/worlds/ocean/underwater.png',
-    thumbnailOverlay: '/worlds/ocean/station-sub.png',
-    // Shevi's colour tokens: primary action #087E8B, information areas #E5F2F7
-    accent: '#087e8b',
-    accentSoft: '#e5f2f7',
-    accentText: '#ffffff',
-    completedColor: '#25b8e8',
-    stages: {
-      reception: { icon: '⚓', image: '/worlds/ocean/station-house.png' },
-      'wait-before-triage': { icon: '/worlds/ocean/station-sub.png' },
-      triage: { icon: '🤿', heroImage: '/worlds/ocean/station-pod.png' },
-      'wait-doctor': { icon: '🐟' },
-      doctor: { icon: '🐙' },
-      decision: { icon: '🌊' },
-      tests: { icon: '📡' },
-      treatment: { icon: '🔧' },
-      consult: { icon: '📻' },
-      'wait-results': { icon: '💾' },
-    },
-  },
-  {
-    id: 'dollhouse',
-    emoji: '🏠',
-    bg: '',
-    thumbnail: '/worlds/dollhouse/dollhouse.png',
-    accent: '#c2618f',
-    accentSoft: '#fbe6ef',
-    accentText: '#ffffff',
-    completedColor: '#e0a8c4',
-    stages: {
-      reception: {icon: '📋',},
-      'wait-before-triage': {icon: '🛋️',},
-      triage: {icon: '🧸',},
-      'wait-doctor': {icon: '🪑',},
-      doctor: {icon: '🩺',},
-      decision: {icon: '🏡',},
-      tests: {icon: '🔬',},
-      treatment: {icon: '💊',},
-      consult: {icon: '🧑‍⚕️',},
-      'wait-results': {icon: '🕰️',},
-    },
-  },
-]
+const files = import.meta.glob<QuestTheme>('../../../data/child/worlds/*/world.json', { eager: true, import: 'default' })
+
+export const themes: QuestTheme[] = Object.values(files).sort(
+  (a, b) => (a.order ?? 99) - (b.order ?? 99) || a.id.localeCompare(b.id),
+)
 
 export function getTheme(id: string): QuestTheme {
   return themes.find((t) => t.id === id) ?? themes[0]
+}
+
+/** The design's pictures and colours as CSS variables (--w-*), read by the designed screens' styles in quest.module.css */
+export function designVars(design: WorldDesign | undefined): React.CSSProperties {
+  if (!design) return {}
+  const vars: Record<string, string> = {}
+  const url = (src?: string) => (src ? `url('${src}')` : 'none')
+  vars['--w-background'] = url(design.assets.background)
+  vars['--w-background-wide'] = url(design.assets.backgroundWide ?? design.assets.background)
+  vars['--w-sheet-fade'] = url(design.assets.sheetFade)
+  vars['--w-sheet-floor'] = url(design.assets.sheetSeabed)
+  for (const [k, v] of Object.entries(design.colors)) {
+    if (typeof v === 'string') vars[`--w-${k}`] = v
+  }
+  design.colors.progress?.forEach((c, i) => (vars[`--w-progress-${i + 1}`] = c))
+  return vars as React.CSSProperties
 }

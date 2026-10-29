@@ -208,7 +208,11 @@
       "רגע, נושמים יחד 💙",
       "קשה עכשיו? זה בסדר גמור. אני כאן.",
       "אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…"
-    ]
+    ],
+    "ui": {
+      "decision": "החלטת פיית הריפוי ←",
+      "decisionTitle": "החלטת פיית הריפוי"
+    }
   },
   "en": {
     "name": "Magic Garden",
@@ -419,7 +423,11 @@
       "A moment — let's breathe together 💙",
       "Is it hard right now? That's completely okay. I'm here.",
       "We can also count slowly to ten together. One… two… three…"
-    ]
+    ],
+    "ui": {
+      "decision": "The healing fairy's decision →",
+      "decisionTitle": "The healing fairy's decision"
+    }
   },
   "ru": {
     "name": "Волшебный сад",
@@ -630,6 +638,10 @@
       "Минутку — дышим вместе 💙",
       "Сейчас трудно? Это совершенно нормально. Я рядом.",
       "Можно ещё медленно посчитать со мной до десяти. Один… два… три…"
-    ]
+    ],
+    "ui": {
+      "decision": "Решение феи-целительницы →",
+      "decisionTitle": "Решение феи-целительницы"
+    }
   }
 }

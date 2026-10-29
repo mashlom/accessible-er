@@ -1,4 +1,5 @@
-import { Link } from '../../nav'
+import { useGoBackTo } from '../../nav'
+import { WORLD_SELECT } from '../components/WorldScope'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
@@ -9,6 +10,7 @@ export function ShopPage() {
   const { t } = useI18n()
   const { reset, doneProcedures } = useQuestProgress()
   const doneCount = doneProcedures.size
+  const goBackTo = useGoBackTo()
 
   return (
     <div className={css.shopPage} style={{ background: '#000' }}>
@@ -23,15 +25,16 @@ export function ShopPage() {
         </p>
       )}
       <div className={css.shopActions}>
-        <Link to="/">
-          <button
-            className={css.backBtn}
-            style={{ borderColor: theme.accent, color: theme.accent, background: 'rgba(255,255,255,0.9)' }}
-            onClick={reset}
-          >
-            {t('ui.buttons.chooseWorld')}
-          </button>
-        </Link>
+        <button
+          className={css.backBtn}
+          style={{ borderColor: theme.accent, color: theme.accent, background: 'rgba(255,255,255,0.9)' }}
+          onClick={() => {
+            reset()
+            goBackTo(WORLD_SELECT, { absolute: true })
+          }}
+        >
+          {t('ui.buttons.chooseWorld')}
+        </button>
       </div>
     </div>
   )

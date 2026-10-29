@@ -19,11 +19,8 @@ export function WorldSelectPage() {
     navigate(conceptPath(`/${id}`))
   }
 
-  const ORDER = ['ocean', 'knight', 'dollhouse', 'dino', 'fairy', 'safari', 'space']
-  const ordered = [
-    ...ORDER.map((id) => themes.find((t) => t.id === id)!).filter(Boolean),
-    ...themes.filter((t) => !ORDER.includes(t.id)),
-  ]
+  // the worlds come in their own order (world.json, order)
+  const ordered = themes
 
   return (
     <div className={css.selectPage}>

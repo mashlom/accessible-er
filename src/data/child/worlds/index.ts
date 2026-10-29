@@ -13,6 +13,8 @@ export interface WorldText {
   procedureVariants?: Record<string, { label: string; steps: string[] }[]>
   calmLines?: string[]
   distractTitle?: string
+  /** The world's own wording on the designed screens (the main buttons, the choice sheet's title, the map's headline) */
+  ui?: { done?: string; decision?: string; decisionTitle?: string; headline?: string }
 }
 
 const files = import.meta.glob<Partial<Record<WorldLang, WorldText>>>('./*/texts.json', { eager: true, import: 'default' })

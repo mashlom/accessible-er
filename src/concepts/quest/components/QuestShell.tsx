@@ -1,6 +1,7 @@
-import { Outlet, useNavigate, useLocation } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { useLayoutEffect } from 'react'
-import { Link, useIsConceptHome } from '../../nav'
+import { Link, useBack, useIsConceptHome } from '../../nav'
+import { designVars } from '../themes'
 import { REQUIRED_STAGES, useQuestProgress } from '../useQuestProgress'
 import { useQuestTheme } from '../useQuestTheme'
 import { LanguagePicker } from '../../../components/LanguagePicker'
@@ -18,13 +19,14 @@ import css from '../quest.module.css'
  * done and optional stages are revealed, it's the night map.
  */
 export function QuestShell() {
-  const navigate = useNavigate()
+  const back = useBack()
   const { pathname } = useLocation()
   const isHome = useIsConceptHome()
   const { active, visibleOptionals } = useQuestProgress()
   const { theme } = useQuestTheme()
   const { lang, dir, t } = useI18n()
-  const isOcean = theme.id === 'ocean' && !isHome
+  // a designed world (world.json has a design): its own map header, sheets and colours
+  const designed = !!theme.design && !isHome
 
   // translations are on for the whole child side (the worlds and their screens), not only for the ocean
   useLayoutEffect(() => {
@@ -36,18 +38,26 @@ export function QuestShell() {
   const mapTarget = dayActive || visibleOptionals.length === 0 ? '/map' : '/night-map'
   // the world's map: /quest/<world>/map, /quest/<world>/night-map or the world's own address /quest/<world>
   const isMapPage = /\/(night-)?map$/.test(pathname) || /^\/quest\/[^/]+\/?$/.test(pathname)
-  // The ocean day map carries its own language picker and menu link in its header row
-  const hideTopbar = isOcean && isMapPage
+  // the sheets over the map: the map under them is drawn with its own header
+  const isSheet = /\/(stage\/[^/]+|wait-times|procedures|procedure\/[^/]+)$/.test(pathname)
+  // A designed world's maps carry their own language picker and menu link in their header row
+  const hideTopbar = designed && (isMapPage || isSheet)
 
   return (
-    <div className={`${css.questShell} ${isOcean ? css.questShellOcean : ''}`} dir={dir} lang={lang}>
+    <div
+      className={`${css.questShell} ${designed ? css.questShellWorld : ''}`}
+      style={designed ? designVars(theme.design) : undefined}
+      dir={dir}
+      lang={lang}
+    >
       {/* Pinned RTL so the top bar doesn't flip when the language changes */}
-      {!hideTopbar && <header className={`${css.questTopbar} ${isOcean ? css.questTopbarOcean : ''} no-print`} dir="rtl">
+      {!hideTopbar && <header className={`${css.questTopbar} ${designed ? css.questTopbarWorld : ''} no-print`} dir="rtl">
         {!isHome ? (
           <button
             type="button"
             className={css.questTopBtn}
-            onClick={() => navigate(-1)}
+            // the previous screen; on the first screen of the visit (a link that was sent), the map
+            onClick={() => back(mapTarget)}
             aria-label={t('ui.buttons.back')}
           >
             <span aria-hidden>›</span>

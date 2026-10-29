@@ -12,7 +12,7 @@ Not exhaustive yet: this is the first inventory (2026-10-17).
 - Decision needed: move it out of the parent sheet, or keep it and mark it as child text.
 
 ## 2. The parent button on child screens
-- `ParentInfo` is rendered inside child sheets: `OceanStageSheet` (station sheet, line ~116) and `OceanProcedureDetailSheet` (child procedure page).
+- `ParentInfo` is rendered inside child sheets: `WorldStageSheet` (station sheet) and `WorldProcedureDetailSheet` (child procedure page).
 - The button text is for the parent; the sheet around it is for the child.
 - Decision needed: the parent button stays on the child sheet (as today), or it moves to a parent-only place.
 

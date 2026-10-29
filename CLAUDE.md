@@ -147,29 +147,57 @@ src/
 - השיחה נשמרת ב־`sessionStorage` (`talk-trail`) כרשימת מזהי צמתים בלבד — הטקסט
   נבנה מחדש מ־`resolveNode`, ואף הודעה לא נשמרת.
 
-### 4. `quest` — "מסע במלר״ד" (`#/quest`), עולם האוקיינוס
+### 4. `quest` — "מסע במלר״ד" (`#/quest`), העולמות
 
-קונספט של עולמות (`useQuestTheme`): בוחרים עולם, ומפת המסע מציגה תחנות. העולם
-הגמור והמעוצב לפי המוקאפ של שבי (Figma "Mashlom.me") הוא **האוקיינוס**
-("הרפתקה תת-ימית", `theme.id === 'ocean'`); שאר העולמות עדיין לא עובדו מחדש —
-**אל תיגעו בהם כשעובדים על האוקיינוס**.
+קונספט של עולמות (`useQuestTheme`): בוחרים עולם, ומפת המסע מציגה תחנות. **עולם הוא
+תיקייה של נתונים, לא קוד:** `src/data/child/worlds/<world>/` עם `world.json` (המראה:
+צבעים, תמונות, ולעולם מעוצב גם המפות והגיליונות) ו־`texts.json` (המילים, בכל השפות).
+עולם חדש = תיקייה חדשה + תמונות ב־`public/worlds/<world>/`; ראו
+[README של העולמות](src/data/child/worlds/README.md).
 
-- **מפות:** [OceanMapPage](src/concepts/quest/pages/OceanMapPage.tsx) (שלב 1, 5 תחנות)
-  ו־[OceanNightMapPage](src/concepts/quest/pages/OceanNightMapPage.tsx) (שלב 2, התחנות
-  שהרופא הורה + סוף טוב). הסצנה מצוירת ביחידות של מסגרת הפיגמה (אנכית 412×939, אופקית
-  1920×1080) עם `--u`.
+- **עולם מעוצב** הוא עולם שיש לו `design` ב־`world.json` (`theme.design`): **האוקיינוס**
+  ("הרפתקה תת-ימית"), לפי המוקאפ של שבי (Figma "Mashlom.me"), **האביר**, **הדינוזאורים**, **בית הבובות**, **הפיות**, **הספארי** ו**החלל** — על אותו מבנה,
+  באיורים שנוצרו ב־AI ונכנסו עם [import_world.py](scripts/art/import_world.py) (מ־manifest ו־PNG; הוא בודק מידות,
+  שקיפות וניגודיות). הציורים הקודמים שצוירו בקוד ([scripts/art/](scripts/art/)) נשארו כטיוטות ב־`scripts/art/build/`. עולם בלי
+  `design` מקבל את המסכים הפשוטים הישנים (רצועת תחנות ודפים). **אל תבדקו
+  `theme.id === 'ocean'` בקוד** — שאלו `theme.design`, וכל מה שספציפי לעולם הולך ל־JSON.
+- **מפות:** [WorldMapPage](src/concepts/quest/pages/WorldMapPage.tsx) (שלב 1, 5 תחנות,
+  `design.dayMap`) ו־[WorldNightMapPage](src/concepts/quest/pages/WorldNightMapPage.tsx)
+  (שלב 2, התחנות שהרופא הורה + סוף טוב, נבנית מ־`design.nightMap`). הסצנה מצוירת ביחידות
+  של מסגרת הפיגמה (אנכית 412×939, אופקית 1920×1080) עם `--u`.
 - **מעבר אנכי/אופקי:** `(min-aspect-ratio: 3/2), (min-width: 747px) and
   (min-aspect-ratio: 1/1)` — מוגדר גם ב־`useWide()` וגם ב־CSS, ושניהם חייבים להישאר
   זהים. טאבלט עומד נשאר באנכי. באנכי על חלון רחב הרקע מרוצף ותוכן הסצנה במרכז.
-- **גיליונות (sheets):** `OceanStageSheet`, `OceanProcedureSheet`,
-  `OceanProcedureDetailSheet`, ו־`ParentInfo` (`ocean`). כפתור ההורה תמיד **מתחת** לכפתורי
-  הילד. באופקי הגיליון הופך לפאנל צד בגובה מלא.
-- **צבעים:** טוקנים `--tok-*` מהפיגמה של שבי; מבטיחים ניגודיות קריאה.
-- **טקסטים:** מקור האמת הוא האפליקציה (`src/data/i18n/ocean.json`, `ui.json`), לא
-  הפיגמה. אין להמציא תוכן רפואי; הנוסחים לשלב השני עוברים בדיקה של צוות MLR.
+- **גיליונות (sheets):** `WorldStageSheet`, `WorldProcedureSheet`,
+  `WorldProcedureDetailSheet`, ו־`ParentInfo`. מתחת לגיליון המפה מצוירת עם השורה העליונה
+  שלה, אבל `inert`. כפתור ההורה תמיד **מתחת** לכפתורי הילד. באופקי הגיליון הופך לפאנל צד
+  בגובה מלא. התמונה של תחנה וצורת הפאנל שלה (`bubbles`/`bleed`/`plain`/`symbol`) —
+  ב־`design.stations`.
+- **צבעים:** `design.colors` הופכים למשתנים `--w-*` על ה־shell
+  ([designVars](src/concepts/quest/themes/index.ts)), ו־`--tok-*` ב־CSS קוראים מהם (ברירת
+  המחדל: הטוקנים של שבי לאוקיינוס). גיליון ההורה תמיד בצבעי ההורה (`PARENT_WORLD`).
+  שמות המחלקות ב־CSS הם `world*`.
+- **טקסטים:** מקור האמת הוא האפליקציה (`texts.json` של העולם, `ui.json`), לא הפיגמה.
+  ניסוח של עולם לכפתורים (`ui.done`, `ui.decision`, `ui.decisionTitle`, `ui.headline`)
+  ב־`texts.json` שלו. אין להמציא תוכן רפואי; הנוסחים לשלב השני עוברים בדיקה של צוות MLR.
 - **נעילת גלילה:** `lockBodyScroll()` (מונה) — אל תכתבו `overflow` על ה־body ישירות.
-- **מדיה:** ציורי העולם נוצרו ב־AI גנרטיבי (ראו "מדיה ואנימציות"), והרישיון עדיין
+- **מדיה:** ציורי האוקיינוס נוצרו ב־AI גנרטיבי (ראו "מדיה ואנימציות"), והרישיון עדיין
   **לא סגור**.
+
+### ניווט אחורה
+
+כפתור "חזרה" באפליקציה וכפתור ה־back של הדפדפן חייבים להסכים. לכן:
+
+- **סגירה / "חזרה למפה" / "סיימתי"** — `useGoBackTo()` מ־`concepts/nav.tsx`: אם המסך
+  שחוזרים אליו כבר בהיסטוריה, חוזרים אליו בהיסטוריה (`navigate(-n)`); אחרת מחליפים את
+  המסך הנוכחי (`replace`). **לא `navigate(to)`** — זה מוסיף את המפה מעל הגיליון, וה־back
+  של הדפדפן פותח שוב את הגיליון.
+- **"אחורה" כללי** — `useBack()`: היסטוריה, ובכניסה ישירה מקישור — למסך ברירת מחדל.
+- **מסך שתופס את מקומו של אחר** (בחירת הבדיקות אחרי הרופא, המפה השנייה אחרי הבחירה) —
+  `navigate(..., { replace: true })`.
+- ההיסטוריה של הלשונית נשמרת ב־[historyTrail.ts](src/lib/historyTrail.ts)
+  (`useHistoryTrail` ב־`App`). `/quest/<world>` ו־`/quest/<world>/map` הם אותו מקום.
+- בחירת עולם אחר: `WORLD_SELECT` (`/quest`) עם `absolute: true`.
 
 ### `Roni` — הדמות
 
@@ -189,6 +217,12 @@ src/
 | אנימציות האייקונים (`public/anim/*.json`) | [Noto Animated Emoji](https://googlefonts.github.io/noto-emoji-animation/) של Google | CC BY 4.0 — **מחייב ייחוס** |
 | דמות רוני (`Roni.tsx`) | נכתבה לפרויקט | חלק מהריפו |
 | שאר האיורים | אימוג'י מהמערכת + SVG/CSS | — |
+| איורי עולם האביר (`public/worlds/knight/art/*`) | נוצרו ב־OpenAI GPT Image ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
+| איורי עולם הדינוזאורים (`public/worlds/dino/art/*`) | נוצרו ב־OpenAI GPT Image ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
+| איורי בית הבובות (`public/worlds/dollhouse/art/*`) | נוצרו ב־OpenAI GPT Image ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
+| איורי עולם הפיות (`public/worlds/fairy/art/*`) | נוצרו ב־OpenAI GPT Image ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
+| איורי עולם הספארי (`public/worlds/safari/art/*`) | נוצרו ב־Google Gemini ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
+| איורי עולם החלל (`public/worlds/space/art/*`) | נוצרו ב־Google Gemini ונכנסו עם `scripts/art/import_world.py` | **טרם נסגר** — מותר מסחרית ובלי ייחוס לפי תנאי השירות, בלי ערובה לזכויות; ראו `NOTICE.txt` של העולם; מצוין ב־README ובתחתית דף הבית |
 | ציורי עולם האוקיינוס (`public/worlds/ocean/*`) | נוצרו ב־Gemini (גרסה חינמית) ועובדו ע״י שבי | **טרם נסגר** — ראו [NOTICE.txt](public/worlds/ocean/NOTICE.txt); חובה לציין ב־README ובתחתית דף הבית שנוצרו ב־AI |
 
 CC BY 4.0 מחייב ייחוס, ולכן הקרדיט מופיע בשלושה מקומות שאסור להסיר:

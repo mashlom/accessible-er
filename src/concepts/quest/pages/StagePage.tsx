@@ -1,15 +1,13 @@
 import { useParams, useNavigate } from 'react-router-dom'
-import { Navigate, Link } from '../../nav'
-import { useConceptPath } from '../../nav'
+import { Navigate, Link, useConceptPath, useGoBackTo } from '../../nav'
 import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES, OPTIONAL_STAGES, loadProcs } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
-import { OceanStageSheet } from '../components/OceanStageSheet'
+import { WorldStageSheet } from '../components/WorldStageSheet'
 import { ParentInfo } from '../components/ParentInfo'
-import { OceanProcedureIcons } from '../components/OceanProcedureIcons'
-import { OCEAN_IMAGES, OCEAN_SYMBOLS, OCEAN_SHEET_PICTURES } from './OceanMapPage'
+import { WorldProcedureIcons } from '../components/WorldProcedureIcons'
 import css from '../quest.module.css'
 
 const LAST_REQUIRED = REQUIRED_STAGES[REQUIRED_STAGES.length - 1]
@@ -21,6 +19,7 @@ export function StagePage() {
   const { stages, active, completeActive, completeStage, completeProcedure, doneProcedures } = useQuestProgress()
   const navigate = useNavigate()
   const conceptPath = useConceptPath()
+  const goBackTo = useGoBackTo()
 
   const isLastStage = id === LAST_REQUIRED
   const isOptional = id ? (OPTIONAL_STAGES as readonly string[]).includes(id) : false
@@ -32,15 +31,14 @@ export function StagePage() {
   const data = parentJourney(lang).find((j) => j.id === id)
   const skin = id ? theme.stages[id] : undefined
 
-  // ocean: the ending station opened before everything is done: a sheet with only the way back
-  if (theme.id === 'ocean' && id === 'decision') {
+  // designed world: the ending station opened before everything is done: a sheet with only the way back
+  if (theme.design && id === 'decision') {
     const skin = theme.stages.decision
     return (
-      <OceanStageSheet
+      <WorldStageSheet
         stageId="decision"
         label={skin?.label ?? ''}
         hint={skin?.hint}
-        image={OCEAN_IMAGES.decision}
         isActive={false}
         onDone={() => {}}
         backTo="/night-map"
@@ -74,23 +72,21 @@ export function StagePage() {
     } else {
       completeActive()
     }
-    if (isLastStage) {
-      // ocean: finishing the doctor stage goes straight on to the procedure choice
-      navigate(conceptPath(theme.id === 'ocean' ? '/procedures' : '/map'))
-    } else if (isOptional) {
-      navigate(conceptPath('/night-map'))
+    // the sheet is done with: back to the map it was opened from (not a new step in the history)
+    if (isLastStage && theme.design) {
+      // designed world: finishing the doctor stage goes straight on to the procedure choice, in this sheet's place
+      navigate(conceptPath('/procedures'), { replace: true })
     } else {
-      navigate(conceptPath('/map'))
+      goBackTo(isOptional ? '/night-map' : '/map')
     }
   }
 
-  if (theme.id === 'ocean' && id) {
+  if (theme.design && id) {
     return (
-      <OceanStageSheet
+      <WorldStageSheet
         stageId={id}
         label={label}
         hint={skin?.hint}
-        image={OCEAN_SYMBOLS[id] ?? OCEAN_SHEET_PICTURES[id] ?? heroImg ?? OCEAN_IMAGES[id]}
         isActive={!!isActive}
         onDone={handleDone}
         showChooseTests={isLastStage && thisStage?.status === 'done'}
@@ -103,9 +99,9 @@ export function StagePage() {
           </ol>
         )}
         {!inlineProc && data.procedureIds && data.procedureIds.length > 0 && (
-          <OceanProcedureIcons ids={data.procedureIds} />
+          <WorldProcedureIcons ids={data.procedureIds} />
         )}
-      </OceanStageSheet>
+      </WorldStageSheet>
     )
   }
 

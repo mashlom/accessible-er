@@ -1,0 +1,3 @@
+The dollhouse world's pictures (map backgrounds, stations, scenes, sheet floor, celebration, card) were
+delivered as PNG with a manifest and converted to WebP by scripts/art/import_world.py.
+Made with: OpenAI GPT Image (high-quality image generation/editing via the Instinct image tool); commercial use permitted under the OpenAI Services Agreement section 4.1: the customer owns the output to the extent permitted by law, with no attribution requirement. Outputs may not be unique; copyright protection and third-party clearance are not guaranteed. https://openai.com/policies/services-agreement/

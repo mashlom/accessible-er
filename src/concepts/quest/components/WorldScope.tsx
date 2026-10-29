@@ -4,6 +4,9 @@ import { ConceptBase, Navigate } from '../../nav'
 import { themes } from '../themes'
 import { useQuestTheme } from '../useQuestTheme'
 
+/** The world select screen's address */
+export const WORLD_SELECT = '/quest'
+
 /**
  * The first part of the address after /quest names the world: /quest/<world>/…
  * Everything under it belongs to that world: the chosen theme is set from the address, and every link inside
