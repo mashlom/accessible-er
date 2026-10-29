@@ -3289,6 +3289,9 @@ path.worldTrailLit {
     background-size: calc(100% + 6px) 100%;
     background-position: center top;
   }
+  /* the scene reaches the top of the screen: no sky above it to fade into */
+  .worldSceneFade::after,
+  .worldTileHFade::after { display: none; }
   .worldTileH { display: block; bottom: calc((100dvh - var(--sh)) / 2); }
   /* the sides: the picture mirrored, sharp at the seam so the scene's own edge stays untouched; further out a
      blurred copy comes in, and further still the picture's own sky and ground colours (set by the page, see
