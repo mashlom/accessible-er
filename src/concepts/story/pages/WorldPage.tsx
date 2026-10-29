@@ -71,6 +71,7 @@ export function WorldPage() {
         <span className={styles.homeEyebrow}>{tx.eyebrow}</span>
         <h1 className={styles.homeTitle}>{tx.title}</h1>
         <p className={styles.homeSub}>{tx.subtitle}</p>
+        <p className={styles.homeSub}>{tx.audiences}</p>
       </header>
 
       <section className={styles.homeSection} aria-labelledby="child-world">
@@ -83,11 +84,13 @@ export function WorldPage() {
             <span className={styles.childCardIcon} aria-hidden>🗺️</span>
             <span className={styles.childCardName}>{tx.start.title}</span>
             <span className={styles.childCardDesc}>{tx.start.desc}</span>
+            <span className={styles.childCardAction}>{tx.start.action} {dir === 'rtl' ? '←' : '→'}</span>
           </a>
           <a href="#/book" className={styles.childCard}>
             <span className={styles.childCardIcon} aria-hidden>📖</span>
             <span className={styles.childCardName}>{tx.read.title}</span>
             <span className={styles.childCardDesc}>{tx.read.desc}</span>
+            <span className={styles.childCardAction}>{tx.read.action} {dir === 'rtl' ? '←' : '→'}</span>
           </a>
         </div>
       </section>
@@ -95,6 +98,7 @@ export function WorldPage() {
       <div className={styles.sectionHead}>
         <h2 className={styles.worldLabel}>{tx.parentLabel}</h2>
       </div>
+      <p className={styles.sectionDesc}>{tx.parentDesc}</p>
       {path ? (
         <div className={styles.reasonStrip}>
           <span className={styles.reasonStripEmoji} aria-hidden>
