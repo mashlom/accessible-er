@@ -2859,9 +2859,10 @@ path.worldTrailLit {
 .worldProgressStick[data-on='true']:nth-child(odd) { background: var(--w-progress-1, #d9a53a); }
 .worldProgressStick[data-on='true']:nth-child(even) { background: var(--w-progress-2, #84dccb); }
 
-/* Landscape: the case at the right edge, longer: from the home button down to the house station */
+/* Landscape: the case at the right edge, longer; at the top of the page, level with the headline (the same
+   size as before, when it followed the scene down) */
 .worldProgressWide {
-  top: calc(max(0px, 100dvh - var(--S) * 9 / 16) + var(--S) * 118 / 1920);
+  top: 72px;
   width: calc(var(--S) * 26 / 1920);
   padding: calc(var(--S) * 5 / 1920);
   gap: calc(var(--S) * 5 / 1920);
