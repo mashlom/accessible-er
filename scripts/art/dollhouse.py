@@ -842,14 +842,20 @@ def card():
     return d.svg(f'{WORLD} world: the card on the world select screen')
 
 
-files = {}
-for k, (f, c) in STATIONS.items():
-    files[f'station-{k}.svg'] = station(k, f, c, WORLD, base=lambda d: '')
-for k, (f, c) in SCENES.items():
-    files[f'scene-{k}.svg'] = scene(k, f, c, WORLD)
-files['map-portrait.svg'] = portrait_bg()
-files['map-landscape.svg'] = landscape_bg()
-files['sheet-floor.svg'] = sheet_floor()
-files['celebrate.svg'] = celebrate()
-files['card.svg'] = card()
-write('dollhouse', files)
+
+def main():
+    files = {}
+    for k, (f, c) in STATIONS.items():
+        files[f'station-{k}.svg'] = station(k, f, c, WORLD, base=lambda d: '')
+    for k, (f, c) in SCENES.items():
+        files[f'scene-{k}.svg'] = scene(k, f, c, WORLD)
+    files['map-portrait.svg'] = portrait_bg()
+    files['map-landscape.svg'] = landscape_bg()
+    files['sheet-floor.svg'] = sheet_floor()
+    files['celebrate.svg'] = celebrate()
+    files['card.svg'] = card()
+    write('dollhouse', files)
+
+
+if __name__ == '__main__':
+    main()

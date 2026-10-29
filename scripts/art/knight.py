@@ -729,13 +729,19 @@ def celebrate():
     return d.svg('Knight world: the victory feast (the celebration screen)', clay=False)
 
 
-files = {}
-for k, (f, c) in STATIONS.items():
-    files[f'station-{k}.svg'] = station(k, f, c)
-for k, (f, c) in SCENES.items():
-    files[f'scene-{k}.svg'] = scene(k, f, c)
-files['map-portrait.svg'] = portrait_bg()
-files['map-landscape.svg'] = landscape_bg()
-files['sheet-floor.svg'] = sheet_floor()
-files['celebrate.svg'] = celebrate()
-write('knight', files)
+
+def main():
+    files = {}
+    for k, (f, c) in STATIONS.items():
+        files[f'station-{k}.svg'] = station(k, f, c)
+    for k, (f, c) in SCENES.items():
+        files[f'scene-{k}.svg'] = scene(k, f, c)
+    files['map-portrait.svg'] = portrait_bg()
+    files['map-landscape.svg'] = landscape_bg()
+    files['sheet-floor.svg'] = sheet_floor()
+    files['celebrate.svg'] = celebrate()
+    write('knight', files)
+
+
+if __name__ == '__main__':
+    main()

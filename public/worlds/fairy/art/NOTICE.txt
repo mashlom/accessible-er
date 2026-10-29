@@ -1,0 +1,4 @@
+The fairy world's pictures (map backgrounds, stations, scenes, sheet floor, celebration, card) were drawn as SVG for
+this project, in code, and rendered into WebP: scripts/art/fairy.py writes every file here, with the shared tools in
+scripts/art/lib.py. They are part of the repository, free to use.
+To change a picture, change the script and run: python3 scripts/art/fairy.py
