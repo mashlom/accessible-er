@@ -9,6 +9,7 @@ import { WorldMapPage } from '../pages/WorldMapPage'
 import { WorldNightMapPage } from '../pages/WorldNightMapPage'
 import { ParentInfo } from './ParentInfo'
 import { Bubbles, useWorldButtons } from './WorldStageSheet'
+import { ProcedureLineIcon } from './ProcedureLineIcon'
 import css from '../quest.module.css'
 
 /** Route of a station's own (child) sheet */
@@ -81,7 +82,7 @@ export function WorldProcedureDetailSheet({ id }: { id: string }) {
           {/* the procedure's picture stands on the same sea floor panel with bubbles as the stations' pictures */}
           <div className={`${css.stageSheetPicWrap} ${css.procBigIcon}`} aria-hidden>
             <Bubbles />
-            <span className={css.procBigEmoji}>{procedure.emoji}</span>
+            <span className={css.procBigEmoji}><ProcedureLineIcon id={id} emoji={procedure.emoji} /></span>
           </div>
           <h1 className={css.stageSheetTitle} style={{ color: theme.accent }}>{procedure.title}</h1>
           {narrative && <p className={css.stageSheetHint}>{narrative}</p>}

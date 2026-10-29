@@ -3268,6 +3268,12 @@ path.worldTrailLit {
   font-size: calc(84 * var(--u));
   line-height: 1.15;
 }
+/* the procedure's picture on its own sheet: as big as the panel allows */
+.procBigEmoji img {
+  width: calc(220 * var(--u)) !important;
+  height: calc(220 * var(--u)) !important;
+  display: block;
+}
 
 /* ── Ocean: contrast fixes (the old greys were 3.5:1 on white, the teal line 4.2:1 on the pale blue) ── */
 .questShellWorld .stageBody h2 {
