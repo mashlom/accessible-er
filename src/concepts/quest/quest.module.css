@@ -2073,10 +2073,25 @@
 }
 
 /* the top of a landscape picture fades into the sky colour above it (worlds without the mirrored water) */
+/* no own colour behind it: a fraction of a pixel at its top edge would show as a dark line on a light sky */
+.worldSceneFade { background: transparent; }
 .worldSceneFade::after {
   top: -2px;
-  height: calc(140 * var(--u));
-  background: linear-gradient(var(--w-water), transparent);
+  height: calc(380 * var(--u));
+  /* eased, so neither the start nor the end of the fade shows as a line */
+  background: linear-gradient(
+    var(--w-water) 0%,
+    color-mix(in srgb, var(--w-water) 98%, transparent) 10%,
+    color-mix(in srgb, var(--w-water) 93%, transparent) 20%,
+    color-mix(in srgb, var(--w-water) 84%, transparent) 30%,
+    color-mix(in srgb, var(--w-water) 72%, transparent) 40%,
+    color-mix(in srgb, var(--w-water) 58%, transparent) 50%,
+    color-mix(in srgb, var(--w-water) 43%, transparent) 60%,
+    color-mix(in srgb, var(--w-water) 29%, transparent) 70%,
+    color-mix(in srgb, var(--w-water) 16%, transparent) 80%,
+    color-mix(in srgb, var(--w-water) 6%, transparent) 90%,
+    transparent 100%
+  );
 }
 
 /* on a wide screen the headline is at the top of the page, on the sky, below the top row, centred (clear of the
@@ -2118,7 +2133,22 @@
 /* the mirrored piece sits right above the scene, tucked 2px under it so no hairline shows */
 .worldTileVTop { bottom: calc(var(--sh) - 2px); }
 
-.worldTileV .worldSideBgW {
+/* The mirrored pieces on the left and right of the scene, on a screen wider than 16:9 (see below) */
+.worldTileH {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: var(--sw);
+  height: var(--sh);
+  overflow: hidden;
+  pointer-events: none;
+  container-type: inline-size;
+  transform: scaleX(-1);
+}
+
+
+.worldTileV .worldSideBgW,
+.worldTileH .worldSideBgW {
   position: absolute;
   left: calc(var(--bg-x, 0) * 100cqw / 1920);
   top: calc(var(--bg-y, 0) * 100cqw / 1920);
@@ -3228,4 +3258,64 @@ path.worldTrailLit {
   display: flex;
   justify-content: center;
   padding: 1rem 16px;
+}
+
+/* the side pieces fade into the sky colour at the top, as the scene does (worlds without the mirrored water) */
+.worldTileHFade::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px;
+  height: calc(140 * 100cqw / 1920);
+  background: linear-gradient(var(--w-water), transparent);
+  pointer-events: none;
+}
+
+/* A screen wider than 16:9. Up to 2:1 the scene still fills the width and a little sky and ground are cut off at
+   the top and bottom (no scrolling). Wider than that, the scene fits the height, stands in the middle, and the
+   picture continues on each side blurred and darkened, so no copies of the characters show. The progress case and
+   the stars keep their places on the scene, counted from its edges instead of the window's. */
+@media (min-aspect-ratio: 16/9) {
+  .worldMapWide {
+    --sw: min(100vw, 100dvh * 2);
+    --sh: calc(var(--sw) * 9 / 16);
+    height: 100dvh;
+    justify-content: center;
+  }
+  .worldSceneWide {
+    width: var(--sw);
+    margin-inline: auto;
+    background: transparent; /* its faded edges show the sides under them */
+  }
+  /* the picture's outermost pixel columns are blurred by scaling: push them just past the seam */
+  .worldSceneWide::before {
+    background-size: calc(100% + 6px) 100%;
+    background-position: center top;
+  }
+  /* the scene reaches the top of the screen: no sky above it to fade into */
+  .worldSceneFade::after,
+  .worldTileHFade::after { display: none; }
+  .worldTileH { display: block; bottom: calc((100dvh - var(--sh)) / 2); }
+  /* the sides: the picture mirrored, sharp at the seam so the scene's own edge stays untouched; further out a
+     blurred copy comes in, and further still the picture's own sky and ground colours (set by the page, see
+     useSideColours), so no mirrored characters show. The pieces are flipped: their local left is next to the scene
+     for the left piece, their local right for the right one. */
+  .worldTileH .worldSideBlur { filter: blur(24px); scale: 1.1; }
+  .worldSideColour { display: none; position: absolute; inset: 0; filter: blur(6px); }
+  .worldTileH .worldSideColour { display: block; }
+  .worldTileHLeft .worldSideBlur { transform-origin: left center; mask-image: linear-gradient(to right, transparent 0, #000 120px); }
+  .worldTileHRight .worldSideBlur { transform-origin: right center; mask-image: linear-gradient(to left, transparent 0, #000 120px); }
+  .worldTileHLeft .worldSideColour { mask-image: linear-gradient(to right, transparent 80px, #000 320px); }
+  .worldTileHRight .worldSideColour { mask-image: linear-gradient(to left, transparent 80px, #000 320px); }
+  .worldTileHLeft { left: calc((100vw - var(--sw)) / 2 - var(--sw) + 4px); }
+  .worldTileHRight { left: calc((100vw + var(--sw)) / 2 - 4px); }
+  .worldProgressWide {
+    --S: min(100vw, 100dvh * 2);
+    left: calc((100vw - var(--S)) / 2 + min(var(--S) * 1868 / 1920, var(--S) - 34px));
+  }
+  .worldStarsTotalWide {
+    right: calc((100vw - min(100vw, 100dvh * 2)) / 2 + 24px);
+    font-size: calc(56 * min(100vw, 100dvh * 2) / 1920);
+  }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useConceptPath, useGoBackTo } from '../../nav'
 import { WORLD_SELECT } from '../components/WorldScope'
@@ -29,6 +29,40 @@ export function useWide(): boolean {
     return () => mq.removeEventListener('change', on)
   }, [])
   return wide
+}
+
+/** The picture's colours row by row (sky on top, grass below), without what stands on them: for each band of rows
+ *  the median colour across the outer third of the picture on that side. Fills the sides of a very wide screen as
+ *  a vertical gradient: [left, right]. */
+function useSideColours(ref: React.RefObject<HTMLElement | null>, on: boolean, key: unknown): (string | undefined)[] {
+  const [grad, setGrad] = useState<(string | undefined)[]>([])
+  useEffect(() => {
+    if (!on || !ref.current) return
+    const url = getComputedStyle(ref.current).getPropertyValue('--w-background-wide').match(/url\(["']?([^"')]+)/)?.[1]
+    if (!url) return
+    const img = new Image()
+    img.onload = () => {
+      const W = 48, H = 27
+      const c = document.createElement('canvas')
+      c.width = W
+      c.height = H
+      const g = c.getContext('2d', { willReadFrequently: true })
+      if (!g) return
+      g.drawImage(img, 0, 0, W, H)
+      const d = g.getImageData(0, 0, W, H).data
+      const med = (a: number[]) => a.sort((x, y) => x - y)[a.length >> 1]
+      const side = (x0: number) => {
+        const stops = Array.from({ length: H }, (_, y) => {
+          const ch = [0, 1, 2].map((k) => med(Array.from({ length: W / 3 }, (_, x) => d[(y * W + x0 + x) * 4 + k])))
+          return `rgb(${ch.join(' ')}) ${((y + 0.5) / H * 100).toFixed(1)}%`
+        })
+        return `linear-gradient(${stops.join(', ')})`
+      }
+      setGrad([side(0), side(W - W / 3)])
+    }
+    img.src = url
+  }, [ref, on, key])
+  return grad
 }
 
 /** Cuts the end of a polyline where it enters a circle (when it ends inside or next to it) */
@@ -95,8 +129,10 @@ interface ViewProps {
 export function WorldMapView({ portrait, landscape, items, underSheet, progress, numbers, firstNumber = 1, noTitle, starsTotal, headline }: ViewProps) {
   const { t, dir } = useI18n()
   const wide = useWide()
+  const mapRef = useRef<HTMLDivElement>(null)
   const goBackTo = useGoBackTo()
   const { theme } = useQuestTheme()
+  const sideBg = useSideColours(mapRef, wide, theme)
   const { W, H, slots, dots, lines, vars } = wide ? landscape : portrait
   const pctX = (v: number) => `${(v / W) * 100}%`
   // the headline: in the scene on a narrow screen; on a wide one at the top of the page, on the sky
@@ -115,6 +151,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
 
   return (
     <div
+      ref={mapRef}
       className={wide ? `${css.worldMap} ${css.worldMapWide}` : css.worldMap}
       // the same numbers are used by the mirrored pieces that fill what the scene doesn't reach
       style={vars as React.CSSProperties}
@@ -126,6 +163,22 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
         <div className={`${css.worldTileV} ${css.worldTileVTop}`} aria-hidden>
           <div className={css.worldSideBgW} />
         </div>
+      )}
+      {wide && (
+        // on a screen wider than the scene (more than 16:9) the scene stands in the middle and the picture is
+        // mirrored on each side of it (the CSS shows these only then)
+        <>
+          <div className={`${css.worldTileH} ${css.worldTileHLeft} ${theme.design?.mirrorAbove === false ? css.worldTileHFade : ''}`} aria-hidden>
+            <div className={css.worldSideBgW} />
+            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} />
+            <div className={css.worldSideColour} style={sideBg[0] ? { background: sideBg[0] } : undefined} />
+          </div>
+          <div className={`${css.worldTileH} ${css.worldTileHRight} ${theme.design?.mirrorAbove === false ? css.worldTileHFade : ''}`} aria-hidden>
+            <div className={css.worldSideBgW} />
+            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} />
+            <div className={css.worldSideColour} style={sideBg[1] ? { background: sideBg[1] } : undefined} />
+          </div>
+        </>
       )}
       {!wide && (
         <>
