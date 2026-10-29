@@ -27,7 +27,8 @@
 
 .worldGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* minmax(0, …): a long button text wraps inside its card instead of widening the column */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   width: 100%;
   max-width: 480px;
@@ -84,7 +85,8 @@
   font-size: 0.85rem;
   color: #111;
   min-height: 44px;
-  white-space: nowrap;
+  /* on a narrow phone the words wrap to two lines rather than push the arrow out of the card */
+  line-height: 1.2;
 }
 
 .worldCardArrow {
@@ -3539,4 +3541,17 @@ path.worldTrailLit {
 .questTopParent {
   justify-self: center;
   margin: 0;
+}
+/* a narrow phone: the middle column takes what the two sides leave, and the button's words wrap */
+@media (max-width: 480px) {
+  .questTopbar { grid-template-columns: auto minmax(0, 1fr) auto; }
+  .questTopParent { min-width: 0; }
+  .questTopParent .parentBtnOceanPill {
+    white-space: normal;
+    height: auto;
+    min-height: 34px;
+    padding-block: 2px;
+    line-height: 1.15;
+    font-size: 13px;
+  }
 }
