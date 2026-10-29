@@ -3245,8 +3245,20 @@ path.worldTrailLit {
   padding: 1rem 16px;
 }
 
+/* the side pieces fade into the sky colour at the top, as the scene does (worlds without the mirrored water) */
+.worldTileHFade::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px;
+  height: calc(140 * 100cqw / 1920);
+  background: linear-gradient(var(--w-water), transparent);
+  pointer-events: none;
+}
+
 /* A screen wider than 16:9: the scene fits the height (no scrolling) and stands in the middle; the picture is
-   mirrored on each side of it, tucked 2px under the scene so no hairline shows. The progress case and the stars
+   mirrored on each side of it, tucked 4px under the scene so no hairline shows. The progress case and the stars
    keep their places on the scene, counted from its edges instead of the window's. */
 @media (min-aspect-ratio: 16/9) {
   .worldMapWide {
@@ -3256,10 +3268,12 @@ path.worldTrailLit {
   .worldSceneWide {
     width: var(--sw);
     margin-inline: auto;
+    /* no own colour at the edge: the mirrored piece under it shows through any fraction of a pixel */
+    background: transparent;
   }
   .worldTileH { display: block; }
-  .worldTileHLeft { left: calc((100vw - var(--sw)) / 2 - var(--sw) + 2px); }
-  .worldTileHRight { left: calc((100vw + var(--sw)) / 2 - 2px); }
+  .worldTileHLeft { left: calc((100vw - var(--sw)) / 2 - var(--sw) + 4px); }
+  .worldTileHRight { left: calc((100vw + var(--sw)) / 2 - 4px); }
   .worldProgressWide {
     --S: calc(100dvh * 16 / 9);
     left: calc((100vw - var(--S)) / 2 + min(var(--S) * 1868 / 1920, var(--S) - 34px));

@@ -131,10 +131,10 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
         // on a screen wider than the scene (more than 16:9) the scene stands in the middle and the picture is
         // mirrored on each side of it (the CSS shows these only then)
         <>
-          <div className={`${css.worldTileH} ${css.worldTileHLeft}`} aria-hidden>
+          <div className={`${css.worldTileH} ${css.worldTileHLeft} ${theme.design?.mirrorAbove === false ? css.worldTileHFade : ''}`} aria-hidden>
             <div className={css.worldSideBgW} />
           </div>
-          <div className={`${css.worldTileH} ${css.worldTileHRight}`} aria-hidden>
+          <div className={`${css.worldTileH} ${css.worldTileHRight} ${theme.design?.mirrorAbove === false ? css.worldTileHFade : ''}`} aria-hidden>
             <div className={css.worldSideBgW} />
           </div>
         </>
