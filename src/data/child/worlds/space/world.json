@@ -63,9 +63,9 @@
         "#7f8cf0",
         "#4a5bd0"
       ],
-      "water": "#34457A",
-      "waterTop": "#34457A",
-      "waterLight": "#34457A",
+      "water": "#122042",
+      "waterTop": "#122042",
+      "waterLight": "#122042",
       "trail": "#34457A"
     },
     "mirrorAbove": false,
