@@ -4,43 +4,61 @@
     "stages": {
       "reception": {
         "label": "קבלה בדלפק הכניסה",
-        "hint": "רושמים את השם בפנקס הכניסה לבית"
+        "hint": "רושמים את השם בפנקס הכניסה לבית",
+        "story": "כשנכנסים לבית הבובות, רושמים את השם בפנקס הכניסה ומקבלים תג שם קטן, שילווה אותנו בכל החדרים של הבית. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "done": "קיבלתי תג שם לבית הבובות!"
       },
       "wait-before-triage": {
         "label": "הספסל במסדרון",
-        "hint": "יושבים על הספסל עד שהארנבון קורא"
+        "hint": "יושבים על הספסל עד שהארנבון קורא",
+        "story": "לפני שנכנסים לחדרים, יושבים על הספסל במסדרון עד שהארנבון קורא לנו. גם במיון, מחכים בחדר ההמתנה עד שהאחות קוראת לנו. לפעמים יש שם הרבה אנשים ורעש.",
+        "done": "ישבתי על הספסל במסדרון!"
       },
       "triage": {
         "label": "חדר המדידות",
-        "hint": "הארנבון עוזר למדוד ולבדוק"
+        "hint": "הארנבון עוזר למדוד ולבדוק",
+        "story": "בחדר המדידות הארנבון מודד ובודק שהבובות מוכנות לשחק. גם במיון, האחות בודקת איך אנחנו מרגישים: מודדת חום, שמה אטב קטן על האצבע ושרוול רך על הזרוע.",
+        "done": "סיימתי בחדר המדידות!"
       },
       "wait-doctor": {
         "label": "חדר האורחים",
-        "hint": "ממתינים בנחת עד שקוראים בשם"
+        "hint": "ממתינים בנחת עד שקוראים בשם",
+        "story": "הדובי הרופא עוזר לכל הבובות בבית, ולכן לפעמים מחכים לו בחדר האורחים. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
+        "done": "חיכיתי לדובי בחדר האורחים!"
       },
       "doctor": {
         "label": "החדר של הדובי הרופא",
-        "hint": "הדובי הרופא בודק בעדינות"
+        "hint": "הדובי הרופא בודק בעדינות",
+        "story": "הדובי הרופא מקשיב ובודק בעדינות, ואז מחליט מה עושים עכשיו. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
       },
       "decision": {
         "label": "חזרה הביתה",
-        "hint": "סיימנו, אפשר לחזור הביתה"
+        "hint": "סיימנו, אפשר לחזור הביתה",
+        "story": "בסוף הביקור בבית הבובות יוצאים מהדלת הקדמית. גם במיון, בסוף הצוות מסכם איתנו מה הלאה: לרוב חוזרים הביתה, ולפעמים נשארים לישון בבית החולים כדי להמשיך לטפל בנו."
       },
       "tests": {
         "label": "חדר הבדיקות הקטן",
-        "hint": "בדיקות דם, רנטגן ועוד"
+        "hint": "בדיקות דם, רנטגן ועוד",
+        "story": "בחדר הבדיקות הקטן בודקים דברים שלא רואים בעיניים. גם במיון, לפעמים צריך בדיקות, כמו בדיקת דם, בדיקת שתן או צילום. עושים רק את הבדיקות שהרופא החליט עליהן.",
+        "done": "סיימתי בחדר הבדיקות הקטן!"
       },
       "treatment": {
         "label": "פינת הטיפול",
-        "hint": "הארנבון מטפל במה שצריך"
+        "hint": "הארנבון מטפל במה שצריך",
+        "story": "בפינת הטיפול הארנבון עוזר לבובות שצריכות טיפול. גם במיון, אם צריך, נותנים לנו את הטיפול שהרופא החליט עליו, כמו תרופה, אינהלציה או תחבושת.",
+        "done": "סיימתי בפינת הטיפול!"
       },
       "consult": {
         "label": "הינשופה באה לבקר",
-        "hint": "הינשופה החכמה באה לעזור"
+        "hint": "הינשופה החכמה באה לעזור",
+        "story": "לפעמים הדובי קורא לינשופה החכמה, שיודעת הרבה על דבר אחד. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
+        "done": "פגשתי את הינשופה החכמה!"
       },
       "wait-results": {
         "label": "חדר ההמתנה השקט",
-        "hint": "ממתינים לתשובות"
+        "hint": "ממתינים לתשובות",
+        "story": "בחדר ההמתנה השקט מחכים לשמוע מה הבדיקות גילו, ואפשר לשחק בצעצועים. גם במיון, אחרי הבדיקות מחכים לתשובות, ולפעמים זה לוקח זמן. כשיהיו תשובות, הרופא יבוא לספר לנו.",
+        "done": "חיכיתי בחדר ההמתנה השקט!"
       }
     },
     "distractTitle": "חדר המשחקים 🎪",
@@ -211,7 +229,8 @@
     ],
     "ui": {
       "decision": "מה הדובי הרופא החליט ←",
-      "decisionTitle": "מה הדובי הרופא החליט"
+      "decisionTitle": "מה הדובי הרופא החליט",
+      "intro": "המסע במיון הילדים דומה לביקור בבית הבובות. מוכנים להיכנס?"
     }
   },
   "en": {
@@ -219,43 +238,61 @@
     "stages": {
       "reception": {
         "label": "Reception Desk",
-        "hint": "We write the name in the house entrance book"
+        "hint": "We write the name in the house entrance book",
+        "story": "When we come into the dollhouse, we write the name in the entrance book and get a little name tag that goes with us to every room in the house. In the ER too, we get a number that goes with us from station to station.",
+        "done": "I got my dollhouse name tag!"
       },
       "wait-before-triage": {
         "label": "The Corridor Bench",
-        "hint": "We sit on the bench until the bunny calls"
+        "hint": "We sit on the bench until the bunny calls",
+        "story": "Before we go into the rooms, we sit on the bench in the corridor until the bunny calls us. In the ER too, we wait in the waiting room until the nurse calls us. Sometimes it is busy and noisy there.",
+        "done": "I sat on the corridor bench!"
       },
       "triage": {
         "label": "Measuring Room",
-        "hint": "The bunny helps to measure and check"
+        "hint": "The bunny helps to measure and check",
+        "story": "In the measuring room the bunny measures and checks that the dolls are ready to play. In the ER too, the nurse checks how we feel: takes our temperature, puts a little clip on a finger and a soft cuff on the arm.",
+        "done": "I finished in the measuring room!"
       },
       "wait-doctor": {
         "label": "The Guest Room",
-        "hint": "We wait calmly until our name is called"
+        "hint": "We wait calmly until our name is called",
+        "story": "The teddy-bear doctor helps all the dolls in the house, so sometimes we wait for him in the guest room. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
+        "done": "I waited for the teddy bear in the guest room!"
       },
       "doctor": {
         "label": "The Doctor's Room",
-        "hint": "The teddy-bear doctor checks gently"
+        "hint": "The teddy-bear doctor checks gently",
+        "story": "The teddy-bear doctor listens and checks gently, and then decides what we do next. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
       },
       "decision": {
         "label": "Going Home",
-        "hint": "We are done, we can go home"
+        "hint": "We are done, we can go home",
+        "story": "At the end of the visit to the dollhouse we go out through the front door. In the ER too, at the end the team tells us what comes next: most often we go home, and sometimes we stay the night in the hospital so they can keep looking after us."
       },
       "tests": {
         "label": "The Small Test Room",
-        "hint": "Blood tests, an X-ray and more"
+        "hint": "Blood tests, an X-ray and more",
+        "story": "In the small test room they check things we can't see with our eyes. In the ER too, sometimes we need tests, like a blood test, a urine test or an X-ray. We only do the tests the doctor decided on.",
+        "done": "I finished in the small test room!"
       },
       "treatment": {
         "label": "The Treatment Corner",
-        "hint": "The bunny treats what needs treating"
+        "hint": "The bunny treats what needs treating",
+        "story": "In the treatment corner the bunny helps dolls who need treatment. In the ER too, if we need it, we get the treatment the doctor decided on, like medicine, an inhaler mask or a bandage.",
+        "done": "I finished in the treatment corner!"
       },
       "consult": {
         "label": "The Owl Comes to Visit",
-        "hint": "The wise owl comes to help"
+        "hint": "The wise owl comes to help",
+        "story": "Sometimes the teddy bear calls the wise owl, who knows a lot about one thing. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
+        "done": "I met the wise owl!"
       },
       "wait-results": {
         "label": "The Quiet Waiting Room",
-        "hint": "We wait for the answers"
+        "hint": "We wait for the answers",
+        "story": "In the quiet waiting room we wait to hear what the tests found, and we can play with the toys. In the ER too, after the tests we wait for the answers, and sometimes it takes a while. When the answers are ready, the doctor will come and tell us.",
+        "done": "I waited in the quiet waiting room!"
       }
     },
     "distractTitle": "The Playroom 🎪",
@@ -426,7 +463,8 @@
     ],
     "ui": {
       "decision": "Teddy doctor decides →",
-      "decisionTitle": "What the teddy doctor decided"
+      "decisionTitle": "What the teddy doctor decided",
+      "intro": "A visit to the children's ER is like a visit to the dollhouse. Ready to go in?"
     }
   },
   "ru": {
@@ -434,43 +472,61 @@
     "stages": {
       "reception": {
         "label": "Стойка регистрации",
-        "hint": "Записываем имя в книгу входа в домик"
+        "hint": "Записываем имя в книгу входа в домик",
+        "story": "Когда входим в кукольный домик, мы записываем имя в книгу входа и получаем маленький бейджик с именем, который будет с нами во всех комнатах домика. В приёмном покое тоже нам дадут номер, который будет с нами на всех остановках.",
+        "done": "Я получил(а) бейджик кукольного домика!"
       },
       "wait-before-triage": {
         "label": "Скамейка в коридоре",
-        "hint": "Сидим на скамейке, пока нас позовёт зайчик"
+        "hint": "Сидим на скамейке, пока нас позовёт зайчик",
+        "story": "Перед тем как зайти в комнаты, мы сидим на скамейке в коридоре, пока нас не позовёт зайчик. В приёмном покое тоже мы ждём в зале ожидания, пока нас не позовёт медсестра. Иногда там много людей и шумно.",
+        "done": "Я посидел(а) на скамейке в коридоре!"
       },
       "triage": {
         "label": "Комната измерений",
-        "hint": "Зайчик помогает измерить и проверить"
+        "hint": "Зайчик помогает измерить и проверить",
+        "story": "В комнате измерений зайчик измеряет и проверяет, что куклы готовы играть. В приёмном покое тоже медсестра проверяет, как мы себя чувствуем: измеряет температуру, надевает маленькую прищепку на палец и мягкую манжету на руку.",
+        "done": "Я закончил(а) в комнате измерений!"
       },
       "wait-doctor": {
         "label": "Комната гостей",
-        "hint": "Спокойно ждём, пока назовут наше имя"
+        "hint": "Спокойно ждём, пока назовут наше имя",
+        "story": "Мишка-доктор помогает всем куклам в домике, поэтому иногда его приходится ждать в комнате гостей. В приёмном покое тоже мы ждём врача. Ждать бывает долго, но про нас не забыли.",
+        "done": "Я дождался(лась) мишку в комнате гостей!"
       },
       "doctor": {
         "label": "Комната доктора",
-        "hint": "Мишка-доктор аккуратно проверяет"
+        "hint": "Мишка-доктор аккуратно проверяет",
+        "story": "Мишка-доктор слушает и аккуратно осматривает, а потом решает, что делать дальше. В приёмном покое тоже врач разговаривает с нами и осматривает тело, а в конце осмотра знает, что лучше сделать."
       },
       "decision": {
         "label": "Возвращаемся домой",
-        "hint": "Всё, можно возвращаться домой"
+        "hint": "Всё, можно возвращаться домой",
+        "story": "В конце визита в кукольный домик мы выходим через парадную дверь. В приёмном покое тоже в конце команда рассказывает нам, что дальше: чаще всего мы едем домой, а иногда остаёмся ночевать в больнице, чтобы о нас продолжали заботиться."
       },
       "tests": {
         "label": "Маленькая комната анализов",
-        "hint": "Анализы крови, рентген и другое"
+        "hint": "Анализы крови, рентген и другое",
+        "story": "В маленькой комнате анализов проверяют то, чего не видно глазами. В приёмном покое тоже иногда нужны анализы — например, анализ крови, анализ мочи или рентген. Делают только те анализы, которые решил врач.",
+        "done": "Я закончил(а) в маленькой комнате анализов!"
       },
       "treatment": {
         "label": "Уголок лечения",
-        "hint": "Зайчик лечит то, что нужно"
+        "hint": "Зайчик лечит то, что нужно",
+        "story": "В уголке лечения зайчик помогает куклам, которым нужно лечение. В приёмном покое тоже, если нужно, нам дают лечение, которое решил врач, — например, лекарство, ингаляцию или повязку.",
+        "done": "Я закончил(а) в уголке лечения!"
       },
       "consult": {
         "label": "Сова приходит в гости",
-        "hint": "Мудрая сова приходит помочь"
+        "hint": "Мудрая сова приходит помочь",
+        "story": "Иногда мишка зовёт мудрую сову, которая много знает об одной вещи. В приёмном покое тоже иногда приходит ещё один врач, специалист, чтобы нас осмотреть. Это не значит, что что-то плохо, — просто хотят узнать больше.",
+        "done": "Я познакомился(лась) с мудрой совой!"
       },
       "wait-results": {
         "label": "Тихая комната ожидания",
-        "hint": "Ждём ответов"
+        "hint": "Ждём ответов",
+        "story": "В тихой комнате ожидания мы ждём, что покажут анализы, и можно поиграть с игрушками. В приёмном покое тоже после анализов мы ждём ответов, и иногда это долго. Когда ответы будут готовы, врач придёт и расскажет нам.",
+        "done": "Я подождал(а) в тихой комнате ожидания!"
       }
     },
     "distractTitle": "Игровая комната 🎪",
@@ -641,7 +697,8 @@
     ],
     "ui": {
       "decision": "Что решил мишка-доктор →",
-      "decisionTitle": "Что решил мишка-доктор"
+      "decisionTitle": "Что решил мишка-доктор",
+      "intro": "Поход в детский приёмный покой похож на визит в кукольный домик. Готовы войти?"
     }
   }
 }

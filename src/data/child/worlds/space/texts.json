@@ -4,43 +4,61 @@
     "stages": {
       "reception": {
         "label": "כניסה לתחנה",
-        "hint": "נרשמים בתחנת החלל ומקבלים צמיד אסטרונאוט"
+        "hint": "נרשמים בתחנת החלל ומקבלים צמיד אסטרונאוט",
+        "story": "כשמגיעים לתחנת החלל, נרשמים בכניסה ומקבלים צמיד אסטרונאוט, איתו אפשר לעבור בכל התחנה. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "done": "קיבלתי את צמיד האסטרונאוט!"
       },
       "wait-before-triage": {
         "label": "תא ההמתנה",
-        "hint": "ממתינים בתחנה עד שמהנדס הטיסה קורא לבדיקה"
+        "hint": "ממתינים בתחנה עד שמהנדס הטיסה קורא לבדיקה",
+        "story": "לפני הבדיקות, ממתינים בתא ההמתנה עד שמהנדס הטיסה קורא לנו. גם במיון, מחכים בחדר ההמתנה עד שהאחות קוראת לנו. לפעמים יש שם הרבה אנשים ורעש.",
+        "done": "חיכיתי בתא ההמתנה!"
       },
       "triage": {
         "label": "בדיקות לפני המראה",
-        "hint": "מהנדס הטיסה בודק שאנחנו מוכנים לטיסה"
+        "hint": "מהנדס הטיסה בודק שאנחנו מוכנים לטיסה",
+        "story": "לפני ההמראה, מהנדס הטיסה בודק שאנחנו מוכנים לטיסה. גם במיון, האחות בודקת איך אנחנו מרגישים: מודדת חום, שמה אטב קטן על האצבע ושרוול רך על הזרוע.",
+        "done": "עברתי את הבדיקות לפני ההמראה!"
       },
       "wait-doctor": {
         "label": "חדר בקרה",
-        "hint": "ממתינים לקברניט שיסיים תדרוך"
+        "hint": "ממתינים לקברניט שיסיים תדרוך",
+        "story": "מפקד החללית עוזר לכל הצוות בתחנה, ולכן לפעמים מחכים לו בחדר הבקרה. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
+        "done": "חיכיתי למפקד בחדר הבקרה!"
       },
       "doctor": {
         "label": "פגישה עם מפקד החללית",
-        "hint": "מפקד החללית קובע את מסלול הטיסה"
+        "hint": "מפקד החללית קובע את מסלול הטיסה",
+        "story": "מפקד החללית מקשיב ובודק, ואז קובע את מסלול הטיסה. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
       },
       "decision": {
         "label": "נחיתה מוצלחת!",
-        "hint": "חזרנו לכדור הארץ בשלום!"
+        "hint": "חזרנו לכדור הארץ בשלום!",
+        "story": "בסוף המסע בחלל, החללית נוחתת. גם במיון, בסוף הצוות מסכם איתנו מה הלאה: לרוב חוזרים הביתה, ולפעמים נשארים לישון בבית החולים כדי להמשיך לטפל בנו."
       },
       "tests": {
         "label": "סורק החלל",
-        "hint": "הסורק רואה מה שהעין לא רואה"
+        "hint": "הסורק רואה מה שהעין לא רואה",
+        "story": "סורק החלל רואה דברים שהעין לא רואה. גם במיון, לפעמים צריך בדיקות, כמו בדיקת דם, בדיקת שתן או צילום. עושים רק את הבדיקות שהרופא החליט עליהן.",
+        "done": "סיימתי בסורק החלל!"
       },
       "treatment": {
         "label": "תיקון התחנה",
-        "hint": "הטכנאי מתקן את מה שצריך"
+        "hint": "הטכנאי מתקן את מה שצריך",
+        "story": "בתיקון התחנה, הטכנאי מתקן את מה שצריך. גם במיון, אם צריך, נותנים לנו את הטיפול שהרופא החליט עליו, כמו תרופה, אינהלציה או תחבושת.",
+        "done": "סיימתי בתיקון התחנה!"
       },
       "consult": {
         "label": "מרכז פיקוד",
-        "hint": "מומחה נוסף מצטרף לעזור"
+        "hint": "מומחה נוסף מצטרף לעזור",
+        "story": "לפעמים מפקד החללית קורא למומחה ממרכז הפיקוד, כדי שיעזור. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
+        "done": "פגשתי את המומחה ממרכז הפיקוד!"
       },
       "wait-results": {
         "label": "עיבוד נתונים",
-        "hint": "המחשב מנתח את הנתונים"
+        "hint": "המחשב מנתח את הנתונים",
+        "story": "המחשב של התחנה מנתח את הנתונים, ומחכים לשמוע מה הוא גילה. גם במיון, אחרי הבדיקות מחכים לתשובות, ולפעמים זה לוקח זמן. כשיהיו תשובות, הרופא יבוא לספר לנו.",
+        "done": "חיכיתי לעיבוד הנתונים!"
       }
     },
     "procedureNarratives": {
@@ -211,7 +229,8 @@
     ],
     "ui": {
       "decision": "החלטת מפקד החללית ←",
-      "decisionTitle": "החלטת מפקד החללית"
+      "decisionTitle": "החלטת מפקד החללית",
+      "intro": "המסע במיון הילדים דומה למסע בחלל. מוכנים להמריא?"
     }
   },
   "en": {
@@ -219,43 +238,61 @@
     "stages": {
       "reception": {
         "label": "Station Entrance",
-        "hint": "We register at the space station and get an astronaut's bracelet"
+        "hint": "We register at the space station and get an astronaut's bracelet",
+        "story": "When we arrive at the space station, we register at the entrance and get an astronaut's bracelet, so we can go all around the station. In the ER too, we get a number that goes with us from station to station.",
+        "done": "I got my astronaut's bracelet!"
       },
       "wait-before-triage": {
         "label": "Waiting Cabin",
-        "hint": "We wait at the station until the flight engineer calls us for the check"
+        "hint": "We wait at the station until the flight engineer calls us for the check",
+        "story": "Before the checks, we wait in the waiting cabin until the flight engineer calls us. In the ER too, we wait in the waiting room until the nurse calls us. Sometimes it is busy and noisy there.",
+        "done": "I waited in the waiting cabin!"
       },
       "triage": {
         "label": "Checks Before Launch",
-        "hint": "The flight engineer checks that we are ready to fly"
+        "hint": "The flight engineer checks that we are ready to fly",
+        "story": "Before the launch, the flight engineer checks that we are ready to fly. In the ER too, the nurse checks how we feel: takes our temperature, puts a little clip on a finger and a soft cuff on the arm.",
+        "done": "I passed the checks before launch!"
       },
       "wait-doctor": {
         "label": "Control Room",
-        "hint": "We wait for the ship commander to finish the briefing"
+        "hint": "We wait for the ship commander to finish the briefing",
+        "story": "The ship commander helps the whole crew on the station, so sometimes we wait for the commander in the control room. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
+        "done": "I waited for the commander in the control room!"
       },
       "doctor": {
         "label": "Meeting the Ship Commander",
-        "hint": "The ship commander sets the flight route"
+        "hint": "The ship commander sets the flight route",
+        "story": "The ship commander listens and checks, and then sets the flight route. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
       },
       "decision": {
         "label": "Successful Landing!",
-        "hint": "We are back on Earth safely!"
+        "hint": "We are back on Earth safely!",
+        "story": "At the end of the space journey, the spaceship lands. In the ER too, at the end the team tells us what comes next: most often we go home, and sometimes we stay the night in the hospital so they can keep looking after us."
       },
       "tests": {
         "label": "Space Scanner",
-        "hint": "The scanner sees what the eye cannot see"
+        "hint": "The scanner sees what the eye cannot see",
+        "story": "The space scanner sees things the eye cannot see. In the ER too, sometimes we need tests, like a blood test, a urine test or an X-ray. We only do the tests the doctor decided on.",
+        "done": "I finished at the space scanner!"
       },
       "treatment": {
         "label": "Station Repair",
-        "hint": "The technician fixes what needs fixing"
+        "hint": "The technician fixes what needs fixing",
+        "story": "At the station repair, the technician fixes what needs fixing. In the ER too, if we need it, we get the treatment the doctor decided on, like medicine, an inhaler mask or a bandage.",
+        "done": "I finished at the station repair!"
       },
       "consult": {
         "label": "Command Centre",
-        "hint": "Another expert joins to help"
+        "hint": "Another expert joins to help",
+        "story": "Sometimes the ship commander calls an expert from the command centre to help. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
+        "done": "I met the expert from the command centre!"
       },
       "wait-results": {
         "label": "Data Processing",
-        "hint": "The computer analyses the data"
+        "hint": "The computer analyses the data",
+        "story": "The station computer analyses the data, and we wait to hear what it found. In the ER too, after the tests we wait for the answers, and sometimes it takes a while. When the answers are ready, the doctor will come and tell us.",
+        "done": "I waited for the data processing!"
       }
     },
     "procedureNarratives": {
@@ -426,7 +463,8 @@
     ],
     "ui": {
       "decision": "Commander decides →",
-      "decisionTitle": "The commander's decision"
+      "decisionTitle": "The commander's decision",
+      "intro": "A visit to the children's ER is like a journey into space. Ready for launch?"
     }
   },
   "ru": {
@@ -434,43 +472,61 @@
     "stages": {
       "reception": {
         "label": "Вход на станцию",
-        "hint": "Регистрируемся на космической станции и получаем браслет космонавта"
+        "hint": "Регистрируемся на космической станции и получаем браслет космонавта",
+        "story": "Когда прилетаем на космическую станцию, мы регистрируемся у входа и получаем браслет космонавта, с которым можно ходить по всей станции. В приёмном покое тоже нам дадут номер, который будет с нами на всех остановках.",
+        "done": "Я получил(а) браслет космонавта!"
       },
       "wait-before-triage": {
         "label": "Каюта ожидания",
-        "hint": "Ждём на станции, пока бортинженер позовёт на проверку"
+        "hint": "Ждём на станции, пока бортинженер позовёт на проверку",
+        "story": "Перед проверками мы ждём в каюте ожидания, пока нас не позовёт бортинженер. В приёмном покое тоже мы ждём в зале ожидания, пока нас не позовёт медсестра. Иногда там много людей и шумно.",
+        "done": "Я подождал(а) в каюте ожидания!"
       },
       "triage": {
         "label": "Проверки перед взлётом",
-        "hint": "Бортинженер проверяет, что мы готовы к полёту"
+        "hint": "Бортинженер проверяет, что мы готовы к полёту",
+        "story": "Перед взлётом бортинженер проверяет, что мы готовы к полёту. В приёмном покое тоже медсестра проверяет, как мы себя чувствуем: измеряет температуру, надевает маленькую прищепку на палец и мягкую манжету на руку.",
+        "done": "Я прошёл(ла) проверки перед взлётом!"
       },
       "wait-doctor": {
         "label": "Диспетчерская",
-        "hint": "Ждём, пока командир корабля закончит инструктаж"
+        "hint": "Ждём, пока командир корабля закончит инструктаж",
+        "story": "Командир корабля помогает всему экипажу станции, поэтому иногда его приходится ждать в диспетчерской. В приёмном покое тоже мы ждём врача. Ждать бывает долго, но про нас не забыли.",
+        "done": "Я дождался(лась) командира в диспетчерской!"
       },
       "doctor": {
         "label": "Встреча с командиром",
-        "hint": "Командир корабля определяет маршрут полёта"
+        "hint": "Командир корабля определяет маршрут полёта",
+        "story": "Командир корабля слушает и осматривает, а потом определяет маршрут полёта. В приёмном покое тоже врач разговаривает с нами и осматривает тело, а в конце осмотра знает, что лучше сделать."
       },
       "decision": {
         "label": "Удачная посадка!",
-        "hint": "Мы благополучно вернулись на Землю!"
+        "hint": "Мы благополучно вернулись на Землю!",
+        "story": "В конце путешествия в космос корабль совершает посадку. В приёмном покое тоже в конце команда рассказывает нам, что дальше: чаще всего мы едем домой, а иногда остаёмся ночевать в больнице, чтобы о нас продолжали заботиться."
       },
       "tests": {
         "label": "Космический сканер",
-        "hint": "Сканер видит то, что не видит глаз"
+        "hint": "Сканер видит то, что не видит глаз",
+        "story": "Космический сканер видит то, чего не видит глаз. В приёмном покое тоже иногда нужны анализы — например, анализ крови, анализ мочи или рентген. Делают только те анализы, которые решил врач.",
+        "done": "Я закончил(а) у космического сканера!"
       },
       "treatment": {
         "label": "Ремонт станции",
-        "hint": "Техник чинит то, что нужно починить"
+        "hint": "Техник чинит то, что нужно починить",
+        "story": "На ремонте станции техник чинит то, что нужно починить. В приёмном покое тоже, если нужно, нам дают лечение, которое решил врач, — например, лекарство, ингаляцию или повязку.",
+        "done": "Я закончил(а) на ремонте станции!"
       },
       "consult": {
         "label": "Командный центр",
-        "hint": "Ещё один эксперт присоединяется помочь"
+        "hint": "Ещё один эксперт присоединяется помочь",
+        "story": "Иногда командир корабля зовёт на помощь эксперта из командного центра. В приёмном покое тоже иногда приходит ещё один врач, специалист, чтобы нас осмотреть. Это не значит, что что-то плохо, — просто хотят узнать больше.",
+        "done": "Я познакомился(лась) с экспертом из командного центра!"
       },
       "wait-results": {
         "label": "Обработка данных",
-        "hint": "Компьютер анализирует данные"
+        "hint": "Компьютер анализирует данные",
+        "story": "Компьютер станции анализирует данные, и мы ждём, что он покажет. В приёмном покое тоже после анализов мы ждём ответов, и иногда это долго. Когда ответы будут готовы, врач придёт и расскажет нам.",
+        "done": "Я дождался(лась) обработки данных!"
       }
     },
     "procedureNarratives": {
@@ -641,7 +697,8 @@
     ],
     "ui": {
       "decision": "Решение командира →",
-      "decisionTitle": "Решение командира"
+      "decisionTitle": "Решение командира",
+      "intro": "Поход в детский приёмный покой похож на путешествие в космос. Готовы к взлёту?"
     }
   }
 }

@@ -2109,6 +2109,23 @@
   font-size: 30px;
 }
 
+.worldTitleIntro {
+  /* the world's intro sentence instead of the headline: a smaller font, and the pill grows down to fit it */
+  height: auto;
+  min-height: calc(var(--title-h) * var(--u));
+  padding: 0.5em 1.1em;
+  border-radius: calc(var(--title-h) * var(--u) / 2);
+  font-size: calc(var(--title-fs) * 0.72 * var(--title-shrink, 1) * var(--u));
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.worldTitleTop.worldTitleIntro {
+  max-width: min(760px, calc(100vw - 2 * 170px));
+  border-radius: 28px;
+  font-size: 24px;
+}
+
 .worldSceneWide {
   position: relative;
   width: 100%;

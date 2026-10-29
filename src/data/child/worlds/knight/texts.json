@@ -4,43 +4,61 @@
     "stages": {
       "reception": {
         "label": "שער הטירה",
-        "hint": "נרשמים בספר האבירים ומקבלים צמיד אביר"
+        "hint": "נרשמים בספר האבירים ומקבלים צמיד אביר",
+        "story": "כשמגיעים לשער הטירה, נרשמים בספר האבירים ומקבלים צמיד אביר, איתו אפשר להסתובב בכל הטירה. גם במיון, נרשמים בכניסה ומקבלים מספר שילווה אותנו בין התחנות.",
+        "done": "קיבלתי את צמיד האביר!"
       },
       "wait-before-triage": {
         "label": "חצר הטירה",
-        "hint": "ממתינים בחצר עד שהרפואן קורא"
+        "hint": "ממתינים בחצר עד שהרפואן קורא",
+        "story": "לפני שנכנסים פנימה, ממתינים בחצר הטירה עד שהרפואן קורא לנו. גם במיון, מחכים בחדר ההמתנה עד שהאחות קוראת לנו. לפעמים יש שם הרבה אנשים ורעש.",
+        "done": "חיכיתי בחצר הטירה!"
       },
       "triage": {
         "label": "בדיקת הכוחות",
-        "hint": "הרפואן בודק שהכול מוכן למסע"
+        "hint": "הרפואן בודק שהכול מוכן למסע",
+        "story": "בבדיקת הכוחות, הרפואן בודק שהאביר מוכן למסע. גם במיון, האחות בודקת איך אנחנו מרגישים: מודדת חום, שמה אטב קטן על האצבע ושרוול רך על הזרוע.",
+        "done": "עברתי את בדיקת הכוחות!"
       },
       "wait-doctor": {
         "label": "אולם האבירים",
-        "hint": "ממתינים באולם עד שהקוסם הגדול יקרא"
+        "hint": "ממתינים באולם עד שהקוסם הגדול יקרא",
+        "story": "הקוסם הגדול עוזר לכל האבירים בטירה, ולכן לפעמים ממתינים לו באולם האבירים. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
+        "done": "חיכיתי לקוסם הגדול באולם האבירים!"
       },
       "doctor": {
         "label": "פגישה עם הקוסם הגדול",
-        "hint": "הקוסם מחליט מהו הקסם הנכון"
+        "hint": "הקוסם מחליט מהו הקסם הנכון",
+        "story": "הקוסם הגדול מקשיב ובוחן את כוחות האביר, ואז מחליט מהו הקסם הנכון. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
       },
       "decision": {
         "label": "טקס הניצחון",
-        "hint": "קיבלתם גלילה — המסע הסתיים!"
+        "hint": "קיבלתם גלילה — המסע הסתיים!",
+        "story": "בסוף המסע בטירה מתאספים לטקס הניצחון ומקבלים גלילה. גם במיון, בסוף הצוות מסכם איתנו מה הלאה: לרוב חוזרים הביתה, ולפעמים נשארים לישון בבית החולים כדי להמשיך לטפל בנו."
       },
       "tests": {
         "label": "מראת הקסמים",
-        "hint": "המראה רואה מה שעיניים לא יכולות"
+        "hint": "המראה רואה מה שעיניים לא יכולות",
+        "story": "מראת הקסמים רואה דברים שעיניים לא יכולות לראות. גם במיון, לפעמים צריך בדיקות, כמו בדיקת דם, בדיקת שתן או צילום. עושים רק את הבדיקות שהרופא החליט עליהן.",
+        "done": "סיימתי אצל מראת הקסמים!"
       },
       "treatment": {
         "label": "חדר הנשק",
-        "hint": "הנפח מתקן מה שנשבר בקרב"
+        "hint": "הנפח מתקן מה שנשבר בקרב",
+        "story": "בחדר הנשק הנפח מתקן את מה שצריך תיקון. גם במיון, אם צריך, נותנים לנו את הטיפול שהרופא החליט עליו, כמו תרופה, אינהלציה או תחבושת.",
+        "done": "סיימתי בחדר הנשק!"
       },
       "consult": {
         "label": "מועצת החכמים",
-        "hint": "חכם נוסף מצטרף לעזור"
+        "hint": "חכם נוסף מצטרף לעזור",
+        "story": "לפעמים הקוסם הגדול קורא לעוד חכם ממועצת החכמים, שיודע הרבה על דבר אחד. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
+        "done": "פגשתי את מועצת החכמים!"
       },
       "wait-results": {
         "label": "המתנה לנבואה",
-        "hint": "הגביש מעבד את התשובות"
+        "hint": "הגביש מעבד את התשובות",
+        "story": "גביש הקוסם מעבד את התשובות, ומחכים לנבואה. גם במיון, אחרי הבדיקות מחכים לתשובות, ולפעמים זה לוקח זמן. כשיהיו תשובות, הרופא יבוא לספר לנו.",
+        "done": "חיכיתי לנבואה של הגביש!"
       }
     },
     "procedureNarratives": {
@@ -211,7 +229,8 @@
     },
     "ui": {
       "decision": "החלטת הקוסם ←",
-      "decisionTitle": "החלטת הקוסם"
+      "decisionTitle": "החלטת הקוסם",
+      "intro": "המסע במיון הילדים דומה למסע של אביר בטירה. מוכנים לצאת להרפתקה?"
     }
   },
   "en": {
@@ -219,43 +238,61 @@
     "stages": {
       "reception": {
         "label": "The Castle Gate",
-        "hint": "We sign the knights' book and get a knight's bracelet"
+        "hint": "We sign the knights' book and get a knight's bracelet",
+        "story": "When we arrive at the castle gate, we sign the knights' book and get a knight's bracelet, so we can walk around the whole castle. In the ER too, we sign in at the entrance and get a number that goes with us from station to station.",
+        "done": "I got my knight's bracelet!"
       },
       "wait-before-triage": {
         "label": "The Castle Yard",
-        "hint": "We wait in the yard until the healer calls"
+        "hint": "We wait in the yard until the healer calls",
+        "story": "Before we go inside, we wait in the castle yard until the healer calls us. In the ER too, we wait in the waiting room until the nurse calls us. Sometimes it is busy and noisy there.",
+        "done": "I waited in the castle yard!"
       },
       "triage": {
         "label": "Strength Check",
-        "hint": "The healer checks that you are ready for the quest"
+        "hint": "The healer checks that you are ready for the quest",
+        "story": "At the strength check, the healer checks that the knight is ready for the quest. In the ER too, the nurse checks how we feel: takes our temperature, puts a little clip on a finger and a soft cuff on the arm.",
+        "done": "I passed the strength check!"
       },
       "wait-doctor": {
         "label": "The Knights' Hall",
-        "hint": "We wait in the hall until the great wizard calls"
+        "hint": "We wait in the hall until the great wizard calls",
+        "story": "The great wizard helps every knight in the castle, so sometimes we wait for him in the knights' hall. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
+        "done": "I waited for the great wizard in the knights' hall!"
       },
       "doctor": {
         "label": "Meeting the Great Wizard",
-        "hint": "The wizard decides which magic is needed"
+        "hint": "The wizard decides which magic is needed",
+        "story": "The great wizard listens and examines the knight's powers, and then decides which magic is right. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
       },
       "decision": {
         "label": "End of the Journey",
-        "hint": "You got the scroll — the quest is over!"
+        "hint": "You got the scroll — the quest is over!",
+        "story": "At the end of the quest in the castle we gather for the victory ceremony and get a scroll. In the ER too, at the end the team tells us what comes next: most often we go home, and sometimes we stay the night in the hospital so they can keep looking after us."
       },
       "tests": {
         "label": "The Magic Mirror",
-        "hint": "The mirror sees what eyes cannot"
+        "hint": "The mirror sees what eyes cannot",
+        "story": "The magic mirror sees things that eyes cannot see. In the ER too, sometimes we need tests, like a blood test, a urine test or an X-ray. We only do the tests the doctor decided on.",
+        "done": "I finished at the magic mirror!"
       },
       "treatment": {
         "label": "The Weapon Room",
-        "hint": "The smith fixes what was broken in battle"
+        "hint": "The smith fixes what was broken in battle",
+        "story": "In the weapon room the smith fixes whatever needs fixing. In the ER too, if we need it, we get the treatment the doctor decided on, like medicine, an inhaler mask or a bandage.",
+        "done": "I finished in the weapon room!"
       },
       "consult": {
         "label": "The Council of Sages",
-        "hint": "Another sage joins to help"
+        "hint": "Another sage joins to help",
+        "story": "Sometimes the great wizard calls another sage from the council of sages, one who knows a lot about one thing. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
+        "done": "I met the council of sages!"
       },
       "wait-results": {
         "label": "Waiting for the Prophecy",
-        "hint": "The crystal processes the answers"
+        "hint": "The crystal processes the answers",
+        "story": "The wizard's crystal is working on the answers, and we wait for the prophecy. In the ER too, after the tests we wait for the answers, and sometimes it takes a while. When the answers are ready, the doctor will come and tell us.",
+        "done": "I waited for the crystal's prophecy!"
       }
     },
     "procedureNarratives": {
@@ -426,7 +463,8 @@
     },
     "ui": {
       "decision": "Wizard decides →",
-      "decisionTitle": "The wizard's decision"
+      "decisionTitle": "The wizard's decision",
+      "intro": "A visit to the children's ER is like a knight's quest in the castle. Ready for the adventure?"
     }
   },
   "ru": {
@@ -434,43 +472,61 @@
     "stages": {
       "reception": {
         "label": "Ворота замка",
-        "hint": "Записываемся в книгу рыцарей и получаем браслет рыцаря"
+        "hint": "Записываемся в книгу рыцарей и получаем браслет рыцаря",
+        "story": "Когда приходим к воротам замка, мы записываемся в книгу рыцарей и получаем браслет рыцаря, с которым можно ходить по всему замку. В приёмном покое тоже мы регистрируемся у входа и получаем номер, который будет с нами на всех остановках.",
+        "done": "Я получил(а) браслет рыцаря!"
       },
       "wait-before-triage": {
         "label": "Двор замка",
-        "hint": "Ждём во дворе, пока нас позовёт лекарь"
+        "hint": "Ждём во дворе, пока нас позовёт лекарь",
+        "story": "Перед тем как войти внутрь, мы ждём во дворе замка, пока нас не позовёт лекарь. В приёмном покое тоже мы ждём в зале ожидания, пока нас не позовёт медсестра. Иногда там много людей и шумно.",
+        "done": "Я подождал(а) во дворе замка!"
       },
       "triage": {
         "label": "Проверка сил",
-        "hint": "Лекарь проверяет, готов ли ты к походу"
+        "hint": "Лекарь проверяет, готов ли ты к походу",
+        "story": "На проверке сил лекарь проверяет, что рыцарь готов к походу. В приёмном покое тоже медсестра проверяет, как мы себя чувствуем: измеряет температуру, надевает маленькую прищепку на палец и мягкую манжету на руку.",
+        "done": "Я прошёл(прошла) проверку сил!"
       },
       "wait-doctor": {
         "label": "Зал рыцарей",
-        "hint": "Ждём в зале, пока нас позовёт великий волшебник"
+        "hint": "Ждём в зале, пока нас позовёт великий волшебник",
+        "story": "Великий волшебник помогает всем рыцарям в замке, поэтому иногда его приходится ждать в зале рыцарей. В приёмном покое тоже мы ждём врача. Ждать бывает долго, но про нас не забыли.",
+        "done": "Я дождался(лась) великого волшебника в зале рыцарей!"
       },
       "doctor": {
         "label": "Встреча с великим волшебником",
-        "hint": "Волшебник решает, какое нужно волшебство"
+        "hint": "Волшебник решает, какое нужно волшебство",
+        "story": "Великий волшебник слушает и изучает силы рыцаря, а потом решает, какое волшебство нужно. В приёмном покое тоже врач разговаривает с нами и осматривает тело, а в конце осмотра знает, что лучше сделать."
       },
       "decision": {
         "label": "Конец путешествия",
-        "hint": "Ты получил свиток — поход окончен!"
+        "hint": "Ты получил свиток — поход окончен!",
+        "story": "В конце похода в замке мы собираемся на праздник победы и получаем свиток. В приёмном покое тоже в конце команда рассказывает нам, что дальше: чаще всего мы едем домой, а иногда остаёмся ночевать в больнице, чтобы о нас продолжали заботиться."
       },
       "tests": {
         "label": "Волшебное зеркало",
-        "hint": "Зеркало видит то, чего не видят глаза"
+        "hint": "Зеркало видит то, чего не видят глаза",
+        "story": "Волшебное зеркало видит то, чего не видят глаза. В приёмном покое тоже иногда нужны анализы — например, анализ крови, анализ мочи или рентген. Делают только те анализы, которые решил врач.",
+        "done": "Я закончил(а) у волшебного зеркала!"
       },
       "treatment": {
         "label": "Оружейная",
-        "hint": "Кузнец чинит то, что сломалось в бою"
+        "hint": "Кузнец чинит то, что сломалось в бою",
+        "story": "В оружейной кузнец чинит то, что нужно починить. В приёмном покое тоже, если нужно, нам дают лечение, которое решил врач, — например, лекарство, ингаляцию или повязку.",
+        "done": "Я закончил(а) в оружейной!"
       },
       "consult": {
         "label": "Совет мудрецов",
-        "hint": "Ещё один мудрец приходит помочь"
+        "hint": "Ещё один мудрец приходит помочь",
+        "story": "Иногда великий волшебник зовёт ещё одного мудреца из совета мудрецов, который много знает об одном деле. В приёмном покое тоже иногда приходит ещё один врач, специалист, чтобы нас осмотреть. Это не значит, что что-то плохо, — просто хотят узнать больше.",
+        "done": "Я познакомился(лась) с советом мудрецов!"
       },
       "wait-results": {
         "label": "Ожидание пророчества",
-        "hint": "Кристалл обрабатывает ответы"
+        "hint": "Кристалл обрабатывает ответы",
+        "story": "Кристалл волшебника работает над ответами, и мы ждём пророчества. В приёмном покое тоже после анализов мы ждём ответов, и иногда это долго. Когда ответы будут готовы, врач придёт и расскажет нам.",
+        "done": "Я дождался(лась) пророчества кристалла!"
       }
     },
     "procedureNarratives": {
@@ -641,7 +697,8 @@
     },
     "ui": {
       "decision": "Решение волшебника →",
-      "decisionTitle": "Решение волшебника"
+      "decisionTitle": "Решение волшебника",
+      "intro": "Поход в детский приёмный покой похож на поход рыцаря в замке. Готовы к приключению?"
     }
   }
 }

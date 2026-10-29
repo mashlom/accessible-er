@@ -4,43 +4,61 @@
     "stages": {
       "reception": {
         "label": "שער הגן",
-        "hint": "נרשמים בגן הקסמים ומקבלים צמיד קסמים"
+        "hint": "נרשמים בגן הקסמים ומקבלים צמיד קסמים",
+        "story": "כשמגיעים לשער גן הקסמים, נרשמים בכניסה ומקבלים צמיד קסמים, איתו אפשר לטייל בכל הגן. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "done": "קיבלתי את צמיד הקסמים!"
       },
       "wait-before-triage": {
         "label": "גשר הפרפרים",
-        "hint": "מחכים על הגשר עד שהשדון העוזר קורא"
+        "hint": "מחכים על הגשר עד שהשדון העוזר קורא",
+        "story": "על גשר הפרפרים מחכים עד שהשדון העוזר קורא לנו. גם במיון, מחכים בחדר ההמתנה עד שהאחות קוראת לנו. לפעמים יש שם הרבה אנשים ורעש.",
+        "done": "חיכיתי על גשר הפרפרים!"
       },
       "triage": {
         "label": "בדיקת הקסמים",
-        "hint": "השדון העוזר בודק את הקסם שלנו"
+        "hint": "השדון העוזר בודק את הקסם שלנו",
+        "story": "לפני שממשיכים בשביל הגן, השדון העוזר בודק את הקסם שלנו. גם במיון, האחות בודקת איך אנחנו מרגישים: מודדת חום, שמה אטב קטן על האצבע ושרוול רך על הזרוע.",
+        "done": "השדון בדק את הקסם שלי!"
       },
       "wait-doctor": {
         "label": "פינת הפרחים",
-        "hint": "יושבים בין הפרחים ומחכים"
+        "hint": "יושבים בין הפרחים ומחכים",
+        "story": "פיית הריפוי עוזרת לכל האורחים בגן, ולכן לפעמים מחכים לה בפינת הפרחים. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
+        "done": "חיכיתי בין הפרחים בסבלנות!"
       },
       "doctor": {
         "label": "פגישה עם פיית הריפוי",
-        "hint": "הפיה מחליטה איזה קסם תרפא"
+        "hint": "הפיה מחליטה איזה קסם תרפא",
+        "story": "פיית הריפוי מקשיבה ובודקת, ואז מחליטה איזה קסם יעזור. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
       },
       "decision": {
         "label": "יוצאים מהגן היפה",
-        "hint": "להתראות, פיות!"
+        "hint": "להתראות, פיות!",
+        "story": "בסוף המסע יוצאים מגן הקסמים ונפרדים מהפיות. גם במיון, בסוף הצוות מסכם איתנו מה הלאה: לרוב חוזרים הביתה, ולפעמים נשארים לישון בבית החולים כדי להמשיך לטפל בנו."
       },
       "tests": {
         "label": "קסם הראייה",
-        "hint": "הגביש מראה מה שבפנים"
+        "hint": "הגביש מראה מה שבפנים",
+        "story": "הגביש הקסום מראה דברים שלא רואים בעיניים. גם במיון, לפעמים צריך בדיקות, כמו בדיקת דם, בדיקת שתן או צילום. עושים רק את הבדיקות שהרופא החליט עליהן.",
+        "done": "סיימתי את קסם הראייה!"
       },
       "treatment": {
         "label": "שרביט הריפוי",
-        "hint": "הגמד הגנן מטפל במה שצריך"
+        "hint": "הגמד הגנן מטפל במה שצריך",
+        "story": "עם שרביט הריפוי, הגמד הגנן מטפל במה שצריך. גם במיון, אם צריך, נותנים לנו את הטיפול שהרופא החליט עליו, כמו תרופה, אינהלציה או תחבושת.",
+        "done": "סיימתי אצל הגמד הגנן!"
       },
       "consult": {
         "label": "מועצת הפיות",
-        "hint": "הפיה החכמה מגיעה לעזור"
+        "hint": "הפיה החכמה מגיעה לעזור",
+        "story": "לפעמים פיית הריפוי קוראת לפיה החכמה ממועצת הפיות. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
+        "done": "פגשתי את הפיה החכמה!"
       },
       "wait-results": {
         "label": "ממתינים לקסם",
-        "hint": "הקסם בהכנה"
+        "hint": "הקסם בהכנה",
+        "story": "הגביש הקסום בודק את הדגימות, ומחכים לשמוע מה הוא גילה. גם במיון, אחרי הבדיקות מחכים לתשובות, ולפעמים זה לוקח זמן. כשיהיו תשובות, הרופא יבוא לספר לנו.",
+        "done": "חיכיתי לתשובת הקסם!"
       }
     },
     "procedureNarratives": {
@@ -211,7 +229,8 @@
     ],
     "ui": {
       "decision": "החלטת פיית הריפוי ←",
-      "decisionTitle": "החלטת פיית הריפוי"
+      "decisionTitle": "החלטת פיית הריפוי",
+      "intro": "המסע במיון הילדים דומה למסע בגן הקסמים. מוכנים להיכנס לגן?"
     }
   },
   "en": {
@@ -219,43 +238,61 @@
     "stages": {
       "reception": {
         "label": "Garden Gate",
-        "hint": "We register in the magic garden and get a magic bracelet"
+        "hint": "We register in the magic garden and get a magic bracelet",
+        "story": "When we reach the gate of the magic garden, we sign in at the entrance and get a magic bracelet, so we can walk around the whole garden. In the ER too, we get a number that goes with us from station to station.",
+        "done": "I got my magic bracelet!"
       },
       "wait-before-triage": {
         "label": "Butterfly Bridge",
-        "hint": "We wait on the bridge until the elf helper calls"
+        "hint": "We wait on the bridge until the elf helper calls",
+        "story": "On the butterfly bridge we wait until the elf helper calls us. In the ER too, we wait in the waiting room until the nurse calls us. Sometimes it is busy and noisy there.",
+        "done": "I waited on the butterfly bridge!"
       },
       "triage": {
         "label": "Magic Check",
-        "hint": "The elf helper checks our magic"
+        "hint": "The elf helper checks our magic",
+        "story": "Before we go on along the garden path, the elf helper checks our magic. In the ER too, the nurse checks how we feel: takes our temperature, puts a little clip on a finger and a soft cuff on the arm.",
+        "done": "The elf checked my magic!"
       },
       "wait-doctor": {
         "label": "Flower Corner",
-        "hint": "We sit among the flowers and wait"
+        "hint": "We sit among the flowers and wait",
+        "story": "The healing fairy helps every guest in the garden, so sometimes we wait for her in the flower corner. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
+        "done": "I waited patiently among the flowers!"
       },
       "doctor": {
         "label": "Meeting the Healing Fairy",
-        "hint": "The fairy decides which magic will heal"
+        "hint": "The fairy decides which magic will heal",
+        "story": "The healing fairy listens and checks, and then decides which magic will help. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
       },
       "decision": {
         "label": "Leaving the Beautiful Garden",
-        "hint": "Goodbye, fairies!"
+        "hint": "Goodbye, fairies!",
+        "story": "At the end of the journey we leave the magic garden and say goodbye to the fairies. In the ER too, at the end the team tells us what comes next: most often we go home, and sometimes we stay the night in the hospital so they can keep looking after us."
       },
       "tests": {
         "label": "Magic Sight",
-        "hint": "The crystal shows what is inside"
+        "hint": "The crystal shows what is inside",
+        "story": "The magic crystal shows things we can't see with our eyes. In the ER too, sometimes we need tests, like a blood test, a urine test or an X-ray. We only do the tests the doctor decided on.",
+        "done": "I finished the magic sight!"
       },
       "treatment": {
         "label": "Healing Wand",
-        "hint": "The garden gnome treats what needs treating"
+        "hint": "The garden gnome treats what needs treating",
+        "story": "With the healing wand, the garden gnome treats what needs treating. In the ER too, if we need it, we get the treatment the doctor decided on, like medicine, an inhaler mask or a bandage.",
+        "done": "I finished with the garden gnome!"
       },
       "consult": {
         "label": "Council of Fairies",
-        "hint": "The wise fairy comes to help"
+        "hint": "The wise fairy comes to help",
+        "story": "Sometimes the healing fairy calls the wise fairy from the council of fairies. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
+        "done": "I met the wise fairy!"
       },
       "wait-results": {
         "label": "Waiting for the Magic",
-        "hint": "The magic is being prepared"
+        "hint": "The magic is being prepared",
+        "story": "The magic crystal is studying the samples, and we wait to hear what it found. In the ER too, after the tests we wait for the answers, and sometimes it takes a while. When the answers are ready, the doctor will come and tell us.",
+        "done": "I waited for the magic answer!"
       }
     },
     "procedureNarratives": {
@@ -426,7 +463,8 @@
     ],
     "ui": {
       "decision": "Fairy decides →",
-      "decisionTitle": "The healing fairy's decision"
+      "decisionTitle": "The healing fairy's decision",
+      "intro": "A visit to the children's ER is like a journey through the magic garden. Ready to step inside?"
     }
   },
   "ru": {
@@ -434,43 +472,61 @@
     "stages": {
       "reception": {
         "label": "Ворота сада",
-        "hint": "Регистрируемся в волшебном саду и получаем волшебный браслет"
+        "hint": "Регистрируемся в волшебном саду и получаем волшебный браслет",
+        "story": "Когда подходим к воротам волшебного сада, мы регистрируемся у входа и получаем волшебный браслет, с которым можно гулять по всему саду. В приёмном покое тоже нам дадут номер, который будет с нами на всех остановках.",
+        "done": "Я получил(а) волшебный браслет!"
       },
       "wait-before-triage": {
         "label": "Мост бабочек",
-        "hint": "Ждём на мосту, пока нас позовёт эльф-помощник"
+        "hint": "Ждём на мосту, пока нас позовёт эльф-помощник",
+        "story": "На мосту бабочек мы ждём, пока нас позовёт эльф-помощник. В приёмном покое тоже мы ждём в зале ожидания, пока нас не позовёт медсестра. Иногда там много людей и шумно.",
+        "done": "Я подождал(а) на мосту бабочек!"
       },
       "triage": {
         "label": "Проверка волшебства",
-        "hint": "Эльф-помощник проверяет наше волшебство"
+        "hint": "Эльф-помощник проверяет наше волшебство",
+        "story": "Прежде чем идти дальше по дорожке сада, эльф-помощник проверяет наше волшебство. В приёмном покое тоже медсестра проверяет, как мы себя чувствуем: измеряет температуру, надевает маленькую прищепку на палец и мягкую манжету на руку.",
+        "done": "Эльф проверил моё волшебство!"
       },
       "wait-doctor": {
         "label": "Цветочный уголок",
-        "hint": "Сидим среди цветов и ждём"
+        "hint": "Сидим среди цветов и ждём",
+        "story": "Фея-целительница помогает всем гостям сада, поэтому иногда её приходится ждать в цветочном уголке. В приёмном покое тоже мы ждём врача. Ждать бывает долго, но про нас не забыли.",
+        "done": "Я терпеливо ждал(а) среди цветов!"
       },
       "doctor": {
         "label": "Встреча с феей-целительницей",
-        "hint": "Фея решает, какое волшебство исцелит"
+        "hint": "Фея решает, какое волшебство исцелит",
+        "story": "Фея-целительница слушает и осматривает, а потом решает, какое волшебство поможет. В приёмном покое тоже врач разговаривает с нами и осматривает тело, а в конце осмотра знает, что лучше сделать."
       },
       "decision": {
         "label": "Выходим из прекрасного сада",
-        "hint": "До свидания, феи!"
+        "hint": "До свидания, феи!",
+        "story": "В конце путешествия мы выходим из волшебного сада и прощаемся с феями. В приёмном покое тоже в конце команда рассказывает нам, что дальше: чаще всего мы едем домой, а иногда остаёмся ночевать в больнице, чтобы о нас продолжали заботиться."
       },
       "tests": {
         "label": "Волшебное зрение",
-        "hint": "Кристалл показывает, что внутри"
+        "hint": "Кристалл показывает, что внутри",
+        "story": "Волшебный кристалл показывает то, чего не видно глазами. В приёмном покое тоже иногда нужны анализы — например, анализ крови, анализ мочи или рентген. Делают только те анализы, которые решил врач.",
+        "done": "Я закончил(а) с волшебным зрением!"
       },
       "treatment": {
         "label": "Целебная палочка",
-        "hint": "Гном-садовник лечит то, что нужно"
+        "hint": "Гном-садовник лечит то, что нужно",
+        "story": "Целебной палочкой гном-садовник лечит то, что нужно. В приёмном покое тоже, если нужно, нам дают лечение, которое решил врач, — например, лекарство, ингаляцию или повязку.",
+        "done": "Я закончил(а) у гнома-садовника!"
       },
       "consult": {
         "label": "Совет фей",
-        "hint": "Мудрая фея приходит помочь"
+        "hint": "Мудрая фея приходит помочь",
+        "story": "Иногда фея-целительница зовёт мудрую фею из совета фей. В приёмном покое тоже иногда приходит ещё один врач, специалист, чтобы нас осмотреть. Это не значит, что что-то плохо, — просто хотят узнать больше.",
+        "done": "Я познакомился(лась) с мудрой феей!"
       },
       "wait-results": {
         "label": "Ждём волшебства",
-        "hint": "Волшебство готовится"
+        "hint": "Волшебство готовится",
+        "story": "Волшебный кристалл изучает образцы, и мы ждём, что он покажет. В приёмном покое тоже после анализов мы ждём ответов, и иногда это долго. Когда ответы будут готовы, врач придёт и расскажет нам.",
+        "done": "Я дождался(лась) волшебного ответа!"
       }
     },
     "procedureNarratives": {
@@ -641,7 +697,8 @@
     ],
     "ui": {
       "decision": "Решение феи-целительницы →",
-      "decisionTitle": "Решение феи-целительницы"
+      "decisionTitle": "Решение феи-целительницы",
+      "intro": "Поход в детский приёмный покой похож на путешествие по волшебному саду. Готовы войти в сад?"
     }
   }
 }
