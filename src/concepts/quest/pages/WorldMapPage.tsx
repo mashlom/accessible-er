@@ -133,9 +133,11 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
         <>
           <div className={`${css.worldTileH} ${css.worldTileHLeft} ${theme.design?.mirrorAbove === false ? css.worldTileHFade : ''}`} aria-hidden>
             <div className={css.worldSideBgW} />
+            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} />
           </div>
           <div className={`${css.worldTileH} ${css.worldTileHRight} ${theme.design?.mirrorAbove === false ? css.worldTileHFade : ''}`} aria-hidden>
             <div className={css.worldSideBgW} />
+            <div className={`${css.worldSideBgW} ${css.worldSideBlur}`} />
           </div>
         </>
       )}

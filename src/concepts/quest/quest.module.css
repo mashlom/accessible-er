@@ -3271,7 +3271,6 @@ path.worldTrailLit {
   .worldSceneWide {
     width: var(--sw);
     margin-inline: auto;
-    box-shadow: 0 0 48px rgba(0, 0, 0, 0.35);
   }
   /* the picture's outermost pixel columns are blurred by scaling: push them just past the seam */
   .worldSceneWide::before {
@@ -3279,10 +3278,14 @@ path.worldTrailLit {
     background-position: center top;
   }
   .worldTileH { display: block; bottom: calc((100dvh - var(--sh)) / 2); }
-  .worldTileH .worldSideBgW {
-    filter: blur(28px) brightness(0.75) saturate(0.9);
+  /* the mirrored picture is sharp at the seam; a blurred copy over it comes in gradually further out
+     (the pieces are flipped, so "left" here is the side next to the scene for the left piece) */
+  .worldTileH .worldSideBlur {
+    filter: blur(28px) brightness(0.85);
     scale: 1.15;
   }
+  .worldTileHLeft .worldSideBlur { mask-image: linear-gradient(to right, transparent 0, #000 120px); transform-origin: left center; }
+  .worldTileHRight .worldSideBlur { mask-image: linear-gradient(to left, transparent 0, #000 120px); transform-origin: right center; }
   .worldTileHLeft { left: calc((100vw - var(--sw)) / 2 - var(--sw) + 4px); }
   .worldTileHRight { left: calc((100vw + var(--sw)) / 2 - 4px); }
   .worldProgressWide {
