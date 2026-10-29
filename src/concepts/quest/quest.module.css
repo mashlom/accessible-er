@@ -2082,11 +2082,16 @@
 /* on a wide screen the headline is at the top of the page, on the sky, below the top row, centred (clear of the
    language picker); the same size as in the scene (the scene is the full width, so its unit is 100vw / 1920) */
 .worldTitleTop {
-  --u: calc(100vw / 1920);
   z-index: 15;
   top: 72px;
   left: 50%;
   translate: -50% 0;
+  /* always large, whatever the window's width: the pill fits its words */
+  width: max-content;
+  max-width: calc(100vw - 2 * 170px);
+  height: auto;
+  padding: 0.45em 1.4em;
+  font-size: 30px;
 }
 
 .worldSceneWide {
