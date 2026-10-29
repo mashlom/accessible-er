@@ -1,0 +1,44 @@
+{
+  "id": "safari",
+  "order": 6,
+  "doneEmoji": "⭐",
+  "shopImage": "/worlds/knight/shop.JPEG",
+  "emoji": "🦁",
+  "bg": "/worlds/safari/safari.JPEG",
+  "accent": "#b5720a",
+  "accentSoft": "#fcefd0",
+  "accentText": "#ffffff",
+  "completedColor": "#e8a825",
+  "stages": {
+    "reception": {
+      "icon": "⛺"
+    },
+    "wait-before-triage": {
+      "icon": "🌳"
+    },
+    "triage": {
+      "icon": "🎒"
+    },
+    "wait-doctor": {
+      "icon": "🦁"
+    },
+    "doctor": {
+      "icon": "🐘"
+    },
+    "decision": {
+      "icon": "🌅"
+    },
+    "tests": {
+      "icon": "🔬"
+    },
+    "treatment": {
+      "icon": "🩹"
+    },
+    "consult": {
+      "icon": "🦒"
+    },
+    "wait-results": {
+      "icon": "🕐"
+    }
+  }
+}

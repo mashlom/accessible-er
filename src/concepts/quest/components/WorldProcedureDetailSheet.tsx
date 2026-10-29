@@ -1,30 +1,29 @@
 import { lockBodyScroll } from '../../../lib/scrollLock'
 import { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useConceptPath } from '../../nav'
+import { useGoBackTo } from '../../nav'
 import { parentJourney, parentProcedure } from '../../../data/parent'
 import { OPTIONAL_STAGES, useQuestProgress } from '../useQuestProgress'
 import { useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
-import { OceanMapPage } from '../pages/OceanMapPage'
-import { OceanNightMapPage } from '../pages/OceanNightMapPage'
+import { WorldMapPage } from '../pages/WorldMapPage'
+import { WorldNightMapPage } from '../pages/WorldNightMapPage'
 import { ParentInfo } from './ParentInfo'
-import { BUBBLES } from './OceanStageSheet'
+import { Bubbles, useWorldButtons } from './WorldStageSheet'
 import css from '../quest.module.css'
 
 /** Route of a station's own (child) sheet */
 export const stageRoute = (stageId: string) => (stageId === 'wait-before-triage' ? '/wait-times' : `/stage/${stageId}`)
 
 /**
- * Ocean world, child side: one procedure as a sheet over the map. Both buttons (and closing the sheet)
+ * Designed world, child side: one procedure as a sheet over the map. Both buttons (and closing the sheet)
  * lead back to the station's child sheet; the parent's details open only from the parent pill.
  */
-export function OceanProcedureDetailSheet({ id }: { id: string }) {
+export function WorldProcedureDetailSheet({ id }: { id: string }) {
   const { theme } = useQuestTheme()
   const { t, lang } = useI18n()
   const { completeProcedure, doneProcedures, active, visibleOptionals } = useQuestProgress()
-  const navigate = useNavigate()
-  const conceptPath = useConceptPath()
+  const goBackTo = useGoBackTo()
+  const buttons = useWorldButtons()
   const handleRef = useRef<HTMLButtonElement>(null)
   const [variant, setVariant] = useState(0)
   useEffect(() => setVariant(0), [id])
@@ -38,7 +37,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
   const procedure = parentProcedure(lang, id)
   const night = (OPTIONAL_STAGES as readonly string[]).includes(stageId)
 
-  const back = () => navigate(conceptPath(stageRoute(stageId)))
+  const back = () => goBackTo(stageRoute(stageId))
 
   useEffect(() => {
     handleRef.current?.focus()
@@ -66,10 +65,10 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
 
   return (
     <>
-      {night ? <OceanNightMapPage underSheet /> : <OceanMapPage underSheet />}
+      {night ? <WorldNightMapPage underSheet /> : <WorldMapPage underSheet />}
       <div className={css.sheetBackdrop} onClick={back}>
         <div
-          className={`${css.sheet} ${css.stageSheet} ${css.oceanSheet} ${css.parentBelow}`}
+          className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.parentBelow}`}
           role="dialog"
           aria-modal="true"
           aria-label={procedure.title}
@@ -81,9 +80,7 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
 
           {/* the procedure's picture stands on the same sea floor panel with bubbles as the stations' pictures */}
           <div className={`${css.stageSheetPicWrap} ${css.procBigIcon}`} aria-hidden>
-            {BUBBLES.map((b, i) => (
-              <span key={i} className={css.stageBubble} style={{ left: `${b.x}%`, top: `${b.y}%`, width: `${b.d}%` }} />
-            ))}
+            <Bubbles />
             <span className={css.procBigEmoji}>{procedure.emoji}</span>
           </div>
           <h1 className={css.stageSheetTitle} style={{ color: theme.accent }}>{procedure.title}</h1>
@@ -122,17 +119,17 @@ export function OceanProcedureDetailSheet({ id }: { id: string }) {
             {stageActive && (
               <button
                 type="button"
-                className={`${css.oceanBtn} ${css.oceanBtnDone}`}
+                className={`${css.worldBtn} ${css.worldBtnDone}`}
                 onClick={() => {
                   completeProcedure(id)
                   back()
                 }}
               >
-                {isDone ? (theme.doneEmoji ?? '✓') : t('ui.buttons.oceanDone')}
+                {isDone ? (theme.doneEmoji ?? '✓') : buttons.done}
               </button>
             )}
             {(!isDone || !stageActive) && (
-              <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={back}>
+              <button type="button" className={`${css.worldBtn} ${css.worldBtnBack}`} onClick={back}>
                 {t('ui.buttons.backToStation')}
               </button>
             )}

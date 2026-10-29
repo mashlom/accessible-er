@@ -43,13 +43,17 @@ export function useQuestTheme(): { theme: QuestTheme; setThemeId: (id: string) =
       procedureVariants: tx.procedureVariants,
       calmLines: tx.calmLines,
       distractTitle: tx.distractTitle,
+      ui: tx.ui,
     }
   }, [current, lang])
 
   return { theme, setThemeId }
 }
 
+/** The world whose colours the parent's pages use, whatever world is chosen */
+export const PARENT_WORLD = 'ocean'
+
 /** The parent's pages (the card, the calm and reason pages, the parent sheets) always use the ocean's turquoise, whatever world is chosen. */
 export function useParentTheme(): { theme: QuestTheme } {
-  return { theme: getTheme('ocean') }
+  return { theme: getTheme(PARENT_WORLD) }
 }

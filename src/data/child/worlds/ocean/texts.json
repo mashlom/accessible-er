@@ -208,7 +208,11 @@
       "כשקשה לצוללן, הוא נושם עמוק מאוד",
       "נשום איתי — שאיפה… נשיפה…"
     ],
-    "distractTitle": "חדר ההידרופונים 🎧"
+    "distractTitle": "חדר ההידרופונים 🎧",
+    "ui": {
+      "decision": "החלטת הקפטן ←",
+      "decisionTitle": "החלטת הקפטן"
+    }
   },
   "en": {
     "name": "Underwater",
@@ -419,7 +423,11 @@
       "When a diver finds it hard, they breathe very deeply",
       "Breathe with me — in… and out…"
     ],
-    "distractTitle": "Sonar Sounds 📡"
+    "distractTitle": "Sonar Sounds 📡",
+    "ui": {
+      "decision": "Captain's decision →",
+      "decisionTitle": "Captain's decision"
+    }
   },
   "ru": {
     "name": "Подводный мир",
@@ -630,6 +638,10 @@
       "Когда водолазу трудно, он дышит очень глубоко",
       "Дыши со мной — вдох… выдох…"
     ],
-    "distractTitle": "Звуки локатора 📡"
+    "distractTitle": "Звуки локатора 📡",
+    "ui": {
+      "decision": "Что решили →",
+      "decisionTitle": "Решение капитана"
+    }
   }
 }

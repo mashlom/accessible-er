@@ -1,5 +1,5 @@
-import { useLocation, useNavigate } from 'react-router-dom'
-import { useConceptPath } from '../nav'
+import { useLocation } from 'react-router-dom'
+import { useGoBackTo } from '../nav'
 
 interface ReturnState {
   from?: string
@@ -8,18 +8,17 @@ interface ReturnState {
 
 /**
  * Explicit "where did we come from" for sub-screens reachable from several
- * places (calm, card, distract…). Browser history is unreliable here because
- * returning always pushes, so `navigate(-1)` from a hub screen would dive
- * back into the sub-screen instead of leaving.
+ * places (calm, card, distract…). Going back returns to that screen: through
+ * the history when it is the screen before (so the browser's back button
+ * agrees), else in this screen's place (see useGoBackTo).
  */
 export function useReturnTo(fallback: string) {
-  const navigate = useNavigate()
-  const conceptPath = useConceptPath()
+  const goBackTo = useGoBackTo()
   const location = useLocation()
   const state = (location.state ?? null) as ReturnState | null
   const backTo = state?.from ?? fallback
 
-  const goBack = () => navigate(conceptPath(backTo), { state: state?.fromState ?? null })
+  const goBack = () => goBackTo(backTo, { state: state?.fromState ?? null })
 
   /** Attach to a Link leaving this screen so the target's back button returns here. */
   const leaveState = (here: string): ReturnState => ({ from: here, fromState: state })

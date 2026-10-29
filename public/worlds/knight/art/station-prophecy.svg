@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" width="300" height="220">
+<!-- Knight world: waiting for the prophecy (waiting for results) -->
+<ellipse cx="150" cy="200" rx="132" ry="14" fill="#000" opacity="0.12"/>
+<path d="M18 182 Q150 222 282 182 L282 186 Q150 230 18 186 Z" fill="#6fa548"/>
+<ellipse cx="150" cy="182" rx="132" ry="24" fill="#8cc05a"/>
+<ellipse cx="128" cy="178" rx="92" ry="12" fill="#a8d57a" opacity="0.6"/>
+<path d="M118 182 L128 154 L172 154 L182 182 Z" fill="#c99a32"/>
+<path d="M126 158 Q150 140 174 158 L170 148 Q150 134 130 148 Z" fill="#e8b84a"/>
+<defs><radialGradient id="ball" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#e9ddff"/><stop offset="0.55" stop-color="#a98be0"/><stop offset="1" stop-color="#553d84"/></radialGradient></defs>
+<circle cx="150" cy="96" r="54" fill="#d9ccf5" opacity="0.35"/>
+<circle cx="150" cy="96" r="46" fill="url(#ball)"/>
+<path d="M126 108 Q140 84 168 92 Q150 98 140 114 Z" fill="#fff" opacity="0.35"/>
+<ellipse cx="134" cy="74" rx="11" ry="7" fill="#fff" opacity="0.7" transform="rotate(-30 134 74)"/>
+<polygon points="166.0,103.0 167.3,106.2 170.8,106.5 168.1,108.7 168.9,112.0 166.0,110.2 163.1,112.0 163.9,108.7 161.2,106.5 164.7,106.2" fill="#fff"/>
+<path d="M90 58 Q91.44 64.56 98 66 Q91.44 67.44 90 74 Q88.56 67.44 82 66 Q88.56 64.56 90 58 Z" fill="#e8b84a"/>
+<path d="M214 83 Q215.26 88.74 221 90 Q215.26 91.26 214 97 Q212.74 91.26 207 90 Q212.74 88.74 214 83 Z" fill="#e8b84a"/>
+<polygon points="206.0,39.5 207.2,42.4 210.3,42.6 207.9,44.6 208.6,47.6 206.0,46.0 203.4,47.6 204.1,44.6 201.7,42.6 204.8,42.4" fill="#e8b84a"/>
+</svg>

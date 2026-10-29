@@ -1,0 +1,569 @@
+{
+  "id": "ocean",
+  "order": 1,
+  "doneEmoji": "⭐",
+  "shopImage": "/worlds/ocean/sheet-seabed.jpg",
+  "emoji": "🐠",
+  "bg": "/worlds/ocean/underwater.png",
+  "thumbnailOverlay": "/worlds/ocean/station-sub.png",
+  "accent": "#087e8b",
+  "accentSoft": "#e5f2f7",
+  "accentText": "#ffffff",
+  "completedColor": "#25b8e8",
+  "stages": {
+    "reception": {
+      "icon": "⚓"
+    },
+    "wait-before-triage": {
+      "icon": "/worlds/ocean/station-sub.png"
+    },
+    "triage": {
+      "icon": "🤿"
+    },
+    "wait-doctor": {
+      "icon": "🐟"
+    },
+    "doctor": {
+      "icon": "🐙"
+    },
+    "decision": {
+      "icon": "🌊"
+    },
+    "tests": {
+      "icon": "📡"
+    },
+    "treatment": {
+      "icon": "🔧"
+    },
+    "consult": {
+      "icon": "📻"
+    },
+    "wait-results": {
+      "icon": "💾"
+    }
+  },
+  "design": {
+    "assets": {
+      "background": "/worlds/ocean/background.jpg",
+      "sheetFade": "/worlds/ocean/sheet-fade.png",
+      "sheetSeabed": "/worlds/ocean/sheet-seabed.jpg"
+    },
+    "colors": {
+      "text": "#173b4d",
+      "text2": "#526570",
+      "action": "#087e8b",
+      "page": "#f7faf9",
+      "card": "#ffffff",
+      "mint": "#ddf3ee",
+      "blue": "#e5f2f7",
+      "coral": "#b5473a",
+      "yellow": "#f4c95d",
+      "water": "#1f6f80",
+      "waterTop": "#207082",
+      "waterLight": "#74dcf6",
+      "progress": [
+        "#d9a53a",
+        "#84dccb"
+      ]
+    },
+    "stations": {
+      "reception": {
+        "map": "/worlds/ocean/station-house.png",
+        "sheet": "/worlds/ocean/station-house.png",
+        "panel": "bleed"
+      },
+      "wait-before-triage": {
+        "map": "/worlds/ocean/station-sub-lit.png",
+        "sheet": "/worlds/ocean/station-sub-lit.png",
+        "panel": "bubbles"
+      },
+      "triage": {
+        "map": "/worlds/ocean/station-pod.png",
+        "sheet": "/worlds/ocean/station-pod.png",
+        "panel": "bubbles"
+      },
+      "wait-doctor": {
+        "map": "/worlds/ocean/station-aquarium.png",
+        "sheet": "/worlds/ocean/station-aquarium.png",
+        "panel": "bubbles"
+      },
+      "doctor": {
+        "map": "/worlds/ocean/station-doctor.png",
+        "sheet": "/worlds/ocean/station-doctor-sheet.png",
+        "panel": "bubbles"
+      },
+      "tests": {
+        "map": "/worlds/ocean/station-sonar.png",
+        "sheet": "/worlds/ocean/symbol-sonar.png",
+        "panel": "symbol"
+      },
+      "consult": {
+        "map": "/worlds/ocean/station-sub-lit.png",
+        "sheet": "/worlds/ocean/symbol-comms.png",
+        "panel": "symbol"
+      },
+      "wait-results": {
+        "map": "/worlds/ocean/station-pod.png",
+        "sheet": "/worlds/ocean/symbol-data.png",
+        "panel": "symbol"
+      },
+      "treatment": {
+        "map": "/worlds/ocean/station-sub-lit.png",
+        "sheet": "/worlds/ocean/symbol-repair.png",
+        "panel": "symbol"
+      },
+      "decision": {
+        "map": "/worlds/ocean/station-house.png",
+        "sheet": "/worlds/ocean/station-house.png",
+        "panel": "bleed"
+      }
+    },
+    "images": {
+      "/worlds/ocean/station-house.png": {
+        "aspect": 0.9590909090909091,
+        "visible": 0.916,
+        "lift": 0.068
+      },
+      "/worlds/ocean/station-pod.png": {
+        "aspect": 1.5513513513513513,
+        "visible": 0.916,
+        "lift": 0.068
+      },
+      "/worlds/ocean/station-sonar.png": {
+        "aspect": 1.6515151515151516,
+        "visible": 0.963,
+        "lift": 0.03
+      },
+      "/worlds/ocean/station-sub-lit.png": {
+        "aspect": 1.2200956937799043,
+        "visible": 0.969,
+        "lift": 0.02
+      },
+      "/worlds/ocean/station-sub.png": {
+        "aspect": 1.3431952662721893,
+        "visible": 0.815,
+        "lift": 0.056
+      }
+    },
+    "bubbles": [
+      {
+        "x": 71,
+        "y": 23,
+        "d": 13
+      },
+      {
+        "x": 29,
+        "y": 20,
+        "d": 10
+      },
+      {
+        "x": 84,
+        "y": 36,
+        "d": 6.5
+      },
+      {
+        "x": 14,
+        "y": 42,
+        "d": 5
+      },
+      {
+        "x": 77,
+        "y": 58,
+        "d": 4
+      },
+      {
+        "x": 22,
+        "y": 66,
+        "d": 6
+      },
+      {
+        "x": 60,
+        "y": 22,
+        "d": 2.5
+      },
+      {
+        "x": 55,
+        "y": 28,
+        "d": 1.8
+      },
+      {
+        "x": 9,
+        "y": 28,
+        "d": 2.2
+      }
+    ],
+    "dayMap": {
+      "portrait": {
+        "W": 412,
+        "H": 939,
+        "slots": [
+          {
+            "x": -27,
+            "y": 108,
+            "w": 211,
+            "h": 220,
+            "badge": [92, 176]
+          },
+          {
+            "x": 241,
+            "y": 242,
+            "w": 189,
+            "h": 155,
+            "badge": [265, 277]
+          },
+          {
+            "x": 16,
+            "y": 408,
+            "w": 211,
+            "h": 136,
+            "badge": [116, 411]
+          },
+          {
+            "x": 177,
+            "y": 566,
+            "w": 189,
+            "h": 129,
+            "badge": [272, 567]
+          },
+          {
+            "x": 41,
+            "y": 748,
+            "w": 193,
+            "h": 124,
+            "badge": [123, 745]
+          }
+        ],
+        "dots": [
+          [
+            [180, 271],
+            [184, 268],
+            [189, 266],
+            [195, 263],
+            [201, 262],
+            [207, 260],
+            [213, 260],
+            [219, 259],
+            [225, 260],
+            [231, 260],
+            [237, 262],
+            [243, 264],
+            [248, 266],
+            [254, 269],
+            [259, 272],
+            [264, 275]
+          ],
+          [
+            [252, 380],
+            [247, 382],
+            [241, 383],
+            [235, 382],
+            [229, 382],
+            [223, 381],
+            [217, 380],
+            [211, 380],
+            [205, 379],
+            [199, 378],
+            [194, 378],
+            [188, 377],
+            [182, 377],
+            [176, 378],
+            [170, 378],
+            [164, 379],
+            [158, 380],
+            [152, 381],
+            [147, 383],
+            [141, 386],
+            [136, 389],
+            [131, 393],
+            [127, 397],
+            [123, 401],
+            [120, 406]
+          ],
+          {
+            "bezier": [
+              [183, 517],
+              [215, 520],
+              [240, 552],
+              [272, 567]
+            ]
+          },
+          {
+            "bezier": [
+              [255, 691],
+              [200, 700],
+              [140, 702],
+              [123, 745]
+            ]
+          }
+        ],
+        "vars": {
+          "--bg-x": -87,
+          "--bg-y": -250,
+          "--bg-w": 553,
+          "--bg-h": 1260,
+          "--bg-rot": "180deg",
+          "--grad-y": -16,
+          "--grad-h": 199,
+          "--title-x": 64.5,
+          "--title-y": 72,
+          "--title-w": 283,
+          "--title-h": 50,
+          "--title-fs": 21,
+          "--badge": 24,
+          "--badge-fs": 15,
+          "--star": 30,
+          "--title-bg": "rgba(18, 56, 74, 0.6)"
+        }
+      },
+      "landscape": {
+        "W": 1920,
+        "H": 1080,
+        "slots": [
+          {
+            "x": 1494,
+            "y": 521,
+            "w": 493,
+            "h": 513,
+            "badge": [1628, 772],
+            "flip": true
+          },
+          {
+            "x": 1035,
+            "y": 456,
+            "w": 442,
+            "h": 362,
+            "badge": [1276.5, 839.5]
+          },
+          {
+            "x": 651,
+            "y": 156,
+            "w": 487,
+            "h": 314,
+            "badge": [1132.5, 339.5]
+          },
+          {
+            "x": 180,
+            "y": 589,
+            "w": 475,
+            "h": 324,
+            "badge": [423, 549]
+          },
+          {
+            "x": -64,
+            "y": 151,
+            "w": 461,
+            "h": 297,
+            "badge": [106.5, 452.5]
+          }
+        ],
+        "lines": [
+          [
+            [1648.2, 788.2],
+            [1636.1, 781.8],
+            [1620.7, 778.5],
+            [1604.8, 778.5],
+            [1589.1, 780.7],
+            [1573.8, 784.3],
+            [1558.7, 789],
+            [1543.8, 794.2],
+            [1529, 799.9],
+            [1514.4, 805.9],
+            [1499.8, 812],
+            [1485.2, 818.2],
+            [1470.6, 824.4],
+            [1456, 830.4],
+            [1441.3, 836.3],
+            [1426.5, 841.8],
+            [1411.6, 846.9],
+            [1396.4, 851.5],
+            [1381.1, 855.4],
+            [1365.5, 858.3],
+            [1349.8, 860],
+            [1333.9, 860],
+            [1318.3, 857.9],
+            [1303.2, 853.3],
+            [1289.3, 845.9],
+            [1278.4, 837.4]
+          ],
+          [
+            [1222.4, 478.4],
+            [1209.1, 474.8],
+            [1197.8, 464.4],
+            [1190.7, 450.4],
+            [1186.2, 435.2],
+            [1183.1, 419.7],
+            [1180.6, 404],
+            [1178, 388.4],
+            [1174.8, 372.9],
+            [1169.8, 357.9],
+            [1160.6, 345.5],
+            [1145.7, 341.2],
+            [1132.3, 344.2]
+          ],
+          [
+            [817.8, 456.2],
+            [811.2, 468],
+            [798.4, 477],
+            [783.5, 482.4],
+            [768.1, 485.7],
+            [752.4, 487.9],
+            [736.7, 489.2],
+            [720.9, 490],
+            [705.1, 490.5],
+            [689.3, 490.7],
+            [673.5, 490.8],
+            [657.6, 490.8],
+            [641.8, 490.7],
+            [626, 490.7],
+            [610.2, 490.8],
+            [594.4, 491],
+            [578.6, 491.4],
+            [562.8, 492.1],
+            [547.1, 493.1],
+            [531.3, 494.6],
+            [515.6, 496.7],
+            [500.1, 499.5],
+            [484.7, 503.4],
+            [469.8, 508.6],
+            [455.7, 515.6],
+            [443.1, 525.1],
+            [433.4, 537.3],
+            [428, 550]
+          ],
+          [
+            [225.9, 739.9],
+            [212.2, 736.6],
+            [200.6, 726.1],
+            [194.2, 711.4],
+            [190.9, 695.6],
+            [189, 679.5],
+            [187.7, 663.4],
+            [186.3, 647.4],
+            [184.6, 631.3],
+            [181.9, 615.4],
+            [177.7, 599.8],
+            [172.4, 586.8],
+            [170.6, 583.3],
+            [163.7, 571.6],
+            [154.8, 558.8],
+            [145.1, 546.7],
+            [135.1, 534.8],
+            [125.6, 522.5],
+            [117.6, 509.3],
+            [112, 494.9],
+            [109.3, 479.6],
+            [109, 463.9],
+            [110.2, 450.4]
+          ]
+        ],
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": -1682,
+          "--bg-w": 1920,
+          "--bg-h": 4376,
+          "--map-bg": "#1f6f80",
+          "--title-x": 1270,
+          "--title-y": 94,
+          "--title-w": 550,
+          "--title-h": 97,
+          "--title-fs": 41,
+          "--badge": 42,
+          "--badge-fs": 26,
+          "--star": 56,
+          "--title-bg": "rgba(18, 56, 74, 0.6)"
+        }
+      }
+    },
+    "nightMap": {
+      "portrait": {
+        "shoreY": 653,
+        "finaleWidth": 210,
+        "vars": {
+          "--bg-x": 0,
+          "--bg-w": 412,
+          "--bg-h": 939,
+          "--title-x": 64.5,
+          "--title-y": 44.5,
+          "--title-w": 283,
+          "--title-h": 50,
+          "--title-fs": 21,
+          "--badge": 24,
+          "--badge-fs": 15,
+          "--star": 30,
+          "--title-bg": "rgba(18, 56, 74, 0.35)",
+          "--grad-h": 520,
+          "--map-bg": "#207082"
+        }
+      },
+      "landscape": {
+        "places": [
+          {
+            "cx": 1640,
+            "top": 190,
+            "visible": 430,
+            "badge": [1685, 465]
+          },
+          {
+            "cx": 1500,
+            "top": 590,
+            "visible": 470,
+            "badge": [1500, 549]
+          },
+          {
+            "cx": 1050,
+            "top": 190,
+            "visible": 440,
+            "badge": [1050, 518]
+          },
+          {
+            "cx": 664,
+            "top": 465,
+            "visible": 428,
+            "badge": [664, 852]
+          }
+        ],
+        "curves": [
+          [
+            [1690, 540],
+            [1620, 580]
+          ],
+          [
+            [1380, 520],
+            [1200, 560]
+          ],
+          [
+            [1020, 760],
+            [840, 920]
+          ]
+        ],
+        "finale": {
+          "x": -67,
+          "y": 521,
+          "w": 493,
+          "badge": [179.5, 560]
+        },
+        "finaleTrail": {
+          "end": [430, 870],
+          "c1": [-70, 30],
+          "c2": [90, 10]
+        },
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": -1682,
+          "--bg-w": 1920,
+          "--bg-h": 4376,
+          "--bg-sx": -1,
+          "--map-bg": "#1f6f80",
+          "--title-x": 1270,
+          "--title-y": 94,
+          "--title-w": 550,
+          "--title-h": 97,
+          "--title-fs": 41,
+          "--badge": 42,
+          "--badge-fs": 26,
+          "--star": 56
+        }
+      }
+    }
+  }
+}

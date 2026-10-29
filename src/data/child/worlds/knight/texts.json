@@ -208,6 +208,10 @@
           ]
         }
       ]
+    },
+    "ui": {
+      "decision": "החלטת הקוסם ←",
+      "decisionTitle": "החלטת הקוסם"
     }
   },
   "en": {
@@ -419,6 +423,10 @@
           ]
         }
       ]
+    },
+    "ui": {
+      "decision": "The wizard's decision →",
+      "decisionTitle": "The wizard's decision"
     }
   },
   "ru": {
@@ -630,6 +638,10 @@
           ]
         }
       ]
+    },
+    "ui": {
+      "decision": "Решение волшебника →",
+      "decisionTitle": "Решение волшебника"
     }
   }
 }

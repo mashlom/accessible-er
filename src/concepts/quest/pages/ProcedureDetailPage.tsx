@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import { Navigate } from '../../nav'
+import { useParams } from 'react-router-dom'
+import { Navigate, useBack } from '../../nav'
 import { parentJourney, parentProcedure } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
-import { OceanProcedureDetailSheet } from '../components/OceanProcedureDetailSheet'
+import { WorldProcedureDetailSheet, stageRoute } from '../components/WorldProcedureDetailSheet'
 import { ParentInfo } from '../components/ParentInfo'
 import css from '../quest.module.css'
 
@@ -14,7 +14,7 @@ export function ProcedureDetailPage() {
   const { theme } = useQuestTheme()
   const { t, lang } = useI18n()
   const { completeProcedure, doneProcedures, active, visibleOptionals } = useQuestProgress()
-  const navigate = useNavigate()
+  const back = useBack()
   const isDone = id ? doneProcedures.has(id) : false
 
   // Only allow completing if the parent stage is currently active
@@ -30,7 +30,7 @@ export function ProcedureDetailPage() {
 
   if (!procedure) return <Navigate to="/map" replace />
 
-  if (theme.id === 'ocean' && id) return <OceanProcedureDetailSheet id={id} />
+  if (theme.design && id) return <WorldProcedureDetailSheet id={id} />
 
   const themedSteps = id ? theme.procedureSteps?.[id] : undefined
   // the variants (the methods) come first; a world without them shows its own steps, else the shared story
@@ -77,7 +77,7 @@ export function ProcedureDetailPage() {
             <button
               className={css.doneBtn}
               style={{ background: theme.accent, color: theme.accentText }}
-              onClick={() => { completeProcedure(id!); navigate(-1) }}
+              onClick={() => { completeProcedure(id!); back(stageRoute(parentStage?.id ?? 'triage')) }}
             >
               {isDone
                 ? <em className={css.doneBtnCoin}>{theme.doneEmoji ?? '✓'}</em>
@@ -85,7 +85,7 @@ export function ProcedureDetailPage() {
             </button>
           )}
           {(!isDone || !parentIsActive) && (
-            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => navigate(-1)}>
+            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => back(stageRoute(parentStage?.id ?? 'triage'))}>
               {t('ui.buttons.back')}
             </button>
           )}

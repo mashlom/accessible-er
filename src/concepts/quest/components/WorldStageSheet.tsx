@@ -1,12 +1,10 @@
 import { lockBodyScroll } from '../../../lib/scrollLock'
 import { useEffect, useRef, type ReactNode } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Link } from '../../nav'
-import { useConceptPath } from '../../nav'
+import { Link, useGoBackTo } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
 import { useI18n } from '../../../hooks/useI18n'
-import { OceanMapPage, useWide } from '../pages/OceanMapPage'
-import { OceanNightMapPage } from '../pages/OceanNightMapPage'
+import { WorldMapPage, stationPicture, useWide } from '../pages/WorldMapPage'
+import { WorldNightMapPage } from '../pages/WorldNightMapPage'
 import { ParentInfo } from './ParentInfo'
 import css from '../quest.module.css'
 
@@ -14,7 +12,6 @@ interface Props {
   stageId: string
   label: string
   hint?: string
-  image?: string
   /** Child-facing extras (story steps, procedure icons) rendered under the hint */
   children?: ReactNode
   isActive: boolean
@@ -29,34 +26,45 @@ interface Props {
   noParent?: boolean
 }
 
-/** Bubbles far behind the captain's picture, on its sea floor panel: centre (x, y) in % of the panel's width and height,
- *  diameter in % of its width. Some are half hidden behind the dome. */
-export const BUBBLES = [
-  { x: 71, y: 23, d: 13 },
-  { x: 29, y: 20, d: 10 },
-  { x: 84, y: 36, d: 6.5 },
-  { x: 14, y: 42, d: 5 },
-  { x: 77, y: 58, d: 4 },
-  { x: 22, y: 66, d: 6 },
-  { x: 60, y: 22, d: 2.5 },
-  { x: 55, y: 28, d: 1.8 },
-  { x: 9, y: 28, d: 2.2 },
-]
-
-/** Ocean world: a stage opens as a bottom sheet over the map instead of a separate page. */
-export function OceanStageSheet({ stageId, label, hint, image, children, isActive, onDone, showChooseTests, doneIsChoice, backTo, noParent }: Props) {
+/** The world's main buttons: its own wording (texts.json, ui), else the shared one */
+export function useWorldButtons() {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
-  const navigate = useNavigate()
-  const conceptPath = useConceptPath()
+  return {
+    done: theme.ui?.done ?? t('ui.buttons.worldDone'),
+    decision: theme.ui?.decision ?? t('ui.buttons.chooseTests'),
+  }
+}
+
+/** The bubbles behind a picture on its panel (the world's design) */
+export function Bubbles() {
+  const { theme } = useQuestTheme()
+  return (
+    <>
+      {theme.design?.bubbles?.map((b, i) => (
+        <span key={i} className={css.stageBubble} style={{ left: `${b.x}%`, top: `${b.y}%`, width: `${b.d}%` }} aria-hidden />
+      ))}
+    </>
+  )
+}
+
+/** Designed world: a stage opens as a bottom sheet over the map instead of a separate page. */
+export function WorldStageSheet({ stageId, label, hint, children, isActive, onDone, showChooseTests, doneIsChoice, backTo, noParent }: Props) {
+  const { theme } = useQuestTheme()
+  const { t } = useI18n()
+  const buttons = useWorldButtons()
+  const goBackTo = useGoBackTo()
   const handleRef = useRef<HTMLButtonElement>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
-  // every station that stands in the water (all but the house on the pier and the golden symbols) has bubbles behind its picture
-  const bubbles = ['wait-before-triage', 'triage', 'wait-doctor', 'doctor'].includes(stageId)
   const wide = useWide()
-  const isHouse = !!image?.endsWith('station-house.png')
+  // the picture and how it stands on the sheet are the world's (world.json, design.stations)
+  const design = theme.design!
+  const image = stationPicture(design, stageId, 'sheet')
+  const panel = design.stations[stageId]?.panel ?? 'plain'
+  const bubbles = panel === 'bubbles'
+  const isHouse = panel === 'bleed'
 
-  const close = () => navigate(conceptPath(backTo))
+  const close = () => goBackTo(backTo)
 
   useEffect(() => {
     handleRef.current?.focus()
@@ -76,11 +84,11 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
 
   return (
     <>
-      {backTo === '/night-map' ? <OceanNightMapPage underSheet /> : <OceanMapPage underSheet />}
+      {backTo === '/night-map' ? <WorldNightMapPage underSheet /> : <WorldMapPage underSheet />}
       <div className={css.sheetBackdrop} onClick={close}>
         <div
           ref={dialogRef}
-          className={`${css.sheet} ${css.stageSheet} ${css.oceanSheet} ${css.parentBelow}`}
+          className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.parentBelow}`}
           role="dialog"
           aria-modal="true"
           aria-label={label}
@@ -91,23 +99,21 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
           </button>
 
           {image && (
-            // the captain's sheet has bubbles far behind its picture, on the sea floor panel (the wrapper carries the panel)
+            // a picture with bubbles far behind it, on the floor panel (the wrapper carries the panel)
             <div className={isHouse ? css.stageSheetPicHouse : bubbles ? css.stageSheetPicWrap : css.stageSheetPicPlain}>
               <img
                 src={image}
                 alt=""
-                // The house is cut straight on its left edge in the mockup: push it off the sheet's edge
+                // A 'bleed' picture (the ocean's house) is cut straight on one edge in the mockup: push it off the sheet's edge
                 className={[
                   css.stageSheetImg,
                   isHouse ? css.stageSheetImgBleed : '',
-                  // on the landscape map the house is mirrored (the pier points left): so it is on its sheet
+                  // on the landscape map it is mirrored (the ocean's pier points left): so it is on its sheet
                   isHouse && wide ? css.stageSheetImgFlip : '',
-                  image.includes('/symbol-') ? css.stageSheetImgSymbol : '',
+                  panel === 'symbol' ? css.stageSheetImgSymbol : '',
                 ].join(' ')}
               />
-              {bubbles && BUBBLES.map((b, i) => (
-                <span key={i} className={css.stageBubble} style={{ left: `${b.x}%`, top: `${b.y}%`, width: `${b.d}%` }} aria-hidden />
-              ))}
+              {bubbles && <Bubbles />}
             </div>
           )}
           <h1 className={css.stageSheetTitle} style={{ color: theme.accent }}>{label}</h1>
@@ -121,18 +127,19 @@ export function OceanStageSheet({ stageId, label, hint, image, children, isActiv
             {isActive && (
               <button
                 type="button"
-                className={`${css.oceanBtn} ${css.oceanBtnDone}`}
+                className={`${css.worldBtn} ${css.worldBtnDone}`}
                 onClick={onDone}
               >
-                {doneIsChoice ? t('ui.buttons.oceanDecision') : t('ui.buttons.oceanDone')}
+                {doneIsChoice ? buttons.decision : buttons.done}
               </button>
             )}
             {showChooseTests && !isActive && (
-              <Link to="/procedures" className={`${css.oceanBtn} ${css.oceanBtnDone}`}>
-                {t('ui.buttons.oceanDecision')}
+              // the choice takes this sheet's place: closing it returns to the map, not to this sheet
+              <Link to="/procedures" replace className={`${css.worldBtn} ${css.worldBtnDone}`}>
+                {buttons.decision}
               </Link>
             )}
-            <button type="button" className={`${css.oceanBtn} ${css.oceanBtnBack}`} onClick={close}>
+            <button type="button" className={`${css.worldBtn} ${css.worldBtnBack}`} onClick={close}>
               {t('ui.buttons.backToMap')}
             </button>
           </div>

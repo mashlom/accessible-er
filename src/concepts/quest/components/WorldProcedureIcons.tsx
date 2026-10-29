@@ -7,7 +7,7 @@ import { ProcedureLineIcon } from './ProcedureLineIcon'
 import css from '../quest.module.css'
 
 /** The round procedure buttons of a stage (child side): each opens that procedure's own child page. */
-export function OceanProcedureIcons({ ids }: { ids: string[] }) {
+export function WorldProcedureIcons({ ids }: { ids: string[] }) {
   const { lang } = useI18n()
   const { theme } = useQuestTheme()
   const { doneProcedures } = useQuestProgress()

@@ -241,7 +241,7 @@
   border-bottom: 1px solid #e5e0d8;
 }
 
-.questTopbarOcean {
+.questTopbarWorld {
   width: 100%;
   max-width: 560px;
   margin-inline: auto;
@@ -1369,7 +1369,7 @@
 }
 
 /* Long pages scroll as a whole: nothing in the sheet shrinks, the sheet itself scrolls */
-.oceanSheet.stageSheet > * {
+.worldSheet.stageSheet > * {
   flex-shrink: 0;
 }
 
@@ -1493,13 +1493,13 @@
   transform: scale(0.98);
 }
 
-/* ── Ocean Map (positioned scene) ─────────────────────────────────── */
+/* ── Designed world map (positioned scene; the pictures and colours come from world.json as --w-* variables) ─────────────────────────────────── */
 
-.oceanMap {
+.worldMap {
   min-height: 100dvh;
   position: relative;
   overflow: clip;
-  background: var(--map-bg, #74dcf6);
+  background: var(--map-bg, var(--w-waterLight, #74dcf6));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1510,19 +1510,19 @@
 
 
 
-.oceanScene {
+.worldScene {
   position: relative;
   width: 100%;
   max-width: 560px;
   margin-left: auto; /* a narrow map is pressed to the right edge; extra picture is drawn on its left */
   aspect-ratio: 830 / 2700;
   /* what shows where the background picture doesn't reach */
-  background: var(--map-bg, #78dff8);
+  background: var(--map-bg, var(--w-waterLight, #78dff8));
   container-type: inline-size;
   overflow: hidden;
 }
 
-.oceanScene::before {
+.worldScene::before {
   content: '';
   position: absolute;
   /* Background box in frame units (from the Figma export), optionally rotated */
@@ -1530,11 +1530,11 @@
   top: calc(var(--bg-y) * var(--u));
   width: calc(var(--bg-w) * var(--u));
   height: calc(var(--bg-h) * var(--u));
-  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
+  background: var(--w-background) 0 0 / 100% 100% no-repeat;
   transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
 }
 
-.oceanScene::after {
+.worldScene::after {
   content: '';
   position: absolute;
   left: 0;
@@ -1542,12 +1542,12 @@
   /* 2px above the picture's edge (it is on a fractional pixel), so no light hairline shows there */
   top: calc(var(--grad-y, 0) * var(--u) - 2px);
   height: calc(var(--grad-h, 0) * var(--u) + 2px);
-  background: linear-gradient(#207082, rgba(29, 117, 129, 0) 76%);
+  background: linear-gradient(var(--w-waterTop, #207082), transparent 76%);
   pointer-events: none;
   z-index: 0;
 }
 
-.oceanTitle {
+.worldTitle {
   /* Title pill, positioned from the mockup */
   position: absolute;
   z-index: 3;
@@ -1571,23 +1571,23 @@
   padding-inline: 5%;
 }
 
-.oceanTitle strong {
+.worldTitle strong {
   font-weight: 800;
 }
 
-.oceanPath {
+.worldPath {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
 }
 
-.oceanPath circle {
+.worldPath circle {
   fill: #fff;
 }
 
 /* Dashed trails of the landscape mockup */
-.oceanPath path {
+.worldPath path {
   fill: none;
   stroke: #fff;
   stroke-width: 4.7;
@@ -1596,18 +1596,18 @@
   stroke-dasharray: 3.6 10.1;
 }
 
-.oceanStage {
+.worldStage {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
 
-.oceanStage:focus-visible .oceanBubble {
+.worldStage:focus-visible .worldBubble {
   outline: 3px solid #0a6b8a;
   outline-offset: 2px;
 }
 
-.oceanObj {
+.worldObj {
   position: absolute;
   display: block;
   height: auto;
@@ -1618,11 +1618,11 @@
   z-index: 2;
 }
 
-.oceanObj:hover {
+.worldObj:hover {
   filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.3));
 }
 
-.oceanBubble {
+.worldBubble {
   position: absolute;
   z-index: 3;
   pointer-events: auto;
@@ -1630,7 +1630,7 @@
   cursor: pointer;
 }
 
-.oceanNum {
+.worldNum {
   display: inline-grid;
   place-items: center;
   /* 23×23 circle in the 412-wide mockup */
@@ -1646,7 +1646,7 @@
   line-height: 1;
 }
 
-.oceanStars {
+.worldStars {
   position: absolute;
   z-index: 3;
   translate: -50% -50%;
@@ -1655,27 +1655,27 @@
   pointer-events: none;
 }
 
-.oceanStar {
+.worldStar {
   font-size: calc(var(--star) * var(--u));
   line-height: 1;
   filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.9)) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
 }
 
-.oceanDone {
+.worldDone {
   position: absolute;
   top: -1.5cqw;
   inset-inline-end: -2cqw;
   font-size: 3.2cqw;
 }
 
-.oceanStage.pin--locked .oceanObj,
-.oceanStage.pin--locked .oceanBubble {
+.worldStage.pin--locked .worldObj,
+.worldStage.pin--locked .worldBubble {
   opacity: 0.55;
   filter: grayscale(0.4);
 }
 
 
-.oceanStage.pin--active .oceanObj {
+.worldStage.pin--active .worldObj {
   animation: oceanBob 2.4s ease-in-out infinite;
 }
 
@@ -1685,7 +1685,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .oceanStage.pin--active .oceanObj { animation: none; }
+  .worldStage.pin--active .worldObj { animation: none; }
 }
 
 /* ── Parent info: pill + bottom sheet ─────────────────────────────── */
@@ -1988,7 +1988,7 @@
 }
 
 /* Top row over the ocean map: back, home and language (from the mockup), always reachable */
-.oceanTopRow {
+.worldTopRow {
   position: fixed;
   top: 0;
   left: 0;
@@ -2005,36 +2005,41 @@
   pointer-events: none;
 }
 
-.oceanTopRowWide {
+.worldTopRowWide {
   max-width: none;
   padding-inline: 12px;
 }
 
-.oceanTopGroup {
+.worldTopGroup {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.oceanTopRow > *, .oceanTopGroup > * {
+.worldTopRow > *, .worldTopGroup > * {
   pointer-events: auto;
 }
 
-.oceanTopBtn {
+.worldTopBtn {
   width: 56px;
   height: 56px;
   display: grid;
   place-items: center;
   color: #fff;
   border-radius: 50%;
+  /* the same look for a link and a button */
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
 }
 
-.oceanTopBtn:focus-visible {
+.worldTopBtn:focus-visible {
   outline: 3px solid #fff;
   outline-offset: -3px;
 }
 
-.oceanTopIcon {
+.worldTopIcon {
   width: 44px;
   height: 44px;
   fill: none;
@@ -2048,19 +2053,24 @@
 /* Landscape screens: the scene is 16:9 and always as wide as the window, so every station is in view.
    On a window taller than 16:9 the picture is mirrored up and down from the scene's edges to fill it;
    on a wider one (a phone turned sideways) the page scrolls down. */
-.oceanMapWide {
+.worldMapWide {
   --sw: 100vw;
   --sh: calc(100vw * 9 / 16);
   min-height: 100dvh;
   position: relative;
   overflow: clip;
-  background: #1f6f80;
+  background: var(--w-water, #1f6f80);
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* the picture falls to the bottom of the screen */
 }
 
-.oceanSceneWide {
+/* the landscape scene's background: its own picture when the world has one (backgroundWide) */
+.worldSceneWide::before {
+  background-image: var(--w-background-wide, var(--w-background));
+}
+
+.worldSceneWide {
   position: relative;
   width: 100%;
   max-width: none;
@@ -2070,7 +2080,7 @@
 }
 
 /* The mirrored pieces above and below the scene (same picture, flipped upside down) */
-.oceanTileV {
+.worldTileV {
   position: absolute;
   left: 0;
   width: var(--sw);
@@ -2082,20 +2092,20 @@
 }
 
 /* the mirrored piece sits right above the scene, tucked 2px under it so no hairline shows */
-.oceanTileVTop { bottom: calc(var(--sh) - 2px); }
+.worldTileVTop { bottom: calc(var(--sh) - 2px); }
 
-.oceanTileV .oceanSideBgW {
+.worldTileV .worldSideBgW {
   position: absolute;
   left: calc(var(--bg-x, 0) * 100cqw / 1920);
   top: calc(var(--bg-y, 0) * 100cqw / 1920);
   width: calc(var(--bg-w, 1920) * 100cqw / 1920);
   height: calc(var(--bg-h, 1080) * 100cqw / 1920);
-  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
+  background: var(--w-background-wide, var(--w-background)) 0 0 / 100% 100% no-repeat;
   transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
 }
 
 /* Progress capsule from the mockup, filled in equal steps as stations are done, growing upwards */
-.oceanProgress {
+.worldProgress {
   --col: min(100vw, 560px);
   position: fixed;
   z-index: 14;
@@ -2115,7 +2125,7 @@
   pointer-events: none;
 }
 
-.oceanProgressFill {
+.worldProgressFill {
   position: absolute;
   /* a small inner margin between the outline and the fill, as in the mockup */
   inset: auto 3px 3px 3px;
@@ -2126,7 +2136,7 @@
 }
 
 /* Landscape: same vertical capsule at the right edge, under the title pill, above the house */
-.oceanProgressWide {
+.worldProgressWide {
   /* the scene is as wide as the window and sits on the bottom of the screen */
   --S: 100vw;
   left: min(calc(var(--S) * 1868 / 1920), calc(100vw - 34px));
@@ -2239,7 +2249,7 @@
 /* Ocean sheets are as wide as the app column and, wherever the screen is tall enough, have the mockup's
    proportions (412×659). Everything inside, buttons included, is sized in mockup units (--u) so it scales
    with the width. On a screen too short for that shape the height is capped and the content scrolls. */
-.oceanSheet {
+.worldSheet {
   /* Full width of the app column (the phone-sized "screen" the mockup is drawn for) */
   --sw: min(100vw, 560px);
   /* One mockup unit: from the width, or from the height on short screens (content is ~480 units tall) */
@@ -2254,19 +2264,19 @@
   flex-direction: column;
 }
 
-.oceanSheet .sheetHandle {
+.worldSheet .sheetHandle {
   height: calc(28 * var(--u));
   flex-shrink: 0;
 }
 
-.oceanSheet .sheetHandle span {
+.worldSheet .sheetHandle span {
   width: calc(48 * var(--u));
 }
 
 /* Buttons: same height, corners and type scale as the mockup (44px at least for touch) */
-.oceanSheet .doneBtn,
-.oceanSheet .backBtn,
-.oceanSheet .pickBtn {
+.worldSheet .doneBtn,
+.worldSheet .backBtn,
+.worldSheet .pickBtn {
   min-height: max(calc(48 * var(--u)), 44px);
   border-radius: calc(12 * var(--u));
   font-size: max(calc(16 * var(--u)), 15px);
@@ -2274,75 +2284,75 @@
 }
 
 /* Stage sheet */
-.oceanSheet.stageSheet {
+.worldSheet.stageSheet {
   gap: calc(10 * var(--u));
   padding-bottom: calc(20 * var(--u));
 }
 
-.oceanSheet .stageSheetImg {
+.worldSheet .stageSheetImg {
   flex: 1 1 auto;
   min-height: 0;
   /* On very short screens the picture gives way so the buttons stay in view */
   max-height: max(90px, min(calc(300 * var(--u)), calc(92dvh - 250px)));
 }
 
-.oceanSheet .stageSheetImgBleed {
+.worldSheet .stageSheetImgBleed {
   --w: min(calc(290 * var(--u)), 100%, max(86px, calc((92dvh - 250px) * 0.96)));
   flex: 0 0 auto;
   max-height: none;
 }
 
-.oceanSheet .stageSheetTitle {
+.worldSheet .stageSheetTitle {
   font-size: max(calc(24 * var(--u)), 18px);
 }
 
-.oceanSheet .stageSheetHint {
+.worldSheet .stageSheetHint {
   font-size: max(calc(15 * var(--u)), 14px);
 }
 
-.oceanSheet .stageSheetActions {
+.worldSheet .stageSheetActions {
   gap: calc(8 * var(--u));
   margin-top: auto;
 }
 
 /* Choice sheet: spacing taken from the mockup frame */
-.oceanSheet.pickSheet {
+.worldSheet.pickSheet {
   --pad: calc(35 * var(--u));
 }
 
 /* Computers: the black button follows the cards (no empty gap above it), so the sheet needs no scrolling.
    On phones it stays pinned to the bottom, as in the mockup. */
 @media (min-width: 700px) {
-  .oceanSheet.pickSheet {
+  .worldSheet.pickSheet {
     height: auto;
     max-height: 92dvh;
   }
 
-  .oceanSheet.pickSheet .pickBtn {
+  .worldSheet.pickSheet .pickBtn {
     margin-top: calc(4 * var(--u));
   }
 }
 
-.oceanSheet .pickTitle {
+.worldSheet .pickTitle {
   margin-top: calc(28 * var(--u));
   font-size: max(calc(15 * var(--u)), 15px);
 }
 
-.oceanSheet .pickSub {
+.worldSheet .pickSub {
   font-size: max(calc(12.5 * var(--u)), 13px);
 }
 
-.oceanSheet .pickNote {
+.worldSheet .pickNote {
   margin-bottom: calc(22 * var(--u));
   font-size: max(calc(11 * var(--u)), 12px);
 }
 
-.oceanSheet .pickGrid {
+.worldSheet .pickGrid {
   gap: calc(15 * var(--u));
   margin-bottom: calc(22 * var(--u));
 }
 
-.oceanSheet .pickCard {
+.worldSheet .pickCard {
   min-height: calc(112 * var(--u));
   justify-content: center;
   gap: calc(8 * var(--u));
@@ -2350,27 +2360,27 @@
   border-radius: calc(16 * var(--u));
 }
 
-.oceanSheet .pickPic {
+.worldSheet .pickPic {
   width: calc(60 * var(--u));
   height: calc(60 * var(--u));
   border-radius: calc(14 * var(--u));
   font-size: calc(30 * var(--u));
 }
 
-.oceanSheet .pickLabel {
+.worldSheet .pickLabel {
   font-size: max(calc(12 * var(--u)), 12.5px);
 }
 
-.oceanSheet .pickBtn {
+.worldSheet .pickBtn {
   margin-top: auto;
 }
 
-.oceanSheet .parentBtn {
+.worldSheet .parentBtn {
   min-height: max(calc(44 * var(--u)), 44px);
   font-size: max(calc(14 * var(--u)), 13px);
 }
 
-.oceanSheet .parentBtnArrow {
+.worldSheet .parentBtnArrow {
   width: max(calc(34 * var(--u)), 30px);
   height: max(calc(34 * var(--u)), 30px);
 }
@@ -2384,14 +2394,14 @@
   box-shadow: 0 0 0 3px #0a6b8a;
 }
 
-.oceanStage[aria-disabled='true'] .oceanObj {
+.worldStage[aria-disabled='true'] .worldObj {
   cursor: not-allowed;
 }
 
 /* ── Ocean sheets: buttons in a row and the procedure panel ────────── */
 
 /* Mockup buttons: black "done" and grey "back to map", side by side */
-.oceanBtn {
+.worldBtn {
   flex: 1;
   min-height: max(calc(48 * var(--u)), 44px);
   padding: 0 calc(12 * var(--u));
@@ -2408,22 +2418,22 @@
   cursor: pointer;
 }
 
-.oceanBtnDone {
+.worldBtnDone {
   background: #000;
   color: #fff;
 }
 
-.oceanBtnBack {
+.worldBtnBack {
   background: #d9d9d9;
   color: #000;
 }
 
-.oceanBtn:focus-visible {
+.worldBtn:focus-visible {
   outline: 3px solid #0a6b8a;
   outline-offset: 2px;
 }
 
-.oceanSheet .stageSheetActions {
+.worldSheet .stageSheetActions {
   flex-direction: row;
 }
 
@@ -2513,11 +2523,11 @@
 
 /* The same rhythm as the station sheet: 14 units under the hint, 14 between the variants and the steps,
    and the same 12 above the parent button and 16 above the two buttons (from the shared sheet rules) */
-.oceanSheet.stageSheet .procBody {
+.worldSheet.stageSheet .procBody {
   margin-top: calc(14 * var(--u));
 }
 
-.oceanSheet.stageSheet .procBody .variantToggle {
+.worldSheet.stageSheet .procBody .variantToggle {
   margin-bottom: calc(14 * var(--u));
 }
 
@@ -2526,11 +2536,11 @@
 }
 
 /* Round procedure buttons of the stage sheet, as in the mockup: flat light circles with a thin line icon */
-.oceanSheet .procedureIconRow {
+.worldSheet .procedureIconRow {
   gap: calc(12 * var(--u));
 }
 
-.oceanSheet .procedureIconBtn {
+.worldSheet .procedureIconBtn {
   width: max(calc(48 * var(--u)), 44px);
   height: max(calc(48 * var(--u)), 44px);
   background: #f3eeec;
@@ -2539,31 +2549,31 @@
   font-size: max(calc(26 * var(--u)), 24px);
 }
 
-.oceanSheet .procedureIconBtn:active {
+.worldSheet .procedureIconBtn:active {
   transform: scale(0.94);
   box-shadow: none;
 }
 
-.oceanSheet .procedureIconBtn:focus-visible {
+.worldSheet .procedureIconBtn:focus-visible {
   outline: 3px solid #0a6b8a;
   outline-offset: 2px;
 }
 
-.oceanSheet .procDoneBadge {
+.worldSheet .procDoneBadge {
   top: -4px;
   inset-inline-start: -4px;
   left: auto;
 }
 
 /* Variants of a procedure (e.g. "in the mouth" / "under the arm"): equal-width buttons that share the row */
-.oceanSheet .variantToggle {
+.worldSheet .variantToggle {
   display: grid;
   grid-template-columns: repeat(var(--n, 2), 1fr);
   gap: calc(10 * var(--u));
   margin-bottom: calc(10 * var(--u));
 }
 
-.oceanSheet .variantBtn {
+.worldSheet .variantBtn {
   width: 100%;
   min-height: max(calc(44 * var(--u)), 44px);
   border-radius: calc(12 * var(--u));
@@ -2572,9 +2582,9 @@
 
 /* Portrait map on a wide window: the picture is mirrored outwards from the column's edges (tile k = -1, 1
    is the mirror image beside the column, k = -2, 2 mirrors that back), so the colours meet at the seam. */
-.oceanMap { --uc: calc(min(100vw, 560px) / 412); --colw: min(100vw, 560px); }
+.worldMap { --uc: calc(min(100vw, 560px) / 412); --colw: min(100vw, 560px); }
 
-.oceanTile {
+.worldTile {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2585,25 +2595,25 @@
   pointer-events: none;
 }
 
-.oceanTileFlip { transform: scaleX(-1); }
+.worldTileFlip { transform: scaleX(-1); }
 
-.oceanSideBg {
+.worldSideBg {
   position: absolute;
   left: calc(var(--bg-x, 0) * var(--uc));
   top: calc(var(--bg-y, 0) * var(--uc));
   width: calc(var(--bg-w, 412) * var(--uc));
   height: calc(var(--bg-h, 939) * var(--uc));
-  background: url('/worlds/ocean/background.jpg') 0 0 / 100% 100% no-repeat;
+  background: var(--w-background) 0 0 / 100% 100% no-repeat;
   transform: rotate(var(--bg-rot, 0deg)) scaleX(var(--bg-sx, 1));
 }
 
-.oceanBackdropGrad {
+.worldBackdropGrad {
   position: absolute;
   left: 0;
   right: 0;
   top: calc(var(--grad-y, 0) * var(--uc) - 2px);
   height: calc(var(--grad-h, 0) * var(--uc) + 2px);
-  background: linear-gradient(#207082, rgba(29, 117, 129, 0) 76%);
+  background: linear-gradient(var(--w-waterTop, #207082), transparent 76%);
   pointer-events: none;
 }
 
@@ -2611,18 +2621,18 @@
    handle 7px from the top · picture 364×340 at +50 · title 17px bold, start-aligned, black · hint 15px ·
    round buttons 48px, 15px apart, start-aligned · parent pill 34px, start-aligned · buttons 16px apart,
    24px from the bottom. */
-.oceanSheet.stageSheet {
+.worldSheet.stageSheet {
   --dh: 640;
   gap: 0;
   padding-bottom: calc(24 * var(--u));
 }
 
-.oceanSheet.stageSheet .sheetHandle {
+.worldSheet.stageSheet .sheetHandle {
   height: calc(24 * var(--u));
   margin-bottom: calc(26 * var(--u));
 }
 
-.oceanSheet.stageSheet .stageSheetImg {
+.worldSheet.stageSheet .stageSheetImg {
   flex: 0 0 auto;
   height: max(90px, min(calc(340 * var(--u)), calc(92dvh - 330px)));
   max-height: none;
@@ -2631,14 +2641,14 @@
   object-fit: contain;
 }
 
-.oceanSheet.stageSheet .stageSheetImgBleed {
+.worldSheet.stageSheet .stageSheetImgBleed {
   /* keeps the house's own fade and offset; the picture is 340 tall like the others */
   --w: min(calc(326 * var(--u)), 100%, max(86px, calc((92dvh - 330px) * 0.96)));
   width: var(--w);
   height: auto;
 }
 
-.oceanSheet.stageSheet .stageSheetTitle {
+.worldSheet.stageSheet .stageSheetTitle {
   margin: calc(12 * var(--u)) 0 0;
   text-align: start;
   font-size: max(calc(17 * var(--u)), 16px);
@@ -2646,25 +2656,25 @@
   color: #000 !important;
 }
 
-.oceanSheet.stageSheet .stageSheetHint {
+.worldSheet.stageSheet .stageSheetHint {
   margin: calc(4 * var(--u)) 0 0;
   text-align: start;
   font-size: max(calc(15 * var(--u)), 14px);
   color: #222;
 }
 
-.oceanSheet.stageSheet .procedureIconRow {
+.worldSheet.stageSheet .procedureIconRow {
   justify-content: flex-start;
   gap: calc(15 * var(--u));
   margin-top: calc(14 * var(--u));
 }
 
-.oceanSheet.stageSheet .parentBtnOceanInline {
+.worldSheet.stageSheet .parentBtnOceanInline {
   align-self: flex-start;
   margin-top: calc(10 * var(--u));
 }
 
-.oceanSheet.stageSheet .parentBtnOceanPill {
+.worldSheet.stageSheet .parentBtnOceanPill {
   min-width: calc(166 * var(--u));
   /* text about 108px wide like the mockup (17px), icon 24px */
   font-size: 17px;
@@ -2672,7 +2682,7 @@
   padding-inline: calc(22 * var(--u)) calc(5 * var(--u));
 }
 
-.oceanSheet.stageSheet .stageSheetActions {
+.worldSheet.stageSheet .stageSheetActions {
   gap: calc(16 * var(--u));
   margin-top: auto;
   padding-top: calc(16 * var(--u));
@@ -2680,46 +2690,46 @@
 
 /* Parent panel cards in mockup units (measured on the 412×939 frame): 17px bold title, 14px text,
    cards 20px apart, tight padding */
-.oceanSheet .sheetCard {
+.worldSheet .sheetCard {
   margin-bottom: calc(18 * var(--u));
   padding: calc(14 * var(--u)) calc(18 * var(--u)) calc(14 * var(--u));
   border-radius: calc(16 * var(--u));
   background: #f3eeec;
 }
 
-.oceanSheet .sheetCard h2 {
+.worldSheet .sheetCard h2 {
   margin: 0 0 calc(4 * var(--u));
   font-size: max(calc(17 * var(--u)), 16px);
   font-weight: 800;
   line-height: 1.25;
 }
 
-.oceanSheet .sheetCard p,
-.oceanSheet .sheetCard li {
+.worldSheet .sheetCard p,
+.worldSheet .sheetCard li {
   font-size: max(calc(14 * var(--u)), 14px);
   line-height: 1.25;
 }
 
-.oceanSheet .procHead {
+.worldSheet .procHead {
   margin-bottom: calc(24 * var(--u));
 }
 
 /* Portrait map on a wide window: the sheet is pressed to the right edge too, over the map's column */
 @media not all and ((min-aspect-ratio: 3/2) or ((min-width: 747px) and (min-aspect-ratio: 1/1))) {
-  .sheetBackdrop > .oceanSheet { margin-left: auto; }
+  .sheetBackdrop > .worldSheet { margin-left: auto; }
 }
 
 /* Other languages: the longer "more for the parent" label goes under the two buttons, full width
    (Hebrew keeps the mockup's small pill above the buttons) */
-.oceanSheet.stageSheet.parentBelow .stageSheetActions { order: 1; }
+.worldSheet.stageSheet.parentBelow .stageSheetActions { order: 1; }
 
-.oceanSheet.stageSheet.parentBelow .parentBtnOceanInline {
+.worldSheet.stageSheet.parentBelow .parentBtnOceanInline {
   order: 2;
   align-self: stretch;
   margin-top: calc(12 * var(--u));
 }
 
-.oceanSheet.stageSheet.parentBelow .parentBtnOceanPill {
+.worldSheet.stageSheet.parentBelow .parentBtnOceanPill {
   width: 100%;
   /* text at the start of the line (left in Russian/English), the book icon at the far end */
   justify-content: space-between;
@@ -2727,23 +2737,23 @@
 }
 
 /* The part of the route already travelled glows: warm light dots and dashes with a soft halo (static, no flicker) */
-.oceanTrailLit circle {
+.worldTrailLit circle {
   fill: #fff4cf;
 }
 
-.oceanTrailLit,
-path.oceanTrailLit {
+.worldTrailLit,
+path.worldTrailLit {
   filter: drop-shadow(0 0 2px rgba(255, 224, 130, 0.95)) drop-shadow(0 0 6px rgba(255, 200, 80, 0.65));
 }
 
-path.oceanTrailLit {
+path.worldTrailLit {
   stroke: #fff4cf;
 }
 
 /* Portrait map on a window wider than the column (the mirrored picture shows on its left): the progress bar
    moves out of the column, onto the extra picture, so it covers no station */
 @media (min-width: 620px) {
-  .oceanProgress:not(.oceanProgressWide) {
+  .worldProgress:not(.worldProgressWide) {
     left: calc(100vw - var(--col) - var(--col) * 14 / 412 - 20px);
   }
 }
@@ -2752,11 +2762,11 @@ path.oceanTrailLit {
    panel pressed to the right edge, as wide as its content (no big white field), standing on the bottom
    edge, and the map stays in view on its left */
 @media (min-aspect-ratio: 3/2), (min-width: 747px) and (min-aspect-ratio: 1/1) {
-  .sheetBackdrop:has(> .oceanSheet) {
+  .sheetBackdrop:has(> .worldSheet) {
     align-items: flex-end;
   }
 
-  .sheetBackdrop > .oceanSheet {
+  .sheetBackdrop > .worldSheet {
     /* as in the mockup (800 of 1920): about 42% of the window; the content scales with the width */
     --sw: clamp(380px, 42vw, 800px);
     /* the full-height panel holds about 660 units of content, so the unit also follows the height */
@@ -2770,7 +2780,7 @@ path.oceanTrailLit {
 
 /* Stars earned on the first stage, at the top right of the second stage's map, under the top row:
    the stars themselves, one for each, wrapping to a second row when there are many */
-.oceanStarsTotal {
+.worldStarsTotal {
   position: fixed;
   z-index: 14;
   top: 68px;
@@ -2790,7 +2800,7 @@ path.oceanTrailLit {
   filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.35));
 }
 
-.oceanStarsTotalWide {
+.worldStarsTotalWide {
   top: 76px;
   right: 24px;
   font-size: calc(56 * 100vw / 1920);
@@ -2799,7 +2809,7 @@ path.oceanTrailLit {
 
 /* Above the landscape scene only the near half of the mirrored picture is drawn (the mirrored water; the
    far half would show the sand upside down), fading into the plain sea colour of the window above it */
-.oceanTileVTop {
+.worldTileVTop {
   height: calc(var(--sh) / 2);
   -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
@@ -2808,7 +2818,7 @@ path.oceanTrailLit {
 /* The progress capsule as in the mockup: a transparent glass case (17 units wide) that the sticks of the
    stations done so far go into one by one, from the bottom, gold - mint - gold - mint - gold. It is not a
    continuous bar: each station is a stick, an empty place is see-through. */
-.oceanProgress {
+.worldProgress {
   width: calc(var(--col) * 17 / 412);
   padding: calc(var(--col) * 3 / 412);
   display: flex;
@@ -2820,18 +2830,18 @@ path.oceanTrailLit {
   overflow: visible;
 }
 
-.oceanProgressStick {
+.worldProgressStick {
   flex: 1 1 0;
   border-radius: 999px;
   background: transparent;
   transition: background-color 0.5s ease;
 }
 
-.oceanProgressStick[data-on='true']:nth-child(odd) { background: #d9a53a; }
-.oceanProgressStick[data-on='true']:nth-child(even) { background: #84dccb; }
+.worldProgressStick[data-on='true']:nth-child(odd) { background: var(--w-progress-1, #d9a53a); }
+.worldProgressStick[data-on='true']:nth-child(even) { background: var(--w-progress-2, #84dccb); }
 
 /* Landscape: the case at the right edge, longer: from the home button down to the house station */
-.oceanProgressWide {
+.worldProgressWide {
   top: calc(max(0px, 100dvh - var(--S) * 9 / 16) + var(--S) * 118 / 1920);
   width: calc(var(--S) * 26 / 1920);
   padding: calc(var(--S) * 5 / 1920);
@@ -2839,38 +2849,37 @@ path.oceanTrailLit {
   height: calc(var(--S) * 440 / 1920);
 }
 
-/* ── Ocean sheets in the colours of Shevi's "Design Tokens" table ─────────────────────────────────────────
-   text #173B4D, secondary text #526570, primary action #087E8B, page #F7FAF9, cards #FFFFFF, mint #DDF3EE,
-   info areas #E5F2F7, coral #B5473A, yellow marks #F4C95D. (Her names are semantic and may change, so the
-   values live in these variables.) */
-.oceanSheet {
-  --tok-text: #173b4d;
-  --tok-text2: #526570;
-  --tok-action: #087e8b;
-  --tok-page: #f7faf9;
-  --tok-card: #ffffff;
-  --tok-mint: #ddf3ee;
-  --tok-blue: #e5f2f7;
-  --tok-coral: #b5473a;
-  --tok-yellow: #f4c95d;
+/* ── Designed world sheets in the world's design tokens (world.json, design.colors → --w-*). The defaults are
+   the ocean's, from Shevi's "Design Tokens" table: text #173B4D, secondary text #526570, primary action #087E8B,
+   page #F7FAF9, cards #FFFFFF, mint #DDF3EE, info areas #E5F2F7, coral #B5473A, yellow marks #F4C95D. */
+.worldSheet {
+  --tok-text: var(--w-text, #173b4d);
+  --tok-text2: var(--w-text2, #526570);
+  --tok-action: var(--w-action, #087e8b);
+  --tok-page: var(--w-page, #f7faf9);
+  --tok-card: var(--w-card, #ffffff);
+  --tok-mint: var(--w-mint, #ddf3ee);
+  --tok-blue: var(--w-blue, #e5f2f7);
+  --tok-coral: var(--w-coral, #b5473a);
+  --tok-yellow: var(--w-yellow, #f4c95d);
 }
 
-.sheet.oceanSheet {
+.sheet.worldSheet {
   background: var(--tok-page);
   color: var(--tok-text);
 }
 
-.oceanSheet .stageSheetTitle,
-.oceanSheet.stageSheet .stageSheetTitle {
+.worldSheet .stageSheetTitle,
+.worldSheet.stageSheet .stageSheetTitle {
   color: var(--tok-text) !important;
 }
 
-.oceanSheet .stageSheetHint,
-.oceanSheet.stageSheet .stageSheetHint {
+.worldSheet .stageSheetHint,
+.worldSheet.stageSheet .stageSheetHint {
   color: var(--tok-text2);
 }
 
-.oceanSheet .procedureSteps {
+.worldSheet .procedureSteps {
   color: var(--tok-text) !important;
   /* the steps are the same size as the sheet's own text, not the page's rem size */
   font-size: max(calc(16 * var(--u)), 15px);
@@ -2879,59 +2888,59 @@ path.oceanTrailLit {
 
 /* the picture sits on a panel: the sea floor with its light ripples, under a pale teal veil that fades out downwards
    (sheet-fade.png is Shevi's "Rectangle 24") */
-.oceanSheet.stageSheet .stageSheetImg {
+.worldSheet.stageSheet .stageSheetImg {
   background:
-    url('/worlds/ocean/sheet-fade.png') center top / 100% 100% no-repeat,
-    url('/worlds/ocean/sheet-seabed.jpg') center bottom / cover no-repeat;
+    var(--w-sheet-fade) center top / 100% 100% no-repeat,
+    var(--w-sheet-floor) center bottom / cover no-repeat;
   border-radius: calc(12 * var(--u));
 }
 
 /* buttons: teal "I did it", a teal outline for "back" */
-.oceanSheet .oceanBtnDone {
+.worldSheet .worldBtnDone {
   background: var(--tok-action);
   color: #fff;
 }
 
-.oceanSheet .oceanBtnBack {
+.worldSheet .worldBtnBack {
   background: var(--tok-card);
   color: var(--tok-action);
   border: 1.5px solid var(--tok-action);
 }
 
-.oceanSheet .sheetFooter {
+.worldSheet .sheetFooter {
   background: var(--tok-page);
 }
 
 /* the parent button: white pill, a yellow circle with the book */
-.oceanSheet .parentBtnOceanPill {
+.worldSheet .parentBtnOceanPill {
   background: var(--tok-card);
   border-color: rgba(8, 126, 139, 0.28);
   color: var(--tok-text);
 }
 
-.oceanSheet .parentBtnOceanIcon rect {
+.worldSheet .parentBtnOceanIcon rect {
   fill: var(--tok-yellow);
 }
 
 /* the round procedure buttons: light blue */
-.oceanSheet .procedureIconBtn {
+.worldSheet .procedureIconBtn {
   background: var(--tok-blue);
   color: var(--tok-text);
 }
 
 /* the parent panel's cards: light blue with a yellow book circle before each heading */
-.oceanSheet .sheetCard {
+.worldSheet .sheetCard {
   background: var(--tok-blue);
 }
 
-.oceanSheet .sheetCard h2 {
+.worldSheet .sheetCard h2 {
   display: flex;
   align-items: center;
   gap: calc(8 * var(--u));
   color: var(--tok-text);
 }
 
-.oceanSheet .sheetCard h2::before {
+.worldSheet .sheetCard h2::before {
   content: '';
   flex: 0 0 auto;
   width: calc(22 * var(--u));
@@ -2939,47 +2948,47 @@ path.oceanTrailLit {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23F4C95D'/%3E%3Cpath d='M6 8.5c2-1 4-1 6 .5 2-1.5 4-1.5 6-.5v8c-2-1-4-1-6 .5-2-1.5-4-1.5-6-.5z M12 9v8' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-.oceanSheet .sheetCard p,
-.oceanSheet .sheetCard li {
+.worldSheet .sheetCard p,
+.worldSheet .sheetCard li {
   color: var(--tok-text);
 }
 
-.oceanSheet .procHeadText p {
+.worldSheet .procHeadText p {
   color: var(--tok-text2);
 }
 
-.oceanSheet .procIcon {
+.worldSheet .procIcon {
   background: var(--tok-blue);
 }
 
 /* the choice sheet */
-.oceanSheet .pickTitle {
+.worldSheet .pickTitle {
   color: var(--tok-text);
 }
 
-.oceanSheet .pickSub {
+.worldSheet .pickSub {
   color: var(--tok-text2);
 }
 
-.oceanSheet .pickNote {
+.worldSheet .pickNote {
   color: var(--tok-action);
 }
 
-.oceanSheet .pickCard {
+.worldSheet .pickCard {
   background: var(--tok-blue);
   border: 0;
   color: var(--tok-text);
 }
 
-.oceanSheet .pickCardOn {
+.worldSheet .pickCardOn {
   box-shadow: inset 0 0 0 2px var(--tok-action);
 }
 
-.oceanSheet .pickPic {
+.worldSheet .pickPic {
   background: transparent;
 }
 
-.oceanSheet .pickBtn {
+.worldSheet .pickBtn {
   background: var(--tok-action);
   color: #fff;
 }
@@ -3009,7 +3018,7 @@ path.oceanTrailLit {
 }
 
 /* A golden symbol on its sheet is not stretched to the panel's edges: it has room around it */
-.oceanSheet.stageSheet .stageSheetImgSymbol {
+.worldSheet.stageSheet .stageSheetImgSymbol {
   box-sizing: border-box;
   padding: calc(40 * var(--u)) calc(36 * var(--u));
   object-fit: contain;
@@ -3026,16 +3035,16 @@ path.oceanTrailLit {
   overflow: hidden;
   border-radius: calc(12 * var(--u));
   background:
-    url('/worlds/ocean/sheet-fade.png') center top / 100% 100% no-repeat,
-    url('/worlds/ocean/sheet-seabed.jpg') center bottom / cover no-repeat;
+    var(--w-sheet-fade) center top / 100% 100% no-repeat,
+    var(--w-sheet-floor) center bottom / cover no-repeat;
 }
 
-.oceanSheet.stageSheet .stageSheetPicHouse .stageSheetImg {
+.worldSheet.stageSheet .stageSheetPicHouse .stageSheetImg {
   background: none;
   border-radius: 0;
 }
 
-.oceanSheet.stageSheet .stageSheetPicHouse .stageSheetImgFlip {
+.worldSheet.stageSheet .stageSheetPicHouse .stageSheetImgFlip {
   transform: scaleX(-1);
   left: calc(var(--w) * 0.045);
 }
@@ -3046,11 +3055,11 @@ path.oceanTrailLit {
   overflow: hidden;
   border-radius: calc(12 * var(--u));
   background:
-    url('/worlds/ocean/sheet-fade.png') center top / 100% 100% no-repeat,
-    url('/worlds/ocean/sheet-seabed.jpg') center bottom / cover no-repeat;
+    var(--w-sheet-fade) center top / 100% 100% no-repeat,
+    var(--w-sheet-floor) center bottom / cover no-repeat;
 }
 
-.oceanSheet.stageSheet .stageSheetPicWrap .stageSheetImg {
+.worldSheet.stageSheet .stageSheetPicWrap .stageSheetImg {
   background: none;
   border-radius: 0;
   position: relative;
@@ -3064,18 +3073,18 @@ path.oceanTrailLit {
 /* ── The ocean world's other screens (help, reason, card, celebration, feedback ...) in Shevi's colour tokens ──
    page #F7FAF9, text #173B4D, secondary text #526570, primary action #087E8B, information areas #E5F2F7 (the
    accent colours come from the theme) */
-.questShellOcean {
-  --tok-text: #173b4d;
-  --tok-text2: #526570;
-  --tok-action: #087e8b;
-  --tok-page: #f7faf9;
-  --tok-blue: #e5f2f7;
-  --tok-mint: #ddf3ee;
+.questShellWorld {
+  --tok-text: var(--w-text, #173b4d);
+  --tok-text2: var(--w-text2, #526570);
+  --tok-action: var(--w-action, #087e8b);
+  --tok-page: var(--w-page, #f7faf9);
+  --tok-blue: var(--w-blue, #e5f2f7);
+  --tok-mint: var(--w-mint, #ddf3ee);
   background: var(--tok-page);
   color: var(--tok-text);
 }
 
-.questShellOcean .questTopbar {
+.questShellWorld .questTopbar {
   background: var(--tok-page);
 }
 
@@ -3083,52 +3092,52 @@ path.oceanTrailLit {
    stations, the top row, the progress case, the stars counter and the sheets stand in the middle, while the
    background picture stays pressed to the right edge. */
 @media not all and ((min-aspect-ratio: 3/2) or ((min-width: 747px) and (min-aspect-ratio: 1/1))) {
-  .oceanScene {
+  .worldScene {
     margin-inline: auto;
   }
 
-  .oceanTopRow {
+  .worldTopRow {
     margin-inline: auto;
   }
 
   /* the background: the picture stays pressed to the right edge (the column's own picture is drawn as the tile
      k = 0 there, the mirrored piece k = -1 beside it); the scene only carries the stations, the trails, the numbers,
      and it stands in the middle */
-  .oceanScene {
+  .worldScene {
     background: transparent;
     /* the stations that run over the column's edge (the house, the submarine ...) are not cut there: the map wrapper
        clips them at the window's edge */
     overflow: visible;
   }
 
-  .oceanScene::before,
-  .oceanScene::after {
+  .worldScene::before,
+  .worldScene::after {
     display: none;
   }
 
-  .oceanProgress:not(.oceanProgressWide) {
+  .worldProgress:not(.worldProgressWide) {
     left: calc((100vw - var(--col)) / 2 + var(--col) * 6 / 412);
   }
 
-  .oceanStarsTotal:not(.oceanStarsTotalWide) {
+  .worldStarsTotal:not(.worldStarsTotalWide) {
     right: calc((100vw - var(--col)) / 2 + 12px);
   }
 
-  .sheetBackdrop > .oceanSheet {
+  .sheetBackdrop > .worldSheet {
     margin-inline: auto;
   }
 }
 
 @media (min-width: 620px) {
   /* the progress case leaves the column onto the picture beside it */
-  .oceanProgress:not(.oceanProgressWide) {
+  .worldProgress:not(.worldProgressWide) {
     left: calc((100vw - var(--col)) / 2 - var(--col) * 14 / 412 - 20px);
   }
 }
 
 /* ── Ocean: the buttons of the other screens in the style of the sheets' buttons (teal "do", white outlined "back") ── */
-.questShellOcean .doneBtn,
-.questShellOcean .outcomeBtn {
+.questShellWorld .doneBtn,
+.questShellWorld .outcomeBtn {
   background: var(--tok-action) !important;
   color: #fff !important;
   border: 0;
@@ -3138,7 +3147,7 @@ path.oceanTrailLit {
   min-height: 48px;
 }
 
-.questShellOcean .backBtn {
+.questShellWorld .backBtn {
   background: #fff !important;
   color: var(--tok-action) !important;
   border: 1.5px solid var(--tok-action) !important;
@@ -3148,9 +3157,9 @@ path.oceanTrailLit {
   min-height: 48px;
 }
 
-.questShellOcean .doneBtn:focus-visible,
-.questShellOcean .outcomeBtn:focus-visible,
-.questShellOcean .backBtn:focus-visible {
+.questShellWorld .doneBtn:focus-visible,
+.questShellWorld .outcomeBtn:focus-visible,
+.questShellWorld .backBtn:focus-visible {
   outline: 3px solid #0a6b8a;
   outline-offset: 2px;
 }
@@ -3169,11 +3178,11 @@ path.oceanTrailLit {
 }
 
 /* ── Ocean: contrast fixes (the old greys were 3.5:1 on white, the teal line 4.2:1 on the pale blue) ── */
-.questShellOcean .stageBody h2 {
+.questShellWorld .stageBody h2 {
   color: var(--tok-text2);
 }
 
-.questShellOcean .calmChildLine {
+.questShellWorld .calmChildLine {
   color: #065a66;
 }
 

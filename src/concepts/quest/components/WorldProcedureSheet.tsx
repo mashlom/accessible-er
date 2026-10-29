@@ -1,12 +1,11 @@
 import { lockBodyScroll } from '../../../lib/scrollLock'
 import { useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useConceptPath } from '../../nav'
+import { useGoBackTo } from '../../nav'
 import { useQuestTheme } from '../useQuestTheme'
 import { OPTIONAL_STAGES, type StageId } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
-import { OceanMapPage, OCEAN_SYMBOLS } from '../pages/OceanMapPage'
+import { WorldMapPage, stationPicture } from '../pages/WorldMapPage'
 import css from '../quest.module.css'
 
 interface Props {
@@ -16,15 +15,15 @@ interface Props {
   onSkip: () => void
 }
 
-/** Ocean world: the procedure choice (which extra stations were prescribed) as a sheet over the map. */
-export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: Props) {
+/** Designed world: the procedure choice (which extra stations were prescribed) as a sheet over the map. */
+export function WorldProcedureSheet({ selected, onToggle, onContinue, onSkip }: Props) {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
-  const navigate = useNavigate()
-  const conceptPath = useConceptPath()
+  const goBackTo = useGoBackTo()
   const handleRef = useRef<HTMLButtonElement>(null)
+  const design = theme.design!
 
-  const close = () => navigate(conceptPath('/map'))
+  const close = () => goBackTo('/map')
 
   useEffect(() => {
     handleRef.current?.focus()
@@ -39,15 +38,15 @@ export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
   }, [])
 
   // Texts are the app's own (not the mockup's wording)
-  const title = t('ui.text.oceanDecisionTitle')
+  const title = theme.ui?.decisionTitle ?? t('ui.labels.adult.nextStep')
   const prompt = theme.procedurePrompt ?? t('ui.labels.adult.procedurePrompt')
 
   return (
     <>
-      <OceanMapPage underSheet />
+      <WorldMapPage underSheet />
       <div className={css.sheetBackdrop} onClick={close}>
         <div
-          className={`${css.sheet} ${css.pickSheet} ${css.oceanSheet}`}
+          className={`${css.sheet} ${css.pickSheet} ${css.worldSheet}`}
           role="dialog"
           aria-modal="true"
           aria-label={title}
@@ -64,6 +63,7 @@ export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
           <div className={css.pickGrid}>
             {OPTIONAL_STAGES.map((id) => {
               const skin = theme.stages[id]
+              const picture = stationPicture(design, id, 'sheet')
               const isSelected = selected.has(id)
               return (
                 <button
@@ -74,8 +74,8 @@ export function OceanProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
                   onClick={() => onToggle(id)}
                 >
                   <span className={css.pickPic}>
-                    {OCEAN_SYMBOLS[id] || skin?.image ? (
-                      <img src={OCEAN_SYMBOLS[id] ?? skin?.image} alt="" />
+                    {picture ? (
+                      <img src={picture} alt="" />
                     ) : (
                       <StageIcon icon={skin?.icon ?? '❓'} />
                     )}

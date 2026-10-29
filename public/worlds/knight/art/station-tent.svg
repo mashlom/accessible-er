@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" width="300" height="220">
+<!-- Knight world: the healer's tent (the checks) -->
+<ellipse cx="150" cy="200" rx="132" ry="14" fill="#000" opacity="0.12"/>
+<path d="M18 182 Q150 222 282 182 L282 186 Q150 230 18 186 Z" fill="#6fa548"/>
+<ellipse cx="150" cy="182" rx="132" ry="24" fill="#8cc05a"/>
+<ellipse cx="128" cy="178" rx="92" ry="12" fill="#a8d57a" opacity="0.6"/>
+<path d="M62 180 L150 58 L238 180 Z" fill="#f6ecd6"/>
+<path d="M62 180 L150 58 L84 180 Z" fill="#4a6fa5"/>
+<path d="M106 180 L150 58 L128 180 Z" fill="#4a6fa5"/>
+<path d="M150 180 L150 58 L172 180 Z" fill="#4a6fa5"/>
+<path d="M194 180 L150 58 L216 180 Z" fill="#4a6fa5"/>
+<path d="M150 58 L238 180 L196 180 Z" fill="#000" opacity="0.10"/>
+<path d="M130 180 L150 116 L170 180 Z" fill="#3b3346"/>
+<path d="M150 116 L130 180 L120 180 Z" fill="#f6ecd6"/><path d="M150 116 L170 180 L180 180 Z" fill="#f6ecd6"/>
+<path d="M48 182 Q150 172 252 182" fill="none" stroke="#6b4329" stroke-width="2"/>
+<line x1="150" y1="26" x2="150" y2="52" stroke="#6b4329" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M150 27 L170 32 L150 38 Z" fill="#6fa548"/>
+<path d="M84 120 L108 120 L108 150 L96 144 L84 150 Z" fill="#f6ecd6" stroke="#c99a32" stroke-width="1.5"/>
+<path d="M96 140.1 Q87.9 132 96 123.9 Q104.1 132 96 140.1 Z" fill="#6fa548"/><line x1="96" y1="125.7" x2="96" y2="140.1" stroke="#fff" stroke-width="1.08" opacity="0.8"/>
+<path d="M206 146 L232 146 L232 164 Q232 178 219 184 Q206 178 206 164 Z" fill="#c8553d" stroke="#e8b84a" stroke-width="2.5"/>
+<path d="M219 150 L219 178 M209 160 L229 160" stroke="#e8b84a" stroke-width="2.5"/>
+</svg>

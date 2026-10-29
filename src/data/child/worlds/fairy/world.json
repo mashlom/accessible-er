@@ -1,0 +1,44 @@
+{
+  "id": "fairy",
+  "order": 5,
+  "doneEmoji": "⭐",
+  "shopImage": "/worlds/knight/shop.JPEG",
+  "emoji": "🧚",
+  "bg": "/worlds/fairy/6bf9b600-f83d-4d9e-90ce-4233e11f4b30.JPEG",
+  "accent": "#9c5ab5",
+  "accentSoft": "#f0e0f7",
+  "accentText": "#ffffff",
+  "completedColor": "#d4a8e8",
+  "stages": {
+    "reception": {
+      "icon": "🌸"
+    },
+    "wait-before-triage": {
+      "icon": "🦋"
+    },
+    "triage": {
+      "icon": "✨"
+    },
+    "wait-doctor": {
+      "icon": "🌺"
+    },
+    "doctor": {
+      "icon": "🧚"
+    },
+    "decision": {
+      "icon": "🌟"
+    },
+    "tests": {
+      "icon": "🔮"
+    },
+    "treatment": {
+      "icon": "🪄"
+    },
+    "consult": {
+      "icon": "🌈"
+    },
+    "wait-results": {
+      "icon": "💫"
+    }
+  }
+}

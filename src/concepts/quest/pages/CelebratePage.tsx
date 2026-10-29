@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Link } from '../../nav'
+import { Link, useGoBackTo } from '../../nav'
+import { WORLD_SELECT } from '../components/WorldScope'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
@@ -34,6 +35,12 @@ export function CelebratePage() {
   const celebrateSkin = theme.stages['decision']
   const doneCount = doneProcedures.size
   const cardEmpty = isCardEmpty(card)
+  const goBackTo = useGoBackTo()
+  // a new journey: back to the world select screen (through the history, when it was the way in)
+  const chooseWorld = () => {
+    reset()
+    goBackTo(WORLD_SELECT, { absolute: true })
+  }
 
   return (
     <div className={css.celebratePage}>
@@ -65,15 +72,15 @@ export function CelebratePage() {
               {t('ui.buttons.toShop')}
             </button>
           </Link>
-          <Link to="/" style={{ flex: 1, display: 'flex' }}>
+          <div style={{ flex: 1, display: 'flex' }}>
             <button
               className={css.backBtn}
               style={{ borderColor: theme.accent, color: theme.accent, flex: 1 }}
-              onClick={reset}
+              onClick={chooseWorld}
             >
               {t('ui.buttons.chooseWorld')}
             </button>
-          </Link>
+          </div>
         </div>
       </div>
 

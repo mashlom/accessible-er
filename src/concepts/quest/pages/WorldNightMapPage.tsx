@@ -5,16 +5,14 @@ import { parentJourney } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
-import { dotsAlong } from './oceanTrails'
-import { OceanMapView, OCEAN_IMAGES, starsFor, type Pt, type Scene, type Slot, type ViewItem } from './OceanMapPage'
+import { dotsAlong } from './trails'
+import { WorldMapView, stationPicture, starsFor, type ViewItem } from './WorldMapPage'
+import type { Pt, Scene, Slot, WorldDesign } from '../themes'
 
-/** Picture shapes (width / height) of the stand-in station images */
-function aspectOf(src: string): number {
-  if (src.includes('station-pod')) return 287 / 185
-  if (src.includes('station-sonar')) return 218 / 132
-  if (src.includes('station-sub-lit')) return 255 / 209
-  if (src.includes('station-sub')) return 227 / 169
-  return 211 / 220 // house
+/** A picture's shape on the second map (width / height, and its visible part): from the world's images list */
+function shapeOf(design: WorldDesign, src: string) {
+  const im = design.images[src]
+  return { aspect: im?.aspect ?? 1, visible: im?.visible ?? 1, lift: im?.lift ?? 0 }
 }
 
 /** S-shaped trail from a to b with vertical tangents */
@@ -41,13 +39,12 @@ function useScreenUnits(): number {
  * the house: little sand, lots of sea. The map is at least as tall as the screen, so there is no empty
  * strip; any gap at the top is light water, like the picture's own top.
  */
-/** Where the shore runs on the unshifted background (the sea is above this line) */
-const shoreOrig = (x: number) => 653 + (412 - x) * 0.347
-
-function portraitScene(images: string[], screenH: number): Scene {
+function portraitScene(design: WorldDesign, images: string[], screenH: number): Scene {
+  const spec = design.nightMap.portrait
+  const aspectOf = (src: string) => shapeOf(design, src).aspect
   const n = images.length - 1
   const w = n <= 2 ? 250 : n === 3 ? 215 : 185
-  const fw = 210
+  const fw = spec.finaleWidth
   const fh = fw / aspectOf(images[n])
   const hs = images.slice(0, n).map((img) => w / aspectOf(img))
   const hmax = Math.max(0, ...hs)
@@ -75,7 +72,7 @@ function portraitScene(images: string[], screenH: number): Scene {
 
   // the house stands at the very edge of the land: at the right edge the shore meets the foot of the
   // house, while the pier to its left (where the shore runs lower) reaches over the water
-  const shift = shoreOrig(412) - (fy + fh * 0.96)
+  const shift = spec.shoreY - (fy + fh * 0.96)
 
   const dots: Pt[][] = []
   for (let k = 0; k < slots.length - 1; k++) {
@@ -98,13 +95,10 @@ function portraitScene(images: string[], screenH: number): Scene {
     slots,
     dots,
     vars: {
-      '--bg-x': 0, '--bg-y': -shift, '--bg-w': 412, '--bg-h': 939,
-      '--title-x': 64.5, '--title-y': 44.5, '--title-w': 283, '--title-h': 50, '--title-fs': 21,
-      '--badge': 24, '--badge-fs': 15, '--star': 30, '--title-bg': 'rgba(18, 56, 74, 0.35)',
-      // The picture's top is light water: cover it with the deep teal of the first stage's map and let the
-      // same teal fill any gap above the picture, so the top is never light blue
-      '--grad-y': -shift, '--grad-h': 520,
-      '--map-bg': '#207082',
+      ...spec.vars,
+      // the background is moved so the shore passes under the ending, and the gradient at its top goes with it
+      '--bg-y': -shift,
+      '--grad-y': -shift,
     },
   }
 }
@@ -114,67 +108,49 @@ function portraitScene(images: string[], screenH: number): Scene {
  * taken in the opposite order): the path leads from the top right, down to the bottom right, to the top centre
  * and the centre left, and ends at the house, which stands as a pier at the water's edge on the left.
  */
-function landscapeScene(images: string[]): Scene {
+function landscapeScene(design: WorldDesign, images: string[]): Scene {
+  const spec = design.nightMap.landscape
   const n = images.length - 1
   // The first stage's landscape arrangement, mirrored left to right: its five places are taken in the opposite
   // order, because here the path leads TO the house. Places (visible width, centre x, top of the picture) and
   // where each station's number stands (relative to the place):
   //   A top right (the captain's place), B bottom right, C top centre, D centre left; the house bottom left.
-  const places = [
-    { cx: 1640, top: 190, vis: 430, badge: [1685, 465] as Pt },
-    { cx: 1500, top: 590, vis: 470, badge: [1500, 549] as Pt },
-    { cx: 1050, top: 190, vis: 440, badge: [1050, 518] as Pt },
-    { cx: 664, top: 465, vis: 428, badge: [664, 852] as Pt },
-  ]
-  // how much of a picture's width / how far below its top the visible part is (the pictures have margins)
-  const fit = (img: string) =>
-    img.includes('station-sub-lit') ? { frac: 0.969, lift: 0.02 } : img.includes('station-sub') ? { frac: 0.815, lift: 0.056 } : img.includes('station-sonar') ? { frac: 0.963, lift: 0.03 } : { frac: 0.916, lift: 0.068 }
+  const places = spec.places
   const slots: Slot[] = []
   for (let k = 0; k < n; k++) {
     const pl = places[k]
-    const f = fit(images[k])
-    const w = pl.vis / f.frac
-    const h = w / aspectOf(images[k])
+    const f = shapeOf(design, images[k])
+    const w = pl.visible / f.visible
+    const h = w / f.aspect
     slots.push({ x: pl.cx - w / 2, y: pl.top - f.lift * h, w, h, badge: pl.badge })
   }
-  const fw = 493
-  const fh = fw / aspectOf(images[n])
-  // the first stage's house, mirrored across the scene: house on the left, pier pointing into the sea
-  slots.push({ x: -67, y: 521, w: fw, h: fh, badge: [-67 + fw / 2, 560] })
+  // the ending: in landscape the first stage's start, mirrored across the scene
+  slots.push({ ...spec.finale, h: spec.finale.w / shapeOf(design, images[n]).aspect })
 
   // trails: every number is joined to the next one by a curve that goes around the stations (the numbers cut
-  // them at their edges); the last number is joined to the end of the pier
-  const curves: ((from: Pt, to: Pt) => Pt[])[] = [
-    (a, b) => dotsAlong(a, [1690, 540], [1620, 580], b), // 6 to 7: down from under the top right station
-    (a, b) => dotsAlong(a, [1380, 520], [1200, 560], b), // 7 to 8: left, between the stations
-    (a, b) => dotsAlong(a, [1020, 760], [840, 920], b), // 8 to 9: down the right side of the left station
-  ]
+  // them at their edges); the last number is joined to the end of the ending's picture
+  const curves = spec.curves.map(([c1, c2]) => (a: Pt, b: Pt) => dotsAlong(a, c1, c2, b))
   const lines: Pt[][] = []
   for (let k = 0; k < n - 1; k++) lines.push(curves[k](slots[k].badge, slots[k + 1].badge))
   if (n > 0) {
     // to the end of the pier
     const lb = slots[n - 1].badge
-    const end: Pt = [430, 870]
-    lines.push(dotsAlong(lb, [lb[0] - 70, lb[1] + 30], [end[0] + 90, end[1] + 10], end))
+    const { end, c1, c2 } = spec.finaleTrail
+    lines.push(dotsAlong(lb, [lb[0] + c1[0], lb[1] + c1[1]], [end[0] + c2[0], end[1] + c2[1]], end))
   }
   return {
     W: 1920,
     H: 1080,
     slots,
     lines,
-    vars: {
-      // the first stage's landscape background, mirrored
-      '--bg-x': 0, '--bg-y': -1682, '--bg-w': 1920, '--bg-h': 4376, '--bg-sx': -1,
-      '--map-bg': '#1f6f80',
-      '--title-x': 1270, '--title-y': 94, '--title-w': 550, '--title-h': 97, '--title-fs': 41,
-      '--badge': 42, '--badge-fs': 26, '--star': 56,
-    },
+    vars: spec.vars,
   }
 }
 
-/** Ocean world, second stage: the stations prescribed by the captain, then the surfacing on land. */
-export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {}) {
+/** A designed world's second stage: the stations prescribed by the captain, then the surfacing on land. */
+export function WorldNightMapPage({ underSheet }: { underSheet?: boolean } = {}) {
   const { theme } = useQuestTheme()
+  const design = theme.design!
   const { t, lang } = useI18n()
   const { visibleOptionals, allOptionalsDone, doneProcedures } = useQuestProgress()
   const screenH = useScreenUnits()
@@ -191,7 +167,7 @@ export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {})
       id: s.id,
       label: skin?.label ?? data?.title ?? s.id,
       status: s.status === 'done' ? 'done' : i === firstOpen ? 'active' : 'locked',
-      image: OCEAN_IMAGES[s.id],
+      image: stationPicture(design, s.id),
       stars: starsFor(data?.procedureIds, s.id, doneProcedures),
       onOpen: () => navigate(conceptPath(`/stage/${s.id}`)),
     }
@@ -203,7 +179,7 @@ export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {})
     id: 'decision',
     label: finale?.label ?? t('ui.buttons.happyEnd'),
     status: endingOpen ? 'active' : 'locked',
-    image: OCEAN_IMAGES.decision,
+    image: stationPicture(design, 'decision'),
     // locked, it still opens (like the other stations) as a sheet with only the way back
     onOpen: () => navigate(conceptPath(endingOpen ? '/celebrate' : '/stage/decision')),
   })
@@ -218,9 +194,9 @@ export function OceanNightMapPage({ underSheet }: { underSheet?: boolean } = {})
   const done = visibleOptionals.filter((s) => s.status === 'done').length
 
   return (
-    <OceanMapView
-      portrait={portraitScene(images, screenH)}
-      landscape={landscapeScene(images)}
+    <WorldMapView
+      portrait={portraitScene(design, images, screenH)}
+      landscape={landscapeScene(design, images)}
       items={items}
       underSheet={underSheet}
       progress={{ done, total: visibleOptionals.length }}

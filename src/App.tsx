@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { KeysOverlay } from './components/KeysOverlay'
-import { ConceptBase } from './concepts/nav'
+import { ConceptBase, useHistoryTrail } from './concepts/nav'
 import StoryConcept from './concepts/story/StoryConcept'
 import TalkConcept from './concepts/talk/TalkConcept'
 import QuestConcept from './concepts/quest/QuestConcept'
@@ -14,6 +14,7 @@ import { StandaloneCardShell } from './components/StandaloneCardShell'
  * its own base path. See CLAUDE.md for how to add a new concept.
  */
 export default function App() {
+  useHistoryTrail()
   return (
     <>
     <KeysOverlay />
