@@ -15,12 +15,12 @@ scenes. This brief brings it in line with the others.
 
 | Kind | Size | Background | Files |
 | --- | --- | --- | --- |
-| Map picture (`station-<stage>`) | 600 x 440 | transparent | the 4 missing ones (table below) |
+| Map picture (`station-<stage>`) | 600 x 440 | transparent | the 4 missing ones, and 3 redrawn at full size (tables below) |
 | Scene (`scene-<stage>`) | 728 x 680 | full picture | all 10 stations |
 | Card (`card`) | 600 x 440 | transparent | 1 |
 | Celebration (`celebrate`) | 640 x 480 | full picture | 1 |
 
-16 pictures, PNG, named as in the tables; plus a `manifest.json` like the other worlds' (file, kind, stage, size,
+19 pictures, PNG, named as in the tables; plus a `manifest.json` like the other worlds' (file, kind, stage, size,
 a one-line description).
 
 ## Rules (for every picture)
@@ -77,6 +77,17 @@ child's eye level, the characters below; a full picture with a soft background."
 | `scene-wait-results.png` | Sonar data processing | The child and a parent wait while screens glow softly, a sand timer on the table. |
 | `scene-decision.png` | Back to the surface | The child, the parent, the captain and the bosun wave as the submarine reaches the sunny surface by the dock. |
 
+### 3 map pictures to redraw at full size
+
+Today's files are far too small for the map (the aquarium is 189 px wide and is shown about 475 px wide, so its
+edges look blurred and jagged). Same place and look as today, drawn again at 600 x 440:
+
+| File | Today | Place to draw (as today) |
+| --- | --- | --- |
+| `station-wait-doctor.png` | `station-aquarium.png`, 189 x 129 | A glass dome full of colourful fish on a rocky round island with seaweed. |
+| `station-wait-before-triage.png` | `station-sub-lit.png`, 255 x 209 | The friendly yellow submarine with its lights on, on a small sea-floor island. |
+| `station-tests.png` | `station-sonar.png`, 218 x 132 | The submarine's sonar: a round dish with calm circles, on a small sea-floor island. |
+
 ### Card and celebration
 
 | File | Picture |
@@ -86,6 +97,6 @@ child's eye level, the characters below; a full picture with a soft background."
 
 ## Before sending
 
-- All 16 look like the other worlds' pictures: same light, softness and scale of detail.
+- All 19 look like the other worlds' pictures: same light, softness and scale of detail.
 - The characters look the same in every picture.
 - The team (MLR) looks at the pictures before they go in, as with the other pictures.
