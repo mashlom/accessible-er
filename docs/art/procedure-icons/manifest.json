@@ -1,26 +1,188 @@
 {
-  "set": "procedure-icons",
-  "size": [512, 512],
-  "transparent": true,
-  "format": "png",
-  "pictures": [
-    { "id": "temperature", "file": "procedure-temperature.png", "notes": "" },
-    { "id": "saturation", "file": "procedure-saturation.png", "notes": "" },
-    { "id": "blood-pressure", "file": "procedure-blood-pressure.png", "notes": "" },
-    { "id": "doctor-exam", "file": "procedure-doctor-exam.png", "notes": "" },
-    { "id": "blood-test", "file": "procedure-blood-test.png", "notes": "" },
-    { "id": "urine", "file": "procedure-urine.png", "notes": "" },
-    { "id": "xray", "file": "procedure-xray.png", "notes": "" },
-    { "id": "ultrasound", "file": "procedure-ultrasound.png", "notes": "" },
-    { "id": "ct", "file": "procedure-ct.png", "notes": "" },
-    { "id": "iv", "file": "procedure-iv.png", "notes": "" },
-    { "id": "medication", "file": "procedure-medication.png", "notes": "" },
-    { "id": "inhalation", "file": "procedure-inhalation.png", "notes": "" },
-    { "id": "stitches", "file": "procedure-stitches.png", "notes": "" },
-    { "id": "cast", "file": "procedure-cast.png", "notes": "" },
-    { "id": "bandage", "file": "procedure-bandage.png", "notes": "" },
-    { "id": "waiting-results", "file": "procedure-waiting-results.png", "notes": "" },
-    { "id": "discharge", "file": "procedure-discharge.png", "notes": "" },
-    { "id": "hospital", "file": "procedure-hospital.png", "notes": "" }
+  "set": "procedures",
+  "tool": "OpenAI GPT Image (high-quality image generation); commercial use permitted under OpenAI Services Agreement section 4.1: customer owns output to the extent permitted by law, no attribution requirement. Outputs may not be unique; no guarantee of copyright protection or third-party clearance. https://openai.com/policies/services-agreement/",
+  "palette": "neutral: soft white, light grey, pale blue, mint, peach",
+  "notes": "Generated on a flat chroma-key background, keyed to real transparency (RGBA), each object cropped and centred to fit within the central ~80% (56-455 px of 512). Contact shadow not preserved by keying. Teddy bear in procedure-hospital has a simple stitched face as the brief requested a teddy. MLR review pending.",
+  "files": [
+    {
+      "file": "procedure-temperature.png",
+      "kind": "procedure",
+      "id": "temperature",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Measuring temperature - digital thermometer",
+      "url": "https://drive.usercontent.google.com/download?id=1v9XXf_VSu2BXok_rG7sZpmlC18gVBij6&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-saturation.png",
+      "kind": "procedure",
+      "id": "saturation",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Oxygen level - finger clip pulse oximeter with warm red light",
+      "url": "https://drive.usercontent.google.com/download?id=1iH_aBiPxSPuC9RZBggY3t9F2UBRaKGKE&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-blood-pressure.png",
+      "kind": "procedure",
+      "id": "blood-pressure",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Blood pressure - folded cuff, dial gauge, squeeze bulb",
+      "url": "https://drive.usercontent.google.com/download?id=1PcupwWUELZTsYvfgCVTyG4ZftJdNjnDr&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-doctor-exam.png",
+      "kind": "procedure",
+      "id": "doctor-exam",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Doctor's exam - coiled stethoscope and pen torch",
+      "url": "https://drive.usercontent.google.com/download?id=1wAJRvNW4szsc6racJfXd7inQPnsgR2Ex&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-blood-test.png",
+      "kind": "procedure",
+      "id": "blood-test",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Blood test - closed test tube with cap and round plaster, no blood",
+      "url": "https://drive.usercontent.google.com/download?id=10Opmk2nRnkGHDB_FQz5_MixEvlN0dPTG&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-urine.png",
+      "kind": "procedure",
+      "id": "urine",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Urine test - empty sample cup with blank sticker",
+      "url": "https://drive.usercontent.google.com/download?id=1VNXFUQch_Z7kFvLwkkEktCxK8MYTygK4&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-xray.png",
+      "kind": "procedure",
+      "id": "xray",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "X-ray - light box with pale-blue hand bones picture",
+      "url": "https://drive.usercontent.google.com/download?id=1_MpP3sllRSG76WDGWT6HZMwGcBW1DYHW&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-ultrasound.png",
+      "kind": "procedure",
+      "id": "ultrasound",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Ultrasound - probe and gel bottle",
+      "url": "https://drive.usercontent.google.com/download?id=1PaswVvL4WZexWPJIVTxQJ4Wp-wB-eU2M&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-ct.png",
+      "kind": "procedure",
+      "id": "ct",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "CT scan - toy-like scanner ring with padded bed",
+      "url": "https://drive.usercontent.google.com/download?id=1vZUW4YPoRJnFpSTwLf38qalL4FCbD_jc&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-iv.png",
+      "kind": "procedure",
+      "id": "iv",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "IV drip - bag on short pole with coiled tube, no needle",
+      "url": "https://drive.usercontent.google.com/download?id=1p7Rfjc547njhbbM4Zi1736VoTGbRf6Nq&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-medication.png",
+      "kind": "procedure",
+      "id": "medication",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Medicine - cup of pink syrup, measuring spoon, two pills",
+      "url": "https://drive.usercontent.google.com/download?id=1avZVoRds7YqbBhXuK_f_xU45pmJGSHrb&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-inhalation.png",
+      "kind": "procedure",
+      "id": "inhalation",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Inhalation - child breathing mask on nebulizer cup with cool mist",
+      "url": "https://drive.usercontent.google.com/download?id=1BX6SjT0xLqG65c3E4nieOMRcP_zzhNcg&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-stitches.png",
+      "kind": "procedure",
+      "id": "stitches",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Closing a cut - wound glue tube and skin-closure strips on a card, no needle",
+      "url": "https://drive.usercontent.google.com/download?id=1eBFox_BYDdn3hcj2Y9U-AqiSlfZUa_1R&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-cast.png",
+      "kind": "procedure",
+      "id": "cast",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Cast or splint - rolled pastel cast bandage and padded splint",
+      "url": "https://drive.usercontent.google.com/download?id=1Gi7IfH8rgtt5SHSfLVZMiXsQ9wWyJacj&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-bandage.png",
+      "kind": "procedure",
+      "id": "bandage",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Bandage - gauze roll partly unrolled with clip",
+      "url": "https://drive.usercontent.google.com/download?id=1ECi23ISUonSoQnhzciCx4pELm6UjbsHA&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-waiting-results.png",
+      "kind": "procedure",
+      "id": "waiting-results",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Waiting for results - sand timer and clipboard with blank sheet",
+      "url": "https://drive.usercontent.google.com/download?id=1Ue2PbKil9Of4Ad80bZCkv4kQbORCkDVi&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-discharge.png",
+      "kind": "procedure",
+      "id": "discharge",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Going home - cosy house with round window and heart",
+      "url": "https://drive.usercontent.google.com/download?id=1rEe1_soZzNl3Zz961XQxJxLbBd8Ji3TM&export=download&confirm=t"
+    },
+    {
+      "file": "procedure-hospital.png",
+      "kind": "procedure",
+      "id": "hospital",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "description": "Staying in hospital - cosy bed with pillow and teddy bear",
+      "url": "https://drive.usercontent.google.com/download?id=1kfoZW0e5CyEwu4i76Bw1PsDH4DG_otlr&export=download&confirm=t"
+    }
   ]
 }
