@@ -6,6 +6,7 @@ import { REQUIRED_STAGES, useQuestProgress } from '../useQuestProgress'
 import { useQuestTheme } from '../useQuestTheme'
 import { LanguagePicker } from '../../../components/LanguagePicker'
 import { setI18nEnabled, useI18n } from '../../../hooks/useI18n'
+import { ParentInfo, WorldChoiceParentSheet } from './ParentInfo'
 import css from '../quest.module.css'
 
 /**
@@ -72,6 +73,9 @@ export function QuestShell() {
           <Link to={mapTarget} className={`${css.questTopBrand} ${css.navWord}`}>
             {t('ui.shell.map')}
           </Link>
+        ) : isHome ? (
+          // the world choice: the parent's explanation of this part of the app, in the middle of the top bar
+          <ParentInfo inline className={css.questTopParent} sheet={(close) => <WorldChoiceParentSheet onClose={close} />} />
         ) : (
           <span className={css.questTopBrand} aria-hidden />
         )}
