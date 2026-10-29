@@ -21,11 +21,14 @@ export function StoryShell() {
   return (
     <div className={styles.theme}>
       <div className={styles.shell}>
-        <div className={`${styles.skyDeco} no-print`} aria-hidden>
-          <span className={styles.sun} />
-          <span className={`${styles.cloud} ${styles.cloudA}`} />
-          <span className={`${styles.cloud} ${styles.cloudB}`} />
-        </div>
+        {/* the sun and clouds are only decoration: kept on the home page, not on the parent centre's pages */}
+        {isHome && (
+          <div className={`${styles.skyDeco} no-print`} aria-hidden>
+            <span className={styles.sun} />
+            <span className={`${styles.cloud} ${styles.cloudA}`} />
+            <span className={`${styles.cloud} ${styles.cloudB}`} />
+          </div>
+        )}
 
         {!isHome && (
         <header className={`${styles.topbar} no-print`}>
