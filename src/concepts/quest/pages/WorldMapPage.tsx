@@ -171,6 +171,12 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
           <div className={css.worldSideBgW} />
         </div>
       )}
+      {wide && theme.design?.mirrorAbove === false && (
+        // the others: just above the scene a short blurred reflection of its top, fading into the sky
+        <div className={`${css.worldTileV} ${css.worldTileVTop} ${css.worldTileVSoft}`} aria-hidden>
+          <div className={css.worldSideBgW} />
+        </div>
+      )}
       {wide && (
         // on a screen wider than the scene (more than 16:9) the scene stands in the middle and the picture is
         // mirrored on each side of it (the CSS shows these only then)
