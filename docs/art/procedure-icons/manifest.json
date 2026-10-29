@@ -1,0 +1,26 @@
+{
+  "set": "procedure-icons",
+  "size": [512, 512],
+  "transparent": true,
+  "format": "png",
+  "pictures": [
+    { "id": "temperature", "file": "procedure-temperature.png", "notes": "" },
+    { "id": "saturation", "file": "procedure-saturation.png", "notes": "" },
+    { "id": "blood-pressure", "file": "procedure-blood-pressure.png", "notes": "" },
+    { "id": "doctor-exam", "file": "procedure-doctor-exam.png", "notes": "" },
+    { "id": "blood-test", "file": "procedure-blood-test.png", "notes": "" },
+    { "id": "urine", "file": "procedure-urine.png", "notes": "" },
+    { "id": "xray", "file": "procedure-xray.png", "notes": "" },
+    { "id": "ultrasound", "file": "procedure-ultrasound.png", "notes": "" },
+    { "id": "ct", "file": "procedure-ct.png", "notes": "" },
+    { "id": "iv", "file": "procedure-iv.png", "notes": "" },
+    { "id": "medication", "file": "procedure-medication.png", "notes": "" },
+    { "id": "inhalation", "file": "procedure-inhalation.png", "notes": "" },
+    { "id": "stitches", "file": "procedure-stitches.png", "notes": "" },
+    { "id": "cast", "file": "procedure-cast.png", "notes": "" },
+    { "id": "bandage", "file": "procedure-bandage.png", "notes": "" },
+    { "id": "waiting-results", "file": "procedure-waiting-results.png", "notes": "" },
+    { "id": "discharge", "file": "procedure-discharge.png", "notes": "" },
+    { "id": "hospital", "file": "procedure-hospital.png", "notes": "" }
+  ]
+}
