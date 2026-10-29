@@ -402,8 +402,9 @@ def rock(d, cx, cy, w, h, color=ROCK):
     return f'<path d="{path}" fill="{g}"/>' + (crack if w > 22 else '')
 
 
-def mound(d):
+def mound(d, grass=GRASS, rock_c=ROCK):
     """The island every station stands on (300×220): a grassy top on a thick base of rounded rocks"""
+    GRASS, ROCK = grass, rock_c
     top = d.lin([(0, shade(GRASS, 0.22)), (0.7, GRASS), (1, shade(GRASS, -0.15))])
     out = [f'<ellipse cx="150" cy="206" rx="136" ry="12" fill="#000" opacity="0.16"/>',
            f'<path d="M16 180 Q18 218 150 219 Q282 218 284 180 Z" fill="{shade(ROCK, -0.5)}"/>']
@@ -498,19 +499,20 @@ def cloud(cx, cy, s):
 
 
 # ---------- the stations on the map (300×220) ----------
-def station(name, draw, comment):
+def station(name, draw, comment, world='Knight', base=mound):
+    """One station on the map (300×220): its island, then what stands on it"""
     d = Doc(300, 220, zlib.crc32(name.encode()) % 1000)
-    d.add(mound(d))
+    d.add(base(d))
     draw(d)
-    return d.svg(f'Knight world: {comment}')
+    return d.svg(f'{world} world: {comment}')
 
 
 # ---------- the scenes: each place as seen by someone standing in it (the station's sheet, 364×340) ----------
 SW, SH = 364, 340
 
 
-def sky(d, h=SH):
-    g = d.lin([(0, SKY0), (1, SKY1)])
+def sky(d, h=SH, top=SKY0, bottom=SKY1):
+    g = d.lin([(0, top), (1, bottom)])
     return f'<rect width="{SW}" height="{h}" fill="{g}"/>'
 
 
@@ -567,10 +569,11 @@ def cobbles(d, y0, color='#c9c0ae'):
     return '\n'.join(out)
 
 
-def scene(name, draw, comment):
+def scene(name, draw, comment, world='Knight'):
+    """One place as seen by someone standing in it (364×340, the station's sheet)"""
     d = Doc(SW, SH, zlib.crc32(("scene" + name).encode()) % 1000)
     draw(d)
-    return d.svg(f'Knight world: {comment}, as seen standing there', slice_=True, edges=False)
+    return d.svg(f'{world} world: {comment}, as seen standing there', slice_=True, edges=False)
 
 
 def band(W, H, y0, amp, phase, color):

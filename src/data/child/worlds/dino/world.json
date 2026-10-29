@@ -3,10 +3,11 @@
   "order": 4,
   "emoji": "🦕",
   "doneEmoji": "⭐",
-  "shopImage": "/worlds/knight/shop.JPEG",
+  "shopImage": "/worlds/dino/art/celebrate.svg",
   "bg": "",
-  "thumbnail": "/worlds/dino/dino.jpeg",
-  "accent": "#4a7c3f",
+  "thumbnail": "/worlds/dino/art/map-portrait.svg",
+  "thumbnailOverlay": "/worlds/dino/art/card.svg",
+  "accent": "#3f7330",
   "accentSoft": "#dcefd8",
   "accentText": "#ffffff",
   "completedColor": "#8bc34a",
@@ -40,6 +41,422 @@
     },
     "wait-results": {
       "icon": "⏳"
+    }
+  },
+  "design": {
+    "assets": {
+      "background": "/worlds/dino/art/map-portrait.svg",
+      "backgroundWide": "/worlds/dino/art/map-landscape.svg",
+      "sheetSeabed": "/worlds/dino/art/sheet-floor.svg"
+    },
+    "colors": {
+      "text": "#26331f",
+      "text2": "#55604f",
+      "action": "#3f7330",
+      "page": "#f6f8f1",
+      "card": "#ffffff",
+      "mint": "#e4f0d8",
+      "blue": "#eaf2e1",
+      "coral": "#b5473a",
+      "yellow": "#e3b34a",
+      "water": "#3f8aa6",
+      "waterTop": "#3f8aa6",
+      "waterLight": "#3f8aa6",
+      "progress": [
+        "#e3b34a",
+        "#5fae9a"
+      ]
+    },
+    "mirrorAbove": false,
+    "stations": {
+      "reception": {
+        "map": "/worlds/dino/art/station-gate.svg",
+        "sheet": "/worlds/dino/art/scene-gate.svg",
+        "panel": "scene",
+        "choice": "/worlds/dino/art/station-gate.svg"
+      },
+      "wait-before-triage": {
+        "map": "/worlds/dino/art/station-path.svg",
+        "sheet": "/worlds/dino/art/scene-path.svg",
+        "panel": "scene",
+        "choice": "/worlds/dino/art/station-path.svg"
+      },
+      "triage": {
+        "map": "/worlds/dino/art/station-ranger.svg",
+        "sheet": "/worlds/dino/art/scene-ranger.svg",
+        "panel": "scene",
+        "choice": "/worlds/dino/art/station-ranger.svg"
+      },
+      "wait-doctor": {
+        "map": "/worlds/dino/art/station-camp.svg",
+        "sheet": "/worlds/dino/art/scene-camp.svg",
+        "panel": "scene",
+        "choice": "/worlds/dino/art/station-camp.svg"
+      },
+      "doctor": {
+        "map": "/worlds/dino/art/station-guide.svg",
+        "sheet": "/worlds/dino/art/scene-guide.svg",
+        "panel": "scene",
+        "choice": "/worlds/dino/art/station-guide.svg"
+      },
+      "tests": {
+        "map": "/worlds/dino/art/station-lab.svg",
+        "sheet": "/worlds/dino/art/scene-lab.svg",
+        "panel": "scene",
+        "choice": "/worlds/dino/art/station-lab.svg"
+      },
+      "treatment": {
+        "map": "/worlds/dino/art/station-medic.svg",
+        "sheet": "/worlds/dino/art/scene-medic.svg",
+        "panel": "scene",
+        "choice": "/worlds/dino/art/station-medic.svg"
+      },
+      "consult": {
+        "map": "/worlds/dino/art/station-expert.svg",
+        "sheet": "/worlds/dino/art/scene-expert.svg",
+        "panel": "scene",
+        "choice": "/worlds/dino/art/station-expert.svg"
+      },
+      "wait-results": {
+        "map": "/worlds/dino/art/station-results.svg",
+        "sheet": "/worlds/dino/art/scene-results.svg",
+        "panel": "scene",
+        "choice": "/worlds/dino/art/station-results.svg"
+      },
+      "decision": {
+        "map": "/worlds/dino/art/station-home.svg",
+        "sheet": "/worlds/dino/art/scene-home.svg",
+        "panel": "scene",
+        "choice": "/worlds/dino/art/station-home.svg"
+      }
+    },
+    "images": {
+      "/worlds/dino/art/station-gate.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
+      },
+      "/worlds/dino/art/station-path.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
+      },
+      "/worlds/dino/art/station-ranger.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
+      },
+      "/worlds/dino/art/station-camp.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
+      },
+      "/worlds/dino/art/station-guide.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
+      },
+      "/worlds/dino/art/station-lab.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
+      },
+      "/worlds/dino/art/station-medic.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
+      },
+      "/worlds/dino/art/station-expert.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
+      },
+      "/worlds/dino/art/station-results.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
+      },
+      "/worlds/dino/art/station-home.svg": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.02
+      }
+    },
+    "dayMap": {
+      "portrait": {
+        "W": 412,
+        "H": 939,
+        "slots": [
+          {
+            "x": 4,
+            "y": 136,
+            "w": 210,
+            "h": 154,
+            "badge": [109, 151]
+          },
+          {
+            "x": 206,
+            "y": 286,
+            "w": 200,
+            "h": 147,
+            "badge": [306, 301]
+          },
+          {
+            "x": 10,
+            "y": 446,
+            "w": 200,
+            "h": 147,
+            "badge": [110, 461]
+          },
+          {
+            "x": 204,
+            "y": 606,
+            "w": 200,
+            "h": 147,
+            "badge": [304, 621]
+          },
+          {
+            "x": 18,
+            "y": 768,
+            "w": 200,
+            "h": 147,
+            "badge": [118, 783]
+          }
+        ],
+        "dots": [
+          {
+            "bezier": [
+              [189, 259],
+              [189, 310],
+              [306, 269],
+              [306, 301]
+            ]
+          },
+          {
+            "bezier": [
+              [230, 404],
+              [230, 463],
+              [110, 414],
+              [110, 461]
+            ]
+          },
+          {
+            "bezier": [
+              [186, 564],
+              [186, 623],
+              [304, 574],
+              [304, 621]
+            ]
+          },
+          {
+            "bezier": [
+              [228, 724],
+              [228, 784],
+              [118, 734],
+              [118, 783]
+            ]
+          }
+        ],
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 412,
+          "--bg-h": 1100,
+          "--grad-h": 0,
+          "--title-x": 64.5,
+          "--title-y": 64,
+          "--title-w": 283,
+          "--title-h": 50,
+          "--title-fs": 21,
+          "--badge": 24,
+          "--badge-fs": 15,
+          "--star": 30,
+          "--map-bg": "#3f8aa6",
+          "--title-bg": "rgba(30, 52, 28, 0.55)"
+        }
+      },
+      "landscape": {
+        "W": 1920,
+        "H": 1080,
+        "slots": [
+          {
+            "x": 1470,
+            "y": 690,
+            "w": 420,
+            "h": 308,
+            "badge": [1680, 721]
+          },
+          {
+            "x": 1060,
+            "y": 410,
+            "w": 400,
+            "h": 293,
+            "badge": [1260, 439]
+          },
+          {
+            "x": 680,
+            "y": 680,
+            "w": 400,
+            "h": 293,
+            "badge": [880, 709]
+          },
+          {
+            "x": 300,
+            "y": 400,
+            "w": 400,
+            "h": 293,
+            "badge": [500, 429]
+          },
+          {
+            "x": -10,
+            "y": 640,
+            "w": 400,
+            "h": 293,
+            "badge": [190, 669]
+          }
+        ],
+        "lines": [
+          {
+            "bezier": [
+              [1520, 936],
+              [1520, 718],
+              [1260, 946],
+              [1260, 439]
+            ]
+          },
+          {
+            "bezier": [
+              [1108, 644],
+              [1108, 707],
+              [880, 654],
+              [880, 709]
+            ]
+          },
+          {
+            "bezier": [
+              [728, 914],
+              [728, 702],
+              [500, 924],
+              [500, 429]
+            ]
+          },
+          {
+            "bezier": [
+              [348, 634],
+              [348, 682],
+              [190, 644],
+              [190, 669]
+            ]
+          }
+        ],
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 1920,
+          "--bg-h": 1080,
+          "--map-bg": "#3f8aa6",
+          "--title-x": 1270,
+          "--title-y": 94,
+          "--title-w": 550,
+          "--title-h": 97,
+          "--title-fs": 41,
+          "--badge": 42,
+          "--badge-fs": 26,
+          "--star": 56,
+          "--title-bg": "rgba(30, 52, 28, 0.55)"
+        }
+      }
+    },
+    "nightMap": {
+      "portrait": {
+        "shoreY": 900,
+        "finaleWidth": 220,
+        "finaleFlip": false,
+        "vars": {
+          "--bg-x": 0,
+          "--bg-w": 412,
+          "--bg-h": 1100,
+          "--grad-h": 0,
+          "--map-bg": "#3f8aa6",
+          "--title-x": 64.5,
+          "--title-y": 44.5,
+          "--title-w": 283,
+          "--title-h": 50,
+          "--title-fs": 21,
+          "--badge": 24,
+          "--badge-fs": 15,
+          "--star": 30,
+          "--title-bg": "rgba(30, 52, 28, 0.55)"
+        }
+      },
+      "landscape": {
+        "places": [
+          {
+            "cx": 1660,
+            "top": 380,
+            "visible": 360,
+            "badge": [1660, 392]
+          },
+          {
+            "cx": 1260,
+            "top": 680,
+            "visible": 360,
+            "badge": [1260, 692]
+          },
+          {
+            "cx": 860,
+            "top": 390,
+            "visible": 360,
+            "badge": [860, 402]
+          },
+          {
+            "cx": 520,
+            "top": 690,
+            "visible": 340,
+            "badge": [520, 702]
+          }
+        ],
+        "curves": [
+          [
+            [1600, 620],
+            [1320, 600]
+          ],
+          [
+            [1180, 560],
+            [920, 560]
+          ],
+          [
+            [800, 620],
+            [580, 600]
+          ]
+        ],
+        "finale": {
+          "x": -20,
+          "y": 360,
+          "w": 420,
+          "badge": [190, 380]
+        },
+        "finaleTrail": {
+          "end": [300, 560],
+          "c1": [-80, -40],
+          "c2": [60, 60]
+        },
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 1920,
+          "--bg-h": 1080,
+          "--map-bg": "#3f8aa6",
+          "--title-x": 1270,
+          "--title-y": 94,
+          "--title-w": 550,
+          "--title-h": 97,
+          "--title-fs": 41,
+          "--badge": 42,
+          "--badge-fs": 26,
+          "--star": 56
+        }
+      }
     }
   }
 }
