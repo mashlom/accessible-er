@@ -3,8 +3,8 @@
     "eyebrow": "מלר״ד ילדים • לניאדו",
     "title": "מה שלומי?",
     "subtitle": "כלי להנגשת הביקור במיון לילדים אוטיסטים ולמשפחותיהם",
-    "audiences": "לילדים: משחקים וסיפורים להיכרות עם הביקור במיון. להורים: מידע והכוונה, צעד אחר צעד.",
     "childLabel": "עולם הילד",
+    "childDesc": "לילדים: משחקים וסיפורים להיכרות עם הביקור במיון.",
     "start": {
       "title": "משחקים במיון",
       "desc": "בוחרים עולם ומשחקים כדי להכיר את הביקור במיון.",
@@ -105,8 +105,8 @@
     "eyebrow": "Children's ER • Laniado",
     "title": "How are you?",
     "subtitle": "A tool to make the emergency room visit easier for autistic children and their families",
-    "audiences": "For children: games and stories to get to know the ER visit. For parents: information and guidance, step by step.",
     "childLabel": "The child's world",
+    "childDesc": "For children: games and stories to get to know the ER visit.",
     "start": {
       "title": "Play in the ER",
       "desc": "Choose a world and play to get to know the ER visit.",
@@ -207,8 +207,8 @@
     "eyebrow": "Детский приёмный покой • Ланиадо",
     "title": "Как вы?",
     "subtitle": "Инструмент, который делает визит в приёмный покой понятнее для аутичных детей и их семей",
-    "audiences": "Детям: игры и истории, чтобы познакомиться с визитом в приёмный покой. Родителям: информация и подсказки, шаг за шагом.",
     "childLabel": "Мир ребёнка",
+    "childDesc": "Детям: игры и истории, чтобы познакомиться с визитом в приёмный покой.",
     "start": {
       "title": "Играем в приёмном покое",
       "desc": "Выбираем мир и играем, чтобы познакомиться с визитом в приёмный покой.",

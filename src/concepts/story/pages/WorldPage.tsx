@@ -71,13 +71,13 @@ export function WorldPage() {
         <span className={styles.homeEyebrow}>{tx.eyebrow}</span>
         <h1 className={styles.homeTitle}>{tx.title}</h1>
         <p className={styles.homeSub}>{tx.subtitle}</p>
-        <p className={styles.homeSub}>{tx.audiences}</p>
       </header>
 
       <section className={styles.homeSection} aria-labelledby="child-world">
         <div className={styles.sectionHead}>
           <h2 id="child-world" className={styles.worldLabel}>{tx.childLabel}</h2>
         </div>
+        <p className={styles.sectionDesc}>{tx.childDesc}</p>
 
         <div className={styles.childCards}>
           <a href="#/quest" className={styles.childCard}>
