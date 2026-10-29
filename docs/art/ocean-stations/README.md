@@ -1,5 +1,7 @@
 # Ocean world: the missing station pictures, brief for the artist
 
+**זוהי השלמה של התחנות לעולם התת-ימי:** תמונות חסרות למפה, סצנות לכל התחנות, כרטיס ותמונת חגיגה, באותו סגנון כמו בשאר העולמות. בנוסף צריך לצייר מחדש את הבית (תחנה 1) ואת תחנה 5 כאי עגול שלם, בלי חיתוך.
+
 The ocean was the first world and was drawn differently. The other six worlds have, for every station, a **map
 picture** (the station as a small floating island on the map) and a **scene** (the same place from inside, at a
 child's eye level, shown on the station's sheet), plus a **card** and a **celebration** picture. The ocean is
@@ -15,12 +17,12 @@ scenes. This brief brings it in line with the others.
 
 | Kind | Size | Background | Files |
 | --- | --- | --- | --- |
-| Map picture (`station-<stage>`) | 600 x 440 | transparent | the 4 missing ones, and 3 redrawn at full size (tables below) |
+| Map picture (`station-<stage>`) | 600 x 440 | transparent | the 4 missing ones, and 5 redrawn (tables below) |
 | Scene (`scene-<stage>`) | 728 x 680 | full picture | all 10 stations |
 | Card (`card`) | 600 x 440 | transparent | 1 |
 | Celebration (`celebrate`) | 640 x 480 | full picture | 1 |
 
-19 pictures, PNG, named as in the tables; plus a `manifest.json` like the other worlds' (file, kind, stage, size,
+21 pictures, PNG, named as in the tables; plus a `manifest.json` like the other worlds' (file, kind, stage, size,
 a one-line description).
 
 ## Rules (for every picture)
@@ -88,6 +90,16 @@ edges look blurred and jagged). Same place and look as today, drawn again at 600
 | `station-wait-before-triage.png` | `station-sub-lit.png`, 255 x 209 | The friendly yellow submarine with its lights on, on a small sea-floor island. |
 | `station-tests.png` | `station-sonar.png`, 218 x 132 | The submarine's sonar: a round dish with calm circles, on a small sea-floor island. |
 
+### 2 map pictures to redraw as whole round islands
+
+Today these two are cut straight on one side (the map used to push that side off the screen). Draw them again as
+whole round islands, nothing cut off, like every other station, at 600 x 440:
+
+| File | Today | Place to draw (as today, but whole) |
+| --- | --- | --- |
+| `station-reception.png` | `station-house.png` | The dock house on a whole round island: the little house with the red cross and the flag, the wooden pier, a life ring, sand and seaweed all round. |
+| `station-doctor.png` | `station-doctor.png` | The captain's station on a whole round island, nothing cut at the edges. |
+
 ### Card and celebration
 
 | File | Picture |
@@ -97,6 +109,6 @@ edges look blurred and jagged). Same place and look as today, drawn again at 600
 
 ## Before sending
 
-- All 19 look like the other worlds' pictures: same light, softness and scale of detail.
+- All 21 look like the other worlds' pictures: same light, softness and scale of detail.
 - The characters look the same in every picture.
 - The team (MLR) looks at the pictures before they go in, as with the other pictures.
