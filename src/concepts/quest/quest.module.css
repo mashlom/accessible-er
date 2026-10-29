@@ -2073,6 +2073,8 @@
 }
 
 /* the top of a landscape picture fades into the sky colour above it (worlds without the mirrored water) */
+/* no own colour behind it: a fraction of a pixel at its top edge would show as a dark line on a light sky */
+.worldSceneFade { background: transparent; }
 .worldSceneFade::after {
   top: -2px;
   height: calc(260 * var(--u));
