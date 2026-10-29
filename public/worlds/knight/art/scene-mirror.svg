@@ -8,6 +8,18 @@
 <feComposite in="wobbly" in2="grey" operator="arithmetic" k1="0" k2="1" k3="0.13" k4="-0.065" result="grained"/>
 <feComposite in="grained" in2="wobbly" operator="in"/>
 </filter>
+<filter id="clay" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceGraphic" stdDeviation="1.2" edgeMode="duplicate" result="blur"/>
+<feColorMatrix in="blur" type="luminanceToAlpha" result="lum"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="3" result="ablur"/>
+<feComposite in="lum" in2="ablur" operator="arithmetic" k2="0.6" k3="0" result="height"/>
+<feSpecularLighting in="height" surfaceScale="3" specularConstant="0.5" specularExponent="16" lighting-color="#fff8ec" result="spec"><feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
+<feComposite in="spec" in2="SourceAlpha" operator="in" result="specIn"/>
+<feDiffuseLighting in="height" surfaceScale="3" diffuseConstant="1.3" lighting-color="#fff" result="diff"><feDistantLight azimuth="235" elevation="50"/></feDiffuseLighting>
+<feBlend in="SourceGraphic" in2="diff" mode="multiply" result="lit"/>
+<feComposite in="lit" in2="SourceAlpha" operator="in" result="litIn"/>
+<feComposite in="litIn" in2="specIn" operator="arithmetic" k2="1" k3="0.5"/>
+</filter>
 <clipPath id="c1"><rect x="70" y="40" width="224" height="196"/></clipPath>
 <clipPath id="c2"><polygon points="0,0 70,40 70,236 0,340"/></clipPath>
 <clipPath id="c3"><polygon points="364,0 294,40 294,236 364,340"/></clipPath>
@@ -18,7 +30,7 @@
 <linearGradient id="g8" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ca6852"/><stop offset="0.5" stop-color="#c4573f"/><stop offset="1" stop-color="#893d2c"/></linearGradient>
 <linearGradient id="g9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#edce89"/><stop offset="0.5" stop-color="#e3b34a"/><stop offset="1" stop-color="#886b2c"/></linearGradient>
 <linearGradient id="g10" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef8fd"/><stop offset="0.5" stop-color="#bfdff1"/><stop offset="1" stop-color="#8fbfdc"/></linearGradient></defs>
-<g filter="url(#paint)">
+<g filter="url(#clay)"><g filter="url(#paint)">
 <rect width="364" height="340" fill="#e1d8c8"/>
 <g clip-path="url(#c1)"><rect x="70" y="40" width="224" height="196" fill="#a29c90"/>
 <rect x="70.8" y="40.8" width="25.0" height="10.4" rx="1.6" fill="#d7cebf"/>
@@ -402,5 +414,5 @@
 <path d="M262 191 Q263.62 198.38 271 200 Q263.62 201.62 262 209 Q260.38 201.62 253 200 Q260.38 198.38 262 191 Z" fill="#e3b34a"/>
 <path d="M254 74 Q255.08 78.92 260 80 Q255.08 81.08 254 86 Q252.92 81.08 248 80 Q252.92 78.92 254 74 Z" fill="#fff"/>
 <path d="M116 215 Q116.9 219.1 121 220 Q116.9 220.9 116 225 Q115.1 220.9 111 220 Q115.1 219.1 116 215 Z" fill="#fff"/>
-</g>
+</g></g>
 </svg>

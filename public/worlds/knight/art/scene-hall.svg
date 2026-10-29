@@ -8,6 +8,18 @@
 <feComposite in="wobbly" in2="grey" operator="arithmetic" k1="0" k2="1" k3="0.13" k4="-0.065" result="grained"/>
 <feComposite in="grained" in2="wobbly" operator="in"/>
 </filter>
+<filter id="clay" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceGraphic" stdDeviation="1.2" edgeMode="duplicate" result="blur"/>
+<feColorMatrix in="blur" type="luminanceToAlpha" result="lum"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="3" result="ablur"/>
+<feComposite in="lum" in2="ablur" operator="arithmetic" k2="0.6" k3="0" result="height"/>
+<feSpecularLighting in="height" surfaceScale="3" specularConstant="0.5" specularExponent="16" lighting-color="#fff8ec" result="spec"><feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
+<feComposite in="spec" in2="SourceAlpha" operator="in" result="specIn"/>
+<feDiffuseLighting in="height" surfaceScale="3" diffuseConstant="1.3" lighting-color="#fff" result="diff"><feDistantLight azimuth="235" elevation="50"/></feDiffuseLighting>
+<feBlend in="SourceGraphic" in2="diff" mode="multiply" result="lit"/>
+<feComposite in="lit" in2="SourceAlpha" operator="in" result="litIn"/>
+<feComposite in="litIn" in2="specIn" operator="arithmetic" k2="1" k3="0.5"/>
+</filter>
 <clipPath id="c1"><rect x="112" y="72" width="140" height="142"/></clipPath>
 <clipPath id="c2"><polygon points="0,0 112,72 112,214 0,340"/></clipPath>
 <clipPath id="c3"><polygon points="364,0 252,72 252,214 364,340"/></clipPath>
@@ -25,7 +37,7 @@
 <radialGradient id="r15" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffd98a" stop-opacity="0.5"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
 <radialGradient id="r16" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffd98a" stop-opacity="0.5"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
 <linearGradient id="g17" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a6d50"/><stop offset="1" stop-color="#815436"/></linearGradient></defs>
-<g filter="url(#paint)">
+<g filter="url(#clay)"><g filter="url(#paint)">
 <rect width="364" height="340" fill="#cfc6b4"/>
 <g clip-path="url(#c1)"><rect x="112" y="72" width="140" height="142" fill="#958f82"/>
 <rect x="112.8" y="72.8" width="9.4" height="10.4" rx="1.6" fill="#c6bdac"/>
@@ -241,5 +253,5 @@
 <polygon points="116,218 138,218 86,324 50,324" fill="#6b462d"/><polygon points="226,218 248,218 314,324 278,324" fill="#6b462d"/>
 <ellipse cx="170" cy="246" rx="12" ry="4" fill="#ddd7ca"/><path d="M160 244 q10 -14 20 0" fill="#e3b34a"/><circle cx="198" cy="270" r="9" fill="#e3b34a"/><circle cx="198" cy="270" r="5" fill="#ebca80"/>
 <rect x="144" y="226" width="14" height="10" rx="2" fill="#e2c39b"/>
-</g>
+</g></g>
 </svg>

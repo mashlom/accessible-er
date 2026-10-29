@@ -4,7 +4,9 @@
 
 Every picture is built from the same small set of drawing tools below (stone blocks, round towers with
 shingled roofs, arches of wedge stones, plank doors, windows, flags, trees, grass), lit from the top left,
-with a soft painted grain over it. No flashing, no glaring colours: the audience is sensitive to stimuli.
+with a soft painted grain over it, and a light filter that rounds every edge (the 3D look of the ocean's
+pictures). Do not mirror these pictures with a CSS transform: Chrome draws an SVG with lighting filters black
+when it is flipped. No flashing, no glaring colours: the audience is sensitive to stimuli.
 """
 import math
 import os
@@ -81,8 +83,25 @@ class Doc:
         self.defs.append(f'<clipPath id="{i}">{shape}</clipPath>')
         return f'url(#{i})'
 
-    def svg(self, comment, slice_=False, grain=0.13, wobble=1.6):
+    def svg(self, comment, slice_=False, grain=0.13, wobble=1.6, clay=True, edges=True):
         par = ' preserveAspectRatio="xMidYMid slice"' if slice_ else ''
+        # the 3D look (as the ocean's rendered pictures): every edge between colours is a soft rounded rise, lit from
+        # the top left, with a gentle sheen; the colours themselves stay as drawn
+        # edges: the outline of the picture is rounded too (a station standing free); a scene fills its frame, so its
+        # border is not (the blur repeats the edge pixels instead of fading into nothing)
+        region = 'x="-3%" y="-3%" width="106%" height="106%"' if edges else 'x="0" y="0" width="100%" height="100%"'
+        light = f'''<filter id="clay" {region} color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceGraphic" stdDeviation="1.2" edgeMode="duplicate" result="blur"/>
+<feColorMatrix in="blur" type="luminanceToAlpha" result="lum"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="3" result="ablur"/>
+<feComposite in="lum" in2="ablur" operator="arithmetic" k2="0.6" k3="{0.6 if edges else 0}" result="height"/>
+<feSpecularLighting in="height" surfaceScale="3" specularConstant="0.5" specularExponent="16" lighting-color="#fff8ec" result="spec"><feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
+<feComposite in="spec" in2="SourceAlpha" operator="in" result="specIn"/>
+<feDiffuseLighting in="height" surfaceScale="3" diffuseConstant="1.3" lighting-color="#fff" result="diff"><feDistantLight azimuth="235" elevation="50"/></feDiffuseLighting>
+<feBlend in="SourceGraphic" in2="diff" mode="multiply" result="lit"/>
+<feComposite in="lit" in2="SourceAlpha" operator="in" result="litIn"/>
+<feComposite in="litIn" in2="specIn" operator="arithmetic" k2="1" k3="0.5"/>
+</filter>'''
         # the painted look: the edges wobble a little, and a fine grain lies over the colours (only where there is paint)
         paint = f'''<filter id="paint" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
 <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="warp"/>
@@ -93,8 +112,9 @@ class Doc:
 <feComposite in="grained" in2="wobbly" operator="in"/>
 </filter>'''
         return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.w} {self.h}" width="{self.w}" height="{self.h}"{par}>\n'
-                f'<!-- {comment} -->\n<defs>{paint}\n' + '\n'.join(self.defs) + '</defs>\n'
-                '<g filter="url(#paint)">\n' + '\n'.join(self.body) + '\n</g>\n</svg>\n')
+                f'<!-- {comment} -->\n<defs>{paint}\n{light}\n' + '\n'.join(self.defs) + '</defs>\n'
+                + ('<g filter="url(#clay)">' if clay else '<g>')
+                + '<g filter="url(#paint)">\n' + '\n'.join(self.body) + '\n</g></g>\n</svg>\n')
 
 
 # ---------- drawing tools ----------
@@ -371,21 +391,77 @@ def pebbles(d, x0, x1, y0, y1, n):
     return '\n'.join(f'<ellipse cx="{d.rng.uniform(x0, x1):.1f}" cy="{d.rng.uniform(y0, y1):.1f}" rx="{d.rng.uniform(2, 4):.1f}" ry="{d.rng.uniform(1.2, 2.2):.1f}" fill="{shade(STONE, d.rng.uniform(-0.25, 0.05))}"/>' for _ in range(n))
 
 
+ROCK = '#a99f8f'
+
+
+def rock(d, cx, cy, w, h, color=ROCK):
+    """One rounded rock: lit on top, dark below, with a soft crack"""
+    g = d.lin([(0, shade(color, 0.28)), (0.45, color), (1, shade(color, -0.42))])
+    j = lambda: d.rng.uniform(-0.12, 0.12)
+    x0, x1, y0, y1 = cx - w / 2, cx + w / 2, cy - h / 2, cy + h / 2
+    path = (f'M{x0:.1f} {cy + h * j():.1f} Q{x0 + w * (0.05 + j() / 2):.1f} {y0 + h * (0.05 + j()):.1f} {cx + w * j():.1f} {y0:.1f} '
+            f'Q{x1 - w * (0.05 + j() / 2):.1f} {y0 + h * (0.1 + j()):.1f} {x1:.1f} {cy + h * j():.1f} '
+            f'Q{x1 - w * 0.04:.1f} {y1:.1f} {cx:.1f} {y1:.1f} Q{x0 + w * 0.04:.1f} {y1:.1f} {x0:.1f} {cy:.1f} Z')
+    crack = f'<path d="M{cx + w * 0.1:.1f} {y0 + h * 0.3:.1f} q{w * 0.08:.1f} {h * 0.2:.1f} {-w * 0.02:.1f} {h * 0.45:.1f}" stroke="{shade(color, -0.45)}" stroke-width="1" fill="none" opacity="0.6"/>'
+    return f'<path d="{path}" fill="{g}"/>' + (crack if w > 22 else '')
+
+
 def mound(d):
-    """The grassy mound every station stands on (300×220)"""
-    top = d.lin([(0, shade(GRASS, 0.2)), (1, GRASS)])
-    side = d.lin([(0, '#6a8f46'), (1, '#4c6e33')])
-    earth = d.lin([(0, '#8a6a4a'), (1, '#6b5038')])
-    return '\n'.join([
-        f'<ellipse cx="150" cy="204" rx="134" ry="12" fill="#000" opacity="0.14"/>',
-        f'<path d="M18 182 Q24 206 150 212 Q276 206 282 182 Z" fill="{earth}"/>',
-        f'<path d="M18 182 Q24 196 150 200 Q276 196 282 182 Z" fill="{side}"/>',
-        f'<ellipse cx="150" cy="182" rx="132" ry="22" fill="{top}"/>',
-        f'<ellipse cx="122" cy="177" rx="86" ry="10" fill="#fff" opacity="0.12"/>',
-        tufts(d, 30, 270, 176, 200, 26),
-        flowers(d, 34, 266, 180, 198, 9),
-        pebbles(d, 40, 260, 190, 202, 6),
-    ])
+    """The island every station stands on (300×220): a grassy top on a thick base of rounded rocks"""
+    top = d.lin([(0, shade(GRASS, 0.22)), (0.7, GRASS), (1, shade(GRASS, -0.15))])
+    out = [f'<ellipse cx="150" cy="206" rx="136" ry="12" fill="#000" opacity="0.16"/>',
+           f'<path d="M16 180 Q18 218 150 219 Q282 218 284 180 Z" fill="{shade(ROCK, -0.5)}"/>']
+    # the rocks along the front of the base, the far ones first
+    rocks = []
+    for i in range(13):
+        a = math.pi * (1 - i / 12)
+        rocks.append((186 + 18 * math.sin(a), 150 + 128 * math.cos(a)))
+        # a second, lower row in the middle, where the base is thickest
+        if 2 <= i <= 10:
+            rocks.append((200 + 12 * math.sin(a), 150 + 118 * math.cos(a) + 10))
+    for y, x in sorted(rocks):
+        w = d.rng.uniform(28, 40)
+        h = d.rng.uniform(20, 28)
+        out.append(rock(d, x, min(y + 6, 206), w, h, shade(ROCK, d.rng.uniform(-0.08, 0.06))))
+    out += [f'<ellipse cx="150" cy="180" rx="134" ry="24" fill="{shade(GRASS, -0.35)}"/>',
+            f'<ellipse cx="150" cy="178" rx="132" ry="22" fill="{top}"/>',
+            f'<ellipse cx="126" cy="172" rx="84" ry="9" fill="#fff" opacity="0.14"/>',
+            # the grass hangs a little over the rocks' edge
+            ''.join(f'<path d="M{150 + 130 * math.cos(math.pi * (1 - k / 20)):.1f} {180 + 22 * math.sin(math.pi * (1 - k / 20)):.1f} l3 6 l3 -5" fill="{shade(GRASS, -0.2)}"/>' for k in range(1, 20)),
+            tufts(d, 30, 270, 172, 196, 26),
+            flowers(d, 34, 266, 176, 194, 9),
+            pebbles(d, 40, 260, 186, 196, 5)]
+    return '\n'.join(out)
+
+
+def contact(d, cx, cy, w):
+    """The soft shadow where something stands on the ground"""
+    g = d.rad([(0, '#000', 0.32), (1, '#000', 0)])
+    return f'<ellipse cx="{cx}" cy="{cy}" rx="{w / 2}" ry="{w * 0.09:.1f}" fill="{g}"/>'
+
+
+def side_face(d, x, y, h, dx=16, dy=8, color=STONE, bh=9):
+    """The side of a wall seen at an angle (three-quarter view): from the wall's right edge back and up"""
+    poly = f'{x},{y} {x + dx},{y - dy} {x + dx},{y + h - dy} {x},{y + h}'
+    clip = d.clip(f'<polygon points="{poly}"/>')
+    rows = ''.join(f'<line x1="{x}" y1="{y + k * bh:.1f}" x2="{x + dx}" y2="{y + k * bh - dy:.1f}" stroke="{shade(color, -0.5)}" stroke-width="1"/>' for k in range(1, int(h / bh) + 1))
+    return f'<polygon points="{poly}" fill="{shade(color, -0.3)}"/><g clip-path="{clip}">{rows}</g>'
+
+
+def top_face(d, x, y, w, dx=16, dy=8, color=STONE):
+    return f'<polygon points="{x},{y} {x + dx},{y - dy} {x + w + dx},{y - dy} {x + w},{y}" fill="{shade(color, 0.18)}"/>'
+
+
+def roof_side(d, cx, apex, x1, base, dx=16, dy=8, color=RED):
+    """The far slope of a pitched roof, seen at an angle"""
+    g = d.lin([(0, shade(color, -0.2)), (1, shade(color, -0.45))], 0, 0, 1, 0)
+    return f'<polygon points="{cx},{apex} {cx + dx},{apex - dy} {x1 + dx},{base - dy} {x1},{base}" fill="{g}"/>'
+
+
+def tower_top(d, cx, y, w, color=STONE):
+    """The top of a round tower seen from a little above: the walkway inside its ring of merlons"""
+    return (f'<ellipse cx="{cx}" cy="{y}" rx="{w / 2 + 3}" ry="{w * 0.16:.1f}" fill="{shade(color, -0.2)}"/>'
+            f'<ellipse cx="{cx}" cy="{y - 1}" rx="{w / 2 - 3}" ry="{w * 0.12:.1f}" fill="{shade(color, -0.45)}"/>')
 
 
 def scroll(d, cx, cy, w):
@@ -437,6 +513,8 @@ def station(name, draw, comment):
 
 def draw_gate(d):
     # the curtain wall with the gatehouse, two round towers, the knights' book at the side
+    d.add(contact(d, 150, 182, 230))
+    d.add(top_face(d, 96, 92, 108, 10, 5))
     d.add(wall(d, 96, 92, 108, 90))
     d.add(crenels(d, 96, 108, 92, 5))
     d.add(f'<path d="{arch_path(126, 128, 48, 54)}" fill="{DARK}"/>')
@@ -444,6 +522,7 @@ def draw_gate(d):
     d.add(voussoirs(126, 128, 48, 9, 7))
     for x in (54, 202):
         d.add(cylinder(d, x, 70, 44, 112))
+        d.add(tower_top(d, x + 22, 72, 44))
         d.add(window(d, x + 17, 96, 10, 15, glow=False))
         d.add(window(d, x + 18, 136, 8, 12))
         d.add(cone(d, x + 22, 72, 56, 44))
@@ -481,6 +560,7 @@ def draw_courtyard(d):
 
 
 def draw_tent(d):
+    d.add(contact(d, 150, 182, 200))
     # the healer's pavilion tent, striped, with scalloped edge and guy ropes
     body = 'M64 180 L84 96 L150 56 L216 96 L236 180 Z'
     clip = d.clip(f'<path d="{body}"/>')
@@ -506,6 +586,9 @@ def draw_tent(d):
 
 
 def draw_hall(d):
+    d.add(contact(d, 160, 182, 230))
+    d.add(side_face(d, 246, 94, 88, 18, 9))
+    d.add(roof_side(d, 150, 40, 256, 96, 18, 9, RED))
     d.add(wall(d, 54, 94, 192, 88))
     d.add(gable(d, 44, 256, 96, 56, RED, 7))
     d.add(f'<circle cx="150" cy="72" r="11" fill="{shade(STONE, -0.25)}"/><circle cx="150" cy="72" r="8.5" fill="{WIN}"/>')
@@ -526,6 +609,7 @@ def draw_hall(d):
 
 
 def draw_wizard(d):
+    d.add(contact(d, 170, 182, 190))
     d.add(cylinder(d, 112, 66, 76, 116))
     d.add(f'<rect x="104" y="62" width="92" height="8" rx="3" fill="{shade(STONE, -0.15)}"/>')
     for x in range(106, 196, 10):
@@ -545,6 +629,8 @@ def draw_wizard(d):
     for x in (190, 196, 202):
         d.add(f'<line x1="{x}" y1="112" x2="{x}" y2="120" stroke="{shade(WOOD, -0.3)}" stroke-width="1.4"/>')
     d.add(f'<rect x="196" y="136" width="46" height="46" fill="{STONE}"/>')
+    d.add(side_face(d, 242, 136, 46, 12, 6))
+    d.add(roof_side(d, 219, 112, 248, 138, 12, 6, PURPLE))
     d.add(wall(d, 196, 136, 46, 46, STONE, 8, (10, 16)))
     d.add(gable(d, 190, 248, 138, 26, PURPLE, 4))
     d.add(window(d, 212, 150, 14, 18))
@@ -555,6 +641,7 @@ def draw_wizard(d):
 
 
 def draw_mirror(d):
+    d.add(contact(d, 150, 184, 90))
     d.add(f'<path d="M124 184 L134 156 L166 156 L176 184 Z" fill="{shade(GOLD, -0.2)}"/>')
     d.add(f'<path d="M134 156 L166 156 L162 150 L138 150 Z" fill="{GOLD}"/>')
     d.add(f'<rect x="144" y="136" width="12" height="18" fill="{shade(GOLD, -0.25)}"/>')
@@ -577,6 +664,9 @@ def draw_mirror(d):
 
 
 def draw_forge(d):
+    d.add(contact(d, 130, 182, 170))
+    d.add(side_face(d, 182, 98, 84, 16, 8))
+    d.add(roof_side(d, 121, 58, 192, 100, 16, 8, WOOD))
     d.add(wall(d, 60, 98, 122, 84))
     d.add(wall(d, 146, 42, 22, 60, STONE, 7, (8, 12)))
     d.add(f'<rect x="143" y="38" width="28" height="6" fill="{shade(STONE, -0.2)}"/>')
@@ -600,6 +690,7 @@ def draw_forge(d):
 
 
 def draw_council(d):
+    d.add(contact(d, 150, 182, 200))
     for x in (62, 238):
         d.add(f'<rect x="{x - 3}" y="78" width="6" height="106" fill="{WOOD}"/><circle cx="{x}" cy="78" r="4" fill="{GOLD}"/>')
     d.add(cone(d, 150, 82, 210, 58, SLATE, 5))
@@ -621,6 +712,7 @@ def draw_council(d):
 
 
 def draw_prophecy(d):
+    d.add(contact(d, 150, 184, 100))
     d.add(f'<path d="M116 184 L126 156 L174 156 L184 184 Z" fill="{shade(GOLD, -0.2)}"/>')
     d.add(f'<path d="M124 160 Q150 140 176 160 L172 148 Q150 134 128 148 Z" fill="{GOLD}"/>')
     for x in (130, 150, 170):
@@ -642,12 +734,15 @@ def draw_prophecy(d):
 
 
 def draw_victory(d):
+    d.add(contact(d, 150, 182, 230))
+    d.add(top_face(d, 70, 102, 160, 10, 5))
     d.add(wall(d, 70, 102, 160, 80))
     d.add(crenels(d, 70, 160, 102, 7))
     d.add(wall(d, 118, 60, 64, 44))
     d.add(crenels(d, 118, 64, 60, 4))
     for x in (44, 216):
         d.add(cylinder(d, x, 86, 40, 96))
+        d.add(tower_top(d, x + 20, 88, 40))
         d.add(window(d, x + 16, 110, 8, 12))
         d.add(cone(d, x + 20, 88, 52, 40, RED))
         d.add(flag(d, x + 20, 34, SLATE, 16))
@@ -748,7 +843,7 @@ def cobbles(d, y0, color='#c9c0ae'):
 def scene(name, draw, comment):
     d = Doc(SW, SH, zlib.crc32(("scene" + name).encode()) % 1000)
     draw(d)
-    return d.svg(f'Knight world: {comment}, as seen standing there', slice_=True)
+    return d.svg(f'Knight world: {comment}, as seen standing there', slice_=True, edges=False)
 
 
 def sc_gate(d):
@@ -825,6 +920,7 @@ def sc_courtyard(d):
 
 def sc_tent(d):
     # inside the healer's tent: the striped cloth rising to the pole, a bench with a cushion, a table, a rug
+    d.add(f'<rect width="{SW}" height="{SH}" fill="{CREAM}"/>')
     stripes = []
     for i in range(-2, 11):
         c = SLATE if i % 2 == 0 else CREAM
@@ -1169,7 +1265,7 @@ def background(W, H, horizon, castle, trees, bushes, flower_areas, clouds, seed,
         d.add(tree(d, *t))
     for b in bushes:
         d.add(bush(d, *b, berries=True))
-    return d.svg(f'Knight world: {comment}', grain=0.08, wobble=1.0)
+    return d.svg(f'Knight world: {comment}', grain=0.08, wobble=1.0, clay=False)
 
 
 def portrait_bg():
@@ -1197,7 +1293,7 @@ def sheet_floor():
     d.add(f'<rect width="364" height="340" fill="{d.lin([(0, "#eaf4fb"), (0.55, "#f4efe2"), (1, "#e3d6b8")])}"/>')
     d.add(band(364, 340, 215, 6, 0.7, '#c9dcb0'), band(364, 340, 255, 5, 2.1, '#b5d197'))
     d.add(cloud(70, 60, 0.8), cloud(290, 40, 0.6))
-    return d.svg('Knight world: the panel behind a picture on its sheet')
+    return d.svg('Knight world: the panel behind a picture on its sheet', clay=False)
 
 
 def celebrate():
@@ -1211,7 +1307,7 @@ def celebrate():
     sub.add(mound(sub))
     draw_victory(sub)
     d.defs.extend(sub.defs)
-    d.add(f'<g transform="translate(95 110) scale(1.5)">' + '\n'.join(sub.body) + '</g>')
+    d.add(f'<g transform="translate(95 110) scale(1.5)" filter="url(#clay)">' + '\n'.join(sub.body) + '</g>')
     cols = [RED, GOLD, SLATE, '#5f9440']
     d.add('<path d="M0 36 Q320 76 640 36" fill="none" stroke="#6b4329" stroke-width="2"/>')
     for i in range(16):
@@ -1220,7 +1316,7 @@ def celebrate():
         y = 36 + 40 * 4 * t * (1 - t) * 0.5
         d.add(f'<path d="M{x} {y:.1f} l14 24 l14 -24 Z" fill="{cols[i % 4]}"/>')
     d.add(tree(d, 60, 440, 2.2), tree(d, 590, 450, 2.0))
-    return d.svg('Knight world: the victory feast (the celebration screen)')
+    return d.svg('Knight world: the victory feast (the celebration screen)', clay=False)
 
 
 files = {}

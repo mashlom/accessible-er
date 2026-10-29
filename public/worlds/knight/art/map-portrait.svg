@@ -8,6 +8,18 @@
 <feComposite in="wobbly" in2="grey" operator="arithmetic" k1="0" k2="1" k3="0.08" k4="-0.04" result="grained"/>
 <feComposite in="grained" in2="wobbly" operator="in"/>
 </filter>
+<filter id="clay" x="-3%" y="-3%" width="106%" height="106%" color-interpolation-filters="sRGB">
+<feGaussianBlur in="SourceGraphic" stdDeviation="1.2" edgeMode="duplicate" result="blur"/>
+<feColorMatrix in="blur" type="luminanceToAlpha" result="lum"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="3" result="ablur"/>
+<feComposite in="lum" in2="ablur" operator="arithmetic" k2="0.6" k3="0.6" result="height"/>
+<feSpecularLighting in="height" surfaceScale="3" specularConstant="0.5" specularExponent="16" lighting-color="#fff8ec" result="spec"><feDistantLight azimuth="235" elevation="38"/></feSpecularLighting>
+<feComposite in="spec" in2="SourceAlpha" operator="in" result="specIn"/>
+<feDiffuseLighting in="height" surfaceScale="3" diffuseConstant="1.3" lighting-color="#fff" result="diff"><feDistantLight azimuth="235" elevation="50"/></feDiffuseLighting>
+<feBlend in="SourceGraphic" in2="diff" mode="multiply" result="lit"/>
+<feComposite in="lit" in2="SourceAlpha" operator="in" result="litIn"/>
+<feComposite in="litIn" in2="specIn" operator="arithmetic" k2="1" k3="0.5"/>
+</filter>
 <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f8bc4"/><stop offset="0.85" stop-color="#dcedf7"/></linearGradient>
 <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9a6d50"/><stop offset="1" stop-color="#5d3c27"/></linearGradient>
 <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9a6d50"/><stop offset="1" stop-color="#5d3c27"/></linearGradient>
@@ -17,7 +29,7 @@
 <linearGradient id="g7" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9a6d50"/><stop offset="1" stop-color="#5d3c27"/></linearGradient>
 <linearGradient id="g8" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9a6d50"/><stop offset="1" stop-color="#5d3c27"/></linearGradient>
 <linearGradient id="g9" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9a6d50"/><stop offset="1" stop-color="#5d3c27"/></linearGradient></defs>
-<g filter="url(#paint)">
+<g><g filter="url(#paint)">
 <rect width="412" height="1100" fill="url(#g1)"/>
 <g opacity="0.95"><ellipse cx="250" cy="158.0" rx="19.0" ry="4.5" fill="#dfe9f3"/><ellipse cx="250" cy="156" rx="17.0" ry="6.0" fill="#fff"/><circle cx="243.5" cy="152.0" r="6.5" fill="#fff"/><circle cx="255.0" cy="150.0" r="8.0" fill="#fff"/><circle cx="253.0" cy="148.0" r="4.0" fill="#fff"/></g>
 <g opacity="0.95"><ellipse cx="110" cy="171.8" rx="17.1" ry="4.05" fill="#dfe9f3"/><ellipse cx="110" cy="170" rx="15.3" ry="5.4" fill="#fff"/><circle cx="104.15" cy="166.4" r="5.8500000000000005" fill="#fff"/><circle cx="114.5" cy="164.6" r="7.2" fill="#fff"/><circle cx="112.7" cy="162.8" r="3.6" fill="#fff"/></g>
@@ -626,5 +638,5 @@
 <circle cx="192.2" cy="1055.2" r="1.4" fill="#e87b8f"/>
 <circle cx="184.1" cy="1048.1" r="1.4" fill="#e87b8f"/>
 <circle cx="173.4" cy="1053.6" r="1.4" fill="#e87b8f"/>
-</g>
+</g></g>
 </svg>

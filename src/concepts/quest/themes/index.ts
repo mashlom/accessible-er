@@ -93,6 +93,8 @@ export interface WorldDesign {
       shoreY: number
       /** Width of the ending's picture */
       finaleWidth: number
+      /** The ending's picture is mirrored (the ocean's pier points into the sea); default true */
+      finaleFlip?: boolean
       vars: Scene['vars']
     }
     landscape: {

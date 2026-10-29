@@ -371,6 +371,7 @@
       "portrait": {
         "shoreY": 900,
         "finaleWidth": 220,
+        "finaleFlip": false,
         "vars": {
           "--bg-x": 0,
           "--bg-w": 412,

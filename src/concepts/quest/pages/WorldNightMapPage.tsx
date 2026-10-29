@@ -68,7 +68,7 @@ function portraitScene(design: WorldDesign, images: string[], screenH: number): 
     const x = n === 1 ? 20 : left ? -20 : 412 - w + 20
     slots.push({ x, y, w, h, badge: [x + w / 2, y - 6] })
   }
-  slots.push({ x: fx, y: fy, w: fw, h: fh, badge: [fx + fw / 2, fy - 6], flip: true })
+  slots.push({ x: fx, y: fy, w: fw, h: fh, badge: [fx + fw / 2, fy - 6], flip: spec.finaleFlip !== false })
 
   // the house stands at the very edge of the land: at the right edge the shore meets the foot of the
   // house, while the pier to its left (where the shore runs lower) reaches over the water
