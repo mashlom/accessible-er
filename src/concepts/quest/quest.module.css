@@ -2077,8 +2077,17 @@
 .worldSceneFade { background: transparent; }
 .worldSceneFade::after {
   top: -2px;
-  height: calc(260 * var(--u));
-  background: linear-gradient(var(--w-water), transparent);
+  height: calc(380 * var(--u));
+  /* eased, so neither the start nor the end of the fade shows as a line */
+  background: linear-gradient(
+    var(--w-water) 0%,
+    color-mix(in srgb, var(--w-water) 92%, transparent) 15%,
+    color-mix(in srgb, var(--w-water) 70%, transparent) 35%,
+    color-mix(in srgb, var(--w-water) 40%, transparent) 55%,
+    color-mix(in srgb, var(--w-water) 15%, transparent) 75%,
+    color-mix(in srgb, var(--w-water) 4%, transparent) 90%,
+    transparent 100%
+  );
 }
 
 /* on a wide screen the headline is at the top of the page, on the sky, below the top row, centred (clear of the
