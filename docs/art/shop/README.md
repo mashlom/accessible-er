@@ -42,7 +42,7 @@ Use this at the start of every prompt, then add the piece from the table:
 | --- | --- | --- |
 | Ocean | A child diver | Diving mask, snorkel, wetsuit, diving helmet, flippers, air tank, underwater torch, net bag for shells |
 | Dollhouse | A doll | 3 hats, 3 dresses, 2 pairs of shoes / boots (different shapes) |
-| Dinosaurs | — (no doll) | 8 different friendly dinosaurs, each with a fold-back stand |
+| Dinosaurs | — (no doll) | Each with a fold-back stand: T. rex, triceratops, stegosaurus, brachiosaurus, ankylosaurus, parasaurolophus, pterodactyl, velociraptor (with feathers). The T. rex and the velociraptor friendly and smiling: no bared teeth, no claws |
 | Knight | A child knight | Helmet, chain mail, armour, shield, cape, boots, banner, toy horse on a stick |
 | Fairy | A child fairy | Wings, wand, flower crown, dress, shoes, flower basket, bag of stars, little lantern |
 | Safari | A child explorer | Safari hat, binoculars, vest, boots, backpack, camera, map, water bottle |
