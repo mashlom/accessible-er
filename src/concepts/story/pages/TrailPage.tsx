@@ -44,6 +44,7 @@ export function TrailPage() {
           {t('ui.tiles.journey.title')}
           <span className={styles.trailLead}>{tx.lead}</span>
         </h1>
+        <p className={styles.trailSub}>{tx.together}</p>
         <p className={styles.trailSub}>{tx.subtitle}</p>
       </header>
       {path ? (
