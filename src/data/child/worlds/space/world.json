@@ -3,9 +3,11 @@
   "order": 7,
   "emoji": "🚀",
   "doneEmoji": "⭐",
-  "shopImage": "/worlds/knight/shop.JPEG",
-  "bg": "/worlds/space/space.jpg",
-  "accent": "#1a3a6b",
+  "shopImage": "/worlds/space/art/celebrate.webp",
+  "bg": "",
+  "thumbnail": "/worlds/space/art/map-portrait.webp",
+  "thumbnailOverlay": "/worlds/space/art/card.webp",
+  "accent": "#3a4bb8",
   "accentSoft": "#d0dcf5",
   "accentText": "#ffffff",
   "completedColor": "#5c8de8",
@@ -39,6 +41,422 @@
     },
     "wait-results": {
       "icon": "💻"
+    }
+  },
+  "design": {
+    "assets": {
+      "background": "/worlds/space/art/map-portrait.webp",
+      "backgroundWide": "/worlds/space/art/map-landscape.webp",
+      "sheetSeabed": "/worlds/space/art/sheet-floor.webp"
+    },
+    "colors": {
+      "text": "#1e2448",
+      "text2": "#4f5680",
+      "action": "#3a4bb8",
+      "page": "#f5f6fc",
+      "card": "#ffffff",
+      "mint": "#e6e9f8",
+      "blue": "#eceefa",
+      "coral": "#c8553d",
+      "yellow": "#f2c14e",
+      "progress": [
+        "#7f8cf0",
+        "#4a5bd0"
+      ],
+      "water": "#1c2350",
+      "waterTop": "#1c2350",
+      "waterLight": "#1c2350"
+    },
+    "mirrorAbove": false,
+    "stations": {
+      "reception": {
+        "map": "/worlds/space/art/station-entrance.webp",
+        "sheet": "/worlds/space/art/scene-entrance.webp",
+        "panel": "scene",
+        "choice": "/worlds/space/art/station-entrance.webp"
+      },
+      "wait-before-triage": {
+        "map": "/worlds/space/art/station-cabin.webp",
+        "sheet": "/worlds/space/art/scene-cabin.webp",
+        "panel": "scene",
+        "choice": "/worlds/space/art/station-cabin.webp"
+      },
+      "triage": {
+        "map": "/worlds/space/art/station-checks.webp",
+        "sheet": "/worlds/space/art/scene-checks.webp",
+        "panel": "scene",
+        "choice": "/worlds/space/art/station-checks.webp"
+      },
+      "wait-doctor": {
+        "map": "/worlds/space/art/station-control.webp",
+        "sheet": "/worlds/space/art/scene-control.webp",
+        "panel": "scene",
+        "choice": "/worlds/space/art/station-control.webp"
+      },
+      "doctor": {
+        "map": "/worlds/space/art/station-commander.webp",
+        "sheet": "/worlds/space/art/scene-commander.webp",
+        "panel": "scene",
+        "choice": "/worlds/space/art/station-commander.webp"
+      },
+      "tests": {
+        "map": "/worlds/space/art/station-scanner.webp",
+        "sheet": "/worlds/space/art/scene-scanner.webp",
+        "panel": "scene",
+        "choice": "/worlds/space/art/station-scanner.webp"
+      },
+      "treatment": {
+        "map": "/worlds/space/art/station-repair.webp",
+        "sheet": "/worlds/space/art/scene-repair.webp",
+        "panel": "scene",
+        "choice": "/worlds/space/art/station-repair.webp"
+      },
+      "consult": {
+        "map": "/worlds/space/art/station-command.webp",
+        "sheet": "/worlds/space/art/scene-command.webp",
+        "panel": "scene",
+        "choice": "/worlds/space/art/station-command.webp"
+      },
+      "wait-results": {
+        "map": "/worlds/space/art/station-data.webp",
+        "sheet": "/worlds/space/art/scene-data.webp",
+        "panel": "scene",
+        "choice": "/worlds/space/art/station-data.webp"
+      },
+      "decision": {
+        "map": "/worlds/space/art/station-landing.webp",
+        "sheet": "/worlds/space/art/scene-landing.webp",
+        "panel": "scene",
+        "choice": "/worlds/space/art/station-landing.webp"
+      }
+    },
+    "images": {
+      "/worlds/space/art/station-entrance.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/space/art/station-cabin.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/space/art/station-checks.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/space/art/station-control.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/space/art/station-commander.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/space/art/station-scanner.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/space/art/station-repair.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/space/art/station-command.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/space/art/station-data.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/space/art/station-landing.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      }
+    },
+    "dayMap": {
+      "portrait": {
+        "W": 412,
+        "H": 939,
+        "slots": [
+          {
+            "x": 4,
+            "y": 136,
+            "w": 210,
+            "h": 154,
+            "badge": [109, 151]
+          },
+          {
+            "x": 206,
+            "y": 286,
+            "w": 200,
+            "h": 147,
+            "badge": [306, 301]
+          },
+          {
+            "x": 10,
+            "y": 446,
+            "w": 200,
+            "h": 147,
+            "badge": [110, 461]
+          },
+          {
+            "x": 204,
+            "y": 606,
+            "w": 200,
+            "h": 147,
+            "badge": [304, 621]
+          },
+          {
+            "x": 18,
+            "y": 768,
+            "w": 200,
+            "h": 147,
+            "badge": [118, 783]
+          }
+        ],
+        "dots": [
+          {
+            "bezier": [
+              [189, 259],
+              [189, 310],
+              [306, 269],
+              [306, 301]
+            ]
+          },
+          {
+            "bezier": [
+              [230, 404],
+              [230, 463],
+              [110, 414],
+              [110, 461]
+            ]
+          },
+          {
+            "bezier": [
+              [186, 564],
+              [186, 623],
+              [304, 574],
+              [304, 621]
+            ]
+          },
+          {
+            "bezier": [
+              [228, 724],
+              [228, 784],
+              [118, 734],
+              [118, 783]
+            ]
+          }
+        ],
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 412,
+          "--bg-h": 1100,
+          "--grad-h": 0,
+          "--title-x": 64.5,
+          "--title-y": 64,
+          "--title-w": 283,
+          "--title-h": 50,
+          "--title-fs": 21,
+          "--badge": 24,
+          "--badge-fs": 15,
+          "--star": 30,
+          "--map-bg": "#1c2350",
+          "--title-bg": "rgba(28, 35, 80, 0.55)"
+        }
+      },
+      "landscape": {
+        "W": 1920,
+        "H": 1080,
+        "slots": [
+          {
+            "x": 1470,
+            "y": 690,
+            "w": 420,
+            "h": 308,
+            "badge": [1680, 721]
+          },
+          {
+            "x": 1060,
+            "y": 410,
+            "w": 400,
+            "h": 293,
+            "badge": [1260, 439]
+          },
+          {
+            "x": 680,
+            "y": 680,
+            "w": 400,
+            "h": 293,
+            "badge": [880, 709]
+          },
+          {
+            "x": 300,
+            "y": 400,
+            "w": 400,
+            "h": 293,
+            "badge": [500, 429]
+          },
+          {
+            "x": -10,
+            "y": 640,
+            "w": 400,
+            "h": 293,
+            "badge": [190, 669]
+          }
+        ],
+        "lines": [
+          {
+            "bezier": [
+              [1520, 936],
+              [1520, 718],
+              [1260, 946],
+              [1260, 439]
+            ]
+          },
+          {
+            "bezier": [
+              [1108, 644],
+              [1108, 707],
+              [880, 654],
+              [880, 709]
+            ]
+          },
+          {
+            "bezier": [
+              [728, 914],
+              [728, 702],
+              [500, 924],
+              [500, 429]
+            ]
+          },
+          {
+            "bezier": [
+              [348, 634],
+              [348, 682],
+              [190, 644],
+              [190, 669]
+            ]
+          }
+        ],
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 1920,
+          "--bg-h": 1080,
+          "--map-bg": "#1c2350",
+          "--title-x": 1270,
+          "--title-y": 94,
+          "--title-w": 550,
+          "--title-h": 97,
+          "--title-fs": 41,
+          "--badge": 42,
+          "--badge-fs": 26,
+          "--star": 56,
+          "--title-bg": "rgba(28, 35, 80, 0.55)"
+        }
+      }
+    },
+    "nightMap": {
+      "portrait": {
+        "shoreY": 900,
+        "finaleWidth": 220,
+        "finaleFlip": false,
+        "vars": {
+          "--bg-x": 0,
+          "--bg-w": 412,
+          "--bg-h": 1100,
+          "--grad-h": 0,
+          "--map-bg": "#1c2350",
+          "--title-x": 64.5,
+          "--title-y": 44.5,
+          "--title-w": 283,
+          "--title-h": 50,
+          "--title-fs": 21,
+          "--badge": 24,
+          "--badge-fs": 15,
+          "--star": 30,
+          "--title-bg": "rgba(28, 35, 80, 0.55)"
+        }
+      },
+      "landscape": {
+        "places": [
+          {
+            "cx": 1660,
+            "top": 380,
+            "visible": 360,
+            "badge": [1660, 392]
+          },
+          {
+            "cx": 1260,
+            "top": 680,
+            "visible": 360,
+            "badge": [1260, 692]
+          },
+          {
+            "cx": 860,
+            "top": 390,
+            "visible": 360,
+            "badge": [860, 402]
+          },
+          {
+            "cx": 520,
+            "top": 690,
+            "visible": 340,
+            "badge": [520, 702]
+          }
+        ],
+        "curves": [
+          [
+            [1600, 620],
+            [1320, 600]
+          ],
+          [
+            [1180, 560],
+            [920, 560]
+          ],
+          [
+            [800, 620],
+            [580, 600]
+          ]
+        ],
+        "finale": {
+          "x": -20,
+          "y": 360,
+          "w": 420,
+          "badge": [190, 380]
+        },
+        "finaleTrail": {
+          "end": [300, 560],
+          "c1": [-80, -40],
+          "c2": [60, 60]
+        },
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 1920,
+          "--bg-h": 1080,
+          "--map-bg": "#1c2350",
+          "--title-x": 1270,
+          "--title-y": 94,
+          "--title-w": 550,
+          "--title-h": 97,
+          "--title-fs": 41,
+          "--badge": 42,
+          "--badge-fs": 26,
+          "--star": 56
+        }
+      }
     }
   }
 }

@@ -1,11 +1,13 @@
 {
   "id": "safari",
   "order": 6,
-  "doneEmoji": "⭐",
-  "shopImage": "/worlds/knight/shop.JPEG",
   "emoji": "🦁",
-  "bg": "/worlds/safari/safari.JPEG",
-  "accent": "#b5720a",
+  "doneEmoji": "⭐",
+  "shopImage": "/worlds/safari/art/celebrate.webp",
+  "bg": "",
+  "thumbnail": "/worlds/safari/art/map-portrait.webp",
+  "thumbnailOverlay": "/worlds/safari/art/card.webp",
+  "accent": "#9a5a1e",
   "accentSoft": "#fcefd0",
   "accentText": "#ffffff",
   "completedColor": "#e8a825",
@@ -39,6 +41,422 @@
     },
     "wait-results": {
       "icon": "🕐"
+    }
+  },
+  "design": {
+    "assets": {
+      "background": "/worlds/safari/art/map-portrait.webp",
+      "backgroundWide": "/worlds/safari/art/map-landscape.webp",
+      "sheetSeabed": "/worlds/safari/art/sheet-floor.webp"
+    },
+    "colors": {
+      "text": "#3a2a1a",
+      "text2": "#6a5642",
+      "action": "#9a5a1e",
+      "page": "#fcf8f0",
+      "card": "#ffffff",
+      "mint": "#f6ebd3",
+      "blue": "#f8efdc",
+      "coral": "#b5473a",
+      "yellow": "#e3b34a",
+      "progress": [
+        "#e3b34a",
+        "#c98a3a"
+      ],
+      "water": "#b8612f",
+      "waterTop": "#b8612f",
+      "waterLight": "#b8612f"
+    },
+    "mirrorAbove": false,
+    "stations": {
+      "reception": {
+        "map": "/worlds/safari/art/station-gate.webp",
+        "sheet": "/worlds/safari/art/scene-gate.webp",
+        "panel": "scene",
+        "choice": "/worlds/safari/art/station-gate.webp"
+      },
+      "wait-before-triage": {
+        "map": "/worlds/safari/art/station-shade.webp",
+        "sheet": "/worlds/safari/art/scene-shade.webp",
+        "panel": "scene",
+        "choice": "/worlds/safari/art/station-shade.webp"
+      },
+      "triage": {
+        "map": "/worlds/safari/art/station-gear.webp",
+        "sheet": "/worlds/safari/art/scene-gear.webp",
+        "panel": "scene",
+        "choice": "/worlds/safari/art/station-gear.webp"
+      },
+      "wait-doctor": {
+        "map": "/worlds/safari/art/station-cubs.webp",
+        "sheet": "/worlds/safari/art/scene-cubs.webp",
+        "panel": "scene",
+        "choice": "/worlds/safari/art/station-cubs.webp"
+      },
+      "doctor": {
+        "map": "/worlds/safari/art/station-chief.webp",
+        "sheet": "/worlds/safari/art/scene-chief.webp",
+        "panel": "scene",
+        "choice": "/worlds/safari/art/station-chief.webp"
+      },
+      "tests": {
+        "map": "/worlds/safari/art/station-lab.webp",
+        "sheet": "/worlds/safari/art/scene-lab.webp",
+        "panel": "scene",
+        "choice": "/worlds/safari/art/station-lab.webp"
+      },
+      "treatment": {
+        "map": "/worlds/safari/art/station-medic.webp",
+        "sheet": "/worlds/safari/art/scene-medic.webp",
+        "panel": "scene",
+        "choice": "/worlds/safari/art/station-medic.webp"
+      },
+      "consult": {
+        "map": "/worlds/safari/art/station-expert.webp",
+        "sheet": "/worlds/safari/art/scene-expert.webp",
+        "panel": "scene",
+        "choice": "/worlds/safari/art/station-expert.webp"
+      },
+      "wait-results": {
+        "map": "/worlds/safari/art/station-results.webp",
+        "sheet": "/worlds/safari/art/scene-results.webp",
+        "panel": "scene",
+        "choice": "/worlds/safari/art/station-results.webp"
+      },
+      "decision": {
+        "map": "/worlds/safari/art/station-back.webp",
+        "sheet": "/worlds/safari/art/scene-back.webp",
+        "panel": "scene",
+        "choice": "/worlds/safari/art/station-back.webp"
+      }
+    },
+    "images": {
+      "/worlds/safari/art/station-gate.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/safari/art/station-shade.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/safari/art/station-gear.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/safari/art/station-cubs.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/safari/art/station-chief.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/safari/art/station-lab.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/safari/art/station-medic.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/safari/art/station-expert.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/safari/art/station-results.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      },
+      "/worlds/safari/art/station-back.webp": {
+        "aspect": 1.3636,
+        "visible": 0.92,
+        "lift": 0.05
+      }
+    },
+    "dayMap": {
+      "portrait": {
+        "W": 412,
+        "H": 939,
+        "slots": [
+          {
+            "x": 4,
+            "y": 136,
+            "w": 210,
+            "h": 154,
+            "badge": [109, 151]
+          },
+          {
+            "x": 206,
+            "y": 286,
+            "w": 200,
+            "h": 147,
+            "badge": [306, 301]
+          },
+          {
+            "x": 10,
+            "y": 446,
+            "w": 200,
+            "h": 147,
+            "badge": [110, 461]
+          },
+          {
+            "x": 204,
+            "y": 606,
+            "w": 200,
+            "h": 147,
+            "badge": [304, 621]
+          },
+          {
+            "x": 18,
+            "y": 768,
+            "w": 200,
+            "h": 147,
+            "badge": [118, 783]
+          }
+        ],
+        "dots": [
+          {
+            "bezier": [
+              [189, 259],
+              [189, 310],
+              [306, 269],
+              [306, 301]
+            ]
+          },
+          {
+            "bezier": [
+              [230, 404],
+              [230, 463],
+              [110, 414],
+              [110, 461]
+            ]
+          },
+          {
+            "bezier": [
+              [186, 564],
+              [186, 623],
+              [304, 574],
+              [304, 621]
+            ]
+          },
+          {
+            "bezier": [
+              [228, 724],
+              [228, 784],
+              [118, 734],
+              [118, 783]
+            ]
+          }
+        ],
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 412,
+          "--bg-h": 1100,
+          "--grad-h": 0,
+          "--title-x": 64.5,
+          "--title-y": 64,
+          "--title-w": 283,
+          "--title-h": 50,
+          "--title-fs": 21,
+          "--badge": 24,
+          "--badge-fs": 15,
+          "--star": 30,
+          "--map-bg": "#b8612f",
+          "--title-bg": "rgba(70, 36, 14, 0.55)"
+        }
+      },
+      "landscape": {
+        "W": 1920,
+        "H": 1080,
+        "slots": [
+          {
+            "x": 1470,
+            "y": 690,
+            "w": 420,
+            "h": 308,
+            "badge": [1680, 721]
+          },
+          {
+            "x": 1060,
+            "y": 410,
+            "w": 400,
+            "h": 293,
+            "badge": [1260, 439]
+          },
+          {
+            "x": 680,
+            "y": 680,
+            "w": 400,
+            "h": 293,
+            "badge": [880, 709]
+          },
+          {
+            "x": 300,
+            "y": 400,
+            "w": 400,
+            "h": 293,
+            "badge": [500, 429]
+          },
+          {
+            "x": -10,
+            "y": 640,
+            "w": 400,
+            "h": 293,
+            "badge": [190, 669]
+          }
+        ],
+        "lines": [
+          {
+            "bezier": [
+              [1520, 936],
+              [1520, 718],
+              [1260, 946],
+              [1260, 439]
+            ]
+          },
+          {
+            "bezier": [
+              [1108, 644],
+              [1108, 707],
+              [880, 654],
+              [880, 709]
+            ]
+          },
+          {
+            "bezier": [
+              [728, 914],
+              [728, 702],
+              [500, 924],
+              [500, 429]
+            ]
+          },
+          {
+            "bezier": [
+              [348, 634],
+              [348, 682],
+              [190, 644],
+              [190, 669]
+            ]
+          }
+        ],
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 1920,
+          "--bg-h": 1080,
+          "--map-bg": "#b8612f",
+          "--title-x": 1270,
+          "--title-y": 94,
+          "--title-w": 550,
+          "--title-h": 97,
+          "--title-fs": 41,
+          "--badge": 42,
+          "--badge-fs": 26,
+          "--star": 56,
+          "--title-bg": "rgba(70, 36, 14, 0.55)"
+        }
+      }
+    },
+    "nightMap": {
+      "portrait": {
+        "shoreY": 900,
+        "finaleWidth": 220,
+        "finaleFlip": false,
+        "vars": {
+          "--bg-x": 0,
+          "--bg-w": 412,
+          "--bg-h": 1100,
+          "--grad-h": 0,
+          "--map-bg": "#b8612f",
+          "--title-x": 64.5,
+          "--title-y": 44.5,
+          "--title-w": 283,
+          "--title-h": 50,
+          "--title-fs": 21,
+          "--badge": 24,
+          "--badge-fs": 15,
+          "--star": 30,
+          "--title-bg": "rgba(70, 36, 14, 0.55)"
+        }
+      },
+      "landscape": {
+        "places": [
+          {
+            "cx": 1660,
+            "top": 380,
+            "visible": 360,
+            "badge": [1660, 392]
+          },
+          {
+            "cx": 1260,
+            "top": 680,
+            "visible": 360,
+            "badge": [1260, 692]
+          },
+          {
+            "cx": 860,
+            "top": 390,
+            "visible": 360,
+            "badge": [860, 402]
+          },
+          {
+            "cx": 520,
+            "top": 690,
+            "visible": 340,
+            "badge": [520, 702]
+          }
+        ],
+        "curves": [
+          [
+            [1600, 620],
+            [1320, 600]
+          ],
+          [
+            [1180, 560],
+            [920, 560]
+          ],
+          [
+            [800, 620],
+            [580, 600]
+          ]
+        ],
+        "finale": {
+          "x": -20,
+          "y": 360,
+          "w": 420,
+          "badge": [190, 380]
+        },
+        "finaleTrail": {
+          "end": [300, 560],
+          "c1": [-80, -40],
+          "c2": [60, 60]
+        },
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 1920,
+          "--bg-h": 1080,
+          "--map-bg": "#b8612f",
+          "--title-x": 1270,
+          "--title-y": 94,
+          "--title-w": 550,
+          "--title-h": 97,
+          "--title-fs": 41,
+          "--badge": 42,
+          "--badge-fs": 26,
+          "--star": 56
+        }
+      }
     }
   }
 }
