@@ -1,0 +1,259 @@
+{
+  "world": "fairy",
+  "tool": "OpenAI GPT Image (high-quality image generation) via Instinct tools image; commercial use permitted: OpenAI Terms of Use, 'Ownership of content' - customer owns the Output (assigned all right, title and interest), no attribution requirement. Outputs may not be unique; no guarantee of copyright protection or third-party clearance. https://openai.com/policies/row-terms-of-use/",
+  "colors": {
+    "top": "#398FAA",
+    "text": "#3C4A3F",
+    "text2": "#6E7F6F",
+    "action": "#D96C92",
+    "page": "#F5F6E9",
+    "accent": "#9B7FC7"
+  },
+  "files": [
+    {
+      "file": "station-reception.png",
+      "kind": "station",
+      "stage": "reception",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=17j9OIWQvYBW6hPSZneJ6Ih1rMDWKpu7g&export=download&confirm=t",
+      "description": "Rose-covered garden gate with fairy greeter - floating-island map view"
+    },
+    {
+      "file": "station-wait-before-triage.png",
+      "kind": "station",
+      "stage": "wait-before-triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1WvkGymJOzzli2Osw1WnPQTsr5F8C_hRH&export=download&confirm=t",
+      "description": "Shaded flower bridge over a sparkling stream, bunny and snail waiting - floating-island map view"
+    },
+    {
+      "file": "station-triage.png",
+      "kind": "station",
+      "stage": "triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=14ur21DFelrBKkl783XVqmsBulsFFPRwC&export=download&confirm=t",
+      "description": "Dew-drop check on a big pink flower with clipboard fairy - floating-island map view"
+    },
+    {
+      "file": "station-wait-doctor.png",
+      "kind": "station",
+      "stage": "wait-doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1g8c9aMKu1QiYCB5osv-ZHBkwi_VyYKRI&export=download&confirm=t",
+      "description": "Toadstool waiting circle among smiling daisies - floating-island map view"
+    },
+    {
+      "file": "station-doctor.png",
+      "kind": "station",
+      "stage": "doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1CkL-3KGjSC9QSAdJzTWTYA9SCr0J0XKP&export=download&confirm=t",
+      "description": "The healing fairy at her glowing petal house - floating-island map view"
+    },
+    {
+      "file": "station-tests.png",
+      "kind": "station",
+      "stage": "tests",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1jsApfYJtfTTnuzSugmI11QqdpH8Md_PR&export=download&confirm=t",
+      "description": "Crystal seeing-stone with red-haired fairy and fireflies - floating-island map view"
+    },
+    {
+      "file": "station-treatment.png",
+      "kind": "station",
+      "stage": "treatment",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1njETPmO1ltJRnHPN2Yoi04NM4oqu3DYc&export=download&confirm=t",
+      "description": "Magic wand workshop with fairy inventor and bunny assistant - floating-island map view"
+    },
+    {
+      "file": "station-consult.png",
+      "kind": "station",
+      "stage": "consult",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1z-xr3eOTEdaauPPJjJ0oeO6ausAISRxy&export=download&confirm=t",
+      "description": "Fairy council of three around a golden pollen orb - floating-island map view"
+    },
+    {
+      "file": "station-wait-results.png",
+      "kind": "station",
+      "stage": "wait-results",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=14jTeF4D0MMxKkDLtnoqRLhXX-kIUGxCJ&export=download&confirm=t",
+      "description": "Quiet firefly grove with petal hammock and sleeping bunny - floating-island map view"
+    },
+    {
+      "file": "station-decision.png",
+      "kind": "station",
+      "stage": "decision",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=139VERfUnEDe0xzwUkxy2uBoDSSDcRmBf&export=download&confirm=t",
+      "description": "Fairy flying home along a glowing petal trail to a rainbow - floating-island map view"
+    },
+    {
+      "file": "scene-reception.png",
+      "kind": "scene",
+      "stage": "reception",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1kk05Q8IFnPwc-9UIz9GfLsqzHSKZaAkD&export=download&confirm=t",
+      "description": "Rose-covered garden gate with fairy greeter - eye-level scene as if standing inside the garden"
+    },
+    {
+      "file": "scene-wait-before-triage.png",
+      "kind": "scene",
+      "stage": "wait-before-triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1HoM9BCkyYv94Ps6O_zbx2f4wWxp2svF-&export=download&confirm=t",
+      "description": "Shaded flower bridge over a sparkling stream, bunny and snail waiting - eye-level scene as if standing inside the garden"
+    },
+    {
+      "file": "scene-triage.png",
+      "kind": "scene",
+      "stage": "triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1RcwkfduUjy-4FRT8pwLa0gjH_aaivLbN&export=download&confirm=t",
+      "description": "Dew-drop check on a big pink flower with clipboard fairy - eye-level scene as if standing inside the garden"
+    },
+    {
+      "file": "scene-wait-doctor.png",
+      "kind": "scene",
+      "stage": "wait-doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1dPHOZFW2nS7sklHUT8Zja5N6l_7LZ4gJ&export=download&confirm=t",
+      "description": "Toadstool waiting circle among smiling daisies - eye-level scene as if standing inside the garden"
+    },
+    {
+      "file": "scene-doctor.png",
+      "kind": "scene",
+      "stage": "doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1d_7XYKcS4JqKb2Tib6zzot-IY6BTHug4&export=download&confirm=t",
+      "description": "The healing fairy at her glowing petal house - eye-level scene as if standing inside the garden"
+    },
+    {
+      "file": "scene-tests.png",
+      "kind": "scene",
+      "stage": "tests",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1FkwToLYWfboSbW8BqDqzQpjpYkkbsM82&export=download&confirm=t",
+      "description": "Crystal seeing-stone with red-haired fairy and fireflies - eye-level scene as if standing inside the garden"
+    },
+    {
+      "file": "scene-treatment.png",
+      "kind": "scene",
+      "stage": "treatment",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1P8W_Jt23st0lWJS0ixBZ_NDKwfyDHhbM&export=download&confirm=t",
+      "description": "Magic wand workshop with fairy inventor and bunny assistant - eye-level scene as if standing inside the garden"
+    },
+    {
+      "file": "scene-consult.png",
+      "kind": "scene",
+      "stage": "consult",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1zN9Rr8yI94HTbkWr2kzgl1zzlWakKi3J&export=download&confirm=t",
+      "description": "Fairy council of three around a golden pollen orb - eye-level scene as if standing inside the garden"
+    },
+    {
+      "file": "scene-wait-results.png",
+      "kind": "scene",
+      "stage": "wait-results",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1mkPIo1zytvn3B4lmMKqRfDPA8ibVUh-j&export=download&confirm=t",
+      "description": "Quiet firefly grove with petal hammock and sleeping bunny - eye-level scene as if standing inside the garden"
+    },
+    {
+      "file": "scene-decision.png",
+      "kind": "scene",
+      "stage": "decision",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=13nAWqykyFCEo6cazOC92YyJOFv3vt-F7&export=download&confirm=t",
+      "description": "Fairy flying home along a glowing petal trail to a rainbow - eye-level scene as if standing inside the garden"
+    },
+    {
+      "file": "map-portrait.png",
+      "kind": "map-portrait",
+      "width": 824,
+      "height": 2200,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1WoRTLb0lh8kE8u9RZensc4o54jWZpTsO&export=download&confirm=t",
+      "description": "Tall world backdrop: teal sky band, open mint meadow, central stepping-stone path, clear mirror-safe edges"
+    },
+    {
+      "file": "map-landscape.png",
+      "kind": "map-landscape",
+      "width": 1920,
+      "height": 1080,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1ioBWriNZBvAsWhdsYZUEdI1YMpL6TjCt&export=download&confirm=t",
+      "description": "Wide world backdrop: teal sky band with quiet top-right, open rolling meadow"
+    },
+    {
+      "file": "celebrate.png",
+      "kind": "celebrate",
+      "width": 640,
+      "height": 480,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1vRlR7AJm9NFIJccjqtz-nRlidv50pG0M&export=download&confirm=t",
+      "description": "All garden friends together, happy and waving in a sunny garden"
+    },
+    {
+      "file": "card.png",
+      "kind": "card",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1mPEWntLz_wKB-Dpq_SALuNXTsnq3PgPX&export=download&confirm=t",
+      "description": "World emblem: blossom fairy-tree house with waving fairy, butterfly and ladybug on a floating island"
+    },
+    {
+      "file": "sheet-floor.png",
+      "kind": "sheet-floor",
+      "width": 364,
+      "height": 340,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=19Jim2YjXYqo_7SDEWbLn1zlncFOVWdvg&export=download&confirm=t",
+      "description": "Soft plain mint-and-cream clay-grain texture, no objects"
+    }
+  ]
+}

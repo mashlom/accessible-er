@@ -1,0 +1,264 @@
+{
+  "world": "safari",
+  "tool": "Google Gemini API image model (via the Instinct image tool, edit mode with the approved knight card as style reference); post-processed with Pillow. Commercial use: Google does not claim ownership of generated outputs and no fee or attribution is required, per the Gemini API Terms (https://ai.google.dev/gemini-api/terms).",
+  "colors": {
+    "top": "#2F5D45",
+    "text": "#3A2A1A",
+    "text2": "#6B5A44",
+    "action": "#2E7D4F",
+    "page": "#FBF3E0",
+    "accent": "#E8A33D"
+  },
+  "files": [
+    {
+      "file": "station-reception.png",
+      "kind": "station",
+      "stage": "reception",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1z5b_tfo8MsDAGRxa5v3PFrqhrxlvhiEP&export=download&confirm=t",
+      "description": "Map-view island diorama: Camp gate with vine-and-flower arch, jeep, ranger kids, lions, elephant and monkeys welcoming you"
+    },
+    {
+      "file": "station-wait-before-triage.png",
+      "kind": "station",
+      "stage": "wait-before-triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1YyoMR52uQMyx1IxXRByZSiFooC7aidh-&export=download&confirm=t",
+      "description": "Map-view island diorama: Shaded acacia rest area with thatched shelter, zebra, meerkats, monkey and tortoise"
+    },
+    {
+      "file": "station-triage.png",
+      "kind": "station",
+      "stage": "triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1dcvti9Jp0SVv5sr_SnCwjqT11ZfV8wcl&export=download&confirm=t",
+      "description": "Map-view island diorama: Gear-check hut with a ranger girl, meerkat helper and giraffe"
+    },
+    {
+      "file": "station-wait-doctor.png",
+      "kind": "station",
+      "stage": "wait-doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=19-N92MoXtXR-TUC3Q34f5fLXJp2yoinN&export=download&confirm=t",
+      "description": "Map-view island diorama: Cubs' cozy waiting hut with lion cubs, baby elephant and bird nest"
+    },
+    {
+      "file": "station-doctor.png",
+      "kind": "station",
+      "stage": "doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1itlvn3vu7rx7_UzuBk8BsWm3i21zDkx6&export=download&confirm=t",
+      "description": "Map-view island diorama: The wise chief lodge with a gentle old elephant and elder ranger"
+    },
+    {
+      "file": "station-tests.png",
+      "kind": "station",
+      "stage": "tests",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1s46NIePmdmSXIJgd1EQWECVbo9dqfEiW&export=download&confirm=t",
+      "description": "Map-view island diorama: Tracking lab tent with magnifying glass, paw casts, map, monkey and hippo"
+    },
+    {
+      "file": "station-treatment.png",
+      "kind": "station",
+      "stage": "treatment",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1x7CwnFkpupHRkZvNOl_WBzBxlpzQogIR&export=download&confirm=t",
+      "description": "Map-view island diorama: Healer's tent with herbs and lanterns, a happy hippo and helpers"
+    },
+    {
+      "file": "station-consult.png",
+      "kind": "station",
+      "stage": "consult",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=16Yyox7JjNcMutkda5UCRhURILdCyqaId&export=download&confirm=t",
+      "description": "Map-view island diorama: Visiting expert landing spot with jeep, hot-air balloon, map table, owl, elephant and giraffe"
+    },
+    {
+      "file": "station-wait-results.png",
+      "kind": "station",
+      "stage": "wait-results",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1XpHR5_yKpNrLpky1swjLwT9dfjosdG6v&export=download&confirm=t",
+      "description": "Map-view island diorama: Lookout hill with wooden tower, telescope, rope bridge, zebras and giraffe"
+    },
+    {
+      "file": "station-decision.png",
+      "kind": "station",
+      "stage": "decision",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1LPJNfvBPBr3yvBNNzJpJZOcehwPW-sg2&export=download&confirm=t",
+      "description": "Map-view island diorama: Joyful journey back: flower archway, jeep, ranger kids waving with lions and elephant"
+    },
+    {
+      "file": "scene-reception.png",
+      "kind": "scene",
+      "stage": "reception",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1UVljBLZCREz5U3rNaUsm6ozZn9A_e1Ve&export=download&confirm=t",
+      "description": "Eye-level scene: Camp gate with vine-and-flower arch, jeep, ranger kids, lions, elephant and monkeys welcoming you"
+    },
+    {
+      "file": "scene-wait-before-triage.png",
+      "kind": "scene",
+      "stage": "wait-before-triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=13wB0KjexNusqJftSjy_gzQAJxP-CfEe1&export=download&confirm=t",
+      "description": "Eye-level scene: Shaded acacia rest area with thatched shelter, zebra, meerkats, monkey and tortoise"
+    },
+    {
+      "file": "scene-triage.png",
+      "kind": "scene",
+      "stage": "triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1d8iokDWGfsrvYzhW1YRV-MCqD3L-BCbD&export=download&confirm=t",
+      "description": "Eye-level scene: Gear-check hut with a ranger girl, meerkat helper and giraffe"
+    },
+    {
+      "file": "scene-wait-doctor.png",
+      "kind": "scene",
+      "stage": "wait-doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1z3zsBwC8lE8lPr8bDL64ldM6pjfNRd78&export=download&confirm=t",
+      "description": "Eye-level scene: Cubs' cozy waiting hut with lion cubs, baby elephant and bird nest"
+    },
+    {
+      "file": "scene-doctor.png",
+      "kind": "scene",
+      "stage": "doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1QAIK8KKuGTqHsVOk7qVr2Yq6Vs2Wbkdy&export=download&confirm=t",
+      "description": "Eye-level scene: The wise chief lodge with a gentle old elephant and elder ranger"
+    },
+    {
+      "file": "scene-tests.png",
+      "kind": "scene",
+      "stage": "tests",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1PQ4XiggxD70T50aEWY_9vuWXqOnIKFbI&export=download&confirm=t",
+      "description": "Eye-level scene: Tracking lab tent with magnifying glass, paw casts, map, monkey and hippo"
+    },
+    {
+      "file": "scene-treatment.png",
+      "kind": "scene",
+      "stage": "treatment",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1i5ItweOPu7h9iGT9HmyL_BWU8oNZBgri&export=download&confirm=t",
+      "description": "Eye-level scene: Healer's tent with herbs and lanterns, a happy hippo and helpers"
+    },
+    {
+      "file": "scene-consult.png",
+      "kind": "scene",
+      "stage": "consult",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=19OxZTk57ItzZ6XjUtA1DptlMrxM1BDVL&export=download&confirm=t",
+      "description": "Eye-level scene: Visiting expert landing spot with jeep, hot-air balloon, map table, owl, elephant and giraffe"
+    },
+    {
+      "file": "scene-wait-results.png",
+      "kind": "scene",
+      "stage": "wait-results",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1WtKobmgcNYpH__7137NqKKwufQcwf_IK&export=download&confirm=t",
+      "description": "Eye-level scene: Lookout hill with wooden tower, telescope, rope bridge, zebras and giraffe"
+    },
+    {
+      "file": "scene-decision.png",
+      "kind": "scene",
+      "stage": "decision",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1SQygzG6aZdpkACIOuNuPDTDdoXIogbpN&export=download&confirm=t",
+      "description": "Eye-level scene: Joyful journey back: flower archway, jeep, ranger kids waving with lions and elephant"
+    },
+    {
+      "file": "map-portrait.png",
+      "kind": "map-portrait",
+      "stage": null,
+      "width": 824,
+      "height": 2200,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1jZFQUYTEXX2Q2tiDjCDu7Fx82BtLh62L&export=download&confirm=t",
+      "description": "Phone map backdrop: savanna trails, river and acacias, no stations"
+    },
+    {
+      "file": "map-landscape.png",
+      "kind": "map-landscape",
+      "stage": null,
+      "width": 1920,
+      "height": 1080,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1AHxrl7l4793WBoisupRIQ3lZF2B57LaL&export=download&confirm=t",
+      "description": "Wide map backdrop: savanna trails, river and acacias, no stations"
+    },
+    {
+      "file": "celebrate.png",
+      "kind": "celebrate",
+      "stage": null,
+      "width": 640,
+      "height": 480,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1ZfZ1aYrfiOsaHOzsnfR-c_qkg6qRMwrv&export=download&confirm=t",
+      "description": "Ranger kids with lions, elephant, giraffe, zebra, hippo, monkey and birds celebrating"
+    },
+    {
+      "file": "card.png",
+      "kind": "card",
+      "stage": null,
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1JNtrWmlelByLE5P-JKN8IwuvTvjZy2IW&export=download&confirm=t",
+      "description": "World emblem: camp gate on floating island with ranger kid and lion cub"
+    },
+    {
+      "file": "sheet-floor.png",
+      "kind": "sheet-floor",
+      "stage": null,
+      "width": 364,
+      "height": 340,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1hvE5VKY2s3meuhapGAVjn2lHfSYjOS5X&export=download&confirm=t",
+      "description": "Soft sandy cream felt texture, no objects"
+    }
+  ]
+}

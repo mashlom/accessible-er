@@ -1,0 +1,259 @@
+{
+  "world": "dollhouse",
+  "tool": "OpenAI GPT Image (high-quality image generation/editing via the Instinct image tool); commercial use permitted under the OpenAI Services Agreement section 4.1: the customer owns the output to the extent permitted by law, with no attribution requirement. Outputs may not be unique; copyright protection and third-party clearance are not guaranteed. https://openai.com/policies/services-agreement/",
+  "colors": {
+    "top": "#C15F72",
+    "text": "#4A3239",
+    "text2": "#8A6B72",
+    "action": "#B24E66",
+    "page": "#FBF4EE",
+    "accent": "#E09AA8"
+  },
+  "files": [
+    {
+      "file": "station-reception.png",
+      "kind": "station",
+      "stage": "reception",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1ZqBOXeNDUPFbeJx3YEkPhWkFvy1qRA1c&export=download&confirm=t",
+      "description": "Dollhouse front door with welcome desk; rag doll Rosie waves hello beside a wooden soldier."
+    },
+    {
+      "file": "station-wait-before-triage.png",
+      "kind": "station",
+      "stage": "wait-before-triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1t9xdBT5U_f9sr5xBtieX3Ro8Sd0VQpiE&export=download&confirm=t",
+      "description": "Calm shaded garden nook with cushioned bench under a felt tree; rag bunny and peg doll wait."
+    },
+    {
+      "file": "station-triage.png",
+      "kind": "station",
+      "stage": "triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=17Yz3wwK1ZVq1d9NqrxDAVFMrec_uxF2u&export=download&confirm=t",
+      "description": "Toy measuring corner with ribboned height post and balance scale; soldier measures the porcelain doll."
+    },
+    {
+      "file": "station-wait-doctor.png",
+      "kind": "station",
+      "stage": "wait-doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1ABLx5wAUgSHP11n38oNXkICt6FjQhoJP&export=download&confirm=t",
+      "description": "Quiet guest parlor with mint sofa, braided rug and tea table; peg doll and bunny rest."
+    },
+    {
+      "file": "station-doctor.png",
+      "kind": "station",
+      "stage": "doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1qc95kz3d_SSbadrZqSOAY-srqx2Ftdf-&export=download&confirm=t",
+      "description": "Wise teddy bear study: teddy with round glasses at his wooden desk, Rosie visiting."
+    },
+    {
+      "file": "station-tests.png",
+      "kind": "station",
+      "stage": "tests",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1otJKIGEn3lUrnzERBXokM6GzUipoYO8Y&export=download&confirm=t",
+      "description": "Whimsical cream-and-mint toy look-inside machine with glowing round window; robot and porcelain doll."
+    },
+    {
+      "file": "station-treatment.png",
+      "kind": "station",
+      "stage": "treatment",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1Y3tMmlu3TwlhAxFovIy35UQq-KWOIZsP&export=download&confirm=t",
+      "description": "Cozy care corner: teddy sews a heart patch on a doll dress beside the quilted daybed."
+    },
+    {
+      "file": "station-consult.png",
+      "kind": "station",
+      "stage": "consult",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1DbbP--ThrB6_bX0ROpez7gsBj_0BzoWj&export=download&confirm=t",
+      "description": "Owl advisor tower: plush owl on his perch with scrolls; soldier messenger at the door."
+    },
+    {
+      "file": "station-wait-results.png",
+      "kind": "station",
+      "stage": "wait-results",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1SxE2W-SGypbWRQtcsx1FmJHLsowcLsnU&export=download&confirm=t",
+      "description": "Quiet curtained window nook with cushions and felt stars; bunny and peg doll read."
+    },
+    {
+      "file": "station-decision.png",
+      "kind": "station",
+      "stage": "decision",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1M9uuKJQRECRkYEutsgZvRB8Sp2Cd2SqF&export=download&confirm=t",
+      "description": "Going home: bunting gate at the garden path; everyone waves as the porcelain doll sets off."
+    },
+    {
+      "file": "scene-reception.png",
+      "kind": "scene",
+      "stage": "reception",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1JhTFz-ipvTHhQV6rFKO01ofSmo5VpSGh&export=download&confirm=t",
+      "description": "Eye-level: standing before the open mint front door and welcome desk, greeted by Rosie and a soldier."
+    },
+    {
+      "file": "scene-wait-before-triage.png",
+      "kind": "scene",
+      "stage": "wait-before-triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1KKA4gFU_hQO5g26sYyX2NOYvNHcskxoi&export=download&confirm=t",
+      "description": "Eye-level: resting beside the cushioned bench under the felt tree with bunny and peg doll."
+    },
+    {
+      "file": "scene-triage.png",
+      "kind": "scene",
+      "stage": "triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1IRehbK-6gypKeyFXNFbZ2yyBKdCG5ySO&export=download&confirm=t",
+      "description": "Eye-level: at the toy measuring corner while the soldier measures the porcelain doll."
+    },
+    {
+      "file": "scene-wait-doctor.png",
+      "kind": "scene",
+      "stage": "wait-doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1xuwCF3ekCyij2sOV8Nkaeq6xj1b8o7kK&export=download&confirm=t",
+      "description": "Eye-level: sitting in the quiet guest parlor with sofa, tea table and blank-spined books."
+    },
+    {
+      "file": "scene-doctor.png",
+      "kind": "scene",
+      "stage": "doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1j7MTei6WyGyemzWDMheQUuQRk83dMGtQ&export=download&confirm=t",
+      "description": "Eye-level: before the wise teddy bear desk in his warm round-window study."
+    },
+    {
+      "file": "scene-tests.png",
+      "kind": "scene",
+      "stage": "tests",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1ZtG6i6v6EwzmSlD0RoMTgmF3NYi59XhU&export=download&confirm=t",
+      "description": "Eye-level: up close to the glowing toy look-inside machine with robot at the crank."
+    },
+    {
+      "file": "scene-treatment.png",
+      "kind": "scene",
+      "stage": "treatment",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1Kd5D-bxKT7zaz2HSqvvMc1lXoCHi6Yjj&export=download&confirm=t",
+      "description": "Eye-level: beside the daybed as teddy sews a heart patch on a doll dress."
+    },
+    {
+      "file": "scene-consult.png",
+      "kind": "scene",
+      "stage": "consult",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1BdPLuBcd2ate9X4DQXI7VAQ2uI25mACo&export=download&confirm=t",
+      "description": "Eye-level: inside the owl tower study, owl leaning kindly from his perch."
+    },
+    {
+      "file": "scene-wait-results.png",
+      "kind": "scene",
+      "stage": "wait-results",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1W1Nrh-e_dfZwBt1szaxCFK4GPKj9SUBZ&export=download&confirm=t",
+      "description": "Eye-level: curled in the curtained nook with felt stars, sharing a blank picture book."
+    },
+    {
+      "file": "scene-decision.png",
+      "kind": "scene",
+      "stage": "decision",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=12RenBZ8EAWBx0_5_k5aVx4QsV9fiBN1D&export=download&confirm=t",
+      "description": "Eye-level: on the garden path toward the bunting gate, everyone waving goodbye."
+    },
+    {
+      "file": "map-portrait.png",
+      "kind": "map-portrait",
+      "width": 824,
+      "height": 2200,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1g9V2gLFXbBLyUVSy5uDCvHSv9issLenh&export=download&confirm=t",
+      "description": "Phone map backdrop: rose-to-peach sky over open rolling toy meadow with a thin winding path."
+    },
+    {
+      "file": "map-landscape.png",
+      "kind": "map-landscape",
+      "width": 1920,
+      "height": 1080,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1aRhfSH_MsLAicZi_Gg12GisOo_S3RwGs&export=download&confirm=t",
+      "description": "Wide map backdrop: rose-to-peach sky, distant hill and pond horizon, open meadow for two marker rows."
+    },
+    {
+      "file": "celebrate.png",
+      "kind": "celebrate",
+      "width": 640,
+      "height": 480,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1PhGSimjIUJ59cSKBGxvGNjn9-v1rL86t&export=download&confirm=t",
+      "description": "All toy friends together in the sunny dollhouse garden, waving and cheering under bunting."
+    },
+    {
+      "file": "card.png",
+      "kind": "card",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1MWdFj1iGxeFyslUkA-2G9DDKeg_DjIBK&export=download&confirm=t",
+      "description": "World emblem: the miniature rose-roofed dollhouse with teddy and Rosie waving, on a floating island."
+    },
+    {
+      "file": "sheet-floor.png",
+      "kind": "sheet-floor",
+      "width": 364,
+      "height": 340,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1GPM_DLr7AV-C3DHKTShbaMLxZhS2Nv99&export=download&confirm=t",
+      "description": "Soft plain cream-blush felt texture in world colours, no objects."
+    }
+  ]
+}

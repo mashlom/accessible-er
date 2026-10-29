@@ -1,0 +1,259 @@
+{
+  "world": "knight",
+  "tool": "OpenAI GPT Image (high-quality image generation/editing); commercial use permitted under OpenAI Services Agreement section 4.1: customer owns output to the extent permitted by law, no attribution requirement. Outputs may not be unique; no guarantee of copyright protection or third-party clearance. https://openai.com/policies/services-agreement/",
+  "colors": {
+    "top": "#458FA3",
+    "text": "#243C3E",
+    "text2": "#53666A",
+    "action": "#236775",
+    "page": "#F6F7EF",
+    "accent": "#3F8D93"
+  },
+  "files": [
+    {
+      "file": "station-reception.png",
+      "kind": "station",
+      "stage": "reception",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Castle gate reception - floating-island map view with two distinct adult castle guards",
+      "url": "https://drive.usercontent.google.com/download?id=168OzpqL6CGcTs8cPaNgE0BeEAXWePBFs&export=download&confirm=t"
+    },
+    {
+      "file": "scene-reception.png",
+      "kind": "scene",
+      "stage": "reception",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Castle gate reception - child-eye-level inside view with two distinct adult castle guards",
+      "url": "https://drive.usercontent.google.com/download?id=1EqtbqzmhuWeIcieKlw8ZLwBRs5_mklfq&export=download&confirm=t"
+    },
+    {
+      "file": "station-wait-before-triage.png",
+      "kind": "station",
+      "stage": "wait-before-triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Shaded courtyard waiting - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1SH2kF15mEPuJn8zpKynem-go5x5iu_ie&export=download&confirm=t"
+    },
+    {
+      "file": "scene-wait-before-triage.png",
+      "kind": "scene",
+      "stage": "wait-before-triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Shaded courtyard waiting - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1eUAjhJhTV8Z6OcElQVoXDRxqcXH1C61U&export=download&confirm=t"
+    },
+    {
+      "file": "station-triage.png",
+      "kind": "station",
+      "stage": "triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Squire readiness pavilion - floating-island map view with a veteran knight and braided squire girl",
+      "url": "https://drive.usercontent.google.com/download?id=1YbTtmElFKywjsP34BO93HFEd6XftBEc0&export=download&confirm=t"
+    },
+    {
+      "file": "scene-triage.png",
+      "kind": "scene",
+      "stage": "triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Squire readiness pavilion - child-eye-level inside view with a veteran knight and braided squire girl",
+      "url": "https://drive.usercontent.google.com/download?id=1eho1ZxPsQAe2sVarc-yTCof53J0uLeWW&export=download&confirm=t"
+    },
+    {
+      "file": "station-wait-doctor.png",
+      "kind": "station",
+      "stage": "wait-doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Quiet knights hall waiting - floating-island map view with a veteran knight and braided squire girl",
+      "url": "https://drive.usercontent.google.com/download?id=1CiPn6BW_rju4TSFIqNpFSfUpa5ZhU_Vi&export=download&confirm=t"
+    },
+    {
+      "file": "scene-wait-doctor.png",
+      "kind": "scene",
+      "stage": "wait-doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Quiet knights hall waiting - child-eye-level inside view with a veteran knight and braided squire girl",
+      "url": "https://drive.usercontent.google.com/download?id=1LqDUieHaHXTTC6buz_MrCVBewuUhYBs5&export=download&confirm=t"
+    },
+    {
+      "file": "station-doctor.png",
+      "kind": "station",
+      "stage": "doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Great wizard meeting - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1ewrtKTIRrhEXSW3-aShTLptqyswmw9L0&export=download&confirm=t"
+    },
+    {
+      "file": "scene-doctor.png",
+      "kind": "scene",
+      "stage": "doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Great wizard meeting - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1nJnruyGTmFCd_c98k0Dlj13naj6OWy45&export=download&confirm=t"
+    },
+    {
+      "file": "station-tests.png",
+      "kind": "station",
+      "stage": "tests",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Magic mirror seeing room - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1x9rK7EuH2VzmVPkC2qvVkOdMwQwVmZPB&export=download&confirm=t"
+    },
+    {
+      "file": "scene-tests.png",
+      "kind": "scene",
+      "stage": "tests",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Magic mirror seeing room - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=11OUIHii9ekPAqPvZxSZwCZJyB74pN_KZ&export=download&confirm=t"
+    },
+    {
+      "file": "station-treatment.png",
+      "kind": "station",
+      "stage": "treatment",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Gentle repair workshop - floating-island map view with a woman knight and braided squire girl",
+      "url": "https://drive.usercontent.google.com/download?id=1_wKi8v5mV2kqTyvRXg2AX6vTaTxDvkiV&export=download&confirm=t"
+    },
+    {
+      "file": "scene-treatment.png",
+      "kind": "scene",
+      "stage": "treatment",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Gentle repair workshop - child-eye-level inside view with a woman knight and braided squire girl",
+      "url": "https://drive.usercontent.google.com/download?id=1fD1r8NgBlEduQLaazLHWjM1NgylUvnQL&export=download&confirm=t"
+    },
+    {
+      "file": "station-consult.png",
+      "kind": "station",
+      "stage": "consult",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Round table council - floating-island map view with a veteran knight joining the council",
+      "url": "https://drive.usercontent.google.com/download?id=1e2B0DWKx1_FuM7wFGqQo_tBRhkvH3TS4&export=download&confirm=t"
+    },
+    {
+      "file": "scene-consult.png",
+      "kind": "scene",
+      "stage": "consult",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Round table council - child-eye-level inside view with a veteran knight joining the council",
+      "url": "https://drive.usercontent.google.com/download?id=1USw3xGkyXSOx-1_NG8Y2GNNLwTd6Hlvn&export=download&confirm=t"
+    },
+    {
+      "file": "station-wait-results.png",
+      "kind": "station",
+      "stage": "wait-results",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Prophecy garden waiting - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=15drPwaAymyU6Pg19cp4LOqx6T2bMxI2n&export=download&confirm=t"
+    },
+    {
+      "file": "scene-wait-results.png",
+      "kind": "scene",
+      "stage": "wait-results",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Prophecy garden waiting - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1S3o1Sq5Azxh7pZlrLkEjGjfxS6jHsBWt&export=download&confirm=t"
+    },
+    {
+      "file": "station-decision.png",
+      "kind": "station",
+      "stage": "decision",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Happy return gateway - floating-island map view with two adult guards waving goodbye",
+      "url": "https://drive.usercontent.google.com/download?id=1IIYh2z14fdAgZSXWSH1_m7IqG9B3LECy&export=download&confirm=t"
+    },
+    {
+      "file": "scene-decision.png",
+      "kind": "scene",
+      "stage": "decision",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Happy return gateway - child-eye-level inside view with two adult guards waving goodbye",
+      "url": "https://drive.usercontent.google.com/download?id=1KKAPyeAQQTIKvnIZmUQJZCjhXfw47m24&export=download&confirm=t"
+    },
+    {
+      "file": "map-portrait.png",
+      "kind": "map-portrait",
+      "width": 824,
+      "height": 2200,
+      "transparent": false,
+      "description": "Open sage kingdom terrain for portrait station overlays",
+      "url": "https://drive.usercontent.google.com/download?id=1fghjVcDwofOxG3szLXApeo5ucgNN4ExW&export=download&confirm=t"
+    },
+    {
+      "file": "map-landscape.png",
+      "kind": "map-landscape",
+      "width": 1920,
+      "height": 1080,
+      "transparent": false,
+      "description": "Open sage kingdom terrain for wide-screen station overlays",
+      "url": "https://drive.usercontent.google.com/download?id=1-qH7UyjIGOI3Jj-Dgr_Ffmw1A9HAhiHb&export=download&confirm=t"
+    },
+    {
+      "file": "celebrate.png",
+      "kind": "celebrate",
+      "width": 640,
+      "height": 480,
+      "transparent": false,
+      "description": "The castle companions wave together in a sunny courtyard, including veteran knight, woman knight and braided squire girl",
+      "url": "https://drive.usercontent.google.com/download?id=10K4LtlPfO0GjpPwPGzWtSFdP8Viv4Nwb&export=download&confirm=t"
+    },
+    {
+      "file": "card.png",
+      "kind": "card",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Friendly castle emblem with knight and squire",
+      "url": "https://drive.usercontent.google.com/download?id=1FpAcV0tUzOoPIKnce3eTtnKrvBomk-st&export=download&confirm=t"
+    },
+    {
+      "file": "sheet-floor.png",
+      "kind": "sheet-floor",
+      "width": 364,
+      "height": 340,
+      "transparent": false,
+      "description": "Quiet sage and cream clay-grain texture",
+      "url": "https://drive.usercontent.google.com/download?id=1qzB2tDd-9BMOdLUlan4x3UtFDJvtGVE2&export=download&confirm=t"
+    }
+  ]
+}

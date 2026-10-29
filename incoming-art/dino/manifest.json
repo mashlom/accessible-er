@@ -1,0 +1,259 @@
+{
+  "world": "dino",
+  "tool": "OpenAI GPT Image (high-quality image generation/editing); commercial use permitted under OpenAI Services Agreement section 4.1: customer owns output to the extent permitted by law, no attribution requirement. Outputs may not be unique; no guarantee of copyright protection or third-party clearance. https://openai.com/policies/services-agreement/",
+  "colors": {
+    "top": "#556850",
+    "text": "#21352A",
+    "text2": "#55675A",
+    "action": "#2E7D4F",
+    "page": "#F4F6EA",
+    "accent": "#C97A45"
+  },
+  "files": [
+    {
+      "file": "station-reception.png",
+      "kind": "station",
+      "stage": "reception",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Reserve gate welcome - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1V5TlaMvT1jyPpxRLV_zvIceEyaTnN1mN&export=download&confirm=t"
+    },
+    {
+      "file": "scene-reception.png",
+      "kind": "scene",
+      "stage": "reception",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Reserve gate welcome - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1-yfdrQckKNQZja5VaGJA3qHkTsUlnmzQ&export=download&confirm=t"
+    },
+    {
+      "file": "station-wait-before-triage.png",
+      "kind": "station",
+      "stage": "wait-before-triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Shaded entrance path rest - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1H0uwSFMw5E5lF0gf56AG4ZzjOrBNIN_n&export=download&confirm=t"
+    },
+    {
+      "file": "scene-wait-before-triage.png",
+      "kind": "scene",
+      "stage": "wait-before-triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Shaded entrance path rest - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1YAlvKXrid67T5nZGj9HH0GGxlhfcSWYc&export=download&confirm=t"
+    },
+    {
+      "file": "station-triage.png",
+      "kind": "station",
+      "stage": "triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Ranger readiness check - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1fXirVTll3AdU49qzuuzvYd1tMml_gpMp&export=download&confirm=t"
+    },
+    {
+      "file": "scene-triage.png",
+      "kind": "scene",
+      "stage": "triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Ranger readiness check - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1zVVzJkz7oZPth-wfT5OMfjVuGGMJ6dFy&export=download&confirm=t"
+    },
+    {
+      "file": "station-wait-doctor.png",
+      "kind": "station",
+      "stage": "wait-doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Quiet waiting camp - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=14l41KXCcGr56mTX77FEHG9XvzK5EWw0L&export=download&confirm=t"
+    },
+    {
+      "file": "scene-wait-doctor.png",
+      "kind": "scene",
+      "stage": "wait-doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Quiet waiting camp - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=15nJCv40i9mjqaP3BY_v-Yx0F6W5qM80O&export=download&confirm=t"
+    },
+    {
+      "file": "station-doctor.png",
+      "kind": "station",
+      "stage": "doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Chief guide meeting - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1PlE0-1AjCXm8I6hzuIkcH-ceCMZ7v4cZ&export=download&confirm=t"
+    },
+    {
+      "file": "scene-doctor.png",
+      "kind": "scene",
+      "stage": "doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Chief guide meeting - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1BMvRCgY-otD_eVsLq6b1OWh-d3KgHrOE&export=download&confirm=t"
+    },
+    {
+      "file": "station-tests.png",
+      "kind": "station",
+      "stage": "tests",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Dino lab lookout - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1V3yDQjZLgal9ThVtEGFFSaln_FnYlMqj&export=download&confirm=t"
+    },
+    {
+      "file": "scene-tests.png",
+      "kind": "scene",
+      "stage": "tests",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Dino lab lookout - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1U1QJpsXAT5nJeOZpLQBGRzr7K_hvqVW_&export=download&confirm=t"
+    },
+    {
+      "file": "station-treatment.png",
+      "kind": "station",
+      "stage": "treatment",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Gentle dino care station - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1USzReRVxC6Aof4-kW43C_FN_mOGnAJZT&export=download&confirm=t"
+    },
+    {
+      "file": "scene-treatment.png",
+      "kind": "scene",
+      "stage": "treatment",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Gentle dino care station - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=17ZD1Yg9dqc_0fN0mCxNe-LHMUi7DOqXO&export=download&confirm=t"
+    },
+    {
+      "file": "station-consult.png",
+      "kind": "station",
+      "stage": "consult",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Visiting expert meeting - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1iojVuOzIy-2aVlWnliU0KSGKOigFVM0Y&export=download&confirm=t"
+    },
+    {
+      "file": "scene-consult.png",
+      "kind": "scene",
+      "stage": "consult",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Visiting expert meeting - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1aOSln6H50sG5ATmET46bnBs_nUCkwByQ&export=download&confirm=t"
+    },
+    {
+      "file": "station-wait-results.png",
+      "kind": "station",
+      "stage": "wait-results",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Results hill lookout - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1DCQ2YA294EtiD7RrGaD_XCnG1x6Kqkyb&export=download&confirm=t"
+    },
+    {
+      "file": "scene-wait-results.png",
+      "kind": "scene",
+      "stage": "wait-results",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Results hill lookout - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1KhKzWvsIIzl292SHYPeJ0VmVRMEj2yPg&export=download&confirm=t"
+    },
+    {
+      "file": "station-decision.png",
+      "kind": "station",
+      "stage": "decision",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Happy way home - floating-island map view",
+      "url": "https://drive.usercontent.google.com/download?id=1Rm7zf0NAqPps8fsVVC2jWfVp9qi-dWSq&export=download&confirm=t"
+    },
+    {
+      "file": "scene-decision.png",
+      "kind": "scene",
+      "stage": "decision",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "description": "Happy way home - child-eye-level inside view",
+      "url": "https://drive.usercontent.google.com/download?id=1Q2hZkEJsXnsmp7xiuSyFm4CLRzgl9fGm&export=download&confirm=t"
+    },
+    {
+      "file": "map-portrait.png",
+      "kind": "map-portrait",
+      "width": 824,
+      "height": 2200,
+      "transparent": false,
+      "description": "Open sage reserve terrain for portrait station overlays",
+      "url": "https://drive.usercontent.google.com/download?id=1H9RZ47IFnhGsLif-b_CkVS5Vz1P9hHlQ&export=download&confirm=t"
+    },
+    {
+      "file": "map-landscape.png",
+      "kind": "map-landscape",
+      "width": 1920,
+      "height": 1080,
+      "transparent": false,
+      "description": "Open sage reserve terrain for wide-screen station overlays",
+      "url": "https://drive.usercontent.google.com/download?id=1-0j_Msz5HTbU8yfVE1yAlNmKXO1kwyRI&export=download&confirm=t"
+    },
+    {
+      "file": "celebrate.png",
+      "kind": "celebrate",
+      "width": 640,
+      "height": 480,
+      "transparent": false,
+      "description": "The reserve rangers and dinosaurs wave together in a sunny clearing",
+      "url": "https://drive.usercontent.google.com/download?id=1-UAspGDhGM5mhBYze6UYf4riLQelqTuA&export=download&confirm=t"
+    },
+    {
+      "file": "card.png",
+      "kind": "card",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "description": "Friendly reserve gate emblem with Ranger Maya and the long-neck",
+      "url": "https://drive.usercontent.google.com/download?id=13mD08g0JXM7iOJRXI5oPN1L_jbaJs0hq&export=download&confirm=t"
+    },
+    {
+      "file": "sheet-floor.png",
+      "kind": "sheet-floor",
+      "width": 364,
+      "height": 340,
+      "transparent": false,
+      "description": "Quiet sage and cream clay-grain texture",
+      "url": "https://drive.usercontent.google.com/download?id=1Re-N_URgzCWEHQVaQ6Qwv8wbBLewzsJq&export=download&confirm=t"
+    }
+  ]
+}

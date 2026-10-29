@@ -1,0 +1,264 @@
+{
+  "world": "space",
+  "tool": "Google Gemini API image model (via the Instinct image tool); post-processed (resized/keyed) with Pillow. Commercial use: Google does not claim ownership of generated outputs and no fee or attribution is required, per the Gemini API Terms (https://ai.google.dev/gemini-api/terms).",
+  "colors": {
+    "top": "#34457A",
+    "text": "#2A3050",
+    "text2": "#5E6688",
+    "action": "#4C86C8",
+    "page": "#F2EFF9",
+    "accent": "#F2988A"
+  },
+  "files": [
+    {
+      "file": "station-reception.png",
+      "kind": "station",
+      "stage": "reception",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1P4wRnUQLAru0MMEES0WfFB3xTAo6buff&export=download&confirm=t",
+      "description": "Round airlock entrance gate where an astronaut, robot and alien welcome you"
+    },
+    {
+      "file": "station-wait-before-triage.png",
+      "kind": "station",
+      "stage": "wait-before-triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=15OFJLcgyGsgpDZhDtjntnLgJTisUO2uX&export=download&confirm=t",
+      "description": "Cozy shaded cabin rest lounge with a sleepy blue alien and astronaut"
+    },
+    {
+      "file": "station-triage.png",
+      "kind": "station",
+      "stage": "triage",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1deWh5M3IFmzyVqTPjJ8RTcM-ogpRyhaD&export=download&confirm=t",
+      "description": "Suit-check booth where a yellow robot helper gives a thumbs up"
+    },
+    {
+      "file": "station-wait-doctor.png",
+      "kind": "station",
+      "stage": "wait-doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1O_6HrVT8pW5ZFwZMGu0Z20NA53r_uEVc&export=download&confirm=t",
+      "description": "Quiet moon-bench star-gazing deck with a purple alien and a smiling satellite"
+    },
+    {
+      "file": "station-doctor.png",
+      "kind": "station",
+      "stage": "doctor",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1gPB-2-qIuCpGoyvg71lhq-RdgAz9DVi9&export=download&confirm=t",
+      "description": "Commander's control dome with the wise bearded station commander"
+    },
+    {
+      "file": "station-tests.png",
+      "kind": "station",
+      "stage": "tests",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=13IeokhKdwqb36yXokWnyZYTsV-vY82l0&export=download&confirm=t",
+      "description": "Star-scanner observatory with a big friendly telescope"
+    },
+    {
+      "file": "station-treatment.png",
+      "kind": "station",
+      "stage": "treatment",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1h1GMMALbIDDccwahi7kujseX_oKqDrBl&export=download&confirm=t",
+      "description": "Repair bay where friendly robots care for a little spaceship"
+    },
+    {
+      "file": "station-consult.png",
+      "kind": "station",
+      "stage": "consult",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1ZMI1p8VK9EdKfmzwPxykYSAjNu1SM6nk&export=download&confirm=t",
+      "description": "Command council hall with a round table, alien, robot, astronaut and satellite messenger"
+    },
+    {
+      "file": "station-wait-results.png",
+      "kind": "station",
+      "stage": "wait-results",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1yBdnN3WJX0AKQ30H6aYQk-wIDNBJlbXt&export=download&confirm=t",
+      "description": "Calm data room with glowing crystal columns and a robot librarian"
+    },
+    {
+      "file": "station-decision.png",
+      "kind": "station",
+      "stage": "decision",
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=16MEj1f5BarBUuU7N8DY7ZLaeZLYLV6ZF&export=download&confirm=t",
+      "description": "Landing pad with a little rocket, confetti and a cheering crew heading home"
+    },
+    {
+      "file": "scene-reception.png",
+      "kind": "scene",
+      "stage": "reception",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1fRcNN2yIcbU3uNtcHT-BVrhRB9Qg8Q24&export=download&confirm=t",
+      "description": "Eye-level view inside: round airlock entrance gate where an astronaut, robot and alien welcome you"
+    },
+    {
+      "file": "scene-wait-before-triage.png",
+      "kind": "scene",
+      "stage": "wait-before-triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1Daig71UVpYCkdMMimME_MyhZD13blgjY&export=download&confirm=t",
+      "description": "Eye-level view inside: cozy shaded cabin rest lounge with a sleepy blue alien and astronaut"
+    },
+    {
+      "file": "scene-triage.png",
+      "kind": "scene",
+      "stage": "triage",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1E08zuqhSsGnkujPCF3hAafjRXBPCL9cx&export=download&confirm=t",
+      "description": "Eye-level view inside: suit-check booth where a yellow robot helper gives a thumbs up"
+    },
+    {
+      "file": "scene-wait-doctor.png",
+      "kind": "scene",
+      "stage": "wait-doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1Ew7fT3tQvOP1_mgK__SM2HMxAgLREkxQ&export=download&confirm=t",
+      "description": "Eye-level view inside: quiet moon-bench star-gazing deck with a purple alien and a smiling satellite"
+    },
+    {
+      "file": "scene-doctor.png",
+      "kind": "scene",
+      "stage": "doctor",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1j98JtfSEnEwPilr3dOvT5drhlUoGV44_&export=download&confirm=t",
+      "description": "Eye-level view inside: commander's control dome with the wise bearded station commander"
+    },
+    {
+      "file": "scene-tests.png",
+      "kind": "scene",
+      "stage": "tests",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1xvUnE3f4Yu-kq7wEOEmz2bxBJ_ytTFCe&export=download&confirm=t",
+      "description": "Eye-level view inside: star-scanner observatory with a big friendly telescope"
+    },
+    {
+      "file": "scene-treatment.png",
+      "kind": "scene",
+      "stage": "treatment",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1F2TbNJdEf6LqcKMlL_dIe4HgBscvUoNa&export=download&confirm=t",
+      "description": "Eye-level view inside: repair bay where friendly robots care for a little spaceship"
+    },
+    {
+      "file": "scene-consult.png",
+      "kind": "scene",
+      "stage": "consult",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1g_yd-fxamy3mpfTNitDTm1epxzuv_os6&export=download&confirm=t",
+      "description": "Eye-level view inside: command council hall with a round table, alien, robot, astronaut and satellite messenger"
+    },
+    {
+      "file": "scene-wait-results.png",
+      "kind": "scene",
+      "stage": "wait-results",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1FGWDUWAwTdekf0tmgkkW-Q-0PpEheDVb&export=download&confirm=t",
+      "description": "Eye-level view inside: calm data room with glowing crystal columns and a robot librarian"
+    },
+    {
+      "file": "scene-decision.png",
+      "kind": "scene",
+      "stage": "decision",
+      "width": 728,
+      "height": 680,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1CRSW0g-yz-J8k5r96iJ3MjwmfE5Zi55t&export=download&confirm=t",
+      "description": "Eye-level view inside: landing pad with a little rocket, confetti and a cheering crew heading home"
+    },
+    {
+      "file": "map-portrait.png",
+      "kind": "map",
+      "stage": null,
+      "width": 824,
+      "height": 2200,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1pDqDsSEO5g7tbulpeBVuruJ8f55aBTCJ&export=download&confirm=t",
+      "description": "Phone world backdrop: open lunar terrain under a starry navy sky, no stations"
+    },
+    {
+      "file": "map-landscape.png",
+      "kind": "map",
+      "stage": null,
+      "width": 1920,
+      "height": 1080,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1z2ZnmqvA_eNt6VNvGkVjjdf_LYt_imea&export=download&confirm=t",
+      "description": "Wide-screen world backdrop: open lunar plain with planets and stars, no stations"
+    },
+    {
+      "file": "celebrate.png",
+      "kind": "celebrate",
+      "stage": null,
+      "width": 640,
+      "height": 480,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=10nQu2t1V7VjWryM7UJpZB4WTDh2p-sxY&export=download&confirm=t",
+      "description": "Astronauts, robot, alien and satellite waving together with confetti and star balloons"
+    },
+    {
+      "file": "card.png",
+      "kind": "card",
+      "stage": null,
+      "width": 600,
+      "height": 440,
+      "transparent": true,
+      "url": "https://drive.usercontent.google.com/download?id=1wccDE1gGx77znYOzzGQTcQF0lZG9UqkT&export=download&confirm=t",
+      "description": "World emblem: round space station with telescope dome, an astronaut and a robot on the floating moon island"
+    },
+    {
+      "file": "sheet-floor.png",
+      "kind": "sheet",
+      "stage": null,
+      "width": 364,
+      "height": 340,
+      "transparent": false,
+      "url": "https://drive.usercontent.google.com/download?id=1BsCSpb1yAxzxRu8lWmrxKlrPpS8GJIEz&export=download&confirm=t",
+      "description": "Plain soft lavender-grey felt texture"
+    }
+  ]
+}
