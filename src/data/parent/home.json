@@ -20,7 +20,7 @@
       "action": "לקריאת הסיפור"
     },
     "parentLabel": "מרכז ההורה",
-    "parentDesc": "מידע והכוונה להורים לקראת הביקור במיון ובמהלכו, צעד אחר צעד.",
+    "parentDesc": "להורים: מידע והכוונה לקראת הביקור במיון ובמהלכו, צעד אחר צעד.",
     "reasonAsk": "ספרו לי — מה הביא אתכם היום?",
     "reasonLabel": "באנו היום בגלל",
     "reasonChange": "שינוי",
@@ -122,7 +122,7 @@
       "action": "Read the story"
     },
     "parentLabel": "Parent centre",
-    "parentDesc": "Information and guidance for parents before and during the ER visit, step by step.",
+    "parentDesc": "For parents: information and guidance before and during the ER visit, step by step.",
     "reasonAsk": "Tell me — what brought you here today?",
     "reasonLabel": "Reason for the visit",
     "reasonChange": "Change",
