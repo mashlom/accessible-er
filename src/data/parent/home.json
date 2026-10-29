@@ -36,6 +36,7 @@
       "clear": "ניקוי הבחירה"
     },
     "trail": {
+      "together": "כאן אפשר להכיר את שלבי הביקור ולהתכונן אליהם יחד.",
       "subtitle": "כל עיגול הוא תחנה בביקור. לוחצים על תחנה כדי לראות מה קורה בה, מה עלול להיות קשה, ומה אפשר לבקש.",
       "hereSuffix": " — אנחנו כאן",
       "hereOn": "📍 אנחנו כאן — לביטול",
@@ -138,6 +139,7 @@
       "clear": "Clear the choice"
     },
     "trail": {
+      "together": "Here you can get to know the stages of the visit and prepare for them together.",
       "subtitle": "Each circle is a stop of the visit. Tap a stop to see what happens there, what may be hard, and what you can ask for.",
       "hereSuffix": " — we are here",
       "hereOn": "📍 We are here — tap to undo",
@@ -240,6 +242,7 @@
       "clear": "Сбросить выбор"
     },
     "trail": {
+      "together": "Здесь можно познакомиться с этапами визита и вместе к ним подготовиться.",
       "subtitle": "Каждый кружок — это этап визита. Нажмите на этап, чтобы увидеть, что там происходит, что может быть трудно и что можно попросить.",
       "hereSuffix": " — мы здесь",
       "hereOn": "📍 Мы здесь — отменить",
