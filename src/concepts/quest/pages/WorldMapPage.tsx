@@ -56,9 +56,10 @@ export function trailPoints(trail: Trail): Pt[] {
   return Array.isArray(trail) ? trail : dotsAlong(...trail.bezier)
 }
 
-/** The picture of a station on the map, and on its sheet */
-export function stationPicture(design: WorldDesign, stageId: string, on: 'map' | 'sheet' = 'map'): string {
+/** The picture of a station on the map, on its sheet, and on its card in the choice sheet */
+export function stationPicture(design: WorldDesign, stageId: string, on: 'map' | 'sheet' | 'choice' = 'map'): string {
   const st = design.stations[stageId]
+  if (on === 'choice') return st?.choice ?? st?.sheet ?? st?.map ?? ''
   return (on === 'sheet' ? st?.sheet : undefined) ?? st?.map ?? ''
 }
 

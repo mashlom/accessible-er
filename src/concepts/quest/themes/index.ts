@@ -47,13 +47,17 @@ export type SheetPanel =
   | 'plain'
   /** a small golden symbol in the middle of the panel */
   | 'symbol'
+  /** a whole scene (the place as seen by someone standing in it) filling the panel */
+  | 'scene'
 
 export interface StationDesign {
   /** The picture on the map */
   map: string
-  /** The picture on the station's sheet and on the choice sheet (falls back to map) */
+  /** The picture on the station's sheet (falls back to map) */
   sheet?: string
   panel?: SheetPanel
+  /** The picture on the card of the choice sheet (falls back to sheet, then map) */
+  choice?: string
 }
 
 export interface WorldDesign {

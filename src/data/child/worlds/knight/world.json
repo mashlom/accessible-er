@@ -71,53 +71,63 @@
     "stations": {
       "reception": {
         "map": "/worlds/knight/art/station-gate.svg",
-        "sheet": "/worlds/knight/art/station-gate.svg",
-        "panel": "plain"
+        "sheet": "/worlds/knight/art/scene-gate.svg",
+        "panel": "scene",
+        "choice": "/worlds/knight/art/station-gate.svg"
       },
       "wait-before-triage": {
         "map": "/worlds/knight/art/station-courtyard.svg",
-        "sheet": "/worlds/knight/art/station-courtyard.svg",
-        "panel": "plain"
+        "sheet": "/worlds/knight/art/scene-courtyard.svg",
+        "panel": "scene",
+        "choice": "/worlds/knight/art/station-courtyard.svg"
       },
       "triage": {
         "map": "/worlds/knight/art/station-tent.svg",
-        "sheet": "/worlds/knight/art/station-tent.svg",
-        "panel": "plain"
+        "sheet": "/worlds/knight/art/scene-tent.svg",
+        "panel": "scene",
+        "choice": "/worlds/knight/art/station-tent.svg"
       },
       "wait-doctor": {
         "map": "/worlds/knight/art/station-hall.svg",
-        "sheet": "/worlds/knight/art/station-hall.svg",
-        "panel": "plain"
+        "sheet": "/worlds/knight/art/scene-hall.svg",
+        "panel": "scene",
+        "choice": "/worlds/knight/art/station-hall.svg"
       },
       "doctor": {
         "map": "/worlds/knight/art/station-wizard.svg",
-        "sheet": "/worlds/knight/art/station-wizard.svg",
-        "panel": "plain"
+        "sheet": "/worlds/knight/art/scene-wizard.svg",
+        "panel": "scene",
+        "choice": "/worlds/knight/art/station-wizard.svg"
       },
       "tests": {
         "map": "/worlds/knight/art/station-mirror.svg",
-        "sheet": "/worlds/knight/art/station-mirror.svg",
-        "panel": "plain"
+        "sheet": "/worlds/knight/art/scene-mirror.svg",
+        "panel": "scene",
+        "choice": "/worlds/knight/art/station-mirror.svg"
       },
       "treatment": {
         "map": "/worlds/knight/art/station-forge.svg",
-        "sheet": "/worlds/knight/art/station-forge.svg",
-        "panel": "plain"
+        "sheet": "/worlds/knight/art/scene-forge.svg",
+        "panel": "scene",
+        "choice": "/worlds/knight/art/station-forge.svg"
       },
       "consult": {
         "map": "/worlds/knight/art/station-council.svg",
-        "sheet": "/worlds/knight/art/station-council.svg",
-        "panel": "plain"
+        "sheet": "/worlds/knight/art/scene-council.svg",
+        "panel": "scene",
+        "choice": "/worlds/knight/art/station-council.svg"
       },
       "wait-results": {
         "map": "/worlds/knight/art/station-prophecy.svg",
-        "sheet": "/worlds/knight/art/station-prophecy.svg",
-        "panel": "plain"
+        "sheet": "/worlds/knight/art/scene-prophecy.svg",
+        "panel": "scene",
+        "choice": "/worlds/knight/art/station-prophecy.svg"
       },
       "decision": {
         "map": "/worlds/knight/art/station-victory.svg",
-        "sheet": "/worlds/knight/art/station-victory.svg",
-        "panel": "plain"
+        "sheet": "/worlds/knight/art/scene-victory.svg",
+        "panel": "scene",
+        "choice": "/worlds/knight/art/station-victory.svg"
       }
     },
     "images": {

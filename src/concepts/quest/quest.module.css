@@ -3017,6 +3017,13 @@ path.worldTrailLit {
   box-shadow: 0 0 0 1px rgba(44, 96, 118, 0.85);
 }
 
+/* A scene (the place as seen by someone standing in it) fills the whole panel, cropped to its shape */
+.worldSheet.stageSheet .stageSheetImgScene {
+  object-fit: cover;
+  filter: none;
+  background: none;
+}
+
 /* A golden symbol on its sheet is not stretched to the panel's edges: it has room around it */
 .worldSheet.stageSheet .stageSheetImgSymbol {
   box-sizing: border-box;

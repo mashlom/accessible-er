@@ -63,7 +63,7 @@ export function WorldProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
           <div className={css.pickGrid}>
             {OPTIONAL_STAGES.map((id) => {
               const skin = theme.stages[id]
-              const picture = stationPicture(design, id, 'sheet')
+              const picture = stationPicture(design, id, 'choice')
               const isSelected = selected.has(id)
               return (
                 <button
