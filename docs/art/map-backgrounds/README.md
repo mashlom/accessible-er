@@ -19,9 +19,10 @@ up to a wide 21:9 monitor (landscape).
 The worlds: dinosaurs, dollhouse, fairy (magic garden), knight, ocean, safari, space (14 pictures).
 
 **The ocean** has no single map picture today: its map is put together in the app from a sea picture, turned and
-cropped, plus a sandy shore. For the ocean we send two reference pictures of today's map background without the
-stations, at the frame sizes (1920 x 1080 and 824 x 2200); they are the "picture in the frame" for this world, and
-the artist extends them the same way. The new ocean pictures then replace the layers.
+cropped. Its "picture in the frame" is in [`ocean-reference/`](ocean-reference/): today's map background without the
+stations, taken from the app (`map-landscape.png`, 1920 x 1080; `map-portrait.png`, 824 x 1878, which is the whole
+portrait map: put it at the top of the 824 x 2200 frame and continue the light water below it). In the portrait map
+the shore is at the top and the light water at the bottom; keep that. The new ocean pictures then replace the layers.
 
 **Start from today's picture** (`public/worlds/<world>/art/map-landscape.webp`, `map-portrait.webp`): it goes into
 the frame unchanged, pixel for pixel, and only the area around it is new. The stations are placed by their
