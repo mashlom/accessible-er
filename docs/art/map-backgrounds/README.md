@@ -63,7 +63,7 @@ the world's line from the table below:
 | Dollhouse | Soft rolling hills in a warm pink and peach sunset: more meadow with small flowers and round trees at the sides; above, a wide pink-orange sky with a few soft clouds. |
 | Fairy | A gentle green magic garden: more rolling grassy hills, small flowers and round bushes at the sides; above, a wide bright blue sky with soft white clouds. |
 | Knight | Green rolling meadows with round trees and grey rocks: more hills at the sides; above, a wide calm teal-blue sky over distant soft hills. |
-| Safari | An African savanna at golden hour: more grassland, acacia trees and soft rocks at the sides; above, a wide warm hazy sky, golden near the horizon. |
+| Safari | An African savanna in warm late-afternoon light: more grassland, acacia trees and soft rocks at the sides; above, a wide clear sky, warm golden near the horizon and turning soft light blue higher up. |
 | Ocean | An underwater world in soft teal and blue: more sandy sea floor, soft rocks and swaying seaweed at the sides; above, a wide bright water near the surface with soft light rays; no fish or creatures in the new area. |
 | Space | A pale lunar surface with soft craters and pebbles at the sides; above, a wide deep blue starry sky with a soft violet nebula; no new planets. |
 
