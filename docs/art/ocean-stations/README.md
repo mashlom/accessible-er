@@ -1,12 +1,17 @@
-# Ocean world: the missing station pictures, brief for the artist
+# Ocean world: the missing station pictures, prompts for the image AI
 
 The ocean was the first world and was drawn differently. The other six worlds have, for every station, a **map
 picture** (the station as a small floating island on the map) and a **scene** (the same place from inside, at a
 child's eye level, shown on the station's sheet), plus a **card** and a **celebration** picture. The ocean is
 missing most of these: several stations reuse the same submarine picture, and the sheets show symbols instead of
-scenes. This brief brings it in line with the others.
+scenes. These prompts bring it in line with the others.
 
-**Style references:** any of the other worlds, e.g. `public/worlds/knight/art/station-triage.webp` (map picture) and
+**How to use:** for each picture, give the image AI the style reference pictures below, the shared prompt, the
+map-picture or scene line, and the picture's own line from the tables. Generate the characters first (one sheet with
+the child diver, the bosun, the captain and the engineer) and give that sheet as a reference with every following
+picture, so they look the same everywhere.
+
+**Style reference pictures (attach them):** any of the other worlds, e.g. `public/worlds/knight/art/station-triage.webp` (map picture) and
 `public/worlds/knight/art/scene-triage.webp` (scene). The ocean's own pictures stay as the guide for the place:
 `public/worlds/ocean/station-house.png` (the dock house), `station-sub.png` (the submarine), `station-pod.png`,
 `station-aquarium.png`, `station-sonar.png`, `station-doctor.png`.
@@ -105,7 +110,7 @@ whole round islands, nothing cut off, like every other station, at 600 x 440:
 | `card.png` | A friendly ocean emblem: the yellow submarine with the child diver in a round porthole, bubbles around; transparent background. |
 | `celebrate.png` | The ocean companions (the child, the bosun, the captain, the engineer) wave together on the sunny dock, the submarine behind them. |
 
-## Before sending
+## Checking the results
 
 - All 21 look like the other worlds' pictures: same light, softness and scale of detail.
 - The characters look the same in every picture.
