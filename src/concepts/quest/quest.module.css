@@ -3281,11 +3281,11 @@ path.worldTrailLit {
   /* the mirrored picture is sharp at the seam; a blurred copy over it comes in gradually further out
      (the pieces are flipped, so "left" here is the side next to the scene for the left piece) */
   .worldTileH .worldSideBlur {
-    filter: blur(36px) brightness(0.85);
-    scale: 1.15;
+    /* the page sets the picture's own sky and grass colours here, row by row (see useSideColours) */
+    filter: blur(6px);
   }
-  .worldTileHLeft .worldSideBlur { mask-image: linear-gradient(to right, transparent 0, #000 32px); transform-origin: left center; }
-  .worldTileHRight .worldSideBlur { mask-image: linear-gradient(to left, transparent 0, #000 32px); transform-origin: right center; }
+  .worldTileHLeft .worldSideBlur { background-position: left top; mask-image: linear-gradient(to right, transparent 0, #000 32px); }
+  .worldTileHRight .worldSideBlur { background-position: right top; mask-image: linear-gradient(to left, transparent 0, #000 32px); }
   .worldTileHLeft { left: calc((100vw - var(--sw)) / 2 - var(--sw) + 4px); }
   .worldTileHRight { left: calc((100vw + var(--sw)) / 2 - 4px); }
   .worldProgressWide {
