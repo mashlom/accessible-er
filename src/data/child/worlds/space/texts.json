@@ -425,7 +425,7 @@
       "We can also count slowly to ten together. One… two… three…"
     ],
     "ui": {
-      "decision": "The commander's decision →",
+      "decision": "Commander decides →",
       "decisionTitle": "The commander's decision"
     }
   },
