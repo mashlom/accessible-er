@@ -1,7 +1,5 @@
 # Ocean world: the missing station pictures, brief for the artist
 
-**זוהי השלמה של התחנות לעולם התת-ימי:** תמונות חסרות למפה, סצנות לכל התחנות, כרטיס ותמונת חגיגה, באותו סגנון כמו בשאר העולמות. בנוסף צריך לצייר מחדש את הבית (תחנה 1) ואת תחנה 5 כאי עגול שלם, בלי חיתוך.
-
 The ocean was the first world and was drawn differently. The other six worlds have, for every station, a **map
 picture** (the station as a small floating island on the map) and a **scene** (the same place from inside, at a
 child's eye level, shown on the station's sheet), plus a **card** and a **celebration** picture. The ocean is
