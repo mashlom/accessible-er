@@ -18,12 +18,21 @@ const PATHS: Record<string, string[]> = {
   hospital: ['M5 20V5h14v15', 'M12 8v6', 'M9 11h6'],
 }
 
+/** The artist's pictures of the procedures (public/procedures/<id>.webp, brief in docs/art/procedure-icons) */
+const PICTURES = new Set([
+  'temperature', 'saturation', 'blood-pressure', 'doctor-exam', 'blood-test', 'urine', 'xray', 'ultrasound', 'ct',
+  'iv', 'medication', 'inhalation', 'stitches', 'cast', 'bandage', 'waiting-results', 'discharge', 'hospital',
+])
+
 export function hasLineIcon(id: string): boolean {
-  return id in PATHS
+  return PICTURES.has(id) || id in PATHS
 }
 
-/** The procedure's line icon, or its emoji when no line icon is drawn for it. */
+/** The procedure's picture; else its line icon, or its emoji when neither is drawn for it. */
 export function ProcedureLineIcon({ id, emoji }: { id: string; emoji?: string }) {
+  if (PICTURES.has(id)) {
+    return <img src={`${import.meta.env.BASE_URL}procedures/${id}.webp`} alt="" width="1em" height="1em" style={{ width: '1.6em', height: '1.6em', objectFit: 'contain' }} aria-hidden />
+  }
   const paths = PATHS[id]
   if (!paths) return <>{emoji ?? '?'}</>
   return (
