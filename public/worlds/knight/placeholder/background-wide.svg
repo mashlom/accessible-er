@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" preserveAspectRatio="none">
+<!-- placeholder: the designer's background goes here (1920×1080) -->
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9cc3e6"/><stop offset="1" stop-color="#dcebf5"/></linearGradient></defs>
+<rect width="1920" height="1080" fill="url(#sky)"/>
+<rect x="770" y="299" width="180" height="105" fill="#8e8aa0"/>
+<rect x="770" y="287" width="20" height="12" fill="#8e8aa0"/>
+<rect x="810" y="287" width="20" height="12" fill="#8e8aa0"/>
+<rect x="850" y="287" width="20" height="12" fill="#8e8aa0"/>
+<rect x="890" y="287" width="20" height="12" fill="#8e8aa0"/>
+<rect x="930" y="287" width="20" height="12" fill="#8e8aa0"/>
+<rect x="755" y="239" width="36" height="165" fill="#7d7890"/>
+<path d="M749 239 L773 194 L797 239 Z" fill="#5d5a8a"/>
+<rect x="929" y="239" width="36" height="165" fill="#7d7890"/>
+<path d="M923 239 L947 194 L971 239 Z" fill="#5d5a8a"/>
+<path d="M0 400 C 480 335, 864 465, 1344 374 S 1920 419, 1920 400 L 1920 1080 L 0 1080 Z" fill="#a9c98a"/>
+<path d="M0 522 C 480 468, 864 576, 1344 501 S 1920 539, 1920 522 L 1920 1080 L 0 1080 Z" fill="#86b06a"/>
+<path d="M0 686 C 480 637, 864 734, 1344 666 S 1920 700, 1920 686 L 1920 1080 L 0 1080 Z" fill="#6c9a55"/>
+<path d="M0 876 C 480 833, 864 919, 1344 859 S 1920 889, 1920 876 L 1920 1080 L 0 1080 Z" fill="#5b8748"/>
+</svg>

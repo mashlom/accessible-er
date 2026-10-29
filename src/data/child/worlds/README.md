@@ -23,7 +23,8 @@
 
 1. שמים את התמונות ב־`public/worlds/<world>/` (ומתעדים את הרישיון, ראו CLAUDE.md).
 2. מעתיקים את `design` מ־`ocean/world.json` ל־`world.json` של העולם, ומחליפים:
-3. `assets` — רקע המפה (`background`), ופאנל התמונה בגיליון (`sheetFade` מעל `sheetSeabed`).
+3. `assets` — רקע המפה (`background`; ואם למפה האופקית יש תמונה משלה — `backgroundWide`), ופאנל התמונה
+   בגיליון (`sheetFade` מעל `sheetSeabed`).
 4. `colors` — הטוקנים של המעצבת: `text`, `text2`, `action`, `page`, `card`, `mint`, `blue`,
    `coral`, `yellow`; צבעי המים סביב המפה: `water` (מאחורי המפה האופקית), `waterTop` (המעבר
    בראש המפה), `waterLight` (מאחורי המפה האנכית); `progress` — צבעי המקלות בפס ההתקדמות.
@@ -54,6 +55,15 @@
 10. ב־`texts.json`, אם רוצים ניסוח משלכם לכפתורים: `ui.done` ("הצלחתי!"), `ui.decision`
     (הכפתור שאחרי הרופא), `ui.decisionTitle` (כותרת הבחירה), `ui.headline` (הכותרת על
     המפה). בלי אלה מופיע הניסוח הכללי מ־`i18n/ui.json`.
+
+## מצב העולמות
+
+- `ocean` — מעוצב, לפי המוקאפ של שבי.
+- `knight` — על המבנה המעוצב, עם **תמונות זמניות** שצוירו בקוד
+  (`public/worlds/knight/placeholder/`, ראו NOTICE.txt שם). המיקומים על המפות הם עדיין של
+  האוקיינוס. כשמגיעים הציורים של המעצבת: מחליפים את הקבצים, ומעדכנים ב־`design` את
+  `slots`, השבילים, `images` ו־`nightMap` לפי המסגרות שלה.
+- השאר — מסכים פשוטים (בלי `design`).
 
 ## שאר השדות ב־`world.json`
 

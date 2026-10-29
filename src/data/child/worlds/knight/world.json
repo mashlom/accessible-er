@@ -3,7 +3,7 @@
   "order": 2,
   "emoji": "⚔️",
   "doneEmoji": "🪙",
-  "shopImage": "/worlds/knight/shop.JPEG",
+  "shopImage": "/worlds/knight/placeholder/sheet-floor.svg",
   "bg": "/worlds/knight/castle_v.jpg",
   "bgLandscape": "/worlds/knight/castle_h.jpeg",
   "nightBg": "/worlds/knight/night_castle.JPEG",
@@ -52,6 +52,506 @@
     "wait-results": {
       "icon": "🔮",
       "image": "/worlds/knight/wait.JPEG"
+    }
+  },
+  "design": {
+    "assets": {
+      "background": "/worlds/knight/placeholder/background.svg",
+      "backgroundWide": "/worlds/knight/placeholder/background-wide.svg",
+      "sheetSeabed": "/worlds/knight/placeholder/sheet-floor.svg"
+    },
+    "colors": {
+      "text": "#2b2238",
+      "text2": "#5a5266",
+      "action": "#7b4f28",
+      "page": "#faf7f2",
+      "card": "#ffffff",
+      "mint": "#f3e9d6",
+      "blue": "#f5e6d0",
+      "coral": "#b5473a",
+      "yellow": "#e0b43a",
+      "water": "#9cc3e6",
+      "waterTop": "#9cc3e6",
+      "waterLight": "#9cc3e6",
+      "progress": [
+        "#c9a84c",
+        "#9cc3e6"
+      ]
+    },
+    "stations": {
+      "reception": {
+        "map": "/worlds/knight/placeholder/station-gate.svg",
+        "sheet": "/worlds/knight/placeholder/station-gate.svg",
+        "panel": "plain"
+      },
+      "wait-before-triage": {
+        "map": "/worlds/knight/placeholder/station-courtyard.svg",
+        "sheet": "/worlds/knight/placeholder/station-courtyard.svg",
+        "panel": "plain"
+      },
+      "triage": {
+        "map": "/worlds/knight/placeholder/station-checks.svg",
+        "sheet": "/worlds/knight/placeholder/station-checks.svg",
+        "panel": "plain"
+      },
+      "wait-doctor": {
+        "map": "/worlds/knight/placeholder/station-hall.svg",
+        "sheet": "/worlds/knight/placeholder/station-hall.svg",
+        "panel": "plain"
+      },
+      "doctor": {
+        "map": "/worlds/knight/placeholder/station-wizard.svg",
+        "sheet": "/worlds/knight/placeholder/station-wizard.svg",
+        "panel": "plain"
+      },
+      "tests": {
+        "map": "/worlds/knight/placeholder/station-mirror.svg",
+        "sheet": "/worlds/knight/placeholder/station-mirror.svg",
+        "panel": "plain"
+      },
+      "treatment": {
+        "map": "/worlds/knight/placeholder/station-forge.svg",
+        "sheet": "/worlds/knight/placeholder/station-forge.svg",
+        "panel": "plain"
+      },
+      "consult": {
+        "map": "/worlds/knight/placeholder/station-council.svg",
+        "sheet": "/worlds/knight/placeholder/station-council.svg",
+        "panel": "plain"
+      },
+      "wait-results": {
+        "map": "/worlds/knight/placeholder/station-prophecy.svg",
+        "sheet": "/worlds/knight/placeholder/station-prophecy.svg",
+        "panel": "plain"
+      },
+      "decision": {
+        "map": "/worlds/knight/placeholder/station-victory.svg",
+        "sheet": "/worlds/knight/placeholder/station-victory.svg",
+        "panel": "plain"
+      }
+    },
+    "images": {
+      "/worlds/knight/placeholder/station-gate.svg": {
+        "aspect": 1.3636363636363635,
+        "visible": 0.9,
+        "lift": 0.08
+      },
+      "/worlds/knight/placeholder/station-courtyard.svg": {
+        "aspect": 1.3636363636363635,
+        "visible": 0.9,
+        "lift": 0.08
+      },
+      "/worlds/knight/placeholder/station-checks.svg": {
+        "aspect": 1.3636363636363635,
+        "visible": 0.9,
+        "lift": 0.08
+      },
+      "/worlds/knight/placeholder/station-hall.svg": {
+        "aspect": 1.3636363636363635,
+        "visible": 0.9,
+        "lift": 0.08
+      },
+      "/worlds/knight/placeholder/station-wizard.svg": {
+        "aspect": 1.3636363636363635,
+        "visible": 0.9,
+        "lift": 0.08
+      },
+      "/worlds/knight/placeholder/station-mirror.svg": {
+        "aspect": 1.3636363636363635,
+        "visible": 0.9,
+        "lift": 0.08
+      },
+      "/worlds/knight/placeholder/station-forge.svg": {
+        "aspect": 1.3636363636363635,
+        "visible": 0.9,
+        "lift": 0.08
+      },
+      "/worlds/knight/placeholder/station-council.svg": {
+        "aspect": 1.3636363636363635,
+        "visible": 0.9,
+        "lift": 0.08
+      },
+      "/worlds/knight/placeholder/station-prophecy.svg": {
+        "aspect": 1.3636363636363635,
+        "visible": 0.9,
+        "lift": 0.08
+      },
+      "/worlds/knight/placeholder/station-victory.svg": {
+        "aspect": 1.3636363636363635,
+        "visible": 0.9,
+        "lift": 0.08
+      }
+    },
+    "dayMap": {
+      "portrait": {
+        "W": 412,
+        "H": 939,
+        "slots": [
+          {
+            "x": -27,
+            "y": 108,
+            "w": 211,
+            "h": 155,
+            "badge": [92, 176]
+          },
+          {
+            "x": 241,
+            "y": 242,
+            "w": 189,
+            "h": 139,
+            "badge": [265, 277]
+          },
+          {
+            "x": 16,
+            "y": 408,
+            "w": 211,
+            "h": 155,
+            "badge": [116, 411]
+          },
+          {
+            "x": 177,
+            "y": 566,
+            "w": 189,
+            "h": 139,
+            "badge": [272, 567]
+          },
+          {
+            "x": 41,
+            "y": 748,
+            "w": 193,
+            "h": 142,
+            "badge": [123, 745]
+          }
+        ],
+        "dots": [
+          [
+            [180, 271],
+            [184, 268],
+            [189, 266],
+            [195, 263],
+            [201, 262],
+            [207, 260],
+            [213, 260],
+            [219, 259],
+            [225, 260],
+            [231, 260],
+            [237, 262],
+            [243, 264],
+            [248, 266],
+            [254, 269],
+            [259, 272],
+            [264, 275]
+          ],
+          [
+            [252, 380],
+            [247, 382],
+            [241, 383],
+            [235, 382],
+            [229, 382],
+            [223, 381],
+            [217, 380],
+            [211, 380],
+            [205, 379],
+            [199, 378],
+            [194, 378],
+            [188, 377],
+            [182, 377],
+            [176, 378],
+            [170, 378],
+            [164, 379],
+            [158, 380],
+            [152, 381],
+            [147, 383],
+            [141, 386],
+            [136, 389],
+            [131, 393],
+            [127, 397],
+            [123, 401],
+            [120, 406]
+          ],
+          {
+            "bezier": [
+              [183, 517],
+              [215, 520],
+              [240, 552],
+              [272, 567]
+            ]
+          },
+          {
+            "bezier": [
+              [255, 691],
+              [200, 700],
+              [140, 702],
+              [123, 745]
+            ]
+          }
+        ],
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 412,
+          "--bg-h": 939,
+          "--grad-y": 0,
+          "--grad-h": 0,
+          "--title-x": 64.5,
+          "--title-y": 72,
+          "--title-w": 283,
+          "--title-h": 50,
+          "--title-fs": 21,
+          "--badge": 24,
+          "--badge-fs": 15,
+          "--star": 30,
+          "--title-bg": "rgba(43, 34, 56, 0.55)"
+        }
+      },
+      "landscape": {
+        "W": 1920,
+        "H": 1080,
+        "slots": [
+          {
+            "x": 1494,
+            "y": 521,
+            "w": 493,
+            "h": 362,
+            "badge": [1628, 772]
+          },
+          {
+            "x": 1035,
+            "y": 456,
+            "w": 442,
+            "h": 324,
+            "badge": [1276.5, 839.5]
+          },
+          {
+            "x": 651,
+            "y": 156,
+            "w": 487,
+            "h": 357,
+            "badge": [1132.5, 339.5]
+          },
+          {
+            "x": 180,
+            "y": 589,
+            "w": 475,
+            "h": 348,
+            "badge": [423, 549]
+          },
+          {
+            "x": -64,
+            "y": 151,
+            "w": 461,
+            "h": 338,
+            "badge": [106.5, 452.5]
+          }
+        ],
+        "lines": [
+          [
+            [1648.2, 788.2],
+            [1636.1, 781.8],
+            [1620.7, 778.5],
+            [1604.8, 778.5],
+            [1589.1, 780.7],
+            [1573.8, 784.3],
+            [1558.7, 789],
+            [1543.8, 794.2],
+            [1529, 799.9],
+            [1514.4, 805.9],
+            [1499.8, 812],
+            [1485.2, 818.2],
+            [1470.6, 824.4],
+            [1456, 830.4],
+            [1441.3, 836.3],
+            [1426.5, 841.8],
+            [1411.6, 846.9],
+            [1396.4, 851.5],
+            [1381.1, 855.4],
+            [1365.5, 858.3],
+            [1349.8, 860],
+            [1333.9, 860],
+            [1318.3, 857.9],
+            [1303.2, 853.3],
+            [1289.3, 845.9],
+            [1278.4, 837.4]
+          ],
+          [
+            [1222.4, 478.4],
+            [1209.1, 474.8],
+            [1197.8, 464.4],
+            [1190.7, 450.4],
+            [1186.2, 435.2],
+            [1183.1, 419.7],
+            [1180.6, 404],
+            [1178, 388.4],
+            [1174.8, 372.9],
+            [1169.8, 357.9],
+            [1160.6, 345.5],
+            [1145.7, 341.2],
+            [1132.3, 344.2]
+          ],
+          [
+            [817.8, 456.2],
+            [811.2, 468],
+            [798.4, 477],
+            [783.5, 482.4],
+            [768.1, 485.7],
+            [752.4, 487.9],
+            [736.7, 489.2],
+            [720.9, 490],
+            [705.1, 490.5],
+            [689.3, 490.7],
+            [673.5, 490.8],
+            [657.6, 490.8],
+            [641.8, 490.7],
+            [626, 490.7],
+            [610.2, 490.8],
+            [594.4, 491],
+            [578.6, 491.4],
+            [562.8, 492.1],
+            [547.1, 493.1],
+            [531.3, 494.6],
+            [515.6, 496.7],
+            [500.1, 499.5],
+            [484.7, 503.4],
+            [469.8, 508.6],
+            [455.7, 515.6],
+            [443.1, 525.1],
+            [433.4, 537.3],
+            [428, 550]
+          ],
+          [
+            [225.9, 739.9],
+            [212.2, 736.6],
+            [200.6, 726.1],
+            [194.2, 711.4],
+            [190.9, 695.6],
+            [189, 679.5],
+            [187.7, 663.4],
+            [186.3, 647.4],
+            [184.6, 631.3],
+            [181.9, 615.4],
+            [177.7, 599.8],
+            [172.4, 586.8],
+            [170.6, 583.3],
+            [163.7, 571.6],
+            [154.8, 558.8],
+            [145.1, 546.7],
+            [135.1, 534.8],
+            [125.6, 522.5],
+            [117.6, 509.3],
+            [112, 494.9],
+            [109.3, 479.6],
+            [109, 463.9],
+            [110.2, 450.4]
+          ]
+        ],
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 1920,
+          "--bg-h": 1080,
+          "--map-bg": "#9cc3e6",
+          "--title-x": 1270,
+          "--title-y": 94,
+          "--title-w": 550,
+          "--title-h": 97,
+          "--title-fs": 41,
+          "--badge": 42,
+          "--badge-fs": 26,
+          "--star": 56,
+          "--title-bg": "rgba(43, 34, 56, 0.55)"
+        }
+      }
+    },
+    "nightMap": {
+      "portrait": {
+        "shoreY": 820,
+        "finaleWidth": 210,
+        "vars": {
+          "--bg-x": 0,
+          "--bg-w": 412,
+          "--bg-h": 939,
+          "--title-x": 64.5,
+          "--title-y": 44.5,
+          "--title-w": 283,
+          "--title-h": 50,
+          "--title-fs": 21,
+          "--badge": 24,
+          "--badge-fs": 15,
+          "--star": 30,
+          "--title-bg": "rgba(43, 34, 56, 0.4)",
+          "--grad-h": 0,
+          "--map-bg": "#9cc3e6"
+        }
+      },
+      "landscape": {
+        "places": [
+          {
+            "cx": 1640,
+            "top": 190,
+            "visible": 430,
+            "badge": [1685, 465]
+          },
+          {
+            "cx": 1500,
+            "top": 590,
+            "visible": 470,
+            "badge": [1500, 549]
+          },
+          {
+            "cx": 1050,
+            "top": 190,
+            "visible": 440,
+            "badge": [1050, 518]
+          },
+          {
+            "cx": 664,
+            "top": 465,
+            "visible": 428,
+            "badge": [664, 852]
+          }
+        ],
+        "curves": [
+          [
+            [1690, 540],
+            [1620, 580]
+          ],
+          [
+            [1380, 520],
+            [1200, 560]
+          ],
+          [
+            [1020, 760],
+            [840, 920]
+          ]
+        ],
+        "finale": {
+          "x": -40,
+          "y": 640,
+          "w": 440,
+          "badge": [180, 640]
+        },
+        "finaleTrail": {
+          "end": [300, 700],
+          "c1": [-70, 30],
+          "c2": [90, 10]
+        },
+        "vars": {
+          "--bg-x": 0,
+          "--bg-y": 0,
+          "--bg-w": 1920,
+          "--bg-h": 1080,
+          "--bg-sx": -1,
+          "--map-bg": "#9cc3e6",
+          "--title-x": 1270,
+          "--title-y": 94,
+          "--title-w": 550,
+          "--title-h": 97,
+          "--title-fs": 41,
+          "--badge": 42,
+          "--badge-fs": 26,
+          "--star": 56
+        }
+      }
     }
   }
 }

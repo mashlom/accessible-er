@@ -1,0 +1,4 @@
+Temporary placeholder art for the knight world's designed layout, drawn in code (SVG) for this project.
+Every file here is to be replaced by the designer's pictures (same names, or update world.json):
+  background.svg (portrait map, 412×939 frame), background-wide.svg (landscape map, 1920×1080 frame),
+  station-*.svg (one picture per station, transparent), sheet-floor.svg (the panel behind a picture on its sheet).

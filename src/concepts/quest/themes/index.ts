@@ -60,6 +60,8 @@ export interface WorldDesign {
   assets: {
     /** The map's background picture (the scenes place it with --bg-*) */
     background: string
+    /** The landscape map's own background, if it is a different picture (else `background`) */
+    backgroundWide?: string
     /** The sheet's picture panel: a veil over a floor picture */
     sheetFade?: string
     sheetSeabed?: string
@@ -163,6 +165,7 @@ export function designVars(design: WorldDesign | undefined): React.CSSProperties
   const vars: Record<string, string> = {}
   const url = (src?: string) => (src ? `url('${src}')` : 'none')
   vars['--w-background'] = url(design.assets.background)
+  vars['--w-background-wide'] = url(design.assets.backgroundWide ?? design.assets.background)
   vars['--w-sheet-fade'] = url(design.assets.sheetFade)
   vars['--w-sheet-floor'] = url(design.assets.sheetSeabed)
   for (const [k, v] of Object.entries(design.colors)) {
