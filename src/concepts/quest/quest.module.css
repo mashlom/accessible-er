@@ -3271,6 +3271,7 @@ path.worldTrailLit {
   .worldSceneWide {
     width: var(--sw);
     margin-inline: auto;
+    background: transparent; /* its faded edges show the sides under them */
   }
   /* the picture's outermost pixel columns are blurred by scaling: push them just past the seam */
   .worldSceneWide::before {
@@ -3278,16 +3279,17 @@ path.worldTrailLit {
     background-position: center top;
   }
   .worldTileH { display: block; bottom: calc((100dvh - var(--sh)) / 2); }
-  /* the mirrored picture is sharp at the seam; a blurred copy over it comes in gradually further out
-     (the pieces are flipped, so "left" here is the side next to the scene for the left piece) */
-  .worldTileH .worldSideBlur {
-    /* the page sets the picture's own sky and grass colours here, row by row (see useSideColours) */
-    filter: blur(6px);
+  /* the sides are the picture's own sky and ground colours (set by the page, see useSideColours); they reach under
+     the scene, whose picture fades into them over its outer edge, so trees and rocks don't stop abruptly */
+  .worldTileH .worldSideBgW:not(.worldSideBlur) { display: none; }
+  .worldTileH .worldSideBlur { filter: blur(6px); }
+  @media (min-aspect-ratio: 2/1) {
+    .worldSceneWide::before {
+      mask-image: linear-gradient(to right, transparent, #000 180px, #000 calc(100% - 180px), transparent);
+    }
   }
-  .worldTileHLeft .worldSideBlur { background-position: left top; mask-image: linear-gradient(to right, transparent 0, #000 32px); }
-  .worldTileHRight .worldSideBlur { background-position: right top; mask-image: linear-gradient(to left, transparent 0, #000 32px); }
-  .worldTileHLeft { left: calc((100vw - var(--sw)) / 2 - var(--sw) + 4px); }
-  .worldTileHRight { left: calc((100vw + var(--sw)) / 2 - 4px); }
+  .worldTileHLeft { left: calc((100vw - var(--sw)) / 2 - var(--sw) + 200px); }
+  .worldTileHRight { left: calc((100vw + var(--sw)) / 2 - 200px); }
   .worldProgressWide {
     --S: min(100vw, 100dvh * 2);
     left: calc((100vw - var(--S)) / 2 + min(var(--S) * 1868 / 1920, var(--S) - 34px));
