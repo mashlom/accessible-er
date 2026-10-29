@@ -66,7 +66,8 @@ export function QuestShell() {
           <span className={css.questTopBtn} aria-hidden />
         )}
 
-        {!isMapPage ? (
+        {/* not on the world choice: with no world chosen, the map would only lead back here */}
+        {!isMapPage && !isHome ? (
           // words, not a picture: these buttons are for the adult (the map of the journey in this world)
           <Link to={mapTarget} className={`${css.questTopBrand} ${css.navWord}`}>
             {t('ui.shell.map')}
