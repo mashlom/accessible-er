@@ -41,7 +41,9 @@
     "shell": {
       "map": "To the journey map",
       "menu": "To the concepts menu",
-      "worlds": "Choose another world"
+      "worlds": "Choose another world",
+      "home": "Home page",
+      "chooseWorld": "Worlds"
     },
     "text": {
       "starsEarned": "Stars earned",
@@ -459,7 +461,9 @@
     "shell": {
       "map": "К карте путешествия",
       "menu": "В меню концепций",
-      "worlds": "Выбрать другой мир"
+      "worlds": "Выбрать другой мир",
+      "home": "Главная",
+      "chooseWorld": "Выбор мира"
     },
     "text": {
       "starsEarned": "Заработанные звёзды",
@@ -905,7 +909,9 @@
     "shell": {
       "map": "למפת המסע",
       "menu": "לתפריט הקונספטים",
-      "worlds": "לבחירת עולם אחר"
+      "worlds": "לבחירת עולם אחר",
+      "home": "דף הבית",
+      "chooseWorld": "בחירת עולם"
     },
     "careView": {
       "hebrewNote": "הכרטיס כתוב בעברית: הצוות קורא אותו בעברית."

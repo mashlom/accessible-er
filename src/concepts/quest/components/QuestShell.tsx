@@ -67,8 +67,9 @@ export function QuestShell() {
         )}
 
         {!isMapPage ? (
-          <Link to={mapTarget} className={css.questTopBrand} aria-label={t('ui.shell.map')}>
-            <span aria-hidden>🗺️</span>
+          // words, not a picture: these buttons are for the adult (the map of the journey in this world)
+          <Link to={mapTarget} className={`${css.questTopBrand} ${css.navWord}`}>
+            {t('ui.shell.map')}
           </Link>
         ) : (
           <span className={css.questTopBrand} aria-hidden />
@@ -76,8 +77,8 @@ export function QuestShell() {
 
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end', paddingInlineEnd: '0.5rem' }}>
           <LanguagePicker />
-          <a href="#/" className={css.questTopBtn} aria-label={t('ui.shell.menu')}>
-            <span aria-hidden>🏁</span>
+          <a href="#/" className={`${css.questTopBtn} ${css.navWord}`}>
+            {t('ui.shell.home')}
           </a>
         </div>
       </header>}

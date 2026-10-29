@@ -127,7 +127,7 @@ interface ViewProps {
 
 /** The map scene with its top row, progress capsule and parent button; both layouts share it. */
 export function WorldMapView({ portrait, landscape, items, underSheet, progress, numbers, firstNumber = 1, noTitle, starsTotal, headline }: ViewProps) {
-  const { t, dir } = useI18n()
+  const { t } = useI18n()
   const wide = useWide()
   const mapRef = useRef<HTMLDivElement>(null)
   const goBackTo = useGoBackTo()
@@ -207,17 +207,14 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
       {(
         <div className={wide ? `${css.worldTopRow} ${css.worldTopRowWide}` : css.worldTopRow}>
           {/* back to the world select screen (outside the world's own addresses) */}
-          <button type="button" className={css.worldTopBtn} onClick={() => goBackTo(WORLD_SELECT, { absolute: true })} aria-label={t('ui.shell.worlds')}>
-            <svg viewBox="0 0 24 24" aria-hidden className={css.worldTopIcon} style={{ scale: dir === 'rtl' ? '1' : '-1 1' }}>
-              <path d="M9 5l7 7-7 7" />
-            </svg>
+          {/* words, not pictures: these buttons are for the adult */}
+          <button type="button" className={`${css.worldTopBtn} ${css.navWord}`} onClick={() => goBackTo(WORLD_SELECT, { absolute: true })}>
+            {t('ui.shell.chooseWorld')}
           </button>
           <div className={css.worldTopGroup}>
             <LanguagePicker variant="overlay" />
-            <a href="#/" className={css.worldTopBtn} aria-label={t('ui.shell.menu')}>
-              <svg viewBox="0 0 24 24" aria-hidden className={css.worldTopIcon}>
-                <path d="M4 11l8-7 8 7M6 10v9h4v-5h4v5h4v-9" />
-              </svg>
+            <a href="#/" className={`${css.worldTopBtn} ${css.navWord}`}>
+              {t('ui.shell.home')}
             </a>
           </div>
         </div>

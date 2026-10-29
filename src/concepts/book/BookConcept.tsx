@@ -21,7 +21,7 @@ export default function BookConcept() {
     setI18nEnabled(true)
     return () => setI18nEnabled(false)
   }, [])
-  const { lang, dir } = useI18n()
+  const { lang, dir, t } = useI18n()
   const path = useConceptPath()
   const navigate = useNavigate()
   const tabs = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { books: { tabs: Record<string, string> } }>)[lang], 'i18n/ui')
@@ -39,8 +39,9 @@ export default function BookConcept() {
           <span aria-hidden />
           <div className={css.topGroup}>
             <LanguagePicker />
-            <a href="#/" className={css.topFlag} aria-label="Home">
-              <span aria-hidden>🏁</span>
+            {/* a word, not a picture: the button is for the adult */}
+            <a href="#/" className={`${css.topFlag} ${css.navWord}`}>
+              {t('ui.shell.home')}
             </a>
           </div>
         </div>
