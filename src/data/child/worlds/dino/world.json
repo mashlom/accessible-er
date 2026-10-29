@@ -68,7 +68,6 @@
       "waterLight": "#9DBBD3"
     },
     "mirrorAbove": false,
-    "skyKeep": [{ "x": 365, "y": 120, "rx": 95, "ry": 115 }, { "x": 1735, "y": 70, "rx": 140, "ry": 90 }],
     "stations": {
       "reception": {
         "map": "/worlds/dino/art/station-reception.webp",
