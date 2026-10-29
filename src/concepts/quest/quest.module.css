@@ -3073,8 +3073,10 @@ path.worldTrailLit {
 }
 
 /* A scene (the place as seen by someone standing in it) fills the whole panel, cropped to its shape */
+/* a scene picture is shown whole (no heads cut off); on a short screen the sheet scrolls instead */
 .worldSheet.stageSheet .stageSheetImgScene {
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   filter: none;
   background: none;
 }
