@@ -538,3 +538,16 @@
   place-items: center;
   font-size: 24px;
 }
+
+/* A navigation button for the adult, shown as a word instead of a picture (home, world choice, journey map) */
+.navWord {
+  width: auto;
+  min-width: 0;
+  padding-inline: 14px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+}

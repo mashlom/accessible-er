@@ -3333,3 +3333,16 @@ path.worldTrailLit {
     font-size: calc(56 * min(100vw, 100dvh * 2) / 1920);
   }
 }
+
+/* A navigation button for the adult, shown as a word instead of a picture (home, world choice, journey map) */
+.navWord {
+  width: auto;
+  min-width: 0;
+  padding-inline: 14px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+}
