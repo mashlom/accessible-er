@@ -66,8 +66,10 @@ function useSideColours(ref: React.RefObject<HTMLElement | null>, on: boolean, k
 }
 
 /** The part of the picture's top kept clear of the sky fade, as the scene's CSS variables (see .worldSceneFade) */
-function skyKeepVars(k?: { x: number; y: number; rx: number; ry: number }): Record<string, number> {
-  return k ? { '--keep-x': k.x, '--keep-y': k.y, '--keep-rx': k.rx, '--keep-ry': k.ry } : {}
+function skyKeepVars(keep?: { x: number; y: number; rx: number; ry: number }[]): Record<string, number> {
+  return Object.assign({}, ...(keep ?? []).slice(0, 2).map((k, i) => ({
+    [`--keep${i}-x`]: k.x, [`--keep${i}-y`]: k.y, [`--keep${i}-rx`]: k.rx, [`--keep${i}-ry`]: k.ry,
+  })))
 }
 
 /** Cuts the end of a polyline where it enters a circle (when it ends inside or next to it) */

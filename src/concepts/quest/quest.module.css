@@ -2077,14 +2077,19 @@
 .worldSceneFade { background: transparent; }
 .worldSceneFade::after {
   top: -2px;
-  height: calc(380 * var(--u));
+  height: calc(240 * var(--u));
   /* the far-away top is a little blurred too, as if further off; a world can keep one spot (a head) clear */
   backdrop-filter: blur(calc(4 * var(--u)));
   mask-image:
     linear-gradient(#000 40%, transparent),
     radial-gradient(
-      calc(var(--keep-rx, 0) * var(--u)) calc(var(--keep-ry, 0) * var(--u))
-        at calc(var(--keep-x, -9999) * var(--u)) calc(var(--keep-y, -9999) * var(--u) + 2px),
+      calc(var(--keep0-rx, 0) * var(--u)) calc(var(--keep0-ry, 0) * var(--u))
+        at calc(var(--keep0-x, -9999) * var(--u)) calc(var(--keep0-y, -9999) * var(--u) + 2px),
+      transparent 35%, #000 100%
+    ),
+    radial-gradient(
+      calc(var(--keep1-rx, 0) * var(--u)) calc(var(--keep1-ry, 0) * var(--u))
+        at calc(var(--keep1-x, -9999) * var(--u)) calc(var(--keep1-y, -9999) * var(--u) + 2px),
       transparent 35%, #000 100%
     );
   mask-composite: intersect;
