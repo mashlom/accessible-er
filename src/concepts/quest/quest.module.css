@@ -3319,3 +3319,38 @@ path.worldTrailLit {
   height: calc(240 * var(--u));
   min-height: auto;
 }
+
+/* ── A designed world's celebration: a sheet like the stations', over the world's landscape ── */
+.celebrateLand {
+  position: fixed;
+  inset: 0;
+  background: var(--celebrate-bg) center bottom / cover no-repeat, var(--w-page, #f5f5f5);
+}
+
+.celebrateSheet .celebrateSheetText {
+  text-align: center;
+}
+
+.celebrateSheet .celebrateSheetText .celebrateHint { margin: 0; }
+
+.celebrateSheetActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: calc(6 * var(--u));
+}
+
+.celebrateSheetActions a,
+.celebrateSheetActions .doneBtn,
+.celebrateSheetActions .backBtn {
+  width: 100%;
+}
+
+/* the parent's sheet of the celebration: what happens now */
+.celebrateSheetParent .stageBody.celebrateParentZone {
+  padding: 0;
+  max-width: none;
+}
+
+/* celebrate.webp is 4:3 (the stations' scenes are 728:680) */
+.celebrateSheet > .stageSheetPicPlain > .stageSheetImgScene { aspect-ratio: 4 / 3; }
