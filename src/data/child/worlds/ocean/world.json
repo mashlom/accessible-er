@@ -44,7 +44,7 @@
   },
   "design": {
     "assets": {
-      "background": "/worlds/ocean/art/map-portrait.webp",
+      "background": "/worlds/ocean/art/map-landscape.webp",
       "sheetFade": "/worlds/ocean/sheet-fade.png",
       "sheetSeabed": "/worlds/ocean/sheet-seabed.jpg",
       "backgroundWide": "/worlds/ocean/art/map-landscape.webp"
@@ -352,10 +352,10 @@
           }
         ],
         "vars": {
-          "--bg-x": -344,
-          "--bg-y": -300,
-          "--bg-w": 1100,
-          "--bg-h": 1400,
+          "--bg-x": -700,
+          "--bg-y": -40,
+          "--bg-w": 3733,
+          "--bg-h": 2800,
           "--grad-y": -16,
           "--grad-h": 199,
           "--title-x": 64.5,
@@ -366,7 +366,8 @@
           "--badge": 24,
           "--badge-fs": 15,
           "--star": 30,
-          "--title-bg": "rgba(18, 56, 74, 0.6)"
+          "--title-bg": "rgba(18, 56, 74, 0.6)",
+          "--bg-rot": "180deg"
         }
       },
       "landscape": {
@@ -532,9 +533,9 @@
         "shoreY": 653,
         "finaleWidth": 210,
         "vars": {
-          "--bg-x": -344,
-          "--bg-w": 1100,
-          "--bg-h": 1400,
+          "--bg-x": -700,
+          "--bg-w": 3733,
+          "--bg-h": 2800,
           "--title-x": 64.5,
           "--title-y": 44.5,
           "--title-w": 283,
@@ -546,7 +547,8 @@
           "--title-bg": "rgba(18, 56, 74, 0.35)",
           "--grad-h": 520,
           "--map-bg": "#207082",
-          "--bg-y": -300
+          "--bg-y": -40,
+          "--bg-rot": "180deg"
         }
       },
       "landscape": {
