@@ -460,5 +460,18 @@
       }
     },
     "extended": true
+  },
+  "shop": {
+    "doll": true,
+    "items": [
+      "helmet",
+      "chain-mail",
+      "armour",
+      "shield",
+      "cape",
+      "boots",
+      "banner",
+      "toy-horse"
+    ]
   }
 }

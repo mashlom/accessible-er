@@ -460,5 +460,18 @@
       }
     },
     "extended": true
+  },
+  "shop": {
+    "doll": false,
+    "items": [
+      "trex",
+      "triceratops",
+      "stegosaurus",
+      "brachiosaurus",
+      "ankylosaurus",
+      "parasaurolophus",
+      "pterodactyl",
+      "velociraptor"
+    ]
   }
 }

@@ -3366,3 +3366,125 @@ path.worldTrailLit {
 
 /* celebrate.webp is 4:3 (the stations' scenes are 728:680) */
 .celebrateSheet > .stageSheetPicPlain > .stageSheetImgScene { aspect-ratio: 4 / 3; }
+
+/* ── The shop (issue #50): pick the paper-doll pieces for the colouring sheet ── */
+.shopPrice {
+  margin: 0;
+  text-align: center;
+  color: var(--tok-text2);
+}
+
+.shopGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.shopItem {
+  position: relative;
+  aspect-ratio: 1;
+  padding: 8px;
+  border: 2px solid #d8dde0;
+  border-radius: 14px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.shopItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.shopItem:disabled { opacity: 0.4; cursor: default; }
+
+.shopItemOn {
+  border-color: var(--tok-action);
+  box-shadow: 0 0 0 3px var(--tok-action);
+}
+
+.shopTick {
+  position: absolute;
+  top: 4px;
+  inset-inline-end: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--tok-action);
+  color: #fff;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.shopNote {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--tok-text2);
+}
+
+/* the A4 sheet the PDF is made from: off the screen, 794 x 1123 px (A4 at 96 dpi) */
+.shopPaperHolder {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+}
+
+.shopPaper {
+  width: 794px;
+  height: 1123px;
+  box-sizing: border-box;
+  padding: 48px;
+  background: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: inherit;
+}
+
+.shopPaperHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 18px;
+}
+
+.shopPaperHead strong { font-size: 26px; }
+
+.shopPaperBody {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  min-height: 0;
+}
+
+.shopPaperNoDoll { grid-template-columns: 1fr; }
+
+.shopPieces {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 16px;
+  min-height: 0;
+}
+
+.shopPaperNoDoll .shopPieces { grid-template-columns: 1fr 1fr; }
+
+.shopPiece {
+  border: 2px dashed #888;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopPiece img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}

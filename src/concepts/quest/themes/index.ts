@@ -140,6 +140,9 @@ export interface QuestTheme {
   doneEmoji?: string
   /** Image shown on the celebration/shop screen */
   shopImage?: string
+  /** The shop: paper-doll colouring pieces in public/worlds/<world>/shop/<item>.webp, the doll (doll.webp) unless
+   *  the items stand on their own (the dinosaurs), and the order the items are offered in (issue #50) */
+  shop?: { doll: boolean; items: string[] }
   /** Instruction text on the procedure select screen */
   procedurePrompt?: string
   /** CSS colour used for UI accents in this world */
