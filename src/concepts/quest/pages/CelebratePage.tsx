@@ -10,9 +10,9 @@ import { DAY_MS } from '../../../lib/storage'
 import { isTestMode } from '../../../lib/testMode'
 import i18nUi from '../../../data/i18n/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
+import { createPortal } from 'react-dom'
 import { lockBodyScroll } from '../../../lib/scrollLock'
 import { LanguagePicker } from '../../../components/LanguagePicker'
-import { ParentInfo } from '../components/ParentInfo'
 import { PARENT_WORLD } from '../useQuestTheme'
 import { designVars, getTheme } from '../themes'
 import css from '../quest.module.css'
@@ -162,7 +162,22 @@ export function CelebratePage() {
   )
 
   // a designed world: the celebration is a sheet like the stations', over the world's landscape
-  if (theme.design) return <CelebrateSheet image={theme.shopImage} title={celebrateSkin?.label ?? t('ui.text.weDidIt')} text={childText} buttons={childButtons} parent={parentZone} />
+  // a designed world: the last sheet only asks what happens now (going home is only one of the two); the chosen
+  // outcome's details open in the parent's sheet
+  if (theme.design) {
+    return (
+      <CelebrateSheet
+        image={theme.shopImage}
+        question={t('ui.labels.adult.outcomeLabel')}
+        choices={[
+          { label: t('ui.buttons.discharge'), pick: () => setOutcome('discharge') },
+          { label: t('ui.buttons.admission'), pick: () => setOutcome('admission') },
+        ]}
+        parent={outcome ? parentZone : null}
+        closeParent={() => setOutcome(null)}
+      />
+    )
+  }
 
   return (
     <div className={css.celebratePage}>
@@ -188,12 +203,12 @@ export function CelebratePage() {
 
 /** A designed world's celebration: the world's landscape fills the screen, and the picture, the words, the buttons
  *  and the parent's part stand on a bottom sheet, as on a station */
-function CelebrateSheet({ image, title, text, buttons, parent }: {
+function CelebrateSheet({ image, question, choices, parent, closeParent }: {
   image?: string
-  title: string
-  text: ReactNode
-  buttons: ReactNode
+  question: string
+  choices: { label: string; pick: () => void }[]
   parent: ReactNode
+  closeParent: () => void
 }) {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
@@ -231,13 +246,17 @@ function CelebrateSheet({ image, title, text, buttons, parent }: {
               <img src={image} alt="" className={`${css.stageSheetImg} ${css.stageSheetImgScene}`} />
             </div>
           )}
-          <h1 id="celebrate-title" className={css.stageSheetTitle} style={{ color: theme.accent }}>{title}</h1>
-          <div className={css.celebrateSheetText}>{text}</div>
-          <div className={css.celebrateSheetActions}>{buttons}</div>
-          {/* what happens now (discharge or admission) is for the adult: in the parent's sheet, under the child's buttons, as on a station */}
-          <ParentInfo inline sheet={(onClose) => <CelebrateParentSheet onClose={onClose}>{parent}</CelebrateParentSheet>} />
+          <h1 id="celebrate-title" className={css.stageSheetTitle} style={{ color: theme.accent }}>{question}</h1>
+          <div className={css.celebrateSheetActions}>
+            {choices.map((c) => (
+              <button key={c.label} type="button" className={`${css.worldBtn} ${css.worldBtnDone}`} onClick={c.pick}>
+                {c.label}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
+      {parent && createPortal(<CelebrateParentSheet onClose={closeParent}>{parent}</CelebrateParentSheet>, document.body)}
     </div>
   )
 }
