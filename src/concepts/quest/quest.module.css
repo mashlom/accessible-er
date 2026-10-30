@@ -3531,8 +3531,7 @@ path.worldTrailLit {
 .shopPaperNoDoll .shopPieces { grid-template-columns: 1fr 1fr; }
 
 .shopPiece {
-  border: 2px dashed #888;
-  border-radius: 8px;
+  /* no box around a piece: its own outline is the cutting line */
   padding: 12px;
   min-height: 0;
   display: flex;
