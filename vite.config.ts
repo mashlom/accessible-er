@@ -8,4 +8,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/',
   plugins: [react()],
+  css: {
+    modules: {
+      // Every class in a *.module.css is namespaced by its file:
+      // `.card` in story.module.css becomes `story-module__card__x7Kq2`, so two
+      // files can use the same class name without touching each other.
+      generateScopedName: '[name]__[local]__[hash:base64:5]',
+    },
+  },
 })
