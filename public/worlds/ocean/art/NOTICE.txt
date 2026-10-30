@@ -1,0 +1,3 @@
+The ocean world's completed pictures (stations, scenes, celebration, card) were delivered as PNG with a manifest
+(see docs/art/ocean-stations) and converted to WebP. The map background and the triage pod are still the original ones.
+Made with: Instinct image generation tool, smart mode, reference-guided editing (generated 2026-10-30; style references: knight world art + the ocean world's own current pictures, plus the characters.png sheet generated first and used as reference for every picture). Exact underlying model unverified - confirm commercial-use licence terms before external release, as with the other AI-generated worlds.

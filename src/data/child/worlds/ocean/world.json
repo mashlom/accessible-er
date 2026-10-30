@@ -2,10 +2,10 @@
   "id": "ocean",
   "order": 2,
   "doneEmoji": "⭐",
-  "shopImage": "/worlds/ocean/sheet-seabed.jpg",
+  "shopImage": "/worlds/ocean/art/celebrate.webp",
   "emoji": "🐠",
   "bg": "/worlds/ocean/underwater.png",
-  "thumbnailOverlay": "/worlds/ocean/station-sub.png",
+  "thumbnailOverlay": "/worlds/ocean/art/card.webp",
   "accent": "#087e8b",
   "accentSoft": "#e5f2f7",
   "accentText": "#ffffff",
@@ -68,54 +68,63 @@
     },
     "stations": {
       "reception": {
-        "map": "/worlds/ocean/station-house.png",
-        "sheet": "/worlds/ocean/station-house.png",
-        "panel": "bleed"
+        "map": "/worlds/ocean/art/station-reception.webp",
+        "sheet": "/worlds/ocean/art/scene-reception.webp",
+        "panel": "scene",
+        "choice": "/worlds/ocean/art/station-reception.webp"
       },
       "wait-before-triage": {
-        "map": "/worlds/ocean/station-sub-lit.png",
-        "sheet": "/worlds/ocean/station-sub-lit.png",
-        "panel": "bubbles"
+        "map": "/worlds/ocean/art/station-wait-before-triage.webp",
+        "sheet": "/worlds/ocean/art/scene-wait-before-triage.webp",
+        "panel": "scene",
+        "choice": "/worlds/ocean/art/station-wait-before-triage.webp"
       },
       "triage": {
         "map": "/worlds/ocean/station-pod.png",
-        "sheet": "/worlds/ocean/station-pod.png",
-        "panel": "bubbles"
+        "sheet": "/worlds/ocean/art/scene-triage.webp",
+        "panel": "scene"
       },
       "wait-doctor": {
-        "map": "/worlds/ocean/station-aquarium.png",
-        "sheet": "/worlds/ocean/station-aquarium.png",
-        "panel": "bubbles"
+        "map": "/worlds/ocean/art/station-wait-doctor.webp",
+        "sheet": "/worlds/ocean/art/scene-wait-doctor.webp",
+        "panel": "scene",
+        "choice": "/worlds/ocean/art/station-wait-doctor.webp"
       },
       "doctor": {
-        "map": "/worlds/ocean/station-doctor.png",
-        "sheet": "/worlds/ocean/station-doctor-sheet.png",
-        "panel": "bubbles"
+        "map": "/worlds/ocean/art/station-doctor.webp",
+        "sheet": "/worlds/ocean/art/scene-doctor.webp",
+        "panel": "scene",
+        "choice": "/worlds/ocean/art/station-doctor.webp"
       },
       "tests": {
-        "map": "/worlds/ocean/station-sonar.png",
-        "sheet": "/worlds/ocean/symbol-sonar.png",
-        "panel": "symbol"
+        "map": "/worlds/ocean/art/station-tests.webp",
+        "sheet": "/worlds/ocean/art/scene-tests.webp",
+        "panel": "scene",
+        "choice": "/worlds/ocean/art/station-tests.webp"
       },
       "consult": {
-        "map": "/worlds/ocean/station-sub-lit.png",
-        "sheet": "/worlds/ocean/symbol-comms.png",
-        "panel": "symbol"
+        "map": "/worlds/ocean/art/station-consult.webp",
+        "sheet": "/worlds/ocean/art/scene-consult.webp",
+        "panel": "scene",
+        "choice": "/worlds/ocean/art/station-consult.webp"
       },
       "wait-results": {
-        "map": "/worlds/ocean/station-pod.png",
-        "sheet": "/worlds/ocean/symbol-data.png",
-        "panel": "symbol"
+        "map": "/worlds/ocean/art/station-wait-results.webp",
+        "sheet": "/worlds/ocean/art/scene-wait-results.webp",
+        "panel": "scene",
+        "choice": "/worlds/ocean/art/station-wait-results.webp"
       },
       "treatment": {
-        "map": "/worlds/ocean/station-sub-lit.png",
-        "sheet": "/worlds/ocean/symbol-repair.png",
-        "panel": "symbol"
+        "map": "/worlds/ocean/art/station-treatment.webp",
+        "sheet": "/worlds/ocean/art/scene-treatment.webp",
+        "panel": "scene",
+        "choice": "/worlds/ocean/art/station-treatment.webp"
       },
       "decision": {
-        "map": "/worlds/ocean/station-house.png",
-        "sheet": "/worlds/ocean/station-house.png",
-        "panel": "bleed"
+        "map": "/worlds/ocean/art/station-decision.webp",
+        "sheet": "/worlds/ocean/art/scene-decision.webp",
+        "panel": "scene",
+        "choice": "/worlds/ocean/art/station-decision.webp"
       }
     },
     "images": {
@@ -143,6 +152,51 @@
         "aspect": 1.3431952662721893,
         "visible": 0.815,
         "lift": 0.056
+      },
+      "/worlds/ocean/art/station-reception.webp": {
+        "aspect": 1.3636,
+        "visible": 0.895,
+        "lift": 0.009
+      },
+      "/worlds/ocean/art/station-wait-before-triage.webp": {
+        "aspect": 1.3636,
+        "visible": 0.938,
+        "lift": 0.011
+      },
+      "/worlds/ocean/art/station-wait-doctor.webp": {
+        "aspect": 1.3636,
+        "visible": 0.973,
+        "lift": 0.048
+      },
+      "/worlds/ocean/art/station-doctor.webp": {
+        "aspect": 1.3636,
+        "visible": 0.968,
+        "lift": 0.011
+      },
+      "/worlds/ocean/art/station-tests.webp": {
+        "aspect": 1.3636,
+        "visible": 0.953,
+        "lift": 0.066
+      },
+      "/worlds/ocean/art/station-treatment.webp": {
+        "aspect": 1.3636,
+        "visible": 0.932,
+        "lift": 0.016
+      },
+      "/worlds/ocean/art/station-consult.webp": {
+        "aspect": 1.3636,
+        "visible": 0.943,
+        "lift": 0.007
+      },
+      "/worlds/ocean/art/station-wait-results.webp": {
+        "aspect": 1.3636,
+        "visible": 0.948,
+        "lift": 0.014
+      },
+      "/worlds/ocean/art/station-decision.webp": {
+        "aspect": 1.3636,
+        "visible": 0.86,
+        "lift": 0.011
       }
     },
     "bubbles": [
@@ -198,18 +252,18 @@
         "H": 939,
         "slots": [
           {
-            "x": -27,
-            "y": 108,
+            "x": 4,
+            "y": 173,
             "w": 211,
-            "h": 220,
-            "badge": [92, 176]
+            "h": 155,
+            "badge": [110, 188]
           },
           {
-            "x": 241,
-            "y": 242,
+            "x": 219,
+            "y": 258,
             "w": 189,
-            "h": 155,
-            "badge": [265, 277]
+            "h": 139,
+            "badge": [314, 273]
           },
           {
             "x": 16,
@@ -220,17 +274,17 @@
           },
           {
             "x": 177,
-            "y": 566,
+            "y": 556,
             "w": 189,
-            "h": 129,
-            "badge": [272, 567]
+            "h": 139,
+            "badge": [272, 571]
           },
           {
             "x": 41,
-            "y": 748,
+            "y": 730,
             "w": 193,
-            "h": 124,
-            "badge": [123, 745]
+            "h": 142,
+            "badge": [138, 745]
           }
         ],
         "dots": [
@@ -320,19 +374,18 @@
         "H": 1080,
         "slots": [
           {
-            "x": 1494,
-            "y": 521,
+            "x": 1437,
+            "y": 672,
             "w": 493,
-            "h": 513,
-            "badge": [1628, 772],
-            "flip": true
+            "h": 362,
+            "badge": [1684, 687]
           },
           {
             "x": 1035,
-            "y": 456,
+            "y": 494,
             "w": 442,
-            "h": 362,
-            "badge": [1276.5, 839.5]
+            "h": 324,
+            "badge": [1256, 509]
           },
           {
             "x": 651,
@@ -343,17 +396,17 @@
           },
           {
             "x": 180,
-            "y": 589,
+            "y": 565,
             "w": 475,
-            "h": 324,
-            "badge": [423, 549]
+            "h": 348,
+            "badge": [418, 580]
           },
           {
-            "x": -64,
-            "y": 151,
+            "x": -10,
+            "y": 110,
             "w": 461,
-            "h": 297,
-            "badge": [106.5, 452.5]
+            "h": 338,
+            "badge": [220, 125]
           }
         ],
         "lines": [
