@@ -443,7 +443,9 @@
       "price": "Each thing costs {n} stars",
       "print": "📄 Colouring sheet (PDF)",
       "sheetLine": "Colour, cut out and play",
-      "left": "{n} stars left"
+      "left": "{n} stars left",
+      "buy": "Buy",
+      "bought": "✓ Bought"
     }
   },
   "ru": {
@@ -890,7 +892,9 @@
       "price": "Каждая вещь стоит {n} звезды",
       "print": "📄 Раскраска (PDF)",
       "sheetLine": "Раскрась, вырежи и играй",
-      "left": "Осталось звёзд: {n}"
+      "left": "Осталось звёзд: {n}",
+      "buy": "Купить",
+      "bought": "✓ Куплено"
     }
   },
   "he": {
@@ -1337,7 +1341,9 @@
       "price": "כל דבר עולה {n} כוכבים",
       "print": "📄 לדף הצביעה (PDF)",
       "sheetLine": "צובעים, גוזרים ומשחקים",
-      "left": "נשארו {n} כוכבים"
+      "left": "נשארו {n} כוכבים",
+      "buy": "לקנות",
+      "bought": "✓ נקנה"
     }
   }
 }

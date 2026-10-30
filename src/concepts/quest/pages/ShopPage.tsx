@@ -6,7 +6,6 @@ import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { LanguagePicker } from '../../../components/LanguagePicker'
-import { lockBodyScroll } from '../../../lib/scrollLock'
 import { saveCardPdf } from '../../../components/careCard/saveCardPdf'
 import { worldText, type WorldLang } from '../../../data/child/worlds'
 import css from '../quest.module.css'
@@ -38,7 +37,7 @@ function WorldShop() {
   const affordable = Math.min(MAX_ITEMS, Math.floor(stars / STARS_PER_ITEM))
   const [chosen, setChosen] = useState<string[]>([])
   const [state, setState] = useState<'idle' | 'saving' | 'saved' | 'failed'>('idle')
-  const handleRef = useRef<HTMLButtonElement>(null)
+  const handleRef = useRef<HTMLHeadingElement>(null)
   const sheetRef = useRef<HTMLDivElement>(null)
   const texts = worldText(theme.id, lang as WorldLang)
   const name = (id: string) => texts?.shop?.[id] ?? id
@@ -48,7 +47,6 @@ function WorldShop() {
 
   useEffect(() => {
     handleRef.current?.focus()
-    return lockBodyScroll()
   }, [])
 
   const toggle = (id: string) =>
@@ -65,26 +63,23 @@ function WorldShop() {
     }
   }
 
-  const land = { '--celebrate-bg': wide ? 'var(--w-background-wide, var(--w-background))' : 'var(--w-background)' } as React.CSSProperties
   return (
-    <div className={css.celebrateLand} style={land}>
+    // the shop is a page of its own, the whole screen
+    <div className={css.shopFull}>
       <div className={wide ? `${css.worldTopRow} ${css.worldTopRowWide}` : css.worldTopRow}>
         <button type="button" className={`${css.worldTopBtn} ${css.navWord}`} onClick={() => goBackTo(WORLD_SELECT, { absolute: true })}>
           {t('ui.shell.chooseWorld')}
         </button>
         <div className={css.worldTopGroup}>
-          <LanguagePicker variant="overlay" />
+          {/* the light page: the plain picker (the overlay one is white, for a picture) */}
+          <LanguagePicker />
           <a href="#/" className={`${css.worldTopBtn} ${css.homeIcon}`} aria-label={t('ui.shell.home')}>
             <span aria-hidden>🏠</span>
           </a>
         </div>
       </div>
-      <div className={css.sheetBackdrop}>
-        <div className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.shopSheet}`} role="dialog" aria-modal="true" aria-labelledby="shop-title">
-          <button ref={handleRef} type="button" className={css.sheetHandle} onClick={close} aria-label={t('ui.buttons.close')}>
-            <span aria-hidden />
-          </button>
-          <h1 id="shop-title" className={css.stageSheetTitle} style={{ color: theme.accent }}>{t('ui.shop.title')}</h1>
+      <main className={css.shopBody} aria-labelledby="shop-title">
+          <h1 id="shop-title" ref={handleRef} tabIndex={-1} className={css.stageSheetTitle} style={{ color: theme.accent }}>{t('ui.shop.title')}</h1>
           {/* the stars still to spend */}
           <p className={css.celebrateCoins} role="img" aria-label={t('ui.shop.left').replace('{n}', String(left))}>
             {Array.from({ length: Math.max(0, left) }, (_, i) => (
@@ -98,18 +93,29 @@ function WorldShop() {
               const on = chosen.includes(id)
               const can = on || chosen.length < affordable
               return (
-                <button
-                  key={id}
-                  type="button"
-                  className={on ? `${css.shopItem} ${css.shopItemOn}` : css.shopItem}
-                  aria-pressed={on}
-                  aria-label={name(id)}
-                  disabled={!can}
-                  onClick={() => toggle(id)}
-                >
-                  <img src={picture(id)} alt="" />
-                  {on && <span className={css.shopTick} aria-hidden>✓</span>}
-                </button>
+                // a card as in an online shop: the picture, the name, the price and a "buy" button
+                <div key={id} className={on ? `${css.shopItem} ${css.shopItemOn}` : css.shopItem}>
+                  <span className={css.shopItemPic}>
+                    <img src={picture(id)} alt="" />
+                    {on && <span className={css.shopTick} aria-hidden>✓</span>}
+                  </span>
+                  <span className={css.shopItemName}>{name(id)}</span>
+                  <span className={css.shopItemPrice}>
+                    <span aria-hidden>{STARS_PER_ITEM} {theme.doneEmoji ?? '⭐'}</span>
+                    <span className="app-sr-only">{t('ui.shop.price').replace('{n}', String(STARS_PER_ITEM))}</span>
+                  </span>
+                  {/* bought: tapping again gives the piece back, and its stars */}
+                  <button
+                    type="button"
+                    className={on ? `${css.shopBuy} ${css.shopBuyOn}` : css.shopBuy}
+                    aria-pressed={on}
+                    aria-label={`${on ? t('ui.shop.bought') : t('ui.shop.buy')}: ${name(id)}`}
+                    disabled={!can}
+                    onClick={() => toggle(id)}
+                  >
+                    {on ? t('ui.shop.bought') : t('ui.shop.buy')}
+                  </button>
+                </div>
               )
             })}
           </div>
@@ -129,8 +135,7 @@ function WorldShop() {
               {t('ui.buttons.back')}
             </button>
           </div>
-        </div>
-      </div>
+      </main>
 
       {/* the A4 sheet the PDF is made from: drawn off the screen, black and white */}
       <div className={css.shopPaperHolder} aria-hidden>

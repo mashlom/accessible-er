@@ -3374,29 +3374,86 @@ path.worldTrailLit {
   color: var(--tok-text2);
 }
 
+.shopFull {
+  min-height: 100dvh;
+  background: var(--w-page, #f5f5f5);
+}
+
+/* the shop's page: a column under the top row, the whole screen, scrolling */
+.shopBody {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 88px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .shopGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
 }
 
 .shopItem {
-  position: relative;
-  aspect-ratio: 1;
-  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px 12px;
   border: 2px solid #d8dde0;
-  border-radius: 14px;
+  border-radius: 16px;
   background: #fff;
-  cursor: pointer;
+  color: var(--tok-text);
 }
 
-.shopItem img {
+.shopItemPic {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.shopItemPic img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.shopItem:disabled { opacity: 0.4; cursor: default; }
+.shopItemName {
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* the price tag */
+.shopItemPrice {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #fff4cf;
+  border: 1px solid #f0d27a;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.shopBuy {
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--tok-action);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.shopBuy:disabled { opacity: 0.35; cursor: default; }
+
+.shopBuyOn {
+  background: #fff;
+  color: var(--tok-action);
+  box-shadow: inset 0 0 0 2px var(--tok-action);
+}
 
 .shopItemOn {
   border-color: var(--tok-action);
@@ -3487,4 +3544,17 @@ path.worldTrailLit {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+}
+
+/* the shop's page is light: its top row in the text colour, not white over a picture */
+.shopFull .worldTopBtn {
+  color: var(--tok-text);
+  border-color: var(--tok-text2);
+  text-shadow: none;
+}
+
+/* landscape (the same switch as the maps): five pieces to a row */
+@media (min-aspect-ratio: 3/2), (min-width: 747px) and (min-aspect-ratio: 1/1) {
+  .shopBody { max-width: 1100px; }
+  .shopGrid { grid-template-columns: repeat(5, 1fr); }
 }
