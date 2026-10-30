@@ -142,7 +142,12 @@ export interface QuestTheme {
   shopImage?: string
   /** The shop: paper-doll colouring pieces in public/worlds/<world>/shop/<item>.webp, the doll (doll.webp) unless
    *  the items stand on their own (the dinosaurs), and the order the items are offered in (issue #50) */
-  shop?: { doll: boolean; items: string[] }
+  shop?: {
+    doll: boolean
+    items: string[]
+    /** each piece's height as a part of the doll's, so that it fits on the doll when printed */
+    sizes?: Record<string, number>
+  }
   /** Instruction text on the procedure select screen */
   procedurePrompt?: string
   /** CSS colour used for UI accents in this world */

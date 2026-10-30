@@ -473,6 +473,16 @@
       "mission-badge",
       "flag",
       "robot"
-    ]
+    ],
+    "sizes": {
+      "helmet": 0.33,
+      "suit": 0.78,
+      "boots": 0.15,
+      "jet-pack": 0.33,
+      "gloves": 0.1,
+      "mission-badge": 0.08,
+      "flag": 0.5,
+      "robot": 0.28
+    }
   }
 }

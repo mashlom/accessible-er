@@ -633,6 +633,16 @@
       "air-tank",
       "underwater-torch",
       "net-bag"
-    ]
+    ],
+    "sizes": {
+      "diving-mask": 0.12,
+      "snorkel": 0.24,
+      "wetsuit": 0.78,
+      "flippers": 0.16,
+      "air-tank": 0.38,
+      "underwater-torch": 0.2,
+      "net-bag": 0.28,
+      "diving-helmet": 0.33
+    }
   }
 }

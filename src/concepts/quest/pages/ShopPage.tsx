@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useGoBackTo } from '../../nav'
 import { WORLD_SELECT } from '../components/WorldScope'
 import { useWide } from './WorldMapPage'
@@ -15,6 +15,8 @@ import css from '../quest.module.css'
 const PRICES = [2, 1, 3, 1, 4, 2, 5, 3]
 /** At most this many things go on the sheet next to the doll */
 const MAX_ITEMS = 4
+/** The doll's height on the A4 sheet at most (px of a 1123 px tall page) */
+const DOLL_MAX = 960
 
 /**
  * The shop (issue #50): the stars earned at the stations buy black-and-white paper-doll pieces of the world, and the
@@ -40,6 +42,12 @@ function WorldShop() {
   const [state, setState] = useState<'idle' | 'saving' | 'saved' | 'failed'>('idle')
   const handleRef = useRef<HTMLHeadingElement>(null)
   const sheetRef = useRef<HTMLDivElement>(null)
+  const bodyRef = useRef<HTMLDivElement>(null)
+  // the doll's height on the sheet (px of the 794 x 1123 page): as tall as the page allows, made smaller (with all
+  // the pieces) until everything fits on the one page
+  const [dollH, setDollH] = useState(DOLL_MAX)
+  const [fit, setFit] = useState(0)
+  const refit = () => setFit((n) => n + 1)
   const texts = worldText(theme.id, lang as WorldLang)
   const name = (id: string) => texts?.shop?.[id] ?? id
   const picture = (id: string) => `${import.meta.env.BASE_URL}worlds/${theme.id}/shop/${id}.webp`
@@ -49,6 +57,12 @@ function WorldShop() {
   useEffect(() => {
     handleRef.current?.focus()
   }, [])
+
+  useEffect(() => setDollH(DOLL_MAX), [chosen])
+  useLayoutEffect(() => {
+    const b = bodyRef.current
+    if (b && b.scrollHeight > b.clientHeight + 1 && dollH > 200) setDollH((h) => Math.round(h * 0.94))
+  }, [dollH, fit, chosen])
 
   const toggle = (id: string) =>
     setChosen((c) => (c.includes(id) ? c.filter((x) => x !== id) : c.length < MAX_ITEMS && price(id) <= left ? [...c, id] : c))
@@ -144,19 +158,12 @@ function WorldShop() {
             <strong>{texts?.name}</strong>
             <span>{t('ui.shop.sheetLine')}</span>
           </div>
-          <div className={shop.doll ? css.shopPaperBody : `${css.shopPaperBody} ${css.shopPaperNoDoll}`}>
-            {shop.doll && (
-              <div className={`${css.shopPiece} ${css.shopPieceDoll}`}>
-                <img src={picture('doll')} alt="" />
-              </div>
-            )}
-            <div className={css.shopPieces}>
-              {chosen.map((id) => (
-                <div key={id} className={css.shopPiece}>
-                  <img src={picture(id)} alt="" />
-                </div>
-              ))}
-            </div>
+          {/* the doll and the pieces at the doll's scale, so they fit on it; side by side, close together */}
+          <div ref={bodyRef} className={css.shopPaperBody}>
+            {shop.doll && <img src={picture('doll')} alt="" style={{ height: dollH }} onLoad={refit} />}
+            {chosen.map((id) => (
+              <img key={id} src={picture(id)} alt="" style={{ height: dollH * (shop.sizes?.[id] ?? 0.45) }} onLoad={refit} />
+            ))}
           </div>
         </div>
       </div>

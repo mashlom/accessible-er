@@ -472,6 +472,16 @@
       "boots",
       "banner",
       "toy-horse"
-    ]
+    ],
+    "sizes": {
+      "helmet": 0.3,
+      "chain-mail": 0.36,
+      "armour": 0.33,
+      "shield": 0.36,
+      "cape": 0.55,
+      "boots": 0.16,
+      "banner": 0.62,
+      "toy-horse": 0.62
+    }
   }
 }
