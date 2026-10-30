@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link, useGoBackTo } from '../../nav'
 import { WORLD_SELECT } from '../components/WorldScope'
 import { useWide } from './WorldMapPage'
@@ -11,6 +11,10 @@ import { isTestMode } from '../../../lib/testMode'
 import i18nUi from '../../../data/i18n/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import { lockBodyScroll } from '../../../lib/scrollLock'
+import { LanguagePicker } from '../../../components/LanguagePicker'
+import { ParentInfo } from '../components/ParentInfo'
+import { PARENT_WORLD } from '../useQuestTheme'
+import { designVars, getTheme } from '../themes'
 import css from '../quest.module.css'
 
 // the emoji of each block stay in code; the words come from src/data/i18n/ui.json
@@ -187,9 +191,9 @@ export function CelebratePage() {
 function CelebrateSheet({ image, title, text, buttons, parent }: {
   image?: string
   title: string
-  text: React.ReactNode
-  buttons: React.ReactNode
-  parent: React.ReactNode
+  text: ReactNode
+  buttons: ReactNode
+  parent: ReactNode
 }) {
   const { theme } = useQuestTheme()
   const { t } = useI18n()
@@ -205,6 +209,18 @@ function CelebrateSheet({ image, title, text, buttons, parent }: {
   const land = { '--celebrate-bg': wide ? 'var(--w-background-wide, var(--w-background))' : 'var(--w-background)' } as React.CSSProperties
   return (
     <div className={css.celebrateLand} style={land}>
+      {/* the same top row as on the maps (the shell's bar is hidden here): words for the adult, not pictures */}
+      <div className={wide ? `${css.worldTopRow} ${css.worldTopRowWide}` : css.worldTopRow}>
+        <button type="button" className={`${css.worldTopBtn} ${css.navWord}`} onClick={close}>
+          {t('ui.shell.map')}
+        </button>
+        <div className={css.worldTopGroup}>
+          <LanguagePicker variant="overlay" />
+          <a href="#/" className={`${css.worldTopBtn} ${css.homeIcon}`} aria-label={t('ui.shell.home')}>
+            <span aria-hidden>🏠</span>
+          </a>
+        </div>
+      </div>
       <div className={css.sheetBackdrop}>
         <div className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.celebrateSheet}`} role="dialog" aria-modal="true" aria-labelledby="celebrate-title">
           <button ref={handleRef} type="button" className={css.sheetHandle} onClick={close} aria-label={t('ui.buttons.close')}>
@@ -218,8 +234,45 @@ function CelebrateSheet({ image, title, text, buttons, parent }: {
           <h1 id="celebrate-title" className={css.stageSheetTitle} style={{ color: theme.accent }}>{title}</h1>
           <div className={css.celebrateSheetText}>{text}</div>
           <div className={css.celebrateSheetActions}>{buttons}</div>
-          <div className={css.celebrateSheetParent}>{parent}</div>
+          {/* what happens now (discharge or admission) is for the adult: in the parent's sheet, under the child's buttons, as on a station */}
+          <ParentInfo inline sheet={(onClose) => <CelebrateParentSheet onClose={onClose}>{parent}</CelebrateParentSheet>} />
         </div>
+      </div>
+    </div>
+  )
+}
+
+/** The parent's sheet of the celebration: what happens now, in the parent's colours */
+function CelebrateParentSheet({ onClose, children }: { onClose: () => void; children: ReactNode }) {
+  const { t, lang, dir } = useI18n()
+  const closeRef = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    closeRef.current?.focus()
+    const unlock = lockBodyScroll()
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
+    window.addEventListener('keydown', onKey)
+    return () => {
+      unlock()
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [onClose])
+  return (
+    <div className={css.sheetBackdrop} onClick={onClose}>
+      <div
+        className={`${css.sheet} ${css.worldSheet} ${css.celebrateSheetParent}`}
+        style={designVars(getTheme(PARENT_WORLD).design)}
+        // drawn in the page body (outside the shell): it takes the language's direction itself
+        dir={dir}
+        lang={lang}
+        role="dialog"
+        aria-modal="true"
+        aria-label={t('ui.buttons.parentInfo')}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button ref={closeRef} type="button" className={css.sheetHandle} onClick={onClose} aria-label={t('ui.buttons.close')}>
+          <span aria-hidden />
+        </button>
+        {children}
       </div>
     </div>
   )

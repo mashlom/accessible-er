@@ -3346,13 +3346,7 @@ path.worldTrailLit {
   width: 100%;
 }
 
-/* the parent's part: under the child's buttons, set apart by a thin line */
-.celebrateSheetParent {
-  margin-top: calc(14 * var(--u));
-  padding-top: calc(14 * var(--u));
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
+/* the parent's sheet of the celebration: what happens now */
 .celebrateSheetParent .stageBody.celebrateParentZone {
   padding: 0;
   max-width: none;
