@@ -5,8 +5,12 @@
   "doneEmoji": "⭐",
   "shopImage": "/worlds/safari/art/celebrate.webp",
   "bg": "",
-  "thumbnail": "/worlds/safari/art/map-portrait.webp",
+  "thumbnail": "/worlds/safari/art/map-landscape.webp",
   "thumbnailOverlay": "/worlds/safari/art/card.webp",
+  "thumbnailPiece": {
+    "size": "427%",
+    "position": "18% 29%"
+  },
   "accent": "#2E7D4F",
   "accentSoft": "#fcefd0",
   "accentText": "#ffffff",
