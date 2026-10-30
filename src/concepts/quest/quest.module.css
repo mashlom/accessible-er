@@ -3269,6 +3269,47 @@ path.worldTrailLit {
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
 }
 
+/* ── A map picture with its own landscape around the frame (design.extended, docs/art/map-backgrounds) ─────────
+   The picture is drawn beyond the scene's edges (its box in world.json reaches past the frame), so every screen
+   shape shows real landscape: nothing is mirrored, blurred or filled with a flat colour. The portrait scene fits
+   the screen's height (an upright iPad or a short phone no longer scrolls), standing on the bottom with the sky
+   above it; the column stays pressed to the right edge. */
+.worldMapExt {
+  --colw: min(100vw, 560px, 100dvh * 412 / 939);
+  --uc: calc(var(--colw) / 412);
+  --col: var(--colw);
+  /* the first map fits the screen; a long second map (many prescribed stations) still scrolls */
+  min-height: 100dvh;
+  justify-content: flex-end;
+}
+
+.worldMapExt .worldProgress { --col: var(--colw); }
+
+.worldMapExt .worldScene {
+  width: var(--colw);
+  max-width: none;
+  overflow: visible;
+  background: transparent;
+}
+
+/* the scene carries the whole picture itself (the portrait layout otherwise draws it as tiles); the picture's own
+   sky and ground meet the scene, so no gradient over its top */
+.worldMapExt .worldScene::before { display: block; }
+.worldMapExt .worldScene::after { display: none; }
+
+.worldMapExt.worldMapWide { justify-content: flex-end; }
+
+.worldMapExt .worldSceneWide {
+  width: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .worldMapExt.worldMapWide { justify-content: center; }
+  .worldMapExt .worldSceneWide { width: var(--sw); }
+  .worldMapExt .worldSceneWide::before {
+    background-size: 100% 100%;
+    background-position: 0 0;
+  }
 /* the procedure's (and the test's) picture, like the station's scene: the same size on every sheet, whatever the
    steps below it; the sheet scrolls, the picture never gives way */
 .worldSheet.stageSheet > .stageSheetPicWrap.procBigIcon {

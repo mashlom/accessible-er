@@ -192,7 +192,9 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
   const mapRef = useRef<HTMLDivElement>(null)
   const goBackTo = useGoBackTo()
   const { theme } = useQuestTheme()
-  const sideBg = useSideColours(mapRef, wide, theme)
+  // a picture with its own landscape around the frame: nothing to mirror, blur or fill in
+  const ext = !!theme.design?.extended
+  const sideBg = useSideColours(mapRef, wide && !ext, theme)
   const sceneRef = useRef<HTMLDivElement>(null)
   // the station under the mouse (a touch screen has none): it gets the pointer and the hover shadow
   const [hover, setHover] = useState<number | null>(null)
@@ -223,25 +225,25 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
   return (
     <div
       ref={mapRef}
-      className={wide ? `${css.worldMap} ${css.worldMapWide}` : css.worldMap}
+      className={[css.worldMap, wide ? css.worldMapWide : '', ext ? css.worldMapExt : ''].join(' ')}
       // the same numbers are used by the mirrored pieces that fill what the scene doesn't reach
       style={vars as React.CSSProperties}
       // behind a sheet the map is only a picture: seen, but not reachable by touch, keyboard or screen reader
       {...(underSheet ? { inert: '', 'aria-hidden': true } : {})}
     >
-      {wide && theme.design?.mirrorAbove !== false && (
+      {wide && !ext && theme.design?.mirrorAbove !== false && (
         // the scene sits on the bottom of the screen; only what is above it is filled with the mirrored picture
         <div className={`${css.worldTileV} ${css.worldTileVTop}`} aria-hidden>
           <div className={css.worldSideBgW} />
         </div>
       )}
-      {wide && theme.design?.mirrorAbove === false && (
+      {wide && !ext && theme.design?.mirrorAbove === false && (
         // the others: just above the scene a short blurred reflection of its top, fading into the sky
         <div className={`${css.worldTileV} ${css.worldTileVTop} ${css.worldTileVSoft}`} aria-hidden>
           <div className={css.worldSideBgW} />
         </div>
       )}
-      {wide && (
+      {wide && !ext && (
         // on a screen wider than the scene (more than 16:9) the scene stands in the middle and the picture is
         // mirrored on each side of it (the CSS shows these only then)
         <>
@@ -257,7 +259,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
           </div>
         </>
       )}
-      {!wide && (
+      {!wide && !ext && (
         <>
           {/* the column is pressed to the right edge; the rest of the screen, on its left, is the picture
               mirrored outwards from the column's edge (a mirror at each edge, so the pieces meet without a
