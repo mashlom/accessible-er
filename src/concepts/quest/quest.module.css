@@ -3319,3 +3319,15 @@ path.worldTrailLit {
   height: calc(240 * var(--u));
   min-height: auto;
 }
+
+/* the portrait map of an extended picture: the progress case stands at the right edge of the screen, off the stations
+   that now use the whole width */
+.worldMapExt .worldProgress:not(.worldProgressWide) {
+  left: auto;
+  right: 10px;
+}
+
+/* on a short screen the headline stays under the top row, not over the language button */
+.worldMapExt .worldTitle:not(.worldTitleTop) {
+  top: max(calc(var(--title-y) * var(--u)), 64px);
+}
