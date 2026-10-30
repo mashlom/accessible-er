@@ -41,7 +41,8 @@ export function WorldSelectPage() {
           >
             {theme.thumbnailOverlay ? (
               <div
-                className={css.worldCardBackdrop}
+                // a map picture: its upper part, with plenty of sky over the land (the ocean has its own picture)
+                className={theme.thumbnail ? `${css.worldCardBackdrop} ${css.worldCardBackdropSky}` : css.worldCardBackdrop}
                 style={{ backgroundImage: `url(${theme.thumbnail ?? theme.bg})` }}
               >
                 <img src={theme.thumbnailOverlay} alt="" className={css.worldCardOverlay} />
