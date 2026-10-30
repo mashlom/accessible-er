@@ -282,6 +282,8 @@
       "distract": "🫧 Open a distraction corner during the procedure",
       "note": "The order and times may change depending on the team's decision and how busy the ER is.",
       "crossLink": "🎭 All the stories ←",
+      "storyTitle": "Read it together with your child",
+      "storyText": "This is the story your child meets in the game, step by step. You can read it together before the procedure, stop at any step and ask what feels hard.",
       "videoTitle": "A short video will go here",
       "videoText": "A real video of {title} from the Laniado ER, or a filmed social story. In the demo this is only a placeholder — the filming has to be done in the department itself."
     },
@@ -399,6 +401,9 @@
       "fill": "Fill in the card",
       "savePdf": "📄 Save as PDF",
       "edit": "✏️ Edit",
+      "pdfSaving": "⏳ Saving the file…",
+      "pdfSaved": "✓ The file was saved to the device (in Downloads)",
+      "pdfFailed": "The file could not be saved. You can try again, or use the browser's print and choose \"Save as PDF\".",
       "sendHint": "To send it to the staff: tap \"Save as PDF\", choose \"Save as PDF\" in the print window, and send the file yourselves. The card is kept on this device only, deleted after 24 hours, and nothing is sent automatically.",
       "print": "🖨️ Print"
     },
@@ -717,6 +722,8 @@
       "distract": "🫧 Открыть уголок отвлечения во время процедуры",
       "note": "Порядок и время могут меняться по решению команды и из-за загруженности приёмного покоя.",
       "crossLink": "🎭 Ко всем историям ←",
+      "storyTitle": "Прочитайте вместе с ребёнком",
+      "storyText": "Это история, которую ребёнок встречает в игре, шаг за шагом. Её можно прочитать вместе перед процедурой, остановиться на любом шаге и спросить, что кажется трудным.",
       "videoTitle": "Здесь будет короткое видео",
       "videoText": "Настоящее видео: {title} в приёмном покое Ланиадо или снятая социальная история. В демо здесь только место — съёмку нужно делать в самом отделении."
     },
@@ -834,6 +841,9 @@
       "fill": "Заполнить карточку",
       "savePdf": "📄 Сохранить как PDF",
       "edit": "✏️ Изменить",
+      "pdfSaving": "⏳ Сохраняем файл…",
+      "pdfSaved": "✓ Файл сохранён на устройстве (в «Загрузках»)",
+      "pdfFailed": "Не удалось сохранить файл. Можно попробовать ещё раз или распечатать через браузер и выбрать «Сохранить как PDF».",
       "sendHint": "Чтобы отправить персоналу: нажмите «Сохранить как PDF», в окне печати выберите «Сохранить как PDF» и отправьте файл сами. Карточка хранится только на этом устройстве, удаляется через 24 часа, и ничего не отправляется автоматически.",
       "print": "🖨️ Печать"
     },
@@ -954,7 +964,7 @@
     },
     "circles": {
       "triage-temperature": "חום",
-      "triage-oxygen": "סטורציה",
+      "triage-oxygen": "סאטורציה",
       "triage-pressure": "לחץ דם",
       "tests-blood-test": "בדיקת דם",
       "tests-urine": "בדיקת שתן",
@@ -1061,11 +1071,11 @@
         },
         {
           "title": "המעבר למחלקה",
-          "body": "המעבר עצמו יכול להיות עומס נוסף אחרי ביקור ארוך. חשוב לתן לילד/ה זמן, הסברים, והמשך את ההתאמות שעזרו בדרך."
+          "body": "המעבר עצמו יכול להיות עומס נוסף אחרי ביקור ארוך. חשוב לתת לילד/ה זמן והסברים, ולהמשיך את ההתאמות שעזרו בדרך."
         },
         {
           "title": "בחדר האשפוז",
-          "body": "בחדר יהיה חדר חדש, צוות חדש וסביבה לא מוכרת. אפשר לבקש להביא דברים אהובים של הילד/ה, ולהסביר לצוות המחלקה מה עזר בבדיקות."
+          "body": "במחלקה יהיו חדר חדש, צוות חדש וסביבה לא מוכרת. אפשר לבקש להביא דברים אהובים של הילד/ה, ולהסביר לצוות המחלקה מה עזר בבדיקות."
         },
         {
           "title": "תמיכה משפחתית",
@@ -1152,6 +1162,8 @@
       "distract": "🫧 לפתוח פינת הסחת דעת בזמן הפעולה",
       "note": "הסדר והזמנים עשויים להשתנות לפי החלטת הצוות והעומס במיון.",
       "crossLink": "🎭 לכל הסיפורים ←",
+      "storyTitle": "לקרוא יחד עם הילד/ה",
+      "storyText": "זה הסיפור שהילד/ה פוגש/ת במשחק, שלב אחרי שלב. אפשר לקרוא אותו יחד לפני הבדיקה, לעצור בכל שלב ולשאול מה מרגיש קשה.",
       "videoTitle": "כאן ייכנס סרטון קצר",
       "videoText": "סרטון אמיתי של {title} מהמלר״ד בלניאדו, או סיפור חברתי מצולם. בדמו זה שמור מקום בלבד — הצילום צריך להיעשות במחלקה עצמה."
     },
@@ -1269,6 +1281,9 @@
       "fill": "למילוי הכרטיס",
       "savePdf": "📄 שמירה כ־PDF",
       "edit": "✏️ עריכה",
+      "pdfSaving": "⏳ שומרים את הקובץ…",
+      "pdfSaved": "✓ הקובץ נשמר במכשיר (בתיקיית ההורדות)",
+      "pdfFailed": "לא הצלחנו לשמור את הקובץ. אפשר לנסות שוב, או להדפיס מהדפדפן ולבחור \"שמירה כ־PDF\".",
       "sendHint": "לשליחה לצוות: לחצו \"שמירה כ־PDF\", בחרו \"שמירה כ־PDF\" בחלון ההדפסה, ושִׁלחו את הקובץ בעצמכם. הכרטיס נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ושום דבר לא נשלח אוטומטית.",
       "print": "🖨️ הדפסה"
     },

@@ -2,14 +2,14 @@ import { keyed } from '../../../lib/keyed'
 import { Link } from '../../nav'
 import { useI18n } from '../../../hooks/useI18n'
 import homeTexts from '../../../data/parent/home.json'
-import { Scene, Bubble, Note } from '../components/kit'
+import { Scene, Bubble } from '../components/kit'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
 /**
  * Discharge as its own scene (Keren & Rotem's feedback): going home is a
  * transition too, and the reaction to the visit often arrives only later,
- * at home. The texts are in parent/home.json (a draft, to be finalised with Hagit).
+ * at home. The texts are in parent/home.json.
  */
 const emojis = ['📝', '🚪', '🏠', '🧰', '🩺']
 
@@ -54,10 +54,6 @@ export function GoingHomePage() {
         <Link to="/" className={shell.ghostBtn}>
           {t('ui.storyFeedback.back')}
         </Link>
-      </div>
-
-      <div style={{ marginTop: 'var(--space-4)' }}>
-        <Note>{tx.note}</Note>
       </div>
     </Scene>
     </div>

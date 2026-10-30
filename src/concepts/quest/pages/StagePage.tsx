@@ -28,6 +28,11 @@ export function StagePage() {
   // (a station left "locked" by an older saved state could never be finished, and the ending stayed locked)
   const isActive = isOptional ? !!thisStage?.visible && thisStage.status !== 'done' : active?.id === id
 
+  // the map this sheet closes onto: the second one only once its stage began (a station reached from a link
+  // before the doctor ordered it closes onto the first map, not onto a second map that is still empty)
+  const secondBegun = stages.find((s) => s.id === LAST_REQUIRED)?.status === 'done'
+  const mapOf = (isOptional && thisStage?.visible) || (id === 'decision' && secondBegun) ? '/second-map' : '/map'
+
   const data = parentJourney(lang).find((j) => j.id === id)
   const skin = id ? theme.stages[id] : undefined
 
@@ -41,7 +46,7 @@ export function StagePage() {
         hint={skin?.hint}
         isActive={false}
         onDone={() => {}}
-        backTo="/night-map"
+        backTo={mapOf}
         noParent
       />
     )
@@ -77,7 +82,7 @@ export function StagePage() {
       // designed world: finishing the doctor stage goes straight on to the procedure choice, in this sheet's place
       navigate(conceptPath('/procedures'), { replace: true })
     } else {
-      goBackTo(isOptional ? '/night-map' : '/map')
+      goBackTo(mapOf)
     }
   }
 
@@ -91,7 +96,7 @@ export function StagePage() {
         onDone={handleDone}
         showChooseTests={isLastStage && thisStage?.status === 'done'}
         doneIsChoice={isLastStage}
-        backTo={isOptional ? '/night-map' : '/map'}
+        backTo={mapOf}
       >
         {inlineProc && inlineSteps && inlineSteps.length > 0 && (
           <ol className={css.procedureSteps} style={{ color: theme.accent }}>
@@ -163,7 +168,7 @@ export function StagePage() {
               </button>
             </Link>
           )}
-          <Link to={isOptional ? '/night-map' : '/map'}>
+          <Link to={mapOf}>
             <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }}>
               {t('ui.buttons.backToMap')}
             </button>

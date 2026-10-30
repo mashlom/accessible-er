@@ -7,6 +7,7 @@ import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
+import { isTestMode } from '../../../lib/testMode'
 import i18nUi from '../../../data/i18n/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import css from '../quest.module.css'
@@ -27,17 +28,12 @@ function blocksFor(lang: 'he' | 'en' | 'ru', kind: 'discharge' | 'admission') {
   return texts.map((b, i) => ({ emoji: BLOCK_EMOJI[kind][i], ...b, title: i === 0 ? first : b.title }))
 }
 
-/** The shop is hidden unless the address asks for it: ?enable_store=true (before the # or after the screen's path) */
-function storeEnabled(): boolean {
-  const hashQuery = window.location.hash.split('?')[1] ?? ''
-  return [window.location.search, hashQuery].some((q) => new URLSearchParams(q).get('enable_store') === 'true')
-}
-
 export function CelebratePage() {
   const [outcome, setOutcome] = useState<'discharge' | 'admission' | null>(null)
   const { theme } = useQuestTheme()
   const wide = useWide()
-  const withStore = storeEnabled()
+  // the shop is hidden unless the address asks for the test mode (?test=true)
+  const withStore = isTestMode()
   // a designed world: the page stands on the world's own map picture (the landscape one on a wide screen)
   const worldBg = theme.design
     ? ({ '--celebrate-bg': wide ? 'var(--w-background-wide, var(--w-background))' : 'var(--w-background)' } as React.CSSProperties)

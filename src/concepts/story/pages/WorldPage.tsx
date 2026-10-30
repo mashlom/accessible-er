@@ -1,4 +1,5 @@
 import { keyed } from '../../../lib/keyed'
+import { isTestMode } from '../../../lib/testMode'
 import type { CSSProperties } from 'react'
 import { Link } from '../../nav'
 import { openHelper } from '../../../components/helper/helperStore'
@@ -25,9 +26,6 @@ const destinations = [
   { to: '/message', id: 'message', emoji: '✉️', tint: 'var(--s-lilac-soft)' },
   { to: '/feedback', id: 'feedback', emoji: '💬', tint: 'var(--s-sea-soft)' },
 ]
-
-/** "Reading in the ER" (the books, #/book) is hidden from the home for now; the books themselves stay */
-const SHOW_READ_CARD = false
 
 type HomeLang = keyof typeof homeTexts
 
@@ -89,7 +87,8 @@ export function WorldPage() {
             <span className={styles.childCardDesc}>{tx.start.desc}</span>
             <span className={styles.childCardAction}>{tx.start.action} {dir === 'rtl' ? '←' : '→'}</span>
           </a>
-          {SHOW_READ_CARD && (
+          {/* "Reading in the ER" (the books, #/book) shows only in the test mode (?test=true); the books themselves stay */}
+          {isTestMode() && (
             <a href="#/book" className={styles.childCard}>
               <span className={styles.childCardIcon} aria-hidden>📖</span>
               <span className={styles.childCardName}>{tx.read.title}</span>

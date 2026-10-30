@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { setKeysOn, useI18n } from '../hooks/useI18n'
+import { isTestMode } from '../lib/testMode'
 import css from './LanguagePicker.module.css'
 
 const languages = [
@@ -72,8 +73,8 @@ export function LanguagePicker({
               </button>
             </li>
           ))}
-          {/* the fourth, technical language: every text shows the key it comes from (for the team) */}
-          <li role="none">
+          {/* the fourth, technical language: every text shows the key it comes from (for the team, only with ?test=true) */}
+          {isTestMode() && <li role="none">
             <button
               type="button"
               role="menuitemradio"
@@ -87,7 +88,7 @@ export function LanguagePicker({
               <span aria-hidden>🔧</span>
               <span>text_name</span>
             </button>
-          </li>
+          </li>}
         </ul>
       )}
     </div>

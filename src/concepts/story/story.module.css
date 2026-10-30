@@ -56,7 +56,8 @@
 
 /* decorative sky furniture — sun + clouds, behind everything */
 .skyDeco {
-  position: fixed;
+  /* at the top of the page (it scrolls away with the header, not over the tiles) */
+  position: absolute;
   inset: 64px 0 auto 0;
   height: 320px;
   pointer-events: none;
@@ -119,6 +120,20 @@
   height: 32px;
   top: -15px;
   inset-inline-start: 12px;
+}
+
+/* a phone: the title takes the whole width, so only a small sun in the top corner, clear of the words */
+@media (max-width: 560px) {
+  .sun {
+    top: -48px;
+    right: 5%;
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 0 0 10px rgba(246, 185, 59, 0.16);
+  }
+  .cloud {
+    display: none;
+  }
 }
 
 @keyframes drift {

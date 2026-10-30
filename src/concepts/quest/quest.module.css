@@ -1213,6 +1213,13 @@
   flex: 2;
 }
 
+/* the answer to "save as PDF": saved, or what to do instead */
+.pdfStatus {
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+  text-align: center;
+}
+
 .procedureIconRow {
   display: flex;
   flex-direction: row;
@@ -1455,9 +1462,10 @@
   stroke-dasharray: 3.6 10.1;
 }
 
+/* a station: its box on the scene (its place in the design frame). The touches are not its own: the scene
+   tells which station a touch is for (stationAt in WorldMapPage), so pictures that overlap don't steal them */
 .worldStage {
   position: absolute;
-  inset: 0;
   pointer-events: none;
 }
 
@@ -1468,25 +1476,24 @@
 
 .worldObj {
   position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   display: block;
   height: auto;
-  pointer-events: auto;
-  cursor: pointer;
   filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
   transition: transform 0.2s, filter 0.2s;
   z-index: 2;
 }
 
-.worldObj:hover {
+.worldStage[data-hover] .worldObj {
   filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.3));
 }
 
 .worldBubble {
   position: absolute;
   z-index: 3;
-  pointer-events: auto;
   translate: -50% -50%;
-  cursor: pointer;
 }
 
 .worldNum {
@@ -1559,8 +1566,11 @@
   max-height: 92dvh;
   overflow-y: auto;
   overflow-x: hidden;
+  /* a swipe in the sheet scrolls the sheet, not the map behind it */
+  overscroll-behavior: contain;
   box-sizing: border-box;
-  padding: 0.25rem 1rem 1.5rem;
+  /* on a phone without a home button the bottom of the screen is the system's bar: the last button stays above it */
+  padding: 0.25rem 1rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
   background: #fff;
   border-radius: 28px 28px 0 0;
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.2);
@@ -2128,7 +2138,7 @@
   max-width: none;
   height: min(calc(var(--sw) * 659 / 412), 92dvh);
   max-height: none;
-  padding: 0 var(--pad) calc(20 * var(--u));
+  padding: 0 var(--pad) calc(20 * var(--u) + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
 }
@@ -2155,7 +2165,7 @@
 /* Stage sheet */
 .worldSheet.stageSheet {
   gap: calc(10 * var(--u));
-  padding-bottom: calc(20 * var(--u));
+  padding-bottom: calc(20 * var(--u) + env(safe-area-inset-bottom, 0px));
 }
 
 .worldSheet .stageSheetImg {
@@ -2252,10 +2262,6 @@
 
 .sheetHandle:focus-visible span {
   box-shadow: 0 0 0 3px #0a6b8a;
-}
-
-.worldStage[aria-disabled='true'] .worldObj {
-  cursor: not-allowed;
 }
 
 /* ── Ocean sheets: buttons in a row and the procedure panel ────────── */
@@ -2483,7 +2489,7 @@
 .worldSheet.stageSheet {
   --dh: 640;
   gap: 0;
-  padding-bottom: calc(24 * var(--u));
+  padding-bottom: calc(24 * var(--u) + env(safe-area-inset-bottom, 0px));
 }
 
 .worldSheet.stageSheet .sheetHandle {
@@ -2498,6 +2504,22 @@
   width: 100%;
   margin: 0;
   object-fit: contain;
+}
+
+/* a station with more to say (procedure buttons, a long story, a short phone): the picture gives way, so the
+   buttons and the parent's button stay in view instead of under the bottom of the sheet */
+.worldSheet.stageSheet > .stageSheetPicWrap,
+.worldSheet.stageSheet > .stageSheetPicPlain,
+.worldSheet.stageSheet > .stageSheetPicHouse {
+  flex: 0 1 auto;
+  min-height: 90px;
+}
+
+.worldSheet.stageSheet .stageSheetPicWrap > .stageSheetImg,
+.worldSheet.stageSheet .stageSheetPicPlain > .stageSheetImg,
+.worldSheet.stageSheet .stageSheetPicHouse > .stageSheetImg {
+  flex: 0 1 auto;
+  min-height: 0;
 }
 
 .worldSheet.stageSheet .stageSheetImgBleed {

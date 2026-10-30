@@ -152,3 +152,35 @@
   border: 0;
   border-radius: 0;
 }
+
+/* the age is part of what the staff must see at a glance: as large as the lines */
+.staffScreen .cardAge {
+  font-size: 1.3rem;
+  font-weight: 700;
+  opacity: 1;
+}
+
+/* the parent's way out: back to where the card was opened, or to editing it */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 1.5rem 1.25rem 2rem;
+}
+.actionBtn {
+  flex: 1 1 140px;
+  min-height: 52px;
+  padding: 0 1.25rem;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.actionBtn:hover,
+.actionBtn:focus-visible {
+  background: #222;
+}

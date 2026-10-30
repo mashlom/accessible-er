@@ -21,7 +21,7 @@ interface Props {
   /** Last required stage: the main button finishes it and goes straight to the procedure selection */
   doneIsChoice?: boolean
   /** Map to return to when the sheet closes */
-  backTo: '/map' | '/night-map'
+  backTo: '/map' | '/second-map'
   /** No parent details (the locked ending has none) */
   noParent?: boolean
 }
@@ -86,7 +86,7 @@ export function WorldStageSheet({ stageId, label, hint, children, isActive, onDo
 
   return (
     <>
-      {backTo === '/night-map' ? <WorldNightMapPage underSheet /> : <WorldMapPage underSheet />}
+      {backTo === '/second-map' ? <WorldNightMapPage underSheet /> : <WorldMapPage underSheet />}
       <div className={css.sheetBackdrop} onClick={close}>
         <div
           ref={dialogRef}

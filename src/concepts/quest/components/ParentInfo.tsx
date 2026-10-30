@@ -328,7 +328,8 @@ export function ParentSheet({
 }
 
 /** One procedure's details for the parent, shown inside the parent sheet (slides in from the "forward" side) */
-export function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => void }) {
+/** withHead: false where the page above already titles the procedure */
+export function ProcedurePanel({ pid, onBack, withHead = true }: { pid: string; onBack?: () => void; withHead?: boolean }) {
   const { t, lang, dir } = useI18n()
   const { theme } = useQuestTheme()
   const proc = parentProcedure(lang, pid)
@@ -343,13 +344,15 @@ export function ProcedurePanel({ pid, onBack }: { pid: string; onBack?: () => vo
         </button>
       )}
 
-      <header className={css.procHead}>
-        <span className={css.procIcon} aria-hidden><ProcedureLineIcon id={pid} emoji={proc.emoji} /></span>
-        <div className={css.procHeadText}>
-          <h2>{proc.title}</h2>
-          {narrative && <p>{narrative}</p>}
-        </div>
-      </header>
+      {withHead && (
+        <header className={css.procHead}>
+          <span className={css.procIcon} aria-hidden><ProcedureLineIcon id={pid} emoji={proc.emoji} /></span>
+          <div className={css.procHeadText}>
+            <h2>{proc.title}</h2>
+            {narrative && <p>{narrative}</p>}
+          </div>
+        </header>
+      )}
 
       {(proc.who || proc.duration) && (
         <p className={css.sheetWait}>

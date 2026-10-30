@@ -43,7 +43,8 @@ export function CareCardView({ classes = {} }: { classes?: CareCardViewClasses }
   const lang: Lang = 'he'
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   // the labels of the card are Hebrew, like its values (the note on screen says so)
-  const heRows = keyed((i18nUi as unknown as Record<'he', { card: { rows: Record<string, string> } }>).he, 'i18n/ui').card.rows
+  const heTexts = keyed((i18nUi as unknown as Record<'he', { card: CardTexts }>).he, 'i18n/ui').card
+  const heRows = heTexts.rows
   const heAsks = askTexts('he')
   const c = card.custom ?? emptyCustom
   const join = (...parts: (string | undefined)[]) => parts.map((p) => (p ?? '').trim()).filter(Boolean).join(' · ')
@@ -84,6 +85,7 @@ export function CareCardView({ classes = {} }: { classes?: CareCardViewClasses }
 
       {suggestions.length > 0 && (
         <section className="app-no-print">
+          <h2>{heTexts.suggestionsTitle}</h2>
           <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
             {suggestions.map((s) => <li key={s}>{s}</li>)}
           </ul>

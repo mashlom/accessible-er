@@ -33,7 +33,7 @@ export function ProcedureSelectPage() {
   function handleContinue() {
     revealMultiple([...selected])
     // the second map takes the choice's place: going back from it returns to the first map, not to the choice
-    navigate(conceptPath('/night-map'), { replace: true })
+    navigate(conceptPath('/second-map'), { replace: true })
   }
 
   function handleSkip() {

@@ -1,7 +1,8 @@
 .fab {
   position: fixed;
-  /* lines up with the left edge of the content column (900px max, centred) */
-  left: max(16px, calc((100vw - 900px) / 2 + 16px));
+  /* in the margin just outside the content column (900px max, centred) when there is room, so it covers no tile;
+     on a narrow screen at the edge (the page leaves room under its last line, so nothing stays hidden) */
+  left: max(16px, calc((100vw - 900px) / 2 - 72px));
   /* on phones the browser's own bottom bar can cover the corner — the safe-area inset keeps the button above it */
   bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   /* above the top bar, the sky, the cards and the sheets: it is never covered */
@@ -53,11 +54,15 @@
   height: 100%;
 }
 
+.head {
+  flex: none;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 0;
+  background: #087e8b;
+}
+
 .close {
-  position: absolute;
-  top: 10px;
-  inset-inline-end: 10px;
-  z-index: 2;
   width: 48px;
   height: 48px;
   border: none;

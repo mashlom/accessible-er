@@ -39,9 +39,12 @@ export function HelperChat() {
           aria-label="Roni"
           onClick={(e) => e.stopPropagation()}
         >
-          <button type="button" className={styles.close} onClick={closeHelper} aria-label="Close">
-            ✕
-          </button>
+          {/* the close button has its own row: the conversation scrolls under it, never behind it */}
+          <div className={styles.head}>
+            <button type="button" className={styles.close} onClick={closeHelper} aria-label="Close">
+              ✕
+            </button>
+          </div>
           <div className={`${talkStyles.theme} ${styles.talkHost}`}>
             <div className={talkStyles.app} dir={dir} lang={lang}>
               <TalkPage />

@@ -97,6 +97,64 @@ export function stationPicture(design: WorldDesign, stageId: string, on: 'map' |
   return (on === 'sheet' ? st?.sheet : undefined) ?? st?.map ?? ''
 }
 
+/** The see-through of each station picture (a small copy of its alpha), to tell a touch on the picture from one on its empty margin */
+const alphaOf = new Map<string, { w: number; h: number; a: Uint8ClampedArray } | null>()
+
+/** Whether the picture is drawn at this point (fx, fy: 0..1 across its box); null when it can't be read */
+function opaqueAt(img: HTMLImageElement, fx: number, fy: number): boolean | null {
+  if (!img.complete || !img.naturalWidth) return null
+  const key = img.currentSrc || img.src
+  let m = alphaOf.get(key)
+  if (m === undefined) {
+    try {
+      const scale = Math.min(1, 256 / Math.max(img.naturalWidth, img.naturalHeight))
+      const w = Math.max(1, Math.round(img.naturalWidth * scale))
+      const h = Math.max(1, Math.round(img.naturalHeight * scale))
+      const c = document.createElement('canvas')
+      c.width = w
+      c.height = h
+      const g = c.getContext('2d', { willReadFrequently: true })
+      if (!g) throw new Error('no canvas')
+      g.drawImage(img, 0, 0, w, h)
+      m = { w, h, a: g.getImageData(0, 0, w, h).data }
+    } catch {
+      m = null
+    }
+    alphaOf.set(key, m)
+  }
+  if (!m) return null
+  const x = Math.min(m.w - 1, Math.max(0, Math.floor((img.hasAttribute('data-flip') ? 1 - fx : fx) * m.w)))
+  const y = Math.min(m.h - 1, Math.max(0, Math.floor(fy * m.h)))
+  return m.a[(y * m.w + x) * 4 + 3] > 32
+}
+
+/** A finger is not a mouse: the number badges answer within 48px across at least */
+const BADGE_REACH = 24
+
+/**
+ * Which station a touch at (x, y) is for: its number badge first (a generous circle), then the picture that is
+ * drawn there (the topmost one), then - on a picture's empty margin - the nearest picture whose box holds the point.
+ */
+function stationAt(scene: HTMLElement, x: number, y: number): number | null {
+  const stations = [...scene.querySelectorAll<HTMLElement>('[data-station]')]
+  const indexOf = (el: HTMLElement) => Number(el.dataset.station)
+  for (const el of stations) {
+    const r = el.querySelector('[data-badge]')?.firstElementChild?.getBoundingClientRect()
+    if (r && Math.hypot(x - (r.left + r.width / 2), y - (r.top + r.height / 2)) <= Math.max(BADGE_REACH, r.width / 2)) return indexOf(el)
+  }
+  let near: { i: number; d: number } | null = null
+  for (const el of stations.reverse()) {
+    const img = el.querySelector('img')
+    if (!img) continue
+    const r = img.getBoundingClientRect()
+    if (x < r.left || x > r.right || y < r.top || y > r.bottom) continue
+    if (opaqueAt(img, (x - r.left) / r.width, (y - r.top) / r.height) !== false) return indexOf(el)
+    const d = Math.hypot(x - (r.left + r.width / 2), y - (r.top + r.height / 2))
+    if (!near || d < near.d) near = { i: indexOf(el), d }
+  }
+  return near?.i ?? null
+}
+
 export interface ViewItem {
   id: string
   label: string
@@ -135,6 +193,9 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
   const goBackTo = useGoBackTo()
   const { theme } = useQuestTheme()
   const sideBg = useSideColours(mapRef, wide, theme)
+  const sceneRef = useRef<HTMLDivElement>(null)
+  // the station under the mouse (a touch screen has none): it gets the pointer and the hover shadow
+  const [hover, setHover] = useState<number | null>(null)
   const { W, H, slots, dots, lines, vars } = wide ? landscape : portrait
   const pctX = (v: number) => `${(v / W) * 100}%`
   // the headline: in the scene on a narrow screen; on a wide one at the top of the page, on the sky
@@ -242,7 +303,16 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
       <div
         // a world without the mirrored water above (all but the ocean): the picture's top fades into the sky colour
         className={wide ? `${css.worldScene} ${css.worldSceneWide} ${theme.design?.mirrorAbove === false ? css.worldSceneFade : ''}` : css.worldScene}
-        style={{ aspectRatio: `${W} / ${H}`, '--u': `calc(100cqw / ${W})`, ...vars } as React.CSSProperties}
+        style={{ aspectRatio: `${W} / ${H}`, '--u': `calc(100cqw / ${W})`, ...vars, cursor: hover !== null && items[hover]?.onOpen ? 'pointer' : undefined } as React.CSSProperties}
+        ref={sceneRef}
+        // the scene decides which station a touch is for (see stationAt)
+        onClick={(e) => {
+          if (e.detail === 0 || (e.target as Element).closest('h1')) return
+          const i = stationAt(e.currentTarget, e.clientX, e.clientY)
+          if (i !== null) items[i]?.onOpen?.()
+        }}
+        onPointerMove={(e) => e.pointerType === 'mouse' && setHover(stationAt(e.currentTarget, e.clientX, e.clientY))}
+        onPointerLeave={() => setHover(null)}
       >
         <svg viewBox={`0 0 ${W} ${H}`} className={css.worldPath} aria-hidden>
           {/* a trail lights up once the station it leaves is done */}
@@ -279,11 +349,18 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
           const slot = slots[i]
           if (!slot) return null
           const open = item.onOpen
+          // inside the station's box: the number and the stars are placed relative to it
+          const inX = (v: number) => `${((v - slot.x) / slot.w) * 100}%`
+          const inY = (v: number) => `${((v - slot.y) / slot.h) * 100}%`
           return (
             <div
               key={item.id}
               className={[css.worldStage, css[`pin--${item.status}`]].join(' ')}
-              onClick={open}
+              style={{ left: pctX(slot.x), top: pctY(slot.y), width: pctX(slot.w), height: pctY(slot.h) }}
+              data-station={i}
+              data-hover={hover === i && open ? '' : undefined}
+              // a touch is placed by the scene (stationAt); this one is a screen reader's or the keyboard's "click"
+              onClick={(e) => e.detail === 0 && open?.()}
               onKeyDown={(e) => open && (e.key === 'Enter' || e.key === ' ') && open()}
               role="button"
               tabIndex={open ? 0 : -1}
@@ -294,12 +371,13 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
                 src={item.image}
                 alt=""
                 className={css.worldObj}
-                style={{ left: pctX(slot.x), top: pctY(slot.y), width: pctX(slot.w), transform: slot.flip ? 'scaleX(-1)' : undefined }}
+                data-flip={slot.flip ? '' : undefined}
+                style={{ transform: slot.flip ? 'scaleX(-1)' : undefined }}
               />
               {(item.stars ?? 0) > 0 && (
                 <span
                   className={css.worldStars}
-                  style={{ left: pctX(slot.x + slot.w / 2), top: pctY(slot.y + slot.h * 0.88) }}
+                  style={{ left: '50%', top: '88%' }}
                   role="img"
                   aria-label={`${t('ui.labels.adult.done')}: ${item.stars}`}
                 >
@@ -307,7 +385,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
                 </span>
               )}
               {numbers && (
-                <div className={css.worldBubble} style={{ left: pctX(slot.badge[0]), top: pctY(slot.badge[1]) }}>
+                <div className={css.worldBubble} data-badge style={{ left: inX(slot.badge[0]), top: inY(slot.badge[1]) }}>
                   <span className={css.worldNum} aria-label={item.label}>{firstNumber + i}</span>
                 </div>
               )}

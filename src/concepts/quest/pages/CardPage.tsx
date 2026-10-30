@@ -16,13 +16,17 @@ export function CardPage() {
   const { t, lang, dir } = useI18n()
   const { goBack, leaveState } = useReturnTo('/stage/reception')
   // "save as PDF": the paper is drawn out of sight, saved as a file, and taken away
-  const [saving, setSaving] = useState(false)
+  const [pdf, setPdf] = useState<'idle' | 'saving' | 'saved' | 'failed'>('idle')
+  const saving = pdf === 'saving'
   const paperRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const paper = paperRef.current
     if (!saving || !paper) return
     const name = careCardHeading(readStored<CareCard>('care-card', emptyCard), 'he').title
-    saveCardPdf(paper, name).finally(() => setSaving(false))
+    saveCardPdf(paper, name).then(
+      () => setPdf('saved'),
+      () => setPdf('failed'),
+    )
   }, [saving])
 
   return (
@@ -45,6 +49,7 @@ export function CardPage() {
         <CareCardForm
           colours={{ accent: theme.accent, accentSoft: theme.accentSoft, accentText: theme.accentText }}
           footer={({ empty }) => (
+            <>
             <div className={css.stageBack}>
               <Link to="/card/view" state={leaveState('/card')}>
                 <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText, opacity: empty ? 0.4 : 1 }} disabled={empty}>
@@ -57,11 +62,17 @@ export function CardPage() {
                 style={{ borderColor: theme.accent, color: theme.accent, opacity: empty ? 0.4 : 1 }}
                 disabled={empty || saving}
                 aria-busy={saving}
-                onClick={() => setSaving(true)}
+                onClick={() => setPdf('saving')}
               >
-                {t('ui.cardView.savePdf')}
+                {saving ? t('ui.cardView.pdfSaving') : t('ui.cardView.savePdf')}
               </button>
             </div>
+            {/* the parent sees that the file was made (a download gives no sign of its own on every phone) */}
+            <p className={css.pdfStatus} role="status">
+              {pdf === 'saved' && t('ui.cardView.pdfSaved')}
+              {pdf === 'failed' && t('ui.cardView.pdfFailed')}
+            </p>
+            </>
           )}
         />
       </div>

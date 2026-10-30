@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import { Navigate } from '../nav'
 import { QuestShell } from './components/QuestShell'
 import { WorldSelectPage } from './pages/WorldSelectPage'
 import { WorldScope } from './components/WorldScope'
@@ -22,7 +23,9 @@ function WorldRoutes() {
       <Route path="map" element={<MapPage />} />
       <Route path="stage/:id" element={<StagePage />} />
       <Route path="procedures" element={<ProcedureSelectPage />} />
-      <Route path="night-map" element={<NightMapPage />} />
+      {/* the second stage's map (the stations the doctor ordered); its old address was night-map */}
+      <Route path="second-map" element={<NightMapPage />} />
+      <Route path="night-map" element={<Navigate to="/second-map" replace />} />
       <Route path="celebrate" element={<CelebratePage />} />
       <Route path="shop" element={<ShopPage />} />
       <Route path="procedure/:id" element={<ProcedureDetailPage />} />
@@ -30,6 +33,8 @@ function WorldRoutes() {
       <Route path="wait-times" element={<WaitTimesPage />} />
       <Route path="distract" element={<DistractPage />} />
       <Route path="feedback" element={<FeedbackPage />} />
+      {/* an address the world doesn't have: its map, not an empty screen */}
+      <Route path="*" element={<Navigate to="/map" replace />} />
     </Routes>
   )
 }

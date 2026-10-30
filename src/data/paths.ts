@@ -16,10 +16,10 @@ export const paths: PathBase[] = [
     route: [
       { stageId: 'reception' },
       { stageId: 'triage' },
-      { procedureId: 'doctor-exam' },
+      { stageId: 'doctor', procedureId: 'doctor-exam' },
       { procedureId: 'blood-test', optional: true },
       { procedureId: 'xray', optional: true },
-      { stageId: 'doctor' },
+      {},
     ],
   },
   {
@@ -28,13 +28,13 @@ export const paths: PathBase[] = [
     route: [
       { stageId: 'reception' },
       { stageId: 'triage' },
-      { procedureId: 'doctor-exam' },
+      { stageId: 'doctor', procedureId: 'doctor-exam' },
       { procedureId: 'blood-test', optional: true },
       { procedureId: 'urine', optional: true },
       { procedureId: 'ultrasound', optional: true },
       { procedureId: 'ct', optional: true },
       { optional: true },
-      { stageId: 'doctor' },
+      {},
     ],
   },
   {
@@ -43,11 +43,11 @@ export const paths: PathBase[] = [
     route: [
       { stageId: 'reception' },
       { stageId: 'triage' },
-      { procedureId: 'doctor-exam' },
+      { stageId: 'doctor', procedureId: 'doctor-exam' },
       { procedureId: 'xray' },
       { optional: true },
       { procedureId: 'cast', optional: true },
-      { stageId: 'doctor' },
+      {},
     ],
   },
   {
@@ -56,12 +56,12 @@ export const paths: PathBase[] = [
     route: [
       { stageId: 'reception' },
       { stageId: 'triage' },
-      { procedureId: 'doctor-exam' },
+      { stageId: 'doctor', procedureId: 'doctor-exam' },
       { optional: true },
       { procedureId: 'xray', optional: true },
       { procedureId: 'stitches' },
       { procedureId: 'bandage' },
-      { stageId: 'doctor' },
+      {},
     ],
   },
   {
@@ -70,9 +70,9 @@ export const paths: PathBase[] = [
     route: [
       { stageId: 'reception' },
       { stageId: 'triage' },
-      { procedureId: 'doctor-exam' },
+      { stageId: 'doctor', procedureId: 'doctor-exam' },
       { optional: true },
-      { stageId: 'doctor' },
+      {},
     ],
   },
 ]
