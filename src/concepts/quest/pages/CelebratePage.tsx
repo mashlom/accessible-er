@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useGoBackTo } from '../../nav'
 import { WORLD_SELECT } from '../components/WorldScope'
 import { useWide } from './WorldMapPage'
@@ -10,6 +10,7 @@ import { DAY_MS } from '../../../lib/storage'
 import { isTestMode } from '../../../lib/testMode'
 import i18nUi from '../../../data/i18n/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
+import { lockBodyScroll } from '../../../lib/scrollLock'
 import css from '../quest.module.css'
 
 // the emoji of each block stay in code; the words come from src/data/i18n/ui.json
@@ -31,13 +32,8 @@ function blocksFor(lang: 'he' | 'en' | 'ru', kind: 'discharge' | 'admission') {
 export function CelebratePage() {
   const [outcome, setOutcome] = useState<'discharge' | 'admission' | null>(null)
   const { theme } = useQuestTheme()
-  const wide = useWide()
   // the shop is hidden unless the address asks for the test mode (?test=true)
   const withStore = isTestMode()
-  // a designed world: the page stands on the world's own map picture (the landscape one on a wide screen)
-  const worldBg = theme.design
-    ? ({ '--celebrate-bg': wide ? 'var(--w-background-wide, var(--w-background))' : 'var(--w-background)' } as React.CSSProperties)
-    : undefined
   const { t, lang } = useI18n()
   const { reset, doneProcedures } = useQuestProgress()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
@@ -51,10 +47,123 @@ export function CelebratePage() {
     goBackTo(WORLD_SELECT, { absolute: true })
   }
 
+  const childText = (
+    <>
+      {doneCount > 0 && (
+        <p className={css.celebrateCoins}>
+          {Array.from({ length: doneCount }, (_, i) => (
+            <span key={i} className={css.coinCounterItem}>{theme.doneEmoji ?? '✓'}</span>
+          ))}
+        </p>
+      )}
+      <p className={css.celebrateHint}>
+        {/* the coins line welcomes to the shop: only when there is one */}
+        {doneCount > 0 && withStore
+          ? t(`ui.text.coins.${new Intl.PluralRules(lang).select(doneCount)}`).replace('{n}', String(doneCount))
+          : (celebrateSkin?.hint ?? '')}
+      </p>
+    </>
+  )
+  const childButtons = (
+    <>
+      {withStore && (
+        <Link to="/shop">
+          <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
+            {t('ui.buttons.toShop')}
+          </button>
+        </Link>
+      )}
+      <button
+        className={css.backBtn}
+        style={{ borderColor: theme.accent, color: theme.accent }}
+        onClick={chooseWorld}
+      >
+        {t('ui.buttons.chooseWorld')}
+      </button>
+    </>
+  )
+  const parentZone = (
+    <div className={`${css.stageBody} ${css.celebrateParentZone}`}>
+      {!outcome && (
+        <div className={css.outcomeChoice}>
+          <p className={css.outcomeLabel}>{t('ui.labels.adult.outcomeLabel')}</p>
+          <div className={css.outcomeButtons}>
+            <button
+              className={css.outcomeBtn}
+              onClick={() => setOutcome('discharge')}
+              style={{ background: theme.accent, color: theme.accentText }}
+            >
+              {t('ui.buttons.discharge')}
+            </button>
+            <button
+              className={css.outcomeBtn}
+              onClick={() => setOutcome('admission')}
+              style={{ background: theme.accent, color: theme.accentText }}
+            >
+              {t('ui.buttons.admission')}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {outcome && (
+        <>
+          <p className={css.parentZoneLabel}>
+            {outcome === 'discharge' ? t('ui.text.towardsDischarge') : t('ui.text.towardsAdmission')}
+          </p>
+
+          {blocksFor(lang, outcome).map((b, i) => (
+            <section key={i}>
+              <h2>{b.emoji} {b.title}</h2>
+              <p>{b.body}</p>
+            </section>
+          ))}
+
+          {outcome === 'admission' && (
+            cardEmpty ? (
+              <Link to="/card" state={{ from: '/celebrate' }} className={css.calmLink}>
+                <button
+                  className={css.doneBtn}
+                  style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
+                >
+                  {t('ui.buttons.fillCard')}
+                </button>
+              </Link>
+            ) : (
+              <Link to="/card/view" state={{ from: '/celebrate' }} className={css.calmLink}>
+                <button
+                  className={css.doneBtn}
+                  style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
+                >
+                  {t('ui.buttons.showCard')}
+                </button>
+              </Link>
+            )
+          )}
+
+          <button
+            className={css.calmLink}
+            onClick={() => setOutcome(null)}
+            style={{ color: theme.accent, background: 'none', border: 'none', cursor: 'pointer' }}
+          >
+            {t('ui.buttons.changeChoice')}
+          </button>
+
+          <Link to="/feedback" className={css.calmLink}>
+            {t('ui.buttons.feedback')}
+          </Link>
+        </>
+      )}
+    </div>
+  )
+
+  // a designed world: the celebration is a sheet like the stations', over the world's landscape
+  if (theme.design) return <CelebrateSheet image={theme.shopImage} title={celebrateSkin?.label ?? t('ui.text.weDidIt')} text={childText} buttons={childButtons} parent={parentZone} />
+
   return (
-    <div className={`${css.celebratePage} ${worldBg ? css.celebrateWorld : ''}`} style={worldBg}>
+    <div className={css.celebratePage}>
       {/* ── Child zone ── */}
-      <div className={css.celebrateChildZone} style={worldBg ? undefined : { background: theme.accentSoft }}>
+      <div className={css.celebrateChildZone} style={{ background: theme.accentSoft }}>
         {theme.shopImage && (
           <img src={theme.shopImage} alt="" className={css.celebrateImg} />
         )}
@@ -62,112 +171,56 @@ export function CelebratePage() {
           <p className={css.celebrateTitle} style={{ color: theme.accent }}>
             {celebrateSkin?.label ?? t('ui.text.weDidIt')}
           </p>
-          {doneCount > 0 && (
-            <p className={css.celebrateCoins}>
-              {Array.from({ length: doneCount }, (_, i) => (
-                <span key={i} className={css.coinCounterItem}>{theme.doneEmoji ?? '✓'}</span>
-              ))}
-            </p>
-          )}
-          <p className={css.celebrateHint}>
-            {/* the coins line welcomes to the shop: only when there is one */}
-            {doneCount > 0 && withStore
-              ? t(`ui.text.coins.${new Intl.PluralRules(lang).select(doneCount)}`).replace('{n}', String(doneCount))
-              : (celebrateSkin?.hint ?? '')}
-          </p>
+          {childText}
         </div>
-        <div className={css.celebrateActions}>
-          {withStore && (
-            <Link to="/shop">
-              <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
-                {t('ui.buttons.toShop')}
-              </button>
-            </Link>
-          )}
-          <button
-            className={css.backBtn}
-            style={{ borderColor: theme.accent, color: theme.accent }}
-            onClick={chooseWorld}
-          >
-            {t('ui.buttons.chooseWorld')}
-          </button>
-        </div>
+        <div className={css.celebrateActions}>{childButtons}</div>
       </div>
 
       {/* ── Parent zone ── */}
-      <div className={`${css.stageBody} ${css.celebrateParentZone}`}>
-        {!outcome && (
-          <div className={css.outcomeChoice}>
-            <p className={css.outcomeLabel}>{t('ui.labels.adult.outcomeLabel')}</p>
-            <div className={css.outcomeButtons}>
-              <button
-                className={css.outcomeBtn}
-                onClick={() => setOutcome('discharge')}
-                style={{ background: theme.accent, color: theme.accentText }}
-              >
-                {t('ui.buttons.discharge')}
-              </button>
-              <button
-                className={css.outcomeBtn}
-                onClick={() => setOutcome('admission')}
-                style={{ background: theme.accent, color: theme.accentText }}
-              >
-                {t('ui.buttons.admission')}
-              </button>
+      {parentZone}
+    </div>
+  )
+}
+
+/** A designed world's celebration: the world's landscape fills the screen, and the picture, the words, the buttons
+ *  and the parent's part stand on a bottom sheet, as on a station */
+function CelebrateSheet({ image, title, text, buttons, parent }: {
+  image?: string
+  title: string
+  text: React.ReactNode
+  buttons: React.ReactNode
+  parent: React.ReactNode
+}) {
+  const { theme } = useQuestTheme()
+  const { t } = useI18n()
+  const wide = useWide()
+  const goBackTo = useGoBackTo()
+  const handleRef = useRef<HTMLButtonElement>(null)
+  // closing the sheet goes back to the second map, where the journey ended
+  const close = () => goBackTo('/second-map')
+  useEffect(() => {
+    handleRef.current?.focus()
+    return lockBodyScroll()
+  }, [])
+  const land = { '--celebrate-bg': wide ? 'var(--w-background-wide, var(--w-background))' : 'var(--w-background)' } as React.CSSProperties
+  return (
+    <div className={css.celebrateLand} style={land}>
+      <div className={css.sheetBackdrop}>
+        <div className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.celebrateSheet}`} role="dialog" aria-modal="true" aria-labelledby="celebrate-title">
+          <button ref={handleRef} type="button" className={css.sheetHandle} onClick={close} aria-label={t('ui.buttons.close')}>
+            <span aria-hidden />
+          </button>
+          {image && (
+            <div className={css.stageSheetPicPlain}>
+              <img src={image} alt="" className={`${css.stageSheetImg} ${css.stageSheetImgScene}`} />
             </div>
-          </div>
-        )}
-
-        {outcome && (
-          <>
-            <p className={css.parentZoneLabel}>
-              {outcome === 'discharge' ? t('ui.text.towardsDischarge') : t('ui.text.towardsAdmission')}
-            </p>
-
-            {blocksFor(lang, outcome).map((b, i) => (
-              <section key={i}>
-                <h2>{b.emoji} {b.title}</h2>
-                <p>{b.body}</p>
-              </section>
-            ))}
-
-            {outcome === 'admission' && (
-              cardEmpty ? (
-                <Link to="/card" state={{ from: '/celebrate' }} className={css.calmLink}>
-                  <button
-                    className={css.doneBtn}
-                    style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
-                  >
-                    {t('ui.buttons.fillCard')}
-                  </button>
-                </Link>
-              ) : (
-                <Link to="/card/view" state={{ from: '/celebrate' }} className={css.calmLink}>
-                  <button
-                    className={css.doneBtn}
-                    style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
-                  >
-                    {t('ui.buttons.showCard')}
-                  </button>
-                </Link>
-              )
-            )}
-
-            <button
-              className={css.calmLink}
-              onClick={() => setOutcome(null)}
-              style={{ color: theme.accent, background: 'none', border: 'none', cursor: 'pointer' }}
-            >
-              {t('ui.buttons.changeChoice')}
-            </button>
-
-            <Link to="/feedback" className={css.calmLink}>
-              {t('ui.buttons.feedback')}
-            </Link>
-          </>
-        )}
+          )}
+          <h1 id="celebrate-title" className={css.stageSheetTitle} style={{ color: theme.accent }}>{title}</h1>
+          <div className={css.celebrateSheetText}>{text}</div>
+          <div className={css.celebrateSheetActions}>{buttons}</div>
+          <div className={css.celebrateSheetParent}>{parent}</div>
+        </div>
       </div>
-
     </div>
   )
 }
