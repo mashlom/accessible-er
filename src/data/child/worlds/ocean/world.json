@@ -44,9 +44,10 @@
   },
   "design": {
     "assets": {
-      "background": "/worlds/ocean/background.jpg",
+      "background": "/worlds/ocean/art/map-portrait.webp",
       "sheetFade": "/worlds/ocean/sheet-fade.png",
-      "sheetSeabed": "/worlds/ocean/sheet-seabed.jpg"
+      "sheetSeabed": "/worlds/ocean/sheet-seabed.jpg",
+      "backgroundWide": "/worlds/ocean/art/map-landscape.webp"
     },
     "colors": {
       "text": "#173b4d",
@@ -351,11 +352,10 @@
           }
         ],
         "vars": {
-          "--bg-x": -87,
-          "--bg-y": -250,
-          "--bg-w": 553,
-          "--bg-h": 1260,
-          "--bg-rot": "180deg",
+          "--bg-x": -344,
+          "--bg-y": -300,
+          "--bg-w": 1100,
+          "--bg-h": 1400,
           "--grad-y": -16,
           "--grad-h": 199,
           "--title-x": 64.5,
@@ -510,10 +510,10 @@
           ]
         ],
         "vars": {
-          "--bg-x": 0,
-          "--bg-y": -1682,
-          "--bg-w": 1920,
-          "--bg-h": 4376,
+          "--bg-x": -320,
+          "--bg-y": -840,
+          "--bg-w": 2560,
+          "--bg-h": 1920,
           "--map-bg": "#1f6f80",
           "--title-x": 1270,
           "--title-y": 94,
@@ -532,9 +532,9 @@
         "shoreY": 653,
         "finaleWidth": 210,
         "vars": {
-          "--bg-x": 0,
-          "--bg-w": 412,
-          "--bg-h": 939,
+          "--bg-x": -344,
+          "--bg-w": 1100,
+          "--bg-h": 1400,
           "--title-x": 64.5,
           "--title-y": 44.5,
           "--title-w": 283,
@@ -545,7 +545,8 @@
           "--star": 30,
           "--title-bg": "rgba(18, 56, 74, 0.35)",
           "--grad-h": 520,
-          "--map-bg": "#207082"
+          "--map-bg": "#207082",
+          "--bg-y": -300
         }
       },
       "landscape": {
@@ -601,10 +602,10 @@
           "c2": [90, 10]
         },
         "vars": {
-          "--bg-x": 0,
-          "--bg-y": -1682,
-          "--bg-w": 1920,
-          "--bg-h": 4376,
+          "--bg-x": -320,
+          "--bg-y": -840,
+          "--bg-w": 2560,
+          "--bg-h": 1920,
           "--bg-sx": -1,
           "--map-bg": "#1f6f80",
           "--title-x": 1270,
@@ -617,6 +618,7 @@
           "--star": 56
         }
       }
-    }
+    },
+    "extended": true
   }
 }

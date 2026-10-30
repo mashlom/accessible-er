@@ -87,6 +87,9 @@ export interface WorldDesign {
   /** Landscape: on a window taller than the scene, the space above it shows the scene's top mirrored (the
    *  default); false leaves it the plain `water` colour (for a picture whose top is a plain sky) */
   mirrorAbove?: boolean
+  /** The map pictures carry real landscape around the scene's frame (docs/art/map-backgrounds): they are drawn
+   *  beyond the scene's edges, nothing is mirrored or blurred, and the portrait scene fits the screen's height */
+  extended?: boolean
   /** Bubbles behind a picture on its sheet: centre (x, y) and diameter in % of the panel */
   bubbles?: { x: number; y: number; d: number }[]
   /** The first map: the required stations, as drawn in the designer's frames */
