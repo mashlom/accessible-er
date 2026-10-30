@@ -4,7 +4,7 @@ import { DAY_MS } from '../../lib/storage'
 import careI18n from '../../data/i18n/careCard.json'
 import i18nUi from '../../data/i18n/ui.json'
 import { askTexts, emptyCard, emptyCustom, suggestedAdaptations, type CareCard } from '../../data/careCard'
-import css from '../../concepts/quest/quest.module.css'
+import css from './CareCardView.module.css'
 
 type Lang = 'he' | 'en' | 'ru'
 type CardTexts = {
@@ -35,7 +35,11 @@ export function suggestionsFor(card: CareCard, lang: Lang): string[] {
   return suggestedAdaptations(card, { asks: askTexts(lang) }, (careI18n as unknown as { askFor: Record<string, string[]> }).askFor)
 }
 
-export function CareCardView() {
+/** Extra classes for the parts of the card, for a screen that shows it its own way. */
+export type CareCardViewClasses = Partial<Record<'rows' | 'row' | 'label' | 'value', string>>
+
+export function CareCardView({ classes = {} }: { classes?: CareCardViewClasses }) {
+  const cls = (part: keyof CareCardViewClasses) => [css[part], classes[part]].filter(Boolean).join(' ')
   const lang: Lang = 'he'
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   // the labels of the card are Hebrew, like its values (the note on screen says so)
@@ -58,13 +62,13 @@ export function CareCardView() {
 
   return (
     <>
-      <div className={css.cardViewRows}>
+      <div className={cls('rows')}>
         {rows.map((row) => (
-          <div key={row.label} className={css.cardViewRow}>
-            <span className={css.cardViewLabel}>
+          <div key={row.label} className={cls('row')}>
+            <span className={cls('label')}>
               <span aria-hidden>{row.emoji}</span> {row.label}
             </span>
-            <span className={css.cardViewValue}>{row.value}</span>
+            <span className={cls('value')}>{row.value}</span>
           </div>
         ))}
       </div>
@@ -79,7 +83,7 @@ export function CareCardView() {
       )}
 
       {suggestions.length > 0 && (
-        <section className="no-print">
+        <section className="app-no-print">
           <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
             {suggestions.map((s) => <li key={s}>{s}</li>)}
           </ul>

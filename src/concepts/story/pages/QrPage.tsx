@@ -36,7 +36,7 @@ export function QrPage() {
       title={staff.title}
       subtitle={staff.subtitle}
     >
-      <div className={`${styles.qrCard} print-area`}>
+      <div className={`${styles.qrCard} app-print-area`}>
         <p style={{ fontWeight: 800, fontSize: '1.1rem' }}>
           {staff.storyName}
         </p>
@@ -51,13 +51,13 @@ export function QrPage() {
         <p style={{ color: 'var(--s-ink-soft)' }}>{staff.scan}</p>
       </div>
 
-      <div className={`${styles.actions} no-print`}>
+      <div className={`${styles.actions} app-no-print`}>
         <button type="button" className={shell.bigBtn} onClick={() => window.print()}>
           🖨️ {staff.print}
         </button>
       </div>
 
-      <div className="no-print" style={{ marginTop: 'var(--space-4)' }}>
+      <div className="app-no-print" style={{ marginTop: 'var(--space-4)' }}>
         <Note>{staff.demoNote}</Note>
       </div>
     </Scene>

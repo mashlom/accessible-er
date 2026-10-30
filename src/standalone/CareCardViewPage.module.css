@@ -32,103 +32,6 @@
   opacity: 0.9;
 }
 
-.rows {
-  padding: var(--space-3) var(--space-4) var(--space-4);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.row {
-  display: flex;
-  gap: var(--space-3);
-  align-items: flex-start;
-  border-bottom: 1px dashed var(--c-border);
-  padding-bottom: var(--space-3);
-}
-.row:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.rowLabel {
-  flex-shrink: 0;
-  width: 128px;
-  font-weight: 700;
-  font-size: 1.08rem;
-  color: var(--c-primary-dark);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.rowValue {
-  flex: 1;
-  font-size: 1.18rem;
-  line-height: 1.55;
-  font-weight: 500;
-}
-
-/* suggestions below the card */
-.suggest {
-  margin-top: var(--space-4);
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  background: var(--c-accent-soft);
-  border: 1px solid #f1d8bf;
-}
-
-.suggestTitle {
-  font-weight: 700;
-  margin-bottom: var(--space-2);
-  display: flex;
-  gap: var(--space-2);
-  align-items: center;
-}
-
-.controls {
-  display: flex;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-  flex-wrap: wrap;
-}
-
-.pdfBtn {
-  flex: 1;
-  min-width: 150px;
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  border: none;
-  background: var(--c-primary);
-  color: #fff;
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.printBtn {
-  flex: 1;
-  min-width: 150px;
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  background: var(--c-surface);
-  border: 1.5px solid var(--c-primary-soft);
-  color: var(--c-primary-dark);
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.editBtn {
-  flex: 1;
-  min-width: 150px;
-  text-align: center;
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  background: var(--c-surface);
-  border: 1.5px solid var(--c-primary-soft);
-  color: var(--c-primary-dark);
-  font-weight: 700;
-}
-
 /* empty state */
 .empty {
   text-align: center;
@@ -157,12 +60,12 @@
   color: inherit;
   border-color: #444;
 }
-.staffScreen [class*="cardViewRows"],
-.staffScreen [class*="cardViewRow"] {
+.staffScreen .rows,
+.staffScreen .row {
   background: transparent;
 }
-.staffScreen [class*="cardViewLabel"],
-.staffScreen [class*="cardViewValue"] {
+.staffScreen .label,
+.staffScreen .value {
   font-size: 1.45rem;
   font-weight: 800;
   line-height: 1.35;
@@ -170,14 +73,13 @@
 
 /* the card's own boxes are not white on the black screen; the text is white and large */
 .staffScreen .card,
-.staffScreen [class*="print-area"],
-.staffScreen [class*="cardViewRows"],
-.staffScreen [class*="cardViewRow"] {
+.staffScreen .rows,
+.staffScreen .row {
   background: transparent;
   box-shadow: none;
 }
-.staffScreen [class*="cardViewLabel"],
-.staffScreen [class*="cardViewValue"] {
+.staffScreen .label,
+.staffScreen .value {
   color: #fff;
 }
 
@@ -185,7 +87,7 @@
 .staffScreen {
   padding: 0;
 }
-.staffScreen :global(.container) {
+.staffScreen :global(.app-container) {
   max-width: none;
   padding: 0;
 }
@@ -200,8 +102,8 @@
   border-radius: 0;
   margin: 0;
 }
-.staffScreen [class*="cardViewLabel"],
-.staffScreen [class*="cardViewValue"],
+.staffScreen .label,
+.staffScreen .value,
 .staffScreen li,
 .staffScreen h2 {
   font-size: 1.45rem;
@@ -210,8 +112,8 @@
 }
 
 /* the lines use the page's font, the same as the title */
-.staffScreen [class*="cardViewLabel"],
-.staffScreen [class*="cardViewValue"],
+.staffScreen .label,
+.staffScreen .value,
 .staffScreen li,
 .staffScreen h2 {
   font-family: inherit;
@@ -219,19 +121,21 @@
 }
 
 /* the answer follows the label on the same line, after a colon */
-.staffScreen [class*="cardViewRow"] {
+.staffScreen .rows,
+.staffScreen .row {
   display: block;
 }
-.staffScreen [class*="cardViewLabel"],
-.staffScreen [class*="cardViewValue"] {
+.staffScreen .label,
+.staffScreen .value {
   display: inline;
 }
-.staffScreen [class*="cardViewLabel"]::after {
+.staffScreen .label::after {
   content: ": ";
 }
 
 /* margins on both sides: the lines and the requests do not touch the edges (the green head stays full width) */
-.staffScreen [class*="cardViewRow"],
+.staffScreen .rows,
+.staffScreen .row,
 .staffScreen section {
   padding-inline: 1.25rem;
 }
@@ -243,8 +147,8 @@
 }
 
 /* no borders at all on the card: no frame around the lines, no lines between them */
-.staffScreen [class*="cardViewRows"],
-.staffScreen [class*="cardViewRow"] {
+.staffScreen .rows,
+.staffScreen .row {
   border: 0;
   border-radius: 0;
 }

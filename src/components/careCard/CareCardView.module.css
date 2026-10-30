@@ -1,0 +1,36 @@
+/* The rows of the care card. Screens that show it differently (the paper, the
+   staff screen) pass their own classes through CareCardView's `classes`. */
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: baseline;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  flex-shrink: 0;
+  width: 110px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.value {
+  flex: 1;
+  font-size: 0.97rem;
+  line-height: 1.5;
+}

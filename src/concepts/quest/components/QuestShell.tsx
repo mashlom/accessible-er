@@ -51,7 +51,7 @@ export function QuestShell() {
       lang={lang}
     >
       {/* Pinned RTL so the top bar doesn't flip when the language changes */}
-      {!hideTopbar && <header className={`${css.questTopbar} ${designed ? css.questTopbarWorld : ''} no-print`} dir="rtl">
+      {!hideTopbar && <header className={`${css.questTopbar} ${designed ? css.questTopbarWorld : ''} app-no-print`} dir="rtl">
         {!isHome ? (
           <button
             type="button"

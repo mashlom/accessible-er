@@ -18,7 +18,7 @@ export function TalkShell() {
   return (
     <div className={styles.theme}>
       <div className={styles.app} dir={dir} lang={lang}>
-        <header className={`${styles.topbar} no-print`}>
+        <header className={`${styles.topbar} app-no-print`}>
           {!isHome ? (
             <button
               type="button"

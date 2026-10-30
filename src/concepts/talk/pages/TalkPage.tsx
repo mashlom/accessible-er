@@ -277,7 +277,7 @@ export function TalkPage() {
         </div>
       </div>
 
-      <div className={`${styles.answers} no-print`}>
+      <div className={`${styles.answers} app-no-print`}>
         <div className={styles.answersInner}>
           {current.multi && (
             <div

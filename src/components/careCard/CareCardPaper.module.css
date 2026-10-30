@@ -44,38 +44,40 @@
 }
 
 /* the app's own suggestions are for the screen, not the paper */
-.paper :global(.no-print) {
+.paper :global(.app-no-print) {
   display: none;
 }
 
 /* the rows and the requests come from CareCardView */
-.paper [class*="cardViewRows"] {
+.paper .rows {
   border: 0;
   border-radius: 0;
 }
-.paper [class*="cardViewRow"] {
+.paper .rows,
+.paper .row {
   display: block;
   padding: 11px 20px;
   border-bottom: 1px solid #d9d9d9;
 }
-.paper [class*="cardViewRow"]:last-child {
+.paper .rows:last-child,
+.paper .row:last-child {
   border-bottom: 0;
 }
-.paper [class*="cardViewLabel"],
-.paper [class*="cardViewValue"] {
+.paper .label,
+.paper .value {
   display: inline;
   width: auto;
   font-size: 17px;
   line-height: 1.5;
 }
-.paper [class*="cardViewLabel"] {
+.paper .label {
   font-weight: 800;
   color: var(--c-primary-dark);
 }
-.paper [class*="cardViewLabel"]::after {
+.paper .label::after {
   content: ": ";
 }
-.paper [class*="cardViewValue"] {
+.paper .value {
   font-weight: 500;
   color: #1a1a1a;
 }

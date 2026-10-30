@@ -31,7 +31,7 @@ export function QrPage() {
         <h1 className={styles.docTitle}>{staff.title}</h1>
         <p>{staff.subtitle}</p>
 
-        <div className={`${styles.qrCard} print-area`}>
+        <div className={`${styles.qrCard} app-print-area`}>
           <p style={{ fontWeight: 800, fontSize: '1.1rem' }}>{staff.talkName}</p>
           {src ? (
             <img src={src} alt={`QR code to open the app: ${url}`} className={styles.qrImg} />
@@ -44,13 +44,13 @@ export function QrPage() {
           <p>{staff.scan}</p>
         </div>
 
-        <div className="no-print" style={{ textAlign: 'center' }}>
+        <div className="app-no-print" style={{ textAlign: 'center' }}>
           <button type="button" className={styles.docBtn} onClick={() => window.print()}>
             🖨️ {staff.print}
           </button>
         </div>
 
-        <div className={`${styles.docNote} no-print`}>{staff.demoNote}</div>
+        <div className={`${styles.docNote} app-no-print`}>{staff.demoNote}</div>
       </div>
     </div>
   )

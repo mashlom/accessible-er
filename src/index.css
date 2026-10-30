@@ -129,27 +129,27 @@ a {
 /* ============================================================
    Utility / shared building blocks
    ============================================================ */
-.container {
+.app-container {
   width: 100%;
   max-width: var(--page-max);
   margin-inline: auto;
   padding-inline: var(--space-4);
 }
 
-.stack {
+.app-stack {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
-.card {
+.app-card {
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
 }
 
-.visually-hidden {
+.app-visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -160,7 +160,7 @@ a {
   border: 0;
 }
 
-.skip-link {
+.app-skip-link {
   position: absolute;
   inset-inline-start: var(--space-4);
   top: -100px;
@@ -172,7 +172,7 @@ a {
   z-index: 100;
   transition: top 0.15s var(--ease);
 }
-.skip-link:focus {
+.app-skip-link:focus {
   top: var(--space-4);
 }
 
@@ -185,19 +185,19 @@ a {
     background: #fff;
   }
 
-  .no-print {
+  .app-no-print {
     display: none !important;
   }
 
-  /* When a .print-area exists, print only it. */
-  body:has(.print-area) * {
+  /* When a .app-print-area exists, print only it. */
+  body:has(.app-print-area) * {
     visibility: hidden;
   }
-  body:has(.print-area) .print-area,
-  body:has(.print-area) .print-area * {
+  body:has(.app-print-area) .app-print-area,
+  body:has(.app-print-area) .app-print-area * {
     visibility: visible;
   }
-  .print-area {
+  .app-print-area {
     position: absolute;
     inset-inline-start: 0;
     top: 0;

@@ -33,8 +33,8 @@ export function CareCardViewPage() {
 
   return (
     <div className={styles.staffScreen}>
-      <div className="container">
-        <div className={`${styles.card} print-area`}>
+      <div className="app-container">
+        <div className={`${styles.card} app-print-area`}>
           <div className={styles.cardHead}>
             <span className={styles.cardHeadIcon} aria-hidden>
               🧒
@@ -44,7 +44,7 @@ export function CareCardViewPage() {
               {heading.age && <div className={styles.cardAge}>{heading.age}</div>}
             </div>
           </div>
-          <CareCardView />
+          <CareCardView classes={{ rows: styles.rows, row: styles.row, label: styles.label, value: styles.value }} />
         </div>
       </div>
     </div>

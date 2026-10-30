@@ -17,7 +17,7 @@ export const CareCardPaper = forwardRef<HTMLDivElement, { card: CareCard }>(func
             {heading.age && <div className={styles.age}>{heading.age}</div>}
           </div>
         </div>
-        <CareCardView />
+        <CareCardView classes={{ rows: styles.rows, row: styles.row, label: styles.label, value: styles.value }} />
       </div>
     </div>
     </div>

@@ -56,16 +56,6 @@
 .mid   { background: #e6a832; }
 .high  { background: #d95f5f; }
 
-.levelLabel {
-  font-size: 0.75rem;
-  font-weight: 600;
-  flex-shrink: 0;
-}
-
-.levelLabel.low  { color: #5aab6e; }
-.levelLabel.mid  { color: #e6a832; }
-.levelLabel.high { color: #d95f5f; }
-
 /* In the ocean world's sheets (Shevi's colour tokens): a white card with a light teal outline */
 .ocean {
   background: #ffffff;

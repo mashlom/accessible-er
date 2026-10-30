@@ -17,7 +17,7 @@ export function StandaloneCardShell({ children }: { children: ReactNode }) {
   }, [])
   return (
     <div className={styles.theme}>
-      <header className={`${styles.topbar} no-print`}>
+      <header className={`${styles.topbar} app-no-print`}>
         <div className={styles.topbarInner}>
           <span className={`${styles.topBtn} ${styles.topBtnGhost}`} aria-hidden />
           <span className={styles.topTitle} aria-hidden />
