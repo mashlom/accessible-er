@@ -136,8 +136,9 @@ export interface QuestTheme {
   thumbnail?: string
   /** If set, thumbnail is used as a cropped backdrop and this image is layered on top */
   thumbnailOverlay?: string
-  /** The world card's sky: a plain colour over the picture's own sky (e.g. space: black, without its planets) */
-  thumbnailSky?: string
+  /** The world card's own piece of the thumbnail picture (CSS background-size and -position), instead of the
+   *  shared one (e.g. space: a corner of its landscape picture, a crater under the nebula, no planets) */
+  thumbnailPiece?: { size: string; position: string }
   /** Emoji shown on completed stages/procedures (default '✓') */
   doneEmoji?: string
   /** Image shown on the celebration/shop screen */

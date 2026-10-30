@@ -44,14 +44,9 @@ export function WorldSelectPage() {
                 // a map picture: its upper part, with plenty of sky over the land (the ocean has its own picture)
                 className={theme.thumbnail ? `${css.worldCardBackdrop} ${css.worldCardBackdropSky}` : css.worldCardBackdrop}
                 style={{
-                  backgroundImage: [
-                    // a plain sky over the picture's own (it ends just above the land behind the station)
-                    theme.thumbnailSky ? `linear-gradient(${theme.thumbnailSky} 42%, transparent 50%)` : '',
-                    `url(${theme.thumbnail ?? theme.bg})`,
-                  ].filter(Boolean).join(', '),
-                  // with its own sky: a piece of the ground only (lower in the picture, under its sky and planets)
-                  backgroundSize: theme.thumbnailSky ? '100% 100%, 280%' : undefined,
-                  backgroundPosition: theme.thumbnailSky ? 'center, center 62%' : undefined,
+                  backgroundImage: `url(${theme.thumbnail ?? theme.bg})`,
+                  backgroundSize: theme.thumbnailPiece?.size,
+                  backgroundPosition: theme.thumbnailPiece?.position,
                 }}
               >
                 <img src={theme.thumbnailOverlay} alt="" className={css.worldCardOverlay} />
