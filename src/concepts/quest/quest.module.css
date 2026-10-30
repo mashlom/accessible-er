@@ -2987,6 +2987,21 @@ path.worldTrailLit {
   background: none;
 }
 
+/* every station's scene is the same size, whatever the station has to say: the sheet scrolls, the picture never
+   gives way (a station with procedure buttons used to get a smaller picture) */
+.worldSheet.stageSheet > .stageSheetPicPlain:has(> .stageSheetImgScene) {
+  flex: 0 0 auto;
+  align-self: center;
+  width: min(100%, 420px);
+}
+
+.worldSheet.stageSheet > .stageSheetPicPlain > .stageSheetImgScene {
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 728 / 680;
+}
+
 /* A golden symbol on its sheet is not stretched to the panel's edges: it has room around it */
 .worldSheet.stageSheet .stageSheetImgSymbol {
   box-sizing: border-box;
