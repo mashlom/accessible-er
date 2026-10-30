@@ -3311,3 +3311,11 @@ path.worldTrailLit {
     background-position: 0 0;
   }
 }
+
+/* the procedure's (and the test's) picture, like the station's scene: the same size on every sheet, whatever the
+   steps below it; the sheet scrolls, the picture never gives way */
+.worldSheet.stageSheet > .stageSheetPicWrap.procBigIcon {
+  flex: 0 0 auto;
+  height: calc(240 * var(--u));
+  min-height: auto;
+}
