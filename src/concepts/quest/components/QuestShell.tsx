@@ -37,7 +37,8 @@ export function QuestShell() {
   const dayActive = active && (REQUIRED_STAGES as readonly string[]).includes(active.id)
   const mapTarget = dayActive || visibleOptionals.length === 0 ? '/map' : '/second-map'
   // the world's map: /quest/<world>/map, /quest/<world>/second-map or the world's own address /quest/<world>
-  const isMapPage = /\/(night-)?map$/.test(pathname) || /^\/quest\/[^/]+\/?$/.test(pathname)
+  // (night-map is only the old address of second-map and redirects to it)
+  const isMapPage = /\/(second-)?map$/.test(pathname) || /^\/quest\/[^/]+\/?$/.test(pathname)
   // the sheets over the map: the map under them is drawn with its own header
   const isSheet = /\/(stage\/[^/]+|wait-times|procedures|procedure\/[^/]+)$/.test(pathname)
   // A designed world's maps carry their own language picker and menu link in their header row
