@@ -5,8 +5,12 @@
   "doneEmoji": "⭐",
   "shopImage": "/worlds/dino/art/celebrate.webp",
   "bg": "",
-  "thumbnail": "/worlds/dino/art/map-portrait.webp",
+  "thumbnail": "/worlds/dino/art/map-landscape.webp",
   "thumbnailOverlay": "/worlds/dino/art/card.webp",
+  "thumbnailPiece": {
+    "size": "427%",
+    "position": "51% 34%"
+  },
   "accent": "#2E7D4F",
   "accentSoft": "#dcefd8",
   "accentText": "#ffffff",
