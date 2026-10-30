@@ -31,21 +31,26 @@ export function useWide(): boolean {
   return wide
 }
 
-/** A portrait map with its own landscape (design.extended) on a screen wider than the scene's shape (a short phone,
- *  an upright tablet): how much the stations spread out sideways (1 = not at all, at most 2), so they use the whole
- *  width while the islands keep the size that fits the height */
-const PORTRAIT_SHAPE = 412 / 939
-function useSpread(on: boolean): number {
-  const get = () => (on && typeof window !== 'undefined' ? Math.min(2, Math.max(1, window.innerWidth / window.innerHeight / PORTRAIT_SHAPE)) : 1)
-  const [k, setK] = useState(get)
+/** A portrait map with its own landscape (design.extended): the islands are as big as the width allows, but never
+ *  bigger than about three stations to a screen's height; the map scrolls. On a screen wider than that (a short phone,
+ *  an upright tablet) the stations' places spread out sideways (kx, up to twice): the islands keep their size. */
+const UNITS_PER_SCREEN = 560
+function useSpread(on: boolean, H: number): { kx: number; ky: number; Hs: number; width?: string } {
+  const get = () => {
+    if (!on || typeof window === 'undefined') return { kx: 1, ky: 1, Hs: H }
+    const u = Math.min(window.innerWidth / 412, window.innerHeight / UNITS_PER_SCREEN)
+    const kx = Math.min(2, Math.max(1, window.innerWidth / (412 * u)))
+    return { kx, ky: 1, Hs: H, width: `${Math.round(Math.min(window.innerWidth, 412 * kx * u))}px` }
+  }
+  const [spread, setSpread] = useState(get)
   useEffect(() => {
-    const onResize = () => setK(get())
+    const onResize = () => setSpread(get())
     onResize()
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [on])
-  return k
+  }, [on, H])
+  return spread
 }
 
 /** The picture's colours row by row (sky on top, grass below), without what stands on them: for each band of rows
@@ -217,17 +222,23 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
   const [hover, setHover] = useState<number | null>(null)
   const { W, H, slots, dots, lines, vars } = wide ? landscape : portrait
   // the portrait scene of an extended picture spreads out sideways on a wider screen: k times its width in units
-  const k = useSpread(ext && !wide)
-  const sx = (x: number) => x * k
-  // a trail between two stations moves out with them: each point by the shift of the stations it lies between
-  // (from the first one's shift at its start to the second one's at its end), so it still joins them
-  const centre = (i: number) => (slots[i] ? slots[i].x + slots[i].w / 2 : 0)
+  const { kx, ky, Hs, width: spreadWidth } = useSpread(ext && !wide, H)
+  // a station's centre, and where it moves on a spread scene
+  const cx = (i: number) => (slots[i] ? slots[i].x + slots[i].w / 2 : 0)
+  const cy = (i: number) => (slots[i] ? slots[i].y + slots[i].h / 2 : 0)
+  // sideways from the middle; vertically the stations close up towards the bottom of the scene
+  const shift = (i: number): Pt => [(kx - 1) * cx(i), Hs - (H - cy(i)) * ky - cy(i)]
+  const moved = (p: Pt, i: number): Pt => [p[0] + shift(i)[0], p[1] + shift(i)[1]]
+  // a trail between two stations moves with them: each point by the shift of the stations it lies between
+  // (from the first one's at its start to the second one's at its end), so it still joins them
   const spreadTrail = (pts: Pt[], i: number): Pt[] =>
-    k === 1 ? pts : pts.map(([x, y], j) => {
+    kx === 1 && ky === 1 && Hs === H ? pts : pts.map(([x, y], j) => {
       const t = pts.length > 1 ? j / (pts.length - 1) : 0
-      return [x + (k - 1) * (centre(i) + (centre(i + 1) - centre(i)) * t), y]
+      const [ax, ay] = shift(i)
+      const [bx, by] = shift(i + 1)
+      return [x + ax + (bx - ax) * t, y + ay + (by - ay) * t]
     })
-  const pctX = (v: number) => `${(v / (W * k)) * 100}%`
+  const pctX = (v: number) => `${(v / (W * kx)) * 100}%`
   // the headline: in the scene on a narrow screen; on a wide one at the top of the page, on the sky
   const title = noTitle ? null : intro ? (
     // a whole sentence: the pill grows to fit it, with no bold last word; a long one (other languages) gets a smaller font
@@ -248,7 +259,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
       </h1>
     )
   })()
-  const pctY = (v: number) => `${(v / H) * 100}%`
+  const pctY = (v: number) => `${(v / Hs) * 100}%`
 
   return (
     <div
@@ -334,11 +345,16 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
         // a world without the mirrored water above (all but the ocean): the picture's top fades into the sky colour
         className={wide ? `${css.worldScene} ${css.worldSceneWide} ${theme.design?.mirrorAbove === false ? css.worldSceneFade : ''}` : css.worldScene}
         style={{
-          aspectRatio: `${W * k} / ${H}`,
-          '--u': `calc(100cqw / ${W * k})`,
+          aspectRatio: `${W * kx} / ${Hs}`,
+          '--u': `calc(100cqw / ${W * kx})`,
           ...vars,
           // the picture stays centred under the wider scene
-          ...(k > 1 ? { '--bg-x': (Number(vars['--bg-x']) || 0) + (W * k - W) / 2, '--title-x': (Number(vars['--title-x']) || 0) + (W * k - W) / 2, width: `min(100vw, ${(PORTRAIT_SHAPE * k).toFixed(4)} * 100dvh)` } : {}),
+          ...(spreadWidth ? {
+            '--bg-x': (Number(vars['--bg-x']) || 0) + (W * kx - W) / 2,
+            '--bg-y': (Number(vars['--bg-y']) || 0) + (Hs - H),
+            '--title-x': (Number(vars['--title-x']) || 0) + (W * kx - W) / 2,
+            width: spreadWidth,
+          } : {}),
           cursor: hover !== null && items[hover]?.onOpen ? 'pointer' : undefined } as React.CSSProperties}
         ref={sceneRef}
         // the scene decides which station a touch is for (see stationAt)
@@ -350,13 +366,13 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
         onPointerMove={(e) => e.pointerType === 'mouse' && setHover(stationAt(e.currentTarget, e.clientX, e.clientY))}
         onPointerLeave={() => setHover(null)}
       >
-        <svg viewBox={`0 0 ${W * k} ${H}`} className={css.worldPath} aria-hidden>
+        <svg viewBox={`0 0 ${W * kx} ${Hs}`} className={css.worldPath} aria-hidden>
           {/* a trail lights up once the station it leaves is done */}
           {dots?.map(trailPoints).map((raw, i) => {
             const seg = spreadTrail(raw, i)
             // the dots stop short of the next station's number: none inside the circle or right at its edge
             const badge = numbers ? slots[i + 1]?.badge : undefined
-            const target: Pt | undefined = badge && [badge[0] + (k - 1) * centre(i + 1), badge[1]]
+            const target: Pt | undefined = badge && moved(badge, i + 1)
             const r = (Number(vars['--badge']) || 0) / 2 + 8
             const shown = target ? seg.filter(([x, y]) => Math.hypot(x - target[0], y - target[1]) >= r) : seg
             return (
@@ -369,12 +385,12 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
             const pts = spreadTrail(raw, i)
             // a trail that ends at the next station's number stops at the circle's edge, not inside it
             const badge = numbers ? slots[i + 1]?.badge : undefined
-            const target: Pt | undefined = badge && [badge[0] + (k - 1) * centre(i + 1), badge[1]]
+            const target: Pt | undefined = badge && moved(badge, i + 1)
             const r = (Number(vars['--badge']) || 0) / 2 + 8
             let shown = target ? trimAtCircle(pts, target, r) : pts
             // a trail that starts at a number (the second stage) also starts at the circle's edge
             const ob = numbers ? slots[i]?.badge : undefined
-            const origin: Pt | undefined = ob && [ob[0] + (k - 1) * centre(i), ob[1]]
+            const origin: Pt | undefined = ob && moved(ob, i)
             if (origin) shown = trimAtCircle([...shown].reverse(), origin, r).reverse()
             return (
               <path
@@ -398,7 +414,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
               key={item.id}
               className={[css.worldStage, css[`pin--${item.status}`]].join(' ')}
               // the station keeps its size; on a spread scene only its centre moves out
-              style={{ left: pctX(sx(slot.x + slot.w / 2) - slot.w / 2), top: pctY(slot.y), width: pctX(slot.w), height: pctY(slot.h) }}
+              style={{ left: pctX(moved([cx(i), 0], i)[0] - slot.w / 2), top: pctY(moved([0, cy(i)], i)[1] - slot.h / 2), width: pctX(slot.w), height: pctY(slot.h) }}
               data-station={i}
               data-hover={hover === i && open ? '' : undefined}
               // a touch is placed by the scene (stationAt); this one is a screen reader's or the keyboard's "click"
