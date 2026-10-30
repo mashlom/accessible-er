@@ -40,7 +40,7 @@ export function QuestShell() {
   // (night-map is only the old address of second-map and redirects to it)
   const isMapPage = /\/(second-)?map$/.test(pathname) || /^\/quest\/[^/]+\/?$/.test(pathname)
   // the sheets over the map: the map under them is drawn with its own header
-  const isSheet = /\/(stage\/[^/]+|wait-times|procedures|procedure\/[^/]+)$/.test(pathname)
+  const isSheet = /\/(stage\/[^/]+|wait-times|procedures|procedure\/[^/]+|celebrate)$/.test(pathname)
   // A designed world's maps carry their own language picker and menu link in their header row
   const hideTopbar = designed && (isMapPage || isSheet)
 
