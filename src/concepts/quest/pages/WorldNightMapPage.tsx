@@ -97,7 +97,7 @@ function portraitScene(design: WorldDesign, images: string[], screenH: number): 
     vars: {
       ...spec.vars,
       // the background is moved so the shore passes under the ending, and the gradient at its top goes with it
-      '--bg-y': -shift,
+      '--bg-y': (Number(spec.vars?.['--bg-y']) || 0) - shift,
       '--grad-y': -shift,
     },
   }
