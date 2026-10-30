@@ -82,3 +82,39 @@ The scene is drawn in the frame's units (1920 x 1080 landscape, 824 x 2200 portr
 offset change. The mirroring, the side blur and the sky fade can then be switched off for the worlds that have the
 new pictures. Separately: on an upright iPad the portrait map is taller than the screen and scrolls; it should fit
 the height (with today's pictures, until the new ones arrive).
+
+## Ocean: a new portrait picture (redo)
+
+The first ocean portrait picture has water above the beach (the brief asked for "bright water" above every frame,
+which is wrong for the ocean's portrait map: there the shore is at the top). The app shows the landscape picture
+turned upside down until the new one arrives. The landscape picture stays as it is.
+
+**What to deliver:** `map-portrait.webp` (or PNG), **2200 x 2800**, seen **straight from above** (like a map, not a
+view under water from the side).
+
+**Where things are** (pixels of the 2200 x 2800 canvas):
+
+- **Beach and land at the top.** The shoreline runs across the picture, gently curved: at about y 1350 at the left
+  edge, rising to about y 1000 at the right edge. Everything above it is land: a wide warm sand beach, further up
+  soft dunes with tufts of beach grass and a few round bushes, calmer towards the top edge. No water above the shore.
+- **The dock house stands here:** x 700 to 1120, y 950 to 1260, on the sand right at the water's edge (its pier
+  reaches into the water). Keep this place plain sand.
+- **Water below the shore,** seen from above: a thin line of foam and very light turquoise shallows at the shore,
+  then clear teal-blue water with soft light ripples and sandy patches on the bottom, slowly getting a little deeper
+  blue towards the bottom of the picture. Calm, even, nothing in the water.
+- The other stations stand in the water at x 700 to 1500 (they are added by the app); keep the water there plain.
+
+**Prompt:**
+
+> A top-down view, like a map seen from straight above, for a children's hospital app. Soft 3D clay-and-felt
+> miniature style, matte textures, warm soft light from the top left, pastel colours, no outlines. Portrait canvas
+> 2200 x 2800. The upper part is land: a wide warm sand beach along a gently curved shoreline that runs across the
+> picture (lower on the left, higher on the right, roughly at the middle of the upper half), and above the beach
+> soft sand dunes with tufts of beach grass and a few round green bushes, simpler towards the top edge. The lower
+> part is calm sea seen from above: a thin line of white foam and light turquoise shallows along the shore, then
+> clear teal-blue water with soft light ripples and pale sandy patches on the bottom, slowly turning a little deeper
+> blue towards the bottom. No water above the shoreline. No people, animals, fish, boats, buildings, paths or text:
+> landscape only, calm and plain where the stations will stand.
+
+**Before sending:** check that the shoreline passes under the dock house's place (x 700 to 1120, y 950 to 1260 is
+sand) and that the right half at y 1100 and below is water.
