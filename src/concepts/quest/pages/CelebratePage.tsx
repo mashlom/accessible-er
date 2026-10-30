@@ -173,6 +173,22 @@ export function CelebratePage() {
           { label: t('ui.buttons.discharge'), pick: () => setOutcome('discharge') },
           { label: t('ui.buttons.admission'), pick: () => setOutcome('admission') },
         ]}
+        stars={doneCount > 0 ? (
+          <>
+            <p className={css.celebrateCoins}>
+              {Array.from({ length: doneCount }, (_, i) => (
+                <span key={i} className={css.coinCounterItem}>{theme.doneEmoji ?? '✓'}</span>
+              ))}
+            </p>
+            {/* the shop's welcome only in the test mode, where the shop is */}
+            {withStore && (
+              <p className={css.celebrateHint}>
+                {t(`ui.text.coins.${new Intl.PluralRules(lang).select(doneCount)}`).replace('{n}', String(doneCount))}
+              </p>
+            )}
+          </>
+        ) : null}
+        buttons={childButtons}
         parent={outcome ? parentZone : null}
         closeParent={() => setOutcome(null)}
       />
@@ -203,10 +219,14 @@ export function CelebratePage() {
 
 /** A designed world's celebration: the world's landscape fills the screen, and the picture, the words, the buttons
  *  and the parent's part stand on a bottom sheet, as on a station */
-function CelebrateSheet({ image, question, choices, parent, closeParent }: {
+function CelebrateSheet({ image, question, choices, stars, buttons, parent, closeParent }: {
   image?: string
   question: string
   choices: { label: string; pick: () => void }[]
+  /** the stars earned on the way (and the shop's line in the test mode) */
+  stars: ReactNode
+  /** the shop (test mode only) and the world choice */
+  buttons: ReactNode
   parent: ReactNode
   closeParent: () => void
 }) {
@@ -246,6 +266,7 @@ function CelebrateSheet({ image, question, choices, parent, closeParent }: {
               <img src={image} alt="" className={`${css.stageSheetImg} ${css.stageSheetImgScene}`} />
             </div>
           )}
+          {stars && <div className={css.celebrateSheetText}>{stars}</div>}
           <h1 id="celebrate-title" className={css.stageSheetTitle} style={{ color: theme.accent }}>{question}</h1>
           <div className={css.celebrateSheetActions}>
             {choices.map((c) => (
@@ -253,6 +274,7 @@ function CelebrateSheet({ image, question, choices, parent, closeParent }: {
                 {c.label}
               </button>
             ))}
+            {buttons}
           </div>
         </div>
       </div>
