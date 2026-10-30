@@ -10,8 +10,9 @@ import { saveCardPdf } from '../../../components/careCard/saveCardPdf'
 import { worldText, type WorldLang } from '../../../data/child/worlds'
 import css from '../quest.module.css'
 
-/** What one thing on the colouring sheet costs, in the stars earned on the way */
-const STARS_PER_ITEM = 2
+/** What each thing costs, in the stars earned on the way, by its place in the world's list. Chosen so that any
+ *  number of stars from 1 to 15 can be spent to the last one with at most four things (so with 7 things too). */
+const PRICES = [2, 1, 3, 1, 4, 2, 5, 3]
 /** At most this many things go on the sheet next to the doll */
 const MAX_ITEMS = 4
 
@@ -34,7 +35,7 @@ function WorldShop() {
   const { doneProcedures } = useQuestProgress()
   const shop = theme.shop!
   const stars = doneProcedures.size
-  const affordable = Math.min(MAX_ITEMS, Math.floor(stars / STARS_PER_ITEM))
+  const price = (id: string) => PRICES[shop.items.indexOf(id) % PRICES.length]
   const [chosen, setChosen] = useState<string[]>([])
   const [state, setState] = useState<'idle' | 'saving' | 'saved' | 'failed'>('idle')
   const handleRef = useRef<HTMLHeadingElement>(null)
@@ -42,7 +43,7 @@ function WorldShop() {
   const texts = worldText(theme.id, lang as WorldLang)
   const name = (id: string) => texts?.shop?.[id] ?? id
   const picture = (id: string) => `${import.meta.env.BASE_URL}worlds/${theme.id}/shop/${id}.webp`
-  const left = stars - chosen.length * STARS_PER_ITEM
+  const left = stars - chosen.reduce((sum, id) => sum + price(id), 0)
   const close = () => goBackTo('/celebrate')
 
   useEffect(() => {
@@ -50,7 +51,7 @@ function WorldShop() {
   }, [])
 
   const toggle = (id: string) =>
-    setChosen((c) => (c.includes(id) ? c.filter((x) => x !== id) : c.length < affordable ? [...c, id] : c))
+    setChosen((c) => (c.includes(id) ? c.filter((x) => x !== id) : c.length < MAX_ITEMS && price(id) <= left ? [...c, id] : c))
 
   const save = async () => {
     if (!sheetRef.current) return
@@ -86,12 +87,11 @@ function WorldShop() {
               <span key={i} className={css.coinCounterItem}>{theme.doneEmoji ?? '⭐'}</span>
             ))}
           </p>
-          <p className={css.shopPrice}>{t('ui.shop.price').replace('{n}', String(STARS_PER_ITEM))}</p>
 
           <div className={css.shopGrid}>
             {shop.items.map((id) => {
               const on = chosen.includes(id)
-              const can = on || chosen.length < affordable
+              const can = on || (chosen.length < MAX_ITEMS && price(id) <= left)
               return (
                 // a card as in an online shop: the picture, the name, the price and a "buy" button
                 <div key={id} className={on ? `${css.shopItem} ${css.shopItemOn}` : css.shopItem}>
@@ -101,8 +101,8 @@ function WorldShop() {
                   </span>
                   <span className={css.shopItemName}>{name(id)}</span>
                   <span className={css.shopItemPrice}>
-                    <span aria-hidden>{STARS_PER_ITEM} {theme.doneEmoji ?? '⭐'}</span>
-                    <span className="app-sr-only">{t('ui.shop.price').replace('{n}', String(STARS_PER_ITEM))}</span>
+                    <span aria-hidden>{price(id)} {theme.doneEmoji ?? '⭐'}</span>
+                    <span className="app-sr-only">{t('ui.shop.price').replace('{n}', String(price(id)))}</span>
                   </span>
                   {/* bought: tapping again gives the piece back, and its stars */}
                   <button
