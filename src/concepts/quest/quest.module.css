@@ -3728,5 +3728,5 @@ path.worldTrailLit {
 .shopBody .celebrateSheetActions {
   border-radius: 0;
   border-top: 1.5px solid color-mix(in srgb, var(--tok-action) 35%, transparent);
-  box-shadow: 0 -10px 18px -6px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 -16px 28px -4px rgba(0, 0, 0, 0.24);
 }
