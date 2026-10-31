@@ -12,6 +12,7 @@ import { worldText, type WorldLang } from '../../../data/child/worlds'
 import { ProcedureLineIcon } from './ProcedureLineIcon'
 import { keyed } from '../../../lib/keyed'
 import homeTexts from '../../../data/parent/home.json'
+import { useMoreBelow } from '../useMoreBelow'
 import css from '../quest.module.css'
 
 /** Open-book icon from the ocean mockup (drawn inside a 24×24 circle at 33,888 in the frame) */
@@ -158,12 +159,15 @@ export function ParentSheet({
   const data = parentJourney(lang).find((j) => j.id === stageId)
   if (!data) return null
 
+  // the shadow over the footer while there is more to scroll, as on the child's sheets
+  const moreRef = useMoreBelow<HTMLDivElement>()
   const singleProcId = data.procedureIds?.length === 1 ? data.procedureIds[0] : undefined
   const singleProc = singleProcId ? parentProcedure(lang, singleProcId) : undefined
 
   return (
     <div className={css.sheetBackdrop} onClick={onClose}>
       <div
+        ref={moreRef}
         className={`${css.sheet} ${css.worldSheet}`}
         // the parent's sheet keeps the parent's colours in every world
         style={designVars(getTheme(PARENT_WORLD).design)}
