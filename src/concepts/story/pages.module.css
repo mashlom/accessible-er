@@ -964,7 +964,7 @@ button.dest {
 .childCardJourney {
   flex: 1;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.35;
 }
 .childWorldThumbs {
