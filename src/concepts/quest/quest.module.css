@@ -3788,3 +3788,30 @@ path.worldTrailLit {
 .worldSheet.pickSheet[data-more] .pickBtn {
   box-shadow: 0 -16px 28px -4px rgba(0, 0, 0, 0.24);
 }
+
+/* the last sheet's two answers: a drawn icon in a white circle before the words */
+.answerBtn { gap: calc(8 * var(--u)); }
+.answerIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+}
+.answerIcon svg { width: 20px; height: 20px; }
+.answerIconHome {
+  fill: none;
+  stroke: var(--tok-action);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* the red Star of David of Magen David Adom */
+.answerIconStar {
+  fill: none;
+  stroke: #d71920;
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+}
