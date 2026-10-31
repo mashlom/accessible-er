@@ -11,6 +11,7 @@ import homeTexts from '../../../data/parent/home.json'
 import i18nUi from '../../../data/i18n/ui.json'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
+import { themes } from '../../quest/themes'
 
 /** The stages of the home, in the design's order; the names and descriptions come from parent/home.json */
 const destinations = [
@@ -78,14 +79,29 @@ export function WorldPage() {
         <div className={styles.sectionHead}>
           <h2 id="child-world" className={styles.worldLabel}>{tx.childLabel}</h2>
         </div>
-        <p className={styles.sectionDesc}>{tx.childDesc}</p>
-
         <div className={styles.childCards}>
-          <a href="#/quest" className={styles.childCard}>
-            <span className={styles.childCardIcon} aria-hidden>🗺️</span>
-            <span className={styles.childCardName}>{tx.start.title}</span>
-            <span className={styles.childCardDesc}>{tx.start.desc}</span>
-            <span className={styles.childCardAction}>{tx.start.action} {dir === 'rtl' ? '←' : '→'}</span>
+          {/* one big button: the words on one side, the six worlds, small, on the other */}
+          <a href="#/quest" className={`${styles.childCard} ${styles.childCardWorlds}`} aria-label={tx.start.journey}>
+            <span className={styles.childCardJourney}>{tx.start.journey}</span>
+            <span className={styles.childWorldThumbs} aria-hidden>
+              {themes.filter((theme) => theme.id !== 'knight').map((theme) => (
+                theme.thumbnailOverlay ? (
+                  <span
+                    key={theme.id}
+                    className={styles.childWorldThumb}
+                    style={{
+                      backgroundImage: `url(${theme.thumbnail ?? theme.bg})`,
+                      backgroundSize: theme.thumbnailPiece?.size ?? (theme.thumbnail ? '280%' : 'cover'),
+                      backgroundPosition: theme.thumbnailPiece?.position ?? (theme.thumbnail ? 'center 17%' : 'center'),
+                    }}
+                  >
+                    <img src={theme.thumbnailOverlay} alt="" className={styles.childWorldThumbOverlay} />
+                  </span>
+                ) : (
+                  <img key={theme.id} src={theme.thumbnail ?? theme.bg} alt="" className={styles.childWorldThumb} />
+                )
+              ))}
+            </span>
           </a>
           {/* "Reading in the ER" (the books, #/book) shows only in the test mode (?test=true); the books themselves stay */}
           {isTestMode() && (

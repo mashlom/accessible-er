@@ -8,7 +8,8 @@
     "start": {
       "title": "משחקים במיון",
       "desc": "בוחרים עולם ומשחקים כדי להכיר את הביקור במיון.",
-      "action": "לבחירת עולם"
+      "action": "לבחירת עולם",
+      "journey": "בוחרים עולם ומשחקים, כדי שהביקור במיון יהפוך למסע מרתק."
     },
     "talk": {
       "title": "בוא נדבר!",
@@ -110,7 +111,8 @@
     "start": {
       "title": "Play in the ER",
       "desc": "Choose a world and play to get to know the ER visit.",
-      "action": "Choose a world"
+      "action": "Choose a world",
+      "journey": "Choose a world and play, so the ER visit becomes an exciting journey."
     },
     "talk": {
       "title": "Let's talk!",
@@ -212,7 +214,8 @@
     "start": {
       "title": "Играем в приёмном покое",
       "desc": "Выбираем мир и играем, чтобы познакомиться с визитом в приёмный покой.",
-      "action": "К выбору мира"
+      "action": "К выбору мира",
+      "journey": "Выбираем мир и играем, чтобы визит в приёмный покой стал увлекательным путешествием."
     },
     "talk": {
       "title": "Давай поговорим!",
