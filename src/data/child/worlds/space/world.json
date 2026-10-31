@@ -5,8 +5,12 @@
   "doneEmoji": "⭐",
   "shopImage": "/worlds/space/art/celebrate.webp",
   "bg": "",
-  "thumbnail": "/worlds/space/art/map-portrait.webp",
+  "thumbnail": "/worlds/space/art/map-landscape.webp",
   "thumbnailOverlay": "/worlds/space/art/card.webp",
+  "thumbnailPiece": {
+    "size": "320%",
+    "position": "0% 58%"
+  },
   "accent": "#4579B5",
   "accentSoft": "#d0dcf5",
   "accentText": "#ffffff",
