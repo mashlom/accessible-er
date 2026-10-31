@@ -53,10 +53,6 @@ export function WorldSelectPage() {
               <span className={css.worldEmoji}>{theme.emoji}</span>
             )}
             <span className={css.worldCardName}>{name}</span>
-            <span className={css.worldCardCta}>
-              <span className={css.worldCardArrow} aria-hidden>↖</span>
-              {t('ui.buttons.playWorld')}
-            </span>
           </button>
           )
         })}
