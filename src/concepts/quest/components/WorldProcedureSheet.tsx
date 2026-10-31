@@ -6,6 +6,7 @@ import { OPTIONAL_STAGES, type StageId } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { StageIcon } from '../../../components/StageIcon'
 import { WorldMapPage, stationPicture } from '../pages/WorldMapPage'
+import { useMoreBelow } from '../useMoreBelow'
 import css from '../quest.module.css'
 
 interface Props {
@@ -21,6 +22,7 @@ export function WorldProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
   const { t } = useI18n()
   const goBackTo = useGoBackTo()
   const handleRef = useRef<HTMLButtonElement>(null)
+  const moreRef = useMoreBelow<HTMLDivElement>()
   const design = theme.design!
 
   const close = () => goBackTo('/map')
@@ -47,6 +49,7 @@ export function WorldProcedureSheet({ selected, onToggle, onContinue, onSkip }: 
       <div className={css.sheetBackdrop} onClick={close}>
         <div
           className={`${css.sheet} ${css.pickSheet} ${css.worldSheet}`}
+          ref={moreRef}
           role="dialog"
           aria-modal="true"
           aria-label={title}
