@@ -3548,3 +3548,23 @@ path.worldTrailLit {
   background-size: 280%;
   background-position: center 17%;
 }
+
+
+/* the shop page's buttons look as the sheets' do: its unit is a plain pixel, the colours are the world's */
+.shopBody { --u: 1px; }
+.shopBody .worldBtnDone { background: var(--tok-action); color: #fff; }
+.shopBody .worldBtnBack {
+  background: var(--tok-card, #fff);
+  color: var(--tok-action);
+  border: 1.5px solid var(--tok-action);
+}
+
+/* a main button that cannot be used yet (the shop's PDF before anything is bought): grey, not the action colour */
+.worldBtn:disabled,
+.worldBtn:disabled:hover,
+.shopBody .worldBtnDone:disabled {
+  background: #c9d0d4;
+  color: #fff;
+  box-shadow: none;
+  cursor: default;
+}
