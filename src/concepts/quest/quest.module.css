@@ -3436,8 +3436,9 @@ path.worldTrailLit {
   text-align: center;
 }
 
-/* the price tag */
+/* the price tag, with the buy button under it, on the bottom of the card */
 .shopItemPrice {
+  margin-top: auto;
   padding: 2px 10px;
   border-radius: 999px;
   background: #fff4cf;
@@ -3448,8 +3449,6 @@ path.worldTrailLit {
 
 .shopBuy {
   width: 100%;
-  /* at the bottom of every card */
-  margin-top: auto;
   min-height: 44px;
   border: 0;
   border-radius: 12px;
