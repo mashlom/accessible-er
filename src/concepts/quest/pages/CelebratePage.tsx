@@ -34,6 +34,9 @@ function blocksFor(lang: 'he' | 'en' | 'ru', kind: 'discharge' | 'admission') {
   return texts.map((b, i) => ({ emoji: BLOCK_EMOJI[kind][i], ...b, title: i === 0 ? first : b.title }))
 }
 
+// the sheets' buttons carry no arrows
+const noArrow = (text: string) => text.replace(/\s*[←→]\s*/g, ' ').trim()
+
 export function CelebratePage() {
   const [outcome, setOutcome] = useState<'discharge' | 'admission' | null>(null)
   const { theme } = useQuestTheme()
@@ -163,6 +166,39 @@ export function CelebratePage() {
     </div>
   )
 
+  // a designed world: the outcome's sheet looks as the other parent sheets do — the cards, then a bottom block
+  // with the buttons
+  const parentSheet = outcome && (
+    <>
+      <h1 className={css.stageSheetTitle}>
+        {outcome === 'discharge' ? t('ui.text.towardsDischarge') : t('ui.text.towardsAdmission')}
+      </h1>
+      {blocksFor(lang, outcome).map((b, i) => (
+        <section key={i} className={css.sheetCard}>
+          <h2>{b.title}</h2>
+          <p>{b.body}</p>
+        </section>
+      ))}
+      <Link to="/feedback" className={css.calmLink}>
+        {t('ui.buttons.feedback')}
+      </Link>
+      <div className={css.sheetFooter}>
+        {outcome === 'admission' && (
+          <Link
+            to={cardEmpty ? '/card' : '/card/view'}
+            state={{ from: '/celebrate' }}
+            className={`${css.worldBtn} ${css.worldBtnDone}`}
+          >
+            {noArrow(t(cardEmpty ? 'ui.buttons.fillCard' : 'ui.buttons.showCard'))}
+          </Link>
+        )}
+        <button type="button" className={`${css.worldBtn} ${css.worldBtnBack}`} onClick={() => setOutcome(null)}>
+          {noArrow(t('ui.buttons.changeChoice'))}
+        </button>
+      </div>
+    </>
+  )
+
   // a designed world: the celebration is a sheet like the stations', over the world's landscape
   // a designed world: the last sheet only asks what happens now (going home is only one of the two); the chosen
   // outcome's details open in the parent's sheet
@@ -191,7 +227,7 @@ export function CelebratePage() {
           </>
         ) : null}
         buttons={childButtons}
-        parent={outcome ? parentZone : null}
+        parent={parentSheet || null}
         closeParent={() => setOutcome(null)}
       />
     )
@@ -285,6 +321,8 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
 function CelebrateParentSheet({ onClose, children }: { onClose: () => void; children: ReactNode }) {
   const { t, lang, dir } = useI18n()
   const closeRef = useRef<HTMLButtonElement>(null)
+  // the shadow over the bottom block while there is more to scroll, as on the other sheets
+  const moreRef = useMoreBelow<HTMLDivElement>()
   useEffect(() => {
     closeRef.current?.focus()
     const unlock = lockBodyScroll()
@@ -298,6 +336,7 @@ function CelebrateParentSheet({ onClose, children }: { onClose: () => void; chil
   return (
     <div className={css.sheetBackdrop} onClick={onClose}>
       <div
+        ref={moreRef}
         className={`${css.sheet} ${css.worldSheet} ${css.celebrateSheetParent}`}
         style={designVars(getTheme(PARENT_WORLD).design)}
         // drawn in the page body (outside the shell): it takes the language's direction itself

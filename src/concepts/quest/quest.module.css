@@ -3863,3 +3863,6 @@ path.worldTrailLit {
 .worldSheet:has(> .sheetFooter) {
   padding-bottom: 0;
 }
+
+/* the outcome's parent sheet: its title, with room under it before the cards */
+.celebrateSheetParent > .stageSheetTitle { margin: 0 0 calc(16 * var(--u)); text-align: center; }
