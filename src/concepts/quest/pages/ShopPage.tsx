@@ -29,50 +29,89 @@ const NO_DOLL_H = 1200
 type Size = { w: number; h: number }
 type Placed = { id: string; x: number; y: number; w: number; h: number }
 
+/** The page as a grid of small cells (px): the pieces may not touch each other's drawn lines (their see-through
+ *  parts may overlap), so a piece can stand beside the doll's head, between its arms and legs */
+const CELL = 4
+
+/** Which cells of a picture are drawn, at its size on the page, made a little wider so pieces keep a gap */
+async function maskOf(src: string, w: number, h: number): Promise<{ cw: number; ch: number; on: Uint8Array }> {
+  const cw = Math.ceil(w / CELL), ch = Math.ceil(h / CELL)
+  const img = new Image()
+  img.src = src
+  await img.decode()
+  const c = document.createElement('canvas')
+  c.width = cw
+  c.height = ch
+  const g = c.getContext('2d')!
+  g.drawImage(img, 0, 0, cw, ch)
+  const a = g.getImageData(0, 0, cw, ch).data
+  const raw = new Uint8Array(cw * ch)
+  for (let i = 0; i < cw * ch; i++) raw[i] = a[i * 4 + 3] > 16 ? 1 : 0
+  // the gap: every drawn cell also takes its neighbours
+  const r = Math.ceil(GAP / 2 / CELL)
+  const on = new Uint8Array(cw * ch)
+  for (let y = 0; y < ch; y++) for (let x = 0; x < cw; x++) if (raw[y * cw + x])
+    for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++) {
+      const yy = y + dy, xx = x + dx
+      if (yy >= 0 && yy < ch && xx >= 0 && xx < cw) on[yy * cw + xx] = 1
+    }
+  return { cw, ch, on }
+}
+
 /**
  * Lays the doll and the pieces out on landscape A4 pages, all at one scale (the doll's): the doll stands at the start
- * edge, the pieces go in rows on the free part of the page (the doll's half too, but never over the doll); what does
- * not fit goes on a next page, at the same scale.
+ * edge; every piece, the biggest first, takes the first place where its drawing touches no other drawing (the feet's
+ * from the bottom up, the others from the top down). Only a piece that finds no place goes on a next page.
  */
-function layOut(
+async function layOut(
   doll: Size | null,
   pieces: { id: string; size: Size; place?: 'head' | 'feet' }[],
+  src: (id: string) => string,
   rtl: boolean,
-): Placed[][] {
+): Promise<Placed[][]> {
   const k = DOLL_H / (doll?.h ?? NO_DOLL_H)
-  const pages: Placed[][] = [[]]
-  let left = MARGIN
-  if (doll) {
-    const w = Math.round(doll.w * k)
-    pages[0].push({ id: 'doll', x: MARGIN, y: Math.round((PAGE_H - DOLL_H) / 2), w, h: DOLL_H })
-    left = MARGIN + w + GAP
+  const gw = Math.floor(PAGE_W / CELL), gh = Math.floor(PAGE_H / CELL)
+  const m = Math.ceil(MARGIN / CELL)
+  const grids: Uint8Array[] = []
+  const pages: Placed[][] = []
+  const newPage = () => { grids.push(new Uint8Array(gw * gh)); pages.push([]); return pages.length - 1 }
+  const stamp = (pi: number, mask: { cw: number; ch: number; on: Uint8Array }, cx: number, cy: number) => {
+    for (let y = 0; y < mask.ch; y++) for (let x = 0; x < mask.cw; x++)
+      if (mask.on[y * mask.cw + x]) grids[pi][(cy + y) * gw + cx + x] = 1
   }
-  // as on the doll: what is worn on the head first (at the top), then the rest, then what is worn on the feet,
-  // each group from its tallest piece down, in rows; a new row for each group, a new page when one does not fit
-  const order = { head: 0, undefined: 1, feet: 2 } as const
-  const sorted = [...pieces].sort((a, b) => order[`${a.place}` as keyof typeof order] - order[`${b.place}` as keyof typeof order] || b.size.h - a.size.h)
-  const feet = new Set(pieces.filter((p) => p.place === 'feet').map((p) => p.id))
-  let x = left, y = MARGIN, rowH = 0, page = 0, group: string | undefined
-  for (const { id, size, place } of sorted) {
-    const w = Math.round(size.w * k), h = Math.round(size.h * k)
-    if (x > left && (x + w > PAGE_W - MARGIN || place !== group)) { x = left; y += rowH + GAP; rowH = 0 }
-    group = place
-    if (y + h > PAGE_H - MARGIN && y > MARGIN) {
-      page += 1; pages.push([]); left = MARGIN; x = left; y = MARGIN; rowH = 0
+  const fits = (pi: number, mask: { cw: number; ch: number; on: Uint8Array }, cx: number, cy: number) => {
+    const g = grids[pi]
+    for (let y = 0; y < mask.ch; y++) {
+      const row = (cy + y) * gw + cx
+      for (let x = 0; x < mask.cw; x++) if (mask.on[y * mask.cw + x] && g[row + x]) return false
     }
-    pages[page].push({ id, x, y, w, h })
-    x += w + GAP
-    rowH = Math.max(rowH, h)
+    return true
   }
-  // what is worn on the feet stands on the bottom of the page, as the feet do
-  for (const p of pages) {
-    const f = p.filter((it) => feet.has(it.id))
-    if (!f.length) continue
-    const drop = PAGE_H - MARGIN - Math.max(...f.map((it) => it.y + it.h))
-    if (drop > 0) for (const it of f) it.y += drop
+  newPage()
+  if (doll) {
+    const w = Math.round(doll.w * k), y = Math.round((PAGE_H - DOLL_H) / 2)
+    pages[0].push({ id: 'doll', x: MARGIN, y, w, h: DOLL_H })
+    stamp(0, await maskOf(src('doll'), w, DOLL_H), m, Math.round(y / CELL))
+  }
+  const sorted = [...pieces].sort((a, b) => b.size.w * b.size.h - a.size.w * a.size.h)
+  for (const p of sorted) {
+    const w = Math.round(p.size.w * k), h = Math.round(p.size.h * k)
+    const mask = await maskOf(src(p.id), w, h)
+    const ys: number[] = []
+    for (let cy = m; cy + mask.ch <= gh - m; cy += 2) ys.push(cy)
+    if (p.place === 'feet') ys.reverse()
+    let spot: { pi: number; cx: number; cy: number } | null = null
+    for (let pi = 0; pi < pages.length && !spot; pi++)
+      for (const cy of ys) {
+        for (let cx = m; cx + mask.cw <= gw - m; cx += 2) if (fits(pi, mask, cx, cy)) { spot = { pi, cx, cy }; break }
+        if (spot) break
+      }
+    if (!spot) spot = { pi: newPage(), cx: m, cy: m }
+    stamp(spot.pi, mask, spot.cx, spot.cy)
+    pages[spot.pi].push({ id: p.id, x: spot.cx * CELL, y: spot.cy * CELL, w, h })
   }
   // Hebrew reads from the right: the doll stands at the right edge
-  return rtl ? pages.map((p) => p.map((it) => ({ ...it, x: PAGE_W - it.x - it.w }))) : pages
+  return rtl ? pages.map((pg) => pg.map((it) => ({ ...it, x: PAGE_W - it.x - it.w }))) : pages
 }
 
 /** Each page drawn by the browser, taken as a picture, one landscape A4 page of the PDF each. Nothing leaves the device. */
@@ -135,9 +174,16 @@ function WorldShop() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chosen])
   const ready = (!shop.doll || sizes.doll) && chosen.every((id) => sizes[id])
-  const pages = ready
-    ? layOut(shop.doll ? sizes.doll : null, chosen.map((id) => ({ id, size: sizes[id], place: shop.place?.[id] })), lang === 'he')
-    : []
+  const [pages, setPages] = useState<Placed[][]>([])
+  const key = ready ? chosen.join(',') + lang : ''
+  useEffect(() => {
+    if (!key) return setPages([])
+    let live = true
+    layOut(shop.doll ? sizes.doll : null, chosen.map((id) => ({ id, size: sizes[id], place: shop.place?.[id] })), picture, lang === 'he')
+      .then((p) => live && setPages(p))
+    return () => { live = false }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key])
 
   const toggle = (id: string) =>
     setChosen((c) => (c.includes(id) ? c.filter((x) => x !== id) : c.length < MAX_ITEMS && price(id) <= left ? [...c, id] : c))

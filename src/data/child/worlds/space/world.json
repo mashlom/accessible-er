@@ -467,7 +467,6 @@
     "items": [
       "helmet",
       "suit",
-      "boots",
       "jet-pack",
       "gloves",
       "mission-badge",
@@ -475,8 +474,7 @@
       "robot"
     ],
     "place": {
-      "helmet": "head",
-      "boots": "feet"
+      "helmet": "head"
     }
   }
 }
