@@ -5,7 +5,7 @@
       "reception": {
         "label": "קבלה בדלפק הכניסה",
         "hint": "רושמים את השם בפנקס הכניסה לבית",
-        "story": "כשנכנסים לבית הבובות, רושמים את השם בפנקס הכניסה ומקבלים תג שם קטן, שילווה אותנו בכל החדרים של הבית. גם בקבלה של המיון נקבל צמיד ומספר שילוו אותנו בין התחנות.",
+        "story": "כשנכנסים לבית הבובות, רושמים את השם בפנקס הכניסה ומקבלים תג שם קטן וצמיד יפה, שילוו אותנו בכל החדרים של הבית. גם בקבלה של המיון נקבל צמיד ומספר שילוו אותנו בין התחנות.",
         "done": "קיבלתי תג שם לבית הבובות!"
       },
       "wait-before-triage": {
@@ -249,7 +249,7 @@
       "reception": {
         "label": "Reception Desk",
         "hint": "We write the name in the house entrance book",
-        "story": "When we come into the dollhouse, we write the name in the entrance book and get a little name tag that goes with us to every room in the house. At the ER's registration desk we also get a bracelet and a number that go with us from station to station.",
+        "story": "When we come into the dollhouse, we write the name in the entrance book and get a little name tag and a pretty bracelet that go with us to every room in the house. At the ER's registration desk we also get a bracelet and a number that go with us from station to station.",
         "done": "I got my dollhouse name tag!"
       },
       "wait-before-triage": {
@@ -493,7 +493,7 @@
       "reception": {
         "label": "Стойка регистрации",
         "hint": "Записываем имя в книгу входа в домик",
-        "story": "Когда входим в кукольный домик, мы записываем имя в книгу входа и получаем маленький бейджик с именем и красивый браслет, который будет с нами во всех комнатах домика. В регистратуре приёмного отделения нам тоже дадут браслет и номер, который будет с нами на всех остановках.",
+        "story": "Когда входим в кукольный домик, мы записываем имя в книгу входа и получаем маленький бейджик с именем и красивый браслет, которые будут с нами во всех комнатах домика. В регистратуре приёмного отделения нам тоже дадут браслет и номер, который будет с нами на всех остановках.",
         "done": "Мы получили бейджик кукольного домика!"
       },
       "wait-before-triage": {
