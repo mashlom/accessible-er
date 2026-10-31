@@ -36,10 +36,17 @@
 
 /* landscape: more cards in a row, each the same size as in portrait */
 @media (orientation: landscape) and (min-width: 640px) {
+  /* landscape: all the worlds on one screen, without scrolling — four in a row, two rows, as big as the height
+     allows (the phone held upright scrolls) */
+  .selectPage {
+    min-height: 0;
+    padding: 1rem 1.25rem;
+  }
   .worldGrid {
-    grid-template-columns: repeat(auto-fill, 232px);
+    --card: min(232px, calc((100vw - 2.5rem - 3rem) / 4), calc((100dvh - 2rem - 100px - 1rem) / 2 - 2.2rem));
+    grid-template-columns: repeat(4, var(--card));
     justify-content: center;
-    max-width: 1200px;
+    max-width: none;
   }
 }
 
@@ -3834,3 +3841,13 @@ path.worldTrailLit {
 }
 .selectBarText .selectTitle { font-size: clamp(1rem, 4.2vw, 1.5rem); line-height: 1.2; }
 .selectBarText .selectSub { font-size: clamp(0.75rem, 3.2vw, 1rem); }
+
+/* a phone held sideways: too low for two rows — all the worlds in one row, the names smaller */
+@media (orientation: landscape) and (min-width: 640px) and (max-height: 520px) {
+  .worldGrid {
+    --card: min(160px, calc((100vw - 2.5rem - 6 * 0.75rem) / 7), calc(100dvh - 2rem - 90px - 3rem));
+    grid-template-columns: repeat(7, var(--card));
+    gap: 0.75rem;
+  }
+  .worldCardName { font-size: 0.85rem; line-height: 1.15; padding: 0; }
+}
