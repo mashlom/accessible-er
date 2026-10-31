@@ -78,6 +78,12 @@ export function QuestShell() {
           <Link to={mapTarget} className={`${css.questTopBrand} ${css.navWord}`}>
             {t('ui.shell.map')}
           </Link>
+        ) : isHome ? (
+          // the world choice: its question on the bar, right between the buttons
+          <div className={css.selectBarText}>
+            <h1 className={css.selectTitle}>{selectUi.worlds.title}</h1>
+            <p className={css.selectSub}>{selectUi.worlds.subtitle}</p>
+          </div>
         ) : (
           <span className={css.questTopBrand} aria-hidden />
         )}
@@ -91,13 +97,6 @@ export function QuestShell() {
           </a>
           </>}
         </div>
-        {/* the world choice: its question on the bar, under the buttons */}
-        {isHome && (
-          <div className={css.selectBarText}>
-            <h1 className={css.selectTitle}>{selectUi.worlds.title}</h1>
-            <p className={css.selectSub}>{selectUi.worlds.subtitle}</p>
-          </div>
-        )}
       </header>}
       <main id="main">
         <Outlet />

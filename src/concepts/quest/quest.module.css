@@ -3827,10 +3827,11 @@ path.worldTrailLit {
 /* on the grey (not yet usable) PDF button the icon is pale too */
 .worldBtn:disabled .answerIcon { opacity: 0.6; }
 
-/* the world choice's question sits on the top bar, under its buttons */
+/* the world choice's question sits on the top bar, right between its buttons */
 .selectBarText {
-  grid-column: 1 / -1;
   display: grid;
-  gap: 4px;
-  padding: 4px 0 8px;
+  gap: 2px;
+  padding: 4px 0;
 }
+.selectBarText .selectTitle { font-size: clamp(1rem, 4.2vw, 1.5rem); line-height: 1.2; }
+.selectBarText .selectSub { font-size: clamp(0.75rem, 3.2vw, 1rem); }
