@@ -94,6 +94,22 @@ body), and nothing fits on the doll without guessing. The tabs also come off too
   long when printed, never through a thin neck, so it does not tear off when it is folded. It does not have to run
   the whole edge: a side tab can be shorter than the side it sits on.
 
+### 3. Shoes and boots: a slit for the doll's foot
+
+- A pair of shoes or boots is not a flat picture laid over the feet: each shoe has a **slit across its top opening**
+  (along the line where the foot goes in), so the doll's foot slides into it.
+- Drawn this way, the back of the shoe's opening is hidden behind the foot, and the lower part of the doll's leg is
+  inside the shoe: draw the shoe as seen from the front with the foot already in it, the slit marked as a single cut
+  line (not a fold line), and no tabs on shoes.
+
+### 4. Hats and helmets: tabs where they hold the head
+
+- The tabs of a hat, a helmet or a crown sit **at the sides of the doll's head, at the height of its ears / temples**,
+  pointing sideways and folding back behind the head, so that together they grip the head. Not on top of the hat and
+  not at its brim's outer ends far from the head.
+- Check on the doll: with the hat in place, the tabs' fold lines (the hat's own edge) touch the head's outline on both
+  sides.
+
 ### Prompt (add to the shared prompt above, instead of its line about the tabs)
 
 > Draw this piece on a transparent canvas of exactly the same size as the doll picture, at exactly the doll's scale,
@@ -101,9 +117,14 @@ body), and nothing fits on the doll without guessing. The tabs also come off too
 > the canvas. Tabs: no fold lines and no dashed lines; each tab continues the piece's own edge outwards and is folded
 > along that edge (for example shoulder tabs continue the straps upwards and fold down over the shoulders); each tab
 > joins the piece along a straight stretch of its edge at least 6 mm long, never through a thin neck, so it
-> does not tear off (it may be shorter than that edge).
+> does not tear off (it may be shorter than that edge). Shoes and boots have no tabs: each shoe has one cut line
+> across its top opening (a slit) so the doll's foot slides in, and it is drawn from the front with the foot inside,
+> the back of the opening hidden. On hats, helmets and crowns the tabs sit at the sides of the head, at ear height,
+> where they can fold back behind the head and hold it.
 
 ### Before sending
 
 - Lay every piece over its doll: it sits exactly on the right place, at the right size.
 - No fold lines anywhere; every tab joins the piece along a straight stretch of its edge (at least 6 mm).
+- Every shoe has its slit and no tabs; the doll's foot fits through the slit.
+- On every hat, helmet and crown the tabs reach the sides of the doll's head.
