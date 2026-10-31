@@ -89,18 +89,20 @@ body), and nothing fits on the doll without guessing. The tabs also come off too
   that continues the piece's own edge and bends back over the doll's edge. For example, on a dress the shoulder tabs
   continue the top of the straps upwards and fold down over the doll's shoulders (top to bottom), the side tabs
   continue the waist sideways and fold back around the doll's sides.
-- A tab is wide where it joins the piece (at least the width of the strap or edge it continues), never a thin neck,
-  so it does not tear off when it is folded.
+- A tab joins the piece **along its whole base**, on a straight stretch of the piece's edge, at least about 1.5 cm
+  long when printed, never through a thin neck, so it does not tear off when it is folded. It does not have to run
+  the whole edge: a side tab can be shorter than the side it sits on.
 
 ### Prompt (add to the shared prompt above, instead of its line about the tabs)
 
 > Draw this piece on a transparent canvas of exactly the same size as the doll picture, at exactly the doll's scale,
 > in the place where it is worn on the doll, so that laid over the doll it fits it exactly; do not enlarge it to fill
 > the canvas. Tabs: no fold lines and no dashed lines; each tab continues the piece's own edge outwards and is folded
-> along that edge (for example shoulder tabs continue the straps upwards and fold down over the shoulders), wide where
-> it joins the piece so it does not tear off.
+> along that edge (for example shoulder tabs continue the straps upwards and fold down over the shoulders); each tab
+> joins the piece along a straight stretch of its edge at least about 1.5 cm long, never through a thin neck, so it
+> does not tear off (it may be shorter than that edge).
 
 ### Before sending
 
 - Lay every piece over its doll: it sits exactly on the right place, at the right size.
-- No fold lines anywhere; every tab is a wide continuation of the piece's edge.
+- No fold lines anywhere; every tab joins the piece along a straight stretch of its edge (about 1.5 cm or more).
