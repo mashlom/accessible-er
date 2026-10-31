@@ -3368,7 +3368,7 @@ path.worldTrailLit {
 }
 
 /* celebrate.webp is 4:3 (the stations' scenes are 728:680) */
-.celebrateSheet > .stageSheetPicPlain > .stageSheetImgScene { aspect-ratio: 4 / 3; }
+.worldSheet.stageSheet.celebrateSheet > .stageSheetPicPlain > .stageSheetImgScene { aspect-ratio: 4 / 3; }
 
 /* ── The shop (issue #50): pick the paper-doll pieces for the colouring sheet ── */
 .shopPrice {
