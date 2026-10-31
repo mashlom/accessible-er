@@ -1,9 +1,10 @@
+import { HomePill } from '../../../components/HomePill'
 import { useLayoutEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { useIsConceptHome } from '../../nav'
 import { HelperChat } from '../../../components/helper/HelperChat'
 import { LanguagePicker } from '../../../components/LanguagePicker'
-import { setI18nEnabled, useI18n } from '../../../hooks/useI18n'
+import { setI18nEnabled } from '../../../hooks/useI18n'
 import styles from '../story.module.css'
 
 /**
@@ -12,7 +13,6 @@ import styles from '../story.module.css'
  */
 export function StoryShell() {
   const isHome = useIsConceptHome()
-  const { t } = useI18n()
   // translations are on across the parent side of the app (home, pages, helper)
   useLayoutEffect(() => {
     setI18nEnabled(true)
@@ -34,15 +34,13 @@ export function StoryShell() {
         {!isHome && (
         <header className={`${styles.topbar} app-no-print`}>
           <div className={styles.topbarInner}>
-            <span className={`${styles.topBtn} ${styles.topBtnGhost}`} aria-hidden />
+            {/* the home page on the other side from the language */}
+            <HomePill />
 
             <span className={styles.topTitle} aria-hidden />
 
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'flex-end' }}>
               <LanguagePicker />
-              <a href="#/" className={styles.topFlag} aria-label={t('ui.shell.home')}>
-                <span aria-hidden>🏠</span>
-              </a>
             </div>
           </div>
         </header>

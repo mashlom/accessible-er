@@ -1,3 +1,4 @@
+import { HomePill } from '../../components/HomePill'
 import { keyed } from '../../lib/keyed'
 import { useLayoutEffect } from 'react'
 import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
@@ -21,7 +22,7 @@ export default function BookConcept() {
     setI18nEnabled(true)
     return () => setI18nEnabled(false)
   }, [])
-  const { lang, dir, t } = useI18n()
+  const { lang, dir } = useI18n()
   const path = useConceptPath()
   const navigate = useNavigate()
   const tabs = keyed((i18nUi as unknown as Record<'he' | 'en' | 'ru', { books: { tabs: Record<string, string> } }>)[lang], 'i18n/ui')
@@ -36,12 +37,10 @@ export default function BookConcept() {
           <button type="button" className={css.topBtn} onClick={() => navigate(-1)} aria-label="Back">
             <span aria-hidden>›</span>
           </button>
-          <span aria-hidden />
+          {/* the home page on the other side from the language */}
+          <HomePill />
           <div className={css.topGroup}>
             <LanguagePicker />
-            <a href="#/" className={css.topFlag} aria-label={t('ui.shell.home')}>
-              <span aria-hidden>🏠</span>
-            </a>
           </div>
         </div>
       </header>

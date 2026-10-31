@@ -1,5 +1,6 @@
+import { HomePill } from './HomePill'
 import { useLayoutEffect, type ReactNode } from 'react'
-import { setI18nEnabled, useI18n } from '../hooks/useI18n'
+import { setI18nEnabled } from '../hooks/useI18n'
 import { LanguagePicker } from './LanguagePicker'
 import styles from '../concepts/story/story.module.css'
 
@@ -9,7 +10,6 @@ import styles from '../concepts/story/story.module.css'
  * the rest of the app: a way back, the language choice and a way home.
  */
 export function StandaloneCardShell({ children }: { children: ReactNode }) {
-  const { t } = useI18n()
   // the card pages are translated like the rest of the app
   useLayoutEffect(() => {
     setI18nEnabled(true)
@@ -19,13 +19,11 @@ export function StandaloneCardShell({ children }: { children: ReactNode }) {
     <div className={styles.theme}>
       <header className={`${styles.topbar} app-no-print`}>
         <div className={styles.topbarInner}>
-          <span className={`${styles.topBtn} ${styles.topBtnGhost}`} aria-hidden />
+          {/* the home page on the other side from the language */}
+            <HomePill />
           <span className={styles.topTitle} aria-hidden />
           <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', justifyContent: 'flex-end' }}>
             <LanguagePicker />
-            <a href="#/" className={styles.topFlag} aria-label={t('ui.shell.home')}>
-              <span aria-hidden>🏠</span>
-            </a>
           </div>
         </div>
       </header>
