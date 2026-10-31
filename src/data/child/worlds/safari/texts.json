@@ -21,15 +21,15 @@
         "done": "הכול נמדד!"
       },
       "wait-doctor": {
-        "label": "ממתינים למדריך",
-        "hint": "המדריך עסוק — מחכים בסבלנות",
-        "story": "המדריך עוזר לכל המטיילים בספארי, ולכן לפעמים מחכים לו. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
-        "done": "המדריך הגיע!"
+        "label": "ממתינים למדריך הספארי",
+        "hint": "מדריך הספארי עסוק — מחכים בסבלנות",
+        "story": "מדריך הספארי עוזר לכל המטיילים בספארי, ולכן לפעמים מחכים לו. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
+        "done": "מדריך הספארי הגיע!"
       },
       "doctor": {
-        "label": "פגישה עם המדריך",
-        "hint": "המדריך מחליט מה עושים",
-        "story": "המדריך מקשיב ובודק, ואז מחליט איך ממשיכים במסע. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
+        "label": "פגישה עם מדריך הספארי",
+        "hint": "מדריך הספארי מחליט מה עושים",
+        "story": "מדריך הספארי מקשיב ובודק, ואז מחליט איך ממשיכים במסע. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
       },
       "decision": {
         "label": "חזרה למחנה!",
@@ -51,7 +51,7 @@
       "consult": {
         "label": "מומחה מהסוואנה",
         "hint": "מומחה נוסף מגיע",
-        "story": "לפעמים המדריך קורא למומחה שמכיר היטב חלק אחד של הסוואנה. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
+        "story": "לפעמים מדריך הספארי קורא למומחה שמכיר היטב חלק אחד של הסוואנה. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
         "done": "הכרנו!"
       },
       "wait-results": {
@@ -65,14 +65,14 @@
       "temperature": "המדריך בודק את חום הגוף — בדיוק כמו שבודקים חיות בספארי לפני שיוצאים לשטח.",
       "saturation": "חיישן החמצן הקטן בודק שדם הגיבור נושא מספיק אוויר לאורך כל המסע.",
       "blood-pressure": "המדריך מודד את עוצמת הלב — כדי לוודא שהגיבור מוכן/ה לתנאי השדה.",
-      "doctor-exam": "המדריך בוחן את המטייל/ת ומחליט מהו הטיפול הנכון לחזרה לשטח.",
+      "doctor-exam": "מדריך הספארי בוחן את המטייל/ת ומחליט מהו הטיפול הנכון לחזרה לשטח.",
       "blood-test": "מעבדת השדה צריכה דגימת דם קטנה כדי לגלות מה קורה בגוף.",
-      "urine": "כוסית הדגימה תגלה למדריך מה מתרחש בגוף הגיבור.",
+      "urine": "כוסית הדגימה תגלה למדריך הספארי מה מתרחש בגוף הגיבור.",
       "xray": "ציוד הסריקה של הספארי מצלם את פנים הגוף — רואים הכל בלי להרגיש כלום.",
       "ultrasound": "ג׳ל הבדיקה מאפשר לציוד לסרוק בתוך הגוף ולמצוא מה שצריך לטפל בו.",
       "ct": "הטבעת הסורקת עוברת לאט ומצלמת מפה מפורטת של כל מה שבפנים.",
       "iv": "הצינור הדק מזרים נוזלי ריפוי ישירות לדם — כמו שמחזירים כוח לחיות השדה.",
-      "medication": "המדריך הכין את תרופת הג׳ונגל — סירופ או תרכובת שתחזיר את הכוח.",
+      "medication": "מדריך הספארי הכין את תרופת הג׳ונגל — סירופ או תרכובת שתחזיר את הכוח.",
       "inhalation": "אדי הריפוי של השדה נכנסים דרך המסכה ועוזרים לנשימה לזרום בחופשיות.",
       "stitches": "המרפא מתקן את הפצע בזהירות — דבק מיוחד או חוט שיאחה.",
       "cast": "מגן הגבס עוטף את העצם כמו שעץ חזק תומך בגזע — ומחזיק עד שיחלים.",
@@ -143,10 +143,10 @@
         "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
-        "נפגוש את המדריך, שרוצה לעזור לנו.",
-        "המדריך מקשיב לגוף עם צינור — קצת קריר, לא כואב.",
-        "אולי המדריך יסתכל בגרון ובאוזניים עם אור קטן, כמו בלילה בסוואנה.",
-        "בסוף המדריך יידע איזה טיפול נחוץ לנו."
+        "נפגוש את מדריך הספארי, שרוצה לעזור לנו.",
+        "מדריך הספארי מקשיב לגוף עם צינור — קצת קריר, לא כואב.",
+        "אולי מדריך הספארי יסתכל בגרון ובאוזניים עם אור קטן, כמו בלילה בסוואנה.",
+        "בסוף מדריך הספארי יידע איזה טיפול נחוץ לנו."
       ],
       "blood-test": [
         "המדריך מורח משחה שעושה את העור פחות רגיש.",
@@ -219,7 +219,7 @@
         "סיימנו את כל הבדיקות — כל הכבוד לנו!",
         "עכשיו מחכים לתשובות במחנה. אפשר לשחק, לנוח או לראות סרטון.",
         "מעבדת השטח בודקת את הדגימות שלנו, והמדריך והמרפא לא שכחו אותנו.",
-        "כשיהיו תשובות — המדריך יבוא לספר לנו."
+        "כשיהיו תשובות — מדריך הספארי יבוא לספר לנו."
       ]
     },
     "calmLines": [
@@ -228,8 +228,8 @@
       "אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…"
     ],
     "ui": {
-      "decision": "ההחלטה של המדריך ←",
-      "decisionTitle": "ההחלטה של המדריך",
+      "decision": "ההחלטה של מדריך הספארי ←",
+      "decisionTitle": "ההחלטה של מדריך הספארי",
       "intro": "המסע במיון הילדים דומה למסע בספארי. מוכנים לצאת לדרך?"
     },
     "shop": {
@@ -265,15 +265,15 @@
         "done": "All measured!"
       },
       "wait-doctor": {
-        "label": "Waiting for the Guide",
-        "hint": "The guide is busy — we wait patiently",
-        "story": "The guide helps every traveller in the safari, so sometimes we wait for him. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
-        "done": "The guide is here!"
+        "label": "Waiting for the Safari Leader",
+        "hint": "The safari leader is busy — we wait patiently",
+        "story": "The safari leader helps every traveller in the safari, so sometimes we wait for him. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
+        "done": "The safari leader is here!"
       },
       "doctor": {
-        "label": "Meeting the Guide",
-        "hint": "The guide decides what to do",
-        "story": "The guide listens and checks, and then decides how the journey goes on. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
+        "label": "Meeting the Safari Leader",
+        "hint": "The safari leader decides what to do",
+        "story": "The safari leader listens and checks, and then decides how the journey goes on. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
       },
       "decision": {
         "label": "Back to Camp!",
@@ -295,7 +295,7 @@
       "consult": {
         "label": "Expert from the Savanna",
         "hint": "Another expert is coming",
-        "story": "Sometimes the guide calls an expert who knows one part of the savanna very well. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
+        "story": "Sometimes the safari leader calls an expert who knows one part of the savanna very well. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
         "done": "We met!"
       },
       "wait-results": {
@@ -309,14 +309,14 @@
       "temperature": "The guide checks the body temperature — just like animals are checked at the safari before going out into the field.",
       "saturation": "A small oxygen sensor checks that the hero's blood carries enough air all through the journey.",
       "blood-pressure": "The guide measures the strength of the heart — to make sure the hero is ready for field conditions.",
-      "doctor-exam": "The guide examines the traveller and decides the right treatment for going back out into the field.",
+      "doctor-exam": "The safari leader examines the traveller and decides the right treatment for going back out into the field.",
       "blood-test": "The field lab needs one small blood sample to find out what is happening in the body.",
-      "urine": "The sample cup will show the guide what is happening in the hero's body.",
+      "urine": "The sample cup will show the safari leader what is happening in the hero's body.",
       "xray": "The safari scanner takes a picture of the inside of the body — everything is seen without feeling anything.",
       "ultrasound": "The test gel lets the equipment scan inside the body and find what needs treatment.",
       "ct": "The scanning ring moves slowly and makes a detailed map of everything inside.",
       "iv": "A thin tube sends healing liquid straight into the blood — like giving strength back to animals in the field.",
-      "medication": "The guide has prepared the jungle medicine — a syrup or a mixture that will bring back strength.",
+      "medication": "The safari leader has prepared the jungle medicine — a syrup or a mixture that will bring back strength.",
       "inhalation": "Healing vapours of the field come through the mask and help breathing flow freely.",
       "stitches": "The herbalist carefully repairs the wound — a special glue or a thread that will close it.",
       "cast": "The plaster wrap holds the bone like a strong tree supports its trunk — until it heals.",
@@ -387,10 +387,10 @@
         "Then the cuff comes off — and that's it, all done."
       ],
       "doctor-exam": [
-        "We meet the guide, who wants to help us.",
-        "The guide listens to the body with a tube — a little cool, but it does not hurt.",
-        "Maybe the guide will look in the throat and ears with a small light, like at night in the savanna.",
-        "At the end the guide will know what treatment we need."
+        "We meet the safari leader, who wants to help us.",
+        "The safari leader listens to the body with a tube — a little cool, but it does not hurt.",
+        "Maybe the safari leader will look in the throat and ears with a small light, like at night in the savanna.",
+        "At the end the safari leader will know what treatment we need."
       ],
       "blood-test": [
         "The guide puts a cream on the skin that makes it less sensitive.",
@@ -463,7 +463,7 @@
         "We finished all the checks — well done!",
         "Now we wait for the answers at the camp. We can play, rest or watch a video.",
         "The field lab is studying our samples, and the guide and the herbalist haven't forgotten us.",
-        "When the answers are ready, the guide will come and tell us."
+        "When the answers are ready, the safari leader will come and tell us."
       ]
     },
     "calmLines": [
@@ -472,8 +472,8 @@
       "We can also count slowly to ten together. One… two… three…"
     ],
     "ui": {
-      "decision": "Guide decides →",
-      "decisionTitle": "The guide's decision",
+      "decision": "Safari leader decides →",
+      "decisionTitle": "The safari leader's decision",
       "intro": "A visit to the children's ER is like a journey through the safari. Ready to set off?"
     },
     "shop": {

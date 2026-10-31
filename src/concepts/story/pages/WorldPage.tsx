@@ -82,6 +82,7 @@ export function WorldPage() {
         <div className={styles.sectionHead}>
           <h2 id="child-world" className={styles.worldLabel}>{tx.childLabel}</h2>
         </div>
+        <p className={styles.sectionDesc}>{tx.childDesc}</p>
         <div className={styles.childCards}>
           {/* one big button: the words on one side, the six worlds, small, on the other */}
           <a href="#/quest" className={`${styles.childCard} ${styles.childCardWorlds}`} aria-label={tx.start.journey}>
