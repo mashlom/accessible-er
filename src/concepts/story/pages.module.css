@@ -970,14 +970,14 @@ button.dest {
 .childWorldThumbs {
   flex: none;
   display: grid;
-  grid-template-columns: repeat(3, 44px);
+  grid-template-columns: repeat(3, 60px);
   gap: 6px;
 }
 .childWorldThumb {
   position: relative;
   display: block;
-  width: 44px;
-  height: 44px;
+  width: 60px;
+  height: 60px;
   border-radius: 10px;
   overflow: hidden;
   object-fit: cover;
@@ -996,4 +996,4 @@ button.dest {
 .childCard.childCardBook { grid-column: 1 / -1; }
 .childCard.childCardBook { flex-direction: row; align-items: center; gap: 1rem; }
 .childCardBookText { flex: 1; display: flex; flex-direction: column; gap: 0.35rem; }
-.childCard.childCardBook .childCardIcon { font-size: 3.5rem; line-height: 1; width: auto; height: auto; background: none; }
+.childCard.childCardBook .childCardIcon { font-size: 5rem; line-height: 1; width: auto; height: auto; background: none; }
