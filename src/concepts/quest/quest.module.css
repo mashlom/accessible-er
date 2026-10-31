@@ -3671,3 +3671,11 @@ path.worldTrailLit {
 
 /* the page itself ends at the block: no room of its own under it */
 .shopBody:has(.celebrateSheetActions) { padding-bottom: 0; }
+
+/* the two buttons side by side, as on the sheets; the saved / failed note under them, the full width */
+.shopBody .celebrateSheetActions {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.shopBody .celebrateSheetActions .worldBtn { flex: 1 1 0; }
+.shopBody .celebrateSheetActions .shopNote { flex: 1 0 100%; order: 2; }
