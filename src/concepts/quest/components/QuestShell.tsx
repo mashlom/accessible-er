@@ -80,7 +80,7 @@ export function QuestShell() {
           </Link>
         ) : isHome ? (
           // the world choice: its question on the bar, right between the buttons
-          <div className={css.selectBarText}>
+          <div className={css.selectBarText} dir={dir}>
             <h1 className={css.selectTitle}>{selectUi.worlds.title}</h1>
             <p className={css.selectSub}>{selectUi.worlds.subtitle}</p>
           </div>
