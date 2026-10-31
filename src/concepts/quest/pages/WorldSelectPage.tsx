@@ -4,7 +4,6 @@ import { themes } from '../themes'
 import { useQuestTheme } from '../useQuestTheme'
 import { worldText, type WorldLang } from '../../../data/child/worlds'
 import { useI18n } from '../../../hooks/useI18n'
-import { isTestMode } from '../../../lib/testMode'
 import css from '../quest.module.css'
 
 export function WorldSelectPage() {
@@ -19,9 +18,9 @@ export function WorldSelectPage() {
     navigate(conceptPath(`/${id}`))
   }
 
-  // the worlds come in their own order (world.json, order); the knight's world shows only in the test mode
-  // (?test=true), as Yonatan asked
-  const ordered = isTestMode() ? themes : themes.filter((theme) => theme.id !== 'knight')
+  // the worlds come in their own order (world.json, order); the knight's world is not offered any more (Yonatan),
+  // its files stay
+  const ordered = themes.filter((theme) => theme.id !== 'knight')
 
   return (
     <div className={css.selectPage}>
