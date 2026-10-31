@@ -59,3 +59,48 @@ the pieces.
 - Print a test sheet on a home printer: the lines are clear, nothing is too small to cut.
 - Every item fits onto its doll.
 - The team (MLR) looks at the pieces before they go in, as with the other pictures.
+
+## Redo: one scale, and tabs that fold along the edge
+
+The first set cannot be used as paper dolls: every piece was drawn to fill its own canvas, so the pieces are not at
+the doll's scale (the space helmet came out more than twice as wide as the doll, the mission badge as big as its
+body), and nothing fits on the doll without guessing. The tabs also come off too easily. Please redraw the pieces
+(the dolls can stay as they are) with these two changes.
+
+### 1. One canvas and one scale per world
+
+- **Every piece of a world is drawn on a canvas exactly the size of that world's doll picture** (the same width and
+  height in pixels as `shop-<world>-doll`), transparent everywhere else.
+- **Each piece stands where it goes on the doll**, at the doll's scale: the helmet or hat exactly over the doll's
+  head, the suit, dress or armour over its body, the boots or shoes over its feet, the gloves over its hands. Laid on
+  top of the doll picture, the piece fits it exactly, like a transparent layer.
+- **Things held in the hand** (flag, banner, wand, lantern, torch, camera, basket, map, bottle) stand at the doll's
+  hand, in the size they would really have next to a child.
+- **Nothing is stretched to fill the canvas.** A small piece (a badge, a pair of gloves) stays small.
+- The app then prints the doll and its pieces on a landscape A4 sheet at **one and the same reduction**: the doll on
+  one half (A5), the pieces beside it.
+- The dinosaurs have no doll: draw all eight on canvases of one size (2512 x 2512) at one scale, so they keep their
+  sizes to each other (the brachiosaurus big, the pterodactyl small).
+
+### 2. Tabs fold along the edge of the picture, no fold lines
+
+- **No dashed or drawn fold lines** on the tabs.
+- **A tab folds along the edge of the piece itself**: it is the piece's outline that is folded, so the tab is a flap
+  that continues the piece's own edge and bends back over the doll's edge. For example, on a dress the shoulder tabs
+  continue the top of the straps upwards and fold down over the doll's shoulders (top to bottom), the side tabs
+  continue the waist sideways and fold back around the doll's sides.
+- A tab is wide where it joins the piece (at least the width of the strap or edge it continues), never a thin neck,
+  so it does not tear off when it is folded.
+
+### Prompt (add to the shared prompt above, instead of its line about the tabs)
+
+> Draw this piece on a transparent canvas of exactly the same size as the doll picture, at exactly the doll's scale,
+> in the place where it is worn on the doll, so that laid over the doll it fits it exactly; do not enlarge it to fill
+> the canvas. Tabs: no fold lines and no dashed lines; each tab continues the piece's own edge outwards and is folded
+> along that edge (for example shoulder tabs continue the straps upwards and fold down over the shoulders), wide where
+> it joins the piece so it does not tear off.
+
+### Before sending
+
+- Lay every piece over its doll: it sits exactly on the right place, at the right size.
+- No fold lines anywhere; every tab is a wide continuation of the piece's edge.
