@@ -337,7 +337,8 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
           role="img"
           aria-label={`${t('ui.text.starsEarned')}: ${starsTotal}`}
         >
-          {Array.from({ length: starsTotal ?? 0 }, (_, j) => <span key={j} aria-hidden>⭐</span>)}
+          {/* the world's own reward (the knight's coins), golden */}
+          {Array.from({ length: starsTotal ?? 0 }, (_, j) => <span key={j} className={css.worldCoin} aria-hidden>{theme.doneEmoji ?? '⭐'}</span>)}
         </div>
       )}
       {wide && title}
@@ -439,7 +440,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
                   role="img"
                   aria-label={`${t('ui.labels.adult.done')}: ${item.stars}`}
                 >
-                  {Array.from({ length: item.stars ?? 0 }, (_, j) => <span key={j} className={css.worldStar} aria-hidden>⭐</span>)}
+                  {Array.from({ length: item.stars ?? 0 }, (_, j) => <span key={j} className={`${css.worldStar} ${css.worldCoin}`} aria-hidden>{theme.doneEmoji ?? '⭐'}</span>)}
                 </span>
               )}
               {numbers && (

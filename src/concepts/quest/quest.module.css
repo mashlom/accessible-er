@@ -3525,3 +3525,8 @@ path.worldTrailLit {
   .shopBody { max-width: 1100px; }
   .shopGrid { grid-template-columns: repeat(5, 1fr); }
 }
+
+/* the world's reward on the map (a star, or the knight's coin, which is grey on its own): golden, as in the counter */
+.worldCoin {
+  filter: sepia(1) saturate(4) brightness(1.15) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
