@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useConceptPath, useGoBackTo } from '../../nav'
-import { WORLD_SELECT } from '../components/WorldScope'
+import { useConceptPath } from '../../nav'
 import { parentJourney } from '../../../data/parent'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress, REQUIRED_STAGES } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
-import { LanguagePicker } from '../../../components/LanguagePicker'
 import { dotsAlong } from './trails'
 import type { Pt, Scene, Trail, WorldDesign } from '../themes'
+import { WorldTopRow } from '../components/WorldTopRow'
 import css from '../quest.module.css'
 
 export type { Pt, Scene, Slot } from '../themes'
@@ -212,7 +211,6 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
   const { t } = useI18n()
   const wide = useWide()
   const mapRef = useRef<HTMLDivElement>(null)
-  const goBackTo = useGoBackTo()
   const { theme } = useQuestTheme()
   // a picture with its own landscape around the frame: nothing to mirror, blur or fill in
   const ext = !!theme.design?.extended
@@ -316,22 +314,7 @@ export function WorldMapView({ portrait, landscape, items, underSheet, progress,
           <div className={css.worldBackdropGrad} aria-hidden />
         </>
       )}
-      {(
-        <div className={wide ? `${css.worldTopRow} ${css.worldTopRowWide}` : css.worldTopRow}>
-          {/* back to the world select screen (outside the world's own addresses) */}
-          {/* words, not pictures: these buttons are for the adult */}
-          <button type="button" className={`${css.worldTopBtn} ${css.navWord}`} onClick={() => goBackTo(WORLD_SELECT, { absolute: true })}>
-            {t('ui.shell.chooseWorld')}
-          </button>
-          <div className={css.worldTopGroup}>
-            <LanguagePicker variant="overlay" />
-            {/* children's screens: the word, not a picture (Rakheli's review, #37); the parents' pages keep the house */}
-          <a href="#/" className={`${css.worldTopBtn} ${css.navWord}`}>
-            {t('ui.shell.home')}
-          </a>
-          </div>
-        </div>
-      )}
+      <WorldTopRow />
       {(starsTotal ?? 0) > 0 && (
         <div
           className={wide ? `${css.worldStarsTotal} ${css.worldStarsTotalWide}` : css.worldStarsTotal}

@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { useGoBackTo } from '../../nav'
 import { WORLD_SELECT } from '../components/WorldScope'
-import { useWide } from './WorldMapPage'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
-import { LanguagePicker } from '../../../components/LanguagePicker'
 import { pageFontsCss } from '../../../components/careCard/saveCardPdf'
 import { worldText, type WorldLang } from '../../../data/child/worlds'
+import { WorldTopRow } from '../components/WorldTopRow'
 import css from '../quest.module.css'
 
 /**
@@ -200,7 +199,6 @@ export function ShopPage() {
 function WorldShop() {
   const { theme } = useQuestTheme()
   const { t, lang } = useI18n()
-  const wide = useWide()
   const goBackTo = useGoBackTo()
   const { doneProcedures } = useQuestProgress()
   const shop = theme.shop!
@@ -262,19 +260,7 @@ function WorldShop() {
   return (
     // the shop is a page of its own, the whole screen
     <div className={css.shopFull}>
-      <div className={wide ? `${css.worldTopRow} ${css.worldTopRowWide}` : css.worldTopRow}>
-        <button type="button" className={`${css.worldTopBtn} ${css.navWord}`} onClick={() => goBackTo(WORLD_SELECT, { absolute: true })}>
-          {t('ui.shell.chooseWorld')}
-        </button>
-        <div className={css.worldTopGroup}>
-          {/* the light page: the plain picker (the overlay one is white, for a picture) */}
-          <LanguagePicker />
-          {/* children's screens: the word, not a picture (Rakheli's review, #37); the parents' pages keep the house */}
-          <a href="#/" className={`${css.worldTopBtn} ${css.navWord}`}>
-            {t('ui.shell.home')}
-          </a>
-        </div>
-      </div>
+      <WorldTopRow light />
       <main className={css.shopBody} aria-labelledby="shop-title">
           <h1 id="shop-title" ref={handleRef} tabIndex={-1} className={css.stageSheetTitle} style={{ color: theme.accent }}>{t('ui.shop.title')}</h1>
           {/* the stars still to spend */}
