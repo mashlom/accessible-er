@@ -10,9 +10,33 @@ import { pageFontsCss } from '../../../components/careCard/saveCardPdf'
 import { worldText, type WorldLang } from '../../../data/child/worlds'
 import css from '../quest.module.css'
 
-/** What each thing costs, in the stars earned on the way, by its place in the world's list. Chosen so that any
- *  number of stars from 1 to 15 can be spent to the last one with at most four things (so with 7 things too). */
-const PRICES = [2, 1, 3, 1, 4, 2, 5, 3]
+/**
+ * What each thing costs, set by the stars the child has: the prices are m to m + 3 (in this order along the world's
+ * list), with the smallest m for which five things together always cost more than the stars, and the stars can still
+ * be spent to the last one with at most four things (checked for 1 to 30 stars, with 7 or 8 things).
+ */
+const PRICE_STEPS = [2, 0, 3, 1, 1, 3, 0, 2]
+function pricesFor(stars: number, n: number): number[] {
+  const sums = (p: number[]) => {
+    const out = new Set<number>()
+    const go = (i: number, k: number, sum: number) => {
+      if (k > 0) out.add(sum)
+      if (k === 4) return
+      for (let j = i; j < p.length; j++) go(j + 1, k + 1, sum + p[j])
+    }
+    go(0, 0, 0)
+    return out
+  }
+  let fallback: number[] | null = null
+  for (let m = 1; m < 40; m++) {
+    const p = Array.from({ length: n }, (_, i) => m + PRICE_STEPS[i % PRICE_STEPS.length])
+    const fiveTooDear = n < 5 || [...p].sort((a, b) => a - b).slice(0, 5).reduce((a, b) => a + b, 0) > stars
+    if (!fiveTooDear) continue
+    fallback ??= p
+    if (sums(p).has(stars)) return p
+  }
+  return fallback ?? Array(n).fill(1)
+}
 /** At most this many things go on the sheet next to the doll */
 const MAX_ITEMS = 4
 /** The colouring sheet: landscape A4 in CSS px (96 per inch), its margin, and the doll 18 cm tall, so that it fits
@@ -35,68 +59,6 @@ const CELL = 4
 
 /** Which cells of a picture are drawn, at its size on the page, made a little wider so pieces keep a gap */
 type Mask = { cw: number; ch: number; on: Uint8Array }
-
-/**
- * Moves the pieces apart, a little at a time, as long as that makes the narrowest gap on the page (between two
- * pieces, a piece and the doll, or a piece and the page's edge) wider and no drawing touches another: the empty room
- * ends up shared out evenly instead of in one corner. The doll does not move.
- */
-function spreadOut(page: Placed[], masks: Record<string, Mask>, hasDoll: boolean) {
-  const gw = Math.floor(PAGE_W / CELL), gh = Math.floor(PAGE_H / CELL)
-  const gap = (a: Placed, b: Placed) =>
-    Math.max(b.x - (a.x + a.w), a.x - (b.x + b.w), b.y - (a.y + a.h), a.y - (b.y + b.h))
-  const room = (it: Placed) =>
-    Math.min(
-      it.x - MARGIN, PAGE_W - MARGIN - (it.x + it.w), it.y - MARGIN, PAGE_H - MARGIN - (it.y + it.h),
-      ...page.filter((o) => o !== it).map((o) => gap(it, o)),
-    )
-  // the drawings of every other piece, as cells (made once for each piece in each round)
-  const others = (it: Placed) => {
-    const grid = new Uint8Array(gw * gh)
-    for (const o of page) {
-      if (o === it) continue
-      const m = masks[o.id], ox = Math.round(o.x / CELL), oy = Math.round(o.y / CELL)
-      for (let y = 0; y < m.ch; y++) {
-        const row = (oy + y) * gw + ox
-        for (let x = 0; x < m.cw; x++) if (m.on[y * m.cw + x]) grid[row + x] = 1
-      }
-    }
-    return grid
-  }
-  const clear = (it: Placed, grid: Uint8Array) => {
-    const m = masks[it.id], ix = Math.round(it.x / CELL), iy = Math.round(it.y / CELL)
-    if (ix < 0 || iy < 0 || ix + m.cw > gw || iy + m.ch > gh) return false
-    for (let y = 0; y < m.ch; y++) {
-      const row = (iy + y) * gw + ix
-      for (let x = 0; x < m.cw; x++) if (m.on[y * m.cw + x] && grid[row + x]) return false
-    }
-    return true
-  }
-  const inside = (it: Placed) =>
-    it.x >= MARGIN && it.y >= MARGIN && it.x + it.w <= PAGE_W - MARGIN && it.y + it.h <= PAGE_H - MARGIN
-  const step = CELL * 4
-  const moves = [[step, 0], [-step, 0], [0, step], [0, -step], [step, step], [-step, step], [step, -step], [-step, -step]]
-  for (let round = 0; round < 60; round++) {
-    let moved = false
-    for (const it of page) {
-      if (hasDoll && it.id === 'doll') continue
-      let best = room(it)
-      let bestPos: [number, number] | null = null
-      const grid = others(it)
-      const [x0, y0] = [it.x, it.y]
-      for (const [dx, dy] of moves) {
-        it.x = x0 + dx; it.y = y0 + dy
-        if (inside(it)) {
-          const r = room(it)
-          if (r > best + 0.5 && clear(it, grid)) { best = r; bestPos = [it.x, it.y] }
-        }
-      }
-      it.x = x0; it.y = y0
-      if (bestPos) { [it.x, it.y] = bestPos; moved = true }
-    }
-    if (!moved) break
-  }
-}
 
 async function maskOf(src: string, w: number, h: number): Promise<Mask> {
   const cw = Math.ceil(w / CELL), ch = Math.ceil(h / CELL)
@@ -161,12 +123,37 @@ async function layOut(
     pages[0].push({ id: 'doll', x: MARGIN, y, w, h: DOLL_H })
     stamp(0, await maskOf(src('doll'), w, DOLL_H), m, Math.round(y / CELL))
   }
-  const sorted = [...pieces].sort((a, b) => b.size.w * b.size.h - a.size.w * a.size.h)
+  // the head's pieces choose their corners first, then the feet's, then the rest; the bigger first within each
+  const rank = (p: { place?: 'head' | 'feet' }) => (p.place === 'head' ? 0 : p.place === 'feet' ? 1 : 2)
+  const sorted = [...pieces].sort((a, b) => rank(a) - rank(b) || b.size.w * b.size.h - a.size.w * a.size.h)
   const masks: Record<string, Mask> = {}
   if (doll) masks.doll = await maskOf(src('doll'), pages[0][0].w, pages[0][0].h)
+  // the four corners of the page's free part (beside the doll), in cells: the head's pieces take the top ones, the
+  // feet's the bottom ones, the rest what is left; a piece that does not fit in a corner looks for any free place
+  const left = doll ? Math.ceil((MARGIN + pages[0][0].w + GAP) / CELL) : m
+  const corners = { tl: true, tr: true, bl: true, br: true }
+  const cornerAt = (c: keyof typeof corners, mk: Mask) => ({
+    cx: c === 'tl' || c === 'bl' ? left : gw - m - mk.cw,
+    cy: c === 'tl' || c === 'tr' ? m : gh - m - mk.ch,
+  })
   for (const p of sorted) {
     const w = Math.round(p.size.w * k), h = Math.round(p.size.h * k)
     const mask = await maskOf(src(p.id), w, h)
+    const prefer: (keyof typeof corners)[] =
+      p.place === 'feet' ? ['bl', 'br', 'tl', 'tr'] : ['tl', 'tr', 'bl', 'br']
+    const corner = prefer.find((c) => {
+      if (!corners[c]) return false
+      const at = cornerAt(c, mask)
+      return at.cx >= m && at.cy >= m && fits(0, mask, at.cx, at.cy)
+    })
+    if (corner) {
+      corners[corner] = false
+      const at = cornerAt(corner, mask)
+      stamp(0, mask, at.cx, at.cy)
+      pages[0].push({ id: p.id, x: at.cx * CELL, y: at.cy * CELL, w, h })
+      masks[p.id] = mask
+      continue
+    }
     const ys: number[] = []
     for (let cy = m; cy + mask.ch <= gh - m; cy += 2) ys.push(cy)
     if (p.place === 'feet') ys.reverse()
@@ -181,8 +168,6 @@ async function layOut(
     pages[spot.pi].push({ id: p.id, x: spot.cx * CELL, y: spot.cy * CELL, w, h })
     masks[p.id] = mask
   }
-  // once everything has a place: the pieces spread out over the page, so the empty room is shared between them
-  for (const [pi, page] of pages.entries()) spreadOut(page, masks, pi === 0 && !!doll)
   // Hebrew reads from the right: the doll stands at the right edge
   return rtl ? pages.map((pg) => pg.map((it) => ({ ...it, x: PAGE_W - it.x - it.w }))) : pages
 }
@@ -220,7 +205,8 @@ function WorldShop() {
   const { doneProcedures } = useQuestProgress()
   const shop = theme.shop!
   const stars = doneProcedures.size
-  const price = (id: string) => PRICES[shop.items.indexOf(id) % PRICES.length]
+  const prices = pricesFor(stars, shop.items.length)
+  const price = (id: string) => prices[shop.items.indexOf(id)]
   const [chosen, setChosen] = useState<string[]>([])
   const [state, setState] = useState<'idle' | 'saving' | 'saved' | 'failed'>('idle')
   const handleRef = useRef<HTMLHeadingElement>(null)
