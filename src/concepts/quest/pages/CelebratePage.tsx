@@ -171,8 +171,8 @@ export function CelebratePage() {
         image={theme.shopImage}
         question={t('ui.labels.adult.outcomeLabel')}
         choices={[
-          { label: t('ui.buttons.discharge'), pick: () => setOutcome('discharge') },
-          { label: t('ui.buttons.admission'), pick: () => setOutcome('admission') },
+          { label: t('ui.buttons.discharge'), icon: 'home', pick: () => setOutcome('discharge') },
+          { label: t('ui.buttons.admission'), icon: 'hospital', pick: () => setOutcome('admission') },
         ]}
         stars={doneCount > 0 ? (
           <>
@@ -223,7 +223,7 @@ export function CelebratePage() {
 function CelebrateSheet({ image, question, choices, stars, buttons, parent, closeParent }: {
   image?: string
   question: string
-  choices: { label: string; pick: () => void }[]
+  choices: { label: string; icon: 'home' | 'hospital'; pick: () => void }[]
   /** the stars earned on the way (and the shop's line in the test mode) */
   stars: ReactNode
   /** the shop (test mode only) and the world choice */
@@ -266,8 +266,10 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
             <h1 id="celebrate-title" className={`${css.stageSheetTitle} ${css.celebrateQuestion}`} style={{ color: theme.accent }}>{question}</h1>
             <div className={css.stageSheetActions}>
               {choices.map((c) => (
-                <button key={c.label} type="button" className={`${css.worldBtn} ${css.worldBtnDone}`} onClick={c.pick}>
-                  {c.label}
+                <button key={c.label} type="button" className={`${css.worldBtn} ${css.worldBtnDone} ${css.answerBtn}`} onClick={c.pick}>
+                  <AnswerIcon kind={c.icon} />
+                  {/* the texts start with an emoji (kept for the other screens): the drawn icon stands for it here */}
+                  {c.label.replace(/^\p{Extended_Pictographic}\uFE0F?\s*/u, '')}
                 </button>
               ))}
             </div>
@@ -312,5 +314,23 @@ function CelebrateParentSheet({ onClose, children }: { onClose: () => void; chil
         {children}
       </div>
     </div>
+  )
+}
+
+/** The answers' icons, drawn in a white circle so they show on the coloured button: Shevi's house, and the red star
+ *  of Magen David Adom for staying in the hospital */
+function AnswerIcon({ kind }: { kind: 'home' | 'hospital' }) {
+  return (
+    <span className={css.answerIcon} aria-hidden>
+      {kind === 'home' ? (
+        <svg viewBox="0 0 24 24" className={css.answerIconHome}>
+          <path d="M4 11l8-7 8 7M6 10v9h4v-5h4v5h4v-9" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 24 24" className={css.answerIconStar}>
+          <path d="M12 2.5l8.2 14.2H3.8z M12 21.5L3.8 7.3h16.4z" />
+        </svg>
+      )}
+    </span>
   )
 }
