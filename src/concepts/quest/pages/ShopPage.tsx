@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useGoBackTo } from '../../nav'
 import { WORLD_SELECT } from '../components/WorldScope'
 import { useWide } from './WorldMapPage'
@@ -6,7 +6,7 @@ import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { LanguagePicker } from '../../../components/LanguagePicker'
-import { saveCardPdf } from '../../../components/careCard/saveCardPdf'
+import { pageFontsCss } from '../../../components/careCard/saveCardPdf'
 import { worldText, type WorldLang } from '../../../data/child/worlds'
 import css from '../quest.module.css'
 
@@ -15,8 +15,64 @@ import css from '../quest.module.css'
 const PRICES = [2, 1, 3, 1, 4, 2, 5, 3]
 /** At most this many things go on the sheet next to the doll */
 const MAX_ITEMS = 4
-/** The doll's height on the A4 sheet at most (px of a 1123 px tall page) */
-const DOLL_MAX = 960
+/** The colouring sheet: landscape A4 in CSS px (96 per inch), its margin, and the doll 18 cm tall, so that it fits
+ *  on one half of the sheet (A5). Every picture is printed at the doll's reduction: one factor for all. */
+const MM = 96 / 25.4
+const PAGE_W = Math.round(297 * MM)
+const PAGE_H = Math.round(210 * MM)
+const MARGIN = Math.round(10 * MM)
+const GAP = Math.round(4 * MM)
+const DOLL_H = Math.round(180 * MM)
+/** A world without a doll (the dinosaurs): its pictures as if a doll were this tall in the files (px) */
+const NO_DOLL_H = 1200
+
+type Size = { w: number; h: number }
+type Placed = { id: string; x: number; y: number; w: number; h: number }
+
+/**
+ * Lays the doll and the pieces out on landscape A4 pages, all at one scale (the doll's): the doll stands at the start
+ * edge, the pieces go in rows on the free part of the page (the doll's half too, but never over the doll); what does
+ * not fit goes on a next page, at the same scale.
+ */
+function layOut(doll: Size | null, pieces: { id: string; size: Size }[], rtl: boolean): Placed[][] {
+  const k = DOLL_H / (doll?.h ?? NO_DOLL_H)
+  const pages: Placed[][] = [[]]
+  let left = MARGIN
+  if (doll) {
+    const w = Math.round(doll.w * k)
+    pages[0].push({ id: 'doll', x: MARGIN, y: Math.round((PAGE_H - DOLL_H) / 2), w, h: DOLL_H })
+    left = MARGIN + w + GAP
+  }
+  // rows, from the tallest piece down; a new page when the next one does not fit
+  let x = left, y = MARGIN, rowH = 0, page = 0
+  const sorted = [...pieces].sort((a, b) => b.size.h - a.size.h)
+  for (const { id, size } of sorted) {
+    const w = Math.round(size.w * k), h = Math.round(size.h * k)
+    if (x + w > PAGE_W - MARGIN && x > left) { x = left; y += rowH + GAP; rowH = 0 }
+    if (y + h > PAGE_H - MARGIN && y > MARGIN) {
+      page += 1; pages.push([]); left = MARGIN; x = left; y = MARGIN; rowH = 0
+    }
+    pages[page].push({ id, x, y, w, h })
+    x += w + GAP
+    rowH = Math.max(rowH, h)
+  }
+  // Hebrew reads from the right: the doll stands at the right edge
+  return rtl ? pages.map((p) => p.map((it) => ({ ...it, x: PAGE_W - it.x - it.w }))) : pages
+}
+
+/** Each page drawn by the browser, taken as a picture, one landscape A4 page of the PDF each. Nothing leaves the device. */
+async function savePagesPdf(nodes: HTMLElement[], fileName: string) {
+  const [{ toJpeg }, { jsPDF }] = await Promise.all([import('html-to-image'), import('jspdf')])
+  await document.fonts.ready
+  const fontEmbedCSS = await pageFontsCss()
+  const doc = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'landscape' })
+  for (const [i, node] of nodes.entries()) {
+    const jpeg = await toJpeg(node, { pixelRatio: 3, quality: 0.92, backgroundColor: '#fff', fontEmbedCSS })
+    if (i > 0) doc.addPage('a4', 'landscape')
+    doc.addImage(jpeg, 'JPEG', 0, 0, 297, 210)
+  }
+  doc.save(`${fileName}.pdf`)
+}
 
 /**
  * The shop (issue #50): the stars earned at the stations buy black-and-white paper-doll pieces of the world, and the
@@ -41,13 +97,9 @@ function WorldShop() {
   const [chosen, setChosen] = useState<string[]>([])
   const [state, setState] = useState<'idle' | 'saving' | 'saved' | 'failed'>('idle')
   const handleRef = useRef<HTMLHeadingElement>(null)
-  const sheetRef = useRef<HTMLDivElement>(null)
-  const bodyRef = useRef<HTMLDivElement>(null)
-  // the doll's height on the sheet (px of the 794 x 1123 page): as tall as the page allows, made smaller (with all
-  // the pieces) until everything fits on the one page
-  const [dollH, setDollH] = useState(DOLL_MAX)
-  const [fit, setFit] = useState(0)
-  const refit = () => setFit((n) => n + 1)
+  const pagesRef = useRef<(HTMLDivElement | null)[]>([])
+  // the pictures' own sizes (px in the files): they set every piece's size on the sheet, at the doll's scale
+  const [sizes, setSizes] = useState<Record<string, Size>>({})
   const texts = worldText(theme.id, lang as WorldLang)
   const name = (id: string) => texts?.shop?.[id] ?? id
   const picture = (id: string) => `${import.meta.env.BASE_URL}worlds/${theme.id}/shop/${id}.webp`
@@ -58,20 +110,29 @@ function WorldShop() {
     handleRef.current?.focus()
   }, [])
 
-  useEffect(() => setDollH(DOLL_MAX), [chosen])
-  useLayoutEffect(() => {
-    const b = bodyRef.current
-    if (b && b.scrollHeight > b.clientHeight + 1 && dollH > 200) setDollH((h) => Math.round(h * 0.94))
-  }, [dollH, fit, chosen])
+  useEffect(() => {
+    for (const id of [...(shop.doll ? ['doll'] : []), ...chosen]) {
+      if (sizes[id]) continue
+      const im = new Image()
+      im.onload = () => setSizes((s) => ({ ...s, [id]: { w: im.naturalWidth, h: im.naturalHeight } }))
+      im.src = picture(id)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chosen])
+  const ready = (!shop.doll || sizes.doll) && chosen.every((id) => sizes[id])
+  const pages = ready
+    ? layOut(shop.doll ? sizes.doll : null, chosen.map((id) => ({ id, size: sizes[id] })), lang === 'he')
+    : []
 
   const toggle = (id: string) =>
     setChosen((c) => (c.includes(id) ? c.filter((x) => x !== id) : c.length < MAX_ITEMS && price(id) <= left ? [...c, id] : c))
 
   const save = async () => {
-    if (!sheetRef.current) return
+    const nodes = pagesRef.current.slice(0, pages.length).filter((n): n is HTMLDivElement => !!n)
+    if (!nodes.length) return
     setState('saving')
     try {
-      await saveCardPdf(sheetRef.current, `${texts?.name ?? theme.id} - colouring`)
+      await savePagesPdf(nodes, `${texts?.name ?? theme.id} - colouring`)
       setState('saved')
     } catch {
       setState('failed')
@@ -138,7 +199,7 @@ function WorldShop() {
             <button
               type="button"
               className={`${css.worldBtn} ${css.worldBtnDone}`}
-              disabled={chosen.length === 0 || state === 'saving'}
+              disabled={chosen.length === 0 || !ready || state === 'saving'}
               onClick={save}
             >
               {state === 'saving' ? t('ui.cardView.pdfSaving') : t('ui.shop.print')}
@@ -151,21 +212,20 @@ function WorldShop() {
           </div>
       </main>
 
-      {/* the A4 sheet the PDF is made from: drawn off the screen, black and white */}
+      {/* the landscape A4 pages the PDF is made from: drawn off the screen, black and white */}
       <div className={css.shopPaperHolder} aria-hidden>
-        <div ref={sheetRef} className={css.shopPaper} dir={lang === 'he' ? 'rtl' : 'ltr'}>
-          <div className={css.shopPaperHead}>
-            <strong>{texts?.name}</strong>
-            <span>{t('ui.shop.sheetLine')}</span>
-          </div>
-          {/* the doll and the pieces at the doll's scale, so they fit on it; side by side, close together */}
-          <div ref={bodyRef} className={css.shopPaperBody}>
-            {shop.doll && <img src={picture('doll')} alt="" style={{ height: dollH }} onLoad={refit} />}
-            {chosen.map((id) => (
-              <img key={id} src={picture(id)} alt="" style={{ height: dollH * (shop.sizes?.[id] ?? 0.45) }} onLoad={refit} />
+        {pages.map((page, i) => (
+          <div key={i} ref={(n) => { pagesRef.current[i] = n }} className={css.shopPaper} style={{ width: PAGE_W, height: PAGE_H }}>
+            {i === 0 && (
+              <div className={css.shopPaperHead} dir={lang === 'he' ? 'rtl' : 'ltr'}>
+                <strong>{texts?.name}</strong> · {t('ui.shop.sheetLine')}
+              </div>
+            )}
+            {page.map((it) => (
+              <img key={it.id} src={picture(it.id)} alt="" style={{ left: it.x, top: it.y, width: it.w, height: it.h }} />
             ))}
           </div>
-        </div>
+        ))}
       </div>
     </div>
   )

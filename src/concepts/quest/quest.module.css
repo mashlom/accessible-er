@@ -3489,44 +3489,27 @@ path.worldTrailLit {
 }
 
 .shopPaper {
-  width: 794px;
-  height: 1123px;
-  box-sizing: border-box;
-  padding: 48px;
+  position: relative;
   background: #fff;
   color: #000;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  font-family: inherit;
-}
-
-.shopPaperHead {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 18px;
-}
-
-.shopPaperHead strong { font-size: 26px; }
-
-.shopPaperBody {
-  flex: 1;
-  min-height: 0;
   overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  align-content: flex-start;
-  gap: 10px 14px;
 }
 
-/* every picture keeps its own shape: its height is set by the page (the doll's, or a part of it) */
-.shopPaperBody img {
-  width: auto;
-  max-width: 100%;
+.shopPaper img {
+  position: absolute;
   display: block;
 }
+
+/* the world's name and the line, small, at the bottom of the first page */
+.shopPaperHead {
+  position: absolute;
+  left: 38px;
+  right: 38px;
+  bottom: 12px;
+  font-size: 13px;
+  text-align: center;
+}
+
 
 /* the shop's page is light: its top row in the text colour, not white over a picture */
 .shopFull .worldTopBtn {

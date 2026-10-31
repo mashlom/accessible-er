@@ -472,16 +472,6 @@
       "camera",
       "map",
       "water-bottle"
-    ],
-    "sizes": {
-      "hat": 0.18,
-      "binoculars": 0.12,
-      "vest": 0.33,
-      "boots": 0.15,
-      "backpack": 0.32,
-      "camera": 0.12,
-      "map": 0.2,
-      "water-bottle": 0.18
-    }
+    ]
   }
 }

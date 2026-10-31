@@ -472,16 +472,6 @@
       "flower-basket",
       "bag-of-stars",
       "lantern"
-    ],
-    "sizes": {
-      "wings": 0.5,
-      "wand": 0.36,
-      "flower-crown": 0.12,
-      "dress": 0.45,
-      "shoes": 0.1,
-      "flower-basket": 0.2,
-      "bag-of-stars": 0.16,
-      "lantern": 0.22
-    }
+    ]
   }
 }
