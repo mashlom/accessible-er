@@ -15,6 +15,7 @@ import { lockBodyScroll } from '../../../lib/scrollLock'
 import { LanguagePicker } from '../../../components/LanguagePicker'
 import { PARENT_WORLD } from '../useQuestTheme'
 import { designVars, getTheme } from '../themes'
+import { useMoreBelow } from '../useMoreBelow'
 import css from '../quest.module.css'
 
 // the emoji of each block stay in code; the words come from src/data/i18n/ui.json
@@ -235,6 +236,7 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
   const wide = useWide()
   const goBackTo = useGoBackTo()
   const handleRef = useRef<HTMLButtonElement>(null)
+  const moreRef = useMoreBelow<HTMLDivElement>()
   // closing the sheet goes back to the second map, where the journey ended
   const close = () => goBackTo('/second-map')
   useEffect(() => {
@@ -258,7 +260,7 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
         </div>
       </div>
       <div className={css.sheetBackdrop}>
-        <div className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.celebrateSheet}`} role="dialog" aria-modal="true" aria-labelledby="celebrate-title">
+        <div ref={moreRef} className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.celebrateSheet}`} role="dialog" aria-modal="true" aria-labelledby="celebrate-title">
           <button ref={handleRef} type="button" className={css.sheetHandle} onClick={close} aria-label={t('ui.buttons.close')}>
             <span aria-hidden />
           </button>

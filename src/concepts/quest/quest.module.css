@@ -3728,5 +3728,12 @@ path.worldTrailLit {
 .shopBody .celebrateSheetActions {
   border-radius: 0;
   border-top: 1.5px solid color-mix(in srgb, var(--tok-action) 35%, transparent);
+  box-shadow: none;
+}
+
+/* the shadow only while something is still under the block (the sheet or the page scrolls on) */
+[data-more] > .sheetFooter,
+[data-more] .shopBody .celebrateSheetActions,
+.worldSheet.pickSheet[data-more] .pickBtn {
   box-shadow: 0 -16px 28px -4px rgba(0, 0, 0, 0.24);
 }

@@ -8,6 +8,7 @@ import { useI18n } from '../../../hooks/useI18n'
 import { LanguagePicker } from '../../../components/LanguagePicker'
 import { pageFontsCss } from '../../../components/careCard/saveCardPdf'
 import { worldText, type WorldLang } from '../../../data/child/worlds'
+import { useMoreBelowPage } from '../useMoreBelow'
 import css from '../quest.module.css'
 
 /**
@@ -198,6 +199,7 @@ export function ShopPage() {
 }
 
 function WorldShop() {
+  useMoreBelowPage()
   const { theme } = useQuestTheme()
   const { t, lang } = useI18n()
   const wide = useWide()
