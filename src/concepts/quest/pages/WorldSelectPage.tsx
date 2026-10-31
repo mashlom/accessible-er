@@ -3,7 +3,6 @@ import { useConceptPath } from '../../nav'
 import { themes } from '../themes'
 import { useQuestTheme } from '../useQuestTheme'
 import { worldText, type WorldLang } from '../../../data/child/worlds'
-import childUi from '../../../data/child/ui.json'
 import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
@@ -24,9 +23,6 @@ export function WorldSelectPage() {
 
   return (
     <div className={css.selectPage}>
-      <h1 className={css.selectTitle}>{(childUi[lang as WorldLang] ?? childUi.he).worlds.title}</h1>
-      <p className={css.selectSub}>{(childUi[lang as WorldLang] ?? childUi.he).worlds.subtitle}</p>
-
       <div className={css.worldGrid}>
         {ordered.map((theme) => {
           // the world's name comes from its texts file, in the chosen language
