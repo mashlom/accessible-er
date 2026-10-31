@@ -23,7 +23,7 @@ export function WorldProcedureIcons({ ids }: { ids: string[] }) {
             <Link key={pid} to={`/procedure/${pid}`} className={css.procedureBtn}>
               <span className={css.procedureBtnIcon} aria-hidden><ProcedureLineIcon id={pid} emoji={proc?.emoji} /></span>
               <span className={css.procedureBtnLabel}>{proc?.title ?? pid}</span>
-              {done && <span className={css.procedureBtnDone}>{theme.doneEmoji ?? '✓'}</span>}
+              {done && <span className={`${css.procedureBtnDone} ${css.worldCoin}`}>{theme.doneEmoji ?? '✓'}</span>}
             </Link>
           )
         })}
