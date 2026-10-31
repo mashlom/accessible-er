@@ -3555,17 +3555,6 @@ path.worldTrailLit {
     drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
 }
 
-/* the station's own buttons ("I did it", back to the map) stay at the bottom of the sheet, in view, however much is
-   above them (a picture, a story, procedure buttons): what is above scrolls under them */
-.worldSheet.stageSheet .stageSheetActions {
-  position: sticky;
-  bottom: calc(-24 * var(--u) - env(safe-area-inset-bottom, 0px));
-  z-index: 2;
-  margin-inline: calc(-1 * var(--pad, 0px));
-  padding: calc(12 * var(--u)) var(--pad, 0px) calc(24 * var(--u) + env(safe-area-inset-bottom, 0px));
-  background: var(--tok-page);
-  box-shadow: 0 -10px 12px -8px rgba(0, 0, 0, 0.12);
-}
 
 /* the shop page's buttons look as the sheets' do: its unit is a plain pixel, the colours are the world's */
 .shopBody { --u: 1px; }
@@ -3584,4 +3573,51 @@ path.worldTrailLit {
   color: #fff;
   box-shadow: none;
   cursor: default;
+}
+
+/* ── The bottom of a children's sheet: always in view, tinted in the world's colour ──
+   The child's buttons and the parent's button are one block that does not scroll away (the picture, the story and
+   the procedures scroll above it), close together. The parents' own sheets are left as they are. */
+.worldSheet {
+  --footer-bg: color-mix(in srgb, var(--tok-action) 12%, var(--tok-page));
+}
+
+.worldSheet .sheetFooter,
+.worldSheet.celebrateSheet .celebrateSheetActions,
+.worldSheet.pickSheet .pickBtn {
+  position: sticky;
+  bottom: calc(-24 * var(--u) - env(safe-area-inset-bottom, 0px));
+  z-index: 2;
+}
+
+.worldSheet .sheetFooter,
+.worldSheet.celebrateSheet .celebrateSheetActions {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8 * var(--u));
+  margin: auto calc(-1 * var(--pad, 0px)) calc(-24 * var(--u) - env(safe-area-inset-bottom, 0px));
+  padding: calc(12 * var(--u)) var(--pad, 0px) calc(24 * var(--u) + env(safe-area-inset-bottom, 0px));
+  background: var(--footer-bg);
+  border-radius: calc(20 * var(--u)) calc(20 * var(--u)) 0 0;
+  box-shadow: 0 -6px 14px -8px rgba(0, 0, 0, 0.18);
+}
+
+/* inside the block, no extra room above the buttons or the parent's pill */
+.worldSheet .sheetFooter .stageSheetActions,
+.worldSheet .sheetFooter .parentBtnOceanInline {
+  margin: 0;
+}
+
+/* the choice of the second stage's stations: its one button on the tint */
+.worldSheet.pickSheet .pickBtn {
+  bottom: calc(8 * var(--u) + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 0 0 calc(12 * var(--u)) var(--footer-bg), 0 -14px 16px -6px rgba(0, 0, 0, 0.14);
+}
+
+/* room between the end of what scrolls and the bottom block, so the last line does not touch it */
+/* (stronger than the sheet's own rules for its texts, which set their margins to nothing) */
+.worldSheet.worldSheet.worldSheet > :has(+ .sheetFooter),
+.worldSheet.worldSheet.worldSheet > :has(+ .celebrateSheetActions),
+.worldSheet.worldSheet.worldSheet > :has(+ .pickBtn) {
+  margin-bottom: calc(32 * var(--u));
 }

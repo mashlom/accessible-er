@@ -124,27 +124,30 @@ export function WorldStageSheet({ stageId, label, hint, children, isActive, onDo
 
           {children}
 
-          {!noParent && <ParentInfo stageId={stageId} inline />}
+          {/* the bottom of the sheet, always in view, tinted: the child's buttons and the parent's, close together */}
+          <div className={css.sheetFooter}>
+            {!noParent && <ParentInfo stageId={stageId} inline />}
 
-          <div className={css.stageSheetActions}>
-            {isActive && (
-              <button
-                type="button"
-                className={`${css.worldBtn} ${css.worldBtnDone}`}
-                onClick={onDone}
-              >
-                {doneIsChoice ? buttons.decision : skin?.done ?? buttons.done}
+            <div className={css.stageSheetActions}>
+              {isActive && (
+                <button
+                  type="button"
+                  className={`${css.worldBtn} ${css.worldBtnDone}`}
+                  onClick={onDone}
+                >
+                  {doneIsChoice ? buttons.decision : skin?.done ?? buttons.done}
+                </button>
+              )}
+              {showChooseTests && !isActive && (
+                // the choice takes this sheet's place: closing it returns to the map, not to this sheet
+                <Link to="/procedures" replace className={`${css.worldBtn} ${css.worldBtnDone}`}>
+                  {buttons.decision}
+                </Link>
+              )}
+              <button type="button" className={`${css.worldBtn} ${css.worldBtnBack}`} onClick={close}>
+                {t('ui.buttons.backToMap')}
               </button>
-            )}
-            {showChooseTests && !isActive && (
-              // the choice takes this sheet's place: closing it returns to the map, not to this sheet
-              <Link to="/procedures" replace className={`${css.worldBtn} ${css.worldBtnDone}`}>
-                {buttons.decision}
-              </Link>
-            )}
-            <button type="button" className={`${css.worldBtn} ${css.worldBtnBack}`} onClick={close}>
-              {t('ui.buttons.backToMap')}
-            </button>
+            </div>
           </div>
         </div>
       </div>
