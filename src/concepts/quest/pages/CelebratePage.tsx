@@ -7,7 +7,6 @@ import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
-import { isTestMode } from '../../../lib/testMode'
 import i18nUi from '../../../data/i18n/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import { createPortal } from 'react-dom'
@@ -38,8 +37,8 @@ function blocksFor(lang: 'he' | 'en' | 'ru', kind: 'discharge' | 'admission') {
 export function CelebratePage() {
   const [outcome, setOutcome] = useState<'discharge' | 'admission' | null>(null)
   const { theme } = useQuestTheme()
-  // the shop is hidden unless the address asks for the test mode (?test=true)
-  const withStore = isTestMode()
+  // the shop is open to everyone again (it was for the test mode only)
+  const withStore = true
   const { t, lang } = useI18n()
   const { reset, doneProcedures } = useQuestProgress()
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
