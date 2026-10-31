@@ -65,7 +65,7 @@ the pieces.
 The first set cannot be used as paper dolls: every piece was drawn to fill its own canvas, so the pieces are not at
 the doll's scale (the space helmet came out more than twice as wide as the doll, the mission badge as big as its
 body), and nothing fits on the doll without guessing. The tabs also come off too easily. Please redraw the pieces
-(the dolls can stay as they are) with these two changes.
+with the changes below, and redraw the dolls too (section 5).
 
 ### 1. One canvas and one scale per world
 
@@ -110,6 +110,33 @@ body), and nothing fits on the doll without guessing. The tabs also come off too
 - Check on the doll: with the hat in place, the tabs' fold lines (the hat's own edge) touch the head's outline on both
   sides.
 
+### 5. The doll itself
+
+- **Base clothes, minimal:** a plain sleeveless top (no sleeves, no collar, no belt, no pockets or prints) and plain
+  shorts or briefs; on the feet **socks at most, never shoes or boots** (the shoes are pieces to put on).
+- **Hands made to hold things:** each hand is a small fist with a **slit** through it (one cut line), into which a
+  stick or a handle slides. Draw the hands so that they can hold every held piece of the world.
+
+### 6. Pieces held in the hand: think how the hand holds them
+
+Every held piece is made to work with the doll's fist, not just laid next to it:
+
+- **Sticks** (a wand, a staff, a banner or flag pole, a toy horse's stick, a torch's handle): a long, straight, even
+  part that slides through the slit in the fist and stays there.
+- **Things with a handle** (a lantern, a bag, a basket, a net bag): the handle is drawn as a closed loop or a straight
+  bar that slides into the slit, so the thing hangs from the fist.
+- **Other small things** (binoculars, a camera, a map, a bottle): a strap or a stick to hold them by, made the same
+  way.
+- Check on the doll: every held piece goes into a fist and stays there, at its natural place in the hand.
+
+### 7. Wings and other things worn on the back
+
+- **Wings** (and a backpack, a jet pack, an air tank) are worn **behind the doll**: the piece itself stays at the
+  doll's back, and instead of tabs it has **two straps that go over the doll's shoulders and hang down in front**,
+  like the front panels of a waistcoat. The straps join the piece along a straight stretch of its edge (at least
+  6 mm) and fold over the shoulders along that edge.
+- From the front, the doll is seen with the wings (or the pack) rising behind it and the two straps on its chest.
+
 ### Prompt (add to the shared prompt above, instead of its line about the tabs)
 
 > Draw this piece on a transparent canvas of exactly the same size as the doll picture, at exactly the doll's scale,
@@ -120,7 +147,13 @@ body), and nothing fits on the doll without guessing. The tabs also come off too
 > does not tear off (it may be shorter than that edge). Shoes and boots have no tabs: each shoe has one cut line
 > across its top opening (a slit) so the doll's foot slides in; the shoe is drawn from the front as usual, and the
 > slit is placed so that with the foot through it the back of the shoe is hidden and the doll looks as if wearing it. On hats, helmets and crowns the tabs sit at the sides of the head, at ear height,
-> where they can fold back behind the head and hold it.
+> where they can fold back behind the head and hold it. Things held in the hand have a straight stick, a bar or a
+> closed handle that slides into the slit in the doll's fist. Wings and anything worn on the back stay behind the
+> doll and have two straps that go over its shoulders and hang down in front like the front panels of a waistcoat,
+> instead of tabs.
+>
+> For the doll: a plain sleeveless top without collar, belt or prints, plain shorts, socks at most (no shoes), each
+> hand a small fist with a slit (one cut line) to hold sticks and handles.
 
 ### Before sending
 
@@ -128,3 +161,6 @@ body), and nothing fits on the doll without guessing. The tabs also come off too
 - No fold lines anywhere; every tab joins the piece along a straight stretch of its edge (at least 6 mm).
 - Every shoe has its slit and no tabs; the doll's foot fits through the slit.
 - On every hat, helmet and crown the tabs reach the sides of the doll's head.
+- Every held piece slides into the doll's fist; wings and packs stay behind the doll, their straps over its
+  shoulders.
+- The doll wears only a plain sleeveless top, shorts and socks; both hands are fists with slits.
