@@ -3680,3 +3680,15 @@ path.worldTrailLit {
 }
 .shopBody .celebrateSheetActions .worldBtn { flex: 1 1 0; }
 .shopBody .celebrateSheetActions .shopNote { flex: 1 0 100%; order: 2; }
+
+/* the last sheet: the shop and the world choice side by side, in what scrolls */
+.celebrateSheetRow {
+  display: flex;
+  gap: calc(8 * var(--u));
+}
+.celebrateSheetRow > a { flex: 1 1 0; display: flex; }
+.celebrateSheetRow > a > button,
+.celebrateSheetRow > button { flex: 1 1 0; width: 100%; margin: 0; }
+
+/* its question sits in the bottom block, over the two answers */
+.worldSheet .sheetFooter .celebrateQuestion { margin: 0; font-size: max(calc(16 * var(--u)), 15px); }

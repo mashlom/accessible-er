@@ -267,15 +267,19 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
               <img src={image} alt="" className={`${css.stageSheetImg} ${css.stageSheetImgScene}`} />
             </div>
           )}
+          {/* what scrolls: the stars and the shop's line, then the shop and the world choice side by side */}
           {stars && <div className={css.celebrateSheetText}>{stars}</div>}
-          <h1 id="celebrate-title" className={css.stageSheetTitle} style={{ color: theme.accent }}>{question}</h1>
-          <div className={css.celebrateSheetActions}>
-            {choices.map((c) => (
-              <button key={c.label} type="button" className={`${css.worldBtn} ${css.worldBtnDone}`} onClick={c.pick}>
-                {c.label}
-              </button>
-            ))}
-            {buttons}
+          <div className={css.celebrateSheetRow}>{buttons}</div>
+          {/* the bottom block, always in view: what happens now, and its two answers side by side */}
+          <div className={css.sheetFooter}>
+            <h1 id="celebrate-title" className={`${css.stageSheetTitle} ${css.celebrateQuestion}`} style={{ color: theme.accent }}>{question}</h1>
+            <div className={css.stageSheetActions}>
+              {choices.map((c) => (
+                <button key={c.label} type="button" className={`${css.worldBtn} ${css.worldBtnDone}`} onClick={c.pick}>
+                  {c.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
