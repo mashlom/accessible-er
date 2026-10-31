@@ -5,7 +5,7 @@
       "reception": {
         "label": "כניסה למחנה",
         "hint": "נרשמים במחנה הספארי ומקבלים צמיד מסייר",
-        "story": "כשנכנסים לספארי, יש להרשם בכניסה ולקבל צמיד של סיירים, איתו נוכל להסתובב ברחבי הספארי. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "story": "כשנכנסים לספארי, יש להרשם בכניסה ולקבל צמיד של סיירים, איתו נוכל להסתובב ברחבי הספארי. גם בקבלה של המיון נקבל צמיד ומספר שילוו אותנו בין התחנות.",
         "done": "קיבלתי את צמיד הסיירים!"
       },
       "wait-before-triage": {
@@ -249,7 +249,7 @@
       "reception": {
         "label": "Camp Entrance",
         "hint": "We register at the safari camp and get a ranger's bracelet",
-        "story": "When we arrive at the safari, we sign in at the entrance and get a ranger's bracelet, so we can walk around the whole safari. In the ER too, we get a number that goes with us from station to station.",
+        "story": "When we arrive at the safari, we sign in at the entrance and get a ranger's bracelet, so we can walk around the whole safari. At the ER's registration desk we also get a bracelet and a number that go with us from station to station.",
         "done": "I got my ranger's bracelet!"
       },
       "wait-before-triage": {
@@ -493,7 +493,7 @@
       "reception": {
         "label": "Вход в лагерь",
         "hint": "Регистрируемся в сафари-лагере и получаем браслет следопыта",
-        "story": "Когда приходим в сафари, мы регистрируемся у входа и получаем браслет следопыта, с которым можно ходить по всему сафари. В приёмном покое тоже нам дадут номер, который будет с нами на всех остановках.",
+        "story": "Когда приходим в сафари, мы регистрируемся у входа и получаем браслет следопыта, с которым можно ходить по всему сафари. В регистратуре приёмного отделения нам тоже дадут браслет и номер, который будет с нами на всех остановках.",
         "done": "Мы получили браслет следопыта!"
       },
       "wait-before-triage": {
