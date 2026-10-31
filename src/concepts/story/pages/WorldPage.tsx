@@ -107,9 +107,11 @@ export function WorldPage() {
           {isTestMode() && (
             // under the worlds, the whole row: the book, its line and where it leads, no title and no arrow
             <a href="#/book" className={`${styles.childCard} ${styles.childCardBook}`}>
+              {/* the words at the start side, the book at the end side, as the worlds' card */}
+              <span className={styles.childCardBookText}>
+                <span className={styles.childCardDesc}>{tx.read.desc}</span>
+              </span>
               <span className={styles.childCardIcon} aria-hidden>📖</span>
-              <span className={styles.childCardDesc}>{tx.read.desc}</span>
-              <span className={styles.childCardAction}>{tx.read.action}</span>
             </a>
           )}
         </div>
