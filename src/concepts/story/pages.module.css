@@ -996,3 +996,4 @@ button.dest {
 .childCard.childCardBook { grid-column: 1 / -1; }
 .childCard.childCardBook { flex-direction: row; align-items: center; gap: 1rem; }
 .childCardBookText { flex: 1; display: flex; flex-direction: column; gap: 0.35rem; }
+.childCard.childCardBook .childCardIcon { font-size: 3.5rem; line-height: 1; width: auto; height: auto; background: none; }
