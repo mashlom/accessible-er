@@ -4,6 +4,7 @@ import { Link, useBack, useIsConceptHome } from '../../nav'
 import { designVars } from '../themes'
 import { REQUIRED_STAGES, useQuestProgress } from '../useQuestProgress'
 import { useQuestTheme } from '../useQuestTheme'
+import { HomePill } from '../../../components/HomePill'
 import { LanguagePicker } from '../../../components/LanguagePicker'
 import { setI18nEnabled, useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
@@ -64,7 +65,8 @@ export function QuestShell() {
             <span aria-hidden>›</span>
           </button>
         ) : (
-          <span className={css.questTopBtn} aria-hidden />
+          // the world choice: the same home pill as the parent pages, on the other side from the language
+          <div style={{ display: 'flex', paddingInlineStart: '0.5rem' }}><HomePill /></div>
         )}
 
         {/* not on the world choice: with no world chosen, the map would only lead back here */}
@@ -79,10 +81,12 @@ export function QuestShell() {
 
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end', paddingInlineEnd: '0.5rem' }}>
           <LanguagePicker />
+          {!isHome && <>
           {/* children's screens: the word, not a picture (Rakheli's review, #37); the parents' pages keep the house */}
           <a href="#/" className={`${css.questTopBtn} ${css.navWord}`}>
             {t('ui.shell.home')}
           </a>
+          </>}
         </div>
       </header>}
       <main id="main">
