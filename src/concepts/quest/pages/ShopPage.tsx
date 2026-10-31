@@ -12,31 +12,18 @@ import { ButtonIcon, withoutEmoji } from '../components/ButtonIcon'
 import css from '../quest.module.css'
 
 /**
- * What each thing costs, set by the stars the child has: the prices are m to m + 3 (in this order along the world's
- * list), with the smallest m for which five things together always cost more than the stars, and the stars can still
- * be spent to the last one with at most four things (checked for 1 to 30 stars, with 7 or 8 things).
+ * What each thing costs, set by the stars the child has: four things together cost exactly the stars (so four can
+ * always be bought and every star spent), and the others a little more (so a fifth is always too dear). With fewer
+ * than four stars the cheap things cost one star each. Cheap and dear things alternate along the world's list.
+ * Checked for 1 to 30 stars, with 7 or 8 things.
  */
-const PRICE_STEPS = [2, 0, 3, 1, 1, 3, 0, 2]
 function pricesFor(stars: number, n: number): number[] {
-  const sums = (p: number[]) => {
-    const out = new Set<number>()
-    const go = (i: number, k: number, sum: number) => {
-      if (k > 0) out.add(sum)
-      if (k === 4) return
-      for (let j = i; j < p.length; j++) go(j + 1, k + 1, sum + p[j])
-    }
-    go(0, 0, 0)
-    return out
-  }
-  let fallback: number[] | null = null
-  for (let m = 1; m < 40; m++) {
-    const p = Array.from({ length: n }, (_, i) => m + PRICE_STEPS[i % PRICE_STEPS.length])
-    const fiveTooDear = n < 5 || [...p].sort((a, b) => a - b).slice(0, 5).reduce((a, b) => a + b, 0) > stars
-    if (!fiveTooDear) continue
-    fallback ??= p
-    if (sums(p).has(stars)) return p
-  }
-  return fallback ?? Array(n).fill(1)
+  const base = Math.floor(stars / 4)
+  const rest = stars % 4
+  const cheap = [...Array(rest).fill(Math.max(1, base + 1)), ...Array(4 - rest).fill(Math.max(1, base))].sort((a, b) => a - b)
+  const b = Math.max(1, base)
+  const dear = [b + 1, b + 2, b + 2, b + 3]
+  return [cheap[0], dear[0], cheap[1], dear[1], cheap[2], dear[2], cheap[3], dear[3]].slice(0, n)
 }
 /** At most this many things go on the sheet next to the doll */
 const MAX_ITEMS = 4
