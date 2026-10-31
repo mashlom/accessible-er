@@ -3548,6 +3548,13 @@ path.worldTrailLit {
   background-position: center 17%;
 }
 
+/* a station still to do glows softly (also when the motion is turned off): on the second map, where any of them can
+   be next, the ones not done yet are seen at once */
+.worldStage.pin--active .worldObj {
+  filter: drop-shadow(0 0 calc(6 * var(--u)) #fff) drop-shadow(0 0 calc(14 * var(--u)) rgba(255, 255, 255, 0.95))
+    drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+}
+
 /* the station's own buttons ("I did it", back to the map) stay at the bottom of the sheet, in view, however much is
    above them (a picture, a story, procedure buttons): what is above scrolls under them */
 .worldSheet.stageSheet .stageSheetActions {
