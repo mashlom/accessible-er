@@ -116,13 +116,16 @@ async function layOut(
   const sorted = [...pieces].sort((a, b) => rank(a) - rank(b) || b.size.w * b.size.h - a.size.w * a.size.h)
   const masks: Record<string, Mask> = {}
   if (doll) masks.doll = await maskOf(src('doll'), pages[0][0].w, pages[0][0].h)
-  // the four corners of the page's free part (beside the doll), in cells: the head's pieces take the top ones, the
+  // the four quarters of the page's free part (beside the doll), in cells: the head's pieces take the top ones, the
   // feet's the bottom ones, the rest what is left; a piece that does not fit in a corner looks for any free place
   const left = doll ? Math.ceil((MARGIN + pages[0][0].w + GAP) / CELL) : m
   const corners = { tl: true, tr: true, bl: true, br: true }
+  // each piece in the middle of its quarter of the free part (kept inside the free part when it is bigger)
+  const qw = (gw - m - left) / 2, qh = (gh - 2 * m) / 2
+  const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v))
   const cornerAt = (c: keyof typeof corners, mk: Mask) => ({
-    cx: c === 'tl' || c === 'bl' ? left : gw - m - mk.cw,
-    cy: c === 'tl' || c === 'tr' ? m : gh - m - mk.ch,
+    cx: clamp(Math.round(left + (c === 'tl' || c === 'bl' ? 0 : qw) + (qw - mk.cw) / 2), left, gw - m - mk.cw),
+    cy: clamp(Math.round(m + (c === 'tl' || c === 'tr' ? 0 : qh) + (qh - mk.ch) / 2), m, gh - m - mk.ch),
   })
   for (const p of sorted) {
     const w = Math.round(p.size.w * k), h = Math.round(p.size.h * k)
