@@ -10,6 +10,7 @@ import { WorldNightMapPage } from '../pages/WorldNightMapPage'
 import { ParentInfo } from './ParentInfo'
 import { Bubbles, useWorldButtons } from './WorldStageSheet'
 import { ProcedureLineIcon } from './ProcedureLineIcon'
+import { useMoreBelow } from '../useMoreBelow'
 import css from '../quest.module.css'
 
 /** Route of a station's own (child) sheet */
@@ -26,6 +27,7 @@ export function WorldProcedureDetailSheet({ id }: { id: string }) {
   const goBackTo = useGoBackTo()
   const buttons = useWorldButtons()
   const handleRef = useRef<HTMLButtonElement>(null)
+  const moreRef = useMoreBelow<HTMLDivElement>()
   const [variant, setVariant] = useState(0)
   useEffect(() => setVariant(0), [id])
 
@@ -70,6 +72,7 @@ export function WorldProcedureDetailSheet({ id }: { id: string }) {
       <div className={css.sheetBackdrop} onClick={back}>
         <div
           className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.parentBelow}`}
+          ref={moreRef}
           role="dialog"
           aria-modal="true"
           aria-label={procedure.title}

@@ -6,6 +6,7 @@ import { useI18n } from '../../../hooks/useI18n'
 import { WorldMapPage, stationPicture, useWide } from '../pages/WorldMapPage'
 import { WorldNightMapPage } from '../pages/WorldNightMapPage'
 import { ParentInfo } from './ParentInfo'
+import { useMoreBelow } from '../useMoreBelow'
 import css from '../quest.module.css'
 
 interface Props {
@@ -55,7 +56,8 @@ export function WorldStageSheet({ stageId, label, hint, children, isActive, onDo
   const buttons = useWorldButtons()
   const goBackTo = useGoBackTo()
   const handleRef = useRef<HTMLButtonElement>(null)
-  const dialogRef = useRef<HTMLDivElement>(null)
+  const dialogRef = useRef<HTMLDivElement | null>(null)
+  const moreRef = useMoreBelow<HTMLDivElement>()
   const wide = useWide()
   // the picture and how it stands on the sheet are the world's (world.json, design.stations)
   const design = theme.design!
@@ -89,7 +91,7 @@ export function WorldStageSheet({ stageId, label, hint, children, isActive, onDo
       {backTo === '/second-map' ? <WorldNightMapPage underSheet /> : <WorldMapPage underSheet />}
       <div className={css.sheetBackdrop} onClick={close}>
         <div
-          ref={dialogRef}
+          ref={(el) => { dialogRef.current = el; moreRef(el) }}
           className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.parentBelow}`}
           role="dialog"
           aria-modal="true"

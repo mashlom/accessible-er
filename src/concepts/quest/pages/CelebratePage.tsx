@@ -12,9 +12,10 @@ import i18nUi from '../../../data/i18n/ui.json'
 import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import { createPortal } from 'react-dom'
 import { lockBodyScroll } from '../../../lib/scrollLock'
-import { LanguagePicker } from '../../../components/LanguagePicker'
 import { PARENT_WORLD } from '../useQuestTheme'
 import { designVars, getTheme } from '../themes'
+import { WorldTopRow } from '../components/WorldTopRow'
+import { useMoreBelow } from '../useMoreBelow'
 import css from '../quest.module.css'
 
 // the emoji of each block stay in code; the words come from src/data/i18n/ui.json
@@ -235,6 +236,7 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
   const wide = useWide()
   const goBackTo = useGoBackTo()
   const handleRef = useRef<HTMLButtonElement>(null)
+  const moreRef = useMoreBelow<HTMLDivElement>()
   // closing the sheet goes back to the second map, where the journey ended
   const close = () => goBackTo('/second-map')
   useEffect(() => {
@@ -244,21 +246,10 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
   const land = { '--celebrate-bg': wide ? 'var(--w-background-wide, var(--w-background))' : 'var(--w-background)' } as React.CSSProperties
   return (
     <div className={css.celebrateLand} style={land}>
-      {/* the same top row as on the maps (the shell's bar is hidden here): words for the adult, not pictures */}
-      <div className={wide ? `${css.worldTopRow} ${css.worldTopRowWide}` : css.worldTopRow}>
-        <button type="button" className={`${css.worldTopBtn} ${css.navWord}`} onClick={close}>
-          {t('ui.shell.map')}
-        </button>
-        <div className={css.worldTopGroup}>
-          <LanguagePicker variant="overlay" />
-          {/* children's screens: the word, not a picture (Rakheli's review, #37); the parents' pages keep the house */}
-          <a href="#/" className={`${css.worldTopBtn} ${css.navWord}`}>
-            {t('ui.shell.home')}
-          </a>
-        </div>
-      </div>
+      {/* the same top row as on the maps */}
+      <WorldTopRow />
       <div className={css.sheetBackdrop}>
-        <div className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.celebrateSheet}`} role="dialog" aria-modal="true" aria-labelledby="celebrate-title">
+        <div ref={moreRef} className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.celebrateSheet}`} role="dialog" aria-modal="true" aria-labelledby="celebrate-title">
           <button ref={handleRef} type="button" className={css.sheetHandle} onClick={close} aria-label={t('ui.buttons.close')}>
             <span aria-hidden />
           </button>
@@ -267,15 +258,19 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
               <img src={image} alt="" className={`${css.stageSheetImg} ${css.stageSheetImgScene}`} />
             </div>
           )}
+          {/* what scrolls: the stars and the shop's line, then the shop and the world choice side by side */}
           {stars && <div className={css.celebrateSheetText}>{stars}</div>}
-          <h1 id="celebrate-title" className={css.stageSheetTitle} style={{ color: theme.accent }}>{question}</h1>
-          <div className={css.celebrateSheetActions}>
-            {choices.map((c) => (
-              <button key={c.label} type="button" className={`${css.worldBtn} ${css.worldBtnDone}`} onClick={c.pick}>
-                {c.label}
-              </button>
-            ))}
-            {buttons}
+          <div className={css.celebrateSheetRow}>{buttons}</div>
+          {/* the bottom block, always in view: what happens now, and its two answers side by side */}
+          <div className={css.sheetFooter}>
+            <h1 id="celebrate-title" className={`${css.stageSheetTitle} ${css.celebrateQuestion}`} style={{ color: theme.accent }}>{question}</h1>
+            <div className={css.stageSheetActions}>
+              {choices.map((c) => (
+                <button key={c.label} type="button" className={`${css.worldBtn} ${css.worldBtnDone}`} onClick={c.pick}>
+                  {c.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
