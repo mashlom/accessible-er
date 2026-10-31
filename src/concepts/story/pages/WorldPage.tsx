@@ -67,10 +67,13 @@ export function WorldPage() {
   return (
     <div className={shell.page} dir={dir} lang={lang}>
       <header className={styles.homeHead}>
-        <div className={styles.homeLang}>
-          <LanguagePicker align="start" />
+        {/* the language on the same line as the place's name, at the left edge; the name in the middle */}
+        <div className={styles.homeTopLine}>
+          <div className={styles.homeLang}>
+            <LanguagePicker align="start" />
+          </div>
+          <span className={styles.homeEyebrow} dir={dir}>{tx.eyebrow}</span>
         </div>
-        <span className={styles.homeEyebrow}>{tx.eyebrow}</span>
         <h1 className={styles.homeTitle}>{tx.title}</h1>
         <p className={styles.homeSub}>{tx.subtitle}</p>
       </header>
