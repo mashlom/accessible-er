@@ -21,15 +21,15 @@
         "done": "הכול נמדד!"
       },
       "wait-doctor": {
-        "label": "ממתינים לראש השבט",
-        "hint": "ראש השבט עסוק — מחכים בסבלנות",
-        "story": "ראש השבט עוזר לכל המטיילים בספארי, ולכן לפעמים מחכים לו. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
-        "done": "ראש השבט הגיע!"
+        "label": "ממתינים למדריך",
+        "hint": "המדריך עסוק — מחכים בסבלנות",
+        "story": "המדריך עוזר לכל המטיילים בספארי, ולכן לפעמים מחכים לו. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
+        "done": "המדריך הגיע!"
       },
       "doctor": {
-        "label": "פגישה עם ראש השבט",
-        "hint": "ראש השבט מחליט מה עושים",
-        "story": "ראש השבט מקשיב ובודק, ואז מחליט איך ממשיכים במסע. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
+        "label": "פגישה עם המדריך",
+        "hint": "המדריך מחליט מה עושים",
+        "story": "המדריך מקשיב ובודק, ואז מחליט איך ממשיכים במסע. גם במיון, הרופא או הרופאה מדברים איתנו ובודקים את הגוף, ובסוף הבדיקה הם יודעים מה כדאי לעשות."
       },
       "decision": {
         "label": "חזרה למחנה!",
@@ -51,7 +51,7 @@
       "consult": {
         "label": "מומחה מהסוואנה",
         "hint": "מומחה נוסף מגיע",
-        "story": "לפעמים ראש השבט קורא למומחה שמכיר היטב חלק אחד של הסוואנה. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
+        "story": "לפעמים המדריך קורא למומחה שמכיר היטב חלק אחד של הסוואנה. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
         "done": "הכרנו!"
       },
       "wait-results": {
@@ -65,14 +65,14 @@
       "temperature": "המדריך בודק את חום הגוף — בדיוק כמו שבודקים חיות בספארי לפני שיוצאים לשטח.",
       "saturation": "חיישן החמצן הקטן בודק שדם הגיבור נושא מספיק אוויר לאורך כל המסע.",
       "blood-pressure": "המדריך מודד את עוצמת הלב — כדי לוודא שהגיבור מוכן/ה לתנאי השדה.",
-      "doctor-exam": "ראש השבט בוחן את המטייל/ת ומחליט מהו הטיפול הנכון לחזרה לשטח.",
+      "doctor-exam": "המדריך בוחן את המטייל/ת ומחליט מהו הטיפול הנכון לחזרה לשטח.",
       "blood-test": "מעבדת השדה צריכה דגימת דם קטנה כדי לגלות מה קורה בגוף.",
-      "urine": "כוסית הדגימה תגלה לראש השבט מה מתרחש בגוף הגיבור.",
+      "urine": "כוסית הדגימה תגלה למדריך מה מתרחש בגוף הגיבור.",
       "xray": "ציוד הסריקה של הספארי מצלם את פנים הגוף — רואים הכל בלי להרגיש כלום.",
       "ultrasound": "ג׳ל הבדיקה מאפשר לציוד לסרוק בתוך הגוף ולמצוא מה שצריך לטפל בו.",
       "ct": "הטבעת הסורקת עוברת לאט ומצלמת מפה מפורטת של כל מה שבפנים.",
       "iv": "הצינור הדק מזרים נוזלי ריפוי ישירות לדם — כמו שמחזירים כוח לחיות השדה.",
-      "medication": "ראש השבט הכין את תרופת הג׳ונגל — סירופ או תרכובת שתחזיר את הכוח.",
+      "medication": "המדריך הכין את תרופת הג׳ונגל — סירופ או תרכובת שתחזיר את הכוח.",
       "inhalation": "אדי הריפוי של השדה נכנסים דרך המסכה ועוזרים לנשימה לזרום בחופשיות.",
       "stitches": "המרפא מתקן את הפצע בזהירות — דבק מיוחד או חוט שיאחה.",
       "cast": "מגן הגבס עוטף את העצם כמו שעץ חזק תומך בגזע — ומחזיק עד שיחלים.",
@@ -143,10 +143,10 @@
         "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
-        "נפגוש את ראש השבט, שרוצה לעזור לנו.",
-        "ראש השבט מקשיב לגוף עם צינור — קצת קריר, לא כואב.",
-        "אולי ראש השבט יסתכל בגרון ובאוזניים עם אור קטן, כמו בלילה בסוואנה.",
-        "בסוף ראש השבט יידע איזה טיפול נחוץ לנו."
+        "נפגוש את המדריך, שרוצה לעזור לנו.",
+        "המדריך מקשיב לגוף עם צינור — קצת קריר, לא כואב.",
+        "אולי המדריך יסתכל בגרון ובאוזניים עם אור קטן, כמו בלילה בסוואנה.",
+        "בסוף המדריך יידע איזה טיפול נחוץ לנו."
       ],
       "blood-test": [
         "המדריך מורח משחה שעושה את העור פחות רגיש.",
@@ -219,7 +219,7 @@
         "סיימנו את כל הבדיקות — כל הכבוד לנו!",
         "עכשיו מחכים לתשובות במחנה. אפשר לשחק, לנוח או לראות סרטון.",
         "מעבדת השטח בודקת את הדגימות שלנו, והמדריך והמרפא לא שכחו אותנו.",
-        "כשיהיו תשובות — ראש השבט יבוא לספר לנו."
+        "כשיהיו תשובות — המדריך יבוא לספר לנו."
       ]
     },
     "calmLines": [
@@ -228,8 +228,8 @@
       "אפשר גם לספור איתי לאט עד עשר. אחת… שתיים… שלוש…"
     ],
     "ui": {
-      "decision": "החלטת ראש השבט ←",
-      "decisionTitle": "החלטת ראש השבט",
+      "decision": "ההחלטה של המדריך ←",
+      "decisionTitle": "ההחלטה של המדריך",
       "intro": "המסע במיון הילדים דומה למסע בספארי. מוכנים לצאת לדרך?"
     },
     "shop": {
@@ -265,15 +265,15 @@
         "done": "All measured!"
       },
       "wait-doctor": {
-        "label": "Waiting for the Chief",
-        "hint": "The chief is busy — we wait patiently",
-        "story": "The chief helps every traveller in the safari, so sometimes we wait for him. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
-        "done": "The chief is here!"
+        "label": "Waiting for the Guide",
+        "hint": "The guide is busy — we wait patiently",
+        "story": "The guide helps every traveller in the safari, so sometimes we wait for him. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
+        "done": "The guide is here!"
       },
       "doctor": {
-        "label": "Meeting the Chief",
-        "hint": "The chief decides what to do",
-        "story": "The chief listens and checks, and then decides how the journey goes on. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
+        "label": "Meeting the Guide",
+        "hint": "The guide decides what to do",
+        "story": "The guide listens and checks, and then decides how the journey goes on. In the ER too, the doctor talks with us and checks the body, and at the end of the check the doctor knows what is best to do."
       },
       "decision": {
         "label": "Back to Camp!",
@@ -295,7 +295,7 @@
       "consult": {
         "label": "Expert from the Savanna",
         "hint": "Another expert is coming",
-        "story": "Sometimes the chief calls an expert who knows one part of the savanna very well. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
+        "story": "Sometimes the guide calls an expert who knows one part of the savanna very well. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
         "done": "We met!"
       },
       "wait-results": {
@@ -309,14 +309,14 @@
       "temperature": "The guide checks the body temperature — just like animals are checked at the safari before going out into the field.",
       "saturation": "A small oxygen sensor checks that the hero's blood carries enough air all through the journey.",
       "blood-pressure": "The guide measures the strength of the heart — to make sure the hero is ready for field conditions.",
-      "doctor-exam": "The chief examines the traveller and decides the right treatment for going back out into the field.",
+      "doctor-exam": "The guide examines the traveller and decides the right treatment for going back out into the field.",
       "blood-test": "The field lab needs one small blood sample to find out what is happening in the body.",
-      "urine": "The sample cup will show the chief what is happening in the hero's body.",
+      "urine": "The sample cup will show the guide what is happening in the hero's body.",
       "xray": "The safari scanner takes a picture of the inside of the body — everything is seen without feeling anything.",
       "ultrasound": "The test gel lets the equipment scan inside the body and find what needs treatment.",
       "ct": "The scanning ring moves slowly and makes a detailed map of everything inside.",
       "iv": "A thin tube sends healing liquid straight into the blood — like giving strength back to animals in the field.",
-      "medication": "The chief has prepared the jungle medicine — a syrup or a mixture that will bring back strength.",
+      "medication": "The guide has prepared the jungle medicine — a syrup or a mixture that will bring back strength.",
       "inhalation": "Healing vapours of the field come through the mask and help breathing flow freely.",
       "stitches": "The herbalist carefully repairs the wound — a special glue or a thread that will close it.",
       "cast": "The plaster wrap holds the bone like a strong tree supports its trunk — until it heals.",
@@ -387,10 +387,10 @@
         "Then the cuff comes off — and that's it, all done."
       ],
       "doctor-exam": [
-        "We meet the chief, who wants to help us.",
-        "The chief listens to the body with a tube — a little cool, but it does not hurt.",
-        "Maybe the chief will look in the throat and ears with a small light, like at night in the savanna.",
-        "At the end the chief will know what treatment we need."
+        "We meet the guide, who wants to help us.",
+        "The guide listens to the body with a tube — a little cool, but it does not hurt.",
+        "Maybe the guide will look in the throat and ears with a small light, like at night in the savanna.",
+        "At the end the guide will know what treatment we need."
       ],
       "blood-test": [
         "The guide puts a cream on the skin that makes it less sensitive.",
@@ -463,7 +463,7 @@
         "We finished all the checks — well done!",
         "Now we wait for the answers at the camp. We can play, rest or watch a video.",
         "The field lab is studying our samples, and the guide and the herbalist haven't forgotten us.",
-        "When the answers are ready, the chief will come and tell us."
+        "When the answers are ready, the guide will come and tell us."
       ]
     },
     "calmLines": [
@@ -472,8 +472,8 @@
       "We can also count slowly to ten together. One… two… three…"
     ],
     "ui": {
-      "decision": "Chief decides →",
-      "decisionTitle": "The chief's decision",
+      "decision": "Guide decides →",
+      "decisionTitle": "The guide's decision",
       "intro": "A visit to the children's ER is like a journey through the safari. Ready to set off?"
     },
     "shop": {
@@ -509,15 +509,15 @@
         "done": "Всё измерено!"
       },
       "wait-doctor": {
-        "label": "Ждём вождя",
-        "hint": "Вождь занят — терпеливо ждём",
-        "story": "Вождь помогает всем путешественникам в сафари, поэтому иногда его приходится ждать. В приёмном покое тоже мы ждём врача. Ждать бывает долго, но про нас не забыли.",
-        "done": "Вождь пришёл!"
+        "label": "Ждём проводника",
+        "hint": "Проводник занят — терпеливо ждём",
+        "story": "Проводник помогает всем путешественникам в сафари, поэтому иногда его приходится ждать. В приёмном покое тоже мы ждём врача. Ждать бывает долго, но про нас не забыли.",
+        "done": "Проводник пришёл!"
       },
       "doctor": {
-        "label": "Встреча с вождём",
-        "hint": "Вождь решает, что делать",
-        "story": "Вождь слушает и осматривает, а потом решает, как продолжить путешествие. В приёмном покое тоже врач разговаривает с нами и осматривает тело, а в конце осмотра знает, что лучше сделать."
+        "label": "Встреча с проводником",
+        "hint": "Проводник решает, что делать",
+        "story": "Проводник слушает и осматривает, а потом решает, как продолжить путешествие. В приёмном покое тоже врач разговаривает с нами и осматривает тело, а в конце осмотра знает, что лучше сделать."
       },
       "decision": {
         "label": "Возвращаемся в лагерь!",
@@ -539,7 +539,7 @@
       "consult": {
         "label": "Эксперт из саванны",
         "hint": "Скоро придёт ещё один эксперт",
-        "story": "Иногда вождь зовёт эксперта, который хорошо знает одну часть саванны. В приёмном покое тоже иногда приходит ещё один врач, специалист, чтобы нас осмотреть. Это не значит, что что-то плохо, — просто хотят узнать больше.",
+        "story": "Иногда проводник зовёт эксперта, который хорошо знает одну часть саванны. В приёмном покое тоже иногда приходит ещё один врач, специалист, чтобы нас осмотреть. Это не значит, что что-то плохо, — просто хотят узнать больше.",
         "done": "Познакомились!"
       },
       "wait-results": {
@@ -553,14 +553,14 @@
       "temperature": "Проводник проверяет температуру тела — так же, как проверяют животных в сафари перед выходом в поле.",
       "saturation": "Маленький датчик кислорода проверяет, что кровь героя несёт достаточно воздуха на протяжении всего пути.",
       "blood-pressure": "Проводник измеряет силу сердца — чтобы убедиться, что герой готов к условиям поля.",
-      "doctor-exam": "Вождь осматривает путешественника и решает, какое лечение нужно, чтобы вернуться в поле.",
+      "doctor-exam": "Проводник осматривает путешественника и решает, какое лечение нужно, чтобы вернуться в поле.",
       "blood-test": "Полевой лаборатории нужен один маленький образец крови, чтобы понять, что происходит в теле.",
-      "urine": "Чашка с образцом покажет вождю, что происходит в теле героя.",
+      "urine": "Чашка с образцом покажет проводнику, что происходит в теле героя.",
       "xray": "Сканер сафари снимает внутреннее строение тела — всё видно, и ничего не чувствуешь.",
       "ultrasound": "Гель для проверки позволяет аппарату сканировать внутри тела и найти то, что нужно лечить.",
       "ct": "Сканирующее кольцо движется медленно и строит подробную карту всего внутри.",
       "iv": "Тонкая трубка доставляет целебную жидкость прямо в кровь — как возвращают силы животным в поле.",
-      "medication": "Вождь приготовил лекарство джунглей — сироп или смесь, которая вернёт силы.",
+      "medication": "Проводник приготовил лекарство джунглей — сироп или смесь, которая вернёт силы.",
       "inhalation": "Целебные пары поля проходят через маску и помогают дыханию идти свободно.",
       "stitches": "Травник аккуратно чинит рану — особый клей или нитка, которые её закроют.",
       "cast": "Гипсовая повязка обхватывает кость, как крепкое дерево поддерживает ствол, и держит её, пока она не заживёт.",
@@ -631,10 +631,10 @@
         "Потом манжету снимают — и всё, готово."
       ],
       "doctor-exam": [
-        "Встречаем вождя, который хочет нам помочь.",
-        "Вождь слушает тело трубочкой — немного прохладно, но не больно.",
-        "Может быть, вождь посмотрит горло и уши маленьким фонариком, как ночью в саванне.",
-        "В конце вождь будет знать, какое лечение нам нужно."
+        "Встречаем проводника, который хочет нам помочь.",
+        "Проводник слушает тело трубочкой — немного прохладно, но не больно.",
+        "Может быть, проводник посмотрит горло и уши маленьким фонариком, как ночью в саванне.",
+        "В конце проводник будет знать, какое лечение нам нужно."
       ],
       "blood-test": [
         "Проводник мажет на кожу крем, от которого она становится менее чувствительной.",
@@ -707,7 +707,7 @@
         "Мы закончили все проверки — молодцы!",
         "Теперь ждём ответов в лагере. Можно поиграть, отдохнуть или посмотреть мультик.",
         "Полевая лаборатория изучает наши образцы, а проводник и травник помнят про нас.",
-        "Когда будут ответы, вождь придёт и расскажет нам."
+        "Когда будут ответы, проводник придёт и расскажет нам."
       ]
     },
     "calmLines": [
@@ -716,8 +716,8 @@
       "Можно ещё медленно посчитать со мной до десяти. Один… два… три…"
     ],
     "ui": {
-      "decision": "Решение вождя →",
-      "decisionTitle": "Решение вождя",
+      "decision": "Решение проводника →",
+      "decisionTitle": "Решение проводника",
       "intro": "Поход в детский приёмный покой похож на путешествие по сафари. Готовы отправиться в путь?"
     },
     "shop": {
