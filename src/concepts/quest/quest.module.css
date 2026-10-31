@@ -3394,6 +3394,8 @@ path.worldTrailLit {
 .shopGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  /* every card the same size, whatever its picture or name */
+  grid-auto-rows: 1fr;
   gap: 12px;
 }
 
@@ -3416,12 +3418,19 @@ path.worldTrailLit {
 }
 
 .shopItemPic img {
-  width: 100%;
-  height: 100%;
+  /* the piece smaller than its square tile, with room around it */
+  position: absolute;
+  inset: 14%;
+  width: 72%;
+  height: 72%;
   object-fit: contain;
 }
 
 .shopItemName {
+  /* two lines kept for every name, so the price and the button line up */
+  min-height: 2.4em;
+  display: flex;
+  align-items: center;
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
@@ -3439,6 +3448,8 @@ path.worldTrailLit {
 
 .shopBuy {
   width: 100%;
+  /* at the bottom of every card */
+  margin-top: auto;
   min-height: 44px;
   border: 0;
   border-radius: 12px;
