@@ -2495,8 +2495,9 @@
 }
 
 .worldSheet.stageSheet .sheetHandle {
-  height: calc(24 * var(--u));
-  margin-bottom: calc(26 * var(--u));
+  height: calc(20 * var(--u));
+  /* a little room above the picture, not more */
+  margin-bottom: calc(12 * var(--u));
 }
 
 .worldSheet.stageSheet .stageSheetImg {
