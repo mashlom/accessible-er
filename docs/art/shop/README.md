@@ -77,8 +77,9 @@ body), and nothing fits on the doll without guessing. The tabs also come off too
 - **Things held in the hand** (flag, banner, wand, lantern, torch, camera, basket, map, bottle) stand at the doll's
   hand, in the size they would really have next to a child.
 - **Nothing is stretched to fill the canvas.** A small piece (a badge, a pair of gloves) stays small.
-- The app then prints the doll and its pieces on a landscape A4 sheet at **one and the same reduction**: the doll on
-  one half (A5), the pieces beside it.
+- The app then prints the doll and its pieces on a landscape A4 sheet at **one and the same reduction**: the doll
+  **18 cm tall**, so it fits on one half of the sheet (A5, 148 x 210 mm), the pieces beside it (they may use the free
+  part of the doll's half, never covering the doll); what does not fit goes on a second page at the same scale.
 - The dinosaurs have no doll: draw all eight on canvases of one size (2512 x 2512) at one scale, so they keep their
   sizes to each other (the brachiosaurus big, the pterodactyl small).
 
