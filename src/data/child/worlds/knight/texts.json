@@ -5,7 +5,7 @@
       "reception": {
         "label": "שער הטירה",
         "hint": "נרשמים בספר האבירים ומקבלים צמיד אביר",
-        "story": "כשמגיעים לשער הטירה, נרשמים בספר האבירים ומקבלים צמיד אביר, איתו אפשר להסתובב בכל הטירה. גם במיון, נרשמים בכניסה ומקבלים מספר שילווה אותנו בין התחנות.",
+        "story": "כשמגיעים לשער הטירה, נרשמים בספר האבירים ומקבלים צמיד אביר, איתו אפשר להסתובב בכל הטירה. גם בקבלה של המיון נקבל צמיד ומספר שילוו אותנו בין התחנות.",
         "done": "קיבלתי את צמיד האביר!"
       },
       "wait-before-triage": {
@@ -249,7 +249,7 @@
       "reception": {
         "label": "The Castle Gate",
         "hint": "We sign the knights' book and get a knight's bracelet",
-        "story": "When we arrive at the castle gate, we sign the knights' book and get a knight's bracelet, so we can walk around the whole castle. In the ER too, we sign in at the entrance and get a number that goes with us from station to station.",
+        "story": "When we arrive at the castle gate, we sign the knights' book and get a knight's bracelet, so we can walk around the whole castle. At the ER's registration desk we also get a bracelet and a number that go with us from station to station.",
         "done": "I got my knight's bracelet!"
       },
       "wait-before-triage": {
@@ -493,7 +493,7 @@
       "reception": {
         "label": "Ворота замка",
         "hint": "Записываемся в книгу рыцарей и получаем браслет рыцаря",
-        "story": "Когда приходим к воротам замка, мы записываемся в книгу рыцарей и получаем браслет рыцаря, с которым можно ходить по всему замку. В приёмном покое тоже мы регистрируемся у входа и получаем номер, который будет с нами на всех остановках.",
+        "story": "Когда приходим к воротам замка, мы записываемся в книгу рыцарей и получаем браслет рыцаря, с которым можно ходить по всему замку. В регистратуре приёмного отделения нам тоже дадут браслет и номер, который будет с нами на всех остановках.",
         "done": "Мы получили браслет рыцаря!"
       },
       "wait-before-triage": {
