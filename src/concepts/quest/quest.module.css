@@ -3585,3 +3585,14 @@ path.worldTrailLit {
   box-shadow: none;
   cursor: default;
 }
+
+/* the same on the other children's sheets: the choice of the second stage's stations and the last sheet keep their
+   main buttons at the bottom, in view (the parent's sheets are left as they are) */
+.worldSheet.pickSheet .pickBtn,
+.worldSheet.celebrateSheet .celebrateSheetActions {
+  position: sticky;
+  bottom: calc(8 * var(--u) + env(safe-area-inset-bottom, 0px));
+  z-index: 2;
+  box-shadow: 0 0 0 calc(10 * var(--u)) var(--tok-page), 0 -12px 14px -6px rgba(0, 0, 0, 0.12);
+}
+.worldSheet.celebrateSheet .celebrateSheetActions { background: var(--tok-page); }
