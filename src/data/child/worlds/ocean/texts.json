@@ -5,7 +5,7 @@
       "reception": {
         "label": "על הרציף",
         "hint": "נרשמים בבסיס ומקבלים צמיד צוללן",
-        "story": "לפני שיוצאים לצלילה, נרשמים בבסיס שעל הרציף ומקבלים צמיד צוללן, שמלווה אותנו לאורך כל ההרפתקה. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "story": "לפני שיוצאים לצלילה, נרשמים בבסיס שעל הרציף ומקבלים צמיד צוללן, שמלווה אותנו לאורך כל ההרפתקה. גם בקבלה של המיון נקבל צמיד ומספר שילוו אותנו בין התחנות.",
         "done": "קיבלתי את צמיד הצוללן!"
       },
       "wait-before-triage": {
@@ -249,7 +249,7 @@
       "reception": {
         "label": "On the Dock",
         "hint": "You sign the ship's log and get a diver's bracelet",
-        "story": "Before the dive, we sign in at the base on the dock and get a diver's bracelet that stays with us for the whole adventure. In the ER too, we get a number that goes with us from station to station.",
+        "story": "Before the dive, we sign in at the base on the dock and get a diver's bracelet that stays with us for the whole adventure. At the ER's registration desk we also get a bracelet and a number that go with us from station to station.",
         "done": "I got my diver's bracelet!"
       },
       "wait-before-triage": {
