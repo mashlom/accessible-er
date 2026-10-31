@@ -992,5 +992,7 @@ button.dest {
   object-position: center bottom;
 }
 
-/* the book (test mode only): under the worlds' card, as wide */
+/* the book (test mode only, its line only): under the worlds' card, as wide */
 .childCard.childCardBook { grid-column: 1 / -1; }
+.childCard.childCardBook { flex-direction: row; align-items: center; gap: 1rem; }
+.childCardBookText { flex: 1; display: flex; flex-direction: column; gap: 0.35rem; }
