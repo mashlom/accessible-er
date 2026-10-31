@@ -109,7 +109,7 @@ export function WorldPage() {
             <a href="#/book" className={`${styles.childCard} ${styles.childCardBook}`}>
               {/* the words at the start side, the book at the end side, as the worlds' card */}
               <span className={styles.childCardBookText}>
-                <span className={styles.childCardDesc}>{tx.read.desc}</span>
+                <span className={styles.childCardJourney}>{tx.read.desc}</span>
               </span>
               <span className={styles.childCardIcon} aria-hidden>📖</span>
             </a>
