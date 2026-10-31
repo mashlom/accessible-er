@@ -3366,3 +3366,10 @@ path.worldTrailLit {
 
 /* celebrate.webp is 4:3 (the stations' scenes are 728:680) */
 .celebrateSheet > .stageSheetPicPlain > .stageSheetImgScene { aspect-ratio: 4 / 3; }
+
+/* a world card on its map picture: only a small piece of it, from the middle, where the sky meets the land behind the
+   station (the picture's edges are its widest, most curved part) */
+.worldCardBackdropSky {
+  background-size: 280%;
+  background-position: center 17%;
+}
