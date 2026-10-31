@@ -3683,12 +3683,23 @@ path.worldTrailLit {
 
 /* the last sheet: the shop and the world choice side by side, in what scrolls */
 .celebrateSheetRow {
-  display: flex;
-  gap: calc(8 * var(--u));
+  /* two equal columns, as the bottom block's answers: every button on the sheet the same width */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--footer-space, calc(8 * var(--u)));
 }
-.celebrateSheetRow > a { flex: 1 1 0; display: flex; }
-.celebrateSheetRow > a > button,
-.celebrateSheetRow > button { flex: 1 1 0; width: 100%; margin: 0; }
+.celebrateSheetRow > a { display: flex; min-width: 0; }
+.worldSheet.celebrateSheet .celebrateSheetRow > a > button,
+.worldSheet.celebrateSheet .celebrateSheetRow > button {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  /* the same size as the sheets' main buttons */
+  min-height: 0;
+  height: max(calc(48 * var(--u)), 44px);
+  padding: 0 calc(12 * var(--u));
+  font-size: max(calc(16 * var(--u)), 15px);
+}
 
 /* its question sits in the bottom block, over the two answers */
 .worldSheet .sheetFooter .celebrateQuestion { margin: 0; font-size: max(calc(16 * var(--u)), 15px); }
