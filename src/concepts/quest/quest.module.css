@@ -3649,3 +3649,25 @@ path.worldTrailLit {
   margin: 0;
   padding-top: 0;
 }
+
+/* the shop page: its colouring-sheet and back buttons on the same tinted block as the children's sheets, at the
+   bottom of the screen, always in view; the same small room above, between and under them */
+.shopBody .celebrateSheetActions {
+  --footer-space: 8px;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-space);
+  margin: 0 -16px;
+  padding: var(--footer-space) 16px calc(var(--footer-space) + env(safe-area-inset-bottom, 0px));
+  background: color-mix(in srgb, var(--tok-action) 12%, var(--tok-page));
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -6px 14px -8px rgba(0, 0, 0, 0.18);
+}
+
+.shopBody .celebrateSheetActions > * { margin: 0; }
+
+/* the page itself ends at the block: no room of its own under it */
+.shopBody:has(.celebrateSheetActions) { padding-bottom: 0; }
