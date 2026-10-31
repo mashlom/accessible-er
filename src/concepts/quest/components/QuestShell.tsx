@@ -79,8 +79,9 @@ export function QuestShell() {
 
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flex: 1, justifyContent: 'flex-end', paddingInlineEnd: '0.5rem' }}>
           <LanguagePicker />
-          <a href="#/" className={`${css.questTopBtn} ${css.homeIcon}`} aria-label={t('ui.shell.home')}>
-            <span aria-hidden>🏠</span>
+          {/* children's screens: the word, not a picture (Rakheli's review, #37); the parents' pages keep the house */}
+          <a href="#/" className={`${css.questTopBtn} ${css.navWord}`}>
+            {t('ui.shell.home')}
           </a>
         </div>
       </header>}

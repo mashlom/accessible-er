@@ -251,8 +251,9 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
         </button>
         <div className={css.worldTopGroup}>
           <LanguagePicker variant="overlay" />
-          <a href="#/" className={`${css.worldTopBtn} ${css.homeIcon}`} aria-label={t('ui.shell.home')}>
-            <span aria-hidden>🏠</span>
+          {/* children's screens: the word, not a picture (Rakheli's review, #37); the parents' pages keep the house */}
+          <a href="#/" className={`${css.worldTopBtn} ${css.navWord}`}>
+            {t('ui.shell.home')}
           </a>
         </div>
       </div>
