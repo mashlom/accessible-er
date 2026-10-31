@@ -231,6 +231,16 @@
       "decision": "מה הדובי הרופא החליט ←",
       "decisionTitle": "מה הדובי הרופא החליט",
       "intro": "המסע במיון הילדים דומה לביקור בבית הבובות. מוכנים להיכנס?"
+    },
+    "shop": {
+      "hat-1": "כובע 1",
+      "hat-2": "כובע 2",
+      "hat-3": "כובע 3",
+      "dress-1": "שמלה 1",
+      "dress-2": "שמלה 2",
+      "dress-3": "שמלה 3",
+      "shoes-1": "נעליים 1",
+      "shoes-2": "נעליים 2"
     }
   },
   "en": {
@@ -465,6 +475,16 @@
       "decision": "Teddy doctor decides →",
       "decisionTitle": "What the teddy doctor decided",
       "intro": "A visit to the children's ER is like a visit to the dollhouse. Ready to go in?"
+    },
+    "shop": {
+      "hat-1": "Hat 1",
+      "hat-2": "Hat 2",
+      "hat-3": "Hat 3",
+      "dress-1": "Dress 1",
+      "dress-2": "Dress 2",
+      "dress-3": "Dress 3",
+      "shoes-1": "Shoes 1",
+      "shoes-2": "Shoes 2"
     }
   },
   "ru": {
@@ -699,6 +719,16 @@
       "decision": "Что решил мишка-доктор →",
       "decisionTitle": "Что решил мишка-доктор",
       "intro": "Поход в детский приёмный покой похож на визит в кукольный домик. Готовы войти?"
+    },
+    "shop": {
+      "hat-1": "Шляпка 1",
+      "hat-2": "Шляпка 2",
+      "hat-3": "Шляпка 3",
+      "dress-1": "Платье 1",
+      "dress-2": "Платье 2",
+      "dress-3": "Платье 3",
+      "shoes-1": "Обувь 1",
+      "shoes-2": "Обувь 2"
     }
   }
 }

@@ -24,7 +24,7 @@ export async function saveCardPdf(node: HTMLElement, fileName: string) {
  * the browser does not let the picture read a stylesheet from another site,
  * and without it the card would come out in a fallback font.
  */
-async function pageFontsCss(): Promise<string> {
+export async function pageFontsCss(): Promise<string> {
   const link = document.querySelector<HTMLLinkElement>('link[rel="stylesheet"][href*="fonts.googleapis.com"]')
   if (!link) return ''
   try {

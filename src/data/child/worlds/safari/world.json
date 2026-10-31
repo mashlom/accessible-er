@@ -464,5 +464,22 @@
       }
     },
     "extended": true
+  },
+  "shop": {
+    "doll": true,
+    "items": [
+      "hat",
+      "binoculars",
+      "vest",
+      "boots",
+      "backpack",
+      "camera",
+      "map",
+      "water-bottle"
+    ],
+    "place": {
+      "hat": "head",
+      "boots": "feet"
+    }
   }
 }

@@ -622,5 +622,23 @@
       }
     },
     "extended": true
+  },
+  "shop": {
+    "doll": true,
+    "items": [
+      "diving-mask",
+      "snorkel",
+      "wetsuit",
+      "flippers",
+      "air-tank",
+      "underwater-torch",
+      "net-bag"
+    ],
+    "place": {
+      "diving-mask": "head",
+      "snorkel": "head",
+      "diving-helmet": "head",
+      "flippers": "feet"
+    }
   }
 }

@@ -231,6 +231,16 @@
       "decision": "החלטת הקפטן ←",
       "decisionTitle": "החלטת הקפטן",
       "intro": "המסע במיון הילדים דומה להרפתקה תת-ימית. מוכנים לצלול?"
+    },
+    "shop": {
+      "diving-mask": "מסכת צלילה",
+      "snorkel": "שנורקל",
+      "wetsuit": "חליפת צלילה",
+      "flippers": "סנפירים",
+      "air-tank": "מיכל אוויר",
+      "underwater-torch": "פנס צלילה",
+      "net-bag": "שקית רשת לצדפים",
+      "diving-helmet": "קסדת צלילה"
     }
   },
   "en": {
@@ -465,6 +475,16 @@
       "decision": "Captain decides →",
       "decisionTitle": "Captain's decision",
       "intro": "A visit to the children's ER is like an underwater adventure. Ready to dive in?"
+    },
+    "shop": {
+      "diving-mask": "Diving mask",
+      "snorkel": "Snorkel",
+      "wetsuit": "Wetsuit",
+      "flippers": "Flippers",
+      "air-tank": "Air tank",
+      "underwater-torch": "Underwater torch",
+      "net-bag": "Net bag for shells",
+      "diving-helmet": "Diving helmet"
     }
   },
   "ru": {
@@ -699,6 +719,16 @@
       "decision": "Что решили →",
       "decisionTitle": "Решение капитана",
       "intro": "Поход в детский приёмный покой похож на подводное приключение. Готовы к погружению?"
+    },
+    "shop": {
+      "diving-mask": "Маска для ныряния",
+      "snorkel": "Трубка",
+      "wetsuit": "Гидрокостюм",
+      "flippers": "Ласты",
+      "air-tank": "Баллон с воздухом",
+      "underwater-torch": "Подводный фонарик",
+      "net-bag": "Сетка для ракушек",
+      "diving-helmet": "Водолазный шлем"
     }
   }
 }

@@ -1024,6 +1024,8 @@
   justify-content: flex-end;
 }
 
+.shopItemPrice .coinCounterItem { font-size: 1em; }
+
 .shopCoins .coinCounterItem {
   font-size: 2.2rem;
 }
@@ -3366,6 +3368,167 @@ path.worldTrailLit {
 
 /* celebrate.webp is 4:3 (the stations' scenes are 728:680) */
 .celebrateSheet > .stageSheetPicPlain > .stageSheetImgScene { aspect-ratio: 4 / 3; }
+
+/* ── The shop (issue #50): pick the paper-doll pieces for the colouring sheet ── */
+.shopPrice {
+  margin: 0;
+  text-align: center;
+  color: var(--tok-text2);
+}
+
+.shopFull {
+  min-height: 100dvh;
+  background: var(--w-page, #f5f5f5);
+}
+
+/* the shop's page: a column under the top row, the whole screen, scrolling */
+.shopBody {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 88px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.shopGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.shopItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px 12px;
+  border: 2px solid #d8dde0;
+  border-radius: 16px;
+  background: #fff;
+  color: var(--tok-text);
+}
+
+.shopItemPic {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.shopItemPic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.shopItemName {
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* the price tag */
+.shopItemPrice {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #fff4cf;
+  border: 1px solid #f0d27a;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.shopBuy {
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--tok-action);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.shopBuy:disabled { opacity: 0.35; cursor: default; }
+
+.shopBuyOn {
+  background: #fff;
+  color: var(--tok-action);
+  box-shadow: inset 0 0 0 2px var(--tok-action);
+}
+
+.shopItemOn {
+  border-color: var(--tok-action);
+  box-shadow: 0 0 0 3px var(--tok-action);
+}
+
+.shopTick {
+  position: absolute;
+  top: 4px;
+  inset-inline-end: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--tok-action);
+  color: #fff;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.shopNote {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--tok-text2);
+}
+
+/* the A4 sheet the PDF is made from: off the screen, 794 x 1123 px (A4 at 96 dpi) */
+.shopPaperHolder {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+}
+
+.shopPaper {
+  position: relative;
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+}
+
+.shopPaper img {
+  position: absolute;
+  display: block;
+}
+
+/* the world's name and the line, small, at the bottom of the first page */
+.shopPaperHead {
+  position: absolute;
+  left: 38px;
+  right: 38px;
+  bottom: 12px;
+  font-size: 13px;
+  text-align: center;
+}
+
+
+/* the shop's page is light: its top row in the text colour, not white over a picture */
+.shopFull .worldTopBtn {
+  color: var(--tok-text);
+  border-color: var(--tok-text2);
+  text-shadow: none;
+}
+
+/* landscape (the same switch as the maps): five pieces to a row */
+@media (min-aspect-ratio: 3/2), (min-width: 747px) and (min-aspect-ratio: 1/1) {
+  .shopBody { max-width: 1100px; }
+  .shopGrid { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* the world's reward on the map (a star, or the knight's coin, which is grey on its own): golden, as in the counter */
+.worldCoin {
+  filter: sepia(1) saturate(4) brightness(1.15) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
 
 /* a world card on its map picture: only a small piece of it, from the middle, where the sky meets the land behind the
    station (the picture's edges are its widest, most curved part) */

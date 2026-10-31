@@ -460,5 +460,22 @@
       }
     },
     "extended": true
+  },
+  "shop": {
+    "doll": true,
+    "items": [
+      "wings",
+      "wand",
+      "flower-crown",
+      "dress",
+      "shoes",
+      "flower-basket",
+      "bag-of-stars",
+      "lantern"
+    ],
+    "place": {
+      "flower-crown": "head",
+      "shoes": "feet"
+    }
   }
 }

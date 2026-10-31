@@ -465,5 +465,20 @@
       }
     },
     "extended": true
+  },
+  "shop": {
+    "doll": true,
+    "items": [
+      "helmet",
+      "suit",
+      "jet-pack",
+      "gloves",
+      "mission-badge",
+      "flag",
+      "robot"
+    ],
+    "place": {
+      "helmet": "head"
+    }
   }
 }

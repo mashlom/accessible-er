@@ -231,6 +231,16 @@
       "decision": "החלטת ראש השבט ←",
       "decisionTitle": "החלטת ראש השבט",
       "intro": "המסע במיון הילדים דומה למסע בספארי. מוכנים לצאת לדרך?"
+    },
+    "shop": {
+      "hat": "כובע ספארי",
+      "binoculars": "משקפת",
+      "vest": "אפוד",
+      "boots": "נעלי הליכה",
+      "backpack": "תרמיל",
+      "camera": "מצלמה",
+      "map": "מפה",
+      "water-bottle": "בקבוק מים"
     }
   },
   "en": {
@@ -465,6 +475,16 @@
       "decision": "Chief decides →",
       "decisionTitle": "The chief's decision",
       "intro": "A visit to the children's ER is like a journey through the safari. Ready to set off?"
+    },
+    "shop": {
+      "hat": "Safari hat",
+      "binoculars": "Binoculars",
+      "vest": "Vest",
+      "boots": "Walking boots",
+      "backpack": "Backpack",
+      "camera": "Camera",
+      "map": "Map",
+      "water-bottle": "Water bottle"
     }
   },
   "ru": {
@@ -699,6 +719,16 @@
       "decision": "Решение вождя →",
       "decisionTitle": "Решение вождя",
       "intro": "Поход в детский приёмный покой похож на путешествие по сафари. Готовы отправиться в путь?"
+    },
+    "shop": {
+      "hat": "Панама",
+      "binoculars": "Бинокль",
+      "vest": "Жилет",
+      "boots": "Ботинки",
+      "backpack": "Рюкзак",
+      "camera": "Фотоаппарат",
+      "map": "Карта",
+      "water-bottle": "Фляжка"
     }
   }
 }

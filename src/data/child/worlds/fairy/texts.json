@@ -231,6 +231,16 @@
       "decision": "החלטת פיית הריפוי ←",
       "decisionTitle": "החלטת פיית הריפוי",
       "intro": "המסע במיון הילדים דומה למסע בגן הקסמים. מוכנים להיכנס לגן?"
+    },
+    "shop": {
+      "wings": "כנפיים",
+      "wand": "שרביט קסמים",
+      "flower-crown": "זר פרחים",
+      "dress": "שמלה",
+      "shoes": "נעליים",
+      "flower-basket": "סל פרחים",
+      "bag-of-stars": "שקית כוכבים",
+      "lantern": "פנס קטן"
     }
   },
   "en": {
@@ -465,6 +475,16 @@
       "decision": "Fairy decides →",
       "decisionTitle": "The healing fairy's decision",
       "intro": "A visit to the children's ER is like a journey through the magic garden. Ready to step inside?"
+    },
+    "shop": {
+      "wings": "Wings",
+      "wand": "Magic wand",
+      "flower-crown": "Flower crown",
+      "dress": "Dress",
+      "shoes": "Shoes",
+      "flower-basket": "Flower basket",
+      "bag-of-stars": "Bag of stars",
+      "lantern": "Little lantern"
     }
   },
   "ru": {
@@ -699,6 +719,16 @@
       "decision": "Решение феи-целительницы →",
       "decisionTitle": "Решение феи-целительницы",
       "intro": "Поход в детский приёмный покой похож на путешествие по волшебному саду. Готовы войти в сад?"
+    },
+    "shop": {
+      "wings": "Крылья",
+      "wand": "Волшебная палочка",
+      "flower-crown": "Венок из цветов",
+      "dress": "Платье",
+      "shoes": "Туфельки",
+      "flower-basket": "Корзинка с цветами",
+      "bag-of-stars": "Мешочек со звёздами",
+      "lantern": "Фонарик"
     }
   }
 }

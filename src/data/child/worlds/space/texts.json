@@ -231,6 +231,16 @@
       "decision": "החלטת מפקד החללית ←",
       "decisionTitle": "החלטת מפקד החללית",
       "intro": "המסע במיון הילדים דומה למסע בחלל. מוכנים להמריא?"
+    },
+    "shop": {
+      "helmet": "קסדת חלל",
+      "suit": "חליפת חלל",
+      "boots": "מגפי חלל",
+      "jet-pack": "תרמיל סילון",
+      "gloves": "כפפות",
+      "mission-badge": "סמל המשימה",
+      "flag": "דגל",
+      "robot": "רובוט קטן"
     }
   },
   "en": {
@@ -465,6 +475,16 @@
       "decision": "Commander decides →",
       "decisionTitle": "The commander's decision",
       "intro": "A visit to the children's ER is like a journey into space. Ready for launch?"
+    },
+    "shop": {
+      "helmet": "Space helmet",
+      "suit": "Space suit",
+      "boots": "Space boots",
+      "jet-pack": "Jet pack",
+      "gloves": "Gloves",
+      "mission-badge": "Mission badge",
+      "flag": "Flag",
+      "robot": "Little robot friend"
     }
   },
   "ru": {
@@ -699,6 +719,16 @@
       "decision": "Решение командира →",
       "decisionTitle": "Решение командира",
       "intro": "Поход в детский приёмный покой похож на путешествие в космос. Готовы к взлёту?"
+    },
+    "shop": {
+      "helmet": "Шлем",
+      "suit": "Скафандр",
+      "boots": "Космические ботинки",
+      "jet-pack": "Реактивный ранец",
+      "gloves": "Перчатки",
+      "mission-badge": "Нашивка экспедиции",
+      "flag": "Флаг",
+      "robot": "Робот-друг"
     }
   }
 }

@@ -16,6 +16,8 @@ export interface WorldText {
   distractTitle?: string
   /** The world's own wording on the designed screens (the main buttons, the choice sheet's title, the map's headline,
    *  and intro: the sentence at the top of the first map that says the ER visit is like this world's journey) */
+  /** The shop's paper-doll pieces: each item's name (issue #50) */
+  shop?: Record<string, string>
   ui?: { done?: string; decision?: string; decisionTitle?: string; headline?: string; intro?: string }
 }
 

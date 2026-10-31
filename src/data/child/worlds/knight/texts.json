@@ -231,6 +231,16 @@
       "decision": "החלטת הקוסם ←",
       "decisionTitle": "החלטת הקוסם",
       "intro": "המסע במיון הילדים דומה למסע של אביר בטירה. מוכנים לצאת להרפתקה?"
+    },
+    "shop": {
+      "helmet": "קסדה",
+      "chain-mail": "שריון שרשראות",
+      "armour": "שריון",
+      "shield": "מגן",
+      "cape": "גלימה",
+      "boots": "מגפיים",
+      "banner": "דגל",
+      "toy-horse": "סוס על מקל"
     }
   },
   "en": {
@@ -465,6 +475,16 @@
       "decision": "Wizard decides →",
       "decisionTitle": "The wizard's decision",
       "intro": "A visit to the children's ER is like a knight's quest in the castle. Ready for the adventure?"
+    },
+    "shop": {
+      "helmet": "Helmet",
+      "chain-mail": "Chain mail",
+      "armour": "Armour",
+      "shield": "Shield",
+      "cape": "Cape",
+      "boots": "Boots",
+      "banner": "Banner",
+      "toy-horse": "Toy horse on a stick"
     }
   },
   "ru": {
@@ -699,6 +719,16 @@
       "decision": "Решение волшебника →",
       "decisionTitle": "Решение волшебника",
       "intro": "Поход в детский приёмный покой похож на поход рыцаря в замке. Готовы к приключению?"
+    },
+    "shop": {
+      "helmet": "Шлем",
+      "chain-mail": "Кольчуга",
+      "armour": "Латы",
+      "shield": "Щит",
+      "cape": "Плащ",
+      "boots": "Сапоги",
+      "banner": "Знамя",
+      "toy-horse": "Лошадка на палочке"
     }
   }
 }
