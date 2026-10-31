@@ -3801,7 +3801,7 @@ path.worldTrailLit {
   background: #fff;
 }
 .answerIcon svg { width: 20px; height: 20px; }
-.answerIconHome {
+.answerIconLine {
   fill: none;
   stroke: var(--tok-action);
   stroke-width: 2.2;
@@ -3815,3 +3815,14 @@ path.worldTrailLit {
   stroke-width: 2.2;
   stroke-linejoin: round;
 }
+
+/* buttons with a drawn icon: the icon and the words side by side, centred */
+.celebrateSheetRow button:has(> .answerIcon),
+.shopBody .worldBtn:has(> .answerIcon) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+/* on the grey (not yet usable) PDF button the icon is pale too */
+.worldBtn:disabled .answerIcon { opacity: 0.6; }

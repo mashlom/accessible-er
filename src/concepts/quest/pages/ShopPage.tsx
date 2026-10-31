@@ -8,6 +8,7 @@ import { pageFontsCss } from '../../../components/careCard/saveCardPdf'
 import { worldText, type WorldLang } from '../../../data/child/worlds'
 import { WorldTopRow } from '../components/WorldTopRow'
 import { useMoreBelowPage } from '../useMoreBelow'
+import { ButtonIcon, withoutEmoji } from '../components/ButtonIcon'
 import css from '../quest.module.css'
 
 /**
@@ -311,7 +312,7 @@ function WorldShop() {
               disabled={chosen.length === 0 || !ready || state === 'saving'}
               onClick={save}
             >
-              {state === 'saving' ? t('ui.cardView.pdfSaving') : t('ui.shop.print')}
+              {state === 'saving' ? t('ui.cardView.pdfSaving') : <><ButtonIcon kind="colouring" />{withoutEmoji(t('ui.shop.print'))}</>}
             </button>
             {state === 'saved' && <p className={css.shopNote} role="status">{t('ui.cardView.pdfSaved')}</p>}
             {state === 'failed' && <p className={css.shopNote} role="alert">{t('ui.cardView.pdfFailed')}</p>}
