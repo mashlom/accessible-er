@@ -3586,21 +3586,42 @@ path.worldTrailLit {
 .worldSheet.celebrateSheet .celebrateSheetActions,
 .worldSheet.pickSheet .pickBtn {
   position: sticky;
-  bottom: calc(-24 * var(--u) - env(safe-area-inset-bottom, 0px));
+  bottom: 0;
   z-index: 2;
+}
+
+/* one and the same room above the buttons, between them, and under them (plus the phone's own bottom edge) */
+.worldSheet {
+  --footer-space: calc(8 * var(--u));
 }
 
 .worldSheet .sheetFooter,
 .worldSheet.celebrateSheet .celebrateSheetActions {
   display: flex;
   flex-direction: column;
-  gap: calc(8 * var(--u));
-  margin: auto calc(-1 * var(--pad, 0px)) calc(-24 * var(--u) - env(safe-area-inset-bottom, 0px));
-  padding: calc(12 * var(--u)) var(--pad, 0px) calc(24 * var(--u) + env(safe-area-inset-bottom, 0px));
+  gap: var(--footer-space);
+  margin: auto calc(-1 * var(--pad, 0px)) 0;
+  padding: var(--footer-space) var(--pad, 0px) calc(var(--footer-space) + env(safe-area-inset-bottom, 0px));
   background: var(--footer-bg);
   border-radius: calc(20 * var(--u)) calc(20 * var(--u)) 0 0;
   box-shadow: 0 -6px 14px -8px rgba(0, 0, 0, 0.18);
 }
+
+/* the block reaches the sheet's bottom edge: no room of the sheet's own under it */
+.worldSheet.stageSheet:has(> .sheetFooter),
+.worldSheet.celebrateSheet {
+  padding-bottom: 0;
+}
+
+/* the buttons in a row keep the same room between them */
+.worldSheet .sheetFooter .stageSheetActions,
+.worldSheet.celebrateSheet .celebrateSheetActions {
+  gap: var(--footer-space);
+}
+
+/* the parent's button at the very bottom of the block, under the child's (in every language) */
+.worldSheet .sheetFooter .stageSheetActions { order: 1; }
+.worldSheet .sheetFooter .parentBtnOceanInline { order: 2; align-self: stretch; }
 
 /* inside the block, no extra room above the buttons or the parent's pill */
 .worldSheet .sheetFooter .stageSheetActions,
@@ -3619,5 +3640,12 @@ path.worldTrailLit {
 .worldSheet.worldSheet.worldSheet > :has(+ .sheetFooter),
 .worldSheet.worldSheet.worldSheet > :has(+ .celebrateSheetActions),
 .worldSheet.worldSheet.worldSheet > :has(+ .pickBtn) {
-  margin-bottom: calc(32 * var(--u));
+  margin-bottom: calc(16 * var(--u));
+}
+
+/* inside the bottom block only its own spacing counts: none of the buttons' own margins */
+.worldSheet.worldSheet.worldSheet .sheetFooter > *,
+.worldSheet.worldSheet.worldSheet .sheetFooter .parentBtnOceanInline {
+  margin: 0;
+  padding-top: 0;
 }
