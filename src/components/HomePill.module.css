@@ -36,3 +36,6 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* in the bar, the pill keeps its own width at its own side */
+.pill { justify-self: start; }
