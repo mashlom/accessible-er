@@ -7,6 +7,8 @@ import { useQuestTheme } from '../useQuestTheme'
 import { HomePill } from '../../../components/HomePill'
 import { LanguagePicker } from '../../../components/LanguagePicker'
 import { setI18nEnabled, useI18n } from '../../../hooks/useI18n'
+import childUi from '../../../data/child/ui.json'
+import { type WorldLang } from '../../../data/child/worlds'
 import css from '../quest.module.css'
 
 /**
@@ -26,6 +28,7 @@ export function QuestShell() {
   const { active, visibleOptionals } = useQuestProgress()
   const { theme } = useQuestTheme()
   const { lang, dir, t } = useI18n()
+  const selectUi = childUi[lang as WorldLang] ?? childUi.he
   // a designed world (world.json has a design): its own map header, sheets and colours
   const designed = !!theme.design && !isHome
 
@@ -88,6 +91,13 @@ export function QuestShell() {
           </a>
           </>}
         </div>
+        {/* the world choice: its question on the bar, under the buttons */}
+        {isHome && (
+          <div className={css.selectBarText}>
+            <h1 className={css.selectTitle}>{selectUi.worlds.title}</h1>
+            <p className={css.selectSub}>{selectUi.worlds.subtitle}</p>
+          </div>
+        )}
       </header>}
       <main id="main">
         <Outlet />
