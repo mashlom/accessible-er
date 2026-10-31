@@ -3529,6 +3529,7 @@ path.worldTrailLit {
 /* the world's reward on the map (a star, or the knight's coin, which is grey on its own): golden, as in the counter */
 .worldCoin {
   filter: sepia(1) saturate(4) brightness(1.15) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
 
 /* a world card on its map picture: only a small piece of it, from the middle, where the sky meets the land behind the
    station (the picture's edges are its widest, most curved part) */
