@@ -114,26 +114,29 @@ export function WorldProcedureDetailSheet({ id }: { id: string }) {
             </div>
           )}
 
-          <ParentInfo stageId={stageId} inline initialProc={id} />
+          {/* the bottom of the sheet, always in view, tinted: the child's buttons and the parent's, close together */}
+          <div className={css.sheetFooter}>
+            <ParentInfo stageId={stageId} inline initialProc={id} />
 
-          <div className={css.stageSheetActions}>
-            {stageActive && (
-              <button
-                type="button"
-                className={`${css.worldBtn} ${css.worldBtnDone}`}
-                onClick={() => {
-                  completeProcedure(id)
-                  back()
-                }}
-              >
-                {isDone ? (theme.doneEmoji ?? '✓') : buttons.done}
-              </button>
-            )}
-            {(!isDone || !stageActive) && (
-              <button type="button" className={`${css.worldBtn} ${css.worldBtnBack}`} onClick={back}>
-                {t('ui.buttons.backToStation')}
-              </button>
-            )}
+            <div className={css.stageSheetActions}>
+              {stageActive && (
+                <button
+                  type="button"
+                  className={`${css.worldBtn} ${css.worldBtnDone}`}
+                  onClick={() => {
+                    completeProcedure(id)
+                    back()
+                  }}
+                >
+                  {isDone ? (theme.doneEmoji ?? '✓') : buttons.done}
+                </button>
+              )}
+              {(!isDone || !stageActive) && (
+                <button type="button" className={`${css.worldBtn} ${css.worldBtnBack}`} onClick={back}>
+                  {t('ui.buttons.backToStation')}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
