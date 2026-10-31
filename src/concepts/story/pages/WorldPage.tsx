@@ -105,11 +105,11 @@ export function WorldPage() {
           </a>
           {/* "Reading in the ER" (the books, #/book) shows only in the test mode (?test=true); the books themselves stay */}
           {isTestMode() && (
-            <a href="#/book" className={styles.childCard}>
+            // under the worlds, the whole row: the book, its line and where it leads, no title and no arrow
+            <a href="#/book" className={`${styles.childCard} ${styles.childCardBook}`}>
               <span className={styles.childCardIcon} aria-hidden>📖</span>
-              <span className={styles.childCardName}>{tx.read.title}</span>
               <span className={styles.childCardDesc}>{tx.read.desc}</span>
-              <span className={styles.childCardAction}>{tx.read.action} {dir === 'rtl' ? '←' : '→'}</span>
+              <span className={styles.childCardAction}>{tx.read.action}</span>
             </a>
           )}
         </div>

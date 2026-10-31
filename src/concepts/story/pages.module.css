@@ -991,3 +991,6 @@ button.dest {
   object-fit: contain;
   object-position: center bottom;
 }
+
+/* the book (test mode only): under the worlds' card, as wide */
+.childCard.childCardBook { grid-column: 1 / -1; }
