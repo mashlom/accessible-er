@@ -16,6 +16,7 @@ import { PARENT_WORLD } from '../useQuestTheme'
 import { designVars, getTheme } from '../themes'
 import { WorldTopRow } from '../components/WorldTopRow'
 import { useMoreBelow } from '../useMoreBelow'
+import { ButtonIcon, withoutEmoji } from '../components/ButtonIcon'
 import css from '../quest.module.css'
 
 // the emoji of each block stay in code; the words come from src/data/i18n/ui.json
@@ -74,7 +75,8 @@ export function CelebratePage() {
       {withStore && (
         <Link to="/shop">
           <button className={css.doneBtn} style={{ background: theme.accent, color: theme.accentText }}>
-            {t('ui.buttons.toShop')}
+            <ButtonIcon kind="shop" />
+            {withoutEmoji(t('ui.buttons.toShop'))}
           </button>
         </Link>
       )}
@@ -267,9 +269,8 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
             <div className={css.stageSheetActions}>
               {choices.map((c) => (
                 <button key={c.label} type="button" className={`${css.worldBtn} ${css.worldBtnDone} ${css.answerBtn}`} onClick={c.pick}>
-                  <AnswerIcon kind={c.icon} />
-                  {/* the texts start with an emoji (kept for the other screens): the drawn icon stands for it here */}
-                  {c.label.replace(/^\p{Extended_Pictographic}\uFE0F?\s*/u, '')}
+                  <ButtonIcon kind={c.icon} />
+                  {withoutEmoji(c.label)}
                 </button>
               ))}
             </div>
@@ -317,20 +318,3 @@ function CelebrateParentSheet({ onClose, children }: { onClose: () => void; chil
   )
 }
 
-/** The answers' icons, drawn in a white circle so they show on the coloured button: Shevi's house, and the red star
- *  of Magen David Adom for staying in the hospital */
-function AnswerIcon({ kind }: { kind: 'home' | 'hospital' }) {
-  return (
-    <span className={css.answerIcon} aria-hidden>
-      {kind === 'home' ? (
-        <svg viewBox="0 0 24 24" className={css.answerIconHome}>
-          <path d="M4 11l8-7 8 7M6 10v9h4v-5h4v5h4v-9" />
-        </svg>
-      ) : (
-        <svg viewBox="0 0 24 24" className={css.answerIconStar}>
-          <path d="M12 2.5l8.2 14.2H3.8z M12 21.5L3.8 7.3h16.4z" />
-        </svg>
-      )}
-    </span>
-  )
-}
