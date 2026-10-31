@@ -3753,7 +3753,7 @@ path.worldTrailLit {
 }
 
 /* its question sits in the bottom block, over the two answers */
-.worldSheet .sheetFooter .celebrateQuestion { margin: 0; font-size: max(calc(16 * var(--u)), 15px); }
+.worldSheet .sheetFooter .celebrateQuestion { margin: 0; font-size: max(calc(16 * var(--u)), 15px); text-align: center; }
 
 /* the last sheet keeps the stations' rhythm: the same room under the picture, under the stars and under their line
    as between a station's picture and its title; the stars' line in the stations' text type */
