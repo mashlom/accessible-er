@@ -45,8 +45,8 @@ Use this at the start of every prompt, then add the piece from the table:
 | Dinosaurs | — (no doll) | Each with a fold-back stand: T. rex, triceratops, stegosaurus, brachiosaurus, ankylosaurus, parasaurolophus, pterodactyl, velociraptor (with feathers). The T. rex and the velociraptor friendly and smiling: no bared teeth, no claws |
 | Knight | A child knight | Helmet, chain mail, armour, shield, cape, boots, banner, toy horse on a stick |
 | Fairy | A child fairy | Wings, wand, flower crown, dress, shoes, flower basket, bag of stars, little lantern |
-| Safari | A child explorer | Safari hat, binoculars, vest, boots, backpack, camera, map, water bottle |
-| Space | A child astronaut | Space helmet, space suit, boots, jet pack, gloves, mission badge, flag, small robot friend |
+| Safari | A child explorer | Safari hat, binoculars, vest, **trousers**, boots, backpack, camera, map, water bottle |
+| Space | A child astronaut | Space helmet (**open at the front**, the doll's face seen through it), space suit (its legs **fit the doll's legs**, with the suit's own boots, so no separate boots), jet pack, gloves, flag, small robot friend (two more to choose instead of the boots and the mission badge) |
 
 ## The A4 sheet
 
@@ -80,8 +80,10 @@ with the changes below, and redraw the dolls too (section 5).
 - The app then prints the doll and its pieces on a landscape A4 sheet at **one and the same reduction**: the doll
   **18 cm tall**, so it fits on one half of the sheet (A5, 148 x 210 mm), the pieces beside it (they may use the free
   part of the doll's half, never covering the doll); what does not fit goes on a second page at the same scale.
-- The dinosaurs have no doll: draw all eight on canvases of one size (2512 x 2512) at one scale, so they keep their
-  sizes to each other (the brachiosaurus big, the pterodactyl small).
+- The dinosaurs have no doll and are **not** at one scale (the brachiosaurus would fill the sheet): each one is drawn
+  to fill its own canvas, as now, and printed at a size that suits it.
+- The safari explorer's doll is the same as the diver's (bare feet / socks, so the boots go on it); the explorer gets
+  trousers as a piece.
 
 ### 2. Tabs fold along the edge of the picture, no fold lines
 
