@@ -3613,3 +3613,10 @@ path.worldTrailLit {
   bottom: calc(8 * var(--u) + env(safe-area-inset-bottom, 0px));
   box-shadow: 0 0 0 calc(12 * var(--u)) var(--footer-bg), 0 -14px 16px -6px rgba(0, 0, 0, 0.14);
 }
+
+/* room between the end of what scrolls and the bottom block, so the last line does not touch it */
+.worldSheet > :has(+ .sheetFooter),
+.worldSheet > :has(+ .celebrateSheetActions),
+.worldSheet > :has(+ .pickBtn) {
+  margin-bottom: calc(24 * var(--u));
+}
