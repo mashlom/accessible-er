@@ -34,7 +34,11 @@ type Placed = { id: string; x: number; y: number; w: number; h: number }
  * edge, the pieces go in rows on the free part of the page (the doll's half too, but never over the doll); what does
  * not fit goes on a next page, at the same scale.
  */
-function layOut(doll: Size | null, pieces: { id: string; size: Size }[], rtl: boolean): Placed[][] {
+function layOut(
+  doll: Size | null,
+  pieces: { id: string; size: Size; place?: 'head' | 'feet' }[],
+  rtl: boolean,
+): Placed[][] {
   const k = DOLL_H / (doll?.h ?? NO_DOLL_H)
   const pages: Placed[][] = [[]]
   let left = MARGIN
@@ -43,18 +47,29 @@ function layOut(doll: Size | null, pieces: { id: string; size: Size }[], rtl: bo
     pages[0].push({ id: 'doll', x: MARGIN, y: Math.round((PAGE_H - DOLL_H) / 2), w, h: DOLL_H })
     left = MARGIN + w + GAP
   }
-  // rows, from the tallest piece down; a new page when the next one does not fit
-  let x = left, y = MARGIN, rowH = 0, page = 0
-  const sorted = [...pieces].sort((a, b) => b.size.h - a.size.h)
-  for (const { id, size } of sorted) {
+  // as on the doll: what is worn on the head first (at the top), then the rest, then what is worn on the feet,
+  // each group from its tallest piece down, in rows; a new row for each group, a new page when one does not fit
+  const order = { head: 0, undefined: 1, feet: 2 } as const
+  const sorted = [...pieces].sort((a, b) => order[`${a.place}` as keyof typeof order] - order[`${b.place}` as keyof typeof order] || b.size.h - a.size.h)
+  const feet = new Set(pieces.filter((p) => p.place === 'feet').map((p) => p.id))
+  let x = left, y = MARGIN, rowH = 0, page = 0, group: string | undefined
+  for (const { id, size, place } of sorted) {
     const w = Math.round(size.w * k), h = Math.round(size.h * k)
-    if (x + w > PAGE_W - MARGIN && x > left) { x = left; y += rowH + GAP; rowH = 0 }
+    if (x > left && (x + w > PAGE_W - MARGIN || place !== group)) { x = left; y += rowH + GAP; rowH = 0 }
+    group = place
     if (y + h > PAGE_H - MARGIN && y > MARGIN) {
       page += 1; pages.push([]); left = MARGIN; x = left; y = MARGIN; rowH = 0
     }
     pages[page].push({ id, x, y, w, h })
     x += w + GAP
     rowH = Math.max(rowH, h)
+  }
+  // what is worn on the feet stands on the bottom of the page, as the feet do
+  for (const p of pages) {
+    const f = p.filter((it) => feet.has(it.id))
+    if (!f.length) continue
+    const drop = PAGE_H - MARGIN - Math.max(...f.map((it) => it.y + it.h))
+    if (drop > 0) for (const it of f) it.y += drop
   }
   // Hebrew reads from the right: the doll stands at the right edge
   return rtl ? pages.map((p) => p.map((it) => ({ ...it, x: PAGE_W - it.x - it.w }))) : pages
@@ -121,7 +136,7 @@ function WorldShop() {
   }, [chosen])
   const ready = (!shop.doll || sizes.doll) && chosen.every((id) => sizes[id])
   const pages = ready
-    ? layOut(shop.doll ? sizes.doll : null, chosen.map((id) => ({ id, size: sizes[id] })), lang === 'he')
+    ? layOut(shop.doll ? sizes.doll : null, chosen.map((id) => ({ id, size: sizes[id], place: shop.place?.[id] })), lang === 'he')
     : []
 
   const toggle = (id: string) =>

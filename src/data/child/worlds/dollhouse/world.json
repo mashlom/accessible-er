@@ -472,6 +472,13 @@
       "dress-3",
       "shoes-1",
       "shoes-2"
-    ]
+    ],
+    "place": {
+      "hat-1": "head",
+      "hat-2": "head",
+      "hat-3": "head",
+      "shoes-1": "feet",
+      "shoes-2": "feet"
+    }
   }
 }

@@ -472,6 +472,10 @@
       "boots",
       "banner",
       "toy-horse"
-    ]
+    ],
+    "place": {
+      "helmet": "head",
+      "boots": "feet"
+    }
   }
 }

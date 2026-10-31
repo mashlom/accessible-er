@@ -472,6 +472,10 @@
       "camera",
       "map",
       "water-bottle"
-    ]
+    ],
+    "place": {
+      "hat": "head",
+      "boots": "feet"
+    }
   }
 }

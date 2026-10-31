@@ -473,6 +473,10 @@
       "mission-badge",
       "flag",
       "robot"
-    ]
+    ],
+    "place": {
+      "helmet": "head",
+      "boots": "feet"
+    }
   }
 }

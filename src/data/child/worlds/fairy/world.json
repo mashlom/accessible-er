@@ -472,6 +472,10 @@
       "flower-basket",
       "bag-of-stars",
       "lantern"
-    ]
+    ],
+    "place": {
+      "flower-crown": "head",
+      "shoes": "feet"
+    }
   }
 }

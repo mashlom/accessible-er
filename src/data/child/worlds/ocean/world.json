@@ -633,6 +633,12 @@
       "air-tank",
       "underwater-torch",
       "net-bag"
-    ]
+    ],
+    "place": {
+      "diving-mask": "head",
+      "snorkel": "head",
+      "diving-helmet": "head",
+      "flippers": "feet"
+    }
   }
 }
