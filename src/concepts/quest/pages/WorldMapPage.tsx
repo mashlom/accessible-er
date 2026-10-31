@@ -475,18 +475,20 @@ export function WorldMapPage({ underSheet }: { underSheet?: boolean } = {}) {
   const dayStages = stages.filter((st) => (REQUIRED_STAGES as readonly string[]).includes(st.id))
   const doneStages = dayStages.filter((st) => st.status === 'done').length
 
-  // A station that isn't reached yet can still be looked at (its sheet has no "done" button)
+  // the day map opens its stations one by one, in their order: a station not reached yet does not open (only the
+  // second map has them all open at once)
   const items: ViewItem[] = REQUIRED_STAGES.map((id) => {
     const skin = theme.stages[id]
     const data = journey.find((j) => j.id === id)
     const to = id === 'wait-before-triage' ? '/wait-times' : `/stage/${id}`
+    const status = visible.find((s) => s.id === id)?.status ?? 'locked'
     return {
       id,
       label: skin?.label ?? data?.title ?? id,
-      status: visible.find((s) => s.id === id)?.status ?? 'locked',
+      status,
       image: stationPicture(design, id),
       stars: starsFor(data?.procedureIds, id, doneProcedures),
-      onOpen: () => navigate(conceptPath(to)),
+      onOpen: status === 'locked' ? undefined : () => navigate(conceptPath(to)),
     }
   })
 
