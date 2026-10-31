@@ -34,11 +34,79 @@ type Placed = { id: string; x: number; y: number; w: number; h: number }
 const CELL = 4
 
 /** Which cells of a picture are drawn, at its size on the page, made a little wider so pieces keep a gap */
-async function maskOf(src: string, w: number, h: number): Promise<{ cw: number; ch: number; on: Uint8Array }> {
+type Mask = { cw: number; ch: number; on: Uint8Array }
+
+/**
+ * Moves the pieces apart, a little at a time, as long as that makes the narrowest gap on the page (between two
+ * pieces, a piece and the doll, or a piece and the page's edge) wider and no drawing touches another: the empty room
+ * ends up shared out evenly instead of in one corner. The doll does not move.
+ */
+function spreadOut(page: Placed[], masks: Record<string, Mask>, hasDoll: boolean) {
+  const gw = Math.floor(PAGE_W / CELL), gh = Math.floor(PAGE_H / CELL)
+  const gap = (a: Placed, b: Placed) =>
+    Math.max(b.x - (a.x + a.w), a.x - (b.x + b.w), b.y - (a.y + a.h), a.y - (b.y + b.h))
+  const room = (it: Placed) =>
+    Math.min(
+      it.x - MARGIN, PAGE_W - MARGIN - (it.x + it.w), it.y - MARGIN, PAGE_H - MARGIN - (it.y + it.h),
+      ...page.filter((o) => o !== it).map((o) => gap(it, o)),
+    )
+  // the drawings of every other piece, as cells (made once for each piece in each round)
+  const others = (it: Placed) => {
+    const grid = new Uint8Array(gw * gh)
+    for (const o of page) {
+      if (o === it) continue
+      const m = masks[o.id], ox = Math.round(o.x / CELL), oy = Math.round(o.y / CELL)
+      for (let y = 0; y < m.ch; y++) {
+        const row = (oy + y) * gw + ox
+        for (let x = 0; x < m.cw; x++) if (m.on[y * m.cw + x]) grid[row + x] = 1
+      }
+    }
+    return grid
+  }
+  const clear = (it: Placed, grid: Uint8Array) => {
+    const m = masks[it.id], ix = Math.round(it.x / CELL), iy = Math.round(it.y / CELL)
+    if (ix < 0 || iy < 0 || ix + m.cw > gw || iy + m.ch > gh) return false
+    for (let y = 0; y < m.ch; y++) {
+      const row = (iy + y) * gw + ix
+      for (let x = 0; x < m.cw; x++) if (m.on[y * m.cw + x] && grid[row + x]) return false
+    }
+    return true
+  }
+  const inside = (it: Placed) =>
+    it.x >= MARGIN && it.y >= MARGIN && it.x + it.w <= PAGE_W - MARGIN && it.y + it.h <= PAGE_H - MARGIN
+  const step = CELL * 4
+  const moves = [[step, 0], [-step, 0], [0, step], [0, -step], [step, step], [-step, step], [step, -step], [-step, -step]]
+  for (let round = 0; round < 60; round++) {
+    let moved = false
+    for (const it of page) {
+      if (hasDoll && it.id === 'doll') continue
+      let best = room(it)
+      let bestPos: [number, number] | null = null
+      const grid = others(it)
+      const [x0, y0] = [it.x, it.y]
+      for (const [dx, dy] of moves) {
+        it.x = x0 + dx; it.y = y0 + dy
+        if (inside(it)) {
+          const r = room(it)
+          if (r > best + 0.5 && clear(it, grid)) { best = r; bestPos = [it.x, it.y] }
+        }
+      }
+      it.x = x0; it.y = y0
+      if (bestPos) { [it.x, it.y] = bestPos; moved = true }
+    }
+    if (!moved) break
+  }
+}
+
+async function maskOf(src: string, w: number, h: number): Promise<Mask> {
   const cw = Math.ceil(w / CELL), ch = Math.ceil(h / CELL)
+  // waiting for the load, not decode(): a page in a background tab never finishes decode()
   const img = new Image()
-  img.src = src
-  await img.decode()
+  await new Promise<void>((resolve, reject) => {
+    img.onload = () => resolve()
+    img.onerror = () => reject(new Error(`cannot load ${src}`))
+    img.src = src
+  })
   const c = document.createElement('canvas')
   c.width = cw
   c.height = ch
@@ -94,6 +162,8 @@ async function layOut(
     stamp(0, await maskOf(src('doll'), w, DOLL_H), m, Math.round(y / CELL))
   }
   const sorted = [...pieces].sort((a, b) => b.size.w * b.size.h - a.size.w * a.size.h)
+  const masks: Record<string, Mask> = {}
+  if (doll) masks.doll = await maskOf(src('doll'), pages[0][0].w, pages[0][0].h)
   for (const p of sorted) {
     const w = Math.round(p.size.w * k), h = Math.round(p.size.h * k)
     const mask = await maskOf(src(p.id), w, h)
@@ -109,7 +179,10 @@ async function layOut(
     if (!spot) spot = { pi: newPage(), cx: m, cy: m }
     stamp(spot.pi, mask, spot.cx, spot.cy)
     pages[spot.pi].push({ id: p.id, x: spot.cx * CELL, y: spot.cy * CELL, w, h })
+    masks[p.id] = mask
   }
+  // once everything has a place: the pieces spread out over the page, so the empty room is shared between them
+  for (const [pi, page] of pages.entries()) spreadOut(page, masks, pi === 0 && !!doll)
   // Hebrew reads from the right: the doll stands at the right edge
   return rtl ? pages.map((pg) => pg.map((it) => ({ ...it, x: PAGE_W - it.x - it.w }))) : pages
 }
