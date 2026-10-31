@@ -158,15 +158,15 @@ export function WorldNightMapPage({ underSheet }: { underSheet?: boolean } = {})
   const conceptPath = useConceptPath()
 
   const journey = parentJourney(lang)
-  const firstOpen = visibleOptionals.findIndex((s) => s.status !== 'done')
 
-  const items: ViewItem[] = visibleOptionals.map((s, i) => {
+  const items: ViewItem[] = visibleOptionals.map((s) => {
     const skin = theme.stages[s.id]
     const data = journey.find((j) => j.id === s.id)
     return {
       id: s.id,
       label: skin?.label ?? data?.title ?? s.id,
-      status: s.status === 'done' ? 'done' : i === firstOpen ? 'active' : 'locked',
+      // no order on the second stage (the team decides it): every station not finished yet is open, and stands out
+      status: s.status === 'done' ? 'done' : 'active',
       image: stationPicture(design, s.id),
       // stars only on a finished station (stars left from an earlier choice don't count)
       stars: s.status === 'done' ? starsFor(data?.procedureIds, s.id, doneProcedures) : 0,
@@ -194,17 +194,18 @@ export function WorldNightMapPage({ underSheet }: { underSheet?: boolean } = {})
   const images = items.map((it) => it.image)
   const done = visibleOptionals.filter((s) => s.status === 'done').length
 
+  // no numbers and no trail between the stations: they can be done in any order
+  const portrait = { ...portraitScene(design, images, screenH), dots: undefined, lines: undefined }
+  const landscape = { ...landscapeScene(design, images), dots: undefined, lines: undefined }
   return (
     <WorldMapView
-      portrait={portraitScene(design, images, screenH)}
-      landscape={landscapeScene(design, images)}
+      portrait={portrait}
+      landscape={landscape}
       items={items}
       underSheet={underSheet}
       progress={{ done, total: visibleOptionals.length }}
-      numbers
       noTitle
       starsTotal={starsTotal}
-      firstNumber={6} // the numbers go on from the first stage's five stations
     />
   )
 }
