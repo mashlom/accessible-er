@@ -1017,3 +1017,7 @@ button.dest {
   grid-column: 2;
   grid-row: 1;
 }
+
+/* the subtitle and the child's world close together */
+.homeHead + .homeSection { margin-top: 0; }
+.homeHead { padding-bottom: 0; }
