@@ -3548,6 +3548,17 @@ path.worldTrailLit {
   background-position: center 17%;
 }
 
+/* the station's own buttons ("I did it", back to the map) stay at the bottom of the sheet, in view, however much is
+   above them (a picture, a story, procedure buttons): what is above scrolls under them */
+.worldSheet.stageSheet .stageSheetActions {
+  position: sticky;
+  bottom: calc(-24 * var(--u) - env(safe-area-inset-bottom, 0px));
+  z-index: 2;
+  margin-inline: calc(-1 * var(--pad, 0px));
+  padding: calc(12 * var(--u)) var(--pad, 0px) calc(24 * var(--u) + env(safe-area-inset-bottom, 0px));
+  background: var(--tok-page);
+  box-shadow: 0 -10px 12px -8px rgba(0, 0, 0, 0.12);
+}
 
 /* the shop page's buttons look as the sheets' do: its unit is a plain pixel, the colours are the world's */
 .shopBody { --u: 1px; }
