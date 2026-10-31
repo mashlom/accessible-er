@@ -10,14 +10,14 @@
       },
       "wait-before-triage": {
         "label": "הספסל במסדרון",
-        "hint": "יושבים על הספסל עד שהארנבון קורא",
-        "story": "לפני שנכנסים לחדרים, יושבים על הספסל במסדרון עד שהארנבון קורא לנו. גם במיון, מחכים בחדר ההמתנה עד שהאחות קוראת לנו. לפעמים יש שם הרבה אנשים ורעש.",
+        "hint": "יושבים על הספסל עד שהחייל קורא",
+        "story": "לפני שנכנסים לחדרים, יושבים על הספסל במסדרון עד שהחייל קורא לנו. גם במיון, מחכים בחדר ההמתנה עד שהאחות קוראת לנו. לפעמים יש שם הרבה אנשים ורעש.",
         "done": "ישבתי על הספסל במסדרון!"
       },
       "triage": {
         "label": "חדר המדידות",
-        "hint": "הארנבון עוזר למדוד ולבדוק",
-        "story": "בחדר המדידות הארנבון מודד ובודק שהבובות מוכנות לשחק. גם במיון, האחות בודקת איך אנחנו מרגישים: מודדת חום, שמה אטב קטן על האצבע ושרוול רך על הזרוע.",
+        "hint": "החייל עוזר למדוד ולבדוק",
+        "story": "בחדר המדידות החייל מודד ובודק שהבובות מוכנות לשחק. גם במיון, האחות בודקת איך אנחנו מרגישים: מודדת חום, שמה אטב קטן על האצבע ושרוול רך על הזרוע.",
         "done": "סיימתי בחדר המדידות!"
       },
       "wait-doctor": {
@@ -63,7 +63,7 @@
     },
     "distractTitle": "חדר המשחקים 🎪",
     "procedureNarratives": {
-      "temperature": "הארנבון בודק לבובה חום במהירות — כדי לוודא שהיא חמה ומוכנה לשחק.",
+      "temperature": "החייל בודק לבובה חום במהירות — כדי לוודא שהיא חמה ומוכנה לשחק.",
       "saturation": "קליפס קטן על האצבע של הבובה מראה כמה אוויר נכנס לריאות הקטנות שלה.",
       "blood-pressure": "הרצועה מחבקת בעדינות את היד של הבובה, מתהדקת ואז משתחררת — כמו חיבוק גדול.",
       "doctor-exam": "הדובי הרופא מקשיב לחזה של הבובה ומסתכל באוזניים, כדי לבדוק הכול בבית.",
@@ -85,19 +85,19 @@
         {
           "label": "בפה",
           "steps": [
-            "הארנבון נותן לנו מדחום קטן — שמים אותו בפה.",
+            "החייל נותן לנו מדחום קטן — שמים אותו בפה.",
             "סוגרים את הפה חזק־חזק, כאילו יש בפנים סוכרייה מהמזנון של הבובות.",
             "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הצעצועים על המדף.",
-            "שומעים ביפ קטן — הארנבון מסתכל על המדחום, וסיימנו."
+            "שומעים ביפ קטן — החייל מסתכל על המדחום, וסיימנו."
           ]
         },
         {
           "label": "מתחת לבית השחי",
           "steps": [
-            "הארנבון שם מדחום קטן מתחת לבית השחי.",
+            "החייל שם מדחום קטן מתחת לבית השחי.",
             "מצמידים את הזרוע לגוף, כאילו מחבקים צעצוע אהוב.",
             "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הצעצועים על המדף.",
-            "שומעים ביפ קטן — הארנבון מסתכל על המדחום, וסיימנו."
+            "שומעים ביפ קטן — החייל מסתכל על המדחום, וסיימנו."
           ]
         }
       ],
@@ -125,21 +125,21 @@
     },
     "procedureSteps": {
       "temperature": [
-        "הארנבון נותן לנו מדחום קטן — שמים אותו בפה.",
+        "החייל נותן לנו מדחום קטן — שמים אותו בפה.",
         "סוגרים את הפה חזק־חזק, כאילו יש בפנים סוכרייה מהמזנון של הבובות.",
         "מחכים בשקט עד שהמדחום מסיים — אפשר לספור את הצעצועים על המדף.",
-        "שומעים ביפ קטן — הארנבון מסתכל על המדחום, וסיימנו."
+        "שומעים ביפ קטן — החייל מסתכל על המדחום, וסיימנו."
       ],
       "saturation": [
-        "הארנבון שם אטב קטן ורך על האצבע.",
+        "החייל שם אטב קטן ורך על האצבע.",
         "נדלק בו אור אדום — כמו מנורת לילה בחדר השינה של הבובות.",
         "הוא רק מסתכל — לא עושה כלום.",
-        "אחרי רגע הארנבון מוריד אותו."
+        "אחרי רגע החייל מוריד אותו."
       ],
       "blood-pressure": [
-        "הארנבון שם שרוול רך על הזרוע.",
+        "החייל שם שרוול רך על הזרוע.",
         "הוא מתנפח ומחבק את הזרוע, כמו דובי.",
-        "סופרים יחד עם הארנבון, והשרוול משחרר לבד.",
+        "סופרים יחד עם החייל, והשרוול משחרר לבד.",
         "אחר כך מורידים את השרוול — וזהו, סיימנו."
       ],
       "doctor-exam": [
@@ -254,14 +254,14 @@
       },
       "wait-before-triage": {
         "label": "The Corridor Bench",
-        "hint": "We sit on the bench until the bunny calls",
-        "story": "Before we go into the rooms, we sit on the bench in the corridor until the bunny calls us. In the ER too, we wait in the waiting room until the nurse calls us. Sometimes it is busy and noisy there.",
+        "hint": "We sit on the bench until the toy soldier calls",
+        "story": "Before we go into the rooms, we sit on the bench in the corridor until the toy soldier calls us. In the ER too, we wait in the waiting room until the nurse calls us. Sometimes it is busy and noisy there.",
         "done": "I sat on the corridor bench!"
       },
       "triage": {
         "label": "Measuring Room",
-        "hint": "The bunny helps to measure and check",
-        "story": "In the measuring room the bunny measures and checks that the dolls are ready to play. In the ER too, the nurse checks how we feel: takes our temperature, puts a little clip on a finger and a soft cuff on the arm.",
+        "hint": "The toy soldier helps to measure and check",
+        "story": "In the measuring room the toy soldier measures and checks that the dolls are ready to play. In the ER too, the nurse checks how we feel: takes our temperature, puts a little clip on a finger and a soft cuff on the arm.",
         "done": "I finished in the measuring room!"
       },
       "wait-doctor": {
@@ -307,7 +307,7 @@
     },
     "distractTitle": "The Playroom 🎪",
     "procedureNarratives": {
-      "temperature": "The bunny quickly checks the doll with a thermometer — to make sure it is warm and ready to play.",
+      "temperature": "The toy soldier quickly checks the doll with a thermometer — to make sure it is warm and ready to play.",
       "saturation": "A tiny clip on the doll’s finger shows how much air gets into its little lungs.",
       "blood-pressure": "The cuff gently hugs the doll’s arm, tightens, and lets go — like a big hug.",
       "doctor-exam": "The teddy-bear doctor listens to the doll’s chest and looks in its ears to check everything in the house.",
@@ -329,19 +329,19 @@
         {
           "label": "In the mouth",
           "steps": [
-            "The bunny gives us a little thermometer — we put it in the mouth.",
+            "The toy soldier gives us a little thermometer — we put it in the mouth.",
             "We close the mouth tight-tight, as if there's a sweet from the doll's cupboard inside.",
             "We wait quietly until the thermometer is done — we can count the toys on the shelf.",
-            "We hear a little beep — the bunny looks at the thermometer, and we're done."
+            "We hear a little beep — the toy soldier looks at the thermometer, and we're done."
           ]
         },
         {
           "label": "Under the armpit",
           "steps": [
-            "The bunny puts a little thermometer under the arm.",
+            "The toy soldier puts a little thermometer under the arm.",
             "We press the arm to the body, as if hugging a favourite toy.",
             "We wait quietly until the thermometer is done — we can count the toys on the shelf.",
-            "We hear a little beep — the bunny looks at the thermometer, and we're done."
+            "We hear a little beep — the toy soldier looks at the thermometer, and we're done."
           ]
         }
       ],
@@ -369,21 +369,21 @@
     },
     "procedureSteps": {
       "temperature": [
-        "The bunny gives us a little thermometer — we put it in the mouth.",
+        "The toy soldier gives us a little thermometer — we put it in the mouth.",
         "We close the mouth tight-tight, as if there's a sweet from the doll's cupboard inside.",
         "We wait quietly until the thermometer is done — we can count the toys on the shelf.",
-        "We hear a little beep — the bunny looks at the thermometer, and we're done."
+        "We hear a little beep — the toy soldier looks at the thermometer, and we're done."
       ],
       "saturation": [
-        "The bunny puts a small, soft clip on the finger.",
+        "The toy soldier puts a small, soft clip on the finger.",
         "A red light turns on inside it — like the night light in the doll's bedroom.",
         "It only looks — it doesn't do anything.",
-        "After a moment the bunny takes it off."
+        "After a moment the toy soldier takes it off."
       ],
       "blood-pressure": [
-        "The bunny puts a soft cuff on the arm.",
+        "The toy soldier puts a soft cuff on the arm.",
         "It fills with air and hugs the arm, like a teddy bear.",
-        "We count together with the bunny, and the cuff lets go by itself.",
+        "We count together with the toy soldier, and the cuff lets go by itself.",
         "Then the cuff comes off — and that's it, all done."
       ],
       "doctor-exam": [
@@ -551,7 +551,7 @@
     },
     "distractTitle": "Игровая комната 🎪",
     "procedureNarratives": {
-      "temperature": "Зайчик быстро проверяет куклу градусником — чтобы убедиться, что она тёплая и готова играть.",
+      "temperature": "Солдатик быстро проверяет куклу градусником — чтобы убедиться, что она тёплая и готова играть.",
       "saturation": "Маленький зажим на пальце куклы показывает, сколько воздуха попадает в её крошечные лёгкие.",
       "blood-pressure": "Манжета мягко обнимает руку куклы, крепче, потом отпускает — как большое объятие.",
       "doctor-exam": "Мишка-доктор слушает грудку куклы и смотрит в ушки, чтобы проверить всё в домике.",
@@ -573,19 +573,19 @@
         {
           "label": "Во рту",
           "steps": [
-            "Зайчик даёт нам маленький градусник — кладём его в рот.",
+            "Солдатик даёт нам маленький градусник — кладём его в рот.",
             "Крепко-крепко закрываем рот, как будто там конфетка из кукольного буфета.",
             "Тихонько ждём, пока градусник закончит, — можно посчитать игрушки на полке.",
-            "Слышим тихое «бип» — зайчик смотрит градусник, и всё, готово."
+            "Слышим тихое «бип» — солдатик смотрит градусник, и всё, готово."
           ]
         },
         {
           "label": "Под мышкой",
           "steps": [
-            "Зайчик кладёт маленький градусник под мышку.",
+            "Солдатик кладёт маленький градусник под мышку.",
             "Прижимаем руку к телу, как будто обнимаем любимую игрушку.",
             "Тихонько ждём, пока градусник закончит, — можно посчитать игрушки на полке.",
-            "Слышим тихое «бип» — зайчик смотрит градусник, и всё, готово."
+            "Слышим тихое «бип» — солдатик смотрит градусник, и всё, готово."
           ]
         }
       ],
@@ -613,21 +613,21 @@
     },
     "procedureSteps": {
       "temperature": [
-        "Зайчик даёт нам маленький градусник — кладём его в рот.",
+        "Солдатик даёт нам маленький градусник — кладём его в рот.",
         "Крепко-крепко закрываем рот, как будто там конфетка из кукольного буфета.",
         "Тихонько ждём, пока градусник закончит, — можно посчитать игрушки на полке.",
-        "Слышим тихое «бип» — зайчик смотрит градусник, и всё, готово."
+        "Слышим тихое «бип» — солдатик смотрит градусник, и всё, готово."
       ],
       "saturation": [
-        "Зайчик надевает на палец маленькую мягкую прищепку.",
+        "Солдатик надевает на палец маленькую мягкую прищепку.",
         "В ней загорается красный огонёк — как ночник в кукольной спальне.",
         "Она только смотрит — ничего не делает.",
-        "Через минутку зайчик её снимает."
+        "Через минутку солдатик её снимает."
       ],
       "blood-pressure": [
-        "Зайчик надевает на руку мягкую манжету.",
+        "Солдатик надевает на руку мягкую манжету.",
         "Она надувается и обнимает руку, как плюшевый мишка.",
-        "Мы считаем вместе с зайчиком, и манжета сама отпускает.",
+        "Мы считаем вместе с солдатиком, и манжета сама отпускает.",
         "Потом манжету снимают — и всё, готово."
       ],
       "doctor-exam": [
