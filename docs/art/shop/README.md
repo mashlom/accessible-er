@@ -98,9 +98,9 @@ body), and nothing fits on the doll without guessing. The tabs also come off too
 
 - A pair of shoes or boots is not a flat picture laid over the feet: each shoe has a **slit across its top opening**
   (along the line where the foot goes in), so the doll's foot slides into it.
-- Drawn this way, the back of the shoe's opening is hidden behind the foot, and the lower part of the doll's leg is
-  inside the shoe: draw the shoe as seen from the front with the foot already in it, the slit marked as a single cut
-  line (not a fold line), and no tabs on shoes.
+- Draw the shoe from the front as usual (with its whole opening), the slit marked as a single cut line (not a fold
+  line), no tabs. Place the slit so that once the doll's foot is pushed through it, the shoe's back part is hidden
+  behind the leg and the lower leg looks as if it is inside the shoe: the doll really seems to be wearing it.
 
 ### 4. Hats and helmets: tabs where they hold the head
 
@@ -118,8 +118,8 @@ body), and nothing fits on the doll without guessing. The tabs also come off too
 > along that edge (for example shoulder tabs continue the straps upwards and fold down over the shoulders); each tab
 > joins the piece along a straight stretch of its edge at least 6 mm long, never through a thin neck, so it
 > does not tear off (it may be shorter than that edge). Shoes and boots have no tabs: each shoe has one cut line
-> across its top opening (a slit) so the doll's foot slides in, and it is drawn from the front with the foot inside,
-> the back of the opening hidden. On hats, helmets and crowns the tabs sit at the sides of the head, at ear height,
+> across its top opening (a slit) so the doll's foot slides in; the shoe is drawn from the front as usual, and the
+> slit is placed so that with the foot through it the back of the shoe is hidden and the doll looks as if wearing it. On hats, helmets and crowns the tabs sit at the sides of the head, at ear height,
 > where they can fold back behind the head and hold it.
 
 ### Before sending
