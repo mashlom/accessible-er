@@ -3394,6 +3394,8 @@ path.worldTrailLit {
 .shopGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  /* every card the same size, whatever its picture or name */
+  grid-auto-rows: 1fr;
   gap: 12px;
 }
 
@@ -3416,19 +3418,27 @@ path.worldTrailLit {
 }
 
 .shopItemPic img {
-  width: 100%;
-  height: 100%;
+  /* the piece smaller than its square tile, with room around it */
+  position: absolute;
+  inset: 14%;
+  width: 72%;
+  height: 72%;
   object-fit: contain;
 }
 
 .shopItemName {
+  /* two lines kept for every name, so the price and the button line up */
+  min-height: 2.4em;
+  display: flex;
+  align-items: center;
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
 }
 
-/* the price tag */
+/* the price tag, with the buy button under it, on the bottom of the card */
 .shopItemPrice {
+  margin-top: auto;
   padding: 2px 10px;
   border-radius: 999px;
   background: #fff4cf;
@@ -3543,4 +3553,35 @@ path.worldTrailLit {
 .worldStage.pin--active .worldObj {
   filter: drop-shadow(0 0 calc(6 * var(--u)) #fff) drop-shadow(0 0 calc(14 * var(--u)) rgba(255, 255, 255, 0.95))
     drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+}
+
+/* the station's own buttons ("I did it", back to the map) stay at the bottom of the sheet, in view, however much is
+   above them (a picture, a story, procedure buttons): what is above scrolls under them */
+.worldSheet.stageSheet .stageSheetActions {
+  position: sticky;
+  bottom: calc(-24 * var(--u) - env(safe-area-inset-bottom, 0px));
+  z-index: 2;
+  margin-inline: calc(-1 * var(--pad, 0px));
+  padding: calc(12 * var(--u)) var(--pad, 0px) calc(24 * var(--u) + env(safe-area-inset-bottom, 0px));
+  background: var(--tok-page);
+  box-shadow: 0 -10px 12px -8px rgba(0, 0, 0, 0.12);
+}
+
+/* the shop page's buttons look as the sheets' do: its unit is a plain pixel, the colours are the world's */
+.shopBody { --u: 1px; }
+.shopBody .worldBtnDone { background: var(--tok-action); color: #fff; }
+.shopBody .worldBtnBack {
+  background: var(--tok-card, #fff);
+  color: var(--tok-action);
+  border: 1.5px solid var(--tok-action);
+}
+
+/* a main button that cannot be used yet (the shop's PDF before anything is bought): grey, not the action colour */
+.worldBtn:disabled,
+.worldBtn:disabled:hover,
+.shopBody .worldBtnDone:disabled {
+  background: #c9d0d4;
+  color: #fff;
+  box-shadow: none;
+  cursor: default;
 }
