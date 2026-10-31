@@ -37,10 +37,10 @@
         "story": "בסוף הביקור בבית הבובות יוצאים מהדלת הקדמית. גם במיון, בסוף הצוות מסכם איתנו מה הלאה: לרוב חוזרים הביתה, ולפעמים נשארים לישון בבית החולים כדי להמשיך לטפל בנו."
       },
       "tests": {
-        "label": "חדר הבדיקות הקטן",
+        "label": "החדר של המכונה הקסומה",
         "hint": "בדיקות דם, רנטגן ועוד",
-        "story": "בחדר הבדיקות הקטן בודקים דברים שלא רואים בעיניים. גם במיון, לפעמים צריך בדיקות, כמו בדיקת דם, בדיקת שתן או צילום. עושים רק את הבדיקות שהרופא החליט עליהן.",
-        "done": "סיימתי בחדר הבדיקות הקטן!"
+        "story": "בחדר של המכונה הקסומה מציצים בחלון הקטן ורואים דברים שלא רואים בעיניים. גם במיון, לפעמים צריך בדיקות, כמו בדיקת דם, בדיקת שתן או צילום. עושים רק את הבדיקות שהרופא החליט עליהן.",
+        "done": "הכול נבדק!"
       },
       "treatment": {
         "label": "פינת הטיפול",
@@ -281,10 +281,10 @@
         "story": "At the end of the visit to the dollhouse we go out through the front door. In the ER too, at the end the team tells us what comes next: most often we go home, and sometimes we stay the night in the hospital so they can keep looking after us."
       },
       "tests": {
-        "label": "The Small Test Room",
+        "label": "The Magic Machine Room",
         "hint": "Blood tests, an X-ray and more",
-        "story": "In the small test room they check things we can't see with our eyes. In the ER too, sometimes we need tests, like a blood test, a urine test or an X-ray. We only do the tests the doctor decided on.",
-        "done": "I finished in the small test room!"
+        "story": "In the magic machine room we peek through the little window and see things we can't see with our eyes. In the ER too, sometimes we need tests, like a blood test, a urine test or an X-ray. We only do the tests the doctor decided on.",
+        "done": "All checked!"
       },
       "treatment": {
         "label": "The Treatment Corner",
