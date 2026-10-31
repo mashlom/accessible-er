@@ -3615,8 +3615,9 @@ path.worldTrailLit {
 }
 
 /* room between the end of what scrolls and the bottom block, so the last line does not touch it */
-.worldSheet > :has(+ .sheetFooter),
-.worldSheet > :has(+ .celebrateSheetActions),
-.worldSheet > :has(+ .pickBtn) {
-  margin-bottom: calc(24 * var(--u));
+/* (stronger than the sheet's own rules for its texts, which set their margins to nothing) */
+.worldSheet.worldSheet.worldSheet > :has(+ .sheetFooter),
+.worldSheet.worldSheet.worldSheet > :has(+ .celebrateSheetActions),
+.worldSheet.worldSheet.worldSheet > :has(+ .pickBtn) {
+  margin-bottom: calc(32 * var(--u));
 }
