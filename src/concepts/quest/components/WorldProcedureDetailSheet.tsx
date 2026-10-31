@@ -131,7 +131,7 @@ export function WorldProcedureDetailSheet({ id }: { id: string }) {
                     back()
                   }}
                 >
-                  {isDone ? (theme.doneEmoji ?? '✓') : buttons.done}
+                  {isDone ? <span className={css.worldCoin}>{theme.doneEmoji ?? '✓'}</span> : buttons.done}
                 </button>
               )}
               {(!isDone || !stageActive) && (
