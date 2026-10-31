@@ -6,25 +6,25 @@
         "label": "על הרציף",
         "hint": "נרשמים בבסיס ומקבלים צמיד צוללן",
         "story": "לפני שיוצאים לצלילה, נרשמים בבסיס שעל הרציף ומקבלים צמיד צוללן, שמלווה אותנו לאורך כל ההרפתקה. גם בקבלה של המיון נקבל צמיד ומספר שילוו אותנו בין התחנות.",
-        "done": "קיבלתי את צמיד הצוללן!"
+        "done": "קיבלנו צמיד!"
       },
       "wait-before-triage": {
         "label": "כניסה לצוללת",
         "hint": "עולים לצוללת ומחכים שהבוסמן יקרא לנו",
         "story": "עולים לצוללת ומחכים עד שהבוסמן קורא לנו. גם במיון, מחכים בחדר ההמתנה עד שהאחות קוראת לנו. לפעמים יש שם הרבה אנשים ורעש.",
-        "done": "עליתי לצוללת!"
+        "done": "חיכינו!"
       },
       "triage": {
         "label": "בדיקות לצלילה",
         "hint": "הבוסמן בודק שהכול מוכן לצלילה",
         "story": "לפני הצלילה, הבוסמן בודק שהכול מוכן לרדת למים. גם במיון, האחות בודקת איך אנחנו מרגישים: מודדת חום, שמה אטב קטן על האצבע ושרוול רך על הזרוע.",
-        "done": "הציוד שלי מוכן לצלילה!"
+        "done": "הכול נמדד!"
       },
       "wait-doctor": {
         "label": "ממתינים בתא",
         "hint": "דגים עוברים בחוץ, ממתינים לקברניט",
         "story": "הקברניט עוזר לכל הצוללנים בצוללת, ולכן לפעמים מחכים לו בתא ומסתכלים על הדגים שבחוץ. גם במיון, מחכים לרופא או לרופאה. ההמתנה יכולה להיות ארוכה, אבל לא שכחו אותנו.",
-        "done": "חיכיתי לקברניט בסבלנות!"
+        "done": "הקברניט הגיע!"
       },
       "doctor": {
         "label": "פגישה עם קברניט הצוללת",
@@ -40,25 +40,25 @@
         "label": "סונאר הצוללת",
         "hint": "הסונאר רואה דרך המים",
         "story": "הסונאר של הצוללת רואה דרך המים דברים שלא רואים בעיניים. גם במיון, לפעמים צריך בדיקות, כמו בדיקת דם, בדיקת שתן או צילום. עושים רק את הבדיקות שהרופא החליט עליהן.",
-        "done": "סיימתי בסונאר של הצוללת!"
+        "done": "הכול נבדק!"
       },
       "treatment": {
         "label": "תיקון הצוללת",
         "hint": "המהנדס מתקן את מה שצריך",
         "story": "המהנדס של הצוללת מתקן את מה שצריך. גם במיון, אם צריך, נותנים לנו את הטיפול שהרופא החליט עליו, כמו תרופה, אינהלציה או תחבושת.",
-        "done": "סיימתי בתיקון הצוללת!"
+        "done": "הטיפול הסתיים!"
       },
       "consult": {
         "label": "קשר עם הבסיס",
         "hint": "מומחה מהבסיס מתחבר",
         "story": "לפעמים הקברניט יוצר קשר עם מומחה מהבסיס שמכיר היטב חלק אחד של הים. גם במיון, לפעמים מגיע עוד רופא, מומחה, לבדוק אותנו. זה לא סימן שמשהו רע — רק שרוצים לדעת עוד.",
-        "done": "דיברתי עם המומחה מהבסיס!"
+        "done": "הכרנו!"
       },
       "wait-results": {
         "label": "עיבוד נתוני הסונאר",
         "hint": "הסונאר מעבד נתונים",
         "story": "הסונאר מעבד את הנתונים, ומחכים לשמוע מה הוא גילה. גם במיון, אחרי הבדיקות מחכים לתשובות, ולפעמים זה לוקח זמן. כשיהיו תשובות, הרופא יבוא לספר לנו.",
-        "done": "חיכיתי לנתוני הסונאר!"
+        "done": "התשובות מוכנות!"
       }
     },
     "procedureNarratives": {
@@ -250,25 +250,25 @@
         "label": "On the Dock",
         "hint": "You sign the ship's log and get a diver's bracelet",
         "story": "Before the dive, we sign in at the base on the dock and get a diver's bracelet that stays with us for the whole adventure. At the ER's registration desk we also get a bracelet and a number that go with us from station to station.",
-        "done": "I got my diver's bracelet!"
+        "done": "Got our bracelet!"
       },
       "wait-before-triage": {
         "label": "Boarding the Submarine",
         "hint": "We climb aboard and wait for the bosun to call us",
         "story": "We climb aboard the submarine and wait until the bosun calls us. In the ER too, we wait in the waiting room until the nurse calls us. Sometimes it is busy and noisy there.",
-        "done": "I climbed aboard the submarine!"
+        "done": "We waited!"
       },
       "triage": {
         "label": "Pre-dive Checkup",
         "hint": "The bosun checks that we're ready to dive",
         "story": "Before the dive, the bosun checks that everything is ready to go into the water. In the ER too, the nurse checks how we feel: takes our temperature, puts a little clip on a finger and a soft cuff on the arm.",
-        "done": "My diving gear is ready!"
+        "done": "All measured!"
       },
       "wait-doctor": {
         "label": "Waiting in the Cabin",
         "hint": "Fish swim past the porthole while we wait for the captain",
         "story": "The captain helps every diver on the submarine, so sometimes we wait for him in the cabin and watch the fish outside. In the ER too, we wait for the doctor. The wait can be long, but nobody has forgotten us.",
-        "done": "I waited patiently for the captain!"
+        "done": "The captain is here!"
       },
       "doctor": {
         "label": "Meeting the Captain",
@@ -284,25 +284,25 @@
         "label": "Submarine Sonar",
         "hint": "The sonar sees through the water",
         "story": "The submarine's sonar sees through the water and finds things we can't see with our eyes. In the ER too, sometimes we need tests, like a blood test, a urine test or an X-ray. We only do the tests the doctor decided on.",
-        "done": "I finished at the submarine sonar!"
+        "done": "All checked!"
       },
       "treatment": {
         "label": "Submarine Repairs",
         "hint": "The engineer fixes what needs fixing",
         "story": "The submarine's engineer fixes what needs fixing. In the ER too, if we need it, we get the treatment the doctor decided on, like medicine, an inhaler mask or a bandage.",
-        "done": "I finished the submarine repairs!"
+        "done": "Treatment done!"
       },
       "consult": {
         "label": "Link with the Base",
         "hint": "An expert from the base connects",
         "story": "Sometimes the captain contacts an expert at the base who knows one part of the sea very well. In the ER too, sometimes another doctor, an expert, comes to check us. It doesn't mean something is wrong — they just want to know more.",
-        "done": "I talked with the expert from the base!"
+        "done": "We met!"
       },
       "wait-results": {
         "label": "Sonar Data Processing",
         "hint": "The sonar is processing the data",
         "story": "The sonar is processing the data, and we wait to hear what it found. In the ER too, after the tests we wait for the answers, and sometimes it takes a while. When the answers are ready, the doctor will come and tell us.",
-        "done": "I waited for the sonar data!"
+        "done": "The answers are ready!"
       }
     },
     "procedureNarratives": {
@@ -494,25 +494,25 @@
         "label": "На причале",
         "hint": "Записываемся в бортовой журнал и получаем браслет водолаза",
         "story": "Перед погружением мы записываемся на базе у причала и получаем браслет водолаза, который будет с нами всё приключение. В регистратуре приёмного отделения нам тоже дадут браслет и номер, который будет с нами на всех остановках.",
-        "done": "Мы получили браслет водолаза!"
+        "done": "Браслет у нас!"
       },
       "wait-before-triage": {
         "label": "Вход в подводную лодку",
         "hint": "Поднимаемся на борт и ждём, пока боцман позовёт нас",
         "story": "Мы поднимаемся на борт подводной лодки и ждём, пока нас не позовёт боцман. В приёмном покое тоже мы ждём в зале ожидания, пока нас не позовёт медсестра. Иногда там много людей и шумно.",
-        "done": "Мы поднялись на борт подводной лодки!"
+        "done": "Подождали!"
       },
       "triage": {
         "label": "Проверка перед погружением",
         "hint": "Боцман проверяет, готов ли водолаз к погружению",
         "story": "Перед погружением боцман проверяет, что всё готово, чтобы спуститься под воду. В приёмном покое тоже медсестра проверяет, как мы себя чувствуем: измеряет температуру, надевает маленькую прищепку на палец и мягкую манжету на руку.",
-        "done": "Моё снаряжение готово к погружению!"
+        "done": "Всё измерено!"
       },
       "wait-doctor": {
         "label": "Ожидание в каюте",
         "hint": "За иллюминатором плавают рыбы, ждём капитана",
         "story": "Капитан помогает всем водолазам на подводной лодке, поэтому иногда мы ждём его в каюте и смотрим на рыб за иллюминатором. В приёмном покое тоже мы ждём врача. Ждать бывает долго, но про нас не забыли.",
-        "done": "Мы терпеливо ждали капитана!"
+        "done": "Капитан пришёл!"
       },
       "doctor": {
         "label": "Встреча с капитаном подводной лодки",
@@ -528,25 +528,25 @@
         "label": "Локатор подводной лодки",
         "hint": "Локатор видит сквозь воду",
         "story": "Локатор подводной лодки видит сквозь воду то, чего не видно глазами. В приёмном покое тоже иногда нужны анализы — например, анализ крови, анализ мочи или рентген. Делают только те анализы, которые решил врач.",
-        "done": "Мы закончили у локатора подводной лодки!"
+        "done": "Всё проверено!"
       },
       "treatment": {
         "label": "Ремонт подводной лодки",
         "hint": "Инженер чинит то, что нужно",
         "story": "Инженер подводной лодки чинит то, что нужно. В приёмном покое тоже, если нужно, нам дают лечение, которое решил врач, — например, лекарство, ингаляцию или повязку.",
-        "done": "Мы закончили с ремонтом подводной лодки!"
+        "done": "Лечение завершено!"
       },
       "consult": {
         "label": "Связь с базой",
         "hint": "Специалист с базы выходит на связь",
         "story": "Иногда капитан выходит на связь со специалистом с базы, который хорошо знает одну часть моря. В приёмном покое тоже иногда приходит ещё один врач, специалист, чтобы нас осмотреть. Это не значит, что что-то плохо, — просто хотят узнать больше.",
-        "done": "Мы поговорили со специалистом с базы!"
+        "done": "Познакомились!"
       },
       "wait-results": {
         "label": "Обработка данных локатора",
         "hint": "Локатор обрабатывает данные",
         "story": "Локатор обрабатывает данные, и мы ждём, что он покажет. В приёмном покое тоже после анализов мы ждём ответов, и иногда это долго. Когда ответы будут готовы, врач придёт и расскажет нам.",
-        "done": "Мы дождались данных локатора!"
+        "done": "Ответы готовы!"
       }
     },
     "procedureNarratives": {
