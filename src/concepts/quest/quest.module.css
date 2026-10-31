@@ -1024,6 +1024,8 @@
   justify-content: flex-end;
 }
 
+.shopItemPrice .coinCounterItem { font-size: 1em; }
+
 .shopCoins .coinCounterItem {
   font-size: 2.2rem;
 }

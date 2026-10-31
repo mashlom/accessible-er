@@ -237,7 +237,7 @@ function WorldShop() {
                   </span>
                   <span className={css.shopItemName}>{name(id)}</span>
                   <span className={css.shopItemPrice}>
-                    <span aria-hidden>{price(id)} {theme.doneEmoji ?? '⭐'}</span>
+                    <span aria-hidden>{price(id)} <span className={css.coinCounterItem}>{theme.doneEmoji ?? '⭐'}</span></span>
                     <span className="app-sr-only">{t('ui.shop.price').replace('{n}', String(price(id)))}</span>
                   </span>
                   {/* bought: tapping again gives the piece back, and its stars */}
