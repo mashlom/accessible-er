@@ -3851,3 +3851,17 @@ path.worldTrailLit {
   }
   .worldCardName { font-size: 0.85rem; line-height: 1.15; padding: 0; }
 }
+
+/* landscape: the cards in rows centred on the screen, a shorter last row in the middle too */
+@media (orientation: landscape) and (min-width: 640px) {
+  .worldGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: calc(4 * var(--card) + 3 * 1rem);
+  }
+  .worldGrid > .worldCard { width: var(--card); }
+}
+@media (orientation: landscape) and (min-width: 640px) and (max-height: 520px) {
+  .worldGrid { max-width: none; }
+}
