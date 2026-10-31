@@ -5,7 +5,7 @@
       "reception": {
         "label": "שער הגן",
         "hint": "נרשמים בגן הקסמים ומקבלים צמיד קסמים",
-        "story": "כשמגיעים לשער גן הקסמים, נרשמים בכניסה ומקבלים צמיד קסמים, איתו אפשר לטייל בכל הגן. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "story": "כשמגיעים לשער גן הקסמים, נרשמים בכניסה ומקבלים צמיד קסמים, איתו אפשר לטייל בכל הגן. גם בקבלה של המיון נקבל צמיד ומספר שילוו אותנו בין התחנות.",
         "done": "קיבלתי את צמיד הקסמים!"
       },
       "wait-before-triage": {
@@ -249,7 +249,7 @@
       "reception": {
         "label": "Garden Gate",
         "hint": "We register in the magic garden and get a magic bracelet",
-        "story": "When we reach the gate of the magic garden, we sign in at the entrance and get a magic bracelet, so we can walk around the whole garden. In the ER too, we get a number that goes with us from station to station.",
+        "story": "When we reach the gate of the magic garden, we sign in at the entrance and get a magic bracelet, so we can walk around the whole garden. At the ER's registration desk we also get a bracelet and a number that go with us from station to station.",
         "done": "I got my magic bracelet!"
       },
       "wait-before-triage": {
@@ -493,7 +493,7 @@
       "reception": {
         "label": "Ворота сада",
         "hint": "Регистрируемся в волшебном саду и получаем волшебный браслет",
-        "story": "Когда подходим к воротам волшебного сада, мы регистрируемся у входа и получаем волшебный браслет, с которым можно гулять по всему саду. В приёмном покое тоже нам дадут номер, который будет с нами на всех остановках.",
+        "story": "Когда подходим к воротам волшебного сада, мы регистрируемся у входа и получаем волшебный браслет, с которым можно гулять по всему саду. В регистратуре приёмного отделения нам тоже дадут браслет и номер, который будет с нами на всех остановках.",
         "done": "Мы получили волшебный браслет!"
       },
       "wait-before-triage": {

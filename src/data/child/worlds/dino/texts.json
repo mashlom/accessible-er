@@ -5,7 +5,7 @@
       "reception": {
         "label": "כניסה לשמורה",
         "hint": "נרשמים בשמורת הדינוזאורים ומקבלים צמיד חוקר",
-        "story": "כשמגיעים לשמורת הדינוזאורים, נרשמים בכניסה ומקבלים צמיד חוקר, איתו אפשר לטייל בכל השמורה. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "story": "כשמגיעים לשמורת הדינוזאורים, נרשמים בכניסה ומקבלים צמיד חוקר, איתו אפשר לטייל בכל השמורה. גם בקבלה של המיון נקבל צמיד ומספר שילוו אותנו בין התחנות.",
         "done": "קיבלתי את צמיד החוקר!"
       },
       "wait-before-triage": {
@@ -249,7 +249,7 @@
       "reception": {
         "label": "Reserve Entrance",
         "hint": "We register at the dinosaur reserve and get an explorer's bracelet",
-        "story": "When we arrive at the dinosaur reserve, we register at the entrance and get an explorer's bracelet, so we can walk around the whole reserve. In the ER too, we get a number that goes with us from station to station.",
+        "story": "When we arrive at the dinosaur reserve, we register at the entrance and get an explorer's bracelet, so we can walk around the whole reserve. At the ER's registration desk we also get a bracelet and a number that go with us from station to station.",
         "done": "I got my explorer's bracelet!"
       },
       "wait-before-triage": {
@@ -493,7 +493,7 @@
       "reception": {
         "label": "Вход в заповедник",
         "hint": "Регистрируемся в заповеднике динозавров и получаем браслет исследователя",
-        "story": "Когда приходим в заповедник динозавров, мы регистрируемся у входа и получаем браслет исследователя, с которым можно ходить по всему заповеднику. В приёмном покое тоже нам дадут номер, который будет с нами на всех остановках.",
+        "story": "Когда приходим в заповедник динозавров, мы регистрируемся у входа и получаем браслет исследователя, с которым можно ходить по всему заповеднику. В регистратуре приёмного отделения нам тоже дадут браслет и номер, который будет с нами на всех остановках.",
         "done": "Мы получили браслет исследователя!"
       },
       "wait-before-triage": {

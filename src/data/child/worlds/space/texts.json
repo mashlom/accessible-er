@@ -5,7 +5,7 @@
       "reception": {
         "label": "כניסה לתחנה",
         "hint": "נרשמים בתחנת החלל ומקבלים צמיד אסטרונאוט",
-        "story": "כשמגיעים לתחנת החלל, נרשמים בכניסה ומקבלים צמיד אסטרונאוט, איתו אפשר לעבור בכל התחנה. גם במיון, אנחנו נקבל מספר שילווה אותנו בין התחנות.",
+        "story": "כשמגיעים לתחנת החלל, נרשמים בכניסה ומקבלים צמיד אסטרונאוט, איתו אפשר לעבור בכל התחנה. גם בקבלה של המיון נקבל צמיד ומספר שילוו אותנו בין התחנות.",
         "done": "קיבלתי את צמיד האסטרונאוט!"
       },
       "wait-before-triage": {
@@ -249,7 +249,7 @@
       "reception": {
         "label": "Station Entrance",
         "hint": "We register at the space station and get an astronaut's bracelet",
-        "story": "When we arrive at the space station, we register at the entrance and get an astronaut's bracelet, so we can go all around the station. In the ER too, we get a number that goes with us from station to station.",
+        "story": "When we arrive at the space station, we register at the entrance and get an astronaut's bracelet, so we can go all around the station. At the ER's registration desk we also get a bracelet and a number that go with us from station to station.",
         "done": "I got my astronaut's bracelet!"
       },
       "wait-before-triage": {
@@ -493,7 +493,7 @@
       "reception": {
         "label": "Вход на станцию",
         "hint": "Регистрируемся на космической станции и получаем браслет космонавта",
-        "story": "Когда прилетаем на космическую станцию, мы регистрируемся у входа и получаем браслет космонавта, с которым можно ходить по всей станции. В приёмном покое тоже нам дадут номер, который будет с нами на всех остановках.",
+        "story": "Когда прилетаем на космическую станцию, мы регистрируемся у входа и получаем браслет космонавта, с которым можно ходить по всей станции. В регистратуре приёмного отделения нам тоже дадут браслет и номер, который будет с нами на всех остановках.",
         "done": "Мы получили браслет космонавта!"
       },
       "wait-before-triage": {
