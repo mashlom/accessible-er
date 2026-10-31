@@ -1,0 +1,38 @@
+/* the parent pages' home button: outlined like the language button beside it, Shevi's house and the words */
+.pill {
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  background: #fff;
+  color: #1f2d2b;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.pill:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.pill:focus-visible {
+  outline: 3px solid #0a6b8a;
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
