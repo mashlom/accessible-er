@@ -269,8 +269,9 @@ function WorldShop() {
         <div className={css.worldTopGroup}>
           {/* the light page: the plain picker (the overlay one is white, for a picture) */}
           <LanguagePicker />
-          <a href="#/" className={`${css.worldTopBtn} ${css.homeIcon}`} aria-label={t('ui.shell.home')}>
-            <span aria-hidden>🏠</span>
+          {/* children's screens: the word, not a picture (Rakheli's review, #37); the parents' pages keep the house */}
+          <a href="#/" className={`${css.worldTopBtn} ${css.navWord}`}>
+            {t('ui.shell.home')}
           </a>
         </div>
       </div>
