@@ -3721,3 +3721,12 @@ path.worldTrailLit {
   color: var(--tok-text2);
 }
 .worldSheet.celebrateSheet .celebrateSheetRow { margin-top: calc(12 * var(--u)); }
+
+/* the bottom block's top edge: a straight line, clearly seen, with a shadow cast upwards over what scrolls under it,
+   so it reads as a bar the content goes behind */
+.worldSheet .sheetFooter,
+.shopBody .celebrateSheetActions {
+  border-radius: 0;
+  border-top: 1.5px solid color-mix(in srgb, var(--tok-action) 35%, transparent);
+  box-shadow: 0 -10px 18px -6px rgba(0, 0, 0, 0.22);
+}
