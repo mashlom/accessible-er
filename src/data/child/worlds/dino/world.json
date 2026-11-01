@@ -376,6 +376,7 @@
         "shoreY": 900,
         "finaleWidth": 220,
         "finaleFlip": false,
+        "places": [[300, 330], [115, 470], [300, 610], [115, 740]],
         "vars": {
           "--bg-x": -344,
           "--bg-w": 1100,
