@@ -1,5 +1,4 @@
 import { keyed } from '../../../lib/keyed'
-import { Link } from '../../nav'
 import { Scene, Bubble, Note } from '../components/kit'
 import { useI18n } from '../../../hooks/useI18n'
 import i18nUi from '../../../data/i18n/ui.json'
@@ -45,10 +44,6 @@ export function RequestsPage() {
       <div style={{ marginTop: 'var(--space-4)' }}>
         <Note>{tx.note}</Note>
       </div>
-
-      <Link to="/card/view" className={styles.crossLink}>
-        {t('ui.buttons.showCard')}
-      </Link>
     </Scene>
     </div>
   )

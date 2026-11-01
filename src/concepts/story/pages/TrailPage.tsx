@@ -155,7 +155,7 @@ export function TrailPage() {
                       onClick={() => setCurrentId(isHere ? null : stage.id)}
                       aria-pressed={isHere}
                     >
-                      {isHere ? tx.hereOn : tx.markHere}
+                      {isHere ? tx.hereOn : t('ui.labels.adult.weAreHere')}
                     </button>
                   </div>
                 )}

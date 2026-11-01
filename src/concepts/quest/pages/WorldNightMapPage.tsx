@@ -130,6 +130,27 @@ function landscapeScene(design: WorldDesign, images: string[]): Scene {
   // the ending: in landscape the first stage's start, mirrored across the scene
   slots.push({ ...spec.finale, h: spec.finale.w / shapeOf(design, images[n]).aspect })
 
+  // fewer stations than places: the stations and the ending only fill the left part of the scene, so the whole
+  // group moves to the middle of the screen (the spacing between them stays). With every place taken it spans
+  // the scene already, and stays as designed.
+  let dx = 0
+  if (n < places.length) {
+    const fin = slots[n]
+    const finVisible = fin.w * shapeOf(design, images[n]).visible
+    const lefts = [Math.max(0, fin.x + (fin.w - finVisible) / 2)]
+    const rights = [Math.min(1920, fin.x + (fin.w + finVisible) / 2)]
+    for (let k = 0; k < n; k++) {
+      const pl = places[first + k]
+      lefts.push(pl.cx - pl.visible / 2)
+      rights.push(pl.cx + pl.visible / 2)
+    }
+    dx = 960 - (Math.min(...lefts) + Math.max(...rights)) / 2
+    for (const sl of slots) {
+      sl.x += dx
+      sl.badge = [sl.badge[0] + dx, sl.badge[1]]
+    }
+  }
+
   // trails: every number is joined to the next one by a curve that goes around the stations (the numbers cut
   // them at their edges); the last number is joined to the end of the ending's picture
   const curves = spec.curves.map(([c1, c2]) => (a: Pt, b: Pt) => dotsAlong(a, c1, c2, b))
@@ -138,7 +159,8 @@ function landscapeScene(design: WorldDesign, images: string[]): Scene {
   if (n > 0) {
     // to the end of the pier
     const lb = slots[n - 1].badge
-    const { end, c1, c2 } = spec.finaleTrail
+    const { c1, c2 } = spec.finaleTrail
+    const end: Pt = [spec.finaleTrail.end[0] + dx, spec.finaleTrail.end[1]]
     lines.push(dotsAlong(lb, [lb[0] + c1[0], lb[1] + c1[1]], [end[0] + c2[0], end[1] + c2[1]], end))
   }
   return {

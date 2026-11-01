@@ -14,6 +14,11 @@
   gap: 12px;
   margin-top: var(--space-4);
 }
+/* a row with one button: the button in the middle */
+.actionsSingle {
+  grid-template-columns: minmax(0, 320px);
+  justify-content: center;
+}
 /* the two buttons of a row are the same width and shape */
 .actions > * {
   width: 100%;
@@ -291,7 +296,8 @@
 }
 
 .trailHead {
-  text-align: start;
+  /* centred, as the other screens' headings */
+  text-align: center;
   margin-bottom: var(--space-4);
 }
 .trailTitle {
@@ -306,7 +312,8 @@
   font-weight: 400;
 }
 .trailSub {
-  margin: 8px 0 0;
+  margin: 8px auto 0;
+  max-width: 44ch;
   color: #526570;
   font-size: 1rem;
 }

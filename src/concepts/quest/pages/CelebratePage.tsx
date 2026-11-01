@@ -5,10 +5,7 @@ import { useWide } from './WorldMapPage'
 import { useQuestTheme } from '../useQuestTheme'
 import { useQuestProgress } from '../useQuestProgress'
 import { useI18n } from '../../../hooks/useI18n'
-import { usePersistentState } from '../../../hooks/usePersistentState'
-import { DAY_MS } from '../../../lib/storage'
 import i18nUi from '../../../data/i18n/ui.json'
-import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import { createPortal } from 'react-dom'
 import { lockBodyScroll } from '../../../lib/scrollLock'
 import { PARENT_WORLD } from '../useQuestTheme'
@@ -44,10 +41,8 @@ export function CelebratePage() {
   const withStore = true
   const { t, lang } = useI18n()
   const { reset, doneProcedures } = useQuestProgress()
-  const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   const celebrateSkin = theme.stages['decision']
   const doneCount = doneProcedures.size
-  const cardEmpty = isCardEmpty(card)
   const goBackTo = useGoBackTo()
   // a new journey: back to the world select screen (through the history, when it was the way in)
   const chooseWorld = () => {
@@ -128,34 +123,12 @@ export function CelebratePage() {
             </section>
           ))}
 
-          {outcome === 'admission' && (
-            cardEmpty ? (
-              <Link to="/card" state={{ from: '/celebrate' }} className={css.calmLink}>
-                <button
-                  className={css.doneBtn}
-                  style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
-                >
-                  {t('ui.buttons.fillCard')}
-                </button>
-              </Link>
-            ) : (
-              <Link to="/card/view" state={{ from: '/celebrate' }} className={css.calmLink}>
-                <button
-                  className={css.doneBtn}
-                  style={{ background: theme.accent, color: theme.accentText, width: '100%' }}
-                >
-                  {t('ui.buttons.showCard')}
-                </button>
-              </Link>
-            )
-          )}
-
           <button
             className={css.calmLink}
             onClick={() => setOutcome(null)}
             style={{ color: theme.accent, background: 'none', border: 'none', cursor: 'pointer' }}
           >
-            {t('ui.buttons.changeChoice')}
+            {t('ui.buttons.back')}
           </button>
 
           <Link to="/feedback" className={css.calmLink}>
@@ -183,17 +156,8 @@ export function CelebratePage() {
         {t('ui.buttons.feedback')}
       </Link>
       <div className={css.sheetFooter}>
-        {outcome === 'admission' && (
-          <Link
-            to={cardEmpty ? '/card' : '/card/view'}
-            state={{ from: '/celebrate' }}
-            className={`${css.worldBtn} ${css.worldBtnDone}`}
-          >
-            {noArrow(t(cardEmpty ? 'ui.buttons.fillCard' : 'ui.buttons.showCard'))}
-          </Link>
-        )}
         <button type="button" className={`${css.worldBtn} ${css.worldBtnBack}`} onClick={() => setOutcome(null)}>
-          {noArrow(t('ui.buttons.changeChoice'))}
+          {noArrow(t('ui.buttons.back'))}
         </button>
       </div>
     </>
@@ -278,15 +242,27 @@ function CelebrateSheet({ image, question, choices, stars, buttons, parent, clos
   const close = () => goBackTo('/second-map')
   useEffect(() => {
     handleRef.current?.focus()
-    return lockBodyScroll()
+    const unlock = lockBodyScroll()
+    const onKey = (e: KeyboardEvent) => {
+      // the parent's sheet, when open over this one, takes the Escape itself
+      if (e.key !== 'Escape' || document.querySelectorAll('[role="dialog"]').length > 1) return
+      close()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      unlock()
+      window.removeEventListener('keydown', onKey)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const land = { '--celebrate-bg': wide ? 'var(--w-background-wide, var(--w-background))' : 'var(--w-background)' } as React.CSSProperties
   return (
     <div className={css.celebrateLand} style={land}>
       {/* the same top row as on the maps */}
       <WorldTopRow />
-      <div className={css.sheetBackdrop}>
-        <div ref={moreRef} className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.celebrateSheet}`} role="dialog" aria-modal="true" aria-labelledby="celebrate-title">
+      {/* a tap outside the sheet closes it, as on the stations' sheets */}
+      <div className={css.sheetBackdrop} onClick={close}>
+        <div ref={moreRef} className={`${css.sheet} ${css.stageSheet} ${css.worldSheet} ${css.celebrateSheet}`} role="dialog" aria-modal="true" aria-labelledby="celebrate-title" onClick={(e) => e.stopPropagation()}>
           <button ref={handleRef} type="button" className={css.sheetHandle} onClick={close} aria-label={t('ui.buttons.close')}>
             <span aria-hidden />
           </button>

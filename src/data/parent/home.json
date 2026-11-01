@@ -39,7 +39,6 @@
       "subtitle": "כל עיגול הוא תחנה בביקור. לוחצים על תחנה כדי לראות מה קורה בה, מה עלול להיות קשה, ומה אפשר לבקש.",
       "hereSuffix": " — אנחנו כאן",
       "hereOn": "📍 אנחנו כאן — לביטול",
-      "markHere": "לסמן: אנחנו כאן",
       "note": "הזמנים הם טווחים להמחשה בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.",
       "crossLink": "🏠 מה קורה בסוף הביקור, בדרך הביתה",
       "lead": "איפה אנחנו עכשיו ומה הלאה"
@@ -135,7 +134,6 @@
       "subtitle": "Each circle is a stop of the visit. Tap a stop to see what happens there, what may be hard, and what you can ask for.",
       "hereSuffix": " — we are here",
       "hereOn": "📍 We are here — tap to undo",
-      "markHere": "Mark: we are here",
       "note": "The times are ranges for illustration only. The order and times may change depending on the medical team's decision and how busy the ER is.",
       "crossLink": "🏠 What happens at the end of the visit, on the way home",
       "lead": "Where we are now and what comes next"
@@ -231,7 +229,6 @@
       "subtitle": "Каждый кружок — это этап визита. Нажмите на этап, чтобы увидеть, что там происходит, что может быть трудно и что можно попросить.",
       "hereSuffix": " — мы здесь",
       "hereOn": "📍 Мы здесь — отменить",
-      "markHere": "Отметить: мы здесь",
       "note": "Указано ориентировочное время. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
       "crossLink": "🏠 Что происходит в конце визита, по дороге домой",
       "lead": "Где мы сейчас и что дальше"

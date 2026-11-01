@@ -43,7 +43,7 @@ export function GoingHomePage() {
         </p>
       </div>
 
-      <div className={styles.actions}>
+      <div className={`${styles.actions} ${styles.actionsSingle}`}>
         <Link to="/feedback" className={shell.bigBtn}>
           {tx.feedback}
         </Link>
