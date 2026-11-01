@@ -196,4 +196,3 @@ glow along its edge.
 - One main object per station; never more than two characters.
 - The base is the same in the whole world and its colour differs from the map.
 - The characters look like those in the world's scenes.
-- The team (MLR) looks at the pictures before they go in, as with the other pictures.
