@@ -23,7 +23,7 @@ glance.
 
 | Kind | Size | Background | Files |
 | --- | --- | --- | --- |
-| Map picture (`station-<stage>`) | 600 x 440 | transparent | 10 per world, 6 worlds (60 pictures), plus the ocean's reception fixed (see the ocean) |
+| Map picture (`station-<stage>`) | 600 x 440 | transparent | 10 per world, 6 worlds (60 pictures), plus three ocean pictures fixed (see the ocean) |
 
 PNG or WebP, named as today (`public/worlds/<world>/art/station-<stage>.webp`), plus the world's `manifest.json`
 updated (file, kind, stage, size, a one-line description). Today's pictures are in the same place: the new one
@@ -79,11 +79,14 @@ Each line names what the station's scene shows, and what of it goes on the map.
 
 ### Ocean (Underwater): one fix only
 
-The ocean's stations are not redrawn, except for one detail:
+The ocean's pictures are not redrawn, except for one detail: the red cross on the dock house becomes a red Star of
+David, on the map picture and on the two sheets where the house is seen.
 
 | Station | File | Change |
 | --- | --- | --- |
 | Reception (On the Dock) | `public/worlds/ocean/art/station-reception.webp` | On the dock house, replace the red cross with a red Star of David (the Magen David Adom sign: a red six-pointed star outline on white). Everything else in the picture stays exactly as it is. |
+| Reception, sheet | `public/worlds/ocean/art/scene-reception.webp` | The same on the dock house seen through the window behind the desk (top left): red Star of David instead of the red cross. Nothing else changes. |
+| Decision, sheet (Back to the Surface!) | `public/worlds/ocean/art/scene-decision.webp` | The same on the dock house at the top left: red Star of David instead of the red cross. Nothing else changes. |
 
 ### Dollhouse
 
