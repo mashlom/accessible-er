@@ -15,8 +15,9 @@ that size:
 base, almost no characters, strong shapes and colours. Every station of a world looks clearly different from the
 others, and stands out from the map even when faded.
 
-**All the details move to the sheet.** The scene picture (`scene-<stage>`), shown when the station is opened, stays
-as it is and keeps all the characters and the story. The map picture only has to say "this is the place" at a
+**All the details move to the sheet.** The scene picture (`scene-<stage>`), shown when the station is opened, is not
+redrawn: it stays as it is and keeps all the characters and the story (the only exception is the small fix on two
+of the ocean's sheets, see the ocean). The map picture only has to say "this is the place" at a
 glance.
 
 ## What to deliver
