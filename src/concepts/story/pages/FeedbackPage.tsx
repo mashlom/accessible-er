@@ -83,7 +83,7 @@ export function FeedbackPage() {
         <div className={styles.emptyState}>
           <h1 className={shell.sceneTitle}>{tx.thanks}</h1>
           <p style={{ color: 'var(--s-ink-soft)', maxWidth: '34ch' }}>{tx.thanksText}</p>
-          <div className={styles.actions}>
+          <div className={`${styles.actions} ${styles.actionsSingle}`}>
             <Link to="/" className={shell.bigBtn}>
               {tx.back}
             </Link>
