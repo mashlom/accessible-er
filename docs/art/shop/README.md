@@ -116,20 +116,30 @@ with the changes below, and redraw the dolls too (section 5).
 
 - **Base clothes, minimal:** a plain sleeveless top (no sleeves, no collar, no belt, no pockets or prints) and plain
   shorts or briefs; on the feet **socks at most, never shoes or boots** (the shoes are pieces to put on).
-- **Hands made to hold things:** each hand is a small fist with a **slit** through it (one cut line), into which a
-  stick or a handle slides. Draw the hands so that they can hold every held piece of the world.
+- **Hands made to hold things:** each hand is open, palm to the front, with **fingers that fold over** (no cuts
+  inside the picture, so a child can cut it with scissors):
+  - the four fingers are **one wide flap** beyond the palm, like a mitten without its thumb, about 12 to 14 mm wide
+    when printed (a little more than twice the width of a handle), so folded over a handle they wrap it and reach
+    the thumb;
+  - the **thumb** is separated from the palm by **one short cut from the edge**, along its outline;
+  - no drawn fold line: the fingers fold forward along the edge of the palm (the knuckles), like the other tabs.
+- How it holds: the handle is laid on the palm, the fingers fold forward over it, and their tips are tucked under
+  the thumb, which keeps them closed. Seen from the front, the hand is a little fist gripping the handle.
 
 ### 6. Pieces held in the hand: think how the hand holds them
 
-Every held piece is made to work with the doll's fist, not just laid next to it:
+Every held piece is made to work with the doll's folding fingers, not just laid next to it. The part the hand holds is
+**straight and narrow, 5 to 6 mm wide** when printed, with **two small notches** (one on each side) where the
+fingers close, so it cannot slide up or down out of the hand:
 
 - **Sticks** (a wand, a staff, a banner or flag pole, a toy horse's stick, a torch's handle): a long, straight, even
-  part that slides through the slit in the fist and stays there.
-- **Things with a handle** (a lantern, a bag, a basket, a net bag): the handle is drawn as a closed loop or a straight
-  bar that slides into the slit, so the thing hangs from the fist.
+  part, with the notches where the hand holds it.
+- **Things with a handle** (a lantern, a bag, a basket, a net bag): the handle is a **straight bar or strap**, not a
+  closed loop, with the notches in its middle, so the thing hangs below the fist.
 - **Other small things** (binoculars, a camera, a map, a bottle): a strap or a stick to hold them by, made the same
   way.
-- Check on the doll: every held piece goes into a fist and stays there, at its natural place in the hand.
+- Check on the doll: every held piece lies on the palm, the fingers fold over it and tuck under the thumb, and it
+  stays at its natural place in the hand.
 
 ### 7. Wings and other things worn on the back
 
@@ -150,12 +160,13 @@ Every held piece is made to work with the doll's fist, not just laid next to it:
 > across its top opening (a slit) so the doll's foot slides in; the shoe is drawn from the front as usual, and the
 > slit is placed so that with the foot through it the back of the shoe is hidden and the doll looks as if wearing it. On hats, helmets and crowns the tabs sit at the sides of the head, at ear height,
 > where they can fold back behind the head and hold it. Things held in the hand have a straight stick, a bar or a
-> closed handle that slides into the slit in the doll's fist. Wings and anything worn on the back stay behind the
+> handle strap, 5 to 6 mm wide, with two small notches where the doll's fingers close over it (no closed loops). Wings and anything worn on the back stay behind the
 > doll and have two straps that go over its shoulders and hang down in front like the front panels of a waistcoat,
 > instead of tabs.
 >
 > For the doll: a plain sleeveless top without collar, belt or prints, plain shorts, socks at most (no shoes), each
-> hand a small fist with a slit (one cut line) to hold sticks and handles.
+> hand open with the four fingers as one wide flap (about 12 to 14 mm) that folds forward over a handle, and the
+> thumb separated from the palm by one short cut from the edge, so the fingertips tuck under it.
 
 ### Before sending
 
@@ -163,6 +174,8 @@ Every held piece is made to work with the doll's fist, not just laid next to it:
 - No fold lines anywhere; every tab joins the piece along a straight stretch of its edge (at least 6 mm).
 - Every shoe has its slit and no tabs; the doll's foot fits through the slit.
 - On every hat, helmet and crown the tabs reach the sides of the doll's head.
-- Every held piece slides into the doll's fist; wings and packs stay behind the doll, their straps over its
+- Every held piece has a straight part 5 to 6 mm wide with two notches; the doll's fingers fold over it and tuck
+  under the thumb; wings and packs stay behind the doll, their straps over its
   shoulders.
-- The doll wears only a plain sleeveless top, shorts and socks; both hands are fists with slits.
+- The doll wears only a plain sleeveless top, shorts and socks; both hands have a fingers flap and a thumb cut
+  from the edge, and no cuts inside the picture.
