@@ -10,7 +10,7 @@ that size:
   fairies' are green on green, the space stations grey on a grey moon: they melt into the background, and when faded
   they disappear.
 
-**The model is Shevi's ocean** (`public/worlds/ocean/station-house.png`, `station-sub.png`, `station-pod.png`,
+**The ocean is not redrawn:** its stations stay as they are. **It is the model**: Shevi's ocean (`public/worlds/ocean/station-house.png`, `station-sub.png`, `station-pod.png`,
 `station-aquarium.png`, `station-sonar.png`, `station-doctor.png`): one big object or building per station, a plain
 base, almost no characters, strong shapes and colours. Every station of a world looks clearly different from the
 others, and stands out from the map even when faded.
@@ -23,7 +23,7 @@ glance.
 
 | Kind | Size | Background | Files |
 | --- | --- | --- | --- |
-| Map picture (`station-<stage>`) | 600 x 440 | transparent | 10 per world, 7 worlds (70 pictures) |
+| Map picture (`station-<stage>`) | 600 x 440 | transparent | 10 per world, 6 worlds (60 pictures) |
 
 PNG or WebP, named as today (`public/worlds/<world>/art/station-<stage>.webp`), plus the world's `manifest.json`
 updated (file, kind, stage, size, a one-line description). Today's pictures are in the same place: the new one
@@ -76,25 +76,6 @@ scene"*, and the station's line.
 ## The worlds
 
 Each line names what the station's scene shows, and what of it goes on the map.
-
-### Ocean (Underwater)
-
-**Map:** teal-blue water. **Use:** sunny yellow, coral orange, white, deep navy; avoid teal and light blue as the
-main colour. **Base:** a round grey-blue stone, as in Shevi's pictures. Shevi's pictures are kept where noted:
-redraw the others in the same spirit.
-
-| Station | Scene | Map picture |
-| --- | --- | --- |
-| Reception (On the Dock) | The desk inside the dock house | The dock house with the windsock and the pier: Shevi's `station-house.png`, no people. |
-| Wait before triage (Boarding the Submarine) | The yellow cabin of the submarine, a sofa | The yellow submarine with its hatch open: Shevi's `station-sub.png`. |
-| Triage (Pre-dive Checkup) | The bosun checks the diver, a heart monitor | The glass dome with the bed and the monitor: Shevi's `station-pod.png`. |
-| Wait for the doctor (Waiting in the Cabin) | A sofa in front of a big window full of fish | The glass dome full of bright fish: Shevi's `station-aquarium.png`. |
-| Doctor (Meeting the Captain) | The captain with his stethoscope | The captain's round bridge with the captain: Shevi's `station-doctor.png`. |
-| Tests (Submarine Sonar) | The big sonar screen and its control desk | The dome with the sonar screens: Shevi's `station-sonar.png`. |
-| Treatment (Submarine Repairs) | The engineer fixes a small yellow engine with a propeller | The small yellow engine with its propeller on a workbench, a big wrench beside it, the engineer (one character). |
-| Consult (Link with the Base) | The captain talks to the expert on a big video screen | A big round video screen on a stand, the expert with a headset waving from it. |
-| Wait for results (Sonar Data Processing) | A sofa, the sonar screen on the wall, a sand hourglass | A big sand hourglass beside a small round glowing sonar screen. |
-| Decision (Back to the Surface!) | The dock, the submarine surfaced, everyone waving | The yellow submarine floating at the end of the wooden pier, an orange life ring on a post. |
 
 ### Dollhouse
 
