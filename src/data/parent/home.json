@@ -24,7 +24,6 @@
     "reasonAsk": "ספרו לי — מה הביא אתכם היום?",
     "reasonLabel": "באנו היום בגלל",
     "reasonChange": "שינוי",
-    "foot": "הכלי נועד להנגיש את הביקור ולהפחית אי־ודאות. הוא אינו מחליף את הצוות הרפואי ואינו מספק ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים.",
     "reason": {
       "title": "למה באנו היום?",
       "subtitle": "הבחירה עוזרת לי להראות לכם את הדרך הצפויה. אפשר לשנות בכל רגע — וכל ביקור מתחיל אותו דבר.",
@@ -91,9 +90,9 @@
       "clear": "ניקוי הכרטיס"
     },
     "credits": {
-      "disclaimer": "הכלי אינו מחליף את הצוות הרפואי ואינו נותן ייעוץ רפואי. אין צורך להזין שם או פרטים מזהים, והמידע נשמר במכשיר בלבד.",
-      "animations": "האנימציות של אייקוני האמוג׳י הן Noto Animated Emoji של Google, ברישיון CC BY 4.0. רוני מצויר ומונפש לפרויקט.",
-      "ai": "האיורים של עולמות המסע נוצרו בעזרת בינה מלאכותית גנרטיבית: עולם \"ההרפתקה התת-ימית\" ב־Google Gemini, ועובד בידי צוות העיצוב; שאר העולמות ב־OpenAI GPT Image וב־Google Gemini."
+      "disclaimer": "הכלי אינו מחליף את הצוות הרפואי ואינו נותן ייעוץ רפואי. אין צורך בפרטים מזהים.",
+      "animations": "אנימציות: Noto Animated Emoji של Google, ברישיון CC BY 4.0.",
+      "ai": "האיורים נוצרו בבינה מלאכותית."
     }
   },
   "en": {
@@ -121,7 +120,6 @@
     "reasonAsk": "Tell me — what brought you here today?",
     "reasonLabel": "Reason for the visit",
     "reasonChange": "Change",
-    "foot": "This tool is meant to make the visit easier to follow and to reduce uncertainty. It does not replace the medical team and does not give medical advice. There is no need to enter a name or identifying details.",
     "reason": {
       "title": "Why did we come today?",
       "subtitle": "Your choice helps me show you the expected route. You can change it at any time — every visit starts the same way.",
@@ -188,9 +186,9 @@
       "clear": "Clear the card"
     },
     "credits": {
-      "disclaimer": "The tool does not replace the medical team and does not give medical advice. No name or identifying details are needed, and the information is kept on the device only.",
-      "animations": "The emoji icon animations are Noto Animated Emoji by Google, under CC BY 4.0. Roni is drawn and animated for the project.",
-      "ai": "The pictures of the journey's worlds were made with generative AI: the \"Underwater adventure\" world with Google Gemini, finished by the design team; the other worlds with OpenAI GPT Image and Google Gemini."
+      "disclaimer": "The tool does not replace the medical team or give medical advice. No identifying details are needed.",
+      "animations": "Animations: Noto Animated Emoji by Google, under CC BY 4.0.",
+      "ai": "The illustrations were made with AI."
     }
   },
   "ru": {
@@ -218,7 +216,6 @@
     "reasonAsk": "Расскажите — что привело вас сегодня?",
     "reasonLabel": "Причина визита",
     "reasonChange": "Изменить",
-    "foot": "Инструмент помогает сделать визит понятнее и снизить неопределённость. Он не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные.",
     "reason": {
       "title": "Почему вы пришли сегодня?",
       "subtitle": "Выбор помогает показать вам ожидаемый путь. Его можно изменить в любой момент — любой визит начинается одинаково.",
@@ -285,9 +282,9 @@
       "clear": "Очистить карточку"
     },
     "credits": {
-      "disclaimer": "Инструмент не заменяет медицинскую команду и не даёт медицинских советов. Не нужно вводить имя или личные данные, а информация хранится только на устройстве.",
-      "animations": "Анимации эмодзи-иконок — Noto Animated Emoji от Google, лицензия CC BY 4.0. Рони нарисован и анимирован для проекта.",
-      "ai": "Иллюстрации миров путешествия созданы с помощью генеративного ИИ: мир «Подводное приключение» — Google Gemini, доработан командой дизайна; остальные миры — OpenAI GPT Image и Google Gemini."
+      "disclaimer": "Инструмент не заменяет медицинскую команду и не даёт медицинских советов. Личные данные не нужны.",
+      "animations": "Анимации: Noto Animated Emoji от Google, лицензия CC BY 4.0.",
+      "ai": "Иллюстрации созданы с помощью ИИ."
     }
   }
 }
