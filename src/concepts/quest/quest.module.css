@@ -3367,7 +3367,8 @@ path.worldTrailLit {
 
 .shopGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  /* two to a row on a phone */
+  grid-template-columns: repeat(2, 1fr);
   /* every card the same size, whatever its picture or name */
   grid-auto-rows: 1fr;
   gap: 12px;
@@ -3504,10 +3505,10 @@ path.worldTrailLit {
   text-shadow: none;
 }
 
-/* landscape (the same switch as the maps): five pieces to a row */
+/* landscape (the same switch as the maps): two rows, as even as can be (--half: half the things, rounded up) */
 @media (min-aspect-ratio: 3/2), (min-width: 747px) and (min-aspect-ratio: 1/1) {
   .shopBody { max-width: 1100px; }
-  .shopGrid { grid-template-columns: repeat(5, 1fr); }
+  .shopGrid { grid-template-columns: repeat(var(--half, 4), 1fr); }
 }
 
 /* the world's reward on the map (a star, or the knight's coin, which is grey on its own): golden, as in the counter */

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { useGoBackTo } from '../../nav'
 import { WORLD_SELECT } from '../components/WorldScope'
 import { useQuestTheme } from '../useQuestTheme'
@@ -266,7 +266,7 @@ function WorldShop() {
             ))}
           </p>
 
-          <div className={css.shopGrid}>
+          <div className={css.shopGrid} style={{ '--half': Math.ceil(shop.items.length / 2) } as CSSProperties}>
             {shop.items.map((id) => {
               const on = chosen.includes(id)
               const can = on || (chosen.length < MAX_ITEMS && price(id) <= left)
