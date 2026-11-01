@@ -227,6 +227,51 @@
   margin-bottom: var(--space-4);
 }
 
+/* the heading between the "back" button and an invisible copy of it, so it stays in the middle */
+.titleRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.titleRowMain {
+  min-width: 0;
+}
+
+.titleBack {
+  justify-self: start;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  background: #fff;
+  color: #1f2d2b;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.titleBack:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.titleBack:focus-visible {
+  outline: 3px solid #0a6b8a;
+  outline-offset: 2px;
+}
+
+.titleBackSpacer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .sceneTitle {
   font-size: clamp(1.6rem, 1.2rem + 2vw, 2.3rem);
   font-weight: 800;

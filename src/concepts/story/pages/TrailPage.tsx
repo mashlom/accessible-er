@@ -2,7 +2,7 @@ import { keyed } from '../../../lib/keyed'
 import { useI18n } from '../../../hooks/useI18n'
 import { useState } from 'react'
 import { Link } from '../../nav'
-import { Note } from '../components/kit'
+import { Note, TitleRow } from '../components/kit'
 import { getStageIndex } from '../../../data/journey'
 import { parentJourney, parentProcedure } from '../../../data/parent'
 import { parentPaths } from '../../../data/parent/paths'
@@ -40,10 +40,12 @@ export function TrailPage() {
   return (
     <div className={shell.page} dir={dir} lang={lang}>
       <header className={styles.trailHead}>
-        <h1 className={styles.trailTitle}>
-          {t('ui.tiles.journey.title')}
-          <span className={styles.trailLead}>{tx.lead}</span>
-        </h1>
+        <TitleRow>
+          <h1 className={styles.trailTitle}>
+            {t('ui.tiles.journey.title')}
+            <span className={styles.trailLead}>{tx.lead}</span>
+          </h1>
+        </TitleRow>
         <p className={styles.trailSub}>{tx.together}</p>
         <p className={styles.trailSub}>{tx.subtitle}</p>
       </header>

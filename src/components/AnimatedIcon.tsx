@@ -12,6 +12,8 @@ interface AnimatedIconProps {
   size?: number
   /** 'loop' keeps playing; 'once' plays a single time when it appears */
   play?: 'loop' | 'once'
+  /** playback speed: 1 is the animation's own pace, below 1 is slower */
+  speed?: number
   className?: string
 }
 
@@ -32,6 +34,7 @@ export function AnimatedIcon({
   emoji,
   size = 96,
   play = 'loop',
+  speed = 1,
   className,
 }: AnimatedIconProps) {
   const host = useRef<HTMLSpanElement>(null)
@@ -41,7 +44,7 @@ export function AnimatedIcon({
 
   useEffect(() => {
     if (!animate || !host.current) return
-    let anim: { destroy: () => void } | null = null
+    let anim: { destroy: () => void; setSpeed: (speed: number) => void } | null = null
     let cancelled = false
 
     ;(async () => {
@@ -56,6 +59,7 @@ export function AnimatedIcon({
           autoplay: true,
           path: url!,
         })
+        if (speed !== 1) anim.setSpeed(speed)
       } catch {
         if (!cancelled) setFailed(true)
       }
@@ -65,7 +69,7 @@ export function AnimatedIcon({
       cancelled = true
       anim?.destroy()
     }
-  }, [url, animate, play])
+  }, [url, animate, play, speed])
 
   if (!animate) {
     return (

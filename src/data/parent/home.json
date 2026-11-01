@@ -2,7 +2,6 @@
   "he": {
     "eyebrow": "מלר״ד ילדים • לניאדו",
     "title": "מה שלומי?",
-    "subtitle": "כלי להנגשת הביקור במיון לילדים אוטיסטים ולמשפחותיהם",
     "childLabel": "עולם הילד",
     "childDesc": "לילדים: משחקים וסיפורים להיכרות עם הביקור במיון.",
     "start": {
@@ -13,7 +12,7 @@
     },
     "talk": {
       "title": "בוא נדבר!",
-      "desc": "שיחה אחת רציפה עם רוני"
+      "desc": "שיחה קצרה על מה הולך להיות היום"
     },
     "read": {
       "title": "קוראים במיון",
@@ -47,11 +46,8 @@
       "lead": "איפה אנחנו עכשיו ומה הלאה"
     },
     "show": {
-      "subtitle": "כל בדיקה היא סיפור קצר עם ציור, ואני מספר אותו עמוד אחרי עמוד. אפשר לעצור בכל רגע ולחזור אחורה.",
-      "bubble": "אפשר לקרוא את הסיפור לפני שנכנסים — ככה כבר יודעים מה יקרה, ואין הפתעות.",
       "likely": "כנראה נפגוש את אלה היום",
-      "all": "כל הסיפורים",
-      "ours": "הסיפורים שלנו"
+      "all": "בדיקות נוספות"
     },
     "wait": {
       "note": "הזמנים בעמוד הזה הם טווחים בלבד. הסדר והזמנים עשויים להשתנות לפי החלטת הצוות ולפי העומס במיון.",
@@ -60,12 +56,10 @@
     },
     "mapPage": {
       "subtitle": "לכל מקום במיון יש אופי משלו. כאן רואים איפה רועש ואיפה אפשר לנוח.",
-      "bubble": "העיגולים הצבעוניים מספרים כמה רעש, אור, ריח ואנשים יש בכל מקום. ירוק = מעט, אדום = הרבה.",
-      "note": "המפה והדירוג החושי הם הערכה ראשונית לצורך הדמו, ויעודכנו יחד עם צוות המלר״ד ואלו״ט. מיקום מדויק של אזורים ייקבע לפי המחלקה בפועל."
+      "bubble": "העיגולים הצבעוניים מספרים כמה רעש, אור, ריח ואנשים יש בכל מקום. ירוק = מעט, אדום = הרבה."
     },
     "goingHome": {
       "subtitle": "מה קורה בסיום הביקור, ואיך מתכוננים לחזרה הביתה.",
-      "bubble": "עשיתם היום משהו גדול. עכשיו הולכים הביתה — לאט, בקצב שלכם.",
       "blocks": [
         [
           null,
@@ -89,7 +83,7 @@
         ]
       ],
       "closing": "כל הכבוד לכם. נתראה — ושיהיה לכם רק טוב 💛",
-      "feedback": "לספר לנו איך היה"
+      "feedback": "ספרו לנו איך היה"
     },
     "cardPage": {
       "bubble": "🔒 הכל נשמר במכשיר הזה בלבד, נמחק אחרי 24 שעות, ולא נשלח לשום מקום. מה שלא תראו בעצמכם — לא יגיע לצוות. אפשר למלא גם בלי שם.",
@@ -105,7 +99,6 @@
   "en": {
     "eyebrow": "Children's ER • Laniado",
     "title": "How are you?",
-    "subtitle": "A tool to make the emergency room visit easier for autistic children and their families",
     "childLabel": "The child's world",
     "childDesc": "For children: games and stories to get to know the ER visit.",
     "start": {
@@ -116,7 +109,7 @@
     },
     "talk": {
       "title": "Let's talk!",
-      "desc": "One continuous chat with Roni"
+      "desc": "A short chat about what is going to happen today"
     },
     "read": {
       "title": "Read in the ER",
@@ -150,11 +143,8 @@
       "lead": "Where we are now and what comes next"
     },
     "show": {
-      "subtitle": "Each test is a short story with pictures, and I tell it page by page. You can stop at any time and go back.",
-      "bubble": "You can read the story before we go in — then you already know what will happen, and there are no surprises.",
       "likely": "We will probably meet these today",
-      "all": "All the stories",
-      "ours": "Our stories"
+      "all": "More tests"
     },
     "wait": {
       "note": "The times on this page are ranges only. The order and times may change depending on the team's decision and how busy the ER is.",
@@ -163,12 +153,10 @@
     },
     "mapPage": {
       "subtitle": "Every place in the ER has its own character. Here you can see where it is loud and where you can rest.",
-      "bubble": "The coloured circles show how much noise, light, smell and people there are in each place. Green = a little, red = a lot.",
-      "note": "The map and the sensory ratings are a first estimate for the demo, and will be updated together with the Laniado ER team. The exact locations of the areas will be set by the actual department."
+      "bubble": "The coloured circles show how much noise, light, smell and people there are in each place. Green = a little, red = a lot."
     },
     "goingHome": {
       "subtitle": "What happens at the end of the visit, and how to get ready for going home.",
-      "bubble": "You did something big today. Now we go home — slowly, at your own pace.",
       "blocks": [
         [
           null,
@@ -208,7 +196,6 @@
   "ru": {
     "eyebrow": "Детский приёмный покой • Ланиадо",
     "title": "Как вы?",
-    "subtitle": "Инструмент, который делает визит в приёмный покой\nпонятнее для аутичных детей и их семей",
     "childLabel": "Мир ребёнка",
     "childDesc": "Детям: игры и истории, чтобы познакомиться с визитом в приёмный покой.",
     "start": {
@@ -219,7 +206,7 @@
     },
     "talk": {
       "title": "Давай поговорим!",
-      "desc": "Один непрерывный разговор с Рони"
+      "desc": "Короткий разговор о том, что будет сегодня"
     },
     "read": {
       "title": "Читаем в приёмном покое",
@@ -253,11 +240,8 @@
       "lead": "Где мы сейчас и что дальше"
     },
     "show": {
-      "subtitle": "Каждое обследование — это короткая история с картинками, и я рассказываю её страница за страницей. Можно остановиться в любой момент и вернуться назад.",
-      "bubble": "Можно прочитать историю до того, как зайдём, — тогда уже знаешь, что будет, и нет неожиданностей.",
       "likely": "Скорее всего, сегодня понадобится",
-      "all": "Все истории",
-      "ours": "Наши истории"
+      "all": "Другие обследования"
     },
     "wait": {
       "note": "Указано ориентировочное время. Порядок и время могут меняться по решению медицинской команды и из-за загруженности приёмного покоя.",
@@ -266,12 +250,10 @@
     },
     "mapPage": {
       "subtitle": "В каждом месте приёмного покоя свой характер. Здесь видно, где шумно и где можно отдохнуть.",
-      "bubble": "Цветные кружки показывают, сколько шума, света, запахов и людей есть в каждом месте. Зелёный = мало, красный = много.",
-      "note": "Карта и сенсорные оценки — первичная оценка для демо. Их обновят вместе с командой приёмного покоя Ланиадо. Точное расположение зон определится по самому отделению."
+      "bubble": "Цветные кружки показывают, сколько шума, света, запахов и людей есть в каждом месте. Зелёный = мало, красный = много."
     },
     "goingHome": {
       "subtitle": "Что происходит в конце визита и как подготовиться к возвращению домой.",
-      "bubble": "Сегодня вы сделали что-то очень важное и сложное. Теперь идём домой — медленно, в своём темпе. Можно выдохнуть!",
       "blocks": [
         [
           null,

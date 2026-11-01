@@ -1,7 +1,7 @@
 import { keyed } from '../../../lib/keyed'
 import { useI18n } from '../../../hooks/useI18n'
 import { Link } from '../../nav'
-import { Scene, Bubble } from '../components/kit'
+import { Scene } from '../components/kit'
 import { procedures } from '../../../data/procedures'
 import { parentProcedure } from '../../../data/parent'
 import homeTexts from '../../../data/parent/home.json'
@@ -22,8 +22,9 @@ function Card({ p }: { p: Procedure }) {
 }
 
 /**
- * The library of visual preparations, as a shelf of little books. When the
- * family has told us why they came, the ones on their likely route come first.
+ * The tests and procedures, one card each, to get the child ready for them.
+ * When the family has told us why they came, the ones on their likely route
+ * come first.
  */
 export function ShowPage() {
   const { lang, dir, t } = useI18n()
@@ -40,10 +41,7 @@ export function ShowPage() {
 
   return (
     <div dir={dir} lang={lang} style={{ display: 'contents' }}>
-    <Scene title={t('ui.tiles.procedures.title')} subtitle={tx.subtitle}>
-      <div style={{ marginBottom: 'var(--space-4)' }}>
-        <Bubble>{tx.bubble}</Bubble>
-      </div>
+    <Scene title={t('ui.tiles.procedures.title')}>
 
       {likely.length > 0 && (
         <>
@@ -58,9 +56,11 @@ export function ShowPage() {
         </>
       )}
 
-      <h2 className={styles.sectionLabel}>
-        {likely.length > 0 ? tx.all : tx.ours}
-      </h2>
+      {likely.length > 0 && (
+        <h2 className={styles.sectionLabel}>
+          {tx.all}
+        </h2>
+      )}
       <div className={styles.showGrid}>
         {rest.map((p) => (
           <Card key={p.id} p={p} />

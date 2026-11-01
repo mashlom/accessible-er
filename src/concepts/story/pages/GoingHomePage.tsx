@@ -2,7 +2,7 @@ import { keyed } from '../../../lib/keyed'
 import { Link } from '../../nav'
 import { useI18n } from '../../../hooks/useI18n'
 import homeTexts from '../../../data/parent/home.json'
-import { Scene, Bubble } from '../components/kit'
+import { Scene } from '../components/kit'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 
@@ -19,10 +19,6 @@ export function GoingHomePage() {
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
     <Scene title={t('ui.tiles.discharge.title')} subtitle={tx.subtitle}>
-      <div style={{ marginBottom: 'var(--space-4)' }}>
-        <Bubble>{tx.bubble}</Bubble>
-      </div>
-
       <div className={styles.tips}>
         {tx.blocks.map(([rawTitle, body], i) => {
           // the first title is the same as the celebration's first title (one key)
@@ -50,9 +46,6 @@ export function GoingHomePage() {
       <div className={styles.actions}>
         <Link to="/feedback" className={shell.bigBtn}>
           {tx.feedback}
-        </Link>
-        <Link to="/" className={shell.ghostBtn}>
-          {t('ui.storyFeedback.back')}
         </Link>
       </div>
     </Scene>

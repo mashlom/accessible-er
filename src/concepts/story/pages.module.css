@@ -1021,3 +1021,11 @@ button.dest {
 /* the subtitle and the child's world close together */
 .homeHead + .homeSection { margin-top: 0; }
 .homeHead { padding-bottom: 0; }
+
+/* the feedback could not be sent: said under the send button */
+.sendFailed {
+  margin: var(--space-3, 12px) 0 0;
+  text-align: center;
+  font-weight: 700;
+  color: #a12a2a;
+}

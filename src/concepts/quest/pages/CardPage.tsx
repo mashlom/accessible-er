@@ -11,6 +11,9 @@ import { emptyCard, type CareCard } from '../../../data/careCard'
 import { readStored } from '../../../lib/storage'
 import css from '../quest.module.css'
 
+/** "Save as PDF" is hidden for now (the card is shown to the staff from the screen); true brings it back */
+const SHOW_PDF_BUTTON = false
+
 export function CardPage() {
   const { theme } = useQuestTheme()
   const { t, lang, dir } = useI18n()
@@ -56,16 +59,18 @@ export function CardPage() {
                   {t('ui.buttons.showCardNext')}
                 </button>
               </Link>
-              <button
-                type="button"
-                className={css.backBtn}
-                style={{ borderColor: theme.accent, color: theme.accent, opacity: empty ? 0.4 : 1 }}
-                disabled={empty || saving}
-                aria-busy={saving}
-                onClick={() => setPdf('saving')}
-              >
-                {saving ? t('ui.cardView.pdfSaving') : t('ui.cardView.savePdf')}
-              </button>
+              {SHOW_PDF_BUTTON && (
+                <button
+                  type="button"
+                  className={css.backBtn}
+                  style={{ borderColor: theme.accent, color: theme.accent, opacity: empty ? 0.4 : 1 }}
+                  disabled={empty || saving}
+                  aria-busy={saving}
+                  onClick={() => setPdf('saving')}
+                >
+                  {saving ? t('ui.cardView.pdfSaving') : t('ui.cardView.savePdf')}
+                </button>
+              )}
             </div>
             {/* the parent sees that the file was made (a download gives no sign of its own on every phone) */}
             <p className={css.pdfStatus} role="status">

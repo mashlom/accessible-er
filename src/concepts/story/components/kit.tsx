@@ -1,5 +1,30 @@
 import type { ReactNode } from 'react'
+import { useBack } from '../../nav'
+import { useI18n } from '../../../hooks/useI18n'
 import styles from '../story.module.css'
+
+/**
+ * The screen's heading with a "back" button beside it, at the start side.
+ * An invisible copy of the button holds the other side, so the heading stays
+ * in the middle. Back goes through the history, or to `fallback` when the
+ * screen was opened straight from a link.
+ */
+export function TitleRow({ fallback = '/', children }: { fallback?: string; children: ReactNode }) {
+  const back = useBack()
+  const { t } = useI18n()
+  const label = t('ui.buttons.back')
+  return (
+    <div className={styles.titleRow}>
+      <button type="button" className={`${styles.titleBack} app-no-print`} onClick={() => back(fallback)}>
+        {label}
+      </button>
+      <div className={styles.titleRowMain}>{children}</div>
+      <span className={`${styles.titleBack} ${styles.titleBackSpacer} app-no-print`} aria-hidden>
+        {label}
+      </span>
+    </div>
+  )
+}
 
 /** Page frame with a big storybook heading. */
 export function Scene({
@@ -14,7 +39,9 @@ export function Scene({
   return (
     <div className={styles.page}>
       <header className={styles.sceneHead}>
-        <h1 className={styles.sceneTitle}>{title}</h1>
+        <TitleRow>
+          <h1 className={styles.sceneTitle}>{title}</h1>
+        </TitleRow>
         {subtitle && <p className={styles.sceneSub}>{subtitle}</p>}
       </header>
       {children}

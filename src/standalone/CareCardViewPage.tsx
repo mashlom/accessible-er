@@ -1,6 +1,5 @@
 import { keyed } from '../lib/keyed'
-import { Link, useBack, useGoBackTo } from '../concepts/nav'
-import { Mascot } from './Mascot'
+import { Link, useBack } from '../concepts/nav'
 import { usePersistentState } from '../hooks/usePersistentState'
 import i18nUi from '../data/i18n/ui.json'
 import { DAY_MS } from '../lib/storage'
@@ -15,14 +14,12 @@ export function CareCardViewPage() {
   const lang: Lang = 'he'
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
   const back = useBack()
-  const goBackTo = useGoBackTo()
   const ui = keyed((i18nUi as unknown as Record<Lang, { cardView: Record<string, string>; buttons: { back: string } }>)[lang], 'i18n/ui')
   const cv = ui.cardView
   const emptyTitle = keyed((i18nUi as unknown as Record<Lang, { card: { empty: { title: string; hint: string } } }>)[lang], 'i18n/ui').card.empty
   if (isCardEmpty(card)) {
     return (
       <div className={styles.empty}>
-        <Mascot size={96} mood="calm" />
         <h1>{emptyTitle.title}</h1>
         <p>{emptyTitle.hint}</p>
         <Link to="/card" className={styles.emptyBtn}>
@@ -53,9 +50,6 @@ export function CareCardViewPage() {
         <div className={`${styles.actions} app-no-print`}>
           <button type="button" className={styles.actionBtn} onClick={() => back('/card')}>
             {ui.buttons.back}
-          </button>
-          <button type="button" className={styles.actionBtn} onClick={() => goBackTo('/card', { absolute: true })}>
-            {cv.edit}
           </button>
         </div>
       </div>

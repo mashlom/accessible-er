@@ -13,11 +13,8 @@
       "chooseWorld": "← Choose a world",
       "feedback": "How was it? Tell us →",
       "distractAnimations": "🎬 Distraction animations →",
-      "showToStaff": "Show to staff →",
-      "makeCard": "🪪 Make an accommodations card",
       "showCard": "🪪 Show the card to staff",
       "showCardNext": "🪪 Show the card to staff →",
-      "needHelp": "🆘 We need help",
       "close": "Close",
       "clear": "Clear",
       "fillCard": "Fill in the card →",
@@ -35,7 +32,6 @@
       "discharge": "🏠 Go home",
       "admission": "🏥 Continue hospitalization",
       "changeChoice": "← Change choice",
-      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות",
       "interesting": "It is interesting"
     },
     "shell": {
@@ -116,10 +112,8 @@
         "anythingElse": "✏️ Anything else that helps? (optional)",
         "askStaff": "What to ask the staff",
         "calmDefault": "A moment — let's breathe together 💙",
-        "cardDesc": "The card gathers what's important to know about your child — show it to the staff instead of explaining in words.",
         "cardHint": "Tap the button to make a short card for the staff describing your child's particular needs.",
-        "cardSubtitle": "Tick what fits — less than two minutes. At the end you get a short, large card, which you can show the staff on the screen or print.",
-        "cardTitle": "Accommodations card",
+        "cardSubtitle": "Tick what fits — less than two minutes. At the end you get a short, large card, which you can show the staff on the screen.",
         "childMayFeel": "What your child may feel",
         "distractAria": "What would you like to see",
         "distractHint": "Choose what you'd like to see ↓",
@@ -129,8 +123,6 @@
         "done": "Done",
         "estimated": "⏱ Estimated time:",
         "expectedRoute": "Our expected route",
-        "freeHint": "Want to say something not listed above? Write it here and show it to the staff.",
-        "freeMessage": "Free message to staff",
         "freeNotePlaceholder": "For example: likes being told what's happening in a quiet voice…",
         "ifNeeded": "if needed",
         "journeyProgress": "Journey progress",
@@ -145,8 +137,7 @@
         "privacyB": "on this device only",
         "privacyC": ", deleted after 24 hours, and never sent anywhere.",
         "procedurePrompt": "Choose the procedures that were ordered",
-        "readyHint": "Hard to talk right now? Tap a sentence to show it to the staff in large text on the screen — it will appear in Hebrew.",
-        "readySentences": "Ready sentences for the staff",
+        "readySentences": "What can you ask the staff for?",
         "reasonHint": "Tap the button to choose the reason for your visit and see your expected visit plan.",
         "reasonHintTop": "Your choice helps show your expected route",
         "reasonTitle": "What brought you here today?",
@@ -156,7 +147,6 @@
         "stageProcedures": "Procedures at this stage",
         "whatActuallyHappens": "What actually happens",
         "whenHard": "When it's hard — what helps",
-        "writeHere": "Write here...",
         "whoNurse": "A nurse",
         "durationMinute": "about a minute",
         "minutes": "minutes"
@@ -281,9 +271,6 @@
       "ask": "What you can ask the staff for",
       "distract": "🫧 Open a distraction corner during the procedure",
       "note": "The order and times may change depending on the team's decision and how busy the ER is.",
-      "crossLink": "🎭 All the stories ←",
-      "storyTitle": "Read it together with your child",
-      "storyText": "This is the story your child meets in the game, step by step. You can read it together before the procedure, stop at any step and ask what feels hard.",
       "videoTitle": "A short video will go here",
       "videoText": "A real video of {title} from the Laniado ER, or a filmed social story. In the demo this is only a placeholder — the filming has to be done in the department itself."
     },
@@ -320,11 +307,11 @@
       "helpTitle": "What helped you? (you can choose several)",
       "help": [
         "The visit route",
-        "The stories about the tests",
+        "Getting ready for the tests",
         "The map",
         "What to do when it is hard",
         "What I can ask for",
-        "Roni, the helper"
+        "The short chat"
       ],
       "diagTitle": "Is the child diagnosed? (optional, anonymous)",
       "diag": [
@@ -337,21 +324,19 @@
       "notesTitle": "Anything else you would like to tell us? (optional)",
       "notePh": "What helped, what is missing, what we could improve…",
       "submit": "Send feedback",
-      "note": "Pressing send opens a ready email (the feedback reaches the team only after you confirm and send it). A copy is also kept on this device (demo) and contains no identifying information.",
+      "sending": "Sending…",
+      "failed": "We could not send the feedback. You can try again in a moment.",
       "thanks": "Thank you very much! 🌟",
-      "thanksText": "Your feedback helps us improve the tool for other families. If an email app opened with a ready message, all that is left is to send it.",
-      "mailAgain": "📧 No email opened? Tap here",
-      "copy": "Copy the feedback as text",
-      "copied": "✓ Copied",
-      "back": "Back to the start",
+      "thanksText": "Your feedback helps us improve the tool for other families.",
+      "back": "Back to the home page",
       "team": {
         "help": {
           "trail": "השביל של הביקור",
-          "tests": "הסיפורים על הבדיקות",
+          "tests": "ההכנה לבדיקות",
           "map": "המפה",
           "calm": "מה עושים כשקשה",
           "ask": "מה אפשר לבקש",
-          "roni": "רוני, הדמות המלווה"
+          "roni": "השיחה הקצרה"
         },
         "diag": {
           "diagnosed": "מאובחן/ת",
@@ -366,14 +351,13 @@
         },
         "unset": "לא צוין",
         "none": "—",
-        "subject": "משוב על \"מה שלומי?\"",
-        "concept": "קונספט: המסע של רוני",
         "labels": {
           "rating": "דירוג",
           "helped": "מה עזר",
           "diagnosis": "אבחון",
           "note": "הערה"
-        }
+        },
+        "topic": "פידבק"
       }
     },
     "storyMessage": {
@@ -400,7 +384,6 @@
     "cardView": {
       "fill": "Fill in the card",
       "savePdf": "📄 Save as PDF",
-      "edit": "✏️ Edit",
       "pdfSaving": "⏳ Saving the file…",
       "pdfSaved": "✓ The file was saved to the device (in Downloads)",
       "pdfFailed": "The file could not be saved. You can try again, or use the browser's print and choose \"Save as PDF\".",
@@ -462,11 +445,8 @@
       "chooseWorld": "← Выбрать мир",
       "feedback": "Как всё прошло? Расскажите нам →",
       "distractAnimations": "🎬 Мультики, чтобы отвлечься →",
-      "showToStaff": "Показать персоналу →",
-      "makeCard": "🪪 Заполнить карточку адаптаций",
       "showCard": "🪪 Показать карточку персоналу",
       "showCardNext": "🪪 Показать карточку персоналу →",
-      "needHelp": "🆘 Нам нужна помощь",
       "close": "Закрыть",
       "clear": "Очистить",
       "fillCard": "Заполнить карточку →",
@@ -484,7 +464,6 @@
       "discharge": "🏠 Едем домой",
       "admission": "🏥 Остаёмся",
       "changeChoice": "← Изменить выбор",
-      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות",
       "interesting": "Это интересно"
     },
     "shell": {
@@ -565,10 +544,8 @@
         "anythingElse": "✏️ Что-то ещё, что помогает? (необязательно)",
         "askStaff": "О чём попросить персонал",
         "calmDefault": "Минутку — дышим вместе 💙",
-        "cardDesc": "В карточке собрано главное о ребёнке — покажите её персоналу, вместо того чтобы объяснять словами.",
         "cardHint": "Нажмите на кнопку, чтобы подготовить для персонала короткую карточку об особенностях вашего ребёнка.",
-        "cardSubtitle": "Отметьте подходящее — это займёт меньше двух минут. В конце получится короткая крупная карточка, которую можно показать персоналу с экрана или распечатать.",
-        "cardTitle": "Карточка адаптаций",
+        "cardSubtitle": "Отметьте подходящее — это займёт меньше двух минут. В конце получится короткая крупная карточка, которую можно показать персоналу с экрана.",
         "childMayFeel": "Что может почувствовать ребёнок",
         "distractAria": "Что хочешь посмотреть",
         "distractHint": "Выбери, что хочешь посмотреть ↓",
@@ -578,8 +555,6 @@
         "done": "Выполнено",
         "estimated": "⏱ Примерное время:",
         "expectedRoute": "Ожидаемый маршрут",
-        "freeHint": "Хотите сказать то, чего нет выше? Напишите здесь и покажите персоналу.",
-        "freeMessage": "Своё сообщение персоналу",
         "freeNotePlaceholder": "Например: любит, когда тихим голосом рассказывают, что происходит…",
         "ifNeeded": "при необходимости",
         "journeyProgress": "Прогресс пути",
@@ -594,8 +569,7 @@
         "privacyB": "только на этом устройстве",
         "privacyC": ", удаляется через 24 часа и никуда не отправляется.",
         "procedurePrompt": "Выберите назначенные процедуры",
-        "readyHint": "Трудно говорить в такой момент? Нажмите на фразу, чтобы показать её персоналу крупно на экране — она появится на иврите.",
-        "readySentences": "Готовые фразы для персонала",
+        "readySentences": "О чём можно попросить персонал?",
         "reasonHint": "Нажмите на кнопку, чтобы выбрать причину визита и увидеть ожидаемый план визита.",
         "reasonHintTop": "Выбор поможет увидеть ваш ожидаемый маршрут",
         "reasonTitle": "Что привело вас сегодня?",
@@ -605,7 +579,6 @@
         "stageProcedures": "Процедуры на этом этапе",
         "whatActuallyHappens": "Что происходит на самом деле",
         "whenHard": "Когда трудно — что помогает",
-        "writeHere": "Напишите здесь...",
         "whoNurse": "Медсестра или медбрат",
         "durationMinute": "около минуты",
         "minutes": "минут"
@@ -730,9 +703,6 @@
       "ask": "Что можно попросить у персонала",
       "distract": "🫧 Открыть уголок отвлечения во время процедуры",
       "note": "Порядок и время могут меняться по решению команды и из-за загруженности приёмного покоя.",
-      "crossLink": "🎭 Ко всем историям ←",
-      "storyTitle": "Прочитайте вместе с ребёнком",
-      "storyText": "Это история, которую ребёнок встречает в игре, шаг за шагом. Её можно прочитать вместе перед процедурой, остановиться на любом шаге и спросить, что кажется трудным.",
       "videoTitle": "Здесь будет короткое видео",
       "videoText": "Настоящее видео: {title} в приёмном покое Ланиадо или снятая социальная история. В демо здесь только место — съёмку нужно делать в самом отделении."
     },
@@ -769,11 +739,11 @@
       "helpTitle": "Что помогло? (можно выбрать несколько)",
       "help": [
         "Путь визита",
-        "Истории об обследованиях",
+        "Подготовка к обследованиям",
         "Карта",
         "Что делать, когда трудно",
         "Что можно попросить",
-        "Рони, помощник"
+        "Короткий разговор"
       ],
       "diagTitle": "Есть ли у ребёнка диагноз? (необязательно, анонимно)",
       "diag": [
@@ -786,21 +756,19 @@
       "notesTitle": "Что ещё хотите рассказать? (необязательно)",
       "notePh": "Что помогло, чего не хватило, что можно улучшить…",
       "submit": "Отправить отзыв",
-      "note": "Нажатие «Отправить» откроет готовое письмо (отзыв попадёт к команде только после того, как вы подтвердите отправку). Копия также сохранится на этом устройстве (демо) и не содержит идентифицирующих данных.",
+      "sending": "Отправляем…",
+      "failed": "Не удалось отправить отзыв. Можно попробовать ещё раз через минуту.",
       "thanks": "Большое спасибо! 🌟",
-      "thanksText": "Ваш отзыв помогает нам улучшать инструмент для других семей. Если открылось почтовое приложение с готовым письмом — осталось только его отправить.",
-      "mailAgain": "📧 Письмо не открылось? Нажмите здесь",
-      "copy": "Скопировать отзыв текстом",
-      "copied": "✓ Скопировано",
-      "back": "Назад, на главную",
+      "thanksText": "Ваш отзыв помогает нам улучшать инструмент для других семей.",
+      "back": "Назад на главную",
       "team": {
         "help": {
           "trail": "השביל של הביקור",
-          "tests": "הסיפורים על הבדיקות",
+          "tests": "ההכנה לבדיקות",
           "map": "המפה",
           "calm": "מה עושים כשקשה",
           "ask": "מה אפשר לבקש",
-          "roni": "רוני, הדמות המלווה"
+          "roni": "השיחה הקצרה"
         },
         "diag": {
           "diagnosed": "מאובחן/ת",
@@ -815,14 +783,13 @@
         },
         "unset": "לא צוין",
         "none": "—",
-        "subject": "משוב על \"מה שלומי?\"",
-        "concept": "קונספט: המסע של רוני",
         "labels": {
           "rating": "דירוג",
           "helped": "מה עזר",
           "diagnosis": "אבחון",
           "note": "הערה"
-        }
+        },
+        "topic": "פידבק"
       }
     },
     "storyMessage": {
@@ -849,7 +816,6 @@
     "cardView": {
       "fill": "Заполнить карточку",
       "savePdf": "📄 Сохранить как PDF",
-      "edit": "✏️ Изменить",
       "pdfSaving": "⏳ Сохраняем файл…",
       "pdfSaved": "✓ Файл сохранён на устройстве (в «Загрузках»)",
       "pdfFailed": "Не удалось сохранить файл. Можно попробовать ещё раз или распечатать через браузер и выбрать «Сохранить как PDF».",
@@ -941,11 +907,7 @@
       "showCardNext": "🪪 הצגת הכרטיס לצוות ←",
       "clear": "ניקוי",
       "distractAnimations": "🎬 אנימציות להסחת דעת →",
-      "showToStaff": "להציג לצוות ←",
-      "makeCard": "🪪 להכנת כרטיס התאמות",
       "showCard": "🪪 להצגת הכרטיס לצוות",
-      "needHelp": "🆘 נזדקקנו לעזרה",
-      "staffHelpMessage": "אנחנו צריכים עזרה עכשיו — בבקשה שלחו מישהו מהצוות",
       "worldDone": "הצלחתי! ←",
       "backToStation": "חזרה לתחנה →",
       "continue": "המשיכו ←",
@@ -1014,10 +976,8 @@
         "anythingElse": "✏️ עוד משהו שעוזר? (לא חובה)",
         "askStaff": "מה לבקש מהצוות",
         "calmDefault": "רגע, נושמים יחד 💙",
-        "cardDesc": "הכרטיס מרכז את מה שחשוב לדעת על הילד/ה — להציג לצוות במקום להסביר במילים.",
         "cardHint": "בלחיצה על הכפתור תוכלו להכין כרטיס קצר לצוות המתאר את המאפיינים המיוחדים של הילד/ה שלכם.",
-        "cardSubtitle": "סמנו את מה שמתאים — פחות משתי דקות. בסוף יוצא כרטיס קצר וגדול, שאפשר להראות לצוות מהמסך או להדפיס.",
-        "cardTitle": "כרטיס התאמות",
+        "cardSubtitle": "סמנו את מה שמתאים — פחות משתי דקות. בסוף יוצא כרטיס קצר וגדול, שאפשר להראות לצוות מהמסך.",
         "childMayFeel": "מה הילד/ה עשוי/ה להרגיש",
         "distractAria": "מה רוצים לראות",
         "distractHint": "בחרי/בחר מה רוצים לראות ↓",
@@ -1027,8 +987,6 @@
         "done": "בוצע",
         "estimated": "⏱ זמן משוער:",
         "expectedRoute": "המסלול הצפוי שלנו",
-        "freeHint": "רוצים לומר משהו שלא מופיע למעלה? כתבו כאן והציגו לצוות.",
-        "freeMessage": "הודעה חופשית לצוות",
         "freeNotePlaceholder": "למשל: אוהב שמספרים לו מה קורה בקול שקט…",
         "ifNeeded": "לפי הצורך",
         "journeyProgress": "התקדמות במסע",
@@ -1043,8 +1001,7 @@
         "privacyB": "במכשיר הזה בלבד",
         "privacyC": ", נמחק אחרי 24 שעות, ולא נשלח לשום מקום.",
         "procedurePrompt": "בחרו את הפרוצדורות שנקבעו",
-        "readyHint": "קשה לדבר ברגע כזה? לחצו על משפט כדי להציג אותו לצוות בגדול על המסך.",
-        "readySentences": "משפטים מוכנים לצוות",
+        "readySentences": "מה ניתן לבקש מהצוות?",
         "reasonHint": "בלחיצה על הכפתור תוכלו לבחור את סיבת הביקור ולראות את תכנית הביקור הצפויה שלכם.",
         "reasonHintTop": "הבחירה עוזרת לראות את המסלול הצפוי שלכם",
         "reasonTitle": "מה הביא אתכם היום?",
@@ -1054,7 +1011,6 @@
         "stageProcedures": "פרוצדורות בשלב הזה",
         "whatActuallyHappens": "מה קורה בפועל",
         "whenHard": "כשקשה — מה עוזר",
-        "writeHere": "כתבו כאן...",
         "whoNurse": "אח או אחות",
         "durationMinute": "כדקה",
         "minutes": "דקות"
@@ -1179,9 +1135,6 @@
       "ask": "מה אפשר לבקש מהצוות",
       "distract": "🫧 לפתוח פינת הסחת דעת בזמן הפעולה",
       "note": "הסדר והזמנים עשויים להשתנות לפי החלטת הצוות והעומס במיון.",
-      "crossLink": "🎭 לכל הסיפורים ←",
-      "storyTitle": "לקרוא יחד עם הילד/ה",
-      "storyText": "זה הסיפור שהילד/ה פוגש/ת במשחק, שלב אחרי שלב. אפשר לקרוא אותו יחד לפני הבדיקה, לעצור בכל שלב ולשאול מה מרגיש קשה.",
       "videoTitle": "כאן ייכנס סרטון קצר",
       "videoText": "סרטון אמיתי של {title} מהמלר״ד בלניאדו, או סיפור חברתי מצולם. בדמו זה שמור מקום בלבד — הצילום צריך להיעשות במחלקה עצמה."
     },
@@ -1218,11 +1171,11 @@
       "helpTitle": "מה עזר לכם? (אפשר לבחור כמה)",
       "help": [
         "השביל של הביקור",
-        "הסיפורים על הבדיקות",
+        "ההכנה לבדיקות",
         "המפה",
         "מה עושים כשקשה",
         "מה אפשר לבקש",
-        "רוני, הדמות המלווה"
+        "השיחה הקצרה"
       ],
       "diagTitle": "האם הילד/ה מאובחן/ת? (לא חובה, אנונימי)",
       "diag": [
@@ -1235,21 +1188,19 @@
       "notesTitle": "עוד משהו שתרצו לספר? (לא חובה)",
       "notePh": "מה עזר, מה חסר, מה נשמח לשפר…",
       "submit": "שליחת משוב",
-      "note": "לחיצה על השליחה תפתח הודעת מייל מוכנה (המשוב יגיע לצוות רק אחרי שתאשרו ותשלחו). עותק נשמר גם במכשיר הזה (דמו) ואינו כולל מידע מזהה.",
+      "sending": "שולחים…",
+      "failed": "לא הצלחנו לשלוח את המשוב. אפשר לנסות שוב בעוד רגע.",
       "thanks": "תודה רבה! 🌟",
-      "thanksText": "המשוב שלכם עוזר לנו לשפר את הכלי עבור משפחות אחרות. אם נפתחה אצלכם אפליקציית מייל עם הודעה מוכנה — נשאר רק לשלוח אותה.",
-      "mailAgain": "📧 לא נפתח מייל? לחצו כאן",
-      "copy": "העתקת המשוב כטקסט",
-      "copied": "✓ הועתק",
-      "back": "חזרה לעולם של רוני",
+      "thanksText": "המשוב שלכם עוזר לנו לשפר את הכלי עבור משפחות אחרות.",
+      "back": "חזרה לדף הראשי",
       "team": {
         "help": {
           "trail": "השביל של הביקור",
-          "tests": "הסיפורים על הבדיקות",
+          "tests": "ההכנה לבדיקות",
           "map": "המפה",
           "calm": "מה עושים כשקשה",
           "ask": "מה אפשר לבקש",
-          "roni": "רוני, הדמות המלווה"
+          "roni": "השיחה הקצרה"
         },
         "diag": {
           "diagnosed": "מאובחן/ת",
@@ -1264,14 +1215,13 @@
         },
         "unset": "לא צוין",
         "none": "—",
-        "subject": "משוב על \"מה שלומי?\"",
-        "concept": "קונספט: המסע של רוני",
         "labels": {
           "rating": "דירוג",
           "helped": "מה עזר",
           "diagnosis": "אבחון",
           "note": "הערה"
-        }
+        },
+        "topic": "פידבק"
       }
     },
     "storyMessage": {
@@ -1298,7 +1248,6 @@
     "cardView": {
       "fill": "למילוי הכרטיס",
       "savePdf": "📄 שמירה כ־PDF",
-      "edit": "✏️ עריכה",
       "pdfSaving": "⏳ שומרים את הקובץ…",
       "pdfSaved": "✓ הקובץ נשמר במכשיר (בתיקיית ההורדות)",
       "pdfFailed": "לא הצלחנו לשמור את הקובץ. אפשר לנסות שוב, או להדפיס מהדפדפן ולבחור \"שמירה כ־PDF\".",

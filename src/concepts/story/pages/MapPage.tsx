@@ -1,6 +1,6 @@
 import { keyed } from '../../../lib/keyed'
 import type { CSSProperties } from 'react'
-import { Scene, Bubble, Note } from '../components/kit'
+import { Scene, Bubble } from '../components/kit'
 import { loadLabels } from '../../../data/map'
 import { parentMapAreas, parentLoadLabel } from '../../../data/parent/map'
 import { SensoryBar } from '../../../components/SensoryBar'
@@ -69,10 +69,6 @@ export function MapPage() {
             </article>
           )
         })}
-      </div>
-
-      <div style={{ marginTop: 'var(--space-4)' }}>
-        <Note>{tx.note}</Note>
       </div>
     </Scene>
     </div>

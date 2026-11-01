@@ -680,9 +680,6 @@ export function resolveNode(id: string, ctx: Ctx): TalkNode {
         return {
           say: [
             { text: talkText(ctx.lang).bye.thanks1, mood: 'cheer' },
-            {
-              text: talkText(ctx.lang).bye.thanks2,
-            },
             { text: talkText(ctx.lang).bye.thanks3, mood: 'proud' },
           ],
           choices: [

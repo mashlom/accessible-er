@@ -24,7 +24,6 @@ const destinations = [
   { to: '/distract', id: 'distract', emoji: '🫧', tint: 'var(--s-sea-soft)' },
   { to: '/requests', id: 'requests', emoji: '🙋', tint: 'var(--s-grass-soft)' },
   { to: '/going-home', id: 'going-home', emoji: '🏠', tint: 'var(--s-sun-soft)' },
-  { to: '/message', id: 'message', emoji: '✉️', tint: 'var(--s-lilac-soft)' },
   { to: '/feedback', id: 'feedback', emoji: '💬', tint: 'var(--s-sea-soft)' },
 ]
 
@@ -75,7 +74,6 @@ export function WorldPage() {
           <span className={styles.homeEyebrow} dir={dir}>{tx.eyebrow}</span>
         </div>
         <h1 className={styles.homeTitle}>{tx.title}</h1>
-        <p className={styles.homeSub}>{tx.subtitle}</p>
       </header>
 
       <section className={styles.homeSection} aria-labelledby="child-world">

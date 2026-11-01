@@ -42,9 +42,6 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
   return (
     <>
       <p className={css.parentZoneLabel}>{t('ui.labels.adult.aboutMyChild')}</p>
-      <p className={css.cardPrivacy}>
-        {t('ui.labels.adult.privacyA')} <strong>{t('ui.labels.adult.privacyB')}</strong>{t('ui.labels.adult.privacyC')}
-      </p>
       {!isCardEmpty(card) && (
         <div className={css.stageBack}>
           <button type="button" className={css.backBtn} style={{ borderColor: '#aaa', color: '#888' }} onClick={clearCard}>
@@ -120,6 +117,11 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
       {lang !== 'he' && <p className={css.cardPrivacy}>{t('ui.careView.hebrewNote')}</p>}
 
       {footer({ empty: isCardEmpty(card), clear: clearCard })}
+
+      {/* where the card is kept: small, at the end of the screen, as a footer */}
+      <p className={css.cardPrivacyFoot}>
+        {t('ui.labels.adult.privacyA')} {t('ui.labels.adult.privacyB')}{t('ui.labels.adult.privacyC')}
+      </p>
     </>
   )
 }
