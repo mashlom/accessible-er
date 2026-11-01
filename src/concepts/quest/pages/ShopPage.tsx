@@ -15,7 +15,7 @@ import css from '../quest.module.css'
  * What each thing costs, set by the stars the child has: four things together cost exactly the stars (so four can
  * always be bought and every star spent), and the others a little more (so a fifth is always too dear). With fewer
  * than four stars the cheap things cost one star each. Cheap and dear things alternate along the world's list.
- * Checked for 1 to 30 stars, with 7 or 8 things.
+ * Checked for 1 to 30 stars, with 7 to 9 things.
  */
 function pricesFor(stars: number, n: number): number[] {
   const base = Math.floor(stars / 4)
@@ -23,7 +23,10 @@ function pricesFor(stars: number, n: number): number[] {
   const cheap = [...Array(rest).fill(Math.max(1, base + 1)), ...Array(4 - rest).fill(Math.max(1, base))].sort((a, b) => a - b)
   const b = Math.max(1, base)
   const dear = [b + 1, b + 2, b + 2, b + 3]
-  return [cheap[0], dear[0], cheap[1], dear[1], cheap[2], dear[2], cheap[3], dear[3]].slice(0, n)
+  const prices = [cheap[0], dear[0], cheap[1], dear[1], cheap[2], dear[2], cheap[3], dear[3]]
+  // a ninth thing and more: dear ones too, so the four cheap ones stay the only way to spend every star
+  while (prices.length < n) prices.push(dear[prices.length % 4])
+  return prices.slice(0, n)
 }
 /** At most this many things go on the sheet next to the doll */
 const MAX_ITEMS = 4

@@ -240,7 +240,8 @@
       "backpack": "תרמיל",
       "camera": "מצלמה",
       "map": "מפה",
-      "water-bottle": "בקבוק מים"
+      "water-bottle": "בקבוק מים",
+      "trousers": "מכנסיים"
     }
   },
   "en": {
@@ -484,7 +485,8 @@
       "backpack": "Backpack",
       "camera": "Camera",
       "map": "Map",
-      "water-bottle": "Water bottle"
+      "water-bottle": "Water bottle",
+      "trousers": "Trousers"
     }
   },
   "ru": {
@@ -728,7 +730,8 @@
       "backpack": "Рюкзак",
       "camera": "Фотоаппарат",
       "map": "Карта",
-      "water-bottle": "Фляжка"
+      "water-bottle": "Фляжка",
+      "trousers": "Брюки"
     }
   }
 }
