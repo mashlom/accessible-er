@@ -11,7 +11,6 @@ import { CalmPage } from '../quest/pages/CalmPage'
 import { DistractPage } from './pages/DistractPage'
 import { RequestsPage } from './pages/RequestsPage'
 import { GoingHomePage } from './pages/GoingHomePage'
-import { MessagePage } from './pages/MessagePage'
 import { FeedbackPage } from './pages/FeedbackPage'
 import { WaitTimesPage } from './pages/WaitTimesPage'
 import { QrPage } from './pages/QrPage'
@@ -33,7 +32,6 @@ export default function StoryConcept() {
         <Route path="distract" element={<DistractPage />} />
         <Route path="requests" element={<RequestsPage />} />
         <Route path="going-home" element={<GoingHomePage />} />
-        <Route path="message" element={<MessagePage />} />
         <Route path="feedback" element={<FeedbackPage />} />
         {/* staff-only page, deliberately not linked from the family UI */}
         <Route path="settings" element={<QrPage />} />

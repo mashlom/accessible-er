@@ -105,7 +105,6 @@
     },
     "bye": {
       "thanks1": "תודה רבה! זה עוזר לנו לשפר את הכלי למשפחות אחרות.",
-      "thanks2": "אם נפתחה אצלכם אפליקציית מייל עם הודעה מוכנה — נשאר רק לשלוח אותה.",
       "thanks3": "היה לי טוב איתכם היום. שיהיה רק טוב 💛",
       "ask": "איך היה לכם היום?",
       "askNote": "שאלה אחת קצרה, בלי שם ובלי פרטים מזהים."
@@ -128,10 +127,7 @@
       "back": "חזרה לשיחה",
       "emptyText": "חזרו לשיחה עם רוני — הוא ישאל כמה שאלות קצרות, ויהיה כרטיס."
     },
-    "staffPauseBig": "אנחנו צריכים דקה",
-    "mail": {
-      "subjectPrefix": "משוב על"
-    }
+    "staffPauseBig": "אנחנו צריכים דקה"
   },
   "en": {
     "intro": {
@@ -239,7 +235,6 @@
     },
     "bye": {
       "thanks1": "Thank you very much! It helps us improve this tool for other families.",
-      "thanks2": "If an email app opened with a ready message, all that is left is to send it.",
       "thanks3": "It was good being with you today. Take care 💛",
       "ask": "How was today for you?",
       "askNote": "One short question, with no name and no identifying details."
@@ -262,10 +257,7 @@
       "back": "Back to the conversation",
       "emptyText": "Go back to the conversation with Roni — he will ask a few short questions, and there will be a card."
     },
-    "staffPauseBig": "We need a minute",
-    "mail": {
-      "subjectPrefix": "Feedback on"
-    }
+    "staffPauseBig": "We need a minute"
   },
   "ru": {
     "intro": {
@@ -373,7 +365,6 @@
     },
     "bye": {
       "thanks1": "Большое спасибо! Это помогает нам улучшать инструмент для других семей.",
-      "thanks2": "Если у вас открылось почтовое приложение с готовым письмом — осталось только его отправить.",
       "thanks3": "Мне было с вами хорошо сегодня. Пусть всё будет хорошо 💛",
       "ask": "Как прошёл сегодняшний день?",
       "askNote": "Один короткий вопрос, без имени и без личных данных."
@@ -396,9 +387,6 @@
       "back": "Назад к разговору",
       "emptyText": "Вернитесь к разговору с Рони — он задаст несколько коротких вопросов, и появится карточка."
     },
-    "staffPauseBig": "Нам нужна минута",
-    "mail": {
-      "subjectPrefix": "Отзыв о"
-    }
+    "staffPauseBig": "Нам нужна минута"
   }
 }

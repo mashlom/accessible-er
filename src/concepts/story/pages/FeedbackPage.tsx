@@ -1,15 +1,15 @@
 import { keyed } from '../../../lib/keyed'
 import { useState } from 'react'
 import { Link } from '../../nav'
-import { Roni } from '../../../components/Roni'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
-import { Scene, Panel, ChipButton, Note } from '../components/kit'
+import { Scene, Panel, ChipButton } from '../components/kit'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 import { useI18n } from '../../../hooks/useI18n'
 import i18nUi from '../../../data/i18n/ui.json'
+import { sendToTeam } from '../../../lib/mail'
 
 type FeedbackTexts = {
   subtitle: string
@@ -23,19 +23,17 @@ type FeedbackTexts = {
   notesTitle: string
   notePh: string
   submit: string
-  note: string
+  sending: string
+  failed: string
   thanks: string
   thanksText: string
-  mailAgain: string
-  copy: string
-  copied: string
   back: string
 }
 
 // the choices are stored by id; the team's Hebrew words for them are in i18n/ui.json (storyFeedback.team)
 const HELP_IDS = ['trail', 'tests', 'map', 'calm', 'ask', 'roni'] as const
 const DIAG_IDS = ['diagnosed', 'inProcess', 'no', 'noAnswer'] as const
-type TeamWords = { help: Record<string, string>; diag: Record<string, string>; rating: Record<string, string>; unset: string; none: string; subject: string; concept: string; labels: Record<string, string> }
+type TeamWords = { help: Record<string, string>; diag: Record<string, string>; rating: Record<string, string>; unset: string; none: string; topic: string; labels: Record<string, string> }
 const team = keyed((i18nUi as unknown as { he: { storyFeedback: { team: TeamWords } } }).he, 'i18n/ui').storyFeedback.team
 
 interface Feedback {
@@ -45,20 +43,13 @@ interface Feedback {
   note: string
 }
 
-const FEEDBACK_EMAIL = 'posicel@gmail.com'
-
 function buildText({ rating, helped, diagnosis, note }: Feedback) {
   return [
     `${team.labels.rating}: ${rating ? team.rating[String(rating)] : team.unset}`,
     `${team.labels.helped}: ${helped.length ? helped.map((id) => team.help[id]).join(', ') : team.none}`,
     `${team.labels.diagnosis}: ${diagnosis ? team.diag[diagnosis] : team.unset}`,
     `${team.labels.note}: ${note.trim() || team.none}`,
-    team.concept,
   ].join('\n')
-}
-
-function buildMailto(feedback: Feedback) {
-  return `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(team.subject)}&body=${encodeURIComponent(buildText(feedback))}`
 }
 
 export function FeedbackPage() {
@@ -70,41 +61,33 @@ export function FeedbackPage() {
   const [helped, setHelped] = useState<string[]>(saved?.helped ?? [])
   const [diagnosis, setDiagnosis] = useState<string | null>(saved?.diagnosis ?? null)
   const [note, setNote] = useState(saved?.note ?? '')
-  const [sent, setSent] = useState<Feedback | null>(null)
-  const [copied, setCopied] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'failed'>('idle')
 
-  function submit() {
+  // the feedback goes straight to the team's mail (mashlom.me@gmail.com); a copy stays on this device
+  async function submit() {
     const feedback = { rating, helped, diagnosis, note }
     setSaved(feedback)
-    setSent(feedback)
-    window.location.href = buildMailto(feedback)
+    setStatus('sending')
+    try {
+      await sendToTeam(team.topic, buildText(feedback))
+      setStatus('sent')
+    } catch (error) {
+      console.warn(error)
+      setStatus('failed')
+    }
   }
 
-  if (sent) {
+  if (status === 'sent') {
     return (
       <div className={shell.page} dir={dir} lang={lang}>
         <div className={styles.emptyState}>
-          <Roni size={140} mood="cheer" float />
           <h1 className={shell.sceneTitle}>{tx.thanks}</h1>
           <p style={{ color: 'var(--s-ink-soft)', maxWidth: '34ch' }}>{tx.thanksText}</p>
           <div className={styles.actions}>
-            <a href={buildMailto(sent)} className={shell.bigBtn}>
-              {tx.mailAgain}
-            </a>
-            <button
-              type="button"
-              className={shell.ghostBtn}
-              onClick={async () => {
-                await navigator.clipboard.writeText(buildText(sent))
-                setCopied(true)
-              }}
-            >
-              {copied ? tx.copied : tx.copy}
-            </button>
+            <Link to="/" className={shell.bigBtn}>
+              {tx.back}
+            </Link>
           </div>
-          <Link to="/" className={styles.crossLink}>
-            {tx.back}
-          </Link>
         </div>
       </div>
     )
@@ -186,15 +169,15 @@ export function FeedbackPage() {
           type="button"
           className={shell.bigBtn}
           onClick={submit}
-          disabled={rating === null && helped.length === 0 && !note.trim()}
+          disabled={status === 'sending' || (rating === null && helped.length === 0 && !note.trim())}
+          aria-busy={status === 'sending'}
         >
-          {tx.submit}
+          {status === 'sending' ? tx.sending : tx.submit}
         </button>
       </div>
-
-      <div style={{ marginTop: 'var(--space-4)' }}>
-        <Note>{tx.note}</Note>
-      </div>
+      <p role="status" className={styles.sendFailed}>
+        {status === 'failed' && tx.failed}
+      </p>
     </Scene>
     </div>
   )

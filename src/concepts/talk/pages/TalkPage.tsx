@@ -12,7 +12,7 @@ import { resolveNode, talkText, topicChoices, type Action, type Choice, type Say
 import { useI18n } from '../../../hooks/useI18n'
 import i18nUi from '../../../data/i18n/ui.json'
 import talkJson from '../../../data/parent/talk.json'
-import homeJson from '../../../data/parent/home.json'
+import { sendToTeam } from '../../../lib/mail'
 import styles from '../talk.module.css'
 
 /** One exchange: what Roni said, and what the family answered to it. */
@@ -22,7 +22,8 @@ interface Turn {
 }
 
 const TRAIL_KEY = 'talk-trail'
-const FEEDBACK_EMAIL = 'posicel@gmail.com'
+// the topic in the mail's subject ("ביקור במיון, <date>, פידבק")
+const FEEDBACK_TOPIC = 'פידבק'
 // the rating's key in talk.json's buttons (the team's mail takes the Hebrew wording)
 const RATING_KEYS: Record<number, 'helpedLess' | 'helpedSome' | 'helpedMuch'> = {
   1: 'helpedLess',
@@ -164,11 +165,10 @@ export function TalkPage() {
         break
       case 'feedback': {
         // the team reads Hebrew: the question the parent was asked and the answer the parent chose, as the parent saw them
-        const he = keyed((talkJson as unknown as { he: { mail: Record<string, string>; bye: Record<string, string>; buttons: Record<string, string> } }).he, 'parent/talk')
+        const he = keyed((talkJson as unknown as { he: { bye: Record<string, string>; buttons: Record<string, string> } }).he, 'parent/talk')
         const body = [he.bye.ask, he.buttons[RATING_KEYS[action.rating]]].join('\n')
-        // the subject in the parent's language: the prefix and the app name, as the home page shows it
-        const subject = `${(talkJson as unknown as Record<'he'|'en'|'ru', { mail: { subjectPrefix: string } }>)[lang].mail.subjectPrefix} "${(homeJson as unknown as Record<'he'|'en'|'ru', { title: string }>)[lang].title}"`
-        window.location.href = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+        // straight to the team's mail (mashlom.me@gmail.com); the conversation goes on either way
+        sendToTeam(FEEDBACK_TOPIC, body).catch((error) => console.warn(error))
         break
       }
       case 'restart':

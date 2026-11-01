@@ -116,9 +116,12 @@ function landscapeScene(design: WorldDesign, images: string[]): Scene {
   // where each station's number stands (relative to the place):
   //   A top right (the captain's place), B bottom right, C top centre, D centre left; the house bottom left.
   const places = spec.places
+  // fewer stations than places: the LAST places are taken (the ones nearest the house), so the last station stands
+  // beside the ending and not across the whole map from it; the stations keep the same spacing between them
+  const first = Math.max(0, places.length - n)
   const slots: Slot[] = []
   for (let k = 0; k < n; k++) {
-    const pl = places[k]
+    const pl = places[first + k]
     const f = shapeOf(design, images[k])
     const w = pl.visible / f.visible
     const h = w / f.aspect
@@ -131,7 +134,7 @@ function landscapeScene(design: WorldDesign, images: string[]): Scene {
   // them at their edges); the last number is joined to the end of the ending's picture
   const curves = spec.curves.map(([c1, c2]) => (a: Pt, b: Pt) => dotsAlong(a, c1, c2, b))
   const lines: Pt[][] = []
-  for (let k = 0; k < n - 1; k++) lines.push(curves[k](slots[k].badge, slots[k + 1].badge))
+  for (let k = 0; k < n - 1; k++) lines.push(curves[first + k](slots[k].badge, slots[k + 1].badge))
   if (n > 0) {
     // to the end of the pier
     const lb = slots[n - 1].badge

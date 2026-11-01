@@ -14,14 +14,16 @@ const watchables: { emoji: string }[] = [
   { emoji: '⭐' },
 ]
 
+// the same slow pace as the parent's distraction corner (story/pages/DistractPage.tsx)
 const bubbles = [
-  { size: 46, left: '8%', delay: '0s', duration: '13s' },
-  { size: 26, left: '24%', delay: '3.5s', duration: '16s' },
-  { size: 60, left: '44%', delay: '1.5s', duration: '11s' },
-  { size: 32, left: '64%', delay: '5s', duration: '15s' },
-  { size: 40, left: '82%', delay: '2.5s', duration: '18s' },
-  { size: 20, left: '92%', delay: '6.5s', duration: '12s' },
+  { size: 46, left: '8%', delay: '0s', duration: '18s' },
+  { size: 26, left: '24%', delay: '5s', duration: '22s' },
+  { size: 60, left: '44%', delay: '2s', duration: '15s' },
+  { size: 32, left: '64%', delay: '7s', duration: '21s' },
+  { size: 40, left: '82%', delay: '3.5s', duration: '25s' },
+  { size: 20, left: '92%', delay: '9s', duration: '17s' },
 ]
+const WATCH_SPEED = 0.6
 
 export function DistractPage() {
   const { theme } = useQuestTheme()
@@ -52,7 +54,7 @@ export function DistractPage() {
               />
             ))}
           </div>
-          <AnimatedIcon emoji={pick.emoji} size={180} className={css.distractArt} />
+          <AnimatedIcon emoji={pick.emoji} size={180} speed={WATCH_SPEED} className={css.distractArt} />
         </div>
 
         <div className={css.distractPicker} role="group" aria-label={t('ui.labels.adult.distractAria')}>

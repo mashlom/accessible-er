@@ -1,16 +1,15 @@
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useI18n } from '../../hooks/useI18n'
-import { Roni } from '../Roni'
 import { TalkPage } from '../../concepts/talk/pages/TalkPage'
 import talkStyles from '../../concepts/talk/talk.module.css'
-import { closeHelper, openHelper, useHelperOpen } from './helperStore'
+import { closeHelper, useHelperOpen } from './helperStore'
 import styles from './helper.module.css'
 
 /**
- * Roni's conversation as a popup, for every parent screen: a floating button
- * in the bottom-left corner opens it, and while it is open the rest of the
- * screen is dimmed. Closing: the ✕, Escape, or a tap outside the sheet.
+ * Roni's conversation as a popup over the parent screens: the home's "let's
+ * talk" tile opens it (no floating figure on the screens), and while it is
+ * open the rest of the screen is dimmed. Closing: the ✕, Escape, or a tap outside the sheet.
  * The conversation itself is the same one as on the talk route.
  */
 export function HelperChat() {
@@ -26,7 +25,7 @@ export function HelperChat() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
-  // rendered on the body: an ancestor with a transform or an overflow would otherwise move the button with the page
+  // rendered on the body: an ancestor with a transform or an overflow would otherwise move the popup with the page
   return createPortal(
     open ? (
       <div className={styles.overlay} onClick={closeHelper}>
@@ -52,17 +51,7 @@ export function HelperChat() {
           </div>
         </div>
       </div>
-    ) : (
-      <button
-        type="button"
-        className={styles.fab}
-        onClick={openHelper}
-        aria-label="Roni"
-        aria-haspopup="dialog"
-      >
-        <Roni size={44} mood="calm" headOnly decorative />
-      </button>
-    ),
+    ) : null,
     document.body,
   )
 }

@@ -1,13 +1,9 @@
-import { useState } from 'react'
 import { Link, useGoBackTo } from '../../nav'
 import { useParentTheme, useQuestTheme } from '../useQuestTheme'
 import { useLocation } from 'react-router-dom'
 import { useReturnTo } from '../useReturnTo'
 import { distressTips, readySentences } from '../../../data/support'
 import { AnimatedIcon } from '../../../components/AnimatedIcon'
-import { usePersistentState } from '../../../hooks/usePersistentState'
-import { DAY_MS } from '../../../lib/storage'
-import { emptyCard, isCardEmpty, type CareCard } from '../../../data/careCard'
 import { useI18n } from '../../../hooks/useI18n'
 import css from '../quest.module.css'
 
@@ -26,10 +22,6 @@ export function CalmPage() {
   const theme = fromWorld ? world : parent
   const { t } = useI18n()
   const { goBack, leaveState } = useReturnTo('/map')
-  const [shown, setShown] = useState<string | null>(null)
-  const [freeText, setFreeText] = useState('')
-  const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
-  const cardEmpty = isCardEmpty(card)
 
   return (
     <div className={css.stagePage}>
@@ -68,86 +60,18 @@ export function CalmPage() {
           </section>
         ))}
 
+        {/* what the parents can ask the staff for: sentences to read, not buttons */}
         <p className={css.parentZoneLabel}>{t('ui.labels.adult.readySentences')}</p>
         <section>
-          <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
-            {t('ui.labels.adult.readyHint')}
-          </p>
-          <div className={css.calmSentences}>
+          <ul className={css.calmSentences}>
             {readySentences.map((s, i) => (
-              <button
-                key={s}
-                type="button"
-                className={css.calmSentenceBtn}
-                style={{ borderColor: theme.accent, color: theme.accent }}
-                onClick={() => setShown(s)}
-              >
+              <li key={s} className={css.calmSentence} style={{ borderColor: theme.accent, color: theme.accent }}>
                 {t(`support.readySentences.${i}`, s)}
-              </button>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
-
-        <p className={css.parentZoneLabel}>{t('ui.labels.adult.freeMessage')}</p>
-        <section>
-          <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
-            {t('ui.labels.adult.freeHint')}
-          </p>
-          <textarea
-            className={css.calmFreeText}
-            value={freeText}
-            onChange={(e) => setFreeText(e.target.value)}
-            placeholder={t('ui.labels.adult.writeHere')}
-            rows={3}
-            dir="rtl"
-          />
-          {freeText.trim() && (
-            <button
-              type="button"
-              className={css.calmSentenceBtn}
-              style={{ borderColor: theme.accent, color: theme.accent, marginTop: '0.5rem' }}
-              onClick={() => setShown(freeText.trim())}
-            >
-              {t('ui.buttons.showToStaff')}
-            </button>
-          )}
-        </section>
-
-        <p className={css.parentZoneLabel}>{t('ui.labels.adult.cardTitle')}</p>
-        <section>
-          <p style={{ marginBottom: '0.75rem', color: '#555', fontSize: '0.9rem' }}>
-            {t('ui.labels.adult.cardDesc')}
-          </p>
-          {cardEmpty ? (
-            <Link to="/card" state={leaveState('/calm')} className={css.calmLink}>{t('ui.buttons.makeCard')}</Link>
-          ) : (
-            <Link to="/card/view" state={leaveState('/calm')} className={css.calmLink}>{t('ui.buttons.showCard')}</Link>
-          )}
-        </section>
-
-        <button
-          type="button"
-          className={css.calmHelpBtn}
-          style={{ background: theme.accent, color: theme.accentText }}
-          onClick={() => setShown(t('ui.buttons.staffHelpMessage'))}
-        >
-          {t('ui.buttons.needHelp')}
-        </button>
       </div>
-
-      {shown && (
-        <div
-          className={css.calmOverlay}
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setShown(null)}
-        >
-          <p className={css.calmOverlayText}>{shown}</p>
-          <button type="button" className={css.calmOverlayClose} onClick={() => setShown(null)}>
-            {t('ui.buttons.close')}
-          </button>
-        </div>
-      )}
     </div>
   )
 }
