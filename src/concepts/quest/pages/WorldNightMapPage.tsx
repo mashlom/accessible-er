@@ -43,14 +43,21 @@ function portraitScene(design: WorldDesign, images: string[], screenH: number): 
   const spec = design.nightMap.portrait
   const aspectOf = (src: string) => shapeOf(design, src).aspect
   const n = images.length - 1
-  const w = n <= 2 ? 250 : n === 3 ? 215 : 185
+  const places = spec.places
+  // with fixed places every station has one size, as on the first map
+  const w = places ? 200 : n <= 2 ? 250 : n === 3 ? 215 : 185
   const fw = spec.finaleWidth
   const fh = fw / aspectOf(images[n])
   const hs = images.slice(0, n).map((img) => w / aspectOf(img))
   const hmax = Math.max(0, ...hs)
   // the stations are at least STEP apart vertically (more if the screen is taller)
   const STEP = 150
-  const needed = 130 + hmax + Math.max(0, n - 1) * STEP + 80 + fh + 60
+  const first = places ? Math.max(0, places.length - n) : 0
+  // fixed places: tall enough that the highest one stays under the title (the picture is held at the ending, at
+  // the bottom, so a taller scene moves the picture, and the places on it, down)
+  const needed = places && n > 0
+    ? 1090 - places[first][1] + hmax / 2 + 0.04 * fh
+    : 130 + hmax + Math.max(0, n - 1) * STEP + 80 + fh + 60
   const H = Math.max(820, screenH, Math.round(needed))
   // flush with the right edge: the picture's cut side (12% in, on the right once mirrored) is at the edge
   const fx = 412 - fw * 0.88
@@ -59,8 +66,16 @@ function portraitScene(design: WorldDesign, images: string[], screenH: number): 
   const top = 130
   const avail = fy - 80 - top
 
+  // the picture's units to the scene's: the background is moved by `shift` (below), so a point on it moves too
+  const shiftOf = () => spec.shoreY - (fy + fh * 0.96)
   const slots: Slot[] = []
-  for (let k = 0; k < n; k++) {
+  for (let k = 0; k < n && places; k++) {
+    const [cx, cy] = places[first + k]
+    const h = hs[k]
+    const x = cx - w / 2, y = cy - h / 2 - shiftOf()
+    slots.push({ x, y, w, h, badge: [cx, y - 6] })
+  }
+  for (let k = 0; k < n && !places; k++) {
     const h = hs[k]
     const y = n === 1 ? top + (avail - h) / 2 : top + k * ((avail - hmax) / (n - 1))
     // the last station is on the left, so the house on the right has the shore to itself

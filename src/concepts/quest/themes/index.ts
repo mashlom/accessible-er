@@ -103,6 +103,10 @@ export interface WorldDesign {
       finaleWidth: number
       /** The ending's picture is mirrored (the ocean's pier points into the sea); default true */
       finaleFlip?: boolean
+      /** Fixed places for the stations, centres in the background picture's units (as the first map's frame), from
+       *  the top down; fewer stations take the last ones (nearest the ending). Without it, the stations are spread
+       *  down the screen's height (the ocean, whose sea is plain) */
+      places?: Pt[]
       vars: Scene['vars']
     }
     landscape: {
