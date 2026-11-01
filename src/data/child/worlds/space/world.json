@@ -400,25 +400,25 @@
           {
             "cx": 1660,
             "top": 380,
-            "visible": 0.704,
+            "visible": 360,
             "badge": [1660, 392]
           },
           {
             "cx": 1260,
             "top": 680,
-            "visible": 0.704,
+            "visible": 360,
             "badge": [1260, 692]
           },
           {
             "cx": 860,
             "top": 390,
-            "visible": 0.704,
+            "visible": 360,
             "badge": [860, 402]
           },
           {
             "cx": 520,
             "top": 690,
-            "visible": 0.704,
+            "visible": 340,
             "badge": [520, 702]
           }
         ],
