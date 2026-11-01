@@ -10,7 +10,7 @@ that size:
   fairies' are green on green, the space stations grey on a grey moon: they melt into the background, and when faded
   they disappear.
 
-**The ocean is not redrawn:** its stations stay as they are. **It is the model**: Shevi's ocean (`public/worlds/ocean/station-house.png`, `station-sub.png`, `station-pod.png`,
+**The ocean is not redrawn:** its stations stay as they are (one small fix, see the ocean). **It is the model**: Shevi's ocean (`public/worlds/ocean/station-house.png`, `station-sub.png`, `station-pod.png`,
 `station-aquarium.png`, `station-sonar.png`, `station-doctor.png`): one big object or building per station, a plain
 base, almost no characters, strong shapes and colours. Every station of a world looks clearly different from the
 others, and stands out from the map even when faded.
@@ -23,7 +23,7 @@ glance.
 
 | Kind | Size | Background | Files |
 | --- | --- | --- | --- |
-| Map picture (`station-<stage>`) | 600 x 440 | transparent | 10 per world, 6 worlds (60 pictures) |
+| Map picture (`station-<stage>`) | 600 x 440 | transparent | 10 per world, 6 worlds (60 pictures), plus the ocean's reception fixed (see the ocean) |
 
 PNG or WebP, named as today (`public/worlds/<world>/art/station-<stage>.webp`), plus the world's `manifest.json`
 updated (file, kind, stage, size, a one-line description). Today's pictures are in the same place: the new one
@@ -76,6 +76,14 @@ scene"*, and the station's line.
 ## The worlds
 
 Each line names what the station's scene shows, and what of it goes on the map.
+
+### Ocean (Underwater): one fix only
+
+The ocean's stations are not redrawn, except for one detail:
+
+| Station | File | Change |
+| --- | --- | --- |
+| Reception (On the Dock) | `public/worlds/ocean/art/station-reception.webp` | On the dock house, replace the red cross with a red Star of David (the Magen David Adom sign: a red six-pointed star outline on white). Everything else in the picture stays exactly as it is. |
 
 ### Dollhouse
 
