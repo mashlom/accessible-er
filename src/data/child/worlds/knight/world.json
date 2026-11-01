@@ -133,52 +133,52 @@
     "images": {
       "/worlds/knight/art/station-reception.webp": {
         "aspect": 1.3636,
-        "visible": 0.897,
+        "visible": 0.679,
         "lift": 0.05
       },
       "/worlds/knight/art/station-wait-before-triage.webp": {
         "aspect": 1.3636,
-        "visible": 0.897,
+        "visible": 0.679,
         "lift": 0.05
       },
       "/worlds/knight/art/station-triage.webp": {
         "aspect": 1.3636,
-        "visible": 0.897,
+        "visible": 0.679,
         "lift": 0.05
       },
       "/worlds/knight/art/station-wait-doctor.webp": {
         "aspect": 1.3636,
-        "visible": 0.897,
+        "visible": 0.679,
         "lift": 0.05
       },
       "/worlds/knight/art/station-doctor.webp": {
         "aspect": 1.3636,
-        "visible": 0.897,
+        "visible": 0.679,
         "lift": 0.05
       },
       "/worlds/knight/art/station-tests.webp": {
         "aspect": 1.3636,
-        "visible": 0.897,
+        "visible": 0.679,
         "lift": 0.05
       },
       "/worlds/knight/art/station-treatment.webp": {
         "aspect": 1.3636,
-        "visible": 0.897,
+        "visible": 0.679,
         "lift": 0.05
       },
       "/worlds/knight/art/station-consult.webp": {
         "aspect": 1.3636,
-        "visible": 0.897,
+        "visible": 0.679,
         "lift": 0.05
       },
       "/worlds/knight/art/station-wait-results.webp": {
         "aspect": 1.3636,
-        "visible": 0.897,
+        "visible": 0.679,
         "lift": 0.05
       },
       "/worlds/knight/art/station-decision.webp": {
         "aspect": 1.3636,
-        "visible": 0.897,
+        "visible": 0.679,
         "lift": 0.05
       }
     },
@@ -395,25 +395,25 @@
           {
             "cx": 1660,
             "top": 380,
-            "visible": 360,
+            "visible": 0.679,
             "badge": [1660, 392]
           },
           {
             "cx": 1260,
             "top": 680,
-            "visible": 360,
+            "visible": 0.679,
             "badge": [1260, 692]
           },
           {
             "cx": 860,
             "top": 390,
-            "visible": 360,
+            "visible": 0.679,
             "badge": [860, 402]
           },
           {
             "cx": 520,
             "top": 690,
-            "visible": 340,
+            "visible": 0.679,
             "badge": [520, 702]
           }
         ],
