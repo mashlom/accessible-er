@@ -51,7 +51,7 @@ export function QrPage() {
         <p style={{ color: 'var(--s-ink-soft)' }}>{staff.scan}</p>
       </div>
 
-      <div className={`${styles.actions} app-no-print`}>
+      <div className={`${styles.actions} ${styles.actionsSingle} app-no-print`}>
         <button type="button" className={shell.bigBtn} onClick={() => window.print()}>
           🖨️ {staff.print}
         </button>

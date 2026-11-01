@@ -164,7 +164,7 @@ export function FeedbackPage() {
         </Panel>
       </div>
 
-      <div className={styles.actions}>
+      <div className={`${styles.actions} ${styles.actionsSingle}`}>
         <button
           type="button"
           className={shell.bigBtn}
