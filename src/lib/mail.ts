@@ -6,7 +6,7 @@
  */
 export const TEAM_EMAIL = 'mashlom.me@gmail.com'
 
-const MAIL_API = 'https://mashlom-cms-prod-api-edhcf8htfmc2axaa.francecentral-01.azurewebsites.net/api/mail/send'
+const MAIL_API = 'https://api.mashlom.me/api/mail/send'
 
 /** The subject of every mail: "ביקור במיון, <date>, <topic>" — in Hebrew, as the team reads it */
 export function mailSubject(topic: string, date = new Date()): string {
