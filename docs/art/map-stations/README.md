@@ -45,6 +45,9 @@ replaces the old one file for file.
   world). Small and simple: no rim of plants, flowers or rocks around it.
 - Same style as today: soft 3D clay-and-felt miniature, matte textures, warm soft light from the top left, rounded
   chunky shapes, no outlines. The same characters as in the world's scenes (same faces and clothes).
+- **Taken from the scene.** The map picture is the main place or object of the station's scene (the square
+  picture on its sheet), seen from outside: the same thing, the same colours, the same character. Nothing on the map
+  picture that is not in the scene. To stand out more, colours may be a little brighter, not different.
 - **Nothing scary:** no needles, blood, wounds, weapons; nothing medical that frightens.
 - Seen from the front and a little above, like today, the base at the bottom, centred, a little space around.
 
@@ -52,7 +55,8 @@ replaces the old one file for file.
 
 For each world: give the image AI Shevi's ocean pictures above as the style and simplicity reference, the world's
 character sheet or one of its scenes (so the characters match), and today's map background
-(`map-portrait.webp`) to check the contrast. Then the shared prompt, the world's line and the station's line.
+(`map-portrait.webp`) to check the contrast. Also give the station's own scene (`scene-<stage>.webp`), so the map picture matches it. Then the shared prompt,
+the world's line and the station's line.
 Generate the ten stations of a world together or one after another in the same chat, so they look like one set.
 Before sending, put all ten on the map background at 90 px, normal and faded, and check that each one is clear.
 
@@ -66,9 +70,12 @@ Before sending, put all ten on the map background at 90 px, normal and faded, an
 > and bold colours that stand out from the background described below. Front view from slightly above, centred,
 > transparent background, a soft shadow under the base. Nothing scary: no needles, blood, wounds or weapons.
 
-Then add: *"The map behind it is …; use …"* (the world's line), and the station's line.
+Then add: *"The map behind it is …; use …"* (the world's line), *"Take the place and colours from the attached
+scene"*, and the station's line.
 
 ## The worlds
+
+Each line names what the station's scene shows, and what of it goes on the map.
 
 ### Ocean (Underwater)
 
@@ -76,73 +83,74 @@ Then add: *"The map behind it is …; use …"* (the world's line), and the stat
 main colour. **Base:** a round grey-blue stone, as in Shevi's pictures. Shevi's pictures are kept where noted:
 redraw the others in the same spirit.
 
-| Station | Picture |
-| --- | --- |
-| Reception (On the Dock) | The little dock house with the red-and-white windsock and the wooden pier: Shevi's `station-house.png`, no people. |
-| Wait before triage (Boarding the Submarine) | The yellow submarine with its hatch open and a little ladder: Shevi's `station-sub.png`. |
-| Triage (Pre-dive Checkup) | A big brass diving helmet with a round window on a checking stand with a ring of small lights; the bosun (one character) beside it. |
-| Wait for the doctor (Waiting in the Cabin) | The glass dome full of bright fish: Shevi's `station-aquarium.png`. |
-| Doctor (Meeting the Captain) | The captain's round bridge with the captain at the desk: Shevi's `station-doctor.png`. |
-| Tests (Submarine Sonar) | A big white sonar dish on a stand, tilted up, with glowing circles coming from it. |
-| Treatment (Submarine Repairs) | A big yellow propeller on a repair stand with a giant friendly wrench; the engineer (one character). |
-| Consult (Link with the Base) | A tall red-and-white radio buoy with an antenna on top sending soft signal waves. |
-| Wait for results (Sonar Data Processing) | A small round dome with one big glowing green radar screen showing a sweeping line, and a column of rising bubbles. |
-| Decision (Back to the Surface!) | The top of the yellow submarine coming out of the water with a little flag, a round sun above. |
+| Station | Scene | Map picture |
+| --- | --- | --- |
+| Reception (On the Dock) | The desk inside the dock house | The dock house with the windsock and the pier: Shevi's `station-house.png`, no people. |
+| Wait before triage (Boarding the Submarine) | The yellow cabin of the submarine, a sofa | The yellow submarine with its hatch open: Shevi's `station-sub.png`. |
+| Triage (Pre-dive Checkup) | The bosun checks the diver, a heart monitor | The glass dome with the bed and the monitor: Shevi's `station-pod.png`. |
+| Wait for the doctor (Waiting in the Cabin) | A sofa in front of a big window full of fish | The glass dome full of bright fish: Shevi's `station-aquarium.png`. |
+| Doctor (Meeting the Captain) | The captain with his stethoscope | The captain's round bridge with the captain: Shevi's `station-doctor.png`. |
+| Tests (Submarine Sonar) | The big sonar screen and its control desk | The dome with the sonar screens: Shevi's `station-sonar.png`. |
+| Treatment (Submarine Repairs) | The engineer fixes a small yellow engine with a propeller | The small yellow engine with its propeller on a workbench, a big wrench beside it, the engineer (one character). |
+| Consult (Link with the Base) | The captain talks to the expert on a big video screen | A big round video screen on a stand, the expert with a headset waving from it. |
+| Wait for results (Sonar Data Processing) | A sofa, the sonar screen on the wall, a sand hourglass | A big sand hourglass beside a small round glowing sonar screen. |
+| Decision (Back to the Surface!) | The dock, the submarine surfaced, everyone waving | The yellow submarine floating at the end of the wooden pier, an orange life ring on a post. |
 
 ### Dollhouse
 
-**Map:** bright green grass hills. **Use:** pink, cream, raspberry red, lilac, sky blue; avoid green.
+**Map:** bright green grass hills. **Use:** pink, cream, raspberry red, warm wood; avoid green as the main colour.
 **Base:** a round cream wooden tray (like a toy's stand), not a grassy island.
 
-| Station | Picture |
-| --- | --- |
-| Reception (Reception Desk) | A small pink front desk with a giant open guest book on it, a golden bell and a ribbon bracelet hanging from the edge. No characters. |
-| Wait before triage (The Corridor Bench) | A long raspberry-red velvet bench in front of a striped wallpaper arch. No characters. |
-| Triage (Measuring Room) | The toy soldier (red coat, tall black hat) standing beside a tall measuring stick painted in stripes. |
-| Wait for the doctor (The Guest Room) | One big sky-blue armchair with a round cushion and a little standing lamp. |
-| Doctor (The Doctor's Room) | The teddy-bear doctor with a stethoscope, sitting at a small round white desk. |
-| Tests (The Magic Machine Room) | A lilac toy machine box with one big round glowing window and two large buttons. |
-| Treatment (The Treatment Corner) | The bunny in a white apron holding a big white box with a pink heart on it. |
-| Consult (The Owl Comes to Visit) | The wise owl (big, brown and gold, round glasses) sitting on a tall stack of three books. |
-| Wait for results (The Quiet Waiting Room) | A cream rocking horse with a pink mane on a round soft rug. |
-| Decision (Going Home) | The front of the dollhouse: cream walls, a pink roof, the front door wide open with light inside. The only house among the stations. |
+| Station | Scene | Map picture |
+| --- | --- | --- |
+| Reception (Reception Desk) | At the front door: a little desk with the open guest book, the toy soldier | The little wooden desk with the big open guest book, in front of the open green front door. No characters. |
+| Wait before triage (The Corridor Bench) | A curved pink sofa around a low tea table | The curved pink sofa with the low round tea table and teapot in front. No characters. |
+| Triage (Measuring Room) | The toy soldier at the height chart with a heart, a little scale | The toy soldier (red coat, tall black hat) beside the tall wooden height chart. |
+| Wait for the doctor (The Guest Room) | Toys on a sofa, a tea table, a fringed lamp | A big cosy armchair with a pink check cushion and the tall fringed lamp beside it. |
+| Doctor (The Doctor's Room) | The teddy-bear doctor at his desk with an open book | The teddy-bear doctor (round glasses) sitting at his wooden desk with the open book. |
+| Tests (The Magic Machine Room) | The cream-and-mint machine with a round window and coloured buttons | The cream-and-mint magic machine with its big round glowing window and coloured buttons. |
+| Treatment (The Treatment Corner) | A little bed with a patchwork quilt, a sewing basket | The little bed with the patchwork quilt and the sewing basket beside it; the bunny (one character) sitting on its edge. |
+| Consult (The Owl Comes to Visit) | The owl on a wooden perch, the soldier brings a letter | The owl (blue-grey, scarf) on its tall wooden perch, holding a letter with a red seal. |
+| Wait for results (The Quiet Waiting Room) | A sofa with a storybook, toy blocks on the rug | A big open storybook on the round rug with a little tower of toy blocks. No characters. |
+| Decision (Going Home) | Out through the garden gate with bunting | The wooden garden gate wide open under a string of coloured bunting, the path leading out. No characters. |
 
 ### Safari (Safari in Africa)
 
-**Map:** yellow-green savanna, ochre paths, a blue lake. **Use:** white canvas, terracotta red, bright orange, deep
-blue; avoid khaki, straw and olive as the main colour. **Base:** a round dark terracotta rock, clearly darker than
-the grass.
+**Map:** yellow-green savanna, ochre paths, a blue lake. **Use:** dark wood, white canvas, terracotta red, orange,
+deep blue; avoid khaki, straw and olive as the main colour where the scene allows. **Base:** a round dark
+terracotta rock, clearly darker than the grass.
 
-| Station | Picture |
-| --- | --- |
-| Reception (Camp Entrance) | A tall gate: two wooden posts and an orange-and-white striped banner across them, a bracelet hanging in the middle. No characters. |
-| Wait before triage (In the Tree's Shade) | One big acacia tree with a flat deep-teal crown and a bright orange bench in its shade. |
-| Triage (Equipment Check) | The guide (one character) next to a big open deep-blue backpack with binoculars and a flask sticking out. |
-| Wait for the doctor (Waiting for the Safari Leader) | A white canvas tent with its flaps tied open and two folding chairs in front. |
-| Doctor (Meeting the Safari Leader) | The safari leader (one character) beside a big blue map board on an easel. |
-| Tests (Field Lab) | A giant white-and-blue microscope on a small wooden table with two coloured sample jars. |
-| Treatment (Treatment Post) | The herbalist (one character) with a big round red clay pot of leaves and a white box with a green leaf on it. |
-| Consult (Expert from the Savanna) | A red-and-white striped hot-air balloon landing, its basket just above the base. |
-| Wait for results (Waiting for Results) | A bright red safari jeep with an orange canopy, parked and waiting. |
-| Decision (Back to Camp!) | A round white camp hut with a red door and a little flag, a big orange setting sun behind it. |
+| Station | Scene | Map picture |
+| --- | --- | --- |
+| Reception (Camp Entrance) | The thatched wooden gate with lanterns | The camp gate: two dark wooden posts, a thatched roof across them, the doors open, a lantern on each post. No characters. |
+| Wait before triage (In the Tree's Shade) | A bench with cushions under a big tree, a zebra | One big acacia tree with a wide flat crown and the log bench with red-orange cushions in its shade. |
+| Triage (Equipment Check) | The gear shelf, a backpack opened on the table | A big open backpack with binoculars and a flask on a wooden table, a shelf of gear behind. No characters. |
+| Wait for the doctor (Waiting for the Safari Leader) | Inside a round thatched hut, lion cubs, a toy jeep | A round thatched hut with white walls and the door open, warm light inside. |
+| Doctor (Meeting the Safari Leader) | The safari leader and a friendly elephant | The safari leader (one character, white beard) sitting beside the friendly grey elephant. |
+| Tests (Field Lab) | Under a canvas awning: a magnifying glass over paw-print casts | A big magnifying glass on a stand over white paw-print casts on a table, under a canvas awning. |
+| Treatment (Treatment Post) | The herbalist and a hippo resting on a mat, bowls of herbs | The friendly hippo resting on a soft red mat, the herbalist (one character, flowers in her hair) with a bowl of herbs beside it. |
+| Consult (Expert from the Savanna) | The expert shows a big map on a wooden table | A wooden table with a big unrolled map and binoculars on it, the expert (one character, orange scarf) leaning over it. |
+| Wait for results (Waiting for Results) | A wooden lookout deck with a telescope at sunset | The wooden lookout deck with its rail and a telescope on a tripod, an orange setting sun behind it. |
+| Decision (Back to Camp!) | The jeep under a flower arch with bunting, sunset | The camp's jeep (bright, with a cream canopy) under an arch of flowers and orange bunting. |
 
 ### Dinosaurs
 
-**Map:** yellow-green meadow. **Use:** orange, turquoise, red, cream, purple; avoid green as the main colour, and
-give the dinosaurs blue, purple or orange skin. **Base:** a round pale sandstone with a darker stone edge.
+**Map:** yellow-green meadow. **Use:** warm wood, orange, terracotta, cream, sky blue; avoid green as the main
+colour (keep the dinosaurs' own colours from the scenes, a little brighter). **Base:** a round pale sandstone with
+a darker stone edge.
 
-| Station | Picture |
-| --- | --- |
-| Reception (Reserve Entrance) | A gate of two giant cream bones standing upright with an orange sign hanging between them (no letters). No characters. |
-| Wait before triage (The Entrance Path) | A log bench beside a big turquoise spotted dinosaur egg standing upright. |
-| Triage (Ranger Check) | The reserve ranger (one character) and a small friendly blue triceratops standing on a big round scale. |
-| Wait for the doctor (Waiting Camp) | An orange tent with a ring of stones in front (no fire). |
-| Doctor (Meeting the Head Guide) | The head guide (one character) beside a tall friendly purple long-neck dinosaur. |
-| Tests (Findings Lab) | A giant magnifying glass on a stand over one big cream dinosaur bone on a stone table. |
-| Treatment (Treatment Post) | The expedition medic (one character) with a big white backpack with an orange stripe. |
-| Consult (Field Expert) | A tall wooden lookout tower with a red roof and a telescope sticking out of it. |
-| Wait for results (Waiting for Sample Results) | A round nest with three big coloured eggs (orange, turquoise, purple), one just starting to crack. |
-| Decision (Heading Home from the Trip) | An orange jeep with a flag driving off, a round sun behind it. |
+| Station | Scene | Map picture |
+| --- | --- | --- |
+| Reception (Reserve Entrance) | A wooden gate with a blank sign and orange pennants | The wooden gate with its blank wooden sign and two orange pennants. No characters. |
+| Wait before triage (The Entrance Path) | A log bench under a leafy pergola, a big triceratops | The log bench under the wooden pergola with the big friendly blue triceratops lying beside it. |
+| Triage (Ranger Check) | Under a striped canopy: the ranger checks the little dinosaurs | The round orange-and-cream striped canopy on wooden poles, the ranger (one character) under it. |
+| Wait for the doctor (Waiting Camp) | Tents, a hammock, a ring of stones, logs | A cream tent with orange stripes, a ring of stones in front (no fire). |
+| Doctor (Meeting the Head Guide) | The head guide at a round table with a map scroll | The head guide (one character, white beard) at a round wooden table with a rolled map, a long-neck dinosaur behind. |
+| Tests (Findings Lab) | A big brass telescope in front of a round window | The big brass telescope on its stand in front of a round window. No characters. |
+| Treatment (Treatment Post) | The medic looks after a triceratops resting on leaves | The blue triceratops resting on a bed of leaves, the medic (one character) beside it. |
+| Consult (Field Expert) | Round table with the experts and a map, a pterodactyl | The field expert (one character, grey braid) at a round table with a map, a pterodactyl above. |
+| Wait for results (Waiting for Sample Results) | A glowing white egg on a stump, a flag | The big softly glowing white egg on a tree stump, a little green flag beside it. |
+| Decision (Heading Home from the Trip) | A wooden arch with ivy and bunting, the path out | The wooden arch with colourful bunting and the path leading out under it. No characters. |
 
 ### Fairy (Magic Garden)
 
@@ -150,55 +158,55 @@ give the dinosaurs blue, purple or orange skin. **Base:** a round pale sandstone
 leaves as the main colour. **Base:** a round pale-pink flower top (like a big open blossom seen from above), not a
 grassy island.
 
-| Station | Picture |
-| --- | --- |
-| Reception (Garden Gate) | A white arch gate covered in pink roses, a bracelet of flowers hanging from its top. No characters. |
-| Wait before triage (Butterfly Bridge) | A small sky-blue arched bridge with two big lilac butterflies resting on its rail. |
-| Triage (Magic Check) | The elf helper (one character) beside one giant open pink lotus flower glowing softly inside. |
-| Wait for the doctor (Flower Corner) | One giant yellow tulip shaped like a cup-chair, with a small cushion in it. |
-| Doctor (Meeting the Healing Fairy) | The healing fairy (one character) in front of a red toadstool house with white spots and a round door. |
-| Tests (Magic Sight) | A big glowing lilac crystal ball on a golden tree-stump stand. |
-| Treatment (Healing Wand) | The garden gnome (one character, red hat) holding a big golden wand with a star and soft sparkles. |
-| Consult (Council of Fairies) | The wise fairy (one character, silver hair) on a tall white blossom throne. |
-| Wait for results (Waiting for the Magic) | A big glass jar of glowing golden fireflies with a pink ribbon. |
-| Decision (Leaving the Beautiful Garden) | A rainbow arch rising from the base with a fairy flying under it and waving. |
+| Station | Scene | Map picture |
+| --- | --- | --- |
+| Reception (Garden Gate) | A rose arch gate, a spotted mushroom table | The arch gate covered in pink roses, a little spotted mushroom table beside it. No characters. |
+| Wait before triage (Butterfly Bridge) | A flowery bridge over a stream, a bunny | The small arched bridge covered in pink flowers over a strip of blue stream. |
+| Triage (Magic Check) | The elf helper and a crystal ball inside a pink lotus | The giant open pink lotus with a small crystal ball glowing inside, the elf helper (one character) bending over it. |
+| Wait for the doctor (Flower Corner) | A tea party on red spotted mushrooms, smiling daisies | A red spotted mushroom table with a teapot, two big smiling daisies beside it. |
+| Doctor (Meeting the Healing Fairy) | The healing fairy by a house with a pink petal roof | The healing fairy (one character, silver hair, lilac robe) in front of the little house with the pink petal roof. |
+| Tests (Magic Sight) | The crystal ball on a carved stone stump | The big glowing crystal ball on the carved stone stump. No characters. |
+| Treatment (Healing Wand) | The helper with a golden wand at a wooden table | The helper (one character, as in the scene) holding the big golden star wand, a little wooden table beside her. |
+| Consult (Council of Fairies) | Three fairies around a glowing orb in a big flower | A big open flower with a glowing golden orb in its middle, the wise fairy (one character, grey hair) beside it. |
+| Wait for results (Waiting for the Magic) | A pink petal hammock in an arch of branches, lanterns | The pink petal hammock hanging in a round arch of branches, two glowing lanterns. |
+| Decision (Leaving the Beautiful Garden) | A fairy flying, a rainbow, the animals waving | A rainbow arch rising from the base with the fairy flying under it and waving. |
 
 ### Space (Astronaut in Space)
 
-**Map:** pale lilac-grey moon surface with craters. **Use:** orange, red, deep blue, yellow, white with deep navy
+**Map:** pale lilac-grey moon surface with craters. **Use:** orange, red, deep blue, yellow, gold, with deep navy
 details; avoid grey and pale lilac as the main colour. **Base:** a round dark indigo asteroid rock with a soft blue
 glow along its edge.
 
-| Station | Picture |
-| --- | --- |
-| Reception (Station Entrance) | A round airlock door in a thick orange frame, a green light above it. No characters. |
-| Wait before triage (Waiting Cabin) | A white egg-shaped capsule with one big round window and a single seat seen inside. |
-| Triage (Checks Before Launch) | The flight engineer (one character, orange suit) next to a tall check tower with a column of coloured lights. |
-| Wait for the doctor (Control Room) | A big curved control desk with one wide glowing blue screen and big round buttons. |
-| Doctor (Meeting the Ship Commander) | The ship commander (one character, blue suit) in a round high-backed chair under a big star window. |
-| Tests (Space Scanner) | A big glowing blue ring scanner standing upright like an arch. |
-| Treatment (Station Repair) | A small friendly robot technician with a giant wrench, next to a little satellite. |
-| Consult (Command Centre) | A tall antenna dish tower sending signal waves to a small blue-and-green Earth. |
-| Wait for results (Data Processing) | A tall white computer tower with a round screen showing a planet slowly turning and a row of blinking lights. |
-| Decision (Successful Landing!) | A red-and-white rocket standing on its legs, just landed, a soft puff of cloud at its base and a flag. |
+| Station | Scene | Map picture |
+| --- | --- | --- |
+| Reception (Station Entrance) | A big round glowing doorway | The big round doorway with a ring of glowing lights, orange details. No characters. |
+| Wait before triage (Waiting Cabin) | Bean bags, a star cushion, a little lantern | A big round bean bag with a yellow star cushion and a little glowing lantern. No characters. |
+| Triage (Checks Before Launch) | The yellow robot and a rack of space suits | The yellow flight-engineer robot beside a rack of colourful space suits. |
+| Wait for the doctor (Control Room) | A yellow crescent-moon sofa, a moon lamp | The yellow crescent-moon sofa with the round moon lamp. No characters. |
+| Doctor (Meeting the Ship Commander) | The commander, white beard, cream-and-gold suit | The ship commander (one character, white beard, cream-and-gold suit) in front of a big round window with a planet. |
+| Tests (Space Scanner) | A big white telescope with a screen console | The big white-and-blue telescope scanner on its round base with a glowing screen. No characters. |
+| Treatment (Station Repair) | A small white-and-red spaceship being fixed | The small white-and-red spaceship on a stand with a red tool box, one little helper robot. |
+| Consult (Command Centre) | A round table with a glowing Earth above it | The round table with a big glowing Earth floating above it. No characters. |
+| Wait for results (Data Processing) | Tall glowing crystal data columns | Three tall glowing purple-and-teal crystal columns on a round base. No characters. |
+| Decision (Successful Landing!) | The rocket landed, bunting, everyone celebrating | The red-and-white rocket standing on its legs with its door open, a string of bunting. |
 
 ### Knight (Knight in the Castle)
 
-**Map:** yellow-green grass. **Use:** white and warm grey stone, teal, red, gold, deep blue; avoid green as the
-main colour. **Base:** a round pale stone paving with a darker stone edge.
+**Map:** yellow-green grass. **Use:** cream stone, teal, orange-peach, warm wood; avoid green as the main colour.
+**Base:** a round pale stone paving with a darker stone edge.
 
-| Station | Picture |
-| --- | --- |
-| Reception (The Castle Gate) | A gatehouse with two round towers, teal roofs, the gate open, a red banner on top. No characters. |
-| Wait before triage (The Castle Yard) | A round stone well with a little roof and a bench beside it. |
-| Triage (Strength Check) | The healer (one character) beside a big golden balance scale. |
-| Wait for the doctor (The Knights' Hall) | A long wooden bench under a tall arched window with a red banner hanging beside it. |
-| Doctor (Meeting the Great Wizard) | The great wizard (one character, blue robe, star hat, staff) in front of a tall narrow blue tower. |
-| Tests (The Magic Mirror) | A tall oval golden mirror shining softly. |
-| Treatment (The Weapon Room) | The smith (one character) at an anvil, fixing a big dented helmet (no weapons). |
-| Consult (The Council of Sages) | A round table with three tall chairs and a rolled scroll on it. No characters. |
-| Wait for results (Waiting for the Prophecy) | A crystal ball with swirling stars on a tall carved pedestal. |
-| Decision (End of the Journey) | A small stage with two fanfare banners and a big golden rolled scroll with a red ribbon in the middle. |
+| Station | Scene | Map picture |
+| --- | --- | --- |
+| Reception (The Castle Gate) | The castle gate with a desk | The gatehouse with two round towers, teal roofs, the gate open, a little desk in front. No characters. |
+| Wait before triage (The Castle Yard) | A striped pavilion with a bench and tea table | The round teal-and-cream striped pavilion with orange pennants and a bench inside. No characters. |
+| Triage (Strength Check) | The healer checks the knight, a shelf of helmets | A wooden shelf of shiny knight helmets, the healer (one character, as in the scene) beside it. |
+| Wait for the doctor (The Knights' Hall) | A long bench, banners, a toy horse, a cat | The long cushioned bench under a teal banner, a sleeping cat on it. |
+| Doctor (Meeting the Great Wizard) | The wizard at a round table, an owl | The great wizard (one character, teal robe and hat) sitting at a round wooden table, the owl beside him. |
+| Tests (The Magic Mirror) | The tall oval golden mirror | The tall oval golden mirror shining softly. No characters. |
+| Treatment (The Weapon Room) | The smith fixes a wooden toy horse at the workbench | The wooden workbench with the toy horse being fixed, the smith (one character) at it. |
+| Consult (The Council of Sages) | A round table, an owl flying in with a scroll | The big round table with the owl flying above it holding a scroll. No people. |
+| Wait for results (Waiting for the Prophecy) | The crystal ball on a stone table | The glowing crystal ball on its round stone table. No characters. |
+| Decision (End of the Journey) | Leaving through the gate with the pony | The cream pony with its saddle on the stone path, a small banner beside it. |
 
 ## Before sending
 
