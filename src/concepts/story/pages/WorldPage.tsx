@@ -39,7 +39,6 @@ const calmTileOf: Record<string, string> = {
   calm: 'calm',
   requests: 'requests',
   'going-home': 'discharge',
-  message: 'message',
   feedback: 'feedback',
   distract: 'distract',
 }

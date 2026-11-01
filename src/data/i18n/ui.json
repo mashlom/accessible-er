@@ -251,10 +251,6 @@
       "reason": {
         "title": "Reason for the visit"
       },
-      "message": {
-        "title": "A message to the staff",
-        "desc": "A request or thanks — to show on the screen or send by email"
-      },
       "feedback": {
         "title": "How was it?",
         "desc": "Tell us how it was, so we can improve"
@@ -359,27 +355,6 @@
         },
         "topic": "פידבק"
       }
-    },
-    "storyMessage": {
-      "subtitle": "Would you like to ask for something or say thank you? Write a short sentence and show it to the staff on the screen — or send it by email yourselves.",
-      "bubble": "You can start with a ready sentence and change it however you like.",
-      "templates": [
-        {
-          "label": "🙏 Request",
-          "starter": "We would be very glad if we could "
-        },
-        {
-          "label": "💛 Thanks",
-          "starter": "We wanted to say thank you for "
-        }
-      ],
-      "placeholder": "For example: we would be glad to wait in a quieter corner · thank you very much for your patience.",
-      "aria": "Your message",
-      "show": "🖥️ Show on the screen",
-      "mail": "✉️ Send by email",
-      "note": "To show: tap \"Show on the screen\" and show the screen to the staff. To send: your email app opens with the message — add the address of the ER and send it yourselves. Nothing is sent automatically.",
-      "dialog": "Message shown to the staff",
-      "mailSubject": "הודעה מההורים"
     },
     "cardView": {
       "fill": "Fill in the card",
@@ -683,10 +658,6 @@
       "reason": {
         "title": "Причина визита"
       },
-      "message": {
-        "title": "Сообщение персоналу",
-        "desc": "Просьба или благодарность — показать на экране или отправить по почте"
-      },
       "feedback": {
         "title": "Как прошло?",
         "desc": "Расскажите, как всё прошло, — чтобы мы стали лучше"
@@ -791,27 +762,6 @@
         },
         "topic": "פידבק"
       }
-    },
-    "storyMessage": {
-      "subtitle": "Хотите что-то попросить или сказать спасибо? Напишите короткую фразу и покажите её персоналу на экране — или отправьте письмо сами.",
-      "bubble": "Можно начать с готовой фразы и изменить её, как удобно.",
-      "templates": [
-        {
-          "label": "🙏 Просьба",
-          "starter": "Будем очень рады, если можно "
-        },
-        {
-          "label": "💛 Благодарность",
-          "starter": "Хотели сказать спасибо за "
-        }
-      ],
-      "placeholder": "Например: будем рады подождать в более тихом уголке · большое спасибо за терпение.",
-      "aria": "Ваше сообщение",
-      "show": "🖥️ Показать на экране",
-      "mail": "✉️ Отправить по почте",
-      "note": "Чтобы показать: нажмите «Показать на экране» и покажите экран персоналу. Чтобы отправить: откроется письмо с сообщением — добавьте адрес приёмного покоя и отправьте сами. Ничего не отправляется автоматически.",
-      "dialog": "Сообщение, показанное персоналу",
-      "mailSubject": "הודעה מההורים"
     },
     "cardView": {
       "fill": "Заполнить карточку",
@@ -1115,10 +1065,6 @@
       "reason": {
         "title": "למה הגענו?"
       },
-      "message": {
-        "title": "הודעה לצוות",
-        "desc": "בקשה או תודה — להצגה על המסך או לשליחה במייל"
-      },
       "feedback": {
         "title": "איך היה?",
         "desc": "ספרו לנו איך היה — כדי שנשתפר"
@@ -1223,27 +1169,6 @@
         },
         "topic": "פידבק"
       }
-    },
-    "storyMessage": {
-      "subtitle": "רוצים לבקש משהו או להגיד תודה? כתבו משפט קצר, והראו אותו לצוות על המסך — או שִׁלחו במייל בעצמכם.",
-      "bubble": "אפשר להתחיל ממשפט מוכן, ולשנות אותו איך שרוצים.",
-      "templates": [
-        {
-          "label": "🙏 בקשה",
-          "starter": "נשמח מאוד אם אפשר "
-        },
-        {
-          "label": "💛 תודה",
-          "starter": "רצינו להגיד תודה על "
-        }
-      ],
-      "placeholder": "לדוגמה: נשמח אם אפשר להמתין בפינה שקטה יותר · תודה רבה על הסבלנות.",
-      "aria": "ההודעה שלכם",
-      "show": "🖥️ להראות על המסך",
-      "mail": "✉️ שליחה במייל",
-      "note": "להצגה: לחצו \"להראות על המסך\" והראו את המסך לצוות. לשליחה: ייפתח המייל עם ההודעה — הוסיפו את כתובת המייל של המיון ושִׁלחו בעצמכם. שום דבר לא נשלח אוטומטית.",
-      "dialog": "הודעה מוצגת לצוות",
-      "mailSubject": "הודעה מההורים"
     },
     "cardView": {
       "fill": "למילוי הכרטיס",

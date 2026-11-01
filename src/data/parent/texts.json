@@ -4,7 +4,7 @@
       "reception": {
         "title": "קבלה במזכירות",
         "meaning": "זה השלב הראשון בביקור. אחרי כאן עוברים לאחות להערכה של מצב בריאות ומדידות.",
-        "whatHappens": "המזכיר/ה שואל/ת פרטים ופותח/ת תיק ביקור. מקבלים לרוב צמיד זיהוי. יכול להיות עומדים קרוב לאנשים אחרים בתור.",
+        "whatHappens": "המזכיר/ה שואל/ת פרטים ופותח/ת תיק ביקור. מקבלים מספר. יכול להיות עומדים קרוב לאנשים אחרים בתור.",
         "challenge": "לפעמים יש תור והמתנה קצרה ליד דלפק. יכול להיות רועש.",
         "canAsk": [
           "לשבת במקום שקט יותר בזמן ההמתנה",
@@ -27,7 +27,7 @@
       "triage": {
         "title": "הערכה של מצב בריאות ומדידות",
         "meaning": "האחות בודקת איך הילד/ה מרגיש/ה ועושה מדידות. אחרי כאן ממתינים לתור לרופא/ה.",
-        "whatHappens": "אחות מודדת חום, דופק, לחץ דם וחמצן, ושואלת שאלות קצרות. שמים צמיד זיהוי אם עוד לא. האחות נוגעת ביד, באצבע או בזרוע במהלך המדידות, ומשתמשים במכשירים כמו מד חום, קליפס לאצבע (לחמצן) ושרוול לחץ דם.",
+        "whatHappens": "אחות מודדת חום, דופק, לחץ דם וחמצן, ושואלת שאלות קצרות. האחות נוגעת ביד, באצבע או בזרוע במהלך המדידות, ומשתמשים במכשירים כמו מד חום, קליפס לאצבע (לחמצן) ושרוול לחץ דם.",
         "challenge": "כמה מדידות במגע קרוב, זו אחר זו. מכשירים חדשים ותחושות חדשות.",
         "canAsk": [
           "הסבר קצר לפני כל מדידה",
@@ -331,7 +331,7 @@
       "reception": {
         "title": "Check-in at the reception desk",
         "meaning": "This is the first step of the visit. After this, you go to the nurse for an initial assessment and measurements.",
-        "whatHappens": "The receptionist asks for details and opens a visit file. You usually get an ID bracelet. You may be standing close to other people in line.",
+        "whatHappens": "The receptionist asks for details and opens a visit file. You get a number. You may be standing close to other people in line.",
         "challenge": "Sometimes there is a line and a short wait by the desk. It can be noisy.",
         "canAsk": [
           "Sit in a quieter area while waiting",
@@ -354,7 +354,7 @@
       "triage": {
         "title": "Initial assessment and measurements",
         "meaning": "The nurse checks how your child is feeling and takes measurements. After this, you wait for your turn with the doctor.",
-        "whatHappens": "A nurse measures temperature, pulse, blood pressure and oxygen, and asks a few short questions. If your child has no ID bracelet yet, they get one now. The nurse touches your child's hand, finger or arm during the measurements, using devices like a thermometer, a finger clip (for oxygen) and a blood pressure cuff.",
+        "whatHappens": "A nurse measures temperature, pulse, blood pressure and oxygen, and asks a few short questions. The nurse touches your child's hand, finger or arm during the measurements, using devices like a thermometer, a finger clip (for oxygen) and a blood pressure cuff.",
         "challenge": "Several close-contact measurements, one after another. New devices and new sensations.",
         "canAsk": [
           "A short explanation before each measurement",
@@ -658,7 +658,7 @@
       "reception": {
         "title": "Оформление в регистратуре",
         "meaning": "Это первый этап визита. Отсюда вы переходите на оценку состояния и измерения.",
-        "whatHappens": "Сотрудник регистратуры спрашивает данные и заводит карту визита. Обычно выдают идентификационный браслет. В очереди, возможно, придётся стоять близко к другим людям.",
+        "whatHappens": "Сотрудник регистратуры спрашивает данные и заводит карту визита. Вам дают номер. В очереди, возможно, придётся стоять близко к другим людям.",
         "challenge": "Иногда у стойки очередь и короткое ожидание. Может быть шумно.",
         "canAsk": [
           "Посидеть в более тихом месте, пока ждёте",
@@ -681,7 +681,7 @@
       "triage": {
         "title": "Оценка состояния и измерения у медсестры",
         "meaning": "Медсестра проверяет, как себя чувствует ребёнок, и делает необходимые измерения. После этого вы ждёте своей очереди к врачу.",
-        "whatHappens": "Медсестра измеряет температуру, пульс, давление и кислород и задаёт несколько коротких вопросов. Если идентификационного браслета ещё нет, его надевают. Во время измерений медсестра касается руки, пальца или предплечья ребёнка и использует приборы: градусник, прищепку на палец (для кислорода) и манжету для давления.",
+        "whatHappens": "Медсестра измеряет температуру, пульс, давление и кислород и задаёт несколько коротких вопросов. Во время измерений медсестра касается руки, пальца или предплечья ребёнка и использует приборы: градусник, прищепку на палец (для кислорода) и манжету для давления.",
         "challenge": "Несколько измерений с близким контактом, одно за другим. Новые приборы и новые ощущения.",
         "canAsk": [
           "Коротко объяснять перед каждым измерением",
