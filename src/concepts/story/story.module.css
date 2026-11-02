@@ -57,10 +57,12 @@
 /* the home: warm white with soft lilac and peach glows, as in the design */
 .shellHome {
   background:
-    radial-gradient(60% 22% at 85% 30%, rgba(196, 176, 236, 0.35), transparent 70%),
-    radial-gradient(55% 20% at 15% 55%, rgba(255, 214, 190, 0.4), transparent 70%),
-    radial-gradient(60% 18% at 80% 80%, rgba(196, 176, 236, 0.25), transparent 70%),
-    #fdfcff;
+    radial-gradient(45% 14% at 70% 24%, rgba(205, 188, 240, 0.6), transparent 75%),
+    radial-gradient(40% 22% at 100% 42%, rgba(253, 220, 196, 0.75), transparent 75%),
+    radial-gradient(50% 16% at 55% 52%, rgba(215, 200, 245, 0.55), transparent 75%),
+    radial-gradient(45% 20% at 0% 70%, rgba(253, 224, 204, 0.65), transparent 75%),
+    radial-gradient(50% 16% at 90% 88%, rgba(215, 200, 245, 0.5), transparent 75%),
+    #fff;
 }
 
 /* decorative sky furniture — sun + clouds, behind everything */
