@@ -407,3 +407,59 @@
   color: var(--c-text-faint);
   word-break: break-all;
 }
+
+/* ------------------------------------------------------------
+   Light: Roni's conversation on the parent side, as in the design
+   (Figma "Mashlom.me", בואו נדבר): white with soft glows, cream
+   bubbles, purple answers and a quiet outlined one
+   ------------------------------------------------------------ */
+.light {
+  --t-cream: #fff5eb;
+  --t-cream-2: #fdebd9;
+  --t-ink: #0f0341;
+  --t-on-dark: #0f0341;
+  --t-on-dark-soft: #6f6573;
+  --t-plum: #6f4691;
+}
+.light .app {
+  background:
+    radial-gradient(circle 160px at 30% 92%, rgba(179, 169, 219, 0.45), rgba(179, 169, 219, 0)),
+    radial-gradient(circle 160px at 95% 100%, rgba(246, 213, 182, 0.45), rgba(246, 213, 182, 0)),
+    #fff;
+}
+.light .msgAvatar { background: #e08e45; }
+.light .msg {
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  padding: 8px 12px;
+}
+.light .msgRoni { flex: 0 1 auto; }
+.light .msgMine {
+  background: var(--t-plum);
+  color: #fff;
+}
+.light .thinking { border-radius: 8px; }
+.light .answers {
+  background: #fff;
+  border-top: 1px solid #e3dde8;
+}
+.light .answer {
+  min-height: 48px;
+  padding: 8px 16px;
+  background: var(--t-plum);
+  color: #fff;
+  font-size: 0.92rem;
+  border-radius: 10px;
+}
+.light .answer:hover { background: #5d3a7c; }
+.light .answerQuiet {
+  background: #fff;
+  border: 1px solid #0f0341;
+  color: #0f0341;
+  font-weight: 500;
+}
+.light .answerQuiet:hover { background: #f6f2fa; }
+.light .multi { border-bottom-color: #e3dde8; }
+.light .multiChip { border-color: #cfc4dc; }
+.light .multiChipOn { background: var(--t-plum); border-color: var(--t-plum); color: #fff; }
