@@ -1,6 +1,6 @@
 import { HomePill } from '../../../components/HomePill'
 import { useLayoutEffect } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { useIsConceptHome } from '../../nav'
 import { HelperChat } from '../../../components/helper/HelperChat'
 import { LanguagePicker } from '../../../components/LanguagePicker'
@@ -13,6 +13,9 @@ import styles from '../story.module.css'
  */
 export function StoryShell() {
   const isHome = useIsConceptHome()
+  const { pathname } = useLocation()
+  // the pages already in the design's look have its white background
+  const light = isHome || pathname.endsWith('/trail')
   // translations are on across the parent side of the app (home, pages, helper)
   useLayoutEffect(() => {
     setI18nEnabled(true)
@@ -22,7 +25,7 @@ export function StoryShell() {
   return (
     <div className={styles.theme}>
       {/* the home has the design's own warm background with soft glows (Figma "Mashlom.me", מסך בית) */}
-      <div className={isHome ? `${styles.shell} ${styles.shellHome}` : styles.shell}>
+      <div className={light ? `${styles.shell} ${styles.shellHome}` : styles.shell}>
 
         {!isHome && (
         <header className={`${styles.topbar} app-no-print`}>

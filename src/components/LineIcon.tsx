@@ -25,6 +25,17 @@ const PATHS: Record<string, string[]> = {
   'going-home': ['M4 11l8-7 8 7M6 10v9h4v-5h4v5h4v-9'],
   feedback: ['M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z'],
 
+  // the stages of the visit (the trail), stage-<id>
+  'stage-reception': ['M4 18h16', 'M5.5 18a6.5 6.5 0 0 1 13 0', 'M12 9.5V8', 'M10.5 8h3'],
+  'stage-wait-before-triage': ['M7 4v9', 'M7 13h10v-2a2 2 0 0 0-2-2H7', 'M7 13v7', 'M17 13v7'],
+  'stage-triage': ['M3 12h4l2-4 3 8 2-4h7'],
+  'stage-wait-doctor': [ring(12, 12, 9), 'M12 7v5l3 2'],
+  'stage-doctor': ['M5 3v5a4 4 0 0 0 8 0V3', 'M9 12v2.5a5 5 0 0 0 10 0V12', ring(19, 10, 2)],
+  'stage-consult': [ring(8, 8, 3), 'M3 20a5 5 0 0 1 10 0', ring(16.5, 9, 2.5), 'M15 20h6a4.5 4.5 0 0 0-6.5-4'],
+  'stage-wait-results': ['M7 3h10', 'M7 21h10', 'M8 3c0 5 8 5 8 9s-8 4-8 9', 'M16 3c0 5-8 5-8 9s8 4 8 9'],
+  'stage-treatment': ['M8.5 15.5l7-7a3.5 3.5 0 1 1 5 5l-7 7a3.5 3.5 0 0 1-5-5z', 'M10.5 10.5l3 3'],
+  'stage-decision': ['M12 3v18', 'M12 5h6l2 2-2 2h-6', 'M12 11H6l-2 2 2 2h6', 'M9 21h6'],
+
   // the procedures
   temperature: ['M10 4.5a2 2 0 0 1 4 0v9.8a4 4 0 1 1-4 0z', 'M12 9v7.5'],
   saturation: ['M3 9.5h11a4.5 4.5 0 0 1 0 9H3z', 'M3 9.5V7a2 2 0 0 1 2-2h6', 'M6 14h2l1-2 2 4 1-2h2'],
@@ -47,6 +58,7 @@ const FILES: Record<string, string> = {
   'blood-test': 'drop.svg',
   urine: 'tubes.svg',
   talk: 'talk.svg',
+  'stage-tests': 'tubes.svg',
 }
 
 export function hasShevisIcon(id: string): boolean {
