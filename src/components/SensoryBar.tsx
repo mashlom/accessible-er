@@ -2,11 +2,14 @@ import type { SensoryLevels } from '../data/types'
 import { useI18n } from '../hooks/useI18n'
 import css from './SensoryBar.module.css'
 import { soundLabel } from '../data/careCard'
+import { LineIcon } from './LineIcon'
 
 interface Props {
   sensory: SensoryLevels
   /** The ocean world's sheets: a white card in its colours instead of the beige strip */
   ocean?: boolean
+  /** Shevi's thin line icons instead of the emoji (the parent pages in the home's look) */
+  lineIcons?: boolean
 }
 
 const CHANNELS = [
@@ -22,7 +25,7 @@ function levelClass(n: number): string {
   return css.high
 }
 
-export function SensoryBar({ sensory, ocean }: Props) {
+export function SensoryBar({ sensory, ocean, lineIcons }: Props) {
   const { t, lang } = useI18n()
   return (
     <div className={ocean ? `${css.bar} ${css.ocean}` : css.bar}>
@@ -32,7 +35,7 @@ export function SensoryBar({ sensory, ocean }: Props) {
           const val = sensory[key]
           return (
             <div key={key} className={css.channel}>
-              <span className={css.emoji}>{emoji}</span>
+              <span className={css.emoji}>{lineIcons ? <LineIcon id={`sense-${key}`} size={18} /> : emoji}</span>
               <span className={css.channelLabel}>{key === 'sound' ? soundLabel(lang) : t(`ui.text.sensoryLabels.${key}`)}</span>
               <div className={css.dots}>
                 {[1, 2, 3, 4, 5].map((i) => (

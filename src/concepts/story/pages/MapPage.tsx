@@ -7,6 +7,7 @@ import { SensoryBar } from '../../../components/SensoryBar'
 import homeTexts from '../../../data/parent/home.json'
 import { useI18n } from '../../../hooks/useI18n'
 import type { MapArea } from '../../../data/types'
+import { LineIcon } from '../../../components/LineIcon'
 import styles from '../pages.module.css'
 
 const roomTint: Record<MapArea['load'], string> = {
@@ -15,11 +16,6 @@ const roomTint: Record<MapArea['load'], string> = {
   busy: 'var(--s-coral-soft)',
 }
 
-const loadFace: Record<MapArea['load'], string> = {
-  calm: '😌',
-  medium: '🙂',
-  busy: '😵‍💫',
-}
 
 /**
  * The orientation map as a row of little rooms. On top of "where is it",
@@ -30,7 +26,7 @@ export function MapPage() {
   const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang], 'parent/home').mapPage
   return (
-    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <div dir={dir} lang={lang} className={styles.trailLook} style={{ textAlign: 'start' }}>
     <Scene title={t('ui.tiles.map.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
@@ -47,12 +43,12 @@ export function MapPage() {
             >
               <div className={styles.roomTop}>
                 <span className={styles.roomEmoji} aria-hidden>
-                  {area.emoji}
+                  <LineIcon id={`area-${area.id}`} emoji={area.emoji} size={22} />
                 </span>
                 <div>
                   <h2 className={styles.roomName}>{area.name}</h2>
                   <span className={styles.loadBadge} style={{ color: load.color }}>
-                    <span aria-hidden>{loadFace[area.load]}</span>
+                    <span aria-hidden style={{ display: 'inline-flex' }}><LineIcon id={`load-${area.load}`} size={16} /></span>
                     {parentLoadLabel(lang, area.load)}
                   </span>
                 </div>
@@ -62,7 +58,7 @@ export function MapPage() {
                 <p>{area.note}</p>
 
                 <div className={styles.roomSense}>
-                  <SensoryBar sensory={area.sensory} />
+                  <SensoryBar sensory={area.sensory} lineIcons />
                 </div>
 
               </div>
