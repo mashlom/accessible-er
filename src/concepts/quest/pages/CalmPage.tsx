@@ -87,7 +87,7 @@ export function CalmPage({ look }: { look?: 'home' } = {}) {
           </section>
         ))}
 
-        {/* what the parents can ask the staff for: sentences to read, not buttons */}
+        {/* what the parents can ask the staff for: the staff read them, so a tap shows one big to hold up */}
         <p className={css.parentZoneLabel}>{t('ui.labels.adult.readySentences')}</p>
         <section className={home ? css.cardSectionHome : undefined}>
           <ul className={css.calmSentences}>
