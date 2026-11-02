@@ -21,15 +21,8 @@ export function StoryShell() {
 
   return (
     <div className={styles.theme}>
-      <div className={styles.shell}>
-        {/* the sun and clouds are only decoration: kept on the home page, not on the parent centre's pages */}
-        {isHome && (
-          <div className={`${styles.skyDeco} app-no-print`} aria-hidden>
-            <span className={styles.sun} />
-            <span className={`${styles.cloud} ${styles.cloudA}`} />
-            <span className={`${styles.cloud} ${styles.cloudB}`} />
-          </div>
-        )}
+      {/* the home has the design's own warm background with soft glows (Figma "Mashlom.me", מסך בית) */}
+      <div className={isHome ? `${styles.shell} ${styles.shellHome}` : styles.shell}>
 
         {!isHome && (
         <header className={`${styles.topbar} app-no-print`}>

@@ -63,7 +63,7 @@ export function WorldPage() {
   const reasonLabel = path ? parentPaths(lang as HomeLang).find((p) => p.id === path.id)?.label ?? '' : ''
 
   return (
-    <div className={shell.page} dir={dir} lang={lang}>
+    <div className={`${shell.page} ${styles.home}`} dir={dir} lang={lang}>
       <header className={styles.homeHead}>
         {/* the language on the same line as the place's name, at the left edge; the name in the middle */}
         <div className={styles.homeTopLine}>

@@ -1036,3 +1036,98 @@ button.dest {
   font-weight: 700;
   color: #a12a2a;
 }
+
+/* ---- the home in the design (Figma "Mashlom.me", מסך בית): navy ink, one purple, white cards with a soft shadow ---- */
+.home {
+  --h-ink: #1d1a4e;
+  --h-text: #5b5f73;
+  --h-purple: #6a4c93;
+  --h-lilac: #ece6f7;
+}
+.home .homeEyebrow { color: var(--h-purple); }
+/* a soft peach blob behind the title */
+.home .homeTitle {
+  position: relative;
+  isolation: isolate;
+  width: fit-content;
+  margin: 0.75rem auto 0.25rem;
+  padding: 0.4rem 1.6rem;
+  color: var(--h-ink);
+}
+.home .homeTitle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(100deg, #fde3cf, #f7d9e4 60%, #e7dcf6);
+  border-radius: 58% 42% 55% 45% / 60% 50% 50% 40%;
+}
+.home .worldLabel {
+  color: var(--h-ink);
+  font-size: 1.35rem;
+  margin-bottom: var(--space-2, 8px);
+}
+.home .sectionDesc {
+  margin: 0 0 var(--space-3);
+  color: var(--h-text);
+  font-size: 0.95rem;
+}
+.home .childCard,
+.home .dest {
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08);
+}
+/* the worlds' card: the words above, the six worlds in one row under them */
+.home .childCard.childCardWorlds {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+.home .childCardJourney {
+  font-size: 0.95rem;
+  color: var(--h-ink);
+}
+.home .childWorldThumbs {
+  grid-template-columns: repeat(6, 1fr);
+}
+.home .childWorldThumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+/* "tell me what brought you": one purple pill */
+.home .reasonStrip {
+  justify-content: center;
+  background: var(--h-purple);
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  padding: 12px var(--space-4, 16px);
+  text-align: center;
+  text-decoration: none;
+}
+.home .reasonStripLabel { color: rgba(255, 255, 255, 0.75); }
+.home .reasonStripChange { border-color: #fff; color: var(--h-purple); }
+/* the tiles: a small lilac icon at the start, the name, the line, all at the start side */
+.home .destGrid { gap: 12px; }
+.home .dest {
+  align-items: flex-start;
+  text-align: start;
+  gap: 6px;
+  padding: 14px 14px 16px;
+}
+.home .dest:hover,
+.home .dest:focus-visible { transform: translateY(-2px); }
+.home .destBadge {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 1.35rem;
+  background: var(--h-lilac);
+  box-shadow: none;
+  margin-bottom: 4px;
+}
+.home .destName { color: var(--h-ink); font-size: 1.05rem; }
+.home .destDesc { color: var(--h-text); font-size: 0.85rem; }
