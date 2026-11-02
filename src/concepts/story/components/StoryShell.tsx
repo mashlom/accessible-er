@@ -15,7 +15,7 @@ export function StoryShell() {
   const isHome = useIsConceptHome()
   const { pathname } = useLocation()
   // the pages already in the design's look have its white background
-  const light = isHome || /\/(trail|wait-times|show|map|requests|feedback|distract|calm)$/.test(pathname)
+  const light = isHome || /\/(trail|wait-times|show|map|requests|feedback|distract|calm|going-home)$/.test(pathname)
   // translations are on across the parent side of the app (home, pages, helper)
   useLayoutEffect(() => {
     setI18nEnabled(true)

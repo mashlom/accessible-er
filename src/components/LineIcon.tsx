@@ -99,6 +99,18 @@ const PATHS: Record<string, string[]> = {
   'tip-familiar': [ring(12, 13, 6), ring(7.5, 6.5, 2.2), ring(16.5, 6.5, 2.2), 'M10.5 12v.5', 'M13.5 12v.5', 'M10.5 15.5a2 2 0 0 0 3 0'],
   'tip-mediate': [ring(6, 7, 2.5), 'M2 17a4 4 0 0 1 8 0', ring(18, 7, 2.5), 'M14 17a4 4 0 0 1 8 0', 'M10 12h4'],
 
+  // going home and staying in the hospital: the blocks' icons, end-<kind>-<n>
+  'end-discharge-0': ['M9 3h6v3H9z', 'M7.5 4.5H5V21h14V4.5h-2.5', 'M8.5 11h7', 'M8.5 15h5'],
+  'end-discharge-1': ['M6 21V4h10v17', 'M4 21h16', 'M13 12.5v.5', 'M16 6l3 1v14'],
+  'end-discharge-2': ['M4 11l8-7 8 7M6 10v9h4v-5h4v5h4v-9'],
+  'end-discharge-3': ['M3 9h18v11H3z', 'M8 9V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3', 'M3 14h18', 'M11 13v2h2v-2'],
+  'end-discharge-4': ['M5 3v5a4 4 0 0 0 8 0V3', 'M9 12v2.5a5 5 0 0 0 10 0V12', ring(19, 10, 2)],
+  'end-admission-0': ['M5 21V5h14v16', 'M3 21h18', 'M12 8v6', 'M9 11h6'],
+  'end-admission-1': ['M6 21V4h10v17', 'M4 21h16', 'M13 12.5v.5', 'M16 6l3 1v14'],
+  'end-admission-2': ['M3 7v13', 'M21 20v-5H3', 'M3 15h18v-3a3 3 0 0 0-3-3h-7v6', ring(7, 12, 1.8)],
+  'end-admission-3': ['M12 20s-8-4.6-8-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 8 2.4C20 15.4 12 20 12 20z'],
+  'end-admission-4': ['M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z'],
+
   // the procedures
   temperature: ['M10 4.5a2 2 0 0 1 4 0v9.8a4 4 0 1 1-4 0z', 'M12 9v7.5'],
   saturation: ['M3 9.5h11a4.5 4.5 0 0 1 0 9H3z', 'M3 9.5V7a2 2 0 0 1 2-2h6', 'M6 14h2l1-2 2 4 1-2h2'],
