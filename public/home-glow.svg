@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="412" height="940" viewBox="0 0 412 940">
-  <!-- after the design (Figma "Mashlom.me"), the circles a little larger so they show around the white card; the home's background glows, as exported from the design (Figma "Mashlom.me", מסך בית) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="812" height="1340" viewBox="-200 -200 812 1340">
+  <!-- the home's background glows, after the design (Figma "Mashlom.me", מסך בית), in the mockup's 412-wide units;
+       the canvas has 200 units of room on every side so the blur is never cut off. The circles are a little
+       larger than in the mockup so they show around the white card. -->
   <defs>
     <filter id="a" x="-200" y="-200" width="812" height="1340" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="45"/></filter>
     <filter id="b" x="-200" y="-200" width="812" height="1340" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="60"/></filter>
