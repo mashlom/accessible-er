@@ -1180,16 +1180,16 @@ button.dest {
   isolation: isolate;
 }
 .trailLook::before {
+  /* the glows repeat down the whole page, however long it is */
   content: '';
   position: absolute;
   z-index: -1;
-  top: 0;
+  top: -160px;
+  bottom: 0;
   left: 50%;
   width: min(1100px, 200vw);
   transform: translateX(-50%);
-  margin-top: -120px;
-  aspect-ratio: 812 / 1340;
-  background: url('/home-glow.svg') center / 100% 100% no-repeat;
+  background: url('/home-glow.svg') top center / 100% auto repeat-y;
   pointer-events: none;
 }
 .trailLook .trailTitle { color: #173b4d; }
