@@ -36,6 +36,23 @@ const PATHS: Record<string, string[]> = {
   'stage-treatment': ['M8.5 15.5l7-7a3.5 3.5 0 1 1 5 5l-7 7a3.5 3.5 0 0 1-5-5z', 'M10.5 10.5l3 3'],
   'stage-decision': ['M12 3v18', 'M12 5h6l2 2-2 2h-6', 'M12 11H6l-2 2 2 2h6', 'M9 21h6'],
 
+  // the care card's parts, card-<part>
+  'card-about': [ring(12, 8, 4), 'M4 21a8 8 0 0 1 16 0'],
+  'card-sensitivities': ['M7.5 9.5a4.5 4.5 0 1 1 9 0c0 3.2-3 3.8-3 6.8a2.8 2.8 0 0 1-5.6.2', 'M10.5 10a1.5 1.5 0 0 1 3 0'],
+  'card-calming': ['M12 20s-8-4.6-8-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 8 2.4C20 15.4 12 20 12 20z'],
+  'card-escalators': ['M13 2.5L5 14h6l-1 7.5 8-11.5h-6z'],
+  'card-hardMoments': ['M5 3v5a4 4 0 0 0 8 0V3', 'M9 12v2.5a5 5 0 0 0 10 0V12', ring(19, 10, 2)],
+  'card-pain': ['M4 15L15 4a3.5 3.5 0 0 1 5 5L9 20a3.5 3.5 0 0 1-5-5z', 'M9.5 9.5l5 5'],
+  'card-avoid': [ring(12, 12, 9), 'M5.6 5.6l12.8 12.8'],
+  'card-asks': [
+    'M7 12.5V7a1.5 1.5 0 0 1 3 0v4',
+    'M10 11V4.5a1.5 1.5 0 0 1 3 0V11',
+    'M13 11V5.5a1.5 1.5 0 0 1 3 0V11',
+    'M16 11V8a1.5 1.5 0 0 1 3 0v7a6 6 0 0 1-6 6h-1.2a6 6 0 0 1-4.6-2.2L3.6 15.4a1.6 1.6 0 0 1 2.4-2.1L7 14.4',
+  ],
+  'card-else': ['M4 20h4L19 9l-4-4L4 16z', 'M13.5 6.5l4 4'],
+  'card-suggestions': ['M9 18h6', 'M10 21h4', 'M12 3a6 6 0 0 0-3.5 10.9V16h7v-2.1A6 6 0 0 0 12 3z'],
+
   // the procedures
   temperature: ['M10 4.5a2 2 0 0 1 4 0v9.8a4 4 0 1 1-4 0z', 'M12 9v7.5'],
   saturation: ['M3 9.5h11a4.5 4.5 0 0 1 0 9H3z', 'M3 9.5V7a2 2 0 0 1 2-2h6', 'M6 14h2l1-2 2 4 1-2h2'],
@@ -61,6 +78,7 @@ const FILES: Record<string, string> = {
   // the red Star of David of Magen David Adom (staying in the hospital), as on the last sheet's answer
   admission: 'magen-david.svg',
   'stage-tests': 'tubes.svg',
+  'card-communication': 'talk.svg',
 }
 
 export function hasShevisIcon(id: string): boolean {

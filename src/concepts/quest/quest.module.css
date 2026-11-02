@@ -3846,3 +3846,36 @@ path.worldTrailLit {
   color: #0f0341;
   font-family: Rubik, var(--font);
 }
+/* a card part's heading with its line icon */
+.cardHeadingIcon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cardHeadingIconBox {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #efe7f6;
+}
+/* the card page opened from the home: the home's blurred glows behind it (public/home-glow.svg) */
+.cardPageHome {
+  position: relative;
+  isolation: isolate;
+}
+.cardPageHome::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  width: min(1100px, 200vw);
+  transform: translateX(-50%);
+  margin-top: -160px;
+  aspect-ratio: 812 / 1340;
+  background: url('/home-glow.svg') center / 100% 100% no-repeat;
+  pointer-events: none;
+}
