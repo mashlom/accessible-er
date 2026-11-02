@@ -117,6 +117,13 @@ const PATHS: Record<string, string[]> = {
   // a procedure page's "what actually happens": an eye
   'proc-what': ['M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z', ring(12, 12, 3)],
 
+  // why we came today, reason-<id>
+  'reason-fever': ['M10 4.5a2 2 0 0 1 4 0v9.8a4 4 0 1 1-4 0z', 'M12 9v7.5'],
+  'reason-abdominal': ['M8 3c-1.5 3-1.5 5 0 7-2 2-3 4.5-3 7a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4c0-2.5-1-5-3-7 1.5-2 1.5-4 0-7', ring(12, 15, 1)],
+  'reason-limb-injury': ['M6 6.5a2 2 0 1 1 3.2-1.6l5.9 5.9a2 2 0 1 1 1.6 3.2 2 2 0 1 1-3.2 1.6l-5.9-5.9A2 2 0 1 1 6 6.5z'],
+  'reason-cut': ['M4 15L15 4a3.5 3.5 0 0 1 5 5L9 20a3.5 3.5 0 0 1-5-5z', 'M9.5 9.5l5 5'],
+  'reason-other': [ring(12, 12, 9), 'M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14', 'M12 17v.5'],
+
   // the procedures
   temperature: ['M10 4.5a2 2 0 0 1 4 0v9.8a4 4 0 1 1-4 0z', 'M12 9v7.5'],
   saturation: ['M3 9.5h11a4.5 4.5 0 0 1 0 9H3z', 'M3 9.5V7a2 2 0 0 1 2-2h6', 'M6 14h2l1-2 2 4 1-2h2'],

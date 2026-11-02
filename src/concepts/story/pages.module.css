@@ -1368,3 +1368,25 @@ button.dest {
   align-items: center;
   gap: 12px;
 }
+/* why we came today in the home's look: white cards, a lilac icon square, the chosen one in purple */
+.trailLook .reasonBtn {
+  grid-template-columns: 36px 1fr auto;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08);
+}
+.trailLook .reasonBtnOn { border-color: var(--h-purple); background: #fff; }
+.trailLook .reasonEmoji {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--h-lilac);
+  font-size: 1.25rem;
+}
+.trailLook .reasonName { color: var(--h-ink); font-family: Rubik, var(--font); font-size: 16px; font-weight: 700; }
+.trailLook .reasonBlurb { color: var(--h-text); }
+.trailLook .reasonCheck { color: var(--h-purple); }
+.trailLook .stone { background: var(--h-lilac); color: var(--h-ink); }
+.trailLook .stone a { color: var(--h-purple); }
+.trailLook .stoneOptional { background: #f6f2fa; color: var(--h-text); }
+.trailLook .stoneArrow { color: #b9acd0; }

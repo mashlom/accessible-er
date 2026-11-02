@@ -467,6 +467,7 @@
 .shellHome .bigBtn { border-radius: 999px; background: #6f4691; }
 .shellHome .bigBtn:hover { background: #5d3a7c; }
 .shellHome .bigBtn:disabled { background: #d9d0e4; }
+.shellHome .ghostBtn { border: 2px solid #6f4691; border-radius: 999px; color: #6f4691; }
 /* a panel's line icon in a lilac square */
 .panelIcon {
   flex: none;
