@@ -13,6 +13,7 @@ import shell from '../story.module.css'
 import styles from '../pages.module.css'
 import { themes } from '../../quest/themes'
 import { LineIcon } from '../../../components/LineIcon'
+import { withoutEmoji } from '../../quest/components/ButtonIcon'
 
 /** The stages of the home, in the design's order; the names and descriptions come from parent/home.json */
 const destinations = [
@@ -25,6 +26,7 @@ const destinations = [
   { to: '/distract', id: 'distract', emoji: '🫧', tint: 'var(--s-sea-soft)' },
   { to: '/requests', id: 'requests', emoji: '🙋', tint: 'var(--s-grass-soft)' },
   { to: '/going-home', id: 'going-home', emoji: '🏠', tint: 'var(--s-sun-soft)' },
+  { to: '/going-home?stay=1', id: 'admission', emoji: '🏥', tint: 'var(--s-sun-soft)' },
   { to: '/feedback', id: 'feedback', emoji: '💬', tint: 'var(--s-sea-soft)' },
 ]
 
@@ -48,6 +50,8 @@ const calmTiles = i18nUi as unknown as Record<HomeLang, { tiles: Record<string, 
 
 /** The home tiles: their names and lines are the app's wording in i18n/ui.json (tiles), in every language */
 function tileText(lang: HomeLang, id: string): Tile {
+  // staying in the hospital: the words of the last sheet's answer in the worlds (no line under it yet)
+  if (id === 'admission') return { name: withoutEmoji(calmTiles[lang] && (i18nUi as unknown as Record<HomeLang, { buttons: { admission: string } }>)[lang].buttons.admission), desc: '' }
   const c = calmTiles[lang].tiles[calmTileOf[id]]
   return { name: c?.title ?? '', desc: c?.desc ?? '' }
 }
@@ -169,7 +173,7 @@ export function WorldPage() {
                 <LineIcon id={d.id} emoji={d.emoji} />
               </span>
               <span className={styles.destName}>{text.name}</span>
-              <span className={styles.destDesc}>{text.desc}</span>
+              {text.desc && <span className={styles.destDesc}>{text.desc}</span>}
             </Link>
           )
         })}

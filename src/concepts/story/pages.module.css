@@ -1355,3 +1355,11 @@ button.dest {
 }
 .trailLook .watchOpt { border: 2px solid #ddd3ea; border-radius: 16px; color: var(--h-ink); font-family: Rubik, var(--font); }
 .trailLook .watchOptOn { border-color: var(--h-purple); background: var(--h-lilac); color: var(--h-purple); }
+/* a link to the visit's other end, with its icon at the start */
+.endLink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: start;
+}
