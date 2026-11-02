@@ -9,7 +9,7 @@ import styles from './helper.module.css'
 /**
  * Roni's conversation as a popup over the parent screens: the home's "let's
  * talk" tile opens it (no floating figure on the screens), and while it is
- * open the rest of the screen is dimmed. Closing: the ✕, Escape, or a tap outside the sheet.
+ * open the rest of the screen is dimmed. Closing: the handle, Escape, or a tap outside the sheet.
  * The conversation itself is the same one as on the talk route.
  */
 export function HelperChat() {
@@ -38,12 +38,10 @@ export function HelperChat() {
           aria-label="Roni"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* the close button has its own row: the conversation scrolls under it, never behind it */}
-          <div className={styles.head}>
-            <button type="button" className={styles.close} onClick={closeHelper} aria-label="Close">
-              ✕
-            </button>
-          </div>
+          {/* the same sheet as on the world maps: a handle at the top closes it */}
+          <button type="button" className={styles.handle} onClick={closeHelper} aria-label="Close">
+            <span />
+          </button>
           <div className={`${talkStyles.theme} ${talkStyles.light} ${styles.talkHost}`}>
             <div className={talkStyles.app} dir={dir} lang={lang}>
               <TalkPage />
