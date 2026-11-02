@@ -1043,6 +1043,26 @@ button.dest {
   --h-text: #6f6573;
   --h-purple: #6f4691;
   --h-lilac: #efe7f6;
+  position: relative;
+  isolation: isolate;
+}
+/* the design's blurred glows (public/home-glow.svg), tied to the worlds' card as in the mockup: there the card is
+   364 wide at x 24, y 283, and the picture has 200 units of room around the 412-wide frame (percent margins
+   are of the width, so it keeps its shape at any column width) */
+.home .childCards {
+  position: relative;
+}
+.home .childCards::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: calc(-224% / 364 * 100);
+  width: calc(812% / 364 * 100);
+  margin-top: calc(-483% / 364 * 100);
+  aspect-ratio: 812 / 1340;
+  background: url('/home-glow.svg') center / 100% 100% no-repeat;
+  pointer-events: none;
 }
 .home .homeEyebrow { color: #087e8b; }
 /* the place's name at the start edge, the language at the other, as in the design */

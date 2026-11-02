@@ -56,9 +56,8 @@
 
 /* the home: warm white with soft lilac and peach glows, as in the design */
 .shellHome {
-  /* the design's own blurred circles (public/home-glow.svg), at the mockup's size, over white */
-  background: url('/home-glow.svg') top center / 412px auto no-repeat, #fff;
-  background-attachment: scroll;
+  /* white; the glows are drawn by the home page itself, at its column's width (pages.module.css, .home) */
+  background: #fff;
 }
 
 /* decorative sky furniture — sun + clouds, behind everything */
