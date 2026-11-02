@@ -61,17 +61,20 @@ export function Bubble({ children }: { children: ReactNode }) {
 export function Panel({
   title,
   emoji,
+  icon,
   children,
 }: {
   title?: string
   emoji?: string
+  /** a line icon instead of the emoji, in a lilac square */
+  icon?: ReactNode
   children: ReactNode
 }) {
   return (
     <section className={styles.panel}>
       {title && (
         <h2 className={styles.panelTitle}>
-          {emoji && <span aria-hidden>{emoji}</span>}
+          {icon ? <span className={styles.panelIcon} aria-hidden>{icon}</span> : emoji && <span aria-hidden>{emoji}</span>}
           {title}
         </h2>
       )}
