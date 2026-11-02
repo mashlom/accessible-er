@@ -170,7 +170,7 @@ export function WorldPage() {
               style={{ '--tint': d.tint } as CSSProperties}
             >
               <span className={styles.destBadge} aria-hidden>
-                <LineIcon id={d.id} emoji={d.emoji} />
+                <LineIcon id={d.id === 'admission' ? 'tile-admission' : d.id} emoji={d.emoji} />
               </span>
               <span className={styles.destName}>{text.name}</span>
               {text.desc && <span className={styles.destDesc}>{text.desc}</span>}

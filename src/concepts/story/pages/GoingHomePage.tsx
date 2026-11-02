@@ -86,7 +86,7 @@ export function GoingHomePage() {
 
       {/* the other end of the visit: staying in the hospital */}
       <Link to="/going-home?stay=1" className={`${styles.crossLink} ${styles.endLink}`}>
-        <span className={styles.stopIcon} aria-hidden><LineIcon id="admission" size={22} /></span>
+        <span className={styles.stopIcon} aria-hidden><LineIcon id="tile-admission" size={22} /></span>
         {withoutEmoji(t('ui.buttons.admission'))}
       </Link>
     </Scene>
