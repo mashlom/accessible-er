@@ -1053,17 +1053,15 @@ button.dest {
   isolation: isolate;
   width: fit-content;
   margin: 0.75rem auto 0.25rem;
-  padding: 1.6rem 3.2rem;
+  padding: 0.9rem 1.5rem;
   color: #1b2b3a;
 }
 .home .homeTitle::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -18px -60px -22px;
   z-index: -1;
-  background: #fce6d2;
-  border-radius: 46% 54% 38% 62% / 58% 44% 56% 42%;
-  transform: rotate(-4deg);
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 120'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop offset='0' stop-color='%23fbe0c8'/><stop offset='1' stop-color='%23fdebdc'/></linearGradient></defs><path fill='url(%23g)' d='M20 40C30 14 70 6 104 14c30 7 52-8 92-6 50 2 94 14 100 44 5 26-14 50-50 58-36 8-70-2-104 4-40 7-82 12-116-4C4 98-4 70 20 40z'/></svg>") center / 100% 100% no-repeat;
 }
 .home .worldLabel {
   color: var(--h-ink);
