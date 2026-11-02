@@ -92,10 +92,11 @@ export function CalmPage({ look }: { look?: 'home' } = {}) {
         <section className={home ? css.cardSectionHome : undefined}>
           <ul className={css.calmSentences}>
             {readySentences.map((s, i) => {
+              // the parent reads it in their language; the staff read it big, in Hebrew (the source text)
               const text = t(`support.readySentences.${i}`, s)
               return (
                 <li key={s}>
-                  <button type="button" className={css.calmSentence} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => setShown(text)}>
+                  <button type="button" className={css.calmSentence} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => setShown(s)}>
                     {text}
                   </button>
                 </li>
@@ -107,7 +108,7 @@ export function CalmPage({ look }: { look?: 'home' } = {}) {
 
       {shown && createPortal(
         <button type="button" className={css.calmBig} style={{ color: theme.accent }} onClick={() => setShown(null)} aria-label={t('ui.buttons.close')}>
-          <span className={css.calmBigText}>{shown}</span>
+          <span className={css.calmBigText} dir="rtl" lang="he">{shown}</span>
         </button>,
         document.body,
       )}
