@@ -7,6 +7,7 @@ import homeTexts from '../../../data/parent/home.json'
 import { useI18n } from '../../../hooks/useI18n'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import shell from '../story.module.css'
+import { LineIcon } from '../../../components/LineIcon'
 import styles from '../pages.module.css'
 
 /** "Why we came today?" — the answer draws the family's stepping-stone route. */
@@ -18,7 +19,7 @@ export function ReasonPage() {
   const path = reasonId ? all.find((p) => p.id === reasonId) : undefined
 
   return (
-    <div dir={dir} lang={lang} style={{ display: 'contents' }}>
+    <div dir={dir} lang={lang} className={styles.trailLook}>
     <Scene title={tx.title} subtitle={tx.subtitle} back="/">
       <div className={styles.reasonGrid} role="radiogroup" aria-label={tx.aria}>
         {all.map((p) => {
@@ -33,7 +34,7 @@ export function ReasonPage() {
               onClick={() => setReason(p.id)}
             >
               <span className={styles.reasonEmoji} aria-hidden>
-                {p.emoji}
+                <LineIcon id={`reason-${p.id}`} emoji={p.emoji} size={22} />
               </span>
               <span>
                 <span className={styles.reasonName}>{p.label}</span>
@@ -49,7 +50,7 @@ export function ReasonPage() {
 
       {path && (
         <div className={shell.stack} style={{ marginTop: 'var(--space-4)' }}>
-          <Panel title={tx.routeHeading} emoji={path.emoji}>
+          <Panel title={tx.routeHeading} emoji={path.emoji} icon={<LineIcon id="trail" size={22} />}>
             <div className={styles.stones}>
               {path.route.map((stop, i) => (
                 <Fragment key={i}>
