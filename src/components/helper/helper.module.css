@@ -49,3 +49,15 @@
 }
 .handle:focus-visible { outline: none; }
 .handle:focus-visible span { box-shadow: 0 0 0 3px #0a6b8a; }
+
+/* landscape: a full-height panel at the right edge, as the world maps' sheets (the same query as useWide) */
+@media (min-aspect-ratio: 3/2), (min-width: 747px) and (min-aspect-ratio: 1/1) {
+  .sheet {
+    /* at the right edge in every language, as the maps' panels */
+    margin-left: auto;
+    margin-right: 0;
+    width: clamp(380px, 42vw, 800px);
+    height: 100dvh;
+    border-radius: 28px 0 0 28px;
+  }
+}
