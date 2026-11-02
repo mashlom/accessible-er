@@ -229,3 +229,7 @@
 .staffScreen .cardHead svg {
   stroke: #fff;
 }
+/* the requests and the suggestions stand apart from the lines above them */
+.staffScreen section {
+  margin-top: 1.75rem;
+}
