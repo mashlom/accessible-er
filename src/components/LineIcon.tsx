@@ -53,6 +53,28 @@ const PATHS: Record<string, string[]> = {
   'card-else': ['M4 20h4L19 9l-4-4L4 16z', 'M13.5 6.5l4 4'],
   'card-suggestions': ['M9 18h6', 'M10 21h4', 'M12 3a6 6 0 0 0-3.5 10.9V16h7v-2.1A6 6 0 0 0 12 3z'],
 
+  // the places on the ER map, area-<id>
+  'area-entrance': ['M6 21V4h10v17', 'M4 21h16', 'M13 12.5v.5', 'M16 6l3 1v14'],
+  'area-triage': ['M3 12h4l2-4 3 8 2-4h7'],
+  'area-waiting': ['M7 4v9', 'M7 13h10v-2a2 2 0 0 0-2-2H7', 'M7 13v7', 'M17 13v7'],
+  'area-doctor': ['M5 3v5a4 4 0 0 0 8 0V3', 'M9 12v2.5a5 5 0 0 0 10 0V12', ring(19, 10, 2)],
+  'area-outside': ['M12 21v-6', 'M12 15c-4 0-6-2.5-6-5.5S8.5 3 12 3s6 3.5 6 6.5S16 15 12 15z', 'M9 21h6'],
+  'area-quiet-room': ['M19 14.5A8 8 0 1 1 9.5 5a6.5 6.5 0 0 0 9.5 9.5z'],
+  'area-treatment': ['M3 7v13', 'M21 20v-5H3', 'M3 15h18v-3a3 3 0 0 0-3-3h-7v6', ring(7, 12, 1.8)],
+  'area-imaging': ['M3 8h4l2-3h6l2 3h4v11H3z', ring(12, 13.5, 3.5)],
+  'area-ct': [ring(12, 12, 8), ring(12, 12, 3.5)],
+  'area-restroom': [ring(7, 5, 1.8), 'M5 9h4l.5 6H8v5H6v-5H4.5z', ring(17, 5, 1.8), 'M15 9h4l1.5 7H19v4h-4v-4h-1.5z', 'M12 3v18'],
+
+  // the sensory channels, sense-<key>
+  'sense-sound': ['M4 9.5h3.5L12 5v14l-4.5-4.5H4z', 'M15.5 9a4 4 0 0 1 0 6', 'M18 6.5a7.5 7.5 0 0 1 0 11'],
+  'sense-light': ['M9 18h6', 'M10 21h4', 'M12 3a6 6 0 0 0-3.5 10.9V16h7v-2.1A6 6 0 0 0 12 3z'],
+  'sense-smell': ['M12 4c-.5 4-3 7-3 10a3 3 0 0 0 3 3 3 3 0 0 0 3-3', 'M8.5 17.5a2.5 2.5 0 0 1-2-3', 'M15.5 17.5a2.5 2.5 0 0 0 2-3'],
+  'sense-people': [ring(8, 8, 3), 'M3 20a5 5 0 0 1 10 0', ring(16.5, 9, 2.5), 'M15 20h6a4.5 4.5 0 0 0-6.5-4'],
+  // how busy a place is: a face, calm to crowded
+  'load-calm': [ring(12, 12, 9), 'M8.5 10.5h2', 'M13.5 10.5h2', 'M9 15a4 4 0 0 0 6 0'],
+  'load-medium': [ring(12, 12, 9), 'M9 10v.5', 'M15 10v.5', 'M9 15h6'],
+  'load-busy': [ring(12, 12, 9), 'M8.5 9l2 1.5-2 1.5', 'M15.5 9l-2 1.5 2 1.5', 'M9 16c1-1 2-1 3 0s2 1 3 0'],
+
   // the procedures
   temperature: ['M10 4.5a2 2 0 0 1 4 0v9.8a4 4 0 1 1-4 0z', 'M12 9v7.5'],
   saturation: ['M3 9.5h11a4.5 4.5 0 0 1 0 9H3z', 'M3 9.5V7a2 2 0 0 1 2-2h6', 'M6 14h2l1-2 2 4 1-2h2'],

@@ -1309,3 +1309,18 @@ button.dest {
 .trailLook .showName { color: var(--h-ink); font-size: 16px; font-weight: 700; line-height: 20px; }
 .trailLook .showMeta { color: var(--h-text); font-size: 14px; }
 .trailLook .sectionLabel { color: var(--h-ink); font-family: Rubik, var(--font); }
+/* the map's rooms in the home's look: the same parts inside, white cards with the soft shadow, line icons, Rubik */
+.trailLook .room {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08);
+}
+.trailLook .roomEmoji {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--h-lilac);
+  font-size: 1.25rem;
+}
+.trailLook .roomName { color: var(--h-ink); font-family: Rubik, var(--font); font-size: 16px; }
+.trailLook .roomBody { color: var(--h-text); }
