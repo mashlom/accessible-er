@@ -1342,3 +1342,8 @@ button.dest {
 }
 .trailLook .tipTitle { color: var(--h-ink); font-family: Rubik, var(--font); font-size: 16px; font-weight: 700; }
 .trailLook .tipBody { color: var(--h-text); }
+/* the feedback's faces and text box in the home's look */
+.trailLook .face { border: 2px solid #ddd3ea; border-radius: 16px; color: var(--h-ink); font-family: Rubik, var(--font); }
+.trailLook .faceOn { border-color: var(--h-purple); background: var(--h-lilac); color: var(--h-purple); }
+.trailLook .textarea { border-color: #ddd3ea; }
+.trailLook .textarea:focus { border-color: var(--h-purple); }

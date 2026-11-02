@@ -1,11 +1,11 @@
 import { keyed } from '../../../lib/keyed'
 import { useState } from 'react'
 import { Link } from '../../nav'
-import { AnimatedIcon } from '../../../components/AnimatedIcon'
 import { Scene, Panel, ChipButton } from '../components/kit'
 import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
 import shell from '../story.module.css'
+import { LineIcon } from '../../../components/LineIcon'
 import styles from '../pages.module.css'
 import { useI18n } from '../../../hooks/useI18n'
 import i18nUi from '../../../data/i18n/ui.json'
@@ -94,10 +94,10 @@ export function FeedbackPage() {
   }
 
   return (
-    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <div dir={dir} lang={lang} className={styles.trailLook} style={{ textAlign: 'start' }}>
     <Scene title={t('ui.tiles.feedback.title')} subtitle={tx.subtitle}>
       <div className={shell.stack}>
-        <Panel title={tx.ratingTitle} emoji="🌤️">
+        <Panel title={tx.ratingTitle} emoji="🌤️" icon={<LineIcon id="feedback" size={22} />}>
           <div className={styles.faces}>
             {[
               { v: 1, e: '😕', l: tx.faces[0] },
@@ -111,14 +111,14 @@ export function FeedbackPage() {
                 onClick={() => setRating(f.v)}
                 aria-pressed={rating === f.v}
               >
-                <AnimatedIcon emoji={f.e} size={46} className={styles.faceEmoji} />
+                <LineIcon id={`face-${f.v}`} emoji={f.e} size={40} />
                 {f.l}
               </button>
             ))}
           </div>
         </Panel>
 
-        <Panel title={tx.helpTitle} emoji="💛">
+        <Panel title={tx.helpTitle} emoji="💛" icon={<LineIcon id="calm" size={22} />}>
           <div className={shell.chipRow}>
             {HELP_IDS.map((item, i) => (
               <ChipButton
@@ -136,7 +136,7 @@ export function FeedbackPage() {
           </div>
         </Panel>
 
-        <Panel title={tx.diagTitle} emoji="🧩">
+        <Panel title={tx.diagTitle} emoji="🧩" icon={<LineIcon id="puzzle" size={22} />}>
           <div className={shell.chipRow}>
             {DIAG_IDS.map((opt, i) => (
               <ChipButton
@@ -153,7 +153,7 @@ export function FeedbackPage() {
           </p>
         </Panel>
 
-        <Panel title={tx.notesTitle} emoji="✏️">
+        <Panel title={tx.notesTitle} emoji="✏️" icon={<LineIcon id="card-else" size={22} />}>
           <textarea
             className={styles.textarea}
             value={note}

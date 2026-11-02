@@ -440,3 +440,40 @@
   background: transparent;
   border: none;
 }
+
+/* ---- the pages in the home's look (the shell carries .shellHome): the kit's bubble, note, panel, chips and big
+   button in the design's colours — white cards with the soft shadow, lilac, one purple, Rubik ---- */
+.shellHome .bubble,
+.shellHome .note {
+  border: none;
+  border-radius: 16px;
+  background: #f6f2fa;
+  box-shadow: none;
+  color: #0f0341;
+}
+.shellHome .panel {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08);
+}
+.shellHome .panelTitle {
+  color: #0f0341;
+  font-family: Rubik, var(--font);
+  font-size: 16px;
+  font-weight: 700;
+}
+.shellHome .pchip { border: 2px solid #ddd3ea; color: #0f0341; }
+.shellHome .pchipOn { border-color: #6f4691; background: #efe7f6; color: #6f4691; }
+.shellHome .bigBtn { border-radius: 999px; background: #6f4691; }
+.shellHome .bigBtn:hover { background: #5d3a7c; }
+.shellHome .bigBtn:disabled { background: #d9d0e4; }
+/* a panel's line icon in a lilac square */
+.panelIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #efe7f6;
+}

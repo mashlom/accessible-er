@@ -85,6 +85,12 @@ const PATHS: Record<string, string[]> = {
   'request-6': [ring(12, 12, 4), 'M12 3v2', 'M12 19v2', 'M3 12h2', 'M19 12h2', 'M5.6 5.6l1.4 1.4', 'M17 17l1.4 1.4'],
   'request-7': ['M3 5h18v14H3z', ring(8.5, 10, 1.8), 'M3 17l5-4 4 3 3-2 6 4'],
 
+  // the feedback: its faces and the puzzle of the diagnosis question
+  'face-1': [ring(12, 12, 9), 'M9 10v.5', 'M15 10v.5', 'M8.5 16.5a4.5 4.5 0 0 1 7 0'],
+  'face-2': [ring(12, 12, 9), 'M9 10v.5', 'M15 10v.5', 'M9 15a4 4 0 0 0 6 0'],
+  'face-3': [ring(12, 12, 9), 'M8.5 10a1.5 1.5 0 0 1 3 0', 'M12.5 10a1.5 1.5 0 0 1 3 0', 'M7.5 13.5h9a4.5 4.5 0 0 1-9 0z'],
+  puzzle: ['M4 8h4a2 2 0 1 1 4 0h4v4a2 2 0 1 1 0 4v4h-4a2 2 0 1 0-4 0H4v-4a2 2 0 1 0 0-4z'],
+
   // the procedures
   temperature: ['M10 4.5a2 2 0 0 1 4 0v9.8a4 4 0 1 1-4 0z', 'M12 9v7.5'],
   saturation: ['M3 9.5h11a4.5 4.5 0 0 1 0 9H3z', 'M3 9.5V7a2 2 0 0 1 2-2h6', 'M6 14h2l1-2 2 4 1-2h2'],
