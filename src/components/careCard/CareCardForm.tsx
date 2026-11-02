@@ -17,7 +17,7 @@ export interface CareCardColours {
  * The care card as the parent fills it in. The same on every screen: the
  * screen only gives its colours and the buttons under the form (`footer`).
  */
-export function CareCardForm({ colours, footer }: { colours: CareCardColours; footer: (state: { empty: boolean; clear: () => void }) => ReactNode }) {
+export function CareCardForm({ colours, footer, sectionClass }: { colours: CareCardColours; footer: (state: { empty: boolean; clear: () => void }) => ReactNode; /** a screen's own look for each part of the form */ sectionClass?: string }) {
   const { t, lang } = useI18n()
   const { accent, accentSoft } = colours
   const [card, setCard, clearCard] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
@@ -50,7 +50,7 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
         </div>
       )}
 
-      <section>
+      <section className={sectionClass}>
         <h2>{t('ui.labels.adult.aboutChild')}</h2>
         <div className={css.cardIdentity}>
           <label className={css.cardField}>
@@ -67,7 +67,7 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
       {cardSections.map((section, si) => {
         const label = t(`careCard.cardSections.${si}`, section)
         return (
-          <section key={section.key}>
+          <section key={section.key} className={sectionClass}>
             <h2>{section.emoji} {label.title}</h2>
             <div className={css.cardChips} role="group" aria-label={label.title}>
               {section.options.map((option, oi) => {
@@ -85,7 +85,7 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
       })}
 
       {relevantAsks.length > 0 && (
-        <section>
+        <section className={sectionClass}>
           <h2>{t('careCard.asks.title')}</h2>
           <div className={css.cardChips} role="group" aria-label={t('careCard.asks.title')}>
             {relevantAsks.map((id) => {
@@ -100,13 +100,13 @@ export function CareCardForm({ colours, footer }: { colours: CareCardColours; fo
         </section>
       )}
 
-      <section>
+      <section className={sectionClass}>
         <h2>{t('ui.labels.adult.anythingElse')}</h2>
         <textarea className={css.calmFreeText} rows={3} value={card.freeNote} onChange={(e) => setCard({ ...card, freeNote: e.target.value })} placeholder={t('ui.labels.adult.freeNotePlaceholder')} />
       </section>
 
       {suggestionsFor(card, lang).length > 0 && (
-        <section>
+        <section className={sectionClass}>
           <h2>{t('ui.card.suggestionsTitle')}</h2>
           <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
             {suggestionsFor(card, lang).map((s) => <li key={s}>{s}</li>)}

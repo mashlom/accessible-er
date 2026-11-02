@@ -9,13 +9,20 @@ import { careCardHeading } from '../../../components/careCard/CareCardView'
 import { saveCardPdf } from '../../../components/careCard/saveCardPdf'
 import { emptyCard, type CareCard } from '../../../data/careCard'
 import { readStored } from '../../../lib/storage'
+import { LineIcon } from '../../../components/LineIcon'
 import css from '../quest.module.css'
 
 /** "Save as PDF" is hidden for now (the card is shown to the staff from the screen); true brings it back */
 const SHOW_PDF_BUTTON = false
 
-export function CardPage() {
-  const { theme } = useQuestTheme()
+/** The design's colours on the parent's own card page (/card), as the home: one purple, a lilac tint */
+const HOME_LOOK = { accent: '#6f4691', accentSoft: '#efe7f6', accentText: '#fff' }
+
+/** `look="home"`: the card page opened from the home's tile, in the home's look and without "back" (the top bar goes home) */
+export function CardPage({ look }: { look?: 'home' } = {}) {
+  const { theme: worldTheme } = useQuestTheme()
+  const home = look === 'home'
+  const theme = home ? { ...worldTheme, ...HOME_LOOK } : worldTheme
   const { t, lang, dir } = useI18n()
   const { goBack, leaveState } = useReturnTo('/stage/reception')
   // "save as PDF": the paper is drawn out of sight, saved as a file, and taken away
@@ -34,23 +41,32 @@ export function CardPage() {
 
   return (
     <div className={css.stagePage} dir={dir} lang={lang} style={{ '--accent': theme.accent, textAlign: 'start' } as React.CSSProperties}>
-      <div className={css.stageHero} style={{ background: theme.accentSoft, ...(lang === 'he' ? {} : { alignItems: 'flex-start', textAlign: 'start' }) }}>
-        <span className={css.stageHeroIcon}>🪪</span>
-        <h1 style={{ color: theme.accent }}>
+      <div className={css.stageHero} style={{ background: home ? 'transparent' : theme.accentSoft, ...(lang === 'he' ? {} : { alignItems: 'flex-start', textAlign: 'start' }) }}>
+        {home ? (
+          <span className={css.stageHeroIcon} style={{ display: 'grid', placeItems: 'center', width: 56, height: 56, borderRadius: 12, background: HOME_LOOK.accentSoft }} aria-hidden>
+            <LineIcon id="card" size={32} />
+          </span>
+        ) : (
+          <span className={css.stageHeroIcon}>🪪</span>
+        )}
+        <h1 style={{ color: home ? '#173b4d' : theme.accent }}>
           {t('ui.tiles.card.title')}
         </h1>
         {/* the card is the same on every page and in every world: the same heading as the parent's card page */}
         <p className={css.stageHeroHint}>{t('ui.labels.adult.cardSubtitle')}</p>
-        <div className={css.stageBack}>
-          <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
-            {t('ui.buttons.back')}
-          </button>
-        </div>
+        {!home && (
+          <div className={css.stageBack}>
+            <button className={css.backBtn} style={{ borderColor: theme.accent, color: theme.accent }} onClick={goBack}>
+              {t('ui.buttons.back')}
+            </button>
+          </div>
+        )}
       </div>
 
       <div className={css.stageBody}>
         <CareCardForm
           colours={{ accent: theme.accent, accentSoft: theme.accentSoft, accentText: theme.accentText }}
+          sectionClass={home ? css.cardSectionHome : undefined}
           footer={({ empty }) => (
             <>
             <div className={css.stageBack}>
