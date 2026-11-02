@@ -6,7 +6,9 @@ import { useParams } from 'react-router-dom'
 import { parentProcedure } from '../../../data/parent'
 import { ProcedurePanel } from '../../quest/components/ParentInfo'
 import i18nUi from '../../../data/i18n/ui.json'
+import { LineIcon } from '../../../components/LineIcon'
 import shell from '../story.module.css'
+import styles from '../pages.module.css'
 
 /**
  * One procedure for the parent: what it is, what it may feel like, how to get
@@ -21,18 +23,18 @@ export function BookPage() {
   if (!procedure) return <Navigate to="/show" replace />
 
   return (
-    <div className={shell.page} dir={dir} lang={lang}>
+    <div className={`${shell.page} ${styles.trailLook}`} dir={dir} lang={lang}>
       <header className={shell.sceneHead}>
         <TitleRow fallback="/show">
-          <h1 className={shell.sceneTitle}>
-            <span aria-hidden>{procedure.emoji} </span>
+          <h1 className={`${shell.sceneTitle} ${styles.procTitle}`}>
+            <span className={styles.stopIcon} aria-hidden><LineIcon id={procedure.id} emoji={procedure.emoji} size={24} /></span>
             {procedure.title}
           </h1>
         </TitleRow>
       </header>
 
       <div className={shell.stack} style={{ marginTop: 'var(--space-5)' }}>
-        <ProcedurePanel pid={procedure.id} withHead={false} />
+        <ProcedurePanel pid={procedure.id} withHead={false} look="home" />
 
         <Note>{tx.note}</Note>
       </div>

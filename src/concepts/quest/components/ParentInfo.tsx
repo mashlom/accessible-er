@@ -13,6 +13,7 @@ import { ProcedureLineIcon } from './ProcedureLineIcon'
 import { keyed } from '../../../lib/keyed'
 import homeTexts from '../../../data/parent/home.json'
 import { useMoreBelow } from '../useMoreBelow'
+import { LineIcon } from '../../../components/LineIcon'
 import css from '../quest.module.css'
 
 /** Open-book icon from the ocean mockup (drawn inside a 24×24 circle at 33,888 in the frame) */
@@ -333,7 +334,19 @@ export function ParentSheet({
 
 /** One procedure's details for the parent, shown inside the parent sheet (slides in from the "forward" side) */
 /** withHead: false where the page above already titles the procedure */
-export function ProcedurePanel({ pid, onBack, withHead = true }: { pid: string; onBack?: () => void; withHead?: boolean }) {
+export function ProcedurePanel({ pid, onBack, withHead = true, look }: { pid: string; onBack?: () => void; withHead?: boolean; /** the parent's own procedure page (from the home): white cards with line icons */ look?: 'home' }) {
+  const home = look === 'home'
+  const card = home ? `${css.sheetCard} ${css.cardSectionHome}` : css.sheetCard
+  // a part's heading, with its line icon in the home's look
+  const head = (icon: string, text: string) =>
+    home ? (
+      <h2 className={css.cardHeadingIcon}>
+        <span className={css.cardHeadingIconBox} aria-hidden><LineIcon id={icon} size={20} /></span>
+        {text}
+      </h2>
+    ) : (
+      <h2>{text}</h2>
+    )
   const { t, lang, dir } = useI18n()
   const { theme } = useQuestTheme()
   const proc = parentProcedure(lang, pid)
@@ -367,26 +380,26 @@ export function ProcedurePanel({ pid, onBack, withHead = true }: { pid: string; 
       )}
 
       {proc.what && (
-        <section className={css.sheetCard}>
-          <h2>{t('ui.labels.adult.whatActuallyHappens')}</h2>
+        <section className={card}>
+          {head('proc-what', t('ui.labels.adult.whatActuallyHappens'))}
           <p>{proc.what}</p>
         </section>
       )}
       {proc.feel && (
-        <section className={css.sheetCard}>
-          <h2>{t('ui.labels.adult.childMayFeel')}</h2>
+        <section className={card}>
+          {head('card-calming', t('ui.labels.adult.childMayFeel'))}
           <p>{proc.feel}</p>
         </section>
       )}
       {proc.prepare && (
-        <section className={css.sheetCard}>
-          <h2>{t('ui.tiles.procedures.title')}</h2>
+        <section className={card}>
+          {head('show', t('ui.tiles.procedures.title'))}
           <p>{proc.prepare}</p>
         </section>
       )}
       {proc.adaptations && proc.adaptations.length > 0 && (
-        <section className={css.sheetCard}>
-          <h2>{t('ui.labels.adult.askStaff')}</h2>
+        <section className={card}>
+          {head('card-asks', t('ui.labels.adult.askStaff'))}
           <ul>
             {proc.adaptations.map((item: string, i: number) => <li key={i}>{item}</li>)}
           </ul>
