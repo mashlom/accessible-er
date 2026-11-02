@@ -56,12 +56,9 @@
 
 /* the home: warm white with soft lilac and peach glows, as in the design */
 .shellHome {
-  /* the design's three blurred circles (Figma, בואו נדבר): lilac behind the child's world, peach at the edge, a faint peach lower down */
-  background:
-    radial-gradient(circle 140px at calc(50% + 35px) 334px, rgba(179, 169, 219, 0.55), rgba(179, 169, 219, 0) 100%),
-    radial-gradient(circle 190px at calc(50% + 149px) 402px, rgba(246, 213, 182, 0.45), rgba(246, 213, 182, 0) 100%),
-    radial-gradient(circle 220px at calc(50% - 196px) 775px, rgba(246, 213, 182, 0.2), rgba(246, 213, 182, 0) 100%),
-    #fff;
+  /* the design's own blurred circles (public/home-glow.svg), at the mockup's size, over white */
+  background: url('/home-glow.svg') top center / 412px auto no-repeat, #fff;
+  background-attachment: scroll;
 }
 
 /* decorative sky furniture — sun + clouds, behind everything */
