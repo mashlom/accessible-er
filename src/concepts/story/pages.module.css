@@ -1286,3 +1286,26 @@ button.dest {
   font-weight: 700;
   text-decoration: none;
 }
+/* the tests and procedures in the home's look: the parent tiles' cards, the line icon in a lilac square at the start */
+.trailLook .showCard {
+  align-items: flex-start;
+  text-align: start;
+  gap: 6px;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08);
+  font-family: Rubik, var(--font);
+}
+.trailLook .showCard:hover { transform: translateY(-2px); }
+.trailLook .showEmoji {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--h-lilac);
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+.trailLook .showName { color: var(--h-ink); font-size: 16px; font-weight: 700; line-height: 20px; }
+.trailLook .showMeta { color: var(--h-text); font-size: 14px; }
+.trailLook .sectionLabel { color: var(--h-ink); font-family: Rubik, var(--font); }

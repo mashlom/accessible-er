@@ -14,7 +14,7 @@ function Card({ p }: { p: Procedure }) {
   return (
     <Link to={`/show/${p.id}`} className={styles.showCard}>
       <span className={styles.showEmoji} aria-hidden>
-        <LineIcon id={p.id} emoji={p.emoji} size={32} />
+        <LineIcon id={p.id} emoji={p.emoji} size={22} />
       </span>
       <span className={styles.showName}>{p.title}</span>
       <span className={styles.showMeta}>⏱️ {p.duration}</span>
@@ -41,7 +41,7 @@ export function ShowPage() {
   const rest = procedures.filter((p) => !likelyIds.includes(p.id)).map((p) => parentProcedure(lang, p.id)).filter((p): p is Procedure => !!p)
 
   return (
-    <div dir={dir} lang={lang} style={{ display: 'contents' }}>
+    <div dir={dir} lang={lang} className={styles.trailLook}>
     <Scene title={t('ui.tiles.procedures.title')}>
 
       {likely.length > 0 && (
