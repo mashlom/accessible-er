@@ -40,7 +40,6 @@
   --s-shadow: 0 8px 0 rgba(51, 69, 92, 0.08);
   --s-shadow-soft: 0 10px 26px rgba(51, 69, 92, 0.12);
 
-  --s-companion: 168px; /* room kept free at the bottom for Roni */
 }
 
 /* ============================================================
@@ -58,6 +57,8 @@
 .shellHome {
   /* white; the glows are drawn by the home page itself, at its column's width (pages.module.css, .home) */
   background: #fff;
+  /* the glows' picture is taller than the page: it must not add an empty scroll under the footer */
+  overflow: clip;
 }
 
 /* decorative sky furniture — sun + clouds, behind everything */
@@ -218,7 +219,8 @@
   width: 100%;
   max-width: 900px;
   margin-inline: auto;
-  padding: var(--space-3) var(--space-4) calc(var(--s-companion) + var(--space-5));
+  /* no room kept at the bottom any more: Roni no longer floats over the screens */
+  padding: var(--space-3) var(--space-4) var(--space-5);
 }
 
 /* a page drawn by another concept (the calm page, the card form): as wide as the home's tiles */
