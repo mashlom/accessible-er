@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react'
+import { LineIcon } from '../LineIcon'
+import { withoutEmoji } from '../../concepts/quest/components/ButtonIcon'
 import { usePersistentState } from '../../hooks/usePersistentState'
 import { DAY_MS } from '../../lib/storage'
 import { useI18n } from '../../hooks/useI18n'
@@ -17,7 +19,7 @@ export interface CareCardColours {
  * The care card as the parent fills it in. The same on every screen: the
  * screen only gives its colours and the buttons under the form (`footer`).
  */
-export function CareCardForm({ colours, footer, sectionClass }: { colours: CareCardColours; footer: (state: { empty: boolean; clear: () => void }) => ReactNode; /** a screen's own look for each part of the form */ sectionClass?: string }) {
+export function CareCardForm({ colours, footer, sectionClass, lineIcons }: { colours: CareCardColours; footer: (state: { empty: boolean; clear: () => void }) => ReactNode; /** a screen's own look for each part of the form */ sectionClass?: string; /** the parts' line icons (Shevi's style) instead of their emoji */ lineIcons?: boolean }) {
   const { t, lang } = useI18n()
   const { accent, accentSoft } = colours
   const [card, setCard, clearCard] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
@@ -39,6 +41,17 @@ export function CareCardForm({ colours, footer, sectionClass }: { colours: CareC
 
   const chipStyle = (on: boolean) => (on ? { borderColor: accent, background: accentSoft, color: accent } : undefined)
 
+  // a part's heading: its emoji, or its line icon in a lilac square
+  const heading = (part: string, text: string, emoji?: string) =>
+    lineIcons ? (
+      <h2 className={css.cardHeadingIcon}>
+        <span className={css.cardHeadingIconBox} aria-hidden><LineIcon id={`card-${part}`} size={20} /></span>
+        {withoutEmoji(text)}
+      </h2>
+    ) : (
+      <h2>{emoji ? `${emoji} ${text}` : text}</h2>
+    )
+
   return (
     <>
       <p className={css.parentZoneLabel}>{t('ui.labels.adult.aboutMyChild')}</p>
@@ -51,7 +64,7 @@ export function CareCardForm({ colours, footer, sectionClass }: { colours: CareC
       )}
 
       <section className={sectionClass}>
-        <h2>{t('ui.labels.adult.aboutChild')}</h2>
+        {heading('about', t('ui.labels.adult.aboutChild'))}
         <div className={css.cardIdentity}>
           <label className={css.cardField}>
             <span className={css.cardFieldLabel}>{t('ui.labels.adult.nickname')}</span>
@@ -68,7 +81,7 @@ export function CareCardForm({ colours, footer, sectionClass }: { colours: CareC
         const label = t(`careCard.cardSections.${si}`, section)
         return (
           <section key={section.key} className={sectionClass}>
-            <h2>{section.emoji} {label.title}</h2>
+            {heading(section.key, label.title, section.emoji)}
             <div className={css.cardChips} role="group" aria-label={label.title}>
               {section.options.map((option, oi) => {
                 const on = card[section.key].includes(option)
@@ -86,7 +99,7 @@ export function CareCardForm({ colours, footer, sectionClass }: { colours: CareC
 
       {relevantAsks.length > 0 && (
         <section className={sectionClass}>
-          <h2>{t('careCard.asks.title')}</h2>
+          {heading('asks', t('careCard.asks.title'))}
           <div className={css.cardChips} role="group" aria-label={t('careCard.asks.title')}>
             {relevantAsks.map((id) => {
               const on = (card.asks ?? []).includes(id)
@@ -101,13 +114,13 @@ export function CareCardForm({ colours, footer, sectionClass }: { colours: CareC
       )}
 
       <section className={sectionClass}>
-        <h2>{t('ui.labels.adult.anythingElse')}</h2>
+        {heading('else', t('ui.labels.adult.anythingElse'))}
         <textarea className={css.calmFreeText} rows={3} value={card.freeNote} onChange={(e) => setCard({ ...card, freeNote: e.target.value })} placeholder={t('ui.labels.adult.freeNotePlaceholder')} />
       </section>
 
       {suggestionsFor(card, lang).length > 0 && (
         <section className={sectionClass}>
-          <h2>{t('ui.card.suggestionsTitle')}</h2>
+          {heading('suggestions', t('ui.card.suggestionsTitle'))}
           <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
             {suggestionsFor(card, lang).map((s) => <li key={s}>{s}</li>)}
           </ul>

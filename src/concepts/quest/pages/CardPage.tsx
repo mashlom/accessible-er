@@ -9,7 +9,6 @@ import { careCardHeading } from '../../../components/careCard/CareCardView'
 import { saveCardPdf } from '../../../components/careCard/saveCardPdf'
 import { emptyCard, type CareCard } from '../../../data/careCard'
 import { readStored } from '../../../lib/storage'
-import { LineIcon } from '../../../components/LineIcon'
 import css from '../quest.module.css'
 
 /** "Save as PDF" is hidden for now (the card is shown to the staff from the screen); true brings it back */
@@ -40,15 +39,10 @@ export function CardPage({ look }: { look?: 'home' } = {}) {
   }, [saving])
 
   return (
-    <div className={css.stagePage} dir={dir} lang={lang} style={{ '--accent': theme.accent, textAlign: 'start' } as React.CSSProperties}>
+    <div className={home ? `${css.stagePage} ${css.cardPageHome}` : css.stagePage} dir={dir} lang={lang} style={{ '--accent': theme.accent, textAlign: 'start' } as React.CSSProperties}>
       <div className={css.stageHero} style={{ background: home ? 'transparent' : theme.accentSoft, ...(lang === 'he' ? {} : { alignItems: 'flex-start', textAlign: 'start' }) }}>
-        {home ? (
-          <span className={css.stageHeroIcon} style={{ display: 'grid', placeItems: 'center', width: 56, height: 56, borderRadius: 12, background: HOME_LOOK.accentSoft }} aria-hidden>
-            <LineIcon id="card" size={32} />
-          </span>
-        ) : (
-          <span className={css.stageHeroIcon}>🪪</span>
-        )}
+        {/* the home's other pages have no picture over the title either */}
+        {!home && <span className={css.stageHeroIcon}>🪪</span>}
         <h1 style={{ color: home ? '#173b4d' : theme.accent }}>
           {t('ui.tiles.card.title')}
         </h1>
@@ -67,6 +61,7 @@ export function CardPage({ look }: { look?: 'home' } = {}) {
         <CareCardForm
           colours={{ accent: theme.accent, accentSoft: theme.accentSoft, accentText: theme.accentText }}
           sectionClass={home ? css.cardSectionHome : undefined}
+          lineIcons={home}
           footer={({ empty }) => (
             <>
             <div className={css.stageBack}>
