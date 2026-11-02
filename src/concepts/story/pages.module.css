@@ -1044,31 +1044,34 @@ button.dest {
   --h-purple: #6a4c93;
   --h-lilac: #ece6f7;
 }
-.home .homeEyebrow { color: var(--h-purple); }
+.home .homeEyebrow { color: #087e8b; }
+/* the place's name at the start edge, the language at the other, as in the design */
+.home .homeTopLine > .homeEyebrow { grid-column: 2 / 4; justify-self: end; }
 /* a soft peach blob behind the title */
 .home .homeTitle {
   position: relative;
   isolation: isolate;
   width: fit-content;
   margin: 0.75rem auto 0.25rem;
-  padding: 0.4rem 1.6rem;
-  color: var(--h-ink);
+  padding: 1.6rem 3.2rem;
+  color: #1b2b3a;
 }
 .home .homeTitle::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(100deg, #fde3cf, #f7d9e4 60%, #e7dcf6);
-  border-radius: 58% 42% 55% 45% / 60% 50% 50% 40%;
+  background: #fce6d2;
+  border-radius: 46% 54% 38% 62% / 58% 44% 56% 42%;
+  transform: rotate(-4deg);
 }
 .home .worldLabel {
   color: var(--h-ink);
-  font-size: 1.35rem;
-  margin-bottom: var(--space-2, 8px);
+  font-size: 1.5rem;
+  margin-bottom: 2px;
 }
 .home .sectionDesc {
-  margin: 0 0 var(--space-3);
+  margin: 0 0 var(--space-4, 16px);
   color: var(--h-text);
   font-size: 0.95rem;
 }
