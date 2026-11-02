@@ -8,12 +8,13 @@ import homeTexts from '../../../data/parent/home.json'
 import { useVisitReason } from '../../../hooks/useVisitReason'
 import type { Procedure } from '../../../data/types'
 import styles from '../pages.module.css'
+import { LineIcon } from '../../../components/LineIcon'
 
 function Card({ p }: { p: Procedure }) {
   return (
     <Link to={`/show/${p.id}`} className={styles.showCard}>
       <span className={styles.showEmoji} aria-hidden>
-        {p.emoji}
+        <LineIcon id={p.id} emoji={p.emoji} size={32} />
       </span>
       <span className={styles.showName}>{p.title}</span>
       <span className={styles.showMeta}>⏱️ {p.duration}</span>

@@ -12,6 +12,7 @@ import i18nUi from '../../../data/i18n/ui.json'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 import { themes } from '../../quest/themes'
+import { LineIcon } from '../../../components/LineIcon'
 
 /** The stages of the home, in the design's order; the names and descriptions come from parent/home.json */
 const destinations = [
@@ -149,7 +150,7 @@ export function WorldPage() {
           onClick={openHelper}
         >
           <span className={styles.destBadge} aria-hidden>
-            💬
+            <LineIcon id="talk" emoji="💬" />
           </span>
           <span className={styles.destName}>{tx.talk.title}</span>
           <span className={styles.destDesc}>{tx.talk.desc}</span>
@@ -165,7 +166,7 @@ export function WorldPage() {
               style={{ '--tint': d.tint } as CSSProperties}
             >
               <span className={styles.destBadge} aria-hidden>
-                {d.emoji}
+                <LineIcon id={d.id} emoji={d.emoji} />
               </span>
               <span className={styles.destName}>{text.name}</span>
               <span className={styles.destDesc}>{text.desc}</span>
