@@ -1,5 +1,8 @@
 import { keyed } from '../../../lib/keyed'
 import { Link } from '../../nav'
+import { useSearchParams } from 'react-router-dom'
+import { withoutEmoji } from '../../quest/components/ButtonIcon'
+import { blocksFor } from '../../quest/pages/CelebratePage'
 import { useI18n } from '../../../hooks/useI18n'
 import homeTexts from '../../../data/parent/home.json'
 import { Scene } from '../components/kit'
@@ -13,9 +16,34 @@ import styles from '../pages.module.css'
  */
 const emojis = ['📝', '🚪', '🏠', '🧰', '🩺']
 
+/** Staying in the hospital: the same texts as the last sheet's "continue hospitalization" in the worlds */
+function StayPage() {
+  const { lang, dir, t } = useI18n()
+  const blocks = blocksFor(lang, 'admission')
+  return (
+    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <Scene title={withoutEmoji(t('ui.buttons.admission'))}>
+      <div className={styles.tips}>
+        {blocks.map((b) => (
+          <div key={b.title} className={styles.tip}>
+            <span className={styles.tipEmoji} aria-hidden>{b.emoji}</span>
+            <div>
+              {b.title && <h2 className={styles.tipTitle}>{b.title}</h2>}
+              <p className={styles.tipBody}>{b.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Scene>
+    </div>
+  )
+}
+
 export function GoingHomePage() {
   const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang], 'parent/home').goingHome
+  const [params] = useSearchParams()
+  if (params.has('stay')) return <StayPage />
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
     <Scene title={t('ui.tiles.discharge.title')} subtitle={tx.subtitle}>

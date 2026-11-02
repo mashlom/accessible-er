@@ -24,7 +24,7 @@ const BLOCK_EMOJI = {
 type Block = { title: string; body: string }
 const parentCelebrate = i18nUi as unknown as Record<'he' | 'en' | 'ru', { celebrate: Record<'discharge' | 'admission', Block[]> }>
 
-function blocksFor(lang: 'he' | 'en' | 'ru', kind: 'discharge' | 'admission') {
+export function blocksFor(lang: 'he' | 'en' | 'ru', kind: 'discharge' | 'admission') {
   const texts = (parentCelebrate[lang] ?? parentCelebrate.he).celebrate[kind]
   // the first title is the same for both outcomes: it is the discharge's
   const first = (parentCelebrate[lang] ?? parentCelebrate.he).celebrate.discharge[0].title

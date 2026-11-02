@@ -1239,3 +1239,18 @@ button.dest {
   color: var(--h-ink);
   font-family: Rubik, var(--font);
 }
+/* the two ends of the visit under the trail, side by side */
+.outcomeLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: var(--space-4);
+}
+.outcomeLinks > .crossLink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 0;
+  text-align: start;
+}

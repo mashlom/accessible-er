@@ -13,6 +13,7 @@ import { DAY_MS } from '../../../lib/storage'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
 import { LineIcon } from '../../../components/LineIcon'
+import { withoutEmoji } from '../../quest/components/ButtonIcon'
 
 /**
  * "Our trail" — the visit as a winding trail of stops. The child's own
@@ -172,9 +173,17 @@ export function TrailPage() {
         <Note>{tx.note}</Note>
       </div>
 
-      <Link to="/going-home" className={styles.crossLink}>
-        {tx.crossLink}
-      </Link>
+      {/* the two ends of the visit, as the last sheet's answers in the worlds: Shevi's house and the red Star of David */}
+      <div className={styles.outcomeLinks}>
+        <Link to="/going-home" className={styles.crossLink}>
+          <span className={styles.stopIcon} aria-hidden><LineIcon id="going-home" size={22} /></span>
+          {withoutEmoji(t('ui.buttons.discharge'))}
+        </Link>
+        <Link to="/going-home?stay=1" className={styles.crossLink}>
+          <span className={styles.stopIcon} aria-hidden><LineIcon id="admission" size={22} /></span>
+          {withoutEmoji(t('ui.buttons.admission'))}
+        </Link>
+      </div>
     </div>
   )
 }
