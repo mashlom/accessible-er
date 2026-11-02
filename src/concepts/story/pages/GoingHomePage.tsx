@@ -22,7 +22,7 @@ function StayPage() {
   const blocks = blocksFor(lang, 'admission')
   return (
     <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
-    <Scene title={withoutEmoji(t('ui.buttons.admission'))}>
+    <Scene title={withoutEmoji(t('ui.buttons.admission'))} back="/trail">
       <div className={styles.tips}>
         {blocks.map((b) => (
           <div key={b.title} className={styles.tip}>
