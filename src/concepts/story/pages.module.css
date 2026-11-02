@@ -1039,29 +1039,29 @@ button.dest {
 
 /* ---- the home in the design (Figma "Mashlom.me", מסך בית): navy ink, one purple, white cards with a soft shadow ---- */
 .home {
-  --h-ink: #1d1a4e;
-  --h-text: #5b5f73;
-  --h-purple: #6a4c93;
-  --h-lilac: #ece6f7;
+  --h-ink: #0f0341;
+  --h-text: #6f6573;
+  --h-purple: #6f4691;
+  --h-lilac: #efe7f6;
 }
 .home .homeEyebrow { color: #087e8b; }
 /* the place's name at the start edge, the language at the other, as in the design */
 .home .homeTopLine > .homeEyebrow { grid-column: 2 / 4; justify-self: end; }
-/* a soft peach blob behind the title */
+/* the peach cloud behind the title: the design's own shape (Figma, Vector 3098) */
 .home .homeTitle {
   position: relative;
   isolation: isolate;
   width: fit-content;
   margin: 0.75rem auto 0.25rem;
   padding: 0.9rem 1.5rem;
-  color: #1b2b3a;
+  color: var(--h-ink);
 }
 .home .homeTitle::before {
   content: '';
   position: absolute;
-  inset: -18px -60px -22px;
+  inset: -24px -70px -18px;
   z-index: -1;
-  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 120'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop offset='0' stop-color='%23fbe0c8'/><stop offset='1' stop-color='%23fdebdc'/></linearGradient></defs><path fill='url(%23g)' d='M20 40C30 14 70 6 104 14c30 7 52-8 92-6 50 2 94 14 100 44 5 26-14 50-50 58-36 8-70-2-104 4-40 7-82 12-116-4C4 98-4 70 20 40z'/></svg>") center / 100% 100% no-repeat;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 309 105'><path fill='%23FBEEE1' d='M151.75 14.64C114.967 39.8269 82.7711 32.5507 55.7114 28.2207C-5.10411 11.8844 -1.80339 42.9808 1.49848 58.1361C7.11595 83.9197 81.0282 99.2733 106.07 89.629C126.103 81.9136 144.871 86.4143 151.75 89.629C165.693 98.6172 208.218 113.129 266.777 99.2733C339.976 81.953 299.249 53.6098 282.738 50.6584C270.37 48.4477 246.8 42.4818 237.057 20.347C232.379 9.7184 196.88 -16.2621 151.75 14.64Z'/></svg>") center / 100% 100% no-repeat;
 }
 .home .worldLabel {
   color: var(--h-ink);
