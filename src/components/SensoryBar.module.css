@@ -67,3 +67,9 @@
 .ocean .title {
   color: #526570;
 }
+
+/* the parent pages in the home's look: the design's lilac instead of the beige strip */
+.lilac {
+  background: #f6f2fa;
+  border-top-color: #ebe4f2;
+}
