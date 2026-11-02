@@ -79,10 +79,10 @@ export function FeedbackPage() {
 
   if (status === 'sent') {
     return (
-      <div className={shell.page} dir={dir} lang={lang}>
+      <div className={`${shell.page} ${styles.trailLook}`} dir={dir} lang={lang}>
         <div className={styles.emptyState}>
-          <h1 className={shell.sceneTitle}>{tx.thanks}</h1>
-          <p style={{ color: 'var(--s-ink-soft)', maxWidth: '34ch' }}>{tx.thanksText}</p>
+          <h1 className={shell.sceneTitle} style={{ color: '#173b4d' }}>{tx.thanks}</h1>
+          <p style={{ color: '#6f6573', maxWidth: '34ch' }}>{tx.thanksText}</p>
           <div className={`${styles.actions} ${styles.actionsSingle}`}>
             <Link to="/" className={shell.bigBtn}>
               {tx.back}
