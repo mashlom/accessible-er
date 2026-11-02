@@ -14,10 +14,12 @@ const PATHS: Record<string, string[]> = {
   map: ['M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z', 'M9 4v14', 'M15 6v14'],
   calm: ['M12 20s-8-4.6-8-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 8 2.4C20 15.4 12 20 12 20z'],
   distract: [ring(9, 14, 5), ring(17, 7, 3), ring(18.5, 16.5, 2), 'M6.5 12.5a2.5 2.5 0 0 1 2-1.5'],
+  // a raised hand: four fingers and the thumb
   requests: [
-    'M8 13V6.5a1.5 1.5 0 0 1 3 0V11',
-    'M11 11V4.5a1.5 1.5 0 0 1 3 0V11',
-    'M14 11V6a1.5 1.5 0 0 1 3 0v8a7 7 0 0 1-7 7h-.3a6 6 0 0 1-4.5-2l-2.8-3.3a1.6 1.6 0 0 1 2.3-2.2L8 15',
+    'M7 12.5V7a1.5 1.5 0 0 1 3 0v4',
+    'M10 11V4.5a1.5 1.5 0 0 1 3 0V11',
+    'M13 11V5.5a1.5 1.5 0 0 1 3 0V11',
+    'M16 11V8a1.5 1.5 0 0 1 3 0v7a6 6 0 0 1-6 6h-1.2a6 6 0 0 1-4.6-2.2L3.6 15.4a1.6 1.6 0 0 1 2.4-2.1L7 14.4',
   ],
   // Shevi's house, as on the last sheet's "going home" answer (quest ButtonIcon)
   'going-home': ['M4 11l8-7 8 7M6 10v9h4v-5h4v5h4v-9'],
