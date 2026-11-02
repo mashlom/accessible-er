@@ -48,7 +48,7 @@ export function DistractPage() {
   const current = watchables.find((w) => w.emoji === pick) ?? watchables[0]
 
   return (
-    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <div dir={dir} lang={lang} className={styles.trailLook} style={{ textAlign: 'start' }}>
     <Scene title={t('ui.tiles.distract.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>

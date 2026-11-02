@@ -1347,3 +1347,11 @@ button.dest {
 .trailLook .faceOn { border-color: var(--h-purple); background: var(--h-lilac); color: var(--h-purple); }
 .trailLook .textarea { border-color: #ddd3ea; }
 .trailLook .textarea:focus { border-color: var(--h-purple); }
+/* the distraction corner in the home's look: the cartoons themselves unchanged, their stage and choices in lilac */
+.trailLook .watchStage {
+  border-radius: 16px;
+  background: linear-gradient(180deg, #efe7f6 0%, #f8f4fc 60%, #fdf3ea 100%);
+  box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08);
+}
+.trailLook .watchOpt { border: 2px solid #ddd3ea; border-radius: 16px; color: var(--h-ink); font-family: Rubik, var(--font); }
+.trailLook .watchOptOn { border-color: var(--h-purple); background: var(--h-lilac); color: var(--h-purple); }
