@@ -864,8 +864,13 @@
   padding: 0;
 }
 
-/* a sentence the parents can ask the staff: the look of the old sentence buttons, but only to read */
+/* a sentence the parents can ask the staff: a tap shows it big, to hold up to the staff */
 .calmSentence {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  font: inherit;
+  cursor: pointer;
   text-align: start;
   padding: 0.75rem 1rem;
   border: 1.5px solid;
@@ -3878,4 +3883,25 @@ path.worldTrailLit {
   transform: translateX(-50%);
   background: url('/home-glow.svg') top center / 100% auto repeat-y;
   pointer-events: none;
+}
+
+/* a ready sentence shown on the whole screen: big calm type on white, a tap anywhere closes it */
+.calmBig {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  border: none;
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.calmBigText {
+  max-width: 22ch;
+  font-size: clamp(1.8rem, 7vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
 }
