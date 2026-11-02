@@ -1131,24 +1131,38 @@ button.dest {
 }
 .home .reasonStripLabel { color: rgba(255, 255, 255, 0.75); }
 .home .reasonStripChange { border-color: #fff; color: var(--h-purple); }
-/* the tiles: a small lilac icon at the start, the name, the line, all at the start side */
+/* the tiles, as in the design: white, a lilac icon at the start, the name in Rubik 16/700, the line in Rubik 14/400 */
 .home .destGrid { gap: 12px; }
 .home .dest {
   align-items: flex-start;
   text-align: start;
-  gap: 6px;
-  padding: 14px 14px 16px;
+  gap: 0;
+  padding: 16px;
+  border-radius: 12px;
+  font-family: Rubik, var(--font);
 }
 .home .dest:hover,
 .home .dest:focus-visible { transform: translateY(-2px); }
 .home .destBadge {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  font-size: 1.35rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 1.25rem;
   background: var(--h-lilac);
   box-shadow: none;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
-.home .destName { color: var(--h-ink); font-size: 1.05rem; }
-.home .destDesc { color: var(--h-text); font-size: 0.85rem; }
+.home .destName {
+  color: var(--h-ink);
+  font-size: 16px;
+  font-weight: 700;
+  /* the design's 33.6px line, kept as the space of one line: a name on two lines stays close together */
+  line-height: 20px;
+  padding-block: 6.8px;
+}
+.home .destDesc {
+  color: var(--h-ink);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
