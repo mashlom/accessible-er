@@ -44,7 +44,7 @@ export function HelperChat() {
               ✕
             </button>
           </div>
-          <div className={`${talkStyles.theme} ${styles.talkHost}`}>
+          <div className={`${talkStyles.theme} ${talkStyles.light} ${styles.talkHost}`}>
             <div className={talkStyles.app} dir={dir} lang={lang}>
               <TalkPage />
             </div>
