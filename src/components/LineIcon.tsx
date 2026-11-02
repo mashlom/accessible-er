@@ -91,6 +91,14 @@ const PATHS: Record<string, string[]> = {
   'face-3': [ring(12, 12, 9), 'M8.5 10a1.5 1.5 0 0 1 3 0', 'M12.5 10a1.5 1.5 0 0 1 3 0', 'M7.5 13.5h9a4.5 4.5 0 0 1-9 0z'],
   puzzle: ['M4 8h4a2 2 0 1 1 4 0h4v4a2 2 0 1 1 0 4v4h-4a2 2 0 1 0-4 0H4v-4a2 2 0 1 0 0-4z'],
 
+  // what helps when it's hard, tip-<id>
+  'tip-fewer-words': ['M4 5h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3.5V15H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z', 'M7 10h6'],
+  'tip-more-space': ['M3 12h18', 'M6 9l-3 3 3 3', 'M18 9l3 3-3 3', 'M12 4v4', 'M12 16v4'],
+  'tip-less-stimuli': ['M4 9.5h3.5L12 5v14l-4.5-4.5H4z', 'M16 9.5l5 5', 'M21 9.5l-5 5'],
+  'tip-pause': [ring(12, 12, 9), 'M10 9v6', 'M14 9v6'],
+  'tip-familiar': [ring(12, 13, 6), ring(7.5, 6.5, 2.2), ring(16.5, 6.5, 2.2), 'M10.5 12v.5', 'M13.5 12v.5', 'M10.5 15.5a2 2 0 0 0 3 0'],
+  'tip-mediate': [ring(6, 7, 2.5), 'M2 17a4 4 0 0 1 8 0', ring(18, 7, 2.5), 'M14 17a4 4 0 0 1 8 0', 'M10 12h4'],
+
   // the procedures
   temperature: ['M10 4.5a2 2 0 0 1 4 0v9.8a4 4 0 1 1-4 0z', 'M12 9v7.5'],
   saturation: ['M3 9.5h11a4.5 4.5 0 0 1 0 9H3z', 'M3 9.5V7a2 2 0 0 1 2-2h6', 'M6 14h2l1-2 2 4 1-2h2'],
