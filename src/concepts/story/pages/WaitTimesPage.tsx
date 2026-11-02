@@ -2,13 +2,17 @@ import { keyed } from '../../../lib/keyed'
 import { useI18n } from '../../../hooks/useI18n'
 import { parentJourney } from '../../../data/parent'
 import { Scene, Bubble } from '../components/kit'
+import { Link } from '../../nav'
+import { LineIcon } from '../../../components/LineIcon'
 import homeTexts from '../../../data/parent/home.json'
+import styles from '../pages.module.css'
 
+/** The estimated times of every stage, in the home's look: one white card per stage, as on the trail */
 export function WaitTimesPage() {
   const { lang, dir, t } = useI18n()
   const tx = keyed(homeTexts[lang], 'parent/home').wait
   return (
-    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <div dir={dir} lang={lang} className={styles.trailLook} style={{ textAlign: 'start' }}>
     <Scene title={t('ui.tiles.wait-times.title')} subtitle={t('ui.tiles.wait-times.desc')}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>
@@ -16,58 +20,30 @@ export function WaitTimesPage() {
         </Bubble>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+      <ol className={styles.waitList}>
         {parentJourney(lang).map((stage, i) => (
-          <div
-            key={stage.id}
-            style={{
-              padding: 'var(--space-3)',
-              borderLeft: '4px solid var(--c-story)',
-              background: 'var(--c-story-soft)',
-              borderRadius: '4px',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 'var(--space-2)', marginBottom: 'var(--space-2)' }}>
-              <span style={{ fontSize: '1.25em', minWidth: '2em' }}>{stage.emoji}</span>
-              <h3 style={{ margin: 0, color: 'var(--c-story)', flex: 1 }}>
-                {i + 1}. {stage.title}
-              </h3>
-            </div>
-
-            {stage.waitRange && (
-              <p style={{ margin: 0, fontSize: '0.95em', color: 'var(--c-story)', marginBottom: 'var(--space-2)' }}>
-                <span style={{ fontWeight: 600 }}>
-                  {stage.waitKind === 'duration' ? tx.duration : tx.wait}:
+          <li key={stage.id} className={styles.stopCard}>
+            <span className={styles.stopTitleRow}>
+              <span className={styles.stopTitle}>
+                <span className={styles.stopIcon} aria-hidden>
+                  <LineIcon id={`stage-${stage.id}`} emoji={stage.emoji} size={22} />
                 </span>
-                <br />
-                <span style={{ fontSize: '1.1em' }}>{stage.waitRange}</span>
+                {i + 1}. {stage.title}
+              </span>
+            </span>
+            {stage.waitRange && (
+              <p className={styles.waitRow}>
+                <span className={styles.waitKind}>{stage.waitKind === 'duration' ? tx.duration : tx.wait}</span>
+                <span className={styles.stopWait}>{stage.waitRange}</span>
               </p>
             )}
-          </div>
+          </li>
         ))}
-      </div>
+      </ol>
 
-      <div style={{ marginTop: 'var(--space-4)', textAlign: 'center' }}>
-        <a href="#/story/trail" style={{ textDecoration: 'none' }}>
-          <button
-            style={{
-              padding: 'var(--space-2) var(--space-3)',
-              background: 'var(--c-story)',
-              color: 'white',
-              border: 'none',
-              borderRadius: '8px',
-              fontSize: '0.95em',
-              fontWeight: 500,
-              cursor: 'pointer',
-              transition: 'opacity 0.2s',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-          >
-            {t('ui.buttons.back')}
-          </button>
-        </a>
-      </div>
+      <Link to="/trail" className={styles.lookBtn}>
+        {t('ui.tiles.journey.title')}
+      </Link>
     </Scene>
     </div>
   )

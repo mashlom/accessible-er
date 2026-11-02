@@ -1254,3 +1254,35 @@ button.dest {
   margin: 0;
   text-align: start;
 }
+/* the estimated times: the trail's cards in a plain list */
+.waitList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.waitRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 10px 0 0;
+  font-size: 0.92rem;
+  color: var(--h-text, #6f6573);
+}
+.waitKind { font-weight: 600; }
+/* a purple pill button, as "tell me what brought you" */
+.lookBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  margin-top: var(--space-4);
+  border-radius: 999px;
+  background: var(--h-purple, #6f4691);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
