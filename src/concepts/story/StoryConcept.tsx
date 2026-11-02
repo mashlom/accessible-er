@@ -28,7 +28,7 @@ export default function StoryConcept() {
         <Route path="show" element={<ShowPage />} />
         <Route path="show/:id" element={<BookPage />} />
         <Route path="map" element={<MapPage />} />
-        <Route path="calm" element={<div className={styles.column}><CalmPage /></div>} />
+        <Route path="calm" element={<div className={styles.column}><CalmPage look="home" /></div>} />
         <Route path="distract" element={<DistractPage />} />
         <Route path="requests" element={<RequestsPage />} />
         <Route path="going-home" element={<GoingHomePage />} />
