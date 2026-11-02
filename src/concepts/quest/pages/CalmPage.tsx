@@ -1,4 +1,7 @@
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Link, useGoBackTo } from '../../nav'
+import { lockBodyScroll } from '../../../lib/scrollLock'
 import { useParentTheme, useQuestTheme } from '../useQuestTheme'
 import { useLocation } from 'react-router-dom'
 import { useReturnTo } from '../useReturnTo'
@@ -28,6 +31,15 @@ export function CalmPage({ look }: { look?: 'home' } = {}) {
   const theme = fromWorld ? world : home ? { ...parent, ...HOME_LOOK } : parent
   const { t } = useI18n()
   const { goBack, leaveState } = useReturnTo('/map')
+  // a sentence shown big on the whole screen, to hold the phone up to the staff
+  const [shown, setShown] = useState<string | null>(null)
+  useEffect(() => {
+    if (!shown) return
+    const unlock = lockBodyScroll()
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setShown(null) }
+    window.addEventListener('keydown', onKey)
+    return () => { unlock(); window.removeEventListener('keydown', onKey) }
+  }, [shown])
 
   return (
     <div className={home ? `${css.stagePage} ${css.cardPageHome}` : css.stagePage}>
@@ -79,14 +91,26 @@ export function CalmPage({ look }: { look?: 'home' } = {}) {
         <p className={css.parentZoneLabel}>{t('ui.labels.adult.readySentences')}</p>
         <section className={home ? css.cardSectionHome : undefined}>
           <ul className={css.calmSentences}>
-            {readySentences.map((s, i) => (
-              <li key={s} className={css.calmSentence} style={{ borderColor: theme.accent, color: theme.accent }}>
-                {t(`support.readySentences.${i}`, s)}
-              </li>
-            ))}
+            {readySentences.map((s, i) => {
+              const text = t(`support.readySentences.${i}`, s)
+              return (
+                <li key={s}>
+                  <button type="button" className={css.calmSentence} style={{ borderColor: theme.accent, color: theme.accent }} onClick={() => setShown(text)}>
+                    {text}
+                  </button>
+                </li>
+              )
+            })}
           </ul>
         </section>
       </div>
+
+      {shown && createPortal(
+        <button type="button" className={css.calmBig} style={{ color: theme.accent }} onClick={() => setShown(null)} aria-label={t('ui.buttons.close')}>
+          <span className={css.calmBigText}>{shown}</span>
+        </button>,
+        document.body,
+      )}
     </div>
   )
 }
