@@ -1324,3 +1324,21 @@ button.dest {
 }
 .trailLook .roomName { color: var(--h-ink); font-family: Rubik, var(--font); font-size: 16px; }
 .trailLook .roomBody { color: var(--h-text); }
+/* the requests (and the tips) in the home's look: white cards, a lilac icon square, Rubik */
+.trailLook .request,
+.trailLook .tip {
+  grid-template-columns: 36px 1fr;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08);
+}
+.trailLook .requestEmoji,
+.trailLook .tipEmoji {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--h-lilac);
+  font-size: 1.25rem;
+}
+.trailLook .tipTitle { color: var(--h-ink); font-family: Rubik, var(--font); font-size: 16px; font-weight: 700; }
+.trailLook .tipBody { color: var(--h-text); }

@@ -75,6 +75,16 @@ const PATHS: Record<string, string[]> = {
   'load-medium': [ring(12, 12, 9), 'M9 10v.5', 'M15 10v.5', 'M9 15h6'],
   'load-busy': [ring(12, 12, 9), 'M8.5 9l2 1.5-2 1.5', 'M15.5 9l-2 1.5 2 1.5', 'M9 16c1-1 2-1 3 0s2 1 3 0'],
 
+  // the requests one can make of the staff, request-<n> in their order
+  'request-0': ['M4 15v-3a8 8 0 0 1 16 0v3', 'M4 15h3v5H5a1 1 0 0 1-1-1z', 'M20 15h-3v5h2a1 1 0 0 0 1-1z'],
+  'request-1': [ring(12, 8, 4), 'M4 21a8 8 0 0 1 16 0'],
+  'request-2': ['M4 5h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H9l-3 2.5V13H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z', 'M14 21v-4.5a1.3 1.3 0 0 1 2.6 0V15a1.3 1.3 0 0 1 2.6 0v1a1.3 1.3 0 0 1 2.6 0v2.5a2.5 2.5 0 0 1-2.5 2.5z'],
+  'request-3': ['M12 21v-7', 'M12 14L6 8', 'M12 14l6-6', 'M6 4v4h4', 'M18 4v4h-4'],
+  'request-4': [ring(12, 12, 9), 'M12 7v5l3 2'],
+  'request-5': ['M9 3h6v4H9z', 'M8 7h8v13a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1z', 'M10.5 12h3', 'M12 10.5v3'],
+  'request-6': [ring(12, 12, 4), 'M12 3v2', 'M12 19v2', 'M3 12h2', 'M19 12h2', 'M5.6 5.6l1.4 1.4', 'M17 17l1.4 1.4'],
+  'request-7': ['M3 5h18v14H3z', ring(8.5, 10, 1.8), 'M3 17l5-4 4 3 3-2 6 4'],
+
   // the procedures
   temperature: ['M10 4.5a2 2 0 0 1 4 0v9.8a4 4 0 1 1-4 0z', 'M12 9v7.5'],
   saturation: ['M3 9.5h11a4.5 4.5 0 0 1 0 9H3z', 'M3 9.5V7a2 2 0 0 1 2-2h6', 'M6 14h2l1-2 2 4 1-2h2'],
