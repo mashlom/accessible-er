@@ -58,6 +58,8 @@ const FILES: Record<string, string> = {
   'blood-test': 'drop.svg',
   urine: 'tubes.svg',
   talk: 'talk.svg',
+  // the red Star of David of Magen David Adom (staying in the hospital), as on the last sheet's answer
+  admission: 'magen-david.svg',
   'stage-tests': 'tubes.svg',
 }
 
