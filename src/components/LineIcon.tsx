@@ -114,6 +114,9 @@ const PATHS: Record<string, string[]> = {
   // the home's tile for staying in the hospital: a bed
   'tile-admission': ['M3 7v13', 'M21 20v-5H3', 'M3 15h18v-3a3 3 0 0 0-3-3h-7v6', ring(7, 12, 1.8)],
 
+  // a procedure page's "what actually happens": an eye
+  'proc-what': ['M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z', ring(12, 12, 3)],
+
   // the procedures
   temperature: ['M10 4.5a2 2 0 0 1 4 0v9.8a4 4 0 1 1-4 0z', 'M12 9v7.5'],
   saturation: ['M3 9.5h11a4.5 4.5 0 0 1 0 9H3z', 'M3 9.5V7a2 2 0 0 1 2-2h6', 'M6 14h2l1-2 2 4 1-2h2'],
