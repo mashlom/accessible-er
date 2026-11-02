@@ -3911,10 +3911,16 @@ path.worldTrailLit {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 .sheetWaitIcons span {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  /* each in its own lilac pill, as the times on the trail */
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #efe7f6;
+  color: #0f0341;
+  font-weight: 600;
 }
