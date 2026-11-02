@@ -3905,3 +3905,16 @@ path.worldTrailLit {
   line-height: 1.35;
   text-align: center;
 }
+/* who and how long, with line icons (the parent's own procedure page) */
+.sheetWaitIcons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.sheetWaitIcons span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
