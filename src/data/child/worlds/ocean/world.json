@@ -69,10 +69,10 @@
     },
     "stations": {
       "reception": {
-        "map": "/worlds/ocean/art/station-reception.webp",
+        "map": "/worlds/ocean/art/station-house.webp",
         "sheet": "/worlds/ocean/art/scene-reception.webp",
         "panel": "scene",
-        "choice": "/worlds/ocean/art/station-reception.webp"
+        "choice": "/worlds/ocean/art/station-house.webp"
       },
       "wait-before-triage": {
         "map": "/worlds/ocean/art/station-wait-before-triage.webp",
@@ -122,13 +122,18 @@
         "choice": "/worlds/ocean/art/station-treatment.webp"
       },
       "decision": {
-        "map": "/worlds/ocean/art/station-decision.webp",
+        "map": "/worlds/ocean/art/station-house.webp",
         "sheet": "/worlds/ocean/art/scene-decision.webp",
         "panel": "scene",
-        "choice": "/worlds/ocean/art/station-decision.webp"
+        "choice": "/worlds/ocean/art/station-house.webp"
       }
     },
     "images": {
+      "/worlds/ocean/art/station-house.webp": {
+        "aspect": 0.9590909090909091,
+        "visible": 0.916,
+        "lift": 0.068
+      },
       "/worlds/ocean/station-house.png": {
         "aspect": 0.9590909090909091,
         "visible": 0.916,
