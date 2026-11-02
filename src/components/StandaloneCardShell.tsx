@@ -16,7 +16,7 @@ export function StandaloneCardShell({ children }: { children: ReactNode }) {
     return () => setI18nEnabled(false)
   }, [])
   return (
-    <div className={styles.theme}>
+    <div className={`${styles.theme} ${styles.shellHome}`}>
       <header className={`${styles.topbar} app-no-print`}>
         <div className={styles.topbarInner}>
           {/* the home page on the other side from the language */}

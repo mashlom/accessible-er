@@ -3834,3 +3834,15 @@ path.worldTrailLit {
 
 /* the outcome's parent sheet: its title, with room under it before the cards */
 .celebrateSheetParent > .stageSheetTitle { margin: 0 0 calc(16 * var(--u)); text-align: center; }
+
+/* the care card's parts on the parent's own card page (/card): white cards with the home's soft shadow */
+.cardSectionHome {
+  border: none;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08);
+}
+.cardSectionHome h2 {
+  color: #0f0341;
+  font-family: Rubik, var(--font);
+}
