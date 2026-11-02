@@ -12,6 +12,7 @@ import { usePersistentState } from '../../../hooks/usePersistentState'
 import { DAY_MS } from '../../../lib/storage'
 import shell from '../story.module.css'
 import styles from '../pages.module.css'
+import { LineIcon } from '../../../components/LineIcon'
 
 /**
  * "Our trail" — the visit as a winding trail of stops. The child's own
@@ -38,7 +39,7 @@ export function TrailPage() {
   const currentIndex = currentId ? getStageIndex(currentId) : -1
 
   return (
-    <div className={shell.page} dir={dir} lang={lang}>
+    <div className={`${shell.page} ${styles.trailLook}`} dir={dir} lang={lang}>
       <header className={styles.trailHead}>
         <TitleRow>
           <h1 className={styles.trailTitle}>
@@ -101,7 +102,9 @@ export function TrailPage() {
                 >
                   <span className={styles.stopTitleRow}>
                     <span className={styles.stopTitle}>
-                      <span aria-hidden>{stage.emoji} </span>
+                      <span className={styles.stopIcon} aria-hidden>
+                        <LineIcon id={`stage-${stage.id}`} emoji={stage.emoji} size={22} />
+                      </span>
                       {isHere && '📍 '}
                       {stage.title}
                     </span>

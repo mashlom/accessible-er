@@ -1118,7 +1118,8 @@ button.dest {
   height: auto;
   aspect-ratio: 1;
 }
-/* "tell me what brought you": one purple pill */
+/* "tell me what brought you": one purple pill (the home and the trail) */
+.trailLook .reasonStrip,
 .home .reasonStrip {
   justify-content: center;
   background: var(--h-purple);
@@ -1129,8 +1130,10 @@ button.dest {
   text-align: center;
   text-decoration: none;
 }
-.home .reasonStripLabel { color: rgba(255, 255, 255, 0.75); }
-.home .reasonStripChange { border-color: #fff; color: var(--h-purple); }
+.home .reasonStripLabel,
+.trailLook .reasonStripLabel { color: rgba(255, 255, 255, 0.75); }
+.home .reasonStripChange,
+.trailLook .reasonStripChange { border-color: #fff; color: var(--h-purple); }
 /* the tiles, as in the design: white, a lilac icon at the start, the name in Rubik 16/700, the line in Rubik 14/400 */
 .home .destGrid { gap: 12px; }
 .home .dest {
@@ -1165,4 +1168,74 @@ button.dest {
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
+}
+
+/* ---- the trail in the home's look: white with the design's glows, white cards with a soft shadow, Rubik, lilac ---- */
+.trailLook {
+  --h-ink: #0f0341;
+  --h-text: #6f6573;
+  --h-purple: #6f4691;
+  --h-lilac: #efe7f6;
+  position: relative;
+  isolation: isolate;
+}
+.trailLook::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  width: min(1100px, 200vw);
+  transform: translateX(-50%);
+  margin-top: -120px;
+  aspect-ratio: 812 / 1340;
+  background: url('/home-glow.svg') center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+.trailLook .trailTitle { color: #173b4d; }
+.trailLook .trailSub { color: var(--h-text); }
+.trailLook .trail::before { border-color: #ddd3ea; }
+.trailLook .stopDot { border-color: #ddd3ea; color: var(--h-ink); font-family: Rubik, var(--font); }
+.trailLook .stopDone,
+.trailLook .stopHere { background: var(--h-purple); border-color: var(--h-purple); color: #fff; }
+.trailLook .stopHere { box-shadow: 0 0 0 5px rgba(111, 70, 145, 0.18); }
+.trailLook .stopCard {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08);
+}
+.trailLook .stopCardHere { box-shadow: 0 0 0 2px var(--h-purple), 0 4px 20px rgba(60, 40, 110, 0.08); }
+.trailLook .stopTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Rubik, var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--h-ink);
+}
+.stopIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--h-lilac, #efe7f6);
+}
+.trailLook .stopWait { background: var(--h-lilac); color: var(--h-ink); }
+.trailLook .stopMeaning,
+.trailLook .askList { color: var(--h-text); }
+.trailLook .detailRow { color: var(--h-ink); }
+.trailLook .stopDetail { border-top-color: #ebe4f2; }
+.trailLook .prepLink { background: var(--h-lilac); color: var(--h-ink); }
+.trailLook .hereBtn { border-color: var(--h-purple); color: var(--h-purple); }
+.trailLook .hereBtnOn { background: var(--h-purple); border-color: var(--h-purple); color: #fff; }
+.trailLook .crossLink {
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08);
+  color: var(--h-ink);
+  font-family: Rubik, var(--font);
 }
