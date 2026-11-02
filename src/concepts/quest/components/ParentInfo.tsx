@@ -375,7 +375,7 @@ export function ProcedurePanel({ pid, onBack, withHead = true, look }: { pid: st
       {(proc.who || proc.duration) && (
         <p className={home ? `${css.sheetWait} ${css.sheetWaitIcons}` : css.sheetWait}>
           {proc.who && <span>{home ? <LineIcon id="request-1" size={16} /> : '👤'} {proc.who}</span>}
-          {proc.who && proc.duration && <span> · </span>}
+          {!home && proc.who && proc.duration && <span> · </span>}
           {proc.duration && <span>{home ? <><LineIcon id="wait-times" size={16} /> {withoutEmoji(t('ui.labels.adult.estimated'))}</> : t('ui.labels.adult.estimated')} {proc.duration}</span>}
         </p>
       )}
