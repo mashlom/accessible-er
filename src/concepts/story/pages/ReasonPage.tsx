@@ -19,7 +19,7 @@ export function ReasonPage() {
 
   return (
     <div dir={dir} lang={lang} style={{ display: 'contents' }}>
-    <Scene title={tx.title} subtitle={tx.subtitle}>
+    <Scene title={tx.title} subtitle={tx.subtitle} back="/">
       <div className={styles.reasonGrid} role="radiogroup" aria-label={tx.aria}>
         {all.map((p) => {
           const on = p.id === reasonId

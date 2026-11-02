@@ -26,22 +26,26 @@ export function TitleRow({ fallback = '/', children }: { fallback?: string; chil
   )
 }
 
-/** Page frame with a big storybook heading. */
+/**
+ * Page frame with a big storybook heading. A page opened from a home tile has no "back" beside it (the top bar's
+ * home pill does the same); a page opened from another page passes `back`, where back goes without a history.
+ */
 export function Scene({
   title,
   subtitle,
+  back,
   children,
 }: {
   title: string
   subtitle?: string
+  back?: string
   children: ReactNode
 }) {
+  const heading = <h1 className={styles.sceneTitle}>{title}</h1>
   return (
     <div className={styles.page}>
       <header className={styles.sceneHead}>
-        <TitleRow>
-          <h1 className={styles.sceneTitle}>{title}</h1>
-        </TitleRow>
+        {back ? <TitleRow fallback={back}>{heading}</TitleRow> : heading}
         {subtitle && <p className={styles.sceneSub}>{subtitle}</p>}
       </header>
       {children}
