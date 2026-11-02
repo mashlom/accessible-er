@@ -4,6 +4,7 @@ import { useI18n } from '../../../hooks/useI18n'
 import i18nUi from '../../../data/i18n/ui.json'
 import supportI18n from '../../../data/i18n/support.json'
 import { staffRequests } from '../../../data/support'
+import { LineIcon } from '../../../components/LineIcon'
 import styles from '../pages.module.css'
 
 type StoryRequestsTexts = {
@@ -21,17 +22,17 @@ export function RequestsPage() {
   const items = staffRequests.map((d, i) => ({ ...d, ...(supportI18n as unknown as Record<string, { staffRequests: { title: string; detail: string }[] }>)[lang].staffRequests[i] }))
 
   return (
-    <div dir={dir} lang={lang} style={{ textAlign: 'start' }}>
+    <div dir={dir} lang={lang} className={styles.trailLook} style={{ textAlign: 'start' }}>
     <Scene title={t('ui.tiles.requests.title')} subtitle={tx.subtitle}>
       <div style={{ marginBottom: 'var(--space-4)' }}>
         <Bubble>{tx.bubble}</Bubble>
       </div>
 
       <div className={styles.requests}>
-        {items.map((r) => (
+        {items.map((r, i) => (
           <div key={r.title} className={styles.request}>
             <span className={styles.requestEmoji} aria-hidden>
-              {r.emoji}
+              <LineIcon id={`request-${i}`} emoji={r.emoji} size={22} />
             </span>
             <div>
               <h2 className={styles.tipTitle}>{r.title}</h2>
