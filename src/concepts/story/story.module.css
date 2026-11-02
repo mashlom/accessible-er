@@ -54,6 +54,15 @@
   overflow-x: clip;
 }
 
+/* the home: warm white with soft lilac and peach glows, as in the design */
+.shellHome {
+  background:
+    radial-gradient(60% 22% at 85% 30%, rgba(196, 176, 236, 0.35), transparent 70%),
+    radial-gradient(55% 20% at 15% 55%, rgba(255, 214, 190, 0.4), transparent 70%),
+    radial-gradient(60% 18% at 80% 80%, rgba(196, 176, 236, 0.25), transparent 70%),
+    #fdfcff;
+}
+
 /* decorative sky furniture — sun + clouds, behind everything */
 .skyDeco {
   /* at the top of the page (it scrolls away with the header, not over the tiles) */
