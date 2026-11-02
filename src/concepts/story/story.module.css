@@ -57,6 +57,8 @@
 .shellHome {
   /* white; the glows are drawn by the home page itself, at its column's width (pages.module.css, .home) */
   background: #fff;
+  /* a short page is white to the bottom of the screen too */
+  min-height: 100dvh;
   /* the glows' picture is taller than the page: it must not add an empty scroll under the footer */
   overflow: clip;
 }
