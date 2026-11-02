@@ -56,12 +56,11 @@
 
 /* the home: warm white with soft lilac and peach glows, as in the design */
 .shellHome {
+  /* as in the design: a lilac glow behind the child's world, a peach one at the edge by the parent centre */
   background:
-    radial-gradient(45% 14% at 70% 24%, rgba(205, 188, 240, 0.6), transparent 75%),
-    radial-gradient(40% 22% at 100% 42%, rgba(253, 220, 196, 0.75), transparent 75%),
-    radial-gradient(50% 16% at 55% 52%, rgba(215, 200, 245, 0.55), transparent 75%),
-    radial-gradient(45% 20% at 0% 70%, rgba(253, 224, 204, 0.65), transparent 75%),
-    radial-gradient(50% 16% at 90% 88%, rgba(215, 200, 245, 0.5), transparent 75%),
+    radial-gradient(150px 110px at 52% 270px, rgba(206, 190, 240, 0.55), transparent 80%),
+    radial-gradient(170px 160px at 100% 430px, rgba(250, 222, 200, 0.7), transparent 80%),
+    radial-gradient(170px 160px at 0% 900px, rgba(250, 228, 210, 0.45), transparent 80%),
     #fff;
 }
 
