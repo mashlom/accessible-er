@@ -28,7 +28,7 @@ function levelClass(n: number): string {
 export function SensoryBar({ sensory, ocean, lineIcons }: Props) {
   const { t, lang } = useI18n()
   return (
-    <div className={ocean ? `${css.bar} ${css.ocean}` : css.bar}>
+    <div className={[css.bar, ocean && css.ocean, lineIcons && css.lilac].filter(Boolean).join(' ')}>
       <p className={css.title}>{t('ui.labels.adult.sensoryTitle')}</p>
       <div className={css.channels}>
         {CHANNELS.map(({ key, emoji }) => {
