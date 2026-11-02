@@ -5,6 +5,7 @@ import i18nUi from '../data/i18n/ui.json'
 import { DAY_MS } from '../lib/storage'
 import { emptyCard, isCardEmpty, type CareCard } from '../data/careCard'
 import { CareCardView, careCardHeading } from '../components/careCard/CareCardView'
+import { LineIcon } from '../components/LineIcon'
 import styles from './CareCardViewPage.module.css'
 
 type Lang = 'he' | 'en' | 'ru'
@@ -37,14 +38,14 @@ export function CareCardViewPage() {
         <div className={`${styles.card} app-print-area`}>
           <div className={styles.cardHead}>
             <span className={styles.cardHeadIcon} aria-hidden>
-              🧒
+              <LineIcon id="card-about" size={28} />
             </span>
             <div>
               <div className={styles.cardTitle}>{heading.title}</div>
               {heading.age && <div className={styles.cardAge}>{heading.age}</div>}
             </div>
           </div>
-          <CareCardView classes={{ rows: styles.rows, row: styles.row, label: styles.label, value: styles.value }} />
+          <CareCardView lineIcons classes={{ rows: styles.rows, row: styles.row, label: styles.label, value: styles.value }} />
         </div>
         {/* the parent's way out of the card, once the staff has read it */}
         <div className={`${styles.actions} app-no-print`}>

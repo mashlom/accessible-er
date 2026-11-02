@@ -41,24 +41,45 @@
   align-items: center;
   gap: var(--space-3);
 }
+.empty h1 {
+  color: #173b4d;
+}
+.empty p {
+  color: #6f6573;
+}
 .emptyBtn {
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-pill);
-  background: var(--c-primary);
+  background: #6f4691;
   color: #fff;
   font-weight: 700;
 }
 
-/* the staff reads the card on black, as the staff screens do: no white boxes, large bold text */
+/* the staff reads the card in the home's look: white with the design's glows, large bold dark text */
 .staffScreen {
+  position: relative;
+  isolation: isolate;
   min-height: 100dvh;
-  background: #000;
-  color: #fff;
+  background: transparent;
+  color: #0f0341;
   padding: 16px;
+  font-family: Rubik, var(--font);
+}
+.staffScreen::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -160px;
+  bottom: 0;
+  left: 50%;
+  width: min(1100px, 200vw);
+  transform: translateX(-50%);
+  background: url('/home-glow.svg') top center / 100% auto repeat-y;
+  pointer-events: none;
 }
 .staffScreen * {
   color: inherit;
-  border-color: #444;
+  border-color: #ebe4f2;
 }
 .staffScreen .rows,
 .staffScreen .row {
@@ -80,6 +101,14 @@
 }
 .staffScreen .label,
 .staffScreen .value {
+  color: #0f0341;
+}
+/* the head in the design's purple, its words white */
+.staffScreen .cardHead {
+  background: #6f4691;
+}
+.staffScreen .cardHead,
+.staffScreen .cardHead * {
   color: #fff;
 }
 
@@ -171,10 +200,10 @@
   flex: 1 1 140px;
   min-height: 52px;
   padding: 0 1.25rem;
-  border: 2px solid #fff;
+  border: 2px solid #6f4691;
   border-radius: 999px;
-  background: transparent;
-  color: #fff;
+  background: #fff;
+  color: #6f4691;
   font: inherit;
   font-size: 1.1rem;
   font-weight: 700;
@@ -182,5 +211,21 @@
 }
 .actionBtn:hover,
 .actionBtn:focus-visible {
-  background: #222;
+  background: #efe7f6;
+}
+
+/* the line icons: dark on the lines, white in the purple head, set beside the words */
+.staffScreen .label svg,
+.staffScreen .label img,
+.staffScreen h2 svg {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-inline-end: 4px;
+}
+.cardHeadIcon {
+  display: grid;
+  place-items: center;
+}
+.staffScreen .cardHead svg {
+  stroke: #fff;
 }

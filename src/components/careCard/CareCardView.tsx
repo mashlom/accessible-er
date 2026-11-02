@@ -1,3 +1,5 @@
+import { LineIcon } from '../LineIcon'
+import { withoutEmoji } from '../../concepts/quest/components/ButtonIcon'
 import { keyed } from '../../lib/keyed'
 import { usePersistentState } from '../../hooks/usePersistentState'
 import { DAY_MS } from '../../lib/storage'
@@ -38,7 +40,7 @@ export function suggestionsFor(card: CareCard, lang: Lang): string[] {
 /** Extra classes for the parts of the card, for a screen that shows it its own way. */
 export type CareCardViewClasses = Partial<Record<'rows' | 'row' | 'label' | 'value', string>>
 
-export function CareCardView({ classes = {} }: { classes?: CareCardViewClasses }) {
+export function CareCardView({ classes = {}, lineIcons }: { classes?: CareCardViewClasses; /** Shevi's line icons instead of the emoji (the card in the home's look) */ lineIcons?: boolean }) {
   const cls = (part: keyof CareCardViewClasses) => [css[part], classes[part]].filter(Boolean).join(' ')
   const lang: Lang = 'he'
   const [card] = usePersistentState<CareCard>('care-card', emptyCard, DAY_MS)
@@ -50,13 +52,13 @@ export function CareCardView({ classes = {} }: { classes?: CareCardViewClasses }
   const join = (...parts: (string | undefined)[]) => parts.map((p) => (p ?? '').trim()).filter(Boolean).join(' · ')
 
   const rows = [
-    { emoji: '💬', label: heRows.communication, value: join(...card.communication, c.communication) },
-    { emoji: '⚠️', label: heRows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
-    { emoji: '💛', label: heRows.calming, value: join(...card.calming, c.calming) },
-    { emoji: '🚫', label: heRows.avoid, value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid) },
-    { emoji: '🩺', label: heRows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
-    { emoji: '🤕', label: heRows.pain, value: join(...card.pain, c.pain) },
-    { emoji: '✏️', label: heRows.freeNote, value: card.freeNote.trim() },
+    { emoji: '💬', icon: 'card-communication', label: heRows.communication, value: join(...card.communication, c.communication) },
+    { emoji: '⚠️', icon: 'card-sensitivities', label: heRows.sensitivities, value: join(...card.sensitivities, c.sensitivities) },
+    { emoji: '💛', icon: 'card-calming', label: heRows.calming, value: join(...card.calming, c.calming) },
+    { emoji: '🚫', icon: 'card-avoid', label: heRows.avoid, value: join(...card.escalators, ...card.avoid, c.escalators, c.avoid) },
+    { emoji: '🩺', icon: 'card-hardMoments', label: heRows.hardMoments, value: join(...card.hardMoments, c.hardMoments) },
+    { emoji: '🤕', icon: 'card-pain', label: heRows.pain, value: join(...card.pain, c.pain) },
+    { emoji: '✏️', icon: 'card-else', label: heRows.freeNote, value: card.freeNote.trim() },
   ].filter((r) => r.value)
 
   const suggestions = suggestionsFor(card, lang)
@@ -67,7 +69,7 @@ export function CareCardView({ classes = {} }: { classes?: CareCardViewClasses }
         {rows.map((row) => (
           <div key={row.label} className={cls('row')}>
             <span className={cls('label')}>
-              <span aria-hidden>{row.emoji}</span> {row.label}
+              <span aria-hidden>{lineIcons ? <LineIcon id={row.icon} size={22} /> : row.emoji}</span> {row.label}
             </span>
             <span className={cls('value')}>{row.value}</span>
           </div>
@@ -76,7 +78,7 @@ export function CareCardView({ classes = {} }: { classes?: CareCardViewClasses }
 
       {(card.asks ?? []).length > 0 && (
         <section>
-          <h2>{heAsks.title}</h2>
+          <h2>{lineIcons && <span aria-hidden><LineIcon id="card-asks" size={22} /> </span>}{heAsks.title}</h2>
           <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
             {(card.asks ?? []).map((id) => <li key={id}>{heAsks[id]}</li>)}
           </ul>
@@ -85,7 +87,7 @@ export function CareCardView({ classes = {} }: { classes?: CareCardViewClasses }
 
       {suggestions.length > 0 && (
         <section className="app-no-print">
-          <h2>{heTexts.suggestionsTitle}</h2>
+          <h2>{lineIcons ? <><span aria-hidden><LineIcon id="card-suggestions" size={22} /> </span>{withoutEmoji(heTexts.suggestionsTitle)}</> : heTexts.suggestionsTitle}</h2>
           <ul style={{ paddingInlineStart: '1.2em', lineHeight: 1.7 }}>
             {suggestions.map((s) => <li key={s}>{s}</li>)}
           </ul>
