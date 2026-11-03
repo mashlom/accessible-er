@@ -1390,3 +1390,24 @@ button.dest {
 .trailLook .stone a { color: var(--h-purple); }
 .trailLook .stoneOptional { background: #f6f2fa; color: var(--h-text); }
 .trailLook .stoneArrow { color: #b9acd0; }
+
+/* the trail as in Shevi's design: a solid orange line over the stops already passed, a dashed one ahead;
+   passed stops purple with a tick, the current one purple in a ring, the coming ones lilac */
+.trailLook .trail::before { display: none; }
+.trailLook .stop:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 54px;
+  bottom: -24px;
+  inset-inline-start: 17px;
+  border-inline-start: 2px dashed #f0a04b;
+}
+.trailLook .stopPassed:not(:last-child)::after { border-inline-start-style: solid; }
+.trailLook .stopDot { border: none; background: #efe7f6; color: var(--h-ink); }
+.trailLook .stopDone { background: var(--h-purple); color: #fff; }
+.trailLook .stopHere {
+  background: var(--h-purple);
+  color: #fff;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--h-purple);
+}
+.trailLook .stopCardHere { box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08); }

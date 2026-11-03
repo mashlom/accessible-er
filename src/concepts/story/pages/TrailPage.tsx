@@ -74,7 +74,7 @@ export function TrailPage() {
           const isDone = currentIndex > -1 && i < currentIndex
           const isOpen = openId === stage.id
           return (
-            <li key={stage.id} className={styles.stop}>
+            <li key={stage.id} className={`${styles.stop} ${currentIndex > -1 && i < currentIndex ? styles.stopPassed : ''}`}>
               <button
                 type="button"
                 className={`${styles.stopDot} ${isDone ? styles.stopDone : ''} ${
@@ -84,7 +84,7 @@ export function TrailPage() {
                 aria-expanded={isOpen}
                 aria-label={`${stage.title}${isHere ? tx.hereSuffix : ''}`}
               >
-                <span aria-hidden>{isDone ? '✓' : isHere ? '' : i + 1}</span>
+                <span aria-hidden>{isDone ? '✓' : i + 1}</span>
               </button>
 
               <div className={`${styles.stopCard} ${isHere ? styles.stopCardHere : ''}`}>
@@ -104,7 +104,6 @@ export function TrailPage() {
                       <span className={styles.stopIcon} aria-hidden>
                         <LineIcon id={`stage-${stage.id}`} emoji={stage.emoji} size={22} />
                       </span>
-                      {isHere && '📍 '}
                       {stage.title}
                     </span>
                   </span>
