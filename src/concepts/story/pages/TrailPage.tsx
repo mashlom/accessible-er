@@ -107,11 +107,6 @@ export function TrailPage() {
                       {isHere && '📍 '}
                       {stage.title}
                     </span>
-                    {stage.waitRange && (
-                      <span className={styles.stopWait}>
-                        {stage.waitKind === 'duration' ? '⏱️' : '⏳'} {stage.waitRange}
-                      </span>
-                    )}
                   </span>
                 </button>
 
@@ -119,6 +114,14 @@ export function TrailPage() {
                   <div className={styles.stopDetail}>
                     {/* 'here we are' comes right after the station's title */}
                     <p className={styles.stopMeaning}>{stage.meaning}</p>
+                    {/* the estimated time lives inside the station, so the title stays one short line */}
+                    {stage.waitRange && (
+                      <p>
+                        <span className={styles.stopWait}>
+                          {stage.waitKind === 'duration' ? '⏱️' : '⏳'} {stage.waitRange}
+                        </span>
+                      </p>
+                    )}
                     <p className={styles.detailRow}>
                       <span className={styles.detailLabel}>{t('ui.labels.adult.whatHappens')}</span>
                       {stage.whatHappens}
