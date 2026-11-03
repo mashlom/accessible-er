@@ -304,17 +304,27 @@ export function TalkPage() {
           )}
 
           {done ? (
-            current.choices.map((choice, i) => (
-              <button
-                key={`${choice.label}-${i}`}
-                type="button"
-                className={`${styles.answer} ${choice.quiet ? styles.answerQuiet : ''}`}
-                onClick={() => choose(choice)}
-              >
-                {choice.emoji && <span aria-hidden>{choice.emoji}</span>}
-                {topicLabel(choice)}
-              </button>
-            ))
+            <>
+              {[false, true].map((quiet) => {
+                const row = current.choices.filter((c) => !!c.quiet === quiet)
+                if (row.length === 0) return null
+                return (
+                  <div key={String(quiet)} className={quiet ? styles.quietRow : styles.answerRow}>
+                    {row.map((choice, i) => (
+                      <button
+                        key={`${choice.label}-${i}`}
+                        type="button"
+                        className={`${styles.answer} ${choice.quiet ? styles.answerQuiet : ''}`}
+                        onClick={() => choose(choice)}
+                      >
+                        {choice.emoji && <span aria-hidden>{choice.emoji}</span>}
+                        {topicLabel(choice)}
+                      </button>
+                    ))}
+                  </div>
+                )
+              })}
+            </>
           ) : (
             <button type="button" className={styles.answerQuiet} onClick={revealAll}>
               {ui.showAll}

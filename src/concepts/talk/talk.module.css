@@ -266,6 +266,14 @@
   background: var(--t-cream-2);
 }
 
+.answerRow,
+.quietRow {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
 .answerQuiet {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.25);
@@ -453,6 +461,11 @@
   border-radius: 10px;
 }
 .light .answer:hover { background: #5d3a7c; }
+/* as in the design: the purple answers 32px high, the outlined ones 40px, side by side in one row, 24px below the purple */
+.light .answerRow .answer { box-sizing: border-box; height: 32px; min-height: 0; padding: 0 14px; line-height: 1; }
+.light .quietRow { flex-wrap: nowrap; gap: 8px; }
+.light .quietRow .answer { box-sizing: border-box; flex: 1 1 0; justify-content: center; height: 40px; min-height: 0; padding: 0 10px; line-height: 1.1; }
+.light .answerRow + .quietRow { margin-top: 15px; }
 .light .answerQuiet {
   background: #fff;
   border: 1px solid #0f0341;
