@@ -466,10 +466,12 @@
 }
 .shellHome .pchip { border: 2px solid #ddd3ea; color: #0f0341; }
 .shellHome .pchipOn { border-color: #6f4691; background: #efe7f6; color: #6f4691; }
-.shellHome .bigBtn { border-radius: 999px; background: #6f4691; min-height: 40px; padding: 8px 24px; }
+.shellHome .bigBtn { border-radius: 999px; background: #6f4691; min-height: 40px; padding: 8px 24px; position: relative; }
 .shellHome .bigBtn:hover { background: #5d3a7c; }
 .shellHome .bigBtn:disabled { background: #d9d0e4; }
-.shellHome .ghostBtn { border: 2px solid #6f4691; border-radius: 999px; color: #6f4691; min-height: 40px; padding: 8px 24px; }
+.shellHome .ghostBtn { border: 2px solid #6f4691; border-radius: 999px; color: #6f4691; min-height: 40px; padding: 8px 24px; position: relative; }
+/* 40px as in the design, the tap area still 48px: an invisible frame around it */
+.shellHome .bigBtn::before, .shellHome .ghostBtn::before { content: ""; position: absolute; inset: -4px 0; }
 /* a panel's line icon in a lilac square */
 .panelIcon {
   flex: none;
