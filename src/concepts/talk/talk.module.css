@@ -486,3 +486,5 @@
   inset: -4px 0;
 }
 .light .answerRow .answer::before { inset: -8px 0; }
+/* 16px between the purple rows: their 48px tap areas meet without overlapping */
+.light .answerRow { row-gap: 16px; }
