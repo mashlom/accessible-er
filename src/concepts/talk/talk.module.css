@@ -462,9 +462,10 @@
 }
 .light .answer:hover { background: #5d3a7c; }
 /* as in the design: the purple answers 32px high, the outlined ones 40px, side by side in one row, 24px below the purple */
-.light .answerRow .answer { box-sizing: border-box; height: 32px; min-height: 0; padding: 0 14px; line-height: 1; }
+/* 8px above and below the words (with the border); one line is 32px, a second line just makes the button taller */
+.light .answerRow .answer { box-sizing: border-box; height: auto; min-height: 0; padding: 6px 14px; line-height: 16px; }
 .light .quietRow { flex-wrap: nowrap; gap: 8px; }
-.light .quietRow .answer { box-sizing: border-box; flex: 1 1 0; justify-content: center; height: 40px; min-height: 0; padding: 0 10px; line-height: 1.1; }
+.light .quietRow .answer { box-sizing: border-box; flex: 1 1 0; justify-content: center; height: auto; min-height: 0; padding: 7px 10px; line-height: 24px; }
 .light .answerRow + .quietRow { margin-top: 15px; }
 .light .answerQuiet {
   background: #fff;
