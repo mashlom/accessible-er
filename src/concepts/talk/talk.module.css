@@ -476,3 +476,13 @@
 .light .multi { border-bottom-color: #e3dde8; }
 .light .multiChip { border-color: #cfc4dc; }
 .light .multiChipOn { background: var(--t-plum); border-color: var(--t-plum); color: #fff; }
+/* the design's buttons are 32px and 40px high; an invisible frame around each keeps the tap area 48px */
+.light .answerRow .answer,
+.light .quietRow .answer { position: relative; }
+.light .answerRow .answer::before,
+.light .quietRow .answer::before {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+}
+.light .answerRow .answer::before { inset: -8px 0; }
