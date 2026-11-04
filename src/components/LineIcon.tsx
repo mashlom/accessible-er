@@ -27,7 +27,6 @@ const PATHS: Record<string, string[]> = {
 
   // the stages of the visit (the trail), stage-<id>
   'stage-reception': ['M4 18h16', 'M5.5 18a6.5 6.5 0 0 1 13 0', 'M12 9.5V8', 'M10.5 8h3'],
-  'stage-wait-before-triage': ['M7 4v9', 'M7 13h10v-2a2 2 0 0 0-2-2H7', 'M7 13v7', 'M17 13v7'],
   'stage-triage': ['M3 12h4l2-4 3 8 2-4h7'],
   'stage-wait-doctor': [ring(12, 12, 9), 'M12 7v5l3 2'],
   'stage-doctor': ['M5 3v5a4 4 0 0 0 8 0V3', 'M9 12v2.5a5 5 0 0 0 10 0V12', ring(19, 10, 2)],
@@ -56,7 +55,6 @@ const PATHS: Record<string, string[]> = {
   // the places on the ER map, area-<id>
   'area-entrance': ['M6 21V4h10v17', 'M4 21h16', 'M13 12.5v.5', 'M16 6l3 1v14'],
   'area-triage': ['M3 12h4l2-4 3 8 2-4h7'],
-  'area-waiting': ['M7 4v9', 'M7 13h10v-2a2 2 0 0 0-2-2H7', 'M7 13v7', 'M17 13v7'],
   'area-doctor': ['M5 3v5a4 4 0 0 0 8 0V3', 'M9 12v2.5a5 5 0 0 0 10 0V12', ring(19, 10, 2)],
   'area-outside': ['M12 21v-6', 'M12 15c-4 0-6-2.5-6-5.5S8.5 3 12 3s6 3.5 6 6.5S16 15 12 15z', 'M9 21h6'],
   'area-quiet-room': ['M19 14.5A8 8 0 1 1 9.5 5a6.5 6.5 0 0 0 9.5 9.5z'],
@@ -151,6 +149,8 @@ const FILES: Record<string, string> = {
   'card-communication': 'talk.svg',
   // Shevi's bed: the stay in a ward on the parent's pages
   'tile-admission': 'bed.svg',
+  'stage-wait-before-triage': 'chair.svg',
+  'area-waiting': 'chair.svg',
 }
 
 export function hasShevisIcon(id: string): boolean {
