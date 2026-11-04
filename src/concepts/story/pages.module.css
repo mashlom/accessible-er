@@ -1442,3 +1442,5 @@ button.dest {
   font-weight: 400;
   line-height: 16px;
 }
+/* the station names: Rubik 700, 16px on a 16px line */
+.trailLook .stopTitle { line-height: 16px; }
