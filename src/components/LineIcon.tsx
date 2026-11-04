@@ -112,7 +112,6 @@ const PATHS: Record<string, string[]> = {
   'end-admission-4': ['M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z'],
 
   // the home's tile for staying in the hospital: a bed
-  'tile-admission': ['M3 7v13', 'M21 20v-5H3', 'M3 15h18v-3a3 3 0 0 0-3-3h-7v6', ring(7, 12, 1.8)],
 
   // a procedure page's "what actually happens": an eye
   'proc-what': ['M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z', ring(12, 12, 3)],
@@ -150,6 +149,8 @@ const FILES: Record<string, string> = {
   admission: 'magen-david.svg',
   'stage-tests': 'tubes.svg',
   'card-communication': 'talk.svg',
+  // Shevi's bed: the stay in a ward on the parent's pages
+  'tile-admission': 'bed.svg',
 }
 
 export function hasShevisIcon(id: string): boolean {
