@@ -25,7 +25,7 @@ export function BookPage() {
   return (
     <div className={`${shell.page} ${styles.trailLook}`} dir={dir} lang={lang}>
       <header className={shell.sceneHead}>
-        <TitleRow fallback="/show">
+        <TitleRow fallback="/show" iconBack>
           <h1 className={`${shell.sceneTitle} ${styles.procTitle}`}>
             <span className={styles.stopIcon} aria-hidden><LineIcon id={procedure.id} emoji={procedure.emoji} size={24} /></span>
             {procedure.title}

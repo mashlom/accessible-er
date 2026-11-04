@@ -1367,7 +1367,10 @@ button.dest {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  white-space: nowrap;
 }
+/* one line: a long name shrinks instead of wrapping */
+.trailLook .procTitle { font-size: min(32px, 6.4vw); }
 /* why we came today in the home's look: white cards, a lilac icon square, the chosen one in purple */
 .trailLook .reasonBtn {
   grid-template-columns: 36px 1fr auto;
