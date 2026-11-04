@@ -1525,3 +1525,4 @@ button.dest {
   color: #6f4691;
 }
 .trailLook .stopFoot .hereBtnOn { background: var(--h-purple, #6f4691); border-color: var(--h-purple, #6f4691); color: #fff; }
+.trailLook .stopFoot .stopWait { display: inline-flex; align-items: center; gap: 4px; }

@@ -133,7 +133,7 @@ export function TrailPage() {
                     <div className={styles.stopFoot}>
                       {stage.waitRange ? (
                         <span className={styles.stopWait}>
-                          <span aria-hidden>⏳</span> {stage.waitRange}
+                          <img src={`${import.meta.env.BASE_URL}icons/hourglass.svg`} alt="" aria-hidden width={16} height={16} /> {stage.waitRange}
                         </span>
                       ) : <span />}
                       <button
