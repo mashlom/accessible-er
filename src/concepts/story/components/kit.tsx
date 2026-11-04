@@ -9,18 +9,21 @@ import styles from '../story.module.css'
  * in the middle. Back goes through the history, or to `fallback` when the
  * screen was opened straight from a link.
  */
-export function TitleRow({ fallback = '/', children }: { fallback?: string; children: ReactNode }) {
+/** iconBack: "back" as a bare arrow without a frame (the label stays for screen readers) */
+export function TitleRow({ fallback = '/', iconBack = false, children }: { fallback?: string; iconBack?: boolean; children: ReactNode }) {
   const back = useBack()
-  const { t } = useI18n()
+  const { t, dir } = useI18n()
   const label = t('ui.buttons.back')
+  const cls = iconBack ? `${styles.titleBack} ${styles.titleBackIcon}` : styles.titleBack
+  const content = iconBack ? <span aria-hidden>{dir === 'rtl' ? '→' : '←'}</span> : label
   return (
     <div className={styles.titleRow}>
-      <button type="button" className={`${styles.titleBack} app-no-print`} onClick={() => back(fallback)}>
-        {label}
+      <button type="button" className={`${cls} app-no-print`} onClick={() => back(fallback)} aria-label={iconBack ? label : undefined}>
+        {content}
       </button>
       <div className={styles.titleRowMain}>{children}</div>
-      <span className={`${styles.titleBack} ${styles.titleBackSpacer} app-no-print`} aria-hidden>
-        {label}
+      <span className={`${cls} ${styles.titleBackSpacer} app-no-print`} aria-hidden>
+        {content}
       </span>
     </div>
   )
