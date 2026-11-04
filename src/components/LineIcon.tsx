@@ -28,7 +28,6 @@ const PATHS: Record<string, string[]> = {
   // the stages of the visit (the trail), stage-<id>
   'stage-reception': ['M4 18h16', 'M5.5 18a6.5 6.5 0 0 1 13 0', 'M12 9.5V8', 'M10.5 8h3'],
   'stage-triage': ['M3 12h4l2-4 3 8 2-4h7'],
-  'stage-wait-doctor': [ring(12, 12, 9), 'M12 7v5l3 2'],
   'stage-doctor': ['M5 3v5a4 4 0 0 0 8 0V3', 'M9 12v2.5a5 5 0 0 0 10 0V12', ring(19, 10, 2)],
   'stage-consult': [ring(8, 8, 3), 'M3 20a5 5 0 0 1 10 0', ring(16.5, 9, 2.5), 'M15 20h6a4.5 4.5 0 0 0-6.5-4'],
   'stage-wait-results': ['M7 3h10', 'M7 21h10', 'M8 3c0 5 8 5 8 9s-8 4-8 9', 'M16 3c0 5-8 5-8 9s8 4 8 9'],
@@ -150,6 +149,7 @@ const FILES: Record<string, string> = {
   // Shevi's bed: the stay in a ward on the parent's pages
   'tile-admission': 'bed.svg',
   'stage-wait-before-triage': 'chair.svg',
+  'stage-wait-doctor': 'clock.svg',
   'area-waiting': 'chair.svg',
 }
 
