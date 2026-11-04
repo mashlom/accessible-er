@@ -482,3 +482,18 @@
   border-radius: 8px;
   background: #efe7f6;
 }
+/* the page titles as in Shevi's design: Rubik 700, 32px on a 32px line */
+.shellHome .sceneTitle {
+  font-family: Rubik, var(--font);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+}
+/* the words on the buttons: Rubik 400, 16px on a 16px line */
+.shellHome .bigBtn,
+.shellHome .ghostBtn {
+  font-family: Rubik, var(--font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+}
