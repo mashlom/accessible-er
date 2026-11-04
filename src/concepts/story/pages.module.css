@@ -1444,3 +1444,84 @@ button.dest {
 }
 /* the station names: Rubik 700, 16px on a 16px line */
 .trailLook .stopTitle { line-height: 16px; }
+
+/* ---- the station card as in Shevi's design: the circle inside the card, the details in cream boxes,
+   the time and "we are here" at the foot ---- */
+.trailLook .stop { display: block; }
+.trailLook .stop::after { display: none; }
+.trailLook .stopCard { padding: 0; overflow: hidden; }
+.stopHead {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 64px;
+  padding: 12px 16px;
+}
+.stopHead:focus-visible { outline: 3px solid #0a6b8a; outline-offset: -3px; }
+.trailLook .stopDot {
+  flex: none;
+  margin: 0;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+}
+.trailLook .stopHead .stopIcon { width: auto; height: auto; background: none; }
+.trailLook .stopTitle { font-size: 16px; font-weight: 700; line-height: 16px; }
+.trailLook .stopDetail {
+  margin: 0;
+  padding: 16px;
+  border-top: 1px solid #d9cce8;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: Rubik, var(--font);
+}
+.trailLook .stopMeaning { margin: 0; }
+.detailBox {
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: #fff9f3;
+  color: var(--h-ink, #0f0341);
+}
+.detailBox p,
+.detailBox li,
+.trailLook .stopMeaning { margin: 0; font-size: 16px; font-weight: 400; line-height: 20px; }
+.trailLook .detailLabel {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  color: var(--h-ink, #0f0341);
+}
+.trailLook .askList { margin: 0; padding: 0; list-style: none; color: var(--h-text, #6f6573); }
+.trailLook .prepRow { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.trailLook .prepLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--h-purple, #6f4691);
+  color: #fff;
+  font-weight: 700;
+}
+.stopFoot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.trailLook .stopFoot .stopWait { background: none; padding: 0; color: var(--h-text, #6f6573); font-weight: 300; }
+.trailLook .stopFoot .hereBtn {
+  width: auto;
+  margin: 0;
+  min-height: 40px;
+  padding: 8px 20px;
+  border: 1px solid #6f4691;
+  border-radius: 999px;
+  background: #fff;
+  color: #6f4691;
+}
+.trailLook .stopFoot .hereBtnOn { background: var(--h-purple, #6f4691); border-color: var(--h-purple, #6f4691); color: #fff; }

@@ -75,62 +75,40 @@ export function TrailPage() {
           const isOpen = openId === stage.id
           return (
             <li key={stage.id} className={`${styles.stop} ${currentIndex > -1 && i < currentIndex ? styles.stopPassed : ''}`}>
-              <button
-                type="button"
-                className={`${styles.stopDot} ${isDone ? styles.stopDone : ''} ${
-                  isHere ? styles.stopHere : ''
-                }`}
-                onClick={() => setOpenId(isOpen ? null : stage.id)}
-                aria-expanded={isOpen}
-                aria-label={`${stage.title}${isHere ? tx.hereSuffix : ''}`}
-              >
-                <span aria-hidden>{isDone ? '✓' : i + 1}</span>
-              </button>
-
+              {/* as in Shevi's design: the station's circle inside its card, beside the icon and the name */}
               <div className={`${styles.stopCard} ${isHere ? styles.stopCardHere : ''}`}>
                 <button
                   type="button"
+                  className={styles.stopHead}
                   onClick={() => setOpenId(isOpen ? null : stage.id)}
                   aria-expanded={isOpen}
-                  style={{
-                    all: 'unset',
-                    cursor: 'pointer',
-                    display: 'block',
-                    width: '100%',
-                  }}
+                  aria-label={`${stage.title}${isHere ? tx.hereSuffix : ''}`}
                 >
-                  <span className={styles.stopTitleRow}>
-                    <span className={styles.stopTitle}>
-                      <span className={styles.stopIcon} aria-hidden>
-                        <LineIcon id={`stage-${stage.id}`} emoji={stage.emoji} size={22} />
-                      </span>
-                      {stage.title}
-                    </span>
+                  <span
+                    className={`${styles.stopDot} ${isDone ? styles.stopDone : ''} ${isHere ? styles.stopHere : ''}`}
+                    aria-hidden
+                  >
+                    {isDone ? '✓' : i + 1}
                   </span>
+                  <span className={styles.stopIcon} aria-hidden>
+                    <LineIcon id={`stage-${stage.id}`} emoji={stage.emoji} size={22} />
+                  </span>
+                  <span className={styles.stopTitle}>{stage.title}</span>
                 </button>
 
                 {isOpen && (
                   <div className={styles.stopDetail}>
-                    {/* 'here we are' comes right after the station's title */}
                     <p className={styles.stopMeaning}>{stage.meaning}</p>
-                    {/* the estimated time lives inside the station, so the title stays one short line */}
-                    {stage.waitRange && (
-                      <p>
-                        <span className={styles.stopWait}>
-                          {stage.waitKind === 'duration' ? '⏱️' : '⏳'} {stage.waitRange}
-                        </span>
-                      </p>
-                    )}
-                    <p className={styles.detailRow}>
-                      <span className={styles.detailLabel}>{t('ui.labels.adult.whatHappens')}</span>
-                      {stage.whatHappens}
-                    </p>
-                    <p className={styles.detailRow}>
-                      <span className={styles.detailLabel}>{t('ui.labels.adult.challenge')}</span>
-                      {stage.challenge}
-                    </p>
-                    <div className={styles.detailRow}>
-                      <span className={styles.detailLabel}>{t('ui.tiles.requests.title')}</span>
+                    <div className={styles.detailBox}>
+                      <h3 className={styles.detailLabel}>{t('ui.labels.adult.whatHappens')}</h3>
+                      <p>{stage.whatHappens}</p>
+                    </div>
+                    <div className={styles.detailBox}>
+                      <h3 className={styles.detailLabel}>{t('ui.labels.adult.challenge')}</h3>
+                      <p>{stage.challenge}</p>
+                    </div>
+                    <div className={styles.detailBox}>
+                      <h3 className={styles.detailLabel}>{t('ui.tiles.requests.title')}</h3>
                       <ul className={styles.askList}>
                         {stage.canAsk.map((a) => (
                           <li key={a}>{a}</li>
@@ -145,7 +123,6 @@ export function TrailPage() {
                           if (!p) return null
                           return (
                             <Link key={pid} to={`/show/${pid}`} className={styles.prepLink}>
-                              <span aria-hidden>{p.emoji}</span>
                               {p.title}
                             </Link>
                           )
@@ -153,14 +130,21 @@ export function TrailPage() {
                       </div>
                     )}
 
-                    <button
-                      type="button"
-                      className={`${styles.hereBtn} ${isHere ? styles.hereBtnOn : ''}`}
-                      onClick={() => setCurrentId(isHere ? null : stage.id)}
-                      aria-pressed={isHere}
-                    >
-                      {isHere ? tx.hereOn : t('ui.labels.adult.weAreHere')}
-                    </button>
+                    <div className={styles.stopFoot}>
+                      {stage.waitRange ? (
+                        <span className={styles.stopWait}>
+                          <span aria-hidden>⏳</span> {stage.waitRange}
+                        </span>
+                      ) : <span />}
+                      <button
+                        type="button"
+                        className={`${styles.hereBtn} ${isHere ? styles.hereBtnOn : ''}`}
+                        onClick={() => setCurrentId(isHere ? null : stage.id)}
+                        aria-pressed={isHere}
+                      >
+                        {isHere ? tx.hereOn : t('ui.labels.adult.weAreHere')}
+                      </button>
+                    </div>
                   </div>
                 )}
               </div>
