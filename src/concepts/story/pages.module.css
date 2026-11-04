@@ -1411,3 +1411,34 @@ button.dest {
   box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--h-purple);
 }
 .trailLook .stopCardHere { box-shadow: 0 4px 20px rgba(60, 40, 110, 0.08); }
+
+/* the page titles as in Shevi's design: Rubik 700, 32px on a 32px line */
+.trailLook .trailTitle {
+  font-family: Rubik, var(--font);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+}
+/* the subtitle under it: Rubik 700, 16px on a 16px line */
+.trailLook .trailLead {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+}
+/* the text under the titles: Rubik Light, 14px on a 16px line */
+.trailLook .trailSub {
+  font-family: Rubik, var(--font);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}
+/* the words on the buttons: Rubik 400, 16px on a 16px line */
+.trailLook .reasonStrip,
+.trailLook .reasonStripText,
+.trailLook .hereBtn {
+  font-family: Rubik, var(--font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+}
