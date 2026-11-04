@@ -51,11 +51,12 @@ export function TrailPage() {
       {path ? (
         <div className={styles.reasonStrip}>
           <span className={styles.reasonStripEmoji} aria-hidden>
-            {path.emoji}
+            <LineIcon id={`reason-${path.id}`} emoji={path.emoji} size={22} />
           </span>
+          {/* one line, as in Shevi's design: "we came today because of" and the reason in bold */}
           <span className={styles.reasonStripText}>
-            <span className={styles.reasonStripLabel}>{home.reasonLabel}</span>
-            {path.label}
+            <span className={styles.reasonStripLabel}>{home.reasonLabel}</span>{' '}
+            <strong>{path.label}</strong>
           </span>
           <Link to="/reason" className={styles.reasonStripChange}>
             {home.reasonChange}
