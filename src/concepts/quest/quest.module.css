@@ -3924,3 +3924,33 @@ path.worldTrailLit {
   color: #0f0341;
   font-weight: 600;
 }
+
+/* the parent's procedure page as the trail's station card (Shevi's design): cream boxes, plain line icons,
+   Rubik 700 16/16 headings and 400 16/20 text, the who and the time as a plain grey line */
+.cardSectionHome {
+  background: #fff9f3;
+  box-shadow: none;
+  padding: 12px 16px;
+}
+.cardSectionHome h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+}
+.cardSectionHome p,
+.cardSectionHome li {
+  font-family: Rubik, var(--font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #0f0341;
+}
+.cardSectionHome .cardHeadingIconBox { width: auto; height: auto; background: none; }
+.sheetWaitIcons span {
+  padding: 0;
+  background: none;
+  color: #6f6573;
+  font-family: Rubik, var(--font);
+  font-weight: 300;
+}
