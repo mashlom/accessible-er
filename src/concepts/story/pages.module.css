@@ -1585,3 +1585,16 @@ button.dest {
   font-size: 16px;
   font-weight: 400;
 }
+
+/* a closed station: its name and, under it, the estimated time in grey (Shevi's closed frame) */
+.stopTitleBox { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.stopTimeLine {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--h-text, #6f6573);
+  font-family: Rubik, var(--font);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}

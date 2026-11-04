@@ -93,7 +93,15 @@ export function TrailPage() {
                   <span className={styles.stopIcon} aria-hidden>
                     <LineIcon id={`stage-${stage.id}`} emoji={stage.emoji} size={22} />
                   </span>
-                  <span className={styles.stopTitle}>{stage.title}</span>
+                  <span className={styles.stopTitleBox}>
+                    <span className={styles.stopTitle}>{stage.title}</span>
+                    {/* closed, the estimated time sits under the name; opened, it moves to the card's foot */}
+                    {!isOpen && stage.waitRange && (
+                      <span className={styles.stopTimeLine}>
+                        <img src={`${import.meta.env.BASE_URL}icons/hourglass.svg`} alt="" aria-hidden width={16} height={16} /> {stage.waitRange}
+                      </span>
+                    )}
+                  </span>
                 </button>
 
                 {isOpen && (
