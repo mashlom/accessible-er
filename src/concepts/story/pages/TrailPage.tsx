@@ -2,7 +2,6 @@ import { keyed } from '../../../lib/keyed'
 import { useI18n } from '../../../hooks/useI18n'
 import { useState } from 'react'
 import { Link } from '../../nav'
-import { Note } from '../components/kit'
 import { getStageIndex } from '../../../data/journey'
 import { parentJourney, parentProcedure } from '../../../data/parent'
 import { parentPaths } from '../../../data/parent/paths'
@@ -153,9 +152,11 @@ export function TrailPage() {
         })}
       </ol>
 
-      <div style={{ marginTop: 'var(--space-4)' }}>
-        <Note>{tx.note}</Note>
-      </div>
+      {/* the note in a peach box, its first sentence bold, as in Shevi's design */}
+      <p className={styles.trailNote}>
+        <strong>{tx.note.split(/(?<=\.)\s/)[0]}</strong>{' '}
+        {tx.note.split(/(?<=\.)\s/).slice(1).join(' ')}
+      </p>
 
       {/* the two ends of the visit, as the last sheet's answers in the worlds: Shevi's house and the red Star of David */}
       <div className={styles.outcomeLinks}>
