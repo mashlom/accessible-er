@@ -1565,3 +1565,23 @@ button.dest {
   line-height: 16px;
 }
 .trailLook .outcomeLinks .stopIcon { width: 28px; height: 28px; border-radius: 6px; background: #efe7f6; }
+
+/* the visit's reason as one purple pill: the line icon, the words, and a white "change" at the end */
+.trailLook .reasonStrip { justify-content: flex-start; gap: 8px; padding: 8px 8px 8px 16px; padding-inline: 16px 8px; text-align: start; }
+.trailLook .reasonStripEmoji { display: inline-flex; font-size: 22px; }
+.trailLook .reasonStripEmoji svg { stroke: #fff; }
+.trailLook .reasonStripEmoji img { filter: brightness(0) invert(1); }
+.trailLook .reasonStripLabel { display: inline; font-size: 16px; font-weight: 400; color: #fff; }
+.trailLook .reasonStripText strong { font-weight: 700; }
+.trailLook .reasonStripChange {
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px;
+  border: none;
+  background: #fff;
+  color: #0f0341;
+  font-family: Rubik, var(--font);
+  font-size: 16px;
+  font-weight: 400;
+}
